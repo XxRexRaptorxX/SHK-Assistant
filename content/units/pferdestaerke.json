@@ -10,6 +10,7 @@
   "label": "PS",
   "definition": "735.49875 W",
   "aliases": [],
+  "offerInFormulas": false,
   "examples": [
     {
       "value": "1 Pferdestaerke",

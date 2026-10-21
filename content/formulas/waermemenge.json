@@ -31,6 +31,9 @@
     "symbol": "Q",
     "name": "Wärmemenge",
     "unit": "kJ",
+    "units": [
+      "kcal"
+    ],
     "decimals": 2
   },
   "expression": "m * c * dT",

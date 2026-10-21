@@ -53,6 +53,7 @@ Einheiten, die mathjs nicht kennt (z. B. mWS, kcal). Sie gelten danach überall:
 | `name`       | Ausgeschrieben, z. B. „Meter Wassersäule“                               |
 | `definition` | Über vorhandene Einheiten, z. B. `"1000 mmH2O"`; leer = noch nicht nutzbar |
 | `aliases`    | Weitere Namen                                                           |
+| `offerInFormulas` | `false` = in Formeln nicht automatisch anbieten (z. B. PS: nur mechanische Leistung, kcal: nur Wärme); Formeln können sie über `units` gezielt anbieten |
 | `examples`   | Testbeispiele: `value` und `expected` jeweils mit Einheit, z. B. `"1 mWS"` → `"98.0665 hPa"` |
 
 Bei `verified` sind `definition` und ein Testbeispiel Pflicht. Achtung: mathjs kennt viele Kürzel

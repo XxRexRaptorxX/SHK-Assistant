@@ -12,7 +12,10 @@
     {
       "symbol": "Q",
       "name": "Wärmemenge",
-      "unit": "kJ"
+      "unit": "kJ",
+      "units": [
+        "kcal"
+      ]
     },
     {
       "symbol": "m",

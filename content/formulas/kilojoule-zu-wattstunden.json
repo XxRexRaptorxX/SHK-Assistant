@@ -12,7 +12,10 @@
     {
       "symbol": "QkJ",
       "name": "Wärmemenge",
-      "unit": "kJ"
+      "unit": "kJ",
+      "units": [
+        "kcal"
+      ]
     }
   ],
   "constants": [],
@@ -20,6 +23,9 @@
     "symbol": "EWh",
     "name": "Energie",
     "unit": "Wh",
+    "units": [
+      "kcal"
+    ],
     "decimals": 2
   },
   "expression": "QkJ",

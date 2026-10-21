@@ -13,6 +13,9 @@
       "symbol": "Qdot",
       "name": "Wärmeleistung",
       "unit": "kJ/s",
+      "units": [
+        "kcal/h"
+      ],
       "label": "Q̇"
     }
   ],
@@ -21,6 +24,9 @@
     "symbol": "P",
     "name": "Leistung",
     "unit": "W",
+    "units": [
+      "kcal/h"
+    ],
     "decimals": 2
   },
   "expression": "Qdot",

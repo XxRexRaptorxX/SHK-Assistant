@@ -12,7 +12,10 @@
     {
       "symbol": "Qabs",
       "name": "Aufgenommene Wärmemenge",
-      "unit": "kJ"
+      "unit": "kJ",
+      "units": [
+        "kcal"
+      ]
     }
   ],
   "constants": [],
@@ -20,6 +23,9 @@
     "symbol": "Qrel",
     "name": "Abgegebene Wärmemenge",
     "unit": "kJ",
+    "units": [
+      "kcal"
+    ],
     "decimals": 2
   },
   "expression": "Qabs",

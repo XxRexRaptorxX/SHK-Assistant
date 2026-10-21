@@ -16,6 +16,11 @@ export const unitEntrySchema = defineEntrySchema({
   /** Definition über vorhandene Einheiten, z. B. "1000 mmH2O"; bei draft darf sie fehlen */
   definition: z.string().trim().default(''),
   aliases: z.array(unitName).default([]),
+  /**
+   * In Formeln automatisch als Alternative anbieten? false z. B. für PS (nur mechanische Leistung)
+   * oder kcal (nur Wärme). Formeln können die Einheit dann gezielt über `units` anbieten.
+   */
+  offerInFormulas: z.boolean().default(true),
   /** Testbeispiele: value und expected jeweils mit Einheit, z. B. "1 mWS" → "0.0980665 bar" */
   examples: z
     .array(

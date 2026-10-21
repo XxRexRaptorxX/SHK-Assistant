@@ -25,6 +25,9 @@
     "symbol": "Qv",
     "name": "Verdampfungswärme",
     "unit": "kJ",
+    "units": [
+      "kcal"
+    ],
     "decimals": 2,
     "label": "Qᵥ"
   },

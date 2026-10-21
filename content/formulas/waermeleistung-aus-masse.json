@@ -36,6 +36,9 @@
     "symbol": "Qdot",
     "name": "Wärmeleistung",
     "unit": "kJ/s",
+    "units": [
+      "kcal/h"
+    ],
     "decimals": 2,
     "label": "Q̇"
   },

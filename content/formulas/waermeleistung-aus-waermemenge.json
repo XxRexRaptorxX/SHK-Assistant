@@ -12,7 +12,10 @@
     {
       "symbol": "Q",
       "name": "Wärmemenge",
-      "unit": "kJ"
+      "unit": "kJ",
+      "units": [
+        "kcal"
+      ]
     },
     {
       "symbol": "t",
@@ -25,6 +28,9 @@
     "symbol": "Qdot",
     "name": "Wärmeleistung",
     "unit": "kJ/s",
+    "units": [
+      "kcal/h"
+    ],
     "decimals": 2,
     "label": "Q̇"
   },

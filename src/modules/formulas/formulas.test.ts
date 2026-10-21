@@ -128,6 +128,20 @@ describe('Wählbare Einheiten', () => {
     expect(evaluateFormula(diff, { T2: { value: 30, unit: 'degC' }, T1: { value: 20, unit: 'degC' } })).toBeCloseTo(10)
   })
 
+  it('bietet PS und kcal nur dort an, wo sie fachlich passen', () => {
+    // PS ist mechanische Leistung, kcal Wärme: nicht automatisch bei elektrischer Leistung
+    expect(alternativeUnits('W')).not.toContain('Pferdestaerke')
+    expect(alternativeUnits('W')).not.toContain('kcal/h')
+    expect(alternativeUnits('kJ')).not.toContain('kcal')
+    const units = (id: string) => {
+      const f = formulaEntries.find((entry) => entry.id === id)!
+      return alternativeUnits(f.result!.unit, f.result!.units)
+    }
+    expect(units('formula.elektrotechnik.leistung-spannung-strom')).not.toContain('Pferdestaerke')
+    expect(units('formula.thermodynamik.waermemenge')).toContain('kcal')
+    expect(units('formula.thermodynamik.waermeleistung-aus-masse')).toContain('kcal/h')
+  })
+
   it('vermischt Scheinleistung (VA) nicht mit Wirkleistung (W)', () => {
     expect(alternativeUnits('VA', ['kVA'])).toEqual(['VA', 'kVA'])
     expect(alternativeUnits('W')).not.toContain('VA')

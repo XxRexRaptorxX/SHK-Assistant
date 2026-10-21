@@ -25,6 +25,9 @@
     "symbol": "Qs",
     "name": "Schmelzwärme",
     "unit": "kJ",
+    "units": [
+      "kcal"
+    ],
     "decimals": 2,
     "label": "Qₛ"
   },

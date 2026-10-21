@@ -9,6 +9,7 @@
   "name": "Kilokalorie (internationale Tafelkalorie)",
   "definition": "4.1868 kJ",
   "aliases": [],
+  "offerInFormulas": false,
   "examples": [
     {
       "value": "1 kcal/h",
