@@ -1,18 +1,23 @@
 import { Route, Routes } from 'react-router'
-
-// Platzhalter bis zum App-Gerüst (Schritt 3)
-function Home() {
-  return (
-    <main className="p-4">
-      <h1 className="text-2xl font-bold">SHK-Assistant</h1>
-    </main>
-  )
-}
+import { Layout } from './app/Layout'
+import { modules } from './app/modules'
+import { HomePage } from './pages/HomePage'
+import { NotFoundPage } from './pages/NotFoundPage'
+import { PlaceholderPage } from './pages/PlaceholderPage'
 
 export function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path={modules.formulas.path} element={<PlaceholderPage module={modules.formulas} />} />
+        <Route path={modules.converter.path} element={<PlaceholderPage module={modules.converter} />} />
+        <Route path={modules.checklists.path} element={<PlaceholderPage module={modules.checklists} />} />
+        <Route path={modules.lexicon.path} element={<PlaceholderPage module={modules.lexicon} />} />
+        <Route path={modules.favorites.path} element={<PlaceholderPage module={modules.favorites} />} />
+        <Route path={modules.search.path} element={<PlaceholderPage module={modules.search} />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
     </Routes>
   )
 }
