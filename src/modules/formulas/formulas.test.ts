@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import { formatUnit } from '../../lib/units'
-import { checkFormula, evaluateExample, evaluateFormula } from './engine'
+import { checkFormula, evaluateExample, evaluateFormula, formatExpression } from './engine'
 import { formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
 
@@ -31,6 +31,11 @@ describe('Formel-Engine', () => {
     const inputs = { l: { value: 2, unit: 'm' }, b: { value: 3, unit: 'm' } }
     expect(evaluateFormula(fixture, inputs)).toBeCloseTo(6)
     expect(evaluateFormula(fixture, inputs, 'cm^2')).toBeCloseTo(60000)
+  })
+
+  it('zeigt die Formel mit Malpunkt und Anzeige-Bezeichnungen', () => {
+    const withLabel = { ...fixture, variables: fixture.variables.map((v) => (v.symbol === 'b' ? { ...v, label: 'B' } : v)) }
+    expect(formatExpression(withLabel)).toBe('l · B')
   })
 
   it('prüft Testbeispiele', () => {

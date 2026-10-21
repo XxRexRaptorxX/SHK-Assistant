@@ -220,9 +220,12 @@ export function formatExpression(formula: FormulaEntry): string {
   for (const item of [...formula.variables, ...formula.constants]) {
     if (item.label) labels.set(item.symbol, item.label)
   }
-  return math.parse(formula.expression).toString({
-    implicit: 'show',
-    handler: (node: MathNode) =>
-      math.isSymbolNode(node) && labels.has(node.name) ? labels.get(node.name) : undefined,
-  })
+  return math
+    .parse(formula.expression)
+    .toString({
+      implicit: 'show',
+      handler: (node: MathNode) =>
+        math.isSymbolNode(node) && labels.has(node.name) ? labels.get(node.name) : undefined,
+    })
+    .replace(/ \* /g, ' · ')
 }

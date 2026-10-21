@@ -26,7 +26,8 @@ function UnitSelect({
   onChange: (unit: string) => void
 }) {
   if (units.length <= 1) {
-    return <span className="min-w-16 shrink-0 text-lg">{formatUnit(value)}</span>
+    // Gleiche Breite wie die Auswahlliste, damit alle Eingabefelder bündig sind
+    return <span className="min-w-24 shrink-0 px-3 text-lg">{formatUnit(value)}</span>
   }
   return (
     <select
