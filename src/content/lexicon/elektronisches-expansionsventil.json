@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.elektronisches-expansionsventil",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Elektronisches Expansionsventil",
+  "synonyms": [
+    "EEV"
+  ],
+  "definition": "Elektrisch angesteuertes Expansionsventil, das den Kältemittelmassenstrom anhand von Messwerten präzise regeln kann.",
+  "related": []
+}

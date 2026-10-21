@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.dampfdiffusionsaequivalente-luftschichtdicke",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Dampfdiffusionsäquivalente Luftschichtdicke",
+  "synonyms": [
+    "sd-Wert"
+  ],
+  "definition": "Kenngröße, die beschreibt, welcher Dicke einer ruhenden Luftschicht der Wasserdampfdiffusionswiderstand eines Bauteils entspricht.",
+  "related": []
+}

@@ -15,6 +15,7 @@ export const testCollections = {
     idPrefix: 'item',
     schema: defineEntrySchema({ title: z.string(), related: z.array(z.string()).default([]) }),
     references: (entry) => entry.related,
+    check: (entry) => (entry.title === 'FALSCH' ? ['Titel ist fachlich falsch'] : []),
   }),
   others: { dir: 'others', idPrefix: 'other', schema: defineEntrySchema({ title: z.string() }) },
 } satisfies Record<string, CollectionDefinition>

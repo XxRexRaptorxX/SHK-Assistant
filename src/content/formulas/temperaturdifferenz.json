@@ -1,0 +1,39 @@
+{
+  "id": "formula.thermodynamik.temperaturdifferenz",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Temperaturdifferenz",
+  "description": "Berechnet die Temperaturdifferenz zwischen höherer und niedrigerer Temperatur. Für Differenzen wird Kelvin verwendet.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "T2",
+      "name": "Höhere Temperatur",
+      "unit": "K"
+    },
+    {
+      "symbol": "T1",
+      "name": "Niedrigere Temperatur",
+      "unit": "K"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dT",
+    "name": "Temperaturdifferenz",
+    "unit": "K",
+    "decimals": 2,
+    "label": "ΔT"
+  },
+  "expression": "T2 - T1",
+  "examples": [
+    {
+      "inputs": {
+        "T2": 303.15,
+        "T1": 293.15
+      },
+      "expected": 10
+    }
+  ]
+}

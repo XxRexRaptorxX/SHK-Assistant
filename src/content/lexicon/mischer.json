@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.mischer",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Mischventil",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Mischer",
+  "synonyms": [
+    "Mischventil (Heizung)",
+    "Mischarmatur"
+  ],
+  "definition": "Ein **Mischer** mischt zwei oder mehr Fluidströme, um eine gewünschte Austrittstemperatur oder einen bestimmten Volumenstromanteil einzustellen. In Heizungsanlagen wird oft ein Dreiwege-Mischer verwendet, um Vorlaufwasser mit Rücklaufwasser zu mischen. Er kann manuell oder über einen Stellantrieb geregelt werden.",
+  "related": [
+    "lexicon.heizkreis",
+    "lexicon.vorlauftemperatur",
+    "lexicon.stellantrieb",
+    "lexicon.dreiwegeventil"
+  ]
+}

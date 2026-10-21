@@ -1,0 +1,47 @@
+{
+  "id": "formula.elektrotechnik.leiterwiderstand-erwaermung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden.",
+  "title": "Leiterwiderstand nach Erwärmung",
+  "description": "Berechnet den temperaturabhängigen Widerstand relativ zum Bezugswert bei 20 °C.",
+  "category": "Elektrotechnik",
+  "variables": [
+    {
+      "symbol": "R20",
+      "name": "Widerstand bei 20 °C",
+      "unit": "ohm"
+    },
+    {
+      "symbol": "alpha",
+      "name": "Temperaturbeiwert",
+      "unit": "1/K",
+      "label": "α"
+    },
+    {
+      "symbol": "dT",
+      "name": "Temperaturdifferenz gegenüber 20 °C",
+      "unit": "K",
+      "label": "ΔT"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Rtheta",
+    "name": "Widerstand nach Erwärmung",
+    "unit": "ohm",
+    "decimals": 2,
+    "label": "Rθ"
+  },
+  "expression": "R20 * (1 + alpha * dT)",
+  "examples": [
+    {
+      "inputs": {
+        "R20": 10,
+        "alpha": 0.004,
+        "dT": 50
+      },
+      "expected": 12
+    }
+  ]
+}

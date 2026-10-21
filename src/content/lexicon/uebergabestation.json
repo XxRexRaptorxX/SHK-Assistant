@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.uebergabestation",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Fernw%C3%A4rme",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeübergabestation",
+  "synonyms": [
+    "Fernwärmeübergabestation"
+  ],
+  "definition": "Eine **Wärmeübergabestation** verbindet ein Fern- oder Nahwärmenetz mit der hausinternen Heizungsanlage. Sie kann Wärmetauscher, Regelventil, Temperatur- und Druckmessung, Wärmemengenzähler sowie Sicherheitskomponenten enthalten. Primär- und Sekundärseite sind hydraulisch und regelungstechnisch entsprechend dem Netzkonzept zu behandeln.",
+  "related": [
+    "lexicon.fernwaerme",
+    "lexicon.waermetauscher",
+    "lexicon.waermemengenzaehler"
+  ]
+}

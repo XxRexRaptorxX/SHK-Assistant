@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.hysterese",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Hysterese",
+  "synonyms": [],
+  "definition": "Differenz zwischen Ein- und Ausschaltschwelle eines Reglers. Sie verhindert häufiges Umschalten bei kleinen Schwankungen des Messwerts.",
+  "related": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.gasinstallation",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Gasinstallation",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gasinstallation",
+  "synonyms": [
+    "Gasinneninstallation"
+  ],
+  "definition": "Eine **Gasinstallation** umfasst die Leitungen, Armaturen und Anschlüsse, mit denen Gas innerhalb eines Gebäudes zu Verbrauchseinrichtungen geführt wird. Sie muss gasdicht, für die vorgesehene Gasart und Betriebsbedingungen geeignet und mit den vorgeschriebenen Sicherheitskomponenten ausgestattet sein. Arbeiten, Prüfungen und Inbetriebnahmen unterliegen besonderen fachlichen und rechtlichen Anforderungen.",
+  "related": [
+    "lexicon.gasdruckregler",
+    "lexicon.gasstroemungswaechter",
+    "lexicon.brenner"
+  ]
+}

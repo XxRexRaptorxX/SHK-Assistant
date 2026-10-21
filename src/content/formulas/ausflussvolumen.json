@@ -1,0 +1,44 @@
+{
+  "id": "formula.hydraulik.ausflussvolumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Ausflussvolumen",
+  "description": "Berechnet das ausströmende Volumen bei konstantem Querschnitt und konstanter Geschwindigkeit über eine Zeitspanne.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "A",
+      "name": "Strömungsquerschnitt",
+      "unit": "m^2"
+    },
+    {
+      "symbol": "v",
+      "name": "Strömungsgeschwindigkeit",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "t",
+      "name": "Zeit",
+      "unit": "s"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "V",
+    "name": "Ausflussvolumen",
+    "unit": "m^3",
+    "decimals": 2
+  },
+  "expression": "A * v * t",
+  "examples": [
+    {
+      "inputs": {
+        "A": 0.01,
+        "v": 2,
+        "t": 10
+      },
+      "expected": 0.2
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.luftzahl-lambda",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Luftzahl Lambda",
+  "synonyms": [
+    "Lambda"
+  ],
+  "definition": "Verhältnis der tatsächlich zugeführten Verbrennungsluft zur theoretisch erforderlichen Luftmenge. Lambda größer 1 bedeutet Luftüberschuss.",
+  "related": []
+}

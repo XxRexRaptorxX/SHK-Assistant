@@ -1,0 +1,45 @@
+{
+  "id": "formula.hydraulik.kontinuitaet-geschwindigkeit",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Kontinuitätsgesetz: Geschwindigkeit",
+  "description": "Berechnet die Geschwindigkeit in einem zweiten Querschnitt bei konstantem Volumenstrom.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "A1",
+      "name": "Querschnitt 1",
+      "unit": "m^2"
+    },
+    {
+      "symbol": "v1",
+      "name": "Geschwindigkeit 1",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "A2",
+      "name": "Querschnitt 2",
+      "unit": "m^2"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "v2",
+    "name": "Geschwindigkeit 2",
+    "unit": "m/s",
+    "decimals": 2,
+    "label": "v₂"
+  },
+  "expression": "A1 * v1 / A2",
+  "examples": [
+    {
+      "inputs": {
+        "A1": 0.02,
+        "v1": 1,
+        "A2": 0.01
+      },
+      "expected": 2
+    }
+  ]
+}

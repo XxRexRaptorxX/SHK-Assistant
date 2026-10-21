@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.luftfilter",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Luftfilter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Luftfilter",
+  "synonyms": [
+    "Filterelement"
+  ],
+  "definition": "Ein **Luftfilter** entfernt Partikel aus einem Luftstrom, um Personen, Anlagen und Prozesse zu schützen. Filterklassen beschreiben definierte Abscheideleistungen nach den jeweils geltenden Klassifizierungssystemen; sie sind nicht ohne Weiteres über alte und neue Normen hinweg gleichzusetzen. Mit zunehmender Beladung steigt häufig der Druckverlust, weshalb Wartung und Filterwechsel wichtig sind.",
+  "related": [
+    "lexicon.lueftungsanlage",
+    "lexicon.differenzdruck",
+    "lexicon.raumluftqualitaet"
+  ]
+}

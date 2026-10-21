@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.waermeuebergangskoeffizient",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeübergangskoeffizient",
+  "synonyms": [],
+  "definition": "Kennwert, der den Wärmeübergang zwischen einer Oberfläche und einem Fluid beschreibt. Die Einheit ist üblicherweise W/(m²·K).",
+  "related": []
+}

@@ -114,6 +114,9 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
       } else {
         idToFile.set(entry.id, rel)
       }
+      for (const message of collection.check?.(entry) ?? []) {
+        issues.push(`${rel}: ${message}`)
+      }
       for (const to of collection.references?.(entry) ?? []) {
         references.push({ file: rel, from: entry.id, to })
       }

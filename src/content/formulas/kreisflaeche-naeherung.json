@@ -1,0 +1,33 @@
+{
+  "id": "formula.geometrie.kreisflaeche-naeherung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 1; keine Seitenangabe vorhanden.",
+  "title": "Kreisfläche (Näherung)",
+  "description": "Näherungsweise Berechnung der Kreisfläche aus dem Durchmesser; verwendet den Faktor 0,785.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "A",
+    "name": "Kreisfläche",
+    "unit": "m^2",
+    "decimals": 2
+  },
+  "expression": "0.785 * d^2",
+  "examples": [
+    {
+      "inputs": {
+        "d": 2
+      },
+      "expected": 3.141592653589793,
+      "tolerance": 0.001
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.differenzdruck",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Differenzdruck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Differenzdruck",
+  "synonyms": [
+    "Δp",
+    "Druckdifferenz"
+  ],
+  "definition": "Der **Differenzdruck** ist die Differenz zwischen zwei Druckwerten. In Heizungs- und Trinkwasseranlagen wird er unter anderem zur Beurteilung von Ventilen, Filtern, Pumpen und Druckverlusten verwendet. Ein zu hoher Differenzdruck an Regelventilen kann Strömungsgeräusche und ungünstige Regelbedingungen verursachen.",
+  "related": [
+    "lexicon.druck",
+    "lexicon.hydraulischer-abgleich",
+    "lexicon.druckverlust",
+    "lexicon.umwaelzpumpe"
+  ]
+}

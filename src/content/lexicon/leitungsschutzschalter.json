@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.leitungsschutzschalter",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Leitungsschutzschalter",
+  "synonyms": [
+    "LS-Schalter"
+  ],
+  "definition": "Schutzgerät, das elektrische Leitungen bei Überlast oder Kurzschluss automatisch abschaltet.",
+  "related": []
+}

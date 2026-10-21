@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.rohrschelle",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Rohrschelle",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrschelle",
+  "synonyms": [
+    "Rohrhalter"
+  ],
+  "definition": "Eine **Rohrschelle** befestigt oder führt eine Rohrleitung an einer baulichen Konstruktion. Je nach Ausführung kann sie Schallentkopplung, Wärmedehnung oder definierte Fix- und Gleitpunkte berücksichtigen. Abstände, Tragfähigkeit, Untergrund und Anforderungen an Brand- oder Schallschutz sind entsprechend dem Rohrsystem zu wählen.",
+  "related": [
+    "lexicon.rohrleitung",
+    "lexicon.thermische-laengenausdehnung",
+    "lexicon.schallschutz"
+  ]
+}

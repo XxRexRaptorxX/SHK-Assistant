@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.heizlast",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Heizlast",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Heizlast",
+  "synonyms": [
+    "Gebäudeheizlast",
+    "Raumheizlast"
+  ],
+  "definition": "Die **Heizlast** ist die erforderliche Wärmeleistung, mit der ein Gebäude oder Raum bei festgelegten Auslegungsbedingungen seine Solltemperatur halten kann. Sie wird insbesondere durch Transmissionswärmeverluste, Lüftungswärmeverluste und die Auslegungs-Außentemperatur bestimmt. Die Heizlast ist eine zentrale Grundlage für die Dimensionierung des Wärmeerzeugers und der Heizflächen.",
+  "related": [
+    "lexicon.waermeleistung",
+    "lexicon.heizflaeche",
+    "lexicon.vorlauftemperatur",
+    "lexicon.waermepumpe"
+  ]
+}

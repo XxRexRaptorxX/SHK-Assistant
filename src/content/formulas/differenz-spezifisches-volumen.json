@@ -1,0 +1,39 @@
+{
+  "id": "formula.thermodynamik.differenz-spezifisches-volumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Differenz des spezifischen Volumens",
+  "description": "Berechnet die Differenz aus dem spezifischen Volumen im Endzustand und im Anfangszustand.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "vspec2",
+      "name": "Spezifisches Volumen im Endzustand",
+      "unit": "dm^3/kg"
+    },
+    {
+      "symbol": "vspec1",
+      "name": "Spezifisches Volumen im Anfangszustand",
+      "unit": "dm^3/kg"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dvspec",
+    "name": "Differenz des spezifischen Volumens",
+    "unit": "dm^3/kg",
+    "decimals": 2,
+    "label": "Δv"
+  },
+  "expression": "vspec2 - vspec1",
+  "examples": [
+    {
+      "inputs": {
+        "vspec2": 1.01,
+        "vspec1": 1.0
+      },
+      "expected": 0.01
+    }
+  ]
+}

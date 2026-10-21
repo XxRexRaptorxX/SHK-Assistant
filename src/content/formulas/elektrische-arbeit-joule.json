@@ -1,0 +1,45 @@
+{
+  "id": "formula.elektrotechnik.elektrische-arbeit-joule",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden.",
+  "title": "Elektrische Arbeit in Joule",
+  "description": "Berechnet die elektrische Arbeit aus Spannung, Stromstärke und Zeit in Sekunden.",
+  "category": "Elektrotechnik",
+  "variables": [
+    {
+      "symbol": "U",
+      "name": "Elektrische Spannung",
+      "unit": "V"
+    },
+    {
+      "symbol": "I",
+      "name": "Elektrische Stromstärke",
+      "unit": "A"
+    },
+    {
+      "symbol": "t",
+      "name": "Zeit",
+      "unit": "s"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "E",
+    "name": "Elektrische Arbeit",
+    "unit": "J",
+    "decimals": 2,
+    "label": "W"
+  },
+  "expression": "U * I * t",
+  "examples": [
+    {
+      "inputs": {
+        "U": 12,
+        "I": 2,
+        "t": 60
+      },
+      "expected": 1440
+    }
+  ]
+}

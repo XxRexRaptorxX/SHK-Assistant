@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.thermostatarmatur",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Armatur_(Technik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Thermostatarmatur",
+  "synonyms": [
+    "Thermostatmischer"
+  ],
+  "definition": "Eine **Thermostatarmatur** mischt Warm- und Kaltwasser und hält die eingestellte Auslauftemperatur innerhalb ihrer Betriebsgrenzen automatisch nach. Sie reagiert auf Veränderungen der Zulauftemperaturen und -drücke. Für den Verbrühschutz sind korrekte Montage, Wartung und passende Versorgungsbedingungen wesentlich.",
+  "related": [
+    "lexicon.armatur",
+    "lexicon.verbruehschutz"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.armatur",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Armatur_(Technik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Armatur",
+  "synonyms": [
+    "Sanitärarmatur",
+    "Ventilarmatur"
+  ],
+  "definition": "Eine **Armatur** steuert, sperrt, reguliert oder verteilt den Durchfluss eines Fluids. In der Sanitärtechnik gehören dazu beispielsweise Entnahmearmaturen, Absperrarmaturen, Mischarmaturen, Rückflussverhinderer und Sicherheitsarmaturen. Werkstoff, Druck- und Temperaturbereich sowie bestimmungsgemäße Verwendung müssen passen.",
+  "related": [
+    "lexicon.einhebelmischer",
+    "lexicon.thermostatarmatur",
+    "lexicon.absperrventil",
+    "lexicon.rueckflussverhinderer"
+  ]
+}

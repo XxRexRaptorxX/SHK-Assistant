@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.plattenwaermeuebertrager",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Plattenwärmeübertrager",
+  "synonyms": [
+    "Plattenwärmetauscher"
+  ],
+  "definition": "Wärmeübertrager aus profilierten Platten, zwischen denen zwei Medien in getrennten Kanälen strömen. Er bietet eine große Wärmeübertragungsfläche auf kleinem Raum.",
+  "related": []
+}

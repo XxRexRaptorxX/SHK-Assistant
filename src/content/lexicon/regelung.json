@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.regelung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Regelung",
+  "synonyms": [],
+  "definition": "Beeinflussung einer Größe durch Vergleich des Istwerts mit einem Sollwert und Rückführung der Abweichung, um die Größe möglichst passend zu halten.",
+  "related": []
+}

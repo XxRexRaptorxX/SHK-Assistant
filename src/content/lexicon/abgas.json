@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.abgas",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Abgas",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Abgas",
+  "synonyms": [
+    "Verbrennungsabgas"
+  ],
+  "definition": "**Abgas** ist das gasförmige Produkt, das bei der Verbrennung entsteht und über einen dafür vorgesehenen Abgasweg abgeführt wird. Zusammensetzung und Temperatur hängen von Brennstoff und Betriebszustand ab. Abgaswege müssen dicht, temperatur- und korrosionsbeständig sowie für das Gerät zugelassen sein.",
+  "related": [
+    "lexicon.abgasleitung",
+    "lexicon.schornstein",
+    "lexicon.brennwertkessel",
+    "lexicon.kohlenmonoxid"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.schornstein",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Schornstein",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schornstein",
+  "synonyms": [
+    "Kamin (Abgasanlage)"
+  ],
+  "definition": "Ein **Schornstein** ist eine vertikale Abgasanlage zur Ableitung von Verbrennungsgasen ins Freie. Bauart und Eignung hängen unter anderem von Feuerstätte, Abgastemperatur, Feuchtebeanspruchung und Druckverhältnissen ab. Bestehende Schornsteine müssen für den Anschluss eines neuen Wärmeerzeugers geeignet sein.",
+  "related": [
+    "lexicon.abgas",
+    "lexicon.abgasleitung"
+  ]
+}

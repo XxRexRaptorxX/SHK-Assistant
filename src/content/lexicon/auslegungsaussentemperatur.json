@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.auslegungsaussentemperatur",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Auslegungsaußentemperatur",
+  "synonyms": [],
+  "definition": "Für die Heizlastberechnung verwendete örtliche Außentemperatur unter festgelegten Auslegungsbedingungen. Sie ist nicht mit einer kurzfristigen Wettervorhersage gleichzusetzen.",
+  "related": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "formula.thermodynamik.waermeleistung-aus-waermemenge",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Wärmeleistung aus Wärmemenge",
+  "description": "Berechnet die mittlere Wärmeleistung aus übertragener Wärmemenge und Zeit.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "Q",
+      "name": "Wärmemenge",
+      "unit": "kJ"
+    },
+    {
+      "symbol": "t",
+      "name": "Zeit",
+      "unit": "s"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Qdot",
+    "name": "Wärmeleistung",
+    "unit": "kJ/s",
+    "decimals": 2,
+    "label": "Q̇"
+  },
+  "expression": "Q / t",
+  "examples": [
+    {
+      "inputs": {
+        "Q": 83.8,
+        "t": 20
+      },
+      "expected": 4.19
+    }
+  ]
+}

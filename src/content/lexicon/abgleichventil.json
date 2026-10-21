@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.abgleichventil",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Regelventil",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Abgleichventil",
+  "synonyms": [
+    "Strangregulierventil",
+    "Einregulierventil"
+  ],
+  "definition": "Ein **Abgleichventil** dient dazu, einen berechneten Volumenstrom in einem Teilstrang einzustellen und gegebenenfalls zu messen. Es wird beispielsweise im Heizungs- und Kältewassernetz eingesetzt. Die richtige Einstellung setzt eine geeignete Auslegung und die Kenntnis der Betriebsbedingungen voraus.",
+  "related": [
+    "lexicon.hydraulischer-abgleich",
+    "lexicon.volumenstrom",
+    "lexicon.differenzdruck"
+  ]
+}

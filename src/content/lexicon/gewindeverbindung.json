@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.gewindeverbindung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Gewinde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gewindeverbindung",
+  "synonyms": [
+    "Gewindefitting"
+  ],
+  "definition": "Eine **Gewindeverbindung** stellt eine lösbare oder je nach Konstruktion dauerhaft eingesetzte Verbindung zwischen Bauteilen mit passenden Innen- und Außengewinden her. Die Abdichtung kann über Gewinde, Dichtflächen oder separate Dichtelemente erfolgen. Gewindetyp, Dichtmittel, Anzug und zulässige Belastung müssen zusammenpassen.",
+  "related": [
+    "lexicon.rohrleitung",
+    "lexicon.dichtung",
+    "lexicon.ptfe-band"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.elektrische-leistung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Elektrische_Leistung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Elektrische Leistung",
+  "synonyms": [
+    "P",
+    "Watt-Leistung"
+  ],
+  "definition": "Die **elektrische Leistung** gibt an, wie viel elektrische Energie pro Zeit umgesetzt oder übertragen wird; die Einheit ist Watt (W). Bei Gleichstrom gilt P = U × I; bei Wechsel- und Drehstrom sind Leistungsfaktor und Anschlussart zu berücksichtigen. Bei SHK-Geräten sind elektrische Aufnahmeleistung und thermische Abgabe- beziehungsweise Kälteleistung unterschiedliche Größen.",
+  "related": [
+    "lexicon.elektrische-energie",
+    "lexicon.waermepumpen-cop"
+  ]
+}

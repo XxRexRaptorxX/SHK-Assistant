@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.stellventil",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Regelventil",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Stellventil",
+  "synonyms": [
+    "Regelventil"
+  ],
+  "definition": "Ein **Stellventil** verändert den Durchfluss durch eine Leitung entsprechend einem Steuersignal. Es ist Bestandteil eines Regelkreises und arbeitet mit einem geeigneten Stellantrieb zusammen. Ventilkennlinie, Autorität, Differenzdruck, Medium und Temperatur bestimmen das Regelverhalten.",
+  "related": [
+    "lexicon.aktor",
+    "lexicon.stellantrieb",
+    "lexicon.differenzdruck",
+    "lexicon.volumenstrom"
+  ]
+}

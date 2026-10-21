@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.waermepumpe",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/W%C3%A4rmepumpe",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmepumpe",
+  "synonyms": [
+    "WP"
+  ],
+  "definition": "Eine **Wärmepumpe** entzieht einer Wärmequelle Energie und hebt sie mithilfe eines thermodynamischen Kreisprozesses auf ein höheres Temperaturniveau. Typische Wärmequellen sind Außenluft, Erdreich und Grundwasser. Die Effizienz hängt unter anderem von Quellentemperatur, erforderlicher Vorlauftemperatur, Auslegung und Betriebsbedingungen ab.",
+  "related": [
+    "lexicon.waermepumpen-cop",
+    "lexicon.verdampfer",
+    "lexicon.verdichter",
+    "lexicon.verfluessiger",
+    "lexicon.expansionsventil",
+    "lexicon.heizlast"
+  ]
+}

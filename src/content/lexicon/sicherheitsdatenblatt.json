@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.sicherheitsdatenblatt",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Sicherheitsdatenblatt",
+  "synonyms": [
+    "SDB"
+  ],
+  "definition": "Dokument mit Informationen zu Gefahren, Schutzmaßnahmen, Lagerung, Handhabung und Notfallmaßnahmen eines Gefahrstoffs oder Gemischs.",
+  "related": []
+}

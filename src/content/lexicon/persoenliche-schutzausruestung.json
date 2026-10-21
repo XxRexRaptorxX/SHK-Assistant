@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.persoenliche-schutzausruestung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Pers%C3%B6nliche_Schutzausr%C3%BCstung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Persönliche Schutzausrüstung (PSA)",
+  "synonyms": [
+    "PSA"
+  ],
+  "definition": "**Persönliche Schutzausrüstung** umfasst Ausrüstung, die Beschäftigte vor Gefährdungen schützt, beispielsweise Schutzbrille, Handschuhe, Sicherheitsschuhe oder Gehörschutz. Auswahl und Benutzung richten sich nach der Gefährdungsbeurteilung und den einschlägigen Vorgaben. PSA ergänzt technische und organisatorische Schutzmaßnahmen; sie ersetzt diese nicht.",
+  "related": [
+    "lexicon.gefaehrdungsbeurteilung"
+  ]
+}

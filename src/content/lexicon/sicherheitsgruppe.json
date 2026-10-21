@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.sicherheitsgruppe",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Sicherheitsgruppe",
+  "synonyms": [
+    "Sicherheitsarmaturengruppe"
+  ],
+  "definition": "Eine **Sicherheitsgruppe** fasst mehrere sicherheits- oder betriebsrelevante Komponenten zusammen, häufig in der Kaltwasserzufuhr eines Trinkwassererwärmers. Je nach Bauart enthält sie beispielsweise ein Absperrventil, Rückflussverhinderer und Sicherheitsventil. Aufbau und Ablaufanschluss müssen zur Anwendung und den technischen Regeln passen.",
+  "related": [
+    "lexicon.sicherheitsventil",
+    "lexicon.rueckflussverhinderer",
+    "lexicon.warmwasserspeicher"
+  ]
+}

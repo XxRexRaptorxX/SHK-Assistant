@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.magnetitabscheider",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Magnetitabscheider",
+  "synonyms": [
+    "Magnetitfilter"
+  ],
+  "definition": "Ein **Magnetitabscheider** entfernt magnetische Korrosionsprodukte, insbesondere Magnetitpartikel, aus dem Heizungswasser. Er schützt damit je nach Anlage Pumpen, Ventile und Wärmetauscher vor Ablagerungen. Er ist kein Ersatz für die Ursachenbeseitigung bei fortschreitender Korrosion oder unsachgemäßer Wasserbeschaffenheit.",
+  "related": [
+    "lexicon.schlammabscheider",
+    "lexicon.korrosion",
+    "lexicon.heizungswasser"
+  ]
+}

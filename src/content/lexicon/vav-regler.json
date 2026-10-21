@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.vav-regler",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "VAV-Regler",
+  "synonyms": [
+    "variabler Volumenstromregler"
+  ],
+  "definition": "Variable-Air-Volume-Regler, der den Luftvolumenstrom in einem Lüftungssystem bedarfsgerecht verändert.",
+  "related": []
+}

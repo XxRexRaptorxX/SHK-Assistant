@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.flanschverbindung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Flansch",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Flanschverbindung",
+  "synonyms": [
+    "Flansch"
+  ],
+  "definition": "Eine **Flanschverbindung** verbindet Rohrleitungskomponenten über gegenüberliegende Flansche, zwischen denen gewöhnlich eine Dichtung liegt. Schraubenanzug, Dichtflächen, Dichtungsauswahl und Fluchtung beeinflussen Dichtheit und Betriebssicherheit. Die Verbindung ist insbesondere bei größeren Nennweiten und bestimmten industriellen Anwendungen verbreitet.",
+  "related": [
+    "lexicon.rohrleitung",
+    "lexicon.dichtung",
+    "lexicon.nenndruck"
+  ]
+}

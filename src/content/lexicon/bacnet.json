@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.bacnet",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "BACnet",
+  "synonyms": [],
+  "definition": "Kommunikationsprotokoll für die Gebäudeautomation, das den Austausch von Informationen zwischen Automations- und Managementsystemen unterstützt.",
+  "related": []
+}

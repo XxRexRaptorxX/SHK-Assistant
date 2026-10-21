@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.kv-wert",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kv-Wert",
+  "synonyms": [
+    "Durchflusskoeffizient"
+  ],
+  "definition": "Kennwert eines Ventils, der den Volumenstrom von Wasser unter festgelegten Referenzbedingungen in Abhängigkeit vom Druckverlust beschreibt. Herstellerdefinition und Einheit sind zu beachten.",
+  "related": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.waermeerzeuger",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Heizkessel",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeerzeuger",
+  "synonyms": [
+    "Heizungserzeuger"
+  ],
+  "definition": "Ein **Wärmeerzeuger** wandelt Energie in nutzbare Wärme um oder stellt diese mittels Wärmetransport bereit. Beispiele sind Gas- und Ölkessel, Wärmepumpen, Biomassekessel und Fernwärme-Übergabestationen. Seine Leistung und Betriebsweise müssen zu Heizlast, Warmwasserbedarf und Systemtemperaturen passen.",
+  "related": [
+    "lexicon.heizlast",
+    "lexicon.brennwertkessel",
+    "lexicon.waermepumpe",
+    "lexicon.pufferspeicher"
+  ]
+}

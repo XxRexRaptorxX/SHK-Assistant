@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.sammelleitung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Abwasser",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Sammelleitung",
+  "synonyms": [
+    "Sammelabflussleitung"
+  ],
+  "definition": "Eine **Sammelleitung** nimmt Abwasser aus mehreren Anschluss- oder Fallleitungen auf und führt es weiter. Sie verläuft innerhalb oder außerhalb des Gebäudes und muss auf die angeschlossenen Abflüsse ausgelegt sein. Gefälle, Füllungsgrad, Lüftung und Zugänglichkeit für Reinigung sind entscheidend.",
+  "related": [
+    "lexicon.abwasserleitung",
+    "lexicon.fallleitung",
+    "lexicon.grundleitung"
+  ]
+}

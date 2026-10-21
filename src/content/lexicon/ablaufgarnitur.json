@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.ablaufgarnitur",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Ablaufgarnitur",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Ablaufgarnitur",
+  "synonyms": [
+    "Ablaufventil",
+    "Waschtisch-Ablaufgarnitur"
+  ],
+  "definition": "Eine **Ablaufgarnitur** verbindet den Ablauf eines Sanitärobjekts mit dem nachgeschalteten Abwassersystem und kann je nach Bauart ein Verschluss- oder Betätigungselement enthalten. Sie muss zur Objektgeometrie passen und dicht montiert werden. Der Geruchsverschluss ist ein separates oder integriertes Funktionselement.",
+  "related": [
+    "lexicon.waschtisch",
+    "lexicon.geruchsverschluss",
+    "lexicon.abwasserleitung"
+  ]
+}

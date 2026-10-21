@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.sensor",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Sensor",
+  "synonyms": [],
+  "definition": "Bauteil, das eine physikalische Größe wie Temperatur, Druck, Feuchte oder Durchfluss erfasst und in ein auswertbares Signal umsetzt.",
+  "related": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.schweissen",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Schwei%C3%9Fen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schweißen",
+  "synonyms": [
+    "Schweißverbindung"
+  ],
+  "definition": "**Schweißen** verbindet Werkstoffe durch örtliches Aufschmelzen, mit oder ohne Zusatzwerkstoff, oder durch andere geeignete Schweißverfahren. Für Rohrleitungen kommen abhängig vom Werkstoff beispielsweise Metall- oder Kunststoffschweißverfahren infrage. Qualität hängt von Verfahren, Qualifikation, Vorbereitung, Umgebung und Prüfung ab.",
+  "related": [
+    "lexicon.pe-rohr",
+    "lexicon.stahlrohr",
+    "lexicon.rohrleitung"
+  ]
+}

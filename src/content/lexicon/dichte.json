@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.dichte",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Dichte",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Dichte",
+  "synonyms": [
+    "ρ",
+    "Massendichte"
+  ],
+  "definition": "Die **Dichte** ist die Masse eines Stoffes pro Volumen und wird beispielsweise in kg/m³ angegeben. Sie ist temperatur- und bei Gasen auch druckabhängig. Für die Umrechnung zwischen Volumenstrom und Massenstrom wird die Dichte benötigt.",
+  "related": [
+    "lexicon.massenstrom",
+    "lexicon.volumenstrom"
+  ]
+}

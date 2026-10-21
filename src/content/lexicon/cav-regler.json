@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.cav-regler",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "CAV-Regler",
+  "synonyms": [
+    "konstanter Volumenstromregler"
+  ],
+  "definition": "Constant-Air-Volume-Regler, der den Luftvolumenstrom innerhalb seines Arbeitsbereichs konstant hält.",
+  "related": []
+}

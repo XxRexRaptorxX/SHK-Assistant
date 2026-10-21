@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.wasserhaerte",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Wasserh%C3%A4rte",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wasserhärte",
+  "synonyms": [
+    "Gesamthärte",
+    "Kalkhärte"
+  ],
+  "definition": "Die **Wasserhärte** beschreibt vor allem den Gehalt an gelösten Calcium- und Magnesiumionen. Hartes Wasser kann bei Erwärmung Kalkablagerungen begünstigen, beispielsweise in Wärmeerzeugern und Warmwasserbereitern. Die Härte ist nicht mit dem pH-Wert gleichzusetzen.",
+  "related": [
+    "lexicon.kalkablagerung",
+    "lexicon.enthaertungsanlage",
+    "lexicon.wasseraufbereitung"
+  ]
+}

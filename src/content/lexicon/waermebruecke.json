@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.waermebruecke",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/W%C3%A4rmebr%C3%BCcke",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmebrücke",
+  "synonyms": [
+    "thermische Brücke"
+  ],
+  "definition": "Eine **Wärmebrücke** ist ein Bereich in der Gebäudehülle, durch den Wärme stärker fließt als durch angrenzende Bauteile. Sie kann Oberflächentemperaturen senken, Wärmeverluste erhöhen und bei geeigneten Feuchtebedingungen Kondensation oder Schimmel begünstigen. Installationsdurchdringungen und Befestigungen sind in der Detailplanung mit zu berücksichtigen.",
+  "related": [
+    "lexicon.waermeleitfaehigkeit",
+    "lexicon.rohrdaemmung",
+    "lexicon.taupunkt"
+  ]
+}

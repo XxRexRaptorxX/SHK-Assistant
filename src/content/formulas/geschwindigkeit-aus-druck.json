@@ -1,0 +1,39 @@
+{
+  "id": "formula.hydraulik.geschwindigkeit-aus-druck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Geschwindigkeit aus dynamischem Druck",
+  "description": "Stellt die Formel für den dynamischen Druck nach der Strömungsgeschwindigkeit um.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "pdy",
+      "name": "Dynamischer Druck",
+      "unit": "Pa"
+    },
+    {
+      "symbol": "rho",
+      "name": "Dichte des strömenden Mediums",
+      "unit": "kg/m^3",
+      "label": "ρ"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "v",
+    "name": "Strömungsgeschwindigkeit",
+    "unit": "m/s",
+    "decimals": 2
+  },
+  "expression": "sqrt(2 * pdy / rho)",
+  "examples": [
+    {
+      "inputs": {
+        "pdy": 2000,
+        "rho": 1000
+      },
+      "expected": 2
+    }
+  ]
+}

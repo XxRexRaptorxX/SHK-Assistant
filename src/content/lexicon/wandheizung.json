@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.wandheizung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Fl%C3%A4chenheizung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wandheizung",
+  "synonyms": [
+    "Wandflächenheizung"
+  ],
+  "definition": "Eine **Wandheizung** ist eine Flächenheizung mit wasserführenden Rohren oder Heizelementen in beziehungsweise auf der Wand. Sie gibt Wärme durch Strahlung und Konvektion ab und kann mit vergleichsweise niedrigen Vorlauftemperaturen betrieben werden. Möblierung, Wandaufbau und zulässige Oberflächentemperaturen sind bei Planung und Nutzung zu berücksichtigen.",
+  "related": [
+    "lexicon.heizflaeche",
+    "lexicon.heizkreis"
+  ]
+}

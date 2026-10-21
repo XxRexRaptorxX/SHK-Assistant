@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.abluft",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/L%C3%BCftung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Abluft",
+  "synonyms": [
+    "Abluftstrom"
+  ],
+  "definition": "**Abluft** ist Luft, die aus einem Raum oder Prozess abgeführt wird. Sie kann Feuchte, Gerüche, Wärme oder Schadstoffe enthalten und wird abhängig vom System nach außen abgeführt oder teilweise zur Wärmerückgewinnung genutzt. Eine Rückführung ist nur zulässig und sinnvoll, wenn hygienische und technische Anforderungen erfüllt werden.",
+  "related": [
+    "lexicon.lueftungsanlage",
+    "lexicon.zuluft",
+    "lexicon.waermerueckgewinnung"
+  ]
+}

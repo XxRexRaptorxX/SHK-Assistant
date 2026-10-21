@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.schraegsitzventil",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Ventil_(Technik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schrägsitzventil",
+  "synonyms": [
+    "Schrägsitz-Absperrventil"
+  ],
+  "definition": "Ein **Schrägsitzventil** ist ein Ventil, bei dem der Ventilsitz schräg zur Strömungsrichtung angeordnet ist. Es wird häufig als Absperr- oder Regulierarmatur in Wasserinstallationen eingesetzt. Fließrichtung, Druckverlust und Einsatzgrenzen richten sich nach der konkreten Bauform.",
+  "related": [
+    "lexicon.absperrventil",
+    "lexicon.armatur"
+  ]
+}

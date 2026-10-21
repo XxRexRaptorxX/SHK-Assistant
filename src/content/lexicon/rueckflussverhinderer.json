@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.rueckflussverhinderer",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/R%C3%BCckflussverhinderer",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rückflussverhinderer",
+  "synonyms": [
+    "Rückschlagventil (allgemein)",
+    "Rückfluss-Sicherung"
+  ],
+  "definition": "Ein **Rückflussverhinderer** lässt Wasser grundsätzlich in vorgesehener Richtung durch und verhindert beziehungsweise begrenzt Rückströmung. Er schützt damit je nach Einbauort die Trinkwasserinstallation oder andere Anlagenteile vor unerwünschtem Rückfluss. Er ist kein pauschaler Ersatz für eine nach Gefährdungsbeurteilung erforderliche Sicherungsarmatur.",
+  "related": [
+    "lexicon.trinkwasserinstallation",
+    "lexicon.sicherheitsgruppe",
+    "lexicon.systemtrenner"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.waermerueckgewinnung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/W%C3%A4rmer%C3%BCckgewinnung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmerückgewinnung",
+  "synonyms": [
+    "WRG"
+  ],
+  "definition": "**Wärmerückgewinnung** nutzt Energie aus einem Abluft- oder Prozessstrom, um einen anderen Strom vorzuwärmen oder vorzubehandeln. In Lüftungsanlagen kann sie den Heiz- beziehungsweise Kühlenergiebedarf reduzieren. Übertragungsgrad, Druckverlust, Frostschutz, Leckage und hygienische Trennung sind bei der Auswahl zu berücksichtigen.",
+  "related": [
+    "lexicon.lueftungsanlage",
+    "lexicon.waermetauscher",
+    "lexicon.luftkanal"
+  ]
+}

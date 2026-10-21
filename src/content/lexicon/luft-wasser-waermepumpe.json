@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.luft-wasser-waermepumpe",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/W%C3%A4rmepumpe",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Luft-Wasser-Wärmepumpe",
+  "synonyms": [
+    "Luftwärmepumpe"
+  ],
+  "definition": "Eine **Luft-Wasser-Wärmepumpe** nutzt Außenluft als Wärmequelle und überträgt die gewonnene Wärme an einen wassergeführten Heizkreis oder Speicher. Bei niedrigen Außentemperaturen sinkt typischerweise die verfügbare Heizleistung beziehungsweise Effizienz; je nach Bauart ist Abtauung erforderlich. Aufstellung, Schall, Luftführung und Frostschutz des Kondensatablaufs sind wichtige Planungspunkte.",
+  "related": [
+    "lexicon.waermepumpe",
+    "lexicon.pufferspeicher"
+  ]
+}

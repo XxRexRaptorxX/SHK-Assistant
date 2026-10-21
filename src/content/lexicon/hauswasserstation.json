@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.hauswasserstation",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Hauswasserstation",
+  "synonyms": [
+    "Hauswasserfilterstation"
+  ],
+  "definition": "Eine **Hauswasserstation** ist eine vormontierte Baugruppe am Trinkwasser-Hausanschluss, die je nach Ausführung beispielsweise Filter, Druckminderer und Rückflussverhinderer kombiniert. Sie schützt nachgeschaltete Installationen und erleichtert Wartung und Druckeinstellung. Der konkrete Funktionsumfang ist produktabhängig und muss aus den Herstellerunterlagen hervorgehen.",
+  "related": [
+    "lexicon.trinkwasserinstallation",
+    "lexicon.druckminderer",
+    "lexicon.trinkwasserfilter"
+  ]
+}

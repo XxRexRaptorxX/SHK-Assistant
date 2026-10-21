@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.heizungswasseraufbereitung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Heizungswasseraufbereitung",
+  "synonyms": [
+    "Aufbereitung des Füllwassers"
+  ],
+  "definition": "Die **Heizungswasseraufbereitung** passt die Wasserbeschaffenheit an die Anforderungen eines Heizsystems an. Dazu können Enthärtung, Entsalzung, Filtration oder eine kontrollierte chemische Behandlung gehören. Das konkrete Verfahren richtet sich nach Werkstoffen, Anlagenvolumen, Wärmeerzeuger und den geltenden technischen Regeln; pauschale Rezepturen sind ungeeignet.",
+  "related": [
+    "lexicon.heizungswasser",
+    "lexicon.ph-wert",
+    "lexicon.wasseraufbereitung"
+  ]
+}

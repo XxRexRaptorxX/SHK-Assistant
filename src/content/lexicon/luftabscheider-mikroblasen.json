@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.luftabscheider-mikroblasen",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Mikroblasenabscheider",
+  "synonyms": [
+    "Mikroblasen-Luftabscheider"
+  ],
+  "definition": "Ein **Mikroblasenabscheider** unterstützt die Abscheidung kleiner Gasblasen aus einem Heizungswasserkreislauf. Solche Blasen können sich an geeigneten Stellen sammeln und durch Koaleszenz leichter abgeschieden werden. Die Positionierung, häufig an besonders warmen Stellen, und die Eignung für den Systemvolumenstrom sind nach Herstellerangaben zu wählen.",
+  "related": [
+    "lexicon.luftabscheider",
+    "lexicon.entluefter",
+    "lexicon.heizungswasser"
+  ]
+}

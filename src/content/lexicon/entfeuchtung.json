@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.entfeuchtung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Luftentfeuchter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Entfeuchtung",
+  "synonyms": [
+    "Luftentfeuchtung"
+  ],
+  "definition": "**Entfeuchtung** ist die Verringerung des Wasserdampfgehalts in Luft oder eines anderen Mediums. Bei der Kälteentfeuchtung wird Luft unter ihren Taupunkt abgekühlt, sodass Wasserdampf kondensiert; anschließend kann eine Nacherwärmung erforderlich sein. Auslegung und Kondensatableitung müssen zur Feuchtebelastung und zu den Betriebsbedingungen passen.",
+  "related": [
+    "lexicon.taupunkt",
+    "lexicon.kondensat",
+    "lexicon.relative-luftfeuchtigkeit"
+  ]
+}

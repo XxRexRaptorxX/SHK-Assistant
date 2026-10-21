@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.pn",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "PN",
+  "synonyms": [
+    "Nenndruck"
+  ],
+  "definition": "Druckstufenkennzeichnung für Rohrleitungskomponenten und Armaturen. Sie ist nicht ohne Weiteres mit dem bei jeder Temperatur zulässigen Betriebsdruck gleichzusetzen; maßgeblich sind Norm, Werkstoff und Herstellerangaben.",
+  "related": []
+}

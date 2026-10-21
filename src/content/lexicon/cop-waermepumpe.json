@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.cop-waermepumpe",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "COP-Wärmepumpe",
+  "synonyms": [
+    "COP"
+  ],
+  "definition": "Verhältnis der abgegebenen Heizleistung zur aufgenommenen elektrischen Leistung an einem definierten Betriebspunkt. Ein höherer COP bedeutet unter genau diesen Bedingungen eine höhere momentane Leistungszahl.",
+  "related": []
+}

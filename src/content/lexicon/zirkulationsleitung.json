@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.zirkulationsleitung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Zirkulationssystem",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Zirkulationsleitung",
+  "synonyms": [
+    "Warmwasserzirkulation"
+  ],
+  "definition": "Eine **Zirkulationsleitung** führt erwärmtes Trinkwasser vom Ende eines Verteilnetzes zurück zum Trinkwassererwärmer oder zu einem vorgesehenen Anschluss. Sie dient dazu, Wartezeiten zu verkürzen und die Temperaturhaltung in größeren Anlagen zu unterstützen. Zirkulation muss hygienisch, hydraulisch und energetisch geplant werden; dauerhaft zu hohe oder zu niedrige Temperaturen können nachteilig sein.",
+  "related": [
+    "lexicon.zirkulationspumpe",
+    "lexicon.trinkwasserhygiene",
+    "lexicon.legionellen",
+    "lexicon.warmwasserspeicher"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "formula.thermodynamik.schmelzwaerme",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Schmelzwärme",
+  "description": "Berechnet die zum Schmelzen benötigte Wärme aus Masse und spezifischer Schmelzwärme.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "m",
+      "name": "Masse",
+      "unit": "kg"
+    },
+    {
+      "symbol": "q",
+      "name": "Spezifische Schmelzwärme",
+      "unit": "kJ/kg"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Qs",
+    "name": "Schmelzwärme",
+    "unit": "kJ",
+    "decimals": 2,
+    "label": "Qₛ"
+  },
+  "expression": "m * q",
+  "examples": [
+    {
+      "inputs": {
+        "m": 2,
+        "q": 332
+      },
+      "expected": 664
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.schalldaempfer",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Schalld%C3%A4mpfer",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schalldämpfer",
+  "synonyms": [
+    "Lüftungsschalldämpfer"
+  ],
+  "definition": "Ein **Schalldämpfer** reduziert die Schallübertragung in einem Luftkanal oder einer Anlage. Er nutzt je nach Bauart Absorption, Reflexion oder andere akustische Effekte. Auswahl und Einbau müssen sowohl die erforderliche Schalldämpfung als auch den zusätzlichen Druckverlust und hygienische Anforderungen berücksichtigen.",
+  "related": [
+    "lexicon.luftkanal",
+    "lexicon.lueftungsanlage"
+  ]
+}

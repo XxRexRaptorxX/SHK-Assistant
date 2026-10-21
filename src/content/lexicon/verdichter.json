@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.verdichter",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Verdichter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Verdichter",
+  "synonyms": [
+    "Kompressor"
+  ],
+  "definition": "Ein **Verdichter** erhöht den Druck eines Gases und benötigt dafür mechanische beziehungsweise elektrische Arbeit. In einer Kompressionskälteanlage verdichtet er Kältemitteldampf vom Verdampferdruck auf den höheren Verflüssigungsdruck. Verdichtertyp, Betriebsbereich, Schmierung und Kühlung müssen auf das Kältemittel und die Anlage abgestimmt sein.",
+  "related": [
+    "lexicon.kaeltemaschine",
+    "lexicon.kaeltemittel",
+    "lexicon.verfluessiger",
+    "lexicon.expansionsventil"
+  ]
+}

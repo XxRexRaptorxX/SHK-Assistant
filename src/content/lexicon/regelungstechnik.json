@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.regelungstechnik",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Regelungstechnik",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Regelungstechnik",
+  "synonyms": [
+    "Automatisierungstechnik (Teilgebiet)"
+  ],
+  "definition": "**Regelungstechnik** beschäftigt sich mit dem automatischen Beeinflussen eines Prozesses anhand des Vergleichs von Istwert und Sollwert. Ein Regler bildet aus der Regelabweichung eine Stellgröße, die über einen Aktor auf die Anlage wirkt. In SHK-Anlagen werden beispielsweise Temperatur, Druck, Volumenstrom und Luftqualität geregelt.",
+  "related": [
+    "lexicon.regler",
+    "lexicon.temperaturfuehler",
+    "lexicon.stellantrieb",
+    "lexicon.heizkurve"
+  ]
+}

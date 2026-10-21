@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.modbus",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Modbus",
+  "synonyms": [],
+  "definition": "Kommunikationsprotokoll, das in Gebäude- und Industrieautomation zum Datenaustausch zwischen Steuerungen und Geräten verwendet wird.",
+  "related": []
+}

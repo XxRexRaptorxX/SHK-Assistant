@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.abwasser",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Abwasser",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Abwasser",
+  "synonyms": [
+    "Schmutzwasser (je nach Kontext)"
+  ],
+  "definition": "**Abwasser** ist durch häuslichen, gewerblichen oder sonstigen Gebrauch verändertes Wasser sowie das mit abfließende Wasser. In der Gebäudeentwässerung wird unter anderem zwischen Schmutzwasser und Niederschlagswasser unterschieden. Ableitung, Behandlung und Einleitung unterliegen wasser- und baurechtlichen Anforderungen.",
+  "related": [
+    "lexicon.abwasserleitung",
+    "lexicon.entwaesserung",
+    "lexicon.rueckstauebene"
+  ]
+}

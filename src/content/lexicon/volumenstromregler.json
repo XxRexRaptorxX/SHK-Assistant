@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.volumenstromregler",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Volumenstrom",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Volumenstromregler",
+  "synonyms": [
+    "Durchflussregler"
+  ],
+  "definition": "Ein **Volumenstromregler** hält den Luft- oder Flüssigkeitsvolumenstrom auf einem eingestellten oder vorgegebenen Wert. Er kann mechanisch selbsttätig oder motorisch geregelt sein. Für korrekte Funktion sind ein geeigneter Druckbereich, Einbaulage und gegebenenfalls die Inbetriebnahme-Einstellung zu beachten.",
+  "related": [
+    "lexicon.volumenstrom",
+    "lexicon.lueftungsanlage",
+    "lexicon.luftkanal",
+    "lexicon.differenzdruck"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "formula.elektrotechnik.leistung-strom-widerstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden.",
+  "title": "Elektrische Leistung aus Strom und Widerstand",
+  "description": "Berechnet die elektrische Leistung bei ohmscher Belastung aus Stromstärke und Widerstand.",
+  "category": "Elektrotechnik",
+  "variables": [
+    {
+      "symbol": "I",
+      "name": "Elektrische Stromstärke",
+      "unit": "A"
+    },
+    {
+      "symbol": "R",
+      "name": "Elektrischer Widerstand",
+      "unit": "ohm"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "P",
+    "name": "Elektrische Leistung",
+    "unit": "W",
+    "decimals": 2
+  },
+  "expression": "I^2 * R",
+  "examples": [
+    {
+      "inputs": {
+        "I": 2,
+        "R": 6
+      },
+      "expected": 24
+    }
+  ]
+}

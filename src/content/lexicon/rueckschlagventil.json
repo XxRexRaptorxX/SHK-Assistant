@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.rueckschlagventil",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rückschlagventil",
+  "synonyms": [
+    "Rückflussverhinderer"
+  ],
+  "definition": "Armatur, die den Durchfluss nur in einer vorgesehenen Richtung zulässt und Rückströmung automatisch verhindert.",
+  "related": []
+}

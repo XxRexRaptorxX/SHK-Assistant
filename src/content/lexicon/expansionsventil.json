@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.expansionsventil",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Expansionsventil",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Expansionsventil",
+  "synonyms": [
+    "Drosselventil (Kälteanlage)",
+    "Dosierventil"
+  ],
+  "definition": "Ein **Expansionsventil** senkt den Druck des flüssigen beziehungsweise teilweise verdampfenden Kältemittels vor dem Verdampfer und dosiert dessen Massenstrom. Thermostatische oder elektronische Ausführungen können die Überhitzung am Verdampferausgang regeln. Auswahl und Einstellung müssen zum Kältemittel, zur Leistung und zum Betriebsbereich passen.",
+  "related": [
+    "lexicon.kaeltemaschine",
+    "lexicon.kaeltemittel",
+    "lexicon.verdampfer",
+    "lexicon.ueberhitzung"
+  ]
+}

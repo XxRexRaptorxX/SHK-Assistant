@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.waermeausdehnung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeausdehnung",
+  "synonyms": [
+    "thermische Ausdehnung"
+  ],
+  "definition": "Änderung des Volumens eines Stoffes durch Temperaturänderung. In geschlossenen Anlagen muss die Volumenvergrößerung erwärmter Flüssigkeit sicher aufgenommen werden.",
+  "related": []
+}

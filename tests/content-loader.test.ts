@@ -137,6 +137,11 @@ describe('loadContent', () => {
     ])
   })
 
+  it('meldet Ergebnisse der fachlichen Prüfung einer Sammlung', () => {
+    const issues = expectIssues({ 'items/a.json': entry({ title: 'FALSCH' }) })
+    expect(issues).toEqual(['items/a.json: Titel ist fachlich falsch'])
+  })
+
   it('sammelt alle Fehler statt beim ersten abzubrechen', () => {
     const issues = expectIssues({
       'items/a.json': entry({ id: 'item.a', status: 'x' }),

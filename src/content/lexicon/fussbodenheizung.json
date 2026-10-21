@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.fussbodenheizung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Fu%C3%9Fbodenheizung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Fußbodenheizung",
+  "synonyms": [
+    "FBH",
+    "Fußbodenflächenheizung"
+  ],
+  "definition": "Eine **Fußbodenheizung** ist eine Flächenheizung, bei der Heizrohre oder elektrische Heizelemente im Fußbodenaufbau liegen. Wassergeführte Systeme arbeiten aufgrund der großen Übertragungsfläche oft mit niedrigen Vorlauftemperaturen. Estrich und Bodenbelag beeinflussen Wärmeabgabe und Reaktionszeit.",
+  "related": [
+    "lexicon.heizflaeche",
+    "lexicon.heizkreis",
+    "lexicon.mischer",
+    "lexicon.hydraulischer-abgleich"
+  ]
+}

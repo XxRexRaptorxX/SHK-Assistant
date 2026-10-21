@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.waermekapazitaet",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmekapazität",
+  "synonyms": [],
+  "definition": "Wärmeenergie, die erforderlich ist, um die Temperatur eines Körpers oder Systems um ein Kelvin zu erhöhen. Sie hängt von Masse und spezifischer Wärmekapazität ab.",
+  "related": []
+}

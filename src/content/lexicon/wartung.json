@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.wartung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Wartung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wartung",
+  "synonyms": [
+    "Anlagenwartung"
+  ],
+  "definition": "**Wartung** umfasst Maßnahmen, die den funktionsfähigen und sicheren Zustand einer Anlage erhalten, etwa Reinigung, Prüfung, Nachstellen und den Austausch von Verschleißteilen. Intervalle und Arbeiten ergeben sich aus Herstellerangaben, Betriebsbedingungen und rechtlichen beziehungsweise technischen Anforderungen. Wartung ist von Reparatur und gesetzlich vorgeschriebener Prüfung zu unterscheiden.",
+  "related": [
+    "lexicon.inbetriebnahme",
+    "lexicon.sicherheitsventil",
+    "lexicon.gasfeuerungsautomat"
+  ]
+}

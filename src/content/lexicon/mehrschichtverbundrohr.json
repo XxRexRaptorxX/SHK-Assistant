@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.mehrschichtverbundrohr",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Verbundwerkstoff",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Mehrschichtverbundrohr",
+  "synonyms": [
+    "MLCP-Rohr",
+    "Verbundrohr"
+  ],
+  "definition": "Ein **Mehrschichtverbundrohr** besteht aus mehreren verbundenen Materialschichten, häufig Kunststoff innen und außen mit einer metallischen Zwischenschicht. Diese Bauart kann Formstabilität mit Korrosionsbeständigkeit und reduzierter Sauerstoffdiffusion verbinden. Zulässige Medien, Temperaturen, Drücke, Biegeradien und Verbindungssysteme sind produktspezifisch.",
+  "related": [
+    "lexicon.rohrleitung",
+    "lexicon.pressfitting",
+    "lexicon.rohrdaemmung"
+  ]
+}

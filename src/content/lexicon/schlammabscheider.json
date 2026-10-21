@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.schlammabscheider",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Filter_(Fluidtechnik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schlammabscheider",
+  "synonyms": [
+    "Schmutzabscheider"
+  ],
+  "definition": "Ein **Schlammabscheider** hält Partikel und Ablagerungen aus dem Heizungswasser zurück, bevor sie empfindliche Komponenten beeinträchtigen. Je nach Bauart werden Schwerkraft, Siebe oder andere Abscheidemechanismen genutzt. Einbauposition, Durchflussbereich und regelmäßige Reinigung beeinflussen die Wirksamkeit.",
+  "related": [
+    "lexicon.magnetitabscheider",
+    "lexicon.heizungswasser",
+    "lexicon.umwaelzpumpe"
+  ]
+}

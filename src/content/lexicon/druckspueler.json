@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.druckspueler",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Sp%C3%BClventil",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Druckspüler",
+  "synonyms": [
+    "Spülarmatur"
+  ],
+  "definition": "Ein **Druckspüler** spült ein WC oder Urinal direkt aus der Trinkwasserinstallation, ohne einen separaten Spülkasten vorzuhalten. Er benötigt passende Druck- und Durchflussbedingungen und muss den hygienischen Schutz der Trinkwasseranlage gewährleisten. Auswahl und Anschluss hängen von Gerät, Installation und geltenden Regeln ab.",
+  "related": [
+    "lexicon.wc",
+    "lexicon.rueckflussverhinderer"
+  ]
+}

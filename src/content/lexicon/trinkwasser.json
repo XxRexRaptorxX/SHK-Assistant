@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.trinkwasser",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Trinkwasser",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Trinkwasser",
+  "synonyms": [
+    "Wasser für den menschlichen Gebrauch"
+  ],
+  "definition": "**Trinkwasser** ist Wasser, das für den menschlichen Gebrauch bestimmt ist und die dafür geltenden hygienischen und chemischen Anforderungen erfüllen muss. In Gebäuden muss die Installation die Wasserqualität bis zur Entnahmestelle erhalten. Stagnation, Erwärmung, ungeeignete Werkstoffe und Rückfließen aus angeschlossenen Systemen können Risiken verursachen.",
+  "related": [
+    "lexicon.trinkwasserinstallation",
+    "lexicon.legionellen",
+    "lexicon.rueckflussverhinderer",
+    "lexicon.trinkwasserhygiene"
+  ]
+}

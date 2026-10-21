@@ -1,0 +1,34 @@
+{
+  "id": "formula.thermodynamik.spezifisches-volumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Spezifisches Volumen aus Dichte",
+  "description": "Berechnet das spezifische Volumen als Kehrwert der Dichte.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "rho",
+      "name": "Dichte",
+      "unit": "kg/dm^3",
+      "label": "ρ"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "vspec",
+    "name": "Spezifisches Volumen",
+    "unit": "dm^3/kg",
+    "decimals": 2,
+    "label": "v"
+  },
+  "expression": "1 / rho",
+  "examples": [
+    {
+      "inputs": {
+        "rho": 0.998
+      },
+      "expected": 1.002004008016032
+    }
+  ]
+}

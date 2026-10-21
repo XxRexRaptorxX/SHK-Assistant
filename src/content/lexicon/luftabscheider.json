@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.luftabscheider",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Entl%C3%BCftung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Luftabscheider",
+  "synonyms": [
+    "Mikroblasenabscheider (Bauart)"
+  ],
+  "definition": "Ein **Luftabscheider** trennt freie oder gelöste Gasanteile aus einem Flüssigkeitskreislauf ab. Je nach Bauart nutzt er Strömungsverlangsamung, Koaleszenz oder andere Abscheideprinzipien. Er kann zur Verringerung von Luftproblemen beitragen, ersetzt aber keine korrekte Befüllung und Entlüftung.",
+  "related": [
+    "lexicon.entluefter",
+    "lexicon.heizungswasser",
+    "lexicon.schlammabscheider"
+  ]
+}

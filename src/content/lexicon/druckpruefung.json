@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.druckpruefung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Druckpr%C3%BCfung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Druckprüfung",
+  "synonyms": [
+    "Druckprobe"
+  ],
+  "definition": "Eine **Druckprüfung** belastet eine Anlage oder Leitung mit einem vorgegebenen Prüfdruck, um Festigkeit oder Dichtheit nach dem dafür vorgesehenen Verfahren zu beurteilen. Wasser, Luft oder Inertgas dürfen nicht beliebig gegeneinander ausgetauscht werden, da gespeicherte Energie und Risiken stark variieren. Es gelten die spezifischen Prüfregeln des jeweiligen Systems.",
+  "related": [
+    "lexicon.dichtheitspruefung",
+    "lexicon.nenndruck",
+    "lexicon.rohrleitung"
+  ]
+}

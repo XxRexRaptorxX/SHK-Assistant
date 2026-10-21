@@ -1,0 +1,45 @@
+{
+  "id": "formula.thermodynamik.waermekapazitaet-spezifisch",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Spezifische Wärmekapazität",
+  "description": "Ermittelt die spezifische Wärmekapazität aus Wärmemenge, Masse und Temperaturdifferenz.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "Q",
+      "name": "Wärmemenge",
+      "unit": "kJ"
+    },
+    {
+      "symbol": "m",
+      "name": "Masse",
+      "unit": "kg"
+    },
+    {
+      "symbol": "dT",
+      "name": "Temperaturdifferenz",
+      "unit": "K",
+      "label": "ΔT"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "c",
+    "name": "Spezifische Wärmekapazität",
+    "unit": "kJ/(kg*K)",
+    "decimals": 2
+  },
+  "expression": "Q / (m * dT)",
+  "examples": [
+    {
+      "inputs": {
+        "Q": 83.8,
+        "m": 2,
+        "dT": 10
+      },
+      "expected": 4.19
+    }
+  ]
+}

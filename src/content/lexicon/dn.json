@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.dn",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "DN",
+  "synonyms": [
+    "Nennweite"
+  ],
+  "definition": "Dimensionslose Nennweitenkennzeichnung für Rohre, Armaturen und Zubehör. DN ist ein Größenkennzeichen und entspricht nicht zwingend dem exakt gemessenen Innen- oder Außendurchmesser.",
+  "related": []
+}

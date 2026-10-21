@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.leitfaehigkeit",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Leitfähigkeit",
+  "synonyms": [
+    "elektrische Leitfähigkeit"
+  ],
+  "definition": "Maß dafür, wie gut Wasser elektrischen Strom durch gelöste Ionen leitet. Sie kann als Indikator für gelöste Salze dienen, ersetzt aber keine vollständige Wasseranalyse.",
+  "related": []
+}

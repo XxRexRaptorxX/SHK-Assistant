@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.kalibrierung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kalibrierung",
+  "synonyms": [],
+  "definition": "Vergleich eines Messgeräts mit einem Referenzstandard unter festgelegten Bedingungen, um dessen Anzeigeabweichung zu bestimmen. Kalibrierung ist nicht automatisch eine Justierung.",
+  "related": []
+}

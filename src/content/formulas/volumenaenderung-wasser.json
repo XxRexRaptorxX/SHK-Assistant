@@ -1,0 +1,40 @@
+{
+  "id": "formula.thermodynamik.volumenaenderung-wasser",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Volumenänderung",
+  "description": "Berechnet die Volumenänderung aus Masse und Differenz des spezifischen Volumens.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "m",
+      "name": "Masse",
+      "unit": "kg"
+    },
+    {
+      "symbol": "dvspec",
+      "name": "Differenz des spezifischen Volumens",
+      "unit": "dm^3/kg",
+      "label": "Δv"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dV",
+    "name": "Volumenänderung",
+    "unit": "dm^3",
+    "decimals": 2,
+    "label": "ΔV"
+  },
+  "expression": "m * dvspec",
+  "examples": [
+    {
+      "inputs": {
+        "m": 2,
+        "dvspec": 0.01
+      },
+      "expected": 0.02
+    }
+  ]
+}

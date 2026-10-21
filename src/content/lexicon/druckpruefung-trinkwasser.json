@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.druckpruefung-trinkwasser",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Druckprüfung der Trinkwasserinstallation",
+  "synonyms": [
+    "Trinkwasser-Druckprobe"
+  ],
+  "definition": "Die **Druckprüfung einer Trinkwasserinstallation** prüft nach einem festgelegten Verfahren die Dichtheit neu errichteter oder veränderter Leitungsabschnitte. Prüfmedium, Prüfablauf und Dokumentation hängen unter anderem vom Leitungssystem und den geltenden technischen Regeln ab. Eine fachgerechte Prüfung muss auch das Risiko hygienischer Beeinträchtigung während der Bauphase berücksichtigen.",
+  "related": [
+    "lexicon.dichtheitspruefung",
+    "lexicon.trinkwasserinstallation",
+    "lexicon.inbetriebnahme"
+  ]
+}

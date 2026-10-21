@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.hebeanlage",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Hebeanlage",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Hebeanlage",
+  "synonyms": [
+    "Abwasserhebeanlage",
+    "Fäkalienhebeanlage (je nach Bauart)"
+  ],
+  "definition": "Eine **Hebeanlage** fördert Abwasser über die Rückstauebene oder zu einem höher gelegenen Entwässerungspunkt. Sie besteht typischerweise aus Sammelbehälter, Pumpe(n), Steuerung und Druckleitung. Die Anlage muss zur Abwasserart und Nutzung passen; Alarmierung, Wartung und eine geeignete Druckleitungsführung sind zu beachten.",
+  "related": [
+    "lexicon.rueckstauebene",
+    "lexicon.rueckstauverschluss",
+    "lexicon.abwasser"
+  ]
+}

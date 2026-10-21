@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.taupunkt",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Taupunkt",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Taupunkt",
+  "synonyms": [
+    "Taupunkttemperatur"
+  ],
+  "definition": "Der **Taupunkt** ist die Temperatur, auf die feuchte Luft bei gleichbleibendem Druck abgekühlt werden muss, damit sie gesättigt wird und Kondensation beginnt. Liegt eine Oberfläche unter dem Taupunkt der angrenzenden Luft, kann sich Kondenswasser bilden. Der Taupunkt ist für Kühldecken, Kälteverteilungen, Lüftung und Dämmung wichtig.",
+  "related": [
+    "lexicon.relative-luftfeuchtigkeit",
+    "lexicon.kondensat",
+    "lexicon.rohrdaemmung"
+  ]
+}

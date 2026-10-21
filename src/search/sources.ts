@@ -1,10 +1,11 @@
+import { formulaSearchDocuments } from '../modules/formulas/search'
 import { lexiconSearchDocuments } from '../modules/lexicon/search'
 import { createSearch, type SearchDocument, type SearchEngine } from './search'
 
 // Jedes Modul trägt hier seine Einträge ein. Dient der Suche und den Favoriten
 // als gemeinsames Verzeichnis aller Inhalte (id → Titel, Modul, Adresse).
 function allDocuments(): SearchDocument[] {
-  return [...lexiconSearchDocuments()]
+  return [...formulaSearchDocuments(), ...lexiconSearchDocuments()]
 }
 
 let engine: SearchEngine | undefined

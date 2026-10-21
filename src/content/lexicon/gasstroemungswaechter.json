@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.gasstroemungswaechter",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gasströmungswächter",
+  "synonyms": [
+    "GS"
+  ],
+  "definition": "Ein **Gasströmungswächter** ist eine Sicherheitseinrichtung, die bei einem unzulässig hohen Gasvolumenstrom selbsttätig schließt. Er kann damit bei bestimmten Leckage- oder Schadensfällen den Gasfluss begrenzen. Auswahl und Einbau hängen von Leitungssystem, Gasart, Nennbelastung und den geltenden Regeln ab.",
+  "related": [
+    "lexicon.gasinstallation",
+    "lexicon.gasdruckregler"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.cop",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "COP",
+  "synonyms": [
+    "Leistungszahl"
+  ],
+  "definition": "Coefficient of Performance: Verhältnis der abgegebenen Heiz- oder Kälteleistung zur aufgenommenen Antriebsleistung unter festgelegten Betriebsbedingungen. Der Wert gilt für einen bestimmten Betriebspunkt.",
+  "related": []
+}

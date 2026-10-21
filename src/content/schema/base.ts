@@ -55,6 +55,8 @@ export interface CollectionDefinition<T extends BaseEntry = BaseEntry> {
   schema: z.ZodType<T>
   /** ids, auf die ein Eintrag verweist. Der Build prüft, dass sie existieren. */
   references?(entry: T): string[]
+  /** Fachliche Prüfungen über das Schema hinaus, z. B. Formeln gegen ihre Testbeispiele. */
+  check?(entry: T): string[]
 }
 
 /** Hilft TypeScript, den Eintragstyp aus dem Schema abzuleiten. */

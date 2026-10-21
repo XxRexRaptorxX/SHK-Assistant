@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.rcd",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "RCD",
+  "synonyms": [
+    "FI-Schutzschalter"
+  ],
+  "definition": "Fehlerstrom-Schutzeinrichtung, die bei einem ausreichend großen Differenzstrom den Stromkreis abschaltet.",
+  "related": []
+}

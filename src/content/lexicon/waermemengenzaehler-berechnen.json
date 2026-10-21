@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.waermemengenzaehler-berechnen",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmemengenzähler berechnen",
+  "synonyms": [],
+  "definition": "Ein Wärmemengenzähler berechnet die übertragene Wärmeenergie typischerweise aus dem gemessenen Volumenstrom, der Temperaturdifferenz und den Stoffeigenschaften des Mediums.",
+  "related": []
+}

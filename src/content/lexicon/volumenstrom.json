@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.volumenstrom",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Volumenstrom",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Volumenstrom",
+  "synonyms": [
+    "Durchfluss",
+    "Volumenstromstärke"
+  ],
+  "definition": "Der **Volumenstrom** ist das Flüssigkeits- oder Gasvolumen, das pro Zeiteinheit durch einen Querschnitt strömt. Häufige Einheiten sind m³/h und l/min; in Berechnungen ist auf die Einheit zu achten. In Heizungsanlagen beeinflusst er die übertragene Wärmeleistung und den Druckverlust.",
+  "related": [
+    "lexicon.hydraulischer-abgleich",
+    "lexicon.differenzdruck",
+    "lexicon.umwaelzpumpe",
+    "lexicon.waermemengenzaehler"
+  ]
+}

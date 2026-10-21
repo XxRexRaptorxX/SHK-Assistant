@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.waermeuebertrager",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeübertrager",
+  "synonyms": [
+    "Wärmetauscher"
+  ],
+  "definition": "Bauteil, das Wärme zwischen zwei Medien über eine Trennfläche überträgt, ohne dass sich die Medien im Normalbetrieb vermischen.",
+  "related": []
+}

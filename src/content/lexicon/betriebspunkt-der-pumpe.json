@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.betriebspunkt-der-pumpe",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Betriebspunkt der Pumpe",
+  "synonyms": [],
+  "definition": "Schnittpunkt von Pumpenkennlinie und Anlagenkennlinie. Er beschreibt den Volumenstrom und die Förderhöhe, die sich im Betrieb einstellen.",
+  "related": []
+}

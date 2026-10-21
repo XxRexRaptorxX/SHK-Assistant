@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.fliessdruck",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Druck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Fließdruck",
+  "synonyms": [
+    "Betriebsdruck bei Durchfluss"
+  ],
+  "definition": "Der **Fließdruck** ist der Druck an einer Messstelle, während Wasser entnommen wird und strömt. Er liegt wegen Druckverlusten häufig unter dem Ruhedruck. Für die Funktion einer Armatur oder eines Geräts ist zu prüfen, welcher Mindestfließdruck bei dem erforderlichen Durchfluss verfügbar sein muss.",
+  "related": [
+    "lexicon.ruhedruck",
+    "lexicon.druckminderer",
+    "lexicon.druckverlust"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.photovoltaik",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Photovoltaik",
+  "synonyms": [
+    "PV"
+  ],
+  "definition": "Technologie, die Licht mithilfe von Solarzellen direkt in elektrische Energie umwandelt.",
+  "related": []
+}

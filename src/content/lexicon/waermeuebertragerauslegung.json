@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.waermeuebertragerauslegung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeübertragerauslegung",
+  "synonyms": [],
+  "definition": "Dimensionierung eines Wärmeübertragers anhand der erforderlichen Leistung, Temperaturdifferenzen, Medien, Druckverluste und Betriebsbedingungen.",
+  "related": []
+}

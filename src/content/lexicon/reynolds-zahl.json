@@ -1,0 +1,12 @@
+{
+  "id": "lexicon.reynolds-zahl",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Reynolds-Zahl",
+  "synonyms": [],
+  "definition": "Dimensionslose Kennzahl zur Einordnung des Strömungszustands in einem Fluid. Sie hängt unter anderem von Geschwindigkeit, charakteristischer Länge, Dichte und Viskosität ab.",
+  "related": []
+}

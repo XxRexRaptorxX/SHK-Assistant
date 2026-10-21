@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.schutzleiter",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schutzleiter",
+  "synonyms": [
+    "PE"
+  ],
+  "definition": "Leiter, der berührbare leitfähige Teile mit dem Schutzsystem verbindet, um im Fehlerfall gefährliche Berührungsspannungen zu begrenzen.",
+  "related": []
+}

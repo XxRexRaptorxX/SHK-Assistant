@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.aussenluft",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Au%C3%9Fenluft",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Außenluft",
+  "synonyms": [
+    "Zuluftquelle"
+  ],
+  "definition": "**Außenluft** ist Luft, die von außerhalb des Gebäudes angesaugt und einer Lüftungsanlage zugeführt wird. Ansaugstelle und Luftführung müssen Verunreinigungsquellen, Kurzschlussströmungen und ungünstige Wetterbedingungen berücksichtigen. Außenluft ist nicht automatisch frei von Partikeln oder gasförmigen Verunreinigungen.",
+  "related": [
+    "lexicon.lueftungsanlage",
+    "lexicon.luftfilter",
+    "lexicon.raumluftqualitaet"
+  ]
+}

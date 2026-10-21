@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.brennwerttechnik",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Brennwertkessel",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Brennwerttechnik",
+  "synonyms": [
+    "Brennwertnutzung"
+  ],
+  "definition": "**Brennwerttechnik** bezeichnet die Nutzung von Wärme aus der Kondensation von Wasserdampf im Abgas. Sie kann bei geeigneten Rücklauftemperaturen die Brennstoffausnutzung verbessern. Brennwertnutzung und Wirkungsgradangaben müssen auf derselben Bezugsbasis verglichen werden, da Heizwert und Brennwert unterschiedliche Energieinhalte berücksichtigen.",
+  "related": [
+    "lexicon.brennwertkessel",
+    "lexicon.heizwert",
+    "lexicon.brennwert"
+  ]
+}

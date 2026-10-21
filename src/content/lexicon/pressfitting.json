@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.pressfitting",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Rohrverbindung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Pressfitting",
+  "synonyms": [
+    "Pressverbinder"
+  ],
+  "definition": "Ein **Pressfitting** ist ein Rohrverbindungsstück, das mit einem passenden Presswerkzeug dauerhaft mit dem Rohr verbunden wird. Die Dichtheit entsteht durch die vom System vorgesehene Presskontur und Dichtung beziehungsweise Verformung. Rohr, Fitting, Pressbacke und Werkzeug müssen als kompatibles System verwendet werden; Einstecktiefe und Verpresskontrolle sind entscheidend.",
+  "related": [
+    "lexicon.rohrleitung",
+    "lexicon.mehrschichtverbundrohr",
+    "lexicon.dichtung"
+  ]
+}

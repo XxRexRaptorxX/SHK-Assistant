@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.ruhedruck",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "https://de.wikipedia.org/wiki/Druck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Ruhedruck",
+  "synonyms": [
+    "statischer Druck (in der Trinkwasserpraxis)"
+  ],
+  "definition": "Der **Ruhedruck** ist der Druck in einer Leitung bei fehlendem oder vernachlässigbarem Durchfluss. Er kann deutlich vom Fließdruck abweichen, wenn bei Entnahme Druckverluste entstehen. Für die Beurteilung der Wasserversorgung müssen Messzustand und Messstelle dokumentiert werden.",
+  "related": [
+    "lexicon.fliessdruck",
+    "lexicon.druckminderer",
+    "lexicon.druckverlust"
+  ]
+}

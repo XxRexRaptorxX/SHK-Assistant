@@ -1,0 +1,63 @@
+{
+  "id": "formula.thermodynamik.mischtemperatur-verschiedene-stoffe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "title": "Mischtemperatur verschiedener Stoffe",
+  "description": "Berechnet die Mischtemperatur zweier Stoffe mit unterschiedlichen spezifischen Wärmekapazitäten, ohne Wärmeverluste an die Umgebung.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "mk",
+      "name": "Masse des kalten Stoffes",
+      "unit": "kg"
+    },
+    {
+      "symbol": "ck",
+      "name": "Spezifische Wärmekapazität des kalten Stoffes",
+      "unit": "kJ/(kg*K)"
+    },
+    {
+      "symbol": "Tk",
+      "name": "Temperatur des kalten Stoffes",
+      "unit": "K"
+    },
+    {
+      "symbol": "mw",
+      "name": "Masse des warmen Stoffes",
+      "unit": "kg"
+    },
+    {
+      "symbol": "cw",
+      "name": "Spezifische Wärmekapazität des warmen Stoffes",
+      "unit": "kJ/(kg*K)"
+    },
+    {
+      "symbol": "Tw",
+      "name": "Temperatur des warmen Stoffes",
+      "unit": "K"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Tm",
+    "name": "Mischtemperatur",
+    "unit": "K",
+    "decimals": 2,
+    "label": "Tₘ"
+  },
+  "expression": "(mk * ck * Tk + mw * cw * Tw) / (mk * ck + mw * cw)",
+  "examples": [
+    {
+      "inputs": {
+        "mk": 1,
+        "ck": 4,
+        "Tk": 300,
+        "mw": 2,
+        "cw": 2,
+        "Tw": 350
+      },
+      "expected": 325
+    }
+  ]
+}
