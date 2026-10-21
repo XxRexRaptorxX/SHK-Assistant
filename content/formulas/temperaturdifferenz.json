@@ -2,7 +2,7 @@
   "id": "formula.thermodynamik.temperaturdifferenz",
   "visibility": "public",
   "status": "draft",
-  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden. Wikipedia „Temperatur“, https://de.wikipedia.org/wiki/Temperatur",
   "verifiedBy": "",
   "verifiedAt": "",
   "title": "Temperaturdifferenz",
@@ -12,12 +12,18 @@
     {
       "symbol": "T2",
       "name": "Höhere Temperatur",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     },
     {
       "symbol": "T1",
       "name": "Niedrigere Temperatur",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     }
   ],
   "constants": [],

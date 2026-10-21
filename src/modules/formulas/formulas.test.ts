@@ -93,6 +93,20 @@ describe('Wählbare Einheiten', () => {
     expect(evaluateFormula(inverse, { l: { value: 4, unit: 'K' } })).toBeCloseTo(0.25)
   })
 
+  it('rechnet absolute Temperaturen in °C mit Nullpunkt, Differenzen bleiben in K', () => {
+    const mix = formulaEntries.find((f) => f.id === 'formula.thermodynamik.mischtemperatur-gleicher-stoff')!
+    const inputs = {
+      mk: { value: 10, unit: 'kg' },
+      Tk: { value: 10, unit: 'degC' },
+      mw: { value: 10, unit: 'kg' },
+      Tw: { value: 50, unit: 'degC' },
+    }
+    expect(evaluateFormula(mix, inputs, 'degC')).toBeCloseTo(30)
+    expect(evaluateFormula(mix, inputs)).toBeCloseTo(303.15)
+    const diff = formulaEntries.find((f) => f.id === 'formula.thermodynamik.temperaturdifferenz')!
+    expect(evaluateFormula(diff, { T2: { value: 30, unit: 'degC' }, T1: { value: 20, unit: 'degC' } })).toBeCloseTo(10)
+  })
+
   it('bietet bei Temperaturen keine automatischen Alternativen an (Differenz ≠ Temperatur)', () => {
     expect(alternativeUnits('K')).toEqual(['K'])
     expect(alternativeUnits('degC')).toEqual(['degC'])

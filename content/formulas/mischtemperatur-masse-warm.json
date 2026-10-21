@@ -2,7 +2,7 @@
   "id": "formula.thermodynamik.mischtemperatur-masse-warm",
   "visibility": "public",
   "status": "draft",
-  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden. Wikipedia „Richmannsche Mischungsregel“, https://de.wikipedia.org/wiki/Richmannsche_Mischungsregel",
   "verifiedBy": "",
   "verifiedAt": "",
   "title": "Masse des warmen Stoffes aus Mischtemperatur",
@@ -17,17 +17,26 @@
     {
       "symbol": "Tm",
       "name": "Mischtemperatur",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     },
     {
       "symbol": "Tk",
       "name": "Temperatur des kalten Stoffes",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     },
     {
       "symbol": "Tw",
       "name": "Temperatur des warmen Stoffes",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     }
   ],
   "constants": [],

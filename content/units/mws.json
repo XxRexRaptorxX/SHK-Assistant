@@ -2,12 +2,23 @@
   "id": "unit.mws",
   "visibility": "public",
   "status": "draft",
-  "source": "Abgeleitet aus der mathjs-Einheit mmH2O (1 m = 1000 mm); fachlich zu prüfen",
   "verifiedBy": "",
   "verifiedAt": "",
+  "source": "Wikipedia „Meter Wassersäule“, https://de.wikipedia.org/wiki/Meter_Wassers%C3%A4ule – 1 mWS = 9806,65 Pa (Normfallbeschleunigung, Dichte 1000 kg/m³)",
   "symbol": "mWS",
   "name": "Meter Wassersäule",
-  "definition": "1000 mmH2O",
+  "definition": "9806.65 Pa",
   "aliases": [],
-  "examples": []
+  "examples": [
+    {
+      "value": "1 mWS",
+      "expected": "98.0665 hPa",
+      "tolerance": 0.001
+    },
+    {
+      "value": "1 mWS",
+      "expected": "1000 mmH2O",
+      "tolerance": 0.001
+    }
+  ]
 }

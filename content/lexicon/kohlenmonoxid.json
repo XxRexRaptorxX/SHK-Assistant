@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kohlenmonoxid",
-  "visibility": "internal",
-  "status": "draft",
+  "visibility": "public",
+  "status": "verified",
   "source": "https://de.wikipedia.org/wiki/Kohlenstoffmonoxid",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "term": "Kohlenmonoxid (CO)",
   "synonyms": [
     "CO"

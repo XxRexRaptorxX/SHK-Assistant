@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kaeltekreislauf",
-  "visibility": "internal",
-  "status": "draft",
+  "visibility": "public",
+  "status": "verified",
   "source": "https://de.wikipedia.org/wiki/K%C3%A4ltemaschine",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "term": "Kältekreislauf",
   "synonyms": [
     "Kältemittelkreislauf"

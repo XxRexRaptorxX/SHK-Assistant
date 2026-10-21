@@ -1,7 +1,8 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter, Route, Routes } from 'react-router'
 import { describe, expect, it } from 'vitest'
-import { getSearchEngine } from '../../search/sources'
+import { createSearch } from '../../search/search'
+import { checklistSearchDocuments } from './search'
 import { ChecklistListPage } from './ChecklistListPage'
 import { ChecklistPage, ChecklistView } from './ChecklistPage'
 import { checklistEntries, countDone } from './checklists'
@@ -45,11 +46,15 @@ describe('Checklisten-Daten', () => {
     expect(countDone(fixture, new Set(['punkt-a', 'punkt-c', 'geloeschter-punkt']))).toEqual({ done: 2, total: 3 })
   })
 
-  it('lädt die echten Checklisten und macht sie durchsuchbar', () => {
-    expect(checklistEntries.length).toBeGreaterThan(0)
-    const first = checklistEntries[0]!
-    const ids = getSearchEngine().search(first.title).flatMap((g) => g.results.map((r) => r.id))
-    expect(ids).toContain(first.id)
+  it('macht Checklisten mit ihren Prüfpunkten durchsuchbar', () => {
+    const engine = createSearch(checklistSearchDocuments([fixture]))
+    expect(engine.search('Testwartung').flatMap((g) => g.results.map((r) => r.id))).toEqual([fixture.id])
+    // auch über den Text eines Prüfpunkts
+    expect(engine.search('Punkt C').flatMap((g) => g.results.map((r) => r.id))).toEqual([fixture.id])
+  })
+
+  it('lädt die echten Checklisten gültig (auch wenn noch keine vorhanden sind)', () => {
+    expect(checklistEntries.every((entry) => checkChecklist(entry).length === 0)).toBe(true)
   })
 })
 

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.jahresarbeitszahl",
-  "visibility": "internal",
-  "status": "draft",
+  "visibility": "public",
+  "status": "verified",
   "source": "https://de.wikipedia.org/wiki/Jahresarbeitszahl",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "term": "Jahresarbeitszahl (JAZ)",
   "synonyms": [
     "JAZ"

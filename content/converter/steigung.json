@@ -1,10 +1,10 @@
 {
   "id": "converter.steigung",
   "visibility": "public",
-  "status": "draft",
-  "source": "Umrechnung über das Verhältnis Höhe/Länge (tan); fachlich zu prüfen",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Umrechnung über das Verhältnis Höhe/Länge (tan); Auswahl vom Inhaber bestätigt",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "title": "Steigung",
   "description": "",
   "kind": "slope"

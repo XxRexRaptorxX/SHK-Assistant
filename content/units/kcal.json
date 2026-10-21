@@ -2,12 +2,23 @@
   "id": "unit.kcal",
   "visibility": "public",
   "status": "draft",
-  "source": "",
   "verifiedBy": "",
   "verifiedAt": "",
+  "source": "Wikipedia „Kalorie“, https://de.wikipedia.org/wiki/Kalorie – Internationale Tafelkalorie (cal_IT = 4,1868 J, von PTB und DIN 1301-3 verwendet; 1 kcal/h = 1,163 W)",
   "symbol": "kcal",
-  "name": "Kilokalorie",
-  "definition": "",
+  "name": "Kilokalorie (internationale Tafelkalorie)",
+  "definition": "4.1868 kJ",
   "aliases": [],
-  "examples": []
+  "examples": [
+    {
+      "value": "1 kcal/h",
+      "expected": "1.163 W",
+      "tolerance": 0.001
+    },
+    {
+      "value": "1 kcal",
+      "expected": "4.1868 kJ",
+      "tolerance": 0.001
+    }
+  ]
 }

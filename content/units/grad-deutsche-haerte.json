@@ -2,7 +2,7 @@
   "id": "unit.grad-deutsche-haerte",
   "visibility": "public",
   "status": "draft",
-  "source": "Vom Nutzer bereitgestellte Spezifikation „Wasserhärte umrechnen“ (Faktoren gerundet); dort genannt: https://www.ewt-wasser.de/en/knowledge/concentration-quantities-unit-conversions.html, https://www.aqion.de/site/140",
+  "source": "Wikipedia „Wasserhärte“, https://de.wikipedia.org/wiki/Wasserh%C3%A4rte (1 °dH = 0,1783 mmol/l, 1 °fH = 0,1 mmol/l, 1 °e = 0,142 mmol/l); Testfälle aus der Spezifikation „Wasserhärte umrechnen“ des Nutzers",
   "verifiedBy": "",
   "verifiedAt": "",
   "symbol": "gradDH",

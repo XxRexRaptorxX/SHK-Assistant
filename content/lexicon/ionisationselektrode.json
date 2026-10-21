@@ -1,10 +1,10 @@
 {
   "id": "lexicon.ionisationselektrode",
-  "visibility": "internal",
-  "status": "draft",
+  "visibility": "public",
+  "status": "verified",
   "source": "https://de.wikipedia.org/wiki/Flammen%C3%BCberwachung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "term": "Ionisationselektrode",
   "synonyms": [
     "Ionisationsfühler"

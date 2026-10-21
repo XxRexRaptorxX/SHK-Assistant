@@ -76,9 +76,25 @@ export function evaluateFormula(
   for (const variable of formula.variables) {
     const input = inputs[variable.symbol]
     if (!input) throw new FormulaError(`Wert für ${variable.symbol} fehlt`)
-    scope.set(variable.symbol, toScopeValue(input))
+    // Erst in die Haupteinheit der Variable umrechnen, dann rechnen. So gilt z. B. 20 °C als
+    // absolute Temperatur 293,15 K, und die Formel rechnet stets wie mit den Haupteinheiten.
+    const value =
+      input.unit === variable.unit || variable.unit === ''
+        ? input.value
+        : math.unit(input.value, input.unit).toNumber(asTargetUnit(variable.unit))
+    scope.set(variable.symbol, toScopeValue({ value, unit: variable.unit }))
   }
-  return toNumberIn(compile(formula.expression).evaluate(scope), resultUnit)
+  // Erst in der Haupteinheit des Ergebnisses ausrechnen, dann als einfache Einheit umrechnen:
+  // bei zusammengesetzten Einheiten (z. B. kg·K/kg) übergeht mathjs sonst den Nullpunkt von °C.
+  const mainUnit = formula.result.unit
+  const value = toNumberIn(compile(formula.expression).evaluate(scope), mainUnit)
+  if (resultUnit === mainUnit) return value
+  if (mainUnit === '') throw new FormulaError(`Ergebnis hat keine Einheit, erwartet ${resultUnit}`)
+  try {
+    return math.unit(value, mainUnit).toNumber(asTargetUnit(resultUnit))
+  } catch {
+    throw new FormulaError(`Ergebnis (${mainUnit}) lässt sich nicht in ${resultUnit} umrechnen`)
+  }
 }
 
 /** Text wie "10 kW" oder Zahl (in fallbackUnit) in einen Wert in targetUnit umrechnen */

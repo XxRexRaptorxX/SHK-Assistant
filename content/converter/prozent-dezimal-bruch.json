@@ -1,10 +1,10 @@
 {
   "id": "converter.prozent-dezimal-bruch",
   "visibility": "public",
-  "status": "draft",
-  "source": "Mathematische Umrechnung; fachlich zu prüfen",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Mathematische Umrechnung; Auswahl vom Inhaber bestätigt",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "title": "Prozent & Bruch",
   "description": "",
   "kind": "ratio"

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.fernwaerme",
-  "visibility": "internal",
-  "status": "draft",
+  "visibility": "public",
+  "status": "verified",
   "source": "https://de.wikipedia.org/wiki/Fernw%C3%A4rme",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "term": "Fernwärme",
   "synonyms": [
     "Nah- und Fernwärme (je nach Netzgröße)"

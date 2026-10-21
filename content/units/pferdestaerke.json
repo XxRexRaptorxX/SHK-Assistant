@@ -1,0 +1,20 @@
+{
+  "id": "unit.pferdestaerke",
+  "visibility": "public",
+  "status": "draft",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "source": "Wikipedia „Pferdestärke“, https://de.wikipedia.org/wiki/Pferdest%C3%A4rke – 1 PS = 735,49875 W (metrische Pferdestärke, DIN 66036)",
+  "symbol": "Pferdestaerke",
+  "name": "Pferdestärke (metrisch)",
+  "label": "PS",
+  "definition": "735.49875 W",
+  "aliases": [],
+  "examples": [
+    {
+      "value": "1 Pferdestaerke",
+      "expected": "0.73549875 kW",
+      "tolerance": 0.001
+    }
+  ]
+}

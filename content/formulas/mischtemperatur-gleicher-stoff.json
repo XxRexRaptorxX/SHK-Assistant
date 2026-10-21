@@ -2,7 +2,7 @@
   "id": "formula.thermodynamik.mischtemperatur-gleicher-stoff",
   "visibility": "public",
   "status": "draft",
-  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden. Wikipedia „Richmannsche Mischungsregel“, https://de.wikipedia.org/wiki/Richmannsche_Mischungsregel",
   "verifiedBy": "",
   "verifiedAt": "",
   "title": "Mischtemperatur gleicher Stoffe",
@@ -17,7 +17,10 @@
     {
       "symbol": "Tk",
       "name": "Temperatur des kalten Stoffes",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     },
     {
       "symbol": "mw",
@@ -27,7 +30,10 @@
     {
       "symbol": "Tw",
       "name": "Temperatur des warmen Stoffes",
-      "unit": "K"
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
     }
   ],
   "constants": [],
@@ -35,6 +41,9 @@
     "symbol": "Tm",
     "name": "Mischtemperatur",
     "unit": "K",
+    "units": [
+      "degC"
+    ],
     "decimals": 2,
     "label": "Tₘ"
   },

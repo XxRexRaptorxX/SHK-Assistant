@@ -1,10 +1,10 @@
 {
   "id": "lexicon.enthaertungsanlage",
-  "visibility": "internal",
-  "status": "draft",
+  "visibility": "public",
+  "status": "verified",
   "source": "https://de.wikipedia.org/wiki/Wasserenth%C3%A4rtung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "term": "Enthärtungsanlage",
   "synonyms": [
     "Wasserenthärter"
