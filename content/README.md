@@ -55,16 +55,21 @@ Eine Zusatzeinheit mit einem bereits vorhandenen mathjs-Namen lässt den Build f
 
 ## Umrechner (`converter/`, Präfix `converter.`)
 
-Eine Datei je Größe (Druck, Leistung …).
+Eine Datei je Größe (Druck, Leistung …). `kind` legt die Art fest:
 
-| Feld          | Inhalt                                                          |
-|---------------|-----------------------------------------------------------------|
-| `title`       | Name der Größe                                                  |
-| `description` | Optionaler Hinweis                                              |
-| `units`       | Angebotene Einheiten (mathjs oder Zusatzeinheiten), alle umrechenbar |
-| `from`, `to`  | Voreinstellung beim Öffnen                                      |
+| `kind`  | Wofür                                   | Felder                                   |
+|---------|-----------------------------------------|------------------------------------------|
+| `units` (Standard) | Einheiten einer Größe über mathjs | `units` (alle umrechenbar), `from`, `to` (Voreinstellung) |
+| `slope` | Steigung in %, ‰, Grad, 1 : x           | keine weiteren                           |
+| `ratio` | Prozent, Promille, Dezimalzahl, Bruch   | keine weiteren                           |
+| `table` | Nachschlagetabelle, z. B. Rohrdimensionen | `columns` (Überschriften), `rows` (je Zeile eine Liste von Texten) |
+
+Dazu immer `title` und optional `description`.
 
 Für Temperaturen `degC`, `K`, `degF` verwenden; die Nullpunkt-Verschiebung rechnet mathjs selbst.
+In `units` dürfen Zusatzeinheiten stehen, die in `content/units` noch ohne Definition angekündigt
+sind (z. B. `kcal/h`, `gradDH`). Die App zeigt sie dann als „noch ohne Definition“, bis die
+Definition eingetragen ist.
 
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 

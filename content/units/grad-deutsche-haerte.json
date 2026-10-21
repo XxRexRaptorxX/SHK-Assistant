@@ -1,0 +1,35 @@
+{
+  "id": "unit.grad-deutsche-haerte",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Spezifikation „Wasserhärte umrechnen“ (Faktoren gerundet); dort genannt: https://www.ewt-wasser.de/en/knowledge/concentration-quantities-unit-conversions.html, https://www.aqion.de/site/140",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "symbol": "gradDH",
+  "name": "Grad deutscher Härte",
+  "label": "°dH",
+  "definition": "0.1783 mmol/l",
+  "aliases": [],
+  "examples": [
+    {
+      "value": "14 gradDH",
+      "expected": "2.4962 mmol/l",
+      "tolerance": 0.005
+    },
+    {
+      "value": "14 gradDH",
+      "expected": "24.92 gradFH",
+      "tolerance": 0.005
+    },
+    {
+      "value": "14 gradDH",
+      "expected": "17.542 gradEH",
+      "tolerance": 0.005
+    },
+    {
+      "value": "1 mmol/l",
+      "expected": "5.6085 gradDH",
+      "tolerance": 0.005
+    }
+  ]
+}

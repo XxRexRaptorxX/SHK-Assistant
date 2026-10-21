@@ -5,6 +5,10 @@
 export function normalizeForSearch(text: string): string {
   return text
     .toLocaleLowerCase('de')
+    // Bruchzeichen ausschreiben, damit "1 1/4" auch "1 ¼" findet
+    .replace(/¼/g, '1/4')
+    .replace(/½/g, '1/2')
+    .replace(/¾/g, '3/4')
     .replace(/ä/g, 'ae')
     .replace(/ö/g, 'oe')
     .replace(/ü/g, 'ue')

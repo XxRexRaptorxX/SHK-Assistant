@@ -1,0 +1,21 @@
+{
+  "id": "converter.laenge",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Länge",
+  "description": "Zoll (in) ist hier das Längenmaß 25,4 mm, nicht die Nennweite von Rohrgewinden.",
+  "kind": "units",
+  "units": [
+    "mm",
+    "cm",
+    "dm",
+    "m",
+    "km",
+    "inch"
+  ],
+  "from": "m",
+  "to": "mm"
+}

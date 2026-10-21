@@ -1,4 +1,5 @@
 import { content } from '../../content'
+import { formatAnyUnit } from '../units/labels'
 import { CONVERTER_ID_PREFIX } from './constants'
 import type { ConverterEntry } from './schema'
 
@@ -19,4 +20,18 @@ export function findConverter(entries: readonly ConverterEntry[], slug: string |
   if (!slug) return undefined
   const id = `${CONVERTER_ID_PREFIX}.${slug}`
   return entries.find((entry) => entry.id === id)
+}
+
+/** Kurzbeschreibung für Listen und Suche */
+export function converterSummary(entry: ConverterEntry): string {
+  switch (entry.kind) {
+    case 'units':
+      return entry.units.map(formatAnyUnit).join(' · ')
+    case 'slope':
+      return '% · ‰ · ° · 1 : x'
+    case 'ratio':
+      return '% · ‰ · Dezimalzahl · Bruch'
+    case 'table':
+      return entry.columns.join(' · ')
+  }
 }

@@ -11,6 +11,8 @@ export const unitEntrySchema = defineEntrySchema({
   symbol: unitName,
   /** Ausgeschrieben, z. B. "Meter Wassersäule" */
   name: z.string().trim().min(1),
+  /** Anzeige statt Symbol, z. B. "°dH" für "gradDH" */
+  label: z.string().trim().min(1).optional(),
   /** Definition über vorhandene Einheiten, z. B. "1000 mmH2O"; bei draft darf sie fehlen */
   definition: z.string().trim().default(''),
   aliases: z.array(unitName).default([]),

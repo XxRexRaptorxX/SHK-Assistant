@@ -1,0 +1,20 @@
+{
+  "id": "converter.zeit",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Zeit",
+  "description": "",
+  "kind": "units",
+  "units": [
+    "s",
+    "min",
+    "h",
+    "day",
+    "week"
+  ],
+  "from": "h",
+  "to": "min"
+}

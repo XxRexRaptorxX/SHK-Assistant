@@ -1,0 +1,19 @@
+{
+  "id": "converter.geschwindigkeit",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Geschwindigkeit",
+  "description": "",
+  "kind": "units",
+  "units": [
+    "mm/s",
+    "m/s",
+    "m/min",
+    "km/h"
+  ],
+  "from": "m/s",
+  "to": "km/h"
+}

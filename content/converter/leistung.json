@@ -10,7 +10,8 @@
   "units": [
     "W",
     "kW",
-    "MW"
+    "MW",
+    "kcal/h"
   ],
   "from": "kW",
   "to": "W"

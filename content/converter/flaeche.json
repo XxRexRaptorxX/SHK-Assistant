@@ -1,0 +1,21 @@
+{
+  "id": "converter.flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Fläche",
+  "description": "",
+  "kind": "units",
+  "units": [
+    "mm^2",
+    "cm^2",
+    "dm^2",
+    "m^2",
+    "hectare",
+    "km^2"
+  ],
+  "from": "m^2",
+  "to": "cm^2"
+}

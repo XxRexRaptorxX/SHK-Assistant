@@ -59,6 +59,9 @@ describe('Formel-Engine', () => {
     expect(formatNumber(1234.5, 2)).toBe('1.234,50')
     expect(formatUnit('kJ/(kg K)')).toBe('kJ/(kg·K)')
     expect(formatUnit('m^3/h')).toBe('m³/h')
+    expect(formatUnit('kohm')).toBe('kΩ')
+    expect(formatUnit('degC')).toBe('°C')
+    expect(formatUnit('gradDH', new Map([['gradDH', '°dH']]))).toBe('°dH')
   })
 })
 

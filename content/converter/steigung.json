@@ -1,0 +1,11 @@
+{
+  "id": "converter.steigung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Umrechnung über das Verhältnis Höhe/Länge (tan); fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Steigung",
+  "description": "",
+  "kind": "slope"
+}

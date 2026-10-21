@@ -1,8 +1,7 @@
 import { Link } from 'react-router'
 import { DraftBadge } from '../../components/DraftBadge'
-import { formatUnit } from '../../lib/units'
 import { usePageTitle } from '../../lib/usePageTitle'
-import { converterEntries, converterPath } from './converter'
+import { converterEntries, converterPath, converterSummary } from './converter'
 import type { ConverterEntry } from './schema'
 
 export function ConverterListPage({ entries = converterEntries }: { entries?: ConverterEntry[] }) {
@@ -24,7 +23,7 @@ export function ConverterListPage({ entries = converterEntries }: { entries?: Co
                   <span className="text-xl font-bold">{entry.title}</span>
                   {entry.status === 'draft' && <DraftBadge variant="inline" />}
                 </span>
-                <span className="text-base text-muted">{entry.units.map(formatUnit).join(' · ')}</span>
+                <span className="text-base text-muted">{converterSummary(entry)}</span>
               </Link>
             </li>
           ))}

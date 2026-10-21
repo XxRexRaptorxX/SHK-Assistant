@@ -1,0 +1,25 @@
+{
+  "id": "converter.rohrdimensionen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Tabelle „Rohrdimensionen“ (Bild); keine Norm- oder Quellenangabe vorhanden",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Rohrdimensionen",
+  "description": "Gegenüberstellung von britischem System (Nenndurchmesser in Zoll, Rohr-Außendurchmesser dₐ) und metrischen Größen (Rohr-Außendurchmesser dₐ, Nenndurchmesser DN). Jede Zeile zeigt die einander zugeordneten Größen.",
+  "kind": "table",
+  "columns": ["Zoll", "dₐ britisch (mm)", "dₐ metrisch (mm)", "DN"],
+  "rows": [
+    ["1/8", "10,2", "10", "DN 6"],
+    ["1/4", "13,5", "12", "DN 8"],
+    ["3/8", "17,2", "16", "DN 10"],
+    ["1/2", "21,3", "20", "DN 15"],
+    ["3/4", "26,9", "25", "DN 20"],
+    ["1", "33,7", "32", "DN 25"],
+    ["1 ¼", "42,4", "40", "DN 32"],
+    ["1 ½", "48,3", "50", "DN 40"],
+    ["2", "60,3", "63", "DN 50"],
+    ["2 ½", "75,3", "75", "DN 65"],
+    ["3", "88,9", "90", "DN 80"]
+  ]
+}
