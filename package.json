@@ -9,7 +9,9 @@
     "build:public": "tsc -b && vite build --mode public",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "content:report": "node tools/content-report.ts",
+    "icons": "node tools/generate-icons.ts"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",

@@ -58,6 +58,17 @@ describe('PWA-Build', () => {
     const html = read('index.html')
     expect(html).not.toMatch(/(?:src|href)="\/(?!\/)/)
     expect(html).toContain('manifest.webmanifest')
-    expect(html).toContain('registerSW.js')
+  })
+
+  it('übernimmt Updates sofort (sonst wartet ein Update, bis alle Tabs geschlossen sind)', () => {
+    const serviceWorker = read('sw.js')
+    expect(serviceWorker).toMatch(/self\.skipWaiting\(\)/)
+    expect(serviceWorker).toMatch(/clientsClaim\(\)/)
+    // Registrierung steckt im App-Bundle (virtual:pwa-register)
+    const appCode = listFiles(outDir.root)
+      .filter((file) => file.endsWith('.js') && file.startsWith('assets/'))
+      .map(read)
+      .join('\n')
+    expect(appCode).toContain('sw.js')
   })
 })

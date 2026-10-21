@@ -24,8 +24,9 @@ export default defineConfig(({ mode }) => {
         collections,
       }),
       VitePWA({
+        // Registrierung in src/main.tsx (virtual:pwa-register). Nur so setzt das Plugin
+        // skipWaiting/clientsClaim; sonst bleibt ein Update wartend, bis alle Tabs zu sind.
         registerType: 'autoUpdate',
-        injectRegister: 'script',
         // Icons und Assets erfasst bereits workbox.globPatterns (sonst doppelte Precache-Einträge)
         includeManifestIcons: false,
         manifest: {
@@ -42,7 +43,7 @@ export default defineConfig(({ mode }) => {
           icons: [
             { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
             { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
-            { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+            { src: 'maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
           ],
         },
         workbox: {

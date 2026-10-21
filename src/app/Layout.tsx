@@ -28,14 +28,16 @@ function Header() {
       <div className="mx-auto flex h-16 max-w-3xl items-center gap-1 px-1 min-[360px]:px-2">
         <Link
           to="/"
-          className="flex min-h-12 items-center gap-1 rounded-lg px-1 text-base font-bold whitespace-nowrap min-[360px]:gap-1.5 min-[360px]:text-lg sm:text-xl"
+          className="flex min-h-12 items-center gap-1.5 rounded-lg px-1 font-bold whitespace-nowrap"
         >
-          SHK-Assistant
-          {isInternalEdition && (
-            <span className="rounded border-2 border-line px-1 text-[0.65rem] leading-4 font-bold uppercase text-muted">
-              Intern
-            </span>
-          )}
+          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="size-9 shrink-0" />
+          {/* "Intern" unter dem Namen, damit die Kopfzeile auch auf 320 px passt */}
+          <span className="flex flex-col leading-tight">
+            <span className="text-base min-[360px]:text-lg sm:text-xl">SHK-Assistant</span>
+            {isInternalEdition && (
+              <span className="text-[0.65rem] leading-3 font-bold tracking-wider text-muted uppercase">Intern</span>
+            )}
+          </span>
         </Link>
         <nav aria-label="Werkzeuge" className="ml-auto flex shrink-0 items-center">
           <HeaderLink module={modules.search} />
