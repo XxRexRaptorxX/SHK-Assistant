@@ -3,7 +3,14 @@ import { formatNumber, parseDecimal } from '../../lib/number'
 import { formatUnit } from '../../lib/units'
 import { asTargetUnit, math } from '../../lib/math'
 import { alternativeUnits } from '../units/alternatives'
-import { checkFormula, evaluateExample, evaluateFormula, exampleInputs, formatExpression } from './engine'
+import {
+  checkFormula,
+  evaluateExample,
+  evaluateFormula,
+  exampleInputs,
+  formatExpression,
+  rangeError,
+} from './engine'
 import { ensureCustomUnits } from '../units/customUnits'
 import { formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
@@ -52,6 +59,20 @@ describe('Formel-Engine', () => {
     )
     expect(checkFormula({ ...fixture, result: { ...fixture.result!, units: ['kg'] } })[0]).toMatch(/passt nicht/)
     expect(checkFormula({ ...fixture, result: { ...fixture.result!, unit: 'xyz' } })[0]).toMatch(/unbekannte Einheit/)
+  })
+
+  it('prüft den erlaubten Bereich von Eingaben (z. B. cos φ zwischen 0 und 1)', () => {
+    const cos = { symbol: 'c', name: 'Leistungsfaktor', unit: '', units: [], description: '', min: 0, max: 1 }
+    expect(rangeError(cos, 0.85)).toBeUndefined()
+    expect(rangeError(cos, 1.2)).toBe('muss zwischen 0 und 1 liegen')
+    expect(rangeError({ ...cos, max: undefined }, -1)).toBe('muss mindestens 0 sein')
+    const withCos: FormulaEntry = {
+      ...fixture,
+      variables: [...fixture.variables, cos],
+      expression: 'l * b * c',
+      examples: [{ inputs: { l: 2, b: 3, c: 1.5 }, expected: 9, tolerance: 0.001 }],
+    }
+    expect(checkFormula(withCos)).toEqual(['Testbeispiel 1: c muss zwischen 0 und 1 liegen'])
   })
 
   it('liest und formatiert deutsche Zahlen und Einheiten', () => {
@@ -105,6 +126,20 @@ describe('Wählbare Einheiten', () => {
     expect(evaluateFormula(mix, inputs)).toBeCloseTo(303.15)
     const diff = formulaEntries.find((f) => f.id === 'formula.thermodynamik.temperaturdifferenz')!
     expect(evaluateFormula(diff, { T2: { value: 30, unit: 'degC' }, T1: { value: 20, unit: 'degC' } })).toBeCloseTo(10)
+  })
+
+  it('vermischt Scheinleistung (VA) nicht mit Wirkleistung (W)', () => {
+    expect(alternativeUnits('VA', ['kVA'])).toEqual(['VA', 'kVA'])
+    expect(alternativeUnits('W')).not.toContain('VA')
+  })
+
+  it('rechnet Drehstrom: Wirkleistung mit cos φ, Scheinleistung ohne', () => {
+    const p = formulaEntries.find((f) => f.id === 'formula.elektrotechnik.drehstrom-wirkleistung')!
+    const s = formulaEntries.find((f) => f.id === 'formula.elektrotechnik.drehstromleistung')!
+    const ui = { U: { value: 400, unit: 'V' }, I: { value: 50, unit: 'A' } }
+    expect(evaluateFormula(p, { ...ui, cosphi: { value: 1, unit: '' } }, 'kW')).toBeCloseTo(34.641, 3)
+    expect(evaluateFormula(p, { ...ui, cosphi: { value: 0.8, unit: '' } }, 'kW')).toBeCloseTo(27.713, 3)
+    expect(evaluateFormula(s, ui, 'kVA')).toBeCloseTo(34.641, 3)
   })
 
   it('bietet bei Temperaturen keine automatischen Alternativen an (Differenz ≠ Temperatur)', () => {

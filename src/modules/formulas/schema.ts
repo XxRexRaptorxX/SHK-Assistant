@@ -19,6 +19,9 @@ const variableSchema = z.strictObject({
   /** Weitere wählbare Eingabeeinheiten (müssen zur Haupteinheit passen) */
   units: z.array(unit).default([]),
   description: z.string().default(''),
+  /** Erlaubter Bereich in der Haupteinheit, z. B. 0 bis 1 für cos φ */
+  min: z.number().optional(),
+  max: z.number().optional(),
 })
 
 const constantSchema = z.strictObject({

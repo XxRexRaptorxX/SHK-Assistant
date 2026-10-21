@@ -1,7 +1,7 @@
 import type { EvalFunction, MathNode, Unit } from 'mathjs'
 // Wird auch beim Build geladen (über schema.ts): Importe mit Dateiendung .ts.
 import { asTargetUnit, math } from '../../lib/math.ts'
-import type { FormulaEntry, FormulaExample } from './schema.ts'
+import type { FormulaEntry, FormulaExample, FormulaVariable } from './schema.ts'
 
 /** Eingabewert mit Einheit ("" = ohne Einheit) */
 export interface Quantity {
@@ -76,13 +76,7 @@ export function evaluateFormula(
   for (const variable of formula.variables) {
     const input = inputs[variable.symbol]
     if (!input) throw new FormulaError(`Wert für ${variable.symbol} fehlt`)
-    // Erst in die Haupteinheit der Variable umrechnen, dann rechnen. So gilt z. B. 20 °C als
-    // absolute Temperatur 293,15 K, und die Formel rechnet stets wie mit den Haupteinheiten.
-    const value =
-      input.unit === variable.unit || variable.unit === ''
-        ? input.value
-        : math.unit(input.value, input.unit).toNumber(asTargetUnit(variable.unit))
-    scope.set(variable.symbol, toScopeValue({ value, unit: variable.unit }))
+    scope.set(variable.symbol, toScopeValue({ value: toMainUnit(variable, input), unit: variable.unit }))
   }
   // Erst in der Haupteinheit des Ergebnisses ausrechnen, dann als einfache Einheit umrechnen:
   // bei zusammengesetzten Einheiten (z. B. kg·K/kg) übergeht mathjs sonst den Nullpunkt von °C.
@@ -133,6 +127,27 @@ export function exampleInputs(formula: FormulaEntry, example: FormulaExample): R
     if (!formula.variables.some((v) => v.symbol === key)) throw new FormulaError(`Unbekannte Eingabe ${key}`)
   }
   return inputs
+}
+
+/**
+ * Wert in der Haupteinheit der Variable. Erst umrechnen, dann rechnen: so gilt z. B. 20 °C als
+ * absolute Temperatur 293,15 K, und die Formel rechnet stets wie mit den Haupteinheiten.
+ */
+export function toMainUnit(variable: FormulaVariable, input: Quantity): number {
+  return input.unit === variable.unit || variable.unit === ''
+    ? input.value
+    : math.unit(input.value, input.unit).toNumber(asTargetUnit(variable.unit))
+}
+
+/** Meldung, wenn ein Wert (in der Haupteinheit) außerhalb von min/max liegt, sonst undefined */
+export function rangeError(variable: FormulaVariable, valueInMainUnit: number): string | undefined {
+  const { min, max } = variable
+  if ((min !== undefined && valueInMainUnit < min) || (max !== undefined && valueInMainUnit > max)) {
+    const format = (n: number) => String(n).replace('.', ',')
+    if (min !== undefined && max !== undefined) return `muss zwischen ${format(min)} und ${format(max)} liegen`
+    return min !== undefined ? `muss mindestens ${format(min)} sein` : `darf höchstens ${format(max!)} sein`
+  }
+  return undefined
 }
 
 function isValidUnit(unit: string): boolean {
@@ -221,11 +236,22 @@ export function checkFormula(formula: FormulaEntry): string[] {
     if (!used.has(variable.symbol)) issues.push(`Variable "${variable.symbol}" kommt in der Formel nicht vor`)
   }
 
+  for (const variable of formula.variables) {
+    if (variable.min !== undefined && variable.max !== undefined && variable.min > variable.max) {
+      issues.push(`${variable.symbol}: min ist größer als max`)
+    }
+  }
+
   if (issues.length > 0 || !formula.result) return issues
 
   formula.examples.forEach((example, index) => {
     const label = `Testbeispiel ${index + 1}`
     try {
+      for (const [symbol, input] of Object.entries(exampleInputs(formula, example))) {
+        const variable = formula.variables.find((v) => v.symbol === symbol)!
+        const range = rangeError(variable, input.value)
+        if (range) issues.push(`${label}: ${symbol} ${range}`)
+      }
       const { expected, actual, ok } = evaluateExample(formula, example)
       if (!ok) issues.push(`${label}: erwartet ${expected}, berechnet ${actual}`)
     } catch (error) {

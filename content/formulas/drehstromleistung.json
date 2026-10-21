@@ -2,11 +2,11 @@
   "id": "formula.elektrotechnik.drehstromleistung",
   "visibility": "public",
   "status": "draft",
-  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Dreiphasenwechselstrom“, https://de.wikipedia.org/wiki/Dreiphasenwechselstrom",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Scheinleistung“, https://de.wikipedia.org/wiki/Scheinleistung (S = U · I, Einheit VA); Wikipedia „Dreiphasenwechselstrom“, https://de.wikipedia.org/wiki/Dreiphasenwechselstrom (Faktor √3 bei verketteter Spannung)",
   "verifiedBy": "",
   "verifiedAt": "",
-  "title": "Leistung bei Drehstrom",
-  "description": "Berechnet die Wirkleistung eines symmetrischen Drehstromsystems bei ohmscher Belastung mit dem Verkettungsfaktor √3.",
+  "title": "Scheinleistung bei Drehstrom",
+  "description": "Berechnet die Scheinleistung eines symmetrischen Drehstromsystems aus verketteter Spannung und Leiterstrom (Verkettungsfaktor √3). Für die Wirkleistung siehe „Wirkleistung bei Drehstrom“ (mit Leistungsfaktor cos φ).",
   "category": "Elektrotechnik",
   "variables": [
     {
@@ -22,9 +22,12 @@
   ],
   "constants": [],
   "result": {
-    "symbol": "P",
-    "name": "Elektrische Leistung",
-    "unit": "W",
+    "symbol": "S",
+    "name": "Scheinleistung",
+    "unit": "VA",
+    "units": [
+      "kVA"
+    ],
     "decimals": 2
   },
   "expression": "sqrt(3) * U * I",

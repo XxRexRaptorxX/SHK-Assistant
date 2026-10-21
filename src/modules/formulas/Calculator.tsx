@@ -2,8 +2,8 @@ import { useId, useMemo, useState } from 'react'
 import { formatNumber, formatSignificant, parseDecimal } from '../../lib/number'
 import { alternativeUnits } from '../units/alternatives'
 import { formatAnyUnit } from '../units/labels'
-import { evaluateFormula, FormulaError, type Quantity } from './engine'
-import type { FormulaEntry } from './schema'
+import { evaluateFormula, FormulaError, rangeError, toMainUnit, type Quantity } from './engine'
+import type { FormulaEntry, FormulaVariable } from './schema'
 
 type CalculationState =
   | { kind: 'incomplete' }
@@ -48,6 +48,15 @@ function UnitSelect({
   )
 }
 
+/** Fehlermeldung für ein Eingabefeld, sonst undefined (leeres Feld ist kein Fehler) */
+function fieldError(variable: FormulaVariable, raw: string, unit: string): string | undefined {
+  if (raw.trim() === '') return undefined
+  const value = parseDecimal(raw)
+  if (value === undefined) return 'Keine gültige Zahl (Beispiel: 12,5)'
+  const range = rangeError(variable, toMainUnit(variable, { value, unit }))
+  return range ? `Der Wert ${range}.` : undefined
+}
+
 export function Calculator({ formula }: { formula: FormulaEntry }) {
   const idPrefix = useId()
   const result = formula.result
@@ -66,9 +75,10 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
         incomplete = true
         continue
       }
+      const unit = units[variable.symbol] ?? variable.unit
       const value = parseDecimal(raw)
-      if (value === undefined) return { kind: 'invalid' }
-      inputs[variable.symbol] = { value, unit: units[variable.symbol] ?? variable.unit }
+      if (value === undefined || fieldError(variable, raw, unit)) return { kind: 'invalid' }
+      inputs[variable.symbol] = { value, unit }
     }
     if (incomplete) return { kind: 'incomplete' }
     try {
@@ -95,7 +105,8 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
         {formula.variables.map((variable) => {
           const inputId = `${idPrefix}-${variable.symbol}`
           const raw = values[variable.symbol] ?? ''
-          const invalid = raw.trim() !== '' && parseDecimal(raw) === undefined
+          const error = fieldError(variable, raw, units[variable.symbol] ?? variable.unit)
+          const invalid = error !== undefined
           return (
             <div key={variable.symbol}>
               <label htmlFor={inputId} className="block font-semibold">
@@ -123,7 +134,7 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
               </div>
               {invalid && (
                 <p id={`${inputId}-error`} className="mt-1 text-base font-semibold">
-                  Keine gültige Zahl (Beispiel: 12,5)
+                  {error}
                 </p>
               )}
             </div>
