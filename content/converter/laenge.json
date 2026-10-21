@@ -14,7 +14,8 @@
     "dm",
     "m",
     "km",
-    "inch"
+    "inch",
+    "ft"
   ],
   "from": "m",
   "to": "mm"

@@ -1,0 +1,20 @@
+{
+  "id": "converter.winkel",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Winkel",
+  "description": "",
+  "kind": "units",
+  "units": [
+    "deg",
+    "rad",
+    "grad",
+    "arcmin",
+    "arcsec"
+  ],
+  "from": "deg",
+  "to": "rad"
+}

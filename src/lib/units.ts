@@ -3,6 +3,9 @@ const UNIT_LABELS: Record<string, string> = {
   degC: '°C',
   degF: '°F',
   deg: '°',
+  grad: 'gon', // mathjs "grad" = Neugrad (Gon), 400 gon = Vollkreis
+  arcmin: '′',
+  arcsec: '″',
   ohm: 'Ω',
   mohm: 'mΩ',
   kohm: 'kΩ',

@@ -61,6 +61,8 @@ describe('Formel-Engine', () => {
     expect(formatUnit('m^3/h')).toBe('m³/h')
     expect(formatUnit('kohm')).toBe('kΩ')
     expect(formatUnit('degC')).toBe('°C')
+    expect(['deg', 'grad', 'arcmin', 'arcsec'].map((u) => formatUnit(u))).toEqual(['°', 'gon', '′', '″'])
+    expect(formatUnit('N/cm^2')).toBe('N/cm²')
     expect(formatUnit('gradDH', new Map([['gradDH', '°dH']]))).toBe('°dH')
   })
 })

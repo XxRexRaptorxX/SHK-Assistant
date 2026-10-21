@@ -8,9 +8,14 @@
   "title": "Volumen",
   "description": "",
   "units": [
-    "l",
     "ml",
-    "m^3"
+    "cm^3",
+    "dl",
+    "l",
+    "dm^3",
+    "hl",
+    "m^3",
+    "km^3"
   ],
   "from": "l",
   "to": "m^3"

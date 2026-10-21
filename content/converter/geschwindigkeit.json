@@ -9,9 +9,10 @@
   "description": "",
   "kind": "units",
   "units": [
+    "m/h",
     "mm/s",
-    "m/s",
     "m/min",
+    "m/s",
     "km/h"
   ],
   "from": "m/s",

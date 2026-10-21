@@ -202,6 +202,16 @@ describe('Prozent, Dezimalzahl, Bruch', () => {
 })
 
 describe('Umrechnen', () => {
+  it('rechnet die ergänzten Einheiten um', () => {
+    expect(convert(1, 'grad', 'deg')).toBeCloseTo(0.9)
+    expect(convert(1, 'deg', 'arcmin')).toBeCloseTo(60)
+    expect(convert(1, 'dt', 'kg')).toBeCloseTo(100)
+    expect(convert(1, 'hl', 'dm^3')).toBeCloseTo(100)
+    expect(convert(1, 'N/cm^2', 'mbar')).toBeCloseTo(100)
+    expect(convert(1, 'ft', 'mm')).toBeCloseTo(304.8)
+    expect(convert(3600, 'm/h', 'm/s')).toBeCloseTo(1)
+  })
+
   it('rechnet mit Nullpunkt-Verschiebung bei Temperaturen', () => {
     expect(convert(20, 'degC', 'K')).toBeCloseTo(293.15)
     expect(convert(1, 'bar', 'mbar')).toBeCloseTo(1000)
