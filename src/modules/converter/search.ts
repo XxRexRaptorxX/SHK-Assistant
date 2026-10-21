@@ -10,7 +10,7 @@ export function converterSearchDocuments(entries: readonly ConverterEntry[] = co
     moduleTitle: modules.converter.title,
     title: entry.title,
     subtitle: converterSummary(entry),
-    keywords: [...entry.units.map(formatAnyUnit), ...entry.columns],
+    keywords: [...entry.units.map(formatAnyUnit), ...entry.factors.map((factor) => factor.label), ...entry.columns],
     text: entry.description,
     path: converterPath(entry.id),
     status: entry.status,

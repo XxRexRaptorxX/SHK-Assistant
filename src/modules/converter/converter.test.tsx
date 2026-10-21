@@ -11,7 +11,8 @@ import ConverterPage from './ConverterPage'
 import { converterEntries } from './converter'
 import { formatFraction } from './RatioConverter'
 import { parseFraction, toDecimal, toFraction } from './ratio'
-import { checkConverter, type ConverterEntry } from './schema'
+import { convertByFactors, FactorConverter } from './FactorConverter'
+import { checkConverter, type ConverterEntry, type ConverterFactor } from './schema'
 import { ratioToSlope, slopeToRatio } from './slope'
 import { normalizeForSearch } from '../../lib/text'
 import { TableView } from './TableView'
@@ -32,13 +33,30 @@ const pressure: ConverterEntry = {
   description: '',
   kind: 'units',
   units: ['bar', 'mbar', 'Pa'],
+  factors: [],
   from: 'bar',
   to: 'mbar',
   columns: [],
   rows: [],
 }
 
-const blank = { units: [], from: '', to: '', columns: [], rows: [] }
+const blank = { units: [], factors: [], from: '', to: '', columns: [], rows: [] }
+
+const wood: ConverterEntry = {
+  ...pressure,
+  ...blank,
+  id: 'converter.test-holz',
+  title: 'Testholz',
+  kind: 'factors',
+  factors: [
+    { key: 'fm', label: 'Festmeter', value: 1 },
+    { key: 'rm', label: 'Raummeter', value: 1.4 },
+    { key: 'srm', label: 'Schüttraummeter', value: 2.2 },
+  ],
+  from: 'rm',
+  to: 'fm',
+  min: 0,
+}
 
 describe('Zusatzeinheiten', () => {
   const testUnit = (overrides: Partial<Parameters<typeof registerCustomUnits>[0][number]>) => ({
@@ -163,6 +181,39 @@ describe('Rohrdimensionen', () => {
   })
 })
 
+describe('Richtwert-Faktoren (Holzmaße)', () => {
+  const [fm, rm, srm] = wood.factors as [ConverterFactor, ConverterFactor, ConverterFactor]
+
+  it('rechnet über die gemeinsame Bezugsmenge um', () => {
+    expect(convertByFactors(1, fm, rm)).toBeCloseTo(1.4)
+    expect(convertByFactors(1, rm, fm)).toBeCloseTo(0.714, 3)
+    expect(convertByFactors(10, fm, srm)).toBeCloseTo(22)
+    expect(convertByFactors(1.4, rm, srm)).toBeCloseTo(2.2)
+  })
+
+  it('prüft Schlüssel und Voreinstellungen', () => {
+    expect(checkConverter(wood)).toEqual([])
+    const broken = { ...wood, factors: [...wood.factors, { key: 'rm', label: 'doppelt', value: 1 }], to: 'xyz' }
+    expect(checkConverter(broken)).toEqual(['factors: key doppelt vergeben', 'to: "xyz" steht nicht in factors'])
+    expect(checkConverter({ ...pressure, factors: wood.factors })).toEqual(['factors: wird bei kind "units" nicht verwendet'])
+  })
+
+  it('zeigt Richtwerte mit wenigen Stellen und lehnt negative Mengen ab', () => {
+    const html = renderToStaticMarkup(<FactorConverter entry={wood} />)
+    expect(html).toContain('≈ 0,714')
+    expect(html).toContain('In allen Maßen (Richtwerte)')
+    expect(renderToStaticMarkup(<FactorConverter entry={wood} initialValue="-2" />)).toContain(
+      'Ungültige Eingabe (keine negativen Werte)',
+    )
+  })
+
+  it('lädt die echten Holzmaße', () => {
+    const entry = converterEntries.find((e) => e.id === 'converter.holzmasse')
+    expect(entry?.kind).toBe('factors')
+    expect(entry?.factors.map((f) => f.key)).toContain('fm')
+  })
+})
+
 describe('Steigung', () => {
   it('rechnet zwischen Prozent, Promille, Grad und 1:x um', () => {
     const r = slopeToRatio(2, 'percent')!
@@ -179,7 +230,7 @@ describe('Steigung', () => {
   })
 })
 
-describe('Prozent, Dezimalzahl, Bruch', () => {
+describe('Anteile (Prozent, Dezimalzahl, Bruch)', () => {
   it('liest Brüche, gemischte Zahlen und Dezimalzahlen', () => {
     expect(parseFraction('3/4')).toBe(0.75)
     expect(parseFraction('1 1/2')).toBe(1.5)

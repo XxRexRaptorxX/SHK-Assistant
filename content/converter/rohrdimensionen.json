@@ -1,10 +1,10 @@
 {
   "id": "converter.rohrdimensionen",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Tabelle vom Nutzer (Bild); geprüft gegen: Britisches System = Gewinderohre nach EN 10255 (Außendurchmesser 10,2–165,1 mm); Toleranzbereiche je Größe: Engineering ToolBox „BS 1387 Steel Tubes – Dimensions“, https://www.engineeringtoolbox.com/bs1387-steel-tubes-dimensions-d_97.html; DN 65 = 76,1 mm auch lt. Händlerangaben (z. B. Ahlsell). Korrektur: 2 ½″ = 76,1 mm statt 75,3 mm (liegt außerhalb des Bereichs 76,0–76,6 mm). Metrische Größen: MCM-Systeme „Nennweite (DN) von Rohren und Fittings“, https://www.mcm-systeme.de/Nennweite-DN-von-Rohren-und-Fittings (dort nach bevo Wassertechnik).",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
   "title": "Rohrdimensionen",
   "description": "Gegenüberstellung von britischem System (Nenndurchmesser in Zoll, Rohr-Außendurchmesser dₐ) und metrischen Größen (Rohr-Außendurchmesser dₐ, Nenndurchmesser DN). Jede Zeile zeigt die einander zugeordneten Größen.",
   "kind": "table",

@@ -5,6 +5,7 @@ import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
 import { converterEntries, findConverter } from './converter'
+import { FactorConverter } from './FactorConverter'
 import { RatioConverter } from './RatioConverter'
 import type { ConverterEntry } from './schema'
 import { SlopeConverter } from './SlopeConverter'
@@ -20,6 +21,8 @@ function ConverterBody({ entry }: { entry: ConverterEntry }) {
   switch (entry.kind) {
     case 'units':
       return <UnitConverter entry={entry} />
+    case 'factors':
+      return <FactorConverter entry={entry} />
     case 'slope':
       return <SlopeConverter />
     case 'ratio':

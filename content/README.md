@@ -66,6 +66,7 @@ Eine Datei je Größe (Druck, Leistung …). `kind` legt die Art fest:
 | `kind`  | Wofür                                   | Felder                                   |
 |---------|-----------------------------------------|------------------------------------------|
 | `units` (Standard) | Einheiten einer Größe über mathjs | `units` (alle umrechenbar), `from`, `to` (Voreinstellung) |
+| `factors` | Richtwerte ohne festes Einheiten-Verhältnis, z. B. Holzmaße | `factors` (je Größe `key`, `label`, `value` = Menge je gemeinsamer Bezugsmenge, z. B. fm: 1, rm: 1.4), `from`, `to` |
 | `slope` | Steigung in %, ‰, Grad, 1 : x           | keine weiteren                           |
 | `ratio` | Prozent, Promille, Dezimalzahl, Bruch   | keine weiteren                           |
 | `table` | Nachschlagetabelle, z. B. Rohrdimensionen | `columns` (Überschriften), `rows` (je Zeile eine Liste von Texten) |

@@ -27,6 +27,8 @@ export function converterSummary(entry: ConverterEntry): string {
   switch (entry.kind) {
     case 'units':
       return entry.units.map(formatAnyUnit).join(' · ')
+    case 'factors':
+      return entry.factors.map((factor) => factor.label).join(' · ')
     case 'slope':
       return '% · ‰ · ° · 1 : x'
     case 'ratio':

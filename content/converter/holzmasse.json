@@ -1,0 +1,46 @@
+{
+  "id": "converter.holzmasse",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „Raummeter“, https://de.wikipedia.org/wiki/Raummeter – Umrechnungstabelle der Bayerischen Landesanstalt für Wald und Forstwirtschaft (LWF, Juli 2014), Holzart nicht spezifiziert; Zeile 1 fm",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-21",
+  "title": "Holzmaße",
+  "description": "Richtwerte für Brennholz. **Festmeter (fm):** 1 m³ feste Holzmasse ohne Zwischenräume. **Raummeter (rm, Ster):** 1 m³ geschichtetes Holz mit Luftzwischenräumen. **Schüttraummeter (srm):** 1 m³ lose geschüttete Scheite.\n\nDie Umrechnung hängt von Holzart, Scheitlänge, Spaltung und Stapelsorgfalt ab. Gerechnet wird über 1 fm; Rückrechnungen können von gerundeten Tabellenwerten leicht abweichen.",
+  "kind": "factors",
+  "factors": [
+    {
+      "key": "fm",
+      "label": "fm",
+      "value": 1
+    },
+    {
+      "key": "rm-rundholz-1m",
+      "label": "rm Rundholz 1 m",
+      "value": 1.4
+    },
+    {
+      "key": "rm-scheite-1m",
+      "label": "rm Scheite 1 m",
+      "value": 1.6
+    },
+    {
+      "key": "rm-scheite-33cm",
+      "label": "rm Scheite 33 cm",
+      "value": 1.4
+    },
+    {
+      "key": "srm-fichte",
+      "label": "srm Fichte",
+      "value": 2.2
+    },
+    {
+      "key": "srm-buche",
+      "label": "srm Buche",
+      "value": 2
+    }
+  ],
+  "from": "rm-scheite-33cm",
+  "to": "fm",
+  "min": 0
+}
