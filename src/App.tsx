@@ -3,13 +3,14 @@ import { Route, Routes } from 'react-router'
 import { Layout } from './app/Layout'
 import { modules } from './app/modules'
 import { FavoritesPage } from './favorites/FavoritesPage'
+import { ChecklistListPage } from './modules/checklists/ChecklistListPage'
+import { ChecklistPage } from './modules/checklists/ChecklistPage'
 import { ConverterListPage } from './modules/converter/ConverterListPage'
 import { FormulaListPage } from './modules/formulas/FormulaListPage'
 import { LexiconDetailPage } from './modules/lexicon/LexiconDetailPage'
 import { LexiconListPage } from './modules/lexicon/LexiconListPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
-import { PlaceholderPage } from './pages/PlaceholderPage'
 import { SearchPage } from './search/SearchPage'
 
 // Seiten mit mathjs werden erst bei Bedarf geladen (kleineres Start-Bundle, offline trotzdem vorgecacht)
@@ -43,7 +44,8 @@ export function App() {
             </Suspense>
           }
         />
-        <Route path={modules.checklists.path} element={<PlaceholderPage module={modules.checklists} />} />
+        <Route path={modules.checklists.path} element={<ChecklistListPage />} />
+        <Route path={`${modules.checklists.path}/:slug`} element={<ChecklistPage />} />
         <Route path={modules.lexicon.path} element={<LexiconListPage />} />
         <Route path={`${modules.lexicon.path}/:slug`} element={<LexiconDetailPage />} />
         <Route path={modules.favorites.path} element={<FavoritesPage />} />

@@ -71,6 +71,19 @@ In `units` dürfen Zusatzeinheiten stehen, die in `content/units` noch ohne Defi
 sind (z. B. `kcal/h`, `gradDH`). Die App zeigt sie dann als „noch ohne Definition“, bis die
 Definition eingetragen ist.
 
+## Checklisten (`checklists/`, Präfix `checklist.`)
+
+| Feld          | Inhalt                                                           |
+|---------------|------------------------------------------------------------------|
+| `title`       | Name der Checkliste                                              |
+| `description` | Optionaler Text oberhalb der Punkte                              |
+| `category`    | Gruppe in der Liste, z. B. „Wartung“ (leer = „Allgemein“)        |
+| `sections`    | Abschnitte: `title` und `items` (je Punkt `id`, `text`, optional `note`) |
+
+Die `id` eines Punkts (z. B. `abgasweg-pruefen`) muss innerhalb der Checkliste eindeutig sein und
+**stabil bleiben**: Der gespeicherte Fortschritt auf den Geräten hängt daran. Wird ein Punkt nur
+umformuliert, `id` beibehalten. Bei `verified` ist mindestens ein Abschnitt Pflicht.
+
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 
 | Feld         | Inhalt                                                        |

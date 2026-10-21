@@ -1,5 +1,6 @@
 import type { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe hier mit Dateiendung .ts.
+import { checklistCollection } from '../modules/checklists/schema.ts'
 import { converterCollection } from '../modules/converter/schema.ts'
 import { formulaCollection } from '../modules/formulas/schema.ts'
 import { lexiconCollection } from '../modules/lexicon/schema.ts'
@@ -13,6 +14,7 @@ export const collections = {
   units: unitCollection,
   converter: converterCollection,
   formulas: formulaCollection,
+  checklists: checklistCollection,
   lexicon: lexiconCollection,
 } satisfies Record<string, CollectionDefinition>
 

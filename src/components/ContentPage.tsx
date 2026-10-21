@@ -26,7 +26,7 @@ export function ContentPage({ entry, title, back, actions, children }: ContentPa
       {back && <BackLink to={back.to} label={back.label} />}
       <header className="mb-4 flex items-start justify-between gap-3">
         <h1 className="text-2xl font-bold break-words">{title}</h1>
-        {actions}
+        {actions && <div className="print:hidden">{actions}</div>}
       </header>
       {entry.status === 'draft' && <DraftBadge />}
       <div className="mt-4">{children}</div>
@@ -39,7 +39,7 @@ export function BackLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
-      className="-ml-2 mb-2 inline-flex min-h-12 items-center gap-1 rounded-lg px-2 font-semibold text-accent"
+      className="-ml-2 mb-2 inline-flex min-h-12 items-center gap-1 rounded-lg px-2 font-semibold text-accent print:hidden"
     >
       <span aria-hidden="true">←</span> {label}
     </Link>
