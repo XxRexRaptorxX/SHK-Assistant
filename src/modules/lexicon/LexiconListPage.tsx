@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { DraftBadge } from '../../components/DraftBadge'
+import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterLexicon, lexiconEntries, lexiconPath } from './lexicon'
 import type { LexiconEntry } from './schema'
@@ -24,18 +25,15 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
         <p className="mt-2 text-muted">Noch keine Begriffe vorhanden.</p>
       ) : (
         <>
-          <label htmlFor="lexicon-filter" className="sr-only">
-            Begriffe filtern
-          </label>
-          <input
-            id="lexicon-filter"
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Begriff filtern …"
-            autoComplete="off"
-            className="mt-3 min-h-12 w-full rounded-lg border-2 border-line bg-page px-3 text-lg placeholder:text-muted"
-          />
+          <div className="mt-3">
+            <SearchInput
+              id="lexicon-filter"
+              label="Begriffe filtern"
+              value={query}
+              onChange={setQuery}
+              placeholder="Begriff filtern …"
+            />
+          </div>
           <p className="mt-2 text-base text-muted" aria-live="polite">
             {visible.length} von {entries.length} Begriffen
           </p>

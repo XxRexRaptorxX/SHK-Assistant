@@ -6,6 +6,7 @@ import { LexiconListPage } from './modules/lexicon/LexiconListPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { PlaceholderPage } from './pages/PlaceholderPage'
+import { SearchPage } from './search/SearchPage'
 
 export function App() {
   return (
@@ -18,7 +19,7 @@ export function App() {
         <Route path={modules.lexicon.path} element={<LexiconListPage />} />
         <Route path={`${modules.lexicon.path}/:slug`} element={<LexiconDetailPage />} />
         <Route path={modules.favorites.path} element={<PlaceholderPage module={modules.favorites} />} />
-        <Route path={modules.search.path} element={<PlaceholderPage module={modules.search} />} />
+        <Route path={modules.search.path} element={<SearchPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

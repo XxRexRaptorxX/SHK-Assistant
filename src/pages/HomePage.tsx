@@ -1,12 +1,41 @@
-import { Link } from 'react-router'
-import { homeTileModules } from '../app/modules'
+import { useState, type FormEvent } from 'react'
+import { createSearchParams, Link, useNavigate } from 'react-router'
+import { homeTileModules, modules } from '../app/modules'
+import { SearchInput } from '../components/SearchInput'
 import { usePageTitle } from '../lib/usePageTitle'
 
 export function HomePage() {
   usePageTitle()
+  const navigate = useNavigate()
+  const [query, setQuery] = useState('')
+
+  const submit = (event: FormEvent) => {
+    event.preventDefault()
+    const trimmed = query.trim()
+    navigate({
+      pathname: modules.search.path,
+      search: trimmed ? createSearchParams({ q: trimmed }).toString() : '',
+    })
+  }
+
   return (
     <>
       <h1 className="sr-only">Start</h1>
+      <form role="search" onSubmit={submit} className="mb-4 flex gap-2">
+        <SearchInput
+          id="home-search"
+          label="In allen Modulen suchen"
+          value={query}
+          onChange={setQuery}
+          placeholder="Suchen …"
+        />
+        <button
+          type="submit"
+          className="min-h-12 shrink-0 rounded-lg bg-accent px-4 font-bold text-accent-ink"
+        >
+          Suchen
+        </button>
+      </form>
       <ul className="grid gap-3 sm:grid-cols-2">
         {homeTileModules.map((module) => {
           const Icon = module.icon
