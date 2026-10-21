@@ -1,19 +1,16 @@
-import { readdirSync, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { build, type Rollup } from 'vite'
 import { afterEach, describe, expect, it } from 'vitest'
 import { collections } from '../src/content/collections'
 import { loadContent } from '../tools/content-loader'
 import { contentPlugin } from '../tools/vite-plugin-content'
+import { buildApp, listFiles, projectRoot } from './helpers/build-app'
 import { createTempDir, entry, testCollections } from './helpers/temp-content'
 
-const projectRoot = fileURLToPath(new URL('..', import.meta.url))
-
 function readAllFiles(dir: string): string {
-  return readdirSync(dir, { recursive: true, withFileTypes: true })
-    .filter((dirent) => dirent.isFile())
-    .map((dirent) => readFileSync(path.join(dirent.parentPath, dirent.name), 'utf8'))
+  return listFiles(dir)
+    .map((file) => readFileSync(path.join(dir, file), 'utf8'))
     .join('\n')
 }
 
@@ -62,21 +59,7 @@ describe('public-Build der App', () => {
   it('enthält keine IDs interner Inhalte', { timeout: 120_000 }, async () => {
     const outDir = createTempDir({})
     cleanup = outDir.cleanup
-
-    // process.env hat Vorrang vor .env-Dateien; sicherstellen, dass nichts "internal" erzwingt.
-    const previous = process.env.VITE_EDITION
-    process.env.VITE_EDITION = 'public'
-    try {
-      await build({
-        root: projectRoot,
-        mode: 'public',
-        logLevel: 'silent',
-        build: { outDir: outDir.root, emptyOutDir: true },
-      })
-    } finally {
-      if (previous === undefined) delete process.env.VITE_EDITION
-      else process.env.VITE_EDITION = previous
-    }
+    await buildApp('public', outDir.root)
 
     const bundleText = readAllFiles(outDir.root)
     expect(bundleText.length).toBeGreaterThan(0)
