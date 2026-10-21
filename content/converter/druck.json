@@ -1,0 +1,23 @@
+{
+  "id": "converter.druck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Druck",
+  "description": "",
+  "units": [
+    "bar",
+    "mbar",
+    "Pa",
+    "hPa",
+    "kPa",
+    "MPa",
+    "psi",
+    "mWS",
+    "mmH2O"
+  ],
+  "from": "bar",
+  "to": "mWS"
+}

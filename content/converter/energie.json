@@ -1,0 +1,20 @@
+{
+  "id": "converter.energie",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Energie",
+  "description": "",
+  "units": [
+    "J",
+    "kJ",
+    "MJ",
+    "Wh",
+    "kWh",
+    "MWh"
+  ],
+  "from": "kWh",
+  "to": "MJ"
+}

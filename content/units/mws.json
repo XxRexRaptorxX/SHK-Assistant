@@ -1,0 +1,13 @@
+{
+  "id": "unit.mws",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Abgeleitet aus der mathjs-Einheit mmH2O (1 m = 1000 mm); fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "symbol": "mWS",
+  "name": "Meter Wassersäule",
+  "definition": "1000 mmH2O",
+  "aliases": [],
+  "examples": []
+}

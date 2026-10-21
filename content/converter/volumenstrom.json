@@ -1,0 +1,19 @@
+{
+  "id": "converter.volumenstrom",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Einheiten und Umrechnung aus mathjs; Auswahl fachlich zu prüfen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Volumenstrom",
+  "description": "",
+  "units": [
+    "m^3/h",
+    "l/h",
+    "l/min",
+    "l/s",
+    "m^3/s"
+  ],
+  "from": "m^3/h",
+  "to": "l/min"
+}

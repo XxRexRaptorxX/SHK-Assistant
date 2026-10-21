@@ -4,12 +4,15 @@ import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { formatUnit } from '../../lib/units'
 import { usePageTitle } from '../../lib/usePageTitle'
+import { ensureCustomUnits } from '../units/customUnits'
 import { Calculator } from './Calculator'
 import { formatExpression } from './engine'
 import { findFormula, formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
 
 const BACK = { to: '/formeln', label: 'Formeln' }
+
+ensureCustomUnits()
 
 // Wird per React.lazy geladen, damit mathjs nicht im Start-Bundle landet.
 export default function FormulaDetailPage({ entries = formulaEntries }: { entries?: FormulaEntry[] }) {

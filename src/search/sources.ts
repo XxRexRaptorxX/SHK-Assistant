@@ -1,3 +1,4 @@
+import { converterSearchDocuments } from '../modules/converter/search'
 import { formulaSearchDocuments } from '../modules/formulas/search'
 import { lexiconSearchDocuments } from '../modules/lexicon/search'
 import { createSearch, type SearchDocument, type SearchEngine } from './search'
@@ -5,7 +6,7 @@ import { createSearch, type SearchDocument, type SearchEngine } from './search'
 // Jedes Modul trägt hier seine Einträge ein. Dient der Suche und den Favoriten
 // als gemeinsames Verzeichnis aller Inhalte (id → Titel, Modul, Adresse).
 function allDocuments(): SearchDocument[] {
-  return [...formulaSearchDocuments(), ...lexiconSearchDocuments()]
+  return [...formulaSearchDocuments(), ...converterSearchDocuments(), ...lexiconSearchDocuments()]
 }
 
 let engine: SearchEngine | undefined

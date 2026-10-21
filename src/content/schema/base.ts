@@ -58,6 +58,11 @@ export interface CollectionDefinition<T extends BaseEntry = BaseEntry> {
   references?(entry: T): string[]
   /** Fachliche Prüfungen über das Schema hinaus, z. B. Formeln gegen ihre Testbeispiele. */
   check?(entry: T): string[]
+  /**
+   * Läuft nach dem Laden der ganzen Sammlung und vor den folgenden Sammlungen,
+   * z. B. um Zusatzeinheiten zu registrieren. Liefert Fehlermeldungen.
+   */
+  prepare?(entries: T[]): string[]
 }
 
 /** Hilft TypeScript, den Eintragstyp aus dem Schema abzuleiten. */

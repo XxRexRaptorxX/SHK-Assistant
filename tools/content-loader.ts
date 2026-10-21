@@ -123,6 +123,8 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
       entries.push(entry)
     }
 
+    // Reihenfolge im Register zählt: z. B. Einheiten vor Formeln
+    issues.push(...(collection.prepare?.(entries) ?? []))
     entries.sort((a, b) => a.id.localeCompare(b.id))
     allEntries.push(...entries)
     data[name] = entries.filter((entry) => isIncludedInEdition(entry, edition))

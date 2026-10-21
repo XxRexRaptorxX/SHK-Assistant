@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import { formatUnit } from '../../lib/units'
 import { checkFormula, evaluateExample, evaluateFormula, formatExpression } from './engine'
+import { ensureCustomUnits } from '../units/customUnits'
 import { formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
 
@@ -63,6 +64,9 @@ describe('Formel-Engine', () => {
 
 // CLAUDE.md: Jede Formel wird automatisch gegen ihre Testbeispiele geprüft.
 describe('Formeln in content/formulas', () => {
+  // Zusatzeinheiten (z. B. mWS) wie in der App registrieren
+  ensureCustomUnits()
+
   for (const formula of formulaEntries) {
     describe(formula.id, () => {
       it('besteht die fachliche Prüfung', () => {

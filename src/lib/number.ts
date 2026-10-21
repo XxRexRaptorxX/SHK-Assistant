@@ -11,6 +11,11 @@ export function parseDecimal(input: string): number | undefined {
   return Number.isFinite(value) ? value : undefined
 }
 
+/** Deutsche Zahlendarstellung mit gültigen Stellen, z. B. 0,0980665 oder 98.066,5 */
+export function formatSignificant(value: number, digits = 6): string {
+  return new Intl.NumberFormat('de-DE', { maximumSignificantDigits: digits }).format(value)
+}
+
 /** Deutsche Zahlendarstellung mit fester Anzahl Nachkommastellen, z. B. 1.234,50 */
 export function formatNumber(value: number, decimals: number): string {
   return new Intl.NumberFormat('de-DE', {

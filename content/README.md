@@ -37,6 +37,35 @@ Beim Build wird jede Formel geprüft: bekannte Einheiten, passende Alternativein
 Symbole, jede Variable wird verwendet, und **jedes Testbeispiel muss den Referenzwert ergeben**.
 Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflicht.
 
+## Zusatzeinheiten (`units/`, Präfix `unit.`)
+
+Einheiten, die mathjs nicht kennt (z. B. mWS, kcal). Sie gelten danach überall: in Formeln und im Umrechner.
+
+| Feld         | Inhalt                                                                  |
+|--------------|-------------------------------------------------------------------------|
+| `symbol`     | Name in Formeln und Umrechner, z. B. `mWS` (nur Buchstaben, Ziffern, `_`) |
+| `name`       | Ausgeschrieben, z. B. „Meter Wassersäule“                               |
+| `definition` | Über vorhandene Einheiten, z. B. `"1000 mmH2O"`; leer = noch nicht nutzbar |
+| `aliases`    | Weitere Namen                                                           |
+| `examples`   | Testbeispiele: `value` und `expected` jeweils mit Einheit, z. B. `"1 mWS"` → `"98.0665 hPa"` |
+
+Bei `verified` sind `definition` und ein Testbeispiel Pflicht. Achtung: mathjs kennt viele Kürzel
+anders als im Handwerk üblich, z. B. ist `PS` dort Petasiemens und `hp` die mechanische Pferdestärke.
+Eine Zusatzeinheit mit einem bereits vorhandenen mathjs-Namen lässt den Build fehlschlagen.
+
+## Umrechner (`converter/`, Präfix `converter.`)
+
+Eine Datei je Größe (Druck, Leistung …).
+
+| Feld          | Inhalt                                                          |
+|---------------|-----------------------------------------------------------------|
+| `title`       | Name der Größe                                                  |
+| `description` | Optionaler Hinweis                                              |
+| `units`       | Angebotene Einheiten (mathjs oder Zusatzeinheiten), alle umrechenbar |
+| `from`, `to`  | Voreinstellung beim Öffnen                                      |
+
+Für Temperaturen `degC`, `K`, `degF` verwenden; die Nullpunkt-Verschiebung rechnet mathjs selbst.
+
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 
 | Feld         | Inhalt                                                        |
