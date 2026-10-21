@@ -14,6 +14,11 @@ export function normalizeForSearch(text: string): string {
     .trim()
 }
 
+/** Entfernt die Fettdruck-Markierung **…** (für Suche und Listen). */
+export function stripEmphasis(text: string): string {
+  return text.replace(/\*\*(.+?)\*\*/g, '$1')
+}
+
 /** Teilt Fließtext an Leerzeilen in Absätze. */
 export function splitParagraphs(text: string): string[] {
   return text

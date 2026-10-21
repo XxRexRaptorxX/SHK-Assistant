@@ -1,0 +1,34 @@
+{
+  "id": "formula.thermodynamik.wattstunden-zu-kilojoule",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wattstunden in Kilojoule",
+  "description": "Rechnet eine Energie von Wattstunden in Kilojoule um; 1 Wh entspricht 3,6 kJ.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "EWh",
+      "name": "Energie",
+      "unit": "Wh"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "QkJ",
+    "name": "Wärmemenge",
+    "unit": "kJ",
+    "decimals": 2
+  },
+  "expression": "EWh",
+  "examples": [
+    {
+      "inputs": {
+        "EWh": 1
+      },
+      "expected": 3.6
+    }
+  ]
+}

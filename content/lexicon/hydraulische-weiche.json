@@ -2,11 +2,19 @@
   "id": "lexicon.hydraulische-weiche",
   "visibility": "internal",
   "status": "draft",
-  "source": "",
+  "source": "https://de.wikipedia.org/wiki/Hydraulische_Weiche",
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Hydraulische Weiche",
-  "synonyms": [],
-  "definition": "TODO: Inhalt fehlt",
-  "related": []
+  "synonyms": [
+    "Weiche",
+    "hydraulischer Entkoppler"
+  ],
+  "definition": "Eine **hydraulische Weiche** ist ein Bauteil, das Erzeugerkreis und Verbraucherkreise einer Heizungs- oder Kälteanlage hydraulisch weitgehend voneinander entkoppelt. Sie ermöglicht unterschiedliche Volumenströme in den Kreisen; dabei kann es je nach Verhältnis von Erzeuger- zu Verbraucher-Volumenstrom zu einer Beimischung von Vorlauf- und Rücklaufwasser kommen. Eine Weiche ersetzt weder den hydraulischen Abgleich noch eine fachgerechte Regelung.",
+  "related": [
+    "lexicon.heizkreis",
+    "lexicon.volumenstrom",
+    "lexicon.umwaelzpumpe",
+    "lexicon.hydraulischer-abgleich"
+  ]
 }

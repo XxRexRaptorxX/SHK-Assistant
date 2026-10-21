@@ -1,0 +1,40 @@
+{
+  "id": "formula.elektrotechnik.ohmsches-gesetz-spannung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Ohmsches Gesetz: Spannung",
+  "description": "Berechnet die Spannung aus Widerstand und Stromstärke.",
+  "category": "Elektrotechnik",
+  "variables": [
+    {
+      "symbol": "R",
+      "name": "Elektrischer Widerstand",
+      "unit": "ohm"
+    },
+    {
+      "symbol": "I",
+      "name": "Elektrische Stromstärke",
+      "unit": "A"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "U",
+    "name": "Elektrische Spannung",
+    "unit": "V",
+    "decimals": 2
+  },
+  "expression": "R * I",
+  "examples": [
+    {
+      "inputs": {
+        "R": 6,
+        "I": 2
+      },
+      "expected": 12
+    }
+  ]
+}

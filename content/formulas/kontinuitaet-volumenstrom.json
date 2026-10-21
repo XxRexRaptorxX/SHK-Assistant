@@ -1,0 +1,36 @@
+{
+  "id": "formula.hydraulik.kontinuitaet-volumenstrom",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kontinuitätsgesetz: Volumenstrom",
+  "description": "Bei stationärer Strömung ohne Zu- oder Abfluss bleibt der Volumenstrom entlang des betrachteten Strömungswegs gleich.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "Vdot1",
+      "name": "Volumenstrom 1",
+      "unit": "m^3/s",
+      "label": "V̇₁"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Vdot2",
+    "name": "Volumenstrom 2",
+    "unit": "m^3/s",
+    "decimals": 2,
+    "label": "V̇₂"
+  },
+  "expression": "Vdot1",
+  "examples": [
+    {
+      "inputs": {
+        "Vdot1": 0.02
+      },
+      "expected": 0.02
+    }
+  ]
+}

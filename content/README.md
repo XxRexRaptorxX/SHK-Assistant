@@ -43,5 +43,10 @@ Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflic
 |--------------|---------------------------------------------------------------|
 | `term`       | Begriff, wie er in der Liste erscheint                        |
 | `synonyms`   | andere Bezeichnungen, Abkürzungen (werden mit durchsucht)     |
-| `definition` | Erklärung als Text; eine Leerzeile (`\n\n`) beginnt einen neuen Absatz |
+| `definition` | Erklärung als Text; eine Leerzeile (`\n\n`) beginnt einen neuen Absatz, `**Wort**` wird fett |
 | `related`    | IDs verwandter Lexikon-Einträge („Siehe auch“)                |
+
+Datenbestand: Der erste Bestand (724 Einträge) ist `internal` und `draft`. Die Erklärungen sind
+eigenständig formulierte Kurzbeschreibungen, Wikipedia diente als Recherche-Einstieg. Das ist keine
+fachliche Freigabe: Sicherheits-, Normen-, Rechts- und herstellerspezifische Aussagen vor dem Setzen
+auf `verified` gegen Normen, Regeln und Herstellerunterlagen prüfen.

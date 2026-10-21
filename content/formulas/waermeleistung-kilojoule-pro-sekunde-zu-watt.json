@@ -1,0 +1,35 @@
+{
+  "id": "formula.thermodynamik.waermeleistung-kilojoule-pro-sekunde-zu-watt",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kilojoule pro Sekunde in Watt",
+  "description": "Rechnet Wärmeleistung von kJ/s in W um; 1 kJ/s entspricht 1000 W.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "Qdot",
+      "name": "Wärmeleistung",
+      "unit": "kJ/s",
+      "label": "Q̇"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "P",
+    "name": "Leistung",
+    "unit": "W",
+    "decimals": 2
+  },
+  "expression": "Qdot",
+  "examples": [
+    {
+      "inputs": {
+        "Qdot": 1
+      },
+      "expected": 1000
+    }
+  ]
+}

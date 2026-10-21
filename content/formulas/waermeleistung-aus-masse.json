@@ -1,0 +1,54 @@
+{
+  "id": "formula.thermodynamik.waermeleistung-aus-masse",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wärmeleistung beim Erwärmen",
+  "description": "Berechnet die Wärmeleistung aus Masse, spezifischer Wärmekapazität, Temperaturdifferenz und Zeit.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "m",
+      "name": "Masse",
+      "unit": "kg"
+    },
+    {
+      "symbol": "c",
+      "name": "Spezifische Wärmekapazität",
+      "unit": "kJ/(kg*K)"
+    },
+    {
+      "symbol": "dT",
+      "name": "Temperaturdifferenz",
+      "unit": "K",
+      "label": "ΔT"
+    },
+    {
+      "symbol": "t",
+      "name": "Zeit",
+      "unit": "s"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Qdot",
+    "name": "Wärmeleistung",
+    "unit": "kJ/s",
+    "decimals": 2,
+    "label": "Q̇"
+  },
+  "expression": "m * c * dT / t",
+  "examples": [
+    {
+      "inputs": {
+        "m": 2,
+        "c": 4.19,
+        "dT": 10,
+        "t": 20
+      },
+      "expected": 4.19
+    }
+  ]
+}

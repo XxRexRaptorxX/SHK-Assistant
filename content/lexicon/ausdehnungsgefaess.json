@@ -1,12 +1,19 @@
 {
   "id": "lexicon.ausdehnungsgefaess",
-  "visibility": "public",
+  "visibility": "internal",
   "status": "draft",
-  "source": "",
+  "source": "https://de.wikipedia.org/wiki/Ausdehnungsgef%C3%A4%C3%9F",
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Ausdehnungsgefäß",
-  "synonyms": [],
-  "definition": "TODO: Inhalt fehlt",
-  "related": []
+  "synonyms": [
+    "MAG",
+    "Membran-Ausdehnungsgefäß"
+  ],
+  "definition": "Ein **Ausdehnungsgefäß** nimmt die Volumenänderung des Heizungswassers bei Temperaturänderungen auf und begrenzt dadurch Druckschwankungen. In geschlossenen Heizungsanlagen wird meist ein Membran-Druckausdehnungsgefäß eingesetzt, das Wasser und Gaspolster durch eine Membran trennt. Größe, Vordruck und Einbindung müssen zum Anlagenvolumen und Betriebsdruck passen.",
+  "related": [
+    "lexicon.sicherheitsventil",
+    "lexicon.anlagendruck",
+    "lexicon.heizungswasser"
+  ]
 }

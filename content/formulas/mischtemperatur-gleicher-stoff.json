@@ -1,0 +1,53 @@
+{
+  "id": "formula.thermodynamik.mischtemperatur-gleicher-stoff",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Mischtemperatur gleicher Stoffe",
+  "description": "Berechnet die Mischtemperatur zweier Mengen desselben Stoffes ohne Wärmeverluste an die Umgebung.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "mk",
+      "name": "Masse des kalten Stoffes",
+      "unit": "kg"
+    },
+    {
+      "symbol": "Tk",
+      "name": "Temperatur des kalten Stoffes",
+      "unit": "K"
+    },
+    {
+      "symbol": "mw",
+      "name": "Masse des warmen Stoffes",
+      "unit": "kg"
+    },
+    {
+      "symbol": "Tw",
+      "name": "Temperatur des warmen Stoffes",
+      "unit": "K"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Tm",
+    "name": "Mischtemperatur",
+    "unit": "K",
+    "decimals": 2,
+    "label": "Tₘ"
+  },
+  "expression": "(mk * Tk + mw * Tw) / (mk + mw)",
+  "examples": [
+    {
+      "inputs": {
+        "mk": 1,
+        "Tk": 300,
+        "mw": 2,
+        "Tw": 350
+      },
+      "expected": 333.3333333333333
+    }
+  ]
+}

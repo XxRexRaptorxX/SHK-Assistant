@@ -1,0 +1,41 @@
+{
+  "id": "formula.elektrotechnik.ohmsches-gesetz-widerstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Ohmsches Gesetz: Widerstand",
+  "description": "Berechnet den elektrischen Widerstand aus Spannung und Stromstärke; laut Formeltafel für metallische Leiter.",
+  "category": "Elektrotechnik",
+  "variables": [
+    {
+      "symbol": "U",
+      "name": "Elektrische Spannung",
+      "unit": "V"
+    },
+    {
+      "symbol": "I",
+      "name": "Elektrische Stromstärke",
+      "unit": "A"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "R",
+    "name": "Elektrischer Widerstand",
+    "unit": "ohm",
+    "decimals": 2,
+    "label": "R"
+  },
+  "expression": "U / I",
+  "examples": [
+    {
+      "inputs": {
+        "U": 12,
+        "I": 2
+      },
+      "expected": 6
+    }
+  ]
+}

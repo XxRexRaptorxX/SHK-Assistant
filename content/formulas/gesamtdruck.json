@@ -1,0 +1,40 @@
+{
+  "id": "formula.hydraulik.gesamtdruck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Gesamtdruck",
+  "description": "Addiert statischen und dynamischen Druck zur Bestimmung des Gesamtdrucks.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "pst",
+      "name": "Statischer Druck",
+      "unit": "Pa"
+    },
+    {
+      "symbol": "pdy",
+      "name": "Dynamischer Druck",
+      "unit": "Pa"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "pges",
+    "name": "Gesamtdruck",
+    "unit": "Pa",
+    "decimals": 2
+  },
+  "expression": "pst + pdy",
+  "examples": [
+    {
+      "inputs": {
+        "pst": 100000,
+        "pdy": 2000
+      },
+      "expected": 102000
+    }
+  ]
+}

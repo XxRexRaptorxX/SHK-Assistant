@@ -1,0 +1,52 @@
+{
+  "id": "formula.thermodynamik.mischtemperatur-masse-warm",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Masse des warmen Stoffes aus Mischtemperatur",
+  "description": "Stellt die Mischtemperaturformel für zwei Mengen desselben Stoffes nach der Masse des warmen Anteils um.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "mk",
+      "name": "Masse des kalten Stoffes",
+      "unit": "kg"
+    },
+    {
+      "symbol": "Tm",
+      "name": "Mischtemperatur",
+      "unit": "K"
+    },
+    {
+      "symbol": "Tk",
+      "name": "Temperatur des kalten Stoffes",
+      "unit": "K"
+    },
+    {
+      "symbol": "Tw",
+      "name": "Temperatur des warmen Stoffes",
+      "unit": "K"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "mw",
+    "name": "Masse des warmen Stoffes",
+    "unit": "kg",
+    "decimals": 2
+  },
+  "expression": "mk * (Tm - Tk) / (Tw - Tm)",
+  "examples": [
+    {
+      "inputs": {
+        "mk": 2,
+        "Tm": 330,
+        "Tk": 290,
+        "Tw": 350
+      },
+      "expected": 4
+    }
+  ]
+}

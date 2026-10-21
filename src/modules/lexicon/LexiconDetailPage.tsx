@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router'
 import { BackLink, ContentPage } from '../../components/ContentPage'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
-import { splitParagraphs } from '../../lib/text'
+import { RichText } from '../../components/RichText'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { findLexiconEntry, lexiconEntries, lexiconPath } from './lexicon'
 import type { LexiconEntry } from './schema'
@@ -30,11 +30,7 @@ export function LexiconDetailPage({ entries = lexiconEntries }: { entries?: Lexi
           <span className="font-semibold">Auch:</span> {entry.synonyms.join(', ')}
         </p>
       )}
-      {splitParagraphs(entry.definition).map((paragraph, index) => (
-        <p key={index} className="mt-3 whitespace-pre-line first:mt-0">
-          {paragraph}
-        </p>
-      ))}
+      <RichText text={entry.definition} />
       {related.length > 0 && (
         <section className="mt-6">
           <h2 className="text-xl font-bold">Siehe auch</h2>

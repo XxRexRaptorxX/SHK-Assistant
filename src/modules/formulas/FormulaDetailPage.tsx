@@ -1,8 +1,8 @@
 import { useParams } from 'react-router'
 import { BackLink, ContentPage } from '../../components/ContentPage'
+import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { formatUnit } from '../../lib/units'
-import { splitParagraphs } from '../../lib/text'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { Calculator } from './Calculator'
 import { formatExpression } from './engine'
@@ -40,11 +40,7 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
       back={BACK}
       actions={<FavoriteButton id={formula.id} title={formula.title} />}
     >
-      {splitParagraphs(formula.description).map((paragraph, index) => (
-        <p key={index} className="mt-3 whitespace-pre-line first:mt-0">
-          {paragraph}
-        </p>
-      ))}
+      <RichText text={formula.description} />
 
       {formula.expression === '' || !result ? (
         <p className="mt-4 font-semibold">Die Formel ist noch nicht hinterlegt.</p>

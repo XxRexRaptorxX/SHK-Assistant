@@ -1,0 +1,40 @@
+{
+  "id": "formula.geometrie.dreieck-flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 1; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Dreiecksfläche",
+  "description": "Berechnet die Fläche eines Dreiecks aus Grundseite und zugehöriger Höhe.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "l",
+      "name": "Grundseite",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "A",
+    "name": "Fläche",
+    "unit": "m^2",
+    "decimals": 2
+  },
+  "expression": "l * h / 2",
+  "examples": [
+    {
+      "inputs": {
+        "l": 4,
+        "h": 3
+      },
+      "expected": 6
+    }
+  ]
+}

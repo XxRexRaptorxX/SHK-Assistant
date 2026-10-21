@@ -1,0 +1,47 @@
+{
+  "id": "formula.thermodynamik.temperaturanstieg-aus-waerme",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Temperaturänderung aus Wärmemenge",
+  "description": "Berechnet die Temperaturänderung aus Wärmemenge, Masse und spezifischer Wärmekapazität.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "Q",
+      "name": "Wärmemenge",
+      "unit": "kJ"
+    },
+    {
+      "symbol": "m",
+      "name": "Masse",
+      "unit": "kg"
+    },
+    {
+      "symbol": "c",
+      "name": "Spezifische Wärmekapazität",
+      "unit": "kJ/(kg*K)"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dT",
+    "name": "Temperaturdifferenz",
+    "unit": "K",
+    "decimals": 2,
+    "label": "ΔT"
+  },
+  "expression": "Q / (m * c)",
+  "examples": [
+    {
+      "inputs": {
+        "Q": 83.8,
+        "m": 2,
+        "c": 4.19
+      },
+      "expected": 10
+    }
+  ]
+}

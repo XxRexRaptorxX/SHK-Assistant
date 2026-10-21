@@ -4,6 +4,7 @@ import type { BaseEntry } from '../content/schema/base'
 import { formatIsoDate } from '../lib/format'
 import { ContentPage } from './ContentPage'
 import { DraftBadge } from './DraftBadge'
+import { RichText } from './RichText'
 import { SourceInfo } from './SourceInfo'
 
 const verified: BaseEntry = {
@@ -20,6 +21,14 @@ const draft: BaseEntry = { ...verified, status: 'draft', source: '', verifiedBy:
 describe('formatIsoDate', () => {
   it('formatiert ISO-Datum deutsch', () => {
     expect(formatIsoDate('2026-01-05')).toBe('05.01.2026')
+  })
+})
+
+describe('RichText', () => {
+  it('stellt **…** fett dar, trennt Absätze und führt kein HTML aus', () => {
+    const html = renderToStaticMarkup(<RichText text={'Ein **Ventil** <b>x</b>\n\nZweiter Absatz'} />)
+    expect(html).toBe('<p class="mt-3 whitespace-pre-line first:mt-0">Ein <strong>Ventil</strong> &lt;b&gt;x&lt;/b&gt;</p>' +
+      '<p class="mt-3 whitespace-pre-line first:mt-0">Zweiter Absatz</p>')
   })
 })
 

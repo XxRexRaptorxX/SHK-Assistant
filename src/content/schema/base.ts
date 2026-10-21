@@ -1,7 +1,8 @@
 import { z } from 'zod'
 
 // IDs: Kleinbuchstaben, Ziffern, Bindestriche; mind. zwei Teile durch Punkte getrennt.
-// Der erste Teil ist das Modul-Präfix, z. B. "lexicon.ausdehnungsgefaess".
+// Der erste Teil ist das Modul-Präfix, z. B. "lexicon.beispiel-begriff".
+// Beispiele hier nie mit echten IDs: die Meldung landet im Bundle (Public-Bundle-Test).
 export const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+(?:-[a-z0-9]+)*)+$/
 
 const baseShape = {
@@ -9,7 +10,7 @@ const baseShape = {
     .string()
     .regex(
       ID_PATTERN,
-      'Ungültige id: nur a-z, 0-9 und Bindestriche, Teile durch Punkte getrennt (z. B. "lexicon.ausdehnungsgefaess")',
+      'Ungültige id: nur a-z, 0-9 und Bindestriche, Teile durch Punkte getrennt (z. B. "lexicon.beispiel-begriff")',
     ),
   visibility: z.enum(['internal', 'public']),
   status: z.enum(['draft', 'verified']),
