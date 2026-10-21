@@ -1,0 +1,20 @@
+{
+  "id": "unit.kalenderjahr",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Festlegung des Inhabers: Kalenderjahr mit 365 Tagen (ohne Schaltjahr)",
+  "symbol": "Kalenderjahr",
+  "name": "Jahr (365 Tage)",
+  "label": "Jahr",
+  "definition": "365 day",
+  "aliases": [],
+  "examples": [
+    {
+      "value": "1 Kalenderjahr",
+      "expected": "8760 h",
+      "tolerance": 0.001
+    }
+  ]
+}

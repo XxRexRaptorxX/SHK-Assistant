@@ -1,0 +1,25 @@
+{
+  "id": "unit.quartal",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Festlegung des Inhabers: Quartal = ¼ Kalenderjahr mit 365 Tagen = 91,25 Tage",
+  "symbol": "Quartal",
+  "name": "Quartal (¼ Jahr à 365 Tage)",
+  "label": "Quartal",
+  "definition": "91.25 day",
+  "aliases": [],
+  "examples": [
+    {
+      "value": "4 Quartal",
+      "expected": "1 Kalenderjahr",
+      "tolerance": 0.001
+    },
+    {
+      "value": "1 Quartal",
+      "expected": "2190 h",
+      "tolerance": 0.001
+    }
+  ]
+}

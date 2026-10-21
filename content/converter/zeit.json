@@ -6,14 +6,19 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Zeit",
-  "description": "",
+  "description": "HM = Hundertstelminute (1/100 min, Arbeitsstudium nach REFA), IM = Industrieminute (1/100 h). Quartal und Jahr mit 365 Tagen gerechnet (ohne Schaltjahr).",
   "kind": "units",
   "units": [
+    "ms",
+    "Hundertstelminute",
     "s",
+    "Industrieminute",
     "min",
     "h",
     "day",
-    "week"
+    "week",
+    "Quartal",
+    "Kalenderjahr"
   ],
   "from": "h",
   "to": "min"

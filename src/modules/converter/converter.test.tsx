@@ -263,6 +263,16 @@ describe('Umrechnen', () => {
     expect(convert(3600, 'm/h', 'm/s')).toBeCloseTo(1)
   })
 
+  it('kennt Industrie- und Hundertstelminute, Quartal und Jahr (365 Tage)', () => {
+    ensureCustomUnits()
+    expect(convert(1, 'Industrieminute', 's')).toBeCloseTo(36)
+    expect(convert(1, 'Hundertstelminute', 's')).toBeCloseTo(0.6)
+    expect(convert(1, 'Industrieminute', 'Hundertstelminute')).toBeCloseTo(60)
+    expect(convert(1, 'Kalenderjahr', 'day')).toBeCloseTo(365)
+    expect(convert(1, 'Quartal', 'day')).toBeCloseTo(91.25)
+    expect(convert(250, 'ms', 's')).toBeCloseTo(0.25)
+  })
+
   it('rechnet mit Nullpunkt-Verschiebung bei Temperaturen', () => {
     expect(convert(20, 'degC', 'K')).toBeCloseTo(293.15)
     expect(convert(1, 'bar', 'mbar')).toBeCloseTo(1000)

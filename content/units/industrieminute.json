@@ -1,0 +1,25 @@
+{
+  "id": "unit.industrieminute",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Wikipedia „Industrieminute“, https://de.wikipedia.org/wiki/Industrieminute (1/100 Stunde = 36 s)",
+  "symbol": "Industrieminute",
+  "name": "Industrieminute (1/100 Stunde)",
+  "label": "IM",
+  "definition": "0.01 h",
+  "aliases": [],
+  "examples": [
+    {
+      "value": "1 Industrieminute",
+      "expected": "36 s",
+      "tolerance": 0.001
+    },
+    {
+      "value": "100 Industrieminute",
+      "expected": "1 h",
+      "tolerance": 0.001
+    }
+  ]
+}
