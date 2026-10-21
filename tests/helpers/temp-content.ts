@@ -2,11 +2,20 @@ import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { z } from 'zod'
-import { defineEntrySchema, type CollectionDefinition } from '../../src/content/schema/base'
+import {
+  defineCollection,
+  defineEntrySchema,
+  type CollectionDefinition,
+} from '../../src/content/schema/base'
 
 /** Test-Sammlungen, unabhängig von den echten Modulen */
 export const testCollections = {
-  items: { dir: 'items', idPrefix: 'item', schema: defineEntrySchema({ title: z.string() }) },
+  items: defineCollection({
+    dir: 'items',
+    idPrefix: 'item',
+    schema: defineEntrySchema({ title: z.string(), related: z.array(z.string()).default([]) }),
+    references: (entry) => entry.related,
+  }),
   others: { dir: 'others', idPrefix: 'other', schema: defineEntrySchema({ title: z.string() }) },
 } satisfies Record<string, CollectionDefinition>
 

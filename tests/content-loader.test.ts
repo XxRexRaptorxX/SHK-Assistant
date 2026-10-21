@@ -118,6 +118,25 @@ describe('loadContent', () => {
     )
   })
 
+  it('akzeptiert Verweise auf vorhandene Einträge, auch in anderen Sammlungen', () => {
+    const { data } = load({
+      'items/a.json': entry({ id: 'item.a', related: ['item.b', 'other.c'] }),
+      'items/b.json': entry({ id: 'item.b' }),
+      'others/c.json': entry({ id: 'other.c' }),
+    })
+    expect(data.items?.find((e) => e.id === 'item.a')).toMatchObject({ related: ['item.b', 'other.c'] })
+  })
+
+  it('meldet Verweise auf unbekannte ids und auf sich selbst', () => {
+    const issues = expectIssues({
+      'items/a.json': entry({ id: 'item.a', related: ['item.fehlt', 'item.a'] }),
+    })
+    expect(issues).toEqual([
+      'items/a.json: Verweis auf unbekannte id "item.fehlt"',
+      'items/a.json: "item.a" verweist auf sich selbst',
+    ])
+  })
+
   it('sammelt alle Fehler statt beim ersten abzubrechen', () => {
     const issues = expectIssues({
       'items/a.json': entry({ id: 'item.a', status: 'x' }),

@@ -15,4 +15,13 @@ Pflichtfelder jedes Eintrags:
 | `verifiedAt` | `YYYY-MM-DD`                            | bei `verified` Pflicht                    |
 
 Der Build bricht ab bei fehlenden oder unbekannten Feldern, doppelten IDs,
-falschem Präfix und unregistrierten Ordnern.
+falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern.
+
+## Lexikon (`lexicon/`, Präfix `lexicon.`)
+
+| Feld         | Inhalt                                                        |
+|--------------|---------------------------------------------------------------|
+| `term`       | Begriff, wie er in der Liste erscheint                        |
+| `synonyms`   | andere Bezeichnungen, Abkürzungen (werden mit durchsucht)     |
+| `definition` | Erklärung als Text; eine Leerzeile (`\n\n`) beginnt einen neuen Absatz |
+| `related`    | IDs verwandter Lexikon-Einträge („Siehe auch“)                |

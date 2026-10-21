@@ -74,5 +74,10 @@ describe('public-Build der App', () => {
       .map((e) => e.id)
       .filter((id) => bundleText.includes(id))
     expect(leakedIds).toEqual([])
+
+    // Gegenprobe: öffentliche Inhalte sind im Bundle, der Test durchsucht also das Richtige
+    const publicIds = allEntries.filter((e) => e.visibility === 'public').map((e) => e.id)
+    expect(publicIds.length).toBeGreaterThan(0)
+    expect(publicIds.filter((id) => !bundleText.includes(id))).toEqual([])
   })
 })

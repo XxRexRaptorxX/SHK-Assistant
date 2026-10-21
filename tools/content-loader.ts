@@ -69,6 +69,7 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
   const data: Record<string, BaseEntry[]> = {}
   const allEntries: BaseEntry[] = []
   const idToFile = new Map<string, string>()
+  const references: { file: string; from: string; to: string }[] = []
 
   const knownDirs = new Set(Object.values(collections).map((c) => c.dir))
   if (existsSync(contentDir)) {
@@ -113,12 +114,21 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
       } else {
         idToFile.set(entry.id, rel)
       }
+      for (const to of collection.references?.(entry) ?? []) {
+        references.push({ file: rel, from: entry.id, to })
+      }
       entries.push(entry)
     }
 
     entries.sort((a, b) => a.id.localeCompare(b.id))
     allEntries.push(...entries)
     data[name] = entries.filter((entry) => isIncludedInEdition(entry, edition))
+  }
+
+  // Erst nach dem Laden aller Sammlungen prüfbar
+  for (const { file, from, to } of references) {
+    if (to === from) issues.push(`${file}: "${from}" verweist auf sich selbst`)
+    else if (!idToFile.has(to)) issues.push(`${file}: Verweis auf unbekannte id "${to}"`)
   }
 
   if (issues.length > 0) throw new ContentValidationError(issues)

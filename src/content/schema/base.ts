@@ -47,10 +47,17 @@ export function defineEntrySchema<T extends z.ZodRawShape>(shape: T) {
     .superRefine((entry, ctx) => checkVerification(entry as BaseEntry, ctx))
 }
 
-export interface CollectionDefinition {
+export interface CollectionDefinition<T extends BaseEntry = BaseEntry> {
   /** Unterordner in content/ */
   dir: string
   /** Pflicht-Präfix der id, z. B. "lexicon" → "lexicon.…" */
   idPrefix: string
-  schema: z.ZodType<BaseEntry>
+  schema: z.ZodType<T>
+  /** ids, auf die ein Eintrag verweist. Der Build prüft, dass sie existieren. */
+  references?(entry: T): string[]
+}
+
+/** Hilft TypeScript, den Eintragstyp aus dem Schema abzuleiten. */
+export function defineCollection<T extends BaseEntry>(definition: CollectionDefinition<T>) {
+  return definition
 }
