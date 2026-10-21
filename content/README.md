@@ -33,6 +33,12 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 Einheiten in mathjs-Schreibweise, z. B. `kW`, `m^3/h`, `kg/h`, `K`, `bar`. Für Temperatur­differenzen
 `K` verwenden, nicht `degC` (°C ist eine Skala mit Nullpunkt-Verschiebung).
 
+Im Rechner lassen sich Einheiten antippen und umstellen. Angeboten werden automatisch alle
+gleichartigen Einheiten aus dem Umrechner (z. B. für `m^2` auch `cm^2`, `ha`) plus die in `units`
+genannten. **Ausnahme Temperatur:** Hier gibt es keine automatischen Alternativen, weil bei einer
+Differenz 10 K nicht 10 °C sind. Ist eine Variable eine absolute Temperatur, kann `units: ["degC"]`
+gesetzt werden. Ein Test prüft, dass jede angebotene Einheit dasselbe Ergebnis liefert.
+
 Beim Build wird jede Formel geprüft: bekannte Einheiten, passende Alternativeinheiten, nur definierte
 Symbole, jede Variable wird verwendet, und **jedes Testbeispiel muss den Referenzwert ergeben**.
 Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflicht.

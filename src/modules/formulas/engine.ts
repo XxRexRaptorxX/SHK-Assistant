@@ -1,6 +1,6 @@
 import type { EvalFunction, MathNode, Unit } from 'mathjs'
 // Wird auch beim Build geladen (über schema.ts): Importe mit Dateiendung .ts.
-import { math } from '../../lib/math.ts'
+import { asTargetUnit, math } from '../../lib/math.ts'
 import type { FormulaEntry, FormulaExample } from './schema.ts'
 
 /** Eingabewert mit Einheit ("" = ohne Einheit) */
@@ -44,7 +44,7 @@ function toNumberIn(result: unknown, unit: string): number {
       return result.toNumber()
     }
     try {
-      return result.toNumber(unit)
+      return result.toNumber(asTargetUnit(unit))
     } catch {
       throw new FormulaError(`Ergebnis (${result.formatUnits()}) lässt sich nicht in ${unit} umrechnen`)
     }
@@ -98,6 +98,15 @@ export interface ExampleOutcome {
 /** Rechnet ein Testbeispiel nach. Wirft bei unbrauchbaren Eingaben. */
 export function evaluateExample(formula: FormulaEntry, example: FormulaExample): ExampleOutcome {
   const resultUnit = formula.result?.unit ?? ''
+  const inputs = exampleInputs(formula, example)
+  const expected = quantityIn(example.expected, resultUnit)
+  const actual = evaluateFormula(formula, inputs)
+  const allowed = example.tolerance * Math.max(Math.abs(expected), Number.EPSILON)
+  return { expected, actual, ok: Math.abs(actual - expected) <= allowed }
+}
+
+/** Eingaben eines Testbeispiels, jeweils in der Haupteinheit der Variable */
+export function exampleInputs(formula: FormulaEntry, example: FormulaExample): Record<string, Quantity> {
   const inputs: Record<string, Quantity> = {}
   for (const variable of formula.variables) {
     const raw = example.inputs[variable.symbol]
@@ -107,10 +116,7 @@ export function evaluateExample(formula: FormulaEntry, example: FormulaExample):
   for (const key of Object.keys(example.inputs)) {
     if (!formula.variables.some((v) => v.symbol === key)) throw new FormulaError(`Unbekannte Eingabe ${key}`)
   }
-  const expected = quantityIn(example.expected, resultUnit)
-  const actual = evaluateFormula(formula, inputs)
-  const allowed = example.tolerance * Math.max(Math.abs(expected), Number.EPSILON)
-  return { expected, actual, ok: Math.abs(actual - expected) <= allowed }
+  return inputs
 }
 
 function isValidUnit(unit: string): boolean {

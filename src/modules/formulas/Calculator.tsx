@@ -1,6 +1,7 @@
 import { useId, useMemo, useState } from 'react'
-import { formatNumber, parseDecimal } from '../../lib/number'
-import { formatUnit } from '../../lib/units'
+import { formatNumber, formatSignificant, parseDecimal } from '../../lib/number'
+import { alternativeUnits } from '../units/alternatives'
+import { formatAnyUnit } from '../units/labels'
 import { evaluateFormula, FormulaError, type Quantity } from './engine'
 import type { FormulaEntry } from './schema'
 
@@ -27,8 +28,9 @@ function UnitSelect({
 }) {
   if (units.length <= 1) {
     // Gleiche Breite wie die Auswahlliste, damit alle Eingabefelder bündig sind
-    return <span className="min-w-24 shrink-0 px-3 text-lg">{formatUnit(value)}</span>
+    return <span className="min-w-24 shrink-0 px-3 text-lg">{formatAnyUnit(value)}</span>
   }
+  // Antippen öffnet die Auswahl; umgerechnet wird beim Rechnen über die Einheiten (mathjs)
   return (
     <select
       id={id}
@@ -39,7 +41,7 @@ function UnitSelect({
     >
       {units.map((unit) => (
         <option key={unit} value={unit}>
-          {formatUnit(unit)}
+          {formatAnyUnit(unit)}
         </option>
       ))}
     </select>
@@ -114,7 +116,7 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
                 <UnitSelect
                   id={`${inputId}-unit`}
                   label={`Einheit für ${variable.name}`}
-                  units={[variable.unit, ...variable.units]}
+                  units={alternativeUnits(variable.unit, variable.units)}
                   value={units[variable.symbol] ?? variable.unit}
                   onChange={(unit) => setUnits({ ...units, [variable.symbol]: unit })}
                 />
@@ -134,12 +136,17 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
         <div className="mt-1 flex flex-wrap items-center gap-2">
           <p className="text-3xl font-bold break-all">
             {resultLabel} ={' '}
-            {calculation.kind === 'result' ? formatNumber(calculation.value, result.decimals) : '–'}
+            {calculation.kind === 'result'
+              ? // Nachkommastellen gelten für die Haupteinheit; in anderen Einheiten gültige Stellen
+                resultUnit === result.unit
+                ? formatNumber(calculation.value, result.decimals)
+                : formatSignificant(calculation.value)
+              : '–'}
           </p>
           <UnitSelect
             id={`${idPrefix}-result-unit`}
             label={`Einheit für ${result.name}`}
-            units={[result.unit, ...result.units]}
+            units={alternativeUnits(result.unit, result.units)}
             value={resultUnit}
             onChange={setResultUnit}
           />

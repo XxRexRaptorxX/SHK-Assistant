@@ -1,5 +1,5 @@
 import { useId, useMemo, useState } from 'react'
-import { math } from '../../lib/math'
+import { asTargetUnit, math } from '../../lib/math'
 import { formatSignificant, parseDecimal } from '../../lib/number'
 import { unverifiedUnitSymbols } from '../units/customUnits'
 import { formatAnyUnit } from '../units/labels'
@@ -8,7 +8,7 @@ import { fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
 import type { ConverterEntry } from './schema'
 
 export function convert(value: number, from: string, to: string): number {
-  return math.unit(value, from).toNumber(to)
+  return math.unit(value, from).toNumber(asTargetUnit(to))
 }
 
 function unitLabel(unit: string): string {

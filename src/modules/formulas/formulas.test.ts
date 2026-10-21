@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import { formatUnit } from '../../lib/units'
-import { checkFormula, evaluateExample, evaluateFormula, formatExpression } from './engine'
+import { asTargetUnit, math } from '../../lib/math'
+import { alternativeUnits } from '../units/alternatives'
+import { checkFormula, evaluateExample, evaluateFormula, exampleInputs, formatExpression } from './engine'
 import { ensureCustomUnits } from '../units/customUnits'
 import { formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
@@ -65,6 +67,63 @@ describe('Formel-Engine', () => {
     expect(formatUnit('N/cm^2')).toBe('N/cm²')
     expect(formatUnit('gradDH', new Map([['gradDH', '°dH']]))).toBe('°dH')
   })
+})
+
+describe('Wählbare Einheiten', () => {
+  ensureCustomUnits()
+
+  it('bietet gleichartige Einheiten aus dem Umrechner an', () => {
+    const areas = alternativeUnits('m^2')
+    expect(areas).toContain('cm^2')
+    expect(areas).toContain('hectare')
+    expect(alternativeUnits('m^3/h')).toContain('l/min')
+    // ausdrücklich genannte Einheiten kommen dazu, unbekannte Kombinationen bleiben allein
+    expect(alternativeUnits('kJ/(kg K)', ['J/(kg K)'])).toEqual(['kJ/(kg K)', 'J/(kg K)'])
+    expect(alternativeUnits('')).toEqual([''])
+  })
+
+  it('rechnet Ergebnisse auch in Kehrwert-Einheiten wie 1/K aus', () => {
+    const inverse: FormulaEntry = {
+      ...fixture,
+      variables: [{ symbol: 'l', name: 'Länge', unit: 'K', units: [], description: '' }],
+      result: { symbol: 'k', name: 'Kehrwert', unit: '1/K', units: [], decimals: 3 },
+      expression: '1 / l',
+      examples: [],
+    }
+    expect(evaluateFormula(inverse, { l: { value: 4, unit: 'K' } })).toBeCloseTo(0.25)
+  })
+
+  it('bietet bei Temperaturen keine automatischen Alternativen an (Differenz ≠ Temperatur)', () => {
+    expect(alternativeUnits('K')).toEqual(['K'])
+    expect(alternativeUnits('degC')).toEqual(['degC'])
+  })
+
+  // Jede angebotene Einheit muss dasselbe Ergebnis liefern (Umrechnung über mathjs)
+  for (const formula of formulaEntries.filter((f) => f.result && f.examples.length > 0)) {
+    it(`${formula.id}: Ergebnis unabhängig von der gewählten Einheit`, () => {
+      const result = formula.result!
+      for (const example of formula.examples) {
+        const inputs = exampleInputs(formula, example)
+        const baseline = evaluateFormula(formula, inputs)
+        const same = (actual: number, expected: number) =>
+          expect(Math.abs(actual - expected)).toBeLessThanOrEqual(1e-9 * Math.max(1, Math.abs(expected)))
+
+        for (const variable of formula.variables) {
+          const input = inputs[variable.symbol]!
+          for (const unit of alternativeUnits(variable.unit, variable.units)) {
+            const value =
+              unit === variable.unit ? input.value : math.unit(input.value, variable.unit).toNumber(asTargetUnit(unit))
+            same(evaluateFormula(formula, { ...inputs, [variable.symbol]: { value, unit } }), baseline)
+          }
+        }
+        for (const unit of alternativeUnits(result.unit, result.units)) {
+          const expected =
+            unit === result.unit ? baseline : math.unit(baseline, result.unit).toNumber(asTargetUnit(unit))
+          same(evaluateFormula(formula, inputs, unit), expected)
+        }
+      }
+    })
+  }
 })
 
 // CLAUDE.md: Jede Formel wird automatisch gegen ihre Testbeispiele geprüft.
