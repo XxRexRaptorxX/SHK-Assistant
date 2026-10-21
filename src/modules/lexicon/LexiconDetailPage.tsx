@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router'
 import { BackLink, ContentPage } from '../../components/ContentPage'
+import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { splitParagraphs } from '../../lib/text'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { findLexiconEntry, lexiconEntries, lexiconPath } from './lexicon'
@@ -18,7 +19,12 @@ export function LexiconDetailPage({ entries = lexiconEntries }: { entries?: Lexi
     .filter((candidate) => candidate !== undefined)
 
   return (
-    <ContentPage entry={entry} title={entry.term} back={BACK}>
+    <ContentPage
+      entry={entry}
+      title={entry.term}
+      back={BACK}
+      actions={<FavoriteButton id={entry.id} title={entry.term} />}
+    >
       {entry.synonyms.length > 0 && (
         <p className="text-muted">
           <span className="font-semibold">Auch:</span> {entry.synonyms.join(', ')}

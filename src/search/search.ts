@@ -1,4 +1,5 @@
 import Fuse from 'fuse.js'
+import { groupByModule } from '../components/EntryList'
 import { normalizeForSearch } from '../lib/text'
 
 /** Ein durchsuchbarer Eintrag. Jedes Modul liefert seine Einträge in dieser Form. */
@@ -62,19 +63,8 @@ export function createSearch(documents: readonly SearchDocument[]): SearchEngine
     search(query) {
       const needle = normalizeForSearch(query)
       if (needle.length < MIN_QUERY_LENGTH) return []
-
-      // Gruppen nach Modul; die Gruppe mit dem besten Treffer zuerst
-      const groups = new Map<string, SearchGroup>()
-      for (const { item } of fuse.search(needle, { limit: MAX_RESULTS })) {
-        const { moduleTitle } = item.doc
-        let group = groups.get(moduleTitle)
-        if (!group) {
-          group = { moduleTitle, results: [] }
-          groups.set(moduleTitle, group)
-        }
-        group.results.push(item.doc)
-      }
-      return [...groups.values()]
+      // Treffer kommen nach Relevanz sortiert; die Gruppe mit dem besten Treffer steht zuerst
+      return groupByModule(fuse.search(needle, { limit: MAX_RESULTS }).map(({ item }) => item.doc))
     },
   }
 }
