@@ -13,7 +13,7 @@ const UNIT_LABELS: Record<string, string> = {
   kohm: 'kΩ',
   Mohm: 'MΩ',
   hectare: 'ha',
-  day: 'Tag',
+  day: 'd', // Einheitenzeichen des Tages (lat. dies), zum Gebrauch mit dem SI zugelassen
   week: 'Woche',
   inch: 'in',
   kgf: 'kp',

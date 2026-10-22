@@ -6,6 +6,7 @@ import { ContentPage } from './ContentPage'
 import { DraftBadge } from './DraftBadge'
 import { RichText } from './RichText'
 import { SourceInfo } from './SourceInfo'
+import { splitLinks } from '../lib/links'
 
 const verified: BaseEntry = {
   id: 'item.beispiel',
@@ -58,6 +59,31 @@ describe('SourceInfo', () => {
     )
     expect(html).toContain('href="https://example.org/doku.pdf"')
     expect(html).toContain('rel="noopener noreferrer"')
+  })
+
+  it('verlinkt Adressen mitten in der Quellenangabe, ohne angehängte Satzzeichen', () => {
+    const source = 'Wikipedia „Ventil“, https://de.wikipedia.org/wiki/Ventil_(Technik); Hersteller, https://example.org/a.pdf.'
+    const html = renderToStaticMarkup(<SourceInfo entry={{ ...verified, source }} />)
+    expect(html).toContain('href="https://de.wikipedia.org/wiki/Ventil_(Technik)"')
+    expect(html).toContain('href="https://example.org/a.pdf"')
+    expect(html).toContain('<span>Wikipedia „Ventil“, </span>')
+    expect(html).toContain('<span>; Hersteller, </span>')
+  })
+})
+
+describe('splitLinks', () => {
+  it('trennt Text und Adressen und lässt Satzzeichen am Ende außen vor', () => {
+    expect(splitLinks('Quelle: https://example.org/x, S. 3')).toEqual([
+      { text: 'Quelle: ' },
+      { text: 'https://example.org/x', href: 'https://example.org/x' },
+      { text: ', S. 3' },
+    ])
+    expect(splitLinks('(siehe https://example.org/a_(b))')).toEqual([
+      { text: '(siehe ' },
+      { text: 'https://example.org/a_(b)', href: 'https://example.org/a_(b)' },
+      { text: ')' },
+    ])
+    expect(splitLinks('ohne Adresse')).toEqual([{ text: 'ohne Adresse' }])
   })
 })
 

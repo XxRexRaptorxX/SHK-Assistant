@@ -5,7 +5,7 @@ import { unverifiedUnitSymbols } from '../units/customUnits'
 import { formatAnyUnit } from '../units/labels'
 import { isKnownUnit } from '../units/registry'
 import { useSettings } from '../../settings/settings'
-import { displayName, fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
+import { displayName, FromToSelects, ResultsTable, ValueInput } from './converterUi'
 import type { ConverterEntry } from './schema'
 
 export function convert(value: number, from: string, to: string): number {
@@ -89,23 +89,10 @@ export function UnitConverter({
       </label>
       <div className="mt-1 flex flex-wrap items-center gap-2 [&>input]:flex-1">
         <ValueInput id={`${id}-value`} value={raw} onChange={setRaw} invalid={invalid} hint={hint} />
-        <Select id={`${id}-from`} label="Von Einheit" options={options} value={from} onChange={setFrom} />
       </div>
       {empty && <p className="mt-1 text-base text-muted">Bitte einen Wert eingeben.</p>}
 
-      <div className="mt-3 flex items-center justify-between gap-2">
-        <button
-          type="button"
-          onClick={() => {
-            setFrom(to)
-            setTo(from)
-          }}
-          className={`${fieldClass} inline-flex items-center gap-2 bg-surface font-bold`}
-        >
-          <span aria-hidden="true">⇅</span> Tauschen
-        </button>
-        <Select id={`${id}-to`} label="Nach Einheit" options={options} value={to} onChange={setTo} />
-      </div>
+      <FromToSelects id={id} options={options} from={from} to={to} onFromChange={setFrom} onToChange={setTo} />
 
       <p className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-all" aria-live="polite">
         {target ? `${formatSignificant(target.value)} ${formatAnyUnit(to)}` : '–'}

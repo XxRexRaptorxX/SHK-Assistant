@@ -239,19 +239,19 @@ describe('Ausgeschriebene Einheiten', () => {
   it('zeigt den Namen grau hinter der Einheit, abschaltbar', () => {
     const shown = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
     const hidden = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames={false} />)
-    expect(shown).toContain('<span class="ml-2 text-base font-normal text-muted hyphens-auto">Millibar</span>')
+    expect(shown).toContain('text-muted hyphens-auto">Millibar</td>')
     expect(hidden).not.toContain('Millibar')
   })
 
   it('wiederholt den Namen nicht, wenn er der Kurzform entspricht', () => {
     const html = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
-    expect(html).not.toContain('text-muted hyphens-auto">Bar</span>')
+    expect(html).not.toContain('text-muted hyphens-auto">Bar</td>')
     const factors = renderToStaticMarkup(<FactorConverter entry={wood} showUnitNames />)
-    expect(factors).not.toContain('text-muted hyphens-auto">Festmeter</span>')
+    expect(factors).not.toContain('text-muted hyphens-auto">Festmeter</td>')
     const named = renderToStaticMarkup(
       <FactorConverter entry={{ ...wood, factors: wood.factors.map((f) => ({ ...f, label: f.key })) }} showUnitNames />,
     )
-    expect(named).toContain('text-muted hyphens-auto">Schüttraummeter</span>')
+    expect(named).toContain('text-muted hyphens-auto">Schüttraummeter</td>')
   })
 
   it('verlangt beim Build einen Namen je Einheit, aber keine überzähligen', () => {
@@ -410,6 +410,11 @@ describe('Umrechnen', () => {
     expect(convert(1, 'Kalenderjahr', 'day')).toBeCloseTo(365)
     expect(convert(1, 'Quartal', 'day')).toBeCloseTo(91.25)
     expect(convert(250, 'ms', 's')).toBeCloseTo(0.25)
+  })
+
+  it('zeigt Einheitenzeichen statt Wörtern, wo es eines gibt (Tag d, Jahr a)', () => {
+    ensureCustomUnits()
+    expect(['day', 'Kalenderjahr', 'week', 'Quartal'].map(formatAnyUnit)).toEqual(['d', 'a', 'Woche', 'Quartal'])
   })
 
   it('rechnet mit Nullpunkt-Verschiebung bei Temperaturen', () => {

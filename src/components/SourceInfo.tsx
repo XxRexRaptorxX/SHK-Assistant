@@ -1,20 +1,21 @@
 import type { BaseEntry } from '../content/schema/base'
 import { formatIsoDate } from '../lib/format'
+import { splitLinks } from '../lib/links'
 
 type SourceMeta = Pick<BaseEntry, 'status' | 'source' | 'verifiedBy' | 'verifiedAt'>
 
-const URL_PATTERN = /^https?:\/\/\S+$/
-
+/** Quellenangabe; enthaltene Webadressen sind klickbar und öffnen sich in einem neuen Tab */
 function Source({ source }: { source: string }) {
   if (source.trim() === '') return <>nicht angegeben</>
-  if (URL_PATTERN.test(source)) {
-    return (
-      <a href={source} target="_blank" rel="noopener noreferrer" className="break-all text-accent underline">
-        {source}
+  return splitLinks(source).map((part, index) =>
+    part.href ? (
+      <a key={index} href={part.href} target="_blank" rel="noopener noreferrer" className="text-accent underline">
+        {part.text}
       </a>
-    )
-  }
-  return <>{source}</>
+    ) : (
+      <span key={index}>{part.text}</span>
+    ),
+  )
 }
 
 /** Quelle und Prüfstatus – Pflicht am Ende jeder Inhaltsseite */
