@@ -42,13 +42,14 @@ describe('Content-Plugin im Bundle', () => {
     return output.output.map((chunk) => (chunk.type === 'chunk' ? chunk.code : '')).join('\n')
   }
 
-  it('enthält im internen Bundle beide Einträge', async () => {
+  // Vite-Kaltstart braucht unter Last knapp 5 s (Standardgrenze), daher mehr Luft
+  it('enthält im internen Bundle beide Einträge', { timeout: 30_000 }, async () => {
     const code = await bundle('internal')
     expect(code).toContain('item.oeffentlich-marker')
     expect(code).toContain('item.intern-marker')
   })
 
-  it('enthält im public-Bundle keine internen Einträge', async () => {
+  it('enthält im public-Bundle keine internen Einträge', { timeout: 30_000 }, async () => {
     const code = await bundle('public')
     expect(code).toContain('item.oeffentlich-marker')
     expect(code).not.toContain('item.intern-marker')

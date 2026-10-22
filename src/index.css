@@ -25,6 +25,12 @@
   --highlight: #ffd400;
   --warn: #ff9f0a;
   --warn-ink: #000000;
+  /* Kopfleiste: in beiden Designs hell, damit das Firmenlogo gut sichtbar ist */
+  --bar: #ffffff;
+  --bar-ink: #0b1220;
+  --bar-muted: #3c4659;
+  --bar-active: #dde3ee;
+  --bar-active-ink: #0047c2;
 }
 
 .dark {
@@ -42,6 +48,11 @@
   --highlight: #3b7bff;
   --warn: #ff9f0a;
   --warn-ink: #000000;
+  --bar: #e9edf3;
+  --bar-ink: #0b1220;
+  --bar-muted: #3c4659;
+  --bar-active: #d0d7e3;
+  --bar-active-ink: #0047c2;
 }
 
 @theme inline {
@@ -58,6 +69,12 @@
   --color-highlight: var(--highlight);
   --color-warn: var(--warn);
   --color-warn-ink: var(--warn-ink);
+  --color-bar: var(--bar);
+  --color-bar-ink: var(--bar-ink);
+  --color-bar-muted: var(--bar-muted);
+  --color-bar-active: var(--bar-active);
+  --color-bar-active-ink: var(--bar-active-ink);
+  --color-bar-stripe: #ffd400;
 }
 
 /* Seitentitel der Module mit Farbstreifen darunter (Anklang an die Firmen-Streifen) */
@@ -69,15 +86,6 @@
   margin-top: 0.35rem;
   border-radius: 9999px;
   background: var(--highlight);
-}
-
-/* Leichtes Leuchten in der oberen rechten Ecke von Karten */
-.glow {
-  background-image: radial-gradient(
-    circle at 100% 0%,
-    color-mix(in srgb, var(--brand) 22%, transparent),
-    transparent 65%
-  );
 }
 
 /* Große Checkbox für Checklisten (Bedienung mit Handschuhen) */
@@ -132,9 +140,6 @@
     --accent-ink: #ffffff;
     --highlight: #000000;
   }
-  .glow {
-    background-image: none;
-  }
   @page {
     margin: 15mm;
   }
@@ -165,5 +170,9 @@
   :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 2px;
+  }
+  /* Auf der hellen Kopfleiste wäre der gelbe Fokusrahmen unsichtbar */
+  header :focus-visible {
+    outline-color: var(--bar-active-ink);
   }
 }

@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from 'react-router'
+import { companyLogoUrl } from '../components/CompanyLogo'
 import { HomeIcon } from '../components/icons'
 import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
@@ -6,8 +7,8 @@ import { useApplyTheme } from '../theme/useTheme'
 import { bottomNavModules, modules, type AppModule } from './modules'
 
 const iconButton =
-  'flex size-12 items-center justify-center rounded-full text-ink hover:bg-raised active:bg-raised'
-const iconButtonActive = 'bg-raised text-accent'
+  'flex size-12 items-center justify-center rounded-full text-bar-ink hover:bg-bar-active active:bg-bar-active'
+const iconButtonActive = 'bg-bar-active text-bar-active-ink'
 
 function HeaderLink({ module }: { module: AppModule }) {
   const Icon = module.icon
@@ -25,22 +26,33 @@ function HeaderLink({ module }: { module: AppModule }) {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b border-edge bg-page/85 pt-[env(safe-area-inset-top)] backdrop-blur-md print:hidden">
-      <div className="mx-auto flex h-16 max-w-3xl items-center gap-1 px-1 min-[360px]:px-2">
+    <header className="sticky top-0 z-10 border-b-[3px] border-bar-stripe bg-bar pt-[env(safe-area-inset-top)] text-bar-ink shadow-lg shadow-black/30 print:hidden">
+      <div className="mx-auto grid h-16 max-w-3xl grid-cols-[auto_1fr_auto] items-center gap-1 px-1 min-[360px]:px-2">
         <Link
           to="/"
           className="flex min-h-12 items-center gap-1.5 rounded-xl px-1 font-bold whitespace-nowrap"
         >
-          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="size-9 shrink-0" />
+          {/* App-Symbol erst ab etwas breiteren Bildschirmen, damit das Firmenlogo Platz hat */}
+          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="hidden size-9 shrink-0 min-[430px]:block" />
           {/* "Intern" unter dem Namen, damit die Kopfzeile auch auf 320 px passt */}
           <span className="flex flex-col leading-tight">
-            <span className="text-base min-[360px]:text-lg sm:text-xl">SHK-Assistant</span>
+            {/* Wortmarke wie im Style-Guide: „SHK-“ extra fett, „Assistant“ etwas leichter */}
+            <span className="text-base min-[400px]:text-lg sm:text-xl">
+              <span className="font-extrabold">SHK-</span>
+              <span className="font-semibold">Assistant</span>
+            </span>
             {isInternalEdition && (
-              <span className="text-[0.65rem] leading-3 font-bold tracking-wider text-muted uppercase">Intern</span>
+              <span className="text-[0.65rem] leading-3 font-bold tracking-wider text-bar-muted uppercase">Intern</span>
             )}
           </span>
         </Link>
-        <nav aria-label="Werkzeuge" className="ml-auto flex shrink-0 items-center">
+        {/* Firmenlogo mittig im freien Raum zwischen Name und Knöpfen */}
+        <div className="flex min-w-0 justify-center">
+          {companyLogoUrl && (
+            <img src={companyLogoUrl} alt="Firmenlogo" className="max-h-10 w-auto max-w-full object-contain" />
+          )}
+        </div>
+        <nav aria-label="Werkzeuge" className="flex shrink-0 items-center">
           <HeaderLink module={modules.search} />
           <HeaderLink module={modules.favorites} />
           <HeaderLink module={modules.settings} />

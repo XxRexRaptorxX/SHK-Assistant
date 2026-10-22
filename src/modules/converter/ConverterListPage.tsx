@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
 import { categoryHeading, pageTitle } from '../../components/headings'
+import { featureCard } from '../../components/surfaces'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
@@ -32,9 +33,10 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
               <li key={entry.id}>
                 <Link
                   to={converterPath(entry.id)}
-                  className="glow flex min-h-20 flex-col justify-center gap-1 rounded-3xl border border-edge bg-surface/70 p-5 backdrop-blur-md active:border-accent"
+                  className={`${featureCard} flex min-h-20 flex-col justify-center gap-1 p-5 pl-6`}
                 >
-                  <span className="flex items-center justify-between gap-2">
+                  <span aria-hidden="true" className="absolute inset-y-5 left-0 w-1.5 rounded-r-full bg-accent" />
+                  <span className="relative flex items-center justify-between gap-2">
                     <span className="text-xl font-bold">
                       <ConverterTitle entry={entry} />
                     </span>

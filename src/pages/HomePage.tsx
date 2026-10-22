@@ -1,10 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import { createSearchParams, Link, useNavigate } from 'react-router'
 import { homeTileModules, modules, type AppModule } from '../app/modules'
-import { CompanyLogo, companyLogoUrl } from '../components/CompanyLogo'
 import { pageTitle } from '../components/headings'
 import { SearchInput } from '../components/SearchInput'
-import { chip } from '../components/surfaces'
+import { chip, featureCard } from '../components/surfaces'
 import { content } from '../content'
 import { useFavoriteIds } from '../favorites/favoritesStore'
 import { usePageTitle } from '../lib/usePageTitle'
@@ -26,10 +25,12 @@ function Tile({ module, chipText }: { module: AppModule; chipText?: string }) {
   return (
     <Link
       to={module.path}
-      className="glow relative flex min-h-36 flex-col justify-between gap-3 overflow-hidden rounded-3xl border border-edge bg-surface/70 p-5 backdrop-blur-md active:border-accent"
+      className={`${featureCard} flex min-h-36 flex-col justify-between gap-3 p-5 pl-6`}
     >
+      {/* Farbleiste links als Blickfang */}
+      <span aria-hidden="true" className="absolute inset-y-6 left-0 w-1.5 rounded-r-full bg-accent" />
       {/* Großes, blasses Symbol als Bildersatz, wie ein Motiv auf der Karte */}
-      <Icon aria-hidden="true" className="pointer-events-none absolute -right-5 -bottom-6 size-36 -rotate-12 text-brand opacity-25" />
+      <Icon aria-hidden="true" className="pointer-events-none absolute -right-5 -bottom-6 size-36 -rotate-12 text-brand opacity-35" />
       {chipText && (
         <span className={`${chip} relative self-start`}>
           <Icon className="size-5 text-accent" />
@@ -37,7 +38,7 @@ function Tile({ module, chipText }: { module: AppModule; chipText?: string }) {
         </span>
       )}
       <span className="relative">
-        <span className="block text-2xl font-bold">{module.title}</span>
+        <span className="block text-[1.65rem] leading-tight font-extrabold">{module.title}</span>
         <span className="mt-1 block max-w-[80%] text-base text-muted">{module.description}</span>
       </span>
     </Link>
@@ -84,12 +85,6 @@ export function HomePage() {
           </li>
         ))}
       </ul>
-      {companyLogoUrl && (
-        <div className="mt-8 flex flex-col items-center gap-2 text-sm text-muted">
-          <span>Ein Werkzeug von</span>
-          <CompanyLogo />
-        </div>
-      )}
     </>
   )
 }
