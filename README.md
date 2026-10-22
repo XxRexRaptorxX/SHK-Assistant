@@ -34,6 +34,17 @@ erscheinen in der App als **ungeprüft**. Freigeben: `status: "verified"`, Quell
 - `tools/` – Build-Werkzeuge: Inhalte laden und prüfen, Vite-Plugin, Berichte
 - `tests/` – Tests für Build, Public-Bundle (keine internen Inhalte) und Offline-Fähigkeit
 
+## Veröffentlichung (GitHub Pages)
+
+Jeder Push auf `main` baut und testet die App und veröffentlicht sie unter
+<https://xxrexraptorxx.github.io/SHK-Assistant/> (Ablauf: `.github/workflows/pages.yml`).
+Schlägt ein Test fehl, bleibt die bisherige Version online. Einmalig nötig: Repository-Einstellungen
+→ Pages → Source „GitHub Actions“.
+
+**Achtung:** Die Seite und dieses (öffentliche) Repository sind für jeden einsehbar. Veröffentlicht
+wird derzeit die interne Edition (`.env`). Einträge mit `visibility: "internal"` gehören deshalb
+nicht in dieses Repository; dafür wäre ein privates Repository mit geschütztem Hosting nötig.
+
 ## Updates
 
 Neue Versionen übernimmt die App beim nächsten Öffnen automatisch und lädt einmal neu.
