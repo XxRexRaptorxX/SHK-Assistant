@@ -232,7 +232,7 @@ export function SettingsPage() {
         </Section>
         <Section title="Design">
           <ThemeChoice value={preference} onChange={setPreference} />
-          <p className="mt-2 text-base text-muted">Standard: Dunkel. „System“ folgt der Einstellung des Handys (hell/dunkel).</p>
+          <p className="mt-2 text-base text-muted">Standard: System. „System“ folgt der Einstellung des Handys (hell/dunkel).</p>
         </Section>
         <Section title="App auf den Startbildschirm">
           <InstallSection />

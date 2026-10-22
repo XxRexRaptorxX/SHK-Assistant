@@ -9,8 +9,8 @@ export type ThemePreference = (typeof THEME_PREFERENCES)[number]
 
 export type ResolvedTheme = 'light' | 'dark'
 
-/** Gilt, solange nichts gewählt ist (Vorgabe des Inhabers: dunkles Design) */
-export const DEFAULT_THEME_PREFERENCE: ThemePreference = 'dark'
+/** Gilt, solange nichts gewählt ist (Vorgabe des Inhabers: folgt dem System) */
+export const DEFAULT_THEME_PREFERENCE: ThemePreference = 'system'
 
 export const THEME_LABELS: Record<ThemePreference, string> = {
   system: 'System',

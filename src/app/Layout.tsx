@@ -26,7 +26,7 @@ function HeaderLink({ module }: { module: AppModule }) {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b-[3px] border-bar-stripe bg-bar pt-[env(safe-area-inset-top)] text-bar-ink shadow-lg shadow-black/30 print:hidden">
+    <header className="sticky top-0 z-10 border-b-[3px] border-bar-stripe bg-bar bg-linear-to-r from-bar-from via-bar-via to-bar-to pt-[env(safe-area-inset-top)] text-bar-ink shadow-lg shadow-black/30 print:hidden">
       <div className="mx-auto grid h-16 max-w-3xl grid-cols-[auto_1fr_auto] items-center gap-1 px-1 min-[360px]:px-2">
         <Link
           to="/"

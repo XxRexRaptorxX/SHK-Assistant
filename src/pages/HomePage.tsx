@@ -30,7 +30,7 @@ function Tile({ module, chipText }: { module: AppModule; chipText?: string }) {
       {/* Farbleiste links als Blickfang */}
       <span aria-hidden="true" className="absolute inset-y-6 left-0 w-1.5 rounded-r-full bg-accent" />
       {/* Großes, blasses Symbol als Bildersatz, wie ein Motiv auf der Karte */}
-      <Icon aria-hidden="true" className="pointer-events-none absolute -right-5 -bottom-6 size-36 -rotate-12 text-brand opacity-35" />
+      <Icon aria-hidden="true" className="pointer-events-none absolute -right-5 -bottom-6 size-36 -rotate-12 text-tile-icon opacity-45 dark:opacity-60 dark:drop-shadow-[0_0_10px_rgba(255,212,0,0.45)]" />
       {chipText && (
         <span className={`${chip} relative self-start`}>
           <Icon className="size-5 text-accent" />

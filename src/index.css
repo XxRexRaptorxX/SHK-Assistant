@@ -27,6 +27,12 @@
   --warn-ink: #000000;
   /* Kopfleiste: in beiden Designs hell, damit das Firmenlogo gut sichtbar ist */
   --bar: #ffffff;
+  /* Dezenter Verlauf der Kopfleiste: links Blau, rechts ein Hauch Gelb (wie im Style-Guide) */
+  --bar-from: #d3e3fc;
+  --bar-via: #f1f4f9;
+  --bar-to: #f9ebc2;
+  /* Große Symbole auf den Startseiten-Kacheln */
+  --tile-icon: #e9a400;
   --bar-ink: #0b1220;
   --bar-muted: #3c4659;
   --bar-active: #dde3ee;
@@ -49,6 +55,10 @@
   --warn: #ff9f0a;
   --warn-ink: #000000;
   --bar: #e9edf3;
+  --bar-from: #c9dcfa;
+  --bar-via: #e3e9f2;
+  --bar-to: #eedcab;
+  --tile-icon: #ffd400;
   --bar-ink: #0b1220;
   --bar-muted: #3c4659;
   --bar-active: #d0d7e3;
@@ -70,6 +80,10 @@
   --color-warn: var(--warn);
   --color-warn-ink: var(--warn-ink);
   --color-bar: var(--bar);
+  --color-bar-from: var(--bar-from);
+  --color-bar-via: var(--bar-via);
+  --color-bar-to: var(--bar-to);
+  --color-tile-icon: var(--tile-icon);
   --color-bar-ink: var(--bar-ink);
   --color-bar-muted: var(--bar-muted);
   --color-bar-active: var(--bar-active);
