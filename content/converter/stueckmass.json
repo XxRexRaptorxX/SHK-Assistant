@@ -36,6 +36,12 @@
     "schock",
     "gros"
   ],
+  "names": {
+    "stk": "Stück",
+    "dtzd": "Dutzend",
+    "schock": "Schock",
+    "gros": "Gros"
+  },
   "from": "dtzd",
   "to": "stk",
   "min": 0

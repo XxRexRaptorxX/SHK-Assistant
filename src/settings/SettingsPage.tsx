@@ -192,6 +192,14 @@ export function SettingsPage() {
             checked={settings.hideRareUnits}
             onChange={(hideRareUnits) => updateSettings({ hideRareUnits })}
           />
+          <div className="mt-3">
+            <Switch
+              label="Einheiten ausgeschrieben anzeigen"
+              description="Zeigt im Umrechner hinter jeder Einheit grau den vollen Namen, z. B. „hl Hektoliter“. Standard: an."
+              checked={settings.showUnitNames}
+              onChange={(showUnitNames) => updateSettings({ showUnitNames })}
+            />
+          </div>
         </Section>
         <Section title="Design">
           <ThemeChoice value={preference} onChange={setPreference} />

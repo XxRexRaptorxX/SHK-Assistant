@@ -41,6 +41,14 @@
       "value": 2
     }
   ],
+  "names": {
+    "fm": "Festmeter",
+    "rm-rundholz-1m": "Raummeter (Rundholz, 1 m)",
+    "rm-scheite-1m": "Raummeter (Scheite, 1 m)",
+    "rm-scheite-33cm": "Raummeter (Scheite, 33 cm)",
+    "srm-fichte": "Schüttraummeter (Fichte)",
+    "srm-buche": "Schüttraummeter (Buche)"
+  },
   "from": "rm-scheite-33cm",
   "to": "fm",
   "min": 0

@@ -21,6 +21,14 @@
   "rare": [
     "km^2"
   ],
+  "names": {
+    "mm^2": "Quadratmillimeter",
+    "cm^2": "Quadratzentimeter",
+    "dm^2": "Quadratdezimeter",
+    "m^2": "Quadratmeter",
+    "hectare": "Hektar",
+    "km^2": "Quadratkilometer"
+  },
   "from": "m^2",
   "to": "cm^2"
 }

@@ -10,11 +10,13 @@ describe('Einstellungen', () => {
     expect(parseSettings(null)).toEqual(DEFAULT_SETTINGS)
     expect(parseSettings('{kaputt')).toEqual(DEFAULT_SETTINGS)
     expect(parseSettings('{"hideRareUnits":"ja"}')).toEqual(DEFAULT_SETTINGS)
-    expect(parseSettings('{"hideRareUnits":true}')).toEqual({ hideRareUnits: true })
+    expect(parseSettings('{"hideRareUnits":true}')).toEqual({ hideRareUnits: true, showUnitNames: true })
+    expect(parseSettings('{"showUnitNames":false}')).toEqual({ hideRareUnits: false, showUnitNames: false })
   })
 
-  it('blendet unübliche Einheiten standardmäßig nicht aus', () => {
+  it('blendet unübliche Einheiten standardmäßig nicht aus und zeigt Einheitennamen', () => {
     expect(DEFAULT_SETTINGS.hideRareUnits).toBe(false)
+    expect(DEFAULT_SETTINGS.showUnitNames).toBe(true)
   })
 
   it('teilt einen gespeicherten Wert zwischen allen Lesern', () => {
@@ -46,9 +48,9 @@ describe('Einstellungen-Seite', () => {
     }
   })
 
-  it('hat den Schalter für unübliche Einheiten, standardmäßig aus', () => {
-    expect(html).toContain('role="switch" aria-checked="false"')
-    expect(html).toContain('Unübliche Einheiten ausblenden')
+  it('hat die Schalter für unübliche Einheiten (aus) und ausgeschriebene Einheiten (an)', () => {
+    expect(html).toContain('role="switch" aria-checked="false" aria-label="Unübliche Einheiten ausblenden"')
+    expect(html).toContain('role="switch" aria-checked="true" aria-label="Einheiten ausgeschrieben anzeigen"')
   })
 
   it('bietet System, Hell und Dunkel zur Auswahl', () => {

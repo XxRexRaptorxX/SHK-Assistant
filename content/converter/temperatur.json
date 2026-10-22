@@ -17,6 +17,11 @@
   "rare": [
     "degF"
   ],
+  "names": {
+    "degC": "Grad Celsius",
+    "K": "Kelvin",
+    "degF": "Grad Fahrenheit"
+  },
   "from": "degC",
   "to": "K"
 }

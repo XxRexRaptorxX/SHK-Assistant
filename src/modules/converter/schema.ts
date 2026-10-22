@@ -48,6 +48,8 @@ export const converterEntrySchema = defineEntrySchema({
    * „Unübliche Einheiten ausblenden“ wegfallen
    */
   rare: z.array(z.string().trim().min(1)).default([]),
+  /** Ausgeschriebene Namen je Einheit (units) bzw. Größe (factors), z. B. { "ml": "Milliliter" } */
+  names: z.record(z.string(), z.string().trim().min(1)).default({}),
   /** kind "table": Spaltenüberschriften und Zeilen (Text je Zelle) */
   columns: z.array(z.string().trim().min(1)).default([]),
   rows: z.array(z.array(z.string())).default([]),
@@ -136,9 +138,22 @@ function checkRare(entry: ConverterEntry): string[] {
   return issues
 }
 
+/** Bei units/factors braucht jede Einheit einen ausgeschriebenen Namen, sonst keine Namen */
+function checkNames(entry: ConverterEntry): string[] {
+  const named = Object.keys(entry.names)
+  if (entry.kind !== 'units' && entry.kind !== 'factors') {
+    return named.length > 0 ? [`names: wird bei kind "${entry.kind}" nicht verwendet`] : []
+  }
+  const keys = selectableKeys(entry)
+  return [
+    ...keys.filter((key) => !named.includes(key)).map((key) => `names: Name für "${key}" fehlt`),
+    ...named.filter((key) => !keys.includes(key)).map((key) => `names: "${key}" gibt es bei kind "${entry.kind}" nicht`),
+  ]
+}
+
 /** Prüft je nach Art die passenden Felder; nicht benutzte Felder müssen leer sein. */
 export function checkConverter(entry: ConverterEntry): string[] {
-  return [...checkKind(entry), ...checkRare(entry)]
+  return [...checkKind(entry), ...checkRare(entry), ...checkNames(entry)]
 }
 
 function checkKind(entry: ConverterEntry): string[] {

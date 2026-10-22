@@ -28,6 +28,18 @@
     "Industrieminute",
     "Quartal"
   ],
+  "names": {
+    "ms": "Millisekunde",
+    "Hundertstelminute": "Hundertstelminute",
+    "s": "Sekunde",
+    "Industrieminute": "Industrieminute",
+    "min": "Minute",
+    "h": "Stunde",
+    "day": "Tag",
+    "week": "Woche",
+    "Quartal": "Quartal",
+    "Kalenderjahr": "Jahr"
+  },
   "from": "h",
   "to": "min"
 }

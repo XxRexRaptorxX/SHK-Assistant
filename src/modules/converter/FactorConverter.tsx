@@ -1,7 +1,7 @@
 import { useId, useState } from 'react'
 import { formatSignificant, parseDecimal } from '../../lib/number'
 import { useSettings } from '../../settings/settings'
-import { fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
+import { displayName, fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
 import type { ConverterEntry, ConverterFactor } from './schema'
 
 /** Richtwerte: wenige gültige Stellen, um keine falsche Genauigkeit vorzutäuschen; exakte Verhältnisse voll */
@@ -17,15 +17,18 @@ export function FactorConverter({
   entry,
   initialValue = '1',
   hideRareUnits,
+  showUnitNames,
 }: {
   entry: ConverterEntry
   initialValue?: string
   /** Für Tests überschreibbar, sonst aus den Einstellungen */
   hideRareUnits?: boolean
+  showUnitNames?: boolean
 }) {
   const id = useId()
   const settings = useSettings()
   const hideRare = hideRareUnits ?? settings.hideRareUnits
+  const showNames = showUnitNames ?? settings.showUnitNames
   const factors = entry.factors.filter((factor) => !(hideRare && entry.rare.includes(factor.key)))
   const byKey = new Map(factors.map((factor) => [factor.key, factor]))
   const [raw, setRaw] = useState(initialValue)
@@ -89,6 +92,7 @@ export function FactorConverter({
                 key: factor.key,
                 value: format(convertByFactors(value, from, factor)),
                 label: factor.label,
+                name: displayName(entry.names, factor.key, factor.label, showNames),
                 highlight: factor.key === fromKey,
               }))
         }

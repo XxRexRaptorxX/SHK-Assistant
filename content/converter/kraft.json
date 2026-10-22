@@ -24,6 +24,15 @@
     "cN",
     "MN"
   ],
+  "names": {
+    "mN": "Millinewton",
+    "cN": "Zentinewton",
+    "N": "Newton",
+    "daN": "Dekanewton",
+    "kN": "Kilonewton",
+    "MN": "Meganewton",
+    "kgf": "Kilopond"
+  },
   "from": "kN",
   "to": "N"
 }

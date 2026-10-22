@@ -23,6 +23,16 @@
     "dm^3",
     "km^3"
   ],
+  "names": {
+    "ml": "Milliliter",
+    "cm^3": "Kubikzentimeter",
+    "dl": "Deziliter",
+    "l": "Liter",
+    "dm^3": "Kubikdezimeter",
+    "hl": "Hektoliter",
+    "m^3": "Kubikmeter",
+    "km^3": "Kubikkilometer"
+  },
   "from": "l",
   "to": "m^3"
 }

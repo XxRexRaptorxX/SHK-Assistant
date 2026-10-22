@@ -19,6 +19,12 @@
   "rare": [
     "Mohm"
   ],
+  "names": {
+    "mohm": "Milliohm",
+    "ohm": "Ohm",
+    "kohm": "Kiloohm",
+    "Mohm": "Megaohm"
+  },
   "from": "ohm",
   "to": "kohm"
 }

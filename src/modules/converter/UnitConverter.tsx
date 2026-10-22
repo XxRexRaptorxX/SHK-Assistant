@@ -5,7 +5,7 @@ import { unverifiedUnitSymbols } from '../units/customUnits'
 import { formatAnyUnit } from '../units/labels'
 import { isKnownUnit } from '../units/registry'
 import { useSettings } from '../../settings/settings'
-import { fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
+import { displayName, fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
 import type { ConverterEntry } from './schema'
 
 export function convert(value: number, from: string, to: string): number {
@@ -22,15 +22,18 @@ export function UnitConverter({
   entry,
   initialValue = '1',
   hideRareUnits,
+  showUnitNames,
 }: {
   entry: ConverterEntry
   initialValue?: string
   /** Für Tests überschreibbar, sonst aus den Einstellungen */
   hideRareUnits?: boolean
+  showUnitNames?: boolean
 }) {
   const id = useId()
   const settings = useSettings()
   const hideRare = hideRareUnits ?? settings.hideRareUnits
+  const showNames = showUnitNames ?? settings.showUnitNames
   // Angekündigte Zusatzeinheiten ohne Definition fehlen noch; unübliche ggf. ausgeblendet
   const available = useMemo(
     () => entry.units.filter((unit) => isKnownUnit(unit) && !(hideRare && entry.rare.includes(unit))),
@@ -114,6 +117,7 @@ export function UnitConverter({
           key: result.unit,
           value: formatSignificant(result.value),
           label: unitLabel(result.unit),
+          name: displayName(entry.names, result.unit, formatAnyUnit(result.unit), showNames),
           highlight: result.unit === from,
         }))}
       />

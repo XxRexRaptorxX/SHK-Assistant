@@ -7,18 +7,19 @@ export const SETTINGS_STORAGE_KEY = 'shk-settings'
 export interface Settings {
   /** Umrechner: unübliche Einheiten ausblenden (Standard: aus) */
   hideRareUnits: boolean
+  /** Umrechner: ausgeschriebene Einheitennamen hinter den Einheiten (Standard: an) */
+  showUnitNames: boolean
 }
 
-export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false }
+export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true }
 
 /** Liest gespeicherte Einstellungen; Unbekanntes oder Kaputtes fällt auf die Standardwerte zurück. */
 export function parseSettings(raw: string | null): Settings {
   try {
     const data: unknown = raw ? JSON.parse(raw) : {}
     const record = typeof data === 'object' && data !== null ? (data as Record<string, unknown>) : {}
-    return {
-      hideRareUnits: typeof record.hideRareUnits === 'boolean' ? record.hideRareUnits : DEFAULT_SETTINGS.hideRareUnits,
-    }
+    const flag = (key: keyof Settings) => (typeof record[key] === 'boolean' ? record[key] : DEFAULT_SETTINGS[key])
+    return { hideRareUnits: flag('hideRareUnits'), showUnitNames: flag('showUnitNames') }
   } catch {
     return DEFAULT_SETTINGS
   }

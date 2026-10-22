@@ -22,6 +22,15 @@
   "rare": [
     "ft"
   ],
+  "names": {
+    "mm": "Millimeter",
+    "cm": "Zentimeter",
+    "dm": "Dezimeter",
+    "m": "Meter",
+    "km": "Kilometer",
+    "inch": "Zoll (Inch)",
+    "ft": "Fuß"
+  },
   "from": "m",
   "to": "mm"
 }

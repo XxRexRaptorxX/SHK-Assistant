@@ -21,6 +21,13 @@
     "uV",
     "MV"
   ],
+  "names": {
+    "uV": "Mikrovolt",
+    "mV": "Millivolt",
+    "V": "Volt",
+    "kV": "Kilovolt",
+    "MV": "Megavolt"
+  },
   "from": "V",
   "to": "kV"
 }

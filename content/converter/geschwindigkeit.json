@@ -21,6 +21,13 @@
     "mm/s",
     "m/h"
   ],
+  "names": {
+    "m/h": "Meter pro Stunde",
+    "mm/s": "Millimeter pro Sekunde",
+    "m/min": "Meter pro Minute",
+    "m/s": "Meter pro Sekunde",
+    "km/h": "Kilometer pro Stunde"
+  },
   "from": "m/s",
   "to": "km/h"
 }

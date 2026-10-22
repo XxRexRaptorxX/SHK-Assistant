@@ -60,7 +60,15 @@ export interface ResultRow {
   key: string
   value: string
   label: string
+  /** Ausgeschriebener Name, grau hinter der Einheit */
+  name?: string
   highlight?: boolean
+}
+
+/** Name nur, wenn eingeschaltet und nicht gleich der Kurzform (z. B. „Tag“) */
+export function displayName(names: Record<string, string>, key: string, label: string, show: boolean): string | undefined {
+  const name = names[key]
+  return show && name && name.toLowerCase() !== label.toLowerCase() ? name : undefined
 }
 
 export function ResultsTable({ title, rows }: { title: string; rows: ResultRow[] }) {
@@ -73,7 +81,10 @@ export function ResultsTable({ title, rows }: { title: string; rows: ResultRow[]
           {rows.map((row) => (
             <tr key={row.key} className={row.highlight ? 'font-bold' : ''}>
               <td className="py-2 pr-3 text-right tabular-nums">{row.value}</td>
-              <td className="py-2">{row.label}</td>
+              <td className="py-2">
+                {row.label}
+                {row.name && <span className="ml-2 text-base font-normal text-muted">{row.name}</span>}
+              </td>
             </tr>
           ))}
         </tbody>

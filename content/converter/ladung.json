@@ -19,6 +19,12 @@
   "rare": [
     "kAh"
   ],
+  "names": {
+    "C": "Coulomb",
+    "mAh": "Milliamperestunde",
+    "Ah": "Amperestunde",
+    "kAh": "Kiloamperestunde"
+  },
   "from": "Ah",
   "to": "mAh"
 }

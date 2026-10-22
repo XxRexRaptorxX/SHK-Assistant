@@ -22,6 +22,15 @@
     "MJ",
     "MWh"
   ],
+  "names": {
+    "J": "Joule",
+    "kJ": "Kilojoule",
+    "kcal": "Kilokalorie",
+    "MJ": "Megajoule",
+    "Wh": "Wattstunde",
+    "kWh": "Kilowattstunde",
+    "MWh": "Megawattstunde"
+  },
   "from": "kWh",
   "to": "MJ"
 }

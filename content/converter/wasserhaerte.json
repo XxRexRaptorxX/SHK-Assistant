@@ -18,6 +18,12 @@
   "rare": [
     "gradEH"
   ],
+  "names": {
+    "gradDH": "Grad deutscher Härte",
+    "gradFH": "Grad französischer Härte",
+    "gradEH": "Grad englischer Härte",
+    "mmol/l": "Millimol pro Liter"
+  },
   "from": "gradDH",
   "to": "mmol/l",
   "min": 0

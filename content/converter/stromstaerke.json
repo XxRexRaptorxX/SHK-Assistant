@@ -20,6 +20,12 @@
     "uA",
     "kA"
   ],
+  "names": {
+    "uA": "Mikroampere",
+    "mA": "Milliampere",
+    "A": "Ampere",
+    "kA": "Kiloampere"
+  },
   "from": "A",
   "to": "mA"
 }

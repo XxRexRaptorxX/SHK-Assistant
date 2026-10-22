@@ -19,6 +19,13 @@
   "rare": [
     "m^3/s"
   ],
+  "names": {
+    "m^3/h": "Kubikmeter pro Stunde",
+    "l/h": "Liter pro Stunde",
+    "l/min": "Liter pro Minute",
+    "l/s": "Liter pro Sekunde",
+    "m^3/s": "Kubikmeter pro Sekunde"
+  },
   "from": "m^3/h",
   "to": "l/min"
 }

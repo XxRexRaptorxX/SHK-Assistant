@@ -82,6 +82,10 @@ Verhältnisse (`false`, z. B. Stückmaß).
 in den Einstellungen „Unübliche Einheiten ausblenden“ eingeschaltet ist (Standard: aus). Mindestens
 zwei Einheiten müssen übrig bleiben.
 
+`names` (bei `units` und `factors` Pflicht) nennt je Einheit bzw. Größen-Schlüssel den ausgeschriebenen
+Namen, z. B. `{ "hl": "Hektoliter" }`. Die App zeigt ihn grau hinter der Einheit (abschaltbar in den
+Einstellungen). Der Build bricht ab, wenn ein Name fehlt oder zu keiner Einheit gehört.
+
 Für Temperaturen `degC`, `K`, `degF` verwenden; die Nullpunkt-Verschiebung rechnet mathjs selbst.
 In `units` dürfen Zusatzeinheiten stehen, die in `content/units` noch ohne Definition angekündigt
 sind (z. B. `kcal/h`, `gradDH`). Die App zeigt sie dann als „noch ohne Definition“, bis die

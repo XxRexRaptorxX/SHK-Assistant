@@ -20,6 +20,13 @@
   "rare": [
     "mg"
   ],
+  "names": {
+    "mg": "Milligramm",
+    "g": "Gramm",
+    "kg": "Kilogramm",
+    "dt": "Dezitonne",
+    "t": "Tonne"
+  },
   "from": "kg",
   "to": "t"
 }

@@ -40,11 +40,15 @@ const pressure: ConverterEntry = {
   from: 'bar',
   to: 'mbar',
   rare: [],
+  names: { bar: 'Bar', mbar: 'Millibar', Pa: 'Pascal' },
   columns: [],
   rows: [],
 }
 
-const blank = { units: [], factors: [], from: '', to: '', columns: [], rows: [] }
+const blank = { units: [], factors: [], from: '', to: '', names: {}, columns: [], rows: [] }
+
+/** Prüfung ohne die Namens-Vollständigkeit (für Tests, die andere Felder variieren) */
+const checkWithoutNames = (entry: ConverterEntry) => checkConverter(entry).filter((issue) => !issue.startsWith('names:'))
 
 const wood: ConverterEntry = {
   ...pressure,
@@ -57,6 +61,7 @@ const wood: ConverterEntry = {
     { key: 'rm', label: 'Raummeter', value: 1.4 },
     { key: 'srm', label: 'Schüttraummeter', value: 2.2 },
   ],
+  names: { fm: 'Festmeter', rm: 'Raummeter', srm: 'Schüttraummeter' },
   from: 'rm',
   to: 'fm',
   min: 0,
@@ -102,7 +107,7 @@ describe('Umrechner-Prüfung', () => {
   })
 
   it('meldet unbekannte, unpassende und doppelte Einheiten sowie falsche Voreinstellungen', () => {
-    const issues = checkConverter({ ...pressure, units: ['bar', 'kW', 'xyz', 'bar'], to: 'psi' })
+    const issues = checkWithoutNames({ ...pressure, units: ['bar', 'kW', 'xyz', 'bar'], to: 'psi' })
     expect(issues).toEqual(
       expect.arrayContaining([
         expect.stringMatching(/"xyz" unbekannt/),
@@ -114,15 +119,15 @@ describe('Umrechner-Prüfung', () => {
   })
 
   it('erkennt, dass "PS" in mathjs keine Leistung ist', () => {
-    expect(checkConverter({ ...pressure, units: ['W', 'PS'], from: 'W', to: 'W' })).toEqual([
+    expect(checkWithoutNames({ ...pressure, units: ['W', 'PS'], from: 'W', to: 'W' })).toEqual([
       'Einheit "PS" passt nicht zu "W"',
     ])
   })
 
   it('erlaubt angekündigte Zusatzeinheiten ohne Definition', () => {
     registerCustomUnits([{ id: 'unit.zz-pending', symbol: 'zzPending', definition: '', aliases: [], examples: [] }])
-    expect(checkConverter({ ...pressure, units: ['W', 'zzPending/h'], from: 'W', to: 'W' })).toEqual([])
-    expect(checkConverter({ ...pressure, units: ['W', 'zzUnbekannt/h'], from: 'W', to: 'W' })[0]).toMatch(/unbekannt/)
+    expect(checkWithoutNames({ ...pressure, units: ['W', 'zzPending/h'], from: 'W', to: 'W' })).toEqual([])
+    expect(checkWithoutNames({ ...pressure, units: ['W', 'zzUnbekannt/h'], from: 'W', to: 'W' })[0]).toMatch(/unbekannt/)
   })
 
   it('prüft Tabellen und nicht benutzte Felder je Art', () => {
@@ -133,6 +138,7 @@ describe('Umrechner-Prüfung', () => {
       'units: wird bei kind "slope" nicht verwendet',
       'from: wird bei kind "slope" nicht verwendet',
       'to: wird bei kind "slope" nicht verwendet',
+      'names: wird bei kind "slope" nicht verwendet',
     ])
     expect(checkConverter({ ...pressure, ...blank, kind: 'ratio' })).toEqual([])
   })
@@ -211,9 +217,9 @@ describe('Unübliche Einheiten ausblenden', () => {
   })
 
   it('prüft die rare-Liste beim Build', () => {
-    expect(checkConverter(withRare)).toEqual([])
-    expect(checkConverter({ ...withRare, rare: ['xyz'] })).toEqual(['rare: "xyz" gibt es bei kind "units" nicht'])
-    expect(checkConverter({ ...withRare, rare: ['psi', 'Pa', 'mbar'] })).toEqual([
+    expect(checkWithoutNames(withRare)).toEqual([])
+    expect(checkWithoutNames({ ...withRare, rare: ['xyz'] })).toEqual(['rare: "xyz" gibt es bei kind "units" nicht'])
+    expect(checkWithoutNames({ ...withRare, rare: ['psi', 'Pa', 'mbar'] })).toEqual([
       'rare: mindestens zwei Einheiten müssen übrig bleiben',
     ])
   })
@@ -221,6 +227,41 @@ describe('Unübliche Einheiten ausblenden', () => {
   it('ist in den echten Inhalten gültig und lässt überall genug Einheiten übrig', () => {
     for (const entry of converterEntries) expect(checkConverter(entry)).toEqual([])
     expect(converterEntries.find((e) => e.id === 'converter.laenge')?.rare).toContain('ft')
+  })
+})
+
+describe('Ausgeschriebene Einheiten', () => {
+  it('zeigt den Namen grau hinter der Einheit, abschaltbar', () => {
+    const shown = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
+    const hidden = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames={false} />)
+    expect(shown).toContain('<span class="ml-2 text-base font-normal text-muted">Millibar</span>')
+    expect(hidden).not.toContain('Millibar')
+  })
+
+  it('wiederholt den Namen nicht, wenn er der Kurzform entspricht', () => {
+    const html = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
+    expect(html).not.toContain('text-muted">Bar</span>')
+    const factors = renderToStaticMarkup(<FactorConverter entry={wood} showUnitNames />)
+    expect(factors).not.toContain('text-muted">Festmeter</span>')
+    const named = renderToStaticMarkup(
+      <FactorConverter entry={{ ...wood, factors: wood.factors.map((f) => ({ ...f, label: f.key })) }} showUnitNames />,
+    )
+    expect(named).toContain('text-muted">Schüttraummeter</span>')
+  })
+
+  it('verlangt beim Build einen Namen je Einheit, aber keine überzähligen', () => {
+    expect(checkConverter({ ...pressure, names: { bar: 'Bar', mbar: 'Millibar' } })).toEqual(['names: Name für "Pa" fehlt'])
+    expect(checkConverter({ ...pressure, names: { ...pressure.names, psi: 'Pfund' } })).toEqual([
+      'names: "psi" gibt es bei kind "units" nicht',
+    ])
+    expect(checkConverter({ ...pressure, ...blank, kind: 'ratio', names: { x: 'X' } })).toEqual([
+      'names: wird bei kind "ratio" nicht verwendet',
+    ])
+  })
+
+  it('hat in den echten Inhalten für jede Einheit einen Namen', () => {
+    const volume = converterEntries.find((e) => e.id === 'converter.volumen')
+    expect(volume?.names.hl).toBe('Hektoliter')
   })
 })
 
@@ -238,7 +279,7 @@ describe('Richtwert-Faktoren (Holzmaße)', () => {
     expect(checkConverter(wood)).toEqual([])
     const broken = { ...wood, factors: [...wood.factors, { key: 'rm', label: 'doppelt', value: 1 }], to: 'xyz' }
     expect(checkConverter(broken)).toEqual(['factors: key doppelt vergeben', 'to: "xyz" steht nicht in factors'])
-    expect(checkConverter({ ...pressure, factors: wood.factors })).toEqual(['factors: wird bei kind "units" nicht verwendet'])
+    expect(checkWithoutNames({ ...pressure, factors: wood.factors })).toEqual(['factors: wird bei kind "units" nicht verwendet'])
   })
 
   it('zeigt Richtwerte mit wenigen Stellen und lehnt negative Mengen ab', () => {

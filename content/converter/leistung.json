@@ -20,6 +20,13 @@
     "MW",
     "Pferdestaerke"
   ],
+  "names": {
+    "W": "Watt",
+    "kW": "Kilowatt",
+    "MW": "Megawatt",
+    "Pferdestaerke": "Pferdestärke",
+    "kcal/h": "Kilokalorie pro Stunde"
+  },
   "from": "kW",
   "to": "W"
 }

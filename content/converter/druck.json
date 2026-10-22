@@ -28,6 +28,19 @@
     "N/m^2",
     "N/cm^2"
   ],
+  "names": {
+    "bar": "Bar",
+    "mbar": "Millibar",
+    "Pa": "Pascal",
+    "N/m^2": "Newton pro Quadratmeter",
+    "hPa": "Hektopascal",
+    "kPa": "Kilopascal",
+    "N/cm^2": "Newton pro Quadratzentimeter",
+    "MPa": "Megapascal",
+    "psi": "Pfund pro Quadratzoll",
+    "mWS": "Meter Wassersäule",
+    "mmH2O": "Millimeter Wassersäule"
+  },
   "from": "bar",
   "to": "mWS"
 }
