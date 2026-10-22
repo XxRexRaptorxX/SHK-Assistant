@@ -51,6 +51,8 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
       }
     >
       <RichText text={formula.description} />
+      {/* Skizze immer über der Formel */}
+      <FigureView id={formula.figure} />
 
       {formula.expression === '' || !result ? (
         <p className="mt-4 font-semibold">Die Formel ist noch nicht hinterlegt.</p>
@@ -70,7 +72,6 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
               </div>
             ))}
           </dl>
-          <FigureView id={formula.figure} />
           <Calculator key={formula.id} formula={formula} />
         </>
       )}

@@ -12,6 +12,7 @@
   "units": [
     "W",
     "kW",
+    "kJ/s",
     "MW",
     "Pferdestaerke",
     "kcal/h"
@@ -23,6 +24,7 @@
   "names": {
     "W": "Watt",
     "kW": "Kilowatt",
+    "kJ/s": "Kilojoule pro Sekunde",
     "MW": "Megawatt",
     "Pferdestaerke": "Pferdestärke",
     "kcal/h": "Kilokalorie pro Stunde"
