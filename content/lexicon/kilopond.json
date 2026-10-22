@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilopond",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Kraft“; Wikipedia „Kilopond“, https://de.wikipedia.org/wiki/Kilopond",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilopond",
+  "synonyms": [
+    "kp"
+  ],
+  "definition": "**Kilopond** (kp) ist eine Einheit für die Kraft. 1 kp = 9,80665 N.",
+  "related": [
+    "lexicon.newton"
+  ]
+}

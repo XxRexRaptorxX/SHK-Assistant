@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilogramm-pro-kubikmeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Dichte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilogramm%20pro%20Kubikmeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilogramm pro Kubikmeter",
+  "synonyms": [
+    "kg/m³"
+  ],
+  "definition": "**Kilogramm pro Kubikmeter** (kg/m³) ist eine Einheit für die Dichte. 1 kg/m³ = 0,001 g/cm³.",
+  "related": [
+    "lexicon.gramm-pro-kubikzentimeter"
+  ]
+}

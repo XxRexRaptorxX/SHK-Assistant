@@ -1,8 +1,9 @@
 import { useId, useState } from 'react'
 import { formatSignificant, parseDecimal } from '../../lib/number'
 import { useSettings } from '../../settings/settings'
-import { displayName, FromToSelects, ResultsTable, ValueInput } from './converterUi'
+import { ConversionInputs, displayName, RareUnitsToggle, ResultsTable } from './converterUi'
 import type { ConverterEntry, ConverterFactor } from './schema'
+import { lexiconPathFor } from '../lexicon/termLinks'
 
 /** Richtwerte: wenige gültige Stellen, um keine falsche Genauigkeit vorzutäuschen; exakte Verhältnisse voll */
 const APPROXIMATE_DIGITS = 3
@@ -52,15 +53,14 @@ export function FactorConverter({
 
   return (
     <section className="mt-2" aria-label="Umrechnen">
-      <label htmlFor={`${id}-value`} className="block font-semibold">
-        Menge
-      </label>
-      <div className="mt-1 flex flex-wrap items-center gap-2 [&>input]:flex-1">
-        <ValueInput id={`${id}-value`} value={raw} onChange={setRaw} invalid={invalid} hint={hint} />
-      </div>
-      {empty && <p className="mt-1 text-base text-muted">Bitte eine Menge eingeben.</p>}
-      <FromToSelects
+      <ConversionInputs
         id={id}
+        raw={raw}
+        onRawChange={setRaw}
+        invalid={invalid}
+        hint={hint}
+        emptyHint="Bitte eine Menge eingeben."
+        result={value !== undefined && from && to ? format(convertByFactors(value, from, to)) : '–'}
         options={options}
         from={fromKey}
         to={toKey}
@@ -68,14 +68,10 @@ export function FactorConverter({
         onToChange={setToKey}
       />
 
-      <p className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-words" aria-live="polite">
-        {value !== undefined && from && to
-          ? `${format(convertByFactors(value, from, to))} ${to.label}`
-          : '–'}
-      </p>
 
       <ResultsTable
         title={entry.approximate ? 'In allen Maßen (Richtwerte)' : 'In allen Maßen'}
+        action={entry.rare.length > 0 && <RareUnitsToggle hidden={hideRare} />}
         rows={
           value === undefined || !from
             ? []
@@ -84,6 +80,7 @@ export function FactorConverter({
                 value: format(convertByFactors(value, from, factor)),
                 label: factor.label,
                 name: displayName(entry.names, factor.key, factor.label, showNames),
+                href: lexiconPathFor([entry.names[factor.key], factor.label]),
                 highlight: factor.key === fromKey,
               }))
         }

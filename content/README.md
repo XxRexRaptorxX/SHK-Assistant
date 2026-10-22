@@ -117,7 +117,8 @@ Definition eingetragen ist.
 | `title`       | Name der Checkliste                                              |
 | `description` | Optionaler Text oberhalb der Punkte                              |
 | `category`    | Gruppe in der Liste, z. B. „Wartung“ (leer = „Allgemein“)        |
-| `sections`    | Abschnitte: `title` und `items` (je Punkt `id`, `text`, optional `note`) |
+| `sections`    | Abschnitte: optional `title` (Zwischenüberschrift; leer = ohne) und `items` (je Punkt `id`, `text`, optional `note`) |
+| `notes`       | Optional: Notizfeld unter den Punkten, z. B. `{ "label": "Notizen" }`; wird auf dem Gerät gespeichert, gedruckt und beim Zurücksetzen geleert |
 
 Die `id` eines Punkts (z. B. `abgasweg-pruefen`) muss innerhalb der Checkliste eindeutig sein und
 **stabil bleiben**: Der gespeicherte Fortschritt auf den Geräten hängt daran. Wird ein Punkt nur

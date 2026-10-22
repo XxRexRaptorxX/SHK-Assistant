@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.amperestunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Ladung“; Wikipedia „Amperestunde“, https://de.wikipedia.org/wiki/Amperestunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Amperestunde",
+  "synonyms": [
+    "Ah"
+  ],
+  "definition": "**Amperestunde** (Ah) ist eine Einheit für die elektrische Ladung. 1 Ah = 3.600 C.",
+  "related": [
+    "lexicon.coulomb"
+  ]
+}

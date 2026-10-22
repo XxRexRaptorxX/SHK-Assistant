@@ -1,0 +1,75 @@
+{
+  "id": "checklist.lpg-inspection",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Checkliste des Inhabers, übermittelt am 22.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Flüssiggasprüfung nach DVGW G 607",
+  "category": "Prüfung",
+  "sections": [
+    {
+      "items": [
+        {
+          "id": "inspection-book-completed",
+          "text": "Neues Prüfheft ausgefüllt"
+        },
+        {
+          "id": "cylinder-holder-intact",
+          "text": "Flaschenhalterung intakt und vorhanden"
+        },
+        {
+          "id": "ventilation-openings-clear",
+          "text": "Lüftungsöffnungen frei"
+        },
+        {
+          "id": "pressure-regulator-inspected",
+          "text": "Druckregler kontrolliert"
+        },
+        {
+          "id": "gas-hoses-inspected",
+          "text": "Gasschläuche kontrolliert"
+        },
+        {
+          "id": "gas-burner-inspected",
+          "text": "Gasbrenner kontrolliert"
+        },
+        {
+          "id": "gas-heater-inspected",
+          "text": "Gasheizung kontrolliert"
+        },
+        {
+          "id": "gas-refrigerator-inspected",
+          "text": "Gaskühlschrank kontrolliert"
+        },
+        {
+          "id": "leak-test-passed",
+          "text": "Dichtheitsprüfung erfolgreich (150 mbar - 10 min)"
+        },
+        {
+          "id": "cylinder-installation-area-inspected",
+          "text": "Flaschenaufstellraum kontrolliert"
+        },
+        {
+          "id": "exhaust-pipe-intact",
+          "text": "Abgasrohr unbeschädigt und Öffnung frei"
+        },
+        {
+          "id": "pipework-intact",
+          "text": "Rohrleitungsinstallation intakt"
+        },
+        {
+          "id": "warning-signs-present",
+          "text": "Hinweisschilder vorhanden"
+        },
+        {
+          "id": "inspection-sticker-issued",
+          "text": "Prüfplakette vergeben"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

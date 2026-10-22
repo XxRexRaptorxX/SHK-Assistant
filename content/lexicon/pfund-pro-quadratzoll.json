@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.pfund-pro-quadratzoll",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Pfund%20pro%20Quadratzoll",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Pfund pro Quadratzoll",
+  "synonyms": [
+    "psi"
+  ],
+  "definition": "**Pfund pro Quadratzoll** (psi) ist eine Einheit für den Druck. 1 psi = 6.894,76 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

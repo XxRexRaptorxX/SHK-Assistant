@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.gramm-pro-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Massenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Gramm%20pro%20Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gramm pro Sekunde",
+  "synonyms": [
+    "g/s"
+  ],
+  "definition": "**Gramm pro Sekunde** (g/s) ist eine Einheit für den Massenstrom. 1 g/s = 0,001 kg/s.",
+  "related": [
+    "lexicon.kilogramm-pro-sekunde"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.millimeter-pro-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Geschwindigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Millimeter%20pro%20Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Millimeter pro Sekunde",
+  "synonyms": [
+    "mm/s"
+  ],
+  "definition": "**Millimeter pro Sekunde** (mm/s) ist eine Einheit für die Geschwindigkeit. 1 mm/s = 0,001 m/s.",
+  "related": [
+    "lexicon.meter-pro-sekunde"
+  ]
+}

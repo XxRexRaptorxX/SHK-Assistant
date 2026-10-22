@@ -8,17 +8,9 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { checklistEntries, countDone, findChecklist } from './checklists'
 import type { ChecklistEntry } from './schema'
 import { useChecklistProgress } from './useChecklistProgress'
-import { listCard } from '../../components/surfaces'
+import { fieldBase, listCard } from '../../components/surfaces'
 
 const BACK = { to: '/checklisten', label: 'Checklisten' }
-
-/** Druckt die Seite; "blank" blendet die Haken für ein leeres Formular aus (siehe index.css). */
-function printChecklist(blank: boolean) {
-  const root = document.documentElement
-  if (blank) root.dataset.printBlank = ''
-  window.addEventListener('afterprint', () => delete root.dataset.printBlank, { once: true })
-  window.print()
-}
 
 export function ChecklistPage({ entries = checklistEntries }: { entries?: ChecklistEntry[] }) {
   const { slug } = useParams()
@@ -28,7 +20,7 @@ export function ChecklistPage({ entries = checklistEntries }: { entries?: Checkl
 }
 
 function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
-  const { state, setChecked, reset } = useChecklistProgress(entry.id)
+  const { state, setChecked, setTitle, setNotes, reset } = useChecklistProgress(entry.id)
   const [confirmReset, setConfirmReset] = useState(false)
   const checked: ReadonlySet<string> = state.status === 'loading' ? new Set() : state.checked
 
@@ -44,6 +36,12 @@ function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
         <p className="mt-4 font-semibold">TODO: Inhalt fehlt – die Prüfpunkte sind noch nicht hinterlegt.</p>
       ) : (
         <>
+          <ChecklistTitle
+            id={`${entry.id}-title`}
+            value={state.status === 'loading' ? '' : state.title}
+            disabled={state.status === 'loading'}
+            onChange={setTitle}
+          />
           <PrintHeader />
           {state.status === 'unavailable' && (
             <p role="alert" className="mt-4 rounded-xl bg-warn p-2 font-semibold text-warn-ink print:hidden">
@@ -56,13 +54,19 @@ function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
             disabled={state.status === 'loading'}
             onToggle={(itemId, value) => void setChecked(itemId, value)}
           />
+          {entry.notes && (
+            <ChecklistNotes
+              id={`${entry.id}-notes`}
+              label={entry.notes.label}
+              value={state.status === 'loading' ? '' : state.notes}
+              disabled={state.status === 'loading'}
+              onChange={setNotes}
+            />
+          )}
 
           <div className="mt-6 flex flex-wrap gap-2 print:hidden">
-            <button type="button" className={primaryButton} onClick={() => printChecklist(false)}>
+            <button type="button" className={primaryButton} onClick={() => window.print()}>
               Drucken
-            </button>
-            <button type="button" className={secondaryButton} onClick={() => printChecklist(true)}>
-              Leer drucken
             </button>
             <button type="button" className={secondaryButton} onClick={() => setConfirmReset(true)}>
               Zurücksetzen
@@ -70,7 +74,7 @@ function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
           </div>
           {confirmReset && (
             <div className="mt-3 rounded-2xl border border-edge bg-surface p-3 print:hidden">
-              <p>Alle Haken dieser Checkliste entfernen?</p>
+              <p>{entry.notes ? 'Titel, alle Haken und Notizen dieser Checkliste entfernen?' : 'Titel und alle Haken dieser Checkliste entfernen?'}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <button
                   type="button"
@@ -122,9 +126,9 @@ export function ChecklistView({ entry, checked, disabled = false, onToggle }: Ch
         </div>
       </div>
 
-      {entry.sections.map((section) => (
-        <section key={section.title} className="mt-6">
-          <h2 className="text-xl font-bold">{section.title}</h2>
+      {entry.sections.map((section, index) => (
+        <section key={index} className="mt-6">
+          {section.title && <h2 className="text-xl font-bold">{section.title}</h2>}
           <ul className={`mt-2 ${listCard}`}>
             {section.items.map((item) => {
               const isDone = checked.has(item.id)
@@ -150,6 +154,59 @@ export function ChecklistView({ entry, checked, disabled = false, onToggle }: Ch
         </section>
       ))}
     </>
+  )
+}
+
+/** Freitext-Titel über den Punkten (z. B. Kunde oder Anlage); im Ausdruck als Zeile */
+export function ChecklistTitle({ id, value, disabled = false, onChange }: {
+  id: string
+  value: string
+  disabled?: boolean
+  onChange: (value: string) => void
+}) {
+  return (
+    <div className="mt-4">
+      <label htmlFor={id} className="block text-base font-semibold print:hidden">
+        Titel
+      </label>
+      <input
+        id={id}
+        type="text"
+        value={value}
+        disabled={disabled}
+        onChange={(event) => onChange(event.target.value)}
+        className={`${fieldBase} mt-1 block min-h-12 w-full print:hidden`}
+      />
+      <p className="hidden border-b-2 border-line pb-1 text-xl font-bold print:block">{value || ' '}</p>
+    </div>
+  )
+}
+
+/** Freitext unter den Punkten; im Ausdruck als Kasten */
+export function ChecklistNotes({ id, label, value, disabled = false, onChange }: {
+  id: string
+  label: string
+  value: string
+  disabled?: boolean
+  onChange: (value: string) => void
+}) {
+  return (
+    <section className="mt-6 break-inside-avoid">
+      <label htmlFor={id} className="block text-xl font-bold">
+        {label}
+      </label>
+      <textarea
+        id={id}
+        rows={4}
+        value={value}
+        disabled={disabled}
+        onChange={(event) => onChange(event.target.value)}
+        className={`${fieldBase} mt-2 block w-full py-2 print:hidden`}
+      />
+      <div className="mt-2 hidden min-h-32 rounded-xl border-2 border-line p-3 whitespace-pre-wrap print:block">
+        {value}
+      </div>
+    </section>
   )
 }
 

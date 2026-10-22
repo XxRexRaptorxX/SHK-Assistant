@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.schock",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Stückmaße“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Schock",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schock",
+  "synonyms": [],
+  "definition": "**Schock** ist eine Einheit für Stückzahlen. 1 Schock = 60 Stk.",
+  "related": [
+    "lexicon.stueck"
+  ]
+}

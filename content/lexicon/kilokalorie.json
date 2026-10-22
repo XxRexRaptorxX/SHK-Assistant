@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilokalorie",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Energie“; Wikipedia „Kalorie“, https://de.wikipedia.org/wiki/Kalorie",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilokalorie",
+  "synonyms": [
+    "kcal"
+  ],
+  "definition": "**Kilokalorie** (kcal) ist eine Einheit für die Energie. 1 kcal = 4.186,8 J.",
+  "related": [
+    "lexicon.joule"
+  ]
+}

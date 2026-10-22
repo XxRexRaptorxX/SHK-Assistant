@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.gramm",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Gewicht“; Wikipedia „Gramm“, https://de.wikipedia.org/wiki/Gramm",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gramm",
+  "synonyms": [],
+  "definition": "**Gramm** (g) ist eine Einheit für die Masse (umgangssprachlich Gewicht). 1 g = 0,001 kg.",
+  "related": [
+    "lexicon.kilogramm"
+  ]
+}

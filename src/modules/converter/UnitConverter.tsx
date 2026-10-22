@@ -5,8 +5,9 @@ import { unverifiedUnitSymbols } from '../units/customUnits'
 import { formatAnyUnit } from '../units/labels'
 import { isKnownUnit } from '../units/registry'
 import { useSettings } from '../../settings/settings'
-import { displayName, FromToSelects, ResultsTable, ValueInput } from './converterUi'
+import { ConversionInputs, displayName, RareUnitsToggle, ResultsTable } from './converterUi'
 import type { ConverterEntry } from './schema'
+import { lexiconPathFor } from '../lexicon/termLinks'
 
 export function convert(value: number, from: string, to: string): number {
   return math.unit(value, from).toNumber(asTargetUnit(to))
@@ -84,27 +85,30 @@ export function UnitConverter({
 
   return (
     <section className="mt-2" aria-label="Umrechnen">
-      <label htmlFor={`${id}-value`} className="block font-semibold">
-        Wert
-      </label>
-      <div className="mt-1 flex flex-wrap items-center gap-2 [&>input]:flex-1">
-        <ValueInput id={`${id}-value`} value={raw} onChange={setRaw} invalid={invalid} hint={hint} />
-      </div>
-      {empty && <p className="mt-1 text-base text-muted">Bitte einen Wert eingeben.</p>}
-
-      <FromToSelects id={id} options={options} from={from} to={to} onFromChange={setFrom} onToChange={setTo} />
-
-      <p className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-all" aria-live="polite">
-        {target ? `${formatSignificant(target.value)} ${formatAnyUnit(to)}` : '–'}
-      </p>
+      <ConversionInputs
+        id={id}
+        raw={raw}
+        onRawChange={setRaw}
+        invalid={invalid}
+        hint={hint}
+        emptyHint="Bitte einen Wert eingeben."
+        result={target ? formatSignificant(target.value) : '–'}
+        options={options}
+        from={from}
+        to={to}
+        onFromChange={setFrom}
+        onToChange={setTo}
+      />
 
       <ResultsTable
         title="In allen Einheiten"
+        action={entry.rare.length > 0 && <RareUnitsToggle hidden={hideRare} />}
         rows={results.map((result) => ({
           key: result.unit,
           value: formatSignificant(result.value),
           label: unitLabel(result.unit),
           name: displayName(entry.names, result.unit, formatAnyUnit(result.unit), showNames),
+          href: lexiconPathFor([entry.names[result.unit], formatAnyUnit(result.unit)]),
           highlight: result.unit === from,
         }))}
       />

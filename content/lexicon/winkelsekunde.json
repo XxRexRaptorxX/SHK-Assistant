@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.winkelsekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Winkel“; Wikipedia „Winkelsekunde“, https://de.wikipedia.org/wiki/Winkelsekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Winkelsekunde",
+  "synonyms": [],
+  "definition": "**Winkelsekunde** (″) ist eine Einheit für Winkel. 1 ″ = 0,000277778 °.",
+  "related": [
+    "lexicon.grad"
+  ]
+}

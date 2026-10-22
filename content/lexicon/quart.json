@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.quart",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumen“; Wikipedia „Quart (Einheit)“, https://de.wikipedia.org/wiki/Quart_(Einheit)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Quart",
+  "synonyms": [
+    "Quart (US)",
+    "qt"
+  ],
+  "definition": "**Quart (US)** (qt) ist eine Einheit für das Volumen. 1 qt = 0,946353 l.",
+  "related": [
+    "lexicon.liter"
+  ]
+}

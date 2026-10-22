@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.mebibyte",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Datenmenge“; Wikipedia „Byte“, https://de.wikipedia.org/wiki/Byte",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Mebibyte",
+  "synonyms": [
+    "MiB"
+  ],
+  "definition": "**Mebibyte** (MiB) ist eine Einheit für die Datenmenge. 1 MiB = 1.048.580 B.",
+  "related": [
+    "lexicon.byte"
+  ]
+}

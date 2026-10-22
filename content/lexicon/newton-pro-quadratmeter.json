@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.newton-pro-quadratmeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Newton%20pro%20Quadratmeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Newton pro Quadratmeter",
+  "synonyms": [
+    "N/m²"
+  ],
+  "definition": "**Newton pro Quadratmeter** (N/m²) ist eine Einheit für den Druck. 1 N/m² = 1 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.ohm",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Widerstand“; Wikipedia „Ohm“, https://de.wikipedia.org/wiki/Ohm",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Ohm",
+  "synonyms": [],
+  "definition": "**Ohm** (Ω) ist eine Einheit für den elektrischen Widerstand. 1 Ω = 0,001 kΩ.",
+  "related": [
+    "lexicon.kiloohm"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.gramm-pro-liter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Dichte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Gramm%20pro%20Liter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gramm pro Liter",
+  "synonyms": [
+    "g/l"
+  ],
+  "definition": "**Gramm pro Liter** (g/l) ist eine Einheit für die Dichte. 1 g/l = 1 kg/m³.",
+  "related": [
+    "lexicon.kilogramm-pro-kubikmeter"
+  ]
+}

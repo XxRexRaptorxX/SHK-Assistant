@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.meganewton",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Kraft“; Wikipedia „Newton (Einheit)“, https://de.wikipedia.org/wiki/Newton_(Einheit)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Meganewton",
+  "synonyms": [
+    "MN"
+  ],
+  "definition": "**Meganewton** (MN) ist eine Einheit für die Kraft. 1 MN = 1.000.000 N.",
+  "related": [
+    "lexicon.newton"
+  ]
+}

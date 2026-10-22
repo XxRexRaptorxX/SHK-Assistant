@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.festmeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Holzmaße“; Wikipedia „Festmeter“, https://de.wikipedia.org/wiki/Festmeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Festmeter",
+  "synonyms": [
+    "fm"
+  ],
+  "definition": "**Festmeter** (fm) ist eine Einheit für Holzmengen. Bezugseinheit der Holzmaße; Raum- und Schüttraummeter werden in Festmeter umgerechnet.",
+  "related": [
+    "lexicon.raummeter"
+  ]
+}

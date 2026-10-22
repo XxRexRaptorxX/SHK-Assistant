@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.siemens-pro-meter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Leitfähigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Siemens%20pro%20Meter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Siemens pro Meter",
+  "synonyms": [
+    "S/m"
+  ],
+  "definition": "**Siemens pro Meter** (S/m) ist eine Einheit für die elektrische Leitfähigkeit. 1 S/m = 10.000 µS/cm.",
+  "related": [
+    "lexicon.mikrosiemens-pro-zentimeter"
+  ]
+}

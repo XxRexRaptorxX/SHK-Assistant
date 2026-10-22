@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.megavolt",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Spannung“; Wikipedia „Volt“, https://de.wikipedia.org/wiki/Volt",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Megavolt",
+  "synonyms": [
+    "MV"
+  ],
+  "definition": "**Megavolt** (MV) ist eine Einheit für die elektrische Spannung. 1 MV = 1.000.000 V.",
+  "related": [
+    "lexicon.volt"
+  ]
+}

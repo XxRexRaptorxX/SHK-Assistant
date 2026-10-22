@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.radiant",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Winkel“; Wikipedia „Radiant (Einheit)“, https://de.wikipedia.org/wiki/Radiant_(Einheit)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Radiant",
+  "synonyms": [
+    "rad"
+  ],
+  "definition": "**Radiant** (rad) ist eine Einheit für Winkel. 1 rad = 57,2958 °.",
+  "related": [
+    "lexicon.grad"
+  ]
+}

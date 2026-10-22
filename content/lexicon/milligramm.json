@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.milligramm",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Gewicht“; Wikipedia „Liste von Größenordnungen der Masse“, https://de.wikipedia.org/wiki/Liste_von_Gr%C3%B6%C3%9Fenordnungen_der_Masse",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Milligramm",
+  "synonyms": [
+    "mg"
+  ],
+  "definition": "**Milligramm** (mg) ist eine Einheit für die Masse (umgangssprachlich Gewicht). 1 mg = 0,000001 kg.",
+  "related": [
+    "lexicon.kilogramm"
+  ]
+}

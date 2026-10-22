@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.newton-pro-quadratzentimeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Newton%20pro%20Quadratzentimeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Newton pro Quadratzentimeter",
+  "synonyms": [
+    "N/cm²"
+  ],
+  "definition": "**Newton pro Quadratzentimeter** (N/cm²) ist eine Einheit für den Druck. 1 N/cm² = 10.000 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

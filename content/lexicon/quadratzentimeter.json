@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.quadratzentimeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Fläche“; Wikipedia „Quadratmeter“, https://de.wikipedia.org/wiki/Quadratmeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Quadratzentimeter",
+  "synonyms": [
+    "cm²"
+  ],
+  "definition": "**Quadratzentimeter** (cm²) ist eine Einheit für die Fläche. 1 cm² = 0,0001 m².",
+  "related": [
+    "lexicon.quadratmeter"
+  ]
+}

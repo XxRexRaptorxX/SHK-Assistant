@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.raummeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Holzmaße“; Wikipedia „Raummeter“, https://de.wikipedia.org/wiki/Raummeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Raummeter",
+  "synonyms": [
+    "Raummeter (Rundholz, 1 m)",
+    "rm Rundholz 1 m",
+    "Raummeter (Scheite, 1 m)",
+    "rm Scheite 1 m",
+    "Raummeter (Scheite, 33 cm)",
+    "rm Scheite 33 cm"
+  ],
+  "definition": "**Raummeter (Rundholz, 1 m)** (rm Rundholz 1 m) ist eine Einheit für Holzmengen. 1 rm Rundholz 1 m ≈ 0,714286 fm (Richtwert). Variante **Raummeter (Scheite, 1 m)** (rm Scheite 1 m): 1 rm Scheite 1 m ≈ 0,625 fm (Richtwert). Variante **Raummeter (Scheite, 33 cm)** (rm Scheite 33 cm): 1 rm Scheite 33 cm ≈ 0,714286 fm (Richtwert).",
+  "related": [
+    "lexicon.festmeter"
+  ]
+}

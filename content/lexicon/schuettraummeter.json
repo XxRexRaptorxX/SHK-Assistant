@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.schuettraummeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Holzmaße“; Wikipedia „Raummeter“, https://de.wikipedia.org/wiki/Raummeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schüttraummeter",
+  "synonyms": [
+    "Schüttraummeter (Fichte)",
+    "srm Fichte",
+    "Schüttraummeter (Buche)",
+    "srm Buche"
+  ],
+  "definition": "**Schüttraummeter (Fichte)** (srm Fichte) ist eine Einheit für Holzmengen. 1 srm Fichte ≈ 0,454545 fm (Richtwert). Variante **Schüttraummeter (Buche)** (srm Buche): 1 srm Buche ≈ 0,5 fm (Richtwert).",
+  "related": [
+    "lexicon.festmeter"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "checklist.oil-heating",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Checkliste des Inhabers, übermittelt am 22.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wartung - Ölheizung",
+  "category": "Wartung",
+  "sections": [
+    {
+      "items": [
+        {
+          "id": "boiler-cleaned",
+          "text": "Kessel gereinigt"
+        },
+        {
+          "id": "burner-cleaned-and-serviced",
+          "text": "Brenner gereinigt und gewartet"
+        },
+        {
+          "id": "nozzle-replaced",
+          "text": "Düse getauscht"
+        },
+        {
+          "id": "oil-filter-replaced",
+          "text": "Ölfilter getauscht"
+        },
+        {
+          "id": "heating-pressure-checked",
+          "text": "Heizungsdruck kontrolliert"
+        },
+        {
+          "id": "visual-and-functional-inspection",
+          "text": "Sicht- und Funktionskontrolle durchgeführt"
+        },
+        {
+          "id": "exhaust-emissions-measured",
+          "text": "Abgasmessung durchgeführt"
+        },
+        {
+          "id": "refill-station-inspected",
+          "text": "Nachfüllstation überprüft (nach 24 Monaten austauschen)"
+        },
+        {
+          "id": "refill-station-installation-requirement-explained",
+          "text": "Auf Einbaupflicht einer Nachfüllstation hingewiesen"
+        },
+        {
+          "id": "anti-siphon-valve-installation-requirement-explained",
+          "text": "Auf Einbaupflicht eines Antiheberventils hingewiesen"
+        },
+        {
+          "id": "water-filter-flushed",
+          "text": "Wasserfilter gespült"
+        },
+        {
+          "id": "exhaust-system-checked",
+          "text": "Abgasführung überprüft"
+        },
+        {
+          "id": "combustion-air-openings-checked",
+          "text": "Zuluftöffnungen überprüft"
+        },
+        {
+          "id": "expansion-vessel-checked",
+          "text": "MAG überprüft"
+        },
+        {
+          "id": "oil-tanks-and-bund-inspected",
+          "text": "Sichtkontrolle Öltanks und Ölauffangwanne"
+        },
+        {
+          "id": "heating-water-tested",
+          "text": "Heizungswasser getestet"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

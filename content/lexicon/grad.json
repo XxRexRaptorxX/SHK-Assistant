@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.grad",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Winkel“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Grad",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Grad",
+  "synonyms": [],
+  "definition": "**Grad** (°) ist eine Einheit für Winkel. 1 ° = 0,0174533 rad.",
+  "related": [
+    "lexicon.radiant"
+  ]
+}

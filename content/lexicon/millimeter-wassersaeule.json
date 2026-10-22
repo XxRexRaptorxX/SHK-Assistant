@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.millimeter-wassersaeule",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia „Meter Wassersäule“, https://de.wikipedia.org/wiki/Meter_Wassers%C3%A4ule",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Millimeter Wassersäule",
+  "synonyms": [
+    "mmH2O"
+  ],
+  "definition": "**Millimeter Wassersäule** (mmH2O) ist eine Einheit für den Druck. 1 mmH2O = 9,80665 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

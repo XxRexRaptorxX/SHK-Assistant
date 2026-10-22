@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kubikmeter-pro-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kubikmeter%20pro%20Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kubikmeter pro Sekunde",
+  "synonyms": [
+    "m³/s"
+  ],
+  "definition": "**Kubikmeter pro Sekunde** (m³/s) ist eine Einheit für den Volumenstrom. 1 m³/s = 3.600 m³/h.",
+  "related": [
+    "lexicon.kubikmeter-pro-stunde"
+  ]
+}

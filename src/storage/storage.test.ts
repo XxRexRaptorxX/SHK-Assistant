@@ -15,6 +15,7 @@ import {
   listChecklistProgress,
   resetChecklistProgress,
   setChecklistItemChecked,
+  setChecklistTexts,
 } from './checklistProgress'
 import { closeDatabase, DB_NAME } from './db'
 import { addFavorite, isFavorite, listFavorites, removeFavorite, toggleFavorite } from './favorites'
@@ -103,6 +104,25 @@ describe('Checklisten-Fortschritt', () => {
 
     expect(await getChecklistProgress('checklist.a')).toBeUndefined()
     expect((await listChecklistProgress()).map((p) => p.checklistId)).toEqual(['checklist.b'])
+  })
+
+  it('speichert Titel und Notizen, ohne Haken zu verlieren, und umgekehrt', async () => {
+    await setChecklistItemChecked('checklist.wartung', 'brenner', true)
+    await setChecklistTexts('checklist.wartung', { notes: 'Brennerdüse beim nächsten Mal tauschen' })
+    await setChecklistTexts('checklist.wartung', { title: 'Heizung Müller' })
+    await setChecklistItemChecked('checklist.wartung', 'abgas', true)
+
+    const progress = await getChecklistProgress('checklist.wartung')
+    expect(progress?.checkedItemIds).toEqual(['brenner', 'abgas'])
+    expect(progress?.title).toBe('Heizung Müller')
+    expect(progress?.notes).toBe('Brennerdüse beim nächsten Mal tauschen')
+
+    await setChecklistTexts('checklist.wartung', { notes: '' })
+    const cleared = await getChecklistProgress('checklist.wartung')
+    expect(cleared?.notes).toBeUndefined()
+    expect(cleared?.title).toBe('Heizung Müller')
+    await resetChecklistProgress('checklist.wartung')
+    expect(await getChecklistProgress('checklist.wartung')).toBeUndefined()
   })
 })
 

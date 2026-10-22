@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.millisiemens-pro-zentimeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Leitfähigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Millisiemens%20pro%20Zentimeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Millisiemens pro Zentimeter",
+  "synonyms": [
+    "mS/cm"
+  ],
+  "definition": "**Millisiemens pro Zentimeter** (mS/cm) ist eine Einheit für die elektrische Leitfähigkeit. 1 mS/cm = 0,1 S/m.",
+  "related": [
+    "lexicon.siemens-pro-meter"
+  ]
+}

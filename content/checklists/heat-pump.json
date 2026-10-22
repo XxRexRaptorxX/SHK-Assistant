@@ -1,0 +1,59 @@
+{
+  "id": "checklist.heat-pump",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Checkliste des Inhabers, übermittelt am 22.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wartung - Wärmepumpe",
+  "category": "Wartung",
+  "sections": [
+    {
+      "items": [
+        {
+          "id": "visual-and-functional-inspection",
+          "text": "Sicht- und Funktionskontrolle durchgeführt"
+        },
+        {
+          "id": "outdoor-unit-inspected",
+          "text": "Außengerät Sichtkontrolle"
+        },
+        {
+          "id": "sludge-separator-cleaned",
+          "text": "Schlammabscheider gereinigt"
+        },
+        {
+          "id": "outdoor-unit-return-filter-cleaned",
+          "text": "Filtersieb im Rücklauf der Außeneinheit gereinigt"
+        },
+        {
+          "id": "heating-pressure-checked",
+          "text": "Heizungsdruck kontrolliert"
+        },
+        {
+          "id": "refill-station-inspected",
+          "text": "Nachfüllstation überprüft (nach 24 Monaten austauschen)"
+        },
+        {
+          "id": "refill-station-installation-requirement-explained",
+          "text": "Auf Einbaupflicht einer Nachfüllstation hingewiesen"
+        },
+        {
+          "id": "water-filter-flushed",
+          "text": "Wasserfilter gespült"
+        },
+        {
+          "id": "expansion-vessel-checked",
+          "text": "MAG überprüft"
+        },
+        {
+          "id": "heating-water-tested",
+          "text": "Heizungswasser getestet"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

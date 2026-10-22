@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.millimol-pro-liter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Wasserhärte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Millimol%20pro%20Liter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Millimol pro Liter",
+  "synonyms": [
+    "mmol/l"
+  ],
+  "definition": "**Millimol pro Liter** (mmol/l) ist eine Einheit für die Wasserhärte. 1 mmol/l = 5,60852 °dH.",
+  "related": [
+    "lexicon.grad-deutscher-haerte"
+  ]
+}

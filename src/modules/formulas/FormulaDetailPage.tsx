@@ -4,6 +4,8 @@ import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { HideButton } from '../../hidden/HideButton'
 import { FigureView } from '../figures/FigureView'
+import { lexiconPathFor, unitNameFor } from '../lexicon/termLinks'
+import { TermLink } from '../lexicon/TermLink'
 import { formatUnit } from '../../lib/units'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
@@ -23,17 +25,33 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
   if (!formula) return <FormulaNotFound />
 
   const result = formula.result
+  // Ergebnis zuerst, dann Eingaben und Konstanten
   const legend = [
+    ...(result ? [result] : []).map((r) => ({
+      key: `result-${r.symbol}`,
+      label: r.label ?? r.symbol,
+      name: r.name,
+      nameHref: lexiconPathFor([r.name]),
+      unit: r.unit ? formatUnit(r.unit) : '',
+      unitHref: r.unit ? lexiconPathFor([unitNameFor(r.unit), formatUnit(r.unit)]) : undefined,
+      detail: '',
+    })),
     ...formula.variables.map((v) => ({
       key: v.symbol,
       label: v.label ?? v.symbol,
       name: v.name,
-      detail: v.unit ? `[${formatUnit(v.unit)}]` : '',
+      nameHref: lexiconPathFor([v.name]),
+      unit: v.unit ? formatUnit(v.unit) : '',
+      unitHref: v.unit ? lexiconPathFor([unitNameFor(v.unit), formatUnit(v.unit)]) : undefined,
+      detail: '',
     })),
     ...formula.constants.map((c) => ({
       key: c.symbol,
       label: c.label ?? c.symbol,
       name: c.name,
+      nameHref: lexiconPathFor([c.name]),
+      unit: '',
+      unitHref: undefined,
       detail: `= ${formatConstant(c.value)}`,
     })),
   ]
@@ -66,7 +84,13 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
               <div key={item.key} className="contents">
                 <dt className="font-mono font-semibold">{item.label}</dt>
                 <dd>
-                  {item.name}
+                  <TermLink to={item.nameHref}>{item.name}</TermLink>
+                  {item.unit && (
+                    <span className="text-muted">
+                      {' ['}
+                      <TermLink to={item.unitHref}>{item.unit}</TermLink>]
+                    </span>
+                  )}
                   {item.detail && <span className="text-muted"> {item.detail}</span>}
                 </dd>
               </div>

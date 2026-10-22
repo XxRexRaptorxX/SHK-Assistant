@@ -50,6 +50,13 @@ const pressure: ConverterEntry = {
   rows: [],
 }
 
+/** Ergebnis im Nach-Feld mit gewählter Zieleinheit, z. B. „1.000 mbar“ */
+function shownResult(html: string): string {
+  const value = /<output[^>]*>(.*?)<\/output>/.exec(html)?.[1] ?? ''
+  const unit = /<select id="[^"]*-to"[^>]*>.*?<option value="[^"]*" selected="">(.*?)<\/option>/.exec(html)?.[1] ?? ''
+  return `${value} ${unit}`
+}
+
 const blank = { units: [], factors: [], from: '', to: '', names: {}, columns: [], rows: [] }
 
 /** Prüfung ohne die Namens-Vollständigkeit (für Tests, die andere Felder variieren) */
@@ -174,7 +181,7 @@ describe('Wasserhärte (Spezifikation, Testfälle A–D)', () => {
 
   const hardness = converterEntries.find((e) => e.id === 'converter.wasserhaerte')!
   const render = (value: string) =>
-    renderToStaticMarkup(<UnitConverter entry={hardness} initialValue={value} />)
+    renderToStaticMarkup(<MemoryRouter><UnitConverter entry={hardness} initialValue={value} /></MemoryRouter>)
 
   it('D: lehnt negative, leere und nichtnumerische Eingaben kontrolliert ab, 0 ist gültig', () => {
     expect(render('-1')).toContain('Ungültige Eingabe (keine negativen Werte)')
@@ -182,7 +189,7 @@ describe('Wasserhärte (Spezifikation, Testfälle A–D)', () => {
     expect(render('abc')).toContain('Ungültige Eingabe')
     const zero = render('0')
     expect(zero).not.toContain('Ungültige Eingabe')
-    expect(zero).toContain('0 mmol/l')
+    expect(shownResult(zero)).toBe('0 mmol/l')
   })
 })
 
@@ -200,21 +207,40 @@ describe('Unübliche Einheiten ausblenden', () => {
   const withRare: ConverterEntry = { ...pressure, units: ['bar', 'mbar', 'Pa', 'psi'], rare: ['psi', 'Pa'] }
 
   it('blendet unübliche Einheiten nur bei eingeschalteter Einstellung aus', () => {
-    const shown = renderToStaticMarkup(<UnitConverter entry={withRare} hideRareUnits={false} />)
-    const hidden = renderToStaticMarkup(<UnitConverter entry={withRare} hideRareUnits />)
+    const shown = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={withRare} hideRareUnits={false} /></MemoryRouter>)
+    const hidden = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={withRare} hideRareUnits /></MemoryRouter>)
     expect(shown).toContain('>psi<')
     expect(hidden).not.toContain('>psi<')
     expect(hidden).not.toContain('>Pa<')
-    expect(hidden).toContain('1.000 mbar')
+    expect(shownResult(hidden)).toBe('1.000 mbar')
+  })
+
+  it('bietet neben den Ergebnissen einen Umschalter, nur wenn es unübliche Einheiten gibt', () => {
+    const hidden = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={withRare} hideRareUnits /></MemoryRouter>)
+    expect(hidden).toContain('aria-pressed="true"')
+    expect(hidden).toContain('aria-label="Unübliche Einheiten einblenden"')
+    const shown = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={withRare} hideRareUnits={false} /></MemoryRouter>)
+    expect(shown).toContain('aria-label="Unübliche Einheiten ausblenden"')
+    const none = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={pressure} /></MemoryRouter>)
+    expect(none).not.toContain('Unübliche Einheiten ausblenden')
+    expect(none).not.toContain('Unübliche Einheiten einblenden')
+  })
+
+  it('zeigt „Von“ mit Eingabe und Einheit, darunter „Nach“ mit Ergebnis und Einheit', () => {
+    const html = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={pressure} /></MemoryRouter>)
+    expect(html.indexOf('>Von</label>')).toBeLessThan(html.indexOf('<input'))
+    expect(html.indexOf('<input')).toBeLessThan(html.indexOf('>Nach</label>'))
+    expect(html.indexOf('>Nach</label>')).toBeLessThan(html.indexOf('<output'))
+    expect(shownResult(html)).toBe('1.000 mbar')
   })
 
   it('fällt auf eine sichtbare Einheit zurück, wenn die Voreinstellung ausgeblendet ist', () => {
-    const html = renderToStaticMarkup(<UnitConverter entry={{ ...withRare, from: 'psi' }} hideRareUnits />)
+    const html = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={{ ...withRare, from: 'psi' }} hideRareUnits /></MemoryRouter>)
     expect(html).toContain('value="bar" selected=""')
   })
 
   it('wirkt auch bei Faktoren und Anteilen', () => {
-    const factors = renderToStaticMarkup(<FactorConverter entry={{ ...wood, rare: ['srm'] }} hideRareUnits />)
+    const factors = renderToStaticMarkup(<MemoryRouter><FactorConverter entry={{ ...wood, rare: ['srm'] }} hideRareUnits /></MemoryRouter>)
     expect(factors).not.toContain('Schüttraummeter')
     const ratio = renderToStaticMarkup(<RatioConverter rare={['ppb', 'permyriad']} hideRareUnits />)
     expect(ratio).not.toContain('ppb')
@@ -236,22 +262,27 @@ describe('Unübliche Einheiten ausblenden', () => {
 })
 
 describe('Ausgeschriebene Einheiten', () => {
+  // Name in der grauen Spalte, mit oder ohne Lexikon-Link
+  const nameCell = (name: string) => new RegExp('text-muted hyphens-auto">(<a [^>]*>)?' + name + '(</a>)?</td>')
+
   it('zeigt den Namen grau hinter der Einheit, abschaltbar', () => {
-    const shown = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
-    const hidden = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames={false} />)
-    expect(shown).toContain('text-muted hyphens-auto">Millibar</td>')
+    const shown = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={pressure} showUnitNames /></MemoryRouter>)
+    const hidden = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={pressure} showUnitNames={false} /></MemoryRouter>)
+    expect(shown).toMatch(nameCell('Millibar'))
     expect(hidden).not.toContain('Millibar')
   })
 
   it('wiederholt den Namen nicht, wenn er der Kurzform entspricht', () => {
-    const html = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
-    expect(html).not.toContain('text-muted hyphens-auto">Bar</td>')
-    const factors = renderToStaticMarkup(<FactorConverter entry={wood} showUnitNames />)
-    expect(factors).not.toContain('text-muted hyphens-auto">Festmeter</td>')
+    const html = renderToStaticMarkup(<MemoryRouter><UnitConverter entry={pressure} showUnitNames /></MemoryRouter>)
+    expect(html).not.toMatch(nameCell('Bar'))
+    const factors = renderToStaticMarkup(<MemoryRouter><FactorConverter entry={wood} showUnitNames /></MemoryRouter>)
+    expect(factors).not.toMatch(nameCell('Festmeter'))
     const named = renderToStaticMarkup(
-      <FactorConverter entry={{ ...wood, factors: wood.factors.map((f) => ({ ...f, label: f.key })) }} showUnitNames />,
+      <MemoryRouter>
+        <FactorConverter entry={{ ...wood, factors: wood.factors.map((f) => ({ ...f, label: f.key })) }} showUnitNames />
+      </MemoryRouter>,
     )
-    expect(named).toContain('text-muted hyphens-auto">Schüttraummeter</td>')
+    expect(named).toMatch(nameCell('Schüttraummeter'))
   })
 
   it('verlangt beim Build einen Namen je Einheit, aber keine überzähligen', () => {
@@ -288,10 +319,10 @@ describe('Richtwert-Faktoren (Holzmaße)', () => {
   })
 
   it('zeigt Richtwerte mit wenigen Stellen und lehnt negative Mengen ab', () => {
-    const html = renderToStaticMarkup(<FactorConverter entry={wood} />)
+    const html = renderToStaticMarkup(<MemoryRouter><FactorConverter entry={wood} /></MemoryRouter>)
     expect(html).toContain('≈ 0,714')
     expect(html).toContain('In allen Maßen (Richtwerte)')
-    expect(renderToStaticMarkup(<FactorConverter entry={wood} initialValue="-2" />)).toContain(
+    expect(renderToStaticMarkup(<MemoryRouter><FactorConverter entry={wood} initialValue="-2" /></MemoryRouter>)).toContain(
       'Ungültige Eingabe (keine negativen Werte)',
     )
   })
@@ -308,8 +339,8 @@ describe('Richtwert-Faktoren (Holzmaße)', () => {
       from: 'gros',
       to: 'stk',
     }
-    const html = renderToStaticMarkup(<FactorConverter entry={pieces} />)
-    expect(html).toContain('144 Stk.')
+    const html = renderToStaticMarkup(<MemoryRouter><FactorConverter entry={pieces} /></MemoryRouter>)
+    expect(shownResult(html)).toBe('144 Stk.')
     expect(html).toContain('In allen Maßen<')
     expect(html).not.toContain('≈')
     const [stk, dtzd] = pieces.factors as [ConverterFactor, ConverterFactor]
@@ -495,7 +526,7 @@ describe('Umrechner-Seiten', () => {
 
   it('rechnet den Startwert 1 in die Zieleinheit und in alle Einheiten um', () => {
     const html = renderAt('/umrechner/test-druck')
-    expect(html).toContain('1.000 mbar')
+    expect(shownResult(html)).toBe('1.000 mbar')
     expect(html).toContain('In allen Einheiten')
     expect(html).toContain('100.000')
     expect(html).toContain('Testdruck</h1>')

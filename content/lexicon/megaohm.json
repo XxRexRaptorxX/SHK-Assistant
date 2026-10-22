@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.megaohm",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Widerstand“; Wikipedia „Ohm“, https://de.wikipedia.org/wiki/Ohm",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Megaohm",
+  "synonyms": [
+    "MΩ"
+  ],
+  "definition": "**Megaohm** (MΩ) ist eine Einheit für den elektrischen Widerstand. 1 MΩ = 1.000.000 Ω.",
+  "related": [
+    "lexicon.ohm"
+  ]
+}

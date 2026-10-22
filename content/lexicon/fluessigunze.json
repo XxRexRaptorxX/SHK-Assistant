@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.fluessigunze",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumen“; Wikipedia „Fluid ounce“, https://de.wikipedia.org/wiki/Fluid_ounce",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Flüssigunze",
+  "synonyms": [
+    "Flüssigunze (US)",
+    "fl oz"
+  ],
+  "definition": "**Flüssigunze (US)** (fl oz) ist eine Einheit für das Volumen. 1 fl oz = 0,0295735 l.",
+  "related": [
+    "lexicon.liter"
+  ]
+}

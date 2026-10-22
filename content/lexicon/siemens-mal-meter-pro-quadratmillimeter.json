@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.siemens-mal-meter-pro-quadratmillimeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Leitfähigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Siemens%20mal%20Meter%20pro%20Quadratmillimeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Siemens mal Meter pro Quadratmillimeter",
+  "synonyms": [
+    "S·m/mm²"
+  ],
+  "definition": "**Siemens mal Meter pro Quadratmillimeter** (S·m/mm²) ist eine Einheit für die elektrische Leitfähigkeit. 1 S·m/mm² = 1.000.000 S/m.",
+  "related": [
+    "lexicon.siemens-pro-meter"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.liter-pro-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Liter%20pro%20Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Liter pro Sekunde",
+  "synonyms": [
+    "l/s"
+  ],
+  "definition": "**Liter pro Sekunde** (l/s) ist eine Einheit für den Volumenstrom. 1 l/s = 3,6 m³/h.",
+  "related": [
+    "lexicon.kubikmeter-pro-stunde"
+  ]
+}

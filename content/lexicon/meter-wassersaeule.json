@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.meter-wassersaeule",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia „Meter Wassersäule“, https://de.wikipedia.org/wiki/Meter_Wassers%C3%A4ule",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Meter Wassersäule",
+  "synonyms": [
+    "mWS"
+  ],
+  "definition": "**Meter Wassersäule** (mWS) ist eine Einheit für den Druck. 1 mWS = 9.806,65 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

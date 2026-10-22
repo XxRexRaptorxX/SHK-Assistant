@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.meter-pro-quadratsekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Beschleunigung“; Wikipedia „Beschleunigung“, https://de.wikipedia.org/wiki/Beschleunigung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Meter pro Quadratsekunde",
+  "synonyms": [
+    "m/s²"
+  ],
+  "definition": "**Meter pro Quadratsekunde** (m/s²) ist eine Einheit für die Beschleunigung. 1 m/s² = 0,101972 gₙ.",
+  "related": [
+    "lexicon.normfallbeschleunigung"
+  ]
+}

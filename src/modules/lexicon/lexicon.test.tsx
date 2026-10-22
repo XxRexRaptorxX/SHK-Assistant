@@ -6,6 +6,11 @@ import { filterLexicon, findLexiconEntry, lexiconEntries, lexiconPath, sortLexic
 import { LexiconDetailPage } from './LexiconDetailPage'
 import { LexiconListPage } from './LexiconListPage'
 import type { LexiconEntry } from './schema'
+import { buildTermIndex, lexiconPathFor, unitNameFor } from './termLinks'
+import { TermLink } from './TermLink'
+import { converterEntries } from '../converter/converter'
+import { UnitConverter } from '../converter/UnitConverter'
+import FormulaDetailPage from '../formulas/FormulaDetailPage'
 
 function lexiconEntry(overrides: Partial<LexiconEntry>): LexiconEntry {
   return {
@@ -121,5 +126,54 @@ describe('Lexikon-Seiten', () => {
       </MemoryRouter>,
     )
     expect(html).toContain('Keine Begriffe gefunden.')
+  })
+})
+
+describe('Verlinkung von Einheiten und Bezeichnungen', () => {
+  const index = buildTermIndex([
+    lexiconEntry({ id: 'lexicon.volumenstrom', term: 'Volumenstrom', synonyms: ['Durchfluss'] }),
+    lexiconEntry({ id: 'lexicon.waerme', term: 'Wärmemenge' }),
+  ])
+
+  it('findet Begriffe und Synonyme exakt, unabhängig von Groß-/Kleinschreibung und Umlauten', () => {
+    expect(lexiconPathFor(['volumenstrom'], index)).toBe('/lexikon/volumenstrom')
+    expect(lexiconPathFor(['DURCHFLUSS'], index)).toBe('/lexikon/volumenstrom')
+    expect(lexiconPathFor(['Waermemenge'], index)).toBe('/lexikon/waerme')
+    expect(lexiconPathFor(['Volumen'], index)).toBeUndefined() // nur exakte Treffer
+    expect(lexiconPathFor([undefined, 'Wärmemenge'], index)).toBe('/lexikon/waerme')
+  })
+
+  it('kennt die ausgeschriebenen Namen der Einheiten aus den Umrechnern', () => {
+    expect(unitNameFor('kWh')).toBe('Kilowattstunde')
+    expect(unitNameFor('gibt-es-nicht')).toBeUndefined()
+  })
+
+  it('verlinkt unauffällig, ohne Ziel bleibt es Text', () => {
+    const linked = renderToStaticMarkup(
+      <MemoryRouter>
+        <TermLink to="/lexikon/bar">bar</TermLink>
+      </MemoryRouter>,
+    )
+    expect(linked).toBe('<a class="text-inherit no-underline" href="/lexikon/bar" data-discover="true">bar</a>')
+    expect(renderToStaticMarkup(<TermLink>bar</TermLink>)).toBe('bar')
+  })
+
+  it('verlinkt im Umrechner und in Formeln, wo das Lexikon einen Eintrag hat', () => {
+    const pressure = converterEntries.find((entry) => entry.id === 'converter.druck')!
+    const converter = renderToStaticMarkup(
+      <MemoryRouter>
+        <UnitConverter entry={pressure} />
+      </MemoryRouter>,
+    )
+    expect(converter).toContain('href="/lexikon/bar"')
+    const formula = renderToStaticMarkup(
+      <MemoryRouter initialEntries={['/formeln/hydraulik.volumenstrom']}>
+        <Routes>
+          <Route path="/formeln/:slug" element={<FormulaDetailPage />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+    // Ergebnis „Volumenstrom“ steht jetzt in der Liste der Formelzeichen und ist verlinkt
+    expect(formula).toContain('<a class="text-inherit no-underline" href="/lexikon/volumenstrom"')
   })
 })

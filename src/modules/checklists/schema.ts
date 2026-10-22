@@ -16,7 +16,8 @@ const itemSchema = z.strictObject({
 })
 
 const sectionSchema = z.strictObject({
-  title: z.string().trim().min(1),
+  /** Zwischenüberschrift; leer = Punkte ohne Überschrift (z. B. bei nur einem Abschnitt) */
+  title: z.string().trim().default(''),
   items: z.array(itemSchema).min(1),
 })
 
@@ -26,6 +27,8 @@ export const checklistEntrySchema = defineEntrySchema({
   /** Gruppierung in der Liste, z. B. "Wartung" */
   category: z.string().trim().default(''),
   sections: z.array(sectionSchema).default([]),
+  /** Freitextfeld unter den Punkten, z. B. für Auffälligkeiten; wird lokal gespeichert und gedruckt */
+  notes: z.strictObject({ label: z.string().trim().min(1).default('Notizen') }).optional(),
 }).superRefine((entry, ctx) => {
   if (entry.status === 'verified' && entry.sections.length === 0) {
     ctx.addIssue({ code: 'custom', path: ['sections'], message: 'Pflicht bei status "verified"' })

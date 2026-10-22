@@ -1,0 +1,35 @@
+{
+  "id": "checklist.solar-thermal",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Checkliste des Inhabers, übermittelt am 22.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wartung - Solaranlage",
+  "category": "Wartung",
+  "sections": [
+    {
+      "items": [
+        {
+          "id": "system-flushed",
+          "text": "Anlage gespült"
+        },
+        {
+          "id": "system-pressure-refilled",
+          "text": "Anlagendruck aufgefüllt"
+        },
+        {
+          "id": "controller-checked",
+          "text": "Regelung überprüft"
+        },
+        {
+          "id": "expansion-vessel-checked",
+          "text": "MAG überprüft"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

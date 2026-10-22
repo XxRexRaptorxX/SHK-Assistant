@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.zentinewton",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Kraft“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Zentinewton",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Zentinewton",
+  "synonyms": [
+    "cN"
+  ],
+  "definition": "**Zentinewton** (cN) ist eine Einheit für die Kraft. 1 cN = 0,01 N.",
+  "related": [
+    "lexicon.newton"
+  ]
+}

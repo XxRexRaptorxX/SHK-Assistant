@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.zentimeter-pro-quadratsekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Beschleunigung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Zentimeter%20pro%20Quadratsekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Zentimeter pro Quadratsekunde",
+  "synonyms": [
+    "cm/s²"
+  ],
+  "definition": "**Zentimeter pro Quadratsekunde** (cm/s²) ist eine Einheit für die Beschleunigung. 1 cm/s² = 0,01 m/s².",
+  "related": [
+    "lexicon.meter-pro-quadratsekunde"
+  ]
+}

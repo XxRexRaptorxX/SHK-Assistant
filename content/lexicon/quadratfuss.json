@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.quadratfuss",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Fläche“; Wikipedia „Quadratfuß“, https://de.wikipedia.org/wiki/Quadratfu%C3%9F",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Quadratfuß",
+  "synonyms": [
+    "ft²"
+  ],
+  "definition": "**Quadratfuß** (ft²) ist eine Einheit für die Fläche. 1 ft² = 0,092903 m².",
+  "related": [
+    "lexicon.quadratmeter"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.meter-pro-minute",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Geschwindigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Meter%20pro%20Minute",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Meter pro Minute",
+  "synonyms": [
+    "m/min"
+  ],
+  "definition": "**Meter pro Minute** (m/min) ist eine Einheit für die Geschwindigkeit. 1 m/min = 0,0166667 m/s.",
+  "related": [
+    "lexicon.meter-pro-sekunde"
+  ]
+}

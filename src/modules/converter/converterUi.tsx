@@ -1,3 +1,7 @@
+import type { ReactNode } from 'react'
+import { EyeIcon, EyeOffIcon } from '../../components/icons'
+import { updateSettings } from '../../settings/settings'
+import { TermLink } from '../lexicon/TermLink'
 import type { ConverterEntry } from './schema'
 import { fieldBase } from '../../components/surfaces'
 
@@ -41,10 +45,36 @@ export function Select<T extends string>({ id, label, options, value, onChange, 
   )
 }
 
-/** „Von“ und „Nach“ nebeneinander, mittig mit Pfeil dazwischen */
-export function FromToSelects<T extends string>({ id, options, from, to, onFromChange, onToChange }: {
-  /** Präfix für die ids der Auswahlfelder */
+const ROW = 'mt-1 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-2'
+
+/**
+ * Zwei Zeilen: „Von“ mit Eingabe und Einheit, „Nach“ mit Ergebnis und Einheit.
+ * Das Ergebnis steht im Feld der Nach-Zeile (hervorgehoben), Hinweise unter der Eingabe.
+ */
+export function ConversionInputs<T extends string>({
+  id,
+  raw,
+  onRawChange,
+  invalid,
+  hint,
+  emptyHint,
+  result,
+  options,
+  from,
+  to,
+  onFromChange,
+  onToChange,
+}: {
+  /** Präfix für die ids der Felder */
   id: string
+  raw: string
+  onRawChange: (value: string) => void
+  invalid: boolean
+  hint?: string
+  /** Hinweis bei leerem Feld, z. B. „Bitte einen Wert eingeben.“ */
+  emptyHint: string
+  /** Ergebnis ohne Einheit, z. B. „1.000“; „–“ ohne gültige Eingabe */
+  result: string
   options: readonly { value: T; label: string }[]
   from: T
   to: T
@@ -52,33 +82,53 @@ export function FromToSelects<T extends string>({ id, options, from, to, onFromC
   onToChange: (value: T) => void
 }) {
   return (
-    <div className="mx-auto mt-3 grid max-w-md grid-cols-[1fr_auto_1fr] items-end gap-3">
-      <div className="flex min-w-0 flex-col gap-1">
-        <label htmlFor={`${id}-from`} className="font-semibold">
-          Von
-        </label>
-        <Select id={`${id}-from`} label="Von" options={options} value={from} onChange={onFromChange} className="w-full min-w-0" />
+    <div className="mt-2">
+      <label htmlFor={`${id}-value`} className="block font-semibold">
+        Von
+      </label>
+      <div className={ROW}>
+        <ValueInput id={`${id}-value`} value={raw} onChange={onRawChange} invalid={invalid} showError={false} />
+        <Select id={`${id}-from`} label="Von: Einheit" options={options} value={from} onChange={onFromChange} className="w-full min-w-0" />
       </div>
-      <span aria-hidden="true" className="pb-2.5 text-2xl text-muted">
-        →
-      </span>
-      <div className="flex min-w-0 flex-col gap-1">
-        <label htmlFor={`${id}-to`} className="font-semibold">
-          Nach
-        </label>
-        <Select id={`${id}-to`} label="Nach" options={options} value={to} onChange={onToChange} className="w-full min-w-0" />
+      {invalid && <InvalidHint id={`${id}-value`} hint={hint} />}
+      {raw.trim() === '' && <p className="mt-1 text-base text-muted">{emptyHint}</p>}
+
+      <label htmlFor={`${id}-to`} className="mt-3 block font-semibold">
+        Nach
+      </label>
+      <div className={ROW}>
+        <output
+          htmlFor={`${id}-value ${id}-from ${id}-to`}
+          aria-live="polite"
+          className="flex min-h-12 min-w-0 items-center rounded-xl border-2 border-accent bg-surface px-3 text-xl font-bold break-all"
+        >
+          {result}
+        </output>
+        <Select id={`${id}-to`} label="Nach: Einheit" options={options} value={to} onChange={onToChange} className="w-full min-w-0" />
       </div>
     </div>
   )
 }
 
-export function ValueInput({ id, value, onChange, invalid, hint = 'Beispiel: 12,5', inputMode = 'decimal' }: {
+const DEFAULT_HINT = 'Beispiel: 12,5'
+
+function InvalidHint({ id, hint = DEFAULT_HINT }: { id: string; hint?: string }) {
+  return (
+    <p id={`${id}-error`} className="mt-1 basis-full text-base font-semibold">
+      Ungültige Eingabe ({hint})
+    </p>
+  )
+}
+
+export function ValueInput({ id, value, onChange, invalid, hint = DEFAULT_HINT, inputMode = 'decimal', showError = true }: {
   id: string
   value: string
   onChange: (value: string) => void
   invalid: boolean
   hint?: string
   inputMode?: 'decimal' | 'text'
+  /** false: Fehlermeldung zeigt der Aufrufer selbst (z. B. unter einer Zeile mit mehreren Feldern) */
+  showError?: boolean
 }) {
   return (
     <>
@@ -93,11 +143,7 @@ export function ValueInput({ id, value, onChange, invalid, hint = 'Beispiel: 12,
         onChange={(event) => onChange(event.target.value)}
         className={`${fieldClass} w-full min-w-0`}
       />
-      {invalid && (
-        <p id={`${id}-error`} className="mt-1 basis-full text-base font-semibold">
-          Ungültige Eingabe ({hint})
-        </p>
-      )}
+      {invalid && showError && <InvalidHint id={id} hint={hint} />}
     </>
   )
 }
@@ -108,7 +154,28 @@ export interface ResultRow {
   label: string
   /** Ausgeschriebener Name, grau hinter der Einheit */
   name?: string
+  /** Lexikon-Eintrag zur Einheit; Einheit und Name werden dann unauffällig verlinkt */
+  href?: string
   highlight?: boolean
+}
+
+/** Umschalter: unübliche Einheiten ein- oder ausblenden (gleiche Einstellung wie in den Einstellungen) */
+export function RareUnitsToggle({ hidden }: { hidden: boolean }) {
+  // Nur Symbol: offenes Auge = alle sichtbar, durchgestrichen = unübliche ausgeblendet
+  const Icon = hidden ? EyeOffIcon : EyeIcon
+  const label = hidden ? 'Unübliche Einheiten einblenden' : 'Unübliche Einheiten ausblenden'
+  return (
+    <button
+      type="button"
+      aria-pressed={hidden}
+      aria-label={label}
+      title={label}
+      onClick={() => updateSettings({ hideRareUnits: !hidden })}
+      className="flex size-11 items-center justify-center rounded-full border border-edge bg-raised text-ink"
+    >
+      <Icon className="size-6" />
+    </button>
+  )
 }
 
 /** Name nur, wenn eingeschaltet und nicht gleich der Kurzform (z. B. „Tag“) */
@@ -117,18 +184,23 @@ export function displayName(names: Record<string, string>, key: string, label: s
   return show && name && name.toLowerCase() !== label.toLowerCase() ? name : undefined
 }
 
-export function ResultsTable({ title, rows, wrapValues = false }: {
+export function ResultsTable({ title, rows, wrapValues = false, action }: {
   title: string
   rows: ResultRow[]
   /** Lange Werte ohne Leerzeichen umbrechen (z. B. Hexadezimalzahlen); sonst bleiben Zahlen zusammen */
   wrapValues?: boolean
+  /** Knopf rechts neben der Überschrift, z. B. unübliche Einheiten ein-/ausblenden */
+  action?: ReactNode
 }) {
   if (rows.length === 0) return null
   // Namen in eigener Spalte, damit sie alle auf einer Linie beginnen
   const hasNames = rows.some((row) => row.name)
   return (
     <>
-      <h2 className="mt-6 text-xl font-bold">{title}</h2>
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-xl font-bold">{title}</h2>
+        {action}
+      </div>
       <div className="mt-2 overflow-hidden rounded-2xl border border-edge bg-surface">
         <table className="w-full text-lg" aria-live="polite">
           <tbody className="divide-y divide-edge">
@@ -140,9 +212,13 @@ export function ResultsTable({ title, rows, wrapValues = false }: {
                 >
                   {row.value}
                 </td>
-                <td className={`py-2 ${hasNames ? '' : 'w-full pr-4'}`}>{row.label}</td>
+                <td className={`py-2 ${hasNames ? '' : 'w-full pr-4'}`}>
+                  <TermLink to={row.href}>{row.label}</TermLink>
+                </td>
                 {hasNames && (
-                  <td className="w-full py-2 pr-4 pl-5 text-base font-normal text-muted hyphens-auto">{row.name}</td>
+                  <td className="w-full py-2 pr-4 pl-5 text-base font-normal text-muted hyphens-auto">
+                    {row.name && <TermLink to={row.href}>{row.name}</TermLink>}
+                  </td>
                 )}
               </tr>
             ))}

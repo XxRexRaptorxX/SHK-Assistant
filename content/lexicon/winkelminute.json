@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.winkelminute",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Winkel“; Wikipedia „Winkelminute“, https://de.wikipedia.org/wiki/Winkelminute",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Winkelminute",
+  "synonyms": [],
+  "definition": "**Winkelminute** (′) ist eine Einheit für Winkel. 1 ′ = 0,0166667 °.",
+  "related": [
+    "lexicon.grad"
+  ]
+}

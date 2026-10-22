@@ -1,0 +1,39 @@
+{
+  "id": "checklist.ventilation",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Checkliste des Inhabers, übermittelt am 22.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wartung - Lüftung",
+  "category": "Wartung",
+  "sections": [
+    {
+      "items": [
+        {
+          "id": "filter-replaced",
+          "text": "Filter gewechselt"
+        },
+        {
+          "id": "filter-cleaned",
+          "text": "Filter gereinigt"
+        },
+        {
+          "id": "air-ducts-cleaned",
+          "text": "Luftkanäle gereinigt"
+        },
+        {
+          "id": "fans-inspected-and-repaired",
+          "text": "Kontrolle und Instandsetzung der Ventilatoren"
+        },
+        {
+          "id": "visual-and-functional-inspection",
+          "text": "Sicht- und Funktionskontrolle"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

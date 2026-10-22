@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilogramm-pro-minute",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Massenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilogramm%20pro%20Minute",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilogramm pro Minute",
+  "synonyms": [
+    "kg/min"
+  ],
+  "definition": "**Kilogramm pro Minute** (kg/min) ist eine Einheit für den Massenstrom. 1 kg/min = 0,0166667 kg/s.",
+  "related": [
+    "lexicon.kilogramm-pro-sekunde"
+  ]
+}

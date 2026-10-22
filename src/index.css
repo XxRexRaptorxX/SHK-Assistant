@@ -290,18 +290,6 @@
   @page {
     margin: 15mm;
   }
-  /* "Leer drucken": Haken und Durchstreichen ausblenden */
-  [data-print-blank] .check:checked {
-    background: var(--page);
-    border-color: var(--line);
-  }
-  [data-print-blank] .check:checked::after {
-    opacity: 0;
-  }
-  [data-print-blank] .done-text {
-    color: var(--ink);
-    text-decoration: none;
-  }
 }
 
 @layer base {

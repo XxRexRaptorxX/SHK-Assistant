@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.barrel",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumen“; Wikipedia „Barrel“, https://de.wikipedia.org/wiki/Barrel",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Barrel",
+  "synonyms": [
+    "Barrel (Erdöl, US)",
+    "bbl"
+  ],
+  "definition": "**Barrel (Erdöl, US)** (bbl) ist eine Einheit für das Volumen. 1 bbl = 158,987 l.",
+  "related": [
+    "lexicon.liter"
+  ]
+}

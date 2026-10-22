@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.meter-pro-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Geschwindigkeit“; Wikipedia „Meter pro Sekunde“, https://de.wikipedia.org/wiki/Meter_pro_Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Meter pro Sekunde",
+  "synonyms": [
+    "m/s"
+  ],
+  "definition": "**Meter pro Sekunde** (m/s) ist eine Einheit für die Geschwindigkeit. 1 m/s = 3,6 km/h.",
+  "related": [
+    "lexicon.kilometer-pro-stunde"
+  ]
+}

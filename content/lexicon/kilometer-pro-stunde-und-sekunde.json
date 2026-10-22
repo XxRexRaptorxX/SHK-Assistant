@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilometer-pro-stunde-und-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Beschleunigung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilometer%20pro%20Stunde%20und%20Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilometer pro Stunde und Sekunde",
+  "synonyms": [
+    "km/(h·s)"
+  ],
+  "definition": "**Kilometer pro Stunde und Sekunde** (km/(h·s)) ist eine Einheit für die Beschleunigung. 1 km/(h·s) = 0,277778 m/s².",
+  "related": [
+    "lexicon.meter-pro-quadratsekunde"
+  ]
+}

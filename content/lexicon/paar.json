@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.paar",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Stückmaße“; Wikipedia „Paar (Einheit)“, https://de.wikipedia.org/wiki/Paar_(Einheit)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Paar",
+  "synonyms": [],
+  "definition": "**Paar** ist eine Einheit für Stückzahlen. 1 Paar = 2 Stk.",
+  "related": [
+    "lexicon.stueck"
+  ]
+}

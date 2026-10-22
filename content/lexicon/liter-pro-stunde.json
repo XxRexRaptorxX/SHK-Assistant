@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.liter-pro-stunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Liter%20pro%20Stunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Liter pro Stunde",
+  "synonyms": [
+    "l/h"
+  ],
+  "definition": "**Liter pro Stunde** (l/h) ist eine Einheit für den Volumenstrom. 1 l/h = 0,001 m³/h.",
+  "related": [
+    "lexicon.kubikmeter-pro-stunde"
+  ]
+}

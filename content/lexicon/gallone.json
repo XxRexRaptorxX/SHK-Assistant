@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.gallone",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumen“; Wikipedia „Gallone“, https://de.wikipedia.org/wiki/Gallone",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gallone",
+  "synonyms": [
+    "Gallone (US)",
+    "gal"
+  ],
+  "definition": "**Gallone (US)** (gal) ist eine Einheit für das Volumen. 1 gal = 3,78541 l.",
+  "related": [
+    "lexicon.liter"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kubikkilometer",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumen“; Wikipedia „Kubikmeter“, https://de.wikipedia.org/wiki/Kubikmeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kubikkilometer",
+  "synonyms": [
+    "km³"
+  ],
+  "definition": "**Kubikkilometer** (km³) ist eine Einheit für das Volumen. 1 km³ = 1.000.000.000.000 l.",
+  "related": [
+    "lexicon.liter"
+  ]
+}

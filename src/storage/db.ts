@@ -12,6 +12,10 @@ export interface FavoriteRecord {
 export interface ChecklistProgressRecord {
   checklistId: string
   checkedItemIds: string[]
+  /** Freitext-Titel, z. B. Kunde oder Anlage (fehlt, wenn leer) */
+  title?: string
+  /** Freitext-Notizen zur Checkliste (fehlt, wenn leer) */
+  notes?: string
   /** ISO-Zeitstempel der letzten Änderung */
   updatedAt: string
 }

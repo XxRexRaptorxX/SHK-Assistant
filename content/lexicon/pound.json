@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.pound",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Gewicht“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Pound",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Pound",
+  "synonyms": [
+    "Pound (avoirdupois)",
+    "lb"
+  ],
+  "definition": "**Pound (avoirdupois)** (lb) ist eine Einheit für die Masse (umgangssprachlich Gewicht). 1 lb = 0,453592 kg.",
+  "related": [
+    "lexicon.kilogramm"
+  ]
+}

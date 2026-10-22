@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilowatt",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Leistung“; Wikipedia „Liste von Größenordnungen der Leistung“, https://de.wikipedia.org/wiki/Liste_von_Gr%C3%B6%C3%9Fenordnungen_der_Leistung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilowatt",
+  "synonyms": [
+    "kW"
+  ],
+  "definition": "**Kilowatt** (kW) ist eine Einheit für die Leistung. 1 kW = 1.000 W.",
+  "related": [
+    "lexicon.watt"
+  ]
+}

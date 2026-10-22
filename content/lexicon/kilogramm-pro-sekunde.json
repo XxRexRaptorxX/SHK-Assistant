@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilogramm-pro-sekunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Massenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilogramm%20pro%20Sekunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilogramm pro Sekunde",
+  "synonyms": [
+    "kg/s"
+  ],
+  "definition": "**Kilogramm pro Sekunde** (kg/s) ist eine Einheit für den Massenstrom. 1 kg/s = 3.600 kg/h.",
+  "related": [
+    "lexicon.kilogramm-pro-stunde"
+  ]
+}

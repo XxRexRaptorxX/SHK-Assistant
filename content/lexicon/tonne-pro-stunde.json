@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.tonne-pro-stunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Massenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Tonne%20pro%20Stunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Tonne pro Stunde",
+  "synonyms": [
+    "t/h"
+  ],
+  "definition": "**Tonne pro Stunde** (t/h) ist eine Einheit für den Massenstrom. 1 t/h = 0,277778 kg/s.",
+  "related": [
+    "lexicon.kilogramm-pro-sekunde"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kiloohm",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Widerstand“; Wikipedia „Ohm“, https://de.wikipedia.org/wiki/Ohm",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kiloohm",
+  "synonyms": [
+    "kΩ"
+  ],
+  "definition": "**Kiloohm** (kΩ) ist eine Einheit für den elektrischen Widerstand. 1 kΩ = 1.000 Ω.",
+  "related": [
+    "lexicon.ohm"
+  ]
+}

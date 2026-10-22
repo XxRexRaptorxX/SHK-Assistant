@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kiloamperestunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Ladung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kiloamperestunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kiloamperestunde",
+  "synonyms": [
+    "kAh"
+  ],
+  "definition": "**Kiloamperestunde** (kAh) ist eine Einheit für die elektrische Ladung. 1 kAh = 3.600.000 C.",
+  "related": [
+    "lexicon.coulomb"
+  ]
+}

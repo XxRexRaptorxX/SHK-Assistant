@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.stueck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Stückmaße“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=St%C3%BCck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Stück",
+  "synonyms": [
+    "Stk."
+  ],
+  "definition": "**Stück** (Stk.) ist eine Einheit für Stückzahlen. Bezugseinheit der Stückmaße; Paar, Dutzend, Schock und Gros sind Vielfache davon.",
+  "related": [
+    "lexicon.dutzend"
+  ]
+}

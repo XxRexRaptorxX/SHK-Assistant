@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.tonne-pro-kubikmeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Dichte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Tonne%20pro%20Kubikmeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Tonne pro Kubikmeter",
+  "synonyms": [
+    "t/m³"
+  ],
+  "definition": "**Tonne pro Kubikmeter** (t/m³) ist eine Einheit für die Dichte. 1 t/m³ = 1.000 kg/m³.",
+  "related": [
+    "lexicon.kilogramm-pro-kubikmeter"
+  ]
+}

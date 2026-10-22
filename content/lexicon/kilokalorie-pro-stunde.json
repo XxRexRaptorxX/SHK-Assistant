@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilokalorie-pro-stunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Leistung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilokalorie%20pro%20Stunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilokalorie pro Stunde",
+  "synonyms": [
+    "kcal/h"
+  ],
+  "definition": "**Kilokalorie pro Stunde** (kcal/h) ist eine Einheit für die Leistung. 1 kcal/h = 1,163 W.",
+  "related": [
+    "lexicon.watt"
+  ]
+}

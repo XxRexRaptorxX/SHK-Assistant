@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { createSearch } from '../../search/search'
 import { checklistSearchDocuments } from './search'
 import { ChecklistListPage } from './ChecklistListPage'
-import { ChecklistPage, ChecklistView } from './ChecklistPage'
+import { ChecklistNotes, ChecklistPage, ChecklistTitle, ChecklistView } from './ChecklistPage'
 import { checklistEntries, countDone } from './checklists'
 import { checkChecklist, type ChecklistEntry } from './schema'
 
@@ -56,6 +56,42 @@ describe('Checklisten-Daten', () => {
   it('lädt die echten Checklisten gültig (auch wenn noch keine vorhanden sind)', () => {
     expect(checklistEntries.every((entry) => checkChecklist(entry).length === 0)).toBe(true)
   })
+
+  it('enthält die acht Checklisten des Inhabers mit allen 98 Punkten und Notizfeld', () => {
+    expect(checklistEntries).toHaveLength(8)
+    expect(checklistEntries.reduce((sum, entry) => sum + countDone(entry, new Set()).total, 0)).toBe(98)
+    expect(checklistEntries.every((entry) => entry.notes?.label === 'Notizen')).toBe(true)
+    const lpg = checklistEntries.find((entry) => entry.id === 'checklist.lpg-inspection')
+    expect(lpg?.category).toBe('Prüfung')
+    expect(lpg?.sections[0]?.items.map((item) => item.id)).toContain('leak-test-passed')
+  })
+})
+
+describe('Notizen', () => {
+  it('zeigt ein beschriftetes Textfeld und für den Ausdruck einen Kasten mit dem Text', () => {
+    const html = renderToStaticMarkup(
+      <ChecklistNotes id="n" label="Notizen" value="MAG-Vordruck geprüft" onChange={() => {}} />,
+    )
+    expect(html).toContain('<label for="n"')
+    expect(html).toContain('>Notizen</label>')
+    expect(html).toContain('<textarea id="n"')
+    expect(html).toMatch(/print:block">MAG-Vordruck geprüft<\/div>/)
+  })
+
+  it('zeigt oben ein Titelfeld, im Ausdruck als Text', () => {
+    const html = renderToStaticMarkup(<ChecklistTitle id="t" value="Heizung Müller" onChange={() => {}} />)
+    expect(html).toContain('<label for="t"')
+    expect(html).toContain('>Titel</label>')
+    expect(html).toContain('<input id="t" type="text"')
+    expect(html).toMatch(/print:block">Heizung Müller<\/p>/)
+  })
+
+  it('zeigt Abschnitte ohne Überschrift ohne leere Überschrift', () => {
+    const entry: ChecklistEntry = { ...fixture, sections: [{ title: '', items: [{ id: 'x', text: 'X', note: '' }] }] }
+    const html = renderToStaticMarkup(<ChecklistView entry={entry} checked={new Set()} onToggle={() => {}} />)
+    expect(html).not.toContain('<h2')
+    expect(html).toContain('>X</span>')
+  })
 })
 
 describe('Checklisten-Ansicht', () => {
@@ -100,7 +136,9 @@ describe('Checklisten-Seiten', () => {
   it('zeigt Druck- und Zurücksetzen-Knöpfe sowie die Felder für den Ausdruck', () => {
     const html = renderAt('/checklisten/test-wartung')
     expect(html).toContain('Testwartung</h1>')
-    expect(html).toContain('Leer drucken')
+    expect(html).toContain('>Titel</label>')
+    expect(html).toContain('>Drucken</button>')
+    expect(html).not.toContain('Leer drucken')
     expect(html).toContain('Zurücksetzen')
     expect(html).toContain('Unterschrift')
   })

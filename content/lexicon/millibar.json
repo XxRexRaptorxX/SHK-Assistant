@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.millibar",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia „Bar (Einheit)“, https://de.wikipedia.org/wiki/Bar_(Einheit)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Millibar",
+  "synonyms": [
+    "mbar"
+  ],
+  "definition": "**Millibar** (mbar) ist eine Einheit für den Druck. 1 mbar = 100 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

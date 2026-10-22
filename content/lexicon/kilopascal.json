@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilopascal",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia „Pascal (Einheit)“, https://de.wikipedia.org/wiki/Pascal_(Einheit)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilopascal",
+  "synonyms": [
+    "kPa"
+  ],
+  "definition": "**Kilopascal** (kPa) ist eine Einheit für den Druck. 1 kPa = 1.000 Pa.",
+  "related": [
+    "lexicon.pascal"
+  ]
+}

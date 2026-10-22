@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.stunde",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Zeit“; Wikipedia „Stunde“, https://de.wikipedia.org/wiki/Stunde",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Stunde",
+  "synonyms": [],
+  "definition": "**Stunde** (h) ist eine Einheit für die Zeit. 1 h = 3.600 s.",
+  "related": [
+    "lexicon.sekunde"
+  ]
+}

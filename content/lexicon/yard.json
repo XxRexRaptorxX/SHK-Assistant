@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.yard",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Länge“; Wikipedia „Yard“, https://de.wikipedia.org/wiki/Yard",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Yard",
+  "synonyms": [
+    "yd"
+  ],
+  "definition": "**Yard** (yd) ist eine Einheit für die Länge. 1 yd = 0,9144 m.",
+  "related": [
+    "lexicon.meter"
+  ]
+}

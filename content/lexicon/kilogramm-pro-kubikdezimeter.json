@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.kilogramm-pro-kubikdezimeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Dichte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilogramm%20pro%20Kubikdezimeter",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kilogramm pro Kubikdezimeter",
+  "synonyms": [
+    "kg/dm³"
+  ],
+  "definition": "**Kilogramm pro Kubikdezimeter** (kg/dm³) ist eine Einheit für die Dichte. 1 kg/dm³ = 1.000 kg/m³.",
+  "related": [
+    "lexicon.kilogramm-pro-kubikmeter"
+  ]
+}
