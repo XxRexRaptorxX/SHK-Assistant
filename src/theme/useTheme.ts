@@ -1,16 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { createStoredState } from '../lib/storedState'
 import {
   loadThemePreference,
   resolveTheme,
   saveThemePreference,
+  THEME_STORAGE_KEY,
   type ThemePreference,
 } from './theme'
 
 const DARK_QUERY = '(prefers-color-scheme: dark)'
 
-export function useTheme() {
-  const [preference, setPreference] = useState<ThemePreference>(() => loadThemePreference())
+/** Gemeinsamer Stand für alle Komponenten (Einstellungen, Seiten), auch über Tabs hinweg */
+const themeState = createStoredState<ThemePreference>({
+  key: THEME_STORAGE_KEY,
+  read: () => loadThemePreference(),
+  write: (value) => saveThemePreference(value),
+  fallback: 'system',
+})
 
+export function useTheme() {
+  return { preference: themeState.useValue(), setPreference: themeState.set }
+}
+
+/** Setzt das Theme auf <html> und folgt bei "System" dem Betriebssystem. Einmal im Layout verwenden. */
+export function useApplyTheme() {
+  const preference = themeState.useValue()
   useEffect(() => {
     const media = window.matchMedia(DARK_QUERY)
     const apply = () => {
@@ -22,15 +36,7 @@ export function useTheme() {
       document.querySelector('meta[name="theme-color"]')?.setAttribute('content', surface)
     }
     apply()
-    // Bei "System" dem Wechsel des Betriebssystems folgen
     media.addEventListener('change', apply)
     return () => media.removeEventListener('change', apply)
   }, [preference])
-
-  const changePreference = (next: ThemePreference) => {
-    saveThemePreference(next)
-    setPreference(next)
-  }
-
-  return { preference, setPreference: changePreference }
 }

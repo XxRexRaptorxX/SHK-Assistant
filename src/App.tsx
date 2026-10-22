@@ -12,6 +12,7 @@ import { LexiconListPage } from './modules/lexicon/LexiconListPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { SearchPage } from './search/SearchPage'
+import { SettingsPage } from './settings/SettingsPage'
 
 // Seiten mit mathjs werden erst bei Bedarf geladen (kleineres Start-Bundle, offline trotzdem vorgecacht)
 const FormulaDetailPage = lazy(() => import('./modules/formulas/FormulaDetailPage'))
@@ -50,6 +51,7 @@ export function App() {
         <Route path={`${modules.lexicon.path}/:slug`} element={<LexiconDetailPage />} />
         <Route path={modules.favorites.path} element={<FavoritesPage />} />
         <Route path={modules.search.path} element={<SearchPage />} />
+        <Route path={modules.settings.path} element={<SettingsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

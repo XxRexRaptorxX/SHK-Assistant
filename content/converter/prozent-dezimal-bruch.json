@@ -8,5 +8,9 @@
   "title": "Anteile",
   "category": "Allgemein",
   "description": "ppb meint hier Milliardstel (10⁻⁹, engl. „billion“). pu (per unit) ist der Wert bezogen auf den Bezugswert, also wie eine Dezimalzahl: 1 pu = 100 %.",
-  "kind": "ratio"
+  "kind": "ratio",
+  "rare": [
+    "permyriad",
+    "ppb"
+  ]
 }

@@ -15,6 +15,9 @@
     "gradEH",
     "mmol/l"
   ],
+  "rare": [
+    "gradEH"
+  ],
   "from": "gradDH",
   "to": "mmol/l",
   "min": 0

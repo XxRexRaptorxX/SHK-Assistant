@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
 import { math } from '../../lib/math.ts'
 import { isPendingUnit } from '../units/registry.ts'
-import { CONVERTER_ID_PREFIX } from './constants.ts'
+import { CONVERTER_ID_PREFIX, RATIO_FORMS } from './constants.ts'
 
 /**
  * Arten von Umrechnern:
@@ -43,6 +43,11 @@ export const converterEntrySchema = defineEntrySchema({
   to: z.string().trim().default(''),
   /** kind "units"/"factors": kleinster erlaubter Eingabewert, z. B. 0 (keine negativen Werte) */
   min: z.number().optional(),
+  /**
+   * Unübliche Einheiten (units), Größen (factors) bzw. Formen (ratio), die bei der Einstellung
+   * „Unübliche Einheiten ausblenden“ wegfallen
+   */
+  rare: z.array(z.string().trim().min(1)).default([]),
   /** kind "table": Spaltenüberschriften und Zeilen (Text je Zelle) */
   columns: z.array(z.string().trim().min(1)).default([]),
   rows: z.array(z.array(z.string())).default([]),
@@ -105,8 +110,38 @@ function checkTable(entry: ConverterEntry): string[] {
   return issues
 }
 
+/** Auswählbare Schlüssel je Art (für "rare") */
+function selectableKeys(entry: ConverterEntry): readonly string[] {
+  switch (entry.kind) {
+    case 'units':
+      return entry.units
+    case 'factors':
+      return entry.factors.map((factor) => factor.key)
+    case 'ratio':
+      return RATIO_FORMS
+    default:
+      return []
+  }
+}
+
+function checkRare(entry: ConverterEntry): string[] {
+  if (entry.rare.length === 0) return []
+  const keys = selectableKeys(entry)
+  const issues = entry.rare
+    .filter((key) => !keys.includes(key))
+    .map((key) => `rare: "${key}" gibt es bei kind "${entry.kind}" nicht`)
+  if (keys.filter((key) => !entry.rare.includes(key)).length < 2) {
+    issues.push('rare: mindestens zwei Einheiten müssen übrig bleiben')
+  }
+  return issues
+}
+
 /** Prüft je nach Art die passenden Felder; nicht benutzte Felder müssen leer sein. */
 export function checkConverter(entry: ConverterEntry): string[] {
+  return [...checkKind(entry), ...checkRare(entry)]
+}
+
+function checkKind(entry: ConverterEntry): string[] {
   const usesMin = entry.kind === 'units' || entry.kind === 'factors'
   const unused = (fields: (keyof ConverterEntry)[]) =>
     [...fields, ...(usesMin ? [] : (['min'] as const))]

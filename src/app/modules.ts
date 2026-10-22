@@ -4,6 +4,7 @@ import {
   CalculatorIcon,
   ChecklistIcon,
   ConvertIcon,
+  GearIcon,
   SearchIcon,
   StarIcon,
   type IconProps,
@@ -53,6 +54,12 @@ export const modules = {
     title: 'Suche',
     description: 'In allen Modulen suchen',
     icon: SearchIcon,
+  },
+  settings: {
+    path: '/einstellungen',
+    title: 'Einstellungen',
+    description: 'Darstellung, Umrechner, App installieren',
+    icon: GearIcon,
   },
 } satisfies Record<string, AppModule>
 

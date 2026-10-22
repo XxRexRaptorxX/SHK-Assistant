@@ -32,6 +32,10 @@
       "value": 5
     }
   ],
+  "rare": [
+    "schock",
+    "gros"
+  ],
   "from": "dtzd",
   "to": "stk",
   "min": 0

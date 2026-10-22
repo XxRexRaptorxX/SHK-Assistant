@@ -18,6 +18,10 @@
     "kWh",
     "MWh"
   ],
+  "rare": [
+    "MJ",
+    "MWh"
+  ],
   "from": "kWh",
   "to": "MJ"
 }

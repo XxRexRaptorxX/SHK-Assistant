@@ -1,8 +1,9 @@
 import { parseDecimal } from '../../lib/number'
+import { RATIO_FORMS } from './constants'
 
 // Anteile – alles über den Dezimalwert (= pu, bezogen auf 1).
 
-export const RATIO_FORMS = ['percent', 'permille', 'permyriad', 'ppm', 'ppb', 'decimal', 'fraction'] as const
+export { RATIO_FORMS }
 export type RatioForm = (typeof RATIO_FORMS)[number]
 
 export const RATIO_LABELS: Record<RatioForm, string> = {

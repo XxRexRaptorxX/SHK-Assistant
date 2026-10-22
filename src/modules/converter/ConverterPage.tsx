@@ -26,7 +26,7 @@ function ConverterBody({ entry }: { entry: ConverterEntry }) {
     case 'slope':
       return <SlopeConverter />
     case 'ratio':
-      return <RatioConverter />
+      return <RatioConverter rare={entry.rare} />
     case 'table':
       return <TableView entry={entry} />
   }

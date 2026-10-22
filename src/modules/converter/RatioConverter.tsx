@@ -1,5 +1,6 @@
 import { useId, useState } from 'react'
 import { formatSignificant } from '../../lib/number'
+import { useSettings } from '../../settings/settings'
 import { ResultsTable, Select, ValueInput } from './converterUi'
 import {
   RATIO_FORMS,
@@ -10,8 +11,6 @@ import {
   toFraction,
   type RatioForm,
 } from './ratio'
-
-const OPTIONS = RATIO_FORMS.map((form) => ({ value: form, label: RATIO_LABELS[form] }))
 
 /** "3/4", "≈ 1/3", bei unechten Brüchen mit gemischter Schreibweise: "3/2 = 1 1/2" */
 export function formatFraction(value: number): string {
@@ -32,10 +31,24 @@ function formatAs(value: number, form: RatioForm): string {
   return symbol ? `${number} ${symbol}` : number
 }
 
-export function RatioConverter({ initialValue = '75', initialForm = 'percent' as RatioForm }) {
+interface RatioConverterProps {
+  initialValue?: string
+  initialForm?: RatioForm
+  /** Unübliche Formen aus dem Inhalt (rare) */
+  rare?: readonly string[]
+  /** Für Tests überschreibbar, sonst aus den Einstellungen */
+  hideRareUnits?: boolean
+}
+
+export function RatioConverter({ initialValue = '75', initialForm = 'percent', rare = [], hideRareUnits }: RatioConverterProps) {
   const id = useId()
+  const settings = useSettings()
+  const hideRare = hideRareUnits ?? settings.hideRareUnits
+  const forms = RATIO_FORMS.filter((f) => !(hideRare && rare.includes(f)))
+  const options = forms.map((f) => ({ value: f, label: RATIO_LABELS[f] }))
   const [raw, setRaw] = useState(initialValue)
-  const [form, setForm] = useState<RatioForm>(initialForm)
+  const [chosenForm, setForm] = useState<RatioForm>(initialForm)
+  const form = forms.includes(chosenForm) ? chosenForm : (forms[0] ?? 'percent')
   const value = toDecimal(raw, form)
   const invalid = raw.trim() !== '' && value === undefined
 
@@ -53,14 +66,14 @@ export function RatioConverter({ initialValue = '75', initialForm = 'percent' as
           inputMode={form === 'fraction' ? 'text' : 'decimal'}
           hint={form === 'fraction' ? 'Beispiel: 3/4 oder 1 1/2' : 'Beispiel: 12,5'}
         />
-        <Select id={`${id}-form`} label="Angabe als" options={OPTIONS} value={form} onChange={setForm} />
+        <Select id={`${id}-form`} label="Angabe als" options={options} value={form} onChange={setForm} />
       </div>
       <ResultsTable
         title="Ergebnis"
         rows={
           value === undefined
             ? []
-            : RATIO_FORMS.map((target) => ({
+            : forms.map((target) => ({
                 key: target,
                 value: formatAs(value, target),
                 label: RATIO_LABELS[target],

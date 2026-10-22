@@ -1,8 +1,8 @@
 import { Link, NavLink, Outlet } from 'react-router'
 import { HomeIcon } from '../components/icons'
 import { isInternalEdition } from '../config/edition'
+import { useApplyTheme } from '../theme/useTheme'
 import { bottomNavModules, modules, type AppModule } from './modules'
-import { ThemeToggle } from './ThemeToggle'
 
 const iconButton =
   'flex size-12 items-center justify-center rounded-lg text-ink hover:bg-page active:bg-page'
@@ -42,7 +42,7 @@ function Header() {
         <nav aria-label="Werkzeuge" className="ml-auto flex shrink-0 items-center">
           <HeaderLink module={modules.search} />
           <HeaderLink module={modules.favorites} />
-          <ThemeToggle className={iconButton} />
+          <HeaderLink module={modules.settings} />
         </nav>
       </div>
     </header>
@@ -86,6 +86,7 @@ function BottomNav() {
 }
 
 export function Layout() {
+  useApplyTheme()
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />

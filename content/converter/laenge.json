@@ -19,6 +19,9 @@
     "inch",
     "ft"
   ],
+  "rare": [
+    "ft"
+  ],
   "from": "m",
   "to": "mm"
 }

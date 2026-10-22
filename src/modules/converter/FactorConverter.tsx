@@ -1,5 +1,6 @@
 import { useId, useState } from 'react'
 import { formatSignificant, parseDecimal } from '../../lib/number'
+import { useSettings } from '../../settings/settings'
 import { fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
 import type { ConverterEntry, ConverterFactor } from './schema'
 
@@ -12,12 +13,27 @@ export function convertByFactors(value: number, from: ConverterFactor, to: Conve
 }
 
 /** Umrechnung über Richtwert-Faktoren aus dem Inhalt (ohne mathjs-Einheiten) */
-export function FactorConverter({ entry, initialValue = '1' }: { entry: ConverterEntry; initialValue?: string }) {
+export function FactorConverter({
+  entry,
+  initialValue = '1',
+  hideRareUnits,
+}: {
+  entry: ConverterEntry
+  initialValue?: string
+  /** Für Tests überschreibbar, sonst aus den Einstellungen */
+  hideRareUnits?: boolean
+}) {
   const id = useId()
-  const byKey = new Map(entry.factors.map((factor) => [factor.key, factor]))
+  const settings = useSettings()
+  const hideRare = hideRareUnits ?? settings.hideRareUnits
+  const factors = entry.factors.filter((factor) => !(hideRare && entry.rare.includes(factor.key)))
+  const byKey = new Map(factors.map((factor) => [factor.key, factor]))
   const [raw, setRaw] = useState(initialValue)
-  const [fromKey, setFromKey] = useState(entry.from)
-  const [toKey, setToKey] = useState(entry.to)
+  const [chosenFrom, setFromKey] = useState(entry.from)
+  const [chosenTo, setToKey] = useState(entry.to)
+  // Ausgeblendete Auswahl auf die erste bzw. zweite verbleibende Größe zurücksetzen
+  const fromKey = byKey.has(chosenFrom) ? chosenFrom : (factors[0]?.key ?? '')
+  const toKey = byKey.has(chosenTo) ? chosenTo : (factors.find((f) => f.key !== fromKey)?.key ?? '')
   const from = byKey.get(fromKey)
   const to = byKey.get(toKey)
 
@@ -27,7 +43,7 @@ export function FactorConverter({ entry, initialValue = '1' }: { entry: Converte
   const empty = raw.trim() === ''
   const invalid = !empty && value === undefined
   const hint = belowMin ? (entry.min === 0 ? 'keine negativen Werte' : `mindestens ${entry.min}`) : undefined
-  const options = entry.factors.map((factor) => ({ value: factor.key, label: factor.label }))
+  const options = factors.map((factor) => ({ value: factor.key, label: factor.label }))
   const format = (n: number) =>
     entry.approximate ? `≈ ${formatSignificant(n, APPROXIMATE_DIGITS)}` : formatSignificant(n, EXACT_DIGITS)
 
@@ -69,7 +85,7 @@ export function FactorConverter({ entry, initialValue = '1' }: { entry: Converte
         rows={
           value === undefined || !from
             ? []
-            : entry.factors.map((factor) => ({
+            : factors.map((factor) => ({
                 key: factor.key,
                 value: format(convertByFactors(value, from, factor)),
                 label: factor.label,

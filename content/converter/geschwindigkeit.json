@@ -17,6 +17,10 @@
     "m/s",
     "km/h"
   ],
+  "rare": [
+    "mm/s",
+    "m/h"
+  ],
   "from": "m/s",
   "to": "km/h"
 }

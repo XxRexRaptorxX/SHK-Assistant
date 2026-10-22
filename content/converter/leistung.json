@@ -16,6 +16,10 @@
     "Pferdestaerke",
     "kcal/h"
   ],
+  "rare": [
+    "MW",
+    "Pferdestaerke"
+  ],
   "from": "kW",
   "to": "W"
 }

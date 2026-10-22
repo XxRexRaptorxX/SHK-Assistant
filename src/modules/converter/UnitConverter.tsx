@@ -4,6 +4,7 @@ import { formatSignificant, parseDecimal } from '../../lib/number'
 import { unverifiedUnitSymbols } from '../units/customUnits'
 import { formatAnyUnit } from '../units/labels'
 import { isKnownUnit } from '../units/registry'
+import { useSettings } from '../../settings/settings'
 import { fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
 import type { ConverterEntry } from './schema'
 
@@ -17,19 +18,36 @@ function unitLabel(unit: string): string {
 }
 
 /** Umrechnung zwischen Einheiten einer Größe. Zusatzeinheiten müssen registriert sein. */
-export function UnitConverter({ entry, initialValue = '1' }: { entry: ConverterEntry; initialValue?: string }) {
+export function UnitConverter({
+  entry,
+  initialValue = '1',
+  hideRareUnits,
+}: {
+  entry: ConverterEntry
+  initialValue?: string
+  /** Für Tests überschreibbar, sonst aus den Einstellungen */
+  hideRareUnits?: boolean
+}) {
   const id = useId()
-  // Angekündigte Zusatzeinheiten ohne Definition fehlen noch
-  const available = useMemo(() => entry.units.filter(isKnownUnit), [entry.units])
-  const missing = entry.units.filter((unit) => !available.includes(unit))
+  const settings = useSettings()
+  const hideRare = hideRareUnits ?? settings.hideRareUnits
+  // Angekündigte Zusatzeinheiten ohne Definition fehlen noch; unübliche ggf. ausgeblendet
+  const available = useMemo(
+    () => entry.units.filter((unit) => isKnownUnit(unit) && !(hideRare && entry.rare.includes(unit))),
+    [entry.units, entry.rare, hideRare],
+  )
+  const missing = entry.units.filter((unit) => !isKnownUnit(unit))
   const fallbackFrom = available.includes(entry.from) ? entry.from : (available[0] ?? '')
   const fallbackTo = available.includes(entry.to) && entry.to !== fallbackFrom
     ? entry.to
     : (available.find((unit) => unit !== fallbackFrom) ?? '')
 
   const [raw, setRaw] = useState(initialValue)
-  const [from, setFrom] = useState(fallbackFrom)
-  const [to, setTo] = useState(fallbackTo)
+  const [chosenFrom, setFrom] = useState(fallbackFrom)
+  const [chosenTo, setTo] = useState(fallbackTo)
+  // Wird eine gewählte Einheit ausgeblendet (Einstellung), auf die Voreinstellung zurückfallen
+  const from = available.includes(chosenFrom) ? chosenFrom : fallbackFrom
+  const to = available.includes(chosenTo) ? chosenTo : fallbackTo
   const parsed = parseDecimal(raw)
   const belowMin = parsed !== undefined && entry.min !== undefined && parsed < entry.min
   const value = belowMin ? undefined : parsed

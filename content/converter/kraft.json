@@ -19,6 +19,11 @@
     "MN",
     "kgf"
   ],
+  "rare": [
+    "mN",
+    "cN",
+    "MN"
+  ],
   "from": "kN",
   "to": "N"
 }

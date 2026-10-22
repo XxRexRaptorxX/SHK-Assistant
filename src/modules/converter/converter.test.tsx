@@ -39,6 +39,7 @@ const pressure: ConverterEntry = {
   factors: [],
   from: 'bar',
   to: 'mbar',
+  rare: [],
   columns: [],
   rows: [],
 }
@@ -181,6 +182,45 @@ describe('Rohrdimensionen', () => {
     const html = renderToStaticMarkup(<TableView entry={pipes} initialQuery="1 1/4" />)
     expect(html).toContain('DN 32')
     expect(html).not.toContain('DN 15')
+  })
+})
+
+describe('Unübliche Einheiten ausblenden', () => {
+  const withRare: ConverterEntry = { ...pressure, units: ['bar', 'mbar', 'Pa', 'psi'], rare: ['psi', 'Pa'] }
+
+  it('blendet unübliche Einheiten nur bei eingeschalteter Einstellung aus', () => {
+    const shown = renderToStaticMarkup(<UnitConverter entry={withRare} hideRareUnits={false} />)
+    const hidden = renderToStaticMarkup(<UnitConverter entry={withRare} hideRareUnits />)
+    expect(shown).toContain('>psi<')
+    expect(hidden).not.toContain('>psi<')
+    expect(hidden).not.toContain('>Pa<')
+    expect(hidden).toContain('1.000 mbar')
+  })
+
+  it('fällt auf eine sichtbare Einheit zurück, wenn die Voreinstellung ausgeblendet ist', () => {
+    const html = renderToStaticMarkup(<UnitConverter entry={{ ...withRare, from: 'psi' }} hideRareUnits />)
+    expect(html).toContain('value="bar" selected=""')
+  })
+
+  it('wirkt auch bei Faktoren und Anteilen', () => {
+    const factors = renderToStaticMarkup(<FactorConverter entry={{ ...wood, rare: ['srm'] }} hideRareUnits />)
+    expect(factors).not.toContain('Schüttraummeter')
+    const ratio = renderToStaticMarkup(<RatioConverter rare={['ppb', 'permyriad']} hideRareUnits />)
+    expect(ratio).not.toContain('ppb')
+    expect(ratio).toContain('ppm')
+  })
+
+  it('prüft die rare-Liste beim Build', () => {
+    expect(checkConverter(withRare)).toEqual([])
+    expect(checkConverter({ ...withRare, rare: ['xyz'] })).toEqual(['rare: "xyz" gibt es bei kind "units" nicht'])
+    expect(checkConverter({ ...withRare, rare: ['psi', 'Pa', 'mbar'] })).toEqual([
+      'rare: mindestens zwei Einheiten müssen übrig bleiben',
+    ])
+  })
+
+  it('ist in den echten Inhalten gültig und lässt überall genug Einheiten übrig', () => {
+    for (const entry of converterEntries) expect(checkConverter(entry)).toEqual([])
+    expect(converterEntries.find((e) => e.id === 'converter.laenge')?.rare).toContain('ft')
   })
 })
 

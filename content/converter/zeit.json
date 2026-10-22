@@ -22,6 +22,12 @@
     "Quartal",
     "Kalenderjahr"
   ],
+  "rare": [
+    "ms",
+    "Hundertstelminute",
+    "Industrieminute",
+    "Quartal"
+  ],
   "from": "h",
   "to": "min"
 }

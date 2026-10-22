@@ -4,6 +4,8 @@ import { HashRouter } from 'react-router'
 import { registerSW } from 'virtual:pwa-register'
 import { App } from './App'
 import './index.css'
+// früh laden: fängt das Installations-Angebot des Browsers ab (siehe Einstellungen)
+import './settings/install'
 
 // Offline-Betrieb: Service Worker registrieren. Bei einem Update übernimmt der neue
 // sofort und die Seite lädt einmal neu (Fortschritt und Favoriten liegen in IndexedDB).

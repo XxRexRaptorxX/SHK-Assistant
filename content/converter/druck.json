@@ -22,6 +22,12 @@
     "mWS",
     "mmH2O"
   ],
+  "rare": [
+    "MPa",
+    "psi",
+    "N/m^2",
+    "N/cm^2"
+  ],
   "from": "bar",
   "to": "mWS"
 }
