@@ -134,7 +134,10 @@ export function ResultsTable({ title, rows, wrapValues = false }: {
           <tbody className="divide-y divide-edge">
             {rows.map((row) => (
               <tr key={row.key} className={row.highlight ? 'bg-raised font-bold' : ''}>
-                <td className={`py-2 pr-3 pl-4 text-right tabular-nums ${wrapValues ? '[overflow-wrap:anywhere]' : 'whitespace-nowrap'}`}>
+                {/* Linker Rand wächst mit der Breite: am schmalen Handy knapp, sonst etwas Luft */}
+                <td
+                  className={`py-2 pr-3 pl-4 text-right tabular-nums min-[400px]:pl-8 sm:pl-14 ${wrapValues ? '[overflow-wrap:anywhere]' : 'whitespace-nowrap'}`}
+                >
                   {row.value}
                 </td>
                 <td className={`py-2 ${hasNames ? '' : 'w-full pr-4'}`}>{row.label}</td>
