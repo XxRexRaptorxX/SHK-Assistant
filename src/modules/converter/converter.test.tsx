@@ -388,6 +388,20 @@ describe('Umrechner-Seiten', () => {
     expect(converterEntries.every((entry) => entry.category !== '')).toBe(true)
   })
 
+  it('zeigt die Kategorien in der vorgegebenen Reihenfolge', () => {
+    expect(groupConvertersByCategory(converterEntries).map((g) => g.category)).toEqual([
+      'Geometrie',
+      'Hydraulik',
+      'Mechanik',
+      'Thermodynamik',
+      'Elektrotechnik',
+      'Allgemein',
+    ])
+    // unbekannte Kategorien landen vor „Allgemein“
+    const extra = [...converterEntries, { ...pressure, id: 'converter.x', category: 'Akustik' }]
+    expect(groupConvertersByCategory(extra).map((g) => g.category).slice(-2)).toEqual(['Akustik', 'Allgemein'])
+  })
+
   it('rechnet den Startwert 1 in die Zieleinheit und in alle Einheiten um', () => {
     const html = renderAt('/umrechner/test-druck')
     expect(html).toContain('1.000 mbar')

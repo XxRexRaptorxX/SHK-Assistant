@@ -27,7 +27,16 @@ export function converterTitle(entry: ConverterEntry): string {
   return entry.symbol ? `${entry.title} [${entry.symbol}]` : entry.title
 }
 
-/** Gruppiert nach Kategorie; ohne Kategorie unter "Allgemein", diese Gruppe zuletzt */
+/** Reihenfolge der Kategorien in der Liste (Vorgabe des Inhabers); andere folgen alphabetisch davor „Allgemein“ */
+export const CONVERTER_CATEGORY_ORDER = ['Geometrie', 'Hydraulik', 'Mechanik', 'Thermodynamik', 'Elektrotechnik']
+
+function categoryRank(category: string): number {
+  if (category === 'Allgemein') return Number.MAX_SAFE_INTEGER
+  const index = CONVERTER_CATEGORY_ORDER.indexOf(category)
+  return index === -1 ? CONVERTER_CATEGORY_ORDER.length : index
+}
+
+/** Gruppiert nach Kategorie in fester Reihenfolge; ohne Kategorie unter „Allgemein“, diese Gruppe zuletzt */
 export function groupConvertersByCategory(entries: readonly ConverterEntry[]) {
   const groups = new Map<string, ConverterEntry[]>()
   for (const entry of entries) {
@@ -35,7 +44,7 @@ export function groupConvertersByCategory(entries: readonly ConverterEntry[]) {
     groups.set(category, [...(groups.get(category) ?? []), entry])
   }
   return [...groups.entries()]
-    .sort(([a], [b]) => (a === 'Allgemein' ? 1 : b === 'Allgemein' ? -1 : a.localeCompare(b, 'de')))
+    .sort(([a], [b]) => categoryRank(a) - categoryRank(b) || a.localeCompare(b, 'de'))
     .map(([category, items]) => ({ category, entries: items }))
 }
 
