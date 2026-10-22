@@ -17,6 +17,10 @@ import { SettingsPage } from './settings/SettingsPage'
 // Seiten mit mathjs werden erst bei Bedarf geladen (kleineres Start-Bundle, offline trotzdem vorgecacht)
 const FormulaDetailPage = lazy(() => import('./modules/formulas/FormulaDetailPage'))
 const ConverterPage = lazy(() => import('./modules/converter/ConverterPage'))
+// Nur intern: im public-Build entfällt die Seite samt PIN ganz. Die Bedingung muss hier direkt
+// auf import.meta.env stehen; über isInternalEdition legt der Bundler den Chunk trotzdem an.
+const ExpertPage =
+  import.meta.env.VITE_EDITION === 'internal' ? lazy(() => import('./modules/expert/ExpertPage')) : undefined
 
 function Loading() {
   return <p className="text-muted">Wird geladen …</p>
@@ -49,6 +53,16 @@ export function App() {
         <Route path={`${modules.checklists.path}/:slug`} element={<ChecklistPage />} />
         <Route path={modules.lexicon.path} element={<LexiconListPage />} />
         <Route path={`${modules.lexicon.path}/:slug`} element={<LexiconDetailPage />} />
+        {ExpertPage && (
+          <Route
+            path={modules.expert.path}
+            element={
+              <Suspense fallback={<Loading />}>
+                <ExpertPage />
+              </Suspense>
+            }
+          />
+        )}
         <Route path={modules.favorites.path} element={<FavoritesPage />} />
         <Route path={modules.search.path} element={<SearchPage />} />
         <Route path={modules.settings.path} element={<SettingsPage />} />

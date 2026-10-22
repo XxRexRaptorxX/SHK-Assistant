@@ -5,10 +5,12 @@ import {
   ChecklistIcon,
   ConvertIcon,
   GearIcon,
+  KeyIcon,
   SearchIcon,
   StarIcon,
   type IconProps,
 } from '../components/icons'
+import { isInternalEdition } from '../config/edition'
 
 export interface AppModule {
   path: string
@@ -43,6 +45,13 @@ export const modules = {
     description: 'Bauteile und Begriffe',
     icon: BookIcon,
   },
+  /** Nur in der internen Edition erreichbar (siehe homeTileModules und App) */
+  expert: {
+    path: '/fachmann',
+    title: 'Fachmann',
+    description: 'Codes für die Fachmann-Ebenen',
+    icon: KeyIcon,
+  },
   favorites: {
     path: '/favoriten',
     title: 'Favoriten',
@@ -72,4 +81,8 @@ export const bottomNavModules: AppModule[] = [
 ]
 
 /** Kacheln auf der Startseite */
-export const homeTileModules: AppModule[] = [...bottomNavModules, modules.favorites]
+export const homeTileModules: AppModule[] = [
+  ...bottomNavModules,
+  ...(isInternalEdition ? [modules.expert] : []),
+  modules.favorites,
+]

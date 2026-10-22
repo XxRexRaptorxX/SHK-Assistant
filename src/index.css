@@ -17,6 +17,8 @@
   --raised: #e3e9f3;
   --ink: #0b1220;
   --muted: #3c4659;
+  /* noch zurückhaltender als muted, z. B. Nebenstellen in Fachmann-Codes */
+  --faint: #858ea0;
   --line: #6f7a8f;
   --edge: #d3dae6;
   --accent: #0047c2;
@@ -46,6 +48,7 @@
   --raised: #202838;
   --ink: #f4f6fb;
   --muted: #b8c1d1;
+  --faint: #7f899c;
   --line: #6f7b91;
   --edge: #273145;
   --accent: #ffd400;
@@ -71,6 +74,7 @@
   --color-raised: var(--raised);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
+  --color-faint: var(--faint);
   --color-line: var(--line);
   --color-edge: var(--edge);
   --color-accent: var(--accent);
@@ -282,6 +286,7 @@
     --edge: #000000;
     --ink: #000000;
     --muted: #333333;
+    --faint: #777777;
     --line: #000000;
     --accent: #000000;
     --accent-ink: #ffffff;

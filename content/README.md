@@ -124,6 +124,20 @@ Die `id` eines Punkts (z. B. `abgasweg-pruefen`) muss innerhalb der Checkliste e
 **stabil bleiben**: Der gespeicherte Fortschritt auf den Geräten hängt daran. Wird ein Punkt nur
 umformuliert, `id` beibehalten. Bei `verified` ist mindestens ein Abschnitt Pflicht.
 
+## Fachmann-Codes (`expert-codes/`, Präfix `expert-code.`)
+
+| Feld   | Inhalt                                                                |
+|--------|-----------------------------------------------------------------------|
+| `name` | Hersteller bzw. Regelung, z. B. „Brötje WBS“                          |
+| `code` | Code oder Rechenweg, z. B. „00 (service), 17 (admin)“                 |
+
+Graue Stellen werden mit Klammern markiert, die in der App entfallen: `[eckige Klammern]` =
+**dunkelgrau**, `(runde Klammern)` = **hellgrau**; z. B. `00 (service)` oder
+`[Bsp.:] (1)[9](.0)`. Klammern müssen paarweise stehen und dürfen nicht verschachtelt sein. Echte
+Klammern im Text sind daher nicht möglich. Fachmann-Codes sind immer `internal`; der Build lehnt `public` ab.
+In der App liegen sie im Bereich „Fachmann“ hinter einer PIN-Abfrage. Die PIN ist nur eine
+Hürde, kein Schutz: Codes und PIN stehen lesbar im Bundle der internen Edition.
+
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 
 | Feld         | Inhalt                                                        |

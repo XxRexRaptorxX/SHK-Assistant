@@ -14,8 +14,18 @@ function renderAt(path: string): string {
 }
 
 describe('App-Routen', () => {
-  it.each(Object.values(modules))('zeigt die Seite $title unter $path', (module) => {
+  // Fachmann wird nachgeladen (entfällt im public-Build), siehe eigener Test
+  const directModules = Object.values(modules).filter((module) => module !== modules.expert)
+
+  it.each(directModules)('zeigt die Seite $title unter $path', (module) => {
     expect(renderAt(module.path)).toContain(`<h1 class="${pageTitle}">${module.title}</h1>`)
+  })
+
+  it('kennt in der internen Edition den Bereich Fachmann mit Kachel auf der Startseite', () => {
+    const html = renderAt(modules.expert.path)
+    expect(html).not.toContain('Seite nicht gefunden')
+    expect(html).toContain('Wird geladen')
+    expect(renderAt('/')).toContain(modules.expert.description)
   })
 
   it('zeigt auf der Startseite Kacheln zu den Modulen', () => {

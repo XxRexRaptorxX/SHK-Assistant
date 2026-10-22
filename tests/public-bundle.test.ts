@@ -3,6 +3,7 @@ import path from 'node:path'
 import { build, type Rollup } from 'vite'
 import { afterEach, describe, expect, it } from 'vitest'
 import { collections } from '../src/content/collections'
+import { EXPERT_UNLOCK_KEY } from '../src/modules/expert/constants'
 import { loadContent } from '../tools/content-loader'
 import { contentPlugin } from '../tools/vite-plugin-content'
 import { buildApp, listFiles, projectRoot } from './helpers/build-app'
@@ -75,6 +76,10 @@ describe('public-Build der App', () => {
       .map((e) => e.id)
       .filter((id) => bundleText.includes(id))
     expect(leakedIds).toEqual([])
+
+    // Nur-interne Module (Fachmann samt PIN) fehlen ganz, auch nicht als nachladbarer Chunk
+    expect(bundleText).not.toContain(EXPERT_UNLOCK_KEY)
+    expect(listFiles(outDir.root).filter((file) => /expert/i.test(file))).toEqual([])
 
     // Gegenprobe: öffentliche Inhalte sind im Bundle, der Test durchsucht also das Richtige
     const publicIds = allEntries.filter((e) => e.visibility === 'public').map((e) => e.id)

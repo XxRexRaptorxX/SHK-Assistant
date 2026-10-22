@@ -1,6 +1,7 @@
 import { checklistSearchDocuments } from '../modules/checklists/search'
 import { converterSearchDocuments } from '../modules/converter/search'
 import { formulaSearchDocuments } from '../modules/formulas/search'
+import { expertCodeSearchDocuments } from '../modules/expert/search'
 import { lexiconSearchDocuments } from '../modules/lexicon/search'
 import { createSearch, type SearchDocument, type SearchEngine } from './search'
 
@@ -14,6 +15,7 @@ function allDocuments(): SearchDocument[] {
     ...converterSearchDocuments(),
     ...checklistSearchDocuments(),
     ...lexiconSearchDocuments(),
+    ...expertCodeSearchDocuments(),
   ]
 }
 
