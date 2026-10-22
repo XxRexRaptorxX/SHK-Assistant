@@ -45,8 +45,8 @@ export default defineConfig(({ mode }) => {
           start_url: './',
           scope: './',
           display: 'standalone',
-          theme_color: '#eef2f8',
-          background_color: '#eef2f8',
+          theme_color: '#0b0f17',
+          background_color: '#0b0f17',
           icons: [
             { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
             { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
@@ -56,7 +56,7 @@ export default defineConfig(({ mode }) => {
         workbox: {
           // Offline-first: alles, was der Build erzeugt, wird vorgecacht
           // (manifest.webmanifest trägt das Plugin selbst ein)
-          globPatterns: ['**/*.{html,js,css,svg,png,ico,json,woff2}'],
+          globPatterns: ['**/*.{html,js,css,svg,png,webp,ico,json,woff2}'],
           cleanupOutdatedCaches: true,
         },
       }),

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { createStoredState } from '../lib/storedState'
 import {
+  DEFAULT_THEME_PREFERENCE,
   loadThemePreference,
   resolveTheme,
   saveThemePreference,
@@ -15,7 +16,7 @@ const themeState = createStoredState<ThemePreference>({
   key: THEME_STORAGE_KEY,
   read: () => loadThemePreference(),
   write: (value) => saveThemePreference(value),
-  fallback: 'system',
+  fallback: DEFAULT_THEME_PREFERENCE,
 })
 
 export function useTheme() {

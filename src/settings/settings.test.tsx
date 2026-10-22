@@ -55,7 +55,7 @@ describe('Einstellungen-Seite', () => {
 
   it('bietet System, Hell und Dunkel zur Auswahl', () => {
     expect(html.match(/role="radio"/g)).toHaveLength(3)
-    expect(html).toContain('aria-checked="true"') // System ist vorgewählt
+    expect(html).toMatch(/role="radio" aria-checked="true"[^>]*>(?:(?!<\/button>).)*Dunkel<\/button>/) // Dunkel ist vorgewählt
   })
 
   it('erklärt die Installation und nennt die Version', () => {

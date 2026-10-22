@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet } from 'react-router'
 import { HomeIcon } from '../components/icons'
+import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
 import { useApplyTheme } from '../theme/useTheme'
 import { bottomNavModules, modules, type AppModule } from './modules'
@@ -90,6 +91,7 @@ export function Layout() {
   useApplyTheme()
   return (
     <div className="flex min-h-dvh flex-col">
+      <TechBackdrop />
       <Header />
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 pt-5 pb-32 print:p-0">
         <Outlet />

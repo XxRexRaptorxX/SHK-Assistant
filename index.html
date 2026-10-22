@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <!-- Wird von src/theme/useTheme.ts an die gewählte Darstellung angepasst -->
-    <meta name="theme-color" content="#eef2f8" />
+    <meta name="theme-color" content="#0b0f17" />
     <meta name="description" content="Werkzeugkasten für Heizungsbauer" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>SHK-Assistant</title>
     <script>
       // Theme vor dem ersten Rendern setzen, damit es nicht hell aufblitzt.
-      // Schlüssel und Werte wie in src/theme/theme.ts.
+      // Schlüssel, Werte und Vorgabe (dunkel) wie in src/theme/theme.ts.
+      var dark = true
       try {
         var pref = localStorage.getItem('shk-theme')
-        var dark = pref === 'dark' || (pref !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
-        if (dark) document.documentElement.classList.add('dark')
+        if (pref === 'light') dark = false
+        if (pref === 'system') dark = matchMedia('(prefers-color-scheme: dark)').matches
       } catch (e) {}
+      if (dark) document.documentElement.classList.add('dark')
     </script>
   </head>
   <body>

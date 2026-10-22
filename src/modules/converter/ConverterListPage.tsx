@@ -32,7 +32,7 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
               <li key={entry.id}>
                 <Link
                   to={converterPath(entry.id)}
-                  className="glow flex min-h-20 flex-col justify-center gap-1 rounded-3xl border border-edge bg-surface p-5 active:border-accent"
+                  className="glow flex min-h-20 flex-col justify-center gap-1 rounded-3xl border border-edge bg-surface/70 p-5 backdrop-blur-md active:border-accent"
                 >
                   <span className="flex items-center justify-between gap-2">
                     <span className="text-xl font-bold">

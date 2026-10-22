@@ -26,7 +26,7 @@ function Tile({ module, chipText }: { module: AppModule; chipText?: string }) {
   return (
     <Link
       to={module.path}
-      className="glow relative flex min-h-36 flex-col justify-between gap-3 overflow-hidden rounded-3xl border border-edge bg-surface p-5 active:border-accent"
+      className="glow relative flex min-h-36 flex-col justify-between gap-3 overflow-hidden rounded-3xl border border-edge bg-surface/70 p-5 backdrop-blur-md active:border-accent"
     >
       {/* Großes, blasses Symbol als Bildersatz, wie ein Motiv auf der Karte */}
       <Icon aria-hidden="true" className="pointer-events-none absolute -right-5 -bottom-6 size-36 -rotate-12 text-brand opacity-25" />

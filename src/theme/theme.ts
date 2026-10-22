@@ -9,6 +9,9 @@ export type ThemePreference = (typeof THEME_PREFERENCES)[number]
 
 export type ResolvedTheme = 'light' | 'dark'
 
+/** Gilt, solange nichts gewählt ist (Vorgabe des Inhabers: dunkles Design) */
+export const DEFAULT_THEME_PREFERENCE: ThemePreference = 'dark'
+
 export const THEME_LABELS: Record<ThemePreference, string> = {
   system: 'System',
   light: 'Hell',
@@ -30,9 +33,9 @@ function browserStorage(): Storage | undefined {
 export function loadThemePreference(storage: ReadableStorage | undefined = browserStorage()): ThemePreference {
   try {
     const value = storage?.getItem(THEME_STORAGE_KEY)
-    return THEME_PREFERENCES.find((p) => p === value) ?? 'system'
+    return THEME_PREFERENCES.find((p) => p === value) ?? DEFAULT_THEME_PREFERENCE
   } catch {
-    return 'system'
+    return DEFAULT_THEME_PREFERENCE
   }
 }
 

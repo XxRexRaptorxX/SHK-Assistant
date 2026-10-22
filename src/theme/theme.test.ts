@@ -17,10 +17,11 @@ function fakeStorage(initial: Record<string, string> = {}) {
 }
 
 describe('Theme-Einstellung', () => {
-  it('nutzt "system", wenn nichts oder Unsinn gespeichert ist', () => {
-    expect(loadThemePreference(fakeStorage())).toBe('system')
-    expect(loadThemePreference(fakeStorage({ [THEME_STORAGE_KEY]: 'lila' }))).toBe('system')
-    expect(loadThemePreference(undefined)).toBe('system')
+  it('nutzt das dunkle Design, wenn nichts oder Unsinn gespeichert ist', () => {
+    expect(loadThemePreference(fakeStorage())).toBe('dark')
+    expect(loadThemePreference(fakeStorage({ [THEME_STORAGE_KEY]: 'lila' }))).toBe('dark')
+    expect(loadThemePreference(undefined)).toBe('dark')
+    expect(loadThemePreference(fakeStorage({ [THEME_STORAGE_KEY]: 'system' }))).toBe('system')
   })
 
   it('übersteht einen Speicher, der beim Zugriff Fehler wirft', () => {
@@ -32,7 +33,7 @@ describe('Theme-Einstellung', () => {
         throw new Error('QuotaExceededError')
       },
     }
-    expect(loadThemePreference(broken)).toBe('system')
+    expect(loadThemePreference(broken)).toBe('dark')
     expect(() => saveThemePreference('dark', broken)).not.toThrow()
   })
 
