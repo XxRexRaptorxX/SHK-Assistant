@@ -10,13 +10,15 @@ describe('Einstellungen', () => {
     expect(parseSettings(null)).toEqual(DEFAULT_SETTINGS)
     expect(parseSettings('{kaputt')).toEqual(DEFAULT_SETTINGS)
     expect(parseSettings('{"hideRareUnits":"ja"}')).toEqual(DEFAULT_SETTINGS)
-    expect(parseSettings('{"hideRareUnits":true}')).toEqual({ hideRareUnits: true, showUnitNames: true })
-    expect(parseSettings('{"showUnitNames":false}')).toEqual({ hideRareUnits: false, showUnitNames: false })
+    expect(parseSettings('{"hideRareUnits":true}')).toEqual({ ...DEFAULT_SETTINGS, hideRareUnits: true })
+    expect(parseSettings('{"showUnitNames":false}')).toEqual({ ...DEFAULT_SETTINGS, showUnitNames: false })
+    expect(parseSettings('{"shakeToReport":false}')).toEqual({ ...DEFAULT_SETTINGS, shakeToReport: false })
   })
 
   it('blendet unübliche Einheiten standardmäßig nicht aus und zeigt Einheitennamen', () => {
     expect(DEFAULT_SETTINGS.hideRareUnits).toBe(false)
     expect(DEFAULT_SETTINGS.showUnitNames).toBe(true)
+    expect(DEFAULT_SETTINGS.shakeToReport).toBe(true)
   })
 
   it('teilt einen gespeicherten Wert zwischen allen Lesern', () => {
@@ -43,7 +45,7 @@ describe('Einstellungen-Seite', () => {
   const html = renderToStaticMarkup(<SettingsPage />)
 
   it('zeigt Grundeinstellungen, Design, Installation und Infos', () => {
-    for (const heading of ['Grundeinstellungen', 'Design', 'App auf den Startbildschirm', 'Über die App']) {
+    for (const heading of ['Grundeinstellungen', 'Design', 'App auf den Startbildschirm', 'Fehler melden', 'Über die App']) {
       expect(html).toContain(`>${heading}</h2>`)
     }
   })
@@ -62,6 +64,16 @@ describe('Einstellungen-Seite', () => {
     expect(html).toContain('Anleitung für andere Geräte')
     expect(html).toContain('Zum Home-Bildschirm')
     expect(html).toContain(__APP_VERSION__)
+  })
+
+  it('verlinkt „Fehler melden“ auf ein neues GitHub-Issue und bietet Schütteln (an)', () => {
+    expect(html).toMatch(/href="https:\/\/github\.com\/XxRexRaptorxX\/SHK-Assistant\/issues\/new\?[^"]*" target="_blank"/)
+    expect(html).toContain('role="switch" aria-checked="true" aria-label="Schütteln zum Melden"')
+  })
+
+  it('verlinkt die Ko-fi-Seite zum Unterstützen', () => {
+    expect(html).toContain('href="https://ko-fi.com/xxrexraptorxx" target="_blank" rel="noopener noreferrer"')
+    expect(html).toContain('Entwicklung unterstützen (Ko-fi)')
   })
 
   it('zeigt den Schalter eingeschaltet an', () => {

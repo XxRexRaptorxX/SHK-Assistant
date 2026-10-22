@@ -82,6 +82,14 @@ export function KeyIcon(props: IconProps) {
   )
 }
 
+export function HeartIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 20s-7.5-4.6-9.3-9.3C1.5 7.4 3.6 4 7 4c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.4 0 5.5 3.4 4.3 6.7C19.5 15.4 12 20 12 20z" />
+    </Icon>
+  )
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <Icon {...props}>

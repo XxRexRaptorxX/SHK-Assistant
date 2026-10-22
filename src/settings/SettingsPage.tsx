@@ -1,10 +1,12 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { primaryButton, secondaryButton } from '../components/buttons'
 import { showAllHidden, useHiddenIds } from '../hidden/hiddenStore'
-import { CompanyLogo } from '../components/CompanyLogo'
-import { MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
+import { HeartIcon, MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
 import { content } from '../content'
+import { currentBugReportUrl } from '../feedback/bugReport'
+import { requestMotionPermission } from '../feedback/shake'
 import { isInternalEdition } from '../config/edition'
+import { KOFI_URL } from '../config/links'
 import { usePageTitle } from '../lib/usePageTitle'
 import { THEME_LABELS, THEME_PREFERENCES, type ThemePreference } from '../theme/theme'
 import { useTheme } from '../theme/useTheme'
@@ -176,6 +178,50 @@ function InstallSection() {
   )
 }
 
+function BugReportSection({ shakeToReport }: { shakeToReport: boolean }) {
+  const [denied, setDenied] = useState(false)
+
+  const toggleShake = async (enable: boolean) => {
+    setDenied(false)
+    // iPhone/iPad: Zugriff auf den Bewegungssensor beim Einschalten erfragen
+    if (enable && !(await requestMotionPermission())) {
+      setDenied(true)
+      return
+    }
+    updateSettings({ shakeToReport: enable })
+  }
+
+  return (
+    <>
+      <p className="text-base text-muted">
+        Etwas funktioniert nicht oder ein Inhalt ist falsch? Melde es als Issue auf GitHub.
+      </p>
+      <a
+        href={currentBugReportUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${primaryButton} mt-3 w-full`}
+      >
+        Fehler melden
+      </a>
+      <div className="mt-3">
+        <Switch
+          label="Schütteln zum Melden"
+          description="Handy kräftig hin und her schütteln öffnet „Fehler melden“."
+          checked={shakeToReport}
+          onChange={(enable) => void toggleShake(enable)}
+        />
+      </div>
+      {denied && (
+        <p role="alert" className="mt-2 rounded-xl bg-warn p-2 font-semibold text-warn-ink">
+          Zugriff auf den Bewegungssensor wurde nicht erlaubt. Er lässt sich in den Einstellungen des
+          Browsers wieder freigeben.
+        </p>
+      )}
+    </>
+  )
+}
+
 function AboutSection() {
   const counts: [string, number][] = [
     ['Formeln', content.formulas.length],
@@ -185,7 +231,8 @@ function AboutSection() {
   ]
   return (
     <>
-      <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-base">
+      {/* Block mittig, Bezeichnungen und Werte jeweils linksbündig untereinander */}
+      <dl className="mx-auto grid w-fit grid-cols-[auto_auto] gap-x-4 gap-y-1 text-base">
         <dt className="font-semibold">Version</dt>
         <dd>{__APP_VERSION__}</dd>
         <dt className="font-semibold">Ausgabe</dt>
@@ -197,9 +244,15 @@ function AboutSection() {
           </div>
         ))}
       </dl>
-      <div className="mt-4">
-        <CompanyLogo />
-      </div>
+      <a
+        href={KOFI_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${secondaryButton} mt-4 w-full`}
+      >
+        <HeartIcon className="size-6 text-accent" />
+        Entwicklung unterstützen (Ko-fi)
+      </a>
     </>
   )
 }
@@ -232,10 +285,12 @@ export function SettingsPage() {
         </Section>
         <Section title="Design">
           <ThemeChoice value={preference} onChange={setPreference} />
-          <p className="mt-2 text-base text-muted">Standard: System. „System“ folgt der Einstellung des Handys (hell/dunkel).</p>
         </Section>
         <Section title="App auf den Startbildschirm">
           <InstallSection />
+        </Section>
+        <Section title="Fehler melden">
+          <BugReportSection shakeToReport={settings.shakeToReport} />
         </Section>
         <Section title="Über die App">
           <AboutSection />

@@ -1,8 +1,10 @@
 import { Link, NavLink, Outlet } from 'react-router'
-import { companyLogoUrl } from '../components/CompanyLogo'
+import { COMPANY_LINK_LABEL, companyLogoUrl } from '../components/CompanyLogo'
 import { HomeIcon } from '../components/icons'
 import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
+import { COMPANY_URL } from '../config/links'
+import { ShakeToReport } from '../feedback/ShakeToReport'
 import { useApplyTheme } from '../theme/useTheme'
 import { bottomNavModules, modules, type AppModule } from './modules'
 
@@ -49,7 +51,16 @@ function Header() {
         {/* Firmenlogo mittig im freien Raum zwischen Name und Knöpfen */}
         <div className="flex min-w-0 justify-center">
           {companyLogoUrl && (
-            <img src={companyLogoUrl} alt="Firmenlogo" className="max-h-10 w-auto max-w-full object-contain" />
+            <a
+              href={COMPANY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={COMPANY_LINK_LABEL}
+              title={COMPANY_LINK_LABEL}
+              className="flex min-h-12 min-w-0 items-center rounded-xl px-1"
+            >
+              <img src={companyLogoUrl} alt="" className="max-h-10 w-auto max-w-full object-contain" />
+            </a>
           )}
         </div>
         <nav aria-label="Werkzeuge" className="flex shrink-0 items-center">
@@ -109,6 +120,7 @@ export function Layout() {
         <Outlet />
       </main>
       <BottomNav />
+      <ShakeToReport />
     </div>
   )
 }

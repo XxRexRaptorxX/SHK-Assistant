@@ -9,9 +9,11 @@ export interface Settings {
   hideRareUnits: boolean
   /** Umrechner: ausgeschriebene Einheitennamen hinter den Einheiten (Standard: an) */
   showUnitNames: boolean
+  /** Handy schütteln öffnet „Fehler melden“ (Standard: an) */
+  shakeToReport: boolean
 }
 
-export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true }
+export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true, shakeToReport: true }
 
 /** Liest gespeicherte Einstellungen; Unbekanntes oder Kaputtes fällt auf die Standardwerte zurück. */
 export function parseSettings(raw: string | null): Settings {
@@ -19,7 +21,11 @@ export function parseSettings(raw: string | null): Settings {
     const data: unknown = raw ? JSON.parse(raw) : {}
     const record = typeof data === 'object' && data !== null ? (data as Record<string, unknown>) : {}
     const flag = (key: keyof Settings) => (typeof record[key] === 'boolean' ? record[key] : DEFAULT_SETTINGS[key])
-    return { hideRareUnits: flag('hideRareUnits'), showUnitNames: flag('showUnitNames') }
+    return {
+      hideRareUnits: flag('hideRareUnits'),
+      showUnitNames: flag('showUnitNames'),
+      shakeToReport: flag('shakeToReport'),
+    }
   } catch {
     return DEFAULT_SETTINGS
   }
