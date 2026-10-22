@@ -153,6 +153,19 @@ werden klickbar. HTML wird nie ausgeführt. Die Seiten sind in den Einstellungen
 Die Texte liefert der Inhaber; sie werden nicht erfunden. Bei `verified` ist mindestens ein
 Abschnitt Pflicht.
 
+## News-Feeds (`news-feeds/`, Präfix `news-feed.`)
+
+| Feld      | Inhalt                                              |
+|-----------|-----------------------------------------------------|
+| `name`    | Anbieter, wie er unter jeder Meldung steht          |
+| `url`     | Adresse des RSS- oder Atom-Feeds                    |
+| `website` | Startseite des Anbieters (Link unter „Quellen“)     |
+
+Die GitHub-Pages-Action ruft die Feeds täglich ab (`npm run news`, schreibt `public/news.json`,
+nicht im Repository) und veröffentlicht sie mit der App. Angezeigt werden nur Überschrift, Datum,
+Quelle und Link, keine Teaser oder Bilder. Ein nicht erreichbarer Feed wird übersprungen und auf
+der News-Seite genannt. Lokal ohne `npm run news` zeigt die Seite „Noch keine News vorhanden“.
+
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 
 | Feld         | Inhalt                                                        |

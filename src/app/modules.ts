@@ -6,6 +6,7 @@ import {
   ConvertIcon,
   GearIcon,
   KeyIcon,
+  NewsIcon,
   SearchIcon,
   StarIcon,
   type IconProps,
@@ -45,6 +46,12 @@ export const modules = {
     description: 'Bauteile und Begriffe',
     icon: BookIcon,
   },
+  news: {
+    path: '/news',
+    title: 'News',
+    description: 'Branchen-News, täglich aktualisiert',
+    icon: NewsIcon,
+  },
   /** Nur in der internen Edition erreichbar (siehe homeTileModules und App) */
   expert: {
     path: '/fachmann',
@@ -83,6 +90,7 @@ export const bottomNavModules: AppModule[] = [
 /** Kacheln auf der Startseite */
 export const homeTileModules: AppModule[] = [
   ...bottomNavModules,
+  modules.news,
   ...(isInternalEdition ? [modules.expert] : []),
   modules.favorites,
 ]

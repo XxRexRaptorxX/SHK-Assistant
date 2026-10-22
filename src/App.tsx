@@ -11,6 +11,7 @@ import { LEGAL_PAGES } from './modules/legal/legal'
 import { LegalPage } from './modules/legal/LegalPage'
 import { LexiconDetailPage } from './modules/lexicon/LexiconDetailPage'
 import { LexiconListPage } from './modules/lexicon/LexiconListPage'
+import { NewsPage } from './modules/news/NewsPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { SearchPage } from './search/SearchPage'
@@ -65,6 +66,7 @@ export function App() {
             }
           />
         )}
+        <Route path={modules.news.path} element={<NewsPage />} />
         <Route path={modules.favorites.path} element={<FavoritesPage />} />
         <Route path={modules.search.path} element={<SearchPage />} />
         <Route path={modules.settings.path} element={<SettingsPage />} />

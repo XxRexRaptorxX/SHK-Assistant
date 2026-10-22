@@ -7,6 +7,7 @@ import { figureCollection } from '../modules/figures/schema.ts'
 import { formulaCollection } from '../modules/formulas/schema.ts'
 import { legalCollection } from '../modules/legal/schema.ts'
 import { lexiconCollection } from '../modules/lexicon/schema.ts'
+import { newsFeedCollection } from '../modules/news/schema.ts'
 import { unitCollection } from '../modules/units/schema.ts'
 import type { CollectionDefinition } from './schema/base.ts'
 
@@ -22,6 +23,7 @@ export const collections = {
   lexicon: lexiconCollection,
   expertCodes: expertCodeCollection,
   legal: legalCollection,
+  newsFeeds: newsFeedCollection,
 } satisfies Record<string, CollectionDefinition>
 
 export type CollectionName = keyof typeof collections

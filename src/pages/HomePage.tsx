@@ -16,6 +16,7 @@ function useTileChips(): Record<string, string> {
     [modules.converter.path]: `${content.converter.length} Größen`,
     [modules.checklists.path]: `${content.checklists.length} Checklisten`,
     [modules.lexicon.path]: `${content.lexicon.length} Begriffe`,
+    [modules.news.path]: 'Täglich neu',
     [modules.expert.path]: `${content.expertCodes.length} Codes`,
     [modules.favorites.path]: `${favorites} gemerkt`,
   }

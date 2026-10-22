@@ -97,6 +97,14 @@ export function KofiIcon(props: IconProps) {
   )
 }
 
+export function NewsIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 16h4" />
+    </Icon>
+  )
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <Icon {...props}>
