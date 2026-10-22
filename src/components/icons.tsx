@@ -82,10 +82,17 @@ export function KeyIcon(props: IconProps) {
   )
 }
 
-export function HeartIcon(props: IconProps) {
+/** Tasse mit rotem Herz wie bei Ko-fi (eigene Zeichnung, Herz in der Ko-fi-Farbe) */
+export function KofiIcon(props: IconProps) {
   return (
     <Icon {...props}>
-      <path d="M12 20s-7.5-4.6-9.3-9.3C1.5 7.4 3.6 4 7 4c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.4 0 5.5 3.4 4.3 6.7C19.5 15.4 12 20 12 20z" />
+      <path d="M3 8h13v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z" />
+      <path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16" />
+      <path
+        d="M9.5 16s-3.2-1.9-3.2-3.9c0-1.1.8-1.9 1.8-1.9.6 0 1.1.3 1.4.8.3-.5.8-.8 1.4-.8 1 0 1.8.8 1.8 1.9 0 2-3.2 3.9-3.2 3.9z"
+        fill="#ff5e5b"
+        stroke="none"
+      />
     </Icon>
   )
 }

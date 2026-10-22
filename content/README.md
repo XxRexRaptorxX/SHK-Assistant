@@ -138,6 +138,21 @@ Klammern im Text sind daher nicht möglich. Fachmann-Codes sind immer `internal`
 In der App liegen sie im Bereich „Fachmann“ hinter einer PIN-Abfrage. Die PIN ist nur eine
 Hürde, kein Schutz: Codes und PIN stehen lesbar im Bundle der internen Edition.
 
+## Rechtliches (`legal/`, Präfix `legal.`)
+
+| Feld       | Inhalt                                                                   |
+|------------|--------------------------------------------------------------------------|
+| `title`    | Seitentitel, z. B. „Impressum“                                           |
+| `sections` | Abschnitte mit optional `heading` (Zwischenüberschrift) und `text`       |
+
+Im `text` trennt eine Leerzeile (`
+
+`) Absätze, `**Wort**` wird fett, Web- und E-Mail-Adressen
+werden klickbar. HTML wird nie ausgeführt. Die Seiten sind in den Einstellungen unter
+„Rechtliches“ verlinkt: `legal.impressum` (`/impressum`) und `legal.datenschutz` (`/datenschutz`).
+Die Texte liefert der Inhaber; sie werden nicht erfunden. Bei `verified` ist mindestens ein
+Abschnitt Pflicht.
+
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 
 | Feld         | Inhalt                                                        |

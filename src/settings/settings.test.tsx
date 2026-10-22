@@ -1,4 +1,5 @@
 import { renderToStaticMarkup } from 'react-dom/server'
+import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { createStoredState } from '../lib/storedState'
 import { detectPlatform } from './install'
@@ -42,10 +43,14 @@ describe('Installation', () => {
 })
 
 describe('Einstellungen-Seite', () => {
-  const html = renderToStaticMarkup(<SettingsPage />)
+  const html = renderToStaticMarkup(
+    <MemoryRouter>
+      <SettingsPage />
+    </MemoryRouter>,
+  )
 
   it('zeigt Grundeinstellungen, Design, Installation und Infos', () => {
-    for (const heading of ['Grundeinstellungen', 'Design', 'App auf den Startbildschirm', 'Fehler melden', 'Über die App']) {
+    for (const heading of ['Grundeinstellungen', 'Design', 'App auf den Startbildschirm', 'Fehler melden', 'Über die App', 'Rechtliches']) {
       expect(html).toContain(`>${heading}</h2>`)
     }
   })
@@ -73,7 +78,13 @@ describe('Einstellungen-Seite', () => {
 
   it('verlinkt die Ko-fi-Seite zum Unterstützen', () => {
     expect(html).toContain('href="https://ko-fi.com/xxrexraptorxx" target="_blank" rel="noopener noreferrer"')
-    expect(html).toContain('Entwicklung unterstützen (Ko-fi)')
+    expect(html).toContain('aria-label="Entwicklung unterstützen auf Ko-fi"')
+    expect(html).not.toContain('(Ko-fi)')
+  })
+
+  it('verlinkt Impressum und Datenschutzerklärung', () => {
+    expect(html).toMatch(/href="\/impressum"[^>]*>Impressum</)
+    expect(html).toMatch(/href="\/datenschutz"[^>]*>Datenschutzerklärung</)
   })
 
   it('zeigt den Schalter eingeschaltet an', () => {

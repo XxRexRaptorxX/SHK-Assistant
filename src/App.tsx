@@ -7,6 +7,8 @@ import { ChecklistListPage } from './modules/checklists/ChecklistListPage'
 import { ChecklistPage } from './modules/checklists/ChecklistPage'
 import { ConverterListPage } from './modules/converter/ConverterListPage'
 import { FormulaListPage } from './modules/formulas/FormulaListPage'
+import { LEGAL_PAGES } from './modules/legal/legal'
+import { LegalPage } from './modules/legal/LegalPage'
 import { LexiconDetailPage } from './modules/lexicon/LexiconDetailPage'
 import { LexiconListPage } from './modules/lexicon/LexiconListPage'
 import { HomePage } from './pages/HomePage'
@@ -66,6 +68,9 @@ export function App() {
         <Route path={modules.favorites.path} element={<FavoritesPage />} />
         <Route path={modules.search.path} element={<SearchPage />} />
         <Route path={modules.settings.path} element={<SettingsPage />} />
+        {LEGAL_PAGES.map((page) => (
+          <Route key={page.path} path={page.path} element={<LegalPage page={page} />} />
+        ))}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

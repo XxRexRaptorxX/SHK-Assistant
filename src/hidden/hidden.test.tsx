@@ -47,7 +47,11 @@ describe('Ausblenden', () => {
   })
 
   it('bietet in den Einstellungen an, alles wieder einzublenden', () => {
-    const html = renderToStaticMarkup(<SettingsPage />)
+    const html = renderToStaticMarkup(
+      <MemoryRouter>
+        <SettingsPage />
+      </MemoryRouter>,
+    )
     expect(html).toContain('Ausgeblendete Einträge')
     expect(html).toContain('Alle einblenden')
   })

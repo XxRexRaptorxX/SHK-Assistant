@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from 'react'
+import { Link } from 'react-router'
 import { primaryButton, secondaryButton } from '../components/buttons'
 import { showAllHidden, useHiddenIds } from '../hidden/hiddenStore'
-import { HeartIcon, MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
+import { KofiIcon, MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
 import { content } from '../content'
 import { currentBugReportUrl } from '../feedback/bugReport'
 import { requestMotionPermission } from '../feedback/shake'
@@ -13,6 +14,8 @@ import { useTheme } from '../theme/useTheme'
 import { detectPlatform, promptInstall, useInstallState, type Platform } from './install'
 import { updateSettings, useSettings } from './settings'
 import { pageTitle } from '../components/headings'
+import { listCard } from '../components/surfaces'
+import { LEGAL_PAGES } from '../modules/legal/legal'
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -248,10 +251,11 @@ function AboutSection() {
         href={KOFI_URL}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Entwicklung unterstützen auf Ko-fi"
         className={`${secondaryButton} mt-4 w-full`}
       >
-        <HeartIcon className="size-6 text-accent" />
-        Entwicklung unterstützen (Ko-fi)
+        Entwicklung unterstützen
+        <KofiIcon className="size-7 text-accent" />
       </a>
     </>
   )
@@ -294,6 +298,20 @@ export function SettingsPage() {
         </Section>
         <Section title="Über die App">
           <AboutSection />
+        </Section>
+        <Section title="Rechtliches">
+          <ul className={listCard}>
+            {LEGAL_PAGES.map((page) => (
+              <li key={page.path}>
+                <Link to={page.path} className="flex min-h-14 items-center justify-between gap-3 px-4 py-2 font-semibold">
+                  {page.title}
+                  <span aria-hidden="true" className="text-muted">
+                    ›
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Section>
       </div>
     </>

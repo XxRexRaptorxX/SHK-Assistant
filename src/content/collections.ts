@@ -5,6 +5,7 @@ import { converterCollection } from '../modules/converter/schema.ts'
 import { expertCodeCollection } from '../modules/expert/schema.ts'
 import { figureCollection } from '../modules/figures/schema.ts'
 import { formulaCollection } from '../modules/formulas/schema.ts'
+import { legalCollection } from '../modules/legal/schema.ts'
 import { lexiconCollection } from '../modules/lexicon/schema.ts'
 import { unitCollection } from '../modules/units/schema.ts'
 import type { CollectionDefinition } from './schema/base.ts'
@@ -20,6 +21,7 @@ export const collections = {
   checklists: checklistCollection,
   lexicon: lexiconCollection,
   expertCodes: expertCodeCollection,
+  legal: legalCollection,
 } satisfies Record<string, CollectionDefinition>
 
 export type CollectionName = keyof typeof collections
