@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <marker id="stromkreis-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="stromkreis-u" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Leitungen -->
+  <path class="line" d="M60 92V40H270V75M270 125V160H60V104"/>
+  <!-- Spannungsquelle: langer Strich +, kurzer dicker Strich − -->
+  <line class="line" x1="42" y1="92" x2="78" y2="92"/>
+  <line class="line" x1="51" y1="104" x2="69" y2="104" style="stroke-width:5"/>
+  <text class="note" x="84" y="91">+</text>
+  <text class="note" x="84" y="112">−</text>
+  <!-- Spannung U: Pfeil von + nach − -->
+  <line class="thin" x1="30" y1="82" x2="30" y2="114" marker-end="url(#stromkreis-u)"/>
+  <text class="sym" x="10" y="104">U</text>
+  <!-- Widerstand R -->
+  <rect class="line" x="260" y="75" width="20" height="50"/>
+  <text class="sym" x="290" y="105">R</text>
+  <!-- Stromstärke I: technische Stromrichtung von + durch den Verbraucher nach − -->
+  <line class="flow" x1="140" y1="40" x2="178" y2="40" marker-end="url(#stromkreis-flow)"/>
+  <text class="sym" x="152" y="29">I</text>
+</svg>

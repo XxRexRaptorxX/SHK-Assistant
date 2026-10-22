@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 215">
+  <defs>
+    <marker id="staudruck-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="staudruck-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Waagrechtes Rohr, Strömung von links nach rechts -->
+  <rect class="water-fill" x="10" y="150" width="320" height="50"/>
+  <path class="line" d="M10 150H100M114 150H220M234 150H330"/>
+  <line class="line" x1="10" y1="200" x2="330" y2="200"/>
+  <line class="flow" x1="30" y1="188" x2="80" y2="188" marker-end="url(#staudruck-flow)"/>
+  <text class="sym" x="50" y="181">v</text>
+  <text class="sym" x="300" y="192">ρ</text>
+  <!-- Bezugshöhe: Rohrachse -->
+  <line class="dim dash" x1="10" y1="169" x2="330" y2="169"/>
+  <!-- Steigrohr an der Rohrwand: statischer Druck -->
+  <rect class="water-fill" x="101" y="95" width="12" height="56"/>
+  <path class="line" d="M100 30V150M114 30V150"/>
+  <line class="water" x1="101" y1="95" x2="113" y2="95"/>
+  <!-- Staurohr mit Öffnung gegen die Strömung: Gesamtdruck -->
+  <rect class="water-fill" x="221" y="60" width="12" height="104"/>
+  <path class="line" d="M220 30V162H196M234 30V176H196"/>
+  <line class="water" x1="221" y1="60" x2="233" y2="60"/>
+  <!-- Druckhöhen -->
+  <line class="dim dash" x1="114" y1="95" x2="220" y2="95"/>
+  <line class="dim dash" x1="150" y1="60" x2="220" y2="60"/>
+  <line class="dim" x1="160" y1="61" x2="160" y2="94" marker-start="url(#staudruck-dim)" marker-end="url(#staudruck-dim)"/>
+  <text x="166" y="83"><tspan class="sym">p</tspan><tspan class="sub" dy="4">dy</tspan></text>
+  <line class="dim" x1="80" y1="96" x2="80" y2="168" marker-start="url(#staudruck-dim)" marker-end="url(#staudruck-dim)"/>
+  <line class="dim" x1="74" y1="95" x2="100" y2="95"/>
+  <text x="44" y="136"><tspan class="sym">p</tspan><tspan class="sub" dy="4">st</tspan></text>
+  <line class="dim" x1="234" y1="60" x2="276" y2="60"/>
+  <line class="dim" x1="270" y1="61" x2="270" y2="168" marker-start="url(#staudruck-dim)" marker-end="url(#staudruck-dim)"/>
+  <text x="278" y="118"><tspan class="sym">p</tspan><tspan class="sub" dy="4">ges</tspan></text>
+</svg>

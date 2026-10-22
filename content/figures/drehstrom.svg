@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 190">
+  <defs>
+    <marker id="drehstrom-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="drehstrom-u" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Außenleiter L1, L2, L3 und Neutralleiter N -->
+  <text x="10" y="45">L1</text>
+  <text x="10" y="85">L2</text>
+  <text x="10" y="125">L3</text>
+  <text x="10" y="165">N</text>
+  <path class="line" d="M40 40H246L258 62M40 80H251M40 120H246L258 98"/>
+  <line class="thin" x1="40" y1="160" x2="230" y2="160"/>
+  <!-- Drehstromverbraucher, z. B. Motor -->
+  <circle class="line" cx="285" cy="80" r="34"/>
+  <text x="276" y="82" style="font-size:20px;font-weight:700">M</text>
+  <text x="274" y="100">3~</text>
+  <!-- Leiterstrom I in einem Außenleiter -->
+  <line class="flow" x1="96" y1="40" x2="140" y2="40" marker-end="url(#drehstrom-flow)"/>
+  <text class="sym" x="114" y="29">I</text>
+  <!-- Spannung U zwischen zwei Außenleitern (verkettete Spannung) -->
+  <line class="thin" x1="196" y1="44" x2="196" y2="77" marker-end="url(#drehstrom-u)"/>
+  <circle class="dim-head" cx="196" cy="40" r="2.5"/>
+  <circle class="dim-head" cx="196" cy="80" r="2.5"/>
+  <text class="sym" x="204" y="66">U</text>
+</svg>

@@ -31,5 +31,6 @@
       "expected": 3.141592653589793,
       "tolerance": 0.001
     }
-  ]
+  ],
+  "figure": "figure.kreis"
 }

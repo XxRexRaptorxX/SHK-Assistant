@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
+import { FIGURE_ID_PREFIX } from '../figures/constants.ts'
 import { FORMULA_ID_PREFIX } from './constants.ts'
 import { checkFormula } from './engine.ts'
 
@@ -63,6 +64,8 @@ export const formulaEntrySchema = defineEntrySchema({
   /** mathjs-Ausdruck mit den Symbolen, z. B. "Q / (c * dT)"; bei draft darf er fehlen */
   expression: z.string().trim().default(''),
   examples: z.array(exampleSchema).default([]),
+  /** Optionale Skizze aus content/figures, z. B. "figure.kreis" */
+  figure: z.string().trim().min(1).optional(),
 }).superRefine((entry, ctx) => {
   if (entry.status !== 'verified') return
   if (entry.expression === '') {
@@ -84,5 +87,12 @@ export const formulaCollection = defineCollection({
   dir: 'formulas',
   idPrefix: FORMULA_ID_PREFIX,
   schema: formulaEntrySchema,
-  check: checkFormula,
+  check: (entry) => [
+    ...checkFormula(entry),
+    ...(entry.figure && !entry.figure.startsWith(`${FIGURE_ID_PREFIX}.`)
+      ? [`figure: "${entry.figure}" ist keine Skizze (muss mit "${FIGURE_ID_PREFIX}." beginnen)`]
+      : []),
+  ],
+  // Der Build prüft, dass die Skizze existiert
+  references: (entry) => (entry.figure ? [entry.figure] : []),
 })

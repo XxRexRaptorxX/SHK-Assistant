@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 215">
+  <defs>
+    <marker id="erwaermungskurve-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="erwaermungskurve-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Achsen: Temperatur über zugeführter Wärme; waagrechte Achse bei 0 °C -->
+  <line class="thin" x1="50" y1="195" x2="50" y2="16" marker-end="url(#erwaermungskurve-axis)"/>
+  <line class="thin" x1="44" y1="150" x2="328" y2="150" marker-end="url(#erwaermungskurve-axis)"/>
+  <text class="note" x="58" y="18">Temperatur in °C</text>
+  <text class="note" x="232" y="168">zugeführte Wärme</text>
+  <text class="note" x="40" y="154" text-anchor="end">0</text>
+  <path class="thin" d="M45 60H55"/>
+  <text class="note" x="40" y="64" text-anchor="end">100</text>
+  <line class="dim dash" x1="55" y1="60" x2="190" y2="60"/>
+  <!-- Verlauf: Eis erwärmen, schmelzen (0 °C), Wasser erwärmen, verdampfen (100 °C), Dampf -->
+  <path class="hot-line" d="M52 182L80 150H130L190 60H290L318 36"/>
+  <line class="dim" x1="81" y1="138" x2="129" y2="138" marker-start="url(#erwaermungskurve-dim)" marker-end="url(#erwaermungskurve-dim)"/>
+  <text x="96" y="131"><tspan class="sym">Q</tspan><tspan class="sub" dy="4">s</tspan></text>
+  <text class="note" x="78" y="168">Schmelzen</text>
+  <line class="dim" x1="191" y1="48" x2="289" y2="48" marker-start="url(#erwaermungskurve-dim)" marker-end="url(#erwaermungskurve-dim)"/>
+  <text x="232" y="41"><tspan class="sym">Q</tspan><tspan class="sub" dy="4">v</tspan></text>
+  <text class="note" x="210" y="78">Verdampfen</text>
+  <text class="note" x="166" y="118">Wasser</text>
+  <text class="note" x="58" y="196">Eis</text>
+  <text class="note" x="296" y="30">Dampf</text>
+  <text class="note" x="232" y="200">bei 1013 hPa</text>
+</svg>

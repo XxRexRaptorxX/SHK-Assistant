@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Dreieck mit den Seiten l1, l2, l3; der Umfang ist die Summe der drei Seiten -->
+  <path class="line" d="M40 160L260 160L170 35Z"/>
+  <text x="140" y="184"><tspan class="sym">l</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <text x="226" y="90"><tspan class="sym">l</tspan><tspan class="sub" dy="4">2</tspan></text>
+  <text x="80" y="88"><tspan class="sym">l</tspan><tspan class="sub" dy="4">3</tspan></text>
+</svg>

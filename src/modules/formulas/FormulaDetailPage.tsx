@@ -3,6 +3,7 @@ import { BackLink, ContentPage } from '../../components/ContentPage'
 import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { HideButton } from '../../hidden/HideButton'
+import { FigureView } from '../figures/FigureView'
 import { formatUnit } from '../../lib/units'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
@@ -69,6 +70,7 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
               </div>
             ))}
           </dl>
+          <FigureView id={formula.figure} />
           <Calculator key={formula.id} formula={formula} />
         </>
       )}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 190">
+  <defs>
+    <marker id="kreis-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Kreisfläche A -->
+  <circle class="area" cx="130" cy="95" r="72"/>
+  <circle class="line" cx="130" cy="95" r="72"/>
+  <!-- Durchmesser d -->
+  <line class="dim" x1="61" y1="95" x2="199" y2="95" marker-start="url(#kreis-dim)" marker-end="url(#kreis-dim)"/>
+  <circle class="dim-head" cx="130" cy="95" r="2.5"/>
+  <text class="sym" x="124" y="86">d</text>
+  <text class="sym" x="122" y="140">A</text>
+  <!-- Umfang U: Bogen außen entlang der Kreislinie -->
+  <path class="dim" d="M171 24A82 82 0 0 1 207 67" marker-end="url(#kreis-dim)"/>
+  <text class="sym" x="214" y="38">U</text>
+</svg>

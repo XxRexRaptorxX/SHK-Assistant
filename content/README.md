@@ -29,6 +29,7 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2) |
 | `expression`  | Formel als mathjs-Ausdruck mit den Symbolen, z. B. `Q / (c * dT)`      |
 | `examples`    | Testbeispiele: `inputs` je Symbol (Zahl in der Haupteinheit oder Text mit Einheit, z. B. `"10 kW"`), `expected` (Referenzwert), optional `tolerance` (relativ, Standard 0.001 = 0,1 %) |
+| `figure`      | Optional: Skizze aus `figures/`, z. B. `"figure.kreis"`; erscheint auf der Formelseite unter den Formelzeichen |
 
 Einheiten in mathjs-Schreibweise, z. B. `kW`, `m^3/h`, `kg/h`, `K`, `bar`. Für Temperatur­differenzen
 `K` verwenden, nicht `degC` (°C ist eine Skala mit Nullpunkt-Verschiebung).
@@ -42,6 +43,22 @@ gesetzt werden. Ein Test prüft, dass jede angebotene Einheit dasselbe Ergebnis 
 Beim Build wird jede Formel geprüft: bekannte Einheiten, passende Alternativeinheiten, nur definierte
 Symbole, jede Variable wird verwendet, und **jedes Testbeispiel muss den Referenzwert ergeben**.
 Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflicht.
+
+## Skizzen (`figures/`, Präfix `figure.`)
+
+Maßskizzen zu Formeln, z. B. Kreis mit Durchmesser oder Rohr mit Querschnitt. Je Skizze zwei
+Dateien mit gleichem Namen: `kreis.json` (Pflicht-Metadaten und `title` = kurze Beschreibung für
+Screenreader) und `kreis.svg` (die Zeichnung). Mehrere Formeln dürfen dieselbe Skizze nutzen.
+
+- **Nur eigene Zeichnungen**, keine Bilder aus Formelbüchern, Normen oder Herstellerunterlagen.
+  In `source` steht, womit die Skizze fachlich abgeglichen wurde.
+- Beschriftung mit denselben Formelzeichen wie im Rechner (`label` der Variablen).
+- Farben nur über die CSS-Klassen aus `src/index.css` (Abschnitt „Skizzen“), z. B. `line`, `dim`,
+  `water`, `area`, `flow`, `hot`, `sym`, `sub`. Dann passt die Skizze zu Hell, Dunkel und Druck.
+  Inline-`style` nur, wo eine Klasse etwas überschreiben würde (z. B. Strichstärke).
+- Der Build prüft: SVG beginnt mit `<svg` und hat eine `viewBox`; keine Skripte, `on…`-Attribute,
+  `<foreignObject>` oder externen Verweise; jede Formel verweist nur auf vorhandene Skizzen.
+- IDs von Pfeilspitzen (`<marker id="…">`) mit dem Dateinamen beginnen lassen, z. B. `kreis-dim`.
 
 ## Zusatzeinheiten (`units/`, Präfix `unit.`)
 

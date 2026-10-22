@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 175">
+  <defs>
+    <marker id="kontinuitaet-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Rohr mit Querschnittsverengung: weit (A1) → eng (A2) -->
+  <path class="water-fill" d="M30 30H150L200 55H320V115H200L150 140H30Z"/>
+  <ellipse class="water" cx="30" cy="85" rx="14" ry="55"/>
+  <ellipse class="line" cx="30" cy="85" rx="14" ry="55"/>
+  <path class="line" d="M30 30H150L200 55H320"/>
+  <path class="line" d="M30 140H150L200 115H320"/>
+  <ellipse class="water" cx="320" cy="85" rx="9" ry="30"/>
+  <ellipse class="line" cx="320" cy="85" rx="9" ry="30"/>
+  <!-- Querschnitte -->
+  <ellipse class="area" cx="85" cy="85" rx="14" ry="55"/>
+  <ellipse class="thin dash" cx="85" cy="85" rx="14" ry="55"/>
+  <text x="76" y="162"><tspan class="sym">A</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <ellipse class="area" cx="285" cy="85" rx="9" ry="30"/>
+  <ellipse class="thin dash" cx="285" cy="85" rx="9" ry="30"/>
+  <text x="276" y="138"><tspan class="sym">A</tspan><tspan class="sub" dy="4">2</tspan></text>
+  <!-- Geschwindigkeiten: im engen Querschnitt größer -->
+  <line class="flow" x1="105" y1="85" x2="135" y2="85" marker-end="url(#kontinuitaet-flow)"/>
+  <text x="110" y="76"><tspan class="sym">v</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <line class="flow" x1="200" y1="85" x2="270" y2="85" marker-end="url(#kontinuitaet-flow)"/>
+  <text x="226" y="76"><tspan class="sym">v</tspan><tspan class="sub" dy="4">2</tspan></text>
+  <!-- Volumenströme gleich groß -->
+  <text x="62" y="20"><tspan class="sym">V̇</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <text x="252" y="45"><tspan class="sym">V̇</tspan><tspan class="sub" dy="4">2</tspan></text>
+  <text class="note" x="150" y="168">V̇₁ = V̇₂</text>
+</svg>

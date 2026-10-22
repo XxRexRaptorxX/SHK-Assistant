@@ -91,6 +91,139 @@
   --color-bar-stripe: #ffd400;
 }
 
+/*
+ * Skizzen aus content/figures (eingebettete SVG in .figure-art). Die Zeichnungen nutzen nur diese Klassen,
+ * damit sie in Hell, Dunkel und im Druck passen:
+ * line/thin (Kontur), dim (Maßlinie), dash, water/water-fill, area (markierte Fläche),
+ * metal, copper, flow (Strömungspfeil), hot/cold (Füllung), hot-soft/cold-soft (blass),
+ * hot-line/cold-line, flame,
+ * Pfeilspitzen dim-head/flow-head; Text: sym (Formelzeichen, kursiv), sub (Index), note (Hinweis)
+ */
+:root {
+  --fig-water: #cfe8fb;
+  --fig-water-line: #3a86d6;
+  --fig-area: #b9d6ff;
+  --fig-metal: #d5dbe5;
+  --fig-copper: #e0954b;
+  --fig-flow: #1d5fd6;
+  --fig-hot: #d9342b;
+  --fig-cold: #1f6fe0;
+  --fig-flame: #ff8a00;
+}
+.dark {
+  --fig-water: #1f4f7d;
+  --fig-water-line: #6cb4ff;
+  --fig-area: #2b4f80;
+  --fig-metal: #3a4458;
+  --fig-copper: #c47a3a;
+  --fig-flow: #7fb6ff;
+  --fig-hot: #ff6b5e;
+  --fig-cold: #6aa8ff;
+  --fig-flame: #ffa640;
+}
+.figure-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 16rem;
+  font-family: inherit;
+}
+.figure-art .line,
+.figure-art .thin {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.figure-art .thin {
+  stroke-width: 1.25;
+}
+.figure-art .dim {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.25;
+}
+.figure-art .dash {
+  stroke-dasharray: 5 4;
+}
+.figure-art .dim-head {
+  fill: var(--muted);
+}
+.figure-art .water {
+  fill: var(--fig-water);
+  stroke: var(--fig-water-line);
+  stroke-width: 1.5;
+}
+.figure-art .water-fill {
+  fill: var(--fig-water);
+}
+.figure-art .area {
+  fill: var(--fig-area);
+}
+.figure-art .metal {
+  fill: var(--fig-metal);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.figure-art .copper {
+  fill: var(--fig-copper);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.figure-art .flow {
+  fill: none;
+  stroke: var(--fig-flow);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.figure-art .flow-head {
+  fill: var(--fig-flow);
+}
+.figure-art .hot {
+  fill: var(--fig-hot);
+}
+.figure-art .cold {
+  fill: var(--fig-cold);
+}
+.figure-art .hot-soft {
+  fill: var(--fig-hot);
+  fill-opacity: 0.3;
+}
+.figure-art .cold-soft {
+  fill: var(--fig-cold);
+  fill-opacity: 0.3;
+}
+.figure-art .hot-line {
+  fill: none;
+  stroke: var(--fig-hot);
+  stroke-width: 3;
+}
+.figure-art .cold-line {
+  fill: none;
+  stroke: var(--fig-cold);
+  stroke-width: 3;
+}
+.figure-art .flame {
+  fill: var(--fig-flame);
+}
+.figure-art text {
+  fill: var(--ink);
+  font-size: 15px;
+}
+.figure-art .sym {
+  font-style: italic;
+  font-weight: 600;
+}
+.figure-art .sub {
+  font-size: 11px;
+  font-style: normal;
+}
+.figure-art .note {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
 /* Seitentitel der Module mit Farbstreifen darunter (Anklang an die Firmen-Streifen) */
 .page-title::after {
   content: '';

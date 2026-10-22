@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 215">
+  <defs>
+    <marker id="mischen-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Kalter Stoff -->
+  <path class="cold-soft" d="M21 32H109V80Q109 85 104 85H26Q21 85 21 80Z"/>
+  <path class="line" d="M20 20V80Q20 86 26 86H104Q110 86 110 80V20"/>
+  <text x="30" y="56"><tspan class="sym">m</tspan><tspan class="sub" dy="4">k</tspan><tspan dy="-4">, </tspan><tspan class="sym">c</tspan><tspan class="sub" dy="4">k</tspan></text>
+  <text x="30" y="78"><tspan class="sym">T</tspan><tspan class="sub" dy="4">k</tspan></text>
+  <!-- Warmer Stoff -->
+  <path class="hot-soft" d="M231 32H319V80Q319 85 314 85H236Q231 85 231 80Z"/>
+  <path class="line" d="M230 20V80Q230 86 236 86H314Q320 86 320 80V20"/>
+  <text x="240" y="56"><tspan class="sym">m</tspan><tspan class="sub" dy="4">w</tspan><tspan dy="-4">, </tspan><tspan class="sym">c</tspan><tspan class="sub" dy="4">w</tspan></text>
+  <text x="240" y="78"><tspan class="sym">T</tspan><tspan class="sub" dy="4">w</tspan></text>
+  <!-- Zusammengießen -->
+  <path class="flow" d="M114 52C140 52 150 78 154 110" marker-end="url(#mischen-flow)"/>
+  <path class="flow" d="M226 52C200 52 190 78 186 110" marker-end="url(#mischen-flow)"/>
+  <!-- Mischung -->
+  <path class="water-fill" d="M121 140H219V194Q219 199 214 199H126Q121 199 121 194Z"/>
+  <line class="water" x1="121" y1="140" x2="219" y2="140"/>
+  <path class="line" d="M120 120V194Q120 200 126 200H214Q220 200 220 194V120"/>
+  <text x="150" y="166"><tspan class="sym">T</tspan><tspan class="sub" dy="4">m</tspan></text>
+  <text x="134" y="190"><tspan class="sym">m</tspan><tspan class="sub" dy="4">k</tspan><tspan dy="-4"> + </tspan><tspan class="sym">m</tspan><tspan class="sub" dy="4">w</tspan></text>
+</svg>

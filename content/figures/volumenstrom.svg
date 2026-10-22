@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 170">
+  <defs>
+    <marker id="volumenstrom-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="volumenstrom-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Rohr mit Wasser, perspektivisch -->
+  <rect class="water-fill" x="40" y="40" width="240" height="90"/>
+  <ellipse class="water" cx="40" cy="85" rx="16" ry="45"/>
+  <line class="line" x1="40" y1="40" x2="280" y2="40"/>
+  <line class="line" x1="40" y1="130" x2="280" y2="130"/>
+  <ellipse class="line" cx="40" cy="85" rx="16" ry="45"/>
+  <!-- Strömungsquerschnitt A -->
+  <ellipse class="area" cx="200" cy="85" rx="16" ry="45"/>
+  <ellipse class="thin dash" cx="200" cy="85" rx="16" ry="45"/>
+  <line class="dim" x1="200" y1="130" x2="200" y2="148"/>
+  <text class="sym" x="194" y="164">A</text>
+  <!-- Rohrende vorn -->
+  <ellipse class="water" cx="280" cy="85" rx="16" ry="45"/>
+  <ellipse class="line" cx="280" cy="85" rx="16" ry="45"/>
+  <!-- Strömungsgeschwindigkeit v -->
+  <line class="flow" x1="70" y1="85" x2="160" y2="85" marker-end="url(#volumenstrom-flow)"/>
+  <text class="sym" x="108" y="76">v</text>
+  <!-- Volumenstrom -->
+  <line class="flow" x1="304" y1="85" x2="340" y2="85" marker-end="url(#volumenstrom-flow)"/>
+  <text class="sym" x="312" y="72">V̇</text>
+</svg>

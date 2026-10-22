@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 205">
+  <defs>
+    <marker id="ausfluss-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Zulaufrohr mit Bogen nach unten -->
+  <path class="water-fill" d="M10 35H160A50 50 0 0 1 210 85V105H180V85A20 20 0 0 0 160 65H10Z"/>
+  <ellipse class="water" cx="10" cy="50" rx="6" ry="15"/>
+  <ellipse class="line" cx="10" cy="50" rx="6" ry="15"/>
+  <path class="line" d="M10 35H160A50 50 0 0 1 210 85V105"/>
+  <path class="line" d="M10 65H160A20 20 0 0 1 180 85V105"/>
+  <!-- Strömungsgeschwindigkeit v im Rohr -->
+  <line class="flow" x1="30" y1="50" x2="110" y2="50" marker-end="url(#ausfluss-flow)"/>
+  <text class="sym" x="64" y="27">v</text>
+  <!-- Austrittsquerschnitt A -->
+  <ellipse class="area" cx="195" cy="105" rx="15" ry="5"/>
+  <ellipse class="thin dash" cx="195" cy="105" rx="15" ry="5"/>
+  <text class="sym" x="218" y="110">A</text>
+  <!-- Auslaufender Strahl mit Volumenstrom -->
+  <path class="water-fill" d="M182 108C182 130 179 148 177 160H213C211 148 208 130 208 108Z"/>
+  <text class="sym" x="220" y="142">V̇</text>
+  <!-- Behälter mit Ausflussvolumen V -->
+  <rect class="water" x="121" y="160" width="168" height="30"/>
+  <path class="line" d="M120 122V191H290V122"/>
+  <text class="sym" x="250" y="182">V</text>
+  <!-- Zeit t -->
+  <circle class="line" cx="60" cy="145" r="24"/>
+  <path class="thin" d="M60 145V128M60 145L72 152M60 121V125M84 145H80M60 169V165M36 145H40"/>
+  <text class="sym" x="92" y="168">t</text>
+</svg>

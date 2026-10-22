@@ -50,5 +50,6 @@
       "tolerance": 0.002,
       "note": "Rechenbeispiel aus Wikipedia „Dreiphasenwechselstrom“"
     }
-  ]
+  ],
+  "figure": "figure.drehstrom"
 }

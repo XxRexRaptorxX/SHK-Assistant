@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 150">
+  <defs>
+    <marker id="leiter-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Leiter (z. B. Kupferdraht) der Länge l -->
+  <rect class="copper" x="40" y="55" width="220" height="40" style="stroke:none"/>
+  <line class="line" x1="40" y1="55" x2="260" y2="55"/>
+  <line class="line" x1="40" y1="95" x2="260" y2="95"/>
+  <ellipse class="copper" cx="40" cy="75" rx="10" ry="20"/>
+  <!-- Querschnitt q an der Schnittfläche -->
+  <ellipse class="copper" cx="260" cy="75" rx="10" ry="20"/>
+  <ellipse class="area" cx="260" cy="75" rx="10" ry="20" fill-opacity="0.6"/>
+  <ellipse class="thin" cx="260" cy="75" rx="10" ry="20"/>
+  <line class="dim" x1="270" y1="75" x2="288" y2="75"/>
+  <text class="sym" x="294" y="80">q</text>
+  <!-- Länge l -->
+  <line class="dim" x1="40" y1="100" x2="40" y2="132"/>
+  <line class="dim" x1="260" y1="100" x2="260" y2="132"/>
+  <line class="dim" x1="41" y1="126" x2="259" y2="126" marker-start="url(#leiter-dim)" marker-end="url(#leiter-dim)"/>
+  <text class="sym" x="146" y="120">l</text>
+</svg>

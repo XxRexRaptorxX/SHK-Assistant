@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <marker id="dreieck-flaeche-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Fläche A -->
+  <path class="area" d="M40 160L260 160L170 35Z"/>
+  <path class="line" d="M40 160L260 160L170 35Z"/>
+  <!-- Höhe h: senkrecht auf der Grundseite -->
+  <line class="dim dash" x1="170" y1="35" x2="170" y2="160"/>
+  <path class="thin" d="M170 150H180V160"/>
+  <text class="sym" x="176" y="108">h</text>
+  <text class="sym" x="120" y="140">A</text>
+  <!-- Grundseite l -->
+  <line class="dim" x1="40" y1="165" x2="40" y2="190"/>
+  <line class="dim" x1="260" y1="165" x2="260" y2="190"/>
+  <line class="dim" x1="41" y1="184" x2="259" y2="184" marker-start="url(#dreieck-flaeche-dim)" marker-end="url(#dreieck-flaeche-dim)"/>
+  <text class="sym" x="146" y="179">l</text>
+</svg>

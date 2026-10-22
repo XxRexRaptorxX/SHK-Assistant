@@ -1,0 +1,9 @@
+{
+  "id": "figure.staudruck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Skizze; abgeglichen mit Wikipedia „Prandtlsonde“, https://de.wikipedia.org/wiki/Prandtlsonde (Gesamtdruck an der Öffnung gegen die Strömung, statischer Druck seitlich, p_ges = p_stat + p_dyn, p_dyn = ½·ρ·v²)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Rohr mit Steigrohr an der Wand (statischer Druck) und Staurohr gegen die Strömung (Gesamtdruck); die Differenz ist der dynamische Druck"
+}

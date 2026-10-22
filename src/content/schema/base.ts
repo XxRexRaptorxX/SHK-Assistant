@@ -54,6 +54,11 @@ export interface CollectionDefinition<T extends BaseEntry = BaseEntry> {
   /** Pflicht-Präfix der id, z. B. "lexicon" → "lexicon.…" */
   idPrefix: string
   schema: z.ZodType<T>
+  /**
+   * Begleitdatei je Eintrag, z. B. ".svg": zu "x.json" gehört "x.svg"; der Dateiinhalt landet
+   * vor der Prüfung im Feld field. Andere Dateien als .json und diese Endung sind verboten.
+   */
+  attachment?: { extension: string; field: string }
   /** ids, auf die ein Eintrag verweist. Der Build prüft, dass sie existieren. */
   references?(entry: T): string[]
   /** Fachliche Prüfungen über das Schema hinaus, z. B. Formeln gegen ihre Testbeispiele. */

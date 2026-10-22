@@ -12,12 +12,14 @@
     {
       "symbol": "vspec2",
       "name": "Spezifisches Volumen im Endzustand",
-      "unit": "dm^3/kg"
+      "unit": "dm^3/kg",
+      "label": "v₂"
     },
     {
       "symbol": "vspec1",
       "name": "Spezifisches Volumen im Anfangszustand",
-      "unit": "dm^3/kg"
+      "unit": "dm^3/kg",
+      "label": "v₁"
     }
   ],
   "constants": [],
@@ -37,5 +39,6 @@
       },
       "expected": 0.01
     }
-  ]
+  ],
+  "figure": "figure.volumenaenderung"
 }

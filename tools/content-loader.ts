@@ -36,20 +36,33 @@ export function isIncludedInEdition(entry: BaseEntry, edition: Edition): boolean
   return edition === 'internal' || entry.visibility === 'public'
 }
 
-function listJsonFiles(dir: string, issues: string[], contentDir: string): string[] {
+/** JSON-Dateien eines Ordners; Begleitdateien (attachmentExtension) sind erlaubt, wenn ihr .json existiert. */
+function listJsonFiles(dir: string, issues: string[], contentDir: string, attachmentExtension?: string): string[] {
   const files: string[] = []
   for (const dirent of readdirSync(dir, { withFileTypes: true })) {
     if (dirent.name.startsWith('.')) continue
     const fullPath = path.join(dir, dirent.name)
     if (dirent.isDirectory()) {
-      files.push(...listJsonFiles(fullPath, issues, contentDir))
+      files.push(...listJsonFiles(fullPath, issues, contentDir, attachmentExtension))
     } else if (dirent.name.endsWith('.json')) {
       files.push(fullPath)
+    } else if (attachmentExtension && dirent.name.endsWith(attachmentExtension)) {
+      const json = fullPath.slice(0, -attachmentExtension.length) + '.json'
+      if (!existsSync(json)) issues.push(`${relative(contentDir, fullPath)}: zugehörige .json-Datei fehlt`)
     } else {
-      issues.push(`${relative(contentDir, fullPath)}: nur .json-Dateien erlaubt`)
+      const allowed = attachmentExtension ? `.json- und ${attachmentExtension}-Dateien` : '.json-Dateien'
+      issues.push(`${relative(contentDir, fullPath)}: nur ${allowed} erlaubt`)
     }
   }
   return files.sort()
+}
+
+/** Liest die Begleitdatei (z. B. .svg) in das konfigurierte Feld; fehlt sie, meldet das Schema das Feld. */
+function withAttachment(raw: unknown, file: string, attachment: { extension: string; field: string } | undefined) {
+  if (!attachment || typeof raw !== 'object' || raw === null || Array.isArray(raw)) return raw
+  const attached = file.slice(0, -'.json'.length) + attachment.extension
+  if (!existsSync(attached)) return raw
+  return { ...raw, [attachment.field]: readFileSync(attached, 'utf8') }
 }
 
 function relative(contentDir: string, file: string): string {
@@ -82,7 +95,7 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
 
   for (const [name, collection] of Object.entries(collections)) {
     const dir = path.join(contentDir, collection.dir)
-    const files = existsSync(dir) ? listJsonFiles(dir, issues, contentDir) : []
+    const files = existsSync(dir) ? listJsonFiles(dir, issues, contentDir, collection.attachment?.extension) : []
     const entries: BaseEntry[] = []
 
     for (const file of files) {
@@ -96,7 +109,7 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
         continue
       }
 
-      const result = collection.schema.safeParse(raw)
+      const result = collection.schema.safeParse(withAttachment(raw, file, collection.attachment))
       if (!result.success) {
         for (const issue of result.error.issues) {
           issues.push(`${rel}: ${formatPath(issue.path)}${issue.message}`)
