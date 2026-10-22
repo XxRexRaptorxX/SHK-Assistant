@@ -4,7 +4,7 @@ import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
-import { converterEntries, findConverter } from './converter'
+import { converterEntries, converterTitle, findConverter } from './converter'
 import { FactorConverter } from './FactorConverter'
 import { RatioConverter } from './RatioConverter'
 import type { ConverterEntry } from './schema'
@@ -39,7 +39,7 @@ export default function ConverterPage({ entries = converterEntries }: { entries?
   return (
     <ContentPage
       entry={entry}
-      title={entry.title}
+      title={converterTitle(entry)}
       back={BACK}
       actions={<FavoriteButton id={entry.id} title={`Umrechner ${entry.title}`} />}
     >

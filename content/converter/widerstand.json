@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Elektr. Widerstand",
+  "symbol": "R",
+  "category": "Elektrotechnik",
   "description": "",
   "kind": "units",
   "units": [

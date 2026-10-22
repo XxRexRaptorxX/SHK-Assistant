@@ -3,8 +3,9 @@ import { formatSignificant, parseDecimal } from '../../lib/number'
 import { fieldClass, ResultsTable, Select, ValueInput } from './converterUi'
 import type { ConverterEntry, ConverterFactor } from './schema'
 
-/** Richtwerte: wenige gültige Stellen, um keine falsche Genauigkeit vorzutäuschen */
-const DIGITS = 3
+/** Richtwerte: wenige gültige Stellen, um keine falsche Genauigkeit vorzutäuschen; exakte Verhältnisse voll */
+const APPROXIMATE_DIGITS = 3
+const EXACT_DIGITS = 6
 
 export function convertByFactors(value: number, from: ConverterFactor, to: ConverterFactor): number {
   return (value / from.value) * to.value
@@ -27,6 +28,8 @@ export function FactorConverter({ entry, initialValue = '1' }: { entry: Converte
   const invalid = !empty && value === undefined
   const hint = belowMin ? (entry.min === 0 ? 'keine negativen Werte' : `mindestens ${entry.min}`) : undefined
   const options = entry.factors.map((factor) => ({ value: factor.key, label: factor.label }))
+  const format = (n: number) =>
+    entry.approximate ? `≈ ${formatSignificant(n, APPROXIMATE_DIGITS)}` : formatSignificant(n, EXACT_DIGITS)
 
   return (
     <section className="mt-2" aria-label="Umrechnen">
@@ -57,18 +60,18 @@ export function FactorConverter({ entry, initialValue = '1' }: { entry: Converte
 
       <p className="mt-4 rounded-xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-words" aria-live="polite">
         {value !== undefined && from && to
-          ? `≈ ${formatSignificant(convertByFactors(value, from, to), DIGITS)} ${to.label}`
+          ? `${format(convertByFactors(value, from, to))} ${to.label}`
           : '–'}
       </p>
 
       <ResultsTable
-        title="In allen Maßen (Richtwerte)"
+        title={entry.approximate ? 'In allen Maßen (Richtwerte)' : 'In allen Maßen'}
         rows={
           value === undefined || !from
             ? []
             : entry.factors.map((factor) => ({
                 key: factor.key,
-                value: `≈ ${formatSignificant(convertByFactors(value, from, factor), DIGITS)}`,
+                value: format(convertByFactors(value, from, factor)),
                 label: factor.label,
                 highlight: factor.key === fromKey,
               }))

@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Volumen",
+  "symbol": "V",
+  "category": "Geometrie",
   "description": "",
   "units": [
     "ml",

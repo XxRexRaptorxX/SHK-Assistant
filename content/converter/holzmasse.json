@@ -6,6 +6,7 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Holzmaße",
+  "category": "Allgemein",
   "description": "Richtwerte für Brennholz. **Festmeter (fm):** 1 m³ feste Holzmasse ohne Zwischenräume. **Raummeter (rm, Ster):** 1 m³ geschichtetes Holz mit Luftzwischenräumen. **Schüttraummeter (srm):** 1 m³ lose geschüttete Scheite.\n\nDie Umrechnung hängt von Holzart, Scheitlänge, Spaltung und Stapelsorgfalt ab. Gerechnet wird über 1 fm; Rückrechnungen können von gerundeten Tabellenwerten leicht abweichen.",
   "kind": "factors",
   "factors": [

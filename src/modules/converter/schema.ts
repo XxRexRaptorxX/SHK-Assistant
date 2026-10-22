@@ -26,8 +26,14 @@ const factorSchema = z.strictObject({
 
 export const converterEntrySchema = defineEntrySchema({
   title: z.string().trim().min(1),
+  /** Formelzeichen der Größe, angezeigt hinter dem Namen, z. B. "A" → „Fläche [A]“ */
+  symbol: z.string().trim().min(1).optional(),
+  /** Gruppierung in der Liste, z. B. "Hydraulik" (leer = „Allgemein“) */
+  category: z.string().trim().default(''),
   description: z.string().trim().default(''),
   kind: z.enum(CONVERTER_KINDS).default('units'),
+  /** kind "factors": true = Richtwerte (mit „≈“, 3 Stellen), false = exakte Verhältnisse (z. B. Stückmaß) */
+  approximate: z.boolean().default(true),
   /** kind "units": mathjs-Einheiten oder Zusatzeinheiten aus content/units */
   units: z.array(z.string().trim().min(1)).default([]),
   /** kind "factors": Größen mit ihren Faktoren */

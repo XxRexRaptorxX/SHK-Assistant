@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Gewicht",
+  "symbol": "m",
+  "category": "Mechanik",
   "description": "",
   "kind": "units",
   "units": [

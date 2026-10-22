@@ -6,6 +6,7 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Rohrdimensionen",
+  "category": "Hydraulik",
   "description": "Gegenüberstellung von britischem System (Nenndurchmesser in Zoll, Rohr-Außendurchmesser dₐ) und metrischen Größen (Rohr-Außendurchmesser dₐ, Nenndurchmesser DN). Jede Zeile zeigt die einander zugeordneten Größen.",
   "kind": "table",
   "columns": [

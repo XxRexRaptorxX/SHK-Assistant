@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Fläche",
+  "symbol": "A",
+  "category": "Geometrie",
   "description": "",
   "kind": "units",
   "units": [

@@ -1,0 +1,21 @@
+{
+  "id": "converter.ladung",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Einheiten und Umrechnung aus mathjs; Wikipedia „Amperestunde“, https://de.wikipedia.org/wiki/Amperestunde (1 Ah = 3600 C)",
+  "title": "Elektr. Ladung",
+  "symbol": "Q",
+  "category": "Elektrotechnik",
+  "description": "Amperestunden (Ah) z. B. für Akkus und Batterien; 1 Ah = 3.600 C (Coulomb = Amperesekunde).",
+  "kind": "units",
+  "units": [
+    "C",
+    "mAh",
+    "Ah",
+    "kAh"
+  ],
+  "from": "Ah",
+  "to": "mAh"
+}

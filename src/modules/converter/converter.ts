@@ -22,6 +22,23 @@ export function findConverter(entries: readonly ConverterEntry[], slug: string |
   return entries.find((entry) => entry.id === id)
 }
 
+/** Name mit Formelzeichen, z. B. „Fläche [A]“ */
+export function converterTitle(entry: ConverterEntry): string {
+  return entry.symbol ? `${entry.title} [${entry.symbol}]` : entry.title
+}
+
+/** Gruppiert nach Kategorie; ohne Kategorie unter "Allgemein", diese Gruppe zuletzt */
+export function groupConvertersByCategory(entries: readonly ConverterEntry[]) {
+  const groups = new Map<string, ConverterEntry[]>()
+  for (const entry of entries) {
+    const category = entry.category || 'Allgemein'
+    groups.set(category, [...(groups.get(category) ?? []), entry])
+  }
+  return [...groups.entries()]
+    .sort(([a], [b]) => (a === 'Allgemein' ? 1 : b === 'Allgemein' ? -1 : a.localeCompare(b, 'de')))
+    .map(([category, items]) => ({ category, entries: items }))
+}
+
 /** Kurzbeschreibung für Listen und Suche */
 export function converterSummary(entry: ConverterEntry): string {
   switch (entry.kind) {
@@ -32,7 +49,7 @@ export function converterSummary(entry: ConverterEntry): string {
     case 'slope':
       return '% · ‰ · ° · 1 : x'
     case 'ratio':
-      return '% · ‰ · Dezimalzahl · Bruch'
+      return '% · ‰ · ‱ · ppm · ppb · pu · Bruch'
     case 'table':
       return entry.columns.join(' · ')
   }

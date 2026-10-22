@@ -1,7 +1,15 @@
 import { useId, useState } from 'react'
 import { formatSignificant } from '../../lib/number'
 import { ResultsTable, Select, ValueInput } from './converterUi'
-import { RATIO_FORMS, RATIO_LABELS, toDecimal, toFraction, type RatioForm } from './ratio'
+import {
+  RATIO_FORMS,
+  RATIO_LABELS,
+  RATIO_SCALE,
+  RATIO_SYMBOLS,
+  toDecimal,
+  toFraction,
+  type RatioForm,
+} from './ratio'
 
 const OPTIONS = RATIO_FORMS.map((form) => ({ value: form, label: RATIO_LABELS[form] }))
 
@@ -18,16 +26,10 @@ export function formatFraction(value: number): string {
 }
 
 function formatAs(value: number, form: RatioForm): string {
-  switch (form) {
-    case 'percent':
-      return `${formatSignificant(value * 100)} %`
-    case 'permille':
-      return `${formatSignificant(value * 1000)} ‰`
-    case 'decimal':
-      return formatSignificant(value)
-    case 'fraction':
-      return formatFraction(value)
-  }
+  if (form === 'fraction') return formatFraction(value)
+  const symbol = RATIO_SYMBOLS[form]
+  const number = formatSignificant(value * RATIO_SCALE[form])
+  return symbol ? `${number} ${symbol}` : number
 }
 
 export function RatioConverter({ initialValue = '75', initialForm = 'percent' as RatioForm }) {

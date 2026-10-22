@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Zeit",
+  "symbol": "t",
+  "category": "Allgemein",
   "description": "HM = Hundertstelminute (1/100 min, Arbeitsstudium nach REFA), IM = Industrieminute (1/100 h). Quartal und Jahr mit 365 Tagen gerechnet (ohne Schaltjahr).",
   "kind": "units",
   "units": [

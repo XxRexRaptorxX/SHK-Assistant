@@ -6,12 +6,17 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Kraft",
+  "symbol": "F",
+  "category": "Mechanik",
   "description": "",
   "kind": "units",
   "units": [
+    "mN",
+    "cN",
     "N",
     "daN",
     "kN",
+    "MN",
     "kgf"
   ],
   "from": "kN",

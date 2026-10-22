@@ -1,15 +1,36 @@
 import { parseDecimal } from '../../lib/number'
 
-// Prozent, Promille, Dezimalzahl und Bruch – alles über den Dezimalwert.
+// Anteile – alles über den Dezimalwert (= pu, bezogen auf 1).
 
-export const RATIO_FORMS = ['percent', 'permille', 'decimal', 'fraction'] as const
+export const RATIO_FORMS = ['percent', 'permille', 'permyriad', 'ppm', 'ppb', 'decimal', 'fraction'] as const
 export type RatioForm = (typeof RATIO_FORMS)[number]
 
 export const RATIO_LABELS: Record<RatioForm, string> = {
   percent: 'Prozent (%)',
   permille: 'Promille (‰)',
-  decimal: 'Dezimalzahl',
+  permyriad: 'Pro Zehntausend (‱)',
+  ppm: 'ppm (Millionstel)',
+  ppb: 'ppb (Milliardstel)',
+  decimal: 'Dezimalzahl / pu',
   fraction: 'Bruch',
+}
+
+/** Wie viele Teile auf das Ganze kommen, z. B. Prozent: 100 */
+export const RATIO_SCALE: Record<Exclude<RatioForm, 'fraction'>, number> = {
+  percent: 1e2,
+  permille: 1e3,
+  permyriad: 1e4,
+  ppm: 1e6,
+  ppb: 1e9,
+  decimal: 1,
+}
+
+export const RATIO_SYMBOLS: Partial<Record<RatioForm, string>> = {
+  percent: '%',
+  permille: '‰',
+  permyriad: '‱',
+  ppm: 'ppm',
+  ppb: 'ppb',
 }
 
 /**
@@ -31,8 +52,7 @@ export function parseFraction(input: string): number | undefined {
 export function toDecimal(input: string, form: RatioForm): number | undefined {
   if (form === 'fraction') return parseFraction(input)
   const value = parseDecimal(input)
-  if (value === undefined) return undefined
-  return form === 'percent' ? value / 100 : form === 'permille' ? value / 1000 : value
+  return value === undefined ? undefined : value / RATIO_SCALE[form]
 }
 
 export interface Fraction {

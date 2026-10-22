@@ -1,0 +1,38 @@
+{
+  "id": "converter.stueckmass",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Wikipedia „Dutzend“, https://de.wikipedia.org/wiki/Dutzend (Dutzend = 12, Schock = 60, Gros = 144 Stück)",
+  "title": "Stückmaß",
+  "category": "Allgemein",
+  "description": "Alte Zählmaße: 1 Dtzd. = 12 Stk., 1 Schock = 60 Stk. (5 Dutzend), 1 Gros = 144 Stk. (12 Dutzend).",
+  "kind": "factors",
+  "approximate": false,
+  "factors": [
+    {
+      "key": "stk",
+      "label": "Stk.",
+      "value": 720
+    },
+    {
+      "key": "dtzd",
+      "label": "Dtzd.",
+      "value": 60
+    },
+    {
+      "key": "schock",
+      "label": "Schock",
+      "value": 12
+    },
+    {
+      "key": "gros",
+      "label": "Gros",
+      "value": 5
+    }
+  ],
+  "from": "dtzd",
+  "to": "stk",
+  "min": 0
+}

@@ -1,0 +1,21 @@
+{
+  "id": "converter.stromstaerke",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Einheiten und Umrechnung aus mathjs; Wikipedia „Elektrische Stromstärke“, https://de.wikipedia.org/wiki/Elektrische_Stromst%C3%A4rke",
+  "title": "Elektr. Stromstärke",
+  "symbol": "I",
+  "category": "Elektrotechnik",
+  "description": "",
+  "kind": "units",
+  "units": [
+    "uA",
+    "mA",
+    "A",
+    "kA"
+  ],
+  "from": "A",
+  "to": "mA"
+}

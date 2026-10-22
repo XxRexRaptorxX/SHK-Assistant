@@ -6,6 +6,8 @@ const UNIT_LABELS: Record<string, string> = {
   grad: 'gon', // mathjs "grad" = Neugrad (Gon), 400 gon = Vollkreis
   arcmin: '′',
   arcsec: '″',
+  uV: 'µV',
+  uA: 'µA',
   ohm: 'Ω',
   mohm: 'mΩ',
   kohm: 'kΩ',

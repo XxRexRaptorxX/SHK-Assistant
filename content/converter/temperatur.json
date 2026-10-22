@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Temperatur",
+  "symbol": "T",
+  "category": "Thermodynamik",
   "description": "",
   "units": [
     "degC",

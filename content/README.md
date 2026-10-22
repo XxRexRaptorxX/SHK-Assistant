@@ -72,7 +72,10 @@ Eine Datei je Größe (Druck, Leistung …). `kind` legt die Art fest:
 | `ratio` | Prozent, Promille, Dezimalzahl, Bruch   | keine weiteren                           |
 | `table` | Nachschlagetabelle, z. B. Rohrdimensionen | `columns` (Überschriften), `rows` (je Zeile eine Liste von Texten) |
 
-Dazu immer `title` und optional `description`.
+Dazu immer `title` und optional `description`, `symbol` (Formelzeichen, angezeigt als „Fläche [A]“)
+und `category` (Gruppe in der Liste, z. B. „Hydraulik“; leer = „Allgemein“). Bei `factors` legt
+`approximate` fest, ob es Richtwerte sind (`true`, Standard: mit „≈“ und 3 Stellen) oder exakte
+Verhältnisse (`false`, z. B. Stückmaß).
 
 Für Temperaturen `degC`, `K`, `degF` verwenden; die Nullpunkt-Verschiebung rechnet mathjs selbst.
 In `units` dürfen Zusatzeinheiten stehen, die in `content/units` noch ohne Definition angekündigt

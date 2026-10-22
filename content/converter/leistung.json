@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Leistung",
+  "symbol": "P",
+  "category": "Thermodynamik",
   "description": "",
   "units": [
     "W",

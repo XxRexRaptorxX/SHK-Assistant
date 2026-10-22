@@ -8,7 +8,8 @@ import { ensureCustomUnits } from '../units/customUnits'
 import { registerCustomUnits } from '../units/registry'
 import { ConverterListPage } from './ConverterListPage'
 import ConverterPage from './ConverterPage'
-import { converterEntries } from './converter'
+import { converterEntries, converterTitle, groupConvertersByCategory } from './converter'
+import { RatioConverter } from './RatioConverter'
 import { formatFraction } from './RatioConverter'
 import { parseFraction, toDecimal, toFraction } from './ratio'
 import { convertByFactors, FactorConverter } from './FactorConverter'
@@ -30,8 +31,10 @@ const pressure: ConverterEntry = {
   ...meta,
   id: 'converter.test-druck',
   title: 'Testdruck',
+  category: '',
   description: '',
   kind: 'units',
+  approximate: true,
   units: ['bar', 'mbar', 'Pa'],
   factors: [],
   from: 'bar',
@@ -207,6 +210,34 @@ describe('Richtwert-Faktoren (Holzmaße)', () => {
     )
   })
 
+  it('zeigt exakte Verhältnisse ohne „≈“ (Stückmaß)', () => {
+    const pieces: ConverterEntry = {
+      ...wood,
+      approximate: false,
+      factors: [
+        { key: 'stk', label: 'Stk.', value: 720 },
+        { key: 'dtzd', label: 'Dtzd.', value: 60 },
+        { key: 'gros', label: 'Gros', value: 5 },
+      ],
+      from: 'gros',
+      to: 'stk',
+    }
+    const html = renderToStaticMarkup(<FactorConverter entry={pieces} />)
+    expect(html).toContain('144 Stk.')
+    expect(html).toContain('In allen Maßen<')
+    expect(html).not.toContain('≈')
+    const [stk, dtzd] = pieces.factors as [ConverterFactor, ConverterFactor]
+    expect(convertByFactors(1, dtzd, stk)).toBe(12)
+  })
+
+  it('lädt das echte Stückmaß mit exakten Werten', () => {
+    const entry = converterEntries.find((e) => e.id === 'converter.stueckmass')!
+    const byKey = new Map(entry.factors.map((f) => [f.key, f]))
+    expect(entry.approximate).toBe(false)
+    expect(convertByFactors(1, byKey.get('schock')!, byKey.get('stk')!)).toBe(60)
+    expect(convertByFactors(1, byKey.get('gros')!, byKey.get('dtzd')!)).toBe(12)
+  })
+
   it('lädt die echten Holzmaße', () => {
     const entry = converterEntries.find((e) => e.id === 'converter.holzmasse')
     expect(entry?.kind).toBe('factors')
@@ -241,6 +272,18 @@ describe('Anteile (Prozent, Dezimalzahl, Bruch)', () => {
     expect(toDecimal('5', 'permille')).toBe(0.005)
   })
 
+  it('kennt Pro Zehntausend, ppm, ppb und pu', () => {
+    expect(toDecimal('25', 'permyriad')).toBeCloseTo(0.0025)
+    expect(toDecimal('500', 'ppm')).toBeCloseTo(0.0005)
+    expect(toDecimal('20', 'ppb')).toBeCloseTo(2e-8)
+    expect(toDecimal('1,2', 'decimal')).toBe(1.2)
+    const html = renderToStaticMarkup(<RatioConverter initialValue="1" initialForm="permille" />)
+    expect(html).toContain('10 ‱')
+    expect(html).toContain('1.000 ppm')
+    expect(html).toContain('1.000.000 ppb')
+    expect(html).toContain('Dezimalzahl / pu')
+  })
+
   it('findet den passenden Bruch und kennzeichnet Näherungen', () => {
     expect(toFraction(0.75)).toEqual({ numerator: 3, denominator: 4, exact: true })
     expect(toFraction(1 / 3)).toEqual({ numerator: 1, denominator: 3, exact: true })
@@ -261,6 +304,16 @@ describe('Umrechnen', () => {
     expect(convert(1, 'N/cm^2', 'mbar')).toBeCloseTo(100)
     expect(convert(1, 'ft', 'mm')).toBeCloseTo(304.8)
     expect(convert(3600, 'm/h', 'm/s')).toBeCloseTo(1)
+  })
+
+  it('rechnet Spannung, Strom, Ladung und die ergänzten Kräfte um', () => {
+    expect(convert(1, 'Ah', 'C')).toBeCloseTo(3600)
+    expect(convert(2500, 'mAh', 'Ah')).toBeCloseTo(2.5)
+    expect(convert(230, 'V', 'kV')).toBeCloseTo(0.23)
+    expect(convert(16, 'A', 'mA')).toBeCloseTo(16000)
+    expect(convert(1, 'MN', 'kN')).toBeCloseTo(1000)
+    expect(convert(100, 'cN', 'N')).toBeCloseTo(1)
+    expect(convert(1, 'kgf', 'N')).toBeCloseTo(9.80665)
   })
 
   it('kennt Industrie- und Hundertstelminute, Quartal und Jahr (365 Tage)', () => {
@@ -311,6 +364,28 @@ describe('Umrechner-Seiten', () => {
     const html = renderAt('/umrechner')
     expect(html).toContain('href="/umrechner/test-druck"')
     expect(html).toContain('bar · mbar · Pa')
+  })
+
+  it('gruppiert nach Kategorie und zeigt das Formelzeichen hinter dem Namen', () => {
+    const entries: ConverterEntry[] = [
+      { ...pressure, id: 'converter.a', title: 'Druck', symbol: 'p', category: 'Hydraulik' },
+      { ...pressure, id: 'converter.b', title: 'Zeit', category: '' },
+      { ...pressure, id: 'converter.c', title: 'Fläche', symbol: 'A', category: 'Geometrie' },
+    ]
+    expect(groupConvertersByCategory(entries).map((g) => g.category)).toEqual(['Geometrie', 'Hydraulik', 'Allgemein'])
+    expect(converterTitle(entries[2]!)).toBe('Fläche [A]')
+    expect(converterTitle(entries[1]!)).toBe('Zeit')
+    const html = renderToStaticMarkup(
+      <MemoryRouter>
+        <ConverterListPage entries={entries} />
+      </MemoryRouter>,
+    )
+    expect(html).toContain('>Geometrie</h2>')
+    expect(html).toContain('Druck [p]')
+  })
+
+  it('ordnet alle echten Größen einer Kategorie zu', () => {
+    expect(converterEntries.every((entry) => entry.category !== '')).toBe(true)
   })
 
   it('rechnet den Startwert 1 in die Zieleinheit und in alle Einheiten um', () => {

@@ -6,6 +6,8 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "title": "Länge",
+  "symbol": "l",
+  "category": "Geometrie",
   "description": "Zoll (in) ist hier das Längenmaß 25,4 mm, nicht die Nennweite von Rohrgewinden.",
   "kind": "units",
   "units": [
