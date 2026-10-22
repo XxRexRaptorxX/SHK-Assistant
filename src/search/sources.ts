@@ -6,6 +6,8 @@ import { createSearch, type SearchDocument, type SearchEngine } from './search'
 
 // Jedes Modul trägt hier seine Einträge ein. Dient der Suche und den Favoriten
 // als gemeinsames Verzeichnis aller Inhalte (id → Titel, Modul, Adresse).
+// Reihenfolge: Module wie in der Navigation, Einträge wie in der Liste des Moduls
+// (die Favoriten werden in dieser Reihenfolge angezeigt).
 function allDocuments(): SearchDocument[] {
   return [
     ...formulaSearchDocuments(),

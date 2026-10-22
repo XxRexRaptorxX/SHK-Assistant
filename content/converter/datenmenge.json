@@ -1,0 +1,39 @@
+{
+  "id": "converter.datenmenge",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Einheiten und Umrechnung aus mathjs; Wikipedia „Byte“, https://de.wikipedia.org/wiki/Byte",
+  "title": "Datenmenge",
+  "category": "Allgemein",
+  "description": "Dezimale Vorsätze (kB, MB, GB) zählen in 1.000er-Schritten, binäre (KiB, MiB, GiB) in 1.024er-Schritten.",
+  "kind": "units",
+  "units": [
+    "b",
+    "B",
+    "kB",
+    "KiB",
+    "MB",
+    "MiB",
+    "GB",
+    "GiB",
+    "TB",
+    "TiB"
+  ],
+  "names": {
+    "b": "Bit",
+    "B": "Byte",
+    "kB": "Kilobyte",
+    "KiB": "Kibibyte",
+    "MB": "Megabyte",
+    "MiB": "Mebibyte",
+    "GB": "Gigabyte",
+    "GiB": "Gibibyte",
+    "TB": "Terabyte",
+    "TiB": "Tebibyte"
+  },
+  "from": "MB",
+  "to": "MiB",
+  "min": 0
+}

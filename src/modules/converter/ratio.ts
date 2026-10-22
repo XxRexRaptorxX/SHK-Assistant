@@ -56,6 +56,18 @@ export function toDecimal(input: string, form: RatioForm): number | undefined {
   return value === undefined ? undefined : value / RATIO_SCALE[form]
 }
 
+/** Bruch als Text, unechte zusätzlich gemischt: "3/4", "6/4 = 1 2/4", "16/8 = 2"; Näherung mit "≈ " */
+export function formatFractionParts(numerator: number, denominator: number, exact = true): string {
+  const prefix = exact ? '' : '≈ '
+  if (numerator === 0) return `${prefix}0`
+  if (denominator === 1) return `${prefix}${numerator}`
+  const base = `${prefix}${numerator}/${denominator}`
+  const whole = Math.trunc(numerator / denominator)
+  if (whole === 0) return base
+  const rest = Math.abs(numerator % denominator)
+  return rest === 0 ? `${base} = ${whole}` : `${base} = ${whole} ${rest}/${denominator}`
+}
+
 export interface Fraction {
   numerator: number
   denominator: number

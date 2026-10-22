@@ -1,0 +1,23 @@
+{
+  "id": "unit.normfallbeschleunigung",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Wikipedia „Normfallbeschleunigung“, https://de.wikipedia.org/wiki/Normfallbeschleunigung – gₙ = 9,80665 m/s² (festgelegter Wert)",
+  "symbol": "gn",
+  "name": "Normfallbeschleunigung",
+  "label": "gₙ",
+  "definition": "9.80665 m/s^2",
+  "aliases": [],
+  "examples": [
+    {
+      "value": "1 gn",
+      "expected": "9.80665 m/s^2"
+    },
+    {
+      "value": "1 gn",
+      "expected": "1 kgf/kg"
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 import { Link } from 'react-router'
+import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
+import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { checklistEntries, checklistPath, countDone, groupChecklistsByCategory } from './checklists'
 import type { ChecklistEntry } from './schema'
 import { useAllChecklistProgress } from './useChecklistProgress'
+import { categoryHeading } from '../../components/headings'
 
 interface ChecklistListPageProps {
   /** Für Tests überschreibbar */
@@ -19,10 +22,11 @@ export function ChecklistListPage({ entries = checklistEntries, progress }: Chec
   return (
     <>
       <h1 className="text-2xl font-bold">Checklisten</h1>
+      <ModuleFavorites moduleTitle={modules.checklists.title} />
       {entries.length === 0 && <p className="mt-2 text-muted">Noch keine Checklisten vorhanden.</p>}
       {groupChecklistsByCategory(entries).map((group) => (
         <section key={group.category} className="mt-5">
-          <h2 className="text-xl font-bold">{group.category}</h2>
+          <h2 className={categoryHeading}>{group.category}</h2>
           <ul className="mt-2 divide-y-2 divide-line border-y-2 border-line">
             {group.entries.map((entry) => {
               const { done, total } = countDone(entry, checkedById.get(entry.id) ?? new Set())

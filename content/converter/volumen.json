@@ -17,11 +17,23 @@
     "dm^3",
     "hl",
     "m^3",
-    "km^3"
+    "km^3",
+    "floz",
+    "cup",
+    "pint",
+    "quart",
+    "gal",
+    "oilbarrel"
   ],
   "rare": [
     "dm^3",
-    "km^3"
+    "km^3",
+    "floz",
+    "cup",
+    "pint",
+    "quart",
+    "gal",
+    "oilbarrel"
   ],
   "names": {
     "ml": "Milliliter",
@@ -31,7 +43,13 @@
     "dm^3": "Kubikdezimeter",
     "hl": "Hektoliter",
     "m^3": "Kubikmeter",
-    "km^3": "Kubikkilometer"
+    "km^3": "Kubikkilometer",
+    "floz": "Flüssigunze (US)",
+    "cup": "Cup (US)",
+    "pint": "Pint (US)",
+    "quart": "Quart (US)",
+    "gal": "Gallone (US)",
+    "oilbarrel": "Barrel (Erdöl, US)"
   },
   "from": "l",
   "to": "m^3"

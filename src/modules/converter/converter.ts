@@ -22,9 +22,9 @@ export function findConverter(entries: readonly ConverterEntry[], slug: string |
   return entries.find((entry) => entry.id === id)
 }
 
-/** Name mit Formelzeichen, z. B. „Fläche [A]“ */
+/** Name mit Formelzeichen als Text, z. B. „Fläche A“ (Seitentitel); in Überschriften: ConverterTitle */
 export function converterTitle(entry: ConverterEntry): string {
-  return entry.symbol ? `${entry.title} [${entry.symbol}]` : entry.title
+  return entry.symbol ? `${entry.title} ${entry.symbol}` : entry.title
 }
 
 /** Reihenfolge der Kategorien in der Liste (Vorgabe des Inhabers); andere folgen alphabetisch davor „Allgemein“ */
@@ -59,6 +59,10 @@ export function converterSummary(entry: ConverterEntry): string {
       return '% · ‰ · ° · 1 : x'
     case 'ratio':
       return '% · ‰ · ‱ · ppm · ppb · pu · Bruch'
+    case 'fractions':
+      return 'Halbe · Viertel · Achtel · … · Hundertstel'
+    case 'numeral':
+      return 'Dual · Ternär · Oktal · Dezimal · Duodezimal · Hexadezimal'
     case 'table':
       return entry.columns.join(' · ')
   }

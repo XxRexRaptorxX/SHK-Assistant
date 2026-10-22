@@ -1,25 +1,35 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
+import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
+import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory } from './formulas'
 import type { FormulaEntry } from './schema'
+import { categoryHeading } from '../../components/headings'
+import { useHiddenIds } from '../../hidden/hiddenStore'
+import { ModuleHidden } from '../../hidden/ModuleHidden'
 
 interface FormulaListPageProps {
   /** Für Tests überschreibbar */
   entries?: FormulaEntry[]
   initialQuery?: string
+  hiddenIds?: ReadonlySet<string>
 }
 
-export function FormulaListPage({ entries = formulaEntries, initialQuery = '' }: FormulaListPageProps) {
+export function FormulaListPage({ entries = formulaEntries, initialQuery = '', hiddenIds }: FormulaListPageProps) {
   usePageTitle('Formeln')
   const [query, setQuery] = useState(initialQuery)
-  const visible = filterFormulas(entries, query)
+  const storedHidden = useHiddenIds()
+  const hidden = hiddenIds ?? storedHidden
+  const listed = entries.filter((entry) => !hidden.has(entry.id))
+  const visible = filterFormulas(listed, query)
 
   return (
     <>
       <h1 className="text-2xl font-bold">Formeln</h1>
+      {query.trim() === '' && <ModuleFavorites moduleTitle={modules.formulas.title} />}
 
       {entries.length === 0 ? (
         <p className="mt-2 text-muted">Noch keine Formeln vorhanden.</p>
@@ -35,13 +45,13 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '' }:
             />
           </div>
           <p className="mt-2 text-base text-muted" aria-live="polite">
-            {visible.length} von {entries.length} Formeln
+            {visible.length} von {listed.length} Formeln
           </p>
           {visible.length === 0 && <p className="mt-4">Keine Formeln gefunden.</p>}
 
           {groupFormulasByCategory(visible).map((group) => (
             <section key={group.category} className="mt-5">
-              <h2 className="text-xl font-bold">{group.category}</h2>
+              <h2 className={categoryHeading}>{group.category}</h2>
               <ul className="mt-2 divide-y-2 divide-line border-y-2 border-line">
                 {group.entries.map((entry) => (
                   <li key={entry.id}>
@@ -57,6 +67,7 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '' }:
               </ul>
             </section>
           ))}
+          <ModuleHidden moduleTitle={modules.formulas.title} hiddenIds={hidden} />
         </>
       )}
     </>

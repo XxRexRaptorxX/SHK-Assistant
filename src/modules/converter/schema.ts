@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
 import { math } from '../../lib/math.ts'
 import { isPendingUnit } from '../units/registry.ts'
-import { CONVERTER_ID_PREFIX, RATIO_FORMS } from './constants.ts'
+import { CONVERTER_ID_PREFIX, FRACTION_DENOMINATORS, NUMERAL_SYSTEMS, RATIO_FORMS } from './constants.ts'
 
 /**
  * Arten von Umrechnern:
@@ -12,9 +12,11 @@ import { CONVERTER_ID_PREFIX, RATIO_FORMS } from './constants.ts'
  *   weil es keine festen Einheiten-Verhältnisse sind
  * - slope: Steigung in %, ‰, Grad und 1:x
  * - ratio: Prozent, Promille, Dezimalzahl und Bruch
+ * - fractions: ein Bruch in verschiedenen Nennern (Halbe bis Hundertstel)
+ * - numeral: ganze Zahlen in Dual-, Ternär-, Oktal-, Dezimal-, Duodezimal- und Hexadezimalsystem
  * - table: Nachschlagetabelle aus dem Inhalt (z. B. Rohrdimensionen)
  */
-export const CONVERTER_KINDS = ['units', 'factors', 'slope', 'ratio', 'table'] as const
+export const CONVERTER_KINDS = ['units', 'factors', 'slope', 'ratio', 'fractions', 'numeral', 'table'] as const
 
 const factorSchema = z.strictObject({
   /** Schlüssel für from/to, z. B. "fm" */
@@ -26,7 +28,7 @@ const factorSchema = z.strictObject({
 
 export const converterEntrySchema = defineEntrySchema({
   title: z.string().trim().min(1),
-  /** Formelzeichen der Größe, angezeigt hinter dem Namen, z. B. "A" → „Fläche [A]“ */
+  /** Formelzeichen der Größe, grau hinter dem Namen angezeigt, z. B. "A" → „Fläche A“ */
   symbol: z.string().trim().min(1).optional(),
   /** Gruppierung in der Liste, z. B. "Hydraulik" (leer = „Allgemein“) */
   category: z.string().trim().default(''),
@@ -44,7 +46,7 @@ export const converterEntrySchema = defineEntrySchema({
   /** kind "units"/"factors": kleinster erlaubter Eingabewert, z. B. 0 (keine negativen Werte) */
   min: z.number().optional(),
   /**
-   * Unübliche Einheiten (units), Größen (factors) bzw. Formen (ratio), die bei der Einstellung
+   * Unübliche Einheiten (units), Größen (factors), Formen (ratio), Nenner (fractions) bzw. Systeme (numeral), die bei der Einstellung
    * „Unübliche Einheiten ausblenden“ wegfallen
    */
   rare: z.array(z.string().trim().min(1)).default([]),
@@ -121,6 +123,10 @@ function selectableKeys(entry: ConverterEntry): readonly string[] {
       return entry.factors.map((factor) => factor.key)
     case 'ratio':
       return RATIO_FORMS
+    case 'fractions':
+      return FRACTION_DENOMINATORS
+    case 'numeral':
+      return NUMERAL_SYSTEMS
     default:
       return []
   }
@@ -175,6 +181,8 @@ function checkKind(entry: ConverterEntry): string[] {
       return [...checkTable(entry), ...unused(['units', 'factors', 'from', 'to'])]
     case 'slope':
     case 'ratio':
+    case 'fractions':
+    case 'numeral':
       return unused(['units', 'factors', 'from', 'to', 'columns', 'rows'])
   }
 }

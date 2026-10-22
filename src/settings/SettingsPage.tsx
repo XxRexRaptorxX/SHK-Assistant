@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
-import { primaryButton } from '../components/buttons'
+import { primaryButton, secondaryButton } from '../components/buttons'
+import { showAllHidden, useHiddenIds } from '../hidden/hiddenStore'
 import { MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
 import { content } from '../content'
 import { isInternalEdition } from '../config/edition'
@@ -51,6 +52,26 @@ export function Switch({ label, description, checked, onChange }: {
         />
       </span>
     </button>
+  )
+}
+
+/** Anzahl ausgeblendeter Formeln/Umrechner und Knopf, um alle wieder einzublenden */
+function HiddenEntries() {
+  const count = useHiddenIds().size
+  return (
+    <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border-2 border-line bg-surface p-4">
+      <span>
+        <span className="block font-semibold">Ausgeblendete Einträge</span>
+        <span className="mt-1 block text-base text-muted">
+          {count === 0
+            ? 'Keine. Formeln und Umrechner lassen sich über das Auge auf ihrer Seite ausblenden.'
+            : `${count} ${count === 1 ? 'Eintrag ist' : 'Einträge sind'} in den Listen ausgeblendet.`}
+        </span>
+      </span>
+      <button type="button" className={secondaryButton} disabled={count === 0} onClick={showAllHidden}>
+        Alle einblenden
+      </button>
+    </div>
   )
 }
 
@@ -200,6 +221,7 @@ export function SettingsPage() {
               onChange={(showUnitNames) => updateSettings({ showUnitNames })}
             />
           </div>
+          <HiddenEntries />
         </Section>
         <Section title="Design">
           <ThemeChoice value={preference} onChange={setPreference} />

@@ -17,10 +17,14 @@
     "m",
     "km",
     "inch",
-    "ft"
+    "ft",
+    "yd",
+    "mile"
   ],
   "rare": [
-    "ft"
+    "ft",
+    "yd",
+    "mile"
   ],
   "names": {
     "mm": "Millimeter",
@@ -29,7 +33,9 @@
     "m": "Meter",
     "km": "Kilometer",
     "inch": "Zoll (Inch)",
-    "ft": "Fuß"
+    "ft": "Fuß",
+    "yd": "Yard",
+    "mile": "Meile"
   },
   "from": "m",
   "to": "mm"

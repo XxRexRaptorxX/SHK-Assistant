@@ -8,6 +8,8 @@ export interface SearchDocument {
   /** Modulname für die Gruppierung, z. B. "Lexikon" */
   moduleTitle: string
   title: string
+  /** Unterüberschrift im Modul, z. B. Kategorie "Hydraulik"; fehlt bei Modulen ohne Gliederung (Lexikon) */
+  group?: string
   /** Zusatzzeile in der Trefferliste, z. B. Synonyme */
   subtitle?: string
   /** Alternative Bezeichnungen, Abkürzungen */

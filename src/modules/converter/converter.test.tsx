@@ -18,6 +18,11 @@ import { ratioToSlope, slopeToRatio } from './slope'
 import { normalizeForSearch } from '../../lib/text'
 import { TableView } from './TableView'
 import { convert, UnitConverter } from './UnitConverter'
+import { NumeralConverter } from './NumeralConverter'
+import { FractionsConverter } from './FractionsConverter'
+import { inDenominator } from './fractions'
+import { formatNumeral, parseNumeral } from './numeral'
+import { formatAnyUnit } from '../units/labels'
 
 const meta = {
   visibility: 'public' as const,
@@ -234,19 +239,19 @@ describe('Ausgeschriebene Einheiten', () => {
   it('zeigt den Namen grau hinter der Einheit, abschaltbar', () => {
     const shown = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
     const hidden = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames={false} />)
-    expect(shown).toContain('<span class="ml-2 text-base font-normal text-muted">Millibar</span>')
+    expect(shown).toContain('<span class="ml-2 text-base font-normal text-muted hyphens-auto">Millibar</span>')
     expect(hidden).not.toContain('Millibar')
   })
 
   it('wiederholt den Namen nicht, wenn er der Kurzform entspricht', () => {
     const html = renderToStaticMarkup(<UnitConverter entry={pressure} showUnitNames />)
-    expect(html).not.toContain('text-muted">Bar</span>')
+    expect(html).not.toContain('text-muted hyphens-auto">Bar</span>')
     const factors = renderToStaticMarkup(<FactorConverter entry={wood} showUnitNames />)
-    expect(factors).not.toContain('text-muted">Festmeter</span>')
+    expect(factors).not.toContain('text-muted hyphens-auto">Festmeter</span>')
     const named = renderToStaticMarkup(
       <FactorConverter entry={{ ...wood, factors: wood.factors.map((f) => ({ ...f, label: f.key })) }} showUnitNames />,
     )
-    expect(named).toContain('text-muted">Schüttraummeter</span>')
+    expect(named).toContain('text-muted hyphens-auto">Schüttraummeter</span>')
   })
 
   it('verlangt beim Build einen Namen je Einheit, aber keine überzähligen', () => {
@@ -454,7 +459,7 @@ describe('Umrechner-Seiten', () => {
       { ...pressure, id: 'converter.c', title: 'Fläche', symbol: 'A', category: 'Geometrie' },
     ]
     expect(groupConvertersByCategory(entries).map((g) => g.category)).toEqual(['Geometrie', 'Hydraulik', 'Allgemein'])
-    expect(converterTitle(entries[2]!)).toBe('Fläche [A]')
+    expect(converterTitle(entries[2]!)).toBe('Fläche A')
     expect(converterTitle(entries[1]!)).toBe('Zeit')
     const html = renderToStaticMarkup(
       <MemoryRouter>
@@ -462,7 +467,7 @@ describe('Umrechner-Seiten', () => {
       </MemoryRouter>,
     )
     expect(html).toContain('>Geometrie</h2>')
-    expect(html).toContain('Druck [p]')
+    expect(html).toContain('Druck<span class="ml-2 font-normal text-muted">p</span>')
   })
 
   it('ordnet alle echten Größen einer Kategorie zu', () => {
@@ -528,5 +533,141 @@ describe('Umrechner-Seiten', () => {
 
   it('meldet unbekannte Größen', () => {
     expect(renderAt('/umrechner/gibt-es-nicht')).toContain('Größe nicht gefunden')
+  })
+})
+
+describe('Zahlensysteme', () => {
+  it('rechnet ganze Zahlen zwischen allen Systemen um', () => {
+    const value = parseNumeral('255', 'dec')!
+    expect(formatNumeral(value, 'bin')).toBe('1111 1111')
+    expect(formatNumeral(value, 'ter')).toBe('100110')
+    expect(formatNumeral(value, 'oct')).toBe('377')
+    expect(formatNumeral(value, 'duo')).toBe('193')
+    expect(formatNumeral(value, 'hex')).toBe('FF')
+    expect(parseNumeral('ff', 'hex')).toBe(255n)
+    expect(parseNumeral('1111 1111', 'bin')).toBe(255n)
+    expect(parseNumeral('B', 'duo')).toBe(11n)
+  })
+
+  it('rechnet große Zahlen ohne Rundung und mit Vorzeichen', () => {
+    expect(formatNumeral(parseNumeral('FFFFFFFFFFFFFFFF', 'hex')!, 'dec')).toBe('18.446.744.073.709.551.615')
+    expect(parseNumeral('1.000.000', 'dec')).toBe(1000000n)
+    expect(formatNumeral(parseNumeral('-10', 'dec')!, 'bin')).toBe('-1010')
+  })
+
+  it('lehnt Ziffern ab, die es im System nicht gibt', () => {
+    expect(parseNumeral('2', 'bin')).toBeUndefined()
+    expect(parseNumeral('C', 'duo')).toBeUndefined()
+    expect(parseNumeral('1,5', 'dec')).toBeUndefined()
+    expect(parseNumeral('', 'dec')).toBeUndefined()
+    expect(parseNumeral('1'.repeat(65), 'bin')).toBeUndefined()
+  })
+
+  it('zeigt alle Systeme und blendet unübliche aus', () => {
+    const html = renderToStaticMarkup(<NumeralConverter hideRareUnits={false} />)
+    expect(html).toContain('1111 1111')
+    expect(html).toContain('Hexadezimal (Basis 16)')
+    const hidden = renderToStaticMarkup(<NumeralConverter rare={['ter', 'duo']} hideRareUnits />)
+    expect(hidden).not.toContain('Ternär')
+  })
+
+  it('prüft die Felder beim Build', () => {
+    expect(checkConverter({ ...pressure, ...blank, kind: 'numeral' })).toEqual([])
+    expect(checkConverter({ ...pressure, ...blank, kind: 'numeral', rare: ['xyz'] })).toEqual([
+      'rare: "xyz" gibt es bei kind "numeral" nicht',
+    ])
+  })
+})
+
+describe('Datenmenge, Leitfähigkeit und angloamerikanische Einheiten', () => {
+  it('rechnet dezimale und binäre Vorsätze getrennt', () => {
+    expect(convert(1, 'MiB', 'B')).toBe(1048576)
+    expect(convert(1, 'MB', 'B')).toBe(1e6)
+    expect(convert(1, 'B', 'b')).toBe(8)
+    expect(formatAnyUnit('b')).toBe('bit')
+  })
+
+  it('rechnet die Leitfähigkeit für Wasseranalysen', () => {
+    expect(convert(1, 'mS/cm', 'uS/cm')).toBeCloseTo(1000, 9)
+    expect(convert(1, 'mS/cm', 'mS/m')).toBeCloseTo(100, 9)
+    expect(formatAnyUnit('uS/cm')).toBe('µS/cm')
+  })
+
+  it('kennt die Einheiten mit den üblichen Kurzzeichen', () => {
+    expect(['mile', 'acre', 'lbm', 'floz', 'pint', 'quart', 'oilbarrel', 'inch^2'].map(formatAnyUnit)).toEqual([
+      'mi', 'ac', 'lb', 'fl oz', 'pt', 'qt', 'bbl', 'in²',
+    ])
+  })
+
+  it('führt die neuen Einheiten als unüblich', () => {
+    const units = { laenge: ['yd', 'mile'], flaeche: ['acre', 'mile^2'], gewicht: ['oz', 'lbm'], volumen: ['gal', 'cup'] }
+    for (const [slug, list] of Object.entries(units)) {
+      const entry = converterEntries.find((e) => e.id === `converter.${slug}`)!
+      for (const unit of list) expect(entry.rare).toContain(unit)
+    }
+  })
+
+  it('hat Formelzeichen für Rohrdimensionen, Steigung und Stückmaß', () => {
+    const symbol = (slug: string) => converterEntries.find((e) => e.id === `converter.${slug}`)?.symbol
+    expect([symbol('rohrdimensionen'), symbol('steigung'), symbol('stueckmass')]).toEqual(['⌀', '∠', 'n'])
+  })
+})
+
+describe('Massenstrom, Dichte, Beschleunigung, Paar', () => {
+  it('rechnet die neuen Größen über mathjs', () => {
+    expect(convert(3600, 'kg/h', 'kg/s')).toBeCloseTo(1, 12)
+    expect(convert(1, 'g/cm^3', 'kg/m^3')).toBeCloseTo(1000, 9)
+    expect(convert(1, 'kg/l', 't/m^3')).toBeCloseTo(1, 12)
+    expect(convert(36, 'km/(h s)', 'm/s^2')).toBeCloseTo(10, 12)
+    expect(formatAnyUnit('km/(h s)')).toBe('km/(h·s)')
+  })
+
+  it('kennt die Normfallbeschleunigung als Zusatzeinheit', () => {
+    expect(convert(1, 'gn', 'm/s^2')).toBeCloseTo(9.80665, 12)
+    expect(formatAnyUnit('gn')).toBe('gₙ')
+  })
+
+  it('rechnet die Leitfähigkeit von Leiterwerkstoffen und % IACS', () => {
+    expect(convert(1, 'm/(ohm mm^2)', 'S/m')).toBeCloseTo(1e6, 3)
+    expect(convert(1, 'S m/mm^2', 'm/(ohm mm^2)')).toBeCloseTo(1, 12)
+    expect(convert(100, 'IACS', 'S m/mm^2')).toBeCloseTo(58, 9)
+    expect(convert(1, 'S/cm', 'mS/cm')).toBeCloseTo(1000, 9)
+    expect(['m/(ohm mm^2)', 'S m/mm^2', 'IACS'].map(formatAnyUnit)).toEqual(['m/(Ω·mm²)', 'S·m/mm²', '% IACS'])
+    const entry = converterEntries.find((e) => e.id === 'converter.leitfaehigkeit')!
+    expect(entry.rare).toEqual(['S/cm', 'm/(ohm mm^2)', 'S m/mm^2', 'IACS'])
+  })
+
+  it('zählt 1 Paar als 2 Stück', () => {
+    const entry = converterEntries.find((e) => e.id === 'converter.stueckmass')!
+    const [stk, paar] = ['stk', 'paar'].map((key) => entry.factors.find((f) => f.key === key)!)
+    expect(convertByFactors(1, paar!, stk!)).toBe(2)
+  })
+})
+
+describe('Brüche', () => {
+  it('erweitert auf andere Nenner, sonst nächster Bruch mit ≈', () => {
+    expect(inDenominator(0.75, 8)).toBe('6/8')
+    expect(inDenominator(0.75, 64)).toBe('48/64')
+    expect(inDenominator(1 / 3, 8)).toBe('≈ 3/8')
+    expect(inDenominator(1 / 3, 6)).toBe('2/6')
+    expect(inDenominator(1.5, 4)).toBe('6/4 = 1 2/4')
+    expect(inDenominator(2, 8)).toBe('16/8 = 2')
+    expect(inDenominator(0.001, 8)).toBe('≈ 0')
+  })
+
+  it('zeigt gekürzt, als Dezimalzahl und in allen Nennern', () => {
+    const html = renderToStaticMarkup(<FractionsConverter initialValue="12/16" hideRareUnits={false} />)
+    expect(html).toContain('>3/4<')
+    expect(html).toContain('>0,75<')
+    expect(html).toContain('>24/32<')
+    expect(html).toContain('Vierundsechzigstel')
+    const hidden = renderToStaticMarkup(<FractionsConverter rare={['5', '100']} hideRareUnits />)
+    expect(hidden).not.toContain('Fünftel')
+  })
+
+  it('prüft die Felder beim Build', () => {
+    expect(checkConverter({ ...pressure, ...blank, kind: 'fractions', rare: ['7'] })).toEqual([
+      'rare: "7" gibt es bei kind "fractions" nicht',
+    ])
   })
 })

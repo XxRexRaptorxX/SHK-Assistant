@@ -1,4 +1,16 @@
+import type { ConverterEntry } from './schema'
+
 // Gemeinsame Bausteine der Umrechner-Ansichten
+
+/** Name mit grauem Formelzeichen dahinter, z. B. „Fläche A“ */
+export function ConverterTitle({ entry }: { entry: Pick<ConverterEntry, 'title' | 'symbol'> }) {
+  return (
+    <>
+      {entry.title}
+      {entry.symbol && <span className="ml-2 font-normal text-muted">{entry.symbol}</span>}
+    </>
+  )
+}
 
 export const fieldClass = 'min-h-12 rounded-lg border-2 border-line bg-page px-3 text-lg'
 
@@ -71,7 +83,12 @@ export function displayName(names: Record<string, string>, key: string, label: s
   return show && name && name.toLowerCase() !== label.toLowerCase() ? name : undefined
 }
 
-export function ResultsTable({ title, rows }: { title: string; rows: ResultRow[] }) {
+export function ResultsTable({ title, rows, wrapValues = false }: {
+  title: string
+  rows: ResultRow[]
+  /** Lange Werte ohne Leerzeichen umbrechen (z. B. Hexadezimalzahlen); sonst bleiben Zahlen zusammen */
+  wrapValues?: boolean
+}) {
   if (rows.length === 0) return null
   return (
     <>
@@ -80,10 +97,10 @@ export function ResultsTable({ title, rows }: { title: string; rows: ResultRow[]
         <tbody className="divide-y-2 divide-line">
           {rows.map((row) => (
             <tr key={row.key} className={row.highlight ? 'font-bold' : ''}>
-              <td className="py-2 pr-3 text-right tabular-nums">{row.value}</td>
+              <td className={`py-2 pr-3 text-right tabular-nums ${wrapValues ? '[overflow-wrap:anywhere]' : ''}`}>{row.value}</td>
               <td className="py-2">
                 {row.label}
-                {row.name && <span className="ml-2 text-base font-normal text-muted">{row.name}</span>}
+                {row.name && <span className="ml-2 text-base font-normal text-muted hyphens-auto">{row.name}</span>}
               </td>
             </tr>
           ))}

@@ -2,6 +2,7 @@ import { useParams } from 'react-router'
 import { BackLink, ContentPage } from '../../components/ContentPage'
 import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
+import { HideButton } from '../../hidden/HideButton'
 import { formatUnit } from '../../lib/units'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
@@ -41,7 +42,12 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
       entry={formula}
       title={formula.title}
       back={BACK}
-      actions={<FavoriteButton id={formula.id} title={formula.title} />}
+      actions={
+        <>
+          <HideButton id={formula.id} title={formula.title} />
+          <FavoriteButton id={formula.id} title={formula.title} />
+        </>
+      }
     >
       <RichText text={formula.description} />
 

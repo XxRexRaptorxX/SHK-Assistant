@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
+import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
+import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterLexicon, lexiconEntries, lexiconPath } from './lexicon'
@@ -20,6 +22,7 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
   return (
     <>
       <h1 className="text-2xl font-bold">Lexikon</h1>
+      {query.trim() === '' && <ModuleFavorites moduleTitle={modules.lexicon.title} />}
 
       {entries.length === 0 ? (
         <p className="mt-2 text-muted">Noch keine Begriffe vorhanden.</p>

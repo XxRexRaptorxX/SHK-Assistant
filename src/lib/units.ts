@@ -17,6 +17,15 @@ const UNIT_LABELS: Record<string, string> = {
   week: 'Woche',
   inch: 'in',
   kgf: 'kp',
+  b: 'bit', // mathjs "b" = Bit
+  uS: 'µS',
+  mile: 'mi',
+  acre: 'ac',
+  lbm: 'lb', // mathjs "lbm" = Pound (Masse)
+  floz: 'fl oz', // geschütztes Leerzeichen, sonst würde daraus „fl·oz“
+  pint: 'pt',
+  quart: 'qt',
+  oilbarrel: 'bbl',
 }
 
 /**

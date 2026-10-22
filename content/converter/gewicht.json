@@ -15,17 +15,23 @@
     "g",
     "kg",
     "dt",
-    "t"
+    "t",
+    "oz",
+    "lbm"
   ],
   "rare": [
-    "mg"
+    "mg",
+    "oz",
+    "lbm"
   ],
   "names": {
     "mg": "Milligramm",
     "g": "Gramm",
     "kg": "Kilogramm",
     "dt": "Dezitonne",
-    "t": "Tonne"
+    "t": "Tonne",
+    "oz": "Unze (avoirdupois)",
+    "lbm": "Pound (avoirdupois)"
   },
   "from": "kg",
   "to": "t"

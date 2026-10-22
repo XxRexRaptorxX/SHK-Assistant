@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react'
+import { useMemo, useSyncExternalStore } from 'react'
 import { importBackup, type Backup, type ImportMode } from '../storage/backup'
 import type { FavoriteRecord } from '../storage/db'
 import { listFavorites, removeFavorite, toggleFavorite } from '../storage/favorites'
@@ -59,6 +59,17 @@ export function getFavoritesSnapshot(): FavoritesState {
 
 export function useFavorites(): FavoritesState {
   return useSyncExternalStore(subscribe, getFavoritesSnapshot, () => LOADING)
+}
+
+const NO_IDS: ReadonlySet<string> = new Set()
+
+/** IDs aller Favoriten; leer, solange nicht geladen oder nicht verfügbar */
+export function useFavoriteIds(): ReadonlySet<string> {
+  const current = useFavorites()
+  return useMemo(
+    () => (current.status === 'ready' ? new Set(current.favorites.map((f) => f.id)) : NO_IDS),
+    [current],
+  )
 }
 
 /** Schaltet um. Die Anzeige reagiert sofort, gespeichert wird im Hintergrund. */

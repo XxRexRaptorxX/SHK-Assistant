@@ -1,6 +1,7 @@
 import { useRef, useState, type ChangeEvent } from 'react'
 import { primaryButton, secondaryButton, dangerButton } from '../components/buttons'
-import { EntryList, groupByModule } from '../components/EntryList'
+import { EntryRows, groupByModule, groupInOrder } from '../components/EntryList'
+import { categoryHeading, subcategoryHeading } from '../components/headings'
 import { downloadTextFile } from '../lib/download'
 import { usePageTitle } from '../lib/usePageTitle'
 import type { SearchDocument } from '../search/search'
@@ -43,7 +44,6 @@ export function FavoritesPage() {
 }
 
 interface FavoritesListProps {
-  /** Älteste zuerst, wie aus dem Speicher */
   favorites: readonly FavoriteRecord[]
   index: ReadonlyMap<string, SearchDocument>
 }
@@ -57,18 +57,33 @@ export function FavoritesList({ favorites, index }: FavoritesListProps) {
     )
   }
 
-  // Neueste zuerst
-  const newestFirst = [...favorites].reverse()
-  const known = newestFirst.flatMap((f) => index.get(f.id) ?? [])
+  const ids = new Set(favorites.map((f) => f.id))
+  // Reihenfolge wie in den Modulen: Modul, dann Unterüberschrift (z. B. Kategorie), dann Eintrag
+  // Zusatzzeile weglassen, wenn sie nur die Unterüberschrift wiederholt (Kategorie bei Formeln)
+  const known = [...index.values()]
+    .filter((entry) => ids.has(entry.id))
+    .map((entry) => (entry.subtitle === entry.group ? { ...entry, subtitle: undefined } : entry))
   // Inhalte, die gelöscht wurden oder in dieser Edition fehlen
-  const missingIds = newestFirst.filter((f) => !index.has(f.id)).map((f) => f.id)
+  const missingIds = favorites.filter((f) => !index.has(f.id)).map((f) => f.id)
+  const star = (entry: SearchDocument) => <FavoriteButton id={entry.id} title={entry.title} />
 
   return (
     <>
-      <EntryList
-        groups={groupByModule(known)}
-        action={(entry) => <FavoriteButton id={entry.id} title={entry.title} />}
-      />
+      {groupByModule(known).map((module) => (
+        <section key={module.moduleTitle} className="mt-5">
+          <h2 className={categoryHeading}>{module.moduleTitle}</h2>
+          {groupInOrder(module.results, (entry) => entry.group ?? '').map((group) =>
+            group.key === '' ? (
+              <EntryRows key="" entries={group.items} action={star} />
+            ) : (
+              <div key={group.key} className="mt-3">
+                <h3 className={subcategoryHeading}>{group.key}</h3>
+                <EntryRows entries={group.items} action={star} />
+              </div>
+            ),
+          )}
+        </section>
+      ))}
       {missingIds.length > 0 && (
         <div className="mt-4 flex flex-wrap items-center gap-3 text-base text-muted">
           <p>

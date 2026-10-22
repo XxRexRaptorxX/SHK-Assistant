@@ -8,6 +8,12 @@ import { closeDatabase, DB_NAME } from '../storage/db'
 import { listFavorites } from '../storage/favorites'
 import { FavoriteButton } from './FavoriteButton'
 import { FavoritesList } from './FavoritesPage'
+import { ModuleFavorites } from './ModuleFavorites'
+import { getContentIndex } from '../search/sources'
+import { FormulaListPage } from '../modules/formulas/FormulaListPage'
+import { ConverterListPage } from '../modules/converter/ConverterListPage'
+import { ChecklistListPage } from '../modules/checklists/ChecklistListPage'
+import { LexiconListPage } from '../modules/lexicon/LexiconListPage'
 import {
   getFavoritesSnapshot,
   importBackupIntoStore,
@@ -70,20 +76,29 @@ describe('Favoriten-Speicher', () => {
   })
 })
 
-const doc = (id: string, title: string, moduleTitle = 'Lexikon'): SearchDocument => ({
+const doc = (id: string, title: string, moduleTitle = 'Lexikon', group?: string): SearchDocument => ({
   id,
   title,
   moduleTitle,
+  group,
   keywords: [],
   text: '',
   path: `/x/${id}`,
   status: 'verified',
 })
 
+// Reihenfolge wie im Inhaltsverzeichnis: Module, darin Unterüberschriften, darin Einträge
+const index = new Map(
+  [
+    doc('formula.c', 'Gamma', 'Formeln', 'Hydraulik'),
+    doc('formula.d', 'Delta', 'Formeln', 'Hydraulik'),
+    doc('formula.e', 'Epsilon', 'Formeln', 'Thermodynamik'),
+    doc('lexicon.a', 'Alpha'),
+    doc('lexicon.b', 'Beta'),
+  ].map((d) => [d.id, d]),
+)
+
 describe('Favoritenliste', () => {
-  const index = new Map(
-    [doc('lexicon.a', 'Alpha'), doc('lexicon.b', 'Beta'), doc('formula.c', 'Gamma', 'Formeln')].map((d) => [d.id, d]),
-  )
   const render = (ids: string[]) =>
     renderToStaticMarkup(
       <MemoryRouter>
@@ -98,12 +113,16 @@ describe('Favoritenliste', () => {
     expect(render([])).toContain('Noch keine Favoriten.')
   })
 
-  it('zeigt die neuesten zuerst, gruppiert nach Modul, mit Stern-Knopf', () => {
-    const html = render(['lexicon.a', 'formula.c', 'lexicon.b'])
-    expect(html.indexOf('Beta')).toBeLessThan(html.indexOf('Alpha'))
-    expect(html.indexOf('>Lexikon</h2>')).toBeLessThan(html.indexOf('>Formeln</h2>'))
+  it('gliedert nach Modul und Unterüberschrift in der Reihenfolge der Module, mit Stern-Knopf', () => {
+    const html = render(['lexicon.b', 'formula.e', 'lexicon.a', 'formula.c'])
+    expect(html.indexOf('>Formeln</h2>')).toBeLessThan(html.indexOf('>Lexikon</h2>'))
+    expect(html.indexOf('>Hydraulik</h3>')).toBeLessThan(html.indexOf('>Thermodynamik</h3>'))
+    expect(html.indexOf('Gamma')).toBeLessThan(html.indexOf('Epsilon'))
+    expect(html.indexOf('Alpha')).toBeLessThan(html.indexOf('Beta'))
+    expect(html).not.toContain('Delta')
+    expect(html.match(/<h3/g)).toHaveLength(2) // Lexikon ohne Unterüberschrift
     expect(html).toContain('href="/x/formula.c"')
-    expect(html.match(/aria-label="„/g)).toHaveLength(3)
+    expect(html.match(/aria-label="„/g)).toHaveLength(4)
   })
 
   it('weist auf nicht mehr vorhandene Einträge hin', () => {
@@ -111,6 +130,43 @@ describe('Favoritenliste', () => {
     expect(html).toContain('2 gemerkte Einträge sind in dieser Version nicht mehr vorhanden.')
     expect(html).toContain('Aufräumen')
     expect(html).toContain('Alpha')
+  })
+})
+
+describe('Favoriten im Modul', () => {
+  const render = (ids: string[]) =>
+    renderToStaticMarkup(
+      <MemoryRouter>
+        <ModuleFavorites moduleTitle="Formeln" favoriteIds={new Set(ids)} index={index} />
+      </MemoryRouter>,
+    )
+
+  it('zeigt nur die gemerkten Einträge dieses Moduls unter „Favoriten“', () => {
+    const html = render(['formula.e', 'lexicon.a', 'formula.c'])
+    expect(html).toContain('>Favoriten</h2>')
+    expect(html.indexOf('Gamma')).toBeLessThan(html.indexOf('Epsilon'))
+    expect(html).not.toContain('Alpha')
+    expect(html).toContain('aria-label="„Gamma“')
+  })
+
+  it('zeigt nichts, wenn im Modul nichts gemerkt ist', () => {
+    expect(render([])).toBe('')
+    expect(render(['lexicon.a'])).toBe('')
+  })
+
+  it('erscheint in den Listen aller Module, solange nichts gemerkt ist aber nicht', () => {
+    const pages = [<FormulaListPage />, <ConverterListPage />, <ChecklistListPage />, <LexiconListPage />]
+    for (const page of pages) {
+      expect(renderToStaticMarkup(<MemoryRouter>{page}</MemoryRouter>)).not.toContain('>Favoriten</h2>')
+    }
+  })
+
+  it('liefert Unterüberschriften in der Reihenfolge der Modul-Listen', () => {
+    const docs = [...getContentIndex().values()]
+    const converterGroups = [...new Set(docs.filter((d) => d.moduleTitle === 'Umrechner').map((d) => d.group))]
+    expect(converterGroups[0]).toBe('Geometrie')
+    expect(converterGroups.at(-1)).toBe('Allgemein')
+    expect(docs.filter((d) => d.moduleTitle === 'Lexikon').every((d) => d.group === undefined)).toBe(true)
   })
 })
 

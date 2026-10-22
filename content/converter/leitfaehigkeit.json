@@ -1,0 +1,42 @@
+{
+  "id": "converter.leitfaehigkeit",
+  "visibility": "public",
+  "status": "verified",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "source": "Einheiten und Umrechnung aus mathjs; Wikipedia „Elektrische Leitfähigkeit“, https://de.wikipedia.org/wiki/Elektrische_Leitf%C3%A4higkeit; % IACS siehe Zusatzeinheit IACS",
+  "title": "Elektr. Leitfähigkeit",
+  "symbol": "σ",
+  "category": "Elektrotechnik",
+  "description": "m/(Ω·mm²) und S·m/mm² sind gleich groß und bei Leiterwerkstoffen üblich; % IACS bezieht die Leitfähigkeit auf weichgeglühtes Kupfer (= 100 %).",
+  "kind": "units",
+  "units": [
+    "uS/cm",
+    "mS/m",
+    "mS/cm",
+    "S/m",
+    "S/cm",
+    "m/(ohm mm^2)",
+    "S m/mm^2",
+    "IACS"
+  ],
+  "rare": [
+    "S/cm",
+    "m/(ohm mm^2)",
+    "S m/mm^2",
+    "IACS"
+  ],
+  "names": {
+    "uS/cm": "Mikrosiemens pro Zentimeter",
+    "mS/m": "Millisiemens pro Meter",
+    "mS/cm": "Millisiemens pro Zentimeter",
+    "S/m": "Siemens pro Meter",
+    "S/cm": "Siemens pro Zentimeter",
+    "m/(ohm mm^2)": "Meter pro Ohm und Quadratmillimeter",
+    "S m/mm^2": "Siemens mal Meter pro Quadratmillimeter",
+    "IACS": "Prozent IACS (Kupfer = 100 %)"
+  },
+  "from": "uS/cm",
+  "to": "mS/m",
+  "min": 0
+}

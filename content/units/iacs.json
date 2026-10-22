@@ -1,0 +1,20 @@
+{
+  "id": "unit.iacs",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „International Annealed Copper Standard“, https://en.wikipedia.org/wiki/International_Annealed_Copper_Standard – 100 % IACS = 58 MS/m bei 20 °C",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-22",
+  "symbol": "IACS",
+  "name": "Prozent IACS (Leitfähigkeit bezogen auf weichgeglühtes Kupfer)",
+  "label": "% IACS",
+  "definition": "0.58 MS/m",
+  "aliases": [],
+  "offerInFormulas": false,
+  "examples": [
+    {
+      "value": "100 IACS",
+      "expected": "58 MS/m"
+    }
+  ]
+}

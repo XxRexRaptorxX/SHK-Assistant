@@ -79,7 +79,7 @@ describe('Suchseite', () => {
     const html = renderAt('/suche?q=weiche')
     expect(html).toContain('value="weiche"')
     expect(html).toContain('1 Treffer')
-    expect(html).toContain('<h2 class="text-xl font-bold">Lexikon</h2>')
+    expect(html).toContain('>Lexikon</h2>')
     expect(html).toContain('href="/x/lexicon.weiche"')
     expect(html).toContain('Ungeprüft')
   })

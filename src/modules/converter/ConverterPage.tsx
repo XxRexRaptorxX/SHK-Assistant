@@ -2,10 +2,14 @@ import { useParams } from 'react-router'
 import { BackLink, ContentPage } from '../../components/ContentPage'
 import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
+import { HideButton } from '../../hidden/HideButton'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
 import { converterEntries, converterTitle, findConverter } from './converter'
+import { ConverterTitle } from './converterUi'
 import { FactorConverter } from './FactorConverter'
+import { FractionsConverter } from './FractionsConverter'
+import { NumeralConverter } from './NumeralConverter'
 import { RatioConverter } from './RatioConverter'
 import type { ConverterEntry } from './schema'
 import { SlopeConverter } from './SlopeConverter'
@@ -27,6 +31,10 @@ function ConverterBody({ entry }: { entry: ConverterEntry }) {
       return <SlopeConverter />
     case 'ratio':
       return <RatioConverter rare={entry.rare} />
+    case 'fractions':
+      return <FractionsConverter rare={entry.rare} />
+    case 'numeral':
+      return <NumeralConverter rare={entry.rare} />
     case 'table':
       return <TableView entry={entry} />
   }
@@ -40,8 +48,14 @@ export default function ConverterPage({ entries = converterEntries }: { entries?
     <ContentPage
       entry={entry}
       title={converterTitle(entry)}
+      heading={<ConverterTitle entry={entry} />}
       back={BACK}
-      actions={<FavoriteButton id={entry.id} title={`Umrechner ${entry.title}`} />}
+      actions={
+        <>
+          <HideButton id={entry.id} title={`Umrechner ${entry.title}`} />
+          <FavoriteButton id={entry.id} title={`Umrechner ${entry.title}`} />
+        </>
+      }
     >
       {/* Rechner zuerst, damit er auf dem Handy ohne Scrollen erreichbar ist */}
       <ConverterBody key={entry.id} entry={entry} />

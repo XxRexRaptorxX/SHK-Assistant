@@ -70,15 +70,17 @@ Eine Datei je Größe (Druck, Leistung …). `kind` legt die Art fest:
 | `factors` | Richtwerte ohne festes Einheiten-Verhältnis, z. B. Holzmaße | `factors` (je Größe `key`, `label`, `value` = Menge je gemeinsamer Bezugsmenge, z. B. fm: 1, rm: 1.4), `from`, `to` |
 | `slope` | Steigung in %, ‰, Grad, 1 : x           | keine weiteren                           |
 | `ratio` | Prozent, Promille, Dezimalzahl, Bruch   | keine weiteren                           |
+| `fractions` | Ein Bruch in verschiedenen Nennern (Halbe bis Hundertstel), sonst nächster Bruch mit „≈“ | keine weiteren |
+| `numeral` | Ganze Zahlen in Zahlensystemen (dual, ternär, oktal, dezimal, duodezimal, hexadezimal) | keine weiteren |
 | `table` | Nachschlagetabelle, z. B. Rohrdimensionen | `columns` (Überschriften), `rows` (je Zeile eine Liste von Texten) |
 
-Dazu immer `title` und optional `description`, `symbol` (Formelzeichen, angezeigt als „Fläche [A]“)
+Dazu immer `title` und optional `description`, `symbol` (Formelzeichen, grau hinter dem Namen angezeigt, z. B. „Fläche A“)
 und `category` (Gruppe in der Liste, z. B. „Hydraulik“; leer = „Allgemein“). Bei `factors` legt
 `approximate` fest, ob es Richtwerte sind (`true`, Standard: mit „≈“ und 3 Stellen) oder exakte
 Verhältnisse (`false`, z. B. Stückmaß).
 
 `rare` listet unübliche Einheiten (bei `units`), Größen-Schlüssel (bei `factors`) bzw. Formen (bei
-`ratio`: `percent`, `permille`, `permyriad`, `ppm`, `ppb`, `decimal`, `fraction`). Sie fallen weg, wenn
+`ratio`: `percent`, `permille`, `permyriad`, `ppm`, `ppb`, `decimal`, `fraction`; bei `fractions`: die Nenner `2`, `3`, `4`, `5`, `6`, `8`, `10`, `12`, `16`, `32`, `64`, `100`; bei `numeral`: `bin`, `ter`, `oct`, `dec`, `duo`, `hex`). Sie fallen weg, wenn
 in den Einstellungen „Unübliche Einheiten ausblenden“ eingeschaltet ist (Standard: aus). Mindestens
 zwei Einheiten müssen übrig bleiben.
 

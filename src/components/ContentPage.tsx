@@ -8,6 +8,8 @@ import { SourceInfo } from './SourceInfo'
 interface ContentPageProps {
   entry: BaseEntry
   title: string
+  /** Überschrift, falls sie mehr als den reinen Text braucht (z. B. graues Formelzeichen); sonst title */
+  heading?: ReactNode
   /** Zurück zur Liste. Nötig, weil installierte Apps (v. a. iOS) keinen Zurück-Knopf haben. */
   back?: { to: string; label: string }
   /** z. B. Favoriten-Knopf neben der Überschrift */
@@ -19,14 +21,14 @@ interface ContentPageProps {
  * Rahmen für jede Detailseite eines Inhaltseintrags.
  * Stellt sicher, dass Entwürfe markiert sind und Quelle + Prüfdatum immer erscheinen.
  */
-export function ContentPage({ entry, title, back, actions, children }: ContentPageProps) {
+export function ContentPage({ entry, title, heading, back, actions, children }: ContentPageProps) {
   usePageTitle(title)
   return (
     <article>
       {back && <BackLink to={back.to} label={back.label} />}
       <header className="mb-4 flex items-start justify-between gap-3">
-        <h1 className="text-2xl font-bold break-words">{title}</h1>
-        {actions && <div className="print:hidden">{actions}</div>}
+        <h1 className="text-2xl font-bold break-words">{heading ?? title}</h1>
+        {actions && <div className="flex print:hidden">{actions}</div>}
       </header>
       {entry.status === 'draft' && <DraftBadge />}
       <div className="mt-4">{children}</div>

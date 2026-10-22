@@ -16,10 +16,20 @@
     "dm^2",
     "m^2",
     "hectare",
-    "km^2"
+    "km^2",
+    "inch^2",
+    "ft^2",
+    "yd^2",
+    "mile^2",
+    "acre"
   ],
   "rare": [
-    "km^2"
+    "km^2",
+    "inch^2",
+    "ft^2",
+    "yd^2",
+    "mile^2",
+    "acre"
   ],
   "names": {
     "mm^2": "Quadratmillimeter",
@@ -27,7 +37,12 @@
     "dm^2": "Quadratdezimeter",
     "m^2": "Quadratmeter",
     "hectare": "Hektar",
-    "km^2": "Quadratkilometer"
+    "km^2": "Quadratkilometer",
+    "inch^2": "Quadratzoll",
+    "ft^2": "Quadratfuß",
+    "yd^2": "Quadratyard",
+    "mile^2": "Quadratmeile",
+    "acre": "Acre"
   },
   "from": "m^2",
   "to": "cm^2"

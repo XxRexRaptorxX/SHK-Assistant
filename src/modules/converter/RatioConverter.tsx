@@ -7,6 +7,7 @@ import {
   RATIO_LABELS,
   RATIO_SCALE,
   RATIO_SYMBOLS,
+  formatFractionParts,
   toDecimal,
   toFraction,
   type RatioForm,
@@ -15,13 +16,7 @@ import {
 /** "3/4", "≈ 1/3", bei unechten Brüchen mit gemischter Schreibweise: "3/2 = 1 1/2" */
 export function formatFraction(value: number): string {
   const { numerator, denominator, exact } = toFraction(value)
-  const prefix = exact ? '' : '≈ '
-  if (denominator === 1) return `${prefix}${numerator}`
-  const base = `${prefix}${numerator}/${denominator}`
-  const whole = Math.trunc(numerator / denominator)
-  if (whole === 0) return base
-  const rest = Math.abs(numerator % denominator)
-  return `${base} = ${whole} ${rest}/${denominator}`
+  return formatFractionParts(numerator, denominator, exact)
 }
 
 function formatAs(value: number, form: RatioForm): string {
