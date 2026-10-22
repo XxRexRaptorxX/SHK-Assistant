@@ -1,3 +1,4 @@
+import { fieldBase } from './surfaces'
 interface SearchInputProps {
   id: string
   /** Für Screenreader, nicht sichtbar */
@@ -23,7 +24,7 @@ export function SearchInput({ id, label, value, onChange, placeholder, autoFocus
         autoFocus={autoFocus}
         autoComplete="off"
         enterKeyHint="search"
-        className="min-h-12 w-full rounded-lg border-2 border-line bg-page px-3 text-lg placeholder:text-muted"
+        className={`${fieldBase} w-full placeholder:text-muted`}
       />
     </>
   )

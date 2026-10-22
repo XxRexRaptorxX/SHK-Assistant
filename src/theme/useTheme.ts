@@ -31,9 +31,9 @@ export function useApplyTheme() {
       const root = document.documentElement
       const theme = resolveTheme(preference, media.matches)
       root.classList.toggle('dark', theme === 'dark')
-      // Statusleiste (installierte App) an die Kopfzeile angleichen
-      const surface = getComputedStyle(root).getPropertyValue('--surface').trim()
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', surface)
+      // Statusleiste (installierte App) an die Kopfzeile angleichen (Seitenhintergrund)
+      const page = getComputedStyle(root).getPropertyValue('--page').trim()
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', page)
     }
     apply()
     media.addEventListener('change', apply)

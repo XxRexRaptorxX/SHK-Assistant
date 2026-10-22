@@ -8,6 +8,7 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { checklistEntries, countDone, findChecklist } from './checklists'
 import type { ChecklistEntry } from './schema'
 import { useChecklistProgress } from './useChecklistProgress'
+import { listCard } from '../../components/surfaces'
 
 const BACK = { to: '/checklisten', label: 'Checklisten' }
 
@@ -45,7 +46,7 @@ function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
         <>
           <PrintHeader />
           {state.status === 'unavailable' && (
-            <p role="alert" className="mt-4 rounded-lg bg-warn p-2 font-semibold text-warn-ink print:hidden">
+            <p role="alert" className="mt-4 rounded-xl bg-warn p-2 font-semibold text-warn-ink print:hidden">
               Der Fortschritt kann auf diesem Gerät nicht gespeichert werden.
             </p>
           )}
@@ -68,7 +69,7 @@ function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
             </button>
           </div>
           {confirmReset && (
-            <div className="mt-3 rounded-lg border-2 border-line bg-surface p-3 print:hidden">
+            <div className="mt-3 rounded-2xl border border-edge bg-surface p-3 print:hidden">
               <p>Alle Haken dieser Checkliste entfernen?</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <button
@@ -115,7 +116,7 @@ export function ChecklistView({ entry, checked, disabled = false, onToggle }: Ch
           aria-valuemin={0}
           aria-valuemax={total}
           aria-valuenow={done}
-          className="mt-1 h-3 overflow-hidden rounded-full border-2 border-line bg-page"
+          className="mt-1 h-3 overflow-hidden rounded-full border border-edge bg-raised"
         >
           <div className="h-full bg-accent" style={{ width: `${total ? (done / total) * 100 : 0}%` }} />
         </div>
@@ -124,12 +125,12 @@ export function ChecklistView({ entry, checked, disabled = false, onToggle }: Ch
       {entry.sections.map((section) => (
         <section key={section.title} className="mt-6">
           <h2 className="text-xl font-bold">{section.title}</h2>
-          <ul className="mt-1 divide-y-2 divide-line border-y-2 border-line">
+          <ul className={`mt-2 ${listCard}`}>
             {section.items.map((item) => {
               const isDone = checked.has(item.id)
               return (
                 <li key={item.id} className="break-inside-avoid">
-                  <label className="flex min-h-14 cursor-pointer items-start gap-3 py-3">
+                  <label className="flex min-h-14 cursor-pointer items-start gap-3 px-4 py-3">
                     <input
                       type="checkbox"
                       className="check mt-0.5"

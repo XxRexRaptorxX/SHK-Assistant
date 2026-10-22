@@ -1,4 +1,5 @@
 import type { ConverterEntry } from './schema'
+import { fieldBase } from '../../components/surfaces'
 
 // Gemeinsame Bausteine der Umrechner-Ansichten
 
@@ -12,7 +13,7 @@ export function ConverterTitle({ entry }: { entry: Pick<ConverterEntry, 'title' 
   )
 }
 
-export const fieldClass = 'min-h-12 rounded-lg border-2 border-line bg-page px-3 text-lg'
+export const fieldClass = fieldBase
 
 export function Select<T extends string>({ id, label, options, value, onChange }: {
   id: string
@@ -93,19 +94,23 @@ export function ResultsTable({ title, rows, wrapValues = false }: {
   return (
     <>
       <h2 className="mt-6 text-xl font-bold">{title}</h2>
-      <table className="mt-2 w-full border-y-2 border-line text-lg" aria-live="polite">
-        <tbody className="divide-y-2 divide-line">
-          {rows.map((row) => (
-            <tr key={row.key} className={row.highlight ? 'font-bold' : ''}>
-              <td className={`py-2 pr-3 text-right tabular-nums ${wrapValues ? '[overflow-wrap:anywhere]' : ''}`}>{row.value}</td>
-              <td className="py-2">
-                {row.label}
-                {row.name && <span className="ml-2 text-base font-normal text-muted hyphens-auto">{row.name}</span>}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="mt-2 overflow-hidden rounded-2xl border border-edge bg-surface">
+        <table className="w-full text-lg" aria-live="polite">
+          <tbody className="divide-y divide-edge">
+            {rows.map((row) => (
+              <tr key={row.key} className={row.highlight ? 'bg-raised font-bold' : ''}>
+                <td className={`py-2 pr-3 pl-4 text-right tabular-nums ${wrapValues ? '[overflow-wrap:anywhere]' : ''}`}>
+                  {row.value}
+                </td>
+                <td className="py-2 pr-4">
+                  {row.label}
+                  {row.name && <span className="ml-2 text-base font-normal text-muted hyphens-auto">{row.name}</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }

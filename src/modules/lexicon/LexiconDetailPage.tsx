@@ -39,7 +39,7 @@ export function LexiconDetailPage({ entries = lexiconEntries }: { entries?: Lexi
               <li key={item.id}>
                 <Link
                   to={lexiconPath(item.id)}
-                  className="inline-flex min-h-12 items-center rounded-lg border-2 border-line px-3 font-semibold"
+                  className="inline-flex min-h-12 items-center rounded-full border border-edge bg-surface px-4 font-semibold"
                 >
                   {item.term}
                 </Link>

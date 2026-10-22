@@ -41,7 +41,7 @@ export function BackLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
-      className="-ml-2 mb-2 inline-flex min-h-12 items-center gap-1 rounded-lg px-2 font-semibold text-accent print:hidden"
+      className="-ml-2 mb-2 inline-flex min-h-12 items-center gap-1 rounded-xl px-2 font-semibold text-accent print:hidden"
     >
       <span aria-hidden="true">←</span> {label}
     </Link>

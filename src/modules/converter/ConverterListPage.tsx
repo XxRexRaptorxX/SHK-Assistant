@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
-import { categoryHeading } from '../../components/headings'
+import { categoryHeading, pageTitle } from '../../components/headings'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
@@ -21,7 +21,7 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
   const listed = entries.filter((entry) => !hidden.has(entry.id))
   return (
     <>
-      <h1 className="text-2xl font-bold">Umrechner</h1>
+      <h1 className={pageTitle}>Umrechner</h1>
       <ModuleFavorites moduleTitle={modules.converter.title} />
       {entries.length === 0 && <p className="mt-2 text-muted">Noch keine Größen vorhanden.</p>}
       {groupConvertersByCategory(listed).map((group) => (
@@ -32,7 +32,7 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
               <li key={entry.id}>
                 <Link
                   to={converterPath(entry.id)}
-                  className="flex min-h-20 flex-col justify-center gap-1 rounded-xl border-2 border-line bg-surface p-4 active:border-accent"
+                  className="glow flex min-h-20 flex-col justify-center gap-1 rounded-3xl border border-edge bg-surface p-5 active:border-accent"
                 >
                   <span className="flex items-center justify-between gap-2">
                     <span className="text-xl font-bold">

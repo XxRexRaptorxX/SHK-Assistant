@@ -7,6 +7,8 @@ import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterLexicon, lexiconEntries, lexiconPath } from './lexicon'
 import type { LexiconEntry } from './schema'
+import { listCard } from '../../components/surfaces'
+import { pageTitle } from '../../components/headings'
 
 interface LexiconListPageProps {
   /** Für Tests überschreibbar */
@@ -21,7 +23,7 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
 
   return (
     <>
-      <h1 className="text-2xl font-bold">Lexikon</h1>
+      <h1 className={pageTitle}>Lexikon</h1>
       {query.trim() === '' && <ModuleFavorites moduleTitle={modules.lexicon.title} />}
 
       {entries.length === 0 ? (
@@ -44,12 +46,12 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
           {visible.length === 0 ? (
             <p className="mt-4">Keine Begriffe gefunden.</p>
           ) : (
-            <ul className="mt-2 divide-y-2 divide-line border-y-2 border-line">
+            <ul className={`mt-2 ${listCard}`}>
               {visible.map((entry) => (
                 <li key={entry.id}>
                   <Link
                     to={lexiconPath(entry.id)}
-                    className="flex min-h-14 items-center justify-between gap-3 px-1 py-2"
+                    className="flex min-h-14 items-center justify-between gap-3 px-4 py-2"
                   >
                     <span>
                       <span className="block font-semibold">{entry.term}</span>

@@ -1,13 +1,54 @@
 import { useState, type FormEvent } from 'react'
 import { createSearchParams, Link, useNavigate } from 'react-router'
-import { homeTileModules, modules } from '../app/modules'
+import { homeTileModules, modules, type AppModule } from '../app/modules'
+import { CompanyLogo, companyLogoUrl } from '../components/CompanyLogo'
+import { pageTitle } from '../components/headings'
 import { SearchInput } from '../components/SearchInput'
+import { chip } from '../components/surfaces'
+import { content } from '../content'
+import { useFavoriteIds } from '../favorites/favoritesStore'
 import { usePageTitle } from '../lib/usePageTitle'
+
+/** Kurze Angabe im Chip oben auf der Kachel, z. B. „48 Formeln“ */
+function useTileChips(): Record<string, string> {
+  const favorites = useFavoriteIds().size
+  return {
+    [modules.formulas.path]: `${content.formulas.length} Formeln`,
+    [modules.converter.path]: `${content.converter.length} Größen`,
+    [modules.checklists.path]: `${content.checklists.length} Checklisten`,
+    [modules.lexicon.path]: `${content.lexicon.length} Begriffe`,
+    [modules.favorites.path]: `${favorites} gemerkt`,
+  }
+}
+
+function Tile({ module, chipText }: { module: AppModule; chipText?: string }) {
+  const Icon = module.icon
+  return (
+    <Link
+      to={module.path}
+      className="glow relative flex min-h-36 flex-col justify-between gap-3 overflow-hidden rounded-3xl border border-edge bg-surface p-5 active:border-accent"
+    >
+      {/* Großes, blasses Symbol als Bildersatz, wie ein Motiv auf der Karte */}
+      <Icon aria-hidden="true" className="pointer-events-none absolute -right-5 -bottom-6 size-36 -rotate-12 text-brand opacity-25" />
+      {chipText && (
+        <span className={`${chip} relative self-start`}>
+          <Icon className="size-5 text-accent" />
+          {chipText}
+        </span>
+      )}
+      <span className="relative">
+        <span className="block text-2xl font-bold">{module.title}</span>
+        <span className="mt-1 block max-w-[80%] text-base text-muted">{module.description}</span>
+      </span>
+    </Link>
+  )
+}
 
 export function HomePage() {
   usePageTitle()
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
+  const chips = useTileChips()
 
   const submit = (event: FormEvent) => {
     event.preventDefault()
@@ -20,8 +61,8 @@ export function HomePage() {
 
   return (
     <>
-      <h1 className="sr-only">Start</h1>
-      <form role="search" onSubmit={submit} className="mb-4 flex gap-2">
+      <h1 className={pageTitle}>Werkzeugkasten</h1>
+      <form role="search" onSubmit={submit} className="mt-4 mb-5 flex gap-2">
         <SearchInput
           id="home-search"
           label="In allen Modulen suchen"
@@ -31,30 +72,24 @@ export function HomePage() {
         />
         <button
           type="submit"
-          className="min-h-12 shrink-0 rounded-lg bg-accent px-4 font-bold text-accent-ink"
+          className="min-h-12 shrink-0 rounded-xl bg-accent px-4 font-bold text-accent-ink"
         >
           Suchen
         </button>
       </form>
       <ul className="grid gap-3 sm:grid-cols-2">
-        {homeTileModules.map((module) => {
-          const Icon = module.icon
-          return (
-            <li key={module.path}>
-              <Link
-                to={module.path}
-                className="flex min-h-20 items-center gap-4 rounded-xl border-2 border-line bg-surface p-4 active:border-accent"
-              >
-                <Icon className="size-10 shrink-0 text-accent" />
-                <span>
-                  <span className="block text-xl font-bold">{module.title}</span>
-                  <span className="block text-base text-muted">{module.description}</span>
-                </span>
-              </Link>
-            </li>
-          )
-        })}
+        {homeTileModules.map((module) => (
+          <li key={module.path}>
+            <Tile module={module} chipText={chips[module.path]} />
+          </li>
+        ))}
       </ul>
+      {companyLogoUrl && (
+        <div className="mt-8 flex flex-col items-center gap-2 text-sm text-muted">
+          <span>Ein Werkzeug von</span>
+          <CompanyLogo />
+        </div>
+      )}
     </>
   )
 }

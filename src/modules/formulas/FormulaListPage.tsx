@@ -7,9 +7,10 @@ import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory } from './formulas'
 import type { FormulaEntry } from './schema'
-import { categoryHeading } from '../../components/headings'
+import { categoryHeading, pageTitle } from '../../components/headings'
 import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
+import { listCard } from '../../components/surfaces'
 
 interface FormulaListPageProps {
   /** Für Tests überschreibbar */
@@ -28,7 +29,7 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '', h
 
   return (
     <>
-      <h1 className="text-2xl font-bold">Formeln</h1>
+      <h1 className={pageTitle}>Formeln</h1>
       {query.trim() === '' && <ModuleFavorites moduleTitle={modules.formulas.title} />}
 
       {entries.length === 0 ? (
@@ -52,12 +53,12 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '', h
           {groupFormulasByCategory(visible).map((group) => (
             <section key={group.category} className="mt-5">
               <h2 className={categoryHeading}>{group.category}</h2>
-              <ul className="mt-2 divide-y-2 divide-line border-y-2 border-line">
+              <ul className={`mt-2 ${listCard}`}>
                 {group.entries.map((entry) => (
                   <li key={entry.id}>
                     <Link
                       to={formulaPath(entry.id)}
-                      className="flex min-h-14 items-center justify-between gap-3 px-1 py-2"
+                      className="flex min-h-14 items-center justify-between gap-3 px-4 py-2"
                     >
                       <span className="font-semibold">{entry.title}</span>
                       {entry.status === 'draft' && <DraftBadge variant="inline" />}

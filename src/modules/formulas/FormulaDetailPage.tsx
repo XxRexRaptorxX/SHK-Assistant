@@ -55,7 +55,7 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
         <p className="mt-4 font-semibold">Die Formel ist noch nicht hinterlegt.</p>
       ) : (
         <>
-          <p className="mt-4 overflow-x-auto rounded-lg bg-surface p-3 font-mono text-xl">
+          <p className="mt-4 overflow-x-auto rounded-2xl border border-edge bg-surface p-4 font-mono text-xl">
             {result.label ?? result.symbol} = {formatExpression(formula)}
           </p>
           <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">

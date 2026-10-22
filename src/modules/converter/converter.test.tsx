@@ -513,7 +513,7 @@ describe('Umrechner-Seiten', () => {
       )
     expect(at('s')).toContain('1 : 50')
     expect(at('r')).toContain('3/4')
-    expect(at('t')).toContain('<th scope="col" class="py-2 pr-4 font-bold">DN</th>')
+    expect(at('t')).toContain('<th scope="col" class="px-4 py-2 font-bold">DN</th>')
     expect(at('leer')).toContain('TODO: Inhalt fehlt')
   })
 

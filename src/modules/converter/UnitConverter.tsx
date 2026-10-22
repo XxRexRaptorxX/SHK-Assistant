@@ -107,7 +107,7 @@ export function UnitConverter({
         <Select id={`${id}-to`} label="Nach Einheit" options={options} value={to} onChange={setTo} />
       </div>
 
-      <p className="mt-4 rounded-xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-all" aria-live="polite">
+      <p className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-all" aria-live="polite">
         {target ? `${formatSignificant(target.value)} ${formatAnyUnit(to)}` : '–'}
       </p>
 

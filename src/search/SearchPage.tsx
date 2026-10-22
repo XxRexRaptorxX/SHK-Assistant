@@ -5,6 +5,7 @@ import { SearchInput } from '../components/SearchInput'
 import { usePageTitle } from '../lib/usePageTitle'
 import { MIN_QUERY_LENGTH, type SearchEngine } from './search'
 import { getSearchEngine } from './sources'
+import { pageTitle } from '../components/headings'
 
 export function SearchPage({ engine }: { /** Für Tests überschreibbar */ engine?: SearchEngine }) {
   usePageTitle('Suche')
@@ -17,7 +18,7 @@ export function SearchPage({ engine }: { /** Für Tests überschreibbar */ engin
 
   return (
     <>
-      <h1 className="text-2xl font-bold">Suche</h1>
+      <h1 className={pageTitle}>Suche</h1>
       <div className="mt-3">
         <SearchInput
           id="global-search"

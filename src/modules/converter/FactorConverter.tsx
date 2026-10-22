@@ -77,7 +77,7 @@ export function FactorConverter({
         <Select id={`${id}-to`} label="Nach" options={options} value={toKey} onChange={setToKey} />
       </div>
 
-      <p className="mt-4 rounded-xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-words" aria-live="polite">
+      <p className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4 text-3xl font-bold break-words" aria-live="polite">
         {value !== undefined && from && to
           ? `${format(convertByFactors(value, from, to))} ${to.label}`
           : '–'}

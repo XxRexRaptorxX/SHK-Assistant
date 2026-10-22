@@ -16,7 +16,7 @@ export function DraftBadge({ variant = 'banner' }: DraftBadgeProps) {
   }
 
   return (
-    <div role="note" className="flex items-start gap-3 rounded-lg border-2 border-warn-ink bg-warn p-3 text-warn-ink">
+    <div role="note" className="flex items-start gap-3 rounded-xl border-2 border-warn-ink bg-warn p-3 text-warn-ink">
       <WarningIcon className="mt-0.5 size-7 shrink-0" />
       <p>
         <strong>Ungeprüft:</strong> Dieser Inhalt ist noch nicht fachlich freigegeben. Nicht ohne

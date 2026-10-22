@@ -1,7 +1,7 @@
 import { useRef, useState, type ChangeEvent } from 'react'
 import { primaryButton, secondaryButton, dangerButton } from '../components/buttons'
 import { EntryRows, groupByModule, groupInOrder } from '../components/EntryList'
-import { categoryHeading, subcategoryHeading } from '../components/headings'
+import { categoryHeading, subcategoryHeading, pageTitle } from '../components/headings'
 import { downloadTextFile } from '../lib/download'
 import { usePageTitle } from '../lib/usePageTitle'
 import type { SearchDocument } from '../search/search'
@@ -25,7 +25,7 @@ export function FavoritesPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold">Favoriten</h1>
+      <h1 className={pageTitle}>Favoriten</h1>
       {state.status === 'loading' && <p className="mt-2 text-muted">Favoriten werden geladen …</p>}
       {state.status === 'unavailable' && (
         <p role="alert" className="mt-2">
@@ -172,7 +172,7 @@ function BackupSection({ hasFavorites }: { hasFavorites: boolean }) {
       </div>
 
       {pending && (
-        <div className="mt-4 rounded-lg border-2 border-line bg-surface p-3">
+        <div className="mt-4 rounded-2xl border border-edge bg-surface p-3">
           <p>
             Backup vom {new Date(pending.exportedAt).toLocaleDateString('de-DE')} mit{' '}
             {pending.favorites.length} Favoriten.
@@ -197,7 +197,7 @@ function BackupSection({ hasFavorites }: { hasFavorites: boolean }) {
       {message && (
         <p
           role={message.kind === 'error' ? 'alert' : 'status'}
-          className={`mt-3 font-semibold ${message.kind === 'error' ? 'rounded-lg bg-warn p-2 text-warn-ink' : ''}`}
+          className={`mt-3 font-semibold ${message.kind === 'error' ? 'rounded-xl bg-warn p-2 text-warn-ink' : ''}`}
         >
           {message.text}
         </p>

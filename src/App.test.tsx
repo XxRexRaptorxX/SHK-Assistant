@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { App } from './App'
 import { bottomNavModules, modules } from './app/modules'
+import { pageTitle } from './components/headings'
 
 function renderAt(path: string): string {
   return renderToStaticMarkup(
@@ -14,7 +15,7 @@ function renderAt(path: string): string {
 
 describe('App-Routen', () => {
   it.each(Object.values(modules))('zeigt die Seite $title unter $path', (module) => {
-    expect(renderAt(module.path)).toContain(`<h1 class="text-2xl font-bold">${module.title}</h1>`)
+    expect(renderAt(module.path)).toContain(`<h1 class="${pageTitle}">${module.title}</h1>`)
   })
 
   it('zeigt auf der Startseite Kacheln zu den Modulen', () => {

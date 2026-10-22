@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import type { SearchDocument, SearchGroup } from '../search/search'
 import { DraftBadge } from './DraftBadge'
 import { categoryHeading } from './headings'
+import { listCard } from './surfaces'
 
 type EntryAction = (entry: SearchDocument) => ReactNode
 
@@ -25,10 +26,10 @@ export function EntryList({ groups, action }: EntryListProps) {
 /** Einfache Liste von Einträgen mit Titel, Zusatzzeile und optionalem Knopf */
 export function EntryRows({ entries, action }: { entries: readonly SearchDocument[]; action?: EntryAction }) {
   return (
-    <ul className="mt-2 divide-y-2 divide-line border-y-2 border-line">
+    <ul className={`mt-2 ${listCard}`}>
       {entries.map((entry) => (
         <li key={entry.id} className="flex items-center gap-1">
-          <Link to={entry.path} className="flex min-h-14 flex-1 items-center justify-between gap-3 px-1 py-2">
+          <Link to={entry.path} className="flex min-h-14 flex-1 items-center justify-between gap-3 px-4 py-2">
             <span>
               <span className="block font-semibold">{entry.title}</span>
               {entry.subtitle && <span className="block text-base text-muted">{entry.subtitle}</span>}

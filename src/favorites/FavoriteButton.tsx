@@ -25,7 +25,7 @@ export function FavoriteButton({ id, title }: FavoriteButtonProps) {
       title={label}
       disabled={state.status !== 'ready'}
       onClick={() => void toggleFavoriteInStore(id)}
-      className="flex size-12 shrink-0 items-center justify-center rounded-lg text-accent disabled:opacity-40"
+      className="flex size-12 shrink-0 items-center justify-center rounded-xl text-accent disabled:opacity-40"
     >
       <StarIcon className="size-8" fill={active ? 'currentColor' : 'none'} />
     </button>

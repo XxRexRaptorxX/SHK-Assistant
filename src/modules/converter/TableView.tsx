@@ -16,22 +16,22 @@ export function TableView({ entry, initialQuery = '' }: { entry: ConverterEntry;
   return (
     <section className="mt-2" aria-label={entry.title}>
       <SearchInput id="table-filter" label="Tabelle filtern" value={query} onChange={setQuery} placeholder="Filtern …" />
-      <div className="mt-3 overflow-x-auto">
-        <table className="w-full border-y-2 border-line text-lg">
+      <div className="mt-3 overflow-x-auto rounded-2xl border border-edge bg-surface">
+        <table className="w-full text-lg">
           <thead>
-            <tr className="border-b-2 border-line text-left">
+            <tr className="border-b-2 border-line bg-raised text-left">
               {entry.columns.map((column) => (
-                <th key={column} scope="col" className="py-2 pr-4 font-bold">
+                <th key={column} scope="col" className="px-4 py-2 font-bold">
                   {column}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y-2 divide-line">
+          <tbody className="divide-y divide-edge">
             {rows.map((row, index) => (
               <tr key={index}>
                 {row.map((cell, cellIndex) => (
-                  <td key={cellIndex} className="py-2 pr-4 whitespace-nowrap tabular-nums">
+                  <td key={cellIndex} className="px-4 py-2 whitespace-nowrap tabular-nums">
                     {cell}
                   </td>
                 ))}

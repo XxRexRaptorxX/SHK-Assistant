@@ -23,7 +23,7 @@ export function HideButton({ id, title, hidden }: HideButtonProps) {
       aria-label={label}
       title={label}
       onClick={() => toggleHidden(id)}
-      className="flex size-12 shrink-0 items-center justify-center rounded-lg text-muted"
+      className="flex size-12 shrink-0 items-center justify-center rounded-xl text-muted"
     >
       <Icon className="size-8" />
     </button>

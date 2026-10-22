@@ -4,6 +4,7 @@ import { alternativeUnits } from '../units/alternatives'
 import { formatAnyUnit } from '../units/labels'
 import { evaluateFormula, FormulaError, rangeError, toMainUnit, type Quantity } from './engine'
 import type { FormulaEntry, FormulaVariable } from './schema'
+import { fieldBase } from '../../components/surfaces'
 
 type CalculationState =
   | { kind: 'incomplete' }
@@ -11,7 +12,7 @@ type CalculationState =
   | { kind: 'result'; value: number }
   | { kind: 'error'; message: string }
 
-const fieldClass = 'min-h-12 rounded-lg border-2 border-line bg-page px-3 text-lg'
+const fieldClass = fieldBase
 
 function UnitSelect({
   id,
@@ -142,7 +143,7 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
         })}
       </div>
 
-      <div className="mt-5 rounded-xl border-2 border-accent bg-surface p-4" aria-live="polite">
+      <div className="mt-5 rounded-2xl border-2 border-accent bg-surface p-4" aria-live="polite">
         <p className="font-semibold">{result.name}</p>
         <div className="mt-1 flex flex-wrap items-center gap-2">
           <p className="text-3xl font-bold break-all">

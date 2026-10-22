@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { primaryButton, secondaryButton } from '../components/buttons'
 import { showAllHidden, useHiddenIds } from '../hidden/hiddenStore'
+import { CompanyLogo } from '../components/CompanyLogo'
 import { MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
 import { content } from '../content'
 import { isInternalEdition } from '../config/edition'
@@ -9,6 +10,7 @@ import { THEME_LABELS, THEME_PREFERENCES, type ThemePreference } from '../theme/
 import { useTheme } from '../theme/useTheme'
 import { detectPlatform, promptInstall, useInstallState, type Platform } from './install'
 import { updateSettings, useSettings } from './settings'
+import { pageTitle } from '../components/headings'
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -33,7 +35,7 @@ export function Switch({ label, description, checked, onChange }: {
       aria-checked={checked}
       aria-label={label}
       onClick={() => onChange(!checked)}
-      className="flex w-full items-center justify-between gap-4 rounded-xl border-2 border-line bg-surface p-4 text-left"
+      className="flex w-full items-center justify-between gap-4 rounded-2xl border border-edge bg-surface p-4 text-left"
     >
       <span>
         <span className="block font-semibold">{label}</span>
@@ -59,7 +61,7 @@ export function Switch({ label, description, checked, onChange }: {
 function HiddenEntries() {
   const count = useHiddenIds().size
   return (
-    <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border-2 border-line bg-surface p-4">
+    <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-edge bg-surface p-4">
       <span>
         <span className="block font-semibold">Ausgeblendete Einträge</span>
         <span className="mt-1 block text-base text-muted">
@@ -90,8 +92,8 @@ function ThemeChoice({ value, onChange }: { value: ThemePreference; onChange: (v
             role="radio"
             aria-checked={selected}
             onClick={() => onChange(option)}
-            className={`flex min-h-20 flex-col items-center justify-center gap-1 rounded-xl border-2 font-semibold ${
-              selected ? 'border-accent bg-accent text-accent-ink' : 'border-line bg-surface'
+            className={`flex min-h-20 flex-col items-center justify-center gap-1 rounded-2xl border-2 font-semibold ${
+              selected ? 'border-accent bg-accent text-accent-ink' : 'border-edge bg-surface'
             }`}
           >
             <Icon className="size-7" />
@@ -182,18 +184,21 @@ function AboutSection() {
     ['Lexikon-Einträge', content.lexicon.length],
   ]
   return (
-    <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-base">
-      <dt className="font-semibold">Version</dt>
-      <dd>{__APP_VERSION__}</dd>
-      <dt className="font-semibold">Ausgabe</dt>
-      <dd>{isInternalEdition ? 'Intern' : 'Öffentlich'}</dd>
-      {counts.map(([label, count]) => (
-        <div key={label} className="contents">
-          <dt className="font-semibold">{label}</dt>
-          <dd>{count}</dd>
-        </div>
-      ))}
-    </dl>
+    <>
+      <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-base">
+        <dt className="font-semibold">Version</dt>
+        <dd>{__APP_VERSION__}</dd>
+        <dt className="font-semibold">Ausgabe</dt>
+        <dd>{isInternalEdition ? 'Intern' : 'Öffentlich'}</dd>
+        {counts.map(([label, count]) => (
+          <div key={label} className="contents">
+            <dt className="font-semibold">{label}</dt>
+            <dd>{count}</dd>
+          </div>
+        ))}
+      </dl>
+      <CompanyLogo className="mt-4 h-12 w-auto" />
+    </>
   )
 }
 
@@ -204,7 +209,7 @@ export function SettingsPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold">Einstellungen</h1>
+      <h1 className={pageTitle}>Einstellungen</h1>
       <div className="mt-4">
         <Section title="Grundeinstellungen">
           <Switch
