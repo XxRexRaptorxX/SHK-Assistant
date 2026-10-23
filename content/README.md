@@ -75,10 +75,13 @@ steht die erste Spalte als Kurzinfo unter jeder Stufe.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person.
 Felder: `input` (die Zahl, z. B. Personen: `symbol`, `name`, optional `unit`, `min`, `max`),
-`choices` (Varianten zum Antippen, je `key`, `name` und `options` mit `key` und `label`) und
+`choices` (Varianten zum Antippen, je `key`, `name`, `options` mit `key` und `label`, optional
+`default` als vorausgewählte Option und `display`: `"bar"` für Knöpfe nebeneinander, Standard, oder
+`"dropdown"` für eine Auswahlliste bei vielen Optionen) und
 `results` (je `symbol`, `name`, `unit`, `decimals` und `cases`). Ein Fall nennt `when` (für welche
-Auswahl er gilt, fehlende Auswahl = alle), `factor`, `per` (Bezugsgröße: das Symbol der Eingabe oder
-eines vorher stehenden Ergebnisses) und `rule` (der Richtwert in Worten wie in der Quelle). Der Build
+Auswahl er gilt, fehlende Auswahl = alle), `factor` und `per` (Bezugsgröße: das Symbol der Eingabe
+oder eines vorher stehenden Ergebnisses) oder statt dessen einen festen `value` (z. B. einen
+Neigungswinkel) und `rule` (der Richtwert in Worten wie in der Quelle). Der Build
 prüft, dass für jede Kombination genau ein Fall passt, und rechnet die `examples` nach (`input`,
 `choices`, `expected` je Ergebnis-Symbol). Lange Wörter in `label` dürfen eine weiche Trennstelle (`\u00AD`, unsichtbar)
 enthalten (z. B. „Heizungs\u00ADunterstützung“), damit sie auf schmalen Knöpfen umbrechen; die Suche

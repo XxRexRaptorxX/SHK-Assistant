@@ -5,6 +5,7 @@ import { defineEntrySchema } from '../../content/schema/base.ts'
 // Faktor-Tools ("kind": "factor"): eine Zahl eingeben (z. B. Personen), Varianten auswählen
 // (z. B. Nutzung und Kollektorart); jedes Ergebnis ist Faktor × Bezugsgröße, wobei der Faktor
 // von der Auswahl abhängt und die Bezugsgröße die Eingabe oder ein vorheriges Ergebnis ist.
+// Ein Fall kann statt Faktor auch einen festen Wert haben (z. B. Neigungswinkel je Ausrichtung).
 
 const key = z.string().regex(/^[a-z][a-zA-Z0-9]*$/, 'key: Kleinbuchstabe, dann Buchstaben/Ziffern')
 const symbol = z.string().regex(/^[A-Za-z][A-Za-z0-9_]*$/, 'Symbol: nur A-Z, a-z, 0-9 und _')
@@ -16,17 +17,28 @@ const choiceSchema = z.strictObject({
   options: z
     .array(z.strictObject({ key, label: z.string().trim().min(1) }))
     .min(2),
+  /** Vorausgewählte Option (key); sonst die erste */
+  default: key.optional(),
+  /** "bar": Knöpfe nebeneinander (wenige, kurze Optionen); "dropdown": Auswahlliste (viele Optionen) */
+  display: z.enum(['bar', 'dropdown']).default('bar'),
 })
 
-const caseSchema = z.strictObject({
-  /** Für welche Auswahl der Faktor gilt: Auswahl-key → Options-key; fehlt eine Auswahl, gilt er für alle */
-  when: z.record(z.string(), z.string()).default({}),
-  factor: z.number().positive(),
-  /** Bezugsgröße: Symbol der Eingabe oder eines vorher stehenden Ergebnisses */
-  per: symbol,
-  /** Richtwert in Worten, wie in der Quelle, z. B. „1,5 m² pro Person“ */
-  rule: z.string().trim().min(1),
-})
+const caseSchema = z
+  .strictObject({
+    /** Für welche Auswahl der Fall gilt: Auswahl-key → Options-key; fehlt eine Auswahl, gilt er für alle */
+    when: z.record(z.string(), z.string()).default({}),
+    /** Ergebnis = factor × per … */
+    factor: z.number().positive().optional(),
+    /** … mit per als Symbol der Eingabe oder eines vorher stehenden Ergebnisses */
+    per: symbol.optional(),
+    /** … oder ein fester Wert, unabhängig von der Eingabe */
+    value: z.number().optional(),
+    /** Richtwert in Worten, wie in der Quelle, z. B. „1,5 m² pro Person“ */
+    rule: z.string().trim().min(1),
+  })
+  .refine((item) => (item.value === undefined) === (item.factor !== undefined && item.per !== undefined), {
+    message: 'Entweder factor und per oder value angeben',
+  })
 
 const resultSchema = z.strictObject({
   symbol,
@@ -95,12 +107,13 @@ export function computeFactorTool(
   const values: Record<string, FactorValue | undefined> = {}
   for (const result of tool.results) {
     const match = matchingCase(result, selection)
-    const base = match ? scope[match.per] : undefined
-    if (!match || base === undefined) {
+    const base = match?.per === undefined ? undefined : scope[match.per]
+    const value =
+      match?.value !== undefined ? match.value : match?.factor !== undefined && base !== undefined ? match.factor * base : undefined
+    if (!match || value === undefined) {
       values[result.symbol] = undefined
       continue
     }
-    const value = match.factor * base
     scope[result.symbol] = value
     values[result.symbol] = { value, rule: match.rule }
   }
@@ -123,6 +136,9 @@ export function checkFactorTool(entry: FactorTool): string[] {
   for (const choice of entry.choices) {
     const optionKeys = choice.options.map((option) => option.key)
     if (new Set(optionKeys).size !== optionKeys.length) issues.push(`choices (${choice.key}): Options-key doppelt vergeben`)
+    if (choice.default !== undefined && !optionKeys.includes(choice.default)) {
+      issues.push(`choices (${choice.key}): default "${choice.default}" ist keine Option`)
+    }
   }
 
   const known = [entry.input.symbol]
@@ -130,7 +146,7 @@ export function checkFactorTool(entry: FactorTool): string[] {
     const where = `results (${result.symbol})`
     if (known.includes(result.symbol)) issues.push(`${where}: Symbol doppelt vergeben`)
     result.cases.forEach((candidate, index) => {
-      if (!known.includes(candidate.per)) {
+      if (candidate.per !== undefined && !known.includes(candidate.per)) {
         issues.push(`${where}, cases[${index}]: per "${candidate.per}" ist weder die Eingabe noch ein vorheriges Ergebnis`)
       }
       for (const [choiceKey, optionKey] of Object.entries(candidate.when)) {

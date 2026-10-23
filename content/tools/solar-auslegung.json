@@ -2,12 +2,12 @@
   "id": "tool.solar-auslegung",
   "visibility": "public",
   "status": "draft",
-  "source": "Tabelle des Inhabers „Speichergröße? Kollektorfläche?“ (Bild, übermittelt am 23.10.2026)",
+  "source": "Kollektorfläche und Speicher: Tabelle des Inhabers „Speichergröße? Kollektorfläche?“ (Bild, übermittelt am 23.10.2026). Neigung und Einstrahlung: PVGIS 5.3 der Gemeinsamen Forschungsstelle der EU-Kommission (JRC), https://re.jrc.ec.europa.eu/pvg_tools/de/, Strahlungsdaten PVGIS-SARAH3 2005–2023, ohne Geländehorizont, abgerufen am 23.10.2026. Bezugsorte: geografische Mitte Deutschlands (51,16° N, 10,45° O) und je Bundesland die Landeshauptstadt. Ausgewertet: monatliche Einstrahlung auf die Kollektorebene je Ausrichtung bei 0–90° Neigung in 5°-Schritten; optimal ist die Neigung mit der größten Summe im Nutzungszeitraum (Warmwasser: Jahr, Heizungsunterstützung: Oktober bis März).",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "factor",
   "title": "Solaranlage: Kollektorfläche und Speichergröße",
-  "description": "Schätzt Kollektorfläche und Größe des Warmwasserspeichers einer Solaranlage aus der Zahl der Personen, getrennt nach solarer Warmwasserbereitung und solarer Heizungsunterstützung sowie nach Kollektorart. Bei Heizungsunterstützung richtet sich der Speicher nach der Kollektorfläche. Die Werte sind Faustwerte.",
+  "description": "Schätzt Kollektorfläche und Größe des Warmwasserspeichers einer Solaranlage aus der Zahl der Personen, getrennt nach solarer Warmwasserbereitung und solarer Heizungsunterstützung sowie nach Kollektorart. Bei Heizungsunterstützung richtet sich der Speicher nach der Kollektorfläche. Die Werte sind Faustwerte. Zu Dachausrichtung und Standort zeigt das Tool die Neigung mit der meisten Sonneneinstrahlung und wie viel Sonne dort ankommt: für Warmwasser übers ganze Jahr, für Heizungsunterstützung von Oktober bis März, berechnet aus Strahlungsdaten der EU-Kommission (PVGIS) für die Landeshauptstadt des gewählten Bundeslands. Ist das Optimum 0°, wäre eine flache Fläche am besten; die Mindestneigung des Kollektorherstellers gilt trotzdem.",
   "category": "Auslegung",
   "input": {
     "symbol": "n",
@@ -42,6 +42,109 @@
           "label": "Vakuumröhren"
         }
       ]
+    },
+    {
+      "key": "ausrichtung",
+      "name": "Dachausrichtung",
+      "options": [
+        {
+          "key": "ost",
+          "label": "Ost"
+        },
+        {
+          "key": "suedost",
+          "label": "Südost"
+        },
+        {
+          "key": "sued",
+          "label": "Süd"
+        },
+        {
+          "key": "suedwest",
+          "label": "Südwest"
+        },
+        {
+          "key": "west",
+          "label": "West"
+        }
+      ],
+      "default": "sued"
+    },
+    {
+      "key": "standort",
+      "name": "Standort",
+      "options": [
+        {
+          "key": "mitte",
+          "label": "Deutschland (Mitte)"
+        },
+        {
+          "key": "bw",
+          "label": "Baden-Württemberg (Stuttgart)"
+        },
+        {
+          "key": "by",
+          "label": "Bayern (München)"
+        },
+        {
+          "key": "be",
+          "label": "Berlin"
+        },
+        {
+          "key": "bb",
+          "label": "Brandenburg (Potsdam)"
+        },
+        {
+          "key": "hb",
+          "label": "Bremen"
+        },
+        {
+          "key": "hh",
+          "label": "Hamburg"
+        },
+        {
+          "key": "he",
+          "label": "Hessen (Wiesbaden)"
+        },
+        {
+          "key": "mv",
+          "label": "Mecklenburg-Vorpommern (Schwerin)"
+        },
+        {
+          "key": "ni",
+          "label": "Niedersachsen (Hannover)"
+        },
+        {
+          "key": "nw",
+          "label": "Nordrhein-Westfalen (Düsseldorf)"
+        },
+        {
+          "key": "rp",
+          "label": "Rheinland-Pfalz (Mainz)"
+        },
+        {
+          "key": "sl",
+          "label": "Saarland (Saarbrücken)"
+        },
+        {
+          "key": "sn",
+          "label": "Sachsen (Dresden)"
+        },
+        {
+          "key": "st",
+          "label": "Sachsen-Anhalt (Magdeburg)"
+        },
+        {
+          "key": "sh",
+          "label": "Schleswig-Holstein (Kiel)"
+        },
+        {
+          "key": "th",
+          "label": "Thüringen (Erfurt)"
+        }
+      ],
+      "default": "mitte",
+      "display": "dropdown"
     }
   ],
   "results": [
@@ -112,6 +215,4623 @@
           "rule": "etwa 60 Liter pro m² Kollektorfläche"
         }
       ]
+    },
+    {
+      "symbol": "beta",
+      "label": "β",
+      "name": "Optimale Kollektorneigung",
+      "unit": "°",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 55°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 30° und 70°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 75°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 10,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 55°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 25°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 75°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 55°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 75°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 5,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 25°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 55°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 30,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 25°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 30° und 70°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 75°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 30° und 70°"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 80°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 55°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 30,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 25°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 75°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 30,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 30° und 70°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 75°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 50,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 30° und 70°"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 5,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 60°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 35°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 45° und 80°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 75°"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 15° und 55°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 40,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 20° und 55°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 35,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 10° und 55°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung übers Jahr; höchstens 5 % weniger zwischen 0° und 30°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 45°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 60,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 40° und 80°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 55,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 35° und 70°"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 0,
+          "rule": "meiste Einstrahlung von Oktober bis März; höchstens 5 % weniger zwischen 0° und 40°"
+        }
+      ]
+    },
+    {
+      "symbol": "Erel",
+      "label": "Eᵣₑₗ",
+      "name": "Einstrahlung im Vergleich zu Süd",
+      "unit": "%",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 86,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 86,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 63,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 86,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 63,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 61,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 61,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 61,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 61,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 84,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 93,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 84,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 59,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 59,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 86,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 86,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 63,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 86,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 86,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 63,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 86,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 86,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 63,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 86,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 86,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 63,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 87,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 87,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 64,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 87,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 64,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 84,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 84,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 84,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 84,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 84,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 60,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 95,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 94,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 85,
+          "rule": "Einstrahlung übers Jahr bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 61,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 100,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 85,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 61,
+          "rule": "Einstrahlung von Oktober bis März bei optimaler Neigung, verglichen mit einem Süddach am selben Ort"
+        }
+      ]
+    },
+    {
+      "symbol": "H",
+      "label": "H",
+      "name": "Einstrahlung auf den Kollektor",
+      "unit": "kWh/m²",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1136,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1251,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1323,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1253,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1136,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 255,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 344,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 407,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 352,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mitte",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 256,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1208,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1347,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1424,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1337,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1208,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 308,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 429,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 504,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 428,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bw",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 308,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1211,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1347,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1433,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1350,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1211,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 321,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 444,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 529,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 452,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "by",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 321,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1115,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1253,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1324,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1238,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1115,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 242,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 346,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 409,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 343,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "be",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 242,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1102,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1235,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1302,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1220,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1102,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 236,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 338,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 397,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 333,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "bb",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 236,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1058,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1184,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1246,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1169,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1058,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 226,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 319,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 376,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 317,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hb",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 226,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1047,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1169,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1234,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1160,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1047,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 217,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 307,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 362,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 306,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "hh",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 217,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1182,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1308,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1376,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1296,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1182,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 273,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 369,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 431,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 371,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "he",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 273,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1049,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1171,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1234,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1161,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1049,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 215,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 303,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 358,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 304,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "mv",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 215,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1076,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1198,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1266,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1191,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1076,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 236,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 331,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 391,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 331,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "ni",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 236,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1099,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1226,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1295,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1214,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1099,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 255,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 359,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 422,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 357,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "nw",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 255,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1195,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1325,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1396,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1315,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1195,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 278,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 378,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 442,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 379,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "rp",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 278,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1176,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1291,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1359,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1288,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1176,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 276,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 368,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 431,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 375,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sl",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 276,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1126,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1259,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1334,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1251,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1126,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 265,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 378,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 445,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 373,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sn",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 265,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1128,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1264,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1338,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1254,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1128,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 250,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 355,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 419,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 353,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "st",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 250,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1039,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1155,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1225,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1159,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1039,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 204,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 289,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 343,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 291,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "sh",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 204,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "ost"
+          },
+          "value": 1116,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedost"
+          },
+          "value": 1241,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "sued"
+          },
+          "value": 1308,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "suedwest"
+          },
+          "value": 1230,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "warmwasser",
+            "ausrichtung": "west"
+          },
+          "value": 1116,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche übers Jahr bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "ost"
+          },
+          "value": 258,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "suedost"
+          },
+          "value": 360,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "sued"
+          },
+          "value": 421,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "suedwest"
+          },
+          "value": 356,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        },
+        {
+          "when": {
+            "standort": "th",
+            "nutzung": "heizung",
+            "ausrichtung": "west"
+          },
+          "value": 258,
+          "rule": "Sonneneinstrahlung je m² Kollektorfläche von Oktober bis März bei optimaler Neigung"
+        }
+      ]
     }
   ],
   "examples": [
@@ -119,25 +4839,35 @@
       "input": 4,
       "choices": {
         "nutzung": "warmwasser",
-        "kollektor": "flach"
+        "kollektor": "flach",
+        "ausrichtung": "sued",
+        "standort": "mitte"
       },
       "expected": {
         "A": 6,
-        "V": 320
+        "V": 320,
+        "beta": 35,
+        "Erel": 100,
+        "H": 1323
       },
-      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Warmwasser, Flachkollektor"
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Warmwasser, Flachkollektor, Süddach, Mitte Deutschlands"
     },
     {
       "input": 4,
       "choices": {
         "nutzung": "heizung",
-        "kollektor": "vakuum"
+        "kollektor": "vakuum",
+        "ausrichtung": "ost",
+        "standort": "by"
       },
       "expected": {
         "A": 12,
-        "V": 720
+        "V": 720,
+        "beta": 0,
+        "Erel": 61,
+        "H": 321
       },
-      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Heizungsunterstützung, Vakuumröhren"
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Heizungsunterstützung, Vakuumröhren, Ostdach, Bayern"
     }
   ]
 }

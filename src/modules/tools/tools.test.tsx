@@ -226,7 +226,43 @@ describe('Tools', () => {
     expect(html).toContain('A = 6,0 m²')
     expect(html).toContain('1,5 m² pro Person')
     expect(html).toContain('V = 320 l')
-    expect(html.match(/aria-pressed="true"/g)).toHaveLength(2)
+    // Vorauswahl Süddach: optimale Neigung für Warmwasser aus PVGIS
+    expect(html).toContain('β = 35 °')
+    expect(html).toContain('Eᵣₑₗ = 100 %')
+    expect(html.match(/aria-pressed="true"/g)).toHaveLength(3)
+  })
+
+  it('nennt die optimale Neigung je Dachausrichtung, für Heizungsunterstützung steiler', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.solar-auslegung')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    const tilt = (nutzung: string, ausrichtung: string) => {
+      const values = computeFactorTool(tool, 1, { nutzung, kollektor: 'flach', ausrichtung, standort: 'mitte' })
+      return [values.beta?.value, values.Erel?.value]
+    }
+    expect(tilt('warmwasser', 'sued')).toEqual([35, 100])
+    expect(tilt('heizung', 'sued')).toEqual([60, 100])
+    expect(tilt('heizung', 'suedost')).toEqual([50, 85])
+    expect(tilt('warmwasser', 'west')).toEqual([0, 86])
+    expect(tilt('heizung', 'ost')).toEqual([0, 63])
+  })
+
+  it('zeigt je Bundesland die Einstrahlung, im Winter im Süden deutlich mehr als im Norden', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.solar-auslegung')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    const location = tool.choices.find((choice) => choice.key === 'standort')!
+    expect(location.display).toBe('dropdown')
+    expect(location.options).toHaveLength(17)
+    const winter = (standort: string) =>
+      computeFactorTool(tool, 1, { nutzung: 'heizung', kollektor: 'flach', ausrichtung: 'sued', standort })
+    expect(winter('sh').beta?.value).toBe(60)
+    expect(winter('by').beta?.value).toBe(60)
+    expect(winter('sh').H?.value).toBe(343)
+    expect(winter('by').H?.value).toBe(529)
+
+    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialInput="4" />)
+    expect(html).toContain('<option value="mitte" selected="">Deutschland (Mitte)</option>')
+    expect(html).toContain('Bayern (München)')
+    expect(html).toContain('H = 1.323 kWh/m²')
   })
 
   it('meldet Fehler in Faktor-Tools', () => {
@@ -235,6 +271,7 @@ describe('Tools', () => {
     const [area, storage] = tool.results
     const broken = {
       ...tool,
+      choices: tool.choices.filter((choice) => choice.key === 'nutzung' || choice.key === 'kollektor'),
       results: [{ ...area!, cases: area!.cases.slice(1) }, { ...storage!, cases: [{ ...storage!.cases[0]!, when: {}, per: 'X' }] }],
       examples: [{ input: 1, choices: { nutzung: 'warmwasser', kollektor: 'vakuum' }, expected: { A: 2 } }],
     }
