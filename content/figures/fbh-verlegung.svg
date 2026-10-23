@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <marker id="fbh-verlegung-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Beheizte Fläche A (Draufsicht) -->
+  <rect class="area" x="30" y="18" width="210" height="140"/>
+  <rect class="line" x="30" y="18" width="210" height="140" fill="none"/>
+  <!-- Heizrohr mäanderförmig verlegt -->
+  <path class="hot-line" d="M8 38H218A12 12 0 0 1 218 62H52A12 12 0 0 0 52 86H218A12 12 0 0 1 218 110H52A12 12 0 0 0 52 134H8"/>
+  <!-- Verlegeabstand VA zwischen zwei benachbarten Rohrsträngen -->
+  <line class="dim" x1="232" y1="38" x2="270" y2="38"/>
+  <line class="dim" x1="232" y1="62" x2="270" y2="62"/>
+  <line class="dim" x1="262" y1="39" x2="262" y2="61" marker-start="url(#fbh-verlegung-dim)" marker-end="url(#fbh-verlegung-dim)"/>
+  <text class="sym" x="274" y="55">VA</text>
+  <text class="sym" x="128" y="184">A</text>
+  <text class="note" x="142" y="184">beheizte Fläche</text>
+  <text class="note" x="4" y="12">Heizrohr</text>
+</svg>

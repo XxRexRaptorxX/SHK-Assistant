@@ -54,9 +54,9 @@ describe('Skizze auf der Formelseite', () => {
     expect(renderToStaticMarkup(<FigureView id="figure.andere" figures={[figure]} />)).toBe('')
   })
 
-  it('nutzt jede vorhandene Skizze bei mindestens einer Formel', () => {
-    const used = new Set(content.formulas.map((formula) => formula.figure).filter(Boolean))
+  it('nutzt jede vorhandene Skizze bei mindestens einer Formel oder einem Tool', () => {
+    const used = new Set([...content.formulas, ...content.tools].map((formula) => formula.figure).filter(Boolean))
     for (const entry of content.figures) expect(used).toContain(entry.id)
-    expect(content.figures).toHaveLength(33)
+    expect(content.figures).toHaveLength(37)
   })
 })

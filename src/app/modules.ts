@@ -10,6 +10,7 @@ import {
   OperatorsIcon,
   SearchIcon,
   StarIcon,
+  WrenchIcon,
   type IconProps,
 } from '../components/icons'
 import { isInternalEdition } from '../config/edition'
@@ -25,6 +26,12 @@ export interface AppModule {
 
 // Module der App (Phase 1). Routen, Navigation und Startseite lesen von hier.
 export const modules = {
+  tools: {
+    path: '/tools',
+    title: 'Tools',
+    description: 'Praktische Rechenhelfer',
+    icon: WrenchIcon,
+  },
   formulas: {
     path: '/formeln',
     title: 'Formeln',
@@ -91,6 +98,7 @@ export const modules = {
 
 /** Untere Navigationsleiste (neben "Start") */
 export const bottomNavModules: AppModule[] = [
+  modules.tools,
   modules.formulas,
   modules.converter,
   modules.calculator,

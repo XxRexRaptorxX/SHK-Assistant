@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 235">
+  <defs>
+    <marker id="rohrrolle-exakt-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Aufgerollter Bund: Außendurchmesser D, Kerndurchmesser dK, Lagen der Dicke t -->
+  <path class="copper" fill-rule="evenodd" d="M48 115a92 92 0 1 0 184 0a92 92 0 1 0 -184 0ZM96 115a44 44 0 1 0 88 0a44 44 0 1 0 -88 0Z"/>
+  <circle class="thin" cx="140" cy="115" r="60"/>
+  <circle class="thin" cx="140" cy="115" r="76"/>
+  <!-- Wicklungshöhe t: Dicke einer Lage (Rohr- bzw. Kabeldurchmesser) -->
+  <line class="dim" x1="140" y1="5" x2="140" y2="22" marker-end="url(#rohrrolle-exakt-dim)"/>
+  <line class="dim" x1="140" y1="56" x2="140" y2="40" marker-end="url(#rohrrolle-exakt-dim)"/>
+  <text class="sym" x="148" y="15">t</text>
+  <!-- Kerndurchmesser der leeren Rolle -->
+  <line class="dim" x1="97" y1="115" x2="183" y2="115" marker-start="url(#rohrrolle-exakt-dim)" marker-end="url(#rohrrolle-exakt-dim)"/>
+  <text x="129" y="108"><tspan class="sym">d</tspan><tspan class="sub" dy="4">K</tspan></text>
+  <!-- aktueller Außendurchmesser D -->
+  <line class="dim" x1="48" y1="120" x2="48" y2="228"/>
+  <line class="dim" x1="232" y1="120" x2="232" y2="228"/>
+  <line class="dim" x1="49" y1="222" x2="231" y2="222" marker-start="url(#rohrrolle-exakt-dim)" marker-end="url(#rohrrolle-exakt-dim)"/>
+  <text class="sym" x="134" y="217">D</text>
+  <!-- freies Ende: ausgerollte Länge L -->
+  <path class="line" d="M232 115C262 115 268 165 304 173"/>
+  <text class="sym" x="292" y="197">L</text>
+</svg>

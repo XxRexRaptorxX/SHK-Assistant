@@ -1,0 +1,45 @@
+{
+  "id": "tool.rollenlaenge",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Formel und Rechenbeispiel des Inhabers, übermittelt am 23.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Ausgerollte Länge einer Rohr- oder Kabelrolle",
+  "description": "Schätzt die verbleibende Länge auf einer Rolle aus der Anzahl der Wicklungen und dem mittleren Wickeldurchmesser. Den mittleren Durchmesser in der Mitte zwischen innerster und äußerster Wicklung messen. Das Ergebnis ist eine Näherung.",
+  "category": "Tools",
+  "variables": [
+    {
+      "symbol": "n",
+      "name": "Anzahl der Wicklungen",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "symbol": "d",
+      "name": "Mittlerer Wickeldurchmesser",
+      "term": "Durchmesser",
+      "unit": "cm"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "L",
+    "name": "Ausgerollte Länge",
+    "term": "Länge",
+    "unit": "m",
+    "decimals": 2
+  },
+  "expression": "n * pi * d",
+  "examples": [
+    {
+      "inputs": {
+        "n": 50,
+        "d": 80
+      },
+      "expected": 125.66,
+      "note": "Beispiel des Inhabers: 50 Wicklungen, 80 cm mittlerer Durchmesser"
+    }
+  ],
+  "figure": "figure.rohrrolle"
+}

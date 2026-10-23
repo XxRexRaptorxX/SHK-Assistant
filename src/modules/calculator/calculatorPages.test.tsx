@@ -30,7 +30,7 @@ describe('Taschenrechner-Seiten', () => {
   it('steht in der unteren Leiste als „Rechner“ vor den Checklisten', () => {
     const html = at('/')
     const nav = html.slice(html.indexOf('aria-label="Module"'))
-    expect(nav).toContain('grid-cols-6')
+    expect(nav).toContain('grid-cols-7')
     expect(nav.indexOf('>Rechner</span>')).toBeLessThan(nav.indexOf('>Checklisten</span>'))
   })
 

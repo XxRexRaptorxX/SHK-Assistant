@@ -85,7 +85,7 @@ function BottomNav() {
       aria-label="Module"
       className="fixed inset-x-1.5 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-10 print:hidden"
     >
-      <ul className="mx-auto grid max-w-xl grid-cols-6 rounded-full border border-edge bg-surface/90 p-1 shadow-xl shadow-black/25 backdrop-blur-md">
+      <ul className="mx-auto grid max-w-xl grid-cols-7 rounded-full border border-edge bg-surface/90 p-1 shadow-xl shadow-black/25 backdrop-blur-md">
         {bottomItems.map((item) => {
           const Icon = item.icon
           return (
@@ -94,7 +94,7 @@ function BottomNav() {
                 to={item.path}
                 end={item.path === '/'}
                 className={({ isActive }) =>
-                  `flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-full text-[0.625rem] font-semibold tracking-tighter min-[400px]:text-xs min-[400px]:tracking-normal ${
+                  `flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-full text-[0.5625rem] font-semibold tracking-tighter min-[360px]:text-[0.625rem] min-[400px]:text-xs min-[400px]:tracking-normal ${
                     isActive ? 'bg-raised text-accent' : 'text-ink'
                   }`
                 }

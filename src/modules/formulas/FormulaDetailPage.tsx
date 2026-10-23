@@ -31,6 +31,27 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
   const formula = findFormula(entries, slug)
   if (!formula) return <FormulaNotFound />
 
+  return (
+    <ContentPage
+      entry={formula}
+      title={formula.title}
+      back={BACK}
+      actions={
+        <>
+          <HideButton id={formula.id} title={formula.title} />
+          <FavoriteButton id={formula.id} title={formula.title} />
+        </>
+      }
+    >
+      <RichText text={formula.description} />
+      <FormulaBody formula={formula} />
+      <RelatedFormulas formulas={relatedFormulas(formula, entries)} />
+    </ContentPage>
+  )
+}
+
+/** Skizze, Formelzeile, Legende und Rechner einer Formel (auch für Tools) */
+export function FormulaBody({ formula }: { formula: FormulaEntry }) {
   const result = formula.result
   // Ergebnis zuerst, dann Eingaben und Konstanten
   const legend = [
@@ -77,18 +98,7 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
   ]
 
   return (
-    <ContentPage
-      entry={formula}
-      title={formula.title}
-      back={BACK}
-      actions={
-        <>
-          <HideButton id={formula.id} title={formula.title} />
-          <FavoriteButton id={formula.id} title={formula.title} />
-        </>
-      }
-    >
-      <RichText text={formula.description} />
+    <>
       {/* Skizze immer über der Formel */}
       <FigureView id={formula.figure} />
 
@@ -117,8 +127,7 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
           <Calculator key={formula.id} formula={formula} />
         </>
       )}
-      <RelatedFormulas formulas={relatedFormulas(formula, entries)} />
-    </ContentPage>
+    </>
   )
 }
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 170">
+  <!-- Angefangene Rolle am Anfang: Restlänge Ra -->
+  <path class="copper" fill-rule="evenodd" d="M24 75a22 22 0 1 0 44 0a22 22 0 1 0 -44 0ZM36 75a10 10 0 1 0 20 0a10 10 0 1 0 -20 0Z"/>
+  <text x="34" y="128"><tspan class="sym">R</tspan><tspan class="sub" dy="4">a</tspan></text>
+  <text class="note" x="18" y="150">Anfang</text>
+  <text class="sym" x="80" y="80">+</text>
+  <!-- N volle Rollen der Länge Lr -->
+  <path class="copper" fill-rule="evenodd" d="M100 75a34 34 0 1 0 68 0a34 34 0 1 0 -68 0ZM122 75a12 12 0 1 0 24 0a12 12 0 1 0 -24 0Z"/>
+  <path class="copper" fill-rule="evenodd" d="M112 75a34 34 0 1 0 68 0a34 34 0 1 0 -68 0ZM134 75a12 12 0 1 0 24 0a12 12 0 1 0 -24 0Z"/>
+  <text x="114" y="128"><tspan class="sym">N</tspan> · <tspan class="sym">L</tspan><tspan class="sub" dy="4">r</tspan></text>
+  <text class="note" x="104" y="150">volle Rollen</text>
+  <text class="sym" x="192" y="80">+</text>
+  <!-- letzte angebrochene Rolle: verbraucht Lr − Re, Rest Re bleibt -->
+  <circle class="thin dash" cx="252" cy="75" r="34"/>
+  <path class="copper" fill-rule="evenodd" d="M232 75a20 20 0 1 0 40 0a20 20 0 1 0 -40 0ZM240 75a12 12 0 1 0 24 0a12 12 0 1 0 -24 0Z"/>
+  <text x="222" y="128"><tspan class="sym">L</tspan><tspan class="sub" dy="4">r</tspan><tspan dy="-4"> − </tspan><tspan class="sym">R</tspan><tspan class="sub" dy="4">e</tspan></text>
+  <text class="note" x="222" y="150">letzte Rolle</text>
+  <text x="290" y="40"><tspan class="sym">R</tspan><tspan class="sub" dy="4">e</tspan></text>
+  <line class="dim" x1="288" y1="44" x2="268" y2="62"/>
+</svg>

@@ -9,6 +9,7 @@ import { legalCollection } from '../modules/legal/schema.ts'
 import { lexiconCollection } from '../modules/lexicon/schema.ts'
 import { materialCollection } from '../modules/materials/schema.ts'
 import { newsFeedCollection } from '../modules/news/schema.ts'
+import { toolCollection } from '../modules/tools/schema.ts'
 import { unitCollection } from '../modules/units/schema.ts'
 import type { CollectionDefinition } from './schema/base.ts'
 
@@ -26,6 +27,7 @@ export const collections = {
   legal: legalCollection,
   newsFeeds: newsFeedCollection,
   materials: materialCollection,
+  tools: toolCollection,
 } satisfies Record<string, CollectionDefinition>
 
 export type CollectionName = keyof typeof collections

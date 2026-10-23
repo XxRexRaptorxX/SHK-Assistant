@@ -13,6 +13,7 @@ import { usePageTitle } from '../lib/usePageTitle'
 function useTileChips(): Record<string, string> {
   const favorites = useFavoriteIds().size
   return {
+    [modules.tools.path]: `${content.tools.length} ${content.tools.length === 1 ? 'Tool' : 'Tools'}`,
     [modules.formulas.path]: `${content.formulas.length} Formeln`,
     [modules.converter.path]: `${content.converter.length} Größen`,
     [modules.checklists.path]: `${content.checklists.length} Checklisten`,

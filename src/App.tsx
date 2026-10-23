@@ -16,12 +16,14 @@ import { NewsPage } from './modules/news/NewsPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { SearchPage } from './search/SearchPage'
+import { ToolListPage } from './modules/tools/ToolListPage'
 import { SettingsPage } from './settings/SettingsPage'
 
 // Seiten mit mathjs werden erst bei Bedarf geladen (kleineres Start-Bundle, offline trotzdem vorgecacht)
 const FormulaDetailPage = lazy(() => import('./modules/formulas/FormulaDetailPage'))
 const ConverterPage = lazy(() => import('./modules/converter/ConverterPage'))
 const CalculatorPage = lazy(() => import('./modules/calculator/CalculatorPage'))
+const ToolPage = lazy(() => import('./modules/tools/ToolPage'))
 // Nur intern: im public-Build entfällt die Seite samt PIN ganz. Die Bedingung muss hier direkt
 // auf import.meta.env stehen; über isInternalEdition legt der Bundler den Chunk trotzdem an.
 const ExpertPage =
@@ -36,6 +38,15 @@ export function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path={modules.tools.path} element={<ToolListPage />} />
+        <Route
+          path={`${modules.tools.path}/:slug`}
+          element={
+            <Suspense fallback={<Loading />}>
+              <ToolPage />
+            </Suspense>
+          }
+        />
         <Route path={modules.formulas.path} element={<FormulaListPage />} />
         <Route
           path={`${modules.formulas.path}/:slug`}

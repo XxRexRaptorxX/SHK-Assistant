@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 225">
+  <defs>
+    <marker id="rohrrolle-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Aufgerollter Rohr- bzw. Kabelbund -->
+  <path class="copper" fill-rule="evenodd" d="M48 110a92 92 0 1 0 184 0a92 92 0 1 0 -184 0ZM88 110a52 52 0 1 0 104 0a52 52 0 1 0 -104 0Z"/>
+  <!-- einzelne Wicklungen -->
+  <circle class="thin" cx="140" cy="110" r="60"/>
+  <circle class="thin" cx="140" cy="110" r="66"/>
+  <circle class="thin" cx="140" cy="110" r="78"/>
+  <circle class="thin" cx="140" cy="110" r="84"/>
+  <!-- mittlerer Wickeldurchmesser d -->
+  <circle class="dim dash" cx="140" cy="110" r="72"/>
+  <line class="dim" x1="69" y1="110" x2="211" y2="110" marker-start="url(#rohrrolle-dim)" marker-end="url(#rohrrolle-dim)"/>
+  <text class="sym" x="134" y="103">d</text>
+  <!-- Anzahl der Wicklungen n -->
+  <line class="dim" x1="262" y1="44" x2="206" y2="64" marker-end="url(#rohrrolle-dim)"/>
+  <text class="sym" x="266" y="44">n</text>
+  <!-- freies Ende: ausgerollte Länge L -->
+  <path class="line" d="M232 110C262 110 268 160 304 168"/>
+  <text class="sym" x="292" y="192">L</text>
+  <text class="note" x="160" y="218">L = ausgerollte Länge</text>
+</svg>

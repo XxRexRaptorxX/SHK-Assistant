@@ -49,6 +49,12 @@ Beim Build wird jede Formel geprüft: bekannte Einheiten, passende Alternativein
 Symbole, jede Variable wird verwendet, und **jedes Testbeispiel muss den Referenzwert ergeben**.
 Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflicht.
 
+## Tools (`tools/`, Präfix `tool.`)
+
+Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle. Aufbau und Prüfung
+wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
+„Tools“ statt in der Formelsammlung.
+
 ## Skizzen (`figures/`, Präfix `figure.`)
 
 Maßskizzen zu Formeln, z. B. Kreis mit Durchmesser oder Rohr mit Querschnitt. Je Skizze zwei

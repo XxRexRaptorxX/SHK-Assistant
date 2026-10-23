@@ -162,6 +162,15 @@ export function MailIcon(props: IconProps) {
   )
 }
 
+/** Schraubenschlüssel: Werkzeuge */
+export function WrenchIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-4-4 1.7-1.3a4 4 0 0 0-5-5L3 7l4-4 2.7 1.3a4 4 0 0 0 5 2Z" />
+    </Icon>
+  )
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <Icon {...props}>

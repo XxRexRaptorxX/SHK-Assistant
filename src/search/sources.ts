@@ -4,6 +4,7 @@ import { converterSearchDocuments } from '../modules/converter/search'
 import { formulaSearchDocuments } from '../modules/formulas/search'
 import { expertCodeSearchDocuments } from '../modules/expert/search'
 import { lexiconSearchDocuments } from '../modules/lexicon/search'
+import { toolSearchDocuments } from '../modules/tools/tools'
 import { createSearch, type SearchDocument, type SearchEngine } from './search'
 
 // Jedes Modul trägt hier seine Einträge ein. Dient der Suche und den Favoriten
@@ -12,6 +13,7 @@ import { createSearch, type SearchDocument, type SearchEngine } from './search'
 // (die Favoriten werden in dieser Reihenfolge angezeigt).
 function allDocuments(): SearchDocument[] {
   return [
+    ...toolSearchDocuments(),
     ...formulaSearchDocuments(),
     ...converterSearchDocuments(),
     ...calculatorSearchDocuments(),

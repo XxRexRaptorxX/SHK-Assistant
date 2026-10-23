@@ -1,0 +1,49 @@
+{
+  "id": "tool.material-zurueck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Formel und Rechenbeispiel des Inhabers, übermittelt am 23.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Material zurückschreiben",
+  "description": "Ermittelt das tatsächlich verbaute Material, wenn Material zur Baustelle mitgenommen und der Rest wieder ins Lager zurückgegeben wurde. Mitgenommene und zurückgegebene Menge in derselben Einheit eintragen.",
+  "category": "Tools",
+  "variables": [
+    {
+      "symbol": "Mm",
+      "label": "Mₘ",
+      "name": "Mitgenommene Menge",
+      "term": "Länge",
+      "unit": "m",
+      "min": 0
+    },
+    {
+      "symbol": "Mr",
+      "label": "Mᵣ",
+      "name": "Zurückgegebene Menge",
+      "term": "Länge",
+      "unit": "m",
+      "min": 0
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Mv",
+    "label": "Mᵥ",
+    "name": "Verbaute Menge",
+    "term": "Länge",
+    "unit": "m",
+    "decimals": 2
+  },
+  "expression": "Mm - Mr",
+  "examples": [
+    {
+      "inputs": {
+        "Mm": 250,
+        "Mr": 40
+      },
+      "expected": 210,
+      "note": "Beispiel des Inhabers: 250 m mitgenommen, 40 m zurückgegeben"
+    }
+  ]
+}

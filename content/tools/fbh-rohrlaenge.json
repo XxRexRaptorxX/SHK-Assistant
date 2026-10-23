@@ -1,0 +1,53 @@
+{
+  "id": "tool.fbh-rohrlaenge",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Formel und Rechenbeispiel des Inhabers, übermittelt am 23.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Rohrlänge einer Fußbodenheizung",
+  "description": "Schätzt, wie viel Heizrohr für eine Fußbodenheizung auf einer Fläche nötig ist. Der Faktor 100 rechnet den Verlegeabstand von Zentimetern in Meter um. Das Ergebnis ist ein Näherungswert für die verlegte Fläche, z. B. rund 167 m Heizrohr bei 25 m² und 15 cm Verlegeabstand.",
+  "category": "Tools",
+  "variables": [
+    {
+      "symbol": "A",
+      "name": "Beheizte Fläche",
+      "term": "Fläche",
+      "unit": "m^2",
+      "min": 0
+    },
+    {
+      "symbol": "VA",
+      "name": "Verlegeabstand",
+      "unit": "cm",
+      "min": 0
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "k",
+      "label": "100",
+      "name": "Umrechnung von cm in m",
+      "value": "100 cm/m"
+    }
+  ],
+  "result": {
+    "symbol": "L",
+    "name": "Benötigte Rohrlänge",
+    "term": "Länge",
+    "unit": "m",
+    "decimals": 2
+  },
+  "expression": "A * k / VA",
+  "examples": [
+    {
+      "inputs": {
+        "A": 25,
+        "VA": 15
+      },
+      "expected": 166.67,
+      "note": "Beispiel des Inhabers: 25 m² Heizfläche, 15 cm Verlegeabstand, ungefähr 167 m Heizrohr"
+    }
+  ],
+  "figure": "figure.fbh-verlegung"
+}
