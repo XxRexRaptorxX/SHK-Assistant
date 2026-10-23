@@ -1,0 +1,143 @@
+{
+  "id": "tool.solar-auslegung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Tabelle des Inhabers „Speichergröße? Kollektorfläche?“ (Bild, übermittelt am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Solaranlage: Kollektorfläche und Speichergröße",
+  "description": "Schätzt Kollektorfläche und Größe des Warmwasserspeichers einer Solaranlage aus der Zahl der Personen, getrennt nach solarer Warmwasserbereitung und solarer Heizungsunterstützung sowie nach Kollektorart. Bei Heizungsunterstützung richtet sich der Speicher nach der Kollektorfläche. Die Werte sind Faustwerte.",
+  "category": "Auslegung",
+  "input": {
+    "symbol": "n",
+    "name": "Personen im Haushalt",
+    "min": 0
+  },
+  "choices": [
+    {
+      "key": "nutzung",
+      "name": "Nutzung",
+      "options": [
+        {
+          "key": "warmwasser",
+          "label": "Warmwasser"
+        },
+        {
+          "key": "heizung",
+          "label": "Heizungs\u00ADunterstützung"
+        }
+      ]
+    },
+    {
+      "key": "kollektor",
+      "name": "Kollektor",
+      "options": [
+        {
+          "key": "flach",
+          "label": "Flachkollektor"
+        },
+        {
+          "key": "vakuum",
+          "label": "Vakuumröhren"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "A",
+      "name": "Kollektorfläche",
+      "unit": "m²",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "nutzung": "warmwasser",
+            "kollektor": "flach"
+          },
+          "factor": 1.5,
+          "per": "n",
+          "rule": "1,5 m² pro Person"
+        },
+        {
+          "when": {
+            "nutzung": "warmwasser",
+            "kollektor": "vakuum"
+          },
+          "factor": 1,
+          "per": "n",
+          "rule": "1 m² pro Person"
+        },
+        {
+          "when": {
+            "nutzung": "heizung",
+            "kollektor": "flach"
+          },
+          "factor": 4,
+          "per": "n",
+          "rule": "4 m² pro Person"
+        },
+        {
+          "when": {
+            "nutzung": "heizung",
+            "kollektor": "vakuum"
+          },
+          "factor": 3,
+          "per": "n",
+          "rule": "3 m² pro Person"
+        }
+      ]
+    },
+    {
+      "symbol": "V",
+      "name": "Warmwasserspeicher",
+      "unit": "l",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "nutzung": "warmwasser"
+          },
+          "factor": 80,
+          "per": "n",
+          "rule": "80 Liter pro Person"
+        },
+        {
+          "when": {
+            "nutzung": "heizung"
+          },
+          "factor": 60,
+          "per": "A",
+          "rule": "etwa 60 Liter pro m² Kollektorfläche"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "input": 4,
+      "choices": {
+        "nutzung": "warmwasser",
+        "kollektor": "flach"
+      },
+      "expected": {
+        "A": 6,
+        "V": 320
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Warmwasser, Flachkollektor"
+    },
+    {
+      "input": 4,
+      "choices": {
+        "nutzung": "heizung",
+        "kollektor": "vakuum"
+      },
+      "expected": {
+        "A": 12,
+        "V": 720
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Heizungsunterstützung, Vakuumröhren"
+    }
+  ]
+}

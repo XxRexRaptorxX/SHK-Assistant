@@ -7,7 +7,8 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { FormulaBody } from '../formulas/FormulaDetailPage'
 import { ensureCustomUnits } from '../units/customUnits'
 import { findTool, toolEntries } from './tools'
-import { isChoiceTool, isTableTool, type ToolEntry } from './schema'
+import { isChoiceTool, isFactorTool, isTableTool, type ToolEntry } from './schema'
+import { FactorCalculator } from './FactorCalculator'
 import { ChoiceLookup } from './ChoiceLookup'
 import { TableLookup } from './TableLookup'
 
@@ -32,6 +33,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <TableLookup tool={tool} />
       ) : isChoiceTool(tool) ? (
         <ChoiceLookup tool={tool} />
+      ) : isFactorTool(tool) ? (
+        <FactorCalculator tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

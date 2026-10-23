@@ -9,6 +9,9 @@ import { ensureCustomUnits } from '../units/customUnits'
 import ToolPage from './ToolPage'
 import { checkChoiceTool, checkTableTool, isChoiceTool, isTableTool } from './schema'
 import { ChoiceLookup } from './ChoiceLookup'
+import { FactorCalculator } from './FactorCalculator'
+import { checkFactorTool, computeFactorTool } from './factorTool'
+import { isFactorTool } from './schema'
 import { matchingRows, TableLookup } from './TableLookup'
 import { Calculator } from '../formulas/Calculator'
 import { formulaToolEntries, toolEntries } from './tools'
@@ -53,6 +56,7 @@ describe('Tools', () => {
       'Leistungsminderung durch Ruß im Kessel',
       'Material zurückschreiben',
       'Rohrlänge einer Fußbodenheizung',
+      'Solaranlage: Kollektorfläche und Speichergröße',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Verbaute Länge aus mehreren Rollen (bei Abrollern)',
     ])
@@ -202,6 +206,42 @@ describe('Tools', () => {
     expect(checkChoiceTool(broken)).toEqual([
       'sections[0] (Norm-Innentemperatur nach Raumart): label doppelt vergeben',
       'sections[0] (Norm-Innentemperatur nach Raumart), options[1] (Ausstellungsräume): Wert fehlt für temperatur',
+    ])
+  })
+
+  it('legt die Solaranlage aus: Kollektorfläche je Person, Speicher je Person oder je m²', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.solar-auslegung')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    expect(checkFactorTool(tool)).toEqual([])
+    const solar = (n: number, nutzung: string, kollektor: string) => {
+      const values = computeFactorTool(tool, n, { nutzung, kollektor })
+      return [values.A?.value, values.V?.value]
+    }
+    expect(solar(4, 'warmwasser', 'flach')).toEqual([6, 320])
+    expect(solar(4, 'warmwasser', 'vakuum')).toEqual([4, 320])
+    expect(solar(4, 'heizung', 'flach')).toEqual([16, 960])
+    expect(solar(4, 'heizung', 'vakuum')).toEqual([12, 720])
+
+    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialInput="4" />)
+    expect(html).toContain('A = 6,0 m²')
+    expect(html).toContain('1,5 m² pro Person')
+    expect(html).toContain('V = 320 l')
+    expect(html.match(/aria-pressed="true"/g)).toHaveLength(2)
+  })
+
+  it('meldet Fehler in Faktor-Tools', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.solar-auslegung')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    const [area, storage] = tool.results
+    const broken = {
+      ...tool,
+      results: [{ ...area!, cases: area!.cases.slice(1) }, { ...storage!, cases: [{ ...storage!.cases[0]!, when: {}, per: 'X' }] }],
+      examples: [{ input: 1, choices: { nutzung: 'warmwasser', kollektor: 'vakuum' }, expected: { A: 2 } }],
+    }
+    expect(checkFactorTool(broken)).toEqual([
+      'results (A): kein Faktor für warmwasser + flach',
+      'results (V), cases[0]: per "X" ist weder die Eingabe noch ein vorheriges Ergebnis',
+      'examples[0]: A ergibt 1, erwartet 2',
     ])
   })
 

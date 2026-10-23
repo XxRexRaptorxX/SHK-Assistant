@@ -2,7 +2,7 @@ import { modules } from '../../app/modules'
 import { content } from '../../content'
 import type { SearchDocument } from '../../search/search'
 import { TOOL_ID_PREFIX } from './constants'
-import { isChoiceTool, isFormulaTool, isTableTool, type FormulaTool, type ToolEntry } from './schema'
+import { isChoiceTool, isFactorTool, isFormulaTool, isTableTool, type FormulaTool, type ToolEntry } from './schema'
 
 /** Alle Tools der aktuellen Edition, alphabetisch */
 export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.title.localeCompare(b.title, 'de'))
@@ -14,6 +14,7 @@ export const formulaToolEntries: FormulaTool[] = toolEntries.filter(isFormulaToo
 export function toolResultNames(entry: ToolEntry): string | undefined {
   if (isTableTool(entry)) return entry.columns.map((column) => column.name).join(', ')
   if (isChoiceTool(entry)) return entry.sections.map((section) => section.title).join(', ')
+  if (isFactorTool(entry)) return entry.results.map((result) => result.name).join(', ')
   return entry.result?.name
 }
 
@@ -35,6 +36,13 @@ function toolKeywords(entry: ToolEntry): string[] {
       ...section.columns.map((column) => column.name),
       ...section.options.flatMap((option) => [option.label, option.note, ...Object.values(option.values)]),
     ])
+  }
+  if (isFactorTool(entry)) {
+    return [
+      entry.input.name,
+      ...entry.choices.flatMap((choice) => [choice.name, ...choice.options.map((option) => option.label)]),
+      ...entry.results.map((result) => result.name),
+    ]
   }
   return entry.variables.map((variable) => variable.name)
 }

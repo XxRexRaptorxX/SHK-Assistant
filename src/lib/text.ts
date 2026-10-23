@@ -5,6 +5,8 @@
 export function normalizeForSearch(text: string): string {
   return text
     .toLocaleLowerCase('de')
+    // Weiche Trennstellen (z. B. „Heizungs&shy;unterstützung“ für schmale Knöpfe) ignorieren
+    .replace(/\u00ad/g, '')
     // Bruchzeichen ausschreiben, damit "1 1/4" auch "1 ¼" findet
     .replace(/¼/g, '1/4')
     .replace(/½/g, '1/2')
