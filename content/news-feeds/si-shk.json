@@ -1,10 +1,10 @@
 {
   "id": "news-feed.si-shk",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "https://www.si-shk.de/feed/",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-23",
   "name": "SI SHK",
   "url": "https://www.si-shk.de/feed/",
   "website": "https://www.si-shk.de"
