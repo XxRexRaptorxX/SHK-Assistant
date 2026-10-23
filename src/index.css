@@ -19,6 +19,10 @@
   --muted: #3c4659;
   /* noch zurückhaltender als muted, z. B. Nebenstellen in Fachmann-Codes */
   --faint: #858ea0;
+  /* Kurven im Grafikrechner */
+  --graph-1: #0047c2;
+  --graph-2: #c2410c;
+  --graph-3: #15803d;
   --line: #6f7a8f;
   --edge: #d3dae6;
   --accent: #0047c2;
@@ -49,6 +53,9 @@
   --ink: #f4f6fb;
   --muted: #b8c1d1;
   --faint: #7f899c;
+  --graph-1: #6ea8ff;
+  --graph-2: #ffa94d;
+  --graph-3: #69db7c;
   --line: #6f7b91;
   --edge: #273145;
   --accent: #ffd400;

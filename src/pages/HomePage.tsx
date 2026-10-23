@@ -5,6 +5,7 @@ import { pageTitle } from '../components/headings'
 import { SearchInput } from '../components/SearchInput'
 import { chip, featureCard } from '../components/surfaces'
 import { content } from '../content'
+import { CALCULATORS } from '../modules/calculator/calculators'
 import { useFavoriteIds } from '../favorites/favoritesStore'
 import { usePageTitle } from '../lib/usePageTitle'
 
@@ -16,6 +17,7 @@ function useTileChips(): Record<string, string> {
     [modules.converter.path]: `${content.converter.length} Größen`,
     [modules.checklists.path]: `${content.checklists.length} Checklisten`,
     [modules.lexicon.path]: `${content.lexicon.length} Begriffe`,
+    [modules.calculator.path]: `${CALCULATORS.length} Rechner`,
     [modules.news.path]: 'Täglich neu',
     [modules.expert.path]: `${content.expertCodes.length} Codes`,
     [modules.favorites.path]: `${favorites} gemerkt`,

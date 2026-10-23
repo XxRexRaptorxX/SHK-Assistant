@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import { Layout } from './app/Layout'
 import { modules } from './app/modules'
 import { FavoritesPage } from './favorites/FavoritesPage'
+import { CalculatorListPage } from './modules/calculator/CalculatorListPage'
 import { ChecklistListPage } from './modules/checklists/ChecklistListPage'
 import { ChecklistPage } from './modules/checklists/ChecklistPage'
 import { ConverterListPage } from './modules/converter/ConverterListPage'
@@ -20,6 +21,7 @@ import { SettingsPage } from './settings/SettingsPage'
 // Seiten mit mathjs werden erst bei Bedarf geladen (kleineres Start-Bundle, offline trotzdem vorgecacht)
 const FormulaDetailPage = lazy(() => import('./modules/formulas/FormulaDetailPage'))
 const ConverterPage = lazy(() => import('./modules/converter/ConverterPage'))
+const CalculatorPage = lazy(() => import('./modules/calculator/CalculatorPage'))
 // Nur intern: im public-Build entfällt die Seite samt PIN ganz. Die Bedingung muss hier direkt
 // auf import.meta.env stehen; über isInternalEdition legt der Bundler den Chunk trotzdem an.
 const ExpertPage =
@@ -49,6 +51,15 @@ export function App() {
           element={
             <Suspense fallback={<Loading />}>
               <ConverterPage />
+            </Suspense>
+          }
+        />
+        <Route path={modules.calculator.path} element={<CalculatorListPage />} />
+        <Route
+          path={`${modules.calculator.path}/:slug`}
+          element={
+            <Suspense fallback={<Loading />}>
+              <CalculatorPage />
             </Suspense>
           }
         />

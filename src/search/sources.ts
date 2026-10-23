@@ -1,3 +1,4 @@
+import { calculatorSearchDocuments } from '../modules/calculator/calculators'
 import { checklistSearchDocuments } from '../modules/checklists/search'
 import { converterSearchDocuments } from '../modules/converter/search'
 import { formulaSearchDocuments } from '../modules/formulas/search'
@@ -13,6 +14,7 @@ function allDocuments(): SearchDocument[] {
   return [
     ...formulaSearchDocuments(),
     ...converterSearchDocuments(),
+    ...calculatorSearchDocuments(),
     ...checklistSearchDocuments(),
     ...lexiconSearchDocuments(),
     ...expertCodeSearchDocuments(),

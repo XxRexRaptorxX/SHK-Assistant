@@ -105,6 +105,31 @@ export function NewsIcon(props: IconProps) {
   )
 }
 
+/** Rechenzeichen + − × ÷ */
+export function OperatorsIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M7 4v6M4 7h6M14 7h6M4.5 14.5l5 5M9.5 14.5l-5 5M14 17h6M17 14h.01M17 20h.01" />
+    </Icon>
+  )
+}
+
+export function ChevronLeftIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="m15 5-7 7 7 7" />
+    </Icon>
+  )
+}
+
+export function ChevronRightIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="m9 5 7 7-7 7" />
+    </Icon>
+  )
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <Icon {...props}>

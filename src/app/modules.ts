@@ -7,6 +7,7 @@ import {
   GearIcon,
   KeyIcon,
   NewsIcon,
+  OperatorsIcon,
   SearchIcon,
   StarIcon,
   type IconProps,
@@ -17,6 +18,8 @@ export interface AppModule {
   path: string
   title: string
   description: string
+  /** Kürzerer Name für die untere Leiste, falls title dort nicht passt */
+  navTitle?: string
   icon: ComponentType<IconProps>
 }
 
@@ -45,6 +48,13 @@ export const modules = {
     title: 'Lexikon',
     description: 'Bauteile und Begriffe',
     icon: BookIcon,
+  },
+  calculator: {
+    path: '/rechner',
+    title: 'Taschenrechner',
+    navTitle: 'Rechner',
+    description: 'Standard, Wissenschaft, Grafik',
+    icon: OperatorsIcon,
   },
   news: {
     path: '/news',
@@ -83,6 +93,7 @@ export const modules = {
 export const bottomNavModules: AppModule[] = [
   modules.formulas,
   modules.converter,
+  modules.calculator,
   modules.checklists,
   modules.lexicon,
 ]
