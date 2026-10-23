@@ -1,0 +1,48 @@
+{
+  "id": "formula.geometrie.kreisausschnitt-flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kreissektor“, https://de.wikipedia.org/wiki/Kreissektor",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kreisausschnittsfläche",
+  "description": "Berechnet die Fläche eines Kreisausschnitts (Kreissektors) aus Durchmesser und Mittelpunktswinkel.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    },
+    {
+      "symbol": "alpha",
+      "name": "Mittelpunktswinkel",
+      "unit": "deg",
+      "label": "α"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "full",
+      "name": "Vollwinkel",
+      "value": "360 deg"
+    }
+  ],
+  "result": {
+    "symbol": "A",
+    "name": "Fläche",
+    "unit": "m^2",
+    "decimals": 3
+  },
+  "expression": "pi * d^2 / 4 * alpha / full",
+  "examples": [
+    {
+      "inputs": {
+        "d": 2,
+        "alpha": 90
+      },
+      "expected": 0.7853981633974483
+    }
+  ],
+  "figure": "figure.kreisausschnitt"
+}

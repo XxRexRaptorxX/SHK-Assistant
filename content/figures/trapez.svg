@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 205">
+  <defs>
+    <marker id="trapez-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Fläche A -->
+  <path class="area" d="M30 160L270 160L210 55L90 55Z"/>
+  <path class="line" d="M30 160L270 160L210 55L90 55Z"/>
+  <text class="sym" x="160" y="122">A</text>
+  <!-- Höhe h: Abstand der parallelen Seiten -->
+  <line class="dim dash" x1="90" y1="55" x2="90" y2="160"/>
+  <path class="thin" d="M90 150H100V160"/>
+  <text class="sym" x="96" y="112">h</text>
+  <!-- Lange Grundseite l1 -->
+  <line class="dim" x1="30" y1="165" x2="30" y2="198"/>
+  <line class="dim" x1="270" y1="165" x2="270" y2="198"/>
+  <line class="dim" x1="31" y1="192" x2="269" y2="192" marker-start="url(#trapez-dim)" marker-end="url(#trapez-dim)"/>
+  <text x="142" y="186"><tspan class="sym">l</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <!-- Kurze Grundseite l2 -->
+  <line class="dim" x1="90" y1="50" x2="90" y2="16"/>
+  <line class="dim" x1="210" y1="50" x2="210" y2="16"/>
+  <line class="dim" x1="91" y1="22" x2="209" y2="22" marker-start="url(#trapez-dim)" marker-end="url(#trapez-dim)"/>
+  <text x="142" y="17"><tspan class="sym">l</tspan><tspan class="sub" dy="4">2</tspan></text>
+</svg>

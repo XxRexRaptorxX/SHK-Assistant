@@ -1,0 +1,48 @@
+{
+  "id": "formula.geometrie.kreisbogen-laenge",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kreissektor“, https://de.wikipedia.org/wiki/Kreissektor; Wikipedia „Kreisbogen“, https://de.wikipedia.org/wiki/Kreisbogen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kreisbogenlänge",
+  "description": "Berechnet die Länge eines Kreisbogens aus Durchmesser und Mittelpunktswinkel, z. B. die gestreckte Länge eines Rohrbogens.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    },
+    {
+      "symbol": "alpha",
+      "name": "Mittelpunktswinkel",
+      "unit": "deg",
+      "label": "α"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "full",
+      "name": "Vollwinkel",
+      "value": "360 deg"
+    }
+  ],
+  "result": {
+    "symbol": "b",
+    "name": "Bogenlänge",
+    "unit": "m",
+    "decimals": 3
+  },
+  "expression": "pi * d * alpha / full",
+  "examples": [
+    {
+      "inputs": {
+        "d": 2,
+        "alpha": 90
+      },
+      "expected": 1.5707963267948966
+    }
+  ],
+  "figure": "figure.kreisausschnitt"
+}

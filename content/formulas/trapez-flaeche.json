@@ -1,0 +1,49 @@
+{
+  "id": "formula.geometrie.trapez-flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Trapez (Geometrie)“, https://de.wikipedia.org/wiki/Trapez_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Trapezfläche",
+  "description": "Berechnet die Fläche eines Trapezes aus den beiden parallelen Seiten und der Höhe.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "l1",
+      "name": "Lange Grundseite",
+      "unit": "m",
+      "label": "l₁"
+    },
+    {
+      "symbol": "l2",
+      "name": "Kurze Grundseite",
+      "unit": "m",
+      "label": "l₂"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "A",
+    "name": "Fläche",
+    "unit": "m^2",
+    "decimals": 2
+  },
+  "expression": "(l1 + l2) / 2 * h",
+  "examples": [
+    {
+      "inputs": {
+        "l1": 6,
+        "l2": 4,
+        "h": 2.5
+      },
+      "expected": 12.5
+    }
+  ],
+  "figure": "figure.trapez"
+}

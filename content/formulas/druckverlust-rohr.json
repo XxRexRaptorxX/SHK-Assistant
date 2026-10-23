@@ -1,0 +1,66 @@
+{
+  "id": "formula.hydraulik.druckverlust-rohr",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Darcy-Weisbach-Gleichung“, https://de.wikipedia.org/wiki/Darcy-Weisbach-Gleichung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Druckverlust im geraden Rohr",
+  "description": "Berechnet den Druckverlust durch Rohrreibung auf einer geraden Rohrstrecke (Darcy-Weisbach). Die Rohrreibungszahl hängt von Rohrmaterial und Strömung ab und muss bekannt sein.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "lambda",
+      "name": "Rohrreibungszahl",
+      "unit": "",
+      "label": "λ",
+      "min": 0
+    },
+    {
+      "symbol": "l",
+      "name": "Rohrlänge",
+      "unit": "m"
+    },
+    {
+      "symbol": "d",
+      "name": "Innendurchmesser",
+      "unit": "mm"
+    },
+    {
+      "symbol": "rho",
+      "name": "Dichte",
+      "unit": "kg/m^3",
+      "label": "ρ"
+    },
+    {
+      "symbol": "v",
+      "name": "Strömungsgeschwindigkeit",
+      "unit": "m/s"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dp",
+    "name": "Druckverlust",
+    "unit": "Pa",
+    "decimals": 0,
+    "label": "Δp",
+    "units": [
+      "mbar"
+    ]
+  },
+  "expression": "lambda * l / d * rho / 2 * v^2",
+  "examples": [
+    {
+      "inputs": {
+        "lambda": 0.03,
+        "l": 10,
+        "d": 20,
+        "rho": 1000,
+        "v": 1
+      },
+      "expected": 7500
+    }
+  ],
+  "figure": "figure.rohrstrecke"
+}

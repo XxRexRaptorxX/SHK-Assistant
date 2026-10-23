@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 165">
+  <defs>
+    <marker id="rohrstrecke-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="rohrstrecke-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Gerade Rohrstrecke mit Wasser -->
+  <rect class="water-fill" x="40" y="55" width="260" height="50"/>
+  <ellipse class="water" cx="40" cy="80" rx="9" ry="25"/>
+  <line class="line" x1="40" y1="55" x2="300" y2="55"/>
+  <line class="line" x1="40" y1="105" x2="300" y2="105"/>
+  <ellipse class="line" cx="40" cy="80" rx="9" ry="25"/>
+  <ellipse class="water" cx="300" cy="80" rx="9" ry="25"/>
+  <ellipse class="line" cx="300" cy="80" rx="9" ry="25"/>
+  <!-- Strömungsgeschwindigkeit v und Volumenstrom -->
+  <line class="flow" x1="70" y1="80" x2="150" y2="80" marker-end="url(#rohrstrecke-flow)"/>
+  <text class="sym" x="102" y="72">v</text>
+  <line class="flow" x1="316" y1="80" x2="344" y2="80" marker-end="url(#rohrstrecke-flow)"/>
+  <text class="sym" x="318" y="68">V̇</text>
+  <!-- Druck am Anfang und am Ende -->
+  <text x="30" y="44"><tspan class="sym">p</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <text x="290" y="44"><tspan class="sym">p</tspan><tspan class="sub" dy="4">2</tspan></text>
+  <!-- Innendurchmesser d -->
+  <line class="dim" x1="250" y1="56" x2="250" y2="104" marker-start="url(#rohrstrecke-dim)" marker-end="url(#rohrstrecke-dim)"/>
+  <text class="sym" x="256" y="86">d</text>
+  <!-- Länge l -->
+  <line class="dim" x1="40" y1="110" x2="40" y2="158"/>
+  <line class="dim" x1="300" y1="110" x2="300" y2="158"/>
+  <line class="dim" x1="41" y1="152" x2="299" y2="152" marker-start="url(#rohrstrecke-dim)" marker-end="url(#rohrstrecke-dim)"/>
+  <text class="sym" x="166" y="146">l</text>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "id": "formula.thermodynamik.waermedurchgang",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmedurchgangskoeffizient“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchgangskoeffizient",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wärmestrom durch ein Bauteil",
+  "description": "Berechnet den Wärmestrom durch ein Bauteil wie Wand oder Fenster aus U-Wert, Fläche und Temperaturdifferenz zwischen innen und außen.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "U",
+      "name": "Wärmedurchgangskoeffizient (U-Wert)",
+      "unit": "W/(m^2*K)"
+    },
+    {
+      "symbol": "A",
+      "name": "Fläche",
+      "unit": "m^2"
+    },
+    {
+      "symbol": "dT",
+      "name": "Temperaturdifferenz innen – außen",
+      "unit": "K",
+      "label": "ΔT"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Phi",
+    "name": "Wärmestrom",
+    "unit": "W",
+    "decimals": 1,
+    "label": "Φ"
+  },
+  "expression": "U * A * dT",
+  "examples": [
+    {
+      "inputs": {
+        "U": 0.24,
+        "A": 12,
+        "dT": 30
+      },
+      "expected": 86.39999999999999
+    }
+  ],
+  "figure": "figure.wand"
+}

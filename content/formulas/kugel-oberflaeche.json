@@ -1,0 +1,35 @@
+{
+  "id": "formula.geometrie.kugel-oberflaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kugel“, https://de.wikipedia.org/wiki/Kugel",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kugeloberfläche",
+  "description": "Berechnet die Oberfläche einer Kugel aus dem Durchmesser.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "O",
+    "name": "Oberfläche",
+    "unit": "m^2",
+    "decimals": 3
+  },
+  "expression": "pi * d^2",
+  "examples": [
+    {
+      "inputs": {
+        "d": 0.3
+      },
+      "expected": 0.2827433388230814
+    }
+  ],
+  "figure": "figure.kugel"
+}

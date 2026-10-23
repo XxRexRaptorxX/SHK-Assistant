@@ -1,0 +1,41 @@
+{
+  "id": "formula.geometrie.rechteck-umfang",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rechteck“, https://de.wikipedia.org/wiki/Rechteck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Rechteckumfang",
+  "description": "Berechnet den Umfang eines Rechtecks aus Länge und Breite.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "l",
+      "name": "Länge",
+      "unit": "m"
+    },
+    {
+      "symbol": "b",
+      "name": "Breite",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "U",
+    "name": "Umfang",
+    "unit": "m",
+    "decimals": 2
+  },
+  "expression": "2 * (l + b)",
+  "examples": [
+    {
+      "inputs": {
+        "l": 4,
+        "b": 2.5
+      },
+      "expected": 13
+    }
+  ],
+  "figure": "figure.rechteck"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "formula.hydraulik.fliessgeschwindigkeit-rohr",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Volumenstrom“, https://de.wikipedia.org/wiki/Volumenstrom; Wikipedia „Darcy-Weisbach-Gleichung“, https://de.wikipedia.org/wiki/Darcy-Weisbach-Gleichung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Fließgeschwindigkeit im Rohr",
+  "description": "Berechnet die mittlere Fließgeschwindigkeit aus Volumenstrom und Innendurchmesser eines Rohrs.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "Vdot",
+      "name": "Volumenstrom",
+      "unit": "m^3/h",
+      "label": "V̇"
+    },
+    {
+      "symbol": "d",
+      "name": "Innendurchmesser",
+      "unit": "mm"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "v",
+    "name": "Fließgeschwindigkeit",
+    "unit": "m/s",
+    "decimals": 2
+  },
+  "expression": "4 * Vdot / (pi * d^2)",
+  "examples": [
+    {
+      "inputs": {
+        "Vdot": 1,
+        "d": 20
+      },
+      "expected": 0.8841941282883075
+    }
+  ],
+  "figure": "figure.rohrstrecke"
+}

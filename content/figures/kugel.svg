@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <marker id="kugel-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Kugel mit Durchmesser d -->
+  <circle class="area" cx="130" cy="100" r="85"/>
+  <circle class="line" cx="130" cy="100" r="85"/>
+  <path class="thin dash" d="M45 100A85 22 0 0 1 215 100"/>
+  <path class="thin" d="M45 100A85 22 0 0 0 215 100"/>
+  <line class="dim" x1="46" y1="100" x2="214" y2="100" marker-start="url(#kugel-dim)" marker-end="url(#kugel-dim)"/>
+  <circle class="dim-head" cx="130" cy="100" r="2.5"/>
+  <text class="sym" x="124" y="93">d</text>
+  <text class="sym" x="122" y="160">V</text>
+</svg>

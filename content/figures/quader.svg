@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230">
+  <defs>
+    <marker id="quader-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Quader in Schrägansicht: Länge l, Breite b (Tiefe), Höhe h -->
+  <path class="area" d="M40 70H200V190H40Z"/>
+  <path class="line" d="M40 70H200V190H40ZM40 70L100 25H260L200 70M200 190L260 145V25"/>
+  <!-- verdeckte Kanten -->
+  <path class="thin dash" d="M40 190L100 145H260M100 145V25"/>
+  <text class="sym" x="112" y="136">V</text>
+  <!-- Länge l -->
+  <line class="dim" x1="40" y1="195" x2="40" y2="222"/>
+  <line class="dim" x1="200" y1="195" x2="200" y2="222"/>
+  <line class="dim" x1="41" y1="216" x2="199" y2="216" marker-start="url(#quader-dim)" marker-end="url(#quader-dim)"/>
+  <text class="sym" x="116" y="210">l</text>
+  <!-- Höhe h -->
+  <line class="dim" x1="35" y1="70" x2="10" y2="70"/>
+  <line class="dim" x1="35" y1="190" x2="10" y2="190"/>
+  <line class="dim" x1="16" y1="71" x2="16" y2="189" marker-start="url(#quader-dim)" marker-end="url(#quader-dim)"/>
+  <text class="sym" x="22" y="136">h</text>
+  <!-- Breite b entlang der schrägen Kante -->
+  <line class="dim" x1="208" y1="196" x2="268" y2="151" marker-start="url(#quader-dim)" marker-end="url(#quader-dim)"/>
+  <text class="sym" x="244" y="190">b</text>
+</svg>

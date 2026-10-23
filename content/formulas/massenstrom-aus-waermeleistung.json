@@ -1,0 +1,49 @@
+{
+  "id": "formula.heizungstechnik.massenstrom-aus-waermeleistung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Spezifische Wärmekapazität“, https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t; Wikipedia „Massenstrom“, https://de.wikipedia.org/wiki/Massenstrom",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Massenstrom aus Wärmeleistung",
+  "description": "Berechnet den nötigen Massenstrom eines Heizkreises aus Wärmeleistung, spezifischer Wärmekapazität und Spreizung zwischen Vor- und Rücklauf.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "Qdot",
+      "name": "Wärmeleistung",
+      "unit": "kW",
+      "label": "Q̇"
+    },
+    {
+      "symbol": "c",
+      "name": "Spezifische Wärmekapazität",
+      "unit": "kJ/(kg*K)"
+    },
+    {
+      "symbol": "dT",
+      "name": "Spreizung (Vorlauf – Rücklauf)",
+      "unit": "K",
+      "label": "ΔT"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "mdot",
+    "name": "Massenstrom",
+    "unit": "kg/h",
+    "decimals": 1,
+    "label": "ṁ"
+  },
+  "expression": "Qdot / (c * dT)",
+  "examples": [
+    {
+      "inputs": {
+        "Qdot": 10,
+        "c": 4.19,
+        "dT": 20
+      },
+      "expected": 429.59427207637225
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "formula.geometrie.kegel-volumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kegel (Geometrie)“, https://de.wikipedia.org/wiki/Kegel_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kegelvolumen",
+  "description": "Berechnet das Volumen eines geraden Kreiskegels aus Grundkreis-Durchmesser und Höhe.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser des Grundkreises",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "V",
+    "name": "Volumen",
+    "unit": "m^3",
+    "decimals": 4
+  },
+  "expression": "pi * d^2 * h / 12",
+  "examples": [
+    {
+      "inputs": {
+        "d": "103 mm",
+        "h": "59 mm"
+      },
+      "expected": "164 cm^3",
+      "note": "Martiniglas aus dem Wikipedia-Artikel „Kegel (Geometrie)“: etwa 164 ml"
+    }
+  ],
+  "figure": "figure.kegel"
+}

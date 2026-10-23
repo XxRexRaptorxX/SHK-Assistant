@@ -48,6 +48,10 @@ describe('Formel-Engine', () => {
     expect(formatExpression(withLabel)).toBe('l · B')
   })
 
+  it('zeigt den natürlichen Logarithmus als ln, den Zehnerlogarithmus unverändert', () => {
+    expect(formatExpression({ ...fixture, expression: 'log(l / b) + log10(l)' })).toBe('ln(l / b) + log10(l)')
+  })
+
   it('prüft Testbeispiele', () => {
     expect(evaluateExample(fixture, fixture.examples[0]!).ok).toBe(true)
     expect(checkFormula({ ...fixture, examples: [{ ...fixture.examples[0]!, expected: 7 }] })[0]).toMatch(/Testbeispiel 1/)

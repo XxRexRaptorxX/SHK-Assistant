@@ -1,0 +1,41 @@
+{
+  "id": "formula.geometrie.kreisring-flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kreisring“, https://de.wikipedia.org/wiki/Kreisring",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kreisringfläche",
+  "description": "Berechnet die Fläche eines Kreisrings aus Außen- und Innendurchmesser, z. B. den Wandquerschnitt eines Rohrs.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "D",
+      "name": "Außendurchmesser",
+      "unit": "mm"
+    },
+    {
+      "symbol": "d",
+      "name": "Innendurchmesser",
+      "unit": "mm"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "A",
+    "name": "Ringfläche",
+    "unit": "mm^2",
+    "decimals": 1
+  },
+  "expression": "pi / 4 * (D^2 - d^2)",
+  "examples": [
+    {
+      "inputs": {
+        "D": 100,
+        "d": 80
+      },
+      "expected": 2827.4333882308138
+    }
+  ],
+  "figure": "figure.kreisring"
+}

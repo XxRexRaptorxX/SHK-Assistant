@@ -1,0 +1,48 @@
+{
+  "id": "formula.geometrie.quader-volumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Quader“, https://de.wikipedia.org/wiki/Quader",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Quadervolumen",
+  "description": "Berechnet das Volumen eines Quaders, z. B. eines Raums oder Behälters, aus Länge, Breite und Höhe.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "l",
+      "name": "Länge",
+      "unit": "m"
+    },
+    {
+      "symbol": "b",
+      "name": "Breite",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "V",
+    "name": "Volumen",
+    "unit": "m^3",
+    "decimals": 3
+  },
+  "expression": "l * b * h",
+  "examples": [
+    {
+      "inputs": {
+        "l": "9 cm",
+        "b": "4.5 cm",
+        "h": "1 cm"
+      },
+      "expected": "40.5 cm^3",
+      "note": "Rechenbeispiel aus dem Wikipedia-Artikel „Quader“"
+    }
+  ],
+  "figure": "figure.quader"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "formula.thermodynamik.waermedurchlasswiderstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmedurchlasswiderstand“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchlasswiderstand",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wärmedurchlasswiderstand einer Schicht",
+  "description": "Berechnet den Wärmedurchlasswiderstand einer Bauteilschicht aus Dicke und Wärmeleitfähigkeit. Bei mehreren Schichten werden die Werte addiert.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Schichtdicke",
+      "unit": "m"
+    },
+    {
+      "symbol": "lambda",
+      "name": "Wärmeleitfähigkeit",
+      "unit": "W/(m*K)",
+      "label": "λ"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "R",
+    "name": "Wärmedurchlasswiderstand",
+    "unit": "m^2*K/W",
+    "decimals": 3
+  },
+  "expression": "d / lambda",
+  "examples": [
+    {
+      "inputs": {
+        "d": 0.2,
+        "lambda": 0.04
+      },
+      "expected": 5
+    }
+  ],
+  "figure": "figure.wand"
+}

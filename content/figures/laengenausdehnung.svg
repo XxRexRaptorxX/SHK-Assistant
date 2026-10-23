@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 175">
+  <defs>
+    <marker id="laengenausdehnung-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="laengenausdehnung-heat" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="hot" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Festpunkt links -->
+  <line class="line" x1="30" y1="22" x2="30" y2="138"/>
+  <path class="thin" d="M30 32L20 42M30 52L20 62M30 72L20 82M30 92L20 102M30 112L20 122M30 132L20 142"/>
+  <!-- Rohr bei Ausgangstemperatur: Länge l0, Längenausdehnungskoeffizient α -->
+  <rect class="copper" x="30" y="40" width="200" height="16"/>
+  <line class="dim" x1="31" y1="30" x2="229" y2="30" marker-start="url(#laengenausdehnung-dim)" marker-end="url(#laengenausdehnung-dim)"/>
+  <text x="122" y="24"><tspan class="sym">l</tspan><tspan class="sub" dy="4">0</tspan></text>
+  <text class="sym" x="240" y="54">α</text>
+  <!-- Erwärmung um ΔT -->
+  <line class="hot-line" x1="100" y1="64" x2="100" y2="92" marker-end="url(#laengenausdehnung-heat)"/>
+  <text class="sym" x="110" y="84">ΔT</text>
+  <!-- Rohr nach Erwärmung: länger um Δl -->
+  <rect class="copper" x="30" y="104" width="240" height="16"/>
+  <line class="dim dash" x1="230" y1="56" x2="230" y2="150"/>
+  <line class="dim" x1="270" y1="122" x2="270" y2="150"/>
+  <line class="dim" x1="231" y1="144" x2="269" y2="144" marker-start="url(#laengenausdehnung-dim)" marker-end="url(#laengenausdehnung-dim)"/>
+  <text class="sym" x="238" y="166">Δl</text>
+</svg>

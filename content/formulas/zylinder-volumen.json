@@ -1,0 +1,41 @@
+{
+  "id": "formula.geometrie.zylinder-volumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Zylinder (Geometrie)“, https://de.wikipedia.org/wiki/Zylinder_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Zylindervolumen",
+  "description": "Berechnet das Volumen eines Kreiszylinders, z. B. eines Speichers, aus Durchmesser und Höhe.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "V",
+    "name": "Volumen",
+    "unit": "m^3",
+    "decimals": 3
+  },
+  "expression": "pi * d^2 / 4 * h",
+  "examples": [
+    {
+      "inputs": {
+        "d": 0.5,
+        "h": 1.2
+      },
+      "expected": 0.23561944901923448
+    }
+  ],
+  "figure": "figure.zylinder"
+}

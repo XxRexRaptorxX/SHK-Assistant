@@ -1,0 +1,42 @@
+{
+  "id": "formula.geometrie.parallelogramm-flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Parallelogramm“, https://de.wikipedia.org/wiki/Parallelogramm",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Parallelogrammfläche",
+  "description": "Berechnet die Fläche eines Parallelogramms aus Grundseite und zugehöriger Höhe.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "l",
+      "name": "Grundseite",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m",
+      "description": "Senkrechter Abstand zur gegenüberliegenden Seite"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "A",
+    "name": "Fläche",
+    "unit": "m^2",
+    "decimals": 2
+  },
+  "expression": "l * h",
+  "examples": [
+    {
+      "inputs": {
+        "l": 5,
+        "h": 3
+      },
+      "expected": 15
+    }
+  ],
+  "figure": "figure.parallelogramm"
+}

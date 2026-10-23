@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 230">
+  <defs>
+    <marker id="kegel-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Gerader Kreiskegel: Grundkreis-Durchmesser d, Höhe h -->
+  <path class="area" d="M130 25L60 185A70 18 0 0 0 200 185Z"/>
+  <path class="line" d="M200 185L130 25L60 185A70 18 0 0 0 200 185"/>
+  <path class="thin dash" d="M60 185A70 18 0 0 1 200 185"/>
+  <!-- Höhe h: Spitze senkrecht über dem Mittelpunkt -->
+  <line class="dim dash" x1="130" y1="25" x2="130" y2="185"/>
+  <path class="thin" d="M130 175H140V185"/>
+  <text class="sym" x="136" y="128">h</text>
+  <text class="sym" x="96" y="165">V</text>
+  <!-- Durchmesser d -->
+  <line class="dim" x1="60" y1="190" x2="60" y2="224"/>
+  <line class="dim" x1="200" y1="190" x2="200" y2="224"/>
+  <line class="dim" x1="61" y1="218" x2="199" y2="218" marker-start="url(#kegel-dim)" marker-end="url(#kegel-dim)"/>
+  <text class="sym" x="124" y="212">d</text>
+</svg>

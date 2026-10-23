@@ -1,0 +1,56 @@
+{
+  "id": "formula.thermodynamik.u-wert-einschichtig",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmedurchgangskoeffizient“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchgangskoeffizient",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "U-Wert einer einschichtigen Wand",
+  "description": "Berechnet den Wärmedurchgangskoeffizienten aus den Wärmeübergangswiderständen innen und außen sowie Dicke und Wärmeleitfähigkeit der Schicht. Die Übergangswiderstände sind einzusetzen, wie sie für das Bauteil gelten.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "Rsi",
+      "name": "Wärmeübergangswiderstand innen",
+      "unit": "m^2*K/W",
+      "label": "Rₛᵢ"
+    },
+    {
+      "symbol": "d",
+      "name": "Schichtdicke",
+      "unit": "m"
+    },
+    {
+      "symbol": "lambda",
+      "name": "Wärmeleitfähigkeit",
+      "unit": "W/(m*K)",
+      "label": "λ"
+    },
+    {
+      "symbol": "Rse",
+      "name": "Wärmeübergangswiderstand außen",
+      "unit": "m^2*K/W",
+      "label": "Rₛₑ"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "U",
+    "name": "Wärmedurchgangskoeffizient",
+    "unit": "W/(m^2*K)",
+    "decimals": 3
+  },
+  "expression": "1 / (Rsi + d / lambda + Rse)",
+  "examples": [
+    {
+      "inputs": {
+        "Rsi": 0.1,
+        "d": 0.3,
+        "lambda": 0.1,
+        "Rse": 0.1
+      },
+      "expected": 0.3125
+    }
+  ],
+  "figure": "figure.wand"
+}

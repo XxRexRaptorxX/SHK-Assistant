@@ -1,0 +1,41 @@
+{
+  "id": "formula.geometrie.zylinder-mantelflaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Zylinder (Geometrie)“, https://de.wikipedia.org/wiki/Zylinder_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Zylindermantelfläche",
+  "description": "Berechnet die Mantelfläche eines Kreiszylinders ohne Grund- und Deckfläche, z. B. die Oberfläche eines Rohrs für die Dämmung.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe bzw. Länge",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "M",
+    "name": "Mantelfläche",
+    "unit": "m^2",
+    "decimals": 3
+  },
+  "expression": "pi * d * h",
+  "examples": [
+    {
+      "inputs": {
+        "d": 0.5,
+        "h": 1.2
+      },
+      "expected": 1.8849555921538759
+    }
+  ],
+  "figure": "figure.zylinder"
+}

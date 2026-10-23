@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 225">
+  <defs>
+    <marker id="wand-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="wand-heat" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="hot" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Warme Innenseite, kalte Außenseite -->
+  <rect class="hot-soft" x="20" y="20" width="110" height="170"/>
+  <rect class="cold-soft" x="190" y="20" width="110" height="170"/>
+  <!-- Wand: Dicke d, Wärmeleitfähigkeit λ, Fläche A -->
+  <rect class="metal" x="130" y="20" width="60" height="170"/>
+  <text class="sym" x="153" y="58">λ</text>
+  <text class="sym" x="153" y="158">A</text>
+  <text x="34" y="44"><tspan class="sym">θ</tspan><tspan class="sub" dy="4">i</tspan></text>
+  <text x="270" y="44"><tspan class="sym">θ</tspan><tspan class="sub" dy="4">e</tspan></text>
+  <text x="28" y="76"><tspan class="sym">ΔT</tspan> = <tspan class="sym">θ</tspan><tspan class="sub" dy="4">i</tspan><tspan dy="-4"> − </tspan><tspan class="sym">θ</tspan><tspan class="sub" dy="4">e</tspan></text>
+  <!-- Wärmeübergang an den Oberflächen -->
+  <text x="98" y="178"><tspan class="sym">R</tspan><tspan class="sub" dy="4">si</tspan></text>
+  <text x="196" y="178"><tspan class="sym">R</tspan><tspan class="sub" dy="4">se</tspan></text>
+  <!-- Wärmestrom Φ von innen nach außen -->
+  <line class="hot-line" x1="50" y1="115" x2="272" y2="115" marker-end="url(#wand-heat)"/>
+  <text class="sym" x="240" y="105">Φ</text>
+  <!-- Dicke d -->
+  <line class="dim" x1="130" y1="192" x2="130" y2="220"/>
+  <line class="dim" x1="190" y1="192" x2="190" y2="220"/>
+  <line class="dim" x1="131" y1="214" x2="189" y2="214" marker-start="url(#wand-dim)" marker-end="url(#wand-dim)"/>
+  <text class="sym" x="156" y="208">d</text>
+</svg>

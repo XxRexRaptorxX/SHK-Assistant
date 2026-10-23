@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 180">
+  <defs>
+    <marker id="pumpe-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Rohrleitung vor und nach der Pumpe -->
+  <rect class="water-fill" x="20" y="108" width="116" height="24"/>
+  <rect class="water-fill" x="204" y="108" width="116" height="24"/>
+  <path class="line" d="M20 108H137M20 132H137M203 108H320M203 132H320"/>
+  <!-- Pumpe (Kreis mit Dreieck in Förderrichtung) -->
+  <circle class="metal" cx="170" cy="120" r="35"/>
+  <path class="line" d="M150 92L203 120L150 148"/>
+  <!-- Antrieb: Leistung P, Wirkungsgrad η -->
+  <rect class="metal" x="158" y="34" width="24" height="30"/>
+  <line class="line" x1="170" y1="64" x2="170" y2="85"/>
+  <text x="190" y="54"><tspan class="sym">P</tspan>, <tspan class="sym">η</tspan></text>
+  <!-- Drücke vor und nach der Pumpe -->
+  <text x="60" y="98"><tspan class="sym">p</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <text x="250" y="98"><tspan class="sym">p</tspan><tspan class="sub" dy="4">2</tspan></text>
+  <text x="104" y="172"><tspan class="sym">Δp</tspan> = <tspan class="sym">p</tspan><tspan class="sub" dy="4">2</tspan><tspan dy="-4"> − </tspan><tspan class="sym">p</tspan><tspan class="sub" dy="4">1</tspan></text>
+  <!-- Volumenstrom -->
+  <line class="flow" x1="40" y1="120" x2="100" y2="120" marker-end="url(#pumpe-flow)"/>
+  <line class="flow" x1="230" y1="120" x2="300" y2="120" marker-end="url(#pumpe-flow)"/>
+  <text class="sym" x="300" y="98">V̇</text>
+</svg>

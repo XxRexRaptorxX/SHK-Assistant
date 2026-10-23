@@ -276,4 +276,6 @@ export function formatExpression(formula: FormulaEntry): string {
         math.isSymbolNode(node) && labels.has(node.name) ? labels.get(node.name) : undefined,
     })
     .replace(/ \* /g, ' · ')
+    // mathjs: log = natürlicher Logarithmus; in der Anzeige wie üblich "ln", damit es nicht als lg gelesen wird
+    .replace(/\blog\(/g, 'ln(')
 }

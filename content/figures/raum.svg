@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <marker id="raum-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Raum mit Volumen V, Zu- und Abluft mit Volumenstrom -->
+  <path class="area" d="M60 60H220V170H60Z"/>
+  <path class="line" d="M60 60H220V170H60ZM60 60L100 30H260L220 60M220 170L260 140V30"/>
+  <text class="sym" x="132" y="122">V</text>
+  <line class="flow" x1="8" y1="90" x2="54" y2="90" marker-end="url(#raum-flow)"/>
+  <text class="sym" x="20" y="80">V̇</text>
+  <line class="flow" x1="226" y1="155" x2="300" y2="155" marker-end="url(#raum-flow)"/>
+  <text class="sym" x="270" y="143">V̇</text>
+</svg>

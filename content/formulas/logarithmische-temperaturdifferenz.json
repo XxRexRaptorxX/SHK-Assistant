@@ -1,0 +1,46 @@
+{
+  "id": "formula.heizungstechnik.logarithmische-temperaturdifferenz",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmetauscher“, https://de.wikipedia.org/wiki/W%C3%A4rmetauscher",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Mittlere logarithmische Temperaturdifferenz",
+  "description": "Berechnet die mittlere Temperaturdifferenz eines Wärmetauschers aus den Temperaturdifferenzen an beiden Enden. Beide Werte müssen größer als null und verschieden sein.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "dT1",
+      "name": "Temperaturdifferenz an Ende 1",
+      "unit": "K",
+      "label": "ΔT₁",
+      "min": 0.001
+    },
+    {
+      "symbol": "dT2",
+      "name": "Temperaturdifferenz an Ende 2",
+      "unit": "K",
+      "label": "ΔT₂",
+      "min": 0.001
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dTm",
+    "name": "Mittlere logarithmische Temperaturdifferenz",
+    "unit": "K",
+    "decimals": 2,
+    "label": "ΔTₘ"
+  },
+  "expression": "(dT1 - dT2) / log(dT1 / dT2)",
+  "examples": [
+    {
+      "inputs": {
+        "dT1": 50,
+        "dT2": 30
+      },
+      "expected": 39.15230377942435
+    }
+  ],
+  "figure": "figure.waermetauscher"
+}

@@ -1,0 +1,54 @@
+{
+  "id": "formula.thermodynamik.laengenausdehnung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmeausdehnung“, https://de.wikipedia.org/wiki/W%C3%A4rmeausdehnung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Längenausdehnung",
+  "description": "Berechnet, um wie viel sich ein Bauteil wie ein Rohr beim Erwärmen verlängert. Der Längenausdehnungskoeffizient hängt vom Werkstoff ab.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "alpha",
+      "name": "Längenausdehnungskoeffizient",
+      "unit": "1/K",
+      "label": "α",
+      "units": [
+        "mm/(m*K)"
+      ]
+    },
+    {
+      "symbol": "l0",
+      "name": "Ausgangslänge",
+      "unit": "m",
+      "label": "l₀"
+    },
+    {
+      "symbol": "dT",
+      "name": "Temperaturänderung",
+      "unit": "K",
+      "label": "ΔT"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "dl",
+    "name": "Längenänderung",
+    "unit": "mm",
+    "decimals": 2,
+    "label": "Δl"
+  },
+  "expression": "alpha * l0 * dT",
+  "examples": [
+    {
+      "inputs": {
+        "alpha": 0.00001,
+        "l0": 10,
+        "dT": 50
+      },
+      "expected": 5
+    }
+  ],
+  "figure": "figure.laengenausdehnung"
+}

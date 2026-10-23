@@ -1,0 +1,41 @@
+{
+  "id": "formula.hydraulik.rohrinhalt",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Zylinder (Geometrie)“, https://de.wikipedia.org/wiki/Zylinder_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wasserinhalt einer Rohrleitung",
+  "description": "Berechnet das Volumen in einer Rohrleitung aus Innendurchmesser und Länge, z. B. für den Anlageninhalt.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Innendurchmesser",
+      "unit": "mm"
+    },
+    {
+      "symbol": "l",
+      "name": "Rohrlänge",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "V",
+    "name": "Inhalt",
+    "unit": "l",
+    "decimals": 2
+  },
+  "expression": "pi * d^2 / 4 * l",
+  "examples": [
+    {
+      "inputs": {
+        "d": 20,
+        "l": 10
+      },
+      "expected": 3.1415926535897927
+    }
+  ],
+  "figure": "figure.rohrstrecke"
+}

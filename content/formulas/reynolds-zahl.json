@@ -1,0 +1,51 @@
+{
+  "id": "formula.hydraulik.reynolds-zahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Reynolds-Zahl“, https://de.wikipedia.org/wiki/Reynolds-Zahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Reynolds-Zahl im Rohr",
+  "description": "Berechnet die Reynolds-Zahl einer Rohrströmung. Sie zeigt, ob die Strömung laminar oder turbulent ist, und wird für die Rohrreibungszahl gebraucht.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "v",
+      "name": "Mittlere Strömungsgeschwindigkeit",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "d",
+      "name": "Innendurchmesser",
+      "unit": "mm"
+    },
+    {
+      "symbol": "nu",
+      "name": "Kinematische Viskosität",
+      "unit": "m^2/s",
+      "label": "ν",
+      "units": [
+        "mm^2/s"
+      ]
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Re",
+    "name": "Reynolds-Zahl",
+    "unit": "",
+    "decimals": 0
+  },
+  "expression": "v * d / nu",
+  "examples": [
+    {
+      "inputs": {
+        "v": 1,
+        "d": 20,
+        "nu": "1 mm^2/s"
+      },
+      "expected": 20000
+    }
+  ],
+  "figure": "figure.rohrstrecke"
+}

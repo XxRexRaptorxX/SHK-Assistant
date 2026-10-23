@@ -1,0 +1,42 @@
+{
+  "id": "formula.lueftung.luftwechselzahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Luftwechsel“, https://de.wikipedia.org/wiki/Luftwechsel",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Luftwechselzahl",
+  "description": "Berechnet, wie oft die Raumluft pro Stunde ausgetauscht wird, aus Luftvolumenstrom und Raumvolumen.",
+  "category": "Lüftung",
+  "variables": [
+    {
+      "symbol": "Vdot",
+      "name": "Luftvolumenstrom",
+      "unit": "m^3/h",
+      "label": "V̇"
+    },
+    {
+      "symbol": "V",
+      "name": "Raumvolumen",
+      "unit": "m^3"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "n",
+    "name": "Luftwechselzahl",
+    "unit": "1/h",
+    "decimals": 2
+  },
+  "expression": "Vdot / V",
+  "examples": [
+    {
+      "inputs": {
+        "Vdot": 60,
+        "V": 120
+      },
+      "expected": 0.5
+    }
+  ],
+  "figure": "figure.raum"
+}

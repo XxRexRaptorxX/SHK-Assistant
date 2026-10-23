@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 215">
+  <defs>
+    <marker id="kreisring-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Ringfläche A zwischen Außen- und Innenkreis -->
+  <path class="area" fill-rule="evenodd" d="M50 100a80 80 0 1 0 160 0a80 80 0 1 0 -160 0ZM85 100a45 45 0 1 0 90 0a45 45 0 1 0 -90 0Z"/>
+  <circle class="line" cx="130" cy="100" r="80"/>
+  <circle class="line" cx="130" cy="100" r="45"/>
+  <text class="sym" x="168" y="62">A</text>
+  <!-- Innendurchmesser d -->
+  <line class="dim" x1="86" y1="100" x2="174" y2="100" marker-start="url(#kreisring-dim)" marker-end="url(#kreisring-dim)"/>
+  <text class="sym" x="126" y="93">d</text>
+  <!-- Außendurchmesser D -->
+  <line class="dim" x1="50" y1="104" x2="50" y2="208"/>
+  <line class="dim" x1="210" y1="104" x2="210" y2="208"/>
+  <line class="dim" x1="51" y1="202" x2="209" y2="202" marker-start="url(#kreisring-dim)" marker-end="url(#kreisring-dim)"/>
+  <text class="sym" x="124" y="196">D</text>
+</svg>

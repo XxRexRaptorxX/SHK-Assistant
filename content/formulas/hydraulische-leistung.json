@@ -1,0 +1,44 @@
+{
+  "id": "formula.hydraulik.hydraulische-leistung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Leistung (Physik)“, https://de.wikipedia.org/wiki/Leistung_(Physik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Hydraulische Leistung",
+  "description": "Berechnet die Leistung, die eine Pumpe an das Wasser abgibt, aus Druckerhöhung und Volumenstrom.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "dp",
+      "name": "Druckerhöhung",
+      "unit": "bar",
+      "label": "Δp"
+    },
+    {
+      "symbol": "Vdot",
+      "name": "Volumenstrom",
+      "unit": "m^3/h",
+      "label": "V̇"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Phyd",
+    "name": "Hydraulische Leistung",
+    "unit": "W",
+    "decimals": 1,
+    "label": "Phyd"
+  },
+  "expression": "dp * Vdot",
+  "examples": [
+    {
+      "inputs": {
+        "dp": 0.5,
+        "Vdot": 2
+      },
+      "expected": 27.77777777777778
+    }
+  ],
+  "figure": "figure.pumpe"
+}

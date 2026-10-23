@@ -1,0 +1,48 @@
+{
+  "id": "formula.hydraulik.hydrostatischer-druck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Hydrostatischer Druck“, https://de.wikipedia.org/wiki/Hydrostatischer_Druck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Hydrostatischer Druck",
+  "description": "Berechnet den Druck einer ruhenden Flüssigkeitssäule in der Tiefe h, z. B. den statischen Druck aus der Höhe einer Heizungsanlage. Der Luftdruck an der Oberfläche ist nicht enthalten.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "rho",
+      "name": "Dichte der Flüssigkeit",
+      "unit": "kg/m^3",
+      "label": "ρ"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe der Flüssigkeitssäule",
+      "unit": "m"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "g",
+      "name": "Normfallbeschleunigung",
+      "value": "9.80665 m/s^2"
+    }
+  ],
+  "result": {
+    "symbol": "p",
+    "name": "Hydrostatischer Druck",
+    "unit": "bar",
+    "decimals": 3
+  },
+  "expression": "rho * g * h",
+  "examples": [
+    {
+      "inputs": {
+        "rho": 1000,
+        "h": 10
+      },
+      "expected": 0.980665
+    }
+  ],
+  "figure": "figure.wassersaeule"
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 195">
+  <defs>
+    <marker id="parallelogramm-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Fläche A -->
+  <path class="area" d="M40 150L210 150L260 40L90 40Z"/>
+  <path class="line" d="M40 150L210 150L260 40L90 40Z"/>
+  <text class="sym" x="160" y="108">A</text>
+  <!-- Höhe h: senkrecht auf der Grundseite -->
+  <line class="dim dash" x1="90" y1="40" x2="90" y2="150"/>
+  <path class="thin" d="M90 140H100V150"/>
+  <text class="sym" x="96" y="100">h</text>
+  <!-- Grundseite l -->
+  <line class="dim" x1="40" y1="155" x2="40" y2="188"/>
+  <line class="dim" x1="210" y1="155" x2="210" y2="188"/>
+  <line class="dim" x1="41" y1="182" x2="209" y2="182" marker-start="url(#parallelogramm-dim)" marker-end="url(#parallelogramm-dim)"/>
+  <text class="sym" x="122" y="176">l</text>
+</svg>

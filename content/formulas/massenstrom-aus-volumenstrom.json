@@ -1,0 +1,43 @@
+{
+  "id": "formula.hydraulik.massenstrom-aus-volumenstrom",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Massenstrom“, https://de.wikipedia.org/wiki/Massenstrom",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Massenstrom aus Volumenstrom",
+  "description": "Rechnet einen Volumenstrom über die Dichte in einen Massenstrom um.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "rho",
+      "name": "Dichte",
+      "unit": "kg/m^3",
+      "label": "ρ"
+    },
+    {
+      "symbol": "Vdot",
+      "name": "Volumenstrom",
+      "unit": "m^3/h",
+      "label": "V̇"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "mdot",
+    "name": "Massenstrom",
+    "unit": "kg/h",
+    "decimals": 1,
+    "label": "ṁ"
+  },
+  "expression": "rho * Vdot",
+  "examples": [
+    {
+      "inputs": {
+        "rho": 1000,
+        "Vdot": 0.5
+      },
+      "expected": 500
+    }
+  ]
+}

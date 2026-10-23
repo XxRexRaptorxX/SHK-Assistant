@@ -1,0 +1,56 @@
+{
+  "id": "formula.thermodynamik.waermeleitung-wand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmeleitung“, https://de.wikipedia.org/wiki/W%C3%A4rmeleitung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wärmeleitung durch eine ebene Wand",
+  "description": "Berechnet den Wärmestrom durch eine ebene Schicht aus Wärmeleitfähigkeit, Fläche, Temperaturdifferenz der beiden Oberflächen und Dicke.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "lambda",
+      "name": "Wärmeleitfähigkeit",
+      "unit": "W/(m*K)",
+      "label": "λ"
+    },
+    {
+      "symbol": "A",
+      "name": "Fläche",
+      "unit": "m^2"
+    },
+    {
+      "symbol": "dT",
+      "name": "Temperaturdifferenz der Oberflächen",
+      "unit": "K",
+      "label": "ΔT"
+    },
+    {
+      "symbol": "d",
+      "name": "Dicke",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Phi",
+    "name": "Wärmestrom",
+    "unit": "W",
+    "decimals": 1,
+    "label": "Φ"
+  },
+  "expression": "lambda * A * dT / d",
+  "examples": [
+    {
+      "inputs": {
+        "lambda": 0.5,
+        "A": 10,
+        "dT": 20,
+        "d": 0.25
+      },
+      "expected": 400
+    }
+  ],
+  "figure": "figure.wand"
+}

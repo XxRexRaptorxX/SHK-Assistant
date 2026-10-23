@@ -1,0 +1,43 @@
+{
+  "id": "formula.heizungstechnik.wirkungsgrad",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wirkungsgrad“, https://de.wikipedia.org/wiki/Wirkungsgrad",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Wirkungsgrad",
+  "description": "Berechnet den Wirkungsgrad als Verhältnis von abgegebener (genutzter) zu zugeführter Leistung, z. B. bei einem Wärmeerzeuger.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "Pab",
+      "name": "Abgegebene Leistung",
+      "unit": "kW",
+      "label": "Pab"
+    },
+    {
+      "symbol": "Pzu",
+      "name": "Zugeführte Leistung",
+      "unit": "kW",
+      "label": "Pzu"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "eta",
+    "name": "Wirkungsgrad",
+    "unit": "",
+    "decimals": 3,
+    "label": "η"
+  },
+  "expression": "Pab / Pzu",
+  "examples": [
+    {
+      "inputs": {
+        "Pab": 19,
+        "Pzu": 20
+      },
+      "expected": 0.95
+    }
+  ]
+}

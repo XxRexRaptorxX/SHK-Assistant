@@ -1,0 +1,42 @@
+{
+  "id": "formula.geometrie.pythagoras-kathete",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Satz des Pythagoras“, https://de.wikipedia.org/wiki/Satz_des_Pythagoras",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Satz des Pythagoras: Kathete",
+  "description": "Berechnet im rechtwinkligen Dreieck eine Kathete aus Hypotenuse und der anderen Kathete.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "c",
+      "name": "Hypotenuse",
+      "unit": "m"
+    },
+    {
+      "symbol": "b",
+      "name": "Kathete b",
+      "unit": "m",
+      "description": "Muss kürzer sein als die Hypotenuse"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "a",
+    "name": "Kathete a",
+    "unit": "m",
+    "decimals": 3
+  },
+  "expression": "sqrt(c^2 - b^2)",
+  "examples": [
+    {
+      "inputs": {
+        "c": 5,
+        "b": 4
+      },
+      "expected": 3
+    }
+  ],
+  "figure": "figure.rechtwinkliges-dreieck"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "formula.geometrie.rechteck-flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rechteck“, https://de.wikipedia.org/wiki/Rechteck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Rechteckfläche",
+  "description": "Berechnet die Fläche eines Rechtecks aus Länge und Breite.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "l",
+      "name": "Länge",
+      "unit": "m"
+    },
+    {
+      "symbol": "b",
+      "name": "Breite",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "A",
+    "name": "Fläche",
+    "unit": "m^2",
+    "decimals": 2
+  },
+  "expression": "l * b",
+  "examples": [
+    {
+      "inputs": {
+        "l": 4,
+        "b": 2.5
+      },
+      "expected": 10
+    }
+  ],
+  "figure": "figure.rechteck"
+}

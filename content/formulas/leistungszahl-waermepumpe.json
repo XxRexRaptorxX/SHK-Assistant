@@ -1,0 +1,43 @@
+{
+  "id": "formula.heizungstechnik.leistungszahl-waermepumpe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Leistungszahl“, https://de.wikipedia.org/wiki/Leistungszahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Leistungszahl einer Wärmepumpe",
+  "description": "Berechnet die Leistungszahl (COP) einer Wärmepumpe aus abgegebener Heizleistung und aufgenommener elektrischer Leistung.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "QdotH",
+      "name": "Heizleistung",
+      "unit": "kW",
+      "label": "Q̇ₕ"
+    },
+    {
+      "symbol": "Pel",
+      "name": "Elektrische Leistungsaufnahme",
+      "unit": "kW",
+      "label": "Pₑₗ"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "eps",
+    "name": "Leistungszahl",
+    "unit": "",
+    "decimals": 2,
+    "label": "ε"
+  },
+  "expression": "QdotH / Pel",
+  "examples": [
+    {
+      "inputs": {
+        "QdotH": 9,
+        "Pel": 2
+      },
+      "expected": 4.5
+    }
+  ]
+}

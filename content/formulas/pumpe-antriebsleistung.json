@@ -1,0 +1,53 @@
+{
+  "id": "formula.hydraulik.pumpe-antriebsleistung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Leistung (Physik)“, https://de.wikipedia.org/wiki/Leistung_(Physik); Wikipedia „Wirkungsgrad“, https://de.wikipedia.org/wiki/Wirkungsgrad",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Antriebsleistung einer Pumpe",
+  "description": "Berechnet die nötige Antriebsleistung einer Pumpe aus Druckerhöhung, Volumenstrom und Wirkungsgrad.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "dp",
+      "name": "Druckerhöhung",
+      "unit": "bar",
+      "label": "Δp"
+    },
+    {
+      "symbol": "Vdot",
+      "name": "Volumenstrom",
+      "unit": "m^3/h",
+      "label": "V̇"
+    },
+    {
+      "symbol": "eta",
+      "name": "Wirkungsgrad",
+      "unit": "",
+      "label": "η",
+      "min": 0.01,
+      "max": 1,
+      "description": "Als Dezimalzahl, z. B. 0,5 für 50 %"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "P",
+    "name": "Antriebsleistung",
+    "unit": "W",
+    "decimals": 1
+  },
+  "expression": "dp * Vdot / eta",
+  "examples": [
+    {
+      "inputs": {
+        "dp": 0.5,
+        "Vdot": 2,
+        "eta": 0.25
+      },
+      "expected": 111.11111111111111
+    }
+  ],
+  "figure": "figure.pumpe"
+}

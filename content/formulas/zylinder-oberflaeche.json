@@ -1,0 +1,41 @@
+{
+  "id": "formula.geometrie.zylinder-oberflaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Zylinder (Geometrie)“, https://de.wikipedia.org/wiki/Zylinder_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Zylinderoberfläche",
+  "description": "Berechnet die gesamte Oberfläche eines Kreiszylinders: Mantel plus Grund- und Deckfläche.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "d",
+      "name": "Durchmesser",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "name": "Höhe",
+      "unit": "m"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "O",
+    "name": "Oberfläche",
+    "unit": "m^2",
+    "decimals": 3
+  },
+  "expression": "pi * d * h + pi * d^2 / 2",
+  "examples": [
+    {
+      "inputs": {
+        "d": 0.5,
+        "h": 1.2
+      },
+      "expected": 2.2776546738526
+    }
+  ],
+  "figure": "figure.zylinder"
+}
