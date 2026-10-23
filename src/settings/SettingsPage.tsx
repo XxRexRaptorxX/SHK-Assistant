@@ -2,12 +2,12 @@ import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { primaryButton, secondaryButton } from '../components/buttons'
 import { showAllHidden, useHiddenIds } from '../hidden/hiddenStore'
-import { KofiIcon, MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
+import { KofiIcon, MailIcon, MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
 import { content } from '../content'
 import { currentBugReportUrl } from '../feedback/bugReport'
 import { requestMotionPermission } from '../feedback/shake'
 import { isInternalEdition } from '../config/edition'
-import { KOFI_URL } from '../config/links'
+import { CONTACT_EMAIL, KOFI_URL } from '../config/links'
 import { usePageTitle } from '../lib/usePageTitle'
 import { THEME_LABELS, THEME_PREFERENCES, type ThemePreference } from '../theme/theme'
 import { useTheme } from '../theme/useTheme'
@@ -248,11 +248,19 @@ function AboutSection() {
         ))}
       </dl>
       <a
+        href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('SHK-Assistant')}`}
+        aria-label={`Kontakt per E-Mail an ${CONTACT_EMAIL}`}
+        className={`${secondaryButton} mt-4 w-full`}
+      >
+        Kontakt
+        <MailIcon className="size-7 text-accent" />
+      </a>
+      <a
         href={KOFI_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Entwicklung unterstützen auf Ko-fi"
-        className={`${secondaryButton} mt-4 w-full`}
+        className={`${secondaryButton} mt-3 w-full`}
       >
         Entwicklung unterstützen
         <KofiIcon className="size-7 text-accent" />

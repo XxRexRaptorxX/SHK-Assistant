@@ -77,6 +77,11 @@ describe('Einstellungen-Seite', () => {
     expect(html).toContain('role="switch" aria-checked="true" aria-label="Schütteln zum Melden"')
   })
 
+  it('bietet Kontakt per E-Mail über dem Ko-fi-Knopf an', () => {
+    expect(html).toContain('href="mailto:biebl.simon@web.de?subject=SHK-Assistant"')
+    expect(html.indexOf('>Kontakt<')).toBeLessThan(html.indexOf('Entwicklung unterstützen'))
+  })
+
   it('verlinkt die Ko-fi-Seite zum Unterstützen', () => {
     expect(html).toContain('href="https://ko-fi.com/xxrexraptorxx" target="_blank" rel="noopener noreferrer"')
     expect(html).toContain('aria-label="Entwicklung unterstützen auf Ko-fi"')
