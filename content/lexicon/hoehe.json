@@ -1,0 +1,15 @@
+{
+  "id": "lexicon.hoehe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Höhe (Geometrie)“, https://de.wikipedia.org/wiki/H%C3%B6he_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Höhe",
+  "synonyms": [],
+  "definition": "**Höhe** ist in der Geometrie der senkrechte Abstand (das Lot) eines Punktes von einer Strecke oder Fläche, z. B. von der Spitze eines Dreiecks zur Grundseite oder zwischen Grund- und Deckfläche eines Körpers. Sie wird für Flächen- und Volumenberechnungen gebraucht.",
+  "related": [
+    "lexicon.flaeche",
+    "lexicon.volumen"
+  ]
+}

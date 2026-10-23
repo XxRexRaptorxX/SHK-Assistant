@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.laenge",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Länge (Physik)“, https://de.wikipedia.org/wiki/L%C3%A4nge_(Physik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Länge",
+  "synonyms": [],
+  "definition": "**Länge** ist die Ausdehnung eines Gegenstands in einer Richtung oder der Abstand zweier Punkte. Sie ist eine Basisgröße des SI mit der Einheit Meter (m).",
+  "related": [
+    "lexicon.flaeche"
+  ]
+}

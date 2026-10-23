@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.elektrischer-widerstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Elektrischer Widerstand“, https://de.wikipedia.org/wiki/Elektrischer_Widerstand",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Elektrischer Widerstand",
+  "synonyms": [
+    "Widerstand"
+  ],
+  "definition": "**Elektrischer Widerstand** gibt an, welche Spannung nötig ist, um einen bestimmten Strom durch einen Leiter fließen zu lassen (R = U / I). Formelzeichen R, Einheit Ohm (Ω).",
+  "related": [
+    "lexicon.elektrische-spannung",
+    "lexicon.elektrische-stromstaerke",
+    "lexicon.ohm",
+    "lexicon.spezifischer-elektrischer-widerstand"
+  ]
+}

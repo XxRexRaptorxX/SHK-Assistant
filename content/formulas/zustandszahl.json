@@ -12,6 +12,7 @@
     {
       "symbol": "T",
       "name": "Mittlere Gastemperatur",
+      "term": "Temperatur",
       "unit": "K",
       "units": [
         "degC"
@@ -21,18 +22,21 @@
     {
       "symbol": "pamb",
       "name": "Mittlerer Luftdruck am Aufstellort",
+      "term": "Luftdruck",
       "unit": "mbar"
     },
     {
       "symbol": "pe",
       "label": "pₑ",
       "name": "Betriebsdruck (Überdruck) des Gases",
+      "term": "Überdruck",
       "unit": "mbar"
     },
     {
       "symbol": "pw",
       "label": "φ·pₛ",
       "name": "Wasserdampfteildruck des Gases",
+      "term": "Partialdruck",
       "unit": "mbar",
       "min": 0,
       "description": "Bei trockenem Gas 0"
@@ -50,12 +54,14 @@
       "symbol": "Tn",
       "label": "Tₙ",
       "name": "Normtemperatur",
+      "term": "Normzustand",
       "value": "273.15 K"
     },
     {
       "symbol": "pn",
       "label": "pₙ",
       "name": "Normdruck",
+      "term": "Normzustand",
       "value": "1013.25 mbar"
     }
   ],

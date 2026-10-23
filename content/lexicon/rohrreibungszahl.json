@@ -1,0 +1,15 @@
+{
+  "id": "lexicon.rohrreibungszahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Rohrreibungszahl“, https://de.wikipedia.org/wiki/Rohrreibungszahl; Wikipedia „Darcy-Weisbach-Gleichung“, https://de.wikipedia.org/wiki/Darcy-Weisbach-Gleichung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrreibungszahl",
+  "synonyms": [],
+  "definition": "**Rohrreibungszahl** λ ist eine dimensionslose Kennzahl für den Reibungswiderstand einer Strömung in einem geraden Rohr. Sie hängt vom Rohr (Wandrauheit) und von der Strömung ab und wird für die Druckverlustberechnung nach Darcy-Weisbach gebraucht.",
+  "related": [
+    "lexicon.druckverlust",
+    "lexicon.reynolds-zahl"
+  ]
+}

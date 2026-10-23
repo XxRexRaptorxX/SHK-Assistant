@@ -1,0 +1,14 @@
+{
+  "id": "lexicon.masse",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Masse (Physik)“, https://de.wikipedia.org/wiki/Masse_(Physik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Masse",
+  "synonyms": [],
+  "definition": "**Masse** ist eine Eigenschaft eines Körpers, die seine Trägheit und seine Gewichtskraft bestimmt. Sie ist eine Basisgröße des SI und wird in Kilogramm (kg) angegeben.",
+  "related": [
+    "lexicon.dichte"
+  ]
+}

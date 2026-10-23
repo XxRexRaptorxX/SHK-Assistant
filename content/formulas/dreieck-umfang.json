@@ -12,16 +12,19 @@
     {
       "symbol": "l1",
       "name": "Seitenlänge 1",
+      "term": "Länge",
       "unit": "m"
     },
     {
       "symbol": "l2",
       "name": "Seitenlänge 2",
+      "term": "Länge",
       "unit": "m"
     },
     {
       "symbol": "l3",
       "name": "Seitenlänge 3",
+      "term": "Länge",
       "unit": "m"
     }
   ],

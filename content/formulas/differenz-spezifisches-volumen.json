@@ -11,24 +11,27 @@
   "variables": [
     {
       "symbol": "vspec2",
+      "label": "v₂",
       "name": "Spezifisches Volumen im Endzustand",
-      "unit": "dm^3/kg",
-      "label": "v₂"
+      "term": "Spezifisches Volumen",
+      "unit": "dm^3/kg"
     },
     {
       "symbol": "vspec1",
+      "label": "v₁",
       "name": "Spezifisches Volumen im Anfangszustand",
-      "unit": "dm^3/kg",
-      "label": "v₁"
+      "term": "Spezifisches Volumen",
+      "unit": "dm^3/kg"
     }
   ],
   "constants": [],
   "result": {
     "symbol": "dvspec",
+    "label": "Δv",
     "name": "Differenz des spezifischen Volumens",
+    "term": "Spezifisches Volumen",
     "unit": "dm^3/kg",
-    "decimals": 2,
-    "label": "Δv"
+    "decimals": 2
   },
   "expression": "vspec2 - vspec1",
   "examples": [

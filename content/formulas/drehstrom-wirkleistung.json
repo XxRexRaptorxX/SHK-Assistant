@@ -12,11 +12,13 @@
     {
       "symbol": "U",
       "name": "Verkettungsspannung",
+      "term": "Elektrische Spannung",
       "unit": "V"
     },
     {
       "symbol": "I",
       "name": "Leiterstrom",
+      "term": "Elektrische Stromstärke",
       "unit": "A"
     },
     {

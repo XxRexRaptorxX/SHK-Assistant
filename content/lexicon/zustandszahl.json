@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.zustandszahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Zustandszahl",
+  "synonyms": [],
+  "definition": "**Zustandszahl** Z ist das Verhältnis des Gasvolumens im Normzustand zum Volumen im Betriebszustand am Gaszähler. Sie hängt von Gastemperatur, Luftdruck, Betriebsdruck, Wasserdampfanteil und Kompressibilität ab. Gasversorger rechnen damit das gemessene Volumen auf den Normzustand um und multiplizieren es dann mit dem Brennwert, um die Energiemenge in kWh zu erhalten.",
+  "related": [
+    "lexicon.normzustand",
+    "lexicon.brennwert",
+    "lexicon.kompressibilitaetszahl"
+  ]
+}

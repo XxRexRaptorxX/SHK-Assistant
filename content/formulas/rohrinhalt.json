@@ -12,11 +12,13 @@
     {
       "symbol": "d",
       "name": "Innendurchmesser",
+      "term": "Durchmesser",
       "unit": "mm"
     },
     {
       "symbol": "l",
       "name": "Rohrlänge",
+      "term": "Länge",
       "unit": "m"
     }
   ],
@@ -24,6 +26,7 @@
   "result": {
     "symbol": "V",
     "name": "Inhalt",
+    "term": "Volumen",
     "unit": "l",
     "decimals": 2
   },

@@ -12,11 +12,13 @@
     {
       "symbol": "a",
       "name": "Kathete a",
+      "term": "Rechtwinkliges Dreieck",
       "unit": "m"
     },
     {
       "symbol": "b",
       "name": "Kathete b",
+      "term": "Rechtwinkliges Dreieck",
       "unit": "m"
     }
   ],

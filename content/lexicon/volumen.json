@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.volumen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Volumen“, https://de.wikipedia.org/wiki/Volumen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Volumen",
+  "synonyms": [
+    "Rauminhalt"
+  ],
+  "definition": "**Volumen** (Rauminhalt) ist der räumliche Inhalt eines Körpers. Die SI-Einheit ist der Kubikmeter (m³); für Flüssigkeiten ist auch der Liter (l) gebräuchlich, 1 m³ = 1000 l.",
+  "related": [
+    "lexicon.flaeche",
+    "lexicon.volumenstrom"
+  ]
+}

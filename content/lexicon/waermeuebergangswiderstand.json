@@ -1,0 +1,15 @@
+{
+  "id": "lexicon.waermeuebergangswiderstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Wärmeübergangswiderstand“, https://de.wikipedia.org/wiki/W%C3%A4rme%C3%BCbergangswiderstand; Wikipedia „Wärmedurchgangskoeffizient“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchgangskoeffizient",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmeübergangswiderstand",
+  "synonyms": [],
+  "definition": "**Wärmeübergangswiderstand** (innen Rsi, außen Rse) ist der Widerstand, den die Grenzschicht zwischen umgebender Luft und Bauteiloberfläche dem Wärmestrom entgegensetzt. Er geht zusammen mit den Widerständen der Schichten in den U-Wert ein; Einheit m²·K/W.",
+  "related": [
+    "lexicon.waermedurchgangskoeffizient",
+    "lexicon.waermedurchlasswiderstand"
+  ]
+}

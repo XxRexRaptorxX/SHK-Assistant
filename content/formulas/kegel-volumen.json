@@ -12,6 +12,7 @@
     {
       "symbol": "d",
       "name": "Durchmesser des Grundkreises",
+      "term": "Durchmesser",
       "unit": "m"
     },
     {

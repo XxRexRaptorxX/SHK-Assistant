@@ -12,11 +12,13 @@
     {
       "symbol": "D",
       "name": "Außendurchmesser",
+      "term": "Durchmesser",
       "unit": "mm"
     },
     {
       "symbol": "d",
       "name": "Innendurchmesser",
+      "term": "Durchmesser",
       "unit": "mm"
     }
   ],
@@ -25,6 +27,7 @@
     "symbol": "A",
     "label": "A◎",
     "name": "Ringfläche",
+    "term": "Fläche",
     "unit": "mm^2",
     "decimals": 1
   },

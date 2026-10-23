@@ -12,11 +12,13 @@
     {
       "symbol": "n",
       "name": "Luftwechselzahl",
+      "term": "Luftwechselrate",
       "unit": "1/h"
     },
     {
       "symbol": "V",
       "name": "Raumvolumen",
+      "term": "Volumen",
       "unit": "m^3"
     }
   ],

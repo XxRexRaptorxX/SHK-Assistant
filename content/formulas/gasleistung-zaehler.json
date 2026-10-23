@@ -13,6 +13,7 @@
       "symbol": "VB",
       "label": "VB",
       "name": "Gemessenes Betriebsvolumen",
+      "term": "Volumen",
       "unit": "l",
       "units": [
         "m^3"
@@ -21,6 +22,7 @@
     {
       "symbol": "t",
       "name": "Messzeit",
+      "term": "Zeit",
       "unit": "s",
       "units": [
         "min"
@@ -35,6 +37,7 @@
     {
       "symbol": "H",
       "name": "Heiz- bzw. Brennwert im Normzustand",
+      "term": "Brennwert",
       "unit": "kWh/m^3"
     }
   ],
@@ -42,6 +45,7 @@
   "result": {
     "symbol": "P",
     "name": "Gasleistung (Belastung)",
+    "term": "Leistung",
     "unit": "kW",
     "decimals": 2
   },

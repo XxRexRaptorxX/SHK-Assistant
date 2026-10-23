@@ -12,6 +12,7 @@
     {
       "symbol": "T2",
       "name": "Höhere Temperatur",
+      "term": "Temperatur",
       "unit": "K",
       "units": [
         "degC"
@@ -20,6 +21,7 @@
     {
       "symbol": "T1",
       "name": "Niedrigere Temperatur",
+      "term": "Temperatur",
       "unit": "K",
       "units": [
         "degC"

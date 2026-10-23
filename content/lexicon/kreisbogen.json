@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.kreisbogen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Kreisbogen“, https://de.wikipedia.org/wiki/Kreisbogen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kreisbogen",
+  "synonyms": [
+    "Bogenlänge"
+  ],
+  "definition": "**Kreisbogen** ist ein zusammenhängendes Teilstück einer Kreislinie zwischen zwei Punkten. Seine Länge (Bogenlänge) ergibt sich aus dem Durchmesser und dem zugehörigen Mittelpunktswinkel.",
+  "related": [
+    "lexicon.kreis",
+    "lexicon.winkel"
+  ]
+}

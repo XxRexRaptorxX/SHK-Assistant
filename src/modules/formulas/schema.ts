@@ -16,6 +16,8 @@ const variableSchema = z.strictObject({
   /** Anzeige statt Symbol, z. B. "ΔT" für "dT" */
   label: z.string().trim().min(1).optional(),
   name: z.string().trim().min(1),
+  /** Lexikon-Begriff für die Verlinkung, wenn name genauer ist (z. B. "Masse" bei "Masse des kalten Stoffes") */
+  term: z.string().trim().min(1).optional(),
   unit,
   /** Weitere wählbare Eingabeeinheiten (müssen zur Haupteinheit passen) */
   units: z.array(unit).default([]),
@@ -29,6 +31,8 @@ const constantSchema = z.strictObject({
   symbol,
   label: z.string().trim().min(1).optional(),
   name: z.string().trim().min(1),
+  /** Lexikon-Begriff für die Verlinkung, wenn name genauer ist (z. B. "Masse" bei "Masse des kalten Stoffes") */
+  term: z.string().trim().min(1).optional(),
   /** Wert mit Einheit als mathjs-Ausdruck, z. B. "4.19 kJ/(kg K)" */
   value: z.string().trim().min(1),
 })
@@ -37,6 +41,8 @@ const resultSchema = z.strictObject({
   symbol,
   label: z.string().trim().min(1).optional(),
   name: z.string().trim().min(1),
+  /** Lexikon-Begriff für die Verlinkung, wenn name genauer ist (z. B. "Masse" bei "Masse des kalten Stoffes") */
+  term: z.string().trim().min(1).optional(),
   unit,
   units: z.array(unit).default([]),
   /** Nachkommastellen in der Anzeige */

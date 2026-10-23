@@ -11,9 +11,10 @@
   "variables": [
     {
       "symbol": "dp",
+      "label": "Δp",
       "name": "Druckerhöhung",
-      "unit": "bar",
-      "label": "Δp"
+      "term": "Druck",
+      "unit": "bar"
     },
     {
       "symbol": "Vdot",
@@ -35,6 +36,7 @@
   "result": {
     "symbol": "P",
     "name": "Antriebsleistung",
+    "term": "Leistung",
     "unit": "W",
     "decimals": 1
   },

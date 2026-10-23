@@ -20,17 +20,20 @@
       "symbol": "p0",
       "label": "p₀",
       "name": "Bezugswert",
+      "term": "Luftdruck",
       "value": "1016 hPa"
     },
     {
       "symbol": "grad",
       "name": "Luftdruckabnahme je Meter",
+      "term": "Luftdruck",
       "value": "0.12 hPa/m"
     }
   ],
   "result": {
     "symbol": "pamb",
     "name": "Mittlerer Luftdruck",
+    "term": "Luftdruck",
     "unit": "hPa",
     "decimals": 1
   },

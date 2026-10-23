@@ -12,6 +12,7 @@
     {
       "symbol": "R20",
       "name": "Widerstand bei 20 °C",
+      "term": "Elektrischer Widerstand",
       "unit": "ohm"
     },
     {
@@ -22,18 +23,20 @@
     },
     {
       "symbol": "dT",
+      "label": "ΔT",
       "name": "Temperaturdifferenz gegenüber 20 °C",
-      "unit": "K",
-      "label": "ΔT"
+      "term": "Temperaturdifferenz",
+      "unit": "K"
     }
   ],
   "constants": [],
   "result": {
     "symbol": "Rtheta",
+    "label": "Rθ",
     "name": "Widerstand nach Erwärmung",
+    "term": "Elektrischer Widerstand",
     "unit": "ohm",
-    "decimals": 2,
-    "label": "Rθ"
+    "decimals": 2
   },
   "expression": "R20 * (1 + alpha * dT)",
   "examples": [

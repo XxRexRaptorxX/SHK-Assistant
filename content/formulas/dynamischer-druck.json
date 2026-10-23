@@ -11,9 +11,10 @@
   "variables": [
     {
       "symbol": "rho",
+      "label": "ρ",
       "name": "Dichte des strömenden Mediums",
-      "unit": "kg/m^3",
-      "label": "ρ"
+      "term": "Dichte",
+      "unit": "kg/m^3"
     },
     {
       "symbol": "v",

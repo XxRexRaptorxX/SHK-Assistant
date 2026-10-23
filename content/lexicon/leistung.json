@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.leistung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Leistung (Physik)“, https://de.wikipedia.org/wiki/Leistung_(Physik)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Leistung",
+  "synonyms": [],
+  "definition": "**Leistung** ist die in einer Zeitspanne umgesetzte Energie geteilt durch diese Zeitspanne. Formelzeichen P, Einheit Watt (W).",
+  "related": [
+    "lexicon.energie",
+    "lexicon.elektrische-leistung",
+    "lexicon.waermeleistung"
+  ]
+}

@@ -12,6 +12,7 @@
     {
       "symbol": "A",
       "name": "Strömungsquerschnitt",
+      "term": "Fläche",
       "unit": "m^2"
     },
     {
@@ -29,6 +30,7 @@
   "result": {
     "symbol": "V",
     "name": "Ausflussvolumen",
+    "term": "Volumen",
     "unit": "m^3",
     "decimals": 2
   },

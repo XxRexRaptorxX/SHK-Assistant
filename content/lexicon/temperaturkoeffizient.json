@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.temperaturkoeffizient",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Temperaturkoeffizient“, https://de.wikipedia.org/wiki/Temperaturkoeffizient",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Temperaturkoeffizient",
+  "synonyms": [
+    "Temperaturbeiwert"
+  ],
+  "definition": "**Temperaturkoeffizient** (Temperaturbeiwert) beschreibt die relative Änderung einer Größe, z. B. des elektrischen Widerstands eines Leiters, je Kelvin Temperaturänderung gegenüber einer Bezugstemperatur. Einheit 1/K.",
+  "related": [
+    "lexicon.elektrischer-widerstand"
+  ]
+}

@@ -19,11 +19,13 @@
     {
       "symbol": "l",
       "name": "Rohrlänge",
+      "term": "Länge",
       "unit": "m"
     },
     {
       "symbol": "d",
       "name": "Innendurchmesser",
+      "term": "Durchmesser",
       "unit": "mm"
     },
     {

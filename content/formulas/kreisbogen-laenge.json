@@ -16,15 +16,17 @@
     },
     {
       "symbol": "alpha",
+      "label": "α",
       "name": "Mittelpunktswinkel",
-      "unit": "deg",
-      "label": "α"
+      "term": "Winkel",
+      "unit": "deg"
     }
   ],
   "constants": [
     {
       "symbol": "full",
       "name": "Vollwinkel",
+      "term": "Winkel",
       "value": "360 deg"
     }
   ],

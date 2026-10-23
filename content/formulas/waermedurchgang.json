@@ -12,6 +12,7 @@
     {
       "symbol": "U",
       "name": "Wärmedurchgangskoeffizient (U-Wert)",
+      "term": "Wärmedurchgangskoeffizient",
       "unit": "W/(m^2*K)"
     },
     {
@@ -21,9 +22,10 @@
     },
     {
       "symbol": "dT",
+      "label": "ΔT",
       "name": "Temperaturdifferenz innen – außen",
-      "unit": "K",
-      "label": "ΔT"
+      "term": "Temperaturdifferenz",
+      "unit": "K"
     }
   ],
   "constants": [],

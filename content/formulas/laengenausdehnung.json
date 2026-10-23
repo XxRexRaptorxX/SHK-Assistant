@@ -11,33 +11,37 @@
   "variables": [
     {
       "symbol": "alpha",
-      "name": "Längenausdehnungskoeffizient",
-      "unit": "1/K",
       "label": "α",
+      "name": "Längenausdehnungskoeffizient",
+      "term": "Wärmeausdehnungskoeffizient",
+      "unit": "1/K",
       "units": [
         "mm/(m*K)"
       ]
     },
     {
       "symbol": "l0",
+      "label": "l₀",
       "name": "Ausgangslänge",
-      "unit": "m",
-      "label": "l₀"
+      "term": "Länge",
+      "unit": "m"
     },
     {
       "symbol": "dT",
+      "label": "ΔT",
       "name": "Temperaturänderung",
-      "unit": "K",
-      "label": "ΔT"
+      "term": "Temperaturdifferenz",
+      "unit": "K"
     }
   ],
   "constants": [],
   "result": {
     "symbol": "dl",
+    "label": "Δl",
     "name": "Längenänderung",
+    "term": "Wärmeausdehnung",
     "unit": "mm",
-    "decimals": 2,
-    "label": "Δl"
+    "decimals": 2
   },
   "expression": "alpha * l0 * dT",
   "examples": [

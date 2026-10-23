@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.normzustand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl; Wikipedia „Standardbedingungen“, https://de.wikipedia.org/wiki/Standardbedingungen",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Normzustand",
+  "synonyms": [
+    "Normbedingungen"
+  ],
+  "definition": "**Normzustand** ist ein festgelegter Bezugszustand für Gasmengen: 0 °C (273,15 K) und 1013,25 mbar. Gasvolumen sowie Heiz- und Brennwerte werden darauf bezogen, damit sie vergleichbar sind.",
+  "related": [
+    "lexicon.zustandszahl",
+    "lexicon.brennwert",
+    "lexicon.heizwert"
+  ]
+}

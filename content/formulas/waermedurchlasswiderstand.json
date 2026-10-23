@@ -12,6 +12,7 @@
     {
       "symbol": "d",
       "name": "Schichtdicke",
+      "term": "Länge",
       "unit": "m"
     },
     {

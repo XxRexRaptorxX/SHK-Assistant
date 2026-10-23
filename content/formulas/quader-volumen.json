@@ -17,6 +17,7 @@
     {
       "symbol": "b",
       "name": "Breite",
+      "term": "Länge",
       "unit": "m"
     },
     {

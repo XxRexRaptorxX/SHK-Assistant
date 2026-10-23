@@ -22,9 +22,10 @@
     },
     {
       "symbol": "dT",
+      "label": "ΔT",
       "name": "Spreizung (Vorlauf – Rücklauf)",
-      "unit": "K",
-      "label": "ΔT"
+      "term": "Spreizung",
+      "unit": "K"
     }
   ],
   "constants": [],

@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.flaeche",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Flächeninhalt“, https://de.wikipedia.org/wiki/Fl%C3%A4cheninhalt",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Fläche",
+  "synonyms": [
+    "Flächeninhalt",
+    "Querschnittsfläche",
+    "Querschnitt"
+  ],
+  "definition": "**Fläche** bzw. Flächeninhalt ist das Maß für die Größe einer zweidimensionalen Figur wie Rechteck oder Kreis oder der Begrenzungsfläche eines Körpers. Die SI-Einheit ist der Quadratmeter (m²). Die **Querschnittsfläche** ist die Fläche eines Schnitts quer durch ein Bauteil, z. B. durch ein Rohr oder einen Leiter.",
+  "related": [
+    "lexicon.laenge",
+    "lexicon.volumen"
+  ]
+}

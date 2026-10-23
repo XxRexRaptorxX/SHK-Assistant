@@ -1,0 +1,15 @@
+{
+  "id": "lexicon.leistungsfaktor",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Leistungsfaktor“, https://de.wikipedia.org/wiki/Leistungsfaktor",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Leistungsfaktor",
+  "synonyms": [],
+  "definition": "**Leistungsfaktor** ist das Verhältnis von Wirkleistung zu Scheinleistung; er liegt zwischen 0 und 1. Bei sinusförmigen Strömen und Spannungen entspricht er cos φ.",
+  "related": [
+    "lexicon.wirkleistung",
+    "lexicon.scheinleistung"
+  ]
+}

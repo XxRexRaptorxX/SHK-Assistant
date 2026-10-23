@@ -11,13 +11,15 @@
   "variables": [
     {
       "symbol": "Rsi",
+      "label": "Rₛᵢ",
       "name": "Wärmeübergangswiderstand innen",
-      "unit": "m^2*K/W",
-      "label": "Rₛᵢ"
+      "term": "Wärmeübergangswiderstand",
+      "unit": "m^2*K/W"
     },
     {
       "symbol": "d",
       "name": "Schichtdicke",
+      "term": "Länge",
       "unit": "m"
     },
     {
@@ -28,9 +30,10 @@
     },
     {
       "symbol": "Rse",
+      "label": "Rₛₑ",
       "name": "Wärmeübergangswiderstand außen",
-      "unit": "m^2*K/W",
-      "label": "Rₛₑ"
+      "term": "Wärmeübergangswiderstand",
+      "unit": "m^2*K/W"
     }
   ],
   "constants": [],

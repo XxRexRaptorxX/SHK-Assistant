@@ -25,6 +25,7 @@
     "symbol": "O",
     "label": "O▮",
     "name": "Oberfläche",
+    "term": "Fläche",
     "unit": "m^2",
     "decimals": 3
   },

@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.rechtwinkliges-dreieck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Rechtwinkliges Dreieck“, https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck; Wikipedia „Satz des Pythagoras“, https://de.wikipedia.org/wiki/Satz_des_Pythagoras",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rechtwinkliges Dreieck",
+  "synonyms": [
+    "Hypotenuse",
+    "Kathete"
+  ],
+  "definition": "**Rechtwinkliges Dreieck** ist ein Dreieck mit einem rechten Winkel (90°). Die beiden Seiten am rechten Winkel heißen **Katheten**, die längste Seite gegenüber dem rechten Winkel heißt **Hypotenuse**. Nach dem Satz des Pythagoras gilt a² + b² = c².",
+  "related": [
+    "lexicon.winkel"
+  ]
+}

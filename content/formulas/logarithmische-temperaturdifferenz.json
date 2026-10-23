@@ -11,26 +11,29 @@
   "variables": [
     {
       "symbol": "dT1",
-      "name": "Temperaturdifferenz an Ende 1",
-      "unit": "K",
       "label": "ΔT₁",
+      "name": "Temperaturdifferenz an Ende 1",
+      "term": "Temperaturdifferenz",
+      "unit": "K",
       "min": 0.001
     },
     {
       "symbol": "dT2",
-      "name": "Temperaturdifferenz an Ende 2",
-      "unit": "K",
       "label": "ΔT₂",
+      "name": "Temperaturdifferenz an Ende 2",
+      "term": "Temperaturdifferenz",
+      "unit": "K",
       "min": 0.001
     }
   ],
   "constants": [],
   "result": {
     "symbol": "dTm",
+    "label": "ΔTₘ",
     "name": "Mittlere logarithmische Temperaturdifferenz",
+    "term": "Temperaturdifferenz",
     "unit": "K",
-    "decimals": 2,
-    "label": "ΔTₘ"
+    "decimals": 2
   },
   "expression": "(dT1 - dT2) / log(dT1 / dT2)",
   "examples": [

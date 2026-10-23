@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.elektrische-stromstaerke",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Elektrische Stromstärke“, https://de.wikipedia.org/wiki/Elektrische_Stromst%C3%A4rke",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Elektrische Stromstärke",
+  "synonyms": [
+    "Stromstärke"
+  ],
+  "definition": "**Elektrische Stromstärke** gibt an, wie viel elektrische Ladung pro Zeit durch einen Leiterquerschnitt fließt. Formelzeichen I, Einheit Ampere (A).",
+  "related": [
+    "lexicon.elektrische-spannung",
+    "lexicon.elektrischer-widerstand",
+    "lexicon.ampere"
+  ]
+}

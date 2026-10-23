@@ -17,6 +17,7 @@
     {
       "symbol": "b",
       "name": "Kathete b",
+      "term": "Rechtwinkliges Dreieck",
       "unit": "m",
       "description": "Muss kürzer sein als die Hypotenuse"
     }
@@ -25,6 +26,7 @@
   "result": {
     "symbol": "a",
     "name": "Kathete a",
+    "term": "Rechtwinkliges Dreieck",
     "unit": "m",
     "decimals": 3
   },

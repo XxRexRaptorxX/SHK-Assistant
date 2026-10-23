@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.waermedurchlasswiderstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Wärmedurchlasswiderstand“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchlasswiderstand",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmedurchlasswiderstand",
+  "synonyms": [],
+  "definition": "**Wärmedurchlasswiderstand** R ist der Widerstand, den eine Bauteilschicht dem Wärmestrom zwischen ihren Oberflächen entgegensetzt. Er ergibt sich aus Dicke geteilt durch Wärmeleitfähigkeit (R = d / λ); bei mehreren Schichten werden die Werte addiert. Einheit m²·K/W.",
+  "related": [
+    "lexicon.waermeleitfaehigkeit",
+    "lexicon.waermedurchgangskoeffizient",
+    "lexicon.waermeuebergangswiderstand"
+  ]
+}

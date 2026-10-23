@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.ueberdruck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Überdruck“, https://de.wikipedia.org/wiki/%C3%9Cberdruck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Überdruck",
+  "synonyms": [],
+  "definition": "**Überdruck** ist ein Druck, der gegenüber dem umgebenden Luftdruck gemessen wird, wie ihn die meisten Manometer anzeigen. Ein negativer Überdruck wurde früher Unterdruck genannt.",
+  "related": [
+    "lexicon.druck",
+    "lexicon.luftdruck",
+    "lexicon.betriebsdruck"
+  ]
+}

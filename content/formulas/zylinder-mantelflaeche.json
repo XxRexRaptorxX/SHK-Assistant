@@ -17,6 +17,7 @@
     {
       "symbol": "h",
       "name": "Höhe bzw. Länge",
+      "term": "Höhe",
       "unit": "m"
     }
   ],
@@ -25,6 +26,7 @@
     "symbol": "M",
     "label": "M▮",
     "name": "Mantelfläche",
+    "term": "Fläche",
     "unit": "m^2",
     "decimals": 3
   },

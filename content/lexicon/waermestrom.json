@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.waermestrom",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Wärmestrom“, https://de.wikipedia.org/wiki/W%C3%A4rmestrom",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmestrom",
+  "synonyms": [
+    "Wärmefluss"
+  ],
+  "definition": "**Wärmestrom** (Wärmefluss) ist die pro Zeit übertragene Wärme, z. B. durch eine Wand oder in einem Heizkreis. Formelzeichen Φ oder Q̇, Einheit Watt (W).",
+  "related": [
+    "lexicon.waermeleistung",
+    "lexicon.waermedurchgangskoeffizient"
+  ]
+}

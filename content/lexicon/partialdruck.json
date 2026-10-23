@@ -1,0 +1,16 @@
+{
+  "id": "lexicon.partialdruck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Partialdruck“, https://de.wikipedia.org/wiki/Partialdruck",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Partialdruck",
+  "synonyms": [
+    "Teildruck"
+  ],
+  "definition": "**Partialdruck** (Teildruck) ist der Anteil eines einzelnen Gases am Gesamtdruck eines Gasgemischs, z. B. der Wasserdampfteildruck in feuchtem Gas oder in Luft.",
+  "related": [
+    "lexicon.druck"
+  ]
+}

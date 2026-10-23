@@ -16,18 +16,20 @@
     },
     {
       "symbol": "dvspec",
+      "label": "Δv",
       "name": "Differenz des spezifischen Volumens",
-      "unit": "dm^3/kg",
-      "label": "Δv"
+      "term": "Spezifisches Volumen",
+      "unit": "dm^3/kg"
     }
   ],
   "constants": [],
   "result": {
     "symbol": "dV",
+    "label": "ΔV",
     "name": "Volumenänderung",
+    "term": "Volumen",
     "unit": "dm^3",
-    "decimals": 2,
-    "label": "ΔV"
+    "decimals": 2
   },
   "expression": "m * dvspec",
   "examples": [

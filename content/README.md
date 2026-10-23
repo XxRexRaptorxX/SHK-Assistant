@@ -24,12 +24,17 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `title`       | Name der Formel                                                        |
 | `description` | Kurze eigene Erklärung, wann und wofür                                  |
 | `category`    | Gruppe in der Liste, z. B. „Hydraulik“ (leer = „Allgemein“)            |
-| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description` |
+| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten) |
 | `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"4.19 kJ/(kg K)"` |
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2) |
 | `expression`  | Formel als mathjs-Ausdruck mit den Symbolen, z. B. `Q / (c * dT)`      |
 | `examples`    | Testbeispiele: `inputs` je Symbol (Zahl in der Haupteinheit oder Text mit Einheit, z. B. `"10 kW"`), `expected` (Referenzwert), optional `tolerance` (relativ, Standard 0.001 = 0,1 %) |
 | `figure`      | Optional: Skizze aus `figures/`, z. B. `"figure.kreis"`; erscheint auf der Formelseite unter den Formelzeichen |
+
+In der Legende einer Formel sind Name und Einheit mit dem Lexikon verlinkt, wenn es dort einen
+Eintrag mit genau diesem Begriff oder Synonym gibt. Ist der Name genauer als der Lexikon-Begriff
+(z. B. „Masse des kalten Stoffes“), verweist das optionale Feld `term` auf den Begriff (`"term": "Masse"`);
+das geht bei Variablen, Konstanten und beim Ergebnis.
 
 Einheiten in mathjs-Schreibweise, z. B. `kW`, `m^3/h`, `kg/h`, `K`, `bar`. Für Temperatur­differenzen
 `K` verwenden, nicht `degC` (°C ist eine Skala mit Nullpunkt-Verschiebung).

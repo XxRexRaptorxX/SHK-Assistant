@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.kreis",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Kreis“, https://de.wikipedia.org/wiki/Kreis",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kreis",
+  "synonyms": [],
+  "definition": "**Kreis** ist die Menge aller Punkte einer Ebene, die vom Mittelpunkt den gleichen Abstand (Radius) haben. Der Durchmesser ist doppelt so groß wie der Radius.",
+  "related": [
+    "lexicon.durchmesser",
+    "lexicon.umfang",
+    "lexicon.flaeche",
+    "lexicon.kreisbogen"
+  ]
+}

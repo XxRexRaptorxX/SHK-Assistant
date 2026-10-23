@@ -22,13 +22,15 @@
     },
     {
       "symbol": "dT",
+      "label": "ΔT",
       "name": "Temperaturdifferenz der Oberflächen",
-      "unit": "K",
-      "label": "ΔT"
+      "term": "Temperaturdifferenz",
+      "unit": "K"
     },
     {
       "symbol": "d",
       "name": "Dicke",
+      "term": "Länge",
       "unit": "m"
     }
   ],

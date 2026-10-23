@@ -1,0 +1,17 @@
+{
+  "id": "lexicon.kompressibilitaetszahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Realgasfaktor“, https://de.wikipedia.org/wiki/Realgasfaktor; Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kompressibilitätszahl",
+  "synonyms": [
+    "Realgasfaktor",
+    "Kompressibilitätsfaktor"
+  ],
+  "definition": "**Kompressibilitätszahl** (Realgasfaktor) beschreibt, wie stark ein reales Gas vom Verhalten eines idealen Gases abweicht. In der Zustandszahl für die Gasabrechnung wird sie bei Betriebsdrücken bis 1000 hPa mit 1 angesetzt.",
+  "related": [
+    "lexicon.zustandszahl"
+  ]
+}

@@ -11,13 +11,15 @@
   "variables": [
     {
       "symbol": "rho",
+      "label": "ρ",
       "name": "Dichte der Flüssigkeit",
-      "unit": "kg/m^3",
-      "label": "ρ"
+      "term": "Dichte",
+      "unit": "kg/m^3"
     },
     {
       "symbol": "h",
       "name": "Höhe der Flüssigkeitssäule",
+      "term": "Höhe",
       "unit": "m"
     }
   ],

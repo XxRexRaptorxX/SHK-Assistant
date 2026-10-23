@@ -12,26 +12,30 @@
     {
       "symbol": "A1",
       "name": "Querschnitt 1",
+      "term": "Fläche",
       "unit": "m^2"
     },
     {
       "symbol": "v1",
       "name": "Geschwindigkeit 1",
+      "term": "Strömungsgeschwindigkeit",
       "unit": "m/s"
     },
     {
       "symbol": "A2",
       "name": "Querschnitt 2",
+      "term": "Fläche",
       "unit": "m^2"
     }
   ],
   "constants": [],
   "result": {
     "symbol": "v2",
+    "label": "v₂",
     "name": "Geschwindigkeit 2",
+    "term": "Strömungsgeschwindigkeit",
     "unit": "m/s",
-    "decimals": 2,
-    "label": "v₂"
+    "decimals": 2
   },
   "expression": "A1 * v1 / A2",
   "examples": [

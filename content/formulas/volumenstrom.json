@@ -12,6 +12,7 @@
     {
       "symbol": "A",
       "name": "Strömungsquerschnitt",
+      "term": "Fläche",
       "unit": "m^2"
     },
     {

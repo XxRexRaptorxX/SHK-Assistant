@@ -18,6 +18,7 @@
     {
       "symbol": "V",
       "name": "Raumvolumen",
+      "term": "Volumen",
       "unit": "m^3"
     }
   ],
@@ -25,6 +26,7 @@
   "result": {
     "symbol": "n",
     "name": "Luftwechselzahl",
+    "term": "Luftwechselrate",
     "unit": "1/h",
     "decimals": 2
   },

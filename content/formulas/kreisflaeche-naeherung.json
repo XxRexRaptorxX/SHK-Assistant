@@ -20,6 +20,7 @@
     "symbol": "A",
     "label": "A○",
     "name": "Kreisfläche",
+    "term": "Fläche",
     "unit": "m^2",
     "decimals": 2
   },

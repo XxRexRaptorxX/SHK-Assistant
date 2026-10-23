@@ -1,0 +1,15 @@
+{
+  "id": "lexicon.umfang",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Umfang (Geometrie)“, https://de.wikipedia.org/wiki/Umfang_(Geometrie)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Umfang",
+  "synonyms": [],
+  "definition": "**Umfang** ist die Länge der Begrenzungslinie einer ebenen Figur, z. B. eines Kreises oder Rechtecks.",
+  "related": [
+    "lexicon.kreis",
+    "lexicon.laenge"
+  ]
+}

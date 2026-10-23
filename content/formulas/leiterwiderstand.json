@@ -18,6 +18,7 @@
     {
       "symbol": "l",
       "name": "Leiterlänge",
+      "term": "Länge",
       "unit": "m"
     },
     {
@@ -29,10 +30,11 @@
   "constants": [],
   "result": {
     "symbol": "R20",
+    "label": "R₂₀",
     "name": "Widerstand bei 20 °C",
+    "term": "Elektrischer Widerstand",
     "unit": "ohm",
-    "decimals": 2,
-    "label": "R₂₀"
+    "decimals": 2
   },
   "expression": "gamma * l / q",
   "examples": [

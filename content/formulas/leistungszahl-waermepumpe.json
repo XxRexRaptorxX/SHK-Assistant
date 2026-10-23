@@ -17,9 +17,10 @@
     },
     {
       "symbol": "Pel",
+      "label": "Pₑₗ",
       "name": "Elektrische Leistungsaufnahme",
-      "unit": "kW",
-      "label": "Pₑₗ"
+      "term": "Elektrische Leistung",
+      "unit": "kW"
     }
   ],
   "constants": [],

@@ -12,18 +12,21 @@
     {
       "symbol": "v",
       "name": "Mittlere Strömungsgeschwindigkeit",
+      "term": "Strömungsgeschwindigkeit",
       "unit": "m/s"
     },
     {
       "symbol": "d",
       "name": "Innendurchmesser",
+      "term": "Durchmesser",
       "unit": "mm"
     },
     {
       "symbol": "nu",
-      "name": "Kinematische Viskosität",
-      "unit": "m^2/s",
       "label": "ν",
+      "name": "Kinematische Viskosität",
+      "term": "Viskosität",
+      "unit": "m^2/s",
       "units": [
         "mm^2/s"
       ]
