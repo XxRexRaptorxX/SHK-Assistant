@@ -1,0 +1,34 @@
+{
+  "id": "material.spezifischer-widerstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Spezifischer Widerstand“, https://de.wikipedia.org/wiki/Spezifischer_Widerstand",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Spezifischer elektrischer Widerstand"
+  ],
+  "unit": "ohm*mm^2/m",
+  "values": [
+    {
+      "name": "Kupfer",
+      "note": "rein, IACS, 20 °C",
+      "value": 0.01721
+    },
+    {
+      "name": "Aluminium",
+      "note": "20 °C",
+      "value": 0.0265
+    },
+    {
+      "name": "Silber",
+      "note": "20 °C",
+      "value": 0.01587
+    },
+    {
+      "name": "Nichtrostender Stahl",
+      "note": "1.4301, 20 °C",
+      "value": 0.72
+    }
+  ]
+}

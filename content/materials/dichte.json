@@ -1,0 +1,34 @@
+{
+  "id": "material.dichte",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Dichte“, https://de.wikipedia.org/wiki/Dichte",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Dichte"
+  ],
+  "unit": "kg/m^3",
+  "values": [
+    {
+      "name": "Wasser",
+      "note": "20 °C",
+      "value": 998.2067,
+      "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers"
+    },
+    {
+      "name": "Wasser",
+      "note": "3,98 °C, größte Dichte",
+      "value": 999.975,
+      "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers"
+    },
+    {
+      "name": "Eisen",
+      "value": 7874
+    },
+    {
+      "name": "Normalbeton",
+      "value": 2400
+    }
+  ]
+}

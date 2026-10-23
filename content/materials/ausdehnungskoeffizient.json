@@ -1,0 +1,50 @@
+{
+  "id": "material.ausdehnungskoeffizient",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Ausdehnungskoeffizient“, https://de.wikipedia.org/wiki/Ausdehnungskoeffizient",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Wärmeausdehnungskoeffizient",
+    "Längenausdehnungskoeffizient"
+  ],
+  "unit": "1/K",
+  "values": [
+    {
+      "name": "Stahl",
+      "note": "bis 0,5 % C, 0–100 °C",
+      "value": 0.000011
+    },
+    {
+      "name": "Grauguss",
+      "note": "0–100 °C",
+      "value": 0.0000104
+    },
+    {
+      "name": "Aluminium",
+      "note": "rein, 0–100 °C",
+      "value": 0.0000239
+    },
+    {
+      "name": "Messing",
+      "note": "0–100 °C",
+      "value": 0.0000183
+    },
+    {
+      "name": "Technisches Glas",
+      "note": "0–100 °C",
+      "value": 0.000006
+    },
+    {
+      "name": "PE-HD",
+      "value": 0.0002,
+      "source": "Wikipedia „Polyethylen“, https://de.wikipedia.org/wiki/Polyethylen"
+    },
+    {
+      "name": "PE-LD",
+      "value": 0.00017,
+      "source": "Wikipedia „Polyethylen“, https://de.wikipedia.org/wiki/Polyethylen"
+    }
+  ]
+}

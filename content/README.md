@@ -171,6 +171,20 @@ nicht im Repository) und veröffentlicht sie mit der App. Angezeigt werden nur �
 Quelle und Link, keine Teaser oder Bilder. Ein nicht erreichbarer Feed wird übersprungen und auf
 der News-Seite genannt. Lokal ohne `npm run news` zeigt die Seite „Noch keine News vorhanden“.
 
+## Stoffwerte (`materials/`, Präfix `material.`)
+
+| Feld         | Inhalt                                                                  |
+|--------------|-------------------------------------------------------------------------|
+| `quantities` | Größen, für die die Werte gelten, z. B. `["Spezifische Wärmekapazität"]` |
+| `unit`       | Einheit der Werte (mathjs), leer = ohne Einheit                          |
+| `values`     | Werte: `name` (Stoff), optional `note` (Bedingung, z. B. „20 °C“), `value`, optional `unit` und `source`, wenn abweichend |
+
+Im Formelrechner bekommt jedes Eingabefeld, dessen Name oder `term` einer Größe aus `quantities`
+entspricht, rechts einen Pfeil mit diesen Werten zur Auswahl. Der gewählte Wert wird eingetragen
+(bei passender Einheit mit dieser Einheit, sonst umgerechnet); freie Eingabe bleibt möglich. Werte
+nur aus belegbaren Quellen übernehmen, keine Spannen in Einzelwerte umdeuten. Ein Test prüft, dass
+jeder Wert in jedes passende Formelfeld umgerechnet werden kann.
+
 ## Lexikon (`lexicon/`, Präfix `lexicon.`)
 
 | Feld         | Inhalt                                                        |

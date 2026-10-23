@@ -1,0 +1,49 @@
+{
+  "id": "material.viskositaet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Viskosität“, https://de.wikipedia.org/wiki/Viskosit%C3%A4t",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Kinematische Viskosität"
+  ],
+  "unit": "mm^2/s",
+  "values": [
+    {
+      "name": "Wasser",
+      "note": "0 °C",
+      "value": 1.792
+    },
+    {
+      "name": "Wasser",
+      "note": "10 °C",
+      "value": 1.306
+    },
+    {
+      "name": "Wasser",
+      "note": "20 °C",
+      "value": 1.003
+    },
+    {
+      "name": "Wasser",
+      "note": "30 °C",
+      "value": 0.801
+    },
+    {
+      "name": "Wasser",
+      "note": "50 °C",
+      "value": 0.553
+    },
+    {
+      "name": "Wasser",
+      "note": "80 °C",
+      "value": 0.364
+    },
+    {
+      "name": "Wasser",
+      "note": "100 °C",
+      "value": 0.294
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "material.verdampfungswaerme",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Spezifische Verdampfungswärme"
+  ],
+  "unit": "kJ/kg",
+  "values": [
+    {
+      "name": "Wasser zu Dampf",
+      "value": 2257
+    }
+  ]
+}

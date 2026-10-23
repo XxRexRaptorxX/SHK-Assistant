@@ -5,6 +5,8 @@ import { formatAnyUnit } from '../units/labels'
 import { evaluateFormula, FormulaError, rangeError, toMainUnit, type Quantity } from './engine'
 import type { FormulaEntry, FormulaVariable } from './schema'
 import { fieldBase } from '../../components/surfaces'
+import { MaterialPicker } from '../materials/MaterialPicker'
+import { presetInput, presetsFor } from '../materials/materials'
 
 type CalculationState =
   | { kind: 'incomplete' }
@@ -106,30 +108,50 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
         {formula.variables.map((variable) => {
           const inputId = `${idPrefix}-${variable.symbol}`
           const raw = values[variable.symbol] ?? ''
-          const error = fieldError(variable, raw, units[variable.symbol] ?? variable.unit)
+          const currentUnit = units[variable.symbol] ?? variable.unit
+          const availableUnits = alternativeUnits(variable.unit, variable.units)
+          const error = fieldError(variable, raw, currentUnit)
           const invalid = error !== undefined
+          const presets = presetsFor(variable)
+          const input = (
+            <input
+              id={inputId}
+              type="text"
+              inputMode="decimal"
+              autoComplete="off"
+              value={raw}
+              aria-invalid={invalid}
+              aria-describedby={invalid ? `${inputId}-error` : undefined}
+              onChange={(event) => setValues({ ...values, [variable.symbol]: event.target.value })}
+              className={`${fieldClass} w-full min-w-0 ${presets.length > 0 ? 'pr-12' : ''} ${invalid ? 'border-warn-ink outline-2 outline-warn' : ''}`}
+            />
+          )
           return (
             <div key={variable.symbol}>
               <label htmlFor={inputId} className="block font-semibold">
                 {variable.name} <span className="font-normal text-muted">({variable.label ?? variable.symbol})</span>
               </label>
               <div className="mt-1 flex items-center gap-2">
-                <input
-                  id={inputId}
-                  type="text"
-                  inputMode="decimal"
-                  autoComplete="off"
-                  value={raw}
-                  aria-invalid={invalid}
-                  aria-describedby={invalid ? `${inputId}-error` : undefined}
-                  onChange={(event) => setValues({ ...values, [variable.symbol]: event.target.value })}
-                  className={`${fieldClass} w-full min-w-0 ${invalid ? 'border-warn-ink outline-2 outline-warn' : ''}`}
-                />
+                {presets.length > 0 ? (
+                  <MaterialPicker
+                    label={variable.name}
+                    presets={presets}
+                    onPick={(preset) => {
+                      const picked = presetInput(preset, currentUnit, availableUnits)
+                      setValues({ ...values, [variable.symbol]: picked.text })
+                      setUnits({ ...units, [variable.symbol]: picked.unit })
+                    }}
+                  >
+                    {input}
+                  </MaterialPicker>
+                ) : (
+                  input
+                )}
                 <UnitSelect
                   id={`${inputId}-unit`}
                   label={`Einheit für ${variable.name}`}
-                  units={alternativeUnits(variable.unit, variable.units)}
-                  value={units[variable.symbol] ?? variable.unit}
+                  units={availableUnits}
+                  value={currentUnit}
                   onChange={(unit) => setUnits({ ...units, [variable.symbol]: unit })}
                 />
               </div>

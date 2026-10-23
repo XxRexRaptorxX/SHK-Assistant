@@ -1,0 +1,18 @@
+{
+  "id": "material.schmelzwaerme",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Spezifische Schmelzwärme"
+  ],
+  "unit": "kJ/kg",
+  "values": [
+    {
+      "name": "Eis zu Wasser",
+      "value": 333.5
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "material.kompressibilitaetszahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Kompressibilitätszahl"
+  ],
+  "unit": "",
+  "values": [
+    {
+      "name": "Erdgas",
+      "note": "Betriebsdruck bis 1000 hPa",
+      "value": 1
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "material.waermeuebergangswiderstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmeübergangswiderstand“, https://de.wikipedia.org/wiki/W%C3%A4rme%C3%BCbergangswiderstand (Werte nach EN ISO 6946)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Wärmeübergangswiderstand"
+  ],
+  "unit": "m^2*K/W",
+  "values": [
+    {
+      "name": "Innen",
+      "note": "Wärmestrom aufwärts",
+      "value": 0.1
+    },
+    {
+      "name": "Innen",
+      "note": "Wärmestrom horizontal",
+      "value": 0.13
+    },
+    {
+      "name": "Innen",
+      "note": "Wärmestrom abwärts",
+      "value": 0.17
+    },
+    {
+      "name": "Außen",
+      "value": 0.04
+    }
+  ]
+}

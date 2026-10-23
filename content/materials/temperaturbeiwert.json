@@ -1,0 +1,31 @@
+{
+  "id": "material.temperaturbeiwert",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Spezifischer Widerstand“, https://de.wikipedia.org/wiki/Spezifischer_Widerstand",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Temperaturbeiwert",
+    "Temperaturkoeffizient"
+  ],
+  "unit": "1/K",
+  "values": [
+    {
+      "name": "Kupfer",
+      "note": "rein, 20 °C",
+      "value": 0.0039
+    },
+    {
+      "name": "Aluminium",
+      "note": "99,5 %, 20 °C",
+      "value": 0.004,
+      "source": "Wikipedia „Temperaturkoeffizient“, https://de.wikipedia.org/wiki/Temperaturkoeffizient"
+    },
+    {
+      "name": "Eisen",
+      "note": "20 °C",
+      "value": 0.0056
+    }
+  ]
+}

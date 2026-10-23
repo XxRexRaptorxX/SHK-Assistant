@@ -1,0 +1,59 @@
+{
+  "id": "material.waermekapazitaet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Spezifische Wärmekapazität“, https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Spezifische Wärmekapazität"
+  ],
+  "unit": "kJ/(kg*K)",
+  "values": [
+    {
+      "name": "Wasser",
+      "value": 4.18
+    },
+    {
+      "name": "Wasser",
+      "note": "14,5 °C",
+      "value": 4.184,
+      "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers"
+    },
+    {
+      "name": "Eis",
+      "note": "0 °C",
+      "value": 2.06
+    },
+    {
+      "name": "Wasserdampf",
+      "note": "100 °C",
+      "value": 2.08
+    },
+    {
+      "name": "Luft",
+      "note": "trocken",
+      "value": 1.01
+    },
+    {
+      "name": "Kupfer",
+      "value": 0.382
+    },
+    {
+      "name": "Aluminium",
+      "value": 0.9
+    },
+    {
+      "name": "Beton",
+      "value": 0.88
+    },
+    {
+      "name": "Mineralfaser",
+      "value": 0.8
+    },
+    {
+      "name": "Polystyrol",
+      "value": 1.4
+    }
+  ]
+}

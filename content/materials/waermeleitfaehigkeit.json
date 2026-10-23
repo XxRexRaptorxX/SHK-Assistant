@@ -1,0 +1,52 @@
+{
+  "id": "material.waermeleitfaehigkeit",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmeleitfähigkeit“, https://de.wikipedia.org/wiki/W%C3%A4rmeleitf%C3%A4higkeit",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Wärmeleitfähigkeit"
+  ],
+  "unit": "W/(m*K)",
+  "values": [
+    {
+      "name": "Kupfer",
+      "note": "rein",
+      "value": 401
+    },
+    {
+      "name": "Aluminium",
+      "note": "99,5 %",
+      "value": 236
+    },
+    {
+      "name": "Stahl, hochlegiert",
+      "note": "z. B. 1.4301",
+      "value": 15
+    },
+    {
+      "name": "Beton",
+      "value": 2.1
+    },
+    {
+      "name": "Glas",
+      "value": 0.76
+    },
+    {
+      "name": "Eis",
+      "note": "−10 °C",
+      "value": 2.33
+    },
+    {
+      "name": "Wasser",
+      "note": "20 °C",
+      "value": 0.597,
+      "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers"
+    },
+    {
+      "name": "Luft",
+      "value": 0.0262
+    }
+  ]
+}
