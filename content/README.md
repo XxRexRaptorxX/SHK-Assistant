@@ -53,7 +53,8 @@ Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflic
 
 Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle. Aufbau und Prüfung
 wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
-„Tools“ statt in der Formelsammlung.
+„Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, derzeit „Aufmaß“
+(Mengen auf der Baustelle ermitteln) und „Auslegung“ (Bedarf vorab abschätzen).
 
 ## Skizzen (`figures/`, Präfix `figure.`)
 
@@ -185,7 +186,8 @@ der News-Seite genannt. Lokal ohne `npm run news` zeigt die Seite „Noch keine 
 | `unit`       | Einheit der Werte (mathjs), leer = ohne Einheit                          |
 | `values`     | Werte: `name` (Stoff), optional `note` (Bedingung, z. B. „20 °C“), `value`, optional `unit` und `source`, wenn abweichend |
 
-Im Formelrechner bekommt jedes Eingabefeld, dessen Name oder `term` einer Größe aus `quantities`
+Neben Stoffwerten passen hier auch gängige Standardwerte hin, z. B. Verlegeabstände der
+Fußbodenheizung. Im Formelrechner und in den Tools bekommt jedes Eingabefeld, dessen Name oder `term` einer Größe aus `quantities`
 entspricht, rechts einen Pfeil mit diesen Werten zur Auswahl. Der gewählte Wert wird eingetragen
 (bei passender Einheit mit dieser Einheit, sonst umgerechnet); freie Eingabe bleibt möglich. Werte
 nur aus belegbaren Quellen übernehmen, keine Spannen in Einzelwerte umdeuten. Ein Test prüft, dass

@@ -7,7 +7,7 @@
   "verifiedAt": "",
   "title": "Exakte ausgerollte Länge einer Rohr- oder Kabelrolle",
   "description": "Bestimmt die Restlänge aus dem Ringquerschnitt der Rolle: aktueller Außendurchmesser, Kerndurchmesser der leeren Rolle und Rohr- bzw. Kabeldurchmesser als Wicklungshöhe. Genauer als die Rechnung über die Wicklungen, weil sich der Durchmesser mit jeder abgewickelten Lage ändert. Setzt eine enge, gleichmäßige Wicklung voraus.",
-  "category": "Tools",
+  "category": "Aufmaß",
   "variables": [
     {
       "symbol": "D",

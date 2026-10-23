@@ -1,0 +1,48 @@
+{
+  "id": "tool.heizlast-ueberschlaegig",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Formel des Inhabers (q = P / A), nach P umgestellt; übermittelt am 23.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Heizlast überschlägig aus Fläche und Gebäudestandard",
+  "description": "Schätzt die Heizlast aus der beheizten Fläche und einer spezifischen Heizleistung je Quadratmeter. Richtwerte nach Baujahr bzw. Gebäudestandard lassen sich über den Pfeil im Feld q auswählen (Mittelwert der jeweiligen Spanne, auf 10 W/m² gerundet). Eine normgerechte Heizlastberechnung wird dadurch nicht ersetzt.",
+  "category": "Auslegung",
+  "variables": [
+    {
+      "symbol": "q",
+      "name": "Spezifische Heizleistung",
+      "unit": "W/m^2",
+      "min": 0
+    },
+    {
+      "symbol": "A",
+      "name": "Beheizte Fläche",
+      "term": "Fläche",
+      "unit": "m^2",
+      "min": 0
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "P",
+    "name": "Überschlägige Heizlast",
+    "term": "Heizlast",
+    "unit": "kW",
+    "units": [
+      "W"
+    ],
+    "decimals": 2
+  },
+  "expression": "q * A",
+  "examples": [
+    {
+      "inputs": {
+        "q": 80,
+        "A": 125
+      },
+      "expected": 10,
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 80 W/m² auf 125 m²"
+    }
+  ]
+}

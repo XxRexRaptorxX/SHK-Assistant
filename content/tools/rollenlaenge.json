@@ -7,7 +7,7 @@
   "verifiedAt": "",
   "title": "Ausgerollte Länge einer Rohr- oder Kabelrolle",
   "description": "Schätzt die verbleibende Länge auf einer Rolle aus der Anzahl der Wicklungen und dem mittleren Wickeldurchmesser. Den mittleren Durchmesser in der Mitte zwischen innerster und äußerster Wicklung messen. Das Ergebnis ist eine Näherung.",
-  "category": "Tools",
+  "category": "Aufmaß",
   "variables": [
     {
       "symbol": "n",

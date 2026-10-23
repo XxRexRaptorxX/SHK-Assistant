@@ -7,7 +7,7 @@
   "verifiedAt": "",
   "title": "Verbaute Länge aus mehreren Rollen (bei Abrollern)",
   "description": "Ermittelt die verbaute Rohr- oder Kabellänge, wenn mit einer angefangenen Rolle begonnen wurde, dazwischen ganze Rollen verbraucht wurden und von der letzten angebrochenen Rolle noch ein Rest übrig ist. Wurde mit einer vollen Rolle begonnen, die Länge einer vollen Rolle als Anfangsrestlänge eintragen. Bei N nur ganz verbrauchte Rollen zählen.",
-  "category": "Tools",
+  "category": "Aufmaß",
   "variables": [
     {
       "symbol": "Ra",

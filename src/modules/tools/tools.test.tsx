@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { App } from '../../App'
 import { homeTileModules, modules } from '../../app/modules'
 import { checkFormula, evaluateFormula } from '../formulas/engine'
+import { presetsFor } from '../materials/materials'
 import { ensureCustomUnits } from '../units/customUnits'
 import ToolPage from './ToolPage'
 import { toolEntries } from './tools'
@@ -41,6 +42,8 @@ describe('Tools', () => {
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Ausgerollte Länge einer Rohr- oder Kabelrolle',
       'Exakte ausgerollte Länge einer Rohr- oder Kabelrolle',
+      'Heizlast pro Quadratmeter – überschlägig',
+      'Heizlast überschlägig aus Fläche und Gebäudestandard',
       'Material zurückschreiben',
       'Rohrlänge einer Fußbodenheizung',
       'Verbaute Länge aus mehreren Rollen (bei Abrollern)',
@@ -70,6 +73,20 @@ describe('Tools', () => {
     expect(checkFormula(fbh)).toEqual([])
     expect(evaluateFormula(fbh, { A: { value: 25, unit: 'm^2' }, VA: { value: 15, unit: 'cm' } })).toBeCloseTo(166.67, 2)
     expect(evaluateFormula(fbh, { A: { value: 25, unit: 'm^2' }, VA: { value: 150, unit: 'mm' } })).toBeCloseTo(166.67, 2)
+    expect(presetsFor(fbh.variables.find((variable) => variable.symbol === 'VA')!).map((preset) => preset.value)).toEqual([
+      5, 10, 15,
+    ])
+  })
+
+  it('rechnet die Heizlast pro Quadratmeter und zurück mit Richtwerten für q', () => {
+    const proFlaeche = toolEntries.find((entry) => entry.id === 'tool.heizlast-pro-flaeche')!
+    const heizlast = toolEntries.find((entry) => entry.id === 'tool.heizlast-ueberschlaegig')!
+    expect(checkFormula(proFlaeche)).toEqual([])
+    expect(checkFormula(heizlast)).toEqual([])
+    expect(evaluateFormula(proFlaeche, { P: { value: 10, unit: 'kW' }, A: { value: 125, unit: 'm^2' } })).toBe(80)
+    expect(evaluateFormula(heizlast, { q: { value: 80, unit: 'W/m^2' }, A: { value: 125, unit: 'm^2' } })).toBe(10)
+    const q = heizlast.variables.find((variable) => variable.symbol === 'q')!
+    expect(presetsFor(q).map((preset) => preset.value)).toEqual([170, 100, 80, 50, 40, 30, 20, 10])
   })
 
   it('listet die Tools und zeigt ein Tool mit Formel, Legende und Rechner', () => {
@@ -79,6 +96,10 @@ describe('Tools', () => {
       </MemoryRouter>,
     )
     expect(list).toContain('href="/tools/rollenlaenge"')
+    expect(list.indexOf('>Aufmaß</h2>')).toBeGreaterThan(-1)
+    expect(list.indexOf('>Aufmaß</h2>')).toBeLessThan(list.indexOf('href="/tools/material-zurueck"'))
+    expect(list.indexOf('href="/tools/material-zurueck"')).toBeLessThan(list.indexOf('>Auslegung</h2>'))
+    expect(list.indexOf('>Auslegung</h2>')).toBeLessThan(list.indexOf('href="/tools/fbh-rohrlaenge"'))
     const page = renderToStaticMarkup(
       <MemoryRouter initialEntries={['/tools/rollenlaenge']}>
         <Routes>

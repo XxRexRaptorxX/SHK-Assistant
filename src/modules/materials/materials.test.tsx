@@ -5,10 +5,14 @@ import { alternativeUnits } from '../units/alternatives'
 import { ensureCustomUnits } from '../units/customUnits'
 import { Calculator } from '../formulas/Calculator'
 import { formulaEntries } from '../formulas/formulas'
+import { toolEntries } from '../tools/tools'
 import { MaterialPicker } from './MaterialPicker'
 import { presetInput, presetsFor } from './materials'
 
 ensureCustomUnits()
+
+/** Alle Rechner mit Eingabefeldern: Formeln und Tools */
+const calculatorEntries = [...formulaEntries, ...toolEntries]
 
 const formula = (id: string) => {
   const entry = formulaEntries.find((candidate) => candidate.id === id)
@@ -26,9 +30,9 @@ describe('Stoffwerte', () => {
     expect(presetsFor(m)).toEqual([])
   })
 
-  it('lässt sich in jedes passende Formelfeld eintragen (Einheiten passen)', () => {
+  it('lässt sich in jedes passende Formel- oder Toolfeld eintragen (Einheiten passen)', () => {
     let checked = 0
-    for (const entry of formulaEntries) {
+    for (const entry of calculatorEntries) {
       for (const variable of entry.variables) {
         for (const preset of presetsFor(variable)) {
           const units = alternativeUnits(variable.unit, variable.units)
@@ -40,9 +44,9 @@ describe('Stoffwerte', () => {
     expect(checked).toBeGreaterThan(50)
   })
 
-  it('nutzt jede Sammlung bei mindestens einer Formel', () => {
+  it('nutzt jede Sammlung bei mindestens einer Formel oder einem Tool', () => {
     const used = content.materials.filter((set) =>
-      formulaEntries.some((entry) => entry.variables.some((v) => presetsFor(v, [set]).length > 0)),
+      calculatorEntries.some((entry) => entry.variables.some((v) => presetsFor(v, [set]).length > 0)),
     )
     expect(used.map((set) => set.id)).toEqual(content.materials.map((set) => set.id))
   })

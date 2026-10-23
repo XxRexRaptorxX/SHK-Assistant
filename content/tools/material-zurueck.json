@@ -7,7 +7,7 @@
   "verifiedAt": "",
   "title": "Material zurückschreiben",
   "description": "Ermittelt das tatsächlich verbaute Material, wenn Material zur Baustelle mitgenommen und der Rest wieder ins Lager zurückgegeben wurde. Mitgenommene und zurückgegebene Menge in derselben Einheit eintragen.",
-  "category": "Tools",
+  "category": "Aufmaß",
   "variables": [
     {
       "symbol": "Mm",

@@ -1,0 +1,26 @@
+{
+  "id": "material.verlegeabstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Angabe des Inhabers, übermittelt am 23.10.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Verlegeabstand"
+  ],
+  "unit": "cm",
+  "values": [
+    {
+      "name": "Verlegeabstand",
+      "value": 5
+    },
+    {
+      "name": "Verlegeabstand",
+      "value": 10
+    },
+    {
+      "name": "Verlegeabstand",
+      "value": 15
+    }
+  ]
+}
