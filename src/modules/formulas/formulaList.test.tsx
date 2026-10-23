@@ -1,7 +1,8 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
-import { FormulaListPage, FormulaTitle } from './FormulaListPage'
+import { FormulaListPage } from './FormulaListPage'
+import { FormulaTitle } from './FormulaTitle'
 
 describe('Formelliste', () => {
   it('zeigt hinter dem Namen grau das Formelzeichen des Ergebnisses', () => {

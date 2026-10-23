@@ -40,3 +40,37 @@ describe('Legende der Formeln', () => {
     expect(legend).toMatch(/href="\/lexikon\/temperatur"[^>]*>Temperatur des warmen Stoffes</)
   })
 })
+
+describe('Konstanten in Formel und Legende', () => {
+  const pageAt = (slug: string) =>
+    renderToStaticMarkup(
+      <MemoryRouter initialEntries={[`/formeln/${slug}`]}>
+        <Routes>
+          <Route path="/formeln/:slug" element={<FormulaDetailPage />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+
+  it('erklärt π als Kreiszahl mit Näherungswert und Lexikon-Link', () => {
+    const legend = legendAt('geometrie.kreisflaeche')
+    expect(legend).toContain('>π</dt>')
+    expect(legend).toMatch(/href="\/lexikon\/kreiszahl"[^>]*>Kreiszahl</)
+    expect(legend).toContain('≈ 3,14159')
+  })
+
+  it('zeigt √3 als Verkettungsfaktor statt sqrt(3)', () => {
+    const page = pageAt('elektrotechnik.drehstromleistung')
+    expect(page).toContain('√3 · U · I')
+    expect(page).not.toContain('sqrt(3)')
+    expect(legendAt('elektrotechnik.drehstromleistung')).toMatch(/Verkettungsfaktor<\/a><span class="text-muted"> ≈ 1,73205/)
+  })
+
+  it('nennt den Näherungswert und den Vollwinkel ohne doppelte Werte', () => {
+    expect(pageAt('geometrie.kreisflaeche-naeherung')).toContain('0,785 · d ^ 2')
+    const naeherung = legendAt('geometrie.kreisflaeche-naeherung')
+    expect(naeherung).toContain('Näherungswert für π/4')
+    expect(naeherung).not.toContain('= 0,785')
+    expect(pageAt('geometrie.kreisbogen-laenge')).toContain('π · d · α / 360°')
+    expect(legendAt('geometrie.kreisbogen-laenge')).not.toContain('= 360')
+  })
+})

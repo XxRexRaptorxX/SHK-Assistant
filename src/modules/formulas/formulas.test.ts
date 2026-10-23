@@ -4,6 +4,7 @@ import { formatUnit } from '../../lib/units'
 import { asTargetUnit, math } from '../../lib/math'
 import { alternativeUnits } from '../units/alternatives'
 import {
+  builtinConstantsUsed,
   checkFormula,
   evaluateExample,
   evaluateFormula,
@@ -46,6 +47,27 @@ describe('Formel-Engine', () => {
   it('zeigt die Formel mit Malpunkt und Anzeige-Bezeichnungen', () => {
     const withLabel = { ...fixture, variables: fixture.variables.map((v) => (v.symbol === 'b' ? { ...v, label: 'B' } : v)) }
     expect(formatExpression(withLabel)).toBe('l · B')
+  })
+
+  it('zeigt die Kreiszahl als π', () => {
+    expect(formatExpression({ ...fixture, expression: 'pi * l^2 / 4' })).toBe('π · l ^ 2 / 4')
+  })
+
+  it('schreibt π in allen Formeln als pi, nie als Zahl', () => {
+    const numeric = formulaEntries.filter((formula) => /3\.14/.test(formula.expression)).map((formula) => formula.id)
+    expect(numeric).toEqual([])
+  })
+
+  it('führt Konstanten benannt statt als Kommazahl oder Wurzel aus einer Zahl', () => {
+    const unnamed = formulaEntries
+      .filter((formula) => /\d\.\d|sqrt\(\s*\d+\s*\)/.test(formula.expression))
+      .map((formula) => `${formula.id}: ${formula.expression}`)
+    expect(unnamed).toEqual([])
+  })
+
+  it('erkennt eingebaute Konstanten wie π in der Formel', () => {
+    expect(builtinConstantsUsed({ ...fixture, expression: 'pi * l^2 + b' })).toEqual(['pi'])
+    expect(builtinConstantsUsed(fixture)).toEqual([])
   })
 
   it('zeigt den natürlichen Logarithmus als ln, den Zehnerlogarithmus unverändert', () => {

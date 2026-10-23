@@ -6,22 +6,12 @@ import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory } from './formulas'
+import { FormulaTitle } from './FormulaTitle'
 import type { FormulaEntry } from './schema'
 import { categoryHeading, pageTitle } from '../../components/headings'
 import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
 import { listCard } from '../../components/surfaces'
-
-/** Name der Formel, dahinter grau das Formelzeichen des Ergebnisses (z. B. „Kreisfläche  A“) */
-export function FormulaTitle({ entry }: { entry: Pick<FormulaEntry, 'title' | 'result'> }) {
-  const symbol = entry.result && (entry.result.label ?? entry.result.symbol)
-  return (
-    <>
-      {entry.title}
-      {symbol && <span className="ml-2 font-normal text-muted">{symbol}</span>}
-    </>
-  )
-}
 
 interface FormulaListPageProps {
   /** Für Tests überschreibbar */

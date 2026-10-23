@@ -261,6 +261,23 @@ export function checkFormula(formula: FormulaEntry): string[] {
   return issues
 }
 
+/** Eingebaute mathjs-Konstanten, die in Formeln vorkommen dürfen, für Anzeige und Legende */
+export const BUILTIN_CONSTANTS: Record<string, { label: string; name: string; value: number }> = {
+  pi: { label: 'π', name: 'Kreiszahl', value: Math.PI },
+  e: { label: 'e', name: 'Eulersche Zahl', value: Math.E },
+}
+
+/** Eingebaute Konstanten, die die Formel verwendet (in der Reihenfolge des ersten Auftretens) */
+export function builtinConstantsUsed(formula: FormulaEntry): string[] {
+  if (formula.expression === '') return []
+  const defined = new Set([...formula.variables, ...formula.constants].map((item) => item.symbol))
+  const used = new Set<string>()
+  math.parse(formula.expression).traverse((node) => {
+    if (math.isSymbolNode(node) && node.name in BUILTIN_CONSTANTS && !defined.has(node.name)) used.add(node.name)
+  })
+  return [...used]
+}
+
 /** Formel zur Anzeige, mit Anzeige-Bezeichnungen statt Symbolen (z. B. "ΔT" statt "dT") */
 export function formatExpression(formula: FormulaEntry): string {
   if (formula.expression === '') return ''
@@ -272,8 +289,12 @@ export function formatExpression(formula: FormulaEntry): string {
     .parse(formula.expression)
     .toString({
       implicit: 'show',
-      handler: (node: MathNode) =>
-        math.isSymbolNode(node) && labels.has(node.name) ? labels.get(node.name) : undefined,
+      handler: (node: MathNode) => {
+        if (!math.isSymbolNode(node)) return undefined
+        // Kreiszahl einheitlich als π (in den Inhalten als "pi", weil mathjs nur das versteht)
+        if (node.name === 'pi' && !labels.has('pi')) return 'π'
+        return labels.get(node.name)
+      },
     })
     .replace(/ \* /g, ' · ')
     // mathjs: log = natürlicher Logarithmus; in der Anzeige wie üblich "ln", damit es nicht als lg gelesen wird

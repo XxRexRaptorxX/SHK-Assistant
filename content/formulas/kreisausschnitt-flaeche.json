@@ -25,6 +25,7 @@
   "constants": [
     {
       "symbol": "full",
+      "label": "360°",
       "name": "Vollwinkel",
       "term": "Winkel",
       "value": "360 deg"

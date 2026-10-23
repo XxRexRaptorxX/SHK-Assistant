@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.kreiszahl",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung; Wikipedia „Kreiszahl“, https://de.wikipedia.org/wiki/Kreiszahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kreiszahl",
+  "synonyms": [
+    "Pi",
+    "π",
+    "Ludolphsche Zahl"
+  ],
+  "definition": "**Kreiszahl** π ist eine mathematische Konstante: das Verhältnis von Umfang zu Durchmesser eines Kreises, π ≈ 3,14159. Sie kommt in allen Formeln für Kreise, Zylinder, Kegel und Kugeln vor.",
+  "related": [
+    "lexicon.kreis",
+    "lexicon.durchmesser",
+    "lexicon.umfang"
+  ]
+}

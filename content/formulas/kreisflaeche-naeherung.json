@@ -15,7 +15,15 @@
       "unit": "m"
     }
   ],
-  "constants": [],
+  "constants": [
+    {
+      "symbol": "k",
+      "label": "0,785",
+      "name": "Näherungswert für π/4",
+      "term": "Kreiszahl",
+      "value": "0.785"
+    }
+  ],
   "result": {
     "symbol": "A",
     "label": "A○",
@@ -24,7 +32,7 @@
     "unit": "m^2",
     "decimals": 2
   },
-  "expression": "0.785 * d^2",
+  "expression": "k * d^2",
   "examples": [
     {
       "inputs": {

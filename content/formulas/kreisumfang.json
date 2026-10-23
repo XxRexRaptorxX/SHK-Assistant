@@ -23,7 +23,7 @@
     "unit": "m",
     "decimals": 2
   },
-  "expression": "3.141592653589793 * d",
+  "expression": "pi * d",
   "examples": [
     {
       "inputs": {

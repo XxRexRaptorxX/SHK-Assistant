@@ -24,7 +24,7 @@
     "unit": "m^2",
     "decimals": 2
   },
-  "expression": "3.141592653589793 * d^2 / 4",
+  "expression": "pi * d^2 / 4",
   "examples": [
     {
       "inputs": {

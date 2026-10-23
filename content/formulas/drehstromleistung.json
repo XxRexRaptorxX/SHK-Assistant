@@ -22,7 +22,14 @@
       "unit": "A"
     }
   ],
-  "constants": [],
+  "constants": [
+    {
+      "symbol": "k3",
+      "label": "√3",
+      "name": "Verkettungsfaktor",
+      "value": "sqrt(3)"
+    }
+  ],
   "result": {
     "symbol": "S",
     "name": "Scheinleistung",
@@ -32,7 +39,7 @@
     ],
     "decimals": 2
   },
-  "expression": "sqrt(3) * U * I",
+  "expression": "k3 * U * I",
   "examples": [
     {
       "inputs": {

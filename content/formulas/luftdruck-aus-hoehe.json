@@ -25,6 +25,7 @@
     },
     {
       "symbol": "grad",
+      "label": "Δp/Δh",
       "name": "Luftdruckabnahme je Meter",
       "term": "Luftdruck",
       "value": "0.12 hPa/m"
