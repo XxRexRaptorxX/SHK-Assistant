@@ -10,6 +10,9 @@ import { math } from '../../lib/math'
 import { formatUnit } from '../../lib/units'
 import { listCard } from '../../components/surfaces'
 import { DraftBadge } from '../../components/DraftBadge'
+import { FractionIcon, LinearIcon } from '../../components/icons'
+import { updateSettings, useSettings } from '../../settings/settings'
+import { FormulaMath } from './FormulaMath'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
 import { Calculator } from './Calculator'
@@ -93,9 +96,7 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
         <p className="mt-4 font-semibold">Die Formel ist noch nicht hinterlegt.</p>
       ) : (
         <>
-          <p className="mt-4 overflow-x-auto rounded-2xl border border-edge bg-surface p-4 font-mono text-xl">
-            {result.label ?? result.symbol} = {formatExpression(formula)}
-          </p>
+          <FormulaLine formula={formula} resultLabel={result.label ?? result.symbol} />
           <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
             {legend.map((item) => (
               <div key={item.key} className="contents">
@@ -118,6 +119,35 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
       )}
       <RelatedFormulas formulas={relatedFormulas(formula, entries)} />
     </ContentPage>
+  )
+}
+
+/** Formelzeile: Standard Bruchschreibweise, rechts ein Knopf zum Umschalten auf linear (Einstellung) */
+export function FormulaLine({ formula, resultLabel, linear: linearOverride }: {
+  formula: FormulaEntry
+  resultLabel: string
+  /** Für Tests */
+  linear?: boolean
+}) {
+  const settings = useSettings()
+  const linear = linearOverride ?? settings.linearFormulas
+  const label = linear ? 'Als Bruch anzeigen' : 'Linear anzeigen'
+  const Icon = linear ? FractionIcon : LinearIcon
+  return (
+    <div className="mt-4 flex items-center gap-2 rounded-2xl border border-edge bg-surface py-2 pr-2 pl-4">
+      <p className={`min-w-0 flex-1 overflow-x-auto py-2 text-xl ${linear ? 'font-mono' : ''}`}>
+        {resultLabel} = {linear ? formatExpression(formula) : <FormulaMath formula={formula} />}
+      </p>
+      <button
+        type="button"
+        aria-label={label}
+        title={label}
+        onClick={() => updateSettings({ linearFormulas: !linear })}
+        className="flex size-11 shrink-0 items-center justify-center self-start rounded-full border border-edge bg-raised text-muted print:hidden"
+      >
+        <Icon className="size-6" />
+      </button>
+    </div>
   )
 }
 

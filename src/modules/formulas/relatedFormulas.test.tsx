@@ -52,6 +52,6 @@ describe('Verwandte Formeln', () => {
     expect(html.indexOf('Verwandte Formeln')).toBeGreaterThan(html.indexOf('Rechner'))
     expect(section).toContain('href="/formeln/geometrie.kreisumfang"')
     expect(section).toContain('Kreisumfang<span class="ml-2 font-normal text-muted">U○</span>')
-    expect(html).toContain('A○ = π · d ^ 2 / 4')
+    expect(html).toMatch(/A○ = <span class="mx-0\.5 inline-flex flex-col/)
   })
 })

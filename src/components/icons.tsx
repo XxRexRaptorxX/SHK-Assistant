@@ -130,6 +130,28 @@ export function ChevronRightIcon(props: IconProps) {
   )
 }
 
+/** Bruchschreibweise: Zähler über Nenner */
+export function FractionIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="9" y="3" width="6" height="5" rx="1" />
+      <path d="M5 12h14" />
+      <rect x="9" y="16" width="6" height="5" rx="1" />
+    </Icon>
+  )
+}
+
+/** Lineare Schreibweise: a / b in einer Zeile */
+export function LinearIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="2.5" y="9" width="5.5" height="6" rx="1" />
+      <path d="M10 18 14 6" />
+      <rect x="16" y="9" width="5.5" height="6" rx="1" />
+    </Icon>
+  )
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <Icon {...props}>

@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter, Route, Routes } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { lexiconPathFor } from '../lexicon/termLinks'
+import { formatExpression } from './engine'
 import FormulaDetailPage from './FormulaDetailPage'
 import { formulaEntries } from './formulas'
 
@@ -41,6 +42,12 @@ describe('Legende der Formeln', () => {
   })
 })
 
+const formula = (id: string) => {
+  const entry = formulaEntries.find((candidate) => candidate.id === id)
+  if (!entry) throw new Error(`Formel ${id} fehlt`)
+  return entry
+}
+
 describe('Konstanten in Formel und Legende', () => {
   const pageAt = (slug: string) =>
     renderToStaticMarkup(
@@ -60,17 +67,19 @@ describe('Konstanten in Formel und Legende', () => {
 
   it('zeigt √3 als Verkettungsfaktor statt sqrt(3)', () => {
     const page = pageAt('elektrotechnik.drehstromleistung')
-    expect(page).toContain('√3 · U · I')
+    expect(formatExpression(formula('formula.elektrotechnik.drehstromleistung'))).toBe('√3 · U · I')
+    expect(page).toMatch(/√3<span class="mx-1">·<\/span>U/)
     expect(page).not.toContain('sqrt(3)')
     expect(legendAt('elektrotechnik.drehstromleistung')).toMatch(/Verkettungsfaktor<\/a><span class="text-muted"> ≈ 1,73205/)
   })
 
   it('nennt den Näherungswert und den Vollwinkel ohne doppelte Werte', () => {
-    expect(pageAt('geometrie.kreisflaeche-naeherung')).toContain('0,785 · d ^ 2')
+    expect(formatExpression(formula('formula.geometrie.kreisflaeche-naeherung'))).toBe('0,785 · d ^ 2')
     const naeherung = legendAt('geometrie.kreisflaeche-naeherung')
     expect(naeherung).toContain('Näherungswert für π/4')
     expect(naeherung).not.toContain('= 0,785')
-    expect(pageAt('geometrie.kreisbogen-laenge')).toContain('π · d · α / 360°')
+    expect(formatExpression(formula('formula.geometrie.kreisbogen-laenge'))).toBe('π · d · α / 360°')
+    expect(pageAt('geometrie.kreisbogen-laenge')).toMatch(/text-center">360°<\/span>/)
     expect(legendAt('geometrie.kreisbogen-laenge')).not.toContain('= 360')
   })
 })

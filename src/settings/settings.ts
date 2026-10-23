@@ -11,9 +11,11 @@ export interface Settings {
   showUnitNames: boolean
   /** Handy schütteln öffnet „Fehler melden“ (Standard: an) */
   shakeToReport: boolean
+  /** Formeln in einer Zeile mit / statt als Bruch (Standard: aus) */
+  linearFormulas: boolean
 }
 
-export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true, shakeToReport: true }
+export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true, shakeToReport: true, linearFormulas: false }
 
 /** Liest gespeicherte Einstellungen; Unbekanntes oder Kaputtes fällt auf die Standardwerte zurück. */
 export function parseSettings(raw: string | null): Settings {
@@ -25,6 +27,7 @@ export function parseSettings(raw: string | null): Settings {
       hideRareUnits: flag('hideRareUnits'),
       showUnitNames: flag('showUnitNames'),
       shakeToReport: flag('shakeToReport'),
+      linearFormulas: flag('linearFormulas'),
     }
   } catch {
     return DEFAULT_SETTINGS

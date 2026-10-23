@@ -285,6 +285,14 @@ export function SettingsPage() {
               onChange={(showUnitNames) => updateSettings({ showUnitNames })}
             />
           </div>
+          <div className="mt-3">
+            <Switch
+              label="Formeln linear schreiben"
+              description="Zeigt Formeln in einer Zeile mit „/“ statt als Bruch. Umschalten geht auch direkt in der Formelzeile. Standard: aus."
+              checked={settings.linearFormulas}
+              onChange={(linearFormulas) => updateSettings({ linearFormulas })}
+            />
+          </div>
           <HiddenEntries />
         </Section>
         <Section title="Design">

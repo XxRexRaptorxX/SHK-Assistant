@@ -20,6 +20,7 @@ describe('Einstellungen', () => {
     expect(DEFAULT_SETTINGS.hideRareUnits).toBe(false)
     expect(DEFAULT_SETTINGS.showUnitNames).toBe(true)
     expect(DEFAULT_SETTINGS.shakeToReport).toBe(true)
+    expect(DEFAULT_SETTINGS.linearFormulas).toBe(false)
   })
 
   it('teilt einen gespeicherten Wert zwischen allen Lesern', () => {
@@ -80,6 +81,10 @@ describe('Einstellungen-Seite', () => {
     expect(html).toContain('href="https://ko-fi.com/xxrexraptorxx" target="_blank" rel="noopener noreferrer"')
     expect(html).toContain('aria-label="Entwicklung unterstützen auf Ko-fi"')
     expect(html).not.toContain('(Ko-fi)')
+  })
+
+  it('bietet die lineare Formelschreibweise als Schalter an (aus)', () => {
+    expect(html).toContain('role="switch" aria-checked="false" aria-label="Formeln linear schreiben"')
   })
 
   it('verlinkt Impressum und Datenschutzerklärung', () => {

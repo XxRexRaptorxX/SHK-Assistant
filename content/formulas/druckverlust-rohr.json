@@ -51,7 +51,7 @@
       "mbar"
     ]
   },
-  "expression": "lambda * l / d * rho / 2 * v^2",
+  "expression": "lambda * (l / d) * (rho / 2) * v^2",
   "examples": [
     {
       "inputs": {
