@@ -7,7 +7,8 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { FormulaBody } from '../formulas/FormulaDetailPage'
 import { ensureCustomUnits } from '../units/customUnits'
 import { findTool, toolEntries } from './tools'
-import { isTableTool, type ToolEntry } from './schema'
+import { isChoiceTool, isTableTool, type ToolEntry } from './schema'
+import { ChoiceLookup } from './ChoiceLookup'
 import { TableLookup } from './TableLookup'
 
 const BACK = { to: modules.tools.path, label: modules.tools.title }
@@ -27,7 +28,13 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
       actions={<FavoriteButton id={tool.id} title={tool.title} />}
     >
       <RichText text={tool.description} />
-      {isTableTool(tool) ? <TableLookup tool={tool} /> : <FormulaBody formula={tool} />}
+      {isTableTool(tool) ? (
+        <TableLookup tool={tool} />
+      ) : isChoiceTool(tool) ? (
+        <ChoiceLookup tool={tool} />
+      ) : (
+        <FormulaBody formula={tool} />
+      )}
     </ContentPage>
   )
 }

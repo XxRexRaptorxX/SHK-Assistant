@@ -8,6 +8,8 @@ import { TOOL_ID_PREFIX } from './constants.ts'
 // - Formel-Tools (ohne "kind"): Aufbau und Prüfung wie bei den Formeln.
 // - Tabellen-Tools ("kind": "table"): schlagen zu einer Eingabe (z. B. Baujahr) die passenden
 //   Zeilen einer Tabelle nach, ohne zu rechnen.
+// - Auswahl-Tools ("kind": "choice"): ein oder mehrere Abschnitte, in denen man eine Option antippt
+//   (z. B. Thermostatstufe oder Raumart) und deren Werte angezeigt bekommt.
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -54,14 +56,55 @@ const tableToolSchema = defineEntrySchema({
   rows: z.array(tableRowSchema).min(1),
 })
 
-export const toolEntrySchema = z.discriminatedUnion('kind', [formulaToolSchema, tableToolSchema])
+const choiceOptionSchema = z.strictObject({
+  /** Beschriftung der Schaltfläche, z. B. "3" oder "Bad" */
+  label: z.string().trim().min(1),
+  /** Zusatz, z. B. „Frostschutz“ */
+  note: z.string().trim().default(''),
+  /** Werte je Spalte als Text, z. B. "ca. 20" */
+  values: z.record(z.string(), z.string().trim().min(1)),
+})
+
+const choiceSectionSchema = z.strictObject({
+  title: z.string().trim().min(1),
+  /** Was ausgewählt wird, z. B. „Einstellung“ */
+  inputName: z.string().trim().min(1),
+  /** "scale": Stufen nebeneinander in einer Leiste (kurze Beschriftungen); "dropdown": Auswahlliste */
+  display: z.enum(['scale', 'dropdown']).default('dropdown'),
+  columns: z.array(tableColumnSchema).min(1),
+  options: z.array(choiceOptionSchema).min(1),
+})
+
+const choiceToolSchema = defineEntrySchema({
+  kind: z.literal('choice'),
+  title: z.string().trim().min(1),
+  description: z.string().trim().min(1),
+  category: z.string().trim().default(''),
+  sections: z.array(choiceSectionSchema).min(1),
+})
+
+export const toolEntrySchema = z.discriminatedUnion('kind', [formulaToolSchema, tableToolSchema, choiceToolSchema])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
 export type TableTool = z.output<typeof tableToolSchema>
 export type TableRow = z.output<typeof tableRowSchema>
-export type ToolEntry = FormulaTool | TableTool
+export type ChoiceTool = z.output<typeof choiceToolSchema>
+export type ChoiceSection = z.output<typeof choiceSectionSchema>
+export type ToolEntry = FormulaTool | TableTool | ChoiceTool
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
+export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
+export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
+
+/** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
+function checkValues(where: string, keys: string[], values: Record<string, string>): string[] {
+  const missing = keys.filter((key) => !(key in values))
+  const unknown = Object.keys(values).filter((key) => !keys.includes(key))
+  return [
+    ...(missing.length > 0 ? [`${where}: Wert fehlt für ${missing.join(', ')}`] : []),
+    ...(unknown.length > 0 ? [`${where}: unbekannte Spalte ${unknown.join(', ')}`] : []),
+  ]
+}
 
 export function checkTableTool(entry: TableTool): string[] {
   const issues: string[] = []
@@ -71,10 +114,22 @@ export function checkTableTool(entry: TableTool): string[] {
     const where = `rows[${index}] (${row.label})`
     if (row.from === undefined && row.to === undefined) issues.push(`${where}: from oder to fehlt`)
     if (row.from !== undefined && row.to !== undefined && row.from > row.to) issues.push(`${where}: from ist größer als to`)
-    const missing = keys.filter((key) => !(key in row.values))
-    const unknown = Object.keys(row.values).filter((key) => !keys.includes(key))
-    if (missing.length > 0) issues.push(`${where}: Wert fehlt für ${missing.join(', ')}`)
-    if (unknown.length > 0) issues.push(`${where}: unbekannte Spalte ${unknown.join(', ')}`)
+    issues.push(...checkValues(where, keys, row.values))
+  })
+  return issues
+}
+
+export function checkChoiceTool(entry: ChoiceTool): string[] {
+  const issues: string[] = []
+  entry.sections.forEach((section, sectionIndex) => {
+    const where = `sections[${sectionIndex}] (${section.title})`
+    const keys = section.columns.map((column) => column.key)
+    if (new Set(keys).size !== keys.length) issues.push(`${where}: columns: key doppelt vergeben`)
+    const labels = section.options.map((option) => option.label)
+    if (new Set(labels).size !== labels.length) issues.push(`${where}: label doppelt vergeben`)
+    section.options.forEach((option, index) => {
+      issues.push(...checkValues(`${where}, options[${index}] (${option.label})`, keys, option.values))
+    })
   })
   return issues
 }
@@ -83,6 +138,11 @@ export const toolCollection = defineCollection({
   dir: 'tools',
   idPrefix: TOOL_ID_PREFIX,
   schema: toolEntrySchema,
-  check: (entry) => (isTableTool(entry) ? checkTableTool(entry) : formulaCollection.check!(entry as FormulaEntry)),
-  references: (entry) => (isTableTool(entry) ? [] : formulaCollection.references!(entry as FormulaEntry)),
+  check: (entry) =>
+    isTableTool(entry)
+      ? checkTableTool(entry)
+      : isChoiceTool(entry)
+        ? checkChoiceTool(entry)
+        : formulaCollection.check!(entry as FormulaEntry),
+  references: (entry) => (isFormulaTool(entry) ? formulaCollection.references!(entry as FormulaEntry) : []),
 })

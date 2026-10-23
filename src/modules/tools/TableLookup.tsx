@@ -23,7 +23,7 @@ function lookup(tool: TableTool, raw: string): LookupState {
   return { kind: 'rows', rows: matchingRows(tool, value) }
 }
 
-const withUnit = (value: string, unit: string) => (unit ? `${value} ${unit}` : value)
+export const withUnit = (value: string, unit: string) => (unit ? `${value} ${unit}` : value)
 const withLabel = (name: string, label: string | undefined) => (label ? `${name} (${label})` : name)
 
 /** Tabellen-Tool: eine Eingabe, dazu die passende(n) Zeile(n) und die ganze Tabelle zum Nachlesen */

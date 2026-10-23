@@ -7,7 +7,8 @@ import { checkFormula, evaluateFormula } from '../formulas/engine'
 import { presetsFor } from '../materials/materials'
 import { ensureCustomUnits } from '../units/customUnits'
 import ToolPage from './ToolPage'
-import { checkTableTool, isTableTool } from './schema'
+import { checkChoiceTool, checkTableTool, isChoiceTool, isTableTool } from './schema'
+import { ChoiceLookup } from './ChoiceLookup'
 import { matchingRows, TableLookup } from './TableLookup'
 import { Calculator } from '../formulas/Calculator'
 import { formulaToolEntries, toolEntries } from './tools'
@@ -52,6 +53,7 @@ describe('Tools', () => {
       'Leistungsminderung durch Ruß im Kessel',
       'Material zurückschreiben',
       'Rohrlänge einer Fußbodenheizung',
+      'Thermostatkopf-Einstellung und Raumtemperatur',
       'Verbaute Länge aus mehreren Rollen (bei Abrollern)',
     ])
   })
@@ -144,6 +146,62 @@ describe('Tools', () => {
       'rows[0] (x): from oder to fehlt',
       'rows[0] (x): Wert fehlt für waermebedarf',
       'rows[0] (x): unbekannte Spalte extra',
+    ])
+  })
+
+  it('zeigt zur Thermostatstufe Temperatur und Räume, zur Raumart die Norm-Innentemperatur', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.thermostat-raumtemperatur')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    expect(checkChoiceTool(tool)).toEqual([])
+    const [thermostat, norm] = tool.sections
+    expect(thermostat!.options.map((option) => [option.label, option.values.temperatur])).toEqual([
+      ['✻', 'ca. 6'],
+      ['1', 'ca. 12'],
+      ['☾', 'ca. 14'],
+      ['2', 'ca. 16'],
+      ['2½', 'ca. 18'],
+      ['3', 'ca. 20'],
+      ['3½', 'ca. 22'],
+      ['4', 'ca. 24'],
+      ['5', 'ca. 28'],
+    ])
+    const normTemperature = (label: string) => norm!.options.find((option) => option.label === label)?.values.temperatur
+    expect(normTemperature('WC-Räume')).toBe('20')
+    expect(normTemperature('Duschräume')).toBe('24')
+    expect(normTemperature('Treppenhäuser')).toBe('15')
+    expect(normTemperature('Haupttreppenräume')).toBe('20')
+    expect(norm!.options).toHaveLength(20)
+
+    const html = renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: '☾', 1: 'Flure' }} />)
+    // Skala: Stufe in der Leiste gewählt, Karte zeigt Zusatz und Werte
+    expect(html.match(/aria-pressed="true"/g)).toHaveLength(1)
+    expect(html).toContain('aria-label="☾, Nachtabsenkung"')
+    expect(html).toContain('θ = ca. 14 °C')
+    expect(html).toContain('Alle Räume nachts')
+    // Dropdown: Raumart ausgewählt
+    expect(html).toContain('<option value="Flure" selected="">')
+    expect(html).toContain('θᵢₙₜ = 15 °C')
+    const empty = renderToStaticMarkup(<ChoiceLookup tool={tool} />)
+    expect(empty).toContain('Einstellung in der Leiste antippen.')
+    expect(empty).toContain('Raumart wählen …')
+    // Stufe ohne Zusatz: die Zahl als Überschrift
+    const four = renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: '4' }} />)
+    expect(four).toContain('<p class="font-semibold">4</p>')
+    const half = renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: '2½' }} />)
+    expect(half).toContain('<p class="font-semibold">Skala zwischen 2 und 3</p>')
+  })
+
+  it('meldet Fehler in Auswahl-Tools', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.thermostat-raumtemperatur')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    const section = tool.sections[1]!
+    const broken = {
+      ...tool,
+      sections: [{ ...section, options: [section.options[0]!, { label: section.options[0]!.label, note: '', values: {} }] }],
+    }
+    expect(checkChoiceTool(broken)).toEqual([
+      'sections[0] (Norm-Innentemperatur nach Raumart): label doppelt vergeben',
+      'sections[0] (Norm-Innentemperatur nach Raumart), options[1] (Ausstellungsräume): Wert fehlt für temperatur',
     ])
   })
 

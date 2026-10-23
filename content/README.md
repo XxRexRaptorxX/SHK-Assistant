@@ -66,7 +66,14 @@ Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
 | `columns` | Ergebnisspalten: `key`, `name`, optional `label` (Formelzeichen), `term` und `unit` (Anzeige, z. B. „W/m²“) |
 | `rows`    | Zeilen: `label`, Bereich `from`/`to` (einschließlich, eine Grenze darf fehlen), `values` je `key` als Text (z. B. „ca. 105“), optional `note` (z. B. Baustandard) |
 
-Passen mehrere Zeilen zur Eingabe (z. B. Werte aus zwei Quellen), werden alle angezeigt. Quellen
+**Auswahl-Tools** (`"kind": "choice"`) lassen eine Option wählen statt eine Zahl einzugeben,
+z. B. Thermostatstufen oder Raumarten. Sie haben `sections`, je Abschnitt: `title`, `inputName`
+(z. B. „Einstellung“), `display` (`"scale"`: Stufen nebeneinander in einer Leiste mit Verlauf von
+kalt nach warm, nur für kurze Beschriftungen; `"dropdown"`: Auswahlliste, Standard), `columns` wie
+bei Tabellen-Tools und `options` mit `label`, optional `note` und `values` je Spalte. In der Leiste
+steht die erste Spalte als Kurzinfo unter jeder Stufe.
+
+Passen bei Tabellen-Tools mehrere Zeilen zur Eingabe (z. B. Werte aus zwei Quellen), werden alle angezeigt. Quellen
 einzelner Zeilen gehören in `source` des Eintrags. Der Build
 prüft, dass jede Zeile einen Bereich und zu jeder Spalte einen Wert hat.
 

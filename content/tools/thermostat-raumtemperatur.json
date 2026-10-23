@@ -1,0 +1,241 @@
+{
+  "id": "tool.thermostat-raumtemperatur",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Thermostatskala: Bild des Inhabers, übermittelt am 23.10.2026, Zuordnung der Stufen vom Inhaber bestätigt am 23.10.2026. Norm-Innentemperaturen: SHKwissen „Norm-Innentemperatur“ (haustechnikdialog.de, 04.02.2024), Anhaltswerte nach DIN EN 12831, https://www.haustechnikdialog.de/SHKwissen/1303/Norm-Innentemperatur (abgerufen am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "choice",
+  "title": "Thermostatkopf-Einstellung und Raumtemperatur",
+  "description": "Zeigt, welche Raumtemperatur eine Stufe am Thermostatkopf ungefähr ergibt und für welche Räume sie passt. Darunter steht die Norm-Innentemperatur je Raumart, die bei der Heizlastberechnung nach DIN EN 12831 angesetzt wird, wenn der Auftraggeber keine anderen Innentemperaturen wünscht; abweichende Wünsche werden vertraglich festgehalten. Die Zuordnung der Stufen kann je nach Hersteller abweichen, maßgeblich ist die Anleitung des Thermostatkopfs.",
+  "category": "Demonstration",
+  "sections": [
+    {
+      "title": "Thermostatkopf",
+      "inputName": "Einstellung",
+      "display": "scale",
+      "columns": [
+        {
+          "key": "temperatur",
+          "name": "Raumtemperatur",
+          "label": "θ",
+          "unit": "°C"
+        },
+        {
+          "key": "raeume",
+          "name": "Passend für"
+        }
+      ],
+      "options": [
+        {
+          "label": "✻",
+          "note": "Frostschutz",
+          "values": {
+            "temperatur": "ca. 6",
+            "raeume": "Kellerräume"
+          }
+        },
+        {
+          "label": "1",
+          "values": {
+            "temperatur": "ca. 12",
+            "raeume": "Treppenhaus"
+          }
+        },
+        {
+          "label": "☾",
+          "note": "Nachtabsenkung",
+          "values": {
+            "temperatur": "ca. 14",
+            "raeume": "Alle Räume nachts"
+          }
+        },
+        {
+          "label": "2",
+          "values": {
+            "temperatur": "ca. 16",
+            "raeume": "Schlafzimmer"
+          }
+        },
+        {
+          "label": "2½",
+          "note": "Skala zwischen 2 und 3",
+          "values": {
+            "temperatur": "ca. 18",
+            "raeume": "Flur, Küche"
+          }
+        },
+        {
+          "label": "3",
+          "note": "☼ Grundeinstellung",
+          "values": {
+            "temperatur": "ca. 20",
+            "raeume": "Wohn-, Esszimmer"
+          }
+        },
+        {
+          "label": "3½",
+          "note": "Skala zwischen 3 und 4",
+          "values": {
+            "temperatur": "ca. 22",
+            "raeume": "Kinder-, Arbeitszimmer"
+          }
+        },
+        {
+          "label": "4",
+          "values": {
+            "temperatur": "ca. 24",
+            "raeume": "Badezimmer"
+          }
+        },
+        {
+          "label": "5",
+          "values": {
+            "temperatur": "ca. 28",
+            "raeume": "Schwimmbad"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Norm-Innentemperatur nach Raumart",
+      "inputName": "Raumart",
+      "columns": [
+        {
+          "key": "temperatur",
+          "name": "Norm-Innentemperatur",
+          "label": "θᵢₙₜ",
+          "unit": "°C"
+        }
+      ],
+      "options": [
+        {
+          "label": "Ausstellungsräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Baderäume",
+          "note": "Nutzung im unbekleideten Bereich",
+          "values": {
+            "temperatur": "24"
+          }
+        },
+        {
+          "label": "Büroräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Duschräume",
+          "note": "Nutzung im unbekleideten Bereich",
+          "values": {
+            "temperatur": "24"
+          }
+        },
+        {
+          "label": "Flure",
+          "note": "beheizter Nebenraum",
+          "values": {
+            "temperatur": "15"
+          }
+        },
+        {
+          "label": "Haupttreppenräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Hotelzimmer",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Konzerträume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Läden",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Schalterhallen",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Schlafräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Sitzungszimmer",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Theaterräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Treppenhäuser",
+          "note": "beheizter Nebenraum",
+          "values": {
+            "temperatur": "15"
+          }
+        },
+        {
+          "label": "Umkleideräume",
+          "note": "Nutzung im unbekleideten Bereich",
+          "values": {
+            "temperatur": "24"
+          }
+        },
+        {
+          "label": "Unterrichtsräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Untersuchungszimmer",
+          "note": "Nutzung im unbekleideten Bereich",
+          "values": {
+            "temperatur": "24"
+          }
+        },
+        {
+          "label": "Verkaufsräume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "WC-Räume",
+          "values": {
+            "temperatur": "20"
+          }
+        },
+        {
+          "label": "Wohnräume",
+          "values": {
+            "temperatur": "20"
+          }
+        }
+      ]
+    }
+  ]
+}
