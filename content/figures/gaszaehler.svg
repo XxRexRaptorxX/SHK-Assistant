@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 190">
+  <defs>
+    <marker id="gaszaehler-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path class="flow-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Gasleitung mit Zähler -->
+  <path class="line" d="M10 150H120V130M10 170H320M200 130V150H320"/>
+  <path class="line" d="M140 130V150H180V130"/>
+  <line class="flow" x1="24" y1="160" x2="84" y2="160" marker-end="url(#gaszaehler-flow)"/>
+  <!-- Gaszähler mit Zählwerk: Betriebsvolumen V_B -->
+  <rect class="metal" x="100" y="30" width="120" height="100" rx="6"/>
+  <rect class="thin" x="116" y="48" width="88" height="26" rx="3"/>
+  <text class="note" x="124" y="66">0 0 4 2 7,315</text>
+  <text class="note" x="182" y="92">m³</text>
+  <text x="228" y="66"><tspan class="sym">V</tspan><tspan class="sub" dy="4">B</tspan></text>
+  <!-- Messzeit t -->
+  <circle class="line" cx="282" cy="62" r="18"/>
+  <path class="thin" d="M282 62V50M282 62L291 67"/>
+  <text class="sym" x="278" y="100">t</text>
+  <!-- Zustand des Gases am Zähler: Überdruck p_e, Temperatur T -->
+  <text x="20" y="138"><tspan class="sym">p</tspan><tspan class="sub" dy="4">e</tspan><tspan dy="-4">, </tspan><tspan class="sym">T</tspan></text>
+  <!-- Luftdruck am Aufstellort -->
+  <text x="20" y="40"><tspan class="sym">p</tspan><tspan class="sub" dy="4">amb</tspan></text>
+</svg>

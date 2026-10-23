@@ -30,6 +30,7 @@
   ],
   "result": {
     "symbol": "b",
+    "label": "b◠",
     "name": "Bogenlänge",
     "unit": "m",
     "decimals": 3

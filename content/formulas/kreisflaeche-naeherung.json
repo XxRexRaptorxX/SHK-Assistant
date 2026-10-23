@@ -18,6 +18,7 @@
   "constants": [],
   "result": {
     "symbol": "A",
+    "label": "A○",
     "name": "Kreisfläche",
     "unit": "m^2",
     "decimals": 2

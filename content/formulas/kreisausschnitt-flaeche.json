@@ -30,6 +30,7 @@
   ],
   "result": {
     "symbol": "A",
+    "label": "A◔",
     "name": "Fläche",
     "unit": "m^2",
     "decimals": 3

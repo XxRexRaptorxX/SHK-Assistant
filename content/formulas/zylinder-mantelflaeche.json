@@ -23,6 +23,7 @@
   "constants": [],
   "result": {
     "symbol": "M",
+    "label": "M▮",
     "name": "Mantelfläche",
     "unit": "m^2",
     "decimals": 3

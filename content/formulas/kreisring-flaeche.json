@@ -23,6 +23,7 @@
   "constants": [],
   "result": {
     "symbol": "A",
+    "label": "A◎",
     "name": "Ringfläche",
     "unit": "mm^2",
     "decimals": 1

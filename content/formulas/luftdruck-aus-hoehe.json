@@ -1,0 +1,47 @@
+{
+  "id": "formula.gastechnik.luftdruck-aus-hoehe",
+  "visibility": "public",
+  "status": "draft",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "title": "Mittlerer Luftdruck aus der Höhe",
+  "description": "Schätzt den Jahresmittelwert des Luftdrucks aus der geodätischen Höhe des Aufstellorts, z. B. für die Zustandszahl.",
+  "category": "Gastechnik",
+  "variables": [
+    {
+      "symbol": "h",
+      "name": "Geodätische Höhe über dem Meer",
+      "unit": "m"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "p0",
+      "label": "p₀",
+      "name": "Bezugswert",
+      "value": "1016 hPa"
+    },
+    {
+      "symbol": "grad",
+      "name": "Luftdruckabnahme je Meter",
+      "value": "0.12 hPa/m"
+    }
+  ],
+  "result": {
+    "symbol": "pamb",
+    "name": "Mittlerer Luftdruck",
+    "unit": "hPa",
+    "decimals": 1
+  },
+  "expression": "p0 - grad * h",
+  "examples": [
+    {
+      "inputs": {
+        "h": 562
+      },
+      "expected": 948.56,
+      "note": "Beispiel München aus dem Wikipedia-Artikel „Zustandszahl“ (dort gerundet 948,6 hPa)"
+    }
+  ]
+}

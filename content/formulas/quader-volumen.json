@@ -28,6 +28,7 @@
   "constants": [],
   "result": {
     "symbol": "V",
+    "label": "V■",
     "name": "Volumen",
     "unit": "m^3",
     "decimals": 3

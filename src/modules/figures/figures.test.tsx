@@ -57,6 +57,6 @@ describe('Skizze auf der Formelseite', () => {
   it('nutzt jede vorhandene Skizze bei mindestens einer Formel', () => {
     const used = new Set(content.formulas.map((formula) => formula.figure).filter(Boolean))
     for (const entry of content.figures) expect(used).toContain(entry.id)
-    expect(content.figures).toHaveLength(32)
+    expect(content.figures).toHaveLength(33)
   })
 })

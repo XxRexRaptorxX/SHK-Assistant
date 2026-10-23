@@ -1,0 +1,83 @@
+{
+  "id": "formula.gastechnik.zustandszahl",
+  "visibility": "public",
+  "status": "draft",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "title": "Zustandszahl",
+  "description": "Berechnet die Zustandszahl Z: das Verhältnis von Gasvolumen im Normzustand zum Volumen im Betriebszustand am Gaszähler. Damit wird das am Zähler gemessene Volumen auf den Normzustand umgerechnet.",
+  "category": "Gastechnik",
+  "variables": [
+    {
+      "symbol": "T",
+      "name": "Mittlere Gastemperatur",
+      "unit": "K",
+      "units": [
+        "degC"
+      ],
+      "description": "Bei Zählern ohne Temperaturmessung legt der Netzbetreiber einen festen Wert fest"
+    },
+    {
+      "symbol": "pamb",
+      "name": "Mittlerer Luftdruck am Aufstellort",
+      "unit": "mbar"
+    },
+    {
+      "symbol": "pe",
+      "label": "pₑ",
+      "name": "Betriebsdruck (Überdruck) des Gases",
+      "unit": "mbar"
+    },
+    {
+      "symbol": "pw",
+      "label": "φ·pₛ",
+      "name": "Wasserdampfteildruck des Gases",
+      "unit": "mbar",
+      "min": 0,
+      "description": "Bei trockenem Gas 0"
+    },
+    {
+      "symbol": "K",
+      "name": "Kompressibilitätszahl",
+      "unit": "",
+      "min": 0.01,
+      "description": "Laut Quelle 1 bei Betriebsdrücken bis 1000 hPa"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "Tn",
+      "label": "Tₙ",
+      "name": "Normtemperatur",
+      "value": "273.15 K"
+    },
+    {
+      "symbol": "pn",
+      "label": "pₙ",
+      "name": "Normdruck",
+      "value": "1013.25 mbar"
+    }
+  ],
+  "result": {
+    "symbol": "Z",
+    "name": "Zustandszahl",
+    "unit": "",
+    "decimals": 4
+  },
+  "expression": "Tn / T * (pamb + pe - pw) / pn / K",
+  "examples": [
+    {
+      "inputs": {
+        "T": 288.15,
+        "pamb": 949,
+        "pe": 24,
+        "pw": 0,
+        "K": 1
+      },
+      "expected": 0.9103,
+      "note": "Beispiel München aus dem Wikipedia-Artikel „Zustandszahl“"
+    }
+  ],
+  "figure": "figure.gaszaehler"
+}

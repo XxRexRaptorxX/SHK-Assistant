@@ -12,6 +12,17 @@ import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
 import { listCard } from '../../components/surfaces'
 
+/** Name der Formel, dahinter grau das Formelzeichen des Ergebnisses (z. B. „Kreisfläche  A“) */
+export function FormulaTitle({ entry }: { entry: Pick<FormulaEntry, 'title' | 'result'> }) {
+  const symbol = entry.result && (entry.result.label ?? entry.result.symbol)
+  return (
+    <>
+      {entry.title}
+      {symbol && <span className="ml-2 font-normal text-muted">{symbol}</span>}
+    </>
+  )
+}
+
 interface FormulaListPageProps {
   /** Für Tests überschreibbar */
   entries?: FormulaEntry[]
@@ -60,7 +71,9 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '', h
                       to={formulaPath(entry.id)}
                       className="flex min-h-14 items-center justify-between gap-3 px-4 py-2"
                     >
-                      <span className="font-semibold">{entry.title}</span>
+                      <span className="font-semibold">
+                        <FormulaTitle entry={entry} />
+                      </span>
                       {entry.status === 'draft' && <DraftBadge variant="inline" />}
                     </Link>
                   </li>

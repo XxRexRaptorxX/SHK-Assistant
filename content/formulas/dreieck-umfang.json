@@ -28,6 +28,7 @@
   "constants": [],
   "result": {
     "symbol": "U",
+    "label": "U△",
     "name": "Umfang",
     "unit": "m",
     "decimals": 2

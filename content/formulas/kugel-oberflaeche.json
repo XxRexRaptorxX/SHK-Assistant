@@ -18,6 +18,7 @@
   "constants": [],
   "result": {
     "symbol": "O",
+    "label": "O●",
     "name": "Oberfläche",
     "unit": "m^2",
     "decimals": 3

@@ -1,0 +1,61 @@
+{
+  "id": "formula.gastechnik.gasleistung-zaehler",
+  "visibility": "public",
+  "status": "draft",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl; Wikipedia „Leistung (Physik)“, https://de.wikipedia.org/wiki/Leistung_(Physik)",
+  "title": "Gasleistung aus der Zählermessung",
+  "description": "Berechnet die Leistung eines Gasgeräts aus dem in einer Messzeit am Zähler durchgelaufenen Volumen (Zählermethode). Je nachdem, worauf sich die Angabe des Geräts bezieht, Heizwert oder Brennwert im Normzustand einsetzen.",
+  "category": "Gastechnik",
+  "variables": [
+    {
+      "symbol": "VB",
+      "label": "VB",
+      "name": "Gemessenes Betriebsvolumen",
+      "unit": "l",
+      "units": [
+        "m^3"
+      ]
+    },
+    {
+      "symbol": "t",
+      "name": "Messzeit",
+      "unit": "s",
+      "units": [
+        "min"
+      ]
+    },
+    {
+      "symbol": "Z",
+      "name": "Zustandszahl",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "symbol": "H",
+      "name": "Heiz- bzw. Brennwert im Normzustand",
+      "unit": "kWh/m^3"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "P",
+    "name": "Gasleistung (Belastung)",
+    "unit": "kW",
+    "decimals": 2
+  },
+  "expression": "VB * Z * H / t",
+  "examples": [
+    {
+      "inputs": {
+        "VB": 50,
+        "t": 120,
+        "Z": 0.95,
+        "H": 10
+      },
+      "expected": 14.249999999999998
+    }
+  ],
+  "figure": "figure.gaszaehler"
+}

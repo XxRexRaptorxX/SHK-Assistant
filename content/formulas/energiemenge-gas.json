@@ -1,0 +1,50 @@
+{
+  "id": "formula.gastechnik.energiemenge-gas",
+  "visibility": "public",
+  "status": "draft",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "title": "Energiemenge aus dem Gaszähler",
+  "description": "Berechnet die Energiemenge aus dem am Zähler gemessenen Betriebsvolumen, der Zustandszahl und dem Brennwert im Normzustand, so wie bei der Gasabrechnung.",
+  "category": "Gastechnik",
+  "variables": [
+    {
+      "symbol": "VB",
+      "label": "VB",
+      "name": "Betriebsvolumen (Zählerstandsdifferenz)",
+      "unit": "m^3"
+    },
+    {
+      "symbol": "Z",
+      "name": "Zustandszahl",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "symbol": "Hs",
+      "label": "Hₛ",
+      "name": "Brennwert im Normzustand",
+      "unit": "kWh/m^3"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "E",
+    "name": "Energiemenge",
+    "unit": "kWh",
+    "decimals": 1
+  },
+  "expression": "VB * Z * Hs",
+  "examples": [
+    {
+      "inputs": {
+        "VB": 100,
+        "Z": 0.95,
+        "Hs": 10
+      },
+      "expected": 950
+    }
+  ],
+  "figure": "figure.gaszaehler"
+}
