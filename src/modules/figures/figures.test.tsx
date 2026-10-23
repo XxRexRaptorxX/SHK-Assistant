@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { content } from '../../content'
+import { formulaToolEntries } from '../tools/tools'
 import { FigureView } from './FigureView'
 import { checkSvg, type FigureEntry } from './schema'
 
@@ -55,7 +56,7 @@ describe('Skizze auf der Formelseite', () => {
   })
 
   it('nutzt jede vorhandene Skizze bei mindestens einer Formel oder einem Tool', () => {
-    const used = new Set([...content.formulas, ...content.tools].map((formula) => formula.figure).filter(Boolean))
+    const used = new Set([...content.formulas, ...formulaToolEntries].map((formula) => formula.figure).filter(Boolean))
     for (const entry of content.figures) expect(used).toContain(entry.id)
     expect(content.figures).toHaveLength(37)
   })

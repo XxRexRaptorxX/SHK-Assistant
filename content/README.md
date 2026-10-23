@@ -24,7 +24,7 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `title`       | Name der Formel                                                        |
 | `description` | Kurze eigene Erklärung, wann und wofür                                  |
 | `category`    | Gruppe in der Liste, z. B. „Hydraulik“ (leer = „Allgemein“)            |
-| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten) |
+| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert) |
 | `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"4.19 kJ/(kg K)"` |
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2) |
 | `expression`  | Formel als mathjs-Ausdruck mit den Symbolen, z. B. `Q / (c * dT)`      |
@@ -54,7 +54,21 @@ Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflic
 Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle. Aufbau und Prüfung
 wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
 „Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, derzeit „Aufmaß“
-(Mengen auf der Baustelle ermitteln) und „Auslegung“ (Bedarf vorab abschätzen).
+(Mengen auf der Baustelle ermitteln), „Auslegung“ (Bedarf vorab abschätzen) und „Demonstration“
+(Faustwerte zum Zeigen beim Kunden).
+
+**Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
+Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
+
+| Feld      | Inhalt                                                                                       |
+|-----------|----------------------------------------------------------------------------------------------|
+| `input`   | die Eingabe: `name` (z. B. „Baujahr“), optional `unit`, `min`, `max`                          |
+| `columns` | Ergebnisspalten: `key`, `name`, optional `label` (Formelzeichen), `term` und `unit` (Anzeige, z. B. „W/m²“) |
+| `rows`    | Zeilen: `label`, Bereich `from`/`to` (einschließlich, eine Grenze darf fehlen), `values` je `key` als Text (z. B. „ca. 105“), optional `note` (z. B. Baustandard) |
+
+Passen mehrere Zeilen zur Eingabe (z. B. Werte aus zwei Quellen), werden alle angezeigt. Quellen
+einzelner Zeilen gehören in `source` des Eintrags. Der Build
+prüft, dass jede Zeile einen Bereich und zu jeder Spalte einen Wert hat.
 
 ## Skizzen (`figures/`, Präfix `figure.`)
 

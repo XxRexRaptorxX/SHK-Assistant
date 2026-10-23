@@ -1,0 +1,52 @@
+{
+  "id": "tool.kalk-leistungsminderung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Rechenweg (Faustwert je mm, linear hochgerechnet) vom Inhaber gewählt am 23.10.2026; Faustwert: thermondo, Ratgeber „VDI 2035“, https://www.thermondo.de/info/rat/heizen/vdi-2035/ (abgerufen am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Leistungsminderung durch Kalk am Wärmetauscher",
+  "description": "Zeigt überschlägig, wie viel Leistung eine Kalkschicht auf einem Wärmetauscher kostet, z. B. zur Demonstration beim Kunden. Gerechnet wird mit einem Faustwert für 1 mm Kalk (vorausgefüllt, änderbar), der linear auf die eingegebene Schichtdicke hochgerechnet wird. Die Quelle nennt den Faustwert nur für 1 mm; wie die Minderung bei dickeren Schichten tatsächlich verläuft, ist damit nicht belegt.",
+  "category": "Demonstration",
+  "variables": [
+    {
+      "symbol": "s",
+      "name": "Dicke der Kalkschicht",
+      "unit": "mm",
+      "min": 0
+    },
+    {
+      "symbol": "f",
+      "name": "Leistungsminderung je mm Kalkschicht",
+      "unit": "",
+      "min": 0,
+      "default": 10
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "s0",
+      "label": "s₀",
+      "name": "Bezugsdicke des Faustwerts",
+      "value": "1 mm"
+    }
+  ],
+  "result": {
+    "symbol": "dP",
+    "label": "ΔP",
+    "name": "Leistungsminderung in %",
+    "unit": "",
+    "decimals": 1
+  },
+  "expression": "s / s0 * f",
+  "examples": [
+    {
+      "inputs": {
+        "s": 2,
+        "f": 10
+      },
+      "expected": 20,
+      "note": "Eigenes Rechenbeispiel zur Kontrolle: 2 mm Kalk bei 10 % je mm"
+    }
+  ]
+}

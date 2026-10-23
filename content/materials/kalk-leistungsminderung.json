@@ -1,0 +1,19 @@
+{
+  "id": "material.kalk-leistungsminderung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "thermondo, Ratgeber „VDI 2035“, https://www.thermondo.de/info/rat/heizen/vdi-2035/ (abgerufen am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Leistungsminderung je mm Kalkschicht"
+  ],
+  "unit": "",
+  "values": [
+    {
+      "name": "Kalkschicht 1 mm am Wärmetauscher",
+      "note": "bis zu 10 % weniger Leistung",
+      "value": 10
+    }
+  ]
+}

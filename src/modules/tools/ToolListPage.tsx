@@ -6,7 +6,7 @@ import { listCard } from '../../components/surfaces'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { groupFormulasByCategory } from '../formulas/formulas'
-import { toolEntries, toolPath } from './tools'
+import { toolEntries, toolPath, toolResultNames } from './tools'
 import type { ToolEntry } from './schema'
 
 export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] }) {
@@ -27,7 +27,9 @@ export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] 
                   <Link to={toolPath(entry.id)} className="flex min-h-16 items-center justify-between gap-3 px-4 py-3">
                     <span>
                       <span className="block text-lg font-semibold">{entry.title}</span>
-                      {entry.result && <span className="block text-base text-muted">Ergebnis: {entry.result.name}</span>}
+                      {toolResultNames(entry) && (
+                        <span className="block text-base text-muted">Ergebnis: {toolResultNames(entry)}</span>
+                      )}
                     </span>
                     {entry.status === 'draft' && <DraftBadge variant="inline" />}
                   </Link>

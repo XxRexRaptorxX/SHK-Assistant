@@ -1,0 +1,115 @@
+{
+  "id": "tool.heizlast-baujahr",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Bis „ab 2002“: Tabelle des Inhabers (Bild, übermittelt am 23.10.2026). Zeilen nach Baustandard aus Firmen-Ratgebern – 2002 – 2008: Heizlast: reonic, „Heizlastberechnung Tabelle: W/m² für Alt- und Neubau“ (M. Singh, 16.09.2026), https://reonic.com/de-de/blog/heizlastberechnung-tabelle-altbau-neubau-richtwerte/; Wärmebedarf (Referenzort Würzburg): Herz & Lang, „Energiestandards“, https://www.herz-lang.de/de/architektur/energiestandards/ (abgerufen am 23.10.2026) | 2009 – 2013: Heizlast (dort „ab 2009“): reonic, „Heizlastberechnung Tabelle: W/m² für Alt- und Neubau“ (M. Singh, 16.09.2026), https://reonic.com/de-de/blog/heizlastberechnung-tabelle-altbau-neubau-richtwerte/; Wärmebedarf (Referenzort Potsdam): Herz & Lang, „Energiestandards“, https://www.herz-lang.de/de/architektur/energiestandards/ (abgerufen am 23.10.2026) | 2014 – 2020: Heizlast (dort „ab 2009“): reonic, „Heizlastberechnung Tabelle: W/m² für Alt- und Neubau“ (M. Singh, 16.09.2026), https://reonic.com/de-de/blog/heizlastberechnung-tabelle-altbau-neubau-richtwerte/; Wärmebedarf (Referenzort Potsdam): Herz & Lang, „Energiestandards“, https://www.herz-lang.de/de/architektur/energiestandards/ (abgerufen am 23.10.2026) | ab 2021: 42watt, „Wärmebedarf berechnen“ (M. Nestler, 07.09.2026; dort nach Bundesverband Wärmepumpe und Verbraucherzentrale), https://42watt.de/magazin/waermebedarf-berechnen (abgerufen am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "table",
+  "title": "Heizlast und Wärmebedarf nach Baujahr",
+  "description": "Zeigt typische Richtwerte für Heizlast und jährlichen Wärmebedarf je Quadratmeter passend zum Baujahr des Hauses. Für Häuser ab 2002 erscheinen zusätzlich Werte nach dem jeweils gültigen Baustandard (EnEV bzw. GEG) aus Firmen-Ratgebern. Die Werte sind Richtwerte und ersetzen keine Heizlastberechnung.",
+  "category": "Auslegung",
+  "input": {
+    "name": "Baujahr"
+  },
+  "columns": [
+    {
+      "key": "heizlast",
+      "name": "Heizlast",
+      "label": "q",
+      "term": "Heizlast",
+      "unit": "W/m²"
+    },
+    {
+      "key": "waermebedarf",
+      "name": "Wärmebedarf",
+      "label": "qₕ",
+      "unit": "kWh/(m²·a)"
+    }
+  ],
+  "rows": [
+    {
+      "label": "1920 – 1969",
+      "from": 1920,
+      "to": 1969,
+      "values": {
+        "heizlast": "ca. 105",
+        "waermebedarf": "ca. 200"
+      }
+    },
+    {
+      "label": "1970 – 1984",
+      "from": 1970,
+      "to": 1984,
+      "values": {
+        "heizlast": "ca. 90",
+        "waermebedarf": "ca. 170"
+      }
+    },
+    {
+      "label": "1985 – 1995",
+      "from": 1985,
+      "to": 1995,
+      "values": {
+        "heizlast": "ca. 70",
+        "waermebedarf": "ca. 135"
+      }
+    },
+    {
+      "label": "1996 – 2001",
+      "from": 1996,
+      "to": 2001,
+      "values": {
+        "heizlast": "ca. 55",
+        "waermebedarf": "ca. 100"
+      }
+    },
+    {
+      "label": "ab 2002",
+      "from": 2002,
+      "values": {
+        "heizlast": "ca. 45",
+        "waermebedarf": "ca. 70"
+      }
+    },
+    {
+      "label": "2002 – 2008",
+      "from": 2002,
+      "to": 2008,
+      "note": "EnEV 2002",
+      "values": {
+        "heizlast": "43–45",
+        "waermebedarf": "ca. 75"
+      }
+    },
+    {
+      "label": "2009 – 2013",
+      "from": 2009,
+      "to": 2013,
+      "note": "EnEV 2009",
+      "values": {
+        "heizlast": "36–38",
+        "waermebedarf": "ca. 60"
+      }
+    },
+    {
+      "label": "2014 – 2020",
+      "from": 2014,
+      "to": 2020,
+      "note": "EnEV 2014",
+      "values": {
+        "heizlast": "36–38",
+        "waermebedarf": "ca. 45"
+      }
+    },
+    {
+      "label": "ab 2021",
+      "from": 2021,
+      "note": "GEG",
+      "values": {
+        "heizlast": "30–50",
+        "waermebedarf": "30–75"
+      }
+    }
+  ]
+}

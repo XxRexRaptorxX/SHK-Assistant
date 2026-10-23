@@ -7,13 +7,14 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { FormulaBody } from '../formulas/FormulaDetailPage'
 import { ensureCustomUnits } from '../units/customUnits'
 import { findTool, toolEntries } from './tools'
-import type { ToolEntry } from './schema'
+import { isTableTool, type ToolEntry } from './schema'
+import { TableLookup } from './TableLookup'
 
 const BACK = { to: modules.tools.path, label: modules.tools.title }
 
 ensureCustomUnits()
 
-/** Ein Tool: Skizze, Formel, Legende und Rechner wie bei den Formeln. Nachgeladen (mathjs). */
+/** Ein Tool: Skizze, Formel, Legende und Rechner wie bei den Formeln oder eine Nachschlagetabelle. Nachgeladen (mathjs). */
 export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntry[] }) {
   const { slug } = useParams()
   const tool = findTool(entries, slug)
@@ -26,7 +27,7 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
       actions={<FavoriteButton id={tool.id} title={tool.title} />}
     >
       <RichText text={tool.description} />
-      <FormulaBody formula={tool} />
+      {isTableTool(tool) ? <TableLookup tool={tool} /> : <FormulaBody formula={tool} />}
     </ContentPage>
   )
 }

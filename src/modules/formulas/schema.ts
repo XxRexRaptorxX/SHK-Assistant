@@ -25,6 +25,8 @@ const variableSchema = z.strictObject({
   /** Erlaubter Bereich in der Haupteinheit, z. B. 0 bis 1 für cos φ */
   min: z.number().optional(),
   max: z.number().optional(),
+  /** Vorbelegung im Rechner in der Haupteinheit, z. B. ein Faustwert; bleibt änderbar */
+  default: z.number().optional(),
 })
 
 const constantSchema = z.strictObject({
@@ -59,7 +61,8 @@ const exampleSchema = z.strictObject({
   note: z.string().optional(),
 })
 
-export const formulaEntrySchema = defineEntrySchema({
+/** Felder einer Formel; Tools nutzen dieselben (siehe tools/schema.ts) */
+export const formulaShape = {
   title: z.string().trim().min(1),
   description: z.string().trim().min(1),
   /** Gruppierung in der Liste, z. B. "Hydraulik" */
@@ -72,7 +75,13 @@ export const formulaEntrySchema = defineEntrySchema({
   examples: z.array(exampleSchema).default([]),
   /** Optionale Skizze aus content/figures, z. B. "figure.kreis" */
   figure: z.string().trim().min(1).optional(),
-}).superRefine((entry, ctx) => {
+}
+
+/** Pflichtangaben einer geprüften Formel */
+export function checkFormulaRequirements(
+  entry: { status: string; expression: string; result?: unknown; examples: unknown[] },
+  ctx: z.RefinementCtx,
+) {
   if (entry.status !== 'verified') return
   if (entry.expression === '') {
     ctx.addIssue({ code: 'custom', path: ['expression'], message: 'Pflicht bei status "verified"' })
@@ -83,7 +92,9 @@ export const formulaEntrySchema = defineEntrySchema({
   if (entry.examples.length === 0) {
     ctx.addIssue({ code: 'custom', path: ['examples'], message: 'Mindestens ein Testbeispiel bei status "verified"' })
   }
-})
+}
+
+export const formulaEntrySchema = defineEntrySchema(formulaShape).superRefine(checkFormulaRequirements)
 
 export type FormulaEntry = z.output<typeof formulaEntrySchema>
 export type FormulaVariable = z.output<typeof variableSchema>

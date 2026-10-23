@@ -5,14 +5,14 @@ import { alternativeUnits } from '../units/alternatives'
 import { ensureCustomUnits } from '../units/customUnits'
 import { Calculator } from '../formulas/Calculator'
 import { formulaEntries } from '../formulas/formulas'
-import { toolEntries } from '../tools/tools'
+import { formulaToolEntries } from '../tools/tools'
 import { MaterialPicker } from './MaterialPicker'
 import { presetInput, presetsFor } from './materials'
 
 ensureCustomUnits()
 
 /** Alle Rechner mit Eingabefeldern: Formeln und Tools */
-const calculatorEntries = [...formulaEntries, ...toolEntries]
+const calculatorEntries = [...formulaEntries, ...formulaToolEntries]
 
 const formula = (id: string) => {
   const entry = formulaEntries.find((candidate) => candidate.id === id)

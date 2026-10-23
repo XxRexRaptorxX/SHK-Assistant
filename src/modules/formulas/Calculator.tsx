@@ -60,10 +60,16 @@ function fieldError(variable: FormulaVariable, raw: string, unit: string): strin
   return range ? `Der Wert ${range}.` : undefined
 }
 
+const defaultFormat = new Intl.NumberFormat('de-DE', { useGrouping: false, maximumSignificantDigits: 10 })
+
 export function Calculator({ formula }: { formula: FormulaEntry }) {
   const idPrefix = useId()
   const result = formula.result
-  const [values, setValues] = useState<Record<string, string>>({})
+  const [values, setValues] = useState<Record<string, string>>(() =>
+    Object.fromEntries(
+      formula.variables.flatMap((v) => (v.default === undefined ? [] : [[v.symbol, defaultFormat.format(v.default)]])),
+    ),
+  )
   const [units, setUnits] = useState<Record<string, string>>(() =>
     Object.fromEntries(formula.variables.map((v) => [v.symbol, v.unit])),
   )

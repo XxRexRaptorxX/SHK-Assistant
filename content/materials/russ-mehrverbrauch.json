@@ -1,0 +1,19 @@
+{
+  "id": "material.russ-mehrverbrauch",
+  "visibility": "public",
+  "status": "draft",
+  "source": "heizung.de, Ratgeber „Heizungswartung: Kosten, Nutzen, Zeitpunkt“, https://www.heizung.de/ratgeber/diverses/heizungswartung-kosten-nutzen-und-zeitpunkt.html (abgerufen am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Mehrverbrauch je mm Rußschicht"
+  ],
+  "unit": "",
+  "values": [
+    {
+      "name": "Rußschicht 1 mm",
+      "note": "bis zu 5 % mehr Energieverbrauch",
+      "value": 5
+    }
+  ]
+}

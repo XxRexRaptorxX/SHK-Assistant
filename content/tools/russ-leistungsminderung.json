@@ -1,0 +1,52 @@
+{
+  "id": "tool.russ-leistungsminderung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Rechenweg (Faustwert je mm, linear hochgerechnet) vom Inhaber gewählt am 23.10.2026; Faustwert: heizung.de, Ratgeber „Heizungswartung: Kosten, Nutzen, Zeitpunkt“, https://www.heizung.de/ratgeber/diverses/heizungswartung-kosten-nutzen-und-zeitpunkt.html (abgerufen am 23.10.2026)",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Leistungsminderung durch Ruß im Kessel",
+  "description": "Zeigt überschlägig, wie viel Leistung eine Rußschicht auf den Heizflächen des Kessels kostet, z. B. zur Demonstration beim Kunden. Gerechnet wird mit einem Faustwert für 1 mm Ruß (vorausgefüllt, änderbar), der linear auf die eingegebene Schichtdicke hochgerechnet wird. Die Quellen nennen den Faustwert als Mehrverbrauch an Energie und nur für 1 mm; wie die Minderung bei dickeren Schichten tatsächlich verläuft, ist damit nicht belegt. Kein Ersatz für Abgasmessung und Kesselreinigung.",
+  "category": "Demonstration",
+  "variables": [
+    {
+      "symbol": "s",
+      "name": "Dicke der Rußschicht",
+      "unit": "mm",
+      "min": 0
+    },
+    {
+      "symbol": "f",
+      "name": "Mehrverbrauch je mm Rußschicht",
+      "unit": "",
+      "min": 0,
+      "default": 5
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "s0",
+      "label": "s₀",
+      "name": "Bezugsdicke des Faustwerts",
+      "value": "1 mm"
+    }
+  ],
+  "result": {
+    "symbol": "dP",
+    "label": "ΔP",
+    "name": "Leistungsminderung in %",
+    "unit": "",
+    "decimals": 1
+  },
+  "expression": "s / s0 * f",
+  "examples": [
+    {
+      "inputs": {
+        "s": 2,
+        "f": 5
+      },
+      "expected": 10,
+      "note": "Eigenes Rechenbeispiel zur Kontrolle: 2 mm Ruß bei 5 % je mm"
+    }
+  ]
+}

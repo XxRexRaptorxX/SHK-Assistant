@@ -36,8 +36,8 @@ export function filterFormulas(entries: readonly FormulaEntry[], query: string):
 }
 
 /** Gruppiert nach Kategorie; ohne Kategorie unter "Allgemein", diese Gruppe zuletzt */
-export function groupFormulasByCategory(entries: readonly FormulaEntry[]): { category: string; entries: FormulaEntry[] }[] {
-  const groups = new Map<string, FormulaEntry[]>()
+export function groupFormulasByCategory<T extends { category: string }>(entries: readonly T[]): { category: string; entries: T[] }[] {
+  const groups = new Map<string, T[]>()
   for (const entry of entries) {
     const category = entry.category || 'Allgemein'
     groups.set(category, [...(groups.get(category) ?? []), entry])
