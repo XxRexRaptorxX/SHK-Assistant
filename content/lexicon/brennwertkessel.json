@@ -8,7 +8,8 @@
   "term": "Brennwertkessel",
   "synonyms": [
     "Brennwertgerät",
-    "Brennwerttherme"
+    "Brennwerttherme",
+    "condensing boiler"
   ],
   "definition": "Ein **Brennwertkessel** nutzt neben der fühlbaren Wärme des Abgases auch einen Teil der Kondensationswärme des im Abgas enthaltenen Wasserdampfs. Dafür muss der Wärmetauscher ausreichend niedrige Rücklauftemperaturen ermöglichen und das entstehende Kondensat fachgerecht abgeführt werden. Die tatsächliche Effizienz hängt unter anderem von Systemtemperaturen und Betriebsbedingungen ab.",
   "related": [

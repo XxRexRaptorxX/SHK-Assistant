@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasserhammer",
   "synonyms": [
-    "Druckstoß"
+    "Druckstoß",
+    "water hammer"
   ],
   "definition": "Kurzzeitiger Druckstoß in einer Rohrleitung, der durch schnelle Änderung der Strömungsgeschwindigkeit entstehen kann. Er kann Geräusche und mechanische Belastungen verursachen.",
   "related": []

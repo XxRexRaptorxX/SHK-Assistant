@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Quartal",
-  "synonyms": [],
+  "synonyms": [
+    "quarter"
+  ],
   "definition": "**Quartal** ist eine Einheit für die Zeit. 1 Quartal = 7.884.000 s.",
   "related": [
     "lexicon.sekunde"

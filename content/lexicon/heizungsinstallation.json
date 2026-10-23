@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Heizungsinstallation",
-  "synonyms": [],
+  "synonyms": [
+    "heating installation"
+  ],
   "definition": "Gesamtheit der Komponenten zur Wärmeerzeugung, Wärmeverteilung und Wärmeabgabe in einem Gebäude.",
   "related": []
 }

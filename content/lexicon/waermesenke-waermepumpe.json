@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmesenke Wärmepumpe",
-  "synonyms": [],
+  "synonyms": [
+    "heat sink"
+  ],
   "definition": "System oder Medium, an das die Wärmepumpe nutzbare Wärme abgibt, beispielsweise Heizungswasser oder Trinkwarmwasser.",
   "related": []
 }

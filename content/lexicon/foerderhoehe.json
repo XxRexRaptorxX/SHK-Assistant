@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Förderhöhe",
-  "synonyms": [],
+  "synonyms": [
+    "pump head"
+  ],
   "definition": "Energiehöhe, die eine Pumpe dem Fördermedium zuführt und die häufig als äquivalente Höhe einer Flüssigkeitssäule angegeben wird. Sie muss die Druckverluste der Anlage überwinden.",
   "related": []
 }

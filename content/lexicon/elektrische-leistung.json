@@ -8,7 +8,8 @@
   "term": "Elektrische Leistung",
   "synonyms": [
     "P",
-    "Watt-Leistung"
+    "Watt-Leistung",
+    "electrical power"
   ],
   "definition": "Die **elektrische Leistung** gibt an, wie viel elektrische Energie pro Zeit umgesetzt oder übertragen wird; die Einheit ist Watt (W). Bei Gleichstrom gilt P = U × I; bei Wechsel- und Drehstrom sind Leistungsfaktor und Anschlussart zu berücksichtigen. Bei SHK-Geräten sind elektrische Aufnahmeleistung und thermische Abgabe- beziehungsweise Kälteleistung unterschiedliche Größen.",
   "related": [

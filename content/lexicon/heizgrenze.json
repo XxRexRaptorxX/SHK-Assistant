@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Heizgrenze",
-  "synonyms": [],
+  "synonyms": [
+    "heating limit temperature"
+  ],
   "definition": "Außentemperatur, oberhalb derer unter festgelegten Bedingungen keine Raumheizung erforderlich ist oder die Heizungsregelung den Heizbetrieb reduziert.",
   "related": []
 }

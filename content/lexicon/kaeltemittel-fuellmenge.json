@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittel-Füllmenge",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant charge"
+  ],
   "definition": "Masse des Kältemittels, mit der ein Kältekreislauf befüllt ist. Zulässige Menge und Dokumentation hängen von Gerät, Kältemittel und geltenden Anforderungen ab.",
   "related": []
 }

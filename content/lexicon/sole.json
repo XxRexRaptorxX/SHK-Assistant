@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Sole",
-  "synonyms": [],
+  "synonyms": [
+    "brine"
+  ],
   "definition": "Wärmeträgerflüssigkeit, häufig ein Wasser-Glykol-Gemisch, die in bestimmten Erdreich-Wärmepumpenkreisen Wärme transportiert.",
   "related": []
 }

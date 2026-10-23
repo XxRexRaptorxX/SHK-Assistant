@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmerückgewinnungsbypass",
-  "synonyms": [],
+  "synonyms": [
+    "heat recovery bypass"
+  ],
   "definition": "Luftweg, der den Wärmeübertrager teilweise oder vollständig umgeht, beispielsweise zur freien Kühlung oder zum Frostschutz.",
   "related": []
 }

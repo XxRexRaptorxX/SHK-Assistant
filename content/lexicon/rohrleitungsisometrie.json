@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Rohrleitungsisometrie",
-  "synonyms": [],
+  "synonyms": [
+    "piping isometric"
+  ],
   "definition": "Räumliche Darstellung einer Rohrleitung, die Leitungsverlauf, Richtungsänderungen und Anschlusspositionen übersichtlich zeigt.",
   "related": []
 }

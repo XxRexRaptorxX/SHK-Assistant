@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Raumluftunabhängige Feuerstätte",
-  "synonyms": [],
+  "synonyms": [
+    "room-sealed appliance"
+  ],
   "definition": "Feuerstätte, die ihre Verbrennungsluft über ein dafür vorgesehenes System von außen bezieht und vom Aufstellraum weitgehend unabhängig ist.",
   "related": []
 }

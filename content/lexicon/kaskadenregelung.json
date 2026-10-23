@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kaskadenregelung",
-  "synonyms": [],
+  "synonyms": [
+    "cascade control"
+  ],
   "definition": "Regelung, die mehrere Wärmeerzeuger stufenweise oder koordiniert zuschaltet, um den Wärmebedarf effizient abzudecken.",
   "related": []
 }

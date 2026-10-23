@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeübertragung",
-  "synonyms": [],
+  "synonyms": [
+    "heat transfer"
+  ],
   "definition": "**Wärmeübertragung** ist der Transport thermischer Energie aufgrund eines Temperaturunterschieds. Grundlegende Mechanismen sind Wärmeleitung, Konvektion und Wärmestrahlung. In SHK-Anlagen treten sie beispielsweise in Heizkörpern, Wärmetauschern, Rohrleitungen und Gebäudebauteilen auf.",
   "related": [
     "lexicon.waermeleitfaehigkeit",

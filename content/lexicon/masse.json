@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Masse",
-  "synonyms": [],
+  "synonyms": [
+    "mass"
+  ],
   "definition": "**Masse** ist eine Eigenschaft eines Körpers, die seine Trägheit und seine Gewichtskraft bestimmt. Sie ist eine Basisgröße des SI und wird in Kilogramm (kg) angegeben.",
   "related": [
     "lexicon.dichte"

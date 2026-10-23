@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Kältemaschine",
   "synonyms": [
-    "Kälteaggregat"
+    "Kälteaggregat",
+    "refrigerating machine"
   ],
   "definition": "Eine **Kältemaschine** entzieht einem kälteren Bereich Wärme und gibt sie an einen wärmeren Bereich ab, wofür Energie zugeführt werden muss. Bei Kompressionskälteanlagen zirkuliert ein Kältemittel durch Verdampfer, Verdichter, Verflüssiger und Expansionsorgan. Kälteleistung, Leistungsaufnahme, Wärmeabgabe und Betriebsbedingungen sind gemeinsam zu betrachten.",
   "related": [

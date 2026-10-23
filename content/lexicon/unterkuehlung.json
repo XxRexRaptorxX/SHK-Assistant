@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Unterkühlung",
   "synonyms": [
-    "Flüssigkeitsunterkühlung"
+    "Flüssigkeitsunterkühlung",
+    "subcooling"
   ],
   "definition": "Die **Unterkühlung** ist die Differenz zwischen der Sättigungstemperatur bei einem gegebenen Druck und der tatsächlichen Temperatur einer Flüssigkeit unterhalb dieser Sättigungstemperatur. In Kälteanlagen wird sie häufig am Verflüssigerausgang betrachtet. Sie kann Hinweise auf Füllzustand und Wärmeübertragung geben, muss aber zusammen mit den übrigen Betriebsdaten bewertet werden.",
   "related": [

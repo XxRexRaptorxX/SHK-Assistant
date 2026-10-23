@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Schmutzfänger",
   "synonyms": [
-    "Siebfilter"
+    "Siebfilter",
+    "strainer"
   ],
   "definition": "Ein **Schmutzfänger** hält feste Partikel aus einem Fluidstrom zurück, um nachgeschaltete Ventile, Pumpen oder Wärmetauscher zu schützen. Er enthält häufig ein Siebelement, das je nach Belastung kontrolliert und gereinigt werden muss. Ein zugesetzter Schmutzfänger kann den Druckverlust stark erhöhen.",
   "related": [

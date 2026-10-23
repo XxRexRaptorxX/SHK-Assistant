@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "CAV-Regler",
   "synonyms": [
-    "konstanter Volumenstromregler"
+    "konstanter Volumenstromregler",
+    "constant air volume controller"
   ],
   "definition": "Constant-Air-Volume-Regler, der den Luftvolumenstrom innerhalb seines Arbeitsbereichs konstant hält.",
   "related": []

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Absolutdruck",
-  "synonyms": [],
+  "synonyms": [
+    "absolute pressure"
+  ],
   "definition": "Druck bezogen auf das absolute Vakuum als Nullpunkt.",
   "related": []
 }

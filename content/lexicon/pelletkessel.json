@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Pelletkessel",
-  "synonyms": [],
+  "synonyms": [
+    "pellet boiler"
+  ],
   "definition": "Wärmeerzeuger, der Holzpellets automatisch oder teilautomatisch verbrennt und die entstehende Wärme an ein Heizsystem abgibt.",
   "related": []
 }

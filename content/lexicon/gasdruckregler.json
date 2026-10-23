@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Gasdruckregler",
   "synonyms": [
-    "Druckregler für Gas"
+    "Druckregler für Gas",
+    "gas pressure regulator"
   ],
   "definition": "Ein **Gasdruckregler** reduziert und stabilisiert den Gasdruck auf einen für nachgeschaltete Anlagenteile vorgesehenen Wert. Er muss für Gasart, Durchflussbereich und Druckverhältnisse geeignet sein. Einbau, Prüfung und Austausch sind Arbeiten an einer sicherheitsrelevanten Gasinstallation und dürfen nur im zulässigen fachlichen Rahmen erfolgen.",
   "related": [

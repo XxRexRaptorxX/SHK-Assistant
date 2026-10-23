@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Spezifische Verdampfungswärme",
-  "synonyms": [],
+  "synonyms": [
+    "specific latent heat of vaporisation"
+  ],
   "definition": "Wärmeenergie pro Masseneinheit, die bei einem definierten Phasenwechsel von Flüssigkeit zu Dampf benötigt wird.",
   "related": []
 }

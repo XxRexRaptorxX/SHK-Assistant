@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Betriebspunkt der Pumpe",
-  "synonyms": [],
+  "synonyms": [
+    "pump duty point"
+  ],
   "definition": "Schnittpunkt von Pumpenkennlinie und Anlagenkennlinie. Er beschreibt den Volumenstrom und die Förderhöhe, die sich im Betrieb einstellen.",
   "related": []
 }

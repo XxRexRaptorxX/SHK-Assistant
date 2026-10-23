@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Volumen",
   "synonyms": [
-    "Rauminhalt"
+    "Rauminhalt",
+    "volume"
   ],
   "definition": "**Volumen** (Rauminhalt) ist der räumliche Inhalt eines Körpers. Die SI-Einheit ist der Kubikmeter (m³); für Flüssigkeiten ist auch der Liter (l) gebräuchlich, 1 m³ = 1000 l.",
   "related": [

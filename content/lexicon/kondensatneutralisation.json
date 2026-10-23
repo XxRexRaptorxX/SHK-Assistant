@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kondensatneutralisation",
-  "synonyms": [],
+  "synonyms": [
+    "condensate neutralisation"
+  ],
   "definition": "Behandlung von Kondensat zur Einstellung eines geeigneten pH-Werts vor der Ableitung, soweit dies erforderlich ist.",
   "related": []
 }

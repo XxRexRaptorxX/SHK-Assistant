@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Winkelminute",
-  "synonyms": [],
+  "synonyms": [
+    "arcminute"
+  ],
   "definition": "**Winkelminute** (′) ist eine Einheit für Winkel. 1 ′ = 0,0166667 °.",
   "related": [
     "lexicon.grad"

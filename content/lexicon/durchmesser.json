@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Durchmesser",
-  "synonyms": [],
+  "synonyms": [
+    "diameter"
+  ],
   "definition": "**Durchmesser** ist bei Kreis und Kugel der größte Abstand zweier Punkte auf dem Rand; beim Kreis ist das jede Strecke durch den Mittelpunkt. Er ist doppelt so groß wie der Radius. Bei Rohren wird zwischen Innen- und Außendurchmesser unterschieden.",
   "related": [
     "lexicon.kreis"

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Mischerkreis",
-  "synonyms": [],
+  "synonyms": [
+    "mixing circuit"
+  ],
   "definition": "Heizkreis, dessen Vorlauftemperatur durch Mischen von heißem Vorlaufwasser mit kühlerem Rücklaufwasser geregelt wird. Häufig kommt dafür ein Dreiwege- oder Vierwegemischer zum Einsatz.",
   "related": []
 }

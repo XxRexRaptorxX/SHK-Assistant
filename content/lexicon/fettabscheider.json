@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Fettabscheider",
-  "synonyms": [],
+  "synonyms": [
+    "grease separator"
+  ],
   "definition": "Anlage, die Fette und Öle aus Abwasser abtrennt, bevor es in die Entwässerung eingeleitet wird, wenn der Anwendungsfall dies erfordert.",
   "related": []
 }

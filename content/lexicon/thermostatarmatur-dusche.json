@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Thermostatarmatur Dusche",
-  "synonyms": [],
+  "synonyms": [
+    "thermostatic shower mixer"
+  ],
   "definition": "Duscharmatur, die die eingestellte Mischwassertemperatur reguliert und je nach Ausführung einen Verbrühungsschutz bietet.",
   "related": []
 }

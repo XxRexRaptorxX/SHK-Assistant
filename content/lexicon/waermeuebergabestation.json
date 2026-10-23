@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeübergabestation",
-  "synonyms": [],
+  "synonyms": [
+    "heat transfer station"
+  ],
   "definition": "Station, die Wärme aus einem Netz an die Gebäudeanlage überträgt und dabei je nach Aufbau misst, regelt und absichert.",
   "related": []
 }

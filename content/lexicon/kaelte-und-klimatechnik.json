@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kälte- und Klimatechnik",
-  "synonyms": [],
+  "synonyms": [
+    "refrigeration and air conditioning"
+  ],
   "definition": "Fachgebiet zur Erzeugung und Verteilung von Kälte sowie zur Beeinflussung von Temperatur, Feuchte und Luftqualität.",
   "related": []
 }

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Erdkollektor",
-  "synonyms": [],
+  "synonyms": [
+    "ground collector"
+  ],
   "definition": "Flächig im Erdreich verlegter Wärmeübertrager, der Wärme aus dem oberflächennahen Boden aufnimmt oder abgibt.",
   "related": []
 }

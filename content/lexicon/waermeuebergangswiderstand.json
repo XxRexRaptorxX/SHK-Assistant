@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Wärmeübergangswiderstand",
-  "synonyms": [],
+  "synonyms": [
+    "surface thermal resistance"
+  ],
   "definition": "**Wärmeübergangswiderstand** (innen Rsi, außen Rse) ist der Widerstand, den die Grenzschicht zwischen umgebender Luft und Bauteiloberfläche dem Wärmestrom entgegensetzt. Er geht zusammen mit den Widerständen der Schichten in den U-Wert ein; Einheit m²·K/W.",
   "related": [
     "lexicon.waermedurchgangskoeffizient",

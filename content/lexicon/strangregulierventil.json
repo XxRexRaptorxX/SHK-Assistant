@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Strangregulierventil",
-  "synonyms": [],
+  "synonyms": [
+    "balancing valve"
+  ],
   "definition": "Einstellbare Armatur zum Begrenzen und Einregulieren des Volumenstroms in einem Rohrleitungsstrang.",
   "related": []
 }

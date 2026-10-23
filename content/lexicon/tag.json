@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Tag",
-  "synonyms": [],
+  "synonyms": [
+    "day"
+  ],
   "definition": "**Tag** (d) ist eine Einheit für die Zeit. 1 d = 86.400 s.",
   "related": [
     "lexicon.sekunde"

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wasserqualität",
-  "synonyms": [],
+  "synonyms": [
+    "water quality"
+  ],
   "definition": "Zusammensetzung und Eigenschaften von Wasser, beispielsweise Härte, pH-Wert, Leitfähigkeit und Gehalt an gelösten Stoffen. Anforderungen hängen von der Verwendung ab.",
   "related": []
 }

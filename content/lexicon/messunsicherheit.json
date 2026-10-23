@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Messunsicherheit",
-  "synonyms": [],
+  "synonyms": [
+    "measurement uncertainty"
+  ],
   "definition": "Parameter, der die Streuung von Werten beschreibt, die dem Messobjekt aufgrund der Messung vernünftigerweise zugeordnet werden können.",
   "related": []
 }

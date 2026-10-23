@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wartungsfreundlichkeit",
-  "synonyms": [],
+  "synonyms": [
+    "serviceability"
+  ],
   "definition": "Eigenschaft einer Anlage, die Inspektion, Reinigung, Reparatur und Austausch von Komponenten erleichtert.",
   "related": []
 }

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kühllastberechnung",
-  "synonyms": [],
+  "synonyms": [
+    "cooling load calculation"
+  ],
   "definition": "Ermittlung der erforderlichen Kälteleistung eines Raums oder Gebäudes unter festgelegten Auslegungsbedingungen.",
   "related": []
 }

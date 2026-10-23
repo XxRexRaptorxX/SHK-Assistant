@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Hydraulischer Kurzschluss",
-  "synonyms": [],
+  "synonyms": [
+    "hydraulic short circuit"
+  ],
   "definition": "Unerwünschter Strömungsweg mit geringem Widerstand, über den Medium einen Teil des vorgesehenen Kreislaufs umgeht. Dadurch können Wärmeverteilung und Regelung beeinträchtigt werden.",
   "related": []
 }

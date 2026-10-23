@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Solarkollektor",
   "synonyms": [
-    "thermischer Sonnenkollektor"
+    "thermischer Sonnenkollektor",
+    "solar collector"
   ],
   "definition": "Ein **Solarkollektor** wandelt einfallende Sonnenstrahlung in Wärme um und überträgt sie auf einen Wärmeträger. Bei Solarthermie sind Flachkollektoren und Vakuumröhrenkollektoren verbreitet. Stillstandstemperatur, Frostschutz, Stagnationsverhalten und Einbindung in den Speicher sind zu berücksichtigen.",
   "related": [

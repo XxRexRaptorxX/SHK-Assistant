@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Wärmestrom",
   "synonyms": [
-    "Wärmefluss"
+    "Wärmefluss",
+    "heat flow rate"
   ],
   "definition": "**Wärmestrom** (Wärmefluss) ist die pro Zeit übertragene Wärme, z. B. durch eine Wand oder in einem Heizkreis. Formelzeichen Φ oder Q̇, Einheit Watt (W).",
   "related": [

@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Sekunde",
-  "synonyms": [],
+  "synonyms": [
+    "second"
+  ],
   "definition": "**Sekunde** (s) ist eine Einheit für die Zeit. 1 s = 0,000277778 h.",
   "related": [
     "lexicon.stunde"

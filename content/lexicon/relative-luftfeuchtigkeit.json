@@ -8,7 +8,8 @@
   "term": "Relative Luftfeuchtigkeit",
   "synonyms": [
     "relative Feuchte",
-    "rF"
+    "rF",
+    "relative humidity"
   ],
   "definition": "Die **relative Luftfeuchtigkeit** ist das Verhältnis des aktuellen Wasserdampf-Partialdrucks zum Sättigungsdampfdruck bei derselben Temperatur, angegeben in Prozent. Weil der Sättigungsdampfdruck mit der Temperatur stark variiert, kann sich die relative Feuchte auch ohne Änderung des Wasserdampfgehalts ändern. Sie beeinflusst Behaglichkeit, Kondensation und Schimmelrisiken.",
   "related": [

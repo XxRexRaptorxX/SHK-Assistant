@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Elektrische Stromstärke",
   "synonyms": [
-    "Stromstärke"
+    "Stromstärke",
+    "electric current"
   ],
   "definition": "**Elektrische Stromstärke** gibt an, wie viel elektrische Ladung pro Zeit durch einen Leiterquerschnitt fließt. Formelzeichen I, Einheit Ampere (A).",
   "related": [

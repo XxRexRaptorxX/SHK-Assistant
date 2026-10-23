@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Reynolds-Zahl",
-  "synonyms": [],
+  "synonyms": [
+    "Reynolds number"
+  ],
   "definition": "Dimensionslose Kennzahl zur Einordnung des Strömungszustands in einem Fluid. Sie hängt unter anderem von Geschwindigkeit, charakteristischer Länge, Dichte und Viskosität ab.",
   "related": []
 }

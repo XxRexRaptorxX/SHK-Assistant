@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kontinuitätsgleichung",
-  "synonyms": [],
+  "synonyms": [
+    "continuity equation"
+  ],
   "definition": "Erhaltungsgleichung für Masse in einer Strömung. Bei inkompressibler Strömung bleibt der Volumenstrom in einem unverzweigten, dichten Leitungsabschnitt konstant.",
   "related": []
 }

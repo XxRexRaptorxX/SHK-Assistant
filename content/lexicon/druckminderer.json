@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckminderer",
   "synonyms": [
-    "Druckreduzierventil"
+    "Druckreduzierventil",
+    "pressure reducing valve"
   ],
   "definition": "Ein **Druckminderer** reduziert einen höheren Eingangsdruck auf einen einstellbaren, niedrigeren Ausgangsdruck und hält diesen innerhalb seines Arbeitsbereichs möglichst konstant. In Trinkwasserinstallationen schützt er nachgeschaltete Bauteile und kann Druckschwankungen reduzieren. Einstellung, Einbauposition, Filterung und Wartung richten sich nach Herstellerangaben und Anlagenanforderungen.",
   "related": [

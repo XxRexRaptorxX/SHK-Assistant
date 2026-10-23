@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Entgasung",
-  "synonyms": [],
+  "synonyms": [
+    "degassing"
+  ],
   "definition": "Entfernung gelöster oder freier Gase aus einer Flüssigkeit. Sie kann durch Abscheider oder spezielle Entgasungsverfahren erfolgen.",
   "related": []
 }

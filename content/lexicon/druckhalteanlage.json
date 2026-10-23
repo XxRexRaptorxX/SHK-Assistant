@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Druckhalteanlage",
-  "synonyms": [],
+  "synonyms": [
+    "pressurisation unit"
+  ],
   "definition": "Anlage zur Stabilisierung des Drucks in einem geschlossenen Heizungs- oder Kühlkreislauf, beispielsweise mit Pumpen, Kompressor oder Druckbehälter je nach System.",
   "related": []
 }

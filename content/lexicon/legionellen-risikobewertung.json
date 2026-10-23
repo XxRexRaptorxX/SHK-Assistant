@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Legionellen-Risikobewertung",
-  "synonyms": [],
+  "synonyms": [
+    "Legionella risk assessment"
+  ],
   "definition": "Bewertung der Bedingungen, unter denen Legionellen in einer Trinkwasserinstallation auftreten oder sich vermehren könnten, anhand von Nutzung, Temperatur, Stagnation und technischen Gegebenheiten.",
   "related": []
 }

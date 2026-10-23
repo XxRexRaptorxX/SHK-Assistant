@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Thermoelektrischer Stellantrieb",
-  "synonyms": [],
+  "synonyms": [
+    "thermoelectric actuator"
+  ],
   "definition": "Stellantrieb, der durch Erwärmung eines Elements eine Ventilbewegung erzeugt und häufig für Heizkreisverteiler verwendet wird.",
   "related": []
 }

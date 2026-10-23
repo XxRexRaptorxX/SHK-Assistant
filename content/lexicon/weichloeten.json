@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Weichlöten",
   "synonyms": [
-    "Weichlötverbindung"
+    "Weichlötverbindung",
+    "soft soldering"
   ],
   "definition": "Beim **Weichlöten** liegt die Liquidustemperatur des Lots unter 450 °C. Das Verfahren wird für geeignete Werkstoffe und Anwendungen eingesetzt, ist jedoch nicht für jede druck- oder temperaturbelastete Rohrverbindung zugelassen. Die konkrete Einsatzgrenze ergibt sich aus Werkstoff, Lot, Produktfreigabe und technischen Regeln.",
   "related": [

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Bivalenzpunkt",
-  "synonyms": [],
+  "synonyms": [
+    "bivalent point"
+  ],
   "definition": "Betriebspunkt, häufig bezogen auf die Außentemperatur, bei dem in einem bivalenten Heizsystem ein zusätzlicher Wärmeerzeuger zugeschaltet wird oder die alleinige Leistung des Hauptwärmeerzeugers nicht mehr ausreicht.",
   "related": []
 }

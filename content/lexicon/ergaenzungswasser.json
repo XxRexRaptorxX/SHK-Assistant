@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Ergänzungswasser",
-  "synonyms": [],
+  "synonyms": [
+    "make-up water"
+  ],
   "definition": "Wasser, das nach der Erstbefüllung zum Ausgleich von Verlusten in eine Heizungsanlage nachgefüllt wird. Häufiges Nachfüllen kann auf Undichtigkeiten oder andere Fehler hinweisen.",
   "related": []
 }

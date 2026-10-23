@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Fließdruck",
   "synonyms": [
-    "Betriebsdruck bei Durchfluss"
+    "Betriebsdruck bei Durchfluss",
+    "flow pressure"
   ],
   "definition": "Der **Fließdruck** ist der Druck an einer Messstelle, während Wasser entnommen wird und strömt. Er liegt wegen Druckverlusten häufig unter dem Ruhedruck. Für die Funktion einer Armatur oder eines Geräts ist zu prüfen, welcher Mindestfließdruck bei dem erforderlichen Durchfluss verfügbar sein muss.",
   "related": [

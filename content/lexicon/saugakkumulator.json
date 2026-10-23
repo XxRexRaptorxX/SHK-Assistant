@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Saugakkumulator",
-  "synonyms": [],
+  "synonyms": [
+    "suction accumulator"
+  ],
   "definition": "Behälter in bestimmten Kältesystemen, der Flüssigkeitsanteile aus dem Sauggas zurückhält und kontrolliert verdampfen oder zurückführen kann.",
   "related": []
 }

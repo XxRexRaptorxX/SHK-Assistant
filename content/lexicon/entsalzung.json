@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Entsalzung",
-  "synonyms": [],
+  "synonyms": [
+    "demineralisation"
+  ],
   "definition": "Wasseraufbereitungsverfahren, bei dem gelöste Ionen weitgehend entfernt werden. Es wird unter anderem eingesetzt, um die Leitfähigkeit des Heizungsfüllwassers zu reduzieren.",
   "related": []
 }

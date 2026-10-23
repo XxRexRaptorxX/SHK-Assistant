@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Sicherer Zustand",
-  "synonyms": [],
+  "synonyms": [
+    "safe state"
+  ],
   "definition": "Zustand einer Anlage, in dem die betrachteten Gefährdungen ausreichend begrenzt sind, beispielsweise durch Abschaltung oder sichere Druckentlastung.",
   "related": []
 }

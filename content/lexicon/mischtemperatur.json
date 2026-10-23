@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Mischtemperatur",
-  "synonyms": [],
+  "synonyms": [
+    "mixed temperature"
+  ],
   "definition": "Temperatur, die sich beim Mischen von Stoffen mit unterschiedlichen Temperaturen einstellt. Sie hängt unter anderem von Massen, Wärmekapazitäten und Wärmeverlusten ab.",
   "related": []
 }

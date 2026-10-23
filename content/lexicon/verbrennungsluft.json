@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Verbrennungsluft",
-  "synonyms": [],
+  "synonyms": [
+    "combustion air"
+  ],
   "definition": "Luft, deren Sauerstoff für die Verbrennung eines Brennstoffs benötigt wird. Die Versorgung hängt vom Gerät und Aufstellraumkonzept ab.",
   "related": []
 }

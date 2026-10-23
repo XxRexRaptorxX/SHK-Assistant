@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Drucksensor",
-  "synonyms": [],
+  "synonyms": [
+    "pressure sensor"
+  ],
   "definition": "Sensor, der Druck in ein elektrisches oder anderes auswertbares Signal umwandelt.",
   "related": []
 }

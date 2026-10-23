@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeübergabe",
-  "synonyms": [],
+  "synonyms": [
+    "heat emission"
+  ],
   "definition": "Übertragung von Wärme von einem Versorgungs- oder Verteilnetz an ein Gebäude oder einen Verbraucher, beispielsweise über eine Übergabestation.",
   "related": []
 }

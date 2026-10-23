@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmezähler",
   "synonyms": [
-    "Wärmemengenzähler"
+    "Wärmemengenzähler",
+    "heat meter"
   ],
   "definition": "Ein **Wärmezähler** misst die in einem Heiz- oder Kühlkreislauf übertragene thermische Energie. Er kombiniert dazu üblicherweise einen Volumen- oder Durchflusssensor mit Temperaturmessung und einem Rechenwerk. Die Begriffe Wärmezähler und Wärmemengenzähler werden in der Praxis häufig synonym verwendet.",
   "related": [

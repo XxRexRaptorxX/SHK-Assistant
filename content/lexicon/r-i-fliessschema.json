@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "R&I-Fließschema",
   "synonyms": [
-    "P&ID"
+    "P&ID",
+    "piping and instrumentation diagram"
   ],
   "definition": "Rohrleitungs- und Instrumentierungsfließschema, das Medienwege, Apparate, Armaturen und Mess- beziehungsweise Regelstellen einer technischen Anlage darstellt.",
   "related": []

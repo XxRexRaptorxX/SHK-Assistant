@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Primärenergiefaktor",
-  "synonyms": [],
+  "synonyms": [
+    "primary energy factor"
+  ],
   "definition": "Kennwert, der den Aufwand an Primärenergie je Einheit bereitgestellter Endenergie nach einer festgelegten Bewertungsmethode beschreibt.",
   "related": []
 }

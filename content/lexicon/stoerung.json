@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Störung",
-  "synonyms": [],
+  "synonyms": [
+    "fault"
+  ],
   "definition": "Abweichung vom vorgesehenen Anlagenbetrieb, die Funktion, Effizienz oder Sicherheit beeinträchtigen kann. Eine systematische Diagnose nutzt Symptome, Messwerte und Herstellerunterlagen.",
   "related": []
 }

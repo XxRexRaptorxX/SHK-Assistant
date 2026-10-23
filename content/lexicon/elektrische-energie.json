@@ -8,7 +8,8 @@
   "term": "Elektrische Energie",
   "synonyms": [
     "Stromarbeit",
-    "elektrische Arbeit"
+    "elektrische Arbeit",
+    "electrical energy"
   ],
   "definition": "**Elektrische Energie** ist die über einen Zeitraum umgesetzte elektrische Arbeit, häufig angegeben in Wattstunden oder Kilowattstunden. Sie ergibt sich aus Leistung mal Zeit, wenn die Leistung konstant ist. Energieverbrauch und Leistung sind nicht dasselbe: Leistung beschreibt die momentane Rate, Energie den Verbrauch über den Zeitraum.",
   "related": [

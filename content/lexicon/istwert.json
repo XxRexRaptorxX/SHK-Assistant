@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Istwert",
-  "synonyms": [],
+  "synonyms": [
+    "actual value"
+  ],
   "definition": "Aktuell gemessener oder ermittelter Wert einer Größe, die überwacht oder geregelt wird.",
   "related": []
 }

@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "PID-Regler",
   "synonyms": [
-    "Proportional-Integral-Differential-Regler"
+    "Proportional-Integral-Differential-Regler",
+    "PID controller"
   ],
   "definition": "Ein **PID-Regler** kombiniert proportionale (P-), integrierende (I-) und differenzierende (D-) Anteile der Regelabweichung. Damit kann er je nach Auslegung schnell reagieren, bleibende Abweichungen beseitigen und Änderungen berücksichtigen. Nicht jede SHK-Regelung benötigt alle drei Anteile; falsche Parametrierung kann Schwingen oder Überschwingen verursachen.",
   "related": [

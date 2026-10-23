@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kartusche",
-  "synonyms": [],
+  "synonyms": [
+    "cartridge"
+  ],
   "definition": "Austauschbare Funktionseinheit in bestimmten Mischarmaturen, die Durchfluss und Mischung von Warm- und Kaltwasser steuert.",
   "related": []
 }

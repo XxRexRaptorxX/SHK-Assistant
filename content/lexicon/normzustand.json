@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Normzustand",
   "synonyms": [
-    "Normbedingungen"
+    "Normbedingungen",
+    "standard conditions"
   ],
   "definition": "**Normzustand** ist ein festgelegter Bezugszustand für Gasmengen: 0 °C (273,15 K) und 1013,25 mbar. Gasvolumen sowie Heiz- und Brennwerte werden darauf bezogen, damit sie vergleichbar sind.",
   "related": [

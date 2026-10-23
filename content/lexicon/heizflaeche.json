@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Heizfläche",
   "synonyms": [
-    "Wärmeübertragerfläche"
+    "Wärmeübertragerfläche",
+    "heating surface"
   ],
   "definition": "Eine **Heizfläche** überträgt Wärme an einen Raum oder ein anderes Medium. Dazu zählen unter anderem Heizkörper, Fußbodenheizungen, Wandheizungen und Deckenheizungen. Ihre erforderliche Leistung hängt von Bauart, Fläche, mittlerer Heizmitteltemperatur und Raumtemperatur ab.",
   "related": [

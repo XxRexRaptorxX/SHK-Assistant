@@ -8,7 +8,8 @@
   "term": "Volumenstrom",
   "synonyms": [
     "Durchfluss",
-    "Volumenstromstärke"
+    "Volumenstromstärke",
+    "volume flow rate"
   ],
   "definition": "Der **Volumenstrom** ist das Flüssigkeits- oder Gasvolumen, das pro Zeiteinheit durch einen Querschnitt strömt. Häufige Einheiten sind m³/h und l/min; in Berechnungen ist auf die Einheit zu achten. In Heizungsanlagen beeinflusst er die übertragene Wärmeleistung und den Druckverlust.",
   "related": [

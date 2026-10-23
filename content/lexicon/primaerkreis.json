@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Primärkreis",
-  "synonyms": [],
+  "synonyms": [
+    "primary circuit"
+  ],
   "definition": "Kreislauf auf der Erzeuger- oder Quellenseite eines Wärmeübertragers; die genaue Bedeutung ergibt sich aus dem jeweiligen Schema.",
   "related": []
 }

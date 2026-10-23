@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Betriebsparameter",
-  "synonyms": [],
+  "synonyms": [
+    "operating parameters"
+  ],
   "definition": "Mess- oder Einstellgrößen, die den Anlagenbetrieb beschreiben, beispielsweise Druck, Temperatur, Durchfluss und Drehzahl.",
   "related": []
 }

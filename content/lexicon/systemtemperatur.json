@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Systemtemperatur",
-  "synonyms": [],
+  "synonyms": [
+    "system temperature"
+  ],
   "definition": "Vorlauf- und Rücklauftemperatur eines Heiz- oder Kühlkreises, häufig als Temperaturpaar oder Spreizung angegeben.",
   "related": []
 }

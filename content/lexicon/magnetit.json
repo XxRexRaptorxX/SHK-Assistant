@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Magnetit",
-  "synonyms": [],
+  "synonyms": [
+    "magnetite"
+  ],
   "definition": "Magnetisches Eisenoxid, das als Korrosionsprodukt in wasserführenden Heizsystemen auftreten kann und Pumpen, Ventile oder Wärmeübertrager beeinträchtigen kann.",
   "related": []
 }

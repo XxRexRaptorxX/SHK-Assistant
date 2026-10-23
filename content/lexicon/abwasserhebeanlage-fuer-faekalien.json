@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Abwasserhebeanlage für Fäkalien",
-  "synonyms": [],
+  "synonyms": [
+    "sewage lifting plant"
+  ],
   "definition": "Hebeanlage, die für fäkalienhaltiges Abwasser ausgelegt ist und dieses über die Rückstauebene fördert.",
   "related": []
 }

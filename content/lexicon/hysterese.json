@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Hysterese",
-  "synonyms": [],
+  "synonyms": [
+    "hysteresis"
+  ],
   "definition": "Differenz zwischen Ein- und Ausschaltschwelle eines Reglers. Sie verhindert häufiges Umschalten bei kleinen Schwankungen des Messwerts.",
   "related": []
 }

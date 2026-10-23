@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Druckstoß",
-  "synonyms": [],
+  "synonyms": [
+    "pressure surge"
+  ],
   "definition": "Kurzzeitige starke Druckänderung in einem System, häufig ausgelöst durch schnelle Strömungsänderungen.",
   "related": []
 }

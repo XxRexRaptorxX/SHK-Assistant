@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Schutzleiter",
   "synonyms": [
-    "PE"
+    "PE",
+    "protective conductor"
   ],
   "definition": "Leiter, der berührbare leitfähige Teile mit dem Schutzsystem verbindet, um im Fehlerfall gefährliche Berührungsspannungen zu begrenzen.",
   "related": []

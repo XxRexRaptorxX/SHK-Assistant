@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Luftzahl Lambda",
   "synonyms": [
-    "Lambda"
+    "Lambda",
+    "air ratio"
   ],
   "definition": "Verhältnis der tatsächlich zugeführten Verbrennungsluft zur theoretisch erforderlichen Luftmenge. Lambda größer 1 bedeutet Luftüberschuss.",
   "related": []

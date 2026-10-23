@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Temperaturhub",
-  "synonyms": [],
+  "synonyms": [
+    "temperature lift"
+  ],
   "definition": "Temperaturdifferenz zwischen Eintritts- und Austrittstemperatur eines Mediums oder zwischen Ausgangs- und Zieltemperatur.",
   "related": []
 }

@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Druck",
   "synonyms": [
-    "p"
+    "p",
+    "pressure"
   ],
   "definition": "**Druck** ist Kraft pro Fläche und wird in Pascal (Pa) angegeben. In der Gebäudetechnik sind außerdem bar und mbar gebräuchlich; 1 bar entspricht 100.000 Pa. Bei Druckangaben ist zu unterscheiden, ob Relativdruck gegenüber der Umgebung oder Absolutdruck gegenüber dem Vakuum gemeint ist.",
   "related": [

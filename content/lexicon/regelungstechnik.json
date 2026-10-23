@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Regelungstechnik",
   "synonyms": [
-    "Automatisierungstechnik (Teilgebiet)"
+    "Automatisierungstechnik (Teilgebiet)",
+    "control engineering"
   ],
   "definition": "**Regelungstechnik** beschäftigt sich mit dem automatischen Beeinflussen eines Prozesses anhand des Vergleichs von Istwert und Sollwert. Ein Regler bildet aus der Regelabweichung eine Stellgröße, die über einen Aktor auf die Anlage wirkt. In SHK-Anlagen werden beispielsweise Temperatur, Druck, Volumenstrom und Luftqualität geregelt.",
   "related": [

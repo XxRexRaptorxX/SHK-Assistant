@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Temperaturhaltung",
-  "synonyms": [],
+  "synonyms": [
+    "temperature maintenance"
+  ],
   "definition": "Maßnahmen zur Aufrechterhaltung einer vorgesehenen Temperatur in einem Speicher oder Leitungsnetz.",
   "related": []
 }

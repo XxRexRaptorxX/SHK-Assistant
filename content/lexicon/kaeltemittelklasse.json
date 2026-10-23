@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelklasse",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant safety class"
+  ],
   "definition": "Sicherheitsklassifizierung eines Kältemittels anhand von Kriterien wie Toxizität und Brennbarkeit. Sie beeinflusst Anforderungen an Aufstellung, Füllmenge und Schutzmaßnahmen.",
   "related": []
 }

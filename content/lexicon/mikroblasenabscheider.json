@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Mikroblasenabscheider",
-  "synonyms": [],
+  "synonyms": [
+    "microbubble separator"
+  ],
   "definition": "Luftabscheider, der kleine Gasblasen aus dem strömenden Wasser entfernt und damit die Entgasung des Systems unterstützt.",
   "related": []
 }

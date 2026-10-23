@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Bernoulli-Gleichung",
-  "synonyms": [],
+  "synonyms": [
+    "Bernoulli equation"
+  ],
   "definition": "Idealisierte Energiegleichung für eine stationäre Strömung, die Druck-, Geschwindigkeits- und Höhenanteile entlang einer Stromlinie verknüpft.",
   "related": []
 }

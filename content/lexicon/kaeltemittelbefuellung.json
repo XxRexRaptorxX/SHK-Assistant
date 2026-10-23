@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelbefüllung",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant charging"
+  ],
   "definition": "Einbringen einer vorgegebenen Kältemittelmasse in einen Kältekreislauf unter Einhaltung der Herstellervorgaben und Sicherheitsanforderungen.",
   "related": []
 }

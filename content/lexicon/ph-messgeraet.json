@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "pH-Messgerät",
-  "synonyms": [],
+  "synonyms": [
+    "pH meter"
+  ],
   "definition": "Messgerät zur Bestimmung des pH-Werts einer wässrigen Lösung. Kalibrierung, Temperatur und sachgerechte Probenahme beeinflussen das Ergebnis.",
   "related": []
 }

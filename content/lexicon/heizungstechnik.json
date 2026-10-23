@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Heizungstechnik",
-  "synonyms": [],
+  "synonyms": [
+    "heating technology"
+  ],
   "definition": "Fachgebiet zur Erzeugung, Verteilung und Abgabe von Wärme in Gebäuden und Prozessen.",
   "related": []
 }

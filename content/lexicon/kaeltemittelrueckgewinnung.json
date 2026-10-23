@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelrückgewinnung",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant recovery"
+  ],
   "definition": "Entnahme und Sammlung von Kältemittel aus einer Anlage in einen geeigneten Behälter, statt es unkontrolliert freizusetzen.",
   "related": []
 }

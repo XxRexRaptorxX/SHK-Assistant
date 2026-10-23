@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Fülldruck",
-  "synonyms": [],
+  "synonyms": [
+    "fill pressure"
+  ],
   "definition": "Druck, mit dem eine Heizungsanlage im kalten Zustand befüllt beziehungsweise auf Betriebsbereitschaft gebracht wird. Der erforderliche Wert hängt unter anderem von der statischen Höhe und den Herstellerangaben ab.",
   "related": []
 }

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Betriebsdruck",
-  "synonyms": [],
+  "synonyms": [
+    "operating pressure"
+  ],
   "definition": "Druck, bei dem eine Anlage oder ein Bauteil im vorgesehenen Betrieb arbeitet. Er muss innerhalb der zulässigen Grenzen aller Komponenten liegen.",
   "related": []
 }

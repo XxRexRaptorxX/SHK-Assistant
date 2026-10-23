@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Ventilator",
-  "synonyms": [],
+  "synonyms": [
+    "fan"
+  ],
   "definition": "Strömungsmaschine, die Luft bewegt und dabei einen Druckunterschied erzeugt.",
   "related": []
 }

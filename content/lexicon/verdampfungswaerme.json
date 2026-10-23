@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Verdampfungswärme",
-  "synonyms": [],
+  "synonyms": [
+    "heat of vaporisation"
+  ],
   "definition": "Wärmeenergie, die benötigt wird, um eine Flüssigkeit bei gegebenem Zustand in Dampf umzuwandeln.",
   "related": []
 }

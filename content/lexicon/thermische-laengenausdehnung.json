@@ -8,7 +8,8 @@
   "term": "Thermische Längenausdehnung",
   "synonyms": [
     "Wärmedehnung",
-    "Längenausdehnung"
+    "Längenausdehnung",
+    "linear thermal expansion"
   ],
   "definition": "**Thermische Längenausdehnung** ist die Längenänderung eines Werkstoffs infolge einer Temperaturänderung. Bei Rohrleitungen können dadurch Kräfte auf Anschlüsse, Halterungen und Bauteile wirken. Dehnungsausgleich, Festpunkte und Gleitlager müssen nach Werkstoff, Leitungslänge und Temperaturbereich ausgelegt werden.",
   "related": [

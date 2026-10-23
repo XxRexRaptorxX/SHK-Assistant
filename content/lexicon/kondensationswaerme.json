@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kondensationswärme",
-  "synonyms": [],
+  "synonyms": [
+    "heat of condensation"
+  ],
   "definition": "Wärme, die bei der Kondensation eines Dampfes zu Flüssigkeit frei wird. Brennwertgeräte können einen Teil dieser Energie zusätzlich nutzen.",
   "related": []
 }

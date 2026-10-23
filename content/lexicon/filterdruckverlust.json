@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Filterdruckverlust",
-  "synonyms": [],
+  "synonyms": [
+    "filter pressure drop"
+  ],
   "definition": "Druckdifferenz über einem Luftfilter. Er steigt typischerweise mit zunehmender Beladung und beeinflusst den Energiebedarf des Ventilators.",
   "related": []
 }

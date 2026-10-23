@@ -8,7 +8,8 @@
   "term": "Druckverlust",
   "synonyms": [
     "Druckabfall",
-    "Strömungsverlust"
+    "Strömungsverlust",
+    "pressure loss"
   ],
   "definition": "Der **Druckverlust** entsteht, wenn ein strömendes Medium durch Rohrreibung sowie Formstücke, Armaturen und Einbauten Energie verliert. Er hängt unter anderem von Volumenstrom, Rohrdurchmesser, Rohrlänge, Rauheit und Einbauteilen ab. Bei der Rohrnetzberechnung muss der Druckverlust so berücksichtigt werden, dass die benötigten Volumenströme erreicht werden.",
   "related": [

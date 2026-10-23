@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Sicherheitsventil-Ansprechdruck",
-  "synonyms": [],
+  "synonyms": [
+    "safety valve set pressure"
+  ],
   "definition": "Druck, bei dem ein Sicherheitsventil unter festgelegten Bedingungen zu öffnen beginnt. Er muss zur zulässigen Druckgrenze der abgesicherten Anlage passen.",
   "related": []
 }

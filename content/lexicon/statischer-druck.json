@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Statischer Druck",
-  "synonyms": [],
+  "synonyms": [
+    "static pressure"
+  ],
   "definition": "Druck eines Fluids, der unabhängig von der lokalen Strömungsgeschwindigkeit betrachtet wird.",
   "related": []
 }

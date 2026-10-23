@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältebrücke",
-  "synonyms": [],
+  "synonyms": [
+    "cold bridge"
+  ],
   "definition": "Bereich, an dem Wärme unerwünscht in einen gekühlten Bereich gelangt oder sich Oberflächentemperaturen lokal verändern. In der Kältetechnik ist oft eine gute Dämmung samt Dampfsperre entscheidend.",
   "related": []
 }

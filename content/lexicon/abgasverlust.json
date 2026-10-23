@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Abgasverlust",
   "synonyms": [
-    "Abgaswärmeverlust"
+    "Abgaswärmeverlust",
+    "flue gas loss"
   ],
   "definition": "Der **Abgasverlust** beschreibt den Anteil der Brennstoffenergie, der mit den Abgasen ungenutzt abgeführt wird, bezogen auf eine festgelegte Berechnungsgrundlage. Er hängt unter anderem von Abgastemperatur, Abgasmenge und Verbrennungsbedingungen ab. Ein niedriger Abgasverlust allein beweist nicht die Gesamtqualität oder Sicherheit einer Feuerungsanlage.",
   "related": [

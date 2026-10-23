@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Brennwerttechnik",
   "synonyms": [
-    "Brennwertnutzung"
+    "Brennwertnutzung",
+    "condensing technology"
   ],
   "definition": "**Brennwerttechnik** bezeichnet die Nutzung von Wärme aus der Kondensation von Wasserdampf im Abgas. Sie kann bei geeigneten Rücklauftemperaturen die Brennstoffausnutzung verbessern. Brennwertnutzung und Wirkungsgradangaben müssen auf derselben Bezugsbasis verglichen werden, da Heizwert und Brennwert unterschiedliche Energieinhalte berücksichtigen.",
   "related": [

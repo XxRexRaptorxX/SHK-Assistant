@@ -8,7 +8,8 @@
   "term": "Luftwechselrate",
   "synonyms": [
     "Luftwechsel",
-    "n"
+    "n",
+    "air change rate"
   ],
   "definition": "Die **Luftwechselrate** gibt an, wie oft das Raumluftvolumen rechnerisch pro Stunde durch zugeführte Außenluft ersetzt wird; üblich ist die Einheit h⁻¹. Sie ergibt sich aus Außenluftvolumenstrom geteilt durch Raumvolumen. Die Luftwechselrate allein sagt nicht aus, ob Luftqualität, Feuchteschutz und thermischer Komfort in einem konkreten Raum ausreichend sind.",
   "related": [

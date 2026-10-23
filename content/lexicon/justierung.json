@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Justierung",
-  "synonyms": [],
+  "synonyms": [
+    "adjustment"
+  ],
   "definition": "Eingriff an einem Messgerät, um dessen Anzeige oder Verhalten so zu verändern, dass es näher an vorgegebene Werte gelangt.",
   "related": []
 }

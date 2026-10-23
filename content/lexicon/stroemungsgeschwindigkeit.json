@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Strömungsgeschwindigkeit",
   "synonyms": [
-    "Fließgeschwindigkeit"
+    "Fließgeschwindigkeit",
+    "flow velocity"
   ],
   "definition": "**Strömungsgeschwindigkeit** (auch Fließgeschwindigkeit) ist die Geschwindigkeit, mit der sich ein Fluid wie Wasser oder Luft bewegt. In Rohren rechnet man meist mit der mittleren Geschwindigkeit über den Querschnitt, angegeben in m/s.",
   "related": [

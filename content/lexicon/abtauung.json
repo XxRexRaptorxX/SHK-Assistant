@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Abtauung",
-  "synonyms": [],
+  "synonyms": [
+    "defrosting"
+  ],
   "definition": "Vorgang, bei dem Eis auf einem Wärmeübertrager entfernt wird, beispielsweise durch Umkehr des Kältekreislaufs oder andere gerätespezifische Verfahren.",
   "related": []
 }

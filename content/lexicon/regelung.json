@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Regelung",
-  "synonyms": [],
+  "synonyms": [
+    "closed-loop control"
+  ],
   "definition": "Beeinflussung einer Größe durch Vergleich des Istwerts mit einem Sollwert und Rückführung der Abweichung, um die Größe möglichst passend zu halten.",
   "related": []
 }

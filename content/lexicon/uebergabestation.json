@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmeübergabestation",
   "synonyms": [
-    "Fernwärmeübergabestation"
+    "Fernwärmeübergabestation",
+    "heat transfer station"
   ],
   "definition": "Eine **Wärmeübergabestation** verbindet ein Fern- oder Nahwärmenetz mit der hausinternen Heizungsanlage. Sie kann Wärmetauscher, Regelventil, Temperatur- und Druckmessung, Wärmemengenzähler sowie Sicherheitskomponenten enthalten. Primär- und Sekundärseite sind hydraulisch und regelungstechnisch entsprechend dem Netzkonzept zu behandeln.",
   "related": [

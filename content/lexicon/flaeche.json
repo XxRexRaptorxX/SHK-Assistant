@@ -9,7 +9,8 @@
   "synonyms": [
     "Flächeninhalt",
     "Querschnittsfläche",
-    "Querschnitt"
+    "Querschnitt",
+    "area"
   ],
   "definition": "**Fläche** bzw. Flächeninhalt ist das Maß für die Größe einer zweidimensionalen Figur wie Rechteck oder Kreis oder der Begrenzungsfläche eines Körpers. Die SI-Einheit ist der Quadratmeter (m²). Die **Querschnittsfläche** ist die Fläche eines Schnitts quer durch ein Bauteil, z. B. durch ein Rohr oder einen Leiter.",
   "related": [

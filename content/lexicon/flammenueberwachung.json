@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Flammenüberwachung",
   "synonyms": [
-    "Flammenkontrolle"
+    "Flammenkontrolle",
+    "flame monitoring"
   ],
   "definition": "Die **Flammenüberwachung** prüft, ob eine stabile Flamme vorhanden ist. Bei Gasbrennern kommen beispielsweise Ionisationsüberwachung oder optische Sensoren zum Einsatz. Erkennt die Steuerung keine ordnungsgemäße Flamme, muss sie die Brennstoffzufuhr entsprechend ihrer Sicherheitslogik unterbrechen.",
   "related": [

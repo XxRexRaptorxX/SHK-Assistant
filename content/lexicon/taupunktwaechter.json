@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Taupunktwächter",
-  "synonyms": [],
+  "synonyms": [
+    "dew point monitor"
+  ],
   "definition": "Sensor oder Regelfunktion, die kritische Taupunktbedingungen überwacht und Kühlung begrenzt, um Kondensation an kalten Oberflächen zu vermeiden.",
   "related": []
 }

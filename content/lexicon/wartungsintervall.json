@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wartungsintervall",
-  "synonyms": [],
+  "synonyms": [
+    "service interval"
+  ],
   "definition": "Vorgesehener zeitlicher Abstand zwischen Wartungsmaßnahmen. Er richtet sich nach Herstellerangaben, Nutzung, Betriebsbedingungen und gegebenenfalls gesetzlichen Vorgaben.",
   "related": []
 }

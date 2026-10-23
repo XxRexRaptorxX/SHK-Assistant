@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Volumenstrommessung",
   "synonyms": [
-    "Durchflussmessung"
+    "Durchflussmessung",
+    "flow measurement"
   ],
   "definition": "Die **Volumenstrommessung** bestimmt, welches Fluidvolumen pro Zeit einen Messquerschnitt passiert. Je nach Medium und Genauigkeitsanforderung werden beispielsweise Differenzdruck-, Ultraschall-, magnetisch-induktive oder mechanische Messverfahren eingesetzt. Messbereich, Einbaubedingungen, Strömungsprofil und Kalibrierung beeinflussen die Messunsicherheit.",
   "related": [

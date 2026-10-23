@@ -8,7 +8,8 @@
   "term": "Spezifische Wärmekapazität",
   "synonyms": [
     "c-Wert",
-    "Wärmekapazität"
+    "Wärmekapazität",
+    "specific heat capacity"
   ],
   "definition": "Die **spezifische Wärmekapazität** gibt an, wie viel Wärmeenergie benötigt wird, um ein Kilogramm eines Stoffes um ein Kelvin zu erwärmen. Die Einheit ist J/(kg·K), häufig werden kJ/(kg·K) verwendet. Der Wert ist stoff- und temperaturabhängig; bei Wasser liegt er im üblichen Heizungsbereich näherungsweise bei 4,18 kJ/(kg·K).",
   "related": [

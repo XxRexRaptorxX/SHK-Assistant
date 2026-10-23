@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Grad",
-  "synonyms": [],
+  "synonyms": [
+    "degree"
+  ],
   "definition": "**Grad** (°) ist eine Einheit für Winkel. 1 ° = 0,0174533 rad.",
   "related": [
     "lexicon.radiant"

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Hydraulik",
-  "synonyms": [],
+  "synonyms": [
+    "hydraulics"
+  ],
   "definition": "Lehre vom Verhalten ruhender und strömender Flüssigkeiten sowie von der Übertragung von Kräften und Energie durch Flüssigkeiten.",
   "related": []
 }

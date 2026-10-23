@@ -8,7 +8,8 @@
   "term": "Abgleichventil",
   "synonyms": [
     "Strangregulierventil",
-    "Einregulierventil"
+    "Einregulierventil",
+    "balancing valve"
   ],
   "definition": "Ein **Abgleichventil** dient dazu, einen berechneten Volumenstrom in einem Teilstrang einzustellen und gegebenenfalls zu messen. Es wird beispielsweise im Heizungs- und Kältewassernetz eingesetzt. Die richtige Einstellung setzt eine geeignete Auslegung und die Kenntnis der Betriebsbedingungen voraus.",
   "related": [

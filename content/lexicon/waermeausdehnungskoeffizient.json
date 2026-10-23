@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeausdehnungskoeffizient",
-  "synonyms": [],
+  "synonyms": [
+    "coefficient of thermal expansion"
+  ],
   "definition": "Werkstoffkennwert, der beschreibt, wie stark sich die Abmessung eines Materials bei einer Temperaturänderung relativ verändert.",
   "related": []
 }

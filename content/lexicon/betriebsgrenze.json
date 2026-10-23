@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Betriebsgrenze",
-  "synonyms": [],
+  "synonyms": [
+    "operating limit"
+  ],
   "definition": "Bereich von Druck, Temperatur, Durchfluss oder anderen Größen, innerhalb dessen ein Gerät bestimmungsgemäß betrieben werden darf.",
   "related": []
 }

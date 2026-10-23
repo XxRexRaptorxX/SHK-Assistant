@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeverlust",
-  "synonyms": [],
+  "synonyms": [
+    "heat loss"
+  ],
   "definition": "Wärmeenergie, die ein System an eine unerwünschte Umgebung abgibt oder die seinen Nutzbereich verlässt.",
   "related": []
 }

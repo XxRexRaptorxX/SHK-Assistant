@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Vakuumentgaser",
-  "synonyms": [],
+  "synonyms": [
+    "vacuum degasser"
+  ],
   "definition": "Anlage, die durch Absenken des Drucks gelöste Gase aus Heizungswasser freisetzt und abführt.",
   "related": []
 }

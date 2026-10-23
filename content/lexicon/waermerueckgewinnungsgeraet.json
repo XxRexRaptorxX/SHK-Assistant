@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmerückgewinnungsgerät",
-  "synonyms": [],
+  "synonyms": [
+    "heat recovery unit"
+  ],
   "definition": "Gerät, das Wärme aus einem Abluft- oder Prozessstrom auf einen anderen Strom überträgt.",
   "related": []
 }

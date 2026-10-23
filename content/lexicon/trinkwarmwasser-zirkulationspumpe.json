@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Trinkwarmwasser-Zirkulationspumpe",
-  "synonyms": [],
+  "synonyms": [
+    "hot water circulation pump"
+  ],
   "definition": "Pumpe, die Trinkwarmwasser in einer Zirkulationsleitung umwälzt. Einstellung und Betrieb müssen Wärmeverluste und Hygieneanforderungen berücksichtigen.",
   "related": []
 }

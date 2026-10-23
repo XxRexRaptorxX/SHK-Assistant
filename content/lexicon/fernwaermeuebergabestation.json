@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Fernwärmeübergabestation",
-  "synonyms": [],
+  "synonyms": [
+    "district heating substation"
+  ],
   "definition": "Anlage, die Wärme aus einem Fernwärmenetz über einen Wärmeübertrager und Regelkomponenten an die Gebäudeheizung übergibt.",
   "related": []
 }

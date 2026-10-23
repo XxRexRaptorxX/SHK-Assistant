@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Kreis",
-  "synonyms": [],
+  "synonyms": [
+    "circle"
+  ],
   "definition": "**Kreis** ist die Menge aller Punkte einer Ebene, die vom Mittelpunkt den gleichen Abstand (Radius) haben. Der Durchmesser ist doppelt so groß wie der Radius.",
   "related": [
     "lexicon.durchmesser",

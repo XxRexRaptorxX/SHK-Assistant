@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeübertragerfrostschutz",
-  "synonyms": [],
+  "synonyms": [
+    "heat exchanger frost protection"
+  ],
   "definition": "Maßnahmen, die das Einfrieren eines Wärmeübertragers verhindern, beispielsweise durch Regelung, geeignete Medien oder Entleerung.",
   "related": []
 }

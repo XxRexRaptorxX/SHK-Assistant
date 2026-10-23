@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Thermische Bauteilaktivierung",
-  "synonyms": [],
+  "synonyms": [
+    "thermally activated building systems"
+  ],
   "definition": "Nutzung der thermischen Masse von Gebäudebauteilen, etwa Decken, zur Speicherung und zeitversetzten Abgabe von Wärme oder Kälte.",
   "related": []
 }

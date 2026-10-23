@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmerückgewinnungsgrad",
-  "synonyms": [],
+  "synonyms": [
+    "heat recovery efficiency"
+  ],
   "definition": "Kennwert, der unter definierten Bedingungen beschreibt, welcher Anteil einer verfügbaren Temperatur- oder Wärmeübertragungsmöglichkeit durch Wärmerückgewinnung genutzt wird. Die genaue Definition hängt vom Prüfverfahren ab.",
   "related": []
 }

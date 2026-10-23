@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Nennwärmeleistung",
-  "synonyms": [],
+  "synonyms": [
+    "rated heat output"
+  ],
   "definition": "Vom Hersteller angegebene nutzbare Wärmeleistung eines Wärmeerzeugers unter definierten Bedingungen. Sie ist von Feuerungswärmeleistung und tatsächlicher momentaner Leistung zu unterscheiden.",
   "related": []
 }

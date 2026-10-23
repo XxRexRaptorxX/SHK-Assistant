@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kondensatfalle",
-  "synonyms": [],
+  "synonyms": [
+    "condensate trap"
+  ],
   "definition": "Bauteil oder Anordnung, die Kondensat sammelt oder eine definierte Flüssigkeitsbarriere bildet, abhängig vom Systemaufbau.",
   "related": []
 }

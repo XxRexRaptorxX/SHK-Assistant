@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmetauscher",
   "synonyms": [
-    "Wärmeübertrager"
+    "Wärmeübertrager",
+    "heat exchanger"
   ],
   "definition": "Ein **Wärmetauscher** überträgt Wärme zwischen zwei Medien, die je nach Bauart direkt oder durch eine Trennwand getrennt sind. Beispiele sind Plattenwärmetauscher, Rohrbündelwärmetauscher und Luftregister. Wärmeübertragungsleistung, Druckverlust, Werkstoffverträglichkeit und Reinigbarkeit beeinflussen die Auswahl.",
   "related": [

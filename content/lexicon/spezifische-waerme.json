@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Spezifische Wärme",
   "synonyms": [
-    "spezifische Wärmekapazität (umgangssprachlich verkürzt)"
+    "spezifische Wärmekapazität (umgangssprachlich verkürzt)",
+    "specific heat"
   ],
   "definition": "Der Ausdruck **spezifische Wärme** wird im technischen Alltag oft verkürzt für die spezifische Wärmekapazität verwendet. Gemeint ist dann die Wärmemenge, die nötig ist, um eine Masseneinheit eines Stoffes um eine Temperatureinheit zu erwärmen. Für eindeutige Berechnungen sollte der fachlich präzise Begriff „spezifische Wärmekapazität“ samt Einheit verwendet werden.",
   "related": [

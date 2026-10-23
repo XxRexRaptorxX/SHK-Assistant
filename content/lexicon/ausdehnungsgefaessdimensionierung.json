@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Ausdehnungsgefäßdimensionierung",
-  "synonyms": [],
+  "synonyms": [
+    "expansion vessel sizing"
+  ],
   "definition": "Berechnung der erforderlichen Gefäßgröße und Vordruckeinstellung anhand von Anlagenvolumen, Temperaturbereich, statischer Höhe und zulässigen Drücken.",
   "related": []
 }

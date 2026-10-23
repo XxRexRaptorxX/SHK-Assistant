@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Pumpe",
   "synonyms": [
-    "Förderpumpe"
+    "Förderpumpe",
+    "pump"
   ],
   "definition": "Eine **Pumpe** überträgt Energie auf eine Flüssigkeit, damit diese gefördert oder ihr Druck erhöht wird. In SHK-Anlagen finden sich unter anderem Kreiselpumpen für Heizungswasser und Trinkwasserzirkulation sowie spezielle Abwasserpumpen. Fördermedium, Förderhöhe, Volumenstrom, Wirkungsgrad und Betriebsbereich bestimmen die Auswahl.",
   "related": [

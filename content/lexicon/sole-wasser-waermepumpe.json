@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Sole-Wasser-Wärmepumpe",
   "synonyms": [
-    "Erdwärmepumpe"
+    "Erdwärmepumpe",
+    "brine-to-water heat pump"
   ],
   "definition": "Eine **Sole-Wasser-Wärmepumpe** nutzt einen geschlossenen Solekreislauf als Wärmequelle, etwa über Erdsonden oder Erdkollektoren. Die Sole transportiert Wärme aus dem Erdreich zum Verdampfer. Auslegung und Genehmigung der Wärmequelle sowie Frostschutz und Druckhaltung des Solekreises sind zu beachten.",
   "related": [

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittel-Leckage",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant leakage"
+  ],
   "definition": "Unbeabsichtigter Austritt von Kältemittel aus einem Kältekreislauf.",
   "related": []
 }

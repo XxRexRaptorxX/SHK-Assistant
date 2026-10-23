@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Bivalente Heizungsanlage",
-  "synonyms": [],
+  "synonyms": [
+    "bivalent heating system"
+  ],
   "definition": "Heizungsanlage, in der zwei Wärmeerzeuger zusammenarbeiten, beispielsweise eine Wärmepumpe und ein zusätzlicher Heizkessel.",
   "related": []
 }

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wasserstoffbeimischung Gasnetz",
-  "synonyms": [],
+  "synonyms": [
+    "hydrogen blending"
+  ],
   "definition": "Beimischung von Wasserstoff zu Erdgas in einem Gasnetz. Zulässigkeit und technische Auswirkungen hängen von Netz, Geräten und geltenden Vorgaben ab.",
   "related": []
 }

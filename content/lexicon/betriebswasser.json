@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Betriebswasser",
-  "synonyms": [],
+  "synonyms": [
+    "non-potable water"
+  ],
   "definition": "Wasser, das für technische oder gewerbliche Zwecke genutzt wird und nicht notwendigerweise Trinkwasserqualität besitzt.",
   "related": []
 }

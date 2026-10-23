@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelüberhitzung",
-  "synonyms": [],
+  "synonyms": [
+    "superheat"
+  ],
   "definition": "Temperaturdifferenz zwischen dem tatsächlichen gasförmigen Kältemittelzustand und der Sättigungstemperatur beim gleichen Druck.",
   "related": []
 }

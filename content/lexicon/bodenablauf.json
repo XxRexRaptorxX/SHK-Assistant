@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Bodenablauf",
-  "synonyms": [],
+  "synonyms": [
+    "floor drain"
+  ],
   "definition": "Entwässerungsbauteil in Bodenflächen, das Wasser aufnimmt und in das Entwässerungssystem führt.",
   "related": []
 }

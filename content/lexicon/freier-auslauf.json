@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Freier Auslauf",
-  "synonyms": [],
+  "synonyms": [
+    "air gap"
+  ],
   "definition": "Sicherung durch eine physische Trennung zwischen Trinkwasserzufluss und nachgeschaltetem Wasser beziehungsweise Medium. Die Ausführung muss der passenden Normklassifikation entsprechen.",
   "related": []
 }

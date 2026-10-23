@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmekapazität",
-  "synonyms": [],
+  "synonyms": [
+    "heat capacity"
+  ],
   "definition": "Wärmeenergie, die erforderlich ist, um die Temperatur eines Körpers oder Systems um ein Kelvin zu erhöhen. Sie hängt von Masse und spezifischer Wärmekapazität ab.",
   "related": []
 }

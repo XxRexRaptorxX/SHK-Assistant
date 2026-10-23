@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Prüfmittel",
-  "synonyms": [],
+  "synonyms": [
+    "test equipment"
+  ],
   "definition": "Mess- oder Prüfgerät, das zur Feststellung von Eigenschaften oder zur Überprüfung einer Anlage verwendet wird.",
   "related": []
 }

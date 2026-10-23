@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Sensible Wärme",
-  "synonyms": [],
+  "synonyms": [
+    "sensible heat"
+  ],
   "definition": "Wärmeenergie, die mit einer Temperaturänderung eines Stoffes verbunden ist, ohne dass dabei notwendigerweise ein Phasenwechsel stattfindet.",
   "related": []
 }

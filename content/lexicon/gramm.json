@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Gramm",
-  "synonyms": [],
+  "synonyms": [
+    "gram"
+  ],
   "definition": "**Gramm** (g) ist eine Einheit für die Masse (umgangssprachlich Gewicht). 1 g = 0,001 kg.",
   "related": [
     "lexicon.kilogramm"

@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Paar",
-  "synonyms": [],
+  "synonyms": [
+    "pair"
+  ],
   "definition": "**Paar** ist eine Einheit für Stückzahlen. 1 Paar = 2 Stk.",
   "related": [
     "lexicon.stueck"

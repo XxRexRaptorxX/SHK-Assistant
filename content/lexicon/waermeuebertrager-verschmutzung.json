@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmeübertrager-Verschmutzung",
-  "synonyms": [],
+  "synonyms": [
+    "heat exchanger fouling"
+  ],
   "definition": "Ablagerung oder Belag auf Wärmeübertragungsflächen, der den Wärmeübergang und den Druckverlust verschlechtern kann.",
   "related": []
 }

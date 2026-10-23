@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Drehzahlgeregelte Pumpe",
-  "synonyms": [],
+  "synonyms": [
+    "variable speed pump"
+  ],
   "definition": "Pumpe, deren Drehzahl elektronisch verändert wird, um Förderstrom oder Differenzdruck an den Bedarf anzupassen und den Energieverbrauch zu senken.",
   "related": []
 }

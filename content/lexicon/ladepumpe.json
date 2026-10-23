@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Ladepumpe",
-  "synonyms": [],
+  "synonyms": [
+    "charging pump"
+  ],
   "definition": "Pumpe, die Wärmeübertragungsmedium zwischen Wärmeerzeuger und Speicher oder zwischen zwei Anlagenteilen fördert, um einen Speicher zu laden.",
   "related": []
 }

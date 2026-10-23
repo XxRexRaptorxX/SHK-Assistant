@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Rohrdimensionierung",
   "synonyms": [
-    "Rohrberechnung"
+    "Rohrberechnung",
+    "pipe sizing"
   ],
   "definition": "Die **Rohrdimensionierung** legt den erforderlichen Rohrdurchmesser anhand von Volumen- beziehungsweise Massenstrom, zulässiger Strömungsgeschwindigkeit, Druckverlust und weiteren Randbedingungen fest. Zu kleine Rohre erhöhen Druckverlust und Geräuschrisiko; überdimensionierte Rohre können Kosten, Wasserinhalt und Regelverhalten ungünstig beeinflussen. Die Berechnung muss zum Medium und zum konkreten Anwendungsfall passen.",
   "related": [

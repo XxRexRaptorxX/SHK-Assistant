@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Anlagenfülldruck",
-  "synonyms": [],
+  "synonyms": [
+    "system fill pressure"
+  ],
   "definition": "Druck des Anlagenwassers im kalten Zustand, der zur statischen Höhe und den Herstellerangaben passen muss.",
   "related": []
 }

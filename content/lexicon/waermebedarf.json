@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmebedarf",
-  "synonyms": [],
+  "synonyms": [
+    "heat demand"
+  ],
   "definition": "Wärmeenergie, die innerhalb eines Zeitraums benötigt wird, um einen bestimmten Zweck zu erfüllen, beispielsweise Raumheizung oder Trinkwassererwärmung. Er ist von der momentanen Heizlast zu unterscheiden.",
   "related": []
 }

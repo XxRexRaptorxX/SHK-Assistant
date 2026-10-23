@@ -8,7 +8,8 @@
   "term": "Wärmemengenzähler",
   "synonyms": [
     "Wärmezähler",
-    "WMZ"
+    "WMZ",
+    "heat meter"
   ],
   "definition": "Ein **Wärmemengenzähler** ermittelt die übertragene thermische Energie typischerweise aus dem gemessenen Volumenstrom und der Temperaturdifferenz zwischen Vorlauf und Rücklauf. Er besteht im Grundprinzip aus Durchflusssensor, Temperaturfühlern und Rechenwerk. Einbauposition, Einbaurichtung, Messbereich und gültige Eich- beziehungsweise Konformitätsanforderungen sind zu beachten.",
   "related": [

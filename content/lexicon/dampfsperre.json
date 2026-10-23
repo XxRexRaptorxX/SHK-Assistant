@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Dampfsperre",
-  "synonyms": [],
+  "synonyms": [
+    "vapour barrier"
+  ],
   "definition": "Schicht mit hohem Wasserdampfdiffusionswiderstand, die den Eintritt von Wasserdampf in Bauteile begrenzen soll. Bei Kältedämmungen ist eine durchgängige, luftdichte Ausführung wichtig.",
   "related": []
 }

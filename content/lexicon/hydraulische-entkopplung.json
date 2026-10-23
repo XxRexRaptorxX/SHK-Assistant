@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Entkopplung",
-  "synonyms": [],
+  "synonyms": [
+    "hydraulic separation"
+  ],
   "definition": "Trennung der Druck- und Volumenstrombeziehungen zweier Kreise, sodass deren Pumpen sich möglichst wenig gegenseitig beeinflussen.",
   "related": []
 }

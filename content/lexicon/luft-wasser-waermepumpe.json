@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Luft-Wasser-Wärmepumpe",
   "synonyms": [
-    "Luftwärmepumpe"
+    "Luftwärmepumpe",
+    "air-to-water heat pump"
   ],
   "definition": "Eine **Luft-Wasser-Wärmepumpe** nutzt Außenluft als Wärmequelle und überträgt die gewonnene Wärme an einen wassergeführten Heizkreis oder Speicher. Bei niedrigen Außentemperaturen sinkt typischerweise die verfügbare Heizleistung beziehungsweise Effizienz; je nach Bauart ist Abtauung erforderlich. Aufstellung, Schall, Luftführung und Frostschutz des Kondensatablaufs sind wichtige Planungspunkte.",
   "related": [

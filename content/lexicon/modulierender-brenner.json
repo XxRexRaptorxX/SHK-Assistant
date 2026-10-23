@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Modulierender Brenner",
   "synonyms": [
-    "leistungsmodulierender Brenner"
+    "leistungsmodulierender Brenner",
+    "modulating burner"
   ],
   "definition": "Ein **modulierender Brenner** kann seine Leistung innerhalb eines vorgegebenen Bereichs an den aktuellen Wärmebedarf anpassen. Dadurch lassen sich häufiges Ein- und Ausschalten und unnötige Temperaturüberschwinger reduzieren. Die Mindestleistung und die Regelungsstrategie bleiben für die reale Effizienz entscheidend.",
   "related": [

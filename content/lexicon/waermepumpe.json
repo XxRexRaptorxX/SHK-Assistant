@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmepumpe",
   "synonyms": [
-    "WP"
+    "WP",
+    "heat pump"
   ],
   "definition": "Eine **Wärmepumpe** entzieht einer Wärmequelle Energie und hebt sie mithilfe eines thermodynamischen Kreisprozesses auf ein höheres Temperaturniveau. Typische Wärmequellen sind Außenluft, Erdreich und Grundwasser. Die Effizienz hängt unter anderem von Quellentemperatur, erforderlicher Vorlauftemperatur, Auslegung und Betriebsbedingungen ab.",
   "related": [

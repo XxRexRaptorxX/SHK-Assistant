@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittel-CO₂-Äquivalent",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant CO₂ equivalent"
+  ],
   "definition": "Masse eines Kältemittels multipliziert mit seinem Treibhauspotenzial, um die entsprechende Klimawirkung in CO₂-Äquivalenten auszudrücken.",
   "related": []
 }

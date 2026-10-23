@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Spezifisches Volumen",
-  "synonyms": [],
+  "synonyms": [
+    "specific volume"
+  ],
   "definition": "Volumen pro Masseneinheit eines Stoffes; es ist der Kehrwert der Dichte, sofern beide Größen auf denselben Zustand bezogen sind.",
   "related": []
 }

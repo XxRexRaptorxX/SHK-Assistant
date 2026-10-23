@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmepumpenverdichter",
-  "synonyms": [],
+  "synonyms": [
+    "heat pump compressor"
+  ],
   "definition": "Komponente der Wärmepumpe, die gasförmiges Kältemittel verdichtet und damit Druck und Temperatur erhöht.",
   "related": []
 }

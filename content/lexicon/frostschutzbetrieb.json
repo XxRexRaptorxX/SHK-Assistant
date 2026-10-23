@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Frostschutzbetrieb",
-  "synonyms": [],
+  "synonyms": [
+    "frost protection mode"
+  ],
   "definition": "Betriebsmodus, der bei niedrigen Temperaturen eine Mindesttemperatur oder andere Schutzmaßnahmen sicherstellen soll. Die konkrete Funktion ist geräteabhängig.",
   "related": []
 }

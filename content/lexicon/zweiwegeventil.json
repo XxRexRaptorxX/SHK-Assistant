@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Zweiwegeventil",
   "synonyms": [
-    "2-Wege-Ventil"
+    "2-Wege-Ventil",
+    "two-way valve"
   ],
   "definition": "Ein **Zweiwegeventil** besitzt einen Ein- und einen Ausgang und verändert beziehungsweise sperrt den Durchfluss in einer Leitung. Als Regelventil beeinflusst es Volumenstrom und Druckverhältnisse im System. Auswahl und Dimensionierung müssen zum Medium, Durchflussbereich und verfügbaren Differenzdruck passen.",
   "related": [

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelrückgewinnungsgerät",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant recovery unit"
+  ],
   "definition": "Gerät, das Kältemittel aus einer Anlage absaugt und in einen geeigneten Behälter überführt.",
   "related": []
 }

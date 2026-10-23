@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Spezifische Ventilatorleistung",
   "synonyms": [
-    "SFP"
+    "SFP",
+    "specific fan power"
   ],
   "definition": "Kennwert, der die elektrische Leistungsaufnahme eines Lüftungssystems auf den geförderten Luftvolumenstrom bezieht.",
   "related": []

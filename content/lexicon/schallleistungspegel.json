@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Schallleistungspegel",
-  "synonyms": [],
+  "synonyms": [
+    "sound power level"
+  ],
   "definition": "Kenngröße für die von einer Schallquelle abgestrahlte akustische Leistung, angegeben in Dezibel bezogen auf einen Referenzwert.",
   "related": []
 }

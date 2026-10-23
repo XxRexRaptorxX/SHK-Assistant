@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Gasströmungswächter",
   "synonyms": [
-    "GS"
+    "GS",
+    "excess flow valve"
   ],
   "definition": "Ein **Gasströmungswächter** ist eine Sicherheitseinrichtung, die bei einem unzulässig hohen Gasvolumenstrom selbsttätig schließt. Er kann damit bei bestimmten Leckage- oder Schadensfällen den Gasfluss begrenzen. Auswahl und Einbau hängen von Leitungssystem, Gasart, Nennbelastung und den geltenden Regeln ab.",
   "related": [

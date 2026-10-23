@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Inspektion",
-  "synonyms": [],
+  "synonyms": [
+    "inspection"
+  ],
   "definition": "Feststellung und Beurteilung des Ist-Zustands einer Anlage oder Komponente, beispielsweise durch Sichtprüfung und Messung.",
   "related": []
 }

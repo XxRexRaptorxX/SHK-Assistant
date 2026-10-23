@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Auslegungsaußentemperatur",
-  "synonyms": [],
+  "synonyms": [
+    "design outdoor temperature"
+  ],
   "definition": "Für die Heizlastberechnung verwendete örtliche Außentemperatur unter festgelegten Auslegungsbedingungen. Sie ist nicht mit einer kurzfristigen Wettervorhersage gleichzusetzen.",
   "related": []
 }

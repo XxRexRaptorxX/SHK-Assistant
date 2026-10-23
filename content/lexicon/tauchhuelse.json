@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Tauchhülse",
-  "synonyms": [],
+  "synonyms": [
+    "thermowell"
+  ],
   "definition": "Hülse, in die ein Temperaturfühler eingesetzt wird, damit er die Temperatur eines Mediums erfasst, ohne direkt mit diesem in Kontakt zu stehen.",
   "related": []
 }

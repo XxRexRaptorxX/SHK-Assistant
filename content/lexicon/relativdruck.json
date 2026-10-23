@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Relativdruck",
-  "synonyms": [],
+  "synonyms": [
+    "relative pressure"
+  ],
   "definition": "Druck bezogen auf einen Referenzdruck, häufig den atmosphärischen Umgebungsdruck.",
   "related": []
 }

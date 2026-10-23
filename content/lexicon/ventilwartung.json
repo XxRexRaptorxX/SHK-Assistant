@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Ventilwartung",
-  "synonyms": [],
+  "synonyms": [
+    "valve maintenance"
+  ],
   "definition": "Prüfung von Ventilen auf Dichtheit, Beweglichkeit, Funktion und gegebenenfalls Reinigung oder Austausch.",
   "related": []
 }

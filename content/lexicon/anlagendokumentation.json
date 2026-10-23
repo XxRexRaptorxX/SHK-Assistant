@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Anlagendokumentation",
-  "synonyms": [],
+  "synonyms": [
+    "system documentation"
+  ],
   "definition": "Unterlagen zu Planung, Montage, Einstellungen, Prüfungen und Betrieb einer Anlage. Sie unterstützen sicheren Betrieb, Wartung und spätere Änderungen.",
   "related": []
 }

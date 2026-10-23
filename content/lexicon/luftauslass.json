@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Luftauslass",
-  "synonyms": [],
+  "synonyms": [
+    "air outlet"
+  ],
   "definition": "Bauteil, über das Zu- oder Abluft in einen Raum eingebracht oder aus ihm abgesaugt wird.",
   "related": []
 }

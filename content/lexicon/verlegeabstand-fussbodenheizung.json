@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Verlegeabstand Fußbodenheizung",
-  "synonyms": [],
+  "synonyms": [
+    "underfloor heating pipe spacing"
+  ],
   "definition": "Abstand zwischen benachbarten Rohrabschnitten einer Fußbodenheizung. Er beeinflusst Wärmeabgabe und Temperaturverteilung.",
   "related": []
 }

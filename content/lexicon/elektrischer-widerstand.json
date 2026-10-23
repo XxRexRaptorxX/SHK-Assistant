@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Elektrischer Widerstand",
   "synonyms": [
-    "Widerstand"
+    "Widerstand",
+    "electrical resistance"
   ],
   "definition": "**Elektrischer Widerstand** gibt an, welche Spannung nötig ist, um einen bestimmten Strom durch einen Leiter fließen zu lassen (R = U / I). Formelzeichen R, Einheit Ohm (Ω).",
   "related": [

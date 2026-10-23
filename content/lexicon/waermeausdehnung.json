@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmeausdehnung",
   "synonyms": [
-    "thermische Ausdehnung"
+    "thermische Ausdehnung",
+    "thermal expansion"
   ],
   "definition": "Änderung des Volumens eines Stoffes durch Temperaturänderung. In geschlossenen Anlagen muss die Volumenvergrößerung erwärmter Flüssigkeit sicher aufgenommen werden.",
   "related": []

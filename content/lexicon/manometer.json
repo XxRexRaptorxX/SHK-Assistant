@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Manometer",
   "synonyms": [
-    "Druckmessgerät"
+    "Druckmessgerät",
+    "pressure gauge"
   ],
   "definition": "Ein **Manometer** zeigt den Druck eines Mediums an, meist als Relativdruck gegenüber der Umgebung. Es ermöglicht die Kontrolle von Betriebsdruck, Fülldruck oder Prüfdruck innerhalb des vorgesehenen Messbereichs. Messbereich, Genauigkeit, Mediumverträglichkeit und Einbauposition müssen für die Messaufgabe geeignet sein.",
   "related": [

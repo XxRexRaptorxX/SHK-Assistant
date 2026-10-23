@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Umluft",
-  "synonyms": [],
+  "synonyms": [
+    "recirculated air"
+  ],
   "definition": "Luft, die aus einem Raum oder System entnommen und ganz oder teilweise erneut zugeführt wird.",
   "related": []
 }

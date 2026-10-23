@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Kühllast",
   "synonyms": [
-    "Kältelast"
+    "Kältelast",
+    "cooling load"
   ],
   "definition": "Die **Kühllast** beschreibt die Kühlleistung, die erforderlich ist, um vorgegebene Raum- oder Prozessbedingungen bei festgelegten Auslegungsbedingungen einzuhalten. Beiträge können beispielsweise aus Sonneneinstrahlung, Personen, Beleuchtung, Geräten und Außenluft entstehen. Sie ist eine Grundlage für die Dimensionierung von Kälteerzeuger und Raumkühlflächen.",
   "related": [

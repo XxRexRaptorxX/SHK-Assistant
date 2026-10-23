@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Thermostatische Armatur",
-  "synonyms": [],
+  "synonyms": [
+    "thermostatic mixer"
+  ],
   "definition": "Armatur, die durch ein thermostatisches Regelelement die Mischwassertemperatur weitgehend konstant hält, solange die Betriebsbedingungen dies erlauben.",
   "related": []
 }

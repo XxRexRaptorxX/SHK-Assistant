@@ -8,7 +8,8 @@
   "term": "Lüftungsanlage",
   "synonyms": [
     "raumlufttechnische Anlage",
-    "RLT-Anlage"
+    "RLT-Anlage",
+    "ventilation system"
   ],
   "definition": "Eine **Lüftungsanlage** führt Außenluft zu und/oder Abluft ab, um Luftqualität und Feuchteverhältnisse zu beeinflussen. Anlagen können mechanisch, natürlich oder kombiniert arbeiten. Planung und Betrieb berücksichtigen Luftvolumenströme, Filter, Schall, Energiebedarf, Brandschutz und gegebenenfalls Wärmerückgewinnung.",
   "related": [

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Frischwasser",
-  "synonyms": [],
+  "synonyms": [
+    "fresh water"
+  ],
   "definition": "Begriff, der je nach Kontext neu zugeführtes Wasser oder Trinkwasser bezeichnet. In technischen Dokumenten sollte die konkrete Bedeutung angegeben werden.",
   "related": []
 }

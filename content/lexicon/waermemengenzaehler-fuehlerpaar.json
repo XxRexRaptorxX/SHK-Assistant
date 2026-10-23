@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmemengenzähler-Fühlerpaar",
-  "synonyms": [],
+  "synonyms": [
+    "heat meter sensor pair"
+  ],
   "definition": "Zusammengehörige Temperaturfühler, die Vorlauf- und Rücklauftemperatur für die Berechnung der übertragenen Wärmemenge erfassen.",
   "related": []
 }

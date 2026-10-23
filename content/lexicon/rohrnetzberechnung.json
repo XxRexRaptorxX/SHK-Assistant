@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Rohrnetzberechnung",
-  "synonyms": [],
+  "synonyms": [
+    "pipe network calculation"
+  ],
   "definition": "Berechnung von Rohrdimensionen, Volumenströmen und Druckverlusten, damit eine Anlage die erforderlichen Medienmengen innerhalb ihrer Betriebsgrenzen transportiert.",
   "related": []
 }

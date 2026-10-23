@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Außentemperaturfühler",
   "synonyms": [
-    "Außenfühler"
+    "Außenfühler",
+    "outdoor temperature sensor"
   ],
   "definition": "Ein **Außentemperaturfühler** misst die Außenlufttemperatur und liefert bei witterungsgeführten Heizungsregelungen eine wichtige Eingangsgröße. Der Montageort muss direkte Sonneneinstrahlung, Abluft, lokale Wärmequellen und starke Abschirmung möglichst vermeiden. Fehlerhafte Positionierung kann zu unpassender Heizkurvenführung führen.",
   "related": [

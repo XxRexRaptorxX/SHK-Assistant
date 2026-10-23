@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Pumpenkennlinie",
-  "synonyms": [],
+  "synonyms": [
+    "pump curve"
+  ],
   "definition": "Kurve, die den Zusammenhang zwischen Förderstrom und Förderhöhe einer Pumpe bei festgelegten Bedingungen beschreibt.",
   "related": []
 }

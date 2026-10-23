@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "R&I-Schema",
-  "synonyms": [],
+  "synonyms": [
+    "piping and instrumentation diagram"
+  ],
   "definition": "Schematische Darstellung von Rohrleitungen, Apparaten, Armaturen sowie Mess- und Regelkomponenten einer Anlage.",
   "related": []
 }

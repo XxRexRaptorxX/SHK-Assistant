@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Trinkwassererwärmung im Durchfluss",
-  "synonyms": [],
+  "synonyms": [
+    "instantaneous water heating"
+  ],
   "definition": "Erwärmung von Trinkwasser bei Bedarf während des Durchströmens eines Wärmeübertragers, ohne große Mengen Warmwasser im Trinkwasserbehälter zu speichern.",
   "related": []
 }

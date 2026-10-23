@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Schalldruckpegel",
-  "synonyms": [],
+  "synonyms": [
+    "sound pressure level"
+  ],
   "definition": "Logarithmisches Maß für den Schalldruck relativ zu einem Referenzwert, angegeben in Dezibel (dB).",
   "related": []
 }

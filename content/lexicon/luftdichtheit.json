@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Luftdichtheit",
-  "synonyms": [],
+  "synonyms": [
+    "airtightness"
+  ],
   "definition": "Eigenschaft einer Gebäudehülle oder eines Bauteils, unkontrollierte Luftströmungen durch Fugen und Leckagen zu begrenzen.",
   "related": []
 }

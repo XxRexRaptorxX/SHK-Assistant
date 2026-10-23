@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Spezifische Wärmekapazität Wasser",
-  "synonyms": [],
+  "synonyms": [
+    "specific heat capacity of water"
+  ],
   "definition": "Wärmekapazität pro Masseneinheit von Wasser; der Wert hängt von Temperatur und Zustand ab und wird für technische Berechnungen häufig näherungsweise angesetzt.",
   "related": []
 }

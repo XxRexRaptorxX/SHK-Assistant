@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kondensatwanne",
-  "synonyms": [],
+  "synonyms": [
+    "condensate tray"
+  ],
   "definition": "Auffangwanne in Klima- oder Lüftungsgeräten, die am Wärmeübertrager entstehendes Kondenswasser sammelt und zu einem Ablauf führt.",
   "related": []
 }

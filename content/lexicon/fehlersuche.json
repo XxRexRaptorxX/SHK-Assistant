@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Fehlersuche",
-  "synonyms": [],
+  "synonyms": [
+    "troubleshooting"
+  ],
   "definition": "Strukturiertes Vorgehen zur Eingrenzung einer Störungsursache anhand von Beobachtungen, Messungen, Schaltplänen und technischen Unterlagen.",
   "related": []
 }

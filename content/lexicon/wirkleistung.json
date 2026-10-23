@@ -6,7 +6,9 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "term": "Wirkleistung",
-  "synonyms": [],
+  "synonyms": [
+    "active power"
+  ],
   "definition": "**Wirkleistung** ist der Teil der elektrischen Leistung, der tatsächlich in andere Formen wie Wärme oder Bewegung umgesetzt wird. Einheit Watt (W). Davon zu unterscheiden ist die Blindleistung, die dafür nicht nutzbar ist.",
   "related": [
     "lexicon.scheinleistung",

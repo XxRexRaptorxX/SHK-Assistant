@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Dampfdiffusionsäquivalente Luftschichtdicke",
   "synonyms": [
-    "sd-Wert"
+    "sd-Wert",
+    "water vapour diffusion-equivalent air layer thickness"
   ],
   "definition": "Kenngröße, die beschreibt, welcher Dicke einer ruhenden Luftschicht der Wasserdampfdiffusionswiderstand eines Bauteils entspricht.",
   "related": []

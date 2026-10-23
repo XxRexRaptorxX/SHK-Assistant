@@ -8,7 +8,8 @@
   "term": "Rechtwinkliges Dreieck",
   "synonyms": [
     "Hypotenuse",
-    "Kathete"
+    "Kathete",
+    "right-angled triangle"
   ],
   "definition": "**Rechtwinkliges Dreieck** ist ein Dreieck mit einem rechten Winkel (90°). Die beiden Seiten am rechten Winkel heißen **Katheten**, die längste Seite gegenüber dem rechten Winkel heißt **Hypotenuse**. Nach dem Satz des Pythagoras gilt a² + b² = c².",
   "related": [

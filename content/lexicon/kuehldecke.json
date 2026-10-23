@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kühldecke",
-  "synonyms": [],
+  "synonyms": [
+    "chilled ceiling"
+  ],
   "definition": "Flächenkühlsystem, das Wärme aus dem Raum über eine gekühlte Deckenfläche aufnimmt. Bei wassergeführten Systemen ist Tauwasser zu vermeiden.",
   "related": []
 }

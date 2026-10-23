@@ -8,7 +8,8 @@
   "term": "Gasfeuerungsautomat",
   "synonyms": [
     "Feuerungsautomat",
-    "Brennersteuergerät"
+    "Brennersteuergerät",
+    "gas burner control unit"
   ],
   "definition": "Ein **Gasfeuerungsautomat** steuert und überwacht die sichere Start- und Betriebssequenz eines Gasbrenners. Dazu gehören je nach Gerät Vorlüftung, Zündung, Flammenüberwachung und Sicherheitsabschaltung. Fehlermeldungen und Prüfungen sind nach Herstellerunterlagen und den einschlägigen Sicherheitsregeln zu behandeln.",
   "related": [

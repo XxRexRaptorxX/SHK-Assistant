@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Raumluftqualität",
   "synonyms": [
-    "Innenraumluftqualität"
+    "Innenraumluftqualität",
+    "indoor air quality"
   ],
   "definition": "**Raumluftqualität** beschreibt, wie gut die Innenraumluft hinsichtlich Verunreinigungen, Gerüchen, Feuchte, Temperatur und weiteren Einflussgrößen für die Nutzung geeignet ist. Außenluftzufuhr, Quellenkontrolle, Filterung und nutzungsabhängige Lüftung sind wichtige Einflussfaktoren. Ein einzelner Messwert, etwa CO₂, bildet die gesamte Raumluftqualität nicht vollständig ab.",
   "related": [

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Gefälle",
-  "synonyms": [],
+  "synonyms": [
+    "gradient"
+  ],
   "definition": "Neigungsmaß einer Leitung oder Fläche, das den Schwerkraftabfluss unterstützt. Das erforderliche Gefälle hängt unter anderem von Leitungsart, Durchmesser und Regelwerk ab.",
   "related": []
 }

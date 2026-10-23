@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Solekonzentration",
-  "synonyms": [],
+  "synonyms": [
+    "brine concentration"
+  ],
   "definition": "Anteil eines Frostschutzmittels oder gelösten Stoffes im Solemedium. Sie beeinflusst Gefrierpunkt, Viskosität, Wärmekapazität und Pumpenbedarf.",
   "related": []
 }

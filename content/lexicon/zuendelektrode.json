@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Zündelektrode",
-  "synonyms": [],
+  "synonyms": [
+    "ignition electrode"
+  ],
   "definition": "Bauteil, das bei entsprechenden Brennern einen elektrischen Funken zur Zündung des Brennstoff-Luft-Gemischs erzeugt.",
   "related": []
 }

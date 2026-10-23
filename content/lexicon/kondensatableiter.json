@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kondensatableiter",
-  "synonyms": [],
+  "synonyms": [
+    "steam trap"
+  ],
   "definition": "Bauteil, das Kondensat aus einem System ableitet und je nach Bauart den Austritt des Hauptmediums begrenzt.",
   "related": []
 }

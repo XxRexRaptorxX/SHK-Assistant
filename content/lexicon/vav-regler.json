@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "VAV-Regler",
   "synonyms": [
-    "variabler Volumenstromregler"
+    "variabler Volumenstromregler",
+    "variable air volume controller"
   ],
   "definition": "Variable-Air-Volume-Regler, der den Luftvolumenstrom in einem Lüftungssystem bedarfsgerecht verändert.",
   "related": []

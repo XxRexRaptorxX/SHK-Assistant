@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Prüfprotokoll",
-  "synonyms": [],
+  "synonyms": [
+    "test report"
+  ],
   "definition": "Dokumentation von Prüfbedingungen, Messwerten, Ergebnissen und gegebenenfalls Mängeln einer technischen Prüfung.",
   "related": []
 }

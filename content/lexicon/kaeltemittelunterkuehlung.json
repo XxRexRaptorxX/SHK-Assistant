@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelunterkühlung",
-  "synonyms": [],
+  "synonyms": [
+    "subcooling"
+  ],
   "definition": "Temperaturdifferenz, um die flüssiges Kältemittel unter seiner Sättigungstemperatur bei gleichem Druck abgekühlt ist.",
   "related": []
 }

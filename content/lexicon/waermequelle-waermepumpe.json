@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Wärmequelle Wärmepumpe",
-  "synonyms": [],
+  "synonyms": [
+    "heat source"
+  ],
   "definition": "Umgebung oder Medium, aus dem die Wärmepumpe Wärme aufnimmt, beispielsweise Luft, Erdreich oder Wasser.",
   "related": []
 }

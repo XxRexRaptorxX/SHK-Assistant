@@ -7,7 +7,8 @@
   "verifiedAt": "",
   "term": "Temperaturkoeffizient",
   "synonyms": [
-    "Temperaturbeiwert"
+    "Temperaturbeiwert",
+    "temperature coefficient"
   ],
   "definition": "**Temperaturkoeffizient** (Temperaturbeiwert) beschreibt die relative Änderung einer Größe, z. B. des elektrischen Widerstands eines Leiters, je Kelvin Temperaturänderung gegenüber einer Bezugstemperatur. Einheit 1/K.",
   "related": [

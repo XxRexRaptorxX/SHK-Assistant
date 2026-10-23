@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Rauchschutzklappe",
-  "synonyms": [],
+  "synonyms": [
+    "smoke damper"
+  ],
   "definition": "Bauteil, das die Ausbreitung von Rauch in Lüftungsleitungen oder Öffnungen begrenzen soll; Anforderungen hängen vom zugelassenen System ab.",
   "related": []
 }

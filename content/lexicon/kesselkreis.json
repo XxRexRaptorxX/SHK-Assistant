@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kesselkreis",
-  "synonyms": [],
+  "synonyms": [
+    "boiler circuit"
+  ],
   "definition": "Hydraulischer Kreislauf zwischen Wärmeerzeuger und unmittelbar zugehörigen Komponenten, beispielsweise hydraulischer Weiche oder Speicher.",
   "related": []
 }

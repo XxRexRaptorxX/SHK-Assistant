@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Frequenzumrichter",
-  "synonyms": [],
+  "synonyms": [
+    "frequency converter"
+  ],
   "definition": "Elektronisches Gerät, das die Frequenz und meist auch Spannung einer Wechselstromversorgung verändert, um die Drehzahl eines geeigneten Elektromotors zu regeln.",
   "related": []
 }

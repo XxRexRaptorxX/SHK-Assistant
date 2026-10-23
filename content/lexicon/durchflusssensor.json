@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Durchflusssensor",
-  "synonyms": [],
+  "synonyms": [
+    "flow sensor"
+  ],
   "definition": "Sensor oder Messgerät, das den Volumen- oder Massenstrom eines Mediums erfasst.",
   "related": []
 }

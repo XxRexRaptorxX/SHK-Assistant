@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kältekreis",
-  "synonyms": [],
+  "synonyms": [
+    "refrigerant circuit"
+  ],
   "definition": "Geschlossener Kreislauf einer Kälteanlage, in dem das Kältemittel durch Verdampfen, Verdichten, Verflüssigen und Entspannen Wärme transportiert.",
   "related": []
 }

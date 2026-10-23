@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Prüfdruck",
-  "synonyms": [],
+  "synonyms": [
+    "test pressure"
+  ],
   "definition": "Druck, der bei einer definierten Druckprüfung angelegt wird, um Dichtheit oder Festigkeit eines Systems zu überprüfen.",
   "related": []
 }

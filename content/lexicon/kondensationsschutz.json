@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Kondensationsschutz",
-  "synonyms": [],
+  "synonyms": [
+    "condensation protection"
+  ],
   "definition": "Maßnahmen zur Vermeidung unerwünschter Tauwasserbildung auf kalten Oberflächen, häufig durch Dämmung und eine durchgängige Dampfsperre.",
   "related": []
 }

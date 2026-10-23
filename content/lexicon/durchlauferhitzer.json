@@ -8,7 +8,8 @@
   "term": "Durchlauferhitzer",
   "synonyms": [
     "DLE",
-    "Durchflusswassererwärmer"
+    "Durchflusswassererwärmer",
+    "instantaneous water heater"
   ],
   "definition": "Ein **Durchlauferhitzer** erwärmt Wasser während des Durchflusses, ohne es in einem großen Speicher vorzuhalten. Er kann elektrisch oder gasbetrieben sein; Leistung, Durchfluss und gewünschte Temperatur bestimmen, wie viel Warmwasser gleichzeitig bereitgestellt werden kann. Bei hydraulischen und elektrischen Geräten sind die jeweiligen Mindestdurchflüsse beziehungsweise Anschlussleistungen zu beachten.",
   "related": [

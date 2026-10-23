@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Heizkreisverteiler",
-  "synonyms": [],
+  "synonyms": [
+    "heating manifold"
+  ],
   "definition": "Verteiler für einzelne Heizkreise, häufig bei Fußbodenheizungen. Er ermöglicht Anschluss, Verteilung und je nach Ausführung Einregulierung der Kreise.",
   "related": []
 }

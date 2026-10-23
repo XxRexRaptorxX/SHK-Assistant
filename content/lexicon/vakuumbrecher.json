@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Vakuumbrecher",
-  "synonyms": [],
+  "synonyms": [
+    "vacuum breaker"
+  ],
   "definition": "Sicherheitseinrichtung, die bei unzulässigem Unterdruck Luft einlassen kann, um einen Behälter oder ein System vor Schäden durch Vakuum zu schützen.",
   "related": []
 }

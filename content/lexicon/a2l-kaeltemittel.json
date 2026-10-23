@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "A2L-Kältemittel",
-  "synonyms": [],
+  "synonyms": [
+    "A2L refrigerant"
+  ],
   "definition": "Sicherheitsklasse für Kältemittel mit geringer Brennbarkeit und niedriger Flammenausbreitungsgeschwindigkeit nach der entsprechenden Klassifizierung.",
   "related": []
 }

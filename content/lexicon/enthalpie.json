@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Enthalpie",
-  "synonyms": [],
+  "synonyms": [
+    "enthalpy"
+  ],
   "definition": "Thermodynamische Zustandsgröße, die innere Energie und Druck-Volumen-Anteil zusammenfasst. In der Heizungs- und Kältetechnik wird häufig die spezifische Enthalpie verwendet.",
   "related": []
 }

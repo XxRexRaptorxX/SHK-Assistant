@@ -8,7 +8,8 @@
   "term": "Trinkwasserinstallation",
   "synonyms": [
     "Trinkwasseranlage",
-    "Hausinstallation Trinkwasser"
+    "Hausinstallation Trinkwasser",
+    "drinking water installation"
   ],
   "definition": "Eine **Trinkwasserinstallation** umfasst die Leitungen, Armaturen, Geräte und Entnahmestellen für kaltes und erwärmtes Trinkwasser innerhalb eines Gebäudes. Planung und Betrieb müssen hygienische Anforderungen, Druckverhältnisse, Temperaturhaltung und den Schutz vor Rückfließen berücksichtigen. Werkstoffe und Dimensionierung sind entsprechend Wasserbeschaffenheit und geltenden technischen Regeln auszuwählen.",
   "related": [

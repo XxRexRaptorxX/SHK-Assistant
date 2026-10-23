@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Drucktaupunkt",
-  "synonyms": [],
+  "synonyms": [
+    "pressure dew point"
+  ],
   "definition": "Taupunkttemperatur einer komprimierten Gasprobe bei ihrem aktuellen Druck.",
   "related": []
 }

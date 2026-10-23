@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Volumenstrommessung",
-  "synonyms": [],
+  "synonyms": [
+    "flow measurement"
+  ],
   "definition": "Ermittlung des pro Zeiteinheit durch eine Leitung strömenden Volumens, beispielsweise mithilfe eines Durchflussmessers oder aus geeigneten Messgrößen.",
   "related": []
 }

@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Federrücklaufantrieb",
-  "synonyms": [],
+  "synonyms": [
+    "spring return actuator"
+  ],
   "definition": "Stellantrieb, der bei Ausfall der Antriebsenergie durch eine Feder in eine definierte Sicherheitsstellung zurückkehrt, sofern so ausgelegt.",
   "related": []
 }

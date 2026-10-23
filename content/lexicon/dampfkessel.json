@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Dampfkessel",
-  "synonyms": [],
+  "synonyms": [
+    "steam boiler"
+  ],
   "definition": "Druckgerät, das Wasser erhitzt und Dampf erzeugt; es unterliegt besonderen technischen und rechtlichen Anforderungen.",
   "related": []
 }

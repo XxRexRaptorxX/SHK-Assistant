@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmedurchgangskoeffizient",
   "synonyms": [
-    "U-Wert"
+    "U-Wert",
+    "thermal transmittance"
   ],
   "definition": "Kennwert U, der den Wärmestrom durch ein Bauteil pro Fläche und Temperaturdifferenz beschreibt. Die Einheit ist W/(m²·K).",
   "related": []

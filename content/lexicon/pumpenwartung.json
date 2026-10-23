@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Pumpenwartung",
-  "synonyms": [],
+  "synonyms": [
+    "pump maintenance"
+  ],
   "definition": "Prüfung einer Pumpe auf Funktion, Dichtheit, Geräusch, Lagerzustand und elektrische beziehungsweise hydraulische Betriebswerte.",
   "related": []
 }

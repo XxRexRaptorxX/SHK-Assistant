@@ -7,7 +7,8 @@
   "verifiedAt": "2026-10-21",
   "term": "Gaszähler",
   "synonyms": [
-    "Gasuhr"
+    "Gasuhr",
+    "gas meter"
   ],
   "definition": "Ein **Gaszähler** misst das durchströmende Gasvolumen unter den jeweiligen Messbedingungen. Für Abrechnung und Energieberechnung können zusätzlich Zustandsgrößen oder Umrechnungsfaktoren relevant sein. Zählerart, Messbereich und Einbau müssen zum Versorgungsnetz und den geltenden Vorgaben passen.",
   "related": [

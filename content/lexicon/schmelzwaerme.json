@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Schmelzwärme",
-  "synonyms": [],
+  "synonyms": [
+    "heat of fusion"
+  ],
   "definition": "Wärmeenergie, die zum Übergang eines Stoffes vom festen in den flüssigen Zustand benötigt wird.",
   "related": []
 }

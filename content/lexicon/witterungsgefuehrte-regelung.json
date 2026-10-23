@@ -6,7 +6,9 @@
   "verifiedBy": "RR",
   "verifiedAt": "2026-10-21",
   "term": "Witterungsgeführte Regelung",
-  "synonyms": [],
+  "synonyms": [
+    "weather-compensated control"
+  ],
   "definition": "Regelstrategie, bei der die Vorlauftemperatur oder Heizleistung unter anderem anhand der Außentemperatur angepasst wird.",
   "related": []
 }
