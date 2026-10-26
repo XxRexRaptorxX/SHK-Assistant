@@ -73,19 +73,29 @@ kalt nach warm, nur für kurze Beschriftungen; `"dropdown"`: Auswahlliste, Stand
 bei Tabellen-Tools und `options` mit `label`, optional `note` und `values` je Spalte. In der Leiste
 steht die erste Spalte als Kurzinfo unter jeder Stufe.
 
-**Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person.
-Felder: `input` (die Zahl, z. B. Personen: `symbol`, `name`, optional `unit`, `min`, `max`),
-`choices` (Varianten zum Antippen, je `key`, `name`, `options` mit `key` und `label`, optional
-`default` als vorausgewählte Option und `display`: `"bar"` für Knöpfe nebeneinander, Standard, oder
-`"dropdown"` für eine Auswahlliste bei vielen Optionen) und
-`results` (je `symbol`, `name`, `unit`, `decimals` und `cases`). Ein Fall nennt `when` (für welche
-Auswahl er gilt, fehlende Auswahl = alle), `factor` und `per` (Bezugsgröße: das Symbol der Eingabe
-oder eines vorher stehenden Ergebnisses) oder statt dessen einen festen `value` (z. B. einen
-Neigungswinkel) und `rule` (der Richtwert in Worten wie in der Quelle). Der Build
-prüft, dass für jede Kombination genau ein Fall passt, und rechnet die `examples` nach (`input`,
-`choices`, `expected` je Ergebnis-Symbol). Lange Wörter in `label` dürfen eine weiche Trennstelle (`\u00AD`, unsichtbar)
-enthalten (z. B. „Heizungs\u00ADunterstützung“), damit sie auf schmalen Knöpfen umbrechen; die Suche
-ignoriert sie.
+**Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
+oder Dämmdicke nach Rohrdurchmesser. Felder:
+
+- `inputs`: Eingabefelder, je `symbol`, `name`, optional `label` (Formelzeichen), `unit`, `min`,
+  `max`, `default` (Vorbelegung, z. B. ein Standardwert) und `whenEmpty` (Feld darf leer bleiben,
+  dann wird mit diesem Wert gerechnet).
+- `choices`: Varianten zum Antippen, je `key`, `name`, `options` (je `key`, `label`, optional `when`:
+  Option nur anbieten, wenn eine andere Auswahl so steht), optional `default` (vorausgewählte Option)
+  und `display` (`"bar"`: Knöpfe nebeneinander, Standard; `"dropdown"`: Auswahlliste).
+- `results`: je `symbol`, `name`, `unit`, `decimals` und `cases`. Ein Fall nennt `when` (für welche
+  Auswahl er gilt, fehlende Auswahl = alle) und genau eins von: `factor` mit `per` (Bezugsgröße: das
+  Symbol einer Eingabe oder eines vorher stehenden Ergebnisses), festem `value`, `text` (z. B.
+  „keine Anforderung“) oder `expression` (Rechenausdruck ohne Einheiten mit Eingaben und vorherigen
+  Ergebnissen). Dazu `rule`: der Richtwert in Worten wie in der Quelle. Hängt ein Ergebnis von der
+  Größe eines Werts ab (z. B. Dämmdicke vom Innendurchmesser), grenzen `above` (über,
+  ausschließlich) und `upTo` (bis, einschließlich) den Bereich ein; `of` nennt den Wert (Standard:
+  erste Eingabe). Die Bereiche müssen lückenlos aneinander anschließen.
+- `examples`: Testbeispiele mit `inputs`, `choices` und `expected` je Ergebnis-Symbol.
+
+Der Build prüft, dass für jede Kombination genau ein Fall passt, dass Ausdrücke nur bekannte Größen
+nutzen, und rechnet die Beispiele nach. Lange Wörter in `label` dürfen eine weiche Trennstelle
+(`\u00AD`, unsichtbar) enthalten (z. B. „Heizungs\u00ADunterstützung“), damit sie auf schmalen
+Knöpfen umbrechen; die Suche ignoriert sie.
 
 Passen bei Tabellen-Tools mehrere Zeilen zur Eingabe (z. B. Werte aus zwei Quellen), werden alle angezeigt. Quellen
 einzelner Zeilen gehören in `source` des Eintrags. Der Build

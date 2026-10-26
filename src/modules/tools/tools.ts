@@ -39,7 +39,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   }
   if (isFactorTool(entry)) {
     return [
-      entry.input.name,
+      ...entry.inputs.map((input) => input.name),
       ...entry.choices.flatMap((choice) => [choice.name, ...choice.options.map((option) => option.label)]),
       ...entry.results.map((result) => result.name),
     ]

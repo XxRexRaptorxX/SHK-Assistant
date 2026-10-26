@@ -9,11 +9,13 @@
   "title": "Solaranlage: Kollektorfläche und Speichergröße",
   "description": "Schätzt Kollektorfläche und Größe des Warmwasserspeichers einer Solaranlage aus der Zahl der Personen, getrennt nach solarer Warmwasserbereitung und solarer Heizungsunterstützung sowie nach Kollektorart. Bei Heizungsunterstützung richtet sich der Speicher nach der Kollektorfläche. Die Werte sind Faustwerte. Zu Dachausrichtung und Standort zeigt das Tool die Neigung mit der meisten Sonneneinstrahlung und wie viel Sonne dort ankommt: für Warmwasser übers ganze Jahr, für Heizungsunterstützung von Oktober bis März, berechnet aus Strahlungsdaten der EU-Kommission (PVGIS) für die Landeshauptstadt des gewählten Bundeslands. Ist das Optimum 0°, wäre eine flache Fläche am besten; die Mindestneigung des Kollektorherstellers gilt trotzdem.",
   "category": "Auslegung",
-  "input": {
-    "symbol": "n",
-    "name": "Personen im Haushalt",
-    "min": 0
-  },
+  "inputs": [
+    {
+      "symbol": "n",
+      "name": "Personen im Haushalt",
+      "min": 0
+    }
+  ],
   "choices": [
     {
       "key": "nutzung",
@@ -4836,7 +4838,9 @@
   ],
   "examples": [
     {
-      "input": 4,
+      "inputs": {
+        "n": 4
+      },
       "choices": {
         "nutzung": "warmwasser",
         "kollektor": "flach",
@@ -4853,7 +4857,9 @@
       "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 4 Personen, Warmwasser, Flachkollektor, Süddach, Mitte Deutschlands"
     },
     {
-      "input": 4,
+      "inputs": {
+        "n": 4
+      },
       "choices": {
         "nutzung": "heizung",
         "kollektor": "vakuum",

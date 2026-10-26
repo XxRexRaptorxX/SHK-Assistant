@@ -55,6 +55,7 @@ describe('Tools', () => {
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Leistungsminderung durch Ruß im Kessel',
       'Material zurückschreiben',
+      'Mindestdämmdicke von Rohrleitungen',
       'Rohrlänge einer Fußbodenheizung',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Thermostatkopf-Einstellung und Raumtemperatur',
@@ -214,7 +215,7 @@ describe('Tools', () => {
     if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
     expect(checkFactorTool(tool)).toEqual([])
     const solar = (n: number, nutzung: string, kollektor: string) => {
-      const values = computeFactorTool(tool, n, { nutzung, kollektor })
+      const values = computeFactorTool(tool, { n }, { nutzung, kollektor })
       return [values.A?.value, values.V?.value]
     }
     expect(solar(4, 'warmwasser', 'flach')).toEqual([6, 320])
@@ -222,7 +223,7 @@ describe('Tools', () => {
     expect(solar(4, 'heizung', 'flach')).toEqual([16, 960])
     expect(solar(4, 'heizung', 'vakuum')).toEqual([12, 720])
 
-    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialInput="4" />)
+    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialInputs={{ n: '4' }} />)
     expect(html).toContain('A = 6,0 m²')
     expect(html).toContain('1,5 m² pro Person')
     expect(html).toContain('V = 320 l')
@@ -236,7 +237,7 @@ describe('Tools', () => {
     const tool = toolEntries.find((entry) => entry.id === 'tool.solar-auslegung')!
     if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
     const tilt = (nutzung: string, ausrichtung: string) => {
-      const values = computeFactorTool(tool, 1, { nutzung, kollektor: 'flach', ausrichtung, standort: 'mitte' })
+      const values = computeFactorTool(tool, { n: 1 }, { nutzung, kollektor: 'flach', ausrichtung, standort: 'mitte' })
       return [values.beta?.value, values.Erel?.value]
     }
     expect(tilt('warmwasser', 'sued')).toEqual([35, 100])
@@ -253,13 +254,13 @@ describe('Tools', () => {
     expect(location.display).toBe('dropdown')
     expect(location.options).toHaveLength(17)
     const winter = (standort: string) =>
-      computeFactorTool(tool, 1, { nutzung: 'heizung', kollektor: 'flach', ausrichtung: 'sued', standort })
+      computeFactorTool(tool, { n: 1 }, { nutzung: 'heizung', kollektor: 'flach', ausrichtung: 'sued', standort })
     expect(winter('sh').beta?.value).toBe(60)
     expect(winter('by').beta?.value).toBe(60)
     expect(winter('sh').H?.value).toBe(343)
     expect(winter('by').H?.value).toBe(529)
 
-    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialInput="4" />)
+    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialInputs={{ n: '4' }} />)
     expect(html).toContain('<option value="mitte" selected="">Deutschland (Mitte)</option>')
     expect(html).toContain('Bayern (München)')
     expect(html).toContain('H = 1.323 kWh/m²')
@@ -273,13 +274,97 @@ describe('Tools', () => {
       ...tool,
       choices: tool.choices.filter((choice) => choice.key === 'nutzung' || choice.key === 'kollektor'),
       results: [{ ...area!, cases: area!.cases.slice(1) }, { ...storage!, cases: [{ ...storage!.cases[0]!, when: {}, per: 'X' }] }],
-      examples: [{ input: 1, choices: { nutzung: 'warmwasser', kollektor: 'vakuum' }, expected: { A: 2 } }],
+      examples: [{ inputs: { n: 1 }, choices: { nutzung: 'warmwasser', kollektor: 'vakuum' }, expected: { A: 2 } }],
     }
     expect(checkFactorTool(broken)).toEqual([
       'results (A): kein Faktor für warmwasser + flach',
-      'results (V), cases[0]: per "X" ist weder die Eingabe noch ein vorheriges Ergebnis',
+      'results (V), cases[0]: per "X" ist weder eine Eingabe noch ein vorheriges Ergebnis',
       'examples[0]: A ergibt 1, erwartet 2',
     ])
+  })
+
+  it('nennt die Mindestdämmdicke von Rohrleitungen nach GModG Anlage 8, auch für andere Dämmstoffe', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.rohrdaemmung')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    expect(checkFactorTool(tool)).toEqual([])
+    const insulation = (da: number, t: number, medium: string, leitung: string, lambda = 0.035) => {
+      const values = computeFactorTool(tool, { da, t, lambda }, { medium, leitung })
+      // auf 0,001 mm runden, damit Gleitkomma-Reste (20,000000000000004) nicht stören
+      const round = (value: number | undefined) => (value === undefined ? undefined : Math.round(value * 1000) / 1000)
+      return [round(values.di?.value), round(values.s100?.value), values.s?.text ?? round(values.s?.value)]
+    }
+    // Volle Mindestdicke: Grenzen beim Innendurchmesser 22, 35 und 100 mm
+    expect(insulation(24, 1, 'heizung', 'hRegel')).toEqual([22, 20, 20])
+    expect(insulation(24, 0.75, 'heizung', 'hRegel')).toEqual([22.5, 30, 30])
+    expect(insulation(37, 1, 'heizung', 'hRegel')).toEqual([35, 30, 30])
+    expect(insulation(58, 2, 'heizung', 'hRegel')).toEqual([54, 54, 54])
+    expect(insulation(104, 2, 'heizung', 'hRegel')).toEqual([100, 100, 100])
+    expect(insulation(129, 2, 'heizung', 'hRegel')).toEqual([125, 100, 100])
+    // Sonderfälle nach Anlage 8 Nr. 1
+    expect(insulation(28, 1.5, 'heizung', 'hDurchbruch')).toEqual([25, 30, 15])
+    expect(insulation(28, 1.5, 'heizung', 'hNutzer')).toEqual([25, 30, 15])
+    expect(insulation(28, 1.5, 'heizung', 'hFussbodenaufbau')).toEqual([25, 30, 6])
+    expect(insulation(28, 1.5, 'warmwasser', 'wwAussenluft')).toEqual([25, 30, 60])
+    expect(insulation(28, 1.5, 'heizung', 'hAufputzAbsperrbar')).toEqual([25, 30, 'keine Anforderung'])
+    expect(insulation(28, 1.5, 'heizung', 'hAufputzNichtAbsperrbar')).toEqual([25, 30, 30])
+    expect(insulation(28, 1.5, 'heizung', 'hBauteilEinNutzer')).toEqual([25, 30, 'keine Anforderung'])
+    expect(insulation(28, 1.5, 'warmwasser', 'wwAufputz')).toEqual([25, 30, 30])
+    expect(insulation(15, 1, 'warmwasser', 'wwStich')).toEqual([13, 20, 'keine Anforderung'])
+    // Kälte nach Anlage 8 Nr. 2: 9 mm bis 22 mm Innendurchmesser, darüber 19 mm
+    expect(insulation(22, 1, 'kaelte', 'kRlt')).toEqual([20, 9, 9])
+    expect(insulation(28, 1, 'kaelte', 'kRlt')).toEqual([26, 19, 19])
+    // Ohne Wandstärke (leeres Feld = 0): Außendurchmesser als Innendurchmesser, nie dünner als mit Wandstärke
+    expect(insulation(42, 0, 'heizung', 'hRegel')).toEqual([42, 42, 42])
+    expect(insulation(42, 1.5, 'heizung', 'hRegel')).toEqual([39, 39, 39])
+    expect(insulation(22, 0, 'heizung', 'hRegel')).toEqual([22, 20, 20])
+    // Schlechterer Dämmstoff: dicker als linear umgerechnet, weil die Dämmschicht ein Ring ist
+    const [, , thicker] = insulation(22, 1, 'heizung', 'hRegel', 0.04)
+    expect(thicker).toBeCloseTo(11 * ((1 + 40 / 22) ** (0.04 / 0.035) - 1), 3)
+    expect(thicker).toBeGreaterThan((20 * 0.04) / 0.035)
+
+    // Lage der Leitung: nur die zum Medium passenden Einträge
+    const warmwater = renderToStaticMarkup(
+      <FactorCalculator tool={tool} initialInputs={{ da: '28', t: '1,5' }} initialSelection={{ medium: 'warmwasser', leitung: 'wwStich' }} />,
+    )
+    expect(warmwater).toContain('value="0,035"')
+    expect(warmwater).not.toContain('value="hRegel"')
+    expect(warmwater).toContain('<option value="wwStich" selected="">')
+    expect(warmwater).toContain('<p class="text-2xl font-bold">keine Anforderung</p>')
+    expect(warmwater).toContain('trotzdem dämmen wegen Korrosionsschutz')
+    // Wandstärke ist optional
+    expect(warmwater).toContain('placeholder="optional"')
+    const withoutWall = renderToStaticMarkup(
+      <FactorCalculator tool={tool} initialInputs={{ da: '42' }} initialSelection={{ medium: 'heizung', leitung: 'hRegel' }} />,
+    )
+    expect(withoutWall).toContain('dᵢ = 42,0 mm')
+    expect(withoutWall).toContain('Außendurchmesser angesetzt, liegt auf der sicheren Seite')
+    // Kälte hat eine eigene Lage
+    const cold = renderToStaticMarkup(
+      <FactorCalculator tool={tool} initialInputs={{ da: '28', t: '1' }} initialSelection={{ medium: 'kaelte', leitung: 'hRegel' }} />,
+    )
+    expect(cold).toContain('<option value="kRlt" selected="">')
+    expect(cold).toContain('s₁₀₀ = 19,0 mm')
+    // Passt die Lage nicht zum Medium, nimmt das Tool die erste passende
+    const heating = renderToStaticMarkup(
+      <FactorCalculator tool={tool} initialInputs={{ da: '28', t: '1,5' }} initialSelection={{ medium: 'heizung', leitung: 'wwStich' }} />,
+    )
+    expect(heating).toContain('<option value="hRegel" selected="">')
+    expect(heating).toContain('s = 30,0 mm')
+  })
+
+  it('prüft, dass Bereiche lückenlos aneinander anschließen und Ausdrücke bekannte Größen nutzen', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.rohrdaemmung')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    const results = tool.results.map((result) =>
+      result.symbol === 's100'
+        ? { ...result, cases: result.cases.filter((_, index) => index !== 1) }
+        : result.symbol === 'di'
+          ? { ...result, cases: [result.cases[0]!, { ...result.cases[1]!, expression: 'da - 2 * wand' }] }
+          : result,
+    )
+    const issues = checkFactorTool({ ...tool, results, examples: [] })
+    expect(issues[0]).toBe('results (di), cases[1]: unbekannte Symbole im Ausdruck: wand')
+    expect(issues[1]).toContain('Bereiche schließen nicht aneinander an (upTo 22, above 35)')
   })
 
   it('listet die Tools und zeigt ein Tool mit Formel, Legende und Rechner', () => {

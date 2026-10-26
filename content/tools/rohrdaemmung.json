@@ -1,0 +1,728 @@
+{
+  "id": "tool.rohrdaemmung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Gebäudemodernisierungsgesetz (GModG, früher GEG) §§ 69, 70 und Anlage 8, https://www.gesetze-im-internet.de/geg/anlage_8.html (abgerufen am 23.10.2026). Umrechnung auf andere Wärmeleitfähigkeiten nach GModG Anlage 8 Nr. 3 mit der Formel für den Wärmestrom durch eine zylindrische Dämmschicht (DIN EN ISO 12241). Hinweis zum Dämmen ohne Anforderung: Tabelle des Inhabers (Bild, übermittelt am 23.10.2026).",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Mindestdämmdicke von Rohrleitungen",
+  "description": "Zeigt die Mindestdicke der Dämmschicht für Heizungs-, Warmwasser- und Kälteleitungen nach dem Gebäudemodernisierungsgesetz (GModG, früher GEG), Anlage 8. Sie gilt, wenn Leitungen neu eingebaut oder ersetzt werden, und für die Nachrüstpflicht bei ungedämmten, zugänglichen Heizungs- und Warmwasserleitungen außerhalb beheizter Räume (§ 69). Das Gesetz stuft nach dem Innendurchmesser ab; ohne Wandstärke rechnet das Tool mit dem Außendurchmesser und liegt damit auf der sicheren Seite.",
+  "category": "Auslegung",
+  "inputs": [
+    {
+      "symbol": "da",
+      "label": "dₐ",
+      "name": "Außendurchmesser des Rohres",
+      "unit": "mm",
+      "min": 0
+    },
+    {
+      "symbol": "t",
+      "label": "t",
+      "name": "Wandstärke des Rohres",
+      "unit": "mm",
+      "min": 0,
+      "whenEmpty": 0
+    },
+    {
+      "symbol": "lambda",
+      "label": "λ",
+      "name": "Wärmeleitfähigkeit des Dämmstoffs",
+      "unit": "W/(m·K)",
+      "min": 0.001,
+      "default": 0.035
+    }
+  ],
+  "choices": [
+    {
+      "key": "medium",
+      "name": "Leitung für",
+      "options": [
+        {
+          "key": "heizung",
+          "label": "Heizung"
+        },
+        {
+          "key": "warmwasser",
+          "label": "Warmwasser"
+        },
+        {
+          "key": "kaelte",
+          "label": "Kälte"
+        }
+      ]
+    },
+    {
+      "key": "leitung",
+      "name": "Lage der Leitung",
+      "display": "dropdown",
+      "options": [
+        {
+          "key": "hRegel",
+          "label": "in unbeheizten Räumen, Kellern, Schächten, Außenbauteilen",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hAufputzAbsperrbar",
+          "label": "Aufputz in beheizten Räumen, Wärmeabgabe über frei liegende Absperrung regelbar (z. B. mit Thermostatventil am HK)",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hAufputzNichtAbsperrbar",
+          "label": "Aufputz in beheizten Räumen, nicht absperrbar (z. B. Steigleitung)",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hBauteilEinNutzer",
+          "label": "in Bauteilen zwischen beheizten Räumen eines Nutzers, absperrbar",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hNutzer",
+          "label": "in Bauteilen zwischen beheizten Räumen verschiedener Nutzer (verlegt nach dem 31.01.2002)",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hFussbodenaufbau",
+          "label": "im Fußbodenaufbau zwischen beheizten Räumen verschiedener Nutzer",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hDurchbruch",
+          "label": "in Wand- und Deckendurchbrüchen, an Kreuzungen, Verbindungsstellen, zentralen Verteilern",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "hAussenluft",
+          "label": "an Außenluft grenzend",
+          "when": {
+            "medium": "heizung"
+          }
+        },
+        {
+          "key": "wwRegel",
+          "label": "Verteil- und Zirkulationsleitungen",
+          "when": {
+            "medium": "warmwasser"
+          }
+        },
+        {
+          "key": "wwAufputz",
+          "label": "Aufputz in beheizten Räumen (außer kurze Stichleitungen)",
+          "when": {
+            "medium": "warmwasser"
+          }
+        },
+        {
+          "key": "wwStich",
+          "label": "Stichleitung bis 3 l Inhalt, ohne Zirkulation und Begleitheizung, in beheizten Räumen",
+          "when": {
+            "medium": "warmwasser"
+          }
+        },
+        {
+          "key": "wwDurchbruch",
+          "label": "in Wand- und Deckendurchbrüchen, an Kreuzungen, Verbindungsstellen, zentralen Verteilern",
+          "when": {
+            "medium": "warmwasser"
+          }
+        },
+        {
+          "key": "wwAussenluft",
+          "label": "an Außenluft grenzend",
+          "when": {
+            "medium": "warmwasser"
+          }
+        },
+        {
+          "key": "kRlt",
+          "label": "Kälteverteilungs- und Kaltwasserleitungen von Raumlufttechnik- und Klimakälteanlagen",
+          "when": {
+            "medium": "kaelte"
+          }
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "di",
+      "label": "dᵢ",
+      "name": "Innendurchmesser",
+      "unit": "mm",
+      "decimals": 1,
+      "cases": [
+        {
+          "of": "t",
+          "upTo": 0,
+          "factor": 1,
+          "per": "da",
+          "rule": "ohne Wandstärke: Außendurchmesser angesetzt, liegt auf der sicheren Seite"
+        },
+        {
+          "of": "t",
+          "above": 0,
+          "expression": "da - 2 * t",
+          "rule": "Außendurchmesser minus zweimal Wandstärke"
+        }
+      ]
+    },
+    {
+      "symbol": "s100",
+      "label": "s₁₀₀",
+      "name": "Volle Mindestdicke bei 0,035 W/(m·K)",
+      "unit": "mm",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "medium": "heizung"
+          },
+          "of": "di",
+          "upTo": 22,
+          "value": 20,
+          "rule": "Innendurchmesser bis 22 mm"
+        },
+        {
+          "when": {
+            "medium": "heizung"
+          },
+          "of": "di",
+          "above": 22,
+          "upTo": 35,
+          "value": 30,
+          "rule": "Innendurchmesser über 22 bis 35 mm"
+        },
+        {
+          "when": {
+            "medium": "heizung"
+          },
+          "of": "di",
+          "above": 35,
+          "upTo": 100,
+          "factor": 1,
+          "per": "di",
+          "rule": "gleich dem Innendurchmesser (über 35 bis 100 mm)"
+        },
+        {
+          "when": {
+            "medium": "heizung"
+          },
+          "of": "di",
+          "above": 100,
+          "value": 100,
+          "rule": "Innendurchmesser über 100 mm"
+        },
+        {
+          "when": {
+            "medium": "warmwasser"
+          },
+          "of": "di",
+          "upTo": 22,
+          "value": 20,
+          "rule": "Innendurchmesser bis 22 mm"
+        },
+        {
+          "when": {
+            "medium": "warmwasser"
+          },
+          "of": "di",
+          "above": 22,
+          "upTo": 35,
+          "value": 30,
+          "rule": "Innendurchmesser über 22 bis 35 mm"
+        },
+        {
+          "when": {
+            "medium": "warmwasser"
+          },
+          "of": "di",
+          "above": 35,
+          "upTo": 100,
+          "factor": 1,
+          "per": "di",
+          "rule": "gleich dem Innendurchmesser (über 35 bis 100 mm)"
+        },
+        {
+          "when": {
+            "medium": "warmwasser"
+          },
+          "of": "di",
+          "above": 100,
+          "value": 100,
+          "rule": "Innendurchmesser über 100 mm"
+        },
+        {
+          "when": {
+            "medium": "kaelte"
+          },
+          "of": "di",
+          "upTo": 22,
+          "value": 9,
+          "rule": "Innendurchmesser bis 22 mm (Kälte)"
+        },
+        {
+          "when": {
+            "medium": "kaelte"
+          },
+          "of": "di",
+          "above": 22,
+          "value": 19,
+          "rule": "Innendurchmesser über 22 mm (Kälte)"
+        }
+      ]
+    },
+    {
+      "symbol": "p",
+      "label": "Anteil",
+      "name": "Anforderung",
+      "unit": "%",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "leitung": "hRegel"
+          },
+          "value": 100,
+          "rule": "volle Mindestdicke (GModG Anlage 8 Nr. 1 a aa–dd)"
+        },
+        {
+          "when": {
+            "leitung": "hAufputzAbsperrbar"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 b)"
+        },
+        {
+          "when": {
+            "leitung": "hAufputzNichtAbsperrbar"
+          },
+          "value": 100,
+          "rule": "volle Mindestdicke; die Ausnahme nach GModG Anlage 8 Nr. 1 b gilt nur bei frei liegender Absperrung"
+        },
+        {
+          "when": {
+            "leitung": "hBauteilEinNutzer"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 b)"
+        },
+        {
+          "when": {
+            "leitung": "hNutzer"
+          },
+          "value": 50,
+          "rule": "halbe Mindestdicke (GModG Anlage 8 Nr. 1 a ff)"
+        },
+        {
+          "when": {
+            "leitung": "hFussbodenaufbau"
+          },
+          "text": "feste Mindestdicke",
+          "rule": "fest 6 mm (GModG Anlage 8 Nr. 1 a gg)"
+        },
+        {
+          "when": {
+            "leitung": "hDurchbruch"
+          },
+          "value": 50,
+          "rule": "halbe Mindestdicke (GModG Anlage 8 Nr. 1 a ee)"
+        },
+        {
+          "when": {
+            "leitung": "hAussenluft"
+          },
+          "value": 200,
+          "rule": "doppelte Mindestdicke (GModG Anlage 8 Nr. 1 a hh)"
+        },
+        {
+          "when": {
+            "leitung": "wwRegel"
+          },
+          "value": 100,
+          "rule": "volle Mindestdicke (GModG Anlage 8 Nr. 1 a aa–dd)"
+        },
+        {
+          "when": {
+            "leitung": "wwAufputz"
+          },
+          "value": 100,
+          "rule": "volle Mindestdicke; für Warmwasser gibt es in beheizten Räumen nur die Ausnahme für Stichleitungen (GModG Anlage 8 Nr. 1 c)"
+        },
+        {
+          "when": {
+            "leitung": "wwStich"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 c)"
+        },
+        {
+          "when": {
+            "leitung": "wwDurchbruch"
+          },
+          "value": 50,
+          "rule": "halbe Mindestdicke (GModG Anlage 8 Nr. 1 a ee)"
+        },
+        {
+          "when": {
+            "leitung": "wwAussenluft"
+          },
+          "value": 200,
+          "rule": "doppelte Mindestdicke (GModG Anlage 8 Nr. 1 a hh)"
+        },
+        {
+          "when": {
+            "leitung": "kRlt"
+          },
+          "value": 100,
+          "rule": "Mindestdicke für Kälteleitungen (GModG Anlage 8 Nr. 2); Wärmeleitfähigkeit bezogen auf 10 °C Mitteltemperatur"
+        }
+      ]
+    },
+    {
+      "symbol": "sRef",
+      "label": "s₀",
+      "name": "Mindestdicke bei 0,035 W/(m·K)",
+      "unit": "mm",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "leitung": "hRegel"
+          },
+          "factor": 1.0,
+          "per": "s100",
+          "rule": "100 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "hAufputzAbsperrbar"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 b)"
+        },
+        {
+          "when": {
+            "leitung": "hAufputzNichtAbsperrbar"
+          },
+          "factor": 1.0,
+          "per": "s100",
+          "rule": "100 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "hBauteilEinNutzer"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 b)"
+        },
+        {
+          "when": {
+            "leitung": "hNutzer"
+          },
+          "factor": 0.5,
+          "per": "s100",
+          "rule": "50 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "hFussbodenaufbau"
+          },
+          "value": 6,
+          "rule": "fest 6 mm (GModG Anlage 8 Nr. 1 a gg)"
+        },
+        {
+          "when": {
+            "leitung": "hDurchbruch"
+          },
+          "factor": 0.5,
+          "per": "s100",
+          "rule": "50 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "hAussenluft"
+          },
+          "factor": 2.0,
+          "per": "s100",
+          "rule": "200 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "wwRegel"
+          },
+          "factor": 1.0,
+          "per": "s100",
+          "rule": "100 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "wwAufputz"
+          },
+          "factor": 1.0,
+          "per": "s100",
+          "rule": "100 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "wwStich"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 c)"
+        },
+        {
+          "when": {
+            "leitung": "wwDurchbruch"
+          },
+          "factor": 0.5,
+          "per": "s100",
+          "rule": "50 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "wwAussenluft"
+          },
+          "factor": 2.0,
+          "per": "s100",
+          "rule": "200 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "kRlt"
+          },
+          "factor": 1.0,
+          "per": "s100",
+          "rule": "100 % von s₁₀₀"
+        }
+      ]
+    },
+    {
+      "symbol": "s",
+      "label": "s",
+      "name": "Mindestdämmdicke mit gewähltem Dämmstoff",
+      "unit": "mm",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "leitung": "hRegel"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "hAufputzAbsperrbar"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 b)"
+        },
+        {
+          "when": {
+            "leitung": "hAufputzNichtAbsperrbar"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "hBauteilEinNutzer"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 b)"
+        },
+        {
+          "when": {
+            "leitung": "hNutzer"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "hFussbodenaufbau"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "hDurchbruch"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "hAussenluft"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "wwRegel"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "wwAufputz"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "wwStich"
+          },
+          "text": "keine Anforderung",
+          "rule": "keine gesetzliche Anforderung – trotzdem dämmen wegen Korrosionsschutz, Knack- und Fließgeräuschen, Körperschalldämmung und Verringerung der Wärmebelastung (GModG Anlage 8 Nr. 1 c)"
+        },
+        {
+          "when": {
+            "leitung": "wwDurchbruch"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "wwAussenluft"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kRlt"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": {
+        "da": 22,
+        "t": 1,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "heizung",
+        "leitung": "hRegel"
+      },
+      "expected": {
+        "di": 20,
+        "s100": 20,
+        "p": 100,
+        "sRef": 20,
+        "s": 20
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kupfer 22 × 1 im unbeheizten Keller"
+    },
+    {
+      "inputs": {
+        "da": 42,
+        "t": 0,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "heizung",
+        "leitung": "hRegel"
+      },
+      "expected": {
+        "di": 42,
+        "s100": 42,
+        "s": 42
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 42 mm ohne Wandstärke, Außendurchmesser angesetzt"
+    },
+    {
+      "inputs": {
+        "da": 28,
+        "t": 1.5,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "warmwasser",
+        "leitung": "wwDurchbruch"
+      },
+      "expected": {
+        "di": 25,
+        "s100": 30,
+        "p": 50,
+        "sRef": 15,
+        "s": 15
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kupfer 28 × 1,5 im Deckendurchbruch"
+    },
+    {
+      "inputs": {
+        "da": 22,
+        "t": 1,
+        "lambda": 0.04
+      },
+      "choices": {
+        "medium": "heizung",
+        "leitung": "hRegel"
+      },
+      "expected": {
+        "sRef": 20,
+        "s": 24.94537185824755
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Dämmstoff mit 0,040 W/(m·K)"
+    },
+    {
+      "inputs": {
+        "da": 22,
+        "t": 1,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "heizung",
+        "leitung": "hAufputzAbsperrbar"
+      },
+      "expected": {
+        "p": "keine Anforderung",
+        "s": "keine Anforderung"
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Aufputz im beheizten Raum mit Thermostatventil"
+    },
+    {
+      "inputs": {
+        "da": 28,
+        "t": 1,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "kaelte",
+        "leitung": "kRlt"
+      },
+      "expected": {
+        "di": 26,
+        "s100": 19,
+        "s": 19
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kaltwasserleitung einer Klimaanlage 28 × 1"
+    }
+  ]
+}
