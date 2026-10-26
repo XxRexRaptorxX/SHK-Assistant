@@ -313,6 +313,18 @@ describe('Tools', () => {
     // Kälte nach Anlage 8 Nr. 2: 9 mm bis 22 mm Innendurchmesser, darüber 19 mm
     expect(insulation(22, 1, 'kaelte', 'kRlt')).toEqual([20, 9, 9])
     expect(insulation(28, 1, 'kaelte', 'kRlt')).toEqual([26, 19, 19])
+    // Trinkwasser kalt nach DIN 1988-200 Tabelle 8, Richtwerte bei 0,040 W/(m·K)
+    expect(insulation(22, 1, 'trinkwasserKalt', 'kwUnbeheizt', 0.04)).toEqual([20, undefined, 9])
+    expect(insulation(22, 1, 'trinkwasserKalt', 'kwSchacht', 0.04)).toEqual([20, undefined, 13])
+    expect(insulation(22, 1, 'trinkwasserKalt', 'kwVorwand', 0.04)).toEqual([20, undefined, 4])
+    expect(insulation(22, 1, 'trinkwasserKalt', 'kwFussboden', 0.04)).toEqual([20, undefined, 4])
+    expect(insulation(22, 1, 'trinkwasserKalt', 'kwFussbodenZirkulation', 0.04)).toEqual([20, undefined, 13])
+    // Zeile 3: wie Warmwasser, also volle GModG-Dicke bei 0,035 W/(m·K)
+    expect(insulation(28, 1.5, 'trinkwasserKalt', 'kwWaermelast')).toEqual([25, 30, 30])
+    // Besserer Dämmstoff als 0,040: dünnere Schicht reicht
+    const [, , colder] = insulation(22, 1, 'trinkwasserKalt', 'kwSchacht', 0.035)
+    expect(colder).toBeCloseTo(11 * ((1 + 26 / 22) ** (0.035 / 0.04) - 1), 3)
+    expect(colder).toBeLessThan(13)
     // Ohne Wandstärke (leeres Feld = 0): Außendurchmesser als Innendurchmesser, nie dünner als mit Wandstärke
     expect(insulation(42, 0, 'heizung', 'hRegel')).toEqual([42, 42, 42])
     expect(insulation(42, 1.5, 'heizung', 'hRegel')).toEqual([39, 39, 39])
@@ -338,6 +350,10 @@ describe('Tools', () => {
     )
     expect(withoutWall).toContain('dᵢ = 42,0 mm')
     expect(withoutWall).toContain('Außendurchmesser angesetzt, liegt auf der sicheren Seite')
+    // Vier Knöpfe: Heizung, Warmwasser, Kälte (RLT/Klima) und Kaltwasser (Trinkwasser)
+    expect(warmwater.match(/aria-pressed=/g)).toHaveLength(4)
+    expect(warmwater).toContain('Kalt\u00ADwasser')
+    expect(warmwater).not.toContain('Trink\u00ADwasser kalt')
     // Kälte hat eine eigene Lage
     const cold = renderToStaticMarkup(
       <FactorCalculator tool={tool} initialInputs={{ da: '28', t: '1' }} initialSelection={{ medium: 'kaelte', leitung: 'hRegel' }} />,

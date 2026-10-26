@@ -2,12 +2,12 @@
   "id": "tool.rohrdaemmung",
   "visibility": "public",
   "status": "draft",
-  "source": "Gebäudemodernisierungsgesetz (GModG, früher GEG) §§ 69, 70 und Anlage 8, https://www.gesetze-im-internet.de/geg/anlage_8.html (abgerufen am 23.10.2026). Umrechnung auf andere Wärmeleitfähigkeiten nach GModG Anlage 8 Nr. 3 mit der Formel für den Wärmestrom durch eine zylindrische Dämmschicht (DIN EN ISO 12241). Hinweis zum Dämmen ohne Anforderung: Tabelle des Inhabers (Bild, übermittelt am 23.10.2026).",
+  "source": "Gebäudemodernisierungsgesetz (GModG, früher GEG) §§ 69, 70 und Anlage 8, https://www.gesetze-im-internet.de/geg/anlage_8.html (abgerufen am 23.10.2026). Trinkwasser kalt: DIN 1988-200:2012-05, Abschnitt 14.2.6, Tabelle 8 (Richtwerte bei 0,040 W/(m·K), 10 °C), wiedergegeben bei ROCKWOOL, „Wichtige Normen zu Kaltwasserleitungen“, https://www.rockwool.com/de/rat-und-tat/vertiefendes-wissen/energieeffizienz/trinkwasserleitungen-kalt/normen/ und bestätigt bei haustec, „Dämmung von Rohrleitungen nach GEG und DIN 1988-200“ (25.09.2023), https://www.haustec.de/sanitaer/installationstechnik/daemmung-von-rohrleitungen-nach-geg-und-din-1988-200 (beide abgerufen am 26.10.2026). Umrechnung auf andere Wärmeleitfähigkeiten mit der Formel für den Wärmestrom durch eine zylindrische Dämmschicht (DIN EN ISO 12241). Hinweis zum Dämmen ohne Anforderung: Tabelle des Inhabers (Bild, übermittelt am 23.10.2026).",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "factor",
   "title": "Mindestdämmdicke von Rohrleitungen",
-  "description": "Zeigt die Mindestdicke der Dämmschicht für Heizungs-, Warmwasser- und Kälteleitungen nach dem Gebäudemodernisierungsgesetz (GModG, früher GEG), Anlage 8. Sie gilt, wenn Leitungen neu eingebaut oder ersetzt werden, und für die Nachrüstpflicht bei ungedämmten, zugänglichen Heizungs- und Warmwasserleitungen außerhalb beheizter Räume (§ 69). Das Gesetz stuft nach dem Innendurchmesser ab; ohne Wandstärke rechnet das Tool mit dem Außendurchmesser und liegt damit auf der sicheren Seite.",
+  "description": "Zeigt die Mindestdicke der Dämmschicht für Heizungs-, Warmwasser- und Kälteleitungen nach dem Gebäudemodernisierungsgesetz (GModG, früher GEG), Anlage 8, und für Trinkwasserleitungen kalt nach DIN 1988-200. Das Gesetz gilt, wenn Leitungen neu eingebaut oder ersetzt werden, und für die Nachrüstpflicht bei ungedämmten, zugänglichen Heizungs- und Warmwasserleitungen außerhalb beheizter Räume (§ 69). Für Trinkwasser kalt gibt es keine gesetzliche Mindestdicke; die Richtwerte der Norm schützen vor Erwärmung und Tauwasser. Das Gesetz und die Norm stufen nach dem Innendurchmesser ab; ohne Wandstärke rechnet das Tool mit dem Außendurchmesser und liegt damit auf der sicheren Seite.",
   "category": "Auslegung",
   "inputs": [
     {
@@ -45,11 +45,15 @@
         },
         {
           "key": "warmwasser",
-          "label": "Warmwasser"
+          "label": "Warm\u00ADwasser"
         },
         {
           "key": "kaelte",
           "label": "Kälte"
+        },
+        {
+          "key": "trinkwasserKalt",
+          "label": "Kalt\u00ADwasser"
         }
       ]
     },
@@ -155,6 +159,48 @@
           "when": {
             "medium": "kaelte"
           }
+        },
+        {
+          "key": "kwUnbeheizt",
+          "label": "frei verlegt in nicht beheizten Räumen bis 20 °C (Tauwasserschutz)",
+          "when": {
+            "medium": "trinkwasserKalt"
+          }
+        },
+        {
+          "key": "kwSchacht",
+          "label": "in Rohrschächten, Bodenkanälen und abgehängten Decken bis 25 °C",
+          "when": {
+            "medium": "trinkwasserKalt"
+          }
+        },
+        {
+          "key": "kwWaermelast",
+          "label": "in Technikzentralen, Medienkanälen oder Schächten mit Wärmelasten ab 25 °C",
+          "when": {
+            "medium": "trinkwasserKalt"
+          }
+        },
+        {
+          "key": "kwVorwand",
+          "label": "Stockwerks- und Einzelzuleitungen in Vorwandinstallationen",
+          "when": {
+            "medium": "trinkwasserKalt"
+          }
+        },
+        {
+          "key": "kwFussboden",
+          "label": "im Fußbodenaufbau, auch neben nicht zirkulierenden Warmwasserleitungen",
+          "when": {
+            "medium": "trinkwasserKalt"
+          }
+        },
+        {
+          "key": "kwFussbodenZirkulation",
+          "label": "im Fußbodenaufbau neben zirkulierenden warmgehenden Leitungen",
+          "when": {
+            "medium": "trinkwasserKalt"
+          }
         }
       ]
     }
@@ -185,7 +231,7 @@
     {
       "symbol": "s100",
       "label": "s₁₀₀",
-      "name": "Volle Mindestdicke bei 0,035 W/(m·K)",
+      "name": "Volle Mindestdicke nach GModG bei 0,035 W/(m·K)",
       "unit": "mm",
       "decimals": 1,
       "cases": [
@@ -284,6 +330,84 @@
           "above": 22,
           "value": 19,
           "rule": "Innendurchmesser über 22 mm (Kälte)"
+        },
+        {
+          "when": {
+            "medium": "trinkwasserKalt",
+            "leitung": "kwWaermelast"
+          },
+          "of": "di",
+          "upTo": 22,
+          "value": 20,
+          "rule": "Innendurchmesser bis 22 mm"
+        },
+        {
+          "when": {
+            "medium": "trinkwasserKalt",
+            "leitung": "kwWaermelast"
+          },
+          "of": "di",
+          "above": 22,
+          "upTo": 35,
+          "value": 30,
+          "rule": "Innendurchmesser über 22 bis 35 mm"
+        },
+        {
+          "when": {
+            "medium": "trinkwasserKalt",
+            "leitung": "kwWaermelast"
+          },
+          "of": "di",
+          "above": 35,
+          "upTo": 100,
+          "factor": 1,
+          "per": "di",
+          "rule": "gleich dem Innendurchmesser (über 35 bis 100 mm)"
+        },
+        {
+          "when": {
+            "medium": "trinkwasserKalt",
+            "leitung": "kwWaermelast"
+          },
+          "of": "di",
+          "above": 100,
+          "value": 100,
+          "rule": "Innendurchmesser über 100 mm"
+        },
+        {
+          "when": {
+            "leitung": "kwUnbeheizt"
+          },
+          "text": "nicht maßgeblich",
+          "rule": "gilt bei Kaltwasser nur in Räumen mit Wärmelasten ab 25 °C"
+        },
+        {
+          "when": {
+            "leitung": "kwSchacht"
+          },
+          "text": "nicht maßgeblich",
+          "rule": "gilt bei Kaltwasser nur in Räumen mit Wärmelasten ab 25 °C"
+        },
+        {
+          "when": {
+            "leitung": "kwVorwand"
+          },
+          "text": "nicht maßgeblich",
+          "rule": "gilt bei Kaltwasser nur in Räumen mit Wärmelasten ab 25 °C"
+        },
+        {
+          "when": {
+            "leitung": "kwFussboden"
+          },
+          "text": "nicht maßgeblich",
+          "rule": "gilt bei Kaltwasser nur in Räumen mit Wärmelasten ab 25 °C"
+        },
+        {
+          "when": {
+            "leitung": "kwFussbodenZirkulation"
+          },
+          "text": "nicht maßgeblich",
+          "rule": "gilt bei Kaltwasser nur in Räumen mit Wärmelasten ab 25 °C"
         }
       ]
     },
@@ -391,13 +515,55 @@
           },
           "value": 100,
           "rule": "Mindestdicke für Kälteleitungen (GModG Anlage 8 Nr. 2); Wärmeleitfähigkeit bezogen auf 10 °C Mitteltemperatur"
+        },
+        {
+          "when": {
+            "leitung": "kwUnbeheizt"
+          },
+          "text": "feste Mindestdicke",
+          "rule": "9 mm bei 0,040 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 1)"
+        },
+        {
+          "when": {
+            "leitung": "kwSchacht"
+          },
+          "text": "feste Mindestdicke",
+          "rule": "13 mm bei 0,040 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 2)"
+        },
+        {
+          "when": {
+            "leitung": "kwWaermelast"
+          },
+          "value": 100,
+          "rule": "wie Warmwasserleitungen: volle Mindestdicke nach Innendurchmesser bei 0,035 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 3)"
+        },
+        {
+          "when": {
+            "leitung": "kwVorwand"
+          },
+          "text": "feste Mindestdicke",
+          "rule": "4 mm bei 0,040 W/(m·K) oder Rohr-in-Rohr (DIN 1988-200 Tabelle 8 Zeile 4)"
+        },
+        {
+          "when": {
+            "leitung": "kwFussboden"
+          },
+          "text": "feste Mindestdicke",
+          "rule": "4 mm bei 0,040 W/(m·K) oder Rohr-in-Rohr (DIN 1988-200 Tabelle 8 Zeile 5)"
+        },
+        {
+          "when": {
+            "leitung": "kwFussbodenZirkulation"
+          },
+          "text": "feste Mindestdicke",
+          "rule": "13 mm bei 0,040 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 6)"
         }
       ]
     },
     {
       "symbol": "sRef",
       "label": "s₀",
-      "name": "Mindestdicke bei 0,035 W/(m·K)",
+      "name": "Mindestdicke laut Vorgabe",
       "unit": "mm",
       "decimals": 1,
       "cases": [
@@ -508,6 +674,49 @@
           "factor": 1.0,
           "per": "s100",
           "rule": "100 % von s₁₀₀"
+        },
+        {
+          "when": {
+            "leitung": "kwUnbeheizt"
+          },
+          "value": 9,
+          "rule": "9 mm bei 0,040 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 1)"
+        },
+        {
+          "when": {
+            "leitung": "kwSchacht"
+          },
+          "value": 13,
+          "rule": "13 mm bei 0,040 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 2)"
+        },
+        {
+          "when": {
+            "leitung": "kwWaermelast"
+          },
+          "factor": 1,
+          "per": "s100",
+          "rule": "wie Warmwasserleitungen: volle Mindestdicke nach Innendurchmesser bei 0,035 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 3)"
+        },
+        {
+          "when": {
+            "leitung": "kwVorwand"
+          },
+          "value": 4,
+          "rule": "4 mm bei 0,040 W/(m·K) oder Rohr-in-Rohr (DIN 1988-200 Tabelle 8 Zeile 4)"
+        },
+        {
+          "when": {
+            "leitung": "kwFussboden"
+          },
+          "value": 4,
+          "rule": "4 mm bei 0,040 W/(m·K) oder Rohr-in-Rohr (DIN 1988-200 Tabelle 8 Zeile 5)"
+        },
+        {
+          "when": {
+            "leitung": "kwFussbodenZirkulation"
+          },
+          "value": 13,
+          "rule": "13 mm bei 0,040 W/(m·K) (DIN 1988-200 Tabelle 8 Zeile 6)"
         }
       ]
     },
@@ -615,6 +824,48 @@
           },
           "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
           "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kwUnbeheizt"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.04) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,040 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kwSchacht"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.04) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,040 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kwWaermelast"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.035) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,035 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kwVorwand"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.04) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,040 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kwFussboden"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.04) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,040 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
+        },
+        {
+          "when": {
+            "leitung": "kwFussbodenZirkulation"
+          },
+          "expression": "da / 2 * ((1 + 2 * sRef / da) ^ (lambda / 0.04) - 1)",
+          "rule": "gleicher Wärmestrom wie s₀ bei 0,040 W/(m·K), umgerechnet für die Dämmschicht um ein Rohr (DIN EN ISO 12241)"
         }
       ]
     }
@@ -723,6 +974,55 @@
         "s": 19
       },
       "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kaltwasserleitung einer Klimaanlage 28 × 1"
+    },
+    {
+      "inputs": {
+        "da": 22,
+        "t": 1,
+        "lambda": 0.04
+      },
+      "choices": {
+        "medium": "trinkwasserKalt",
+        "leitung": "kwUnbeheizt"
+      },
+      "expected": {
+        "sRef": 9,
+        "s": 9
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kaltwasser 22 × 1 frei im kalten Keller, Dämmstoff 0,040"
+    },
+    {
+      "inputs": {
+        "da": 22,
+        "t": 1,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "trinkwasserKalt",
+        "leitung": "kwSchacht"
+      },
+      "expected": {
+        "sRef": 13,
+        "s": 10.770024717841679
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kaltwasser im Schacht, besserer Dämmstoff 0,035"
+    },
+    {
+      "inputs": {
+        "da": 28,
+        "t": 1.5,
+        "lambda": 0.035
+      },
+      "choices": {
+        "medium": "trinkwasserKalt",
+        "leitung": "kwWaermelast"
+      },
+      "expected": {
+        "p": 100,
+        "sRef": 30,
+        "s": 30
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kaltwasser 28 × 1,5 in der Technikzentrale"
     }
   ]
 }
