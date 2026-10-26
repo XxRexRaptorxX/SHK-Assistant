@@ -57,6 +57,7 @@ describe('Tools', () => {
       'Material zurückschreiben',
       'Mindestdämmdicke von Rohrleitungen',
       'Rohrlänge einer Fußbodenheizung',
+      'Rohrschellenabstand',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Verbaute Länge aus mehreren Rollen (bei Abrollern)',
@@ -381,6 +382,33 @@ describe('Tools', () => {
     const issues = checkFactorTool({ ...tool, results, examples: [] })
     expect(issues[0]).toBe('results (di), cases[1]: unbekannte Symbole im Ausdruck: wand')
     expect(issues[1]).toContain('Bereiche schließen nicht aneinander an (upTo 22, above 35)')
+  })
+
+  it('nennt den Rohrschellenabstand nach Rohrart und Außendurchmesser', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.rohrschellenabstand')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    expect(checkFactorTool(tool)).toEqual([])
+    expect(tool.inputs).toEqual([])
+    const distance = (rohr: string, groesse: string) => computeFactorTool(tool, {}, { rohr, groesse }).L?.value
+    // Metallrohre nach DIN 1988 Teil 2
+    expect(distance('kupfer', 'cu12')).toBe(1.25)
+    expect(distance('kupfer', 'cu22')).toBe(2)
+    expect(distance('kupfer', 'cu54')).toBe(3.5)
+    expect(distance('edelstahl', 'es76p1')).toBe(4.25)
+    expect(distance('edelstahl', 'es168p3')).toBe(5)
+    // Kunststoff- und Verbundrohre: Anhaltswerte
+    expect(distance('verbund', 'vb16')).toBe(1.2)
+    expect(distance('pex', 'px20')).toBe(0.9)
+    expect(distance('pb', 'pb63')).toBe(1.4)
+    expect(distance('pvcc', 'pc25')).toBe(1.05)
+
+    // Größen passend zur Rohrart, Ergebnis ohne Zahleneingabe sofort da
+    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialSelection={{ rohr: 'pex', groesse: 'px32' }} />)
+    expect(html).toContain('<option value="px32" selected="">32 mm</option>')
+    expect(html).not.toContain('value="cu22"')
+    expect(html).toContain('L = 1,00 m')
+    expect(html).toContain('verbindlich sind die Angaben des Rohrherstellers')
+    expect(html).not.toContain('Alle Werte eingeben.')
   })
 
   it('listet die Tools und zeigt ein Tool mit Formel, Legende und Rechner', () => {

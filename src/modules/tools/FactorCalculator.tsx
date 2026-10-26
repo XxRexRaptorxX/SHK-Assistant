@@ -69,7 +69,7 @@ export function FactorCalculator({
       <h2 id={`${idPrefix}-heading`} className="text-xl font-bold">
         Rechner
       </h2>
-      <div className="mt-3 space-y-4">
+      <div className={tool.inputs.length > 0 ? 'mt-3 space-y-4' : undefined}>
         {tool.inputs.map((input) => {
           const inputId = `${idPrefix}-${input.symbol}`
           const error = errors[input.symbol]

@@ -102,7 +102,8 @@ export const factorToolSchema = defineEntrySchema({
   title: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
-  inputs: z.array(inputSchema).min(1),
+  /** Eingabefelder; leer, wenn das Ergebnis nur von der Auswahl abhängt */
+  inputs: z.array(inputSchema).default([]),
   choices: z.array(choiceSchema).default([]),
   results: z.array(resultSchema).min(1),
   examples: z.array(exampleSchema).default([]),
@@ -123,7 +124,7 @@ export type FactorValue = { value: number; text?: undefined; rule: string } | { 
 const matches = (when: Record<string, string>, selection: Record<string, string>) =>
   Object.entries(when).every(([choice, option]) => selection[choice] === option)
 
-const rangeOf = (tool: FactorTool, candidate: FactorCase) => candidate.of ?? tool.inputs[0]!.symbol
+const rangeOf = (tool: FactorTool, candidate: FactorCase) => candidate.of ?? tool.inputs[0]?.symbol ?? ''
 
 const inRange = (candidate: FactorCase, value: number | undefined) =>
   (candidate.above === undefined && candidate.upTo === undefined) ||

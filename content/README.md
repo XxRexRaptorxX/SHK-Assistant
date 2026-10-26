@@ -54,8 +54,8 @@ Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflic
 Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle. Aufbau und Prüfung
 wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
 „Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, derzeit „Aufmaß“
-(Mengen auf der Baustelle ermitteln), „Auslegung“ (Bedarf vorab abschätzen) und „Demonstration“
-(Faustwerte zum Zeigen beim Kunden).
+(Mengen auf der Baustelle ermitteln), „Auslegung“ (Bedarf vorab abschätzen), „Demonstration“
+(Faustwerte zum Zeigen beim Kunden) und „Montage“ (Vorgaben für den Einbau, z. B. Rohrschellenabstände).
 
 **Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
 Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
@@ -78,7 +78,7 @@ oder Dämmdicke nach Rohrdurchmesser. Felder:
 
 - `inputs`: Eingabefelder, je `symbol`, `name`, optional `label` (Formelzeichen), `unit`, `min`,
   `max`, `default` (Vorbelegung, z. B. ein Standardwert) und `whenEmpty` (Feld darf leer bleiben,
-  dann wird mit diesem Wert gerechnet).
+  dann wird mit diesem Wert gerechnet). Darf leer sein, wenn das Ergebnis nur von der Auswahl abhängt.
 - `choices`: Varianten zum Antippen, je `key`, `name`, `options` (je `key`, `label`, optional `when`:
   Option nur anbieten, wenn eine andere Auswahl so steht), optional `default` (vorausgewählte Option)
   und `display` (`"bar"`: Knöpfe nebeneinander, Standard; `"dropdown"`: Auswahlliste).

@@ -1,0 +1,913 @@
+{
+  "id": "tool.rohrschellenabstand",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Kupfer und Edelstahl: Empfehlungen der DIN 1988 Teil 2 für Stahl- und Kupferrohre, wiedergegeben vom Deutschen Kupferinstitut („Die fachgerechte Kupferrohr-Installation“, https://kupfer.de/wp-content/uploads/2019/09/DKI_Broschuere_i158_2019_ES.pdf, Kupfer 12 bis 28 mm) und vom Edelstahl-Service-Center (Technische Information Pressfittings, https://www.edelstahl.de/fileadmin/user_upload/anleitung_pressfittings.pdf, 15 bis 108 mm); Edelstahl über 108 mm: heco, https://www.heco.de/en/stainless-steel/systems/press-fittings/examples-of-installation.html. Kunststoff- und Verbundrohre: MÜPRO, „Abstände von Befestigungspunkten“, Tabelle „Maximal empfohlene Rohrschellenabstände für Verbund- und Kunststoffrohre“, https://www.muepro.de/Abstaende-von-Befestigungspunkten/. Alle abgerufen am 26.10.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Rohrschellenabstand",
+  "description": "Zeigt den größten empfohlenen Abstand zwischen zwei Rohrschellen nach Rohrart und Außendurchmesser. Für Kupfer- und Edelstahlrohre empfehlen die technischen Regeln (DIN 1988) die Abstände; für Kunststoff- und Verbundrohre gibt der Rohrhersteller die zulässigen Abstände verbindlich vor, die Werte hier sind nur Anhaltswerte. Fest- und Gleitpunkte für die Längenausdehnung sowie Gewicht von Dämmung und Medium sind zusätzlich zu beachten.",
+  "category": "Montage",
+  "inputs": [],
+  "choices": [
+    {
+      "key": "rohr",
+      "name": "Rohrart",
+      "display": "dropdown",
+      "options": [
+        {
+          "key": "kupfer",
+          "label": "Kupfer"
+        },
+        {
+          "key": "edelstahl",
+          "label": "Edelstahl"
+        },
+        {
+          "key": "verbund",
+          "label": "Mehrschichtverbundrohr"
+        },
+        {
+          "key": "pex",
+          "label": "PE-X (vernetztes Polyethylen)"
+        },
+        {
+          "key": "pb",
+          "label": "PB (Polybuten)"
+        },
+        {
+          "key": "pvcc",
+          "label": "PVC-C"
+        }
+      ]
+    },
+    {
+      "key": "groesse",
+      "name": "Außendurchmesser",
+      "display": "dropdown",
+      "options": [
+        {
+          "key": "cu12",
+          "label": "12 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu15",
+          "label": "15 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu18",
+          "label": "18 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu22",
+          "label": "22 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu28",
+          "label": "28 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu35",
+          "label": "35 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu42",
+          "label": "42 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu54",
+          "label": "54 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu76p1",
+          "label": "76,1 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu88p9",
+          "label": "88,9 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "cu108",
+          "label": "108 mm",
+          "when": {
+            "rohr": "kupfer"
+          }
+        },
+        {
+          "key": "es15",
+          "label": "15 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es18",
+          "label": "18 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es22",
+          "label": "22 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es28",
+          "label": "28 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es35",
+          "label": "35 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es42",
+          "label": "42 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es54",
+          "label": "54 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es76p1",
+          "label": "76,1 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es88p9",
+          "label": "88,9 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es108",
+          "label": "108 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es114p3",
+          "label": "114,3 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es139p7",
+          "label": "139,7 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "es168p3",
+          "label": "168,3 mm",
+          "when": {
+            "rohr": "edelstahl"
+          }
+        },
+        {
+          "key": "vb14",
+          "label": "14 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb16",
+          "label": "16 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb18",
+          "label": "18 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb20",
+          "label": "20 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb25",
+          "label": "25 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb26",
+          "label": "26 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb32",
+          "label": "32 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb40",
+          "label": "40 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb50",
+          "label": "50 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "vb63",
+          "label": "63 mm",
+          "when": {
+            "rohr": "verbund"
+          }
+        },
+        {
+          "key": "px16",
+          "label": "16 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "px20",
+          "label": "20 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "px25",
+          "label": "25 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "px32",
+          "label": "32 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "px40",
+          "label": "40 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "px50",
+          "label": "50 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "px63",
+          "label": "63 mm",
+          "when": {
+            "rohr": "pex"
+          }
+        },
+        {
+          "key": "pb16",
+          "label": "16 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pb20",
+          "label": "20 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pb25",
+          "label": "25 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pb32",
+          "label": "32 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pb40",
+          "label": "40 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pb50",
+          "label": "50 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pb63",
+          "label": "63 mm",
+          "when": {
+            "rohr": "pb"
+          }
+        },
+        {
+          "key": "pc16",
+          "label": "16 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        },
+        {
+          "key": "pc20",
+          "label": "20 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        },
+        {
+          "key": "pc25",
+          "label": "25 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        },
+        {
+          "key": "pc32",
+          "label": "32 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        },
+        {
+          "key": "pc40",
+          "label": "40 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        },
+        {
+          "key": "pc50",
+          "label": "50 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        },
+        {
+          "key": "pc63",
+          "label": "63 mm",
+          "when": {
+            "rohr": "pvcc"
+          }
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "L",
+      "label": "L",
+      "name": "Maximaler Rohrschellenabstand",
+      "unit": "m",
+      "decimals": 2,
+      "cases": [
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu12"
+          },
+          "value": 1.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu15"
+          },
+          "value": 1.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu18"
+          },
+          "value": 1.5,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu22"
+          },
+          "value": 2.0,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu28"
+          },
+          "value": 2.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu35"
+          },
+          "value": 2.75,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu42"
+          },
+          "value": 3.0,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu54"
+          },
+          "value": 3.5,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu76p1"
+          },
+          "value": 4.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu88p9"
+          },
+          "value": 4.75,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+        },
+        {
+          "when": {
+            "rohr": "kupfer",
+            "groesse": "cu108"
+          },
+          "value": 5.0,
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es15"
+          },
+          "value": 1.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es18"
+          },
+          "value": 1.5,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es22"
+          },
+          "value": 2.0,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es28"
+          },
+          "value": 2.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es35"
+          },
+          "value": 2.75,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es42"
+          },
+          "value": 3.0,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es54"
+          },
+          "value": 3.5,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es76p1"
+          },
+          "value": 4.25,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es88p9"
+          },
+          "value": 4.75,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es108"
+          },
+          "value": 5.0,
+          "rule": "Empfehlung nach DIN 1988 Teil 2"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es114p3"
+          },
+          "value": 5.0,
+          "rule": "Herstellerangabe (heco)"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es139p7"
+          },
+          "value": 5.0,
+          "rule": "Herstellerangabe (heco)"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl",
+            "groesse": "es168p3"
+          },
+          "value": 5.0,
+          "rule": "Herstellerangabe (heco)"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb14"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb16"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb18"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb20"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb25"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb26"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb32"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb40"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb50"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "verbund",
+            "groesse": "vb63"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px16"
+          },
+          "value": 0.8,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px20"
+          },
+          "value": 0.9,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px25"
+          },
+          "value": 1.0,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px32"
+          },
+          "value": 1.0,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px40"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px50"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pex",
+            "groesse": "px63"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb16"
+          },
+          "value": 0.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb20"
+          },
+          "value": 0.6,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb25"
+          },
+          "value": 0.7,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb32"
+          },
+          "value": 0.8,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb40"
+          },
+          "value": 1.0,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb50"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pb",
+            "groesse": "pb63"
+          },
+          "value": 1.4,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc16"
+          },
+          "value": 0.8,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc20"
+          },
+          "value": 0.95,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc25"
+          },
+          "value": 1.05,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc32"
+          },
+          "value": 1.2,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc40"
+          },
+          "value": 1.3,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc50"
+          },
+          "value": 1.5,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        },
+        {
+          "when": {
+            "rohr": "pvcc",
+            "groesse": "pc63"
+          },
+          "value": 1.7,
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": {},
+      "choices": {
+        "rohr": "kupfer",
+        "groesse": "cu22"
+      },
+      "expected": {
+        "L": 2.0
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): Kupfer 22 mm"
+    },
+    {
+      "inputs": {},
+      "choices": {
+        "rohr": "pex",
+        "groesse": "px20"
+      },
+      "expected": {
+        "L": 0.9
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): PE-X 20 mm"
+    }
+  ]
+}
