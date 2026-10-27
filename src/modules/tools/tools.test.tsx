@@ -10,7 +10,7 @@ import ToolPage from './ToolPage'
 import { checkChoiceTool, checkTableTool, isChoiceTool, type TableTool } from './schema'
 import { ChoiceLookup } from './ChoiceLookup'
 import { FactorCalculator } from './FactorCalculator'
-import { checkFactorTool, computeFactorTool } from './factorTool'
+import { checkFactorTool, computeFactorTool, normalizeSelection } from './factorTool'
 import { isFactorTool } from './schema'
 import { matchingRows, TableLookup } from './TableLookup'
 import { Calculator } from '../formulas/Calculator'
@@ -49,6 +49,7 @@ describe('Tools', () => {
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Ausgerollte Länge einer Rohr- oder Kabelrolle',
       'Exakte ausgerollte Länge einer Rohr- oder Kabelrolle',
+      'Gebäudeklasse',
       'Heizlast überschlägig',
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Leistungsminderung durch Ruß im Kessel',
@@ -441,6 +442,43 @@ describe('Tools', () => {
     expect(html).toContain('L = 1,00 m')
     expect(html).toContain('verbindlich sind die Angaben des Rohrherstellers')
     expect(html).not.toContain('Alle Werte eingeben.')
+  })
+
+  it('ermittelt die Gebäudeklasse nach Art. 2 Abs. 3 BayBO', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.gebaeudeklasse')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    expect(checkFactorTool(tool)).toEqual([])
+    const gk = (choices: Record<string, string>) => computeFactorTool(tool, {}, normalizeSelection(tool, choices)).GK?.value
+    const above = (hoehe: string, einheiten: string, lage = 'freistehend') =>
+      gk({ gebaeude: 'oberirdisch', hoehe, einheiten, lage })
+    expect(above('bis7', 'klein')).toBe(1)
+    expect(above('bis7', 'klein', 'angebaut')).toBe(2)
+    expect(above('bis7', 'jeweils')).toBe(3)
+    expect(above('bis7', 'gross')).toBe(3)
+    expect(above('bis13', 'klein')).toBe(4)
+    expect(above('bis13', 'jeweils')).toBe(4)
+    expect(above('bis13', 'gross')).toBe(5)
+    expect(above('bis22', 'klein')).toBe(5)
+    expect(above('hochhaus', 'klein')).toBe(5)
+    // In Bayern ohne Höhen- und Flächengrenze, unterirdisch immer Klasse 5
+    expect(gk({ gebaeude: 'landforst' })).toBe(1)
+    expect(gk({ gebaeude: 'unterirdisch' })).toBe(5)
+
+    // Ausgeblendete Auswahlen bleiben offen, die Lage erscheint nur, wo sie über 1 oder 2 entscheidet
+    expect(normalizeSelection(tool, { gebaeude: 'landforst', hoehe: 'bis7', einheiten: 'klein', lage: 'freistehend' })).toEqual({
+      gebaeude: 'landforst',
+    })
+    const render = (initialSelection: Record<string, string>) =>
+      renderToStaticMarkup(<FactorCalculator tool={tool} initialSelection={initialSelection} />)
+    const small = render({ gebaeude: 'oberirdisch', hoehe: 'bis7', einheiten: 'klein', lage: 'angebaut' })
+    expect(small).toContain('GK = 2')
+    expect(small).toContain('angebaut (z. B. Doppel- oder Reihenhaus)')
+    const tall = render({ gebaeude: 'oberirdisch', hoehe: 'bis13', einheiten: 'klein' })
+    expect(tall).toContain('GK = 4')
+    expect(tall).not.toContain('freistehend</')
+    const farm = render({ gebaeude: 'landforst' })
+    expect(farm).toContain('GK = 1')
+    expect(farm).not.toContain('über 7 m bis 13 m')
   })
 
   it('nennt bei Abwasserrohren getrennte Schellenabstände für waagerecht und senkrecht', () => {

@@ -1,0 +1,149 @@
+{
+  "id": "tool.gebaeudeklasse",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Bayerische Bauordnung (BayBO), Art. 2 Abs. 3 (Gebäudeklassen) und Abs. 4 Nr. 1 (Hochhäuser), Fassung gültig ab 01.05.2026, https://www.gesetze-bayern.de/Content/Document/BayBO-2, abgerufen am 28.10.2026. Zum Vergleich: Musterbauordnung (MBO), § 2 Abs. 3, Fassung November 2002, zuletzt geändert am 25.09.2020, https://bauministerkonferenz.de/Dokumente/42323530.pdf",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Gebäudeklasse",
+  "description": "Ermittelt die Gebäudeklasse 1 bis 5 nach der Bayerischen Bauordnung (Art. 2 Abs. 3 BayBO). Höhe h ist die Fußbodenoberkante des höchstgelegenen Geschosses, in dem ein Aufenthaltsraum möglich ist, über der Geländeoberfläche im Mittel – nicht die Firsthöhe. Flächen sind Brutto-Grundflächen; Flächen im Kellergeschoss zählen nicht mit. Bei Gebäuden bis 13 m dürfen statt ganzer Nutzungseinheiten auch Teile von Nutzungseinheiten jeweils höchstens 400 m² haben, wenn sie durch Wände nach Art. 27 Abs. 2 Nr. 1 BayBO abgetrennt sind und eigene Rettungswege nach Art. 31 Abs. 1 BayBO haben. Ob zusätzlich ein Sonderbau vorliegt (Art. 2 Abs. 4 BayBO, z. B. Schule, Krankenhaus, Versammlungsstätte, Verkaufsstätte über 800 m²), prüft das Tool nur für Hochhäuser. Andere Bundesländer haben eigene Bauordnungen mit teils abweichenden Regeln.",
+  "category": "Auslegung",
+  "choices": [
+    {
+      "key": "gebaeude",
+      "name": "Gebäude",
+      "display": "dropdown",
+      "options": [
+        { "key": "oberirdisch", "label": "Oberirdisches Gebäude" },
+        { "key": "unterirdisch", "label": "Unterirdisches Gebäude" },
+        { "key": "landforst", "label": "Land- oder forstwirtschaftlich genutztes Gebäude" }
+      ]
+    },
+    {
+      "key": "hoehe",
+      "name": "Höhe h (Fußboden des obersten Geschosses mit möglichem Aufenthaltsraum)",
+      "display": "dropdown",
+      "options": [
+        { "key": "bis7", "label": "bis 7 m", "when": { "gebaeude": "oberirdisch" } },
+        { "key": "bis13", "label": "über 7 m bis 13 m", "when": { "gebaeude": "oberirdisch" } },
+        { "key": "bis22", "label": "über 13 m bis 22 m", "when": { "gebaeude": "oberirdisch" } },
+        { "key": "hochhaus", "label": "über 22 m (Hochhaus)", "when": { "gebaeude": "oberirdisch" } }
+      ]
+    },
+    {
+      "key": "einheiten",
+      "name": "Nutzungseinheiten (z. B. Wohnungen, Praxen, Büros; ohne Kellergeschoss)",
+      "display": "dropdown",
+      "options": [
+        { "key": "klein", "label": "höchstens 2, zusammen höchstens 400 m²", "when": { "gebaeude": "oberirdisch" } },
+        { "key": "jeweils", "label": "mehr als 2 oder zusammen über 400 m², jede höchstens 400 m²", "when": { "gebaeude": "oberirdisch" } },
+        { "key": "gross", "label": "mindestens eine über 400 m²", "when": { "gebaeude": "oberirdisch" } }
+      ]
+    },
+    {
+      "key": "lage",
+      "name": "Lage",
+      "options": [
+        { "key": "freistehend", "label": "freistehend", "when": { "hoehe": "bis7", "einheiten": "klein" } },
+        { "key": "angebaut", "label": "angebaut (z. B. Doppel- oder Reihenhaus)", "when": { "hoehe": "bis7", "einheiten": "klein" } }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "GK",
+      "name": "Gebäudeklasse",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": { "gebaeude": "landforst" },
+          "value": 1,
+          "rule": "Land- oder forstwirtschaftlich genutzte Gebäude (Art. 2 Abs. 3 Satz 1 Nr. 1 Buchst. b BayBO)"
+        },
+        {
+          "when": { "gebaeude": "unterirdisch" },
+          "value": 5,
+          "rule": "Unterirdische Gebäude (Art. 2 Abs. 3 Satz 1 Nr. 5 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis7", "einheiten": "klein", "lage": "freistehend" },
+          "value": 1,
+          "rule": "Freistehend, bis 7 m, höchstens 2 Nutzungseinheiten mit zusammen höchstens 400 m² (Art. 2 Abs. 3 Satz 1 Nr. 1 Buchst. a BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis7", "einheiten": "klein", "lage": "angebaut" },
+          "value": 2,
+          "rule": "Bis 7 m, höchstens 2 Nutzungseinheiten mit zusammen höchstens 400 m² (Art. 2 Abs. 3 Satz 1 Nr. 2 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis7", "einheiten": "jeweils" },
+          "value": 3,
+          "rule": "Sonstige Gebäude bis 7 m (Art. 2 Abs. 3 Satz 1 Nr. 3 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis7", "einheiten": "gross" },
+          "value": 3,
+          "rule": "Sonstige Gebäude bis 7 m (Art. 2 Abs. 3 Satz 1 Nr. 3 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis13", "einheiten": "klein" },
+          "value": 4,
+          "rule": "Bis 13 m, jede Nutzungseinheit höchstens 400 m² (Art. 2 Abs. 3 Satz 1 Nr. 4 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis13", "einheiten": "jeweils" },
+          "value": 4,
+          "rule": "Bis 13 m, jede Nutzungseinheit höchstens 400 m² (Art. 2 Abs. 3 Satz 1 Nr. 4 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis13", "einheiten": "gross" },
+          "value": 5,
+          "rule": "Sonstige Gebäude: über 7 m mit einer Nutzungseinheit über 400 m² (Art. 2 Abs. 3 Satz 1 Nr. 5 BayBO)"
+        },
+        {
+          "when": { "hoehe": "bis22" },
+          "value": 5,
+          "rule": "Sonstige Gebäude: über 13 m (Art. 2 Abs. 3 Satz 1 Nr. 5 BayBO)"
+        },
+        {
+          "when": { "hoehe": "hochhaus" },
+          "value": 5,
+          "rule": "Sonstige Gebäude: über 13 m (Art. 2 Abs. 3 Satz 1 Nr. 5 BayBO); über 22 m zusätzlich Hochhaus und damit Sonderbau (Art. 2 Abs. 4 Nr. 1 BayBO)"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": {},
+      "choices": { "gebaeude": "oberirdisch", "hoehe": "bis7", "einheiten": "klein", "lage": "freistehend" },
+      "expected": { "GK": 1 },
+      "note": "Eigenes Kontrollbeispiel (nicht vom Inhaber): freistehendes Einfamilienhaus mit Obergeschoss"
+    },
+    {
+      "inputs": {},
+      "choices": { "gebaeude": "oberirdisch", "hoehe": "bis7", "einheiten": "klein", "lage": "angebaut" },
+      "expected": { "GK": 2 },
+      "note": "Eigenes Kontrollbeispiel (nicht vom Inhaber): Reihenmittelhaus"
+    },
+    {
+      "inputs": {},
+      "choices": { "gebaeude": "oberirdisch", "hoehe": "bis13", "einheiten": "jeweils" },
+      "expected": { "GK": 4 },
+      "note": "Eigenes Kontrollbeispiel (nicht vom Inhaber): Mehrfamilienhaus mit 6 Wohnungen zu je 80 m², oberster Fußboden 9 m"
+    },
+    {
+      "inputs": {},
+      "choices": { "gebaeude": "oberirdisch", "hoehe": "bis13", "einheiten": "gross" },
+      "expected": { "GK": 5 },
+      "note": "Eigenes Kontrollbeispiel (nicht vom Inhaber): Bürogebäude mit einer Büroeinheit über 400 m², oberster Fußboden 10 m"
+    },
+    {
+      "inputs": {},
+      "choices": { "gebaeude": "landforst" },
+      "expected": { "GK": 1 },
+      "note": "Eigenes Kontrollbeispiel (nicht vom Inhaber): Maschinenhalle eines landwirtschaftlichen Betriebs"
+    }
+  ]
+}

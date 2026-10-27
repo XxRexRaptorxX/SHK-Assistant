@@ -137,7 +137,10 @@ export function availableOptions(choice: FactorChoice, selection: Record<string,
   return choice.options.filter((option) => matches(option.when, selection))
 }
 
-/** Auswahl bereinigen: steht eine Auswahl auf einer nicht angebotenen Option, die erste passende nehmen */
+/**
+ * Auswahl bereinigen: steht eine Auswahl auf einer nicht angebotenen Option, die erste passende nehmen;
+ * ohne passende Option bleibt sie offen, damit spätere Auswahlen nicht auf einem veralteten Wert aufbauen
+ */
 export function normalizeSelection(tool: FactorTool, selection: Record<string, string>): Record<string, string> {
   const next = { ...selection }
   for (const choice of tool.choices) {
@@ -145,6 +148,7 @@ export function normalizeSelection(tool: FactorTool, selection: Record<string, s
     if (!options.some((option) => option.key === next[choice.key])) {
       const fallback = options.find((option) => option.key === choice.default) ?? options[0]
       if (fallback) next[choice.key] = fallback.key
+      else delete next[choice.key]
     }
   }
   return next
