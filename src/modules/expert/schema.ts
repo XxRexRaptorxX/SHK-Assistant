@@ -32,8 +32,6 @@ function checkBrackets(field: string, text: string): string[] {
 
 export function checkExpertCode(entry: ExpertCodeEntry): string[] {
   return [
-    // Fachmann-Codes gehören nie in die öffentliche Version
-    ...(entry.visibility === 'internal' ? [] : ['Fachmann-Codes müssen visibility "internal" haben']),
     ...checkBrackets('name', entry.name),
     ...checkBrackets('code', entry.code),
   ]

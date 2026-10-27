@@ -13,7 +13,6 @@ import {
   WrenchIcon,
   type IconProps,
 } from '../components/icons'
-import { isInternalEdition } from '../config/edition'
 
 export interface AppModule {
   path: string
@@ -69,7 +68,6 @@ export const modules = {
     description: 'Branchen-News, täglich aktualisiert',
     icon: NewsIcon,
   },
-  /** Nur in der internen Edition erreichbar (siehe homeTileModules und App) */
   expert: {
     path: '/fachmann',
     title: 'Fachmann',
@@ -110,6 +108,6 @@ export const bottomNavModules: AppModule[] = [
 export const homeTileModules: AppModule[] = [
   ...bottomNavModules,
   modules.news,
-  ...(isInternalEdition ? [modules.expert] : []),
+  modules.expert,
   modules.favorites,
 ]

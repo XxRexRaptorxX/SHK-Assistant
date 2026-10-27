@@ -77,9 +77,8 @@ describe('public-Build der App', () => {
       .filter((id) => bundleText.includes(id))
     expect(leakedIds).toEqual([])
 
-    // Nur-interne Module (Fachmann samt PIN) fehlen ganz, auch nicht als nachladbarer Chunk
-    expect(bundleText).not.toContain(EXPERT_UNLOCK_KEY)
-    expect(listFiles(outDir.root).filter((file) => /expert/i.test(file))).toEqual([])
+    // Fachmann-Codes gehören seit dem 27.10.2026 auch in die öffentliche Version (Entscheidung des Inhabers)
+    expect(bundleText).toContain(EXPERT_UNLOCK_KEY)
 
     // Gegenprobe: öffentliche Inhalte sind im Bundle, der Test durchsucht also das Richtige
     const publicIds = allEntries.filter((e) => e.visibility === 'public').map((e) => e.id)

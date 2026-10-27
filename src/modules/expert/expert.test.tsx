@@ -28,8 +28,14 @@ const render = (unlocked: boolean, entries: ExpertCodeEntry[] = [fixture]) =>
   )
 
 describe('Fachmann-Codes: Daten', () => {
-  it('enthält die 20 Codes des Inhabers, alle intern und gültig', () => {
-    expect(expertCodeEntries).toHaveLength(20)
+  it('enthält die 21 Codes des Inhabers, alle öffentlich und gültig', () => {
+    expect(expertCodeEntries.every((entry) => entry.visibility === 'public')).toBe(true)
+    expect(expertCodeEntries).toHaveLength(21)
+    expect(expertCodeEntries.some((entry) => entry.id === 'expert-code.lvr')).toBe(false)
+    const uvr = expertCodeEntries.find((entry) => entry.id === 'expert-code.uvr65-67')
+    expect(uvr?.name).toBe('UVR65(/)67')
+    expect(uvr?.code).toBe('32 (service)  |  64 (admin)')
+    expect(expertCodeEntries.find((entry) => entry.id === 'expert-code.uvr16x2')?.code).toBe('64 (service)  |  128 (admin)')
     expect(expertCodeEntries.every((entry) => checkExpertCode(entry).length === 0)).toBe(true)
     const vaillant = expertCodeEntries.find((entry) => entry.id === 'expert-code.vaillant')
     expect(vaillant?.code).toBe('00 (service)  |  17 (admin)')
@@ -37,10 +43,8 @@ describe('Fachmann-Codes: Daten', () => {
     expect(idm?.code).toBe('[Bsp.:] (1)[9](.0)[1](.2)[3] [08](:50) → 80319')
   })
 
-  it('lehnt öffentliche Codes und unpassende Klammern ab', () => {
-    expect(checkExpertCode({ ...fixture, visibility: 'public' })).toEqual([
-      'Fachmann-Codes müssen visibility "internal" haben',
-    ])
+  it('lehnt unpassende Klammern ab, erlaubt öffentliche Codes', () => {
+    expect(checkExpertCode({ ...fixture, visibility: 'public' })).toEqual([])
     expect(checkExpertCode({ ...fixture, code: '1(9' })).toEqual(['code: Klammer nicht geschlossen'])
     expect(checkExpertCode({ ...fixture, name: 'a)' })).toEqual(['name: schließende Klammer ohne öffnende'])
     expect(checkExpertCode({ ...fixture, code: '((1))' })).toEqual(['code: verschachtelte Klammer'])

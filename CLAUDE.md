@@ -58,7 +58,7 @@ Alle Fachinhalte werden vom Projektinhaber (SHK-Fachmann) geprüft und freigegeb
 6. **Heizquellen-Vergleich**: Vor- und Nachteile je Heizquelle.
 7. **Fehlerfinder**: Hersteller → Geräteserie → Fehlercode → Bedeutung, Ursachen in Prüfreihenfolge, Quelle. Codes immer pro Geräteserie, nie pro Hersteller pauschal.
 8. **Brandschutz-Helfer**: Eingabe der Einbausituation, Ausgabe nur aus geprüften Datensätzen. Keine Logik, die Zulässigkeit aus allgemeinen Regeln ableitet. Jede Ausgabe nennt Produkt, Zulassungsnummer, Quelle und den Hinweis, die Originalzulassung zu prüfen.
-9. **Fachmann-Codes**: nur `visibility: "internal"`.
+9. **Fachmann-Codes**: dürfen `visibility: "public"` sein (Entscheidung des Inhabers vom 27.10.2026); hinter PIN-Abfrage.
 10. **Branchen-News (RSS)**: später. Benötigt einen Proxy (Cloudflare Worker) wegen CORS. Nur Überschrift, Datum, Quelle und Link anzeigen.
 11. **Favoriten**: Jedes Element (Formel, Checkliste, Begriff, Fehlercode …) ist über seine `id` favorisierbar. Speicherung in IndexedDB, Export/Import als JSON-Datei.
 - **Globale Suche** über alle Module.

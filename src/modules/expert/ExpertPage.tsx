@@ -106,11 +106,16 @@ function CodeRows({ entries, showDraft }: { entries: readonly ExpertCodeEntry[];
           <div className="flex min-h-14 flex-1 flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2 pl-4">
             <span className="font-semibold">
               <ShadedText text={entry.name} />
+              {/* Hinweis neben dem Namen, damit die Zeile so hoch bleibt wie die anderen */}
+              {showDraft && entry.status === 'draft' && (
+                <span className="ml-2 inline-block align-middle">
+                  <DraftBadge variant="inline" />
+                </span>
+              )}
             </span>
             <span className="text-xl font-bold tabular-nums whitespace-pre-wrap">
               <ShadedText text={entry.code} />
             </span>
-            {showDraft && entry.status === 'draft' && <DraftBadge variant="inline" />}
           </div>
           <FavoriteButton id={entry.id} title={plainText(entry.name)} />
         </li>
