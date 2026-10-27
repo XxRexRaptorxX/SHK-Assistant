@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.waermebildkamera",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Wärmebildkamera“, https://de.wikipedia.org/wiki/Wärmebildkamera; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wärmebildkamera",
+  "synonyms": [
+    "Thermografiekamera",
+    "thermal camera"
+  ],
+  "categories": [
+    "werkzeuge",
+    "msr"
+  ],
+  "definition": "Kamera, die Infrarotstrahlung als Bild darstellt, z. B. um verlegte Heizrohre oder Wärmebrücken sichtbar zu machen.",
+  "related": [
+    "lexicon.fussbodenheizung",
+    "lexicon.waermebruecke"
+  ]
+}

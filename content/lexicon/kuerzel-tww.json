@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-tww",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "TWW – Trinkwasser warm",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "trinkwasser"
+  ],
+  "definition": "Ältere deutsche Abkürzung für Trinkwasser warm; heute nach Norm meist PWH.",
+  "related": [
+    "lexicon.kuerzel-pwh",
+    "lexicon.trinkwarmwasser"
+  ]
+}

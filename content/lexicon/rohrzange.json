@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.rohrzange",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rohrzange“, https://de.wikipedia.org/wiki/Rohrzange; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrzange",
+  "synonyms": [
+    "Eckrohrzange",
+    "Schwedenzange",
+    "pipe wrench"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Zange mit verstellbarer Maulweite und gezahnten Backen zum Festhalten und Drehen von Rohren, Fittings und Verschraubungen. Klassisches Werkzeug der Sanitär-, Heizungs- und Lüftungsinstallation.",
+  "related": [
+    "lexicon.gewindeverbindung",
+    "lexicon.stahlrohr"
+  ]
+}

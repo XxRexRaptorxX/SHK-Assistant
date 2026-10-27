@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.stumpfschweissmaschine",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Heizelementstumpfschweißen“, https://de.wikipedia.org/wiki/Heizelementstumpfschweißen; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Stumpfschweißmaschine",
+  "synonyms": [
+    "Heizelementstumpfschweißen",
+    "butt fusion machine"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Maschine für das Heizelementstumpfschweißen nach DVS 2207-1: Die Rohrenden aus Kunststoff werden an einem Heizelement erwärmt und stumpf zusammengefügt, vor allem bei großen Durchmessern.",
+  "related": [
+    "lexicon.pe-rohr",
+    "lexicon.schweissen"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.abgasmessgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Abgasmessgerät",
+  "synonyms": [
+    "Abgasanalysator",
+    "flue gas analyser"
+  ],
+  "categories": [
+    "werkzeuge",
+    "gas"
+  ],
+  "definition": "Messgerät für das Abgas von Feuerstätten, z. B. für Sauerstoff, Kohlenmonoxid und Abgastemperatur, aus denen Kenngrößen wie der Abgasverlust berechnet werden.",
+  "related": [
+    "lexicon.abgasverlust"
+  ]
+}

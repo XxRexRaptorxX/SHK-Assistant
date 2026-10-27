@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.kuerzel-fo",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; deutsche Kurzzeichen nach VDI 4700 Blatt 2, englische nach DIN EN 16798-3; eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "FO – Fortluft",
+  "synonyms": [
+    "FOL",
+    "EHA"
+  ],
+  "categories": [
+    "kuerzel",
+    "lueftung"
+  ],
+  "definition": "Fortluft: die Luft, die von der Lüftungsanlage ins Freie abgegeben wird.",
+  "related": [
+    "lexicon.fortluft",
+    "lexicon.kuerzel-au"
+  ]
+}

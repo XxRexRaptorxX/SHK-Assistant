@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.kanalkamera",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kanalkamera“, https://de.wikipedia.org/wiki/Kanalkamera; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kanalkamera",
+  "synonyms": [
+    "Inspektionskamera",
+    "Rohrkamera",
+    "sewer camera"
+  ],
+  "categories": [
+    "werkzeuge",
+    "abwasser"
+  ],
+  "definition": "Kamera zur Inspektion von Rohren, Kanälen und Schornsteinen, die sonst nicht einsehbar sind.",
+  "related": [
+    "lexicon.rohrreinigung",
+    "lexicon.grundleitung"
+  ]
+}

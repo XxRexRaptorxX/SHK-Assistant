@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.kuerzel-kfe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "KFE – Kesselfüll- und Entleerungshahn",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung"
+  ],
+  "definition": "Abkürzung für Kesselfüll- und Entleerungshahn.",
+  "related": [
+    "lexicon.kfe-hahn"
+  ]
+}

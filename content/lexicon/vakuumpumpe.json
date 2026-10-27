@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.vakuumpumpe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Vakuumpumpe“, https://de.wikipedia.org/wiki/Vakuumpumpe; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Vakuumpumpe",
+  "synonyms": [
+    "vacuum pump"
+  ],
+  "categories": [
+    "werkzeuge",
+    "kaelte"
+  ],
+  "definition": "Pumpe zum Erzeugen eines Unterdrucks; in der Kältetechnik zum Evakuieren eines Kältekreises vor dem Befüllen.",
+  "related": [
+    "lexicon.kaeltekreis",
+    "lexicon.kaeltemittelbefuellung"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.schneidkluppe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Schneidkluppe“, https://de.wikipedia.org/wiki/Schneidkluppe; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Schneidkluppe",
+  "synonyms": [
+    "Gewindeschneidkluppe",
+    "Kluppe",
+    "pipe threader"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Werkzeug zum Schneiden von Außengewinden an Rohren in der Sanitär-, Heizungs- und Klimatechnik, von Hand oder mit Maschinenantrieb.",
+  "related": [
+    "lexicon.gewindeverbindung",
+    "lexicon.stahlrohr"
+  ]
+}

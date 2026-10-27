@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.rohrreinigungsspirale",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rohrreinigungsspirale“, https://de.wikipedia.org/wiki/Rohrreinigungsspirale; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrreinigungsspirale",
+  "synonyms": [
+    "Abflussspirale",
+    "Rohrreinigungswelle",
+    "drain snake"
+  ],
+  "categories": [
+    "werkzeuge",
+    "abwasser"
+  ],
+  "definition": "Biegsame Welle, die von Hand oder mit Maschine in Abflussrohre eingeführt wird, um Verstopfungen zu lösen.",
+  "related": [
+    "lexicon.rohrreinigung",
+    "lexicon.abwasserleitung"
+  ]
+}

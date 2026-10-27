@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.kuerzel-fbh",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "FBH – Fußbodenheizung",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung"
+  ],
+  "definition": "Abkürzung für Fußbodenheizung.",
+  "related": [
+    "lexicon.fussbodenheizung"
+  ]
+}

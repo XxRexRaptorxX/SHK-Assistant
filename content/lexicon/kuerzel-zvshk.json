@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.kuerzel-zvshk",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "ZVSHK – Zentralverband Sanitär Heizung Klima",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "normen"
+  ],
+  "definition": "Abkürzung für Zentralverband Sanitär Heizung Klima, den Bundesverband des SHK-Handwerks in Deutschland.",
+  "related": [
+    "lexicon.shk"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.kuerzel-pwh",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung nach DIN EN 806 und DIN 1988 (englisch „potable water“); eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "PWH – Trinkwasser warm",
+  "synonyms": [
+    "potable water hot"
+  ],
+  "categories": [
+    "kuerzel",
+    "trinkwasser"
+  ],
+  "definition": "Trinkwasser warm.",
+  "related": [
+    "lexicon.trinkwarmwasser",
+    "lexicon.kuerzel-pwh-c"
+  ]
+}

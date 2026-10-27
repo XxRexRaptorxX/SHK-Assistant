@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-bhkw",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "BHKW – Blockheizkraftwerk",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung",
+    "solar"
+  ],
+  "definition": "Abkürzung für Blockheizkraftwerk: erzeugt gleichzeitig Strom und Wärme (Kraft-Wärme-Kopplung).",
+  "related": [
+    "lexicon.waermeerzeuger"
+  ]
+}

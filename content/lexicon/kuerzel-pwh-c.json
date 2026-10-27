@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.kuerzel-pwh-c",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung nach DIN EN 806 und DIN 1988 (englisch „potable water“); eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "PWH-C – Trinkwasser warm Zirkulation",
+  "synonyms": [
+    "potable water hot circulation"
+  ],
+  "categories": [
+    "kuerzel",
+    "trinkwasser"
+  ],
+  "definition": "Zirkulationsleitung des warmen Trinkwassers.",
+  "related": [
+    "lexicon.zirkulationsleitung",
+    "lexicon.kuerzel-pwh"
+  ]
+}

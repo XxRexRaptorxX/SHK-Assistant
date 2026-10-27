@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.kuerzel-glt",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "GLT – Gebäudeleittechnik",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "msr"
+  ],
+  "definition": "Abkürzung für Gebäudeleittechnik: die übergeordnete Bedien- und Überwachungsebene der Gebäudeautomation.",
+  "related": [
+    "lexicon.gebaeudeautomation"
+  ]
+}

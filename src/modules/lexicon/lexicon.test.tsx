@@ -84,6 +84,12 @@ describe('Lexikon-Daten', () => {
     }
     expect(lexiconEntries.find((e) => e.id === 'lexicon.heizlast')?.categories).toContain('heizung')
     expect(lexiconEntries.find((e) => e.id === 'lexicon.kilowatt')?.categories).toEqual(['einheiten'])
+    // Kürzel und Werkzeuge
+    expect(lexiconEntries.find((e) => e.id === 'lexicon.kuerzel-vl')?.categories).toEqual(['kuerzel', 'heizung'])
+    expect(lexiconEntries.find((e) => e.id === 'lexicon.pressmaschine')?.categories).toContain('werkzeuge')
+    // Kürzel überdecken in der Verlinkung keine vollen Begriffe (z. B. Zuluft, kW)
+    expect(lexiconPathFor(['Zuluft'])).toBe('/lexikon/zuluft')
+    expect(lexiconPathFor(['kW'])).toBe('/lexikon/kilowatt')
   })
 })
 

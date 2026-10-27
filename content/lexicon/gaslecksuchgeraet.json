@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.gaslecksuchgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Gaslecksuchgerät",
+  "synonyms": [
+    "Gasspürgerät",
+    "gas leak detector"
+  ],
+  "categories": [
+    "werkzeuge",
+    "gas"
+  ],
+  "definition": "Handgerät, das austretendes Brenngas an Leitungen und Verbindungen aufspürt.",
+  "related": [
+    "lexicon.gasinstallation",
+    "lexicon.dichtheitspruefung"
+  ]
+}

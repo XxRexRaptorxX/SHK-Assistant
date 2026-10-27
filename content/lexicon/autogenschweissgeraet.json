@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.autogenschweissgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Gasschmelzschweißen“, https://de.wikipedia.org/wiki/Gasschmelzschweißen; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Autogenschweißgerät",
+  "synonyms": [
+    "Autogenschweißen",
+    "Gasschmelzschweißen",
+    "oxy-fuel welding"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Gerät zum Gasschmelzschweißen: Die Flamme aus Brenngas und Sauerstoff schmilzt die Fügestelle auf.",
+  "related": [
+    "lexicon.schweissen",
+    "lexicon.hartloeten"
+  ]
+}

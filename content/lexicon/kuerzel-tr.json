@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.kuerzel-tr",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung, Bezeichnungen nach DIN EN 14597; eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "TR – Temperaturregler",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung",
+    "msr"
+  ],
+  "definition": "Abkürzung für Temperaturregler.",
+  "related": [
+    "lexicon.regler",
+    "lexicon.kuerzel-tw"
+  ]
+}

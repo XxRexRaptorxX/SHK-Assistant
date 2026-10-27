@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.kuerzel-tw",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung, Bezeichnungen nach DIN EN 14597; eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "TW – Temperaturwächter",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung",
+    "msr"
+  ],
+  "definition": "Abkürzung für Temperaturwächter.",
+  "related": [
+    "lexicon.temperaturbegrenzer",
+    "lexicon.kuerzel-stb"
+  ]
+}

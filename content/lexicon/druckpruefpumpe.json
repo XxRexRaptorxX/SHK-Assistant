@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.druckpruefpumpe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Druckprüfpumpe",
+  "synonyms": [
+    "Prüfpumpe",
+    "pressure test pump"
+  ],
+  "categories": [
+    "werkzeuge",
+    "trinkwasser",
+    "heizung"
+  ],
+  "definition": "Hand- oder Motorpumpe mit Manometer, mit der Leitungen für die Druckprüfung gefüllt und auf Prüfdruck gebracht werden.",
+  "related": [
+    "lexicon.druckpruefung",
+    "lexicon.pruefdruck"
+  ]
+}

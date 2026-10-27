@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.pressmaschine",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Pressmaschine",
+  "synonyms": [
+    "Pressgerät",
+    "Presswerkzeug",
+    "pressing tool"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Elektrisch oder hydraulisch angetriebenes Gerät, das mit Pressbacken oder Pressschlingen Pressfittings auf Rohren verpresst. Backen und Fittings gehören zum jeweiligen Presssystem.",
+  "related": [
+    "lexicon.pressfitting",
+    "lexicon.mehrschichtverbundrohr"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.kuerzel-twe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "TWE – Trinkwassererwärmer",
+  "synonyms": [
+    "Trinkwassererwärmung"
+  ],
+  "categories": [
+    "kuerzel",
+    "trinkwasser"
+  ],
+  "definition": "Abkürzung für Trinkwassererwärmer bzw. Trinkwassererwärmung.",
+  "related": [
+    "lexicon.trinkwassererwaermer"
+  ]
+}

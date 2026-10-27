@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-mag",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "MAG – Membran-Ausdehnungsgefäß",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung",
+    "hydraulik"
+  ],
+  "definition": "Abkürzung für Membran-Ausdehnungsgefäß.",
+  "related": [
+    "lexicon.membran-ausdehnungsgefaess"
+  ]
+}

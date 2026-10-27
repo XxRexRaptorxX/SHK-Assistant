@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.boerdelgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Bördelgerät",
+  "synonyms": [
+    "Bördelwerkzeug",
+    "flaring tool"
+  ],
+  "categories": [
+    "werkzeuge",
+    "kaelte",
+    "werkstoffe"
+  ],
+  "definition": "Werkzeug, mit dem Rohrenden, meist aus Kupfer, kegelig aufgeweitet werden, damit sie mit einer Bördelverschraubung verbunden werden können.",
+  "related": [
+    "lexicon.kupferrohr"
+  ]
+}

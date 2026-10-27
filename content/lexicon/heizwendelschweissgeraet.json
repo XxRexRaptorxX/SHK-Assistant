@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.heizwendelschweissgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Heizwendelschweißen“, https://de.wikipedia.org/wiki/Heizwendelschweißen; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Heizwendelschweißgerät",
+  "synonyms": [
+    "Heizwendelschweißen",
+    "electrofusion welding"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Gerät für das Heizwendelschweißen: Muffen mit eingebettetem Heizdraht verbinden Kunststoffrohre, z. B. aus PE, PP oder PB; angewandt nach Regelwerk DVS 2207-1.",
+  "related": [
+    "lexicon.pe-rohr",
+    "lexicon.schweissen"
+  ]
+}

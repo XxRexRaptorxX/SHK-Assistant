@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.multimeter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Multimeter“, https://de.wikipedia.org/wiki/Multimeter; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Multimeter",
+  "synonyms": [
+    "Vielfachmessgerät"
+  ],
+  "categories": [
+    "werkzeuge",
+    "msr"
+  ],
+  "definition": "Messgerät für mehrere elektrische Größen, mindestens Spannung und Strom, meist auch Widerstand.",
+  "related": [
+    "lexicon.elektrische-spannung",
+    "lexicon.elektrischer-widerstand"
+  ]
+}

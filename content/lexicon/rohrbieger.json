@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.rohrbieger",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rohrbiegen“, https://de.wikipedia.org/wiki/Rohrbiegen; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrbieger",
+  "synonyms": [
+    "Biegezange",
+    "Rohrbiegegerät",
+    "pipe bender"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Werkzeug zum Kaltbiegen von Rohren, mit dem Bögen ohne Formstück hergestellt werden.",
+  "related": [
+    "lexicon.kupferrohr",
+    "lexicon.mehrschichtverbundrohr"
+  ]
+}

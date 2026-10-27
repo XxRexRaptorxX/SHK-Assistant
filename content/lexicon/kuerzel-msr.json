@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-msr",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "MSR – Mess-, Steuer- und Regelungstechnik",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "msr"
+  ],
+  "definition": "Abkürzung für Mess-, Steuer- und Regelungstechnik.",
+  "related": [
+    "lexicon.regelungstechnik",
+    "lexicon.steuerung"
+  ]
+}

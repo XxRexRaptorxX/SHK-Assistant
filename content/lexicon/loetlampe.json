@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.loetlampe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Lötlampe“, https://de.wikipedia.org/wiki/Lötlampe; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Lötlampe",
+  "synonyms": [
+    "Lötbrenner",
+    "blowtorch"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Handlicher, meist mit Propan oder Butan betriebener Gasbrenner, mit dem Rohre und Fittings beim Löten erwärmt werden.",
+  "related": [
+    "lexicon.weichloeten",
+    "lexicon.hartloeten",
+    "lexicon.loetverbindung"
+  ]
+}

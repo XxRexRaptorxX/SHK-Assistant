@@ -1,0 +1,18 @@
+{
+  "id": "lexicon.kuerzel-pp",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "PP – Polypropylen",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "werkstoffe"
+  ],
+  "definition": "Abkürzung für Polypropylen, einen Kunststoff, aus dem u. a. HT-Abflussrohre bestehen.",
+  "related": [
+    "lexicon.ht-rohr"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.rohrentgrater",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rohrentgrater“, https://de.wikipedia.org/wiki/Rohrentgrater; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrentgrater",
+  "synonyms": [
+    "Entgrater",
+    "Handentgrater",
+    "deburring tool"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Werkzeug, mit dem Rohrenden nach dem Ablängen innen und außen entgratet und angefast werden.",
+  "related": [
+    "lexicon.rohrabschneider",
+    "lexicon.pressfitting"
+  ]
+}

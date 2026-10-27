@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.ultraschall-durchflussmesser",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Ultraschall-Durchflussmesser“, https://de.wikipedia.org/wiki/Ultraschall-Durchflussmesser; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Ultraschall-Durchflussmesser",
+  "synonyms": [
+    "UDM",
+    "USD"
+  ],
+  "categories": [
+    "werkzeuge",
+    "msr",
+    "hydraulik"
+  ],
+  "definition": "Messgerät, das die Strömungsgeschwindigkeit eines Mediums in einer Leitung mit Ultraschall erfasst.",
+  "related": [
+    "lexicon.volumenstrommessung",
+    "lexicon.volumenstrom"
+  ]
+}

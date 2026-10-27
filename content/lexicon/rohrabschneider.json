@@ -1,0 +1,24 @@
+{
+  "id": "lexicon.rohrabschneider",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Rohrabschneider“, https://de.wikipedia.org/wiki/Rohrabschneider; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Rohrabschneider",
+  "synonyms": [
+    "Rohrschneider",
+    "Rollenschneider",
+    "pipe cutter"
+  ],
+  "categories": [
+    "werkzeuge",
+    "werkstoffe"
+  ],
+  "definition": "Handwerkzeug zum Trennen von Metallrohren: Ein Schneidrädchen im C-förmigen Bügel wird über eine Spindel zugestellt und rund um das Rohr geführt.",
+  "related": [
+    "lexicon.kupferrohr",
+    "lexicon.stahlrohr",
+    "lexicon.rohrentgrater"
+  ]
+}

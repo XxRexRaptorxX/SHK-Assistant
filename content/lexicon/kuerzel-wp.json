@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-wp",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "WP – Wärmepumpe",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "kaelte",
+    "heizung"
+  ],
+  "definition": "Abkürzung für Wärmepumpe.",
+  "related": [
+    "lexicon.waermepumpe"
+  ]
+}

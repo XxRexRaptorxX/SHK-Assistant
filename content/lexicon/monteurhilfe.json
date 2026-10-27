@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.monteurhilfe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Monteurhilfe",
+  "synonyms": [
+    "Mehrwegeventil mit Manometern",
+    "manifold gauge"
+  ],
+  "categories": [
+    "werkzeuge",
+    "kaelte"
+  ],
+  "definition": "Armaturenblock mit Manometern und Schläuchen, über den Kältekreise gemessen, evakuiert und mit Kältemittel befüllt werden.",
+  "related": [
+    "lexicon.kaeltemittelbefuellung",
+    "lexicon.vakuumpumpe"
+  ]
+}

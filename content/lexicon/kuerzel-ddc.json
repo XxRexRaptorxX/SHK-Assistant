@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.kuerzel-ddc",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "DDC – Direct Digital Control",
+  "synonyms": [
+    "direkte digitale Regelung"
+  ],
+  "categories": [
+    "kuerzel",
+    "msr"
+  ],
+  "definition": "Abkürzung für Direct Digital Control: frei programmierbare digitale Regelung in der Gebäudeautomation.",
+  "related": [
+    "lexicon.gebaeudeautomation",
+    "lexicon.regelung"
+  ]
+}

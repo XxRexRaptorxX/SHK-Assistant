@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.kuerzel-sv",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "SV – Sicherheitsventil",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung",
+    "trinkwasser",
+    "normen"
+  ],
+  "definition": "Abkürzung für Sicherheitsventil.",
+  "related": [
+    "lexicon.sicherheitsventil"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.spannungspruefer",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Spannungsprüfer“, https://de.wikipedia.org/wiki/Spannungsprüfer; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Spannungsprüfer",
+  "synonyms": [
+    "Spannungsprüfgerät",
+    "voltage tester"
+  ],
+  "categories": [
+    "werkzeuge",
+    "msr"
+  ],
+  "definition": "Prüfmittel, mit dem festgestellt wird, ob an einem Teil Spannung anliegt.",
+  "related": [
+    "lexicon.schutzleiter",
+    "lexicon.rcd"
+  ]
+}

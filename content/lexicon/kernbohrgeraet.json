@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.kernbohrgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Kernlochbohrung“, https://de.wikipedia.org/wiki/Kernlochbohrung; Kurzbeschreibung eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Kernbohrgerät",
+  "synonyms": [
+    "Kernbohrmaschine",
+    "core drill"
+  ],
+  "categories": [
+    "werkzeuge"
+  ],
+  "definition": "Maschine für Kernbohrungen, bei denen nur der Ringspalt zerspant wird und in der Mitte ein Bohrkern stehen bleibt; z. B. für Durchbrüche für Rohre und Luftleitungen in Wänden und Decken.",
+  "related": [
+    "lexicon.brandschutzabschottung"
+  ]
+}

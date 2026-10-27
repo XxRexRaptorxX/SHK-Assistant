@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-hk",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "HK – Heizkörper oder Heizkreis",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "heizung"
+  ],
+  "definition": "Je nach Zusammenhang Abkürzung für Heizkörper oder Heizkreis.",
+  "related": [
+    "lexicon.heizkoerper",
+    "lexicon.heizkreis"
+  ]
+}

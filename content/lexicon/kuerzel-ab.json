@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.kuerzel-ab",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; deutsche Kurzzeichen nach VDI 4700 Blatt 2, englische nach DIN EN 16798-3; eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "AB – Abluft",
+  "synonyms": [
+    "ABL",
+    "ETA"
+  ],
+  "categories": [
+    "kuerzel",
+    "lueftung"
+  ],
+  "definition": "Abluft: die Luft, die aus den Räumen abgesaugt wird.",
+  "related": [
+    "lexicon.abluft",
+    "lexicon.kuerzel-fo"
+  ]
+}

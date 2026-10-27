@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.differenzdruckmessgeraet",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Differenzdruckmessgerät",
+  "synonyms": [
+    "Differenzdruckmanometer"
+  ],
+  "categories": [
+    "werkzeuge",
+    "msr",
+    "hydraulik"
+  ],
+  "definition": "Messgerät für den Druckunterschied zwischen zwei Messstellen, z. B. an Strangregulierventilen beim hydraulischen Abgleich.",
+  "related": [
+    "lexicon.differenzdruck",
+    "lexicon.hydraulischer-abgleich",
+    "lexicon.strangregulierventil"
+  ]
+}

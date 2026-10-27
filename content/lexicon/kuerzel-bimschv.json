@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.kuerzel-bimschv",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "1. BImSchV – Verordnung über kleine und mittlere Feuerungsanlagen",
+  "synonyms": [
+    "BImSchV"
+  ],
+  "categories": [
+    "kuerzel",
+    "normen",
+    "gas"
+  ],
+  "definition": "Erste Verordnung zur Durchführung des Bundes-Immissionsschutzgesetzes (Verordnung über kleine und mittlere Feuerungsanlagen).",
+  "related": [
+    "lexicon.abgasverlust"
+  ]
+}

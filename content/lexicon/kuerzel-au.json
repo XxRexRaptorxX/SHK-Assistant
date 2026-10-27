@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.kuerzel-au",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; deutsche Kurzzeichen nach VDI 4700 Blatt 2, englische nach DIN EN 16798-3; eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "AU – Außenluft",
+  "synonyms": [
+    "AUL",
+    "ODA"
+  ],
+  "categories": [
+    "kuerzel",
+    "lueftung"
+  ],
+  "definition": "Außenluft: die Luft, die von außen in die Lüftungsanlage strömt.",
+  "related": [
+    "lexicon.aussenluft",
+    "lexicon.kuerzel-zu"
+  ]
+}

@@ -13,9 +13,11 @@ export const LEXICON_CATEGORIES = [
   { key: 'solar', label: 'Solar & erneuerbare Energien' },
   { key: 'msr', label: 'Messen, Steuern, Regeln & Elektro' },
   { key: 'werkstoffe', label: 'Werkstoffe, Rohre & Verbindungen' },
+  { key: 'werkzeuge', label: 'Werkzeuge & Maschinen' },
   { key: 'normen', label: 'Normen, Recht & Sicherheit' },
   { key: 'physik', label: 'Physik & Grundlagen' },
   { key: 'einheiten', label: 'Einheiten' },
+  { key: 'kuerzel', label: 'Kürzel & Abkürzungen' },
 ] as const
 
 export type LexiconCategory = (typeof LEXICON_CATEGORIES)[number]['key']

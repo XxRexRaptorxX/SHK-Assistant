@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.kuerzel-zu",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; deutsche Kurzzeichen nach VDI 4700 Blatt 2, englische nach DIN EN 16798-3; eigene Kurzbeschreibung",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "ZU – Zuluft",
+  "synonyms": [
+    "ZUL",
+    "SUP"
+  ],
+  "categories": [
+    "kuerzel",
+    "lueftung"
+  ],
+  "definition": "Zuluft: die Luft, die den Räumen von der Lüftungsanlage zugeführt wird.",
+  "related": [
+    "lexicon.zuluft",
+    "lexicon.kuerzel-ab"
+  ]
+}

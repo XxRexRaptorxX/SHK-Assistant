@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.kuerzel-kg",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "KG – Kanalgrundrohr",
+  "synonyms": [
+    "KG-Rohr"
+  ],
+  "categories": [
+    "kuerzel",
+    "abwasser",
+    "werkstoffe"
+  ],
+  "definition": "Abkürzung für Kanalgrundrohr: Kunststoffrohr für erdverlegte Grund- und Anschlussleitungen der Entwässerung.",
+  "related": [
+    "lexicon.grundleitung",
+    "lexicon.ht-rohr"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.kuerzel-eer",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "EER – Energy Efficiency Ratio",
+  "synonyms": [],
+  "categories": [
+    "kuerzel",
+    "kaelte"
+  ],
+  "definition": "Abkürzung für Energy Efficiency Ratio: Verhältnis von Kälteleistung zu elektrischer Leistungsaufnahme im Kühlbetrieb.",
+  "related": [
+    "lexicon.kaelteleistung-im-verhaeltnis-zur-leistungsaufnahme",
+    "lexicon.kuerzel-seer"
+  ]
+}
