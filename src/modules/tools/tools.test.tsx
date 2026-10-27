@@ -7,7 +7,7 @@ import { checkFormula, evaluateFormula } from '../formulas/engine'
 import { presetsFor } from '../materials/materials'
 import { ensureCustomUnits } from '../units/customUnits'
 import ToolPage from './ToolPage'
-import { checkChoiceTool, checkTableTool, isChoiceTool, isTableTool } from './schema'
+import { checkChoiceTool, checkTableTool, isChoiceTool, type TableTool } from './schema'
 import { ChoiceLookup } from './ChoiceLookup'
 import { FactorCalculator } from './FactorCalculator'
 import { checkFactorTool, computeFactorTool } from './factorTool'
@@ -49,9 +49,7 @@ describe('Tools', () => {
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Ausgerollte Länge einer Rohr- oder Kabelrolle',
       'Exakte ausgerollte Länge einer Rohr- oder Kabelrolle',
-      'Heizlast pro Quadratmeter – überschlägig',
-      'Heizlast überschlägig aus Fläche und Gebäudestandard',
-      'Heizlast und Wärmebedarf nach Baujahr',
+      'Heizlast überschlägig',
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Leistungsminderung durch Ruß im Kessel',
       'Material zurückschreiben',
@@ -92,15 +90,34 @@ describe('Tools', () => {
     ])
   })
 
-  it('rechnet die Heizlast pro Quadratmeter und zurück mit Richtwerten für q', () => {
-    const proFlaeche = formulaToolEntries.find((entry) => entry.id === 'tool.heizlast-pro-flaeche')!
-    const heizlast = formulaToolEntries.find((entry) => entry.id === 'tool.heizlast-ueberschlaegig')!
-    expect(checkFormula(proFlaeche)).toEqual([])
-    expect(checkFormula(heizlast)).toEqual([])
-    expect(evaluateFormula(proFlaeche, { P: { value: 10, unit: 'kW' }, A: { value: 125, unit: 'm^2' } })).toBe(80)
-    expect(evaluateFormula(heizlast, { q: { value: 80, unit: 'W/m^2' }, A: { value: 125, unit: 'm^2' } })).toBe(10)
-    const q = heizlast.variables.find((variable) => variable.symbol === 'q')!
-    expect(presetsFor(q).map((preset) => preset.value)).toEqual([170, 100, 80, 50, 40, 30, 20, 10])
+  it('schätzt die Heizlast nach Baujahr oder Gebäudestandard und vergleicht mit der vorhandenen Leistung', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.heizlast')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    expect(checkFactorTool(tool)).toEqual([])
+    const load = (A: number, Pv: number, selection: Record<string, string>) => {
+      const values = computeFactorTool(tool, { A, Pv }, selection)
+      const show = (symbol: string) => values[symbol]?.text ?? values[symbol]?.value
+      return [show('q'), show('P'), show('Qh'), show('qv')]
+    }
+    // Nach Baujahr: Richtwert, Heizlast, Wärmebedarf pro Jahr und Vergleich mit 15 kW
+    expect(load(125, 15, { quelle: 'baujahr', baujahr: 'j1970' })).toEqual([90, 11.25, 21250, 120])
+    // Ab 2002 nach Baustandard, bei Spannen der obere Wert
+    expect(load(100, 0, { quelle: 'baujahr', baujahr: 'j2009' })).toEqual([38, 3.8, 6000, 'keine Angabe'])
+    expect(load(100, 0, { quelle: 'baujahr', baujahr: 'j2021' })).toEqual([50, 5, 7500, 'keine Angabe'])
+    // Nach Gebäudestandard: kein Wärmebedarf
+    expect(load(125, 0, { quelle: 'standard', standard: 's3' })).toEqual([80, 10, 'nur beim Richtwert nach Baujahr', 'keine Angabe'])
+    expect(load(150, 0, { quelle: 'standard', standard: 's8' })).toEqual([10, 1.5, 'nur beim Richtwert nach Baujahr', 'keine Angabe'])
+
+    // Nur das Dropdown der gewählten Variante erscheint
+    const byYear = renderToStaticMarkup(<FactorCalculator tool={tool} initialInputs={{ A: '125' }} />)
+    expect(byYear).toContain('<option value="j1920" selected="">1920 – 1969</option>')
+    expect(byYear).not.toContain('value="s1"')
+    expect(byYear).toContain('P = 13,1 kW')
+    const byStandard = renderToStaticMarkup(
+      <FactorCalculator tool={tool} initialInputs={{ A: '125' }} initialSelection={{ quelle: 'standard', standard: 's8' }} />,
+    )
+    expect(byStandard).toContain('<option value="s8" selected="">Passivhaus</option>')
+    expect(byStandard).not.toContain('value="j1920"')
   })
 
   it('rechnet die Leistungsminderung durch Ruß und Kalk mit dem Faustwert je mm', () => {
@@ -119,35 +136,50 @@ describe('Tools', () => {
     }
   })
 
-  it('schlägt Heizlast und Wärmebedarf zum Baujahr nach, ab 2002 auch nach Baustandard', () => {
-    const tool = toolEntries.find((entry) => entry.id === 'tool.heizlast-baujahr')!
-    if (!isTableTool(tool)) throw new Error('Tabellen-Tool erwartet')
-    expect(checkTableTool(tool)).toEqual([])
-    const values = (year: number) => matchingRows(tool, year).map((row) => row.values)
-    expect(values(1920)).toEqual([{ heizlast: 'ca. 105', waermebedarf: 'ca. 200' }])
+  // Tabellen-Tools werden zurzeit von keinem Inhalt genutzt; Testdaten nach dem früheren Baujahr-Tool
+  const tableTool: TableTool = {
+    id: 'tool.test-tabelle',
+    visibility: 'public',
+    status: 'draft',
+    source: 'Testdaten',
+    verifiedBy: '',
+    verifiedAt: '',
+    kind: 'table',
+    title: 'Testtabelle',
+    description: 'Testdaten',
+    category: '',
+    input: { name: 'Baujahr', unit: '' },
+    columns: [
+      { key: 'heizlast', name: 'Heizlast', label: 'q', unit: 'W/m²' },
+      { key: 'waermebedarf', name: 'Wärmebedarf', label: 'qₕ', unit: 'kWh/(m²·a)' },
+    ],
+    rows: [
+      { label: '1970 – 1984', from: 1970, to: 1984, note: '', values: { heizlast: 'ca. 90', waermebedarf: 'ca. 170' } },
+      { label: 'ab 2002', from: 2002, note: '', values: { heizlast: 'ca. 45', waermebedarf: 'ca. 70' } },
+      { label: '2014 – 2020', from: 2014, to: 2020, note: 'EnEV 2014', values: { heizlast: '36–38', waermebedarf: 'ca. 45' } },
+    ],
+  }
+
+  it('schlägt in Tabellen-Tools alle passenden Zeilen nach', () => {
+    expect(checkTableTool(tableTool)).toEqual([])
+    const values = (year: number) => matchingRows(tableTool, year).map((row) => row.values)
     expect(values(1984)).toEqual([{ heizlast: 'ca. 90', waermebedarf: 'ca. 170' }])
-    expect(values(1985)).toEqual([{ heizlast: 'ca. 70', waermebedarf: 'ca. 135' }])
-    expect(values(2001)).toEqual([{ heizlast: 'ca. 55', waermebedarf: 'ca. 100' }])
     expect(values(2015)).toEqual([
       { heizlast: 'ca. 45', waermebedarf: 'ca. 70' },
       { heizlast: '36–38', waermebedarf: 'ca. 45' },
     ])
     expect(values(1919)).toEqual([])
 
-    const html = renderToStaticMarkup(<TableLookup tool={tool} initialValue="1975" />)
+    const html = renderToStaticMarkup(<TableLookup tool={tableTool} initialValue="1975" />)
     expect(html).toContain('q = ca. 90 W/m²')
     expect(html).toContain('qₕ = ca. 170 kWh/(m²·a)')
     expect(html).toContain('Heizlast (q)')
-    expect(html).not.toContain('Quelle:')
-    expect(html).not.toContain('ungeprüft')
     expect(html.match(/aria-current="true"/g)).toHaveLength(1)
-    expect(renderToStaticMarkup(<TableLookup tool={tool} initialValue="1900" />)).toContain('keine Angabe')
+    expect(renderToStaticMarkup(<TableLookup tool={tableTool} initialValue="1900" />)).toContain('keine Angabe')
   })
 
   it('meldet Fehler in Tabellen-Tools', () => {
-    const tool = toolEntries.find((entry) => entry.id === 'tool.heizlast-baujahr')!
-    if (!isTableTool(tool)) throw new Error('Tabellen-Tool erwartet')
-    const broken = { ...tool, rows: [{ label: 'x', note: '', values: { heizlast: '1', extra: '2' } }] }
+    const broken = { ...tableTool, rows: [{ label: 'x', note: '', values: { heizlast: '1', extra: '2' } }] }
     expect(checkTableTool(broken)).toEqual([
       'rows[0] (x): from oder to fehlt',
       'rows[0] (x): Wert fehlt für waermebedarf',

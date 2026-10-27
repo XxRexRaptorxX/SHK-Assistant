@@ -198,13 +198,16 @@ export function computeFactorTool(
   return values
 }
 
-/** Jede mögliche Kombination der Auswahlen (nur angebotene Optionen) */
+/** Jede mögliche Kombination der Auswahlen (nur angebotene Optionen; ohne passende Option bleibt die Auswahl offen) */
 export function allSelections(tool: FactorTool): Record<string, string>[] {
   return tool.choices.reduce<Record<string, string>[]>(
     (combinations, choice) =>
-      combinations.flatMap((combination) =>
-        availableOptions(choice, combination).map((option) => ({ ...combination, [choice.key]: option.key })),
-      ),
+      combinations.flatMap((combination) => {
+        const options = availableOptions(choice, combination)
+        return options.length === 0
+          ? [combination]
+          : options.map((option) => ({ ...combination, [choice.key]: option.key }))
+      }),
     [{}],
   )
 }

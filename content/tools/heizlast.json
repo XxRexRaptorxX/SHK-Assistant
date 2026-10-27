@@ -1,0 +1,467 @@
+{
+  "id": "tool.heizlast",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Formel q = P / A: Formel des Inhabers, übermittelt am 23.10.2026. Richtwerte nach Gebäudestandard: Tabelle des Inhabers (Bild, übermittelt am 23.10.2026), je Spanne der Mittelwert, auf 10 W/m² gerundet. Richtwerte nach Baujahr: Bis „ab 2002“: Tabelle des Inhabers (Bild, übermittelt am 23.10.2026). Zeilen nach Baustandard aus Firmen-Ratgebern – 2002 – 2008: Heizlast: reonic, „Heizlastberechnung Tabelle: W/m² für Alt- und Neubau“ (M. Singh, 16.09.2026), https://reonic.com/de-de/blog/heizlastberechnung-tabelle-altbau-neubau-richtwerte/; Wärmebedarf (Referenzort Würzburg): Herz & Lang, „Energiestandards“, https://www.herz-lang.de/de/architektur/energiestandards/ (abgerufen am 23.10.2026) | 2009 – 2013: Heizlast (dort „ab 2009“): reonic, „Heizlastberechnung Tabelle: W/m² für Alt- und Neubau“ (M. Singh, 16.09.2026), https://reonic.com/de-de/blog/heizlastberechnung-tabelle-altbau-neubau-richtwerte/; Wärmebedarf (Referenzort Potsdam): Herz & Lang, „Energiestandards“, https://www.herz-lang.de/de/architektur/energiestandards/ (abgerufen am 23.10.2026) | 2014 – 2020: Heizlast (dort „ab 2009“): reonic, „Heizlastberechnung Tabelle: W/m² für Alt- und Neubau“ (M. Singh, 16.09.2026), https://reonic.com/de-de/blog/heizlastberechnung-tabelle-altbau-neubau-richtwerte/; Wärmebedarf (Referenzort Potsdam): Herz & Lang, „Energiestandards“, https://www.herz-lang.de/de/architektur/energiestandards/ (abgerufen am 23.10.2026) | ab 2021: 42watt, „Wärmebedarf berechnen“ (M. Nestler, 07.09.2026; dort nach Bundesverband Wärmepumpe und Verbraucherzentrale), https://42watt.de/magazin/waermebedarf-berechnen (abgerufen am 23.10.2026). Bei Spannen gilt der obere Wert.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Heizlast überschlägig",
+  "description": "Schätzt die Heizlast eines Gebäudes aus der beheizten Fläche und einem Richtwert je Quadratmeter, wahlweise nach Baujahr oder Gebäudestandard; nach Baujahr zusätzlich den jährlichen Wärmebedarf. Mit der vorhandenen Heizleistung lässt sich vergleichen, wie viel Leistung je Quadratmeter heute installiert ist. Eine normgerechte Heizlastberechnung wird dadurch nicht ersetzt.",
+  "category": "Auslegung",
+  "inputs": [
+    {
+      "symbol": "A",
+      "name": "Beheizte Fläche",
+      "unit": "m²",
+      "min": 0
+    },
+    {
+      "symbol": "Pv",
+      "label": "Pᵥ",
+      "name": "Vorhandene Heizleistung",
+      "unit": "kW",
+      "min": 0,
+      "whenEmpty": 0
+    }
+  ],
+  "choices": [
+    {
+      "key": "quelle",
+      "name": "Richtwert nach",
+      "options": [
+        {
+          "key": "baujahr",
+          "label": "Baujahr"
+        },
+        {
+          "key": "standard",
+          "label": "Gebäudestandard"
+        }
+      ]
+    },
+    {
+      "key": "baujahr",
+      "name": "Baujahr",
+      "display": "dropdown",
+      "options": [
+        {
+          "key": "j1920",
+          "label": "1920 – 1969",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j1970",
+          "label": "1970 – 1984",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j1985",
+          "label": "1985 – 1995",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j1996",
+          "label": "1996 – 2001",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j2002",
+          "label": "2002 – 2008 (EnEV 2002)",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j2009",
+          "label": "2009 – 2013 (EnEV 2009)",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j2014",
+          "label": "2014 – 2020 (EnEV 2014)",
+          "when": {
+            "quelle": "baujahr"
+          }
+        },
+        {
+          "key": "j2021",
+          "label": "ab 2021 (GEG)",
+          "when": {
+            "quelle": "baujahr"
+          }
+        }
+      ]
+    },
+    {
+      "key": "standard",
+      "name": "Gebäudestandard",
+      "display": "dropdown",
+      "options": [
+        {
+          "key": "s1",
+          "label": "Bestandsgebäude bis 1977",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s2",
+          "label": "Gebäude ab 1977",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s3",
+          "label": "Gebäude ab 1982",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s4",
+          "label": "Gebäude ab 1995",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s5",
+          "label": "Gebäude ab 2002",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s6",
+          "label": "Niedrigenergiehaus",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s7",
+          "label": "Ultra-Niedrigenergiehaus",
+          "when": {
+            "quelle": "standard"
+          }
+        },
+        {
+          "key": "s8",
+          "label": "Passivhaus",
+          "when": {
+            "quelle": "standard"
+          }
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "q",
+      "label": "q",
+      "name": "Richtwert Heizlast je m²",
+      "unit": "W/m²",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1920"
+          },
+          "value": 105,
+          "rule": "ca. 105 W/m² (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1970"
+          },
+          "value": 90,
+          "rule": "ca. 90 W/m² (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1985"
+          },
+          "value": 70,
+          "rule": "ca. 70 W/m² (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1996"
+          },
+          "value": 55,
+          "rule": "ca. 55 W/m² (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2002"
+          },
+          "value": 45,
+          "rule": "oberer Wert aus 43–45 W/m² (reonic, „Heizlastberechnung Tabelle“)"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2009"
+          },
+          "value": 38,
+          "rule": "oberer Wert aus 36–38 W/m², dort „ab 2009“ (reonic, „Heizlastberechnung Tabelle“)"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2014"
+          },
+          "value": 38,
+          "rule": "oberer Wert aus 36–38 W/m², dort „ab 2009“ (reonic, „Heizlastberechnung Tabelle“)"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2021"
+          },
+          "value": 50,
+          "rule": "oberer Wert aus 30–50 W/m² (42watt, „Wärmebedarf berechnen“)"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s1"
+          },
+          "value": 170,
+          "rule": "Mittelwert aus 130 bis 200 W/m², auf 10 gerundet (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s2"
+          },
+          "value": 100,
+          "rule": "Mittelwert aus 70 bis 130 W/m² (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s3"
+          },
+          "value": 80,
+          "rule": "Mittelwert aus 60 bis 100 W/m² (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s4"
+          },
+          "value": 50,
+          "rule": "Mittelwert aus 40 bis 60 W/m² (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s5"
+          },
+          "value": 40,
+          "rule": "Mittelwert aus 30 bis 50 W/m² (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s6"
+          },
+          "value": 30,
+          "rule": "Mittelwert aus 25 bis 40 W/m², auf 10 gerundet (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s7"
+          },
+          "value": 20,
+          "rule": "Mittelwert aus 15 bis 30 W/m², auf 10 gerundet (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "standard",
+            "standard": "s8"
+          },
+          "value": 10,
+          "rule": "10 W/m² (Tabelle des Inhabers nach Gebäudestandard (Bild, übermittelt am 23.10.2026))"
+        }
+      ]
+    },
+    {
+      "symbol": "P",
+      "label": "P",
+      "name": "Heizlast überschlägig",
+      "unit": "kW",
+      "decimals": 1,
+      "cases": [
+        {
+          "expression": "q * A / 1000",
+          "rule": "Richtwert q × beheizte Fläche"
+        }
+      ]
+    },
+    {
+      "symbol": "Qh",
+      "label": "Qₕ",
+      "name": "Wärmebedarf pro Jahr",
+      "unit": "kWh",
+      "decimals": 0,
+      "cases": [
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1920"
+          },
+          "factor": 200,
+          "per": "A",
+          "rule": "ca. 200 kWh/(m²·a) (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1970"
+          },
+          "factor": 170,
+          "per": "A",
+          "rule": "ca. 170 kWh/(m²·a) (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1985"
+          },
+          "factor": 135,
+          "per": "A",
+          "rule": "ca. 135 kWh/(m²·a) (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j1996"
+          },
+          "factor": 100,
+          "per": "A",
+          "rule": "ca. 100 kWh/(m²·a) (Tabelle des Inhabers nach Baujahr (Bild, übermittelt am 23.10.2026))"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2002"
+          },
+          "factor": 75,
+          "per": "A",
+          "rule": "ca. 75 kWh/(m²·a), Referenzort Würzburg (Herz & Lang, „Energiestandards“)"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2009"
+          },
+          "factor": 60,
+          "per": "A",
+          "rule": "ca. 60 kWh/(m²·a), Referenzort Potsdam (Herz & Lang, „Energiestandards“)"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2014"
+          },
+          "factor": 45,
+          "per": "A",
+          "rule": "ca. 45 kWh/(m²·a), Referenzort Potsdam (Herz & Lang, „Energiestandards“)"
+        },
+        {
+          "when": {
+            "quelle": "baujahr",
+            "baujahr": "j2021"
+          },
+          "factor": 75,
+          "per": "A",
+          "rule": "oberer Wert aus 30–75 kWh/(m²·a) (42watt, „Wärmebedarf berechnen“)"
+        },
+        {
+          "when": {
+            "quelle": "standard"
+          },
+          "text": "nur beim Richtwert nach Baujahr",
+          "rule": "für die Gebäudestandards liegen keine Werte zum Wärmebedarf vor"
+        }
+      ]
+    },
+    {
+      "symbol": "qv",
+      "label": "qᵥ",
+      "name": "Vorhandene Heizleistung je m²",
+      "unit": "W/m²",
+      "decimals": 0,
+      "cases": [
+        {
+          "of": "Pv",
+          "upTo": 0,
+          "text": "keine Angabe",
+          "rule": "zum Vergleich die vorhandene Heizleistung eintragen"
+        },
+        {
+          "of": "Pv",
+          "above": 0,
+          "expression": "Pv * 1000 / A",
+          "rule": "vorhandene Heizleistung ÷ beheizte Fläche (q = P / A)"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": {
+        "A": 125,
+        "Pv": 15
+      },
+      "choices": {
+        "quelle": "baujahr",
+        "baujahr": "j1970"
+      },
+      "expected": {
+        "q": 90,
+        "P": 11.25,
+        "Qh": 21250,
+        "qv": 120
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 125 m², Baujahr 1975, 15 kW Kessel"
+    },
+    {
+      "inputs": {
+        "A": 125,
+        "Pv": 0
+      },
+      "choices": {
+        "quelle": "standard",
+        "standard": "s3"
+      },
+      "expected": {
+        "q": 80,
+        "P": 10,
+        "Qh": "nur beim Richtwert nach Baujahr",
+        "qv": "keine Angabe"
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 125 m², Gebäude ab 1982"
+    }
+  ]
+}

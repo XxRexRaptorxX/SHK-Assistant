@@ -101,6 +101,8 @@ export function FactorCalculator({
 
       {tool.choices.map((choice) => {
         const options = availableOptions(choice, selection)
+        // Auswahl ohne passende Optionen (z. B. nur für eine andere Variante) ausblenden
+        if (options.length === 0) return null
         return choice.display === 'dropdown' ? (
           <ChoiceDropdown
             key={choice.key}
