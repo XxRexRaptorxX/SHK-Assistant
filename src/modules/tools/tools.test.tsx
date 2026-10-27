@@ -411,6 +411,31 @@ describe('Tools', () => {
     expect(html).not.toContain('Alle Werte eingeben.')
   })
 
+  it('nennt bei Abwasserrohren getrennte Schellenabstände für waagerecht und senkrecht', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.rohrschellenabstand')!
+    if (!isFactorTool(tool)) throw new Error('Faktor-Tool erwartet')
+    const spacing = (rohr: string, groesse: string) => {
+      const values = computeFactorTool(tool, {}, { rohr, groesse })
+      return [values.L?.value ?? values.L?.text, values.Lv?.value ?? values.Lv?.text]
+    }
+    // HT (Ostendorf), POLO-KAL (POLOPLAST), RAUPIANO PLUS (REHAU)
+    expect(spacing('ht', 'ht40')).toEqual([0.5, 1.2])
+    expect(spacing('ht', 'ht110')).toEqual([1.1, 2])
+    expect(spacing('polokal', 'pk110')).toEqual([1.65, 2])
+    expect(spacing('polokal', 'pk250')).toEqual([3, 2])
+    expect(spacing('raupiano', 'rp32')).toEqual([0.48, 1.5])
+    // 1125 mm auf 1,12 m abgerundet, damit die Anzeige den Höchstwert nicht überschreitet
+    expect(spacing('raupiano', 'rp75')).toEqual([1.12, 2])
+    expect(tool.choices.find((choice) => choice.key === 'rohr')!.options.some((option) => option.key === 'kg')).toBe(false)
+    // Druckrohre: Quelle ohne Verlegerichtung
+    expect(spacing('kupfer', 'cu22')).toEqual([2, 'keine gesonderte Angabe'])
+
+    const html = renderToStaticMarkup(<FactorCalculator tool={tool} initialSelection={{ rohr: 'ht', groesse: 'ht110' }} />)
+    expect(html).toContain('<option value="ht110" selected="">DN 110</option>')
+    expect(html).toContain('L = 1,10 m')
+    expect(html).toContain('Lᵥ = 2,00 m')
+  })
+
   it('listet die Tools und zeigt ein Tool mit Formel, Legende und Rechner', () => {
     const list = renderToStaticMarkup(
       <MemoryRouter initialEntries={['/tools']}>

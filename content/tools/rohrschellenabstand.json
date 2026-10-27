@@ -2,12 +2,12 @@
   "id": "tool.rohrschellenabstand",
   "visibility": "public",
   "status": "draft",
-  "source": "Kupfer und Edelstahl: Empfehlungen der DIN 1988 Teil 2 für Stahl- und Kupferrohre, wiedergegeben vom Deutschen Kupferinstitut („Die fachgerechte Kupferrohr-Installation“, https://kupfer.de/wp-content/uploads/2019/09/DKI_Broschuere_i158_2019_ES.pdf, Kupfer 12 bis 28 mm) und vom Edelstahl-Service-Center (Technische Information Pressfittings, https://www.edelstahl.de/fileadmin/user_upload/anleitung_pressfittings.pdf, 15 bis 108 mm); Edelstahl über 108 mm: heco, https://www.heco.de/en/stainless-steel/systems/press-fittings/examples-of-installation.html. Kunststoff- und Verbundrohre: MÜPRO, „Abstände von Befestigungspunkten“, Tabelle „Maximal empfohlene Rohrschellenabstände für Verbund- und Kunststoffrohre“, https://www.muepro.de/Abstaende-von-Befestigungspunkten/. Alle abgerufen am 26.10.2026.",
+  "source": "Kupfer und Edelstahl: Empfehlungen der DIN 1988 Teil 2 für Stahl- und Kupferrohre, wiedergegeben vom Deutschen Kupferinstitut („Die fachgerechte Kupferrohr-Installation“, https://kupfer.de/wp-content/uploads/2019/09/DKI_Broschuere_i158_2019_ES.pdf, Kupfer 12 bis 28 mm) und vom Edelstahl-Service-Center (Technische Information Pressfittings, https://www.edelstahl.de/fileadmin/user_upload/anleitung_pressfittings.pdf, 15 bis 108 mm); Edelstahl über 108 mm: heco, https://www.heco.de/en/stainless-steel/systems/press-fittings/examples-of-installation.html. Kunststoff- und Verbundrohre: MÜPRO, „Abstände von Befestigungspunkten“, Tabelle „Maximal empfohlene Rohrschellenabstände für Verbund- und Kunststoffrohre“, https://www.muepro.de/Abstaende-von-Befestigungspunkten/. Abwasserrohre: Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), https://www.stabilo-sanitaer.de/tpl/download/Montageanleitung_und_Verlegeanleitung_HT-Rohre.pdf; POLOPLAST, Technisches Handbuch (2024-01), https://www.poloplast.com/fileadmin/downloads/THB_Technisches_Handbuch_AUT_2024-01.pdf, übereinstimmend mit dem Technischen Handbuch Hausabfluss (03-16); REHAU, Technische Information RAUPIANO PLUS (gültig ab 03/2025), https://www.rehau.com/downloads/1035948/raupiano-hausabflussystem-.pdf. Alle abgerufen am 26.10.2026.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "factor",
   "title": "Rohrschellenabstand",
-  "description": "Zeigt den größten empfohlenen Abstand zwischen zwei Rohrschellen nach Rohrart und Außendurchmesser. Für Kupfer- und Edelstahlrohre empfehlen die technischen Regeln (DIN 1988) die Abstände; für Kunststoff- und Verbundrohre gibt der Rohrhersteller die zulässigen Abstände verbindlich vor, die Werte hier sind nur Anhaltswerte. Fest- und Gleitpunkte für die Längenausdehnung sowie Gewicht von Dämmung und Medium sind zusätzlich zu beachten.",
+  "description": "Zeigt den größten empfohlenen Abstand zwischen zwei Rohrschellen nach Rohrart und Größe. Für Kupfer- und Edelstahlrohre empfehlen die technischen Regeln (DIN 1988) die Abstände; für Kunststoff-, Verbund- und Abwasserrohre gibt der Rohrhersteller die zulässigen Abstände verbindlich vor. Bei Abwasserrohren gelten getrennte Werte für waagerechte und senkrechte Leitungen. Fest- und Gleitpunkte für die Längenausdehnung sowie Gewicht von Dämmung und Medium sind zusätzlich zu beachten.",
   "category": "Montage",
   "inputs": [],
   "choices": [
@@ -39,12 +39,24 @@
         {
           "key": "pvcc",
           "label": "PVC-C"
+        },
+        {
+          "key": "ht",
+          "label": "HT-Rohr (Ostendorf HT-System)"
+        },
+        {
+          "key": "polokal",
+          "label": "POLO-KAL Schallschutzrohr (POLOPLAST)"
+        },
+        {
+          "key": "raupiano",
+          "label": "RAUPIANO PLUS Schallschutzrohr (REHAU)"
         }
       ]
     },
     {
       "key": "groesse",
-      "name": "Außendurchmesser",
+      "name": "Größe",
       "display": "dropdown",
       "options": [
         {
@@ -431,6 +443,195 @@
           "when": {
             "rohr": "pvcc"
           }
+        },
+        {
+          "key": "ht32",
+          "label": "DN 32",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht40",
+          "label": "DN 40",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht50",
+          "label": "DN 50",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht75",
+          "label": "DN 75",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht90",
+          "label": "DN 90",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht110",
+          "label": "DN 110",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht125",
+          "label": "DN 125",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "ht160",
+          "label": "DN 160",
+          "when": {
+            "rohr": "ht"
+          }
+        },
+        {
+          "key": "pk32",
+          "label": "DN 32",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk40",
+          "label": "DN 40",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk50",
+          "label": "DN 50",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk75",
+          "label": "DN 75",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk90",
+          "label": "DN 90",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk110",
+          "label": "DN 110",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk125",
+          "label": "DN 125",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk160",
+          "label": "DN 160",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk200",
+          "label": "DN 200",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "pk250",
+          "label": "DN 250",
+          "when": {
+            "rohr": "polokal"
+          }
+        },
+        {
+          "key": "rp32",
+          "label": "DN 32",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp40",
+          "label": "DN 40",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp50",
+          "label": "DN 50",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp75",
+          "label": "DN 75",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp90",
+          "label": "DN 90",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp110",
+          "label": "DN 110",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp125",
+          "label": "DN 125",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp160",
+          "label": "DN 160",
+          "when": {
+            "rohr": "raupiano"
+          }
+        },
+        {
+          "key": "rp200",
+          "label": "DN 200",
+          "when": {
+            "rohr": "raupiano"
+          }
         }
       ]
     }
@@ -439,7 +640,7 @@
     {
       "symbol": "L",
       "label": "L",
-      "name": "Maximaler Rohrschellenabstand",
+      "name": "Maximaler Abstand waagerecht",
       "unit": "m",
       "decimals": 2,
       "cases": [
@@ -449,7 +650,7 @@
             "groesse": "cu12"
           },
           "value": 1.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -457,7 +658,7 @@
             "groesse": "cu15"
           },
           "value": 1.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -465,7 +666,7 @@
             "groesse": "cu18"
           },
           "value": 1.5,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -473,7 +674,7 @@
             "groesse": "cu22"
           },
           "value": 2.0,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -481,7 +682,7 @@
             "groesse": "cu28"
           },
           "value": 2.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Deutsches Kupferinstitut); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -489,7 +690,7 @@
             "groesse": "cu35"
           },
           "value": 2.75,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -497,7 +698,7 @@
             "groesse": "cu42"
           },
           "value": 3.0,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -505,7 +706,7 @@
             "groesse": "cu54"
           },
           "value": 3.5,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -513,7 +714,7 @@
             "groesse": "cu76p1"
           },
           "value": 4.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -521,7 +722,7 @@
             "groesse": "cu88p9"
           },
           "value": 4.75,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -529,7 +730,7 @@
             "groesse": "cu108"
           },
           "value": 5.0,
-          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center)"
+          "rule": "Empfehlung nach DIN 1988 Teil 2 (Auszug Edelstahl-Service-Center); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -537,7 +738,7 @@
             "groesse": "es15"
           },
           "value": 1.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -545,7 +746,7 @@
             "groesse": "es18"
           },
           "value": 1.5,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -553,7 +754,7 @@
             "groesse": "es22"
           },
           "value": 2.0,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -561,7 +762,7 @@
             "groesse": "es28"
           },
           "value": 2.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -569,7 +770,7 @@
             "groesse": "es35"
           },
           "value": 2.75,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -577,7 +778,7 @@
             "groesse": "es42"
           },
           "value": 3.0,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -585,7 +786,7 @@
             "groesse": "es54"
           },
           "value": 3.5,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -593,7 +794,7 @@
             "groesse": "es76p1"
           },
           "value": 4.25,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -601,7 +802,7 @@
             "groesse": "es88p9"
           },
           "value": 4.75,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -609,7 +810,7 @@
             "groesse": "es108"
           },
           "value": 5.0,
-          "rule": "Empfehlung nach DIN 1988 Teil 2"
+          "rule": "Empfehlung nach DIN 1988 Teil 2; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -617,7 +818,7 @@
             "groesse": "es114p3"
           },
           "value": 5.0,
-          "rule": "Herstellerangabe (heco)"
+          "rule": "Herstellerangabe (heco); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -625,7 +826,7 @@
             "groesse": "es139p7"
           },
           "value": 5.0,
-          "rule": "Herstellerangabe (heco)"
+          "rule": "Herstellerangabe (heco); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -633,7 +834,7 @@
             "groesse": "es168p3"
           },
           "value": 5.0,
-          "rule": "Herstellerangabe (heco)"
+          "rule": "Herstellerangabe (heco); die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -641,7 +842,7 @@
             "groesse": "vb14"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -649,7 +850,7 @@
             "groesse": "vb16"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -657,7 +858,7 @@
             "groesse": "vb18"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -665,7 +866,7 @@
             "groesse": "vb20"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -673,7 +874,7 @@
             "groesse": "vb25"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -681,7 +882,7 @@
             "groesse": "vb26"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -689,7 +890,7 @@
             "groesse": "vb32"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -697,7 +898,7 @@
             "groesse": "vb40"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -705,7 +906,7 @@
             "groesse": "vb50"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -713,7 +914,7 @@
             "groesse": "vb63"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -721,7 +922,7 @@
             "groesse": "px16"
           },
           "value": 0.8,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -729,7 +930,7 @@
             "groesse": "px20"
           },
           "value": 0.9,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -737,7 +938,7 @@
             "groesse": "px25"
           },
           "value": 1.0,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -745,7 +946,7 @@
             "groesse": "px32"
           },
           "value": 1.0,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -753,7 +954,7 @@
             "groesse": "px40"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -761,7 +962,7 @@
             "groesse": "px50"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -769,7 +970,7 @@
             "groesse": "px63"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -777,7 +978,7 @@
             "groesse": "pb16"
           },
           "value": 0.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -785,7 +986,7 @@
             "groesse": "pb20"
           },
           "value": 0.6,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -793,7 +994,7 @@
             "groesse": "pb25"
           },
           "value": 0.7,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -801,7 +1002,7 @@
             "groesse": "pb32"
           },
           "value": 0.8,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -809,7 +1010,7 @@
             "groesse": "pb40"
           },
           "value": 1.0,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -817,7 +1018,7 @@
             "groesse": "pb50"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -825,7 +1026,7 @@
             "groesse": "pb63"
           },
           "value": 1.4,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -833,7 +1034,7 @@
             "groesse": "pc16"
           },
           "value": 0.8,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -841,7 +1042,7 @@
             "groesse": "pc20"
           },
           "value": 0.95,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -849,7 +1050,7 @@
             "groesse": "pc25"
           },
           "value": 1.05,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -857,7 +1058,7 @@
             "groesse": "pc32"
           },
           "value": 1.2,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -865,7 +1066,7 @@
             "groesse": "pc40"
           },
           "value": 1.3,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -873,7 +1074,7 @@
             "groesse": "pc50"
           },
           "value": 1.5,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
         },
         {
           "when": {
@@ -881,7 +1082,490 @@
             "groesse": "pc63"
           },
           "value": 1.7,
-          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers"
+          "rule": "Anhaltswert (MÜPRO); verbindlich sind die Angaben des Rohrherstellers; die Quelle nennt einen Abstand ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht32"
+          },
+          "value": 0.5,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht40"
+          },
+          "value": 0.5,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht50"
+          },
+          "value": 0.5,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht75"
+          },
+          "value": 0.8,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht90"
+          },
+          "value": 0.9,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht110"
+          },
+          "value": 1.1,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht125"
+          },
+          "value": 1.25,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht160"
+          },
+          "value": 1.6,
+          "rule": "empfohlener Rohrschellenabstand liegend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk32"
+          },
+          "value": 0.5,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk40"
+          },
+          "value": 0.6,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk50"
+          },
+          "value": 0.75,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk75"
+          },
+          "value": 1.1,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk90"
+          },
+          "value": 1.35,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk110"
+          },
+          "value": 1.65,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk125"
+          },
+          "value": 1.85,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk160"
+          },
+          "value": 2.4,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk200"
+          },
+          "value": 3.0,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk250"
+          },
+          "value": 3.0,
+          "rule": "höchstens 15 × Außendurchmesser (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp32"
+          },
+          "value": 0.48,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp40"
+          },
+          "value": 0.6,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp50"
+          },
+          "value": 0.75,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp75"
+          },
+          "value": 1.12,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte)); Hersteller: 1125 mm, auf 1,12 m abgerundet"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp90"
+          },
+          "value": 1.35,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp110"
+          },
+          "value": 1.65,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp125"
+          },
+          "value": 1.87,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte)); Hersteller: 1875 mm, auf 1,87 m abgerundet"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp160"
+          },
+          "value": 2.4,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp200"
+          },
+          "value": 3.0,
+          "rule": "höchstens 15 × Außendurchmesser (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        }
+      ]
+    },
+    {
+      "symbol": "Lv",
+      "label": "Lᵥ",
+      "name": "Maximaler Abstand senkrecht",
+      "unit": "m",
+      "decimals": 2,
+      "cases": [
+        {
+          "when": {
+            "rohr": "kupfer"
+          },
+          "text": "keine gesonderte Angabe",
+          "rule": "Wert oben gilt ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "edelstahl"
+          },
+          "text": "keine gesonderte Angabe",
+          "rule": "Wert oben gilt ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "verbund"
+          },
+          "text": "keine gesonderte Angabe",
+          "rule": "Wert oben gilt ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "pex"
+          },
+          "text": "keine gesonderte Angabe",
+          "rule": "Wert oben gilt ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "pb"
+          },
+          "text": "keine gesonderte Angabe",
+          "rule": "Wert oben gilt ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "pvcc"
+          },
+          "text": "keine gesonderte Angabe",
+          "rule": "Wert oben gilt ohne Unterscheidung nach Verlegerichtung"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht32"
+          },
+          "value": 1.2,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht40"
+          },
+          "value": 1.2,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht50"
+          },
+          "value": 1.5,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht75"
+          },
+          "value": 2.0,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht90"
+          },
+          "value": 2.0,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht110"
+          },
+          "value": 2.0,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht125"
+          },
+          "value": 2.0,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "ht",
+            "groesse": "ht160"
+          },
+          "value": 2.0,
+          "rule": "empfohlener Rohrschellenabstand stehend (Ostendorf, Montage- und Verlegeanleitung HT-System (PPs), Abschnitt 5.3)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk32"
+          },
+          "value": 1.5,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk40"
+          },
+          "value": 1.5,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk50"
+          },
+          "value": 1.5,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk75"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk90"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk110"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk125"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk160"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk200"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "polokal",
+            "groesse": "pk250"
+          },
+          "value": 2.0,
+          "rule": "Fallleitung; zwei Schellen je Geschoss (POLOPLAST, Technisches Handbuch POLO-KAL (2024), maximaler Schellenabstand)"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp32"
+          },
+          "value": 1.5,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp40"
+          },
+          "value": 1.5,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp50"
+          },
+          "value": 1.5,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp75"
+          },
+          "value": 2.0,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp90"
+          },
+          "value": 2.0,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp110"
+          },
+          "value": 2.0,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp125"
+          },
+          "value": 2.0,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp160"
+          },
+          "value": 2.0,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
+        },
+        {
+          "when": {
+            "rohr": "raupiano",
+            "groesse": "rp200"
+          },
+          "value": 2.0,
+          "rule": "senkrechte Verlegung (REHAU, Technische Information RAUPIANO PLUS (2025), Tab. 03-3 (Richtwerte))"
         }
       ]
     }
@@ -908,6 +1592,18 @@
         "L": 0.9
       },
       "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): PE-X 20 mm"
+    },
+    {
+      "inputs": {},
+      "choices": {
+        "rohr": "ht",
+        "groesse": "ht110"
+      },
+      "expected": {
+        "L": 1.1,
+        "Lv": 2.0
+      },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): HT DN 110"
     }
   ]
 }
