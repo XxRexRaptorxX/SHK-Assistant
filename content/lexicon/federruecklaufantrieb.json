@@ -9,6 +9,10 @@
   "synonyms": [
     "spring return actuator"
   ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Stellantrieb, der bei Ausfall der Antriebsenergie durch eine Feder in eine definierte Sicherheitsstellung zurückkehrt, sofern so ausgelegt.",
   "related": []
 }

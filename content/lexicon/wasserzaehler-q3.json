@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasserzähler Q3",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Durchflusskennwert eines Wasserzählers nach einer metrologischen Klassifikation. Auswahl und Dimensionierung erfolgen anhand der einschlägigen Norm und Herstellerangaben.",
   "related": []
 }

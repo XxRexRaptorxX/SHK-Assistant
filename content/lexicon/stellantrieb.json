@@ -11,6 +11,10 @@
     "Antrieb",
     "actuator"
   ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Ein **Stellantrieb** bewegt ein Stellglied wie ein Ventil oder eine Luftklappe anhand eines elektrischen, pneumatischen oder thermischen Signals. Er kann beispielsweise auf/zu, dreipunkt- oder stetig geregelt arbeiten. Stellzeit, Stellkraft, Hub und Regelungssignal müssen mit dem angeschlossenen Bauteil kompatibel sein.",
   "related": [
     "lexicon.aktor",

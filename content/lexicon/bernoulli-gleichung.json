@@ -9,6 +9,9 @@
   "synonyms": [
     "Bernoulli equation"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Idealisierte Energiegleichung für eine stationäre Strömung, die Druck-, Geschwindigkeits- und Höhenanteile entlang einer Stromlinie verknüpft.",
   "related": []
 }

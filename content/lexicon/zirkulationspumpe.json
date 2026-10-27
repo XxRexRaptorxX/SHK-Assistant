@@ -10,6 +10,10 @@
     "Trinkwasser-Zirkulationspumpe",
     "circulation pump"
   ],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Eine **Zirkulationspumpe** hält den Umlauf des erwärmten Trinkwassers in einer Zirkulationsleitung aufrecht. Sie muss für Trinkwasser und die jeweiligen Betriebsbedingungen geeignet sein. Laufzeit, Temperaturregelung und hydraulischer Abgleich beeinflussen Komfort, Energiebedarf und hygienischen Betrieb.",
   "related": [
     "lexicon.zirkulationsleitung",

@@ -9,6 +9,9 @@
   "synonyms": [
     "mixed temperature"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Temperatur, die sich beim Mischen von Stoffen mit unterschiedlichen Temperaturen einstellt. Sie hängt unter anderem von Massen, Wärmekapazitäten und Wärmeverlusten ab.",
   "related": []
 }

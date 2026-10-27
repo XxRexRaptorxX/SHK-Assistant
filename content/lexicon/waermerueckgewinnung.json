@@ -10,6 +10,9 @@
     "WRG",
     "heat recovery"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "**Wärmerückgewinnung** nutzt Energie aus einem Abluft- oder Prozessstrom, um einen anderen Strom vorzuwärmen oder vorzubehandeln. In Lüftungsanlagen kann sie den Heiz- beziehungsweise Kühlenergiebedarf reduzieren. Übertragungsgrad, Druckverlust, Frostschutz, Leckage und hygienische Trennung sind bei der Auswahl zu berücksichtigen.",
   "related": [
     "lexicon.lueftungsanlage",

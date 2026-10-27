@@ -10,6 +10,9 @@
     "Ionenaustauschharz (Anlage)",
     "ion exchanger"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ein **Ionenaustauscher** tauscht gelöste Ionen eines Wassers gegen Ionen aus, die an einem Austauschmaterial gebunden sind. Je nach Harz und Betriebsweise können beispielsweise Enthärtung oder Entsalzung erreicht werden. Kapazität, Regeneration und die Eigenschaften des behandelten Wassers müssen zum Prozess passen.",
   "related": [
     "lexicon.enthaertungsanlage",

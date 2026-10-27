@@ -9,6 +9,9 @@
   "synonyms": [
     "pump curve"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Kurve, die den Zusammenhang zwischen Förderstrom und Förderhöhe einer Pumpe bei festgelegten Bedingungen beschreibt.",
   "related": []
 }

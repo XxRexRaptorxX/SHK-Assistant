@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Anschlussdimension",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Größe der Anschlüsse einer hydraulischen Weiche, die zu den erforderlichen Volumenströmen und Rohrdimensionen passen muss.",
   "related": []
 }

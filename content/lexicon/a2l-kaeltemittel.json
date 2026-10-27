@@ -9,6 +9,9 @@
   "synonyms": [
     "A2L refrigerant"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Sicherheitsklasse für Kältemittel mit geringer Brennbarkeit und niedriger Flammenausbreitungsgeschwindigkeit nach der entsprechenden Klassifizierung.",
   "related": []
 }

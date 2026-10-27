@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche maximaler Volumenstrom",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Vom Hersteller angegebener maximaler Volumenstrom unter definierten Bedingungen.",
   "related": []
 }

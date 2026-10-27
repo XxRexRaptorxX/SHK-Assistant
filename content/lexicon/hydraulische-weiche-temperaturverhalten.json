@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Temperaturverhalten",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Temperaturverhalten der Weiche abhängig von den Volumenströmen der angeschlossenen Kreise; es kann zu Beimischung oder Rücklaufanhebung kommen.",
   "related": []
 }

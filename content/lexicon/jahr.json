@@ -9,6 +9,9 @@
   "synonyms": [
     "year"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Jahr** (a) ist eine Einheit für die Zeit. 1 a = 31.536.000 s.",
   "related": [
     "lexicon.sekunde"

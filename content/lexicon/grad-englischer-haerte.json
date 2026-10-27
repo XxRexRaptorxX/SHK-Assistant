@@ -10,6 +10,9 @@
     "°e",
     "English degree of hardness"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Grad englischer Härte** (°e) ist eine Einheit für die Wasserhärte. 1 °e = 0,142 mmol/l.",
   "related": [
     "lexicon.millimol-pro-liter"

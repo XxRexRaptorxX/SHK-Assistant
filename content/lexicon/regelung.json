@@ -9,6 +9,9 @@
   "synonyms": [
     "closed-loop control"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Beeinflussung einer Größe durch Vergleich des Istwerts mit einem Sollwert und Rückführung der Abweichung, um die Größe möglichst passend zu halten.",
   "related": []
 }

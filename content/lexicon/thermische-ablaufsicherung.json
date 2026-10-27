@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Thermische Ablaufsicherung",
   "synonyms": [],
+  "categories": [
+    "normen"
+  ],
   "definition": "Sicherheitseinrichtung, die bei bestimmten Festbrennstoffkesseln überschüssige Wärme durch einen vorgesehenen Kühlvorgang abführt, sofern der Kessel dafür ausgelegt ist.",
   "related": []
 }

@@ -11,6 +11,9 @@
     "Kalkhärte",
     "water hardness"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Die **Wasserhärte** beschreibt vor allem den Gehalt an gelösten Calcium- und Magnesiumionen. Hartes Wasser kann bei Erwärmung Kalkablagerungen begünstigen, beispielsweise in Wärmeerzeugern und Warmwasserbereitern. Die Härte ist nicht mit dem pH-Wert gleichzusetzen.",
   "related": [
     "lexicon.kalkablagerung",

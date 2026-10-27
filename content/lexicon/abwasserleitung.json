@@ -11,6 +11,9 @@
     "Abflussleitung",
     "drainage pipe"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Eine **Abwasserleitung** transportiert Abwasser innerhalb oder außerhalb eines Gebäudes zur weiteren Ableitung. Je nach Lage und Funktion wird unter anderem zwischen Anschluss-, Fall-, Sammel- und Grundleitungen unterschieden. Gefälle, Belüftung, Reinigungsmöglichkeiten, Schallschutz und Dichtheit sind wesentliche Planungsaspekte.",
   "related": [
     "lexicon.fallleitung",

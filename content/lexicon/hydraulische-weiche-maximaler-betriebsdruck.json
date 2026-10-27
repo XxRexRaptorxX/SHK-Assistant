@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche maximaler Betriebsdruck",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Vom Hersteller angegebener maximal zulässiger Druck für die Weiche.",
   "related": []
 }

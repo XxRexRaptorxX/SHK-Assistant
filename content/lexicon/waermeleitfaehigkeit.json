@@ -10,6 +10,9 @@
     "Lambda-Wert",
     "thermal conductivity"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Die **Wärmeleitfähigkeit** beschreibt, wie gut ein Material Wärme durch Wärmeleitung transportiert. Sie wird üblicherweise mit λ bezeichnet und in W/(m·K) angegeben. Eine geringe Wärmeleitfähigkeit ist bei Dämmstoffen erwünscht; Metalle besitzen im Allgemeinen eine deutlich höhere Wärmeleitfähigkeit.",
   "related": [
     "lexicon.rohrdaemmung",

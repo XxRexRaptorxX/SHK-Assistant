@@ -10,6 +10,9 @@
     "Treibhauspotenzial",
     "global warming potential"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Global Warming Potential: Kennwert für das relative Treibhauspotenzial eines Stoffes über einen festgelegten Zeitraum im Vergleich zu Kohlendioxid.",
   "related": []
 }

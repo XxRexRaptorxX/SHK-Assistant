@@ -9,6 +9,9 @@
   "synonyms": [
     "refrigerant charging"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Einbringen einer vorgegebenen Kältemittelmasse in einen Kältekreislauf unter Einhaltung der Herstellervorgaben und Sicherheitsanforderungen.",
   "related": []
 }

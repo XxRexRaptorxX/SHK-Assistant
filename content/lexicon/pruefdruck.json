@@ -9,6 +9,9 @@
   "synonyms": [
     "test pressure"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Druck, der bei einer definierten Druckprüfung angelegt wird, um Dichtheit oder Festigkeit eines Systems zu überprüfen.",
   "related": []
 }

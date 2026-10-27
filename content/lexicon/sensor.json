@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Sensor",
   "synonyms": [],
+  "categories": [
+    "msr"
+  ],
   "definition": "Bauteil, das eine physikalische Größe wie Temperatur, Druck, Feuchte oder Durchfluss erfasst und in ein auswertbares Signal umsetzt.",
   "related": []
 }

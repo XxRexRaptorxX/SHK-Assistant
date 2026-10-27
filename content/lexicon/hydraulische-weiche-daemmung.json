@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Dämmung",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "werkstoffe"
+  ],
   "definition": "Wärmedämmung der Weiche zur Verringerung von Wärmeverlusten und unerwünschter Wärmeabgabe.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Betriebsdruck bei Durchfluss",
     "flow pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Der **Fließdruck** ist der Druck an einer Messstelle, während Wasser entnommen wird und strömt. Er liegt wegen Druckverlusten häufig unter dem Ruhedruck. Für die Funktion einer Armatur oder eines Geräts ist zu prüfen, welcher Mindestfließdruck bei dem erforderlichen Durchfluss verfügbar sein muss.",
   "related": [
     "lexicon.ruhedruck",

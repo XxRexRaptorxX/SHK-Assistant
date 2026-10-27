@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "pH-Wert Heizungswasser",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "pH-Wert des Wassers in einem Heizkreis. Der geeignete Bereich hängt unter anderem von Werkstoffen und einschlägigen technischen Anforderungen ab.",
   "related": []
 }

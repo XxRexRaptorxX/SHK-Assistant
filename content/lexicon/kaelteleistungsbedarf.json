@@ -9,6 +9,9 @@
   "synonyms": [
     "required cooling capacity"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Erforderliche Kälteleistung zur Abdeckung der Wärmeeinträge eines Raums oder Prozesses unter festgelegten Auslegungsbedingungen.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Schichtspeicher",
     "stratified storage tank"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Speicher, der unterschiedliche Wassertemperaturen in möglichst stabilen Schichten hält, um die nutzbare Temperaturqualität zu verbessern.",
   "related": []
 }

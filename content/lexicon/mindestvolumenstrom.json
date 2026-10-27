@@ -9,6 +9,9 @@
   "synonyms": [
     "minimum flow rate"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Kleinster Volumenstrom, der durch ein Gerät oder einen Anlagenabschnitt fließen muss, damit ein sicherer oder bestimmungsgemäßer Betrieb gewährleistet ist.",
   "related": []
 }

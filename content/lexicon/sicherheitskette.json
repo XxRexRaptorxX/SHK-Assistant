@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Sicherheitskette",
   "synonyms": [],
+  "categories": [
+    "msr",
+    "normen"
+  ],
   "definition": "Verknüpfung sicherheitsrelevanter Schalt- und Überwachungselemente, deren Zustand die Betriebsfreigabe oder Abschaltung eines Geräts bestimmt.",
   "related": []
 }

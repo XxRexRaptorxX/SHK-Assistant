@@ -10,6 +10,9 @@
     "Wasserenthärter",
     "water softener"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Eine **Enthärtungsanlage** reduziert die Wasserhärte, häufig durch Ionenaustausch, bei dem Calcium- und Magnesiumionen gegen andere Ionen ausgetauscht werden. Sie kann Kalkablagerungen in geeigneten Anwendungen verringern. Auslegung, Regeneration, Hygiene und die zulässige Behandlung von Trinkwasser sind nach Herstellerangaben und geltenden Regeln zu beurteilen.",
   "related": [
     "lexicon.wasserhaerte",

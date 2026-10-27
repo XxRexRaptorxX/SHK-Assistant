@@ -9,6 +9,10 @@
   "synonyms": [
     "energy demand"
   ],
+  "categories": [
+    "normen",
+    "physik"
+  ],
   "definition": "Berechnete Energiemenge, die für einen festgelegten Zweck unter definierten Annahmen benötigt wird.",
   "related": []
 }

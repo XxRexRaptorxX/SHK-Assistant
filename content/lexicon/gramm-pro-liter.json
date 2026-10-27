@@ -10,6 +10,9 @@
     "g/l",
     "gram per litre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Gramm pro Liter** (g/l) ist eine Einheit für die Dichte. 1 g/l = 1 kg/m³.",
   "related": [
     "lexicon.kilogramm-pro-kubikmeter"

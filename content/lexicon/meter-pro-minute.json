@@ -10,6 +10,9 @@
     "m/min",
     "metre per minute"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Meter pro Minute** (m/min) ist eine Einheit für die Geschwindigkeit. 1 m/min = 0,0166667 m/s.",
   "related": [
     "lexicon.meter-pro-sekunde"

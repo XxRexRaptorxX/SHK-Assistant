@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Volumenstrom aus Geschwindigkeit",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "physik"
+  ],
   "definition": "Der Volumenstrom ergibt sich bei gleichmäßiger Betrachtung aus mittlerer Strömungsgeschwindigkeit multipliziert mit der Querschnittsfläche.",
   "related": []
 }

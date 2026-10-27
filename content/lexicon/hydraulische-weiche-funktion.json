@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Funktion",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Eine hydraulische Weiche schafft zwischen Erzeuger- und Verbraucherkreisen einen Bereich mit geringem hydraulischem Widerstand, sodass die Kreise unterschiedliche Volumenströme haben können.",
   "related": []
 }

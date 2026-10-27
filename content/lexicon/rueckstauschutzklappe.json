@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Rückstauschutzklappe",
   "synonyms": [],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Klappe oder Rückstausicherung, die den Rückfluss von Abwasser bei Rückstau begrenzen soll. Sie darf nur in dafür geeigneten Fällen nach den geltenden Regeln eingesetzt werden.",
   "related": []
 }

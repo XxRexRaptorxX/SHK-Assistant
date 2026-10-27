@@ -10,6 +10,9 @@
     "Teflonband (umgangssprachlich)",
     "PTFE tape"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**PTFE-Dichtband** ist ein Band aus Polytetrafluorethylen, das bei dafür vorgesehenen Gewindeverbindungen zur Abdichtung verwendet werden kann. Es ist nicht für jede Gewindeart oder jede Verbindung geeignet und muss sachgerecht in der vorgesehenen Richtung und Menge angebracht werden. Anwendung und Freigaben richten sich nach Medium, Druck, Temperatur und Produktangaben.",
   "related": [
     "lexicon.gewindeverbindung",

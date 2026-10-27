@@ -7,6 +7,11 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche und Brennwertgerät",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik",
+    "gas"
+  ],
   "definition": "Bei Brennwertsystemen müssen Volumenströme und Rücklauftemperaturen abgestimmt werden, damit unnötige Rücklaufbeimischung und Effizienzverluste vermieden werden.",
   "related": []
 }

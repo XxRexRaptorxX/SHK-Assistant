@@ -9,6 +9,10 @@
   "synonyms": [
     "thermoelectric actuator"
   ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Stellantrieb, der durch Erwärmung eines Elements eine Ventilbewegung erzeugt und häufig für Heizkreisverteiler verwendet wird.",
   "related": []
 }

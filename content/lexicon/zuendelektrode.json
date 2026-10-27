@@ -9,6 +9,9 @@
   "synonyms": [
     "ignition electrode"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "Bauteil, das bei entsprechenden Brennern einen elektrischen Funken zur Zündung des Brennstoff-Luft-Gemischs erzeugt.",
   "related": []
 }

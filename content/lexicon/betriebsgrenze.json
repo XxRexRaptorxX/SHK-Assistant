@@ -9,6 +9,9 @@
   "synonyms": [
     "operating limit"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Bereich von Druck, Temperatur, Durchfluss oder anderen Größen, innerhalb dessen ein Gerät bestimmungsgemäß betrieben werden darf.",
   "related": []
 }

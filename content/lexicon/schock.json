@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Schock",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Schock** ist eine Einheit für Stückzahlen. 1 Schock = 60 Stk.",
   "related": [
     "lexicon.stueck"

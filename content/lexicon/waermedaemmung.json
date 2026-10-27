@@ -10,6 +10,9 @@
     "Dämmung",
     "thermal insulation"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**Wärmedämmung** verringert den Wärmestrom zwischen Bereichen unterschiedlicher Temperatur. In SHK-Anlagen schützt sie vor Wärmeverlusten, unerwünschter Erwärmung oder Kondensation. Dämmstärke, Wärmeleitfähigkeit, Dampfdiffusionsverhalten, Brandschutz und mechanische Belastung sind auf den Einsatzfall abzustimmen.",
   "related": [
     "lexicon.rohrdaemmung",

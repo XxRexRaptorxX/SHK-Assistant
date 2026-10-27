@@ -10,6 +10,9 @@
     "km²",
     "square kilometre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Quadratkilometer** (km²) ist eine Einheit für die Fläche. 1 km² = 1.000.000 m².",
   "related": [
     "lexicon.quadratmeter"

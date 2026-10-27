@@ -9,6 +9,9 @@
   "synonyms": [
     "vapour pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Druck, den der Dampf eines Stoffes im thermodynamischen Gleichgewicht mit seiner flüssigen oder festen Phase ausübt. Er hängt von der Temperatur ab.",
   "related": []
 }

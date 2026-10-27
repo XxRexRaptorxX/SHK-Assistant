@@ -9,6 +9,10 @@
   "synonyms": [
     "cooling load calculation"
   ],
+  "categories": [
+    "kaelte",
+    "lueftung"
+  ],
   "definition": "Ermittlung der erforderlichen Kälteleistung eines Raums oder Gebäudes unter festgelegten Auslegungsbedingungen.",
   "related": []
 }

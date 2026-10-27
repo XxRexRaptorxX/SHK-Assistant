@@ -9,6 +9,9 @@
   "synonyms": [
     "specific volume"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Volumen pro Masseneinheit eines Stoffes; es ist der Kehrwert der Dichte, sofern beide Größen auf denselben Zustand bezogen sind.",
   "related": []
 }

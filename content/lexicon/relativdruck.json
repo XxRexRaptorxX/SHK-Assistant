@@ -9,6 +9,9 @@
   "synonyms": [
     "relative pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Druck bezogen auf einen Referenzdruck, häufig den atmosphärischen Umgebungsdruck.",
   "related": []
 }

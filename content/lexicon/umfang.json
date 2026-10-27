@@ -9,6 +9,9 @@
   "synonyms": [
     "circumference"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Umfang** ist die Länge der Begrenzungslinie einer ebenen Figur, z. B. eines Kreises oder Rechtecks.",
   "related": [
     "lexicon.kreis",

@@ -9,6 +9,9 @@
   "synonyms": [
     "heat exchanger capacity"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeleistung, die ein Wärmeübertrager unter definierten Temperatur- und Durchflussbedingungen übertragen kann.",
   "related": []
 }

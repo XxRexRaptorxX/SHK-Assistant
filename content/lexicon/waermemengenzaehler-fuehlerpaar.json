@@ -9,6 +9,10 @@
   "synonyms": [
     "heat meter sensor pair"
   ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Zusammengehörige Temperaturfühler, die Vorlauf- und Rücklauftemperatur für die Berechnung der übertragenen Wärmemenge erfassen.",
   "related": []
 }

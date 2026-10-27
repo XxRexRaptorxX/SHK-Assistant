@@ -9,6 +9,9 @@
   "synonyms": [
     "frost protection mode"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Betriebsmodus, der bei niedrigen Temperaturen eine Mindesttemperatur oder andere Schutzmaßnahmen sicherstellen soll. Die konkrete Funktion ist geräteabhängig.",
   "related": []
 }

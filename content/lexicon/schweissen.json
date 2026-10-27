@@ -10,6 +10,9 @@
     "Schweißverbindung",
     "welding"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**Schweißen** verbindet Werkstoffe durch örtliches Aufschmelzen, mit oder ohne Zusatzwerkstoff, oder durch andere geeignete Schweißverfahren. Für Rohrleitungen kommen abhängig vom Werkstoff beispielsweise Metall- oder Kunststoffschweißverfahren infrage. Qualität hängt von Verfahren, Qualifikation, Vorbereitung, Umgebung und Prüfung ab.",
   "related": [
     "lexicon.pe-rohr",

@@ -9,6 +9,9 @@
   "synonyms": [
     "mixing circuit"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Heizkreis, dessen Vorlauftemperatur durch Mischen von heißem Vorlaufwasser mit kühlerem Rücklaufwasser geregelt wird. Häufig kommt dafür ein Dreiwege- oder Vierwegemischer zum Einsatz.",
   "related": []
 }

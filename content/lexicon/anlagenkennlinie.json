@@ -9,6 +9,9 @@
   "synonyms": [
     "system curve"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Kurve, die den erforderlichen Druck beziehungsweise die Förderhöhe eines Rohrnetzes in Abhängigkeit vom Volumenstrom beschreibt.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "vacuum breaker"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Sicherheitseinrichtung, die bei unzulässigem Unterdruck Luft einlassen kann, um einen Behälter oder ein System vor Schäden durch Vakuum zu schützen.",
   "related": []
 }

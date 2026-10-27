@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Ohm",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Ohm** (Ω) ist eine Einheit für den elektrischen Widerstand. 1 Ω = 0,001 kΩ.",
   "related": [
     "lexicon.kiloohm"

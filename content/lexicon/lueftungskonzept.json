@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Lüftungskonzept",
   "synonyms": [],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Planung, wie der erforderliche Luftaustausch eines Gebäudes oder einer Nutzung sichergestellt wird, unter Berücksichtigung von Feuchteschutz, Komfort und Energiebedarf.",
   "related": []
 }

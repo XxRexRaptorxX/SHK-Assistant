@@ -9,6 +9,9 @@
   "synonyms": [
     "heat exchanger fouling"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ablagerung oder Belag auf Wärmeübertragungsflächen, der den Wärmeübergang und den Druckverlust verschlechtern kann.",
   "related": []
 }

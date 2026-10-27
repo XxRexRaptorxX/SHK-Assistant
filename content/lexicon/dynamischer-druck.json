@@ -9,6 +9,10 @@
   "synonyms": [
     "dynamic pressure"
   ],
+  "categories": [
+    "hydraulik",
+    "physik"
+  ],
   "definition": "Druckanteil, der mit der Strömungsgeschwindigkeit eines Fluids zusammenhängt.",
   "related": []
 }

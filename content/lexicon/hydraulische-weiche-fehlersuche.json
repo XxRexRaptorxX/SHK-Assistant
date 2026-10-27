@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Fehlersuche",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "msr"
+  ],
   "definition": "Analyse von Temperatur- und Durchflussproblemen, die mit Weiche, Pumpen oder angeschlossenen Kreisen zusammenhängen können.",
   "related": []
 }

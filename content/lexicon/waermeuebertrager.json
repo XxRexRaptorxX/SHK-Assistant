@@ -10,6 +10,9 @@
     "Wärmetauscher",
     "heat exchanger"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Bauteil, das Wärme zwischen zwei Medien über eine Trennfläche überträgt, ohne dass sich die Medien im Normalbetrieb vermischen.",
   "related": []
 }

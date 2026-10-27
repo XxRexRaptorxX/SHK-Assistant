@@ -9,6 +9,9 @@
   "synonyms": [
     "hydraulic separation"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Trennung der Druck- und Volumenstrombeziehungen zweier Kreise, sodass deren Pumpen sich möglichst wenig gegenseitig beeinflussen.",
   "related": []
 }

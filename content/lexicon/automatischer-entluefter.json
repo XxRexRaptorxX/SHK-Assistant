@@ -10,6 +10,10 @@
     "Schnellentlüfter",
     "automatic air vent"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Armatur, die angesammelte Luft aus einem wasserführenden System selbsttätig abführt. Einbauort und Wartung müssen zur Herstelleranleitung passen.",
   "related": []
 }

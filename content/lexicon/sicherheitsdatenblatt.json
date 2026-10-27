@@ -10,6 +10,9 @@
     "SDB",
     "safety data sheet"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Dokument mit Informationen zu Gefahren, Schutzmaßnahmen, Lagerung, Handhabung und Notfallmaßnahmen eines Gefahrstoffs oder Gemischs.",
   "related": []
 }

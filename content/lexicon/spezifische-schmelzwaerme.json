@@ -9,6 +9,9 @@
   "synonyms": [
     "specific latent heat of fusion"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Wärmeenergie pro Masseneinheit, die bei einem definierten Phasenwechsel von fest zu flüssig benötigt wird.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "thermische Trinkwasserdesinfektion",
     "thermal disinfection"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Die **thermische Desinfektion** nutzt erhöhte Temperaturen, um die Anzahl bestimmter Mikroorganismen in einem Wassersystem zu reduzieren. Wirksamkeit hängt nicht nur von der Solltemperatur, sondern auch von Einwirkzeit, erreichter Temperatur an den relevanten Stellen und Anlagengeometrie ab. Sie ist nur im Rahmen eines geeigneten hygienischen Gesamtkonzepts und nach den geltenden Regeln durchzuführen.",
   "related": [
     "lexicon.trinkwasserhygiene",

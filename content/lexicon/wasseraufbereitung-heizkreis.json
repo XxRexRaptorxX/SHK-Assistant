@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasseraufbereitung Heizkreis",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Maßnahmen zur Einstellung geeigneter Wasserparameter in einem Heizkreis, um Ablagerungen und Korrosion zu begrenzen.",
   "related": []
 }

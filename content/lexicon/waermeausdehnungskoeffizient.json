@@ -9,6 +9,10 @@
   "synonyms": [
     "coefficient of thermal expansion"
   ],
+  "categories": [
+    "werkstoffe",
+    "physik"
+  ],
   "definition": "Werkstoffkennwert, der beschreibt, wie stark sich die Abmessung eines Materials bei einer Temperaturänderung relativ verändert.",
   "related": []
 }

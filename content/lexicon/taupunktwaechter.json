@@ -9,6 +9,9 @@
   "synonyms": [
     "dew point monitor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Sensor oder Regelfunktion, die kritische Taupunktbedingungen überwacht und Kühlung begrenzt, um Kondensation an kalten Oberflächen zu vermeiden.",
   "related": []
 }

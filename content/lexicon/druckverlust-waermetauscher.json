@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckverlust Wärmetauscher",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Druckabfall eines Mediums beim Durchströmen eines Wärmeübertragers.",
   "related": []
 }

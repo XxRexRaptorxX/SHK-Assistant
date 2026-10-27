@@ -10,6 +10,10 @@
     "Stromstärke",
     "electric current"
   ],
+  "categories": [
+    "msr",
+    "physik"
+  ],
   "definition": "**Elektrische Stromstärke** gibt an, wie viel elektrische Ladung pro Zeit durch einen Leiterquerschnitt fließt. Formelzeichen I, Einheit Ampere (A).",
   "related": [
     "lexicon.elektrische-spannung",

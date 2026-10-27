@@ -9,6 +9,10 @@
   "synonyms": [
     "COP"
   ],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "Verhältnis der abgegebenen Heizleistung zur aufgenommenen elektrischen Leistung an einem definierten Betriebspunkt. Ein höherer COP bedeutet unter genau diesen Bedingungen eine höhere momentane Leistungszahl.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Entwässerungsanlage",
     "building drainage"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Die **Gebäudeentwässerung** sammelt und leitet Schmutz- und gegebenenfalls Niederschlagswasser von Sanitärobjekten und Flächen ab. Sie umfasst Rohre, Geruchsverschlüsse, Lüftungsleitungen, Revisionsöffnungen und gegebenenfalls Hebeanlagen oder Rückstauschutz. Planung und Ausführung müssen hydraulische, hygienische und bauliche Anforderungen erfüllen.",
   "related": [
     "lexicon.abwasser",

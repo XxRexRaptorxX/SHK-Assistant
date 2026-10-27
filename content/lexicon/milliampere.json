@@ -9,6 +9,9 @@
   "synonyms": [
     "mA"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Milliampere** (mA) ist eine Einheit für die elektrische Stromstärke. 1 mA = 0,001 A.",
   "related": [
     "lexicon.ampere"

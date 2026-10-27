@@ -9,6 +9,9 @@
   "synonyms": [
     "LAS"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "System, das Verbrennungsluftzufuhr und Abgasabführung für eine geeignete Feuerstätte kombiniert.",
   "related": []
 }

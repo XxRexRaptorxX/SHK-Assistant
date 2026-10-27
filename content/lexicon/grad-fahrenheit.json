@@ -10,6 +10,9 @@
     "°F",
     "degree Fahrenheit"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Grad Fahrenheit** (°F) ist eine Einheit für die Temperatur. 0 °C entsprechen 32 °F, 100 °C entsprechen 212 °F; eine Temperaturdifferenz von 1 K entspricht 1,8 °F.",
   "related": []
 }

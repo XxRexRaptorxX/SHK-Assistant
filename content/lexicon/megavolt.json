@@ -9,6 +9,9 @@
   "synonyms": [
     "MV"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Megavolt** (MV) ist eine Einheit für die elektrische Spannung. 1 MV = 1.000.000 V.",
   "related": [
     "lexicon.volt"

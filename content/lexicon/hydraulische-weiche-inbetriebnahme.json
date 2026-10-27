@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Inbetriebnahme",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "normen"
+  ],
   "definition": "Prüfung und Einstellung der angeschlossenen Kreise und Volumenströme nach dem vorgesehenen Anlagenkonzept.",
   "related": []
 }

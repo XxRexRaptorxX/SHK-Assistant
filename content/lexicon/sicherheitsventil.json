@@ -10,6 +10,11 @@
     "Überdruckventil",
     "safety valve"
   ],
+  "categories": [
+    "heizung",
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Ein **Sicherheitsventil** schützt ein druckbeaufschlagtes System vor unzulässigem Überdruck, indem es bei Erreichen eines festgelegten Ansprechdrucks Medium abbläst. Es darf nicht abgesperrt oder in seiner Funktion beeinträchtigt werden; Abblaseleitung und Einbau müssen den geltenden Regeln und Herstellerangaben entsprechen. Dimensionierung und Ansprechdruck richten sich nach Anlage und Wärmeerzeuger.",
   "related": [
     "lexicon.ausdehnungsgefaess",

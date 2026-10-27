@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Bus-System",
   "synonyms": [],
+  "categories": [
+    "msr"
+  ],
   "definition": "Kommunikationssystem, über das mehrere Geräte Daten oder Steuerinformationen über eine gemeinsame Leitung oder ein definiertes Netzwerk austauschen.",
   "related": []
 }

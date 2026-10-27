@@ -9,6 +9,9 @@
   "synonyms": [
     "boiler circuit"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Hydraulischer Kreislauf zwischen Wärmeerzeuger und unmittelbar zugehörigen Komponenten, beispielsweise hydraulischer Weiche oder Speicher.",
   "related": []
 }

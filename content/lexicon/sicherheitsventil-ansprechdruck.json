@@ -9,6 +9,9 @@
   "synonyms": [
     "safety valve set pressure"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Druck, bei dem ein Sicherheitsventil unter festgelegten Bedingungen zu öffnen beginnt. Er muss zur zulässigen Druckgrenze der abgesicherten Anlage passen.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "hPa",
     "hectopascal"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Hektopascal** (hPa) ist eine Einheit für den Druck. 1 hPa = 100 Pa.",
   "related": [
     "lexicon.pascal"

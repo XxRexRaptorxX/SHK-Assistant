@@ -10,6 +10,9 @@
     "Dichtelement",
     "seal"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Eine **Dichtung** verhindert das Austreten von Fluiden an einer Verbindungsstelle oder zwischen Bauteilen. Werkstoff und Form müssen zum Medium, Druck, Temperaturbereich, Bewegungen und zur Oberfläche passen. Eine Dichtung darf nicht beliebig wiederverwendet werden; Herstellerangaben und Montagevorgaben sind maßgeblich.",
   "related": [
     "lexicon.oring",

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulischer Abgleich Verfahren B",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Detaillierteres Verfahren des hydraulischen Abgleichs, bei dem Heizlasten und erforderliche Volumenströme raumweise beziehungsweise für Heizflächen ermittelt werden. Maßgeblich sind die geltenden Anforderungen.",
   "related": []
 }

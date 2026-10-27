@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulischer Abgleich Verfahren A",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Vereinfachtes Verfahren des hydraulischen Abgleichs auf Basis vereinfachter Annahmen. Anwendbarkeit und Anforderungen sind projektbezogen zu prüfen.",
   "related": []
 }

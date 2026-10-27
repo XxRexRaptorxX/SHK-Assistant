@@ -11,6 +11,9 @@
     "Dosierventil",
     "expansion valve"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Ein **Expansionsventil** senkt den Druck des flüssigen beziehungsweise teilweise verdampfenden Kältemittels vor dem Verdampfer und dosiert dessen Massenstrom. Thermostatische oder elektronische Ausführungen können die Überhitzung am Verdampferausgang regeln. Auswahl und Einstellung müssen zum Kältemittel, zur Leistung und zum Betriebsbereich passen.",
   "related": [
     "lexicon.kaeltemaschine",

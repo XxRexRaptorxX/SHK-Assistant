@@ -10,6 +10,9 @@
     "pH",
     "pH value"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Der **pH-Wert** ist ein Maß für den sauren oder basischen Charakter einer wässrigen Lösung. Er ist logarithmisch definiert; eine Änderung um eine pH-Einheit entspricht einer zehnfachen Änderung der Wasserstoffionenaktivität. In SHK-Anlagen ist der pH-Wert unter anderem für Korrosionsverhalten, Heizungswasser und Wasseraufbereitung relevant; zulässige Bereiche sind nach Werkstoffen und geltenden technischen Regeln zu beurteilen.",
   "related": [
     "lexicon.heizungswasser",

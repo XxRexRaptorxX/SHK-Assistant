@@ -9,6 +9,9 @@
   "synonyms": [
     "system documentation"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Unterlagen zu Planung, Montage, Einstellungen, Prüfungen und Betrieb einer Anlage. Sie unterstützen sicheren Betrieb, Wartung und spätere Änderungen.",
   "related": []
 }

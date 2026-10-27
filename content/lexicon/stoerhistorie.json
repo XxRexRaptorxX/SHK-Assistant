@@ -9,6 +9,9 @@
   "synonyms": [
     "fault history"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Chronologische Aufzeichnung von Stör- und Alarmmeldungen, die bei Diagnose und Ursachenanalyse hilft.",
   "related": []
 }

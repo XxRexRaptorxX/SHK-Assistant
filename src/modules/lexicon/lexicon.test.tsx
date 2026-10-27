@@ -6,6 +6,7 @@ import { filterLexicon, findLexiconEntry, lexiconEntries, lexiconPath, sortLexic
 import { LexiconDetailPage } from './LexiconDetailPage'
 import { LexiconListPage } from './LexiconListPage'
 import type { LexiconEntry } from './schema'
+import { LEXICON_CATEGORIES } from './constants'
 import { buildTermIndex, lexiconPathFor, unitNameFor } from './termLinks'
 import { TermLink } from './TermLink'
 import { converterEntries } from '../converter/converter'
@@ -22,6 +23,7 @@ function lexiconEntry(overrides: Partial<LexiconEntry>): LexiconEntry {
     verifiedAt: '2026-01-15',
     term: 'Beispiel',
     synonyms: [],
+    categories: ['heizung'],
     definition: 'Erster Absatz.\n\nZweiter Absatz.',
     related: [],
     ...overrides,
@@ -30,11 +32,12 @@ function lexiconEntry(overrides: Partial<LexiconEntry>): LexiconEntry {
 
 const fixtures = sortLexicon([
   lexiconEntry({ id: 'lexicon.zentralheizung', term: 'Zentralheizung' }),
-  lexiconEntry({ id: 'lexicon.ausdehnungsgefaess', term: 'Ausdehnungsgefäß', synonyms: ['AG'] }),
+  lexiconEntry({ id: 'lexicon.ausdehnungsgefaess', term: 'Ausdehnungsgefäß', synonyms: ['AG'], categories: ['heizung', 'hydraulik'] }),
   lexiconEntry({
     id: 'lexicon.oelbrenner',
     term: 'Ölbrenner',
     status: 'draft',
+    categories: ['gas'],
     related: ['lexicon.ausdehnungsgefaess', 'lexicon.nur-intern'],
   }),
 ])
@@ -74,6 +77,13 @@ describe('Lexikon-Daten', () => {
   it('lädt die echten Inhalte aus content/lexicon', () => {
     expect(lexiconEntries.length).toBeGreaterThan(0)
     expect(lexiconEntries.every((e) => e.id.startsWith('lexicon.'))).toBe(true)
+    // Jeder Begriff steht in mindestens einer Kategorie, jede Kategorie ist belegt
+    expect(lexiconEntries.every((e) => e.categories.length > 0)).toBe(true)
+    for (const { key } of LEXICON_CATEGORIES) {
+      expect(lexiconEntries.some((e) => (e.categories as readonly string[]).includes(key)), key).toBe(true)
+    }
+    expect(lexiconEntries.find((e) => e.id === 'lexicon.heizlast')?.categories).toContain('heizung')
+    expect(lexiconEntries.find((e) => e.id === 'lexicon.kilowatt')?.categories).toEqual(['einheiten'])
   })
 })
 
@@ -89,8 +99,30 @@ describe('Lexikon-Seiten', () => {
     )
   }
 
-  it('listet alle Begriffe mit Synonymen und markiert Entwürfe', () => {
+  it('zeigt zuerst die Kategorien mit Anzahl, „Alles“ vorn', () => {
     const html = renderAt('/lexikon')
+    expect(html).toContain('aria-label="Kategorien"')
+    expect(html).toContain('href="/lexikon?kategorie=alles"')
+    expect(html.indexOf('>Alles<')).toBeLessThan(html.indexOf('>Heizung<'))
+    expect(html).toMatch(/>Alles<\/span><span class="text-base text-muted">3 Begriffe/)
+    expect(html).toMatch(/>Hydraulik &amp; Pumpen<\/span><span class="text-base text-muted">1 Begriff</)
+    expect(html).not.toContain('href="/lexikon/ausdehnungsgefaess"')
+  })
+
+  it('zeigt nach Auswahl einer Kategorie nur deren Begriffe, mehrfach zugeordnete in jeder', () => {
+    const heating = renderAt('/lexikon?kategorie=heizung')
+    expect(heating).toContain('Heizung</h1>')
+    expect(heating).toContain('2 von 2 Begriffen')
+    expect(heating).toContain('href="/lexikon/ausdehnungsgefaess"')
+    expect(heating).not.toContain('href="/lexikon/oelbrenner"')
+    expect(heating).toContain('Alle Kategorien')
+    const hydraulics = renderAt('/lexikon?kategorie=hydraulik')
+    expect(hydraulics).toContain('1 von 1 Begriffen')
+    expect(hydraulics).toContain('href="/lexikon/ausdehnungsgefaess"')
+  })
+
+  it('listet unter „Alles“ alle Begriffe mit Synonymen und markiert Entwürfe', () => {
+    const html = renderAt('/lexikon?kategorie=alles')
     expect(html).toContain('3 von 3 Begriffen')
     expect(html).toContain('href="/lexikon/ausdehnungsgefaess"')
     expect(html).toContain('AG')

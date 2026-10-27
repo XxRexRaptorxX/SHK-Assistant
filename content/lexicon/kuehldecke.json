@@ -9,6 +9,10 @@
   "synonyms": [
     "chilled ceiling"
   ],
+  "categories": [
+    "kaelte",
+    "lueftung"
+  ],
   "definition": "Flächenkühlsystem, das Wärme aus dem Raum über eine gekühlte Deckenfläche aufnimmt. Bei wassergeführten Systemen ist Tauwasser zu vermeiden.",
   "related": []
 }

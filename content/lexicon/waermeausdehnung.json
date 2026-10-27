@@ -10,6 +10,10 @@
     "thermische Ausdehnung",
     "thermal expansion"
   ],
+  "categories": [
+    "werkstoffe",
+    "physik"
+  ],
   "definition": "Änderung des Volumens eines Stoffes durch Temperaturänderung. In geschlossenen Anlagen muss die Volumenvergrößerung erwärmter Flüssigkeit sicher aufgenommen werden.",
   "related": []
 }

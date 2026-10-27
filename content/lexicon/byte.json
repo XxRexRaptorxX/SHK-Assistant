@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Byte",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Byte** (B) ist eine Einheit für die Datenmenge. 1 B = 8 bit.",
   "related": [
     "lexicon.bit"

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Bar",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "Druckeinheit, die häufig in der Heizungs- und Sanitärtechnik verwendet wird; 1 bar entspricht 100 000 Pa.",
   "related": []
 }

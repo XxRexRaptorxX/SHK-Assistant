@@ -10,6 +10,9 @@
     "dm²",
     "square decimetre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Quadratdezimeter** (dm²) ist eine Einheit für die Fläche. 1 dm² = 0,01 m².",
   "related": [
     "lexicon.quadratmeter"

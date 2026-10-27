@@ -9,6 +9,9 @@
   "synonyms": [
     "calibration"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Vergleich eines Messgeräts mit einem Referenzstandard unter festgelegten Bedingungen, um dessen Anzeigeabweichung zu bestimmen. Kalibrierung ist nicht automatisch eine Justierung.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Schema",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Im Hydraulikschema sind typischerweise Erzeugervorlauf, Erzeugerrücklauf, Verbrauchervorlauf und Verbraucherrücklauf zu erkennen.",
   "related": []
 }

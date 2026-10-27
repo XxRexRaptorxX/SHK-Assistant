@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckverlust Armatur",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Druckabfall, der beim Durchströmen einer Armatur entsteht.",
   "related": []
 }

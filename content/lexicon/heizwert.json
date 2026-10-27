@@ -11,6 +11,10 @@
     "unterer Heizwert",
     "net calorific value"
   ],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
   "definition": "Der **Heizwert** (Hu) beschreibt die bei vollständiger Verbrennung nutzbare Wärme, wobei die Kondensationswärme des im Abgas enthaltenen Wasserdampfs nicht zurückgewonnen wird. Er dient zur energetischen Bewertung von Brennstoffen. Der Heizwert ist kleiner als der Brennwert desselben Brennstoffs.",
   "related": [
     "lexicon.brennwert",

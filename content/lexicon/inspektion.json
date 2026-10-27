@@ -9,6 +9,9 @@
   "synonyms": [
     "inspection"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Feststellung und Beurteilung des Ist-Zustands einer Anlage oder Komponente, beispielsweise durch Sichtprüfung und Messung.",
   "related": []
 }

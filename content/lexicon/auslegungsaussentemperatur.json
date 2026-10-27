@@ -9,6 +9,9 @@
   "synonyms": [
     "design outdoor temperature"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Für die Heizlastberechnung verwendete örtliche Außentemperatur unter festgelegten Auslegungsbedingungen. Sie ist nicht mit einer kurzfristigen Wettervorhersage gleichzusetzen.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "heat transfer rate"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeleistung, die pro Zeiteinheit zwischen zwei Medien oder zwischen einem Bauteil und seiner Umgebung übertragen wird.",
   "related": []
 }

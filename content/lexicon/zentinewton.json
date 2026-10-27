@@ -10,6 +10,9 @@
     "cN",
     "centinewton"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Zentinewton** (cN) ist eine Einheit für die Kraft. 1 cN = 0,01 N.",
   "related": [
     "lexicon.newton"

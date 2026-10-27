@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "HT-Rohr",
   "synonyms": [],
+  "categories": [
+    "abwasser",
+    "werkstoffe"
+  ],
   "definition": "Hochtemperaturbeständiges Kunststoff-Abwasserrohr für bestimmte Entwässerungsleitungen innerhalb von Gebäuden. Es ist nicht mit druckführenden Trinkwasserleitungen gleichzusetzen.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "Temperaturmessgerät"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Ein **Thermometer** misst oder zeigt die Temperatur an. In SHK-Anlagen kommen analoge, elektrische und digitale Ausführungen zum Einsatz; zur Anlagenregelung werden häufig separate Temperaturfühler verwendet. Messbereich, Genauigkeit, Eintauchtiefe und thermischer Kontakt bestimmen die Aussagekraft der Messung.",
   "related": [
     "lexicon.temperaturfuehler",

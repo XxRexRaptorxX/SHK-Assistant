@@ -10,6 +10,9 @@
     "PV",
     "photovoltaics"
   ],
+  "categories": [
+    "solar"
+  ],
   "definition": "Technologie, die Licht mithilfe von Solarzellen direkt in elektrische Energie umwandelt.",
   "related": []
 }

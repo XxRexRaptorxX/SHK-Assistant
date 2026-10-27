@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Flüssigkeitskategorie Trinkwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Einstufung einer Flüssigkeit nach ihrem potenziellen Gesundheitsrisiko, die zur Auswahl geeigneter Sicherungseinrichtungen gegen Rückfließen dient.",
   "related": []
 }

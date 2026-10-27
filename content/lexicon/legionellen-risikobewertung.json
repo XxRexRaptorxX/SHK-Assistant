@@ -9,6 +9,10 @@
   "synonyms": [
     "Legionella risk assessment"
   ],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Bewertung der Bedingungen, unter denen Legionellen in einer Trinkwasserinstallation auftreten oder sich vermehren könnten, anhand von Nutzung, Temperatur, Stagnation und technischen Gegebenheiten.",
   "related": []
 }

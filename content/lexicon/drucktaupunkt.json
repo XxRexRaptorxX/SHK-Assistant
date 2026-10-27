@@ -9,6 +9,9 @@
   "synonyms": [
     "pressure dew point"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Taupunkttemperatur einer komprimierten Gasprobe bei ihrem aktuellen Druck.",
   "related": []
 }

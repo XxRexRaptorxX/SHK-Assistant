@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "SCOP",
   "synonyms": [],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Seasonal Coefficient of Performance: saisonaler Effizienzkennwert, der die Effizienz einer Wärmepumpe über eine definierte Heizperiode unter standardisierten Bedingungen beschreibt.",
   "related": []
 }

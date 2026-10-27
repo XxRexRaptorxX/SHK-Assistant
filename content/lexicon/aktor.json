@@ -10,6 +10,9 @@
     "Stellglied (allgemeiner Begriff)",
     "actuator"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Ein **Aktor** setzt ein Steuer- oder Regelsignal in eine physische Wirkung um, etwa in Bewegung, Kraft, Wärme oder eine Änderung des Durchflusses. Beispiele in SHK-Anlagen sind Ventilantriebe, Klappenantriebe und Pumpen. Ansteuerung, Stellbereich, Versorgung und Sicherheitsstellung müssen zur Anlage passen.",
   "related": [
     "lexicon.stellantrieb",

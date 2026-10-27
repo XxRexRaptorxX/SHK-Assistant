@@ -10,6 +10,9 @@
     "Wasserbehandlung",
     "water treatment"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "**Wasseraufbereitung** umfasst physikalische, chemische oder biologische Verfahren, mit denen Wasser für einen bestimmten Zweck angepasst wird. In SHK-Anlagen kann dies Filtration, Enthärtung, Entsalzung oder die gezielte Einstellung von Eigenschaften umfassen. Die geeignete Methode hängt von Rohwasserqualität, Verwendungszweck und den Anforderungen des Systems ab.",
   "related": [
     "lexicon.enthaertungsanlage",

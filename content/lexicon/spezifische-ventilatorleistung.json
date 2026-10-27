@@ -10,6 +10,9 @@
     "SFP",
     "specific fan power"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Kennwert, der die elektrische Leistungsaufnahme eines Lüftungssystems auf den geförderten Luftvolumenstrom bezieht.",
   "related": []
 }

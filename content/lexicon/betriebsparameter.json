@@ -9,6 +9,9 @@
   "synonyms": [
     "operating parameters"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Mess- oder Einstellgrößen, die den Anlagenbetrieb beschreiben, beispielsweise Druck, Temperatur, Durchfluss und Drehzahl.",
   "related": []
 }

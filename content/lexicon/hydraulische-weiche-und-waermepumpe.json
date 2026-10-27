@@ -7,6 +7,11 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche und Wärmepumpe",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "kaelte",
+    "solar"
+  ],
   "definition": "Bei Wärmepumpen muss eine Weiche zum Mindestvolumenstrom und Speicher- sowie Regelungskonzept passen. Unnötige Temperaturvermischung kann die Effizienz verschlechtern.",
   "related": []
 }

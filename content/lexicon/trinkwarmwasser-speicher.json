@@ -9,6 +9,9 @@
   "synonyms": [
     "hot water cylinder"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Behälter, in dem erwärmtes Trinkwasser bevorratet wird. Dimensionierung und Betrieb müssen den Zapfbedarf und die Hygieneanforderungen berücksichtigen.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Joule",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Joule** (J) ist eine Einheit für die Energie. 1 J = 0,000000277778 kWh.",
   "related": [
     "lexicon.kilowattstunde"

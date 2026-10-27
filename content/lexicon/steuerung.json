@@ -9,6 +9,9 @@
   "synonyms": [
     "open-loop control"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Beeinflussung eines Ablaufs durch vorgegebene Signale oder Logik, ohne dass zwingend eine Rückführung des tatsächlichen Ergebnisses erfolgt.",
   "related": []
 }

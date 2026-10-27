@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebedarf Gebäude",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeenergie, die ein Gebäude über einen Zeitraum für Raumheizung und gegebenenfalls weitere Zwecke benötigt.",
   "related": []
 }

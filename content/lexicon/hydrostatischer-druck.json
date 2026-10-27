@@ -9,6 +9,9 @@
   "synonyms": [
     "hydrostatic pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Druck in einer ruhenden Flüssigkeit, der durch die Höhe der Flüssigkeitssäule und deren Dichte bestimmt wird.",
   "related": []
 }

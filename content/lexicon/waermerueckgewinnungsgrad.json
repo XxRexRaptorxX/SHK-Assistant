@@ -9,6 +9,9 @@
   "synonyms": [
     "heat recovery efficiency"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Kennwert, der unter definierten Bedingungen beschreibt, welcher Anteil einer verfügbaren Temperatur- oder Wärmeübertragungsmöglichkeit durch Wärmerückgewinnung genutzt wird. Die genaue Definition hängt vom Prüfverfahren ab.",
   "related": []
 }

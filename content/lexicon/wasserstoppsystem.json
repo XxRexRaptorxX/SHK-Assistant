@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasserstoppsystem",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "System zur Erkennung oder Begrenzung von Wasserleckagen, das beispielsweise ein Absperrventil automatisch schließen kann.",
   "related": []
 }

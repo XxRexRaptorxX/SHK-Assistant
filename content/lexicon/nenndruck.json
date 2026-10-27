@@ -11,6 +11,9 @@
     "Druckstufe",
     "nominal pressure"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**PN (Pressure Nominal)** ist eine Kennzahl zur Klassifizierung von Druckstufen bei Rohrleitungskomponenten. Die zulässige Betriebsbeanspruchung hängt zusätzlich von Werkstoff, Temperatur, Produktnorm und Herstellerangaben ab; PN darf daher nicht pauschal als maximal zulässiger Betriebsdruck bei jeder Temperatur verstanden werden.",
   "related": [
     "lexicon.druck",

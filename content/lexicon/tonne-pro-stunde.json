@@ -10,6 +10,9 @@
     "t/h",
     "tonne per hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Tonne pro Stunde** (t/h) ist eine Einheit für den Massenstrom. 1 t/h = 0,277778 kg/s.",
   "related": [
     "lexicon.kilogramm-pro-sekunde"

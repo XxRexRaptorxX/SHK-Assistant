@@ -9,6 +9,9 @@
   "synonyms": [
     "air pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Luftdruck** ist der Druck der Luft an einem Ort, verursacht durch das Gewicht der darüberliegenden Luftsäule. Auf Meereshöhe beträgt er im Mittel 1013,25 hPa; mit zunehmender Höhe nimmt er ab.",
   "related": [
     "lexicon.druck",

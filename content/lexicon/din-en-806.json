@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "DIN EN 806",
   "synonyms": [],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Normenreihe zu Planung, Ausführung und Betrieb von Trinkwasserinstallationen innerhalb von Gebäuden; nationale ergänzende Regeln sind ebenfalls zu beachten.",
   "related": []
 }

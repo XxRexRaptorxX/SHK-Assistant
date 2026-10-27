@@ -10,6 +10,9 @@
     "Perlator",
     "aerator"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Einsatz am Armaturenauslauf, der den Wasserstrahl formt und häufig Luft beimischt oder den Durchfluss begrenzt.",
   "related": []
 }

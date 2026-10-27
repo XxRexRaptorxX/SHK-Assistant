@@ -10,6 +10,10 @@
     "Fan-Coil",
     "fan coil unit"
   ],
+  "categories": [
+    "heizung",
+    "lueftung"
+  ],
   "definition": "Wärmeübertrager mit Ventilator, der Luft über eine Heiz- oder Kühlfläche bewegt und dadurch die Wärmeübertragung verstärkt.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebrückenzuschlag pauschal",
   "synonyms": [],
+  "categories": [
+    "physik"
+  ],
   "definition": "Pauschaler Zuschlag zur Berücksichtigung von Wärmebrückenverlusten in einem vereinfachten energetischen Berechnungsverfahren.",
   "related": []
 }

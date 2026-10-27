@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Wartung",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "normen"
+  ],
   "definition": "Kontrolle von Anschlüssen, Dichtheit und gegebenenfalls Entlüftungs- oder Entleerungseinrichtungen nach Herstellerangaben.",
   "related": []
 }

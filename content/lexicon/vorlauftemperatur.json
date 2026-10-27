@@ -10,6 +10,9 @@
     "Vorlauf",
     "flow temperature"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Die **Vorlauftemperatur** ist die Temperatur des Heiz- oder Kühlmediums beim Eintritt in einen nachgeschalteten Verbraucher beziehungsweise Heizkreis. Sie beeinflusst die übertragbare Leistung und die Effizienz des Wärmeerzeugers. Die erforderliche Höhe hängt von Heizlast, Heizflächen und Außentemperatur ab.",
   "related": [
     "lexicon.ruecklauftemperatur",

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Modulation",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Anpassung der Leistung eines Wärmeerzeugers oder Brenners innerhalb seines vorgesehenen Leistungsbereichs an den aktuellen Bedarf.",
   "related": []
 }

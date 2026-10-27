@@ -10,6 +10,10 @@
     "Widerstand",
     "electrical resistance"
   ],
+  "categories": [
+    "msr",
+    "physik"
+  ],
   "definition": "**Elektrischer Widerstand** gibt an, welche Spannung nötig ist, um einen bestimmten Strom durch einen Leiter fließen zu lassen (R = U / I). Formelzeichen R, Einheit Ohm (Ω).",
   "related": [
     "lexicon.elektrische-spannung",

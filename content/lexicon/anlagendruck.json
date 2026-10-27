@@ -10,6 +10,9 @@
     "Fülldruck der Heizungsanlage",
     "system pressure"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Der **Anlagendruck** ist der Druck des Wärmeträgers in einer Heizungsanlage. Er muss unter anderem aus statischer Anlagenhöhe, erforderlichem Mindestdruck am höchsten Punkt und den Grenzwerten der Komponenten abgeleitet werden. Zu niedriger Druck kann Luft- oder Versorgungsprobleme verursachen; zu hoher Druck kann das Sicherheitsventil ansprechen lassen.",
   "related": [
     "lexicon.ausdehnungsgefaess",

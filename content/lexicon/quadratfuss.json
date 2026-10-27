@@ -10,6 +10,9 @@
     "ft²",
     "square foot"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Quadratfuß** (ft²) ist eine Einheit für die Fläche. 1 ft² = 0,092903 m².",
   "related": [
     "lexicon.quadratmeter"

@@ -9,6 +9,10 @@
   "synonyms": [
     "Kohlendioxidsensor"
   ],
+  "categories": [
+    "lueftung",
+    "msr"
+  ],
   "definition": "Ein **CO₂-Sensor** misst die Kohlendioxidkonzentration in der Luft und wird häufig zur bedarfsgeführten Lüftungsregelung verwendet. CO₂ kann in belegten Räumen als Indikator für die Belegung und den Außenluftbedarf dienen, erfasst aber nicht alle Innenraumschadstoffe. Sensorposition, Kalibrierung und Regelstrategie beeinflussen das Ergebnis.",
   "related": [
     "lexicon.raumluftqualitaet",

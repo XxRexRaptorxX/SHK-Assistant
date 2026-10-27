@@ -9,6 +9,9 @@
   "synonyms": [
     "MΩ"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Megaohm** (MΩ) ist eine Einheit für den elektrischen Widerstand. 1 MΩ = 1.000.000 Ω.",
   "related": [
     "lexicon.ohm"

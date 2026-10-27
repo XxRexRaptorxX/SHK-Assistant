@@ -9,6 +9,10 @@
   "synonyms": [
     "piping and instrumentation diagram"
   ],
+  "categories": [
+    "hydraulik",
+    "msr"
+  ],
   "definition": "Schematische Darstellung von Rohrleitungen, Apparaten, Armaturen sowie Mess- und Regelkomponenten einer Anlage.",
   "related": []
 }

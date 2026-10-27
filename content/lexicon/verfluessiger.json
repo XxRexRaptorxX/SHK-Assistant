@@ -10,6 +10,9 @@
     "Kondensator (Kältetechnik)",
     "condenser"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Ein **Verflüssiger** ist ein Wärmeübertrager, in dem ein gasförmiges Fluid Wärme abgibt und kondensiert. In einer Kompressionskälteanlage wird die aufgenommene Wärme einschließlich der Verdichterarbeit an Luft oder Wasser abgegeben. Verschmutzung oder unzureichender Luft- beziehungsweise Wasserdurchsatz können den Verflüssigungsdruck erhöhen.",
   "related": [
     "lexicon.kaeltemaschine",

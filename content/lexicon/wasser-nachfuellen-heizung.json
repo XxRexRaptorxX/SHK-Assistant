@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasser nachfüllen Heizung",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ergänzung von Heizungswasser bei Bedarf. Die Ursache für Wasserverlust ist zu klären; Wasserqualität und Sicherung gegen Rückfließen müssen beachtet werden.",
   "related": []
 }

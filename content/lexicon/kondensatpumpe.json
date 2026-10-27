@@ -9,6 +9,10 @@
   "synonyms": [
     "condensate pump"
   ],
+  "categories": [
+    "heizung",
+    "abwasser"
+  ],
   "definition": "Pumpe, die anfallendes Kondenswasser aus einem Gerät zu einem geeigneten Ablauf fördert.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "Sammelabflussleitung"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Eine **Sammelleitung** nimmt Abwasser aus mehreren Anschluss- oder Fallleitungen auf und führt es weiter. Sie verläuft innerhalb oder außerhalb des Gebäudes und muss auf die angeschlossenen Abflüsse ausgelegt sein. Gefälle, Füllungsgrad, Lüftung und Zugänglichkeit für Reinigung sind entscheidend.",
   "related": [
     "lexicon.abwasserleitung",

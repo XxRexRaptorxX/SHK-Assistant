@@ -10,6 +10,9 @@
     "Regelgerät",
     "controller"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Ein **Regler** verarbeitet den Vergleich zwischen Sollwert und Messwert und erzeugt daraus eine Stellgröße. Je nach Anwendung kann er beispielsweise ein- und ausschalten, proportional oder mit PID-Verhalten regeln. Parametrierung, Sensorposition, Totzeiten und die Dynamik der Anlage beeinflussen die Regelgüte.",
   "related": [
     "lexicon.regelungstechnik",

@@ -9,6 +9,10 @@
   "synonyms": [
     "degassing"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Entfernung gelöster oder freier Gase aus einer Flüssigkeit. Sie kann durch Abscheider oder spezielle Entgasungsverfahren erfolgen.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "height"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Höhe** ist in der Geometrie der senkrechte Abstand (das Lot) eines Punktes von einer Strecke oder Fläche, z. B. von der Spitze eines Dreiecks zur Grundseite oder zwischen Grund- und Deckfläche eines Körpers. Sie wird für Flächen- und Volumenberechnungen gebraucht.",
   "related": [
     "lexicon.flaeche",

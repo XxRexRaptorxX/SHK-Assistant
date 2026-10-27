@@ -10,6 +10,9 @@
     "Heizung",
     "heating system"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Eine **Heizungsanlage** stellt Wärme für Räume oder Prozesse bereit und verteilt sie an die jeweiligen Verbraucher. Typische Bestandteile sind Wärmeerzeuger, Rohrnetz, Pumpen, Regelung, Sicherheitsausrüstung und Heizflächen. Auslegung, Betrieb und Wartung müssen auf Gebäude, Energiequelle und Nutzung abgestimmt sein.",
   "related": [
     "lexicon.waermeerzeuger",

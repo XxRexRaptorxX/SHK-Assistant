@@ -10,6 +10,9 @@
     "Hartlötverbindung",
     "brazing"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Beim **Hartlöten** liegt die Liquidustemperatur des Lots bei mindestens 450 °C. Es wird unter anderem bei geeigneten metallischen Rohrverbindungen eingesetzt, wenn die Systemvorgaben dieses Verfahren vorsehen. Erwärmung, Lot, Flussmittel, Spaltmaß, Reinigung und Brandschutz müssen fachgerecht beherrscht werden.",
   "related": [
     "lexicon.loetverbindung",

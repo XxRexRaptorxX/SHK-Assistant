@@ -10,6 +10,9 @@
     "Kondensatleitung",
     "condensate drain"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Der **Kondensatablauf** führt anfallendes Kondensat aus einem Gerät oder einer Anlage ab. Er muss ausreichend dimensioniert, gegen Verstopfung geschützt und entsprechend Herstellerangaben montiert sein. Je nach Gerät und Abgasführung kann ein Geruchsverschluss erforderlich sein; bei bestimmten Anlagen kann eine Neutralisation notwendig sein.",
   "related": [
     "lexicon.kondensat",

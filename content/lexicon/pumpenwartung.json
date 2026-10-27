@@ -9,6 +9,10 @@
   "synonyms": [
     "pump maintenance"
   ],
+  "categories": [
+    "hydraulik",
+    "normen"
+  ],
   "definition": "Prüfung einer Pumpe auf Funktion, Dichtheit, Geräusch, Lagerzustand und elektrische beziehungsweise hydraulische Betriebswerte.",
   "related": []
 }

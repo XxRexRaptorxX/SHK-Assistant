@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Volumenstromverhältnis",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Verhältnis zwischen Volumenstrom auf Erzeugerseite und Verbraucherseite, das die Temperaturmischung in der Weiche beeinflusst.",
   "related": []
 }

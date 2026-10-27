@@ -10,6 +10,10 @@
     "Ionisationsfühler",
     "ionisation electrode"
   ],
+  "categories": [
+    "gas",
+    "msr"
+  ],
   "definition": "Eine **Ionisationselektrode** dient bei geeigneten Gasbrennern zur Flammenerkennung. Die Flamme leitet einen sehr kleinen elektrischen Strom, den der Feuerungsautomat als Nachweis der Flamme auswertet. Elektrodenlage, Verschmutzung, Erdung und elektrische Anschlüsse beeinflussen die zuverlässige Erkennung.",
   "related": [
     "lexicon.flammenueberwachung",

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Rücklauf",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Rücklaufanschluss einer hydraulischen Weiche, über den abgekühltes Medium aus dem Kreis zurückgeführt wird.",
   "related": []
 }

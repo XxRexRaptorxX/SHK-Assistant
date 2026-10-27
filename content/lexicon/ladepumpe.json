@@ -9,6 +9,9 @@
   "synonyms": [
     "charging pump"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Pumpe, die Wärmeübertragungsmedium zwischen Wärmeerzeuger und Speicher oder zwischen zwei Anlagenteilen fördert, um einen Speicher zu laden.",
   "related": []
 }

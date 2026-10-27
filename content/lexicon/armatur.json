@@ -10,6 +10,10 @@
     "Sanitärarmatur",
     "Ventilarmatur"
   ],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Eine **Armatur** steuert, sperrt, reguliert oder verteilt den Durchfluss eines Fluids. In der Sanitärtechnik gehören dazu beispielsweise Entnahmearmaturen, Absperrarmaturen, Mischarmaturen, Rückflussverhinderer und Sicherheitsarmaturen. Werkstoff, Druck- und Temperaturbereich sowie bestimmungsgemäße Verwendung müssen passen.",
   "related": [
     "lexicon.einhebelmischer",

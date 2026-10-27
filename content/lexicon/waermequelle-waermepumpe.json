@@ -9,6 +9,10 @@
   "synonyms": [
     "heat source"
   ],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "Umgebung oder Medium, aus dem die Wärmepumpe Wärme aufnimmt, beispielsweise Luft, Erdreich oder Wasser.",
   "related": []
 }

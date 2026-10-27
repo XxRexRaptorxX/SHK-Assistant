@@ -9,6 +9,10 @@
   "synonyms": [
     "burner control unit"
   ],
+  "categories": [
+    "gas",
+    "msr"
+  ],
   "definition": "Steuer- und Überwachungseinrichtung, die Start, Zündung, Flammenüberwachung und sicherheitsbedingte Abschaltungen einer Feuerung kontrolliert.",
   "related": []
 }

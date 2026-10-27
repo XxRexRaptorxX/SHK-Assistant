@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmeleitfähigkeit Dämmstoff",
   "synonyms": [],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Materialkennwert, der angibt, wie gut ein Dämmstoff Wärme leitet. Ein kleinerer Wert bedeutet bei vergleichbaren Bedingungen eine bessere Dämmwirkung.",
   "related": []
 }

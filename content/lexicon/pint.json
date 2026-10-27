@@ -10,6 +10,9 @@
     "Pint (US)",
     "pt"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Pint (US)** (pt) ist eine Einheit für das Volumen. 1 pt = 0,473176 l.",
   "related": [
     "lexicon.liter"

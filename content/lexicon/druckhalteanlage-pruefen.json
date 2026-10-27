@@ -7,6 +7,11 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckhalteanlage prüfen",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik",
+    "normen"
+  ],
   "definition": "Kontrolle der Funktion und Einstellung einer Druckhalteanlage gemäß Herstellerangaben und Systemanforderungen.",
   "related": []
 }

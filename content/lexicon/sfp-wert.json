@@ -9,6 +9,9 @@
   "synonyms": [
     "SFP"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Specific Fan Power: spezifische Ventilatorleistung, häufig angegeben als elektrische Leistung pro gefördertem Luftvolumenstrom.",
   "related": []
 }

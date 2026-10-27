@@ -9,6 +9,9 @@
   "synonyms": [
     "setpoint"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Vorgegebener Zielwert einer zu regelnden Größe, beispielsweise gewünschte Raum- oder Vorlauftemperatur.",
   "related": []
 }

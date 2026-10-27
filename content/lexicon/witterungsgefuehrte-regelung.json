@@ -9,6 +9,10 @@
   "synonyms": [
     "weather-compensated control"
   ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Regelstrategie, bei der die Vorlauftemperatur oder Heizleistung unter anderem anhand der Außentemperatur angepasst wird.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "CO-Alarm",
   "synonyms": [],
+  "categories": [
+    "gas"
+  ],
   "definition": "Warnmeldung eines Kohlenmonoxidmelders. Sie ist ernst zu nehmen: Gefahrenbereich verlassen und zuständige Notfallstellen verständigen; nicht ohne Freigabe zurückkehren.",
   "related": []
 }

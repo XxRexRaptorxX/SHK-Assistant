@@ -10,6 +10,9 @@
     "Wandflächenheizung",
     "wall heating"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Eine **Wandheizung** ist eine Flächenheizung mit wasserführenden Rohren oder Heizelementen in beziehungsweise auf der Wand. Sie gibt Wärme durch Strahlung und Konvektion ab und kann mit vergleichsweise niedrigen Vorlauftemperaturen betrieben werden. Möblierung, Wandaufbau und zulässige Oberflächentemperaturen sind bei Planung und Nutzung zu berücksichtigen.",
   "related": [
     "lexicon.heizflaeche",

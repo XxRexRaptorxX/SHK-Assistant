@@ -9,6 +9,10 @@
   "synonyms": [
     "power factor"
   ],
+  "categories": [
+    "msr",
+    "physik"
+  ],
   "definition": "**Leistungsfaktor** ist das Verhältnis von Wirkleistung zu Scheinleistung; er liegt zwischen 0 und 1. Bei sinusförmigen Strömen und Spannungen entspricht er cos φ.",
   "related": [
     "lexicon.wirkleistung",

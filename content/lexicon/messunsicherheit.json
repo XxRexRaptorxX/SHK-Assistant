@@ -9,6 +9,9 @@
   "synonyms": [
     "measurement uncertainty"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Parameter, der die Streuung von Werten beschreibt, die dem Messobjekt aufgrund der Messung vernünftigerweise zugeordnet werden können.",
   "related": []
 }

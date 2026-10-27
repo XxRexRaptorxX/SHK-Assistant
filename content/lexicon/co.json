@@ -9,6 +9,10 @@
   "synonyms": [
     "Kohlendioxid"
   ],
+  "categories": [
+    "gas",
+    "physik"
+  ],
   "definition": "Kohlenstoffdioxid, ein farbloses Gas, das unter anderem bei vollständiger Verbrennung kohlenstoffhaltiger Brennstoffe entsteht und als Treibhausgas wirkt.",
   "related": []
 }

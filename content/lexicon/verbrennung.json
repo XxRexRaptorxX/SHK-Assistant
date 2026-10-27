@@ -9,6 +9,9 @@
   "synonyms": [
     "combustion"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "**Verbrennung** ist eine exotherme chemische Reaktion eines Brennstoffs mit einem Oxidationsmittel, meist Sauerstoff. Für einen sicheren und effizienten Betrieb sind Brennstoffqualität, Luftzufuhr, Durchmischung und Abgasabführung wesentlich. Unvollständige Verbrennung kann unter anderem Kohlenmonoxid bilden.",
   "related": [
     "lexicon.brenner",

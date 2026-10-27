@@ -10,6 +10,9 @@
     "°fH",
     "French degree of hardness"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Grad französischer Härte** (°fH) ist eine Einheit für die Wasserhärte. 1 °fH = 0,1 mmol/l.",
   "related": [
     "lexicon.millimol-pro-liter"

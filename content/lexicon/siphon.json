@@ -10,6 +10,9 @@
     "Röhrensiphon",
     "Flaschensiphon"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Ein **Siphon** ist eine Bauform des Geruchsverschlusses mit einer wassergefüllten Rohrkrümmung oder vergleichbaren Sperrwassergeometrie. Er wird häufig unter Waschtischen und Spülen eingesetzt. Die Form muss zum Anschluss und zum verfügbaren Bauraum passen; die Sperrwasserhöhe darf nicht durch fehlerhafte Entwässerungsbedingungen verloren gehen.",
   "related": [
     "lexicon.geruchsverschluss",

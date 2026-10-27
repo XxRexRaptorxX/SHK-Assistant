@@ -10,6 +10,9 @@
     "cm²",
     "square centimetre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Quadratzentimeter** (cm²) ist eine Einheit für die Fläche. 1 cm² = 0,0001 m².",
   "related": [
     "lexicon.quadratmeter"

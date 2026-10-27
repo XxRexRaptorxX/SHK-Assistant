@@ -10,6 +10,9 @@
     "N/m²",
     "newton per square metre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Newton pro Quadratmeter** (N/m²) ist eine Einheit für den Druck. 1 N/m² = 1 Pa.",
   "related": [
     "lexicon.pascal"

@@ -9,6 +9,9 @@
   "synonyms": [
     "thermowell"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Hülse, in die ein Temperaturfühler eingesetzt wird, damit er die Temperatur eines Mediums erfasst, ohne direkt mit diesem in Kontakt zu stehen.",
   "related": []
 }

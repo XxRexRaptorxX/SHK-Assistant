@@ -9,6 +9,9 @@
   "synonyms": [
     "operating point"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Kombination der Betriebsgrößen einer Komponente, beispielsweise Förderstrom und Förderhöhe einer Pumpe oder Druck und Temperatur eines Kältemittels.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "refrigerant CO₂ equivalent"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Masse eines Kältemittels multipliziert mit seinem Treibhauspotenzial, um die entsprechende Klimawirkung in CO₂-Äquivalenten auszudrücken.",
   "related": []
 }

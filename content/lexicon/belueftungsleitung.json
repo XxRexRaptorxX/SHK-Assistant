@@ -10,6 +10,9 @@
     "Entlüftungsleitung (Entwässerung)",
     "vent pipe"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Eine **Belüftungsleitung** führt Luft in oder aus einem Entwässerungssystem, damit Druckschwankungen begrenzt und Geruchsverschlüsse geschützt werden. Sie unterstützt die Funktion des Abwassernetzes, ist aber nicht mit einer Raumlüftungsleitung gleichzusetzen. Dimensionierung und Führung richten sich nach dem Entwässerungssystem und den geltenden Regeln.",
   "related": [
     "lexicon.fallleitung",

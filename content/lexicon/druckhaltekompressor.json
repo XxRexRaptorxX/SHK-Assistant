@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckhaltekompressor",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Kompressor in bestimmten Druckhalteanlagen, der den Gasdruck zur Stabilisierung des Anlagendrucks beeinflusst.",
   "related": []
 }

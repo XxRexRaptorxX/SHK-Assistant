@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Kühlschrankkältekreislauf",
   "synonyms": [],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Kältekreislauf, der einem gekühlten Innenraum Wärme entzieht und sie an die Umgebung abgibt.",
   "related": []
 }

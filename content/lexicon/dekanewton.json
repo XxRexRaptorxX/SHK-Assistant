@@ -10,6 +10,9 @@
     "daN",
     "decanewton"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Dekanewton** (daN) ist eine Einheit für die Kraft. 1 daN = 10 N.",
   "related": [
     "lexicon.newton"

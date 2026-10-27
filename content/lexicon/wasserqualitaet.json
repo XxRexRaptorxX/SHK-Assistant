@@ -9,6 +9,9 @@
   "synonyms": [
     "water quality"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Zusammensetzung und Eigenschaften von Wasser, beispielsweise Härte, pH-Wert, Leitfähigkeit und Gehalt an gelösten Stoffen. Anforderungen hängen von der Verwendung ab.",
   "related": []
 }

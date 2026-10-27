@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Watt",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "Einheit der Leistung, Symbol W; ein Watt entspricht einem Joule pro Sekunde.",
   "related": []
 }

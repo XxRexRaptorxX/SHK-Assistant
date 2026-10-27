@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Kondenswasser an Kaltwasserrohr",
   "synonyms": [],
+  "categories": [
+    "trinkwasser",
+    "werkstoffe"
+  ],
   "definition": "Symptom, das auf eine Oberflächentemperatur unterhalb des Taupunkts hinweist. Dämmung und Dampfsperre sind zu prüfen.",
   "related": []
 }

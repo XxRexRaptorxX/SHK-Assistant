@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Kvs-Wert",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Kv-Wert eines Ventils bei vollständig geöffnetem Ventil unter festgelegten Referenzbedingungen.",
   "related": []
 }

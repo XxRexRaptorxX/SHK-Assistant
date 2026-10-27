@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasserenthärtung durch Ionenaustausch",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Verfahren, bei dem Calcium- und Magnesiumionen im Wasser gegen andere Ionen ausgetauscht werden, um die Wasserhärte zu verringern.",
   "related": []
 }

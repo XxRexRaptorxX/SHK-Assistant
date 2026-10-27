@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Schema lesen",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Erkennen der Anschlüsse für Erzeugervorlauf, Erzeugerrücklauf, Verbrauchervorlauf und Verbraucherrücklauf im Hydraulikschema.",
   "related": []
 }

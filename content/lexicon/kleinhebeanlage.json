@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Kleinhebeanlage",
   "synonyms": [],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Kompakte Hebeanlage, die Abwasser von einzelnen Sanitärobjekten auf ein höheres Niveau fördert. Zulässige Einsatzfälle sind herstellerabhängig.",
   "related": []
 }

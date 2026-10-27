@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Kältemittelrückgewinnungspflicht",
   "synonyms": [],
+  "categories": [
+    "kaelte",
+    "normen"
+  ],
   "definition": "Anforderung, Kältemittel bei bestimmten Tätigkeiten fachgerecht zurückzugewinnen statt es freizusetzen. Konkrete Pflichten richten sich nach aktueller Rechtslage.",
   "related": []
 }

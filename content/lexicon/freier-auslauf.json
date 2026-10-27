@@ -9,6 +9,9 @@
   "synonyms": [
     "air gap"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Sicherung durch eine physische Trennung zwischen Trinkwasserzufluss und nachgeschaltetem Wasser beziehungsweise Medium. Die Ausführung muss der passenden Normklassifikation entsprechen.",
   "related": []
 }

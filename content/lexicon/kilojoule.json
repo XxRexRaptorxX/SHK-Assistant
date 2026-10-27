@@ -9,6 +9,9 @@
   "synonyms": [
     "kJ"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilojoule** (kJ) ist eine Einheit für die Energie. 1 kJ = 1.000 J.",
   "related": [
     "lexicon.joule"

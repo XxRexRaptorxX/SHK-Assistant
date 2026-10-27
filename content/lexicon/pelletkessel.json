@@ -9,6 +9,10 @@
   "synonyms": [
     "pellet boiler"
   ],
+  "categories": [
+    "heizung",
+    "solar"
+  ],
   "definition": "Wärmeerzeuger, der Holzpellets automatisch oder teilautomatisch verbrennt und die entstehende Wärme an ein Heizsystem abgibt.",
   "related": []
 }

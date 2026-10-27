@@ -10,6 +10,9 @@
     "cm/s²",
     "centimetre per second squared"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Zentimeter pro Quadratsekunde** (cm/s²) ist eine Einheit für die Beschleunigung. 1 cm/s² = 0,01 m/s².",
   "related": [
     "lexicon.meter-pro-quadratsekunde"

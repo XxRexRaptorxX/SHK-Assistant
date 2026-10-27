@@ -10,6 +10,9 @@
     "LS-Schalter",
     "miniature circuit breaker"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Schutzgerät, das elektrische Leitungen bei Überlast oder Kurzschluss automatisch abschaltet.",
   "related": []
 }

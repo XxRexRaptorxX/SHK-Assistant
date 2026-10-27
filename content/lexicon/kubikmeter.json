@@ -10,6 +10,9 @@
     "m³",
     "cubic metre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kubikmeter** (m³) ist eine Einheit für das Volumen. 1 m³ = 1.000 l.",
   "related": [
     "lexicon.liter"

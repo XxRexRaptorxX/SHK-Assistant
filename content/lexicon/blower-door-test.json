@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Blower-Door-Test",
   "synonyms": [],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Verfahren zur Messung der Luftdichtheit eines Gebäudes mithilfe eines Ventilators, der eine definierte Druckdifferenz erzeugt.",
   "related": []
 }

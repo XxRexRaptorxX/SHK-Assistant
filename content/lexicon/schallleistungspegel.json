@@ -9,6 +9,9 @@
   "synonyms": [
     "sound power level"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Kenngröße für die von einer Schallquelle abgestrahlte akustische Leistung, angegeben in Dezibel bezogen auf einen Referenzwert.",
   "related": []
 }

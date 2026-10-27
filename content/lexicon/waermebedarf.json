@@ -9,6 +9,9 @@
   "synonyms": [
     "heat demand"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeenergie, die innerhalb eines Zeitraums benötigt wird, um einen bestimmten Zweck zu erfüllen, beispielsweise Raumheizung oder Trinkwassererwärmung. Er ist von der momentanen Heizlast zu unterscheiden.",
   "related": []
 }

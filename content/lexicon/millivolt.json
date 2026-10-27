@@ -9,6 +9,9 @@
   "synonyms": [
     "mV"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Millivolt** (mV) ist eine Einheit für die elektrische Spannung. 1 mV = 0,001 V.",
   "related": [
     "lexicon.volt"

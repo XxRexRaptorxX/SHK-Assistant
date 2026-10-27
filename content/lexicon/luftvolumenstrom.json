@@ -9,6 +9,9 @@
   "synonyms": [
     "air flow rate"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Luftvolumen, das pro Zeiteinheit durch einen Kanal oder eine Öffnung strömt, beispielsweise in m³/h.",
   "related": []
 }

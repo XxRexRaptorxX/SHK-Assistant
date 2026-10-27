@@ -9,6 +9,9 @@
   "synonyms": [
     "material number"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Standardisierte Kennnummer zur eindeutigen Identifikation eines Werkstoffs, beispielsweise einer Stahlsorte.",
   "related": []
 }

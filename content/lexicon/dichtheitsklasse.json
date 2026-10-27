@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Dichtheitsklasse",
   "synonyms": [],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Klassifizierung der Dichtheit einer Komponente oder Anlage nach einem festgelegten Prüfstandard. Die konkrete Bedeutung hängt vom Bauteiltyp ab.",
   "related": []
 }

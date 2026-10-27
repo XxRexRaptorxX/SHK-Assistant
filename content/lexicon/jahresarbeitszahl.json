@@ -10,6 +10,9 @@
     "JAZ",
     "seasonal performance factor"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Die **Jahresarbeitszahl** setzt die über einen betrachteten Zeitraum abgegebene Wärmeenergie ins Verhältnis zur dafür eingesetzten elektrischen Energie. Sie bildet den realen Betrieb über den Zeitraum ab und hängt unter anderem von Klima, Systemtemperaturen, Warmwasserbereitung und Hilfsenergien ab. Die Systemgrenze muss beim Vergleich von Angaben klar sein.",
   "related": [
     "lexicon.waermepumpe",

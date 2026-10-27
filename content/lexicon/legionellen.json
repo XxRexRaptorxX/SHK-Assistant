@@ -9,6 +9,9 @@
   "synonyms": [
     "Legionella"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "**Legionellen** sind Bakterien, die sich unter geeigneten Bedingungen in wasserführenden Systemen vermehren können. Eine Infektion erfolgt typischerweise durch das Einatmen erregerhaltiger Aerosole; Trinken von Wasser ist nicht der typische Übertragungsweg. Temperaturführung, bestimmungsgemäßer Betrieb, Vermeidung von Stagnation und risikogerechte Untersuchungen sind wichtige Aspekte des Anlagenbetriebs.",
   "related": [
     "lexicon.trinkwasserhygiene",

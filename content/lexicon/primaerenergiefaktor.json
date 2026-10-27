@@ -9,6 +9,10 @@
   "synonyms": [
     "primary energy factor"
   ],
+  "categories": [
+    "normen",
+    "physik"
+  ],
   "definition": "Kennwert, der den Aufwand an Primärenergie je Einheit bereitgestellter Endenergie nach einer festgelegten Bewertungsmethode beschreibt.",
   "related": []
 }

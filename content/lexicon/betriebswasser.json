@@ -9,6 +9,9 @@
   "synonyms": [
     "non-potable water"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Wasser, das für technische oder gewerbliche Zwecke genutzt wird und nicht notwendigerweise Trinkwasserqualität besitzt.",
   "related": []
 }

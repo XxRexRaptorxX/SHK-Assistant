@@ -9,6 +9,9 @@
   "synonyms": [
     "Rückstauhöhe"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Die **Rückstauebene** ist die festgelegte Höhenlage, bis zu der Abwasser im Entwässerungssystem zurückstauen kann; häufig wird sie durch die örtlich maßgebende Straßenoberkante bestimmt, sofern keine abweichende Vorgabe gilt. Entwässerungsgegenstände unterhalb dieser Ebene benötigen ein geeignetes Rückstauschutzkonzept. Die verbindliche Höhe ist vor Ort beziehungsweise bei der zuständigen Stelle zu klären.",
   "related": [
     "lexicon.rueckstauverschluss",

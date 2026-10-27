@@ -10,6 +10,10 @@
     "Spezifischer Widerstand",
     "electrical resistivity"
   ],
+  "categories": [
+    "msr",
+    "physik"
+  ],
   "definition": "**Spezifischer elektrischer Widerstand** ist eine temperaturabhängige Werkstoffkonstante, mit der sich der Widerstand eines Leiters aus Länge und Querschnitt berechnen lässt. Er wird meist in Ω·mm²/m angegeben.",
   "related": [
     "lexicon.elektrischer-widerstand"

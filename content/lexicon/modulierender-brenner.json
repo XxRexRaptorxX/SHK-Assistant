@@ -10,6 +10,10 @@
     "leistungsmodulierender Brenner",
     "modulating burner"
   ],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
   "definition": "Ein **modulierender Brenner** kann seine Leistung innerhalb eines vorgegebenen Bereichs an den aktuellen Wärmebedarf anpassen. Dadurch lassen sich häufiges Ein- und Ausschalten und unnötige Temperaturüberschwinger reduzieren. Die Mindestleistung und die Regelungsstrategie bleiben für die reale Effizienz entscheidend.",
   "related": [
     "lexicon.brenner",

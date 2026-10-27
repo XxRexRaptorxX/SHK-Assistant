@@ -9,6 +9,9 @@
   "synonyms": [
     "hysteresis"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Differenz zwischen Ein- und Ausschaltschwelle eines Reglers. Sie verhindert häufiges Umschalten bei kleinen Schwankungen des Messwerts.",
   "related": []
 }

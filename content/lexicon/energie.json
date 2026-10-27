@@ -10,6 +10,9 @@
     "Energiemenge",
     "energy"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Energie** ist eine grundlegende physikalische Größe, die in Formen wie Wärme, elektrischer oder chemischer Energie auftritt; diese Formen lassen sich ineinander umwandeln. Die SI-Einheit ist das Joule (J); in der Haustechnik wird meist die Kilowattstunde (kWh) verwendet.",
   "related": [
     "lexicon.leistung",

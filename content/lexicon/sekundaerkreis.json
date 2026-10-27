@@ -9,6 +9,9 @@
   "synonyms": [
     "secondary circuit"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Kreislauf auf der Verbraucherseite eines Wärmeübertragers; die genaue Bedeutung ergibt sich aus dem jeweiligen Schema.",
   "related": []
 }

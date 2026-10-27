@@ -9,6 +9,9 @@
   "synonyms": [
     "litre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Liter** (l) ist eine Einheit für das Volumen. 1 l = 0,001 m³.",
   "related": [
     "lexicon.kubikmeter"

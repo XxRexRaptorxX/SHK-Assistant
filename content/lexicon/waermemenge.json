@@ -10,6 +10,9 @@
     "Wärmeenergie",
     "quantity of heat"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Die **Wärmemenge** ist Energie, die aufgrund einer Temperaturdifferenz übertragen wird. Sie wird beispielsweise in Joule, Kilowattstunden oder Megawattstunden angegeben. Für die Erwärmung einer Masse ohne Phasenwechsel gilt näherungsweise: Wärmemenge = Masse × spezifische Wärmekapazität × Temperaturänderung.",
   "related": [
     "lexicon.waermeleistung",

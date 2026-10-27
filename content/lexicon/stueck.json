@@ -10,6 +10,9 @@
     "Stk.",
     "piece"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Stück** (Stk.) ist eine Einheit für Stückzahlen. Bezugseinheit der Stückmaße; Paar, Dutzend, Schock und Gros sind Vielfache davon.",
   "related": [
     "lexicon.dutzend"

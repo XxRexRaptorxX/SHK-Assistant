@@ -10,6 +10,9 @@
     "schwarzes Stahlrohr (umgangssprachlich)",
     "steel pipe"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Ein **Stahlrohr** besteht aus un- oder niedriglegiertem Stahl und wird je nach Ausführung in Heizungs-, Gas-, Industrie- und weiteren Rohrnetzen verwendet. Korrosionsschutz, Wanddicke, Verbindungstechnik und Druck-/Temperaturbeanspruchung müssen auf die Anwendung abgestimmt sein. Nicht jede Stahlausführung ist für Trinkwasser oder jede Gasinstallation zugelassen.",
   "related": [
     "lexicon.rohrleitung",

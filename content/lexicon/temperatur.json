@@ -9,6 +9,9 @@
   "synonyms": [
     "temperature"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Temperatur** ist eine Zustandsgröße der Thermodynamik und beschreibt, wie warm oder kalt ein Stoff ist. Sie wird in Kelvin (K) oder Grad Celsius (°C) gemessen; Temperaturdifferenzen gibt man in Kelvin an.",
   "related": [
     "lexicon.temperaturdifferenz",

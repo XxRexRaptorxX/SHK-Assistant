@@ -10,6 +10,10 @@
     "Absperrarmatur",
     "shut-off valve"
   ],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Ein **Absperrventil** dient dazu, einen Leitungsabschnitt bei Bedarf zu öffnen oder zu schließen. Es ist in erster Linie für Absperr- und nicht automatisch für präzise Regelaufgaben ausgelegt. Zugänglichkeit, Druckstufe, Werkstoff, Fließrichtung und sichere Bedienbarkeit sind bei der Montage zu beachten.",
   "related": [
     "lexicon.armatur",

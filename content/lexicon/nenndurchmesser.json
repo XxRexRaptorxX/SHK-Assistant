@@ -11,6 +11,9 @@
     "Nennweite",
     "nominal size"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**DN (Diameter Nominal)** ist eine dimensionslose Kennzahl zur Größenbezeichnung von Rohrleitungen, Armaturen und Verbindungsteilen. DN ist nicht in jedem Fall mit dem tatsächlichen Innen- oder Außendurchmesser in Millimetern identisch. Für die konkrete Dimension sind die zugehörige Produktnorm und Herstellerangaben maßgeblich.",
   "related": [
     "lexicon.rohrdimensionierung",

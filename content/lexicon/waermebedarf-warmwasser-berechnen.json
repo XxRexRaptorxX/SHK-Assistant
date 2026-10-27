@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebedarf Warmwasser berechnen",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Der Wärmebedarf für die Wassererwärmung hängt von Wassermasse, spezifischer Wärmekapazität und Temperaturerhöhung ab; Speicher- und Verteilverluste können zusätzlich anfallen.",
   "related": []
 }

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckhaltegefäß",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Behälter in einer Druckhalteanlage, der zur Aufnahme von Volumenänderungen und Stabilisierung des Drucks dient.",
   "related": []
 }

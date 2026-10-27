@@ -10,6 +10,9 @@
     "kcal",
     "kilocalorie"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilokalorie** (kcal) ist eine Einheit für die Energie. 1 kcal = 4.186,8 J.",
   "related": [
     "lexicon.joule"

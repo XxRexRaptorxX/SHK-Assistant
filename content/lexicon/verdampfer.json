@@ -10,6 +10,9 @@
     "Verdampferwärmetauscher",
     "evaporator"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Ein **Verdampfer** ist ein Wärmeübertrager, in dem ein Fluid Wärme aufnimmt und bei geeigneten Bedingungen verdampft. In einer Kompressionskälteanlage nimmt das Kältemittel im Verdampfer Wärme aus dem zu kühlenden Medium auf. Wärmeübertragungsfläche, Durchfluss und Verdampfungsbedingungen beeinflussen die Leistung.",
   "related": [
     "lexicon.kaeltemaschine",

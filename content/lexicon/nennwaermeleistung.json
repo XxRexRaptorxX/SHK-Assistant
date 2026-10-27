@@ -9,6 +9,9 @@
   "synonyms": [
     "rated heat output"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Vom Hersteller angegebene nutzbare Wärmeleistung eines Wärmeerzeugers unter definierten Bedingungen. Sie ist von Feuerungswärmeleistung und tatsächlicher momentaner Leistung zu unterscheiden.",
   "related": []
 }

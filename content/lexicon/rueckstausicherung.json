@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Rückstausicherung",
   "synonyms": [],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Einrichtung oder Hebeanlagenlösung, die das Eindringen von rückstauendem Abwasser in tiefer liegende Entwässerungsstellen verhindern soll. Die geeignete Lösung hängt von Nutzung und Ablaufstelle ab.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "MN"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Meganewton** (MN) ist eine Einheit für die Kraft. 1 MN = 1.000.000 N.",
   "related": [
     "lexicon.newton"

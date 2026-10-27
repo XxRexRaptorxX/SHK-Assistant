@@ -10,6 +10,9 @@
     "Rücklauf",
     "return temperature"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Die **Rücklauftemperatur** ist die Temperatur des Mediums nach dem Wärmeverbraucher auf dem Weg zurück zum Wärmeerzeuger. Sie ist unter anderem für Brennwertnutzung, Wärmepumpeneffizienz und die Beurteilung der Wärmeabgabe relevant. Zusammen mit Vorlauftemperatur und Volumenstrom erlaubt sie Rückschlüsse auf die übertragene Wärmeleistung.",
   "related": [
     "lexicon.vorlauftemperatur",

@@ -10,6 +10,9 @@
     "Korrosionsprävention",
     "corrosion protection"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**Korrosionsschutz** umfasst Maßnahmen, die Korrosionsvorgänge verhindern oder verlangsamen, etwa geeignete Werkstoffauswahl, Beschichtungen, konstruktive Gestaltung und Kontrolle der Wasserchemie. In SHK-Anlagen sind auch Sauerstoffeintrag, unterschiedliche Metalle und Betriebsunterbrechungen relevant. Schutzmaßnahmen müssen mit Medium, Temperatur und Wartungskonzept abgestimmt sein.",
   "related": [
     "lexicon.korrosion",

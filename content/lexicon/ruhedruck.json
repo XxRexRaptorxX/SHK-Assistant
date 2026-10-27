@@ -10,6 +10,10 @@
     "statischer Druck (in der Trinkwasserpraxis)",
     "static pressure"
   ],
+  "categories": [
+    "trinkwasser",
+    "physik"
+  ],
   "definition": "Der **Ruhedruck** ist der Druck in einer Leitung bei fehlendem oder vernachlässigbarem Durchfluss. Er kann deutlich vom Fließdruck abweichen, wenn bei Entnahme Druckverluste entstehen. Für die Beurteilung der Wasserversorgung müssen Messzustand und Messstelle dokumentiert werden.",
   "related": [
     "lexicon.fliessdruck",

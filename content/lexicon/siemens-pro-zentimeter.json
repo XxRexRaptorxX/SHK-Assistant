@@ -10,6 +10,9 @@
     "S/cm",
     "siemens per centimetre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Siemens pro Zentimeter** (S/cm) ist eine Einheit für die elektrische Leitfähigkeit. 1 S/cm = 100 S/m.",
   "related": [
     "lexicon.siemens-pro-meter"

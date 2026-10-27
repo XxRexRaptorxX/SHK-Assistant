@@ -10,6 +10,9 @@
     "Pt-100",
     "Platin-Widerstandsthermometer Pt100"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Ein **Pt100** ist ein Widerstandstemperatursensor aus Platin mit einem Nennwiderstand von 100 Ω bei 0 °C. Sein elektrischer Widerstand steigt mit der Temperatur nach einer definierten Kennlinie. Messschaltung, Leitungswiderstand und Anschlussart beeinflussen die Genauigkeit.",
   "related": [
     "lexicon.temperaturfuehler",

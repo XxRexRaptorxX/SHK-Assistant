@@ -10,6 +10,9 @@
     "elektrische Leitfähigkeit",
     "conductivity"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Maß dafür, wie gut Wasser elektrischen Strom durch gelöste Ionen leitet. Sie kann als Indikator für gelöste Salze dienen, ersetzt aber keine vollständige Wasseranalyse.",
   "related": []
 }

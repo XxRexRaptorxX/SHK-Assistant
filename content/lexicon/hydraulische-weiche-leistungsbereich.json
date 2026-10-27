@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Leistungsbereich",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Leistungs- oder Volumenstrombereich, für den eine Weiche vorgesehen ist; genaue Werte sind Herstellerangaben zu entnehmen.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Außenfühler",
     "outdoor temperature sensor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Ein **Außentemperaturfühler** misst die Außenlufttemperatur und liefert bei witterungsgeführten Heizungsregelungen eine wichtige Eingangsgröße. Der Montageort muss direkte Sonneneinstrahlung, Abluft, lokale Wärmequellen und starke Abschirmung möglichst vermeiden. Fehlerhafte Positionierung kann zu unpassender Heizkurvenführung führen.",
   "related": [
     "lexicon.temperaturfuehler",

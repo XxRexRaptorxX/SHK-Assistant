@@ -10,6 +10,9 @@
     "Flansch",
     "flanged joint"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Eine **Flanschverbindung** verbindet Rohrleitungskomponenten über gegenüberliegende Flansche, zwischen denen gewöhnlich eine Dichtung liegt. Schraubenanzug, Dichtflächen, Dichtungsauswahl und Fluchtung beeinflussen Dichtheit und Betriebssicherheit. Die Verbindung ist insbesondere bei größeren Nennweiten und bestimmten industriellen Anwendungen verbreitet.",
   "related": [
     "lexicon.rohrleitung",

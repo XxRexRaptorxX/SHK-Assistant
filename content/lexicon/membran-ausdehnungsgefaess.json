@@ -10,6 +10,10 @@
     "MAG",
     "diaphragm expansion vessel"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Druckbehälter mit elastischer Membran, die Gaspolster und Anlagenwasser trennt. Es nimmt die Volumenänderung des Heizungswassers bei Erwärmung auf und begrenzt Druckschwankungen.",
   "related": []
 }

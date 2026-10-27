@@ -9,6 +9,9 @@
   "synonyms": [
     "gross"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Gros** ist eine Einheit für Stückzahlen. 1 Gros = 144 Stk.",
   "related": [
     "lexicon.stueck"

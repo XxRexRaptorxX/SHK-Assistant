@@ -10,6 +10,9 @@
     "Heizungserzeuger",
     "heat generator"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ein **Wärmeerzeuger** wandelt Energie in nutzbare Wärme um oder stellt diese mittels Wärmetransport bereit. Beispiele sind Gas- und Ölkessel, Wärmepumpen, Biomassekessel und Fernwärme-Übergabestationen. Seine Leistung und Betriebsweise müssen zu Heizlast, Warmwasserbedarf und Systemtemperaturen passen.",
   "related": [
     "lexicon.heizlast",

@@ -9,6 +9,9 @@
   "synonyms": [
     "combustion air"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "Luft, deren Sauerstoff für die Verbrennung eines Brennstoffs benötigt wird. Die Versorgung hängt vom Gerät und Aufstellraumkonzept ab.",
   "related": []
 }

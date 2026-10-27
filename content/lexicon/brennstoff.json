@@ -10,6 +10,9 @@
     "Energieträger zur Verbrennung",
     "fuel"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "Ein **Brennstoff** ist ein Stoff, dessen chemische Energie durch Verbrennung in Wärme umgewandelt werden kann. Beispiele in der Gebäudetechnik sind Erdgas, Flüssiggas, Heizöl, Holz und Holzpellets. Brennstoffwahl beeinflusst Lagerung, Verbrennungstechnik, Emissionen und erforderliche Sicherheitseinrichtungen.",
   "related": [
     "lexicon.heizwert",

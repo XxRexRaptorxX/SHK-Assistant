@@ -10,6 +10,9 @@
     "m³/h",
     "cubic metre per hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kubikmeter pro Stunde** (m³/h) ist eine Einheit für den Volumenstrom. 1 m³/h = 0,277778 l/s.",
   "related": [
     "lexicon.liter-pro-sekunde"

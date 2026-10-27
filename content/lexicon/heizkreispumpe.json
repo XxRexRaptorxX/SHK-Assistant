@@ -10,6 +10,10 @@
     "Heizungsumwälzpumpe",
     "heating circuit pump"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Eine **Heizkreispumpe** fördert Heizungswasser durch den zugehörigen Heizkreis und überwindet dabei die hydraulischen Widerstände. Sie muss zum erforderlichen Volumenstrom und Druckverlust passen. Eine passend ausgelegte, korrekt geregelte Hocheffizienzpumpe kann den elektrischen Hilfsenergiebedarf verringern.",
   "related": [
     "lexicon.umwaelzpumpe",

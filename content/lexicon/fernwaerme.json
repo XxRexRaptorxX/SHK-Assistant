@@ -10,6 +10,9 @@
     "Nah- und Fernwärme (je nach Netzgröße)",
     "district heating"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "**Fernwärme** ist Wärme, die über ein Wärmenetz von einer zentralen Erzeugungs- oder Abwärmequelle zu Verbrauchern transportiert wird. Die Übergabe erfolgt meist über eine Übergabestation mit Wärmetauscher, Regelung und Messung. Anschlussbedingungen, Primärtemperaturen, Differenzdruck und Vertragsvorgaben bestimmen die Ausführung.",
   "related": [
     "lexicon.waermetauscher",

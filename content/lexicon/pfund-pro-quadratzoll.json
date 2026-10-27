@@ -10,6 +10,9 @@
     "psi",
     "pound per square inch"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Pfund pro Quadratzoll** (psi) ist eine Einheit für den Druck. 1 psi = 6.894,76 Pa.",
   "related": [
     "lexicon.pascal"

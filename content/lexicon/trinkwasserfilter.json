@@ -10,6 +10,9 @@
     "Hauswasserfilter",
     "drinking water filter"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ein **Trinkwasserfilter** hält Partikel aus dem Zulauf zurück und schützt dadurch nachgeschaltete Komponenten vor Schmutzeintrag. Filtertypen unterscheiden sich beispielsweise durch Filterfeinheit und Rückspülbarkeit. Ein Filter entfernt nicht automatisch gelöste Stoffe oder Mikroorganismen; Wartungsintervalle und bestimmungsgemäße Anwendung sind einzuhalten.",
   "related": [
     "lexicon.hauswasserstation",

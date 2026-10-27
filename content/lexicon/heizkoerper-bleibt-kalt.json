@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Heizkörper bleibt kalt",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Symptom, bei dem ein Heizkörper nicht oder unzureichend warm wird. Mögliche Ursachen sind fehlender Durchfluss, Luft, Ventilprobleme oder eine zu niedrige Vorlauftemperatur; die Diagnose erfordert Messungen.",
   "related": []
 }

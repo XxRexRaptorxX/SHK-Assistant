@@ -10,6 +10,10 @@
     "Feuerungsbrenner",
     "burner"
   ],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
   "definition": "Ein **Brenner** bereitet den Brennstoff und die Verbrennungsluft auf und führt sie kontrolliert zusammen, damit Wärme freigesetzt wird. Je nach Bauart können Brenner beispielsweise mit Gas oder Heizöl betrieben werden und ihre Leistung ein- oder mehrstufig beziehungsweise modulierend anpassen. Zündung, Flammenüberwachung und Sicherheitsabschaltung sind wesentliche Funktionen.",
   "related": [
     "lexicon.gasfeuerungsautomat",

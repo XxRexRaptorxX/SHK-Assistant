@@ -9,6 +9,9 @@
   "synonyms": [
     "hydrogen blending"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "Beimischung von Wasserstoff zu Erdgas in einem Gasnetz. Zulässigkeit und technische Auswirkungen hängen von Netz, Geräten und geltenden Vorgaben ab.",
   "related": []
 }

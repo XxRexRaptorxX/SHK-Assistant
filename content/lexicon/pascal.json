@@ -9,6 +9,9 @@
   "synonyms": [
     "Pa"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Pascal** (Pa) ist eine Einheit für den Druck. 1 Pa = 0,00001 bar.",
   "related": [
     "lexicon.bar"

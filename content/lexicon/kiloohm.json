@@ -9,6 +9,9 @@
   "synonyms": [
     "kΩ"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kiloohm** (kΩ) ist eine Einheit für den elektrischen Widerstand. 1 kΩ = 1.000 Ω.",
   "related": [
     "lexicon.ohm"

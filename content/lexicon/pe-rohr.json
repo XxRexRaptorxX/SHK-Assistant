@@ -11,6 +11,9 @@
     "PE-HD-Rohr",
     "polyethylene pipe"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Ein **PE-Rohr** besteht aus Polyethylen und wird in dafür vorgesehenen Trinkwasser-, Erdverlegungs-, Gas- oder Entwässerungsanwendungen verwendet. Die geeignete PE-Type, Druckklasse, Verbindungsmethode und Zulassung sind anwendungsabhängig. UV-Beständigkeit, Temperaturgrenzen und zulässige Medien müssen den Produktdaten entnommen werden.",
   "related": [
     "lexicon.rohrleitung",

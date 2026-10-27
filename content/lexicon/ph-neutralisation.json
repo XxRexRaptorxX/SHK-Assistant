@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "pH-Neutralisation",
   "synonyms": [],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Chemische Behandlung, bei der eine saure oder basische Lösung in Richtung eines vorgesehenen pH-Bereichs eingestellt wird.",
   "related": []
 }

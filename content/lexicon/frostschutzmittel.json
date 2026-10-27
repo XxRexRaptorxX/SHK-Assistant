@@ -10,6 +10,9 @@
     "Glykolgemisch",
     "antifreeze"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ein **Frostschutzmittel** senkt den Gefrierpunkt einer Flüssigkeit oder bietet über andere Mechanismen Frostschutz. In geschlossenen Solar- und Solekreisen werden geeignete Wasser-Glykol-Gemische eingesetzt; Art und Konzentration müssen mit Anlagenmaterialien und Herstelleranforderungen kompatibel sein. Zu hohe Konzentrationen können Wärmeübertragung und Pumpenbetrieb verschlechtern.",
   "related": [
     "lexicon.solarthermie",

@@ -9,6 +9,9 @@
   "synonyms": [
     "Refrigerant"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Ein **Kältemittel** ist ein Arbeitsmedium, das in einer Kälteanlage oder Wärmepumpe Wärme durch Verdampfen und Verflüssigen aufnimmt und abgibt. Auswahlkriterien sind unter anderem thermodynamische Eigenschaften, Druckniveau, Energieeffizienz, Brennbarkeit, Toxizität und Klimaauswirkung. Handhabung und Service unterliegen je nach Kältemittel und Anlage besonderen Sicherheits- und Rechtsanforderungen.",
   "related": [
     "lexicon.kaeltemaschine",

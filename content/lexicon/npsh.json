@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "NPSH",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Net Positive Suction Head: Kennwert zur Beurteilung der Druckverhältnisse auf der Saugseite einer Pumpe im Hinblick auf Kavitation.",
   "related": []
 }

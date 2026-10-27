@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Coulomb",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Coulomb** (C) ist eine Einheit für die elektrische Ladung. 1 C = 0,000277778 Ah.",
   "related": [
     "lexicon.amperestunde"

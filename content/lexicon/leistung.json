@@ -9,6 +9,9 @@
   "synonyms": [
     "power"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Leistung** ist die in einer Zeitspanne umgesetzte Energie geteilt durch diese Zeitspanne. Formelzeichen P, Einheit Watt (W).",
   "related": [
     "lexicon.energie",

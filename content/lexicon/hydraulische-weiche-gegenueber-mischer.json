@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche gegenüber Mischer",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Ein Mischer verändert gezielt das Mischungsverhältnis zur Temperaturregelung; eine hydraulische Weiche dient primär der Entkopplung und kann dabei ebenfalls Mischströmungen aufweisen.",
   "related": []
 }

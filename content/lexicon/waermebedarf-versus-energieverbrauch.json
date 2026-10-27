@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebedarf versus Energieverbrauch",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Energiebedarf ist in der Regel berechnet und basiert auf definierten Annahmen; Energieverbrauch ist gemessen oder abgerechnet und hängt auch von Nutzerverhalten und Wetter ab.",
   "related": []
 }

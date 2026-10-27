@@ -9,6 +9,9 @@
   "synonyms": [
     "heat exchanger sizing"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Dimensionierung eines Wärmeübertragers anhand der erforderlichen Leistung, Temperaturdifferenzen, Medien, Druckverluste und Betriebsbedingungen.",
   "related": []
 }

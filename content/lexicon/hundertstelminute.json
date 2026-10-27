@@ -9,6 +9,9 @@
   "synonyms": [
     "HM"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Hundertstelminute** (HM) ist eine Einheit für die Zeit. 1 HM = 0,6 s.",
   "related": [
     "lexicon.sekunde"

@@ -10,6 +10,9 @@
     "WDVS",
     "external thermal insulation composite system"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Außenseitiges Dämmsystem für Gebäude, bei dem Dämmplatten mit weiteren Schichten wie Armierung und Putz kombiniert werden.",
   "related": []
 }

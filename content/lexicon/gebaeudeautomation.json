@@ -9,6 +9,9 @@
   "synonyms": [
     "building automation"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Überwachung, Steuerung und Regelung technischer Gebäudesysteme wie Heizung, Lüftung, Klima, Beleuchtung und Beschattung.",
   "related": []
 }

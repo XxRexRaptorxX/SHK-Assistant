@@ -10,6 +10,9 @@
     "PSA",
     "personal protective equipment"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "**Persönliche Schutzausrüstung** umfasst Ausrüstung, die Beschäftigte vor Gefährdungen schützt, beispielsweise Schutzbrille, Handschuhe, Sicherheitsschuhe oder Gehörschutz. Auswahl und Benutzung richten sich nach der Gefährdungsbeurteilung und den einschlägigen Vorgaben. PSA ergänzt technische und organisatorische Schutzmaßnahmen; sie ersetzt diese nicht.",
   "related": [
     "lexicon.gefaehrdungsbeurteilung"

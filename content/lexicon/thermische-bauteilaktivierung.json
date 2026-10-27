@@ -9,6 +9,9 @@
   "synonyms": [
     "thermally activated building systems"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Nutzung der thermischen Masse von Gebäudebauteilen, etwa Decken, zur Speicherung und zeitversetzten Abgabe von Wärme oder Kälte.",
   "related": []
 }

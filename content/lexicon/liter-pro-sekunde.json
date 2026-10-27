@@ -10,6 +10,9 @@
     "l/s",
     "litre per second"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Liter pro Sekunde** (l/s) ist eine Einheit für den Volumenstrom. 1 l/s = 3,6 m³/h.",
   "related": [
     "lexicon.kubikmeter-pro-stunde"

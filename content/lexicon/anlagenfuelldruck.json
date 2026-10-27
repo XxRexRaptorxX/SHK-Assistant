@@ -9,6 +9,9 @@
   "synonyms": [
     "system fill pressure"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Druck des Anlagenwassers im kalten Zustand, der zur statischen Höhe und den Herstellerangaben passen muss.",
   "related": []
 }

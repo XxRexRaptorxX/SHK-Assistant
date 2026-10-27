@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebrückennachweis",
   "synonyms": [],
+  "categories": [
+    "normen",
+    "physik"
+  ],
   "definition": "Berechnung oder Bewertung der Wärmebrückenwirkung eines Gebäudes, um zusätzliche Wärmeverluste und kritische Oberflächentemperaturen einzuschätzen.",
   "related": []
 }

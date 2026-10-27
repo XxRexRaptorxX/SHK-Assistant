@@ -9,6 +9,9 @@
   "synonyms": [
     "condensing temperature"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Sättigungstemperatur des Kältemittels auf der Hochdruckseite während der Kondensation.",
   "related": []
 }

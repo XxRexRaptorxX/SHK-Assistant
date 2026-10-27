@@ -10,6 +10,9 @@
     "Wh",
     "watt hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Wattstunde** (Wh) ist eine Einheit für die Energie. 1 Wh = 3.600 J.",
   "related": [
     "lexicon.joule"

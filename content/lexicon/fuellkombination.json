@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Füllkombination",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "trinkwasser"
+  ],
   "definition": "Kombination von Armaturen zur kontrollierten Befüllung einer Anlage. Die erforderliche Rückflusssicherung richtet sich nach Medium und Regelwerk.",
   "related": []
 }

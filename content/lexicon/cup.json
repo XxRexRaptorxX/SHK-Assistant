@@ -9,6 +9,9 @@
   "synonyms": [
     "Cup (US)"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Cup (US)** (cup) ist eine Einheit für das Volumen. 1 cup = 0,236588 l.",
   "related": [
     "lexicon.liter"

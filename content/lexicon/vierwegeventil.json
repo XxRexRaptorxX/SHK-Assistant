@@ -10,6 +10,9 @@
     "4-Wege-Ventil",
     "four-way valve"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Armatur mit vier Anschlüssen, die Ströme zwischen zwei Kreisläufen mischen oder umleiten kann. In bestimmten Heizungsanlagen wird sie beispielsweise zur Rücklauftemperaturanhebung eingesetzt.",
   "related": []
 }

@@ -10,6 +10,10 @@
     "Effizienz",
     "energy efficiency"
   ],
+  "categories": [
+    "normen",
+    "physik"
+  ],
   "definition": "**Energieeffizienz** beschreibt, wie viel nutzbare Dienstleistung oder Energieabgabe im Verhältnis zum Energieeinsatz erreicht wird. In SHK-Systemen hängt sie nicht nur vom Wärmeerzeuger ab, sondern auch von Systemtemperaturen, Hydraulik, Regelung, Verteilung, Gebäudehülle und Nutzerverhalten. Einzelne Gerätekennzahlen bilden die Effizienz einer Gesamtanlage nur begrenzt ab.",
   "related": [
     "lexicon.wirkungsgrad",

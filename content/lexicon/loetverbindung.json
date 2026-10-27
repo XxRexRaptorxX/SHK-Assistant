@@ -10,6 +10,9 @@
     "Lötstelle",
     "soldered joint"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Eine **Lötverbindung** verbindet metallische Werkstücke mit einem geschmolzenen Lot, wobei der Grundwerkstoff im Regelfall nicht aufgeschmolzen wird. Man unterscheidet unter anderem Weich- und Hartlöten nach den jeweiligen Prozessbedingungen. Lot, Flussmittel, Werkstoff und Einsatzbereich müssen zueinander passen; Brandschutz und Arbeitssicherheit sind bei der Ausführung zu beachten.",
   "related": [
     "lexicon.hartloeten",

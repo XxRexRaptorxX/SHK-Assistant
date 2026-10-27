@@ -10,6 +10,9 @@
     "Schichtenspeicher für Heizung",
     "stratified storage tank"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ein **Schichtenspeicher** ist ein Wärmespeicher, der Wasser möglichst nach Temperatur geschichtet hält: heißes Wasser oben, kühleres unten. Eine stabile Temperaturschichtung kann die nutzbare Wärmequalität verbessern. Einströmgeschwindigkeit, Anschlusshöhen und interne Strömungsführung beeinflussen die Schichtung.",
   "related": [
     "lexicon.pufferspeicher",

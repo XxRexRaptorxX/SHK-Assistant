@@ -10,6 +10,10 @@
     "Mikroblasenabscheider (Bauart)",
     "air separator"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Ein **Luftabscheider** trennt freie oder gelöste Gasanteile aus einem Flüssigkeitskreislauf ab. Je nach Bauart nutzt er Strömungsverlangsamung, Koaleszenz oder andere Abscheideprinzipien. Er kann zur Verringerung von Luftproblemen beitragen, ersetzt aber keine korrekte Befüllung und Entlüftung.",
   "related": [
     "lexicon.entluefter",

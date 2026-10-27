@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Anschlussfehler",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Fehlerhafte Anschlussanordnung kann unerwünschte Durchmischung oder hydraulische Beeinflussung verursachen; das Hydraulikschema und die Montage sind zu prüfen.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "l/min",
     "litre per minute"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Liter pro Minute** (l/min) ist eine Einheit für den Volumenstrom. 1 l/min = 0,06 m³/h.",
   "related": [
     "lexicon.kubikmeter-pro-stunde"

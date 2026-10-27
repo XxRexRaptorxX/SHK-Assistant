@@ -10,6 +10,9 @@
     "CrNi-Rohr",
     "stainless steel pipe"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Ein **Edelstahlrohr** besteht aus einem nichtrostenden Stahl, dessen Korrosionsbeständigkeit von Legierung und Umgebungsbedingungen abhängt. Es wird in geeigneten Trinkwasser-, Heizungs- und Prozessanwendungen eingesetzt. Chloridgehalt, Spaltbedingungen, Verarbeitung und Kontakt mit anderen Werkstoffen können das Korrosionsverhalten beeinflussen.",
   "related": [
     "lexicon.rohrleitung",

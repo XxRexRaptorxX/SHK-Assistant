@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckminderer Trinkwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Armatur, die den Eingangsdruck des Trinkwassers auf einen eingestellten Ausgangsdruck reduziert.",
   "related": []
 }

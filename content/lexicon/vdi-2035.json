@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "VDI 2035",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "normen"
+  ],
   "definition": "Technische Richtlinienreihe zur Vermeidung von Schäden durch Steinbildung und wasserseitige Korrosion in Warmwasser-Heizungsanlagen. Maßgeblich sind die aktuelle Ausgabe und die konkreten Anlagenbedingungen.",
   "related": []
 }

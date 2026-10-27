@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Ampere",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Ampere** (A) ist eine Einheit für die elektrische Stromstärke. 1 A = 1.000 mA.",
   "related": [
     "lexicon.milliampere"

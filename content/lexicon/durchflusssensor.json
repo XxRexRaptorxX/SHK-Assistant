@@ -9,6 +9,9 @@
   "synonyms": [
     "flow sensor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Sensor oder Messgerät, das den Volumen- oder Massenstrom eines Mediums erfasst.",
   "related": []
 }

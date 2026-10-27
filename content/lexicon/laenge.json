@@ -9,6 +9,9 @@
   "synonyms": [
     "length"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Länge** ist die Ausdehnung eines Gegenstands in einer Richtung oder der Abstand zweier Punkte. Sie ist eine Basisgröße des SI mit der Einheit Meter (m).",
   "related": [
     "lexicon.flaeche"

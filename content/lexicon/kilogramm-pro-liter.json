@@ -10,6 +10,9 @@
     "kg/l",
     "kilogram per litre"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilogramm pro Liter** (kg/l) ist eine Einheit für die Dichte. 1 kg/l = 1.000 kg/m³.",
   "related": [
     "lexicon.kilogramm-pro-kubikmeter"

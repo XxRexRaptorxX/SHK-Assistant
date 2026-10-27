@@ -9,6 +9,9 @@
   "synonyms": [
     "evaporating temperature"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Sättigungstemperatur des Kältemittels auf der Niederdruckseite während der Verdampfung.",
   "related": []
 }

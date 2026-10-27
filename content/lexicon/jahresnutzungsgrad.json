@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Jahresnutzungsgrad",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "physik"
+  ],
   "definition": "Verhältnis der über einen Zeitraum nutzbar abgegebenen Energie zur zugeführten Energie, unter Berücksichtigung der gewählten Systemgrenze und des Betriebsverlaufs.",
   "related": []
 }

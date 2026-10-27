@@ -9,6 +9,9 @@
   "synonyms": [
     "differential pressure bypass valve"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Ventil, das bei einem eingestellten Differenzdruck einen Bypass zwischen Vor- und Rücklauf öffnen kann. Es muss zum Anlagenkonzept passen, da es heißes Wasser in den Rücklauf leiten kann.",
   "related": []
 }

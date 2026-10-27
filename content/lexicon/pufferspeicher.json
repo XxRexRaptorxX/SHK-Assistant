@@ -11,6 +11,9 @@
     "Wärmespeicher",
     "buffer tank"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ein **Pufferspeicher** speichert Wärme in einem Wasservolumen und entkoppelt zeitlich Wärmeangebot und Wärmebedarf. Er kann beispielsweise Laufzeiten eines Wärmeerzeugers verlängern, Abtauenergie bereitstellen oder mehrere Wärmeerzeuger und Verbraucher hydraulisch unterstützen. Ob ein Pufferspeicher sinnvoll ist und wie groß er sein muss, hängt vom Systemkonzept und den Herstelleranforderungen ab.",
   "related": [
     "lexicon.waermeerzeuger",

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Schwerkraftbremse",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Bauteil, das unerwünschte Schwerkraftzirkulation in einer Leitung begrenzt, wenn keine Pumpe läuft. Es ist nicht mit jeder Bauart eines Rückschlagventils gleichzusetzen.",
   "related": []
 }

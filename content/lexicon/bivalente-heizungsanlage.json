@@ -9,6 +9,9 @@
   "synonyms": [
     "bivalent heating system"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Heizungsanlage, in der zwei Wärmeerzeuger zusammenarbeiten, beispielsweise eine Wärmepumpe und ein zusätzlicher Heizkessel.",
   "related": []
 }

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Elektrische Arbeit",
   "synonyms": [],
+  "categories": [
+    "msr",
+    "physik"
+  ],
   "definition": "Über einen Zeitraum umgesetzte elektrische Energie. Sie wird beispielsweise in Joule oder Kilowattstunden angegeben.",
   "related": []
 }

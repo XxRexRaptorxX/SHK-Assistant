@@ -9,6 +9,9 @@
   "synonyms": [
     "absolute pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Druck bezogen auf das absolute Vakuum als Nullpunkt.",
   "related": []
 }

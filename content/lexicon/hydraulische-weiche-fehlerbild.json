@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Fehlerbild",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Mögliche Auffälligkeiten sind unerwartet hohe Rücklauftemperatur, unzureichende Wärmeversorgung oder ungünstige Pumpenbetriebspunkte. Die Ursache muss durch Messung ermittelt werden.",
   "related": []
 }

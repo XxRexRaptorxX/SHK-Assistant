@@ -10,6 +10,9 @@
     "Neutralisationsbox",
     "neutralisation unit"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Einrichtung, die saures Kondensat durch geeignete Reaktionsmittel weniger sauer macht, bevor es entsprechend den geltenden Anforderungen abgeleitet wird.",
   "related": []
 }

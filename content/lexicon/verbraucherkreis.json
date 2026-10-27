@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Verbraucherkreis",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Hydraulischer Kreislauf, der Wärme zu Heizflächen oder anderen Wärmeverbrauchern transportiert.",
   "related": []
 }

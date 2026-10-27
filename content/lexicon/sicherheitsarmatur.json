@@ -9,6 +9,10 @@
   "synonyms": [
     "Sicherheitseinrichtung (Armatur)"
   ],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Eine **Sicherheitsarmatur** erfüllt eine Schutzfunktion, indem sie einen gefährlichen Zustand begrenzt oder verhindert, beispielsweise Überdruck oder Rückfluss. Der Begriff ist allgemein; die konkrete Funktion muss über den Bauteiltyp und dessen Zulassung bestimmt werden. Auswahl, Prüfung und Einbau richten sich nach der jeweiligen Anlage und den technischen Regeln.",
   "related": [
     "lexicon.sicherheitsventil",

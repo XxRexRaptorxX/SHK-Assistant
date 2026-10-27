@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche in Mehrkesselanlage",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Kann die hydraulische Entkopplung zwischen mehreren Wärmeerzeugern und Verbraucherkreisen unterstützen, wenn das Gesamtschema dafür ausgelegt ist.",
   "related": []
 }

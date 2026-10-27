@@ -9,6 +9,10 @@
   "synonyms": [
     "wastewater heat recovery"
   ],
+  "categories": [
+    "abwasser",
+    "solar"
+  ],
   "definition": "Nutzung von Wärme aus Abwasser über einen geeigneten Wärmeübertrager, beispielsweise zur Vorwärmung oder als Wärmequelle einer Wärmepumpe.",
   "related": []
 }

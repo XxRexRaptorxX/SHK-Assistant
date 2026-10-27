@@ -10,6 +10,9 @@
     "°dH",
     "German degree of hardness"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Grad deutscher Härte** (°dH) ist eine Einheit für die Wasserhärte. 1 °dH = 0,1783 mmol/l.",
   "related": [
     "lexicon.millimol-pro-liter"

@@ -10,6 +10,10 @@
     "Ablaufventil",
     "Waschtisch-Ablaufgarnitur"
   ],
+  "categories": [
+    "trinkwasser",
+    "abwasser"
+  ],
   "definition": "Eine **Ablaufgarnitur** verbindet den Ablauf eines Sanitärobjekts mit dem nachgeschalteten Abwassersystem und kann je nach Bauart ein Verschluss- oder Betätigungselement enthalten. Sie muss zur Objektgeometrie passen und dicht montiert werden. Der Geruchsverschluss ist ein separates oder integriertes Funktionselement.",
   "related": [
     "lexicon.waschtisch",

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Abgaswegeprüfung",
   "synonyms": [],
+  "categories": [
+    "gas",
+    "normen"
+  ],
   "definition": "Prüfung, ob Abgase einer Feuerstätte ordnungsgemäß abgeführt werden und keine unzulässigen Abgasaustritte vorliegen; Umfang und Anforderungen richten sich nach den einschlägigen Regeln.",
   "related": []
 }

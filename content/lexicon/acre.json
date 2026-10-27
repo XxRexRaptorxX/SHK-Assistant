@@ -9,6 +9,9 @@
   "synonyms": [
     "ac"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Acre** (ac) ist eine Einheit für die Fläche. 1 ac = 4.046,86 m².",
   "related": [
     "lexicon.quadratmeter"

@@ -10,6 +10,9 @@
     "Thermostatmischer",
     "thermostatic mixing valve"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ventil, das warmes und kaltes Wasser mischt, um eine gewünschte Mischwassertemperatur zu erreichen oder zu begrenzen.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "KNX",
   "synonyms": [],
+  "categories": [
+    "msr"
+  ],
   "definition": "Standardisiertes Bussystem für Gebäudeautomation, das unter anderem Beleuchtung, Beschattung, Heizung und Lüftung vernetzen kann.",
   "related": []
 }

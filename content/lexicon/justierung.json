@@ -9,6 +9,9 @@
   "synonyms": [
     "adjustment"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Eingriff an einem Messgerät, um dessen Anzeige oder Verhalten so zu verändern, dass es näher an vorgegebene Werte gelangt.",
   "related": []
 }

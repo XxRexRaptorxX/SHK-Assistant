@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebrückenzuschlag",
   "synonyms": [],
+  "categories": [
+    "physik"
+  ],
   "definition": "Pauschaler oder berechneter Zuschlag zur Berücksichtigung zusätzlicher Wärmeverluste durch Wärmebrücken, sofern das verwendete Berechnungsverfahren dies vorsieht.",
   "related": []
 }

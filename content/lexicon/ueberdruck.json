@@ -9,6 +9,9 @@
   "synonyms": [
     "gauge pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Überdruck** ist ein Druck, der gegenüber dem umgebenden Luftdruck gemessen wird, wie ihn die meisten Manometer anzeigen. Ein negativer Überdruck wurde früher Unterdruck genannt.",
   "related": [
     "lexicon.druck",

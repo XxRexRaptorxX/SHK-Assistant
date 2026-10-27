@@ -9,6 +9,9 @@
   "synonyms": [
     "low-temperature heating"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Heizsystem, das mit vergleichsweise niedrigen Vorlauftemperaturen arbeitet, beispielsweise eine Fußbodenheizung oder passend ausgelegte Heizkörperanlage.",
   "related": []
 }

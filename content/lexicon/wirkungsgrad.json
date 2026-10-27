@@ -11,6 +11,9 @@
     "Effizienzgrad (unscharf)",
     "efficiency"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Der **Wirkungsgrad** ist das Verhältnis von nutzbarer abgegebener Energie zur zugeführten Energie unter festgelegten Bedingungen. Er ist dimensionslos und wird häufig in Prozent angegeben. Bei Heizgeräten muss die Bezugsbasis – beispielsweise Heizwert oder Brennwert – berücksichtigt werden; bei Wärmepumpen wird oft eine Leistungszahl größer als eins verwendet, die anders definiert ist.",
   "related": [
     "lexicon.heizwert",

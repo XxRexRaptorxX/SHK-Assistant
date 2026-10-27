@@ -9,6 +9,9 @@
   "synonyms": [
     "parallel flow heat exchanger"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeübertrager, in dem zwei Medien in derselben Richtung strömen.",
   "related": []
 }

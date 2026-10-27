@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckprüfung Kunststoffrohr",
   "synonyms": [],
+  "categories": [
+    "werkstoffe",
+    "normen"
+  ],
   "definition": "Prüfung eines Kunststoffrohrsystems nach einem geeigneten Verfahren, das Werkstoffverhalten und Temperaturabhängigkeit berücksichtigt.",
   "related": []
 }

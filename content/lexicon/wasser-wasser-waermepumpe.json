@@ -10,6 +10,11 @@
     "Grundwasserwärmepumpe",
     "water-to-water heat pump"
   ],
+  "categories": [
+    "heizung",
+    "kaelte",
+    "solar"
+  ],
   "definition": "Eine **Wasser-Wasser-Wärmepumpe** nutzt Grundwasser oder ein anderes geeignetes Wasser als Wärmequelle. Die relativ stabile Quellentemperatur kann günstige Betriebsbedingungen ermöglichen; Wasserqualität, Förder- und Schluckbrunnen sowie wasserrechtliche Anforderungen sind jedoch entscheidend. Verschmutzung und Ausfällungen können Wärmetauscher und hydraulische Komponenten beeinträchtigen.",
   "related": [
     "lexicon.waermepumpe",

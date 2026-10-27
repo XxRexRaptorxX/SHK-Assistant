@@ -10,6 +10,11 @@
     "Durchflussregler",
     "flow regulator"
   ],
+  "categories": [
+    "hydraulik",
+    "lueftung",
+    "msr"
+  ],
   "definition": "Ein **Volumenstromregler** hält den Luft- oder Flüssigkeitsvolumenstrom auf einem eingestellten oder vorgegebenen Wert. Er kann mechanisch selbsttätig oder motorisch geregelt sein. Für korrekte Funktion sind ein geeigneter Druckbereich, Einbaulage und gegebenenfalls die Inbetriebnahme-Einstellung zu beachten.",
   "related": [
     "lexicon.volumenstrom",

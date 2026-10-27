@@ -10,6 +10,9 @@
     "Verbrühungsschutz",
     "scald protection"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "**Verbrühschutz** umfasst technische und organisatorische Maßnahmen, die das Risiko von Verbrühungen durch heißes Wasser reduzieren. Dazu können thermostatische Mischarmaturen, Temperaturbegrenzungen und abgestimmte Betriebsparameter gehören. Die Zieltemperatur muss zugleich den hygienischen Anforderungen der jeweiligen Anlage gerecht werden; Schutz und Hygiene sind gemeinsam zu planen.",
   "related": [
     "lexicon.thermostatarmatur",

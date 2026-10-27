@@ -10,6 +10,9 @@
     "Thermostatmischer",
     "thermostatic mixer"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Eine **Thermostatarmatur** mischt Warm- und Kaltwasser und hält die eingestellte Auslauftemperatur innerhalb ihrer Betriebsgrenzen automatisch nach. Sie reagiert auf Veränderungen der Zulauftemperaturen und -drücke. Für den Verbrühschutz sind korrekte Montage, Wartung und passende Versorgungsbedingungen wesentlich.",
   "related": [
     "lexicon.armatur",

@@ -9,6 +9,10 @@
   "synonyms": [
     "temperature lift"
   ],
+  "categories": [
+    "kaelte",
+    "physik"
+  ],
   "definition": "Temperaturdifferenz zwischen Eintritts- und Austrittstemperatur eines Mediums oder zwischen Ausgangs- und Zieltemperatur.",
   "related": []
 }

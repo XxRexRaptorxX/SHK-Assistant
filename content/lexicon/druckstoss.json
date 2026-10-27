@@ -9,6 +9,9 @@
   "synonyms": [
     "pressure surge"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Kurzzeitige starke Druckänderung in einem System, häufig ausgelöst durch schnelle Strömungsänderungen.",
   "related": []
 }

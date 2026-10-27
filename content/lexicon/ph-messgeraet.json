@@ -9,6 +9,9 @@
   "synonyms": [
     "pH meter"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Messgerät zur Bestimmung des pH-Werts einer wässrigen Lösung. Kalibrierung, Temperatur und sachgerechte Probenahme beeinflussen das Ergebnis.",
   "related": []
 }

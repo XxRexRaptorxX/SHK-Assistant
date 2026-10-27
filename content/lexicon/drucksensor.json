@@ -9,6 +9,9 @@
   "synonyms": [
     "pressure sensor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Sensor, der Druck in ein elektrisches oder anderes auswertbares Signal umwandelt.",
   "related": []
 }

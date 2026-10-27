@@ -10,6 +10,9 @@
     "Erstinbetriebnahme",
     "commissioning"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Die **Inbetriebnahme** ist die kontrollierte Überführung einer Anlage in den bestimmungsgemäßen Betrieb. Sie umfasst je nach System Sicht- und Funktionsprüfungen, Befüllen und Entlüften, Dichtheits- und Sicherheitsprüfungen, Parametrierung sowie die Dokumentation der Ergebnisse. Die erforderlichen Schritte sind geräte- und anlagenspezifisch und dürfen nicht durch eine allgemeine Checkliste ersetzt werden.",
   "related": [
     "lexicon.wartung",

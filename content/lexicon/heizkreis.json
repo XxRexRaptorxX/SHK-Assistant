@@ -10,6 +10,9 @@
     "Heizungs-Kreis",
     "heating circuit"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ein **Heizkreis** ist ein hydraulischer Kreislauf, in dem Heizungswasser Wärme vom Wärmeerzeuger oder Verteiler zu einem Verbraucher transportiert und zurückführt. Mehrere Heizkreise können unterschiedliche Temperaturanforderungen und eigene Pumpen oder Mischer besitzen. Typische Beispiele sind Heizkörper- und Fußbodenheizkreise.",
   "related": [
     "lexicon.heizungsanlage",

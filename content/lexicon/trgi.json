@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "TRGI",
   "synonyms": [],
+  "categories": [
+    "gas",
+    "normen"
+  ],
   "definition": "Technische Regel für Gasinstallationen in Deutschland. Für Planung, Errichtung, Änderung und Betrieb sind die jeweils geltenden Ausgaben und rechtlichen Vorgaben maßgeblich.",
   "related": []
 }

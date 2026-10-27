@@ -9,6 +9,10 @@
   "synonyms": [
     "heat sink"
   ],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "System oder Medium, an das die Wärmepumpe nutzbare Wärme abgibt, beispielsweise Heizungswasser oder Trinkwarmwasser.",
   "related": []
 }

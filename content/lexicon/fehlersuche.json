@@ -9,6 +9,9 @@
   "synonyms": [
     "troubleshooting"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Strukturiertes Vorgehen zur Eingrenzung einer Störungsursache anhand von Beobachtungen, Messungen, Schaltplänen und technischen Unterlagen.",
   "related": []
 }

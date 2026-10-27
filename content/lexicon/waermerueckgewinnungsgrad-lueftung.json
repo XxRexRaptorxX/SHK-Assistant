@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmerückgewinnungsgrad Lüftung",
   "synonyms": [],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Kennwert für den Temperatur- oder Wärmeübertragungsgrad eines Wärmerückgewinners nach einem definierten Berechnungs- oder Prüfverfahren.",
   "related": []
 }

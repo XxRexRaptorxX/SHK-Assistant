@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebedarf versus Heizlast",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Der Wärmebedarf beschreibt eine Energiemenge über einen Zeitraum; die Heizlast beschreibt eine erforderliche momentane Wärmeleistung unter Auslegungsbedingungen.",
   "related": []
 }

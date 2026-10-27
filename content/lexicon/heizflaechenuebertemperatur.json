@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Heizflächenübertemperatur",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Differenz zwischen der mittleren Temperatur einer Heizfläche und der Raumtemperatur. Sie beeinflusst die Wärmeabgabe der Heizfläche.",
   "related": []
 }

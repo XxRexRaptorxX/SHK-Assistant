@@ -9,6 +9,9 @@
   "synonyms": [
     "heating installation"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Gesamtheit der Komponenten zur Wärmeerzeugung, Wärmeverteilung und Wärmeabgabe in einem Gebäude.",
   "related": []
 }

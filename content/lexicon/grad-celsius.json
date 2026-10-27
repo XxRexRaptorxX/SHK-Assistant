@@ -9,6 +9,9 @@
   "synonyms": [
     "degree Celsius"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "Temperatureinheit, Symbol °C, die im Alltag und in der Gebäudetechnik verwendet wird. Temperaturdifferenzen sind zahlenmäßig in Kelvin gleich groß.",
   "related": []
 }

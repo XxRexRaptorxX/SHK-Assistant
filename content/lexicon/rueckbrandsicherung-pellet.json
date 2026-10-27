@@ -7,6 +7,11 @@
   "verifiedAt": "2026-10-21",
   "term": "Rückbrandsicherung Pellet",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "gas",
+    "solar"
+  ],
   "definition": "Sicherheitseinrichtung, die eine Rückübertragung von Feuer in das Brennstofffördersystem begrenzen soll.",
   "related": []
 }

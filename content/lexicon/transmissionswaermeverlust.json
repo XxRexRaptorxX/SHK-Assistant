@@ -9,6 +9,9 @@
   "synonyms": [
     "transmission heat loss"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Wärmeverlust durch die Gebäudehülle infolge von Temperaturunterschieden zwischen innen und außen.",
   "related": []
 }

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Sicherheitsventil Heizung",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "normen"
+  ],
   "definition": "Sicherheitsventil, das einen geschlossenen Heizkreis gegen unzulässigen Überdruck schützt.",
   "related": []
 }

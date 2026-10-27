@@ -9,6 +9,9 @@
   "synonyms": [
     "Kondensatneutralisation"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "**Neutralisation** bezeichnet die chemische Verminderung einer sauren oder alkalischen Wirkung durch Reaktion mit einem geeigneten Gegenmittel. In der SHK-Technik wird der Begriff oft für die Behandlung von Kondensat verwendet, bevor es eingeleitet wird, sofern dies erforderlich ist. Verfahren, Dimensionierung und Wartung richten sich nach Kondensatmenge, Zusammensetzung und geltenden örtlichen Regeln.",
   "related": [
     "lexicon.kondensat",

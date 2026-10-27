@@ -9,6 +9,9 @@
   "synonyms": [
     "sound pressure level"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Logarithmisches Maß für den Schalldruck relativ zu einem Referenzwert, angegeben in Dezibel (dB).",
   "related": []
 }

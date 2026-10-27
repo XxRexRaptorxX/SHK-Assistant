@@ -9,6 +9,10 @@
   "synonyms": [
     "hot water circulation pump"
   ],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Pumpe, die Trinkwarmwasser in einer Zirkulationsleitung umwälzt. Einstellung und Betrieb müssen Wärmeverluste und Hygieneanforderungen berücksichtigen.",
   "related": []
 }

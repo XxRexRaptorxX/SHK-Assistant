@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Legionellenschaltung",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Umgangssprachliche Bezeichnung für ein Regelprogramm, das einen Trinkwarmwasserspeicher zeitweise auf erhöhte Temperatur bringt. Es ersetzt kein vollständiges Hygienekonzept.",
   "related": []
 }

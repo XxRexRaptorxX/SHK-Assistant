@@ -9,6 +9,10 @@
   "synonyms": [
     "refrigeration and air conditioning"
   ],
+  "categories": [
+    "kaelte",
+    "lueftung"
+  ],
   "definition": "Fachgebiet zur Erzeugung und Verteilung von Kälte sowie zur Beeinflussung von Temperatur, Feuchte und Luftqualität.",
   "related": []
 }

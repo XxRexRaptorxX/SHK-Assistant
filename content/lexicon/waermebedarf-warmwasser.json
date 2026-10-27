@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmebedarf Warmwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Wärmeenergie, die benötigt wird, um eine entnommene Trinkwassermenge auf die gewünschte Temperatur zu erwärmen, gegebenenfalls zuzüglich berücksichtigter Verluste.",
   "related": []
 }

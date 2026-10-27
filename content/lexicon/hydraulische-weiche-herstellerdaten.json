@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Herstellerdaten",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Technische Angaben zu Volumenstrom, Druckverlust, Leistung, Abmessungen und Betriebsgrenzen sind dem Herstellerdatenblatt zu entnehmen.",
   "related": []
 }

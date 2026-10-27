@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckverlust Filter",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Druckabfall über einem Filter, der mit zunehmender Beladung steigen kann.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "yd"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Yard** (yd) ist eine Einheit für die Länge. 1 yd = 0,9144 m.",
   "related": [
     "lexicon.meter"

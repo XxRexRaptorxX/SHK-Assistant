@@ -9,6 +9,9 @@
   "synonyms": [
     "buffer tank charging"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Übertragung von Wärme in einen Pufferspeicher, bis eine definierte Ladebedingung erreicht wird.",
   "related": []
 }

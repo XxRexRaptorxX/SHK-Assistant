@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Sicherheitsgruppe Trinkwassererwärmer",
   "synonyms": [],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Armaturengruppe, die einen Trinkwassererwärmer gegen unzulässigen Druck schützt und je nach Ausführung Rückflussverhinderung und Absperrung umfasst.",
   "related": []
 }

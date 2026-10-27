@@ -9,6 +9,9 @@
   "synonyms": [
     "safety valve sizing"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Auswahl eines Sicherheitsventils nach erforderlicher Abblaseleistung, Ansprechdruck, Medium und zulässigem Druck der abgesicherten Anlage.",
   "related": []
 }

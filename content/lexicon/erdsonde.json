@@ -9,6 +9,10 @@
   "synonyms": [
     "borehole heat exchanger"
   ],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "Im Boden eingebrachter Wärmeübertrager, häufig als vertikale Bohrung mit Rohrkreislauf ausgeführt, der Wärme zwischen Erdreich und Wärmeträger austauscht.",
   "related": []
 }

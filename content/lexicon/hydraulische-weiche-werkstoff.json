@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Werkstoff",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "werkstoffe"
+  ],
   "definition": "Werkstoff der Weiche, der zu Druck, Temperatur und Heizungswasser passen muss.",
   "related": []
 }

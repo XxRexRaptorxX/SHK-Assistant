@@ -11,6 +11,10 @@
     "Membran-Ausdehnungsgefäß",
     "expansion vessel"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Ein **Ausdehnungsgefäß** nimmt die Volumenänderung des Heizungswassers bei Temperaturänderungen auf und begrenzt dadurch Druckschwankungen. In geschlossenen Heizungsanlagen wird meist ein Membran-Druckausdehnungsgefäß eingesetzt, das Wasser und Gaspolster durch eine Membran trennt. Größe, Vordruck und Einbindung müssen zum Anlagenvolumen und Betriebsdruck passen.",
   "related": [
     "lexicon.sicherheitsventil",

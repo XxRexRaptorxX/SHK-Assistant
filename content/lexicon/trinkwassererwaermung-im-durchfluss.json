@@ -9,6 +9,9 @@
   "synonyms": [
     "instantaneous water heating"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Erwärmung von Trinkwasser bei Bedarf während des Durchströmens eines Wärmeübertragers, ohne große Mengen Warmwasser im Trinkwasserbehälter zu speichern.",
   "related": []
 }

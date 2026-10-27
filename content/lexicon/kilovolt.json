@@ -9,6 +9,9 @@
   "synonyms": [
     "kV"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilovolt** (kV) ist eine Einheit für die elektrische Spannung. 1 kV = 1.000 V.",
   "related": [
     "lexicon.volt"

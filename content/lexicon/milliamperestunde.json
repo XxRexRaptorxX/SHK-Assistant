@@ -10,6 +10,9 @@
     "mAh",
     "milliampere hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Milliamperestunde** (mAh) ist eine Einheit für die elektrische Ladung. 1 mAh = 3,6 C.",
   "related": [
     "lexicon.coulomb"

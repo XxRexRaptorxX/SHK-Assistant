@@ -10,6 +10,9 @@
     "Aggregatzustandsänderung",
     "phase change"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Ein **Phasenwechsel** ist der Übergang eines Stoffes zwischen Aggregatzuständen, beispielsweise Schmelzen, Erstarren, Verdampfen oder Kondensieren. Dabei wird Wärme aufgenommen oder abgegeben, ohne dass sich die Temperatur eines reinen Stoffes während des idealisierten Phasenwechsels bei konstantem Druck ändern muss. Latente Wärme ist unter anderem für Kältekreisläufe und Wärmespeicherung bedeutsam.",
   "related": [
     "lexicon.kondensat",

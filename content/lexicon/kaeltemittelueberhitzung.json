@@ -9,6 +9,9 @@
   "synonyms": [
     "superheat"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Temperaturdifferenz zwischen dem tatsächlichen gasförmigen Kältemittelzustand und der Sättigungstemperatur beim gleichen Druck.",
   "related": []
 }

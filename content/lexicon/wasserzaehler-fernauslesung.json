@@ -9,6 +9,10 @@
   "synonyms": [
     "remote water meter reading"
   ],
+  "categories": [
+    "trinkwasser",
+    "msr"
+  ],
   "definition": "Automatische Übertragung von Messwerten eines Wasserzählers an ein Auswerte- oder Abrechnungssystem.",
   "related": []
 }

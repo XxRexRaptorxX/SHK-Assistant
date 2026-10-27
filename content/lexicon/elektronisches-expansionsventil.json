@@ -10,6 +10,9 @@
     "EEV",
     "electronic expansion valve"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Elektrisch angesteuertes Expansionsventil, das den Kältemittelmassenstrom anhand von Messwerten präzise regeln kann.",
   "related": []
 }

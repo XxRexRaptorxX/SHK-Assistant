@@ -10,6 +10,10 @@
     "Wärmetransportmedium",
     "heat transfer medium"
   ],
+  "categories": [
+    "heizung",
+    "physik"
+  ],
   "definition": "Ein **Wärmeträger** transportiert thermische Energie zwischen Wärmequelle, Wärmeerzeuger und Verbraucher. In Gebäuden wird meist Wasser oder ein Wasser-Glykol-Gemisch verwendet; in Kältekreisläufen übernimmt ein Kältemittel diese Funktion. Stoffeigenschaften, Frostschutz, Korrosionsverträglichkeit und zulässige Temperaturbereiche müssen passen.",
   "related": [
     "lexicon.solarthermie",

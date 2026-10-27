@@ -11,6 +11,10 @@
     "Heizleistung",
     "heat output"
   ],
+  "categories": [
+    "heizung",
+    "physik"
+  ],
   "definition": "Die **Wärmeleistung** beschreibt die pro Zeit übertragene Wärmeenergie. Ihre SI-Einheit ist Watt (W); ein Kilowatt entspricht 1.000 Watt. Sie ist von der Wärmemenge zu unterscheiden, die eine Energie über einen Zeitraum angibt.",
   "related": [
     "lexicon.waermemenge",

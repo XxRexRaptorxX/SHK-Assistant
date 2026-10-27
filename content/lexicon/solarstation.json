@@ -10,6 +10,10 @@
     "Solarpumpengruppe",
     "solar pump station"
   ],
+  "categories": [
+    "hydraulik",
+    "solar"
+  ],
   "definition": "Eine **Solarstation** ist eine vormontierte Baugruppe im Solarkreis, häufig mit Umwälzpumpe, Absperrarmaturen, Rückflussverhinderer, Durchflussanzeige, Sicherheitsgruppe und Anschlussmöglichkeiten für Temperaturmessung. Der genaue Aufbau ist produktabhängig. Sie muss zum Wärmeträger, Betriebsdruck, Volumenstrom und Temperaturbereich passen.",
   "related": [
     "lexicon.solarthermie",

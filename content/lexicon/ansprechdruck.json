@@ -9,6 +9,11 @@
   "synonyms": [
     "set pressure"
   ],
+  "categories": [
+    "heizung",
+    "normen",
+    "physik"
+  ],
   "definition": "Druck, bei dem eine Drucksicherheitseinrichtung unter festgelegten Bedingungen zu öffnen beginnt.",
   "related": []
 }

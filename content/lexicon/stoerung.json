@@ -9,6 +9,9 @@
   "synonyms": [
     "fault"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Abweichung vom vorgesehenen Anlagenbetrieb, die Funktion, Effizienz oder Sicherheit beeinträchtigen kann. Eine systematische Diagnose nutzt Symptome, Messwerte und Herstellerunterlagen.",
   "related": []
 }

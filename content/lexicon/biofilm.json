@@ -9,6 +9,9 @@
   "synonyms": [
     "mikrobieller Belag"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ein **Biofilm** ist eine Gemeinschaft von Mikroorganismen, die an Oberflächen haftet und in eine selbstgebildete Matrix eingebettet ist. Er kann sich auch in wasserführenden Leitungen und Bauteilen entwickeln und die mikrobielle Beschaffenheit beeinflussen. Eine bloße Desinfektion ersetzt nicht die Ursachenanalyse und die hygienegerechte Betriebsführung.",
   "related": [
     "lexicon.legionellen",

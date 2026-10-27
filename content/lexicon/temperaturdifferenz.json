@@ -11,6 +11,9 @@
     "Spreizung",
     "temperature difference"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Die **Temperaturdifferenz** ist die Differenz zwischen zwei Temperaturen, beispielsweise zwischen Vorlauf und Rücklauf. Für Temperaturdifferenzen wird in technischen Berechnungen üblicherweise Kelvin (K) verwendet; ein Unterschied von 1 K ist zahlenmäßig gleich einem Unterschied von 1 °C. Die Differenz ist eine wichtige Größe für die Berechnung der Wärmeleistung.",
   "related": [
     "lexicon.vorlauftemperatur",

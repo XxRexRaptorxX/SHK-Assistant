@@ -9,6 +9,9 @@
   "synonyms": [
     "strap-on sensor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Temperaturfühler, der außen an einer Rohr- oder Bauteiloberfläche befestigt wird. Wärmeübergang und Dämmung beeinflussen die Messgenauigkeit.",
   "related": []
 }

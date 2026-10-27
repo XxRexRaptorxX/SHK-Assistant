@@ -9,6 +9,9 @@
   "synonyms": [
     "heat distribution network"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Rohrleitungsnetz zur Verteilung von Wärme von einem Erzeuger oder Übergabepunkt zu mehreren Verbrauchern.",
   "related": []
 }

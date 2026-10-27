@@ -9,6 +9,9 @@
   "synonyms": [
     "hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Stunde** (h) ist eine Einheit für die Zeit. 1 h = 3.600 s.",
   "related": [
     "lexicon.sekunde"

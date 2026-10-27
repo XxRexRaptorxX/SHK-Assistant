@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wasseraufbereitung Trinkwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Behandlung von Wasser zur Änderung bestimmter Eigenschaften. Sie muss für den jeweiligen Einsatz geeignet und mit den Trinkwasseranforderungen vereinbar sein.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Kompressor",
     "compressor"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Ein **Verdichter** erhöht den Druck eines Gases und benötigt dafür mechanische beziehungsweise elektrische Arbeit. In einer Kompressionskälteanlage verdichtet er Kältemitteldampf vom Verdampferdruck auf den höheren Verflüssigungsdruck. Verdichtertyp, Betriebsbereich, Schmierung und Kühlung müssen auf das Kältemittel und die Anlage abgestimmt sein.",
   "related": [
     "lexicon.kaeltemaschine",

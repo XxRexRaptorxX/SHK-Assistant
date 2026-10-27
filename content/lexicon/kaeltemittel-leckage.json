@@ -9,6 +9,9 @@
   "synonyms": [
     "refrigerant leakage"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Unbeabsichtigter Austritt von Kältemittel aus einem Kältekreislauf.",
   "related": []
 }

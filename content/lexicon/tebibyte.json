@@ -9,6 +9,9 @@
   "synonyms": [
     "TiB"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Tebibyte** (TiB) ist eine Einheit für die Datenmenge. 1 TiB = 1.099.510.000.000 B.",
   "related": [
     "lexicon.byte"

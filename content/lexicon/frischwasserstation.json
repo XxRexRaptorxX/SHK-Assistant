@@ -9,6 +9,9 @@
   "synonyms": [
     "fresh water station"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Wärmeübertragerstation, die Trinkwasser im Durchfluss aus einem Heizungs- oder Pufferspeicher erwärmt, statt große Mengen Trinkwarmwasser im Speicher vorzuhalten.",
   "related": []
 }

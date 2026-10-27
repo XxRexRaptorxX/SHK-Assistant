@@ -9,6 +9,10 @@
   "synonyms": [
     "pressurisation unit"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Anlage zur Stabilisierung des Drucks in einem geschlossenen Heizungs- oder Kühlkreislauf, beispielsweise mit Pumpen, Kompressor oder Druckbehälter je nach System.",
   "related": []
 }

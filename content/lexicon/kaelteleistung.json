@@ -10,6 +10,9 @@
     "Kühlleistung",
     "cooling capacity"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Die **Kälteleistung** ist die pro Zeit aus einem Raum, Prozess oder Medium abgeführte Wärmeenergie. Sie wird meist in Watt oder Kilowatt angegeben. Die erforderliche Leistung ergibt sich aus der Kühllast und den Auslegungsbedingungen; sie ist nicht mit der elektrischen Leistungsaufnahme der Kältemaschine gleichzusetzen.",
   "related": [
     "lexicon.kuehllast",

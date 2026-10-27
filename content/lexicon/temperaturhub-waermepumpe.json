@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Temperaturhub Wärmepumpe",
   "synonyms": [],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "Differenz zwischen der Temperatur der Wärmesenke und der Wärmequelle, die den thermodynamischen Aufwand der Wärmepumpe wesentlich beeinflusst.",
   "related": []
 }

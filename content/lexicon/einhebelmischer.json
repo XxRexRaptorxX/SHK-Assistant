@@ -11,6 +11,9 @@
     "Mischerarmatur",
     "single-lever mixer"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ein **Einhebelmischer** regelt Wassermenge und Mischtemperatur mit einem gemeinsamen Hebel. Im Inneren befindet sich häufig eine Kartusche, die Warm- und Kaltwasser mischt. Wartung, Austausch und Werkstoffverträglichkeit richten sich nach Bauart und Herstellerangaben.",
   "related": [
     "lexicon.armatur",

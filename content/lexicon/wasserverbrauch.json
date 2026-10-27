@@ -9,6 +9,9 @@
   "synonyms": [
     "water consumption"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Wasservolumen, das innerhalb eines Zeitraums genutzt oder entnommen wird.",
   "related": []
 }

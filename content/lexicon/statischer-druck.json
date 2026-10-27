@@ -9,6 +9,9 @@
   "synonyms": [
     "static pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Druck eines Fluids, der unabhängig von der lokalen Strömungsgeschwindigkeit betrachtet wird.",
   "related": []
 }

@@ -10,6 +10,10 @@
     "Coefficient of Performance",
     "Leistungszahl"
   ],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "Der **COP (Coefficient of Performance)** ist das Verhältnis der abgegebenen Wärmeleistung zur aufgenommenen elektrischen Leistung unter bestimmten Prüfbedingungen. Er ist eine Momentaufnahme für definierte Betriebsbedingungen und nicht mit der Jahresarbeitszahl gleichzusetzen. Ein COP ohne Angaben zu Quelle und Vorlauftemperatur ist nur eingeschränkt vergleichbar.",
   "related": [
     "lexicon.waermepumpe",

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Stellantrieb Fußbodenheizung",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Elektrischer oder thermischer Antrieb, der ein Ventil am Heizkreisverteiler öffnet oder schließt, meist anhand eines Raumreglersignals.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Freier Auslauf Trinkwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Sicherung durch einen physischen Luftspalt zwischen Trinkwasserzufluss und nachgeschaltetem Medium, um Rückfließen zu verhindern.",
   "related": []
 }

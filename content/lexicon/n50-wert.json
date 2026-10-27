@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "n50-Wert",
   "synonyms": [],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Kennwert für die Luftwechselrate eines Gebäudes bei einer Druckdifferenz von 50 Pa im Rahmen einer Luftdichtheitsmessung.",
   "related": []
 }

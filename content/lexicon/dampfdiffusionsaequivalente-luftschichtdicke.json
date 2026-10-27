@@ -10,6 +10,9 @@
     "sd-Wert",
     "water vapour diffusion-equivalent air layer thickness"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Kenngröße, die beschreibt, welcher Dicke einer ruhenden Luftschicht der Wasserdampfdiffusionswiderstand eines Bauteils entspricht.",
   "related": []
 }

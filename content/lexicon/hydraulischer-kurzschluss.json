@@ -9,6 +9,9 @@
   "synonyms": [
     "hydraulic short circuit"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Unerwünschter Strömungsweg mit geringem Widerstand, über den Medium einen Teil des vorgesehenen Kreislaufs umgeht. Dadurch können Wärmeverteilung und Regelung beeinträchtigt werden.",
   "related": []
 }

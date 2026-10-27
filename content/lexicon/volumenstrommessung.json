@@ -9,6 +9,10 @@
   "synonyms": [
     "flow measurement"
   ],
+  "categories": [
+    "hydraulik",
+    "msr"
+  ],
   "definition": "Ermittlung des pro Zeiteinheit durch eine Leitung strömenden Volumens, beispielsweise mithilfe eines Durchflussmessers oder aus geeigneten Messgrößen.",
   "related": []
 }

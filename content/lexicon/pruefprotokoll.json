@@ -9,6 +9,9 @@
   "synonyms": [
     "test report"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Dokumentation von Prüfbedingungen, Messwerten, Ergebnissen und gegebenenfalls Mängeln einer technischen Prüfung.",
   "related": []
 }

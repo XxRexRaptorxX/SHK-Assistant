@@ -10,6 +10,9 @@
     "RO",
     "Reverse Osmosis"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Die **Umkehrosmose** ist ein Membranverfahren, bei dem Wasser unter Druck durch eine semipermeable Membran geführt wird, während ein großer Teil gelöster Stoffe zurückgehalten wird. Es wird beispielsweise zur Entsalzung und Wasseraufbereitung eingesetzt. Konzentrat, Vorbehandlung, Membranpflege und die Eignung für den konkreten Zweck sind zu berücksichtigen.",
   "related": [
     "lexicon.wasseraufbereitung"

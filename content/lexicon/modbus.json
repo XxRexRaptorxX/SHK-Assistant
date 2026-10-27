@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Modbus",
   "synonyms": [],
+  "categories": [
+    "msr"
+  ],
   "definition": "Kommunikationsprotokoll, das in Gebäude- und Industrieautomation zum Datenaustausch zwischen Steuerungen und Geräten verwendet wird.",
   "related": []
 }

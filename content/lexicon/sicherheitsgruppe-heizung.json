@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Sicherheitsgruppe Heizung",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "normen"
+  ],
   "definition": "Zusammenstellung von Sicherheitseinrichtungen für einen Heizkreis oder Wärmeerzeuger; konkrete Ausstattung und Einbau richten sich nach Anlage und Vorgaben.",
   "related": []
 }

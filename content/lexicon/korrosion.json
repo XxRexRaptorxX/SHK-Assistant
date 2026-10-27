@@ -10,6 +10,9 @@
     "Materialkorrosion",
     "corrosion"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**Korrosion** ist die meist chemisch oder elektrochemisch verursachte Veränderung eines Werkstoffs durch seine Umgebung. In Anlagen kann sie zu Leckagen, Querschnittsverlust, Funktionsstörungen und Verunreinigungen führen. Werkstoffkombination, Wasserbeschaffenheit, Sauerstoffeintrag und Betriebsbedingungen sind wichtige Einflussgrößen.",
   "related": [
     "lexicon.kontaktkorrosion",

@@ -9,6 +9,9 @@
   "synonyms": [
     "cascade control"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Regelung, die mehrere Wärmeerzeuger stufenweise oder koordiniert zuschaltet, um den Wärmebedarf effizient abzudecken.",
   "related": []
 }

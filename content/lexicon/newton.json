@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Newton",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Newton** (N) ist eine Einheit für die Kraft. 1 N = 0,001 kN.",
   "related": [
     "lexicon.kilonewton"

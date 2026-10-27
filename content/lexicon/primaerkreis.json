@@ -9,6 +9,9 @@
   "synonyms": [
     "primary circuit"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Kreislauf auf der Erzeuger- oder Quellenseite eines Wärmeübertragers; die genaue Bedeutung ergibt sich aus dem jeweiligen Schema.",
   "related": []
 }

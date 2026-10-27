@@ -9,6 +9,10 @@
   "synonyms": [
     "heating manifold"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Verteiler für einzelne Heizkreise, häufig bei Fußbodenheizungen. Er ermöglicht Anschluss, Verteilung und je nach Ausführung Einregulierung der Kreise.",
   "related": []
 }

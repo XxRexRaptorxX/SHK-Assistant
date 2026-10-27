@@ -9,6 +9,9 @@
   "synonyms": [
     "pump head"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Energiehöhe, die eine Pumpe dem Fördermedium zuführt und die häufig als äquivalente Höhe einer Flüssigkeitssäule angegeben wird. Sie muss die Druckverluste der Anlage überwinden.",
   "related": []
 }

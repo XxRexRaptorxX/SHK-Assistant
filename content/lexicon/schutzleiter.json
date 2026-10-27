@@ -10,6 +10,9 @@
     "PE",
     "protective conductor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Leiter, der berührbare leitfähige Teile mit dem Schutzsystem verbindet, um im Fehlerfall gefährliche Berührungsspannungen zu begrenzen.",
   "related": []
 }

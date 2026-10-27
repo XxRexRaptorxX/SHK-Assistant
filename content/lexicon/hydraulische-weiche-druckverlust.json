@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Druckverlust",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Druckabfall des Mediums innerhalb der Weiche, der bei korrekter Auslegung üblicherweise gering gehalten wird.",
   "related": []
 }

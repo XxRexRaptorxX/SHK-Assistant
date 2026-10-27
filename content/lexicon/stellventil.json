@@ -10,6 +10,10 @@
     "Regelventil",
     "control valve"
   ],
+  "categories": [
+    "hydraulik",
+    "msr"
+  ],
   "definition": "Ein **Stellventil** verändert den Durchfluss durch eine Leitung entsprechend einem Steuersignal. Es ist Bestandteil eines Regelkreises und arbeitet mit einem geeigneten Stellantrieb zusammen. Ventilkennlinie, Autorität, Differenzdruck, Medium und Temperatur bestimmen das Regelverhalten.",
   "related": [
     "lexicon.aktor",

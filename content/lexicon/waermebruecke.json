@@ -10,6 +10,9 @@
     "thermische Brücke",
     "thermal bridge"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Eine **Wärmebrücke** ist ein Bereich in der Gebäudehülle, durch den Wärme stärker fließt als durch angrenzende Bauteile. Sie kann Oberflächentemperaturen senken, Wärmeverluste erhöhen und bei geeigneten Feuchtebedingungen Kondensation oder Schimmel begünstigen. Installationsdurchdringungen und Befestigungen sind in der Detailplanung mit zu berücksichtigen.",
   "related": [
     "lexicon.waermeleitfaehigkeit",

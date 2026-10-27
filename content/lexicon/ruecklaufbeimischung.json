@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Rücklaufbeimischung",
   "synonyms": [],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Mischung von heißem Vorlaufwasser in den Rücklauf, die die Rücklauftemperatur erhöht und die Brennwertnutzung reduzieren kann.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "subcooling"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Temperaturdifferenz, um die flüssiges Kältemittel unter seiner Sättigungstemperatur bei gleichem Druck abgekühlt ist.",
   "related": []
 }

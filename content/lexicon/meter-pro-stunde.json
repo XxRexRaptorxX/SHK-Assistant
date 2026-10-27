@@ -10,6 +10,9 @@
     "m/h",
     "metre per hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Meter pro Stunde** (m/h) ist eine Einheit für die Geschwindigkeit. 1 m/h = 0,000277778 m/s.",
   "related": [
     "lexicon.meter-pro-sekunde"

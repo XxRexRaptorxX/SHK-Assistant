@@ -9,6 +9,9 @@
   "synonyms": [
     "m/(Ω·mm²)"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Meter pro Ohm und Quadratmillimeter** (m/(Ω·mm²)) ist eine Einheit für die elektrische Leitfähigkeit. 1 m/(Ω·mm²) = 1.000.000 S/m.",
   "related": [
     "lexicon.siemens-pro-meter"

@@ -10,6 +10,9 @@
     "Cu-Rohr",
     "copper pipe"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Ein **Kupferrohr** ist ein Rohr aus Kupfer, das in geeigneten Trinkwasser-, Heizungs- und Kälteanwendungen eingesetzt werden kann. Die Eignung hängt unter anderem von Wasserbeschaffenheit, Rohrqualität, Fügeart und Herstellerfreigabe ab. Kupfer ist nicht für jede Wasserchemie und jede Werkstoffkombination automatisch geeignet.",
   "related": [
     "lexicon.rohrleitung",

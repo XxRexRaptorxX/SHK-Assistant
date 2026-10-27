@@ -10,6 +10,9 @@
     "Dichtheitsprobe",
     "leak test"
   ],
+  "categories": [
+    "normen"
+  ],
   "definition": "Eine **Dichtheitsprüfung** stellt fest, ob eine Leitung, ein Behälter oder ein System unter festgelegten Prüfbedingungen unzulässig Medium verliert. Prüfmedium, Prüfdruck, Dauer, Messverfahren und Sicherheitsmaßnahmen hängen von Anlagentyp, Werkstoff und geltenden Regeln ab. Ein Prüfergebnis ist zu dokumentieren; eine bestandene Prüfung ersetzt nicht automatisch alle weiteren Inbetriebnahmeschritte.",
   "related": [
     "lexicon.rohrleitung",

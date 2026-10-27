@@ -11,6 +11,10 @@
     "Heizungskennlinie",
     "heating curve"
   ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Die **Heizkurve** ordnet der Außentemperatur eine Soll-Vorlauftemperatur zu. Bei sinkender Außentemperatur steigt bei einer typischen witterungsgeführten Regelung die erforderliche Vorlauftemperatur. Neigung und Niveau werden an Gebäude, Heizflächen und Komfortanforderungen angepasst; überhöhte Einstellungen können den Energieverbrauch erhöhen.",
   "related": [
     "lexicon.vorlauftemperatur",

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche gegenüber Pufferspeicher",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Eine hydraulische Weiche dient primär der hydraulischen Entkopplung; ein Pufferspeicher speichert zusätzlich Wärme. Je nach Anschlusskonzept kann ein Speicher auch hydraulisch entkoppeln.",
   "related": []
 }

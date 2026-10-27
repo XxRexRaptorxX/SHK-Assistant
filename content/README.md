@@ -244,6 +244,7 @@ jeder Wert in jedes passende Formelfeld umgerechnet werden kann.
 |--------------|---------------------------------------------------------------|
 | `term`       | Begriff, wie er in der Liste erscheint                        |
 | `synonyms`   | andere Bezeichnungen, Abkürzungen (werden mit durchsucht)     |
+| `categories` | Kategorien, mindestens eine (`heizung`, `hydraulik`, `trinkwasser`, `abwasser`, `kaelte`, `lueftung`, `gas`, `solar`, `msr`, `werkstoffe`, `normen`, `physik`, `einheiten`); ein Begriff darf in mehreren stehen |
 | `definition` | Erklärung als Text; eine Leerzeile (`\n\n`) beginnt einen neuen Absatz, `**Wort**` wird fett |
 | `related`    | IDs verwandter Lexikon-Einträge („Siehe auch“)                |
 

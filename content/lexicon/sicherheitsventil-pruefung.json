@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Sicherheitsventil Prüfung",
   "synonyms": [],
+  "categories": [
+    "normen"
+  ],
   "definition": "Prüfung der korrekten Ausführung und Funktion eines Sicherheitsventils nach den für die Anlage geltenden Vorgaben und Herstellerangaben.",
   "related": []
 }

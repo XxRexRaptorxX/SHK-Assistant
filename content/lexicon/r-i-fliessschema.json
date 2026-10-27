@@ -10,6 +10,10 @@
     "P&ID",
     "piping and instrumentation diagram"
   ],
+  "categories": [
+    "hydraulik",
+    "msr"
+  ],
   "definition": "Rohrleitungs- und Instrumentierungsfließschema, das Medienwege, Apparate, Armaturen und Mess- beziehungsweise Regelstellen einer technischen Anlage darstellt.",
   "related": []
 }

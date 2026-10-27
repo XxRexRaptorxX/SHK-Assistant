@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Heizungsnotschalter",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
   "definition": "Schalter zum Abschalten einer Heizungsanlage oder bestimmter Funktionen; Ausführung und Einbauort hängen von geltenden Vorschriften und Anlagenkonzept ab.",
   "related": []
 }

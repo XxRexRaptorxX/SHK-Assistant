@@ -9,6 +9,9 @@
   "synonyms": [
     "kW"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilowatt** (kW) ist eine Einheit für die Leistung. 1 kW = 1.000 W.",
   "related": [
     "lexicon.watt"

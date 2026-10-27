@@ -9,6 +9,9 @@
   "synonyms": [
     "thermal resistance"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Wärmedurchlasswiderstand** R ist der Widerstand, den eine Bauteilschicht dem Wärmestrom zwischen ihren Oberflächen entgegensetzt. Er ergibt sich aus Dicke geteilt durch Wärmeleitfähigkeit (R = d / λ); bei mehreren Schichten werden die Werte addiert. Einheit m²·K/W.",
   "related": [
     "lexicon.waermeleitfaehigkeit",

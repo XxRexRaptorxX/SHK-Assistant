@@ -11,6 +11,10 @@
     "Rohrnetzabgleich",
     "hydraulic balancing"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Der **hydraulische Abgleich** stellt sicher, dass alle Heizflächen beziehungsweise Verbraucher mit den vorgesehenen Volumenströmen versorgt werden. Dazu werden unter anderem Heizlast, Heizflächenleistung, Rohrnetz und Ventileinstellungen berücksichtigt. Ein Abgleich kann ungleichmäßige Wärmeverteilung und Strömungsgeräusche reduzieren und den Pumpenbetrieb verbessern.",
   "related": [
     "lexicon.heizlast",

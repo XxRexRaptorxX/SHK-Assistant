@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Druckmessung",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "msr"
+  ],
   "definition": "Messung von Druck oder Druckdifferenz an geeigneten Stellen der Weiche und angeschlossenen Kreise.",
   "related": []
 }

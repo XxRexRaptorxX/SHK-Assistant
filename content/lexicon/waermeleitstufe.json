@@ -9,6 +9,9 @@
   "synonyms": [
     "WLS"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Angabe zur Wärmeleitfähigkeit eines Dämmstoffs; die genaue Kennzeichnung richtet sich nach der jeweiligen Norm und Produktdeklaration.",
   "related": []
 }

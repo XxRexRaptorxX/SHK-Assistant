@@ -10,6 +10,9 @@
     "Teildruck",
     "partial pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Partialdruck** (Teildruck) ist der Anteil eines einzelnen Gases am Gesamtdruck eines Gasgemischs, z. B. der Wasserdampfteildruck in feuchtem Gas oder in Luft.",
   "related": [
     "lexicon.druck"

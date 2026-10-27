@@ -9,6 +9,9 @@
   "synonyms": [
     "heat input"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeleistung, die dem Verbrennungsprozess über den Brennstoff zugeführt wird, bezogen auf den verwendeten Heiz- oder Brennwert gemäß Angabe.",
   "related": []
 }

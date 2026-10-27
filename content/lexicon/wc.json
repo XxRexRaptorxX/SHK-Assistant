@@ -11,6 +11,9 @@
     "Wasserklosett",
     "water closet"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ein **WC** ist ein Sanitärobjekt zur Aufnahme menschlicher Ausscheidungen mit Anschluss an eine Entwässerungsanlage. Die Spülung transportiert den Inhalt in die Abwasserleitung; ein Geruchsverschluss verhindert den Austritt von Kanalgasen. Spülvolumen, Anschlussmaße und Befestigung müssen zu Objekt und Installation passen.",
   "related": [
     "lexicon.wc-spuelkasten",

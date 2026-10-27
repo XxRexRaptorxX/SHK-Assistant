@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Wärmeverlust Speicher",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Wärmeenergie, die ein Speicher über einen definierten Zeitraum an seine Umgebung abgibt.",
   "related": []
 }

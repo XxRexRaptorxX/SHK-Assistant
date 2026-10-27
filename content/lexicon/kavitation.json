@@ -9,6 +9,9 @@
   "synonyms": [
     "cavitation"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "**Kavitation** bezeichnet die Bildung und das anschließende Zusammenfallen von Dampfblasen in einer Flüssigkeit, wenn der lokale Druck ausreichend niedrig wird. In Pumpen und Ventilen kann dies Geräusche, Schwingungen, Materialschäden und Leistungseinbußen verursachen. Ausreichender Zulaufdruck und eine passende Betriebsweise helfen, Kavitation zu vermeiden.",
   "related": [
     "lexicon.umwaelzpumpe",

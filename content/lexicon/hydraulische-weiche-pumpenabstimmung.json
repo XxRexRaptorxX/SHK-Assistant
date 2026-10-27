@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Pumpenabstimmung",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Abstimmung der Pumpen auf Erzeuger- und Verbraucherkreise, damit erforderliche Volumenströme erreicht und unnötige Wechselwirkungen begrenzt werden.",
   "related": []
 }

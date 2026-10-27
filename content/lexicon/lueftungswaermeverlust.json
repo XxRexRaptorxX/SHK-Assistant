@@ -9,6 +9,9 @@
   "synonyms": [
     "ventilation heat loss"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Wärmeverlust, der durch den Austausch warmer Innenluft gegen kältere Außenluft entsteht.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Heißleiter",
     "NTC-Thermistor"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Ein **NTC-Widerstand** ist ein temperaturabhängiger Widerstand mit negativem Temperaturkoeffizienten: Sein Widerstand nimmt bei steigender Temperatur ab. NTC-Sensoren sind in Regelungen und Geräten weit verbreitet, benötigen aber eine zum Sensortyp passende Kennlinie. Ein beliebiger NTC ist nicht ohne Weiteres mit jeder Steuerung austauschbar.",
   "related": [
     "lexicon.temperaturfuehler",

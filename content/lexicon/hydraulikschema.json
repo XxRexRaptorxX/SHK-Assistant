@@ -9,6 +9,9 @@
   "synonyms": [
     "hydraulic schematic"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Schematische Darstellung der hydraulischen Komponenten und Verbindungen einer Anlage, beispielsweise Wärmeerzeuger, Pumpen, Ventile, Speicher und Heizkreise.",
   "related": []
 }

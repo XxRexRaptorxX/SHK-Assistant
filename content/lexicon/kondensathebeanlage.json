@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Kondensathebeanlage",
   "synonyms": [],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Pumpe oder kompakte Anlage, die Kondensat auf ein höheres Niveau fördert, wenn kein ausreichendes natürliches Gefälle zum Ablauf vorhanden ist.",
   "related": []
 }

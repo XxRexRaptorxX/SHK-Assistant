@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "pH-Wert Kondensat",
   "synonyms": [],
+  "categories": [
+    "gas"
+  ],
   "definition": "pH-Wert des bei Kondensation entstandenen Wassers. Kondensat aus Verbrennungsabgasen kann aufgrund gelöster Bestandteile sauer sein.",
   "related": []
 }

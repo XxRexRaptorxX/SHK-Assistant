@@ -10,6 +10,9 @@
     "Schmutzwasser (je nach Kontext)",
     "wastewater"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "**Abwasser** ist durch häuslichen, gewerblichen oder sonstigen Gebrauch verändertes Wasser sowie das mit abfließende Wasser. In der Gebäudeentwässerung wird unter anderem zwischen Schmutzwasser und Niederschlagswasser unterschieden. Ableitung, Behandlung und Einleitung unterliegen wasser- und baurechtlichen Anforderungen.",
   "related": [
     "lexicon.abwasserleitung",

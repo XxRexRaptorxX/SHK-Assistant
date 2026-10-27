@@ -10,6 +10,9 @@
     "kg/h",
     "kilogram per hour"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilogramm pro Stunde** (kg/h) ist eine Einheit für den Massenstrom. 1 kg/h = 0,000277778 kg/s.",
   "related": [
     "lexicon.kilogramm-pro-sekunde"

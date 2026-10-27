@@ -9,6 +9,9 @@
   "synonyms": [
     "pressure loss calculation"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Berechnung des Druckabfalls durch Rohrleitungen und Formteile anhand von Geometrie, Strömungszustand und Mediumeigenschaften.",
   "related": []
 }

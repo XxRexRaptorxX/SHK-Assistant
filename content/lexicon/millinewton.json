@@ -9,6 +9,9 @@
   "synonyms": [
     "mN"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Millinewton** (mN) ist eine Einheit für die Kraft. 1 mN = 0,001 N.",
   "related": [
     "lexicon.newton"

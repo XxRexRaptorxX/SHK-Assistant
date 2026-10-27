@@ -10,6 +10,9 @@
     "Kugelventil",
     "ball valve"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Ein **Kugelhahn** ist eine Absperrarmatur mit einer durchbohrten, drehbaren Kugel als Verschlusskörper. Eine Vierteldrehung schaltet in der Regel zwischen offen und geschlossen um. Für dauerhafte Drosselung ist nicht jede Ausführung geeignet; Druckstufe, Werkstoff und Einbaurichtungshinweise sind zu beachten.",
   "related": [
     "lexicon.absperrventil",

@@ -9,6 +9,9 @@
   "synonyms": [
     "counterflow heat exchanger"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Wärmeübertrager, in dem zwei Medien in entgegengesetzten Richtungen strömen.",
   "related": []
 }

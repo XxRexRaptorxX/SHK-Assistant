@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Dimensionierung",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Auslegung anhand der erforderlichen Volumenströme, Temperaturverhältnisse und Druckverluste. Pauschale Größenregeln ersetzen keine anlagenspezifische Auslegung.",
   "related": []
 }

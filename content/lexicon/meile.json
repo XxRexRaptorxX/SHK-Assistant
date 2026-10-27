@@ -10,6 +10,9 @@
     "mi",
     "mile"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Meile** (mi) ist eine Einheit für die Länge. 1 mi = 1.609,34 m.",
   "related": [
     "lexicon.meter"

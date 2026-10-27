@@ -9,6 +9,10 @@
   "synonyms": [
     "heat pump compressor"
   ],
+  "categories": [
+    "kaelte",
+    "solar"
+  ],
   "definition": "Komponente der Wärmepumpe, die gasförmiges Kältemittel verdichtet und damit Druck und Temperatur erhöht.",
   "related": []
 }

@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Mischtemperatur berechnen",
   "synonyms": [],
+  "categories": [
+    "physik"
+  ],
   "definition": "Temperatur, die sich beim Mischen von Medien mit unterschiedlichen Temperaturen ergibt; bei idealer Mischung ohne Wärmeverlust hängt sie von Masse und spezifischer Wärmekapazität ab.",
   "related": []
 }

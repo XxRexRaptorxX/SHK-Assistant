@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Temperaturdifferenz",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Temperaturunterschiede zwischen den Anschlüssen der Weiche ergeben sich aus Wärmebedarf und Volumenströmen der angeschlossenen Kreise.",
   "related": []
 }

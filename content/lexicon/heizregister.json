@@ -9,6 +9,10 @@
   "synonyms": [
     "heating coil"
   ],
+  "categories": [
+    "heizung",
+    "lueftung"
+  ],
   "definition": "Wärmeübertrager in einem Luftstrom, der Luft erwärmt, beispielsweise mit Heizwasser oder elektrischer Energie.",
   "related": []
 }

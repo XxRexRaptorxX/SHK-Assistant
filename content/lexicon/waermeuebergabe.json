@@ -9,6 +9,9 @@
   "synonyms": [
     "heat emission"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Übertragung von Wärme von einem Versorgungs- oder Verteilnetz an ein Gebäude oder einen Verbraucher, beispielsweise über eine Übergabestation.",
   "related": []
 }

@@ -9,6 +9,10 @@
   "synonyms": [
     "Legionella testing"
   ],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Mikrobiologische Untersuchung einer Trinkwasserprobe auf Legionellen nach einem geeigneten Verfahren und unter den vorgeschriebenen Bedingungen.",
   "related": []
 }

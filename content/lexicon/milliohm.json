@@ -9,6 +9,9 @@
   "synonyms": [
     "mΩ"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Milliohm** (mΩ) ist eine Einheit für den elektrischen Widerstand. 1 mΩ = 0,001 Ω.",
   "related": [
     "lexicon.ohm"

@@ -9,6 +9,9 @@
   "synonyms": [
     "kPa"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilopascal** (kPa) ist eine Einheit für den Druck. 1 kPa = 1.000 Pa.",
   "related": [
     "lexicon.pascal"

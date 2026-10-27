@@ -9,6 +9,9 @@
   "synonyms": [
     "pump duty point"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Schnittpunkt von Pumpenkennlinie und Anlagenkennlinie. Er beschreibt den Volumenstrom und die Förderhöhe, die sich im Betrieb einstellen.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "actual value"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Aktuell gemessener oder ermittelter Wert einer Größe, die überwacht oder geregelt wird.",
   "related": []
 }

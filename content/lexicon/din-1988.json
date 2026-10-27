@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "DIN 1988",
   "synonyms": [],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Deutsche technische Regeln für Trinkwasserinstallationen, die ergänzend zu europäischen Normen angewendet werden. Maßgeblich ist die jeweils aktuelle, einschlägige Ausgabe.",
   "related": []
 }

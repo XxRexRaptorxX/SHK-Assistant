@@ -11,6 +11,9 @@
     "Kalk",
     "limescale"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "**Kalkablagerungen** entstehen insbesondere dann, wenn Calcium- und Hydrogencarbonat-haltiges Wasser erwärmt wird und schwer lösliche Carbonate ausfallen. Ablagerungen können Wärmeübertragung verschlechtern, Querschnitte verengen und Armaturen beeinträchtigen. Maßnahmen zur Vermeidung richten sich nach Wasserbeschaffenheit, Bauteil und Herstellerangaben.",
   "related": [
     "lexicon.wasserhaerte",

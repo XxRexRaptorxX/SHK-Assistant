@@ -9,6 +9,9 @@
   "synonyms": [
     "WLG"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Klassifizierung von Dämmstoffen anhand ihrer Wärmeleitfähigkeit nach einem definierten Schema.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "pipe network calculation"
   ],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Berechnung von Rohrdimensionen, Volumenströmen und Druckverlusten, damit eine Anlage die erforderlichen Medienmengen innerhalb ihrer Betriebsgrenzen transportiert.",
   "related": []
 }

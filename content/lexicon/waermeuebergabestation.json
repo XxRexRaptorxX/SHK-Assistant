@@ -9,6 +9,9 @@
   "synonyms": [
     "heat transfer station"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Station, die Wärme aus einem Netz an die Gebäudeanlage überträgt und dabei je nach Aufbau misst, regelt und absichert.",
   "related": []
 }

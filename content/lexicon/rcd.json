@@ -9,6 +9,9 @@
   "synonyms": [
     "FI-Schutzschalter"
   ],
+  "categories": [
+    "msr"
+  ],
   "definition": "Fehlerstrom-Schutzeinrichtung, die bei einem ausreichend großen Differenzstrom den Stromkreis abschaltet.",
   "related": []
 }

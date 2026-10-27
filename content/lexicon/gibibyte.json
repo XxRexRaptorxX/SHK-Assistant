@@ -9,6 +9,9 @@
   "synonyms": [
     "GiB"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Gibibyte** (GiB) ist eine Einheit für die Datenmenge. 1 GiB = 1.073.740.000 B.",
   "related": [
     "lexicon.byte"

@@ -9,6 +9,9 @@
   "synonyms": [
     "heat exchanger frost protection"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Maßnahmen, die das Einfrieren eines Wärmeübertragers verhindern, beispielsweise durch Regelung, geeignete Medien oder Entleerung.",
   "related": []
 }

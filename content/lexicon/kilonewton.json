@@ -9,6 +9,9 @@
   "synonyms": [
     "kN"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilonewton** (kN) ist eine Einheit für die Kraft. 1 kN = 1.000 N.",
   "related": [
     "lexicon.newton"

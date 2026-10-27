@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Druckverlust Zirkulation",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Druckabfall im Trinkwarmwasser-Zirkulationskreis, der bei Pumpen- und Ventilauslegung zu berücksichtigen ist.",
   "related": []
 }

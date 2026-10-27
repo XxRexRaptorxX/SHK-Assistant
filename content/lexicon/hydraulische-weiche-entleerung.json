@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Entleerung",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Entleerungsmöglichkeit an der Weiche, sofern vorhanden und für Wartung erforderlich.",
   "related": []
 }

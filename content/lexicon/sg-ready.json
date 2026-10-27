@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "SG Ready",
   "synonyms": [],
+  "categories": [
+    "kaelte",
+    "msr"
+  ],
   "definition": "Kennzeichnung beziehungsweise Schnittstellenkonzept für bestimmte Wärmepumpen, das die Ansteuerung über definierte Betriebszustände ermöglicht; konkrete Funktionen sind herstellerabhängig.",
   "related": []
 }

@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "DVGW",
   "synonyms": [],
+  "categories": [
+    "trinkwasser",
+    "normen"
+  ],
   "definition": "Deutscher Verein des Gas- und Wasserfaches, der technische Regeln und Informationen für Gas- und Wasserinstallationen veröffentlicht.",
   "related": []
 }

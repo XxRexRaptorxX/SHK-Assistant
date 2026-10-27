@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulischer Betriebspunkt",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Betriebszustand, der sich aus den Kennlinien der Pumpe und des hydraulischen Systems ergibt.",
   "related": []
 }

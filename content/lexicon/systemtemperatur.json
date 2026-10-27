@@ -9,6 +9,9 @@
   "synonyms": [
     "system temperature"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Vorlauf- und Rücklauftemperatur eines Heiz- oder Kühlkreises, häufig als Temperaturpaar oder Spreizung angegeben.",
   "related": []
 }

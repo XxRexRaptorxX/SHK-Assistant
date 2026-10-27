@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Fachbegriff",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Komponente zur hydraulischen Entkopplung von Erzeuger- und Verbraucherkreisen; ihre konkrete Wirkung hängt von Volumenstromverhältnissen und Einbindung ab.",
   "related": []
 }

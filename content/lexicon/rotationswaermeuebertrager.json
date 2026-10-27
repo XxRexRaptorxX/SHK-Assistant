@@ -10,6 +10,9 @@
     "Rotationswärmetauscher",
     "rotary heat exchanger"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Wärmerückgewinnungssystem mit rotierendem Speichermedium, das Wärme und je nach Ausführung auch Feuchte zwischen Abluft und Zuluft übertragen kann.",
   "related": []
 }

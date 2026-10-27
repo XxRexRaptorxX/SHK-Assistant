@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Brauchwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Mehrdeutiger Begriff, der je nach Kontext Wasser für technische oder häusliche Zwecke bezeichnen kann. Fachtexte sollten präzisieren, ob Trinkwasser, Betriebswasser oder Nichttrinkwasser gemeint ist.",
   "related": []
 }

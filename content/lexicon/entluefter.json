@@ -11,6 +11,10 @@
     "Schnellentlüfter",
     "air vent"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Ein **Entlüfter** entfernt angesammelte Luft oder Gase aus einer Anlage. In Heizungsanlagen können Luftansammlungen Geräusche, Korrosion, verringerte Wärmeübertragung und Pumpenprobleme verursachen. Automatische Entlüfter müssen für Betriebsdruck und Temperatur geeignet sein und an den vorgesehenen Stellen installiert werden.",
   "related": [
     "lexicon.heizungswasser",

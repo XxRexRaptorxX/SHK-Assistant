@@ -9,6 +9,9 @@
   "synonyms": [
     "district heating substation"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Anlage, die Wärme aus einem Fernwärmenetz über einen Wärmeübertrager und Regelkomponenten an die Gebäudeheizung übergibt.",
   "related": []
 }

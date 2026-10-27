@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche kein Ersatz für Abgleich",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Eine hydraulische Weiche entkoppelt Kreise, ersetzt aber nicht automatisch die korrekte Dimensionierung und Einregulierung der Verbraucherkreise.",
   "related": []
 }

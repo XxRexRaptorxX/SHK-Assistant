@@ -9,6 +9,10 @@
   "synonyms": [
     "filter pressure drop"
   ],
+  "categories": [
+    "hydraulik",
+    "lueftung"
+  ],
   "definition": "Druckdifferenz über einem Luftfilter. Er steigt typischerweise mit zunehmender Beladung und beeinflusst den Energiebedarf des Ventilators.",
   "related": []
 }

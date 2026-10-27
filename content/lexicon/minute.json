@@ -9,6 +9,9 @@
   "synonyms": [
     "min"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Minute** (min) ist eine Einheit für die Zeit. 1 min = 60 s.",
   "related": [
     "lexicon.sekunde"

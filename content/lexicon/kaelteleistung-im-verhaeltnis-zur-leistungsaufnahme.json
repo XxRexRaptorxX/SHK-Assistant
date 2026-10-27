@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Kälteleistung im Verhältnis zur Leistungsaufnahme",
   "synonyms": [],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Kennwert einer Kälteanlage, der abgeführte Kälteleistung und aufgenommene Antriebsleistung ins Verhältnis setzt.",
   "related": []
 }

@@ -9,6 +9,10 @@
   "synonyms": [
     "heat transfer fluid"
   ],
+  "categories": [
+    "heizung",
+    "physik"
+  ],
   "definition": "Flüssigkeit oder Gas, das Wärme innerhalb eines technischen Systems transportiert, beispielsweise Heizungswasser oder ein Wasser-Glykol-Gemisch.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "fresh water"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Begriff, der je nach Kontext neu zugeführtes Wasser oder Trinkwasser bezeichnet. In technischen Dokumenten sollte die konkrete Bedeutung angegeben werden.",
   "related": []
 }

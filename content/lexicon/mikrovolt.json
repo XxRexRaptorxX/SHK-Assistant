@@ -10,6 +10,9 @@
     "µV",
     "microvolt"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Mikrovolt** (µV) ist eine Einheit für die elektrische Spannung. 1 µV = 0,000001 V.",
   "related": [
     "lexicon.volt"

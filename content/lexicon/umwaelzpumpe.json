@@ -10,6 +10,10 @@
     "Zirkulationspumpe (allgemein)",
     "circulating pump"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Eine **Umwälzpumpe** hält den Umlauf eines Fluids in einem geschlossenen oder offenen Kreislauf aufrecht. In Heizungsanlagen fördert sie typischerweise Heizungswasser durch Wärmeerzeuger, Rohrnetz und Heizflächen. Förderhöhe, Volumenstrom, Regelungsart und zulässiger Betriebsbereich sind bei Auswahl und Einstellung zu beachten.",
   "related": [
     "lexicon.heizkreispumpe",

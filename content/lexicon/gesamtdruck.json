@@ -9,6 +9,9 @@
   "synonyms": [
     "total pressure"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Summe aus statischem und dynamischem Druck in einer geeigneten Strömungsbetrachtung.",
   "related": []
 }

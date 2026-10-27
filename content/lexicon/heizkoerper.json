@@ -9,6 +9,9 @@
   "synonyms": [
     "Radiator"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "Ein **Heizkörper** gibt Wärme aus dem Heizungswasser an den Raum ab, überwiegend durch Konvektion und Wärmestrahlung. Seine Leistung wird unter anderem von Bauart, Größe und Temperaturverhältnissen beeinflusst. Für die gewünschte Raumleistung müssen Heizkörper und Systemtemperaturen zusammenpassen.",
   "related": [
     "lexicon.heizflaeche",

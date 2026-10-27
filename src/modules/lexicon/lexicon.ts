@@ -1,6 +1,6 @@
 import { content } from '../../content'
 import { normalizeForSearch } from '../../lib/text'
-import { LEXICON_ID_PREFIX } from './constants'
+import { ALL_CATEGORIES, LEXICON_CATEGORIES, LEXICON_ID_PREFIX } from './constants'
 import type { LexiconEntry } from './schema'
 
 /** Alle Einträge der aktuellen Edition, alphabetisch nach Begriff */
@@ -23,6 +23,18 @@ export function findLexiconEntry(entries: readonly LexiconEntry[], slug: string 
   if (!slug) return undefined
   const id = `${LEXICON_ID_PREFIX}.${slug}`
   return entries.find((entry) => entry.id === id)
+}
+
+/** Begriffe einer Kategorie; „alles“ oder eine unbekannte Kategorie liefert alle */
+export function entriesInCategory(entries: readonly LexiconEntry[], category: string): LexiconEntry[] {
+  if (category === ALL_CATEGORIES) return [...entries]
+  return entries.filter((entry) => (entry.categories as readonly string[]).includes(category))
+}
+
+/** Bezeichnung einer Kategorie für die Anzeige */
+export function categoryLabel(category: string): string | undefined {
+  if (category === ALL_CATEGORIES) return 'Alles'
+  return LEXICON_CATEGORIES.find((item) => item.key === category)?.label
 }
 
 /** Filtert nach Begriff und Synonymen (Teilwort, Groß-/Kleinschreibung und Umlaute egal). */

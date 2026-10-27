@@ -9,6 +9,9 @@
   "synonyms": [
     "MPa"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Megapascal** (MPa) ist eine Einheit für den Druck. 1 MPa = 1.000.000 Pa.",
   "related": [
     "lexicon.pascal"

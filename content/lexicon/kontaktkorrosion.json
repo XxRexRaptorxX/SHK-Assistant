@@ -11,6 +11,9 @@
     "Bimetallkorrosion",
     "galvanic corrosion"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "**Kontaktkorrosion** kann auftreten, wenn unterschiedliche Metalle elektrisch leitend miteinander verbunden sind und ein Elektrolyt vorhanden ist. Dabei kann das unedlere Metall verstärkt angegriffen werden. Bei Trinkwasserinstallationen sind Werkstoffkombinationen, Fließregel und die einschlägigen technischen Regeln zu beachten.",
   "related": [
     "lexicon.korrosion",

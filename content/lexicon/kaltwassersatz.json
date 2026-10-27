@@ -9,6 +9,9 @@
   "synonyms": [
     "chiller"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Kälteanlage, die Wasser oder ein geeignetes Kälteträgermedium abkühlt und zur Versorgung von Kühlverbrauchern bereitstellt.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "specific heat capacity of water"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Wärmekapazität pro Masseneinheit von Wasser; der Wert hängt von Temperatur und Zustand ab und wird für technische Berechnungen häufig näherungsweise angesetzt.",
   "related": []
 }

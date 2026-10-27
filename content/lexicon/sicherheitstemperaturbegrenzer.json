@@ -10,6 +10,10 @@
     "STB",
     "safety temperature limiter"
   ],
+  "categories": [
+    "msr",
+    "normen"
+  ],
   "definition": "Sicherheitseinrichtung, die bei Überschreiten einer festgelegten Temperatur die Wärmezufuhr abschaltet oder eine Sicherheitsabschaltung auslöst.",
   "related": []
 }

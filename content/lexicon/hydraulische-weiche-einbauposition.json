@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Einbauposition",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Position der Weiche im Hydraulikschema, die sich aus dem Anlagenkonzept ergibt.",
   "related": []
 }

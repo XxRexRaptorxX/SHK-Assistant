@@ -10,6 +10,10 @@
     "Heizkörperthermostatventil",
     "thermostatic radiator valve"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Ein **Thermostatventil** regelt den Durchfluss durch einen Heizkörper abhängig von der erfassten Raumtemperatur. Der Thermostatkopf verändert die Ventilöffnung; er misst nicht unmittelbar die Temperatur des Heizungswassers. Voreinstellung und Differenzdruck beeinflussen den hydraulischen Betrieb.",
   "related": [
     "lexicon.heizkoerper",

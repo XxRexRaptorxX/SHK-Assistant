@@ -10,6 +10,9 @@
     "Heizwasser",
     "heating water"
   ],
+  "categories": [
+    "heizung"
+  ],
   "definition": "**Heizungswasser** ist das Wasser, das in einem wassergeführten Heizsystem als Wärmeträger zirkuliert. Seine Qualität beeinflusst Korrosion, Steinbildung und die Funktionsfähigkeit von Wärmeerzeuger, Pumpen und Ventilen. Befüllung und Nachspeisung müssen die Anforderungen der Anlage und die einschlägigen technischen Regeln erfüllen.",
   "related": [
     "lexicon.ph-wert",

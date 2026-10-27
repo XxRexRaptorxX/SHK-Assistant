@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Pufferspeicher Kombination",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Eine Kombination aus Weiche und Pufferspeicher ist möglich, wenn sowohl Wärmespeicherung als auch hydraulische Entkopplung benötigt und passend ausgelegt werden.",
   "related": []
 }

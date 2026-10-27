@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche vier Anschlüsse",
   "synonyms": [],
+  "categories": [
+    "hydraulik"
+  ],
   "definition": "Typische Bauform mit Erzeugervorlauf, Erzeugerrücklauf, Verbrauchervorlauf und Verbraucherrücklauf.",
   "related": []
 }

@@ -9,6 +9,9 @@
   "synonyms": [
     "Trinkwassersystemtrenner"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Ein **Systemtrenner** ist eine Sicherungseinrichtung, die Trinkwasser vor Rückfließen aus einer Installation mit möglicher Verunreinigung schützt. Bauarten unterscheiden sich nach ihrer Sicherungsfunktion und dem jeweiligen Gefährdungsgrad. Auswahl, Einbau und Prüfungen müssen der konkreten Anwendung und den geltenden Regeln entsprechen.",
   "related": [
     "lexicon.rueckflussverhinderer",

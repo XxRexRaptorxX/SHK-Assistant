@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "pH-Wert Trinkwasser",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "pH-Wert von Trinkwasser, der im Rahmen der Trinkwasserqualität nach den geltenden Anforderungen bewertet wird.",
   "related": []
 }

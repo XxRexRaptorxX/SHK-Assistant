@@ -9,6 +9,10 @@
   "synonyms": [
     "cooling coil"
   ],
+  "categories": [
+    "kaelte",
+    "lueftung"
+  ],
   "definition": "Wärmeübertrager in einem Luftstrom, der Luft abkühlt und bei Unterschreiten des Taupunkts auch entfeuchten kann.",
   "related": []
 }

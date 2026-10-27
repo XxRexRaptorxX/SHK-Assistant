@@ -10,6 +10,10 @@
     "Solarwärme",
     "solar thermal"
   ],
+  "categories": [
+    "heizung",
+    "solar"
+  ],
   "definition": "**Solarthermie** nutzt Sonnenstrahlung zur Erwärmung eines Wärmeträgers, häufig für Trinkwarmwasser und zur Heizungsunterstützung. Eine typische Anlage besteht aus Kollektor, Solarkreis, Pumpe, Regelung, Wärmetauscher und Speicher. Ertrag und Betrieb hängen unter anderem von Einstrahlung, Kollektortemperatur, Ausrichtung und Speicherführung ab.",
   "related": [
     "lexicon.solarkollektor",

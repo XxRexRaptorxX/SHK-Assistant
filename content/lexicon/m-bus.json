@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "M-Bus",
   "synonyms": [],
+  "categories": [
+    "msr"
+  ],
   "definition": "Kommunikationsstandard für die Fernauslesung von Verbrauchszählern, beispielsweise Wasser-, Wärme- oder Gaszählern.",
   "related": []
 }

@@ -10,6 +10,9 @@
     "Sauggasüberhitzung",
     "superheat"
   ],
+  "categories": [
+    "kaelte"
+  ],
   "definition": "Die **Überhitzung** ist die Temperaturdifferenz zwischen einem Dampf und der Sättigungstemperatur bei demselben Druck. In Kälteanlagen wird sie häufig am Verdampferausgang betrachtet, um sicherzustellen, dass ausreichend gasförmiges Kältemittel zum Verdichter gelangt. Messung und Bewertung erfordern den zugehörigen Druck und eine passende Kältemitteltabelle.",
   "related": [
     "lexicon.kaeltemittel",

@@ -9,6 +9,9 @@
   "synonyms": [
     "heat transfer coefficient"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Kennwert, der den Wärmeübergang zwischen einer Oberfläche und einem Fluid beschreibt. Die Einheit ist üblicherweise W/(m²·K).",
   "related": []
 }

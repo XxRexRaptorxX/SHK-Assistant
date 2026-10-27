@@ -10,6 +10,10 @@
     "Rückflussverhinderer",
     "check valve"
   ],
+  "categories": [
+    "hydraulik",
+    "trinkwasser"
+  ],
   "definition": "Armatur, die den Durchfluss nur in einer vorgesehenen Richtung zulässt und Rückströmung automatisch verhindert.",
   "related": []
 }

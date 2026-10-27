@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "BACnet",
   "synonyms": [],
+  "categories": [
+    "msr"
+  ],
   "definition": "Kommunikationsprotokoll für die Gebäudeautomation, das den Austausch von Informationen zwischen Automations- und Managementsystemen unterstützt.",
   "related": []
 }

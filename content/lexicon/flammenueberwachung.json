@@ -10,6 +10,10 @@
     "Flammenkontrolle",
     "flame monitoring"
   ],
+  "categories": [
+    "gas",
+    "msr"
+  ],
   "definition": "Die **Flammenüberwachung** prüft, ob eine stabile Flamme vorhanden ist. Bei Gasbrennern kommen beispielsweise Ionisationsüberwachung oder optische Sensoren zum Einsatz. Erkennt die Steuerung keine ordnungsgemäße Flamme, muss sie die Brennstoffzufuhr entsprechend ihrer Sicherheitslogik unterbrechen.",
   "related": [
     "lexicon.gasfeuerungsautomat",

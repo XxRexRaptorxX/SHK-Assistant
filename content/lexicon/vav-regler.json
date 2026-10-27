@@ -10,6 +10,10 @@
     "variabler Volumenstromregler",
     "variable air volume controller"
   ],
+  "categories": [
+    "lueftung",
+    "msr"
+  ],
   "definition": "Variable-Air-Volume-Regler, der den Luftvolumenstrom in einem Lüftungssystem bedarfsgerecht verändert.",
   "related": []
 }

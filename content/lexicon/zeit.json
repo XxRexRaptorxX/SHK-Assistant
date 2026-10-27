@@ -9,6 +9,9 @@
   "synonyms": [
     "time"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "**Zeit** ist die physikalische Größe für die Dauer und Abfolge von Vorgängen. Ihre SI-Einheit ist die Sekunde (s); gebräuchlich sind außerdem Minute und Stunde.",
   "related": []
 }

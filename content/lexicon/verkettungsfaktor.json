@@ -7,6 +7,10 @@
   "verifiedAt": "",
   "term": "Verkettungsfaktor",
   "synonyms": [],
+  "categories": [
+    "msr",
+    "physik"
+  ],
   "definition": "**Verkettungsfaktor** ist im Dreiphasensystem das feste Verhältnis zwischen der verketteten Spannung (zwischen zwei Außenleitern) und der Sternspannung (zwischen Außenleiter und Neutralleiter); er beträgt immer √3 ≈ 1,732. Bei 230 V Sternspannung ergeben sich so 400 V zwischen zwei Außenleitern.",
   "related": [
     "lexicon.elektrische-spannung"

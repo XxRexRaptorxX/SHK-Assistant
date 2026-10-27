@@ -10,6 +10,10 @@
     "Massenfluss",
     "mass flow rate"
   ],
+  "categories": [
+    "hydraulik",
+    "physik"
+  ],
   "definition": "Der **Massenstrom** gibt die Masse eines strömenden Mediums pro Zeit an, typischerweise in kg/s oder kg/h. Er hängt mit dem Volumenstrom über die Dichte zusammen: Massenstrom = Dichte × Volumenstrom. Der Massenstrom ist besonders bei Stoff- und Energiebilanzen sowie bei Gasen relevant.",
   "related": [
     "lexicon.volumenstrom",

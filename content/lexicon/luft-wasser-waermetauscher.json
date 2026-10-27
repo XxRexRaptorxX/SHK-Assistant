@@ -9,6 +9,9 @@
   "synonyms": [
     "Luftregister"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "Ein **Luft-Wärmetauscher** überträgt Wärme zwischen Luft und einem anderen Medium, zum Beispiel Wasser oder Kältemittel. Typische Ausführungen sind Heiz- und Kühlregister sowie Lamellenwärmetauscher. Lamellenverschmutzung, Luftvolumenstrom, Kondensatbildung und Frostgefahr beeinflussen Leistung und Wartungsbedarf.",
   "related": [
     "lexicon.waermetauscher",

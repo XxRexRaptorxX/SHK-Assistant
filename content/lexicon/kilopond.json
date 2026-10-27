@@ -10,6 +10,9 @@
     "kp",
     "kilogram-force"
   ],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Kilopond** (kp) ist eine Einheit für die Kraft. 1 kp = 9,80665 N.",
   "related": [
     "lexicon.newton"

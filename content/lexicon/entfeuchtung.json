@@ -10,6 +10,9 @@
     "Luftentfeuchtung",
     "dehumidification"
   ],
+  "categories": [
+    "lueftung"
+  ],
   "definition": "**Entfeuchtung** ist die Verringerung des Wasserdampfgehalts in Luft oder eines anderen Mediums. Bei der Kälteentfeuchtung wird Luft unter ihren Taupunkt abgekühlt, sodass Wasserdampf kondensiert; anschließend kann eine Nacherwärmung erforderlich sein. Auslegung und Kondensatableitung müssen zur Feuchtebelastung und zu den Betriebsbedingungen passen.",
   "related": [
     "lexicon.taupunkt",

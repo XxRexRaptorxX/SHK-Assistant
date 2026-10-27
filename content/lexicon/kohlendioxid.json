@@ -11,6 +11,10 @@
     "Kohlenstoffdioxid",
     "carbon dioxide"
   ],
+  "categories": [
+    "gas",
+    "physik"
+  ],
   "definition": "**Kohlendioxid** ist ein farbloses Gas, das unter anderem bei vollständiger Verbrennung kohlenstoffhaltiger Brennstoffe entsteht. Es wird in Lüftungsanlagen auch als Indikator für die Belegung und den Außenluftbedarf gemessen, bildet aber nicht alle Aspekte der Raumluftqualität ab. In hohen Konzentrationen kann CO₂ gesundheitlich gefährlich sein.",
   "related": [
     "lexicon.co2-sensor",

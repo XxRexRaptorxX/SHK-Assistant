@@ -9,6 +9,9 @@
   "synonyms": [
     "Gasinneninstallation"
   ],
+  "categories": [
+    "gas"
+  ],
   "definition": "Eine **Gasinstallation** umfasst die Leitungen, Armaturen und Anschlüsse, mit denen Gas innerhalb eines Gebäudes zu Verbrauchseinrichtungen geführt wird. Sie muss gasdicht, für die vorgesehene Gasart und Betriebsbedingungen geeignet und mit den vorgeschriebenen Sicherheitskomponenten ausgestattet sein. Arbeiten, Prüfungen und Inbetriebnahmen unterliegen besonderen fachlichen und rechtlichen Anforderungen.",
   "related": [
     "lexicon.gasdruckregler",

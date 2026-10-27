@@ -9,6 +9,9 @@
   "synonyms": [
     "specific latent heat of vaporisation"
   ],
+  "categories": [
+    "physik"
+  ],
   "definition": "Wärmeenergie pro Masseneinheit, die bei einem definierten Phasenwechsel von Flüssigkeit zu Dampf benötigt wird.",
   "related": []
 }

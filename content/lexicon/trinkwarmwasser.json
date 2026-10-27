@@ -10,6 +10,9 @@
     "Warmwasser",
     "domestic hot water"
   ],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Erwärmtes Trinkwasser, das für Körperpflege, Reinigung oder andere häusliche Zwecke bereitgestellt wird.",
   "related": []
 }

@@ -9,6 +9,10 @@
   "synonyms": [
     "magnetite"
   ],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Magnetisches Eisenoxid, das als Korrosionsprodukt in wasserführenden Heizsystemen auftreten kann und Pumpen, Ventile oder Wärmeübertrager beeinträchtigen kann.",
   "related": []
 }

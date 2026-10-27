@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche gegenüber Wärmetauscher",
   "synonyms": [],
+  "categories": [
+    "heizung",
+    "hydraulik"
+  ],
   "definition": "Eine hydraulische Weiche trennt Kreise nicht stofflich; ein Wärmeübertrager hält die Medien in getrennten Kreisläufen.",
   "related": []
 }

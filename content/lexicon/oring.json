@@ -9,6 +9,9 @@
   "synonyms": [
     "O-Ring-Dichtung"
   ],
+  "categories": [
+    "werkstoffe"
+  ],
   "definition": "Ein **O-Ring** ist ein ringförmiges Dichtelement mit kreisförmigem Querschnitt, meist aus Elastomer. Er dichtet durch definierte Verformung in einer passenden Nut ab. Material, Dimension, Schmiermittel und Montage müssen zum Medium sowie zu Temperatur und Druck passen, damit der Ring nicht quillt, versprödet oder beschädigt wird.",
   "related": [
     "lexicon.dichtung"

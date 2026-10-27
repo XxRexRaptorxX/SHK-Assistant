@@ -10,6 +10,9 @@
     "Hebeanlage",
     "wastewater lifting plant"
   ],
+  "categories": [
+    "abwasser"
+  ],
   "definition": "Anlage, die Abwasser sammelt und über die Rückstauebene in eine höher liegende Entwässerungsleitung fördert.",
   "related": []
 }

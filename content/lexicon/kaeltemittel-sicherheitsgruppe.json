@@ -9,6 +9,10 @@
   "synonyms": [
     "refrigerant safety group"
   ],
+  "categories": [
+    "kaelte",
+    "normen"
+  ],
   "definition": "Sicherheitseinrichtungen und Überwachungsfunktionen, die je nach Kälteanlage Risiken durch Druck, Temperatur oder Kältemittelaustritt begrenzen.",
   "related": []
 }

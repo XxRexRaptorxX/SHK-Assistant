@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Warmwasser wird nicht heiß",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Symptom mit möglichen Ursachen in Wärmeerzeugung, Speicherladung, Sensorik, Regelung, Mischventil oder Durchfluss. Die Diagnose erfordert systematisches Prüfen.",
   "related": []
 }

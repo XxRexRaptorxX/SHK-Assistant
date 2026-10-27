@@ -7,6 +7,9 @@
   "verifiedAt": "",
   "term": "Bit",
   "synonyms": [],
+  "categories": [
+    "einheiten"
+  ],
   "definition": "**Bit** (bit) ist eine Einheit für die Datenmenge. 1 bit = 0,125 B.",
   "related": [
     "lexicon.byte"

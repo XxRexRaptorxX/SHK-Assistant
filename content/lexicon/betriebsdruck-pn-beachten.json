@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Betriebsdruck PN beachten",
   "synonyms": [],
+  "categories": [
+    "werkstoffe",
+    "normen"
+  ],
   "definition": "Eine PN-Kennzeichnung allein reicht nicht zur Festlegung des zulässigen Betriebsdrucks bei jeder Temperatur. Herstellerangaben und Druck-Temperatur-Grenzen sind zu prüfen.",
   "related": []
 }

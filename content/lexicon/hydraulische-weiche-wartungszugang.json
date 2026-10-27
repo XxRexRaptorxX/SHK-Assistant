@@ -7,6 +7,10 @@
   "verifiedAt": "2026-10-21",
   "term": "Hydraulische Weiche Wartungszugang",
   "synonyms": [],
+  "categories": [
+    "hydraulik",
+    "normen"
+  ],
   "definition": "Zugänglichkeit für Prüfung, Entlüftung, Entleerung und Austausch der Weiche muss bei der Montage berücksichtigt werden.",
   "related": []
 }

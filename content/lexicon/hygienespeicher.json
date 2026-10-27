@@ -7,6 +7,9 @@
   "verifiedAt": "2026-10-21",
   "term": "Hygienespeicher",
   "synonyms": [],
+  "categories": [
+    "trinkwasser"
+  ],
   "definition": "Umgangssprachliche Bezeichnung für einen Heizungs-Pufferspeicher, der Trinkwasser im Durchfluss über einen Wärmeübertrager erwärmt, statt große Mengen Trinkwarmwasser zu bevorraten.",
   "related": []
 }
