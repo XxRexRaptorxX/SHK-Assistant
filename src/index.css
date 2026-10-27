@@ -120,6 +120,9 @@
   --fig-hot: #d9342b;
   --fig-cold: #1f6fe0;
   --fig-flame: #ff8a00;
+  /* Thermostat-Skala: Verlauf kalt → warm, in beiden Themen gleich, damit weiße Schrift lesbar bleibt */
+  --scale-cold: #1f6fe0;
+  --scale-hot: #d9342b;
 }
 .dark {
   --fig-water: #1f4f7d;

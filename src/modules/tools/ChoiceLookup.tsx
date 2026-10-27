@@ -77,7 +77,7 @@ function ChoiceSectionView({ section, initialLabel }: { section: ChoiceSection; 
   )
 }
 
-/** Skala wie auf dem Thermostatkopf: Stufen nebeneinander, darunter ein Verlauf von kalt nach warm */
+/** Skala wie auf dem Thermostatkopf: Stufen nebeneinander auf einem Verlauf von kalt nach warm */
 function ScaleBar({
   section,
   selected,
@@ -91,7 +91,11 @@ function ScaleBar({
   const preview = section.columns[0]!
   return (
     <div className="mt-3">
-      <div role="group" aria-label={section.inputName} className="flex rounded-xl border-2 border-line bg-surface p-1">
+      <div
+        role="group"
+        aria-label={section.inputName}
+        className="flex rounded-xl border-2 border-line bg-linear-to-r from-[var(--scale-cold)] to-[var(--scale-hot)] p-1 text-white"
+      >
         {section.options.map((candidate) => {
           const active = candidate.label === selected
           return (
@@ -102,21 +106,17 @@ function ScaleBar({
               aria-label={[candidate.label, candidate.note].filter(Boolean).join(', ')}
               onClick={() => onSelect(candidate.label)}
               className={`flex min-h-14 min-w-0 flex-1 flex-col items-center justify-center rounded-lg leading-tight ${
-                active ? 'bg-accent text-accent-ink' : ''
+                active ? 'bg-surface text-ink shadow-md' : ''
               }`}
             >
               <span className="text-base font-bold whitespace-nowrap">{candidate.label}</span>
-              <span className={`text-xs tabular-nums ${active ? '' : 'text-muted'}`}>
+              <span className={`text-xs tabular-nums ${active ? 'text-muted' : 'text-white/90'}`}>
                 {(candidate.values[preview.key] ?? '').replace(/^ca\.\s*/, '')}
               </span>
             </button>
           )
         })}
       </div>
-      <div
-        aria-hidden="true"
-        className="mx-1 mt-1.5 h-1.5 rounded-full bg-linear-to-r from-[var(--fig-cold)] to-[var(--fig-hot)]"
-      />
     </div>
   )
 }
