@@ -5,7 +5,7 @@ import { App } from '../../App'
 import { CALCULATORS, findCalculator, neighbors } from './calculators'
 import { GraphCalculator } from './GraphCalculator'
 import { KeypadCalculator } from './KeypadCalculator'
-import { INITIAL_STATE, press, STANDARD_KEYS } from './keypad'
+import { INITIAL_STATE, press, scientificKeys, STANDARD_KEYS } from './keypad'
 
 const at = (path: string) =>
   renderToStaticMarkup(
@@ -55,11 +55,26 @@ describe('Taschenrechner-Seiten', () => {
     expect(html).toContain('aria-pressed="false"')
   })
 
+  it('beschriftet „Alles löschen“ mit C, im wissenschaftlichen Rechner oben rechts, und färbt ⌫ rot', () => {
+    expect(STANDARD_KEYS[0]).toMatchObject({ id: 'clear', label: 'C' })
+    const ids = scientificKeys(false, 'deg').map((key) => key.id)
+    expect(ids.indexOf('clear')).toBe(4)
+    expect(ids.indexOf('back')).toBe(19)
+    for (const mode of ['standard', 'scientific'] as const) {
+      const html = renderToStaticMarkup(<KeypadCalculator mode={mode} />)
+      expect(html).toContain('aria-label="Alles löschen"')
+      expect(html).not.toContain('>AC<')
+      expect(html).toContain('<span class="text-[var(--fig-hot)]">⌫</span>')
+    }
+  })
+
   it('zeichnet Achsen und eine Kurve und meldet Fehler in der Eingabe', () => {
     const html = renderToStaticMarkup(<GraphCalculator initialInputs={['x^2', 'x + y', '']} />)
     expect(html).toContain('aria-label="Funktionsgraph"')
     expect(html.match(/<polyline/g)?.length).toBeGreaterThan(0)
     expect(html).toContain('stroke="var(--graph-1)"')
     expect(html).toContain('Unbekannt: „y“ (nur x erlaubt)')
+    // Bedienhinweis steht unter allen Knöpfen
+    expect(html.indexOf('Dezimalkomma, Argumente')).toBeGreaterThan(html.indexOf('Ansicht zurücksetzen'))
   })
 })

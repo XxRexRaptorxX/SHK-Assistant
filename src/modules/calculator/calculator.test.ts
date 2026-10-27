@@ -76,7 +76,7 @@ describe('Taschenrechner-Tasten', () => {
     expect(screen(type('d2 plus d2 equals multiply d3 equals')).input).toBe('12')
   })
 
-  it('rechnet mit Komma, ±, Prozent und löscht mit ⌫ und AC', () => {
+  it('rechnet mit Komma, ±, Prozent und löscht mit ⌫ und C', () => {
     expect(screen(type('d1 comma d5 multiply d4 equals')).input).toBe('6')
     expect(screen(type('d5 sign')).input).toBe('(−5)')
     expect(screen(type('d5 sign multiply d2 equals')).input).toBe('-10')

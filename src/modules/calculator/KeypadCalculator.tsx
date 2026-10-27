@@ -88,7 +88,12 @@ export function KeypadCalculator({ mode, initialState = INITIAL_STATE }: {
                 key.kind === 'digit' ? 'font-semibold' : ''
               }`}
             >
-              {key.label}
+              {/* Zeichen der Taste „letzte Eingabe löschen“ rot */}
+              {key.kind === 'action' && key.action === 'back' ? (
+                <span className="text-[var(--fig-hot)]">{key.label}</span>
+              ) : (
+                key.label
+              )}
             </button>
           )
         })}

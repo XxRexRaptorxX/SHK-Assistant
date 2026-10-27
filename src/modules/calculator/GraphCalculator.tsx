@@ -101,11 +101,6 @@ export function GraphCalculator({ initialInputs = ['x^2', '', ''] }: { initialIn
           </button>
         ))}
       </div>
-      <p className="mt-2 text-base text-muted">
-        Dezimalkomma, Argumente mit „;“ trennen, Winkel im Bogenmaß. Verschieben mit dem Finger, zoomen mit
-        zwei Fingern; Tippen zeigt die Werte.
-      </p>
-
       <Plot
         view={view}
         onViewChange={setView}
@@ -135,6 +130,10 @@ export function GraphCalculator({ initialInputs = ['x^2', '', ''] }: { initialIn
           Ansicht zurücksetzen
         </button>
       </div>
+      <p className="mt-2 text-base text-muted">
+        Dezimalkomma, Argumente mit „;“ trennen, Winkel im Bogenmaß. Verschieben mit dem Finger, zoomen mit
+        zwei Fingern; Tippen zeigt die Werte.
+      </p>
 
       {traceX !== undefined && (
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-lg" aria-live="polite">

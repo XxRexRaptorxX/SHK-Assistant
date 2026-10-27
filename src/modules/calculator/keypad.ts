@@ -59,7 +59,7 @@ const MULTIPLY = op('multiply', '×', '*', 'mal')
 const MINUS = op('minus', '−', '-', 'minus')
 const PLUS = op('plus', '+', '+', 'plus')
 const PERCENT = op('percent', '%', '%', 'Prozent')
-const CLEAR = action('clear', 'AC', 'clear', 'clear', 'Alles löschen')
+const CLEAR = action('clear', 'C', 'clear', 'clear', 'Alles löschen')
 const BACK = action('back', '⌫', 'back', 'function', 'Letzte Eingabe löschen')
 const SIGN = action('sign', '±', 'sign', 'digit', 'Vorzeichen wechseln')
 const COMMA: Key = { ...digit(','), id: 'comma', aria: 'Komma' }
@@ -113,10 +113,10 @@ export function scientificKeys(second: boolean, angle: AngleMode): Key[] {
     action('angle', angle === 'deg' ? 'DEG' : 'RAD', 'angle', 'function', angle === 'deg' ? 'Winkel in Grad, umschalten auf Bogenmaß' : 'Winkel im Bogenmaß, umschalten auf Grad'),
     fn('open', '(', t('(', '('), 'Klammer auf'),
     fn('close', ')', t(')', ')'), 'Klammer zu', true),
-    BACK,
+    CLEAR,
     ...functions,
     ...powers,
-    digit('7'), digit('8'), digit('9'), DIVIDE, CLEAR,
+    digit('7'), digit('8'), digit('9'), DIVIDE, BACK,
     digit('4'), digit('5'), digit('6'), MULTIPLY, PERCENT,
     digit('1'), digit('2'), digit('3'), MINUS, fn('ans', 'Ans', t('ans', 'Ans'), 'letztes Ergebnis'),
     SIGN, digit('0'), COMMA, PLUS, EQUALS,
