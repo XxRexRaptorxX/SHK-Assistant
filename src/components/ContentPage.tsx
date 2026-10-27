@@ -14,14 +14,16 @@ interface ContentPageProps {
   back?: { to: string; label: string }
   /** z. B. Favoriten-Knopf neben der Überschrift */
   actions?: ReactNode
+  /** Quelle + Prüfdatum unten; nur bei Seiten ohne Fachinhalt (Impressum, Datenschutz) aus */
+  showSource?: boolean
   children: ReactNode
 }
 
 /**
  * Rahmen für jede Detailseite eines Inhaltseintrags.
- * Stellt sicher, dass Entwürfe markiert sind und Quelle + Prüfdatum immer erscheinen.
+ * Stellt sicher, dass Entwürfe markiert sind und Quelle + Prüfdatum erscheinen.
  */
-export function ContentPage({ entry, title, heading, back, actions, children }: ContentPageProps) {
+export function ContentPage({ entry, title, heading, back, actions, showSource = true, children }: ContentPageProps) {
   usePageTitle(title)
   return (
     <article>
@@ -32,7 +34,7 @@ export function ContentPage({ entry, title, heading, back, actions, children }: 
       </header>
       {entry.status === 'draft' && <DraftBadge />}
       <div className="mt-4">{children}</div>
-      <SourceInfo entry={entry} />
+      {showSource && <SourceInfo entry={entry} />}
     </article>
   )
 }

@@ -27,7 +27,7 @@ const renderPage = (entries: LegalEntry[]) =>
   )
 
 describe('Rechtliche Seiten', () => {
-  it('liegen als Platzhalter für Impressum und Datenschutzerklärung vor', () => {
+  it('liegen für Impressum und Datenschutzerklärung öffentlich vor', () => {
     for (const page of LEGAL_PAGES) {
       const entry = legalEntries.find((candidate) => candidate.id === page.id)
       expect(entry?.visibility).toBe('public')
@@ -48,6 +48,12 @@ describe('Rechtliche Seiten', () => {
     expect(html.match(/<p class="mt-3 whitespace-pre-line/g)).toHaveLength(2)
   })
 
+  it('zeigt keine Quelle und kein Prüfdatum', () => {
+    const html = renderPage([fixture])
+    expect(html).not.toContain('>Quelle</dt>')
+    expect(html).not.toContain('>Geprüft</dt>')
+  })
+
   it('macht Web- und E-Mail-Adressen klickbar und führt kein HTML aus', () => {
     const html = renderToStaticMarkup(
       <LegalText text={'Mail an a.b@example.de oder https://example.de. **Wichtig** <b>roh</b>'} />,
@@ -56,6 +62,34 @@ describe('Rechtliche Seiten', () => {
     expect(html).toContain('href="https://example.de" target="_blank"')
     expect(html).toContain('<strong>Wichtig</strong>')
     expect(html).toContain('&lt;b&gt;roh&lt;/b&gt;')
+  })
+
+  it('macht Absätze nur aus Fettdruck zu Unterüberschriften', () => {
+    const html = renderToStaticMarkup(<LegalText text={'**Cookies**\n\n**Frage?**\nAntwort'} />)
+    expect(html).toContain('<h3 class="mt-5 text-lg font-bold first:mt-0">Cookies</h3>')
+    expect(html).toContain('<strong>Frage?</strong>\nAntwort</p>')
+  })
+
+  it('enthält die Datenschutzerklärung des Inhabers mit verantwortlicher Stelle und Hoster', () => {
+    const entry = legalEntries.find((candidate) => candidate.id === 'legal.datenschutz')
+    const text = entry?.sections.map((section) => section.text).join('\n') ?? ''
+    expect(entry?.sections.map((section) => section.heading)).toEqual([
+      '1. Datenschutz auf einen Blick',
+      '2. Hosting',
+      '3. Allgemeine Hinweise und Pflichtinformationen',
+      '4. Datenerfassung auf dieser Website',
+    ])
+    expect(text).toContain('GitHub, Inc.')
+    expect(text).toContain('simon@biebl-haustechnik.de')
+    expect(text).not.toMatch(/\[[^\]]*\]/)
+  })
+
+  it('enthält das Impressum des Inhabers ohne Platzhalter', () => {
+    const entry = legalEntries.find((candidate) => candidate.id === 'legal.impressum')
+    const text = entry?.sections.map((section) => `${section.heading}\n${section.text}`).join('\n') ?? ''
+    expect(text).toContain('Simon Biebl\nSeigen 3\n93426 Roding')
+    expect(text).toContain('Umsatzsteuer-Identifikationsnummer')
+    expect(text).not.toMatch(/TODO|\[[^\]]*\]/)
   })
 
   it('weist auf fehlende Inhalte hin und ist unter /impressum und /datenschutz erreichbar', () => {

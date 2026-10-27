@@ -2,14 +2,30 @@
   "id": "legal.impressum",
   "visibility": "public",
   "status": "draft",
-  "source": "",
+  "source": "Impressum des Inhabers, erstellt mit dem Generator von eRecht24, https://www.e-recht24.de",
   "verifiedBy": "",
   "verifiedAt": "",
   "title": "Impressum",
   "sections": [
     {
       "heading": "",
-      "text": "TODO: Inhalt fehlt – der Text wird vom Inhaber geliefert."
+      "text": "Simon Biebl\nSeigen 3\n93426 Roding"
+    },
+    {
+      "heading": "Kontakt",
+      "text": "Telefon: 09465/555\nE-Mail: simon@biebl-haustechnik.de"
+    },
+    {
+      "heading": "Umsatzsteuer-ID",
+      "text": "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:\nDE210345821"
+    },
+    {
+      "heading": "Redaktionell verantwortlich",
+      "text": "Quellen angegeben, keine nachselektierung."
+    },
+    {
+      "heading": "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
+      "text": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
     }
   ]
 }

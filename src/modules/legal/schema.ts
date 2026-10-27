@@ -6,7 +6,10 @@ import { LEGAL_ID_PREFIX } from './constants.ts'
 const sectionSchema = z.strictObject({
   /** Zwischenüberschrift; leer = Absatz ohne Überschrift */
   heading: z.string().trim().default(''),
-  /** Text; Leerzeilen trennen Absätze, **Wort** wird fett, Web- und E-Mail-Adressen werden klickbar */
+  /**
+   * Text; Leerzeilen trennen Absätze, **Wort** wird fett, ein Absatz nur aus **…** wird
+   * Unterüberschrift, Web- und E-Mail-Adressen werden klickbar
+   */
   text: z.string().trim().min(1),
 })
 

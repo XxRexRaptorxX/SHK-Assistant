@@ -31,28 +31,41 @@ function renderPlain(text: string): ReactNode[] {
   })
 }
 
+/** Ein Absatz, der nur aus **fett** besteht, ist eine Unterüberschrift */
+const SUBHEADING_PATTERN = /^\*\*([^*\n]+)\*\*$/
+
 /** Absätze mit Fettdruck und klickbaren Web- und E-Mail-Adressen; HTML wird nie ausgeführt */
 export function LegalText({ text }: { text: string }) {
-  return splitParagraphs(text).map((paragraph, index) => (
-    <p key={index} className="mt-3 whitespace-pre-line first:mt-0">
-      {splitLinks(paragraph).map((part, partIndex) =>
-        part.href ? (
-          <a key={partIndex} href={part.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-            {part.text}
-          </a>
-        ) : (
-          <Fragment key={partIndex}>{renderPlain(part.text)}</Fragment>
-        ),
-      )}
-    </p>
-  ))
+  return splitParagraphs(text).map((paragraph, index) => {
+    const subheading = SUBHEADING_PATTERN.exec(paragraph)?.[1]
+    if (subheading) {
+      return (
+        <h3 key={index} className="mt-5 text-lg font-bold first:mt-0">
+          {subheading}
+        </h3>
+      )
+    }
+    return (
+      <p key={index} className="mt-3 whitespace-pre-line first:mt-0">
+        {splitLinks(paragraph).map((part, partIndex) =>
+          part.href ? (
+            <a key={partIndex} href={part.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+              {part.text}
+            </a>
+          ) : (
+            <Fragment key={partIndex}>{renderPlain(part.text)}</Fragment>
+          ),
+        )}
+      </p>
+    )
+  })
 }
 
 export function LegalPage({ page, entries = legalEntries }: { page: LegalPageInfo; entries?: LegalEntry[] }) {
   const entry = findLegalEntry(entries, page.id)
   if (!entry) return <LegalMissing title={page.title} />
   return (
-    <ContentPage entry={entry} title={entry.title} back={BACK}>
+    <ContentPage entry={entry} title={entry.title} back={BACK} showSource={false}>
       {entry.sections.length === 0 ? (
         <p className="font-semibold">TODO: Inhalt fehlt</p>
       ) : (

@@ -204,8 +204,8 @@ PIN ist nur eine Hürde, kein Schutz: Codes und PIN stehen lesbar im Bundle.
 
 Im `text` trennt eine Leerzeile (`
 
-`) Absätze, `**Wort**` wird fett, Web- und E-Mail-Adressen
-werden klickbar. HTML wird nie ausgeführt. Die Seiten sind in den Einstellungen unter
+`) Absätze, `**Wort**` wird fett, ein Absatz, der nur aus
+`**…**` besteht, wird Unterüberschrift. Web- und E-Mail-Adressen werden klickbar. HTML wird nie ausgeführt. Die Seiten sind in den Einstellungen unter
 „Rechtliches“ verlinkt: `legal.impressum` (`/impressum`) und `legal.datenschutz` (`/datenschutz`).
 Die Texte liefert der Inhaber; sie werden nicht erfunden. Bei `verified` ist mindestens ein
 Abschnitt Pflicht.
