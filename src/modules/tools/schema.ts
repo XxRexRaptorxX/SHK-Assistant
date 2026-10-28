@@ -31,6 +31,10 @@ const tableColumnSchema = z.strictObject({
   unit: z.string().trim().default(''),
   /** Nur Auswahl-Tools: Zwischenüberschrift, unter der die Spalte im Ergebnis steht, z. B. „Bewegungsfläche“ */
   group: z.string().trim().min(1).optional(),
+  /** Nur Auswahl-Tools: Bezeichnung nur für Screenreader, der Wert steht dann links (z. B. allein im Block) */
+  hideName: z.boolean().optional(),
+  /** Nur Auswahl-Tools: Wert links, die Bezeichnung dahinter (z. B. „90 × 75 cm davor“) */
+  valueFirst: z.boolean().optional(),
   /** Nur Auswahl-Tools: Zwischenüberschrift innerhalb des Blocks, ab dieser Spalte, z. B. „Anforderungen Elektroinstallation“ */
   subheading: z.string().trim().min(1).optional(),
 })

@@ -469,15 +469,23 @@ describe('Tools', () => {
 
     const wc = html({ 0: 'WC' })
     // Jede Gruppe ein eigener Block mit Überschrift
-    expect(wc.match(/<div class="mt-4 rounded-2xl border-2 border-accent bg-surface p-4"><div[^>]*><h3/g)).toHaveLength(4)
+    expect(wc.match(/<div class="mt-4 rounded-2xl border-2 border-accent bg-surface p-4"><div[^>]*><h3/g)).toHaveLength(5)
     expect(wc).toContain('Montagehöhen</h3>')
-    expect(wc).toContain('Bewegungsflächen</h3>')
+    expect(wc).toContain('Bewegungsfläche</h3>')
+    // Stellflächen nach VDI 6000 Blatt 1, beim WC je nach Spülkasten
+    expect(wc).toContain('Stellfläche</h3><span class="text-base text-muted">(Breite × Tiefe)</span>')
+    expect(wc).toMatch(/mit Unterputzspülkasten<\/dt><dd[^>]*>40 × 60 cm<\/dd>/)
+    expect(wc).toMatch(/mit Aufputzspülkasten<\/dt><dd[^>]*>40 × 75 cm<\/dd>/)
+    // Einzelner Wert ohne sichtbare Bezeichnung, links im Block
+    expect(html({ 0: 'Badewanne' })).toMatch(/<div class="flex flex-wrap items-baseline gap-x-3 "><dt class="sr-only">Gegenstand<\/dt><dd[^>]*>170 × 75 cm<\/dd>/)
     expect(wc).toContain('Abstandsmaße</h3>')
     expect(wc).toContain('40 cm')
     // „/“ in der Vorlage: kein Eckventil, Zeile ohne Wert wird nicht angezeigt
     expect(wc).not.toContain('Eckventile')
     // Legende grau rechts neben der Blocküberschrift, Zeile nur „davor“
-    expect(wc).toContain('Bewegungsflächen</h3><span class="text-base text-muted">(Breite × Tiefe)</span>')
+    expect(wc).toContain('Bewegungsfläche</h3><span class="text-base text-muted">(Breite × Tiefe)</span>')
+    // Maß vorn, „davor“ dahinter
+    expect(wc).toMatch(/<div class="flex flex-wrap items-baseline gap-x-3 "><dt class="text-base text-muted">davor<\/dt><dd class="[^"]* order-first">80 × 60 cm<\/dd>/)
     expect(wc).toMatch(/davor<\/dt><dd[^>]*>80 × 60 cm<\/dd>/)
     // Jeder Bezug eine eigene Zeile
     expect(wc).toMatch(/andere Sanitärgegenstände<\/dt><dd[^>]*>20 cm<\/dd>/)
@@ -500,6 +508,14 @@ describe('Tools', () => {
     const tub = html({ 0: 'Badewanne' })
     expect(tub).toContain('180 cm')
     expect(tub).not.toContain('Eckventile')
+    // Waschmaschine/Trockner: Flächen nach VDI 6000 Blatt 1, Höhen nach Herstellerangaben
+    const washer = html({ 0: 'Waschmaschine, Trockner' })
+    expect(washer).toMatch(/Oberkante<\/dt><dd[^>]*>85 cm<\/dd>/)
+    expect(washer).toMatch(/Abwasseranschluss<\/dt><dd[^>]*>60–100 cm<\/dd>/)
+    expect(washer).toContain('Wasserhahn mit ¾&quot;-Anschlussgewinde')
+    expect(washer).toMatch(/Gegenstand<\/dt><dd[^>]*>60 × 60 cm<\/dd>/)
+    expect(washer).toMatch(/davor<\/dt><dd[^>]*>90 × 90 cm<\/dd>/)
+    expect(washer).toMatch(/Dusche, Badewanne<\/dt><dd[^>]*>3 cm<\/dd>/)
     // Wandarmatur aus der Tabelle des Inhabers (dort in mm: 1010 und 1125)
     expect(html({ 0: 'Waschtisch' })).toMatch(/Wandarmatur<\/dt><dd[^>]*>101 cm<\/dd>/)
     expect(html({ 0: 'Spüle' })).toMatch(/Wandarmatur<\/dt><dd[^>]*>112,5 cm<\/dd>/)
@@ -518,7 +534,7 @@ describe('Tools', () => {
     const blocks = (markup: string) => [...markup.matchAll(/<h3 class="text-lg font-bold text-accent">([^<]+)<\/h3>/g)].map((m) => m[1])
     expect(blocks(html({ 0: 'Dusche' }, { ausfuehrung: 'rollstuhl' }))).toEqual([
       'Montagehöhen',
-      'Bewegungsflächen',
+      'Bewegungsfläche',
       'Abstandsmaße',
       'Schutzbereiche (Elektro)',
       'Hinweise',
@@ -536,10 +552,16 @@ describe('Tools', () => {
     const wheelchair = html({ 0: 'WC' }, { ausfuehrung: 'rollstuhl' })
     expect(wheelchair).toContain('Sanitärgegenstände – rollstuhlgerecht</h2>')
     expect(wheelchair).toContain('46–48 cm inkl. Sitz')
+    expect(wheelchair).toMatch(/Tiefe \(WC-Ausladung\)<\/dt><dd[^>]*>mind. 70 cm<\/dd>/)
     expect(wheelchair).toMatch(/Stützklappgriffe, Oberkante über Sitzhöhe<\/dt><dd[^>]*>28 cm<\/dd>/)
     expect(wheelchair).toMatch(/Stützklappgriffe, lichter Abstand<\/dt><dd[^>]*>65–70 cm<\/dd>/)
     expect(wheelchair).toMatch(/seitlich<\/dt><dd[^>]*>90 × 70 cm, links oder rechts<\/dd>/)
     expect(wheelchair).toContain('Hinweise</h3>')
+    // Rutschhemmung im bodengleichen Duschbereich
+    for (const ausfuehrung of ['barrierefrei', 'rollstuhl']) {
+      expect(html({ 0: 'Dusche' }, { ausfuehrung })).toMatch(/Rutschhemmung<\/dt><dd[^>]*>mind. Bewertungsgruppe B/)
+    }
+    expect(html({ 0: 'Dusche' })).not.toContain('Rutschhemmung')
     expect(html({ 0: 'Waschtisch' }, { ausfuehrung: 'rollstuhl' })).toMatch(/Vorderkante<\/dt><dd[^>]*>max. 80 cm<\/dd>/)
     expect(html({ 0: 'WC' }, { ausfuehrung: 'barrierefrei' })).toContain('120 × 120 cm')
     expect(html({ 1: 'Spiegel' }, { ausfuehrung: 'rollstuhl', bereich: 'zubehoer' })).toContain(

@@ -2,12 +2,12 @@
   "id": "tool.montagehoehen",
   "visibility": "public",
   "status": "draft",
-  "source": "Standard-Montagehöhen: Montagehöhen-Tabelle des Inhabers (Vorgabe vom 28.10.2026); Zubehör und Oberkanten übereinstimmend mit den Richtmaßen von Hansgrohe in IKZ-Praxis 8/2000, „Montage nach Maß“, https://www.ikz.de/ikz-praxis-archiv/p0008/000803.php. Standard-Bewegungsflächen und seitliche Abstände: VDI 6000 Blatt 1, wiedergegeben in TECE, Sanitärraumplanung kompakt (01/2026), S. 5, Tabellen 2 und 3, https://www.tece.com/sites/default/files/media-documents/main/2026-01/BRO_TECE_Sanitaerraumplanung_Kompakt_DE_DS00100870c_low.pdf. Barrierefrei und rollstuhlgerecht: Anforderungen der DIN 18040-2:2011-09, zusammengefasst in HEWI, Planungshilfe DIN 18040 (2018), https://www.online-wohn-beratung.de/fileadmin/5b_Produktinfos/Hewi/2018_Download/180125_Planungshilfe_DIN_18040.pdf, S. 19–45, und TECE, Sanitärraumplanung kompakt (01/2026), S. 9. Schutzbereiche: DIN VDE 0100-701:2025-06, zusammengefasst in Dirk Maske, „Orte mit Badewanne oder Dusche“, elektro.net (04.08.2025), https://www.elektro.net/127581/errichten-von-niederspannungsanlagen-teil-7-701-anforderungen-fuer-betriebsstaetten-raeume-und-anlagen-besonderer-art-orte-mit-badewanne-oder-dusche/; Ernst Schneider, elektrofachkraft.de (16.06.2026), https://www.elektrofachkraft.de/e-artikel/din-vde-0100-701-niederspannungsanlagen-an-orten-mit-badewanne-oder-dusche; Meltem, Infoblatt Schutzbereiche nach DIN VDE 0100-701:2025-06 (KW 33/2026), https://www.meltem.com/fileadmin/downloads/documents/Meltem%20Schutzbereiche%20in%20Baedern%20M-WRG-II%20M-WRG.pdf; licht.de, Lichtlexikon „DIN VDE 0100 Teil 701“, https://www.licht.de/de/grundlagen/lichtlexikon/details-lichtlexikon/din-vde-0100-teil-701. Alle abgerufen am 28.10.2026.",
+  "source": "Standard-Montagehöhen: Montagehöhen-Tabelle des Inhabers (Vorgabe vom 28.10.2026); Zubehör und Oberkanten übereinstimmend mit den Richtmaßen von Hansgrohe in IKZ-Praxis 8/2000, „Montage nach Maß“, https://www.ikz.de/ikz-praxis-archiv/p0008/000803.php. Standard-Stellflächen, Bewegungsflächen und seitliche Abstände: VDI 6000 Blatt 1, wiedergegeben in TECE, Sanitärraumplanung kompakt (01/2026), S. 5, Tabellen 2 und 3, https://www.tece.com/sites/default/files/media-documents/main/2026-01/BRO_TECE_Sanitaerraumplanung_Kompakt_DE_DS00100870c_low.pdf. Barrierefrei und rollstuhlgerecht: Anforderungen der DIN 18040-2:2011-09, zusammengefasst in HEWI, Planungshilfe DIN 18040 (2018), https://www.online-wohn-beratung.de/fileadmin/5b_Produktinfos/Hewi/2018_Download/180125_Planungshilfe_DIN_18040.pdf, S. 19–45, und TECE, Sanitärraumplanung kompakt (01/2026), S. 9. Rutschhemmung im Duschbereich: Bewertungsgruppe B nach HEWI, Planungshilfe DIN 18040 (2018), S. 43–45 (dort noch GUV-I 8527); heute DGUV Information 207-006 „Bodenbeläge für nassbelastete Barfußbereiche“ (Ausgabe 12/2025, Gruppe B ab 18°, Prüfung nach DIN EN 16165 Anhang A), zusammengefasst in safetyxperts, „Arbeitssicherheit & Gesundheitsschutz aktuell“ KW 17/18 2026, https://static.safetyxperts.de/wp-content/uploads/2026/04/Arbeitssicherheit-Gesundheitsschutz-aktuell_KW-17-18-2026-1.pdf. Waschmaschine: Miele, Gebrauchsanweisung Waschmaschine (M.-Nr. 12 985 081), Technische Daten (Höhe 850 mm, Unterbau ab 850 mm), Wasserzulauf (Wasserhahn mit ¾\"-Anschlussgewinde) und Wasserablauf (Abpumphöhe 1 m), https://media.miele.com/downloads/d5/d3/00_7CED8D2439161FD19DD4B994B6AFD5D3.pdf; Samsung Schweiz, „Wie schliesse ich den Ablaufschlauch meiner Waschmaschine an?“ (Schlauchende 60–90 cm über dem Fussboden), https://www.samsung.com/ch/support/home-appliances/wie-schliesse-ich-den-ablaufschlauch-meiner-waschmaschine-an; AEG, „Kann die Waschmaschine an einen Ablauf höher als 1 m angeschlossen werden?“ (60–100 cm), https://www.aeg.de/support/support-articles/waschepflege/waschmaschinen/kann-die-waschmaschine-an-einen-ablauf-hoher-als-1-m-angeschlossen-werden/. Schutzbereiche: DIN VDE 0100-701:2025-06, zusammengefasst in Dirk Maske, „Orte mit Badewanne oder Dusche“, elektro.net (04.08.2025), https://www.elektro.net/127581/errichten-von-niederspannungsanlagen-teil-7-701-anforderungen-fuer-betriebsstaetten-raeume-und-anlagen-besonderer-art-orte-mit-badewanne-oder-dusche/; Ernst Schneider, elektrofachkraft.de (16.06.2026), https://www.elektrofachkraft.de/e-artikel/din-vde-0100-701-niederspannungsanlagen-an-orten-mit-badewanne-oder-dusche; Meltem, Infoblatt Schutzbereiche nach DIN VDE 0100-701:2025-06 (KW 33/2026), https://www.meltem.com/fileadmin/downloads/documents/Meltem%20Schutzbereiche%20in%20Baedern%20M-WRG-II%20M-WRG.pdf; licht.de, Lichtlexikon „DIN VDE 0100 Teil 701“, https://www.licht.de/de/grundlagen/lichtlexikon/details-lichtlexikon/din-vde-0100-teil-701. Alle abgerufen am 28.10.2026.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "choice",
   "title": "Badplanung: Montagehöhen, Abstände und Schutzbereiche",
-  "description": "Montagehöhen, Bewegungsflächen, Abstände und elektrische Schutzbereiche im Bad. Alle Maße in cm, Höhen über Oberkante Fertigfußboden (OKFF); OK = Oberkante, UK = Unterkante. Maßgeblich sind die Herstellerangaben und der aktuelle Normtext; die DIN 18040-2 erscheint 2026 neu. Die Elektroinstallation gehört in die Hand einer Elektrofachkraft.",
+  "description": "Montagehöhen, Stellflächen, Bewegungsflächen, Abstände und elektrische Schutzbereiche im Bad. Alle Maße in cm, Höhen über Oberkante Fertigfußboden (OKFF); OK = Oberkante, UK = Unterkante. Maßgeblich sind die Herstellerangaben und der aktuelle Normtext; die DIN 18040-2 erscheint 2026 neu. Die Elektroinstallation gehört in die Hand einer Elektrofachkraft.",
   "category": "Montage",
   "bars": [
     {
@@ -93,9 +93,26 @@
           "group": "Montagehöhen"
         },
         {
+          "key": "stellflaeche",
+          "name": "Gegenstand",
+          "group": "Stellfläche",
+          "hideName": true
+        },
+        {
+          "key": "stellflaecheUp",
+          "name": "mit Unterputzspülkasten",
+          "group": "Stellfläche"
+        },
+        {
+          "key": "stellflaecheAp",
+          "name": "mit Aufputzspülkasten",
+          "group": "Stellfläche"
+        },
+        {
           "key": "flaeche",
           "name": "davor",
-          "group": "Bewegungsflächen"
+          "group": "Bewegungsfläche",
+          "valueFirst": true
         },
         {
           "key": "abstandEinbauwaschtisch",
@@ -112,6 +129,12 @@
         {
           "key": "abstandWaschmaschine",
           "name": "Waschmaschine, Trockner",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandDuscheWanne",
+          "name": "Dusche, Badewanne",
           "unit": "cm",
           "group": "Abstandsmaße"
         },
@@ -194,12 +217,23 @@
           "key": "rcd",
           "name": "Fehlerstromschutz",
           "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "hinweisAbwasser",
+          "name": "Abwasseranschluss",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisWasser",
+          "name": "Wasseranschluss",
+          "group": "Hinweise"
         }
       ],
       "groupNotes": {
-        "Bewegungsflächen": "(Breite × Tiefe)",
+        "Bewegungsfläche": "(Breite × Tiefe)",
         "Abstandsmaße": "(seitlich, mindestens)",
-        "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)"
+        "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)",
+        "Stellfläche": "(Breite × Tiefe)"
       },
       "options": [
         {
@@ -214,7 +248,8 @@
             "abstandBidet": "25",
             "abstandWand": "20",
             "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaeche": "60 × 55 cm"
           }
         },
         {
@@ -226,7 +261,8 @@
             "wandarmatur": "112,5",
             "flaeche": "90 × 120 cm",
             "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaeche": "90 × 60 cm"
           }
         },
         {
@@ -241,7 +277,9 @@
             "abstandWand": "20",
             "abstandWandBeidseitig": "25",
             "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaecheUp": "40 × 60 cm",
+            "stellflaecheAp": "40 × 75 cm"
           }
         },
         {
@@ -256,7 +294,8 @@
             "abstandWand": "20",
             "abstandWandBeidseitig": "25",
             "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaeche": "40 × 40 cm"
           }
         },
         {
@@ -270,7 +309,8 @@
             "abstandObjekte": "25",
             "abstandWand": "25",
             "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaeche": "40 × 60 cm"
           }
         },
         {
@@ -292,7 +332,8 @@
             "ip12": "IPX4, bei Strahlwasser IPX5",
             "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
             "rcd": "RCD ≤ 30 mA für alle Stromkreise",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaeche": "170 × 75 cm"
           }
         },
         {
@@ -317,7 +358,26 @@
             "ip12": "IPX4, bei Strahlwasser IPX5",
             "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
             "rcd": "RCD ≤ 30 mA für alle Stromkreise",
-            "abstandTuer": "10"
+            "abstandTuer": "10",
+            "stellflaeche": "80 × 80 cm"
+          }
+        },
+        {
+          "label": "Waschmaschine, Trockner",
+          "values": {
+            "oberkante": "85",
+            "abwasser": "60–100",
+            "stellflaeche": "60 × 60 cm",
+            "flaeche": "90 × 90 cm",
+            "abstandEinbauwaschtisch": "15",
+            "abstandBidet": "25",
+            "abstandDuscheWanne": "3",
+            "abstandObjekte": "20",
+            "abstandTuer": "10",
+            "abstandWand": "20",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
+            "hinweisAbwasser": "Höchstwert je nach Gerät 90–100 cm (Förderhöhe der Laugenpumpe), Herstellerangabe beachten",
+            "hinweisWasser": "Wasserhahn mit ¾\"-Anschlussgewinde"
           }
         }
       ]
@@ -369,7 +429,8 @@
             "hoehe": "20"
           }
         }
-      ]
+      ],
+      "groupNotes": {}
     },
     {
       "title": "Sanitärgegenstände – barrierefrei nutzbar",
@@ -408,17 +469,14 @@
         {
           "key": "flaeche",
           "name": "davor",
-          "group": "Bewegungsflächen"
+          "group": "Bewegungsfläche",
+          "valueFirst": true
         },
         {
           "key": "seitlich",
           "name": "seitlich",
-          "group": "Bewegungsflächen"
-        },
-        {
-          "key": "ausladung",
-          "name": "WC-Ausladung",
-          "group": "Abstandsmaße"
+          "group": "Bewegungsfläche",
+          "valueFirst": true
         },
         {
           "key": "ruecken",
@@ -547,6 +605,11 @@
           "group": "Hinweise"
         },
         {
+          "key": "hinweisRutsch",
+          "name": "Rutschhemmung",
+          "group": "Hinweise"
+        },
+        {
           "key": "hinweisSitz",
           "name": "Duschsitz",
           "group": "Hinweise"
@@ -578,7 +641,7 @@
         }
       ],
       "groupNotes": {
-        "Bewegungsflächen": "(Breite × Tiefe)",
+        "Bewegungsfläche": "(Breite × Tiefe)",
         "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)"
       },
       "options": [
@@ -611,17 +674,18 @@
           "values": {
             "flaeche": "120 × 120 cm",
             "zumWaschtisch": "mind. 20 cm",
-            "hinweisDuschplatz": "bodengleich; darf in die Bewegungsfläche einbezogen werden",
-            "hinweisSitz": "Nachrüstung empfohlen",
-            "hinweisGriffe": "Nachrüstung empfohlen",
-            "hinweisDuscharmatur": "Hebel nach unten weisend",
             "zone0": "bis 10 cm über OKFF, im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass",
             "zone1": "im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass, bis 225 cm über OKFF",
             "zone2": "entfällt",
             "ip0": "IPX7",
             "ip12": "IPX4, bei Strahlwasser IPX5",
             "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
-            "rcd": "RCD ≤ 30 mA für alle Stromkreise"
+            "rcd": "RCD ≤ 30 mA für alle Stromkreise",
+            "hinweisDuschplatz": "bodengleich; darf in die Bewegungsfläche einbezogen werden",
+            "hinweisRutsch": "mind. Bewertungsgruppe B (DGUV I 207-006)",
+            "hinweisSitz": "Nachrüstung empfohlen",
+            "hinweisGriffe": "Nachrüstung empfohlen",
+            "hinweisDuscharmatur": "Hebel nach unten weisend"
           }
         }
       ]
@@ -659,7 +723,8 @@
             "hoehe": "individuell"
           }
         }
-      ]
+      ],
+      "groupNotes": {}
     },
     {
       "title": "Sanitärgegenstände – rollstuhlgerecht",
@@ -696,19 +761,21 @@
           "group": "Montagehöhen"
         },
         {
+          "key": "ausladung",
+          "name": "Tiefe (WC-Ausladung)",
+          "group": "Stellfläche"
+        },
+        {
           "key": "flaeche",
           "name": "davor",
-          "group": "Bewegungsflächen"
+          "group": "Bewegungsfläche",
+          "valueFirst": true
         },
         {
           "key": "seitlich",
           "name": "seitlich",
-          "group": "Bewegungsflächen"
-        },
-        {
-          "key": "ausladung",
-          "name": "WC-Ausladung",
-          "group": "Abstandsmaße"
+          "group": "Bewegungsfläche",
+          "valueFirst": true
         },
         {
           "key": "ruecken",
@@ -837,6 +904,11 @@
           "group": "Hinweise"
         },
         {
+          "key": "hinweisRutsch",
+          "name": "Rutschhemmung",
+          "group": "Hinweise"
+        },
+        {
           "key": "hinweisSitz",
           "name": "Duschsitz",
           "group": "Hinweise"
@@ -868,7 +940,7 @@
         }
       ],
       "groupNotes": {
-        "Bewegungsflächen": "(Breite × Tiefe)",
+        "Bewegungsfläche": "(Breite × Tiefe)",
         "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)"
       },
       "options": [
@@ -913,16 +985,17 @@
             "griffeOberkante": "28 cm",
             "flaeche": "150 × 150 cm",
             "zumWaschtisch": "mind. 20 cm",
-            "hinweisDuschplatz": "bodengleich; darf in die Bewegungsfläche einbezogen werden",
-            "hinweisGriffe": "beidseitig des Sitzes nachrüstbar",
-            "hinweisDuscharmatur": "Einhebelarmatur mit Handbrause, im Sitzen erreichbar, Hebel nach unten weisend",
             "zone0": "bis 10 cm über OKFF, im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass",
             "zone1": "im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass, bis 225 cm über OKFF",
             "zone2": "entfällt",
             "ip0": "IPX7",
             "ip12": "IPX4, bei Strahlwasser IPX5",
             "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
-            "rcd": "RCD ≤ 30 mA für alle Stromkreise"
+            "rcd": "RCD ≤ 30 mA für alle Stromkreise",
+            "hinweisDuschplatz": "bodengleich; darf in die Bewegungsfläche einbezogen werden",
+            "hinweisRutsch": "mind. Bewertungsgruppe B (DGUV I 207-006)",
+            "hinweisGriffe": "beidseitig des Sitzes nachrüstbar",
+            "hinweisDuscharmatur": "Einhebelarmatur mit Handbrause, im Sitzen erreichbar, Hebel nach unten weisend"
           }
         }
       ]
@@ -961,7 +1034,8 @@
             "hinweis": "vom WC aus mit Hand oder Arm erreichbar, ohne die Sitzposition zu verändern"
           }
         }
-      ]
+      ],
+      "groupNotes": {}
     }
   ]
 }

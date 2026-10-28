@@ -76,7 +76,9 @@ Dusche); für „gibt es hier nicht“ die Spalte also weglassen statt `"–"` e
 Kurzinfo unter jeder Stufe. Optional `group` je Spalte: Spalten mit gleicher Gruppe stehen im Ergebnis
 in einem eigenen Block mit Überschrift (z. B. „Montagehöhen“, „Bewegungsflächen“); `groupNotes` je
 Abschnitt (Gruppe → Text) setzt eine graue Legende rechts daneben, z. B. „(Breite × Tiefe)“; `subheading`
-an einer Spalte setzt innerhalb des Blocks ab dieser Zeile eine Zwischenüberschrift. Optional `bars`:
+an einer Spalte setzt innerhalb des Blocks ab dieser Zeile eine Zwischenüberschrift; `"hideName": true`
+zeigt nur den Wert, linksbündig (die Bezeichnung bleibt für Screenreader); `"valueFirst": true` setzt den
+Wert nach links und die Bezeichnung dahinter (z. B. „90 × 75 cm davor“). Optional `bars`:
 Leisten ganz oben, untereinander (`key`, `name`, `options` mit `key`, `label`, kleiner zweiter Zeile
 `note`); jeweils die erste Option ist vorausgewählt. Abschnitte mit `when` (Leisten-key → Options-key)
 erscheinen nur bei dieser Stellung; jede Stellung braucht mindestens einen Abschnitt.

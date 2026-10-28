@@ -124,9 +124,13 @@ function ValueList({ columns, option }: { columns: ChoiceColumn[]; option: Choic
   return (
     <dl className="mt-2 space-y-1">
       {columns.map((column) => (
-        <div key={column.key} className="flex flex-wrap items-baseline justify-between gap-x-3">
-          <dt className="text-base text-muted">{column.name}</dt>
-          <dd className={column.unit ? 'text-2xl font-bold' : 'text-lg font-semibold'}>
+        <div
+          key={column.key}
+          className={`flex flex-wrap items-baseline gap-x-3 ${column.hideName || column.valueFirst ? '' : 'justify-between'}`}
+        >
+          <dt className={column.hideName ? 'sr-only' : 'text-base text-muted'}>{column.name}</dt>
+          {/* Bei valueFirst steht der Wert per CSS vorn; im HTML bleibt dt vor dd */}
+          <dd className={`${column.unit ? 'text-2xl font-bold' : 'text-lg font-semibold'} ${column.valueFirst ? 'order-first' : ''}`}>
             {column.label && `${column.label} = `}
             {withUnit(option.values[column.key]!, column.unit)}
           </dd>
