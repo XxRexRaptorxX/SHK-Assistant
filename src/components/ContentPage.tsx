@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import type { BaseEntry } from '../content/schema/base'
+import { ContentReportButton } from '../feedback/ContentReport'
 import { usePageTitle } from '../lib/usePageTitle'
 import { DraftBadge } from './DraftBadge'
 import { SourceInfo } from './SourceInfo'
@@ -14,7 +15,7 @@ interface ContentPageProps {
   back?: { to: string; label: string }
   /** z. B. Favoriten-Knopf neben der Überschrift */
   actions?: ReactNode
-  /** Quelle + Prüfdatum unten; nur bei Seiten ohne Fachinhalt (Impressum, Datenschutz) aus */
+  /** Quelle + Prüfdatum und „Fehler im Inhalt melden“ unten; nur bei Seiten ohne Fachinhalt (Impressum, Datenschutz) aus */
   showSource?: boolean
   children: ReactNode
 }
@@ -34,7 +35,12 @@ export function ContentPage({ entry, title, heading, back, actions, showSource =
       </header>
       {entry.status === 'draft' && <DraftBadge />}
       <div className="mt-4">{children}</div>
-      {showSource && <SourceInfo entry={entry} />}
+      {showSource && (
+        <>
+          <SourceInfo entry={entry} />
+          <ContentReportButton entry={entry} title={title} />
+        </>
+      )}
     </article>
   )
 }
