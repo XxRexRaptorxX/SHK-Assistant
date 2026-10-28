@@ -6,7 +6,11 @@ import type { LegalEntry } from './schema'
 export const LEGAL_PAGES = [
   { path: '/impressum', id: `${LEGAL_ID_PREFIX}.impressum`, title: 'Impressum' },
   { path: '/datenschutz', id: `${LEGAL_ID_PREFIX}.datenschutz`, title: 'Datenschutzerklärung' },
+  { path: '/haftung', id: `${LEGAL_ID_PREFIX}.haftung`, title: 'Haftungshinweis' },
 ] as const
+
+/** Haftungshinweis, der beim ersten Besuch bestätigt werden muss */
+export const DISCLAIMER_PAGE = LEGAL_PAGES[2]
 
 export type LegalPageInfo = (typeof LEGAL_PAGES)[number]
 

@@ -206,7 +206,10 @@ Im `text` trennt eine Leerzeile (`
 
 `) Absätze, `**Wort**` wird fett, ein Absatz, der nur aus
 `**…**` besteht, wird Unterüberschrift. Web- und E-Mail-Adressen werden klickbar. HTML wird nie ausgeführt. Die Seiten sind in den Einstellungen unter
-„Rechtliches“ verlinkt: `legal.impressum` (`/impressum`) und `legal.datenschutz` (`/datenschutz`).
+„Rechtliches“ verlinkt: `legal.impressum` (`/impressum`), `legal.datenschutz` (`/datenschutz`) und
+`legal.haftung` (`/haftung`). Der Haftungshinweis erscheint außerdem beim ersten Besuch als Fenster, das
+mit „Verstanden“ bestätigt werden muss; bei wesentlichen Änderungen `DISCLAIMER_VERSION` in
+`src/modules/legal/DisclaimerDialog.tsx` erhöhen, dann wird er erneut abgefragt.
 Die Texte liefert der Inhaber; sie werden nicht erfunden. Bei `verified` ist mindestens ein
 Abschnitt Pflicht.
 

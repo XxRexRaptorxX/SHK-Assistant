@@ -5,6 +5,7 @@ import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
 import { COMPANY_URL } from '../config/links'
 import { ShakeToReport } from '../feedback/ShakeToReport'
+import { DisclaimerGate } from '../modules/legal/DisclaimerDialog'
 import { useApplyTheme } from '../theme/useTheme'
 import { bottomNavModules, modules, type AppModule } from './modules'
 
@@ -121,6 +122,7 @@ export function Layout() {
       </main>
       <BottomNav />
       <ShakeToReport />
+      <DisclaimerGate />
     </div>
   )
 }

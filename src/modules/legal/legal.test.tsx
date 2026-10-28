@@ -2,7 +2,8 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { App } from '../../App'
-import { LEGAL_PAGES, legalEntries } from './legal'
+import { DisclaimerDialog, DisclaimerGate } from './DisclaimerDialog'
+import { DISCLAIMER_PAGE, LEGAL_PAGES, legalEntries } from './legal'
 import { LegalPage, LegalText } from './LegalPage'
 import { checkLegal, type LegalEntry } from './schema'
 
@@ -82,6 +83,22 @@ describe('Rechtliche Seiten', () => {
     expect(text).toContain('GitHub, Inc.')
     expect(text).toContain('simon@biebl-haustechnik.de')
     expect(text).not.toMatch(/\[[^\]]*\]/)
+  })
+
+  it('zeigt den Haftungshinweis als Dialog, der nur über „Verstanden“ schließt', () => {
+    const entry = legalEntries.find((candidate) => candidate.id === DISCLAIMER_PAGE.id)
+    const text = entry?.sections.map((section) => section.text).join('\n') ?? ''
+    expect(DISCLAIMER_PAGE.path).toBe('/haftung')
+    expect(text).toContain('keine Gewähr')
+    expect(text).toContain('Quelle und das Datum der Prüfung')
+
+    const html = renderToStaticMarkup(<DisclaimerDialog onAccept={() => {}} />)
+    expect(html).toContain('<dialog aria-labelledby="disclaimer-title"')
+    expect(html).toContain('Haftungshinweis</h2>')
+    expect(html).toContain('<strong>Ungeprüft</strong>')
+    expect(html).toContain('Verstanden</button>')
+    // Ohne Browser gilt der Hinweis als bestätigt, damit Seiten-Tests ihn nicht sehen
+    expect(renderToStaticMarkup(<DisclaimerGate />)).toBe('')
   })
 
   it('enthält das Impressum des Inhabers ohne Platzhalter', () => {

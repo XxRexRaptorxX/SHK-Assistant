@@ -1,0 +1,15 @@
+{
+  "id": "legal.haftung",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Vorgabe des Inhabers vom 28.10.2026",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-10-28",
+  "title": "Haftungshinweis",
+  "sections": [
+    {
+      "heading": "",
+      "text": "Die Inhalte dieser App werden mit Sorgfalt zusammengestellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Informationen wird jedoch keine Gewähr übernommen.\n\nBei jedem Eintrag sind die Quelle und das Datum der Prüfung angegeben. Noch nicht geprüfte Einträge sind als **Ungeprüft** gekennzeichnet.\n\nPrüfe wichtige Angaben vor der Verwendung anhand der angegebenen Quelle, der geltenden Normen und Vorschriften sowie der Unterlagen des Herstellers."
+    }
+  ]
+}
