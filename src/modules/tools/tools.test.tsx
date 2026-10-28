@@ -48,6 +48,7 @@ describe('Tools', () => {
     expect(length).toBeCloseTo(6 * Math.PI, 6)
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Ausgerollte Länge einer Rohr- oder Kabelrolle',
+      'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Exakte ausgerollte Länge einer Rohr- oder Kabelrolle',
       'Gebäudeklasse',
       'Heizlast überschlägig',
@@ -240,7 +241,12 @@ describe('Tools', () => {
     }
     expect(checkChoiceTool(broken)).toEqual([
       'sections[0] (Norm-Innentemperatur nach Raumart): label doppelt vergeben',
-      'sections[0] (Norm-Innentemperatur nach Raumart), options[1] (Ausstellungsräume): Wert fehlt für temperatur',
+      'sections[0] (Norm-Innentemperatur nach Raumart), options[1] (Ausstellungsräume): keine Werte',
+    ])
+    // Einzelne Spalten dürfen fehlen (Wert gibt es bei dieser Option nicht), unbekannte nicht
+    const partial = { ...section.options[0]!, label: 'Neu', values: { unbekannt: '1' } }
+    expect(checkChoiceTool({ ...tool, sections: [{ ...section, options: [partial] }] })).toEqual([
+      'sections[0] (Norm-Innentemperatur nach Raumart), options[0] (Neu): unbekannte Spalte unbekannt',
     ])
   })
 
@@ -442,6 +448,115 @@ describe('Tools', () => {
     expect(html).toContain('L = 1,00 m')
     expect(html).toContain('verbindlich sind die Angaben des Rohrherstellers')
     expect(html).not.toContain('Alle Werte eingeben.')
+  })
+
+  it('zeigt Montagehöhen, Bewegungsflächen und Abstände je Ausführung und Bereich in eigenen Blöcken', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.montagehoehen')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    expect(checkChoiceTool(tool)).toEqual([])
+    const html = (selection: Record<number, string>, bars?: Record<string, string>) =>
+      renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={selection} initialBars={bars} />)
+
+    // Zwei Leisten, vorausgewählt „Standard“ und „Sanitärgegenstände“: nur dieser Abschnitt
+    const start = html({})
+    expect(start).toContain('aria-label="Ausführung"')
+    expect(start).toContain('aria-label="Bereich"')
+    expect(start).toMatch(/aria-pressed="true"[^>]*><span[^>]*>Standard<\/span><span[^>]*>VDI 6000 Blatt 1<\/span>/)
+    expect(start).toMatch(/aria-pressed="true"[^>]*><span[^>]*>Sanitärgegenstände<\/span>/)
+    expect(start.match(/<h2 /g)).toHaveLength(1)
+    // Titel nur für Screenreader, die Leisten zeigen schon, welcher Abschnitt das ist
+    expect(start).toMatch(/<h2 id="[^"]*" class="sr-only">Sanitärgegenstände – Standard<\/h2>/)
+
+    const wc = html({ 0: 'WC' })
+    // Jede Gruppe ein eigener Block mit Überschrift
+    expect(wc.match(/<div class="mt-4 rounded-2xl border-2 border-accent bg-surface p-4"><div[^>]*><h3/g)).toHaveLength(4)
+    expect(wc).toContain('Montagehöhen</h3>')
+    expect(wc).toContain('Bewegungsflächen</h3>')
+    expect(wc).toContain('Abstandsmaße</h3>')
+    expect(wc).toContain('40 cm')
+    // „/“ in der Vorlage: kein Eckventil, Zeile ohne Wert wird nicht angezeigt
+    expect(wc).not.toContain('Eckventile')
+    // Legende grau rechts neben der Blocküberschrift, Zeile nur „davor“
+    expect(wc).toContain('Bewegungsflächen</h3><span class="text-base text-muted">(Breite × Tiefe)</span>')
+    expect(wc).toMatch(/davor<\/dt><dd[^>]*>80 × 60 cm<\/dd>/)
+    // Jeder Bezug eine eigene Zeile
+    expect(wc).toMatch(/andere Sanitärgegenstände<\/dt><dd[^>]*>20 cm<\/dd>/)
+    expect(wc).toMatch(/Bidet<\/dt><dd[^>]*>25 cm<\/dd>/)
+    expect(wc).toMatch(/bei Wänden auf beiden Seiten<\/dt><dd[^>]*>25 cm<\/dd>/)
+    expect(html({ 0: 'Dusche' })).toMatch(/Waschmaschine, Trockner<\/dt><dd[^>]*>3 cm<\/dd>/)
+    // Reihenfolge: einzelne Gegenstände, dann „andere Sanitärgegenstände“, Wände ganz unten
+    const rows = (markup: string) => [...markup.matchAll(/<dt class="text-base text-muted">([^<]+)<\/dt>/g)].map((match) => match[1])
+    const wcRows = rows(wc)
+    expect(wcRows.slice(wcRows.indexOf('Bidet'), wcRows.indexOf('bei Wänden auf beiden Seiten') + 1)).toEqual(['Bidet', 'andere Sanitärgegenstände', 'Türöffnung, Türlaibung', 'Wand', 'bei Wänden auf beiden Seiten'])
+    const showerRows = rows(html({ 0: 'Dusche' }))
+    expect(showerRows.slice(showerRows.indexOf('Einbauwaschtisch'), showerRows.indexOf('andere Sanitärgegenstände') + 1)).toEqual([
+      'Einbauwaschtisch',
+      'Bidet',
+      'Waschmaschine, Trockner',
+      'andere Sanitärgegenstände',
+    ])
+    // Brausen nur bei Wanne und Dusche
+    expect(wc).not.toContain('Kopfbrause')
+    const tub = html({ 0: 'Badewanne' })
+    expect(tub).toContain('180 cm')
+    expect(tub).not.toContain('Eckventile')
+    // Wandarmatur aus der Tabelle des Inhabers (dort in mm: 1010 und 1125)
+    expect(html({ 0: 'Waschtisch' })).toMatch(/Wandarmatur<\/dt><dd[^>]*>101 cm<\/dd>/)
+    expect(html({ 0: 'Spüle' })).toMatch(/Wandarmatur<\/dt><dd[^>]*>112,5 cm<\/dd>/)
+    expect(html({ 1: 'Spiegel' }, { bereich: 'zubehoer' })).toContain('UK 115–120 cm')
+
+    // Elektrische Schutzbereiche nach DIN VDE 0100-701:2025-06 als eigener Block
+    const shower = html({ 0: 'Dusche' })
+    expect(shower).toContain('Schutzbereiche (Elektro)</h3><span class="text-base text-muted">(DIN VDE 0100-701)</span>')
+    expect(shower).toMatch(/Bereich 0 ohne Duschwanne<\/dt><dd[^>]*>bis 10 cm über OKFF, im Umkreis von 120 cm/)
+    expect(shower).toMatch(/Bereich 2 ohne Duschwanne<\/dt><dd[^>]*>entfällt<\/dd>/)
+    expect(shower).toMatch(/Schutzart Bereich 0<\/dt><dd[^>]*>IPX7<\/dd>/)
+    expect(shower).toMatch(/entfällt<\/dd><\/div><\/dl><h4 class="mt-4 text-lg font-bold text-accent">Anforderungen Elektroinstallation<\/h4><dl[^>]*><div[^>]*><dt[^>]*>Schutzart Bereich 0/)
+    expect(tub).toMatch(/Bereich 1<\/dt><dd[^>]*>über der Wanne bis 225 cm über OKFF/)
+    expect(wc).toMatch(/Schutzbereich<\/dt><dd[^>]*>kein eigener;/)
+    // Hinweise bleiben der letzte Block
+    const blocks = (markup: string) => [...markup.matchAll(/<h3 class="text-lg font-bold text-accent">([^<]+)<\/h3>/g)].map((m) => m[1])
+    expect(blocks(html({ 0: 'Dusche' }, { ausfuehrung: 'rollstuhl' }))).toEqual([
+      'Montagehöhen',
+      'Bewegungsflächen',
+      'Abstandsmaße',
+      'Schutzbereiche (Elektro)',
+      'Hinweise',
+    ])
+
+    // Barrierefrei und rollstuhlgerecht nach DIN 18040-2, je mit Sanitärgegenständen und Zubehör
+    expect(tool.sections.map((section) => Object.values(section.when).join(' + '))).toEqual([
+      'standard + objekte',
+      'standard + zubehoer',
+      'barrierefrei + objekte',
+      'barrierefrei + zubehoer',
+      'rollstuhl + objekte',
+      'rollstuhl + zubehoer',
+    ])
+    const wheelchair = html({ 0: 'WC' }, { ausfuehrung: 'rollstuhl' })
+    expect(wheelchair).toContain('Sanitärgegenstände – rollstuhlgerecht</h2>')
+    expect(wheelchair).toContain('46–48 cm inkl. Sitz')
+    expect(wheelchair).toMatch(/Stützklappgriffe, Oberkante über Sitzhöhe<\/dt><dd[^>]*>28 cm<\/dd>/)
+    expect(wheelchair).toMatch(/Stützklappgriffe, lichter Abstand<\/dt><dd[^>]*>65–70 cm<\/dd>/)
+    expect(wheelchair).toMatch(/seitlich<\/dt><dd[^>]*>90 × 70 cm, links oder rechts<\/dd>/)
+    expect(wheelchair).toContain('Hinweise</h3>')
+    expect(html({ 0: 'Waschtisch' }, { ausfuehrung: 'rollstuhl' })).toMatch(/Vorderkante<\/dt><dd[^>]*>max. 80 cm<\/dd>/)
+    expect(html({ 0: 'WC' }, { ausfuehrung: 'barrierefrei' })).toContain('120 × 120 cm')
+    expect(html({ 1: 'Spiegel' }, { ausfuehrung: 'rollstuhl', bereich: 'zubehoer' })).toContain(
+      'mind. 100 cm hoch, unmittelbar über dem Waschtisch',
+    )
+  })
+
+  it('prüft die Leisten in Auswahl-Tools', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.montagehoehen')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    const sections = tool.sections.map((section, index) =>
+      index === 5 ? { ...section, when: { ausfuehrung: 'unbekannt', bereich: 'zubehoer' } } : section,
+    )
+    expect(checkChoiceTool({ ...tool, sections })).toEqual([
+      'bars: kein Abschnitt für rollstuhl + zubehoer',
+      'sections[5] (Badzubehör – rollstuhlgerecht): unbekannte Option "unbekannt" bei "ausfuehrung"',
+    ])
   })
 
   it('ermittelt die Gebäudeklasse nach Art. 2 Abs. 3 BayBO', () => {

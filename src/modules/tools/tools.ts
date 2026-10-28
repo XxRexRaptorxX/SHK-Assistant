@@ -31,11 +31,15 @@ function toolKeywords(entry: ToolEntry): string[] {
     return [entry.input.name, ...entry.columns.map((column) => column.name), ...entry.rows.map((row) => row.note)]
   }
   if (isChoiceTool(entry)) {
-    return entry.sections.flatMap((section) => [
-      section.inputName,
-      ...section.columns.map((column) => column.name),
-      ...section.options.flatMap((option) => [option.label, option.note, ...Object.values(option.values)]),
-    ])
+    return [
+      ...entry.bars.flatMap((bar) => bar.options.flatMap((option) => [option.label, option.note])),
+      ...entry.sections.flatMap((section) => [
+        section.title,
+        section.inputName,
+        ...section.columns.map((column) => column.name),
+        ...section.options.flatMap((option) => [option.label, option.note, ...Object.values(option.values)]),
+      ]),
+    ]
   }
   if (isFactorTool(entry)) {
     return [

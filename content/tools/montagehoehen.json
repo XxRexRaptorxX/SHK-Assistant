@@ -1,0 +1,967 @@
+{
+  "id": "tool.montagehoehen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Standard-Montagehöhen: Montagehöhen-Tabelle des Inhabers (Vorgabe vom 28.10.2026); Zubehör und Oberkanten übereinstimmend mit den Richtmaßen von Hansgrohe in IKZ-Praxis 8/2000, „Montage nach Maß“, https://www.ikz.de/ikz-praxis-archiv/p0008/000803.php. Standard-Bewegungsflächen und seitliche Abstände: VDI 6000 Blatt 1, wiedergegeben in TECE, Sanitärraumplanung kompakt (01/2026), S. 5, Tabellen 2 und 3, https://www.tece.com/sites/default/files/media-documents/main/2026-01/BRO_TECE_Sanitaerraumplanung_Kompakt_DE_DS00100870c_low.pdf. Barrierefrei und rollstuhlgerecht: Anforderungen der DIN 18040-2:2011-09, zusammengefasst in HEWI, Planungshilfe DIN 18040 (2018), https://www.online-wohn-beratung.de/fileadmin/5b_Produktinfos/Hewi/2018_Download/180125_Planungshilfe_DIN_18040.pdf, S. 19–45, und TECE, Sanitärraumplanung kompakt (01/2026), S. 9. Schutzbereiche: DIN VDE 0100-701:2025-06, zusammengefasst in Dirk Maske, „Orte mit Badewanne oder Dusche“, elektro.net (04.08.2025), https://www.elektro.net/127581/errichten-von-niederspannungsanlagen-teil-7-701-anforderungen-fuer-betriebsstaetten-raeume-und-anlagen-besonderer-art-orte-mit-badewanne-oder-dusche/; Ernst Schneider, elektrofachkraft.de (16.06.2026), https://www.elektrofachkraft.de/e-artikel/din-vde-0100-701-niederspannungsanlagen-an-orten-mit-badewanne-oder-dusche; Meltem, Infoblatt Schutzbereiche nach DIN VDE 0100-701:2025-06 (KW 33/2026), https://www.meltem.com/fileadmin/downloads/documents/Meltem%20Schutzbereiche%20in%20Baedern%20M-WRG-II%20M-WRG.pdf; licht.de, Lichtlexikon „DIN VDE 0100 Teil 701“, https://www.licht.de/de/grundlagen/lichtlexikon/details-lichtlexikon/din-vde-0100-teil-701. Alle abgerufen am 28.10.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "choice",
+  "title": "Badplanung: Montagehöhen, Abstände und Schutzbereiche",
+  "description": "Montagehöhen, Bewegungsflächen, Abstände und elektrische Schutzbereiche im Bad. Alle Maße in cm, Höhen über Oberkante Fertigfußboden (OKFF); OK = Oberkante, UK = Unterkante. Maßgeblich sind die Herstellerangaben und der aktuelle Normtext; die DIN 18040-2 erscheint 2026 neu. Die Elektroinstallation gehört in die Hand einer Elektrofachkraft.",
+  "category": "Montage",
+  "bars": [
+    {
+      "key": "ausfuehrung",
+      "name": "Ausführung",
+      "options": [
+        {
+          "key": "standard",
+          "label": "Standard",
+          "note": "VDI 6000 Blatt 1"
+        },
+        {
+          "key": "barrierefrei",
+          "label": "Barrierefrei nutzbar",
+          "note": "altersgerecht · DIN 18040-2"
+        },
+        {
+          "key": "rollstuhl",
+          "label": "Rollstuhlgerecht",
+          "note": "DIN 18040-2 (R)"
+        }
+      ]
+    },
+    {
+      "key": "bereich",
+      "name": "Bereich",
+      "options": [
+        {
+          "key": "objekte",
+          "label": "Sanitärgegenstände"
+        },
+        {
+          "key": "zubehoer",
+          "label": "Badzubehör"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Sanitärgegenstände – Standard",
+      "when": {
+        "ausfuehrung": "standard",
+        "bereich": "objekte"
+      },
+      "inputName": "Sanitärgegenstand",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "oberkante",
+          "name": "Oberkante",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "eckventile",
+          "name": "Eckventile",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "abwasser",
+          "name": "Abwasseranschluss",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "wandarmatur",
+          "name": "Wandarmatur",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "kopfbrause",
+          "name": "Kopfbrause",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "seitenbrause",
+          "name": "Seitenbrause",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "flaeche",
+          "name": "davor",
+          "group": "Bewegungsflächen"
+        },
+        {
+          "key": "abstandEinbauwaschtisch",
+          "name": "Einbauwaschtisch",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandBidet",
+          "name": "Bidet",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandWaschmaschine",
+          "name": "Waschmaschine, Trockner",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandObjekte",
+          "name": "andere Sanitärgegenstände",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandTuer",
+          "name": "Türöffnung, Türlaibung",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandWand",
+          "name": "Wand",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "abstandWandBeidseitig",
+          "name": "bei Wänden auf beiden Seiten",
+          "unit": "cm",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zone",
+          "name": "Schutzbereich",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone0",
+          "name": "Bereich 0",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone0OhneWanne",
+          "name": "Bereich 0 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone1",
+          "name": "Bereich 1",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone1OhneWanne",
+          "name": "Bereich 1 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone2",
+          "name": "Bereich 2",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone2OhneWanne",
+          "name": "Bereich 2 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "ip0",
+          "name": "Schutzart Bereich 0",
+          "group": "Schutzbereiche (Elektro)",
+          "subheading": "Anforderungen Elektroinstallation"
+        },
+        {
+          "key": "ip12",
+          "name": "Schutzart Bereich 1 und 2",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "schalter",
+          "name": "Schalter und Steckdosen",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "rcd",
+          "name": "Fehlerstromschutz",
+          "group": "Schutzbereiche (Elektro)"
+        }
+      ],
+      "groupNotes": {
+        "Bewegungsflächen": "(Breite × Tiefe)",
+        "Abstandsmaße": "(seitlich, mindestens)",
+        "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)"
+      },
+      "options": [
+        {
+          "label": "Waschtisch",
+          "values": {
+            "oberkante": "85",
+            "eckventile": "55",
+            "abwasser": "50",
+            "wandarmatur": "101",
+            "flaeche": "90 × 55 cm",
+            "abstandObjekte": "20",
+            "abstandBidet": "25",
+            "abstandWand": "20",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
+            "abstandTuer": "10"
+          }
+        },
+        {
+          "label": "Spüle",
+          "values": {
+            "oberkante": "85",
+            "eckventile": "55",
+            "abwasser": "45",
+            "wandarmatur": "112,5",
+            "flaeche": "90 × 120 cm",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
+            "abstandTuer": "10"
+          }
+        },
+        {
+          "label": "WC",
+          "values": {
+            "oberkante": "40",
+            "abwasser": "25",
+            "wandarmatur": "100",
+            "flaeche": "80 × 60 cm",
+            "abstandObjekte": "20",
+            "abstandBidet": "25",
+            "abstandWand": "20",
+            "abstandWandBeidseitig": "25",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
+            "abstandTuer": "10"
+          }
+        },
+        {
+          "label": "Urinal",
+          "values": {
+            "oberkante": "65",
+            "abwasser": "40",
+            "wandarmatur": "115",
+            "flaeche": "60 × 60 cm",
+            "abstandObjekte": "20",
+            "abstandBidet": "25",
+            "abstandWand": "20",
+            "abstandWandBeidseitig": "25",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
+            "abstandTuer": "10"
+          }
+        },
+        {
+          "label": "Bidet",
+          "values": {
+            "oberkante": "40",
+            "eckventile": "20",
+            "abwasser": "12",
+            "wandarmatur": "85",
+            "flaeche": "80 × 60 cm",
+            "abstandObjekte": "25",
+            "abstandWand": "25",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln",
+            "abstandTuer": "10"
+          }
+        },
+        {
+          "label": "Badewanne",
+          "values": {
+            "oberkante": "55",
+            "wandarmatur": "70",
+            "kopfbrause": "180",
+            "seitenbrause": "120",
+            "flaeche": "90 × 75 cm",
+            "abstandObjekte": "20",
+            "abstandEinbauwaschtisch": "15",
+            "abstandBidet": "25",
+            "abstandWaschmaschine": "3",
+            "zone0": "Innenraum der Wanne",
+            "zone1": "über der Wanne bis 225 cm über OKFF, seitlich bis zum Wannenrand",
+            "zone2": "60 cm breiter Streifen um Bereich 1, bis 225 cm über OKFF",
+            "ip0": "IPX7",
+            "ip12": "IPX4, bei Strahlwasser IPX5",
+            "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
+            "rcd": "RCD ≤ 30 mA für alle Stromkreise",
+            "abstandTuer": "10"
+          }
+        },
+        {
+          "label": "Dusche",
+          "values": {
+            "oberkante": "20",
+            "abwasser": "0",
+            "wandarmatur": "120",
+            "kopfbrause": "210",
+            "flaeche": "80 × 75 cm",
+            "abstandObjekte": "20",
+            "abstandEinbauwaschtisch": "15",
+            "abstandBidet": "25",
+            "abstandWaschmaschine": "3",
+            "zone0": "Innenraum der Duschwanne",
+            "zone0OhneWanne": "bis 10 cm über OKFF, im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass",
+            "zone1": "über der Duschwanne bis 225 cm über OKFF, seitlich bis zum Wannenrand",
+            "zone1OhneWanne": "im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass, bis 225 cm über OKFF",
+            "zone2": "60 cm breiter Streifen um Bereich 1, bis 225 cm über OKFF",
+            "zone2OhneWanne": "entfällt",
+            "ip0": "IPX7",
+            "ip12": "IPX4, bei Strahlwasser IPX5",
+            "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
+            "rcd": "RCD ≤ 30 mA für alle Stromkreise",
+            "abstandTuer": "10"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Badzubehör – Standard",
+      "when": {
+        "ausfuehrung": "standard",
+        "bereich": "zubehoer"
+      },
+      "inputName": "Zubehör",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Montagehöhe",
+          "unit": "cm",
+          "group": "Montagehöhen"
+        }
+      ],
+      "options": [
+        {
+          "label": "Spiegel",
+          "values": {
+            "hoehe": "UK 115–120"
+          }
+        },
+        {
+          "label": "Handtuchstange",
+          "values": {
+            "hoehe": "80"
+          }
+        },
+        {
+          "label": "Papierhalter",
+          "values": {
+            "hoehe": "OK 75–95"
+          }
+        },
+        {
+          "label": "Reserve-Papierhalter",
+          "values": {
+            "hoehe": "UK 30"
+          }
+        },
+        {
+          "label": "Bürstenhalter",
+          "values": {
+            "hoehe": "20"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sanitärgegenstände – barrierefrei nutzbar",
+      "when": {
+        "ausfuehrung": "barrierefrei",
+        "bereich": "objekte"
+      },
+      "inputName": "Sanitärgegenstand",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhe",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "vorderkante",
+          "name": "Vorderkante",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "sitz",
+          "name": "Duschsitz",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "armatur",
+          "name": "Duscharmatur",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "griffeOberkante",
+          "name": "Stützklappgriffe, Oberkante über Sitzhöhe",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "flaeche",
+          "name": "davor",
+          "group": "Bewegungsflächen"
+        },
+        {
+          "key": "seitlich",
+          "name": "seitlich",
+          "group": "Bewegungsflächen"
+        },
+        {
+          "key": "ausladung",
+          "name": "WC-Ausladung",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "ruecken",
+          "name": "Rückenstütze hinter der WC-Vorderkante",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "griffUeberstand",
+          "name": "Stützklappgriffe über die WC-Vorderkante hinaus",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "griffAbstand",
+          "name": "Stützklappgriffe, lichter Abstand",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "armaturRand",
+          "name": "Armatur zum vorderen Rand",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "unterfahrbarTiefe",
+          "name": "unterfahrbar, Tiefe",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "unterfahrbarBreite",
+          "name": "unterfahrbar, Breite",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "knie",
+          "name": "Kniefreiheit, Höhe (bis 30 cm hinter der Vorderkante)",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "beinfreiraum",
+          "name": "Beinfreiraum",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "wand",
+          "name": "seitlich zur Wand",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "wandOhneFlaeche",
+          "name": "zur Wand auf der Seite ohne Bewegungsfläche",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zumWaschtisch",
+          "name": "zum Waschtisch",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zuWcDusche",
+          "name": "zu WC oder Dusche",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zone",
+          "name": "Schutzbereich",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone0",
+          "name": "Bereich 0",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone0OhneWanne",
+          "name": "Bereich 0 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone1",
+          "name": "Bereich 1",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone1OhneWanne",
+          "name": "Bereich 1 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone2",
+          "name": "Bereich 2",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone2OhneWanne",
+          "name": "Bereich 2 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "ip0",
+          "name": "Schutzart Bereich 0",
+          "group": "Schutzbereiche (Elektro)",
+          "subheading": "Anforderungen Elektroinstallation"
+        },
+        {
+          "key": "ip12",
+          "name": "Schutzart Bereich 1 und 2",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "schalter",
+          "name": "Schalter und Steckdosen",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "rcd",
+          "name": "Fehlerstromschutz",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "hinweisNutzung",
+          "name": "Nutzung",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisDuschplatz",
+          "name": "Duschplatz",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisSitz",
+          "name": "Duschsitz",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisGriffe",
+          "name": "Stützklappgriffe",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisBedienung",
+          "name": "Spülung und Papierhalter",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisArmatur",
+          "name": "Armatur",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisTemperatur",
+          "name": "Temperaturbegrenzung",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisDuscharmatur",
+          "name": "Duscharmatur",
+          "group": "Hinweise"
+        }
+      ],
+      "groupNotes": {
+        "Bewegungsflächen": "(Breite × Tiefe)",
+        "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)"
+      },
+      "options": [
+        {
+          "label": "WC",
+          "values": {
+            "hoehe": "individuell",
+            "flaeche": "120 × 120 cm",
+            "wand": "mind. 20 cm",
+            "zumWaschtisch": "mind. 20 cm",
+            "hinweisGriffe": "müssen nachrüstbar sein",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln"
+          }
+        },
+        {
+          "label": "Waschtisch",
+          "values": {
+            "hoehe": "individuell",
+            "flaeche": "120 × 120 cm",
+            "beinfreiraum": "erforderlich",
+            "zuWcDusche": "mind. 20 cm",
+            "hinweisNutzung": "muss auch im Sitzen möglich sein",
+            "hinweisArmatur": "Einhebel- oder berührungslos",
+            "hinweisTemperatur": "bei berührungsloser Armatur max. 45 °C am Auslauf",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln"
+          }
+        },
+        {
+          "label": "Dusche",
+          "values": {
+            "flaeche": "120 × 120 cm",
+            "zumWaschtisch": "mind. 20 cm",
+            "hinweisDuschplatz": "bodengleich; darf in die Bewegungsfläche einbezogen werden",
+            "hinweisSitz": "Nachrüstung empfohlen",
+            "hinweisGriffe": "Nachrüstung empfohlen",
+            "hinweisDuscharmatur": "Hebel nach unten weisend",
+            "zone0": "bis 10 cm über OKFF, im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass",
+            "zone1": "im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass, bis 225 cm über OKFF",
+            "zone2": "entfällt",
+            "ip0": "IPX7",
+            "ip12": "IPX4, bei Strahlwasser IPX5",
+            "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
+            "rcd": "RCD ≤ 30 mA für alle Stromkreise"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Badzubehör – barrierefrei nutzbar",
+      "when": {
+        "ausfuehrung": "barrierefrei",
+        "bereich": "zubehoer"
+      },
+      "inputName": "Zubehör",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhe",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "hinweis",
+          "name": "Hinweis",
+          "group": "Hinweise"
+        }
+      ],
+      "options": [
+        {
+          "label": "Spiegel",
+          "values": {
+            "hoehe": "bauseits Platz für einen 100 cm hohen Spiegel unmittelbar über dem Waschtisch"
+          }
+        },
+        {
+          "label": "Papierhalter",
+          "values": {
+            "hoehe": "individuell"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sanitärgegenstände – rollstuhlgerecht",
+      "when": {
+        "ausfuehrung": "rollstuhl",
+        "bereich": "objekte"
+      },
+      "inputName": "Sanitärgegenstand",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhe",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "vorderkante",
+          "name": "Vorderkante",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "sitz",
+          "name": "Duschsitz",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "armatur",
+          "name": "Duscharmatur",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "griffeOberkante",
+          "name": "Stützklappgriffe, Oberkante über Sitzhöhe",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "flaeche",
+          "name": "davor",
+          "group": "Bewegungsflächen"
+        },
+        {
+          "key": "seitlich",
+          "name": "seitlich",
+          "group": "Bewegungsflächen"
+        },
+        {
+          "key": "ausladung",
+          "name": "WC-Ausladung",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "ruecken",
+          "name": "Rückenstütze hinter der WC-Vorderkante",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "griffUeberstand",
+          "name": "Stützklappgriffe über die WC-Vorderkante hinaus",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "griffAbstand",
+          "name": "Stützklappgriffe, lichter Abstand",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "armaturRand",
+          "name": "Armatur zum vorderen Rand",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "unterfahrbarTiefe",
+          "name": "unterfahrbar, Tiefe",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "unterfahrbarBreite",
+          "name": "unterfahrbar, Breite",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "knie",
+          "name": "Kniefreiheit, Höhe (bis 30 cm hinter der Vorderkante)",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "beinfreiraum",
+          "name": "Beinfreiraum",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "wand",
+          "name": "seitlich zur Wand",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "wandOhneFlaeche",
+          "name": "zur Wand auf der Seite ohne Bewegungsfläche",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zumWaschtisch",
+          "name": "zum Waschtisch",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zuWcDusche",
+          "name": "zu WC oder Dusche",
+          "group": "Abstandsmaße"
+        },
+        {
+          "key": "zone",
+          "name": "Schutzbereich",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone0",
+          "name": "Bereich 0",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone0OhneWanne",
+          "name": "Bereich 0 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone1",
+          "name": "Bereich 1",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone1OhneWanne",
+          "name": "Bereich 1 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone2",
+          "name": "Bereich 2",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "zone2OhneWanne",
+          "name": "Bereich 2 ohne Duschwanne",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "ip0",
+          "name": "Schutzart Bereich 0",
+          "group": "Schutzbereiche (Elektro)",
+          "subheading": "Anforderungen Elektroinstallation"
+        },
+        {
+          "key": "ip12",
+          "name": "Schutzart Bereich 1 und 2",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "schalter",
+          "name": "Schalter und Steckdosen",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "rcd",
+          "name": "Fehlerstromschutz",
+          "group": "Schutzbereiche (Elektro)"
+        },
+        {
+          "key": "hinweisNutzung",
+          "name": "Nutzung",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisDuschplatz",
+          "name": "Duschplatz",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisSitz",
+          "name": "Duschsitz",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisGriffe",
+          "name": "Stützklappgriffe",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisBedienung",
+          "name": "Spülung und Papierhalter",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisArmatur",
+          "name": "Armatur",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisTemperatur",
+          "name": "Temperaturbegrenzung",
+          "group": "Hinweise"
+        },
+        {
+          "key": "hinweisDuscharmatur",
+          "name": "Duscharmatur",
+          "group": "Hinweise"
+        }
+      ],
+      "groupNotes": {
+        "Bewegungsflächen": "(Breite × Tiefe)",
+        "Schutzbereiche (Elektro)": "(DIN VDE 0100-701)"
+      },
+      "options": [
+        {
+          "label": "WC",
+          "values": {
+            "hoehe": "46–48 cm inkl. Sitz",
+            "griffeOberkante": "28 cm",
+            "flaeche": "150 × 150 cm",
+            "seitlich": "90 × 70 cm, links oder rechts",
+            "ausladung": "mind. 70 cm",
+            "ruecken": "55 cm",
+            "griffUeberstand": "mind. 15 cm",
+            "griffAbstand": "65–70 cm",
+            "wandOhneFlaeche": "mind. 30 cm",
+            "zumWaschtisch": "mind. 20 cm",
+            "hinweisGriffe": "beidseitig",
+            "hinweisBedienung": "im Sitzen mit Hand oder Arm erreichbar",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln"
+          }
+        },
+        {
+          "label": "Waschtisch",
+          "values": {
+            "vorderkante": "max. 80 cm",
+            "flaeche": "150 × 150 cm",
+            "armaturRand": "max. 40 cm",
+            "unterfahrbarTiefe": "mind. 55 cm",
+            "unterfahrbarBreite": "90 cm",
+            "knie": "67 cm",
+            "zuWcDusche": "mind. 20 cm",
+            "hinweisArmatur": "Einhebel- oder berührungslos",
+            "hinweisTemperatur": "bei berührungsloser Armatur max. 45 °C am Auslauf",
+            "zone": "kein eigener; steht der Gegenstand in Bereich 1 oder 2 einer Wanne oder Dusche, gelten deren Regeln"
+          }
+        },
+        {
+          "label": "Dusche",
+          "values": {
+            "sitz": "46–48 cm",
+            "armatur": "85 cm",
+            "griffeOberkante": "28 cm",
+            "flaeche": "150 × 150 cm",
+            "zumWaschtisch": "mind. 20 cm",
+            "hinweisDuschplatz": "bodengleich; darf in die Bewegungsfläche einbezogen werden",
+            "hinweisGriffe": "beidseitig des Sitzes nachrüstbar",
+            "hinweisDuscharmatur": "Einhebelarmatur mit Handbrause, im Sitzen erreichbar, Hebel nach unten weisend",
+            "zone0": "bis 10 cm über OKFF, im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass",
+            "zone1": "im Umkreis von 120 cm um den festen Brausekopf oder Wasserauslass, bis 225 cm über OKFF",
+            "zone2": "entfällt",
+            "ip0": "IPX7",
+            "ip12": "IPX4, bei Strahlwasser IPX5",
+            "schalter": "in den Bereichen 0, 1 und 2 nicht zulässig",
+            "rcd": "RCD ≤ 30 mA für alle Stromkreise"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Badzubehör – rollstuhlgerecht",
+      "when": {
+        "ausfuehrung": "rollstuhl",
+        "bereich": "zubehoer"
+      },
+      "inputName": "Zubehör",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhe",
+          "group": "Montagehöhen"
+        },
+        {
+          "key": "hinweis",
+          "name": "Hinweis",
+          "group": "Hinweise"
+        }
+      ],
+      "options": [
+        {
+          "label": "Spiegel",
+          "values": {
+            "hoehe": "mind. 100 cm hoch, unmittelbar über dem Waschtisch",
+            "hinweis": "Einsicht im Sitzen und im Stehen"
+          }
+        },
+        {
+          "label": "Papierhalter",
+          "values": {
+            "hinweis": "vom WC aus mit Hand oder Arm erreichbar, ohne die Sitzposition zu verändern"
+          }
+        }
+      ]
+    }
+  ]
+}

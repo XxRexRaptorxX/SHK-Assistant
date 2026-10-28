@@ -70,8 +70,16 @@ Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
 z. B. Thermostatstufen oder Raumarten. Sie haben `sections`, je Abschnitt: `title`, `inputName`
 (z. B. „Einstellung“), `display` (`"scale"`: Stufen nebeneinander in einer Leiste mit Verlauf von
 kalt nach warm, nur für kurze Beschriftungen; `"dropdown"`: Auswahlliste, Standard), `columns` wie
-bei Tabellen-Tools und `options` mit `label`, optional `note` und `values` je Spalte. In der Leiste
-steht die erste Spalte als Kurzinfo unter jeder Stufe.
+bei Tabellen-Tools und `options` mit `label`, optional `note` und `values` je Spalte. Fehlt eine
+Spalte in `values`, wird sie bei dieser Option nicht angezeigt (z. B. Brausehöhen nur bei Wanne und
+Dusche); für „gibt es hier nicht“ die Spalte also weglassen statt `"–"` einzutragen. In der Leiste steht die erste Spalte als
+Kurzinfo unter jeder Stufe. Optional `group` je Spalte: Spalten mit gleicher Gruppe stehen im Ergebnis
+in einem eigenen Block mit Überschrift (z. B. „Montagehöhen“, „Bewegungsflächen“); `groupNotes` je
+Abschnitt (Gruppe → Text) setzt eine graue Legende rechts daneben, z. B. „(Breite × Tiefe)“; `subheading`
+an einer Spalte setzt innerhalb des Blocks ab dieser Zeile eine Zwischenüberschrift. Optional `bars`:
+Leisten ganz oben, untereinander (`key`, `name`, `options` mit `key`, `label`, kleiner zweiter Zeile
+`note`); jeweils die erste Option ist vorausgewählt. Abschnitte mit `when` (Leisten-key → Options-key)
+erscheinen nur bei dieser Stellung; jede Stellung braucht mindestens einen Abschnitt.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:

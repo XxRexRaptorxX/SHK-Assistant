@@ -23,7 +23,9 @@ function lookup(tool: TableTool, raw: string): LookupState {
   return { kind: 'rows', rows: matchingRows(tool, value) }
 }
 
-export const withUnit = (value: string, unit: string) => (unit ? `${value} ${unit}` : value)
+/** Wert mit Einheit; „–“ (kein Wert) und Platzhalter bleiben ohne Einheit */
+export const withUnit = (value: string, unit: string) =>
+  unit && value !== '–' && !value.startsWith('TODO') ? `${value} ${unit}` : value
 const withLabel = (name: string, label: string | undefined) => (label ? `${name} (${label})` : name)
 
 /** Tabellen-Tool: eine Eingabe, dazu die passende(n) Zeile(n) und die ganze Tabelle zum Nachlesen */
