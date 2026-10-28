@@ -55,7 +55,8 @@ Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle
 wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
 „Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, derzeit „Aufmaß“
 (Mengen auf der Baustelle ermitteln), „Auslegung“ (Bedarf vorab abschätzen), „Demonstration“
-(Faustwerte zum Zeigen beim Kunden) und „Montage“ (Vorgaben für den Einbau, z. B. Rohrschellenabstände).
+(Faustwerte zum Zeigen beim Kunden), „Montage“ (Vorgaben für den Einbau, z. B. Rohrschellenabstände)
+und „Wartung“ (Richtwerte für Messungen, z. B. Abgaswerte).
 
 **Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
 Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:

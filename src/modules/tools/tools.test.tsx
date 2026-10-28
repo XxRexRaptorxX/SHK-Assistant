@@ -47,6 +47,7 @@ describe('Tools', () => {
     })
     expect(length).toBeCloseTo(6 * Math.PI, 6)
     expect(toolEntries.map((entry) => entry.title)).toEqual([
+      'Abgaswerte je Brennerart',
       'Ausgerollte Länge einer Rohr- oder Kabelrolle',
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Exakte ausgerollte Länge einer Rohr- oder Kabelrolle',
@@ -579,6 +580,55 @@ describe('Tools', () => {
       'bars: kein Abschnitt für rollstuhl + zubehoer',
       'sections[5] (Badzubehör – rollstuhlgerecht): unbekannte Option "unbekannt" bei "ausfuehrung"',
     ])
+  })
+
+  it('zeigt die Abgaswerte je Brennerart', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.abgaswerte')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    expect(checkChoiceTool(tool)).toEqual([])
+    expect(tool.sections[0]!.options.map((option) => option.label)).toEqual([
+      'Erdgas (Brennwert)',
+      'Erdgas (Gebläsebrenner)',
+      'Erdgas (atmosphärisch)',
+      'Flüssiggas (Propan)',
+      'Heizöl (Brennwert, Blaubrenner)',
+      'Heizöl (Blaubrenner)',
+      'Heizöl (Gelbbrenner)',
+      'Heizöl (Verdampfungsbrenner)',
+      'Pellet / Holz',
+    ])
+    // Neue Brennerarten: λ nach Testo, CO₂ = CO₂max / λ, O₂ = 21 · (1 − 1/λ)
+    const values = (label: string) => tool.sections[0]!.options.find((option) => option.label === label)!.values
+    const range = (text: string) => text.match(/[\d,]+/g)!.slice(0, 2).map((part) => Number(part.replace(',', '.')))
+    const check = (label: string, co2max: number) => {
+      const [low, high] = range(values(label).lambda!)
+      expect(range(values(label).co2!)).toEqual([Math.round((co2max / high!) * 10) / 10, Math.round((co2max / low!) * 10) / 10])
+      expect(range(values(label).o2!)).toEqual([Math.round(21 * (1 - 1 / low!) * 10) / 10, Math.round(21 * (1 - 1 / high!) * 10) / 10])
+    }
+    check('Erdgas (Gebläsebrenner)', 11.7)
+    check('Flüssiggas (Propan)', 13.9)
+    check('Heizöl (Brennwert, Blaubrenner)', 15.4)
+    check('Heizöl (Gelbbrenner)', 15.4)
+    check('Heizöl (Verdampfungsbrenner)', 15.4)
+    expect(values('Heizöl (Verdampfungsbrenner)').grenzRuss).toBe('max. 2 (bis 11 kW, errichtet vor 1.11.1996: max. 3)')
+    expect(values('Heizöl (Gelbbrenner)').grenzRuss).toBe('max. 1')
+    // Abgeglichene Richtwerte des Inhabers: O₂ passend zu CO₂, Brennwert unter dem Taupunkt
+    expect(values('Erdgas (Brennwert)')).toMatchObject({ co2: '8,5–10,5 Vol.-%', o2: '2–6 Vol.-%', temperatur: '30–60 °C', verlust: '< 3 %' })
+    expect(values('Heizöl (Blaubrenner)').o2).toBe('2–4 Vol.-%')
+    const html = renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: 'Heizöl (Blaubrenner)' }} />)
+    expect(html).toMatch(/Kohlendioxid \(CO₂\)<\/dt><dd[^>]*>12,5–13,5 Vol.-%<\/dd>/)
+    expect(html).toMatch(/Abgastemperatur<\/dt><dd[^>]*>90–160 °C<\/dd>/)
+    // Gesetzliche Grenzwerte als eigener Block
+    expect(html).toContain('Gesetzliche Grenzwerte</h3>')
+    expect(html).toMatch(/Rußzahl<\/dt><dd[^>]*>max. 1<\/dd>/)
+    expect(html).toMatch(/Abgasverlust 4–25 kW<\/dt><dd[^>]*>max. 11 %<\/dd>/)
+    expect(html).toMatch(/CO, unverdünnt und trocken<\/dt><dd[^>]*>max. 1 000 ppm<\/dd>/)
+    const solid = renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: 'Pellet / Holz' }} />)
+    expect(solid).toMatch(/Staub<\/dt><dd[^>]*>max. 0,02 g\/m³<\/dd>/)
+    expect(solid).not.toContain('Abgasverlust 4–25 kW')
+    // Keine Leisten: Abschnittstitel sichtbar
+    expect(html).toContain('<h2 id="')
+    expect(html).toContain('class="text-xl font-bold">Abgaswerte</h2>')
   })
 
   it('ermittelt die Gebäudeklasse nach Art. 2 Abs. 3 BayBO', () => {

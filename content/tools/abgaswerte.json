@@ -1,0 +1,251 @@
+{
+  "id": "tool.abgaswerte",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Richtwerte für Erdgas (Brennwert), Erdgas (atmosphärisch), Heizöl (Blaubrenner) und Pellet/Holz: Richtwerttabelle des Inhabers (Vorgabe vom 28.10.2026), auf seinen Wunsch abgeglichen mit der Testo-Praxis-Fibel: Erdgas (Brennwert) CO₂ 8,5–10,5 % statt bis 11,8 % (CO₂max), O₂ 2–6 %, Abgastemperatur 30–60 °C (unter dem Taupunkt), Abgasverlust nur Brennwert; Heizöl (Blaubrenner) O₂ 2–4 % passend zu CO₂ 12,5–13,5 %. Übrige Brennerarten: Testo AG, Praxis-Fibel Heizungs-Messtechnik (08/2015), https://static-int.testo.com/media/dc/63/06ef41e110ee/Fibel-Heizungs-Messtechnik.pdf: Luftüberschuss je Brennerbauart (Gasgebläsebrenner 10–30 %, Propan 20–40 %, Öl-Blaubrenner 10–20 %, Gelbbrenner 15–30 %, Verdampfungsbrenner 30–40 %), CO₂max (Erdgas 11,7 %, Propan 13,9 %, Heizöl EL 15,4 %), typisches CO (Gas 80–100 ppm, Öl 80–150 ppm), Abgastemperaturen konventioneller Kessel (Gas über 100–260 °C, Öl über 160–260 °C) und Taupunkte (Heizöl und Propan ca. 45–50 °C); CO₂ und O₂ daraus berechnet mit CO₂ = CO₂max / λ und O₂ = 21 · (1 − 1/λ). Grenzwerte: 1. BImSchV § 5 Abs. 1 (feste Brennstoffe, Stufe 2), § 7 (Ölfeuerung mit Verdampfungsbrenner), § 8 (Ölfeuerung mit Zerstäubungsbrenner), § 10 Abs. 1 und 3 (Abgasverluste) und § 14 Abs. 3 Nr. 4 (Brennwertgeräte), https://www.gesetze-im-internet.de/bimschv_1_2010/; KÜO § 1 Abs. 2 (CO bei flüssigen und gasförmigen Brennstoffen), https://www.gesetze-im-internet.de/k_o/__1.html. Abgerufen am 28.10.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "choice",
+  "title": "Abgaswerte je Brennerart",
+  "description": "Zeigt je Brennerart die üblichen Abgaswerte als Anhalt für die Abgasmessung und die gesetzlichen Grenzwerte nach 1. BImSchV und Kehr- und Überprüfungsordnung (KÜO). Maßgeblich sind außerdem die Angaben des Geräteherstellers.",
+  "category": "Wartung",
+  "sections": [
+    {
+      "title": "Abgaswerte",
+      "inputName": "Brennerart",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "lambda",
+          "name": "Luftzahl λ",
+          "group": "Richtwerte"
+        },
+        {
+          "key": "co",
+          "name": "Kohlenmonoxid (CO)",
+          "group": "Richtwerte"
+        },
+        {
+          "key": "co2",
+          "name": "Kohlendioxid (CO₂)",
+          "group": "Richtwerte"
+        },
+        {
+          "key": "o2",
+          "name": "Sauerstoff (O₂)",
+          "group": "Richtwerte"
+        },
+        {
+          "key": "temperatur",
+          "name": "Abgastemperatur",
+          "group": "Richtwerte"
+        },
+        {
+          "key": "verlust",
+          "name": "Abgasverlust",
+          "group": "Richtwerte"
+        },
+        {
+          "key": "grenzCo",
+          "name": "CO, unverdünnt und trocken",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzCoEmission",
+          "name": "CO-Emission",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzRuss",
+          "name": "Rußzahl",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzOelderivate",
+          "name": "Ölderivate",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzVerlust",
+          "name": "Abgasverlust",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzVerlust25",
+          "name": "Abgasverlust 4–25 kW",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzVerlust50",
+          "name": "Abgasverlust über 25–50 kW",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzVerlustUeber50",
+          "name": "Abgasverlust über 50 kW",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzStaub",
+          "name": "Staub",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzCoFest",
+          "name": "CO",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzBezug",
+          "name": "gilt für",
+          "group": "Gesetzliche Grenzwerte"
+        },
+        {
+          "key": "grenzAusnahme",
+          "name": "Ausnahme",
+          "group": "Gesetzliche Grenzwerte"
+        }
+      ],
+      "options": [
+        {
+          "label": "Erdgas (Brennwert)",
+          "values": {
+            "co": "< 30 ppm ideal, < 80 ppm ok",
+            "co2": "8,5–10,5 Vol.-%",
+            "o2": "2–6 Vol.-%",
+            "temperatur": "30–60 °C",
+            "verlust": "< 3 %",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzVerlust": "wird bei Brennwertgeräten nicht gemessen"
+          }
+        },
+        {
+          "label": "Erdgas (Gebläsebrenner)",
+          "values": {
+            "lambda": "1,1–1,3",
+            "co": "80–100 ppm",
+            "co2": "9,0–10,6 Vol.-%",
+            "o2": "1,9–4,8 Vol.-%",
+            "temperatur": "100–260 °C (Kessel ohne Brennwert)",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzVerlust25": "max. 11 %",
+            "grenzVerlust50": "max. 10 %",
+            "grenzVerlustUeber50": "max. 9 %"
+          }
+        },
+        {
+          "label": "Erdgas (atmosphärisch)",
+          "values": {
+            "co": "< 80 ppm",
+            "co2": "4–11 Vol.-%",
+            "o2": "3–13 Vol.-%",
+            "temperatur": "80–200 °C",
+            "verlust": "5–11 %",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzVerlust25": "max. 11 %",
+            "grenzVerlust50": "max. 10 %",
+            "grenzVerlustUeber50": "max. 9 %"
+          }
+        },
+        {
+          "label": "Flüssiggas (Propan)",
+          "values": {
+            "lambda": "1,2–1,4",
+            "co": "80–100 ppm",
+            "co2": "9,9–11,6 Vol.-%",
+            "o2": "3,5–6,0 Vol.-%",
+            "temperatur": "Brennwert: unter dem Taupunkt von ca. 45–50 °C",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzVerlust": "bei Brennwertgeräten keine Messung",
+            "grenzVerlust25": "max. 11 %",
+            "grenzVerlust50": "max. 10 %",
+            "grenzVerlustUeber50": "max. 9 %"
+          }
+        },
+        {
+          "label": "Heizöl (Brennwert, Blaubrenner)",
+          "values": {
+            "lambda": "1,1–1,2",
+            "co": "80–150 ppm",
+            "co2": "12,8–14,0 Vol.-%",
+            "o2": "1,9–3,5 Vol.-%",
+            "temperatur": "unter dem Taupunkt von ca. 45–50 °C",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzCoEmission": "max. 1 300 mg/kWh",
+            "grenzRuss": "max. 1",
+            "grenzOelderivate": "keine",
+            "grenzVerlust": "wird bei Brennwertgeräten nicht gemessen"
+          }
+        },
+        {
+          "label": "Heizöl (Blaubrenner)",
+          "values": {
+            "co": "< 50–100 ppm",
+            "co2": "12,5–13,5 Vol.-%",
+            "o2": "2–4 Vol.-%",
+            "temperatur": "90–160 °C",
+            "verlust": "5–11 %",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzCoEmission": "max. 1 300 mg/kWh",
+            "grenzRuss": "max. 1",
+            "grenzOelderivate": "keine",
+            "grenzVerlust25": "max. 11 %",
+            "grenzVerlust50": "max. 10 %",
+            "grenzVerlustUeber50": "max. 9 %"
+          }
+        },
+        {
+          "label": "Heizöl (Gelbbrenner)",
+          "values": {
+            "lambda": "1,15–1,3",
+            "co": "80–150 ppm",
+            "co2": "11,8–13,4 Vol.-%",
+            "o2": "2,7–4,8 Vol.-%",
+            "temperatur": "160–260 °C (Kessel ohne Brennwert)",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzCoEmission": "max. 1 300 mg/kWh",
+            "grenzRuss": "max. 1",
+            "grenzOelderivate": "keine",
+            "grenzVerlust25": "max. 11 %",
+            "grenzVerlust50": "max. 10 %",
+            "grenzVerlustUeber50": "max. 9 %"
+          }
+        },
+        {
+          "label": "Heizöl (Verdampfungsbrenner)",
+          "values": {
+            "lambda": "1,3–1,4",
+            "co": "80–150 ppm",
+            "co2": "11,0–11,8 Vol.-%",
+            "o2": "4,8–6,0 Vol.-%",
+            "grenzCo": "max. 1 000 ppm",
+            "grenzCoEmission": "max. 1 300 mg/kWh",
+            "grenzRuss": "max. 2 (bis 11 kW, errichtet vor 1.11.1996: max. 3)",
+            "grenzOelderivate": "keine",
+            "grenzVerlust25": "max. 11 %",
+            "grenzVerlust50": "max. 10 %",
+            "grenzVerlustUeber50": "max. 9 %",
+            "grenzAusnahme": "kein Abgasverlust-Grenzwert für Einzelraumfeuerungen bis 11 kW"
+          }
+        },
+        {
+          "label": "Pellet / Holz",
+          "values": {
+            "co": "< 100–300 ppm",
+            "co2": "systemabhängig",
+            "o2": "6–15 Vol.-%",
+            "temperatur": "80–300 °C",
+            "verlust": "5–12 %",
+            "grenzStaub": "max. 0,02 g/m³",
+            "grenzCoFest": "max. 0,4 g/m³",
+            "grenzBezug": "Kessel ab 4 kW, errichtet ab 2015 (Scheitholz ab 2017), bezogen auf 13 % O₂"
+          }
+        }
+      ],
+      "groupNotes": {
+        "Richtwerte": "(Anhaltswerte)",
+        "Gesetzliche Grenzwerte": "(1. BImSchV, KÜO)"
+      }
+    }
+  ]
+}
