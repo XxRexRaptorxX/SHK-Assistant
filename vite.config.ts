@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
           id: './',
           name: 'SHK-Assistant',
           short_name: 'SHK-Assistant',
-          description: 'Werkzeugkasten für Heizungsbauer',
+          description: 'Werkzeugkasten für Heizungsbauer – von Heizungsbauern, für Heizungsbauern!',
           lang: 'de',
           start_url: './',
           scope: './',

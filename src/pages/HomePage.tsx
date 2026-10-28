@@ -3,6 +3,7 @@ import { createSearchParams, Link, useNavigate } from 'react-router'
 import { homeTileModules, modules, type AppModule } from '../app/modules'
 import { pageTitle } from '../components/headings'
 import { SearchInput } from '../components/SearchInput'
+import { Slogan } from '../components/Slogan'
 import { chip, featureCard } from '../components/surfaces'
 import { content } from '../content'
 import { CALCULATORS } from '../modules/calculator/calculators'
@@ -68,6 +69,7 @@ export function HomePage() {
   return (
     <>
       <h1 className={pageTitle}>Werkzeugkasten</h1>
+      <Slogan className="mt-1" />
       <form role="search" onSubmit={submit} className="mt-4 mb-5 flex gap-2">
         <SearchInput
           id="home-search"

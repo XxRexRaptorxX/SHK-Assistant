@@ -7,6 +7,9 @@ import { DraftBadge } from './DraftBadge'
 import { RichText } from './RichText'
 import { SourceInfo } from './SourceInfo'
 import { splitLinks } from '../lib/links'
+import { MemoryRouter } from 'react-router'
+import { HomePage } from '../pages/HomePage'
+import { Slogan } from './Slogan'
 
 const verified: BaseEntry = {
   id: 'item.beispiel',
@@ -84,6 +87,20 @@ describe('splitLinks', () => {
       { text: ')' },
     ])
     expect(splitLinks('ohne Adresse')).toEqual([{ text: 'ohne Adresse' }])
+  })
+})
+
+describe('Slogan', () => {
+  it('steht auf der Startseite und hebt „Heizungsbauern“ hervor', () => {
+    const html = renderToStaticMarkup(
+      <MemoryRouter>
+        <HomePage />
+      </MemoryRouter>,
+    )
+    expect(html).toContain(
+      'Von <span class="text-accent">Heizungsbauern</span>, für <span class="text-accent">Heizungsbauern</span>!',
+    )
+    expect(renderToStaticMarkup(<Slogan />).replace(/<[^>]+>/g, '')).toBe('Von Heizungsbauern, für Heizungsbauern!')
   })
 })
 

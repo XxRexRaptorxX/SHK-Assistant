@@ -14,6 +14,7 @@ import { useTheme } from '../theme/useTheme'
 import { detectPlatform, promptInstall, useInstallState, type Platform } from './install'
 import { updateSettings, useSettings } from './settings'
 import { pageTitle } from '../components/headings'
+import { Slogan } from '../components/Slogan'
 import { listCard } from '../components/surfaces'
 import { LEGAL_PAGES } from '../modules/legal/legal'
 
@@ -234,6 +235,7 @@ function AboutSection() {
   ]
   return (
     <>
+      <Slogan className="mb-4 text-center" />
       {/* Block mittig, Bezeichnungen und Werte jeweils linksbündig untereinander */}
       <dl className="mx-auto grid w-fit grid-cols-[auto_auto] gap-x-4 gap-y-1 text-base">
         <dt className="font-semibold">Version</dt>
