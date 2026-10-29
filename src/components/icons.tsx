@@ -105,11 +105,12 @@ export function NewsIcon(props: IconProps) {
   )
 }
 
-/** Rechenzeichen + − × ÷ */
-export function OperatorsIcon(props: IconProps) {
+/** Wurzel aus x: Formeln */
+export function FormulaIcon(props: IconProps) {
   return (
     <Icon {...props}>
-      <path d="M7 4v6M4 7h6M14 7h6M4.5 14.5l5 5M9.5 14.5l-5 5M14 17h6M17 14h.01M17 20h.01" />
+      <path d="M2.5 13H5l3.5 7L13 4h8.5" />
+      <path d="m14.5 9 5 6M19.5 9l-5 6" />
     </Icon>
   )
 }
@@ -162,11 +163,12 @@ export function MailIcon(props: IconProps) {
   )
 }
 
-/** Schraubenschlüssel: Werkzeuge */
-export function WrenchIcon(props: IconProps) {
+/** Gabelschlüssel und Schraubendreher gekreuzt: Tools (Werkzeug zum Einstellen) */
+export function ToolsIcon(props: IconProps) {
   return (
     <Icon {...props}>
-      <path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-4-4 1.7-1.3a4 4 0 0 0-5-5L3 7l4-4 2.7 1.3a4 4 0 0 0 5 2Z" />
+      <path d="M11.9 9.8 3.1 18.7a1.6 1.6 0 0 0 2.2 2.2l8.9-8.8a4.5 4.5 0 0 0 6-5.6l-2.1 2.1-2.7-2.7 2.1-2.1a4.5 4.5 0 0 0-5.6 6Z" />
+      <path d="M3.5 3.5l7 7M12.6 15.2l2.6-2.6 5.8 5.8a1.8 1.8 0 0 1-2.6 2.6Z" />
     </Icon>
   )
 }

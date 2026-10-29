@@ -4,13 +4,13 @@ import {
   CalculatorIcon,
   ChecklistIcon,
   ConvertIcon,
+  FormulaIcon,
   GearIcon,
   KeyIcon,
   NewsIcon,
-  OperatorsIcon,
   SearchIcon,
   StarIcon,
-  WrenchIcon,
+  ToolsIcon,
   type IconProps,
 } from '../components/icons'
 
@@ -29,13 +29,13 @@ export const modules = {
     path: '/tools',
     title: 'Tools',
     description: 'Praktische Rechenhelfer',
-    icon: WrenchIcon,
+    icon: ToolsIcon,
   },
   formulas: {
     path: '/formeln',
     title: 'Formeln',
     description: 'Formelsammlung mit Rechner',
-    icon: CalculatorIcon,
+    icon: FormulaIcon,
   },
   converter: {
     path: '/umrechner',
@@ -60,7 +60,7 @@ export const modules = {
     title: 'Taschenrechner',
     navTitle: 'Rechner',
     description: 'Standard, Wissenschaft, Grafik',
-    icon: OperatorsIcon,
+    icon: CalculatorIcon,
   },
   news: {
     path: '/news',
