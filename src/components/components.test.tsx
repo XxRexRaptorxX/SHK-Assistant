@@ -7,6 +7,7 @@ import { DraftBadge } from './DraftBadge'
 import { RichText } from './RichText'
 import { SourceInfo } from './SourceInfo'
 import { splitLinks } from '../lib/links'
+import { splitSources } from '../lib/sources'
 import { MemoryRouter } from 'react-router'
 import { HomePage } from '../pages/HomePage'
 import { Slogan } from './Slogan'
@@ -69,8 +70,33 @@ describe('SourceInfo', () => {
     const html = renderToStaticMarkup(<SourceInfo entry={{ ...verified, source }} />)
     expect(html).toContain('href="https://de.wikipedia.org/wiki/Ventil_(Technik)"')
     expect(html).toContain('href="https://example.org/a.pdf"')
-    expect(html).toContain('<span>Wikipedia „Ventil“, </span>')
-    expect(html).toContain('<span>; Hersteller, </span>')
+    expect(html).toContain('<li><span>Wikipedia „Ventil“, </span>')
+    expect(html).toContain('<li><span>Hersteller, </span>')
+  })
+
+  it('zeigt mehrere Quellen als Aufzählung in einem scrollbaren Bereich, eine einzelne als Text', () => {
+    const html = renderToStaticMarkup(<SourceInfo entry={{ ...verified, source: 'Erste Quelle; zweite Quelle' }} />)
+    expect(html).toContain('class="max-h-48 overflow-y-auto')
+    expect(html).toContain('aria-label="Quellenangaben"')
+    expect(html.match(/<li>/g)).toHaveLength(2)
+    expect(renderToStaticMarkup(<SourceInfo entry={verified} />)).not.toContain('<ul')
+  })
+})
+
+describe('splitSources', () => {
+  it('trennt an Semikolon und Satzende, aber nicht nach Abkürzungen, Ordnungszahlen oder in Klammern', () => {
+    expect(
+      splitSources(
+        'Norm A, S. 12 (Abs. 3; Tab. 2). 1. BImSchV § 10 Abs. 1; Hersteller B, https://example.org/a.pdf. Abgerufen am 28.10.2026.',
+      ),
+    ).toEqual([
+      // vor einer Zahl wird nicht getrennt, damit „1. BImSchV“ zusammenbleibt
+      'Norm A, S. 12 (Abs. 3; Tab. 2). 1. BImSchV § 10 Abs. 1',
+      'Hersteller B, https://example.org/a.pdf.',
+      'Abgerufen am 28.10.2026.',
+    ])
+    expect(splitSources('z. B. Lüftung nach DIN 1946-6')).toEqual(['z. B. Lüftung nach DIN 1946-6'])
+    expect(splitSources('  ')).toEqual([])
   })
 })
 
