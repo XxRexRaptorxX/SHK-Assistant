@@ -1,7 +1,8 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 import { FormulaLine } from './FormulaDetailPage'
-import { FormulaMath } from './FormulaMath'
+import { Calculator } from './Calculator'
+import { constantSubstitution, FormulaMath, quantitySubstitution } from './FormulaMath'
 import { formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
 
@@ -14,8 +15,8 @@ const formula = (id: string) => {
 }
 
 /** Sichtbarer Text mit | als Bruchstrich: Zähler|Nenner */
-function plain(entry: FormulaEntry): string {
-  return renderToStaticMarkup(<FormulaMath formula={entry} />)
+function plain(entry: FormulaEntry, substitutions?: Parameters<typeof FormulaMath>[0]['substitutions']): string {
+  return renderToStaticMarkup(<FormulaMath formula={entry} substitutions={substitutions} />)
     .replace(/<span class="w-full border-t-2[^>]*>/g, '|')
     .replace(/<sup[^>]*>/g, '^')
     .replace(/<[^>]+>/g, '')
@@ -63,5 +64,34 @@ describe('Formelzeile', () => {
     expect(html).toContain('A○ = π · d ^ 2 / 4')
     expect(html).toContain('aria-label="Als Bruch anzeigen"')
     expect(html).toContain('font-mono')
+  })
+})
+
+describe('Rechenweg', () => {
+  it('setzt Werte mit Einheit ein, klammert sie als Potenzbasis und lässt fehlende Symbole stehen', () => {
+    const pipe = formula('formula.hydraulik.fliessgeschwindigkeit-rohr')
+    const both = new Map([
+      ['Vdot', quantitySubstitution(2, 'm^3/h')],
+      ['d', quantitySubstitution(25, 'mm')],
+    ])
+    expect(plain(pipe, both)).toBe('4·2 m³/h|π·(25 mm)^2')
+    expect(plain(pipe, new Map([['d', quantitySubstitution(25, 'mm')]]))).toBe('4·V̇|π·(25 mm)^2')
+  })
+
+  it('klammert negative Zahlen und setzt Konstanten mit Zahlenwert ein, Ausdrücke wie √3 nicht', () => {
+    expect(renderToStaticMarkup(<>{quantitySubstitution(-3, '').node}</>)).toBe('(−3)')
+    expect(renderToStaticMarkup(<>{constantSubstitution('9.80665 m/s^2')!.node}</>)).toContain('9,80665')
+    expect(constantSubstitution('sqrt(3)')).toBeUndefined()
+    expect(renderToStaticMarkup(<>{constantSubstitution('360 deg')!.node}</>).replace(/<[^>]+>/g, '')).toBe('360°')
+  })
+
+  it('schaltet im Ergebnis zwischen Ergebnis und Rechenweg um', () => {
+    const pressure = formula('formula.hydraulik.hydrostatischer-druck')
+    const plainResult = renderToStaticMarkup(<Calculator formula={pressure} showWorking={false} />)
+    expect(plainResult).toContain('aria-label="Rechenweg anzeigen"')
+    expect(plainResult).not.toContain('9,80665')
+    const working = renderToStaticMarkup(<Calculator formula={pressure} showWorking />)
+    expect(working).toContain('aria-pressed="true" title="Nur Ergebnis anzeigen"')
+    expect(working).toContain('9,80665')
   })
 })

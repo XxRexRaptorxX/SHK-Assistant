@@ -171,6 +171,26 @@ export function WrenchIcon(props: IconProps) {
   )
 }
 
+/** Rechenweg: Gleichheitszeichen und ein Bruch mit Zahlen (½) */
+export function WorkingIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M2.5 10h6M2.5 14h6M12 12h9.5" />
+      <path d="M15.5 4.5 17 3.5v5" />
+      <path d="M15 16.3a1.8 1.8 0 1 1 3.2 1.1L15 21h3.6" />
+    </Icon>
+  )
+}
+
+/** Ergebnis ohne Rechenweg: großes Gleichheitszeichen */
+export function EqualsIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M5 9h14M5 15h14" />
+    </Icon>
+  )
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <Icon {...props}>

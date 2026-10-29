@@ -13,9 +13,11 @@ export interface Settings {
   shakeToReport: boolean
   /** Formeln in einer Zeile mit / statt als Bruch (Standard: aus) */
   linearFormulas: boolean
+  /** Rechner: Ergebnis als Rechenweg mit eingesetzten Zahlen (Standard: aus) */
+  showWorking: boolean
 }
 
-export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true, shakeToReport: true, linearFormulas: false }
+export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true, shakeToReport: true, linearFormulas: false, showWorking: false }
 
 /** Liest gespeicherte Einstellungen; Unbekanntes oder Kaputtes fällt auf die Standardwerte zurück. */
 export function parseSettings(raw: string | null): Settings {
@@ -28,6 +30,7 @@ export function parseSettings(raw: string | null): Settings {
       showUnitNames: flag('showUnitNames'),
       shakeToReport: flag('shakeToReport'),
       linearFormulas: flag('linearFormulas'),
+      showWorking: flag('showWorking'),
     }
   } catch {
     return DEFAULT_SETTINGS

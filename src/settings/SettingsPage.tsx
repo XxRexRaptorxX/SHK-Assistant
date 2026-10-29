@@ -267,6 +267,14 @@ export function SettingsPage() {
               onChange={(linearFormulas) => updateSettings({ linearFormulas })}
             />
           </div>
+          <div className="mt-3">
+            <Switch
+              label="Rechenweg im Ergebnis zeigen"
+              description="Zeigt im Ergebnis eines Rechners die Formel mit den eingesetzten Zahlen. Umschalten geht auch direkt im Ergebnis. Standard: aus."
+              checked={settings.showWorking}
+              onChange={(showWorking) => updateSettings({ showWorking })}
+            />
+          </div>
           <HiddenEntries />
         </Section>
         <Section title="Design">

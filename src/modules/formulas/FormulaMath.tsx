@@ -1,6 +1,8 @@
 import { Fragment, type ReactNode } from 'react'
 import type { MathNode } from 'mathjs'
 import { math } from '../../lib/math'
+import { formatSignificant } from '../../lib/number'
+import { formatAnyUnit } from '../units/labels'
 import { BUILTIN_CONSTANTS } from './engine'
 import type { FormulaEntry } from './schema'
 
@@ -42,7 +44,14 @@ const MULTIPLY = <span className="mx-1">·</span>
 
 const OPERATOR_SIGNS: Record<string, string> = { add: '+', subtract: '−' }
 
-type Labels = ReadonlyMap<string, string>
+/** Eingesetzter Wert statt eines Symbols (Rechenweg) */
+export interface Substitution {
+  node: ReactNode
+  /** Zahl mit Einheit: als Basis einer Potenz in Klammern, (3 m)² statt 3 m² */
+  compound: boolean
+}
+
+type Labels = ReadonlyMap<string, string | Substitution>
 
 /** Ein Faktor des Produkts; inverted = steht im Nenner */
 interface Factor {
@@ -92,9 +101,17 @@ function formatNumber(value: unknown): string {
   return String(value).replace('.', ',')
 }
 
+/** Potenzbasis oder Ziel eines Minus: eingesetzte Zahl mit Einheit eingeklammert */
+function renderOperand(node: MathNode, labels: Labels): ReactNode {
+  const label = math.isSymbolNode(node) ? labels.get(node.name) : undefined
+  return typeof label === 'object' && label.compound ? <>({label.node})</> : renderNode(node, labels)
+}
+
 export function renderNode(node: MathNode, labels: Labels): ReactNode {
   if (math.isSymbolNode(node)) {
-    return labels.get(node.name) ?? BUILTIN_CONSTANTS[node.name]?.label ?? node.name
+    const label = labels.get(node.name)
+    if (typeof label === 'object') return label.node
+    return label ?? BUILTIN_CONSTANTS[node.name]?.label ?? node.name
   }
   if (math.isConstantNode(node)) return formatNumber(node.value)
   if (math.isParenthesisNode(node)) {
@@ -120,12 +137,12 @@ export function renderNode(node: MathNode, labels: Labels): ReactNode {
       const [base, exponent] = node.args
       return (
         <>
-          {renderNode(base!, labels)}
+          {renderOperand(base!, labels)}
           <sup className="text-[0.65em]">{renderNode(unwrap(exponent!), labels)}</sup>
         </>
       )
     }
-    if (node.fn === 'unaryMinus') return <>−{renderNode(node.args[0]!, labels)}</>
+    if (node.fn === 'unaryMinus') return <>−{renderOperand(node.args[0]!, labels)}</>
     if (node.fn === 'unaryPlus') return renderNode(node.args[0]!, labels)
     const sign = OPERATOR_SIGNS[node.fn] ?? node.op
     return join(
@@ -149,11 +166,45 @@ export function renderNode(node: MathNode, labels: Labels): ReactNode {
   return node.toString()
 }
 
-/** Ausdruck der Formel in Bruchschreibweise */
-export function FormulaMath({ formula }: { formula: FormulaEntry }) {
-  const labels = new Map<string, string>()
+/**
+ * Ausdruck der Formel in Bruchschreibweise. Mit substitutions stehen statt der Symbole
+ * die eingesetzten Werte da (Rechenweg); Symbole ohne Wert bleiben stehen.
+ */
+export function FormulaMath({
+  formula,
+  substitutions,
+}: {
+  formula: FormulaEntry
+  substitutions?: ReadonlyMap<string, Substitution>
+}) {
+  const labels = new Map<string, string | Substitution>()
   for (const item of [...formula.variables, ...formula.constants]) {
     if (item.label) labels.set(item.symbol, item.label)
   }
+  for (const [symbol, substitution] of substitutions ?? []) labels.set(symbol, substitution)
   return <>{renderNode(math.parse(formula.expression), labels)}</>
+}
+
+/** Zahl mit Einheit als eingesetzter Wert; negative Zahlen eingeklammert, damit 2 · (−3) lesbar bleibt */
+export function quantitySubstitution(value: number, unit: string): Substitution {
+  const shown = value < 0 ? `(−${formatSignificant(-value)})` : formatSignificant(value)
+  if (unit === '') return { node: shown, compound: false }
+  const label = formatAnyUnit(unit)
+  return {
+    node: (
+      <span className="whitespace-nowrap">
+        {shown}
+        {/* Winkelgrad ohne Abstand (90°), sonst mit (25 mm, 20 °C) */}
+        <span className="text-[0.8em] text-muted">{label === '°' ? label : ` ${label}`}</span>
+      </span>
+    ),
+    compound: true,
+  }
+}
+
+/** Konstante wie "9.80665 m/s^2" als eingesetzter Wert; Ausdrücke wie sqrt(3) bleiben als Zeichen (√3) stehen */
+export function constantSubstitution(value: string): Substitution | undefined {
+  const match = /^\s*([-+]?\d+(?:\.\d+)?(?:e[-+]?\d+)?)\s*(.*?)\s*$/i.exec(value)
+  if (!match) return undefined
+  return quantitySubstitution(Number(match[1]), match[2]!)
 }
