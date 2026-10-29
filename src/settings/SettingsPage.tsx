@@ -11,7 +11,8 @@ import { CONTACT_EMAIL, KOFI_URL } from '../config/links'
 import { usePageTitle } from '../lib/usePageTitle'
 import { THEME_LABELS, THEME_PREFERENCES, type ThemePreference } from '../theme/theme'
 import { useTheme } from '../theme/useTheme'
-import { detectPlatform, promptInstall, useInstallState, type Platform } from './install'
+import { promptInstall, useInstallState, type Platform } from './install'
+import { currentPlatform, INSTALL_GUIDES, InstallGuide } from './InstallGuide'
 import { updateSettings, useSettings } from './settings'
 import { pageTitle } from '../components/headings'
 import { Slogan } from '../components/Slogan'
@@ -111,46 +112,9 @@ function ThemeChoice({ value, onChange }: { value: ThemePreference; onChange: (v
   )
 }
 
-const INSTALL_GUIDES: Record<Platform, { title: string; steps: string[] }> = {
-  ios: {
-    title: 'iPhone und iPad (Safari)',
-    steps: [
-      'Die App in Safari öffnen.',
-      'Unten (iPad: oben) auf das Teilen-Symbol tippen (Quadrat mit Pfeil nach oben).',
-      '„Zum Home-Bildschirm“ wählen und mit „Hinzufügen“ bestätigen.',
-    ],
-  },
-  android: {
-    title: 'Android (Chrome, Samsung Internet, Firefox)',
-    steps: [
-      'Das Browser-Menü öffnen (⋮ oben rechts bzw. ≡ unten).',
-      '„App installieren“ oder „Zum Startbildschirm hinzufügen“ wählen.',
-      'Mit „Installieren“ bzw. „Hinzufügen“ bestätigen.',
-    ],
-  },
-  desktop: {
-    title: 'Computer (Chrome, Edge)',
-    steps: [
-      'Rechts in der Adressleiste auf das Installieren-Symbol klicken.',
-      'Alternativ im Menü (⋮ bzw. …) „App installieren“ wählen.',
-    ],
-  },
-}
-
-function Guide({ platform }: { platform: Platform }) {
-  const guide = INSTALL_GUIDES[platform]
-  return (
-    <ol className="mt-2 list-decimal space-y-1 pl-6">
-      {guide.steps.map((step) => (
-        <li key={step}>{step}</li>
-      ))}
-    </ol>
-  )
-}
-
 function InstallSection() {
   const { installed, canPrompt } = useInstallState()
-  const platform = typeof navigator === 'undefined' ? 'desktop' : detectPlatform(navigator.userAgent, navigator.maxTouchPoints)
+  const platform = currentPlatform()
   const others = (Object.keys(INSTALL_GUIDES) as Platform[]).filter((p) => p !== platform)
 
   if (installed) {
@@ -168,13 +132,13 @@ function InstallSection() {
         </button>
       )}
       <h3 className="mt-4 font-semibold">{INSTALL_GUIDES[platform].title}</h3>
-      <Guide platform={platform} />
+      <InstallGuide platform={platform} />
       <details className="mt-4">
         <summary className="min-h-12 cursor-pointer py-3 font-semibold">Anleitung für andere Geräte</summary>
         {others.map((p) => (
           <div key={p} className="mt-2">
             <h3 className="font-semibold">{INSTALL_GUIDES[p].title}</h3>
-            <Guide platform={p} />
+            <InstallGuide platform={p} />
           </div>
         ))}
       </details>
