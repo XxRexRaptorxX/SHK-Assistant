@@ -5,6 +5,7 @@ import lightPortrait from '../assets/brand/hintergrund-hell-hoch.webp'
 
 // Fotohintergrund (Firmenbilder): je eine Fassung für dunkles und helles Design, jeweils im Hoch-
 // und Querformat. Eine Schicht in Seitenfarbe darüber hält Texte gut lesbar. Beim Drucken ausgeblendet.
+// Feste Höhe (h-backdrop) statt inset-0, damit das Bild beim Scrollen am Handy nicht springt.
 
 function Photo({ portrait, landscape, className }: { portrait: string; landscape: string; className: string }) {
   return (
@@ -17,7 +18,7 @@ function Photo({ portrait, landscape, className }: { portrait: string; landscape
 
 export function TechBackdrop() {
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden print:hidden">
+    <div aria-hidden="true" className="pointer-events-none fixed inset-x-0 top-0 -z-10 h-backdrop overflow-hidden print:hidden">
       <Photo portrait={darkPortrait} landscape={darkLandscape} className="absolute inset-0 hidden dark:block" />
       <Photo portrait={lightPortrait} landscape={lightLandscape} className="absolute inset-0 dark:hidden" />
       <div className="absolute inset-0 bg-page/50 dark:bg-page/40" />

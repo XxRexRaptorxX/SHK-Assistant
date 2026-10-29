@@ -326,3 +326,13 @@
     outline-color: var(--bar-active-ink);
   }
 }
+
+/*
+ * Feste Höhe für den Fotohintergrund: so hoch wie der größte Bildschirm (Adressleiste ausgeblendet).
+ * Mit inset-0 würde er beim Ein- und Ausblenden der Adressleiste am Handy neu skaliert und „hüpfen“.
+ * min-height 100vh als Rückfall für Browser ohne lvh (eine doppelte height-Angabe entfernt der Build).
+ */
+@utility h-backdrop {
+  min-height: 100vh;
+  height: 100lvh;
+}

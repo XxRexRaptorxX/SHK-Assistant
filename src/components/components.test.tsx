@@ -8,6 +8,7 @@ import { RichText } from './RichText'
 import { SourceInfo } from './SourceInfo'
 import { splitLinks } from '../lib/links'
 import { splitSources } from '../lib/sources'
+import { TechBackdrop } from './TechBackdrop'
 import { MemoryRouter } from 'react-router'
 import { HomePage } from '../pages/HomePage'
 import { Slogan } from './Slogan'
@@ -80,6 +81,14 @@ describe('SourceInfo', () => {
     expect(html).toContain('aria-label="Quellenangaben"')
     expect(html.match(/<li>/g)).toHaveLength(2)
     expect(renderToStaticMarkup(<SourceInfo entry={verified} />)).not.toContain('<ul')
+  })
+})
+
+describe('TechBackdrop', () => {
+  it('hat eine feste Höhe statt inset-0, damit das Bild am Handy beim Scrollen nicht springt', () => {
+    const html = renderToStaticMarkup(<TechBackdrop />)
+    expect(html).toContain('fixed inset-x-0 top-0 -z-10 h-backdrop')
+    expect(html).not.toContain('inset-0 -z-10')
   })
 })
 
