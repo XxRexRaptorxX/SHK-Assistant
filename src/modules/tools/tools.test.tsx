@@ -623,7 +623,8 @@ describe('Tools', () => {
     // Stützklappgriffe über Sitzhöhe: ein Wert über beide Spalten
     const wheelchair = render('15', { ausfuehrung: 'rollstuhl' })
     expect(wheelchair).toMatch(/<span class="col-span-2 text-right text-lg font-semibold">28 cm<\/span>/)
-    expect(wheelchair).toContain('61–63 cm inkl. Sitz')
+    // Bereiche brechen nicht am Strich um (Wortverbinder nach dem Strich)
+    expect(wheelchair).toContain('61–⁠63 cm inkl. Sitz')
     expect(render('abc')).toContain('Bitte eine Zahl von 0 bis 100 eingeben.')
   })
 

@@ -192,6 +192,8 @@ function FloorHeightTable({
   floor: FloorView
 }) {
   const size = (column: ChoiceColumn) => (column.unit ? 'text-xl font-bold' : 'text-lg font-semibold')
+  // Bereiche wie „100–105“ nicht am Strich umbrechen (Wortverbinder); vor der Einheit darf umbrochen werden
+  const keepRange = (text: string) => text.replace(/–/g, '–\u2060')
   return (
     // Spalten rücken bei mehr Platz weiter auseinander
     <div className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-4 gap-y-1 min-[400px]:gap-x-8 sm:gap-x-12">
@@ -211,11 +213,11 @@ function FloorHeightTable({
               <>
                 <span className={`text-right ${size(column)}`}>
                   <span className="sr-only">{floor.baseLabel}: </span>
-                  {withUnit(value, column.unit)}
+                  {keepRange(withUnit(value, column.unit))}
                 </span>
                 <span className={`text-right ${size(column)}`}>
                   <span className="sr-only">{floor.raisedLabel}: </span>
-                  {withUnit(shiftFloorHeight(value, floor.buildUp), column.unit)}
+                  {keepRange(withUnit(shiftFloorHeight(value, floor.buildUp), column.unit))}
                 </span>
               </>
             ) : (
