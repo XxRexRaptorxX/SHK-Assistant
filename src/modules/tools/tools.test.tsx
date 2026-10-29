@@ -11,15 +11,17 @@ import { checkChoiceTool, checkTableTool, isChoiceTool, type TableTool } from '.
 import { ChoiceLookup } from './ChoiceLookup'
 import { FactorCalculator } from './FactorCalculator'
 import { checkFactorTool, computeFactorTool, normalizeSelection } from './factorTool'
-import { isFactorTool } from './schema'
+import { isFactorTool, isVariantTool } from './schema'
 import { matchingRows, TableLookup } from './TableLookup'
 import { shiftFloorHeight } from './floorOffset'
 import { Calculator } from '../formulas/Calculator'
 import { formulaToolEntries, toolEntries } from './tools'
+import { checkVariantTool } from './variantTool'
+import { VariantCalculator } from './VariantCalculator'
 
 ensureCustomUnits()
 
-const rollenlaenge = formulaToolEntries.find((entry) => entry.id === 'tool.rollenlaenge')!
+const rollenlaenge = formulaToolEntries.find((entry) => entry.id === 'tool.rollenlaenge.wicklungen')!
 
 describe('Tools', () => {
   it('steht als erste Kachel auf der Startseite', () => {
@@ -39,7 +41,7 @@ describe('Tools', () => {
   })
 
   it('rechnet die exakte Rollenlänge aus dem Ringquerschnitt', () => {
-    const exakt = formulaToolEntries.find((entry) => entry.id === 'tool.rollenlaenge-exakt')!
+    const exakt = formulaToolEntries.find((entry) => entry.id === 'tool.rollenlaenge.querschnitt')!
     expect(checkFormula(exakt)).toEqual([])
     const length = evaluateFormula(exakt, {
       D: { value: 80, unit: 'cm' },
@@ -49,9 +51,8 @@ describe('Tools', () => {
     expect(length).toBeCloseTo(6 * Math.PI, 6)
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Abgaswerte je Brennerart',
-      'Ausgerollte Länge einer Rohr- oder Kabelrolle',
+      'Ausgerollte Länge von Rohr- und Kabelrollen',
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
-      'Exakte ausgerollte Länge einer Rohr- oder Kabelrolle',
       'Gebäudeklasse',
       'Heizlast überschlägig',
       'Leistungsminderung durch Kalk am Wärmetauscher',
@@ -62,12 +63,11 @@ describe('Tools', () => {
       'Rohrschellenabstand',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Thermostatkopf-Einstellung und Raumtemperatur',
-      'Verbaute Länge aus mehreren Rollen (bei Abrollern)',
     ])
   })
 
   it('rechnet die verbaute Länge aus angefangener, vollen und letzter Rolle', () => {
-    const verbaut = formulaToolEntries.find((entry) => entry.id === 'tool.verbaute-laenge')!
+    const verbaut = formulaToolEntries.find((entry) => entry.id === 'tool.rollenlaenge.rollen')!
     expect(checkFormula(verbaut)).toEqual([])
     const length = evaluateFormula(verbaut, {
       Ra: { value: 40, unit: 'm' },
@@ -767,9 +767,35 @@ describe('Tools', () => {
         </Routes>
       </MemoryRouter>,
     )
-    expect(page).toContain('Länge einer Rohr- oder Kabelrolle</h1>')
+    expect(page).toContain('Ausgerollte Länge von Rohr- und Kabelrollen</h1>')
     expect(page).toMatch(/L = n<span class="mx-1">·<\/span>π<span class="mx-1">·<\/span>d/)
     expect(page).toContain('Anzahl der Wicklungen')
     expect(page).toContain('>Rechner</h2>')
+  })
+
+  it('führt die drei Rollen-Rechnungen in einem Tool mit Umschalter zusammen', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.rollenlaenge')!
+    if (!isVariantTool(tool)) throw new Error('Varianten-Tool erwartet')
+    expect(checkVariantTool(tool)).toEqual([])
+    expect(tool.variants.map((variant) => variant.label)).toEqual(['Wicklungen', 'Ringquerschnitt', 'Mehrere Rollen'])
+    // Alte Einzel-Tools gibt es nicht mehr
+    expect(toolEntries.some((entry) => entry.id === 'tool.rollenlaenge-exakt' || entry.id === 'tool.verbaute-laenge')).toBe(false)
+    const render = (initialVariant?: string) =>
+      renderToStaticMarkup(
+        <MemoryRouter>
+          <VariantCalculator tool={tool} initialVariant={initialVariant} />
+        </MemoryRouter>,
+      )
+    const first = render()
+    expect(first).toContain('aria-label="Berechnung"')
+    expect(first).toMatch(/aria-pressed="true"[^>]*><span[^>]*>Wicklungen<\/span>/)
+    expect(first).toContain('Über die Wicklungen</h2>')
+    const rolls = render('rollen')
+    expect(rolls).toContain('Verbaute Länge aus mehreren Rollen</h2>')
+    expect(rolls).toContain('Restlänge der angefangenen Rolle am Anfang')
+    expect(rolls).not.toContain('Anzahl der Wicklungen')
+    // Ein Varianten-Tool mit falscher Formel wird gemeldet
+    const broken = { ...tool, variants: [{ ...tool.variants[0]!, expression: 'n * pi * x' }, tool.variants[1]!] }
+    expect(checkVariantTool(broken).join(' ')).toContain('variants[0] (Wicklungen)')
   })
 })

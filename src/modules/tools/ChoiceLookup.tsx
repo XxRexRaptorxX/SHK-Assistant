@@ -110,7 +110,7 @@ export function ChoiceLookup({
 }
 
 /** Leiste über den Abschnitten; jede Schaltfläche mit Namen und optional kleiner zweiter Zeile */
-function SelectionBar({
+export function SelectionBar({
   bar,
   selected,
   onSelect,

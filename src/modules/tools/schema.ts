@@ -4,6 +4,7 @@ import { defineCollection, defineEntrySchema } from '../../content/schema/base.t
 import { checkFormulaRequirements, formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool.ts'
+import { checkVariantTool, variantReferences, variantToolSchema, type VariantTool } from './variantTool.ts'
 
 // Tools sind Rechenhelfer für die Praxis. Zwei Arten:
 // - Formel-Tools (ohne "kind"): Aufbau und Prüfung wie bei den Formeln.
@@ -13,6 +14,7 @@ import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool
 //   (z. B. Thermostatstufe oder Raumart) und deren Werte angezeigt bekommt.
 // - Faktor-Tools ("kind": "factor"): Zahl eingeben, Varianten wählen, Ergebnisse = Faktor × Bezugsgröße
 //   (siehe factorTool.ts).
+// - Varianten-Tools ("kind": "variants"): mehrere Formeln zu einer Aufgabe mit Umschalter (siehe variantTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -141,6 +143,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   tableToolSchema,
   choiceToolSchema,
   factorToolSchema,
+  variantToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -148,12 +151,13 @@ export type TableTool = z.output<typeof tableToolSchema>
 export type TableRow = z.output<typeof tableRowSchema>
 export type ChoiceTool = z.output<typeof choiceToolSchema>
 export type ChoiceSection = z.output<typeof choiceSectionSchema>
-export type ToolEntry = FormulaTool | TableTool | ChoiceTool | FactorTool
-export type { FactorTool }
+export type ToolEntry = FormulaTool | TableTool | ChoiceTool | FactorTool | VariantTool
+export type { FactorTool, VariantTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
 export const isFactorTool = (entry: ToolEntry): entry is FactorTool => entry.kind === 'factor'
+export const isVariantTool = (entry: ToolEntry): entry is VariantTool => entry.kind === 'variants'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -248,6 +252,13 @@ export const toolCollection = defineCollection({
         ? checkChoiceTool(entry)
         : isFactorTool(entry)
           ? checkFactorTool(entry)
-          : formulaCollection.check!(entry as FormulaEntry),
-  references: (entry) => (isFormulaTool(entry) ? formulaCollection.references!(entry as FormulaEntry) : []),
+          : isVariantTool(entry)
+            ? checkVariantTool(entry)
+            : formulaCollection.check!(entry as FormulaEntry),
+  references: (entry) =>
+    isFormulaTool(entry)
+      ? formulaCollection.references!(entry as FormulaEntry)
+      : isVariantTool(entry)
+        ? variantReferences(entry)
+        : [],
 })

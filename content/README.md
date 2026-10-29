@@ -88,6 +88,13 @@ Fußbodenaufbau. Ist es ausgefüllt, zeigen Blöcke mit Spalten `"floorHeight": 
 über Fertig- und Rohfußboden (`baseLabel`/`raisedLabel`, z. B. OKFF/OKRFB); Zahlen mit anderem Bezug
 („über Wannenrand“, „über Sitzhöhe“) und Abstände bleiben unverändert.
 
+**Varianten-Tools** (`"kind": "variants"`) fassen mehrere Rechenwege zu einer Aufgabe zusammen, z. B. die
+Länge einer Rohrrolle über die Wicklungen, über den Ringquerschnitt oder über mehrere verbrauchte Rollen.
+Felder: `title`, `description`, `category`, `name` (Beschriftung der Leiste, z. B. „Berechnung“) und
+`variants` (mindestens zwei) mit `key`, `label`, optional `note` (kleine zweite Zeile in der Leiste) und
+allen Feldern einer Formel (`title`, `description`, `variables`, `result`, `expression`, `examples`,
+`figure` …). Jede Variante wird wie eine Formel geprüft; ihre Testbeispiele laufen automatisch mit.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

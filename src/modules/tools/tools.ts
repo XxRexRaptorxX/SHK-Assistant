@@ -2,19 +2,26 @@ import { modules } from '../../app/modules'
 import { content } from '../../content'
 import type { SearchDocument } from '../../search/search'
 import { TOOL_ID_PREFIX } from './constants'
-import { isChoiceTool, isFactorTool, isFormulaTool, isTableTool, type FormulaTool, type ToolEntry } from './schema'
+import type { FormulaEntry } from '../formulas/schema'
+import { isChoiceTool, isFactorTool, isFormulaTool, isTableTool, isVariantTool, type ToolEntry } from './schema'
+import { variantFormulas } from './variantTool'
 
 /** Alle Tools der aktuellen Edition, alphabetisch */
 export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.title.localeCompare(b.title, 'de'))
 
-/** Nur die Tools mit Formel und Rechner */
-export const formulaToolEntries: FormulaTool[] = toolEntries.filter(isFormulaTool)
+/** Alle Formeln mit Rechner aus den Tools, auch die Varianten (Kennung „tool.x.variante“) */
+export const formulaToolEntries: FormulaEntry[] = toolEntries.flatMap((entry) =>
+  isFormulaTool(entry) ? [entry] : isVariantTool(entry) ? variantFormulas(entry) : [],
+)
 
 /** Was ein Tool liefert, z. B. „Ausgerollte Länge“ oder „Heizlast, Wärmebedarf“ */
 export function toolResultNames(entry: ToolEntry): string | undefined {
   if (isTableTool(entry)) return entry.columns.map((column) => column.name).join(', ')
   if (isChoiceTool(entry)) return entry.sections.map((section) => section.title).join(', ')
   if (isFactorTool(entry)) return entry.results.map((result) => result.name).join(', ')
+  if (isVariantTool(entry)) {
+    return [...new Set(entry.variants.flatMap((variant) => (variant.result ? [variant.result.name] : [])))].join(', ')
+  }
   return entry.result?.name
 }
 
@@ -47,6 +54,13 @@ function toolKeywords(entry: ToolEntry): string[] {
       ...entry.choices.flatMap((choice) => [choice.name, ...choice.options.map((option) => option.label)]),
       ...entry.results.map((result) => result.name),
     ]
+  }
+  if (isVariantTool(entry)) {
+    return entry.variants.flatMap((variant) => [
+      variant.label,
+      variant.title,
+      ...variant.variables.map((variable) => variable.name),
+    ])
   }
   return entry.variables.map((variable) => variable.name)
 }

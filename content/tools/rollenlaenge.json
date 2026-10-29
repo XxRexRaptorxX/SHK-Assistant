@@ -2,44 +2,166 @@
   "id": "tool.rollenlaenge",
   "visibility": "public",
   "status": "draft",
-  "source": "Formel und Rechenbeispiel des Inhabers, übermittelt am 23.10.2026",
+  "source": "Wicklungen und mehrere Rollen: Formel und Rechenbeispiel des Inhabers, übermittelt am 23.10.2026; Ringquerschnitt: Formel des Inhabers, übermittelt am 23.10.2026",
   "verifiedBy": "",
   "verifiedAt": "",
-  "title": "Ausgerollte Länge einer Rohr- oder Kabelrolle",
-  "description": "Schätzt die verbleibende Länge auf einer Rolle aus der Anzahl der Wicklungen und dem mittleren Wickeldurchmesser. Den mittleren Durchmesser in der Mitte zwischen innerster und äußerster Wicklung messen. Das Ergebnis ist eine Näherung.",
+  "kind": "variants",
+  "title": "Ausgerollte Länge von Rohr- und Kabelrollen",
+  "description": "Berechnet Rohr- und Kabellängen auf Rollen. Oben den Rechenweg wählen: schnell über die Wicklungen, genauer über den Ringquerschnitt oder die verbaute Länge, wenn mehrere Rollen verbraucht wurden.",
   "category": "Aufmaß",
-  "variables": [
+  "name": "Berechnung",
+  "variants": [
     {
-      "symbol": "n",
-      "name": "Anzahl der Wicklungen",
-      "unit": "",
-      "min": 0
+      "key": "wicklungen",
+      "label": "Wicklungen",
+      "note": "Näherung",
+      "title": "Über die Wicklungen",
+      "description": "Schätzt die verbleibende Länge auf einer Rolle aus der Anzahl der Wicklungen und dem mittleren Wickeldurchmesser. Den mittleren Durchmesser in der Mitte zwischen innerster und äußerster Wicklung messen. Das Ergebnis ist eine Näherung.",
+      "variables": [
+        {
+          "symbol": "n",
+          "name": "Anzahl der Wicklungen",
+          "unit": "",
+          "min": 0
+        },
+        {
+          "symbol": "d",
+          "name": "Mittlerer Wickeldurchmesser",
+          "term": "Durchmesser",
+          "unit": "cm"
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "L",
+        "name": "Ausgerollte Länge",
+        "term": "Länge",
+        "unit": "m",
+        "decimals": 2
+      },
+      "expression": "n * pi * d",
+      "examples": [
+        {
+          "inputs": {
+            "n": 50,
+            "d": 80
+          },
+          "expected": 125.66,
+          "note": "Beispiel des Inhabers: 50 Wicklungen, 80 cm mittlerer Durchmesser"
+        }
+      ],
+      "figure": "figure.rohrrolle"
     },
     {
-      "symbol": "d",
-      "name": "Mittlerer Wickeldurchmesser",
-      "term": "Durchmesser",
-      "unit": "cm"
-    }
-  ],
-  "constants": [],
-  "result": {
-    "symbol": "L",
-    "name": "Ausgerollte Länge",
-    "term": "Länge",
-    "unit": "m",
-    "decimals": 2
-  },
-  "expression": "n * pi * d",
-  "examples": [
-    {
-      "inputs": {
-        "n": 50,
-        "d": 80
+      "key": "querschnitt",
+      "label": "Ringquerschnitt",
+      "note": "genauer",
+      "title": "Über den Ringquerschnitt",
+      "description": "Bestimmt die Restlänge aus dem Ringquerschnitt der Rolle: aktueller Außendurchmesser, Kerndurchmesser der leeren Rolle und Rohr- bzw. Kabeldurchmesser als Wicklungshöhe. Genauer als die Rechnung über die Wicklungen, weil sich der Durchmesser mit jeder abgewickelten Lage ändert. Setzt eine enge, gleichmäßige Wicklung voraus.",
+      "variables": [
+        {
+          "symbol": "D",
+          "name": "Aktueller Außendurchmesser der Rolle",
+          "term": "Durchmesser",
+          "unit": "cm"
+        },
+        {
+          "symbol": "dK",
+          "label": "dₖ",
+          "name": "Kerndurchmesser der leeren Rolle",
+          "term": "Durchmesser",
+          "unit": "cm"
+        },
+        {
+          "symbol": "t",
+          "name": "Wicklungshöhe (Rohr- bzw. Kabeldurchmesser)",
+          "term": "Durchmesser",
+          "unit": "mm"
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "L",
+        "name": "Ausgerollte Länge",
+        "term": "Länge",
+        "unit": "m",
+        "decimals": 2
       },
-      "expected": 125.66,
-      "note": "Beispiel des Inhabers: 50 Wicklungen, 80 cm mittlerer Durchmesser"
+      "expression": "pi * (D^2 - dK^2) / (4 * t)",
+      "examples": [
+        {
+          "inputs": {
+            "D": 80,
+            "dK": 40,
+            "t": 20
+          },
+          "expected": 18.85,
+          "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 80 cm außen, 40 cm Kern, 20 mm Rohr"
+        }
+      ],
+      "figure": "figure.rohrrolle-exakt"
+    },
+    {
+      "key": "rollen",
+      "label": "Mehrere Rollen",
+      "note": "bei Abrollern",
+      "title": "Verbaute Länge aus mehreren Rollen",
+      "description": "Ermittelt die verbaute Rohr- oder Kabellänge, wenn mit einer angefangenen Rolle begonnen wurde, dazwischen ganze Rollen verbraucht wurden und von der letzten angebrochenen Rolle noch ein Rest übrig ist. Wurde mit einer vollen Rolle begonnen, die Länge einer vollen Rolle als Anfangsrestlänge eintragen. Bei N nur ganz verbrauchte Rollen zählen.",
+      "variables": [
+        {
+          "symbol": "Ra",
+          "label": "Rₐ",
+          "name": "Restlänge der angefangenen Rolle am Anfang",
+          "term": "Länge",
+          "unit": "m",
+          "min": 0
+        },
+        {
+          "symbol": "N",
+          "name": "Anzahl vollständig verbrauchter Rollen",
+          "unit": "",
+          "min": 0
+        },
+        {
+          "symbol": "Lr",
+          "label": "Lᵣ",
+          "name": "Länge einer vollen Rolle",
+          "term": "Länge",
+          "unit": "m",
+          "min": 0
+        },
+        {
+          "symbol": "Re",
+          "label": "Rₑ",
+          "name": "Restlänge der letzten angebrochenen Rolle",
+          "term": "Länge",
+          "unit": "m",
+          "min": 0
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "Lv",
+        "label": "Lᵥ",
+        "name": "Verbaute Länge",
+        "term": "Länge",
+        "unit": "m",
+        "decimals": 2
+      },
+      "expression": "Ra + N * Lr + (Lr - Re)",
+      "examples": [
+        {
+          "inputs": {
+            "Ra": 40,
+            "N": 3,
+            "Lr": 60,
+            "Re": 10
+          },
+          "expected": 270,
+          "note": "Beispiel des Inhabers: 40 m Anfangsrest, 3 volle Rollen à 60 m, 10 m Rest auf der letzten Rolle"
+        }
+      ],
+      "figure": "figure.rollen-verbrauch"
     }
-  ],
-  "figure": "figure.rohrrolle"
+  ]
 }
