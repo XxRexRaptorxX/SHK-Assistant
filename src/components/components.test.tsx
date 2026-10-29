@@ -9,6 +9,8 @@ import { SourceInfo } from './SourceInfo'
 import { splitLinks } from '../lib/links'
 import { splitSources } from '../lib/sources'
 import { TechBackdrop } from './TechBackdrop'
+import { ShareButton } from './ShareButton'
+import { App } from '../App'
 import { MemoryRouter } from 'react-router'
 import { HomePage } from '../pages/HomePage'
 import { Slogan } from './Slogan'
@@ -81,6 +83,22 @@ describe('SourceInfo', () => {
     expect(html).toContain('aria-label="Quellenangaben"')
     expect(html.match(/<li>/g)).toHaveLength(2)
     expect(renderToStaticMarkup(<SourceInfo entry={verified} />)).not.toContain('<ul')
+  })
+})
+
+describe('ShareButton', () => {
+  it('steht in der Kopfleiste jeder Seite', () => {
+    const html = renderToStaticMarkup(
+      <MemoryRouter initialEntries={['/tools']}>
+        <App />
+      </MemoryRouter>,
+    )
+    // Reihenfolge: Suche, Favoriten, Teilen, Einstellungen
+    const nav = html.slice(html.indexOf('<nav aria-label="Werkzeuge"'), html.indexOf('</nav>'))
+    const order = ['aria-label="Suche"', 'aria-label="Favoriten"', 'aria-label="Seite teilen"', 'aria-label="Einstellungen"'].map((label) => nav.indexOf(label))
+    expect(order.every((position) => position >= 0)).toBe(true)
+    expect([...order].sort((a, b) => a - b)).toEqual(order)
+    expect(renderToStaticMarkup(<ShareButton className="x" />)).toContain('role="status"')
   })
 })
 

@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet } from 'react-router'
 import { COMPANY_LINK_LABEL, companyLogoUrl } from '../components/CompanyLogo'
 import { HomeIcon } from '../components/icons'
+import { ShareButton } from '../components/ShareButton'
 import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
 import { COMPANY_URL } from '../config/links'
@@ -68,6 +69,7 @@ function Header() {
         <nav aria-label="Werkzeuge" className="flex shrink-0 items-center">
           <HeaderLink module={modules.search} />
           <HeaderLink module={modules.favorites} />
+          <ShareButton className={iconButton} />
           <HeaderLink module={modules.settings} />
         </nav>
       </div>
