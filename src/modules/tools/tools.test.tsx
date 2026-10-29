@@ -639,6 +639,26 @@ describe('Tools', () => {
     ])
   })
 
+  it('hat in jedem Rechner mit Eingabefeldern einen Knopf zum Löschen der Eingaben', () => {
+    const button = /<button type="button" disabled="" aria-label="Alle Eingaben löschen"/
+    const enabled = /<button type="button" aria-label="Alle Eingaben löschen"/
+    // Formel-Tool: leer, also gesperrt
+    expect(renderToStaticMarkup(<Calculator formula={rollenlaenge} />)).toMatch(button)
+    // Faktor-Tool: Vorbelegung zählt nicht als Eingabe, eigene Eingabe schon
+    const insulation = toolEntries.find((entry) => entry.id === 'tool.rohrdaemmung')!
+    if (!isFactorTool(insulation)) throw new Error('Faktor-Tool erwartet')
+    expect(renderToStaticMarkup(<FactorCalculator tool={insulation} />)).toMatch(button)
+    expect(renderToStaticMarkup(<FactorCalculator tool={insulation} initialInputs={{ da: '22' }} />)).toMatch(enabled)
+    // Faktor-Tool ohne Eingabefelder: kein Knopf
+    const clamps = toolEntries.find((entry) => entry.id === 'tool.rohrschellenabstand')!
+    if (!isFactorTool(clamps)) throw new Error('Faktor-Tool erwartet')
+    expect(renderToStaticMarkup(<FactorCalculator tool={clamps} />)).not.toContain('Alle Eingaben löschen')
+    // Auswahl-Tool mit Fußbodenaufbau
+    const heights = toolEntries.find((entry) => entry.id === 'tool.montagehoehen')!
+    if (!isChoiceTool(heights)) throw new Error('Auswahl-Tool erwartet')
+    expect(renderToStaticMarkup(<ChoiceLookup tool={heights} initialBuildUp="15" />)).toMatch(enabled)
+  })
+
   it('zeigt Wartungsintervalle je Bereich und Anlagenteil', () => {
     const tool = toolEntries.find((entry) => entry.id === 'tool.wartungsintervalle')!
     if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')

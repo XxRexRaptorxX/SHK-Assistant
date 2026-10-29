@@ -1,4 +1,5 @@
 import { useId, useState } from 'react'
+import { HeadingWithClear } from '../../components/ClearInputsButton'
 import { fieldBase } from '../../components/surfaces'
 import { parseDecimal } from '../../lib/number'
 import type { TableRow, TableTool } from './schema'
@@ -39,9 +40,9 @@ export function TableLookup({ tool, initialValue = '' }: { tool: TableTool; init
   return (
     <>
       <section className="mt-6" aria-labelledby={`${idPrefix}-heading`}>
-        <h2 id={`${idPrefix}-heading`} className="text-xl font-bold">
+        <HeadingWithClear id={`${idPrefix}-heading`} onClear={() => setRaw('')} disabled={raw === ''}>
           Nachschlagen
-        </h2>
+        </HeadingWithClear>
         <label htmlFor={inputId} className="mt-3 block font-semibold">
           {withUnit(tool.input.name, tool.input.unit ? `(${tool.input.unit})` : '')}
         </label>

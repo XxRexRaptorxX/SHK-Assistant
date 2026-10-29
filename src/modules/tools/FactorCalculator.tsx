@@ -1,4 +1,5 @@
 import { useId, useState } from 'react'
+import { HeadingWithClear } from '../../components/ClearInputsButton'
 import { fieldBase } from '../../components/surfaces'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import {
@@ -35,14 +36,13 @@ export function FactorCalculator({
   initialSelection?: Record<string, string>
 }) {
   const idPrefix = useId()
-  const [raw, setRaw] = useState<Record<string, string>>(() =>
+  // Ausgangszustand der Felder: leer bzw. Vorbelegung (z. B. λ = 0,035)
+  const defaults = (): Record<string, string> =>
     Object.fromEntries(
-      tool.inputs.map((input) => [
-        input.symbol,
-        initialInputs[input.symbol] ?? (input.default === undefined ? '' : defaultFormat.format(input.default)),
-      ]),
-    ),
-  )
+      tool.inputs.map((input) => [input.symbol, input.default === undefined ? '' : defaultFormat.format(input.default)]),
+    )
+  const [raw, setRaw] = useState<Record<string, string>>(() => ({ ...defaults(), ...initialInputs }))
+  const changed = tool.inputs.some((input) => (raw[input.symbol] ?? '') !== defaults()[input.symbol])
   // Vorauswahl (default oder erste angebotene Option), damit gleich ein Ergebnis erscheint
   const [selection, setSelection] = useState<Record<string, string>>(() =>
     normalizeSelection(
@@ -66,9 +66,15 @@ export function FactorCalculator({
 
   return (
     <section className="mt-6" aria-labelledby={`${idPrefix}-heading`}>
-      <h2 id={`${idPrefix}-heading`} className="text-xl font-bold">
-        Rechner
-      </h2>
+      {tool.inputs.length > 0 ? (
+        <HeadingWithClear id={`${idPrefix}-heading`} onClear={() => setRaw(defaults())} disabled={!changed}>
+          Rechner
+        </HeadingWithClear>
+      ) : (
+        <h2 id={`${idPrefix}-heading`} className="text-xl font-bold">
+          Rechner
+        </h2>
+      )}
       <div className={tool.inputs.length > 0 ? 'mt-3 space-y-4' : undefined}>
         {tool.inputs.map((input) => {
           const inputId = `${idPrefix}-${input.symbol}`

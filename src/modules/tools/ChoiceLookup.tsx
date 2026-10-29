@@ -1,4 +1,5 @@
 import { Fragment, useId, useState } from 'react'
+import { ClearInputsButton } from '../../components/ClearInputsButton'
 import { fieldBase } from '../../components/surfaces'
 import { parseDecimal } from '../../lib/number'
 import { shiftFloorHeight } from './floorOffset'
@@ -58,9 +59,12 @@ export function ChoiceLookup({
     <>
       {tool.floorBuildUp && (
         <div className="mt-6">
-          <label htmlFor={buildUpId} className="block font-semibold">
-            {tool.floorBuildUp.name}
-          </label>
+          <div className="flex items-center justify-between gap-3">
+            <label htmlFor={buildUpId} className="block font-semibold">
+              {tool.floorBuildUp.name}
+            </label>
+            <ClearInputsButton onClear={() => setBuildUpText('')} disabled={buildUpText === ''} />
+          </div>
           <div className="mt-1 flex items-center gap-2">
             <input
               id={buildUpId}

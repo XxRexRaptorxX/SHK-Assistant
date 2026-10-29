@@ -1,4 +1,5 @@
 import { useId, useMemo, useState } from 'react'
+import { HeadingWithClear } from '../../components/ClearInputsButton'
 import { formatNumber, formatSignificant, parseDecimal } from '../../lib/number'
 import { alternativeUnits } from '../units/alternatives'
 import { formatAnyUnit } from '../units/labels'
@@ -65,15 +66,23 @@ const defaultFormat = new Intl.NumberFormat('de-DE', { useGrouping: false, maxim
 export function Calculator({ formula }: { formula: FormulaEntry }) {
   const idPrefix = useId()
   const result = formula.result
-  const [values, setValues] = useState<Record<string, string>>(() =>
+  // Ausgangszustand: leere Felder bzw. Vorbelegung, Einheiten wie in der Formel
+  const initialValues = (): Record<string, string> =>
     Object.fromEntries(
       formula.variables.flatMap((v) => (v.default === undefined ? [] : [[v.symbol, defaultFormat.format(v.default)]])),
-    ),
-  )
-  const [units, setUnits] = useState<Record<string, string>>(() =>
-    Object.fromEntries(formula.variables.map((v) => [v.symbol, v.unit])),
-  )
+    )
+  const initialUnits = (): Record<string, string> => Object.fromEntries(formula.variables.map((v) => [v.symbol, v.unit]))
+  const [values, setValues] = useState<Record<string, string>>(initialValues)
+  const [units, setUnits] = useState<Record<string, string>>(initialUnits)
   const [resultUnit, setResultUnit] = useState(result?.unit ?? '')
+  const changed =
+    formula.variables.some((v) => (values[v.symbol] ?? '') !== (initialValues()[v.symbol] ?? '') || units[v.symbol] !== v.unit) ||
+    resultUnit !== (result?.unit ?? '')
+  const clear = () => {
+    setValues(initialValues())
+    setUnits(initialUnits())
+    setResultUnit(result?.unit ?? '')
+  }
 
   const calculation = useMemo((): CalculationState => {
     const inputs: Record<string, Quantity> = {}
@@ -107,9 +116,9 @@ export function Calculator({ formula }: { formula: FormulaEntry }) {
 
   return (
     <section className="mt-6" aria-labelledby={`${idPrefix}-heading`}>
-      <h2 id={`${idPrefix}-heading`} className="text-xl font-bold">
+      <HeadingWithClear id={`${idPrefix}-heading`} onClear={clear} disabled={!changed}>
         Rechner
-      </h2>
+      </HeadingWithClear>
       <div className="mt-3 space-y-4">
         {formula.variables.map((variable) => {
           const inputId = `${idPrefix}-${variable.symbol}`

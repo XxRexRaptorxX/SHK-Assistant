@@ -179,6 +179,15 @@ export function StarIcon(props: IconProps) {
   )
 }
 
+export function EraserIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="m7 20-4-4a1.5 1.5 0 0 1 0-2.1l9.9-9.9a1.5 1.5 0 0 1 2.1 0l5 5a1.5 1.5 0 0 1 0 2.1L12 20Z" />
+      <path d="m8.5 9.5 6 6M12 20h9" />
+    </Icon>
+  )
+}
+
 export function ShareIcon(props: IconProps) {
   return (
     <Icon {...props}>
