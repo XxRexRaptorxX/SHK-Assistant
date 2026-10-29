@@ -13,6 +13,7 @@ import { FactorCalculator } from './FactorCalculator'
 import { checkFactorTool, computeFactorTool, normalizeSelection } from './factorTool'
 import { isFactorTool } from './schema'
 import { matchingRows, TableLookup } from './TableLookup'
+import { shiftFloorHeight } from './floorOffset'
 import { Calculator } from '../formulas/Calculator'
 import { formulaToolEntries, toolEntries } from './tools'
 
@@ -482,7 +483,7 @@ describe('Tools', () => {
     expect(wc).toContain('Abstandsmaße</h3>')
     expect(wc).toContain('40 cm')
     // „/“ in der Vorlage: kein Eckventil, Zeile ohne Wert wird nicht angezeigt
-    expect(wc).not.toContain('Eckventile')
+    expect(wc).not.toContain('>Wasseranschluss<')
     // Legende grau rechts neben der Blocküberschrift, Zeile nur „davor“
     expect(wc).toContain('Bewegungsfläche</h3><span class="text-base text-muted">(Breite × Tiefe)</span>')
     // Maß vorn, „davor“ dahinter
@@ -508,7 +509,7 @@ describe('Tools', () => {
     expect(wc).not.toContain('Kopfbrause')
     const tub = html({ 0: 'Badewanne' })
     expect(tub).toContain('180 cm')
-    expect(tub).not.toContain('Eckventile')
+    expect(tub).not.toContain('>Wasseranschluss<')
     // Waschmaschine/Trockner: Flächen nach VDI 6000 Blatt 1, Höhen nach Herstellerangaben
     const washer = html({ 0: 'Waschmaschine, Trockner' })
     expect(washer).toMatch(/Oberkante<\/dt><dd[^>]*>85 cm<\/dd>/)
@@ -539,6 +540,7 @@ describe('Tools', () => {
     expect(accessory('Spiegelschrank')).toContain('UK 115–125 cm, OK ca. 200 cm')
     // Wandarmatur aus der Tabelle des Inhabers (dort in mm: 1010 und 1125)
     expect(html({ 0: 'Waschtisch' })).toMatch(/Wandarmatur<\/dt><dd[^>]*>101 cm<\/dd>/)
+    expect(html({ 0: 'Waschtisch' })).toMatch(/Wasseranschluss<\/dt><dd[^>]*>55 cm<\/dd>/)
     expect(html({ 0: 'Spüle' })).toMatch(/Wandarmatur<\/dt><dd[^>]*>112,5 cm<\/dd>/)
     expect(html({ 1: 'Spiegel' }, { bereich: 'zubehoer' })).toContain('UK 115–120 cm')
 
@@ -588,6 +590,40 @@ describe('Tools', () => {
     expect(html({ 1: 'Spiegel' }, { ausfuehrung: 'rollstuhl', bereich: 'zubehoer' })).toContain(
       'mind. 100 cm hoch, unmittelbar über dem Waschtisch',
     )
+  })
+
+  it('rechnet Montagehöhen über OKFF mit Fußbodenaufbau auf OKRFB um', () => {
+    expect(shiftFloorHeight('60', 15)).toBe('75')
+    expect(shiftFloorHeight('60–100', 15)).toBe('75–115')
+    expect(shiftFloorHeight('UK 115–125 cm, OK ca. 200 cm', 7.5)).toBe('UK 122,5–132,5 cm, OK ca. 207,5 cm')
+    expect(shiftFloorHeight('mind. 60 cm über Fußboden', 10)).toBe('mind. 70 cm über Fußboden')
+    expect(shiftFloorHeight('55 cm, Abstand 45 cm', 10)).toBe('65 cm, Abstand 45 cm')
+    // anderer Bezug: unverändert
+    expect(shiftFloorHeight('10 cm über Wannenrand', 10)).toBe('10 cm über Wannenrand')
+    expect(shiftFloorHeight('Oberkante 28 cm über Sitzhöhe', 10)).toBe('Oberkante 28 cm über Sitzhöhe')
+    expect(shiftFloorHeight('individuell', 10)).toBe('individuell')
+  })
+
+  it('zeigt mit Fußbodenaufbau die Montagehöhen über OKFF und OKRFB nebeneinander', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.montagehoehen')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    const render = (buildUp: string, bars?: Record<string, string>) =>
+      renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: 'WC', 4: 'WC' }} initialBars={bars} initialBuildUp={buildUp} />)
+    const empty = render('')
+    expect(empty).toContain('Fußbodenaufbau (Estrich und Belag)')
+    expect(empty).not.toContain('OKRFB</span>')
+    // ohne Aufbau steht nur der Bezug rechts über den Höhen
+    expect(empty).toContain('Montagehöhen</h3><span class="text-base text-muted">OKFFB</span>')
+    const raised = render('15')
+    expect(raised).toContain('Montagehöhen</h3><span aria-hidden="true" class="text-right text-base font-semibold text-muted">OKFFB</span>')
+    expect(raised).toMatch(/Oberkante<\/span><span class="text-right text-xl font-bold"><span class="sr-only">OKFFB: <\/span>40 cm<\/span><span class="text-right text-xl font-bold"><span class="sr-only">OKRFB: <\/span>55 cm<\/span>/)
+    // Andere Blöcke unverändert
+    expect(raised).toContain('80 × 60 cm')
+    // Stützklappgriffe über Sitzhöhe: ein Wert über beide Spalten
+    const wheelchair = render('15', { ausfuehrung: 'rollstuhl' })
+    expect(wheelchair).toMatch(/<span class="col-span-2 text-right text-lg font-semibold">28 cm<\/span>/)
+    expect(wheelchair).toContain('61–63 cm inkl. Sitz')
+    expect(render('abc')).toContain('Bitte eine Zahl von 0 bis 100 eingeben.')
   })
 
   it('prüft die Leisten in Auswahl-Tools', () => {

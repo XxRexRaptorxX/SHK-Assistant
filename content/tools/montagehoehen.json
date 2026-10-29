@@ -7,8 +7,15 @@
   "verifiedAt": "",
   "kind": "choice",
   "title": "Badplanung: Montagehöhen, Abstände und Schutzbereiche",
-  "description": "Montagehöhen, Stellflächen, Bewegungsflächen, Abstände und elektrische Schutzbereiche im Bad. Alle Maße in cm, Höhen über Oberkante Fertigfußboden (OKFF); OK = Oberkante, UK = Unterkante. Maßgeblich sind die Herstellerangaben und der aktuelle Normtext; die DIN 18040-2 erscheint 2026 neu. Die Elektroinstallation gehört in die Hand einer Elektrofachkraft.",
+  "description": "Montagehöhen, Stellflächen, Bewegungsflächen, Abstände und elektrische Schutzbereiche im Bad. OK = Oberkante, UK = Unterkante. Maßgeblich sind die Herstellerangaben und der aktuelle Normtext; die DIN 18040-2 erscheint 2026 neu. Die Elektroinstallation gehört in die Hand einer Elektrofachkraft.",
   "category": "Montage",
+  "floorBuildUp": {
+    "name": "Fußbodenaufbau (Estrich und Belag)",
+    "unit": "cm",
+    "hint": "",
+    "baseLabel": "OKFFB",
+    "raisedLabel": "OKRFB"
+  },
   "bars": [
     {
       "key": "ausfuehrung",
@@ -60,77 +67,91 @@
           "key": "oberkante",
           "name": "Oberkante",
           "unit": "cm",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "eckventile",
-          "name": "Eckventile",
+          "name": "Wasseranschluss",
           "unit": "cm",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "abwasser",
           "name": "Abwasseranschluss",
           "unit": "cm",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "wandarmatur",
           "name": "Wandarmatur",
           "unit": "cm",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kopfbrause",
           "name": "Kopfbrause",
           "unit": "cm",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "seitenbrause",
           "name": "Seitenbrause",
           "unit": "cm",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindSitz13",
           "name": "Sitzhöhe, 1–3 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindSitz36",
           "name": "Sitzhöhe, 3–6 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindSitz714",
           "name": "Sitzhöhe, 7–14 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindOk13",
           "name": "Oberkante, 1–3 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindOk36",
           "name": "Oberkante, 3–6 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindOk714",
           "name": "Oberkante, 7–14 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindGriff36",
           "name": "Stützklappgriffe, 3–6 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "kindGriff711",
           "name": "Stützklappgriffe, 7–11 Jahre",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "stellflaeche",
@@ -502,7 +523,8 @@
           "key": "hoehe",
           "name": "Montagehöhe",
           "unit": "",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "hinweis",
@@ -631,22 +653,26 @@
         {
           "key": "hoehe",
           "name": "Höhe",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "vorderkante",
           "name": "Vorderkante",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "sitz",
           "name": "Duschsitz",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "armatur",
           "name": "Duscharmatur",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "griffeOberkante",
@@ -889,7 +915,8 @@
         {
           "key": "hoehe",
           "name": "Höhe",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "hinweis",
@@ -944,22 +971,26 @@
         {
           "key": "hoehe",
           "name": "Höhe",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "vorderkante",
           "name": "Vorderkante",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "sitz",
           "name": "Duschsitz",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "armatur",
           "name": "Duscharmatur",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "griffeOberkante",
@@ -1218,7 +1249,8 @@
         {
           "key": "hoehe",
           "name": "Höhe",
-          "group": "Montagehöhen"
+          "group": "Montagehöhen",
+          "floorHeight": true
         },
         {
           "key": "hinweis",

@@ -35,6 +35,8 @@ const tableColumnSchema = z.strictObject({
   hideName: z.boolean().optional(),
   /** Nur Auswahl-Tools: Wert links, die Bezeichnung dahinter (z. B. „90 × 75 cm davor“) */
   valueFirst: z.boolean().optional(),
+  /** Nur Auswahl-Tools: Höhe über Fertigfußboden; mit Fußbodenaufbau zusätzlich über Rohfußboden angezeigt */
+  floorHeight: z.boolean().optional(),
   /** Nur Auswahl-Tools: Zwischenüberschrift innerhalb des Blocks, ab dieser Spalte, z. B. „Anforderungen Elektroinstallation“ */
   subheading: z.string().trim().min(1).optional(),
 })
@@ -114,6 +116,21 @@ const choiceToolSchema = defineEntrySchema({
   title: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
+  /**
+   * Optionales Eingabefeld ganz oben, z. B. Fußbodenaufbau: Ist es ausgefüllt, zeigen Spalten mit
+   * floorHeight beide Höhen nebeneinander (Bezug ohne und mit Aufbau)
+   */
+  floorBuildUp: z
+    .strictObject({
+      name: z.string().trim().min(1),
+      unit: z.string().trim().min(1),
+      hint: z.string().trim().default(''),
+      /** Spaltenkopf der eingetragenen Höhen, z. B. „OKFF“ */
+      baseLabel: z.string().trim().min(1),
+      /** Spaltenkopf der Höhen einschließlich Aufbau, z. B. „OKRFB“ */
+      raisedLabel: z.string().trim().min(1),
+    })
+    .optional(),
   /** Optionale Auswahlleisten ganz oben, untereinander; jeweils die erste Option ist vorausgewählt */
   bars: z.array(choiceBarSchema).default([]),
   sections: z.array(choiceSectionSchema).min(1),

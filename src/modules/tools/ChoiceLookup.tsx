@@ -1,11 +1,23 @@
 import { Fragment, useId, useState } from 'react'
 import { fieldBase } from '../../components/surfaces'
+import { parseDecimal } from '../../lib/number'
+import { shiftFloorHeight } from './floorOffset'
 import { defaultBarSelection, sectionVisible, type ChoiceSection, type ChoiceTool } from './schema'
 import { withUnit } from './TableLookup'
 
 type ChoiceColumn = ChoiceSection['columns'][number]
 type ChoiceOption = ChoiceSection['options'][number]
 type ChoiceBar = ChoiceTool['bars'][number]
+
+/** Ausgefüllter Fußbodenaufbau mit den Spaltenköpfen, z. B. 15 cm, „OKFF“ und „OKRFB“ */
+interface FloorView {
+  buildUp: number
+  baseLabel: string
+  raisedLabel: string
+}
+
+/** Größter sinnvoller Fußbodenaufbau; größere Werte sind vermutlich Tippfehler */
+const MAX_BUILD_UP = 100
 
 const card = 'mt-4 rounded-2xl border-2 border-accent bg-surface p-4'
 
@@ -17,14 +29,25 @@ export function ChoiceLookup({
   tool,
   initialSelection = {},
   initialBars,
+  initialBuildUp = '',
 }: {
   tool: ChoiceTool
   /** Vorauswahl je Abschnitt, Index wie in tool.sections */
   initialSelection?: Record<number, string>
   /** Stellung der Leisten: Leisten-key → Options-key */
   initialBars?: Record<string, string>
+  /** Vorbelegung des Fußbodenaufbaus (Tests) */
+  initialBuildUp?: string
 }) {
   const [bars, setBars] = useState(() => ({ ...defaultBarSelection(tool), ...initialBars }))
+  const [buildUpText, setBuildUpText] = useState(initialBuildUp)
+  const buildUpId = useId()
+  const buildUp = parseDecimal(buildUpText)
+  const buildUpInvalid = buildUpText.trim() !== '' && (buildUp === undefined || buildUp < 0 || buildUp > MAX_BUILD_UP)
+  const floor: FloorView | undefined =
+    tool.floorBuildUp && buildUp !== undefined && buildUp > 0 && !buildUpInvalid
+      ? { buildUp, baseLabel: tool.floorBuildUp.baseLabel, raisedLabel: tool.floorBuildUp.raisedLabel }
+      : undefined
   // Auswahl je Eingabe (z. B. „Sanitärgegenstand“), damit „WC“ beim Wechsel der Ausführung stehen bleibt
   const [labels, setLabels] = useState<Record<string, string>>(() =>
     Object.fromEntries(
@@ -33,6 +56,33 @@ export function ChoiceLookup({
   )
   return (
     <>
+      {tool.floorBuildUp && (
+        <div className="mt-6">
+          <label htmlFor={buildUpId} className="block font-semibold">
+            {tool.floorBuildUp.name}
+          </label>
+          <div className="mt-1 flex items-center gap-2">
+            <input
+              id={buildUpId}
+              type="text"
+              inputMode="decimal"
+              autoComplete="off"
+              value={buildUpText}
+              placeholder="optional"
+              aria-invalid={buildUpInvalid}
+              aria-describedby={buildUpInvalid || tool.floorBuildUp.hint ? `${buildUpId}-hint` : undefined}
+              onChange={(event) => setBuildUpText(event.target.value)}
+              className={`${fieldBase} w-full max-w-40 ${buildUpInvalid ? 'border-warn-ink outline-2 outline-warn' : ''}`}
+            />
+            <span className="text-lg">{tool.floorBuildUp.unit}</span>
+          </div>
+          {(buildUpInvalid || tool.floorBuildUp.hint) && (
+            <p id={`${buildUpId}-hint`} className="mt-1 text-base text-muted">
+              {buildUpInvalid ? `Bitte eine Zahl von 0 bis ${MAX_BUILD_UP} eingeben.` : tool.floorBuildUp.hint}
+            </p>
+          )}
+        </div>
+      )}
       {tool.bars.map((bar) => (
         <SelectionBar
           key={bar.key}
@@ -48,6 +98,8 @@ export function ChoiceLookup({
               key={section.title}
               section={section}
               hideTitle={tool.bars.length > 0}
+              floor={floor}
+              floorBaseLabel={tool.floorBuildUp?.baseLabel}
               selected={labels[section.inputName] ?? ''}
               onSelect={(label) => setLabels({ ...labels, [section.inputName]: label })}
             />
@@ -120,6 +172,58 @@ function BlockValues({ columns, option }: { columns: ChoiceColumn[]; option: Cho
   ))
 }
 
+/**
+ * Höhen eines Blocks nebeneinander über Fertig- und Rohfußboden, z. B. „Montagehöhen | OKFF | OKRFB“.
+ * Werte mit anderem Bezug (z. B. „28 cm über Sitzhöhe“) stehen über beide Spalten.
+ */
+function FloorHeightTable({
+  group,
+  columns,
+  option,
+  floor,
+}: {
+  group: string
+  columns: ChoiceColumn[]
+  option: ChoiceOption
+  floor: FloorView
+}) {
+  const size = (column: ChoiceColumn) => (column.unit ? 'text-xl font-bold' : 'text-lg font-semibold')
+  return (
+    // Spalten rücken bei mehr Platz weiter auseinander
+    <div className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-4 gap-y-1 min-[400px]:gap-x-8 sm:gap-x-12">
+      <h3 className="text-lg font-bold text-accent">{group}</h3>
+      <span aria-hidden="true" className="text-right text-base font-semibold text-muted">
+        {floor.baseLabel}
+      </span>
+      <span aria-hidden="true" className="text-right text-base font-semibold text-muted">
+        {floor.raisedLabel}
+      </span>
+      {columns.map((column) => {
+        const value = option.values[column.key]!
+        return (
+          <Fragment key={column.key}>
+            <span className="mt-1 text-base text-muted">{column.name}</span>
+            {column.floorHeight ? (
+              <>
+                <span className={`text-right ${size(column)}`}>
+                  <span className="sr-only">{floor.baseLabel}: </span>
+                  {withUnit(value, column.unit)}
+                </span>
+                <span className={`text-right ${size(column)}`}>
+                  <span className="sr-only">{floor.raisedLabel}: </span>
+                  {withUnit(shiftFloorHeight(value, floor.buildUp), column.unit)}
+                </span>
+              </>
+            ) : (
+              <span className={`col-span-2 text-right ${size(column)}`}>{withUnit(value, column.unit)}</span>
+            )}
+          </Fragment>
+        )
+      })}
+    </div>
+  )
+}
+
 function ValueList({ columns, option }: { columns: ChoiceColumn[]; option: ChoiceOption }) {
   return (
     <dl className="mt-2 space-y-1">
@@ -143,12 +247,18 @@ function ValueList({ columns, option }: { columns: ChoiceColumn[]; option: Choic
 function ChoiceSectionView({
   section,
   hideTitle,
+  floor,
+  floorBaseLabel,
   selected,
   onSelect,
 }: {
   section: ChoiceSection
   /** Bei Leisten sagt die Stellung schon, welcher Abschnitt das ist: Titel nur für Screenreader */
   hideTitle: boolean
+  /** Fußbodenaufbau ausgefüllt: Höhen über Fertig- und Rohfußboden nebeneinander */
+  floor: FloorView | undefined
+  /** Ohne Fußbodenaufbau steht dieser Bezug (z. B. „OKFFB“) rechts über den Höhen */
+  floorBaseLabel: string | undefined
   selected: string
   onSelect: (label: string) => void
 }) {
@@ -197,17 +307,29 @@ function ChoiceSectionView({
           // Je Gruppe ein eigener Block, z. B. Montagehöhen, Bewegungsflächen, Abstandsmaße
           <>
             {option.note && <p className="mt-3 text-base text-muted">{option.note}</p>}
-            {groupColumns(section.columns.filter((column) => column.key in option.values)).map(({ group, columns }) => (
-              <div key={group} className={card}>
-                {group && (
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                    <h3 className="text-lg font-bold text-accent">{group}</h3>
-                    {section.groupNotes[group] && <span className="text-base text-muted">{section.groupNotes[group]}</span>}
+            {groupColumns(section.columns.filter((column) => column.key in option.values)).map(({ group, columns }) => {
+              const heights = columns.some((column) => column.floorHeight)
+              if (floor && group && heights) {
+                return (
+                  <div key={group} className={card}>
+                    <FloorHeightTable group={group} columns={columns} option={option} floor={floor} />
                   </div>
-                )}
-                <BlockValues columns={columns} option={option} />
-              </div>
-            ))}
+                )
+              }
+              // Legende rechts neben der Überschrift; bei Höhen ohne Fußbodenaufbau deren Bezug (z. B. „OKFFB“)
+              const note = section.groupNotes[group] ?? (heights ? floorBaseLabel : undefined)
+              return (
+                <div key={group} className={card}>
+                  {group && (
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                      <h3 className="text-lg font-bold text-accent">{group}</h3>
+                      {note && <span className="text-base text-muted">{note}</span>}
+                    </div>
+                  )}
+                  <BlockValues columns={columns} option={option} />
+                </div>
+              )
+            })}
           </>
         ) : (
           <div className={card}>

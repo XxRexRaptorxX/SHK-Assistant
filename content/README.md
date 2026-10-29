@@ -82,7 +82,11 @@ zeigt nur den Wert, linksbündig (die Bezeichnung bleibt für Screenreader); `"v
 Wert nach links und die Bezeichnung dahinter (z. B. „90 × 75 cm davor“). Optional `bars`:
 Leisten ganz oben, untereinander (`key`, `name`, `options` mit `key`, `label`, kleiner zweiter Zeile
 `note`); jeweils die erste Option ist vorausgewählt. Abschnitte mit `when` (Leisten-key → Options-key)
-erscheinen nur bei dieser Stellung; jede Stellung braucht mindestens einen Abschnitt.
+erscheinen nur bei dieser Stellung; jede Stellung braucht mindestens einen Abschnitt. Optional
+`floorBuildUp` (`name`, `unit`, `hint`, `baseLabel`, `raisedLabel`): ein Eingabefeld ganz oben, z. B. der
+Fußbodenaufbau. Ist es ausgefüllt, zeigen Blöcke mit Spalten `"floorHeight": true` die Höhen nebeneinander
+über Fertig- und Rohfußboden (`baseLabel`/`raisedLabel`, z. B. OKFF/OKRFB); Zahlen mit anderem Bezug
+(„über Wannenrand“, „über Sitzhöhe“) und Abstände bleiben unverändert.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
