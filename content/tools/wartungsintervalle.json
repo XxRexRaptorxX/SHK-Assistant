@@ -1,0 +1,358 @@
+{
+  "id": "tool.wartungsintervalle",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Trinkwasser: DIN EN 806-5:2012-04, Anhang A, Tabelle A.1, Auszug in Haufe, „Hinweise für die Wohnungswirtschaft: Wasserführende Installation“, https://www.haufe.de/id/beitrag/hinweise-fuer-die-wohnungswirtschaft-2-wasserfuehrende-installation-hinweise-zur-umsetzung-der-trinkwasserverordnung-HI9341240.html; Rückspülen spätestens alle 6 Monate: DVGW, Wasseraufbereitung in der Trinkwasserinstallation (03/2024), https://www.dvgw.de/medien/dvgw/leistungen/publikationen/twin-wasseraufbereitung-trinkwasserinstallation-maerz-2024.pdf; Druckminderer: BWT, Produktdatenblatt D1 Druckminderer, https://www.bwt.com/de-de/-/media/bwt/global-data/documents/datenblaetter/d1-druckminderer/bwt_d1_druckminderer_pdb_de.pdf. Messungen: 1. BImSchV § 15 Abs. 1 und 3, § 14 Abs. 3 Nr. 4, https://www.gesetze-im-internet.de/bimschv_1_2010/; KÜO § 1 Abs. 2, https://www.gesetze-im-internet.de/k_o/__1.html. Gas: DVGW-TRGI (G 600), Intervalle nach Stadtwerke Radolfzell, „Checkliste zur jährlichen Sichtprüfung“, https://stadtwerke-radolfzell.de/fileadmin/user_upload/pdf/service/netzservice/gasnetz/hausanschluss_gas/Checkliste_zur_j%C3%A4hrlichen_Sichtpr%C3%BCfung.pdf, und Elbenergie, „TRGI – Hinweise zur Instandhaltung“. Membran-Ausdehnungsgefäß: Oventrop, Datenblatt Kappenventil „Expa-Con“ (2017), https://documents.unidomo.de/de/ovdb_1089008-1.pdf. Heizungswasser: Grünbeck, Anlagenbuch für Warmwasser-Heizungsanlagen, https://gruenbeck.de/fileadmin/user_upload/Downloads/Prospekte/Zuhause/Heizung_Energie/82552110_003_Anlagenbuch_fuer_Warmwasser-Heizungsanlagen_150dpi_Doppelseiten.pdf. Wärmepumpe: Verordnung (EU) 2024/573, Art. 5; Umweltbundesamt, Häufig gestellte Fragen zur F-Gas-Verordnung, Abschnitt 2, https://umweltbundesamt.de/themen/klima-energie/fluorierte-treibhausgase-fckw/rechtliche-regelungen/haeufig-gestellte-fragen-zur-f-gas-verordnung/abschnitt-2-dichtheitskontrollen. Warmwasserspeicher: Viessmann, Serviceanleitung Vitocell 100-W (2021), https://www.manualslib.de/manual/863463/Viessmann-Vitocell-100-W-Cugb.html. Hebeanlage: DIN EN 12056-4, Abschnitt 8, nach Wilo und Lernsituation „Instandhaltung Abwasserhebeanlage“ (berufsbildung.nrw.de). Rückstauverschluss: DIN 1986-3, nach Dallmer, Montageanleitung Rückstaudoppelverschluss. Alle abgerufen am 29.10.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "choice",
+  "title": "Wartungsintervalle",
+  "description": "Vorgeschriebene und empfohlene Inspektions-, Wartungs- und Prüfintervalle für typische Anlagenteile. Oben den Bereich wählen, darunter das Anlagenteil. Verlangt der Hersteller kürzere Intervalle, gelten diese.",
+  "category": "Wartung",
+  "bars": [
+    {
+      "key": "bereich",
+      "name": "Bereich",
+      "options": [
+        {
+          "key": "heizung",
+          "label": "Heizung"
+        },
+        {
+          "key": "trinkwasser",
+          "label": "Trinkwasser"
+        },
+        {
+          "key": "abwasser",
+          "label": "Abwasser"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Anlagenteile Heizung",
+      "when": {
+        "bereich": "heizung"
+      },
+      "inputName": "Anlagenteil",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "inspektion",
+          "name": "Inspektion",
+          "group": "Intervalle"
+        },
+        {
+          "key": "wartung",
+          "name": "Wartung",
+          "group": "Intervalle"
+        },
+        {
+          "key": "betreiber",
+          "name": "Kontrolle durch Betreiber",
+          "group": "Intervalle"
+        },
+        {
+          "key": "messung",
+          "name": "Messung durch Schornsteinfeger",
+          "group": "Intervalle"
+        },
+        {
+          "key": "pruefung",
+          "name": "Prüfung",
+          "group": "Intervalle"
+        },
+        {
+          "key": "regel",
+          "name": "Regel",
+          "group": "Grundlage"
+        },
+        {
+          "key": "verbindlich",
+          "name": "Verbindlichkeit",
+          "group": "Grundlage"
+        },
+        {
+          "key": "hinweis",
+          "name": "Hinweis",
+          "group": "Hinweise"
+        }
+      ],
+      "options": [
+        {
+          "label": "Gas-Heizgerät",
+          "values": {
+            "inspektion": "jährlich (Fachbetrieb)",
+            "wartung": "bedarfsorientiert nach Herstellerangabe (Fachbetrieb)",
+            "messung": "CO-Messung bei der Abgaswegüberprüfung nach KÜO, Termine laut Feuerstättenbescheid",
+            "regel": "DVGW-TRGI (Arbeitsblatt G 600); KÜO § 1",
+            "verbindlich": "Inspektion und Wartung: anerkannte Regel der Technik; Messung: gesetzlich vorgeschrieben",
+            "hinweis": "Bei Brennwertgeräten keine wiederkehrende Abgasverlust-Messung nach 1. BImSchV"
+          }
+        },
+        {
+          "label": "Öl- oder Gaskessel ohne Brennwert (ab 4 kW)",
+          "values": {
+            "wartung": "nach Herstellerangabe",
+            "messung": "jedes 3. Kalenderjahr (bis 12 Jahre nach Inbetriebnahme), jedes 2. Kalenderjahr (älter), jedes 5. Kalenderjahr mit selbstkalibrierender Verbrennungsregelung",
+            "regel": "1. BImSchV § 15 Abs. 3",
+            "verbindlich": "gesetzlich vorgeschrieben"
+          }
+        },
+        {
+          "label": "Festbrennstoffkessel, Holz oder Pellets (ab 4 kW)",
+          "values": {
+            "wartung": "nach Herstellerangabe",
+            "messung": "jedes 2. Kalenderjahr (Staub und CO)",
+            "regel": "1. BImSchV § 15 Abs. 1",
+            "verbindlich": "gesetzlich vorgeschrieben",
+            "hinweis": "gilt nicht für Einzelraumfeuerungen wie Kaminöfen"
+          }
+        },
+        {
+          "label": "Gasleitungsanlage im Gebäude",
+          "values": {
+            "betreiber": "jährliche Sichtkontrolle",
+            "pruefung": "Gebrauchsfähigkeitsprüfung alle 12 Jahre (eingetragenes Installationsunternehmen)",
+            "regel": "DVGW-TRGI 2018 (Arbeitsblatt G 600)",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Membran-Ausdehnungsgefäß (Heizung)",
+          "values": {
+            "pruefung": "Vordruck mindestens jährlich prüfen (im Zuge der Anlagenwartung)",
+            "regel": "Herstellerangabe (Oventrop, Kappenventil „Expa-Con“)",
+            "verbindlich": "Herstellerempfehlung",
+            "hinweis": "Zur Prüfung wasserseitig absperren und entleeren"
+          }
+        },
+        {
+          "label": "Heizungswasser (VDI 2035)",
+          "values": {
+            "pruefung": "pH-Wert 8–12 Wochen nach dem Befüllen, danach jährlich; bei zugegebenen Chemikalien jährlich auch deren Konzentration",
+            "regel": "VDI 2035 und Merkblatt BDH/ZVSHK, nach Grünbeck",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang",
+            "hinweis": "Werte im Anlagenbuch dokumentieren"
+          }
+        },
+        {
+          "label": "Wärmepumpe (Kältemittelkreis)",
+          "values": {
+            "pruefung": "Dichtheitskontrolle alle 12 Monate ab 5 t CO₂-Äquivalent Kältemittel (mit Leckage-Erkennungssystem alle 24 Monate)",
+            "regel": "F-Gase-Verordnung (EU) 2024/573, Art. 5",
+            "verbindlich": "gesetzlich vorgeschrieben",
+            "hinweis": "Hermetisch geschlossene Geräte unter 10 t CO₂-Äquivalent sind ausgenommen; viele Wärmepumpen im Einfamilienhaus liegen darunter"
+          }
+        },
+        {
+          "label": "Warmwasserspeicher, emailliert",
+          "values": {
+            "wartung": "Reinigung spätestens 2 Jahre nach Inbetriebnahme, danach nach Bedarf",
+            "pruefung": "Magnesium-Schutzanode jährlich auf Funktion prüfen",
+            "regel": "Herstellerangabe (Viessmann Vitocell 100-W)",
+            "verbindlich": "Herstellerempfehlung",
+            "hinweis": "Sicherheitsventil und Sicherheitsgruppe: siehe Bereich Trinkwasser"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Anlagenteile Trinkwasser",
+      "when": {
+        "bereich": "trinkwasser"
+      },
+      "inputName": "Anlagenteil",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "inspektion",
+          "name": "Inspektion",
+          "group": "Intervalle"
+        },
+        {
+          "key": "wartung",
+          "name": "Wartung",
+          "group": "Intervalle"
+        },
+        {
+          "key": "betreiber",
+          "name": "Kontrolle durch Betreiber",
+          "group": "Intervalle"
+        },
+        {
+          "key": "messung",
+          "name": "Messung durch Schornsteinfeger",
+          "group": "Intervalle"
+        },
+        {
+          "key": "pruefung",
+          "name": "Prüfung",
+          "group": "Intervalle"
+        },
+        {
+          "key": "regel",
+          "name": "Regel",
+          "group": "Grundlage"
+        },
+        {
+          "key": "verbindlich",
+          "name": "Verbindlichkeit",
+          "group": "Grundlage"
+        },
+        {
+          "key": "hinweis",
+          "name": "Hinweis",
+          "group": "Hinweise"
+        }
+      ],
+      "options": [
+        {
+          "label": "Rückspülfilter (80–150 µm)",
+          "values": {
+            "inspektion": "halbjährlich",
+            "wartung": "halbjährlich (rückspülen)",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang",
+            "hinweis": "spätestens alle 6 Monate rückspülen"
+          }
+        },
+        {
+          "label": "Filter, nicht rückspülbar (80–150 µm)",
+          "values": {
+            "inspektion": "halbjährlich",
+            "wartung": "halbjährlich (Filtereinsatz wechseln)",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Feinfilter (unter 80 µm)",
+          "values": {
+            "inspektion": "halbjährlich",
+            "wartung": "halbjährlich",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Druckminderer",
+          "values": {
+            "inspektion": "mindestens jährlich",
+            "wartung": "mindestens jährlich",
+            "regel": "DIN EN 806-5, nach BWT-Datenblatt D1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang",
+            "hinweis": "Ausgangsdruck am Manometer kontrollieren, Sieb reinigen"
+          }
+        },
+        {
+          "label": "Sicherheitsventil (Trinkwassererwärmer)",
+          "values": {
+            "inspektion": "halbjährlich (anlüften)",
+            "wartung": "halbjährlich",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Hydraulische Sicherheitsgruppe",
+          "values": {
+            "inspektion": "halbjährlich",
+            "wartung": "jährlich",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Enthärtungsanlage",
+          "values": {
+            "inspektion": "alle 2 Monate",
+            "wartung": "halbjährlich",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Dosieranlage",
+          "values": {
+            "inspektion": "alle 2 Monate",
+            "wartung": "halbjährlich",
+            "regel": "DIN EN 806-5, Anhang A, Tabelle A.1",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Anlagenteile Abwasser",
+      "when": {
+        "bereich": "abwasser"
+      },
+      "inputName": "Anlagenteil",
+      "display": "dropdown",
+      "columns": [
+        {
+          "key": "inspektion",
+          "name": "Inspektion",
+          "group": "Intervalle"
+        },
+        {
+          "key": "wartung",
+          "name": "Wartung",
+          "group": "Intervalle"
+        },
+        {
+          "key": "betreiber",
+          "name": "Kontrolle durch Betreiber",
+          "group": "Intervalle"
+        },
+        {
+          "key": "messung",
+          "name": "Messung durch Schornsteinfeger",
+          "group": "Intervalle"
+        },
+        {
+          "key": "pruefung",
+          "name": "Prüfung",
+          "group": "Intervalle"
+        },
+        {
+          "key": "regel",
+          "name": "Regel",
+          "group": "Grundlage"
+        },
+        {
+          "key": "verbindlich",
+          "name": "Verbindlichkeit",
+          "group": "Grundlage"
+        },
+        {
+          "key": "hinweis",
+          "name": "Hinweis",
+          "group": "Hinweise"
+        }
+      ],
+      "options": [
+        {
+          "label": "Abwasserhebeanlage",
+          "values": {
+            "wartung": "gewerblich vierteljährlich, Mehrfamilienhaus halbjährlich, Einfamilienhaus jährlich (Fachkundiger)",
+            "betreiber": "monatlich: Betriebsbereitschaft prüfen (mindestens 2 Schaltspiele beobachten)",
+            "regel": "DIN EN 12056-4, Abschnitt 8",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        },
+        {
+          "label": "Rückstauverschluss",
+          "values": {
+            "wartung": "halbjährlich (Fachkundiger): reinigen, Dichtungen prüfen",
+            "betreiber": "monatlich: Sichtprüfung, Handverschluss betätigen",
+            "regel": "DIN 1986-3, nach Herstellerangabe (Dallmer)",
+            "verbindlich": "anerkannte Regel der Technik; Herstellerangaben haben Vorrang"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -63,6 +63,7 @@ describe('Tools', () => {
       'Rohrschellenabstand',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Thermostatkopf-Einstellung und Raumtemperatur',
+      'Wartungsintervalle',
     ])
   })
 
@@ -636,6 +637,25 @@ describe('Tools', () => {
       'bars: kein Abschnitt für rollstuhl + zubehoer',
       'sections[5] (Badzubehör – rollstuhlgerecht): unbekannte Option "unbekannt" bei "ausfuehrung"',
     ])
+  })
+
+  it('zeigt Wartungsintervalle je Bereich und Anlagenteil', () => {
+    const tool = toolEntries.find((entry) => entry.id === 'tool.wartungsintervalle')!
+    if (!isChoiceTool(tool)) throw new Error('Auswahl-Tool erwartet')
+    expect(checkChoiceTool(tool)).toEqual([])
+    expect(tool.category).toBe('Wartung')
+    const html = (label: string, bereich: string) =>
+      renderToStaticMarkup(<ChoiceLookup tool={tool} initialSelection={{ 0: label, 1: label, 2: label }} initialBars={{ bereich }} />)
+    const filter = html('Rückspülfilter (80–150 µm)', 'trinkwasser')
+    expect(filter).toMatch(/Inspektion<\/dt><dd[^>]*>halbjährlich<\/dd>/)
+    expect(filter).toContain('DIN EN 806-5, Anhang A, Tabelle A.1')
+    const softener = html('Enthärtungsanlage', 'trinkwasser')
+    expect(softener).toMatch(/Inspektion<\/dt><dd[^>]*>alle 2 Monate<\/dd>/)
+    const boiler = html('Öl- oder Gaskessel ohne Brennwert (ab 4 kW)', 'heizung')
+    expect(boiler).toContain('jedes 3. Kalenderjahr (bis 12 Jahre nach Inbetriebnahme)')
+    expect(boiler).toContain('gesetzlich vorgeschrieben')
+    const lifting = html('Abwasserhebeanlage', 'abwasser')
+    expect(lifting).toContain('gewerblich vierteljährlich, Mehrfamilienhaus halbjährlich, Einfamilienhaus jährlich')
   })
 
   it('zeigt die Abgaswerte je Brennerart', () => {
