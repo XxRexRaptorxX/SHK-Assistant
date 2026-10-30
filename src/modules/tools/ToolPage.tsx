@@ -7,9 +7,10 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { FormulaBody } from '../formulas/FormulaDetailPage'
 import { ensureCustomUnits } from '../units/customUnits'
 import { findTool, toolEntries } from './tools'
-import { isChoiceTool, isFactorTool, isTableTool, isVariantTool, type ToolEntry } from './schema'
+import { isChoiceTool, isFactorTool, isSymbolTool, isTableTool, isVariantTool, type ToolEntry } from './schema'
 import { FactorCalculator } from './FactorCalculator'
 import { ChoiceLookup } from './ChoiceLookup'
+import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
 import { VariantCalculator } from './VariantCalculator'
 
@@ -38,6 +39,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <FactorCalculator tool={tool} />
       ) : isVariantTool(tool) ? (
         <VariantCalculator tool={tool} />
+      ) : isSymbolTool(tool) ? (
+        <SymbolLookup tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

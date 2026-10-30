@@ -55,8 +55,9 @@ Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle
 wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
 „Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, derzeit „Aufmaß“
 (Mengen auf der Baustelle ermitteln), „Auslegung“ (Bedarf vorab abschätzen), „Demonstration“
-(Faustwerte zum Zeigen beim Kunden), „Montage“ (Vorgaben für den Einbau, z. B. Rohrschellenabstände)
-und „Wartung“ (Richtwerte für Messungen, z. B. Abgaswerte).
+(Faustwerte zum Zeigen beim Kunden), „Montage“ (Vorgaben für den Einbau, z. B. Rohrschellenabstände),
+„Planung“ (Nachschlagen beim Lesen und Zeichnen von Schemata, z. B. Sinnbilder) und „Wartung“
+(Richtwerte für Messungen, z. B. Abgaswerte).
 
 **Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
 Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
@@ -94,6 +95,21 @@ Felder: `title`, `description`, `category`, `name` (Beschriftung der Leiste, z. 
 `variants` (mindestens zwei) mit `key`, `label`, optional `note` (kleine zweite Zeile in der Leiste) und
 allen Feldern einer Formel (`title`, `description`, `variables`, `result`, `expression`, `examples`,
 `figure` …). Jede Variante wird wie eine Formel geprüft; ihre Testbeispiele laufen automatisch mit.
+
+**Sinnbild-Tools** (`"kind": "symbols"`) zeigen Sinnbilder (Schaltzeichen) aus Strang- und
+Anlagenschemata mit Suchfeld. Felder: `title`, `description`, `category` und `groups`, je Gruppe
+`title`, `norm` (z. B. „DIN EN 806-1:2001-12“), optional `note` (Hinweis unter der Überschrift, z. B.
+„Links Grundriss, rechts Aufriss“) und `symbols` mit `name` (je Gruppe eindeutig), optional `aliases` (weitere
+Suchbegriffe, z. B. „RV“), `note` (z. B. was ein Stern im Sinnbild bedeutet) und `draw`: die Zeichnung
+als Liste einfacher Formen auf einer Fläche von 48 × 32 (Leitung waagerecht auf Höhe 16). Formen:
+`{"d": "M4 16H44"}` (SVG-Pfad, nur Pfadbefehle und Zahlen), `{"circle": [cx, cy, r]}` und
+`{"text": "FV", "x": 24, "y": 16, "size": 7}`; Pfade und Kreise optional mit `"fill": true`
+(gefüllt), `"dash": true` (gestrichelt), `"dashDot": true` (Strichpunkt) oder `"bold": true` (breiter
+Strich). Alle Formen dürfen eine `color` haben (`rot`, `blau`, `gruen`, `gelb`, `violett`, `orange`,
+`braun`, `grau`, `schwarz`, `weiss`), z. B. für Leitungsfarben; ohne Farbe gilt die Textfarbe. Sinnbilder
+mit Farbe stehen wie auf einem Plan auf weißem Grund. Die Zeichnungen sind
+eigene Nachzeichnungen, keine Bilder aus Normen oder Büchern. Der Build prüft doppelte Namen und
+Koordinaten außerhalb der Fläche.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:

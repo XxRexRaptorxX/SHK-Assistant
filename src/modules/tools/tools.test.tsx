@@ -61,6 +61,7 @@ describe('Tools', () => {
       'Mindestdämmdicke von Rohrleitungen',
       'Rohrlänge einer Fußbodenheizung',
       'Rohrschellenabstand',
+      'Sinnbilder',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Wartungsintervalle',

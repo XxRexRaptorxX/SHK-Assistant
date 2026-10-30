@@ -1,0 +1,5815 @@
+{
+  "id": "tool.sinnbilder",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Sinnbilder nach DIN EN 806-1:2001-12 (Trinkwasserinstallation und Brandschutzanlagen), DIN 28000-4:2014-07 (Heizungsanlagen), DVGW-TRGI 2018 (Gasinstallation), DIN 1986-100:2016-12 (Sanitär-Ausstattungsgegenstände), DIN 19227-2:1991-02 (Mess-, Steuer- und Regeltechnik) und DIN EN 60617-3, -4, -6, -7, -9, -11:1997-08 (Elektrotechnik). Eigene, vereinfachte Nachzeichnung nach einer Tabellenbuch-Übersicht des Inhabers (Vorlage vom 29.10.2026); Abgleich mit dem Normtext steht aus. Sicherungsarmaturen zusätzlich abgeglichen mit den Symbolen nach DIN EN 1717 in Bosy, „Wegweiser Trinkwasserschutz – Technisches Handbuch Armaturentechnologie“, S. 13–17, http://www.bosy-online.de/WegweiserTrinkwasserSchutzTechnischesHandbuch.pdf. Kappenventil: Absperrung gegen unbeabsichtigtes Schließen gesichert nach DIN EN 12828, wiedergegeben in Afriso, Betriebsanleitung Kappenventile, https://www.afriso.com/ix_pim_assets/PDF/3/73/573/Kappenventile-BA.pdf; Sinnbild: manueller Stellantrieb, gesichert (DIN 28000-4). Leitungskürzel und Farben: PWC grün, PWH rot, PWH-C violett nach DIN EN 806-1, wiedergegeben in Wikipedia, „Rohrleitungskennzeichnung“, https://de.wikipedia.org/wiki/Rohrleitungskennzeichnung; Kaltwasser grün und Warmwasser rot auch in SBZ Monteur 07/2018, „Wie funktioniert eigentlich ein Strangschema?“; VL/RL und Hz V/Hz R ebenda (Wikipedia); Heizungs- und Fernwärme-Vorlauf rot, -Rücklauf blau (Rücklauf gestrichelt) nach MDF AG, „Graphische Darstellung von Anlagen der technischen Gebäudeausrüstung“, https://www.mdf-ag.com/media/user_upload/MFAG/PDF/Technik/LEJ/W6/W6_Graphische_Darstellung_von_Anlagen_der_technischen_Gebaeudeausruestung.pdf; Kürzel HVL, HRL, FVL, FRL, WAS, WAR sowie Kaltwasser auch blau, Zirkulation früher rot gestrichelt, Schmutzwasser schwarz, Regenwasser verschmutzt schwarz gestrichelt, Mischabwasser schwarz Strichpunkt und Regenwasser nutzbar grün nach tabelle.info, „Kennzeichnung von Rohren und Rohrleitungen“, https://www.tabelle.info/rohrleitung_kennzeichnung.html. Rohrkennzeichnung: Gruppen, Gruppen-, Zusatz- und Schriftfarben nach DIN 2403:2014-06, wiedergegeben in TRGS 201, Anhang 3, https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs201/anh3.htm. Alle abgerufen am 29.10.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "symbols",
+  "title": "Sinnbilder",
+  "description": "Sinnbilder (Schaltzeichen) aus Strang- und Anlagenschemata für Trinkwasser, Heizung, Gas, Sanitär, Brandschutz, MSR und Elektro, dazu Leitungskürzel mit ihren Farben. Bauteil eintippen, z. B. „Kugelhahn“ oder „RV“. Die Zeichnungen sind vereinfacht; maßgeblich ist die Norm.",
+  "category": "Planung",
+  "groups": [
+    {
+      "title": "Rohrverbindungen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Rohrverbindung",
+          "aliases": [
+            "Verbindung allgemein"
+          ],
+          "note": "* Kennzeichen der Verbindungsart",
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                1.8
+              ],
+              "fill": true
+            },
+            {
+              "text": "*",
+              "x": 28,
+              "y": 10,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Flanschverbindung",
+          "aliases": [
+            "Flansch"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H22M26 16H44"
+            },
+            {
+              "d": "M22 10V22M26 10V22"
+            }
+          ]
+        },
+        {
+          "name": "Geschweißte oder gelötete Rohrverbindung",
+          "aliases": [
+            "Schweißverbindung",
+            "Lötverbindung",
+            "geschweißt",
+            "gelötet"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                1.8
+              ],
+              "fill": true
+            },
+            {
+              "d": "M24 16L30 10H35M39 7L35 10L39 13"
+            },
+            {
+              "text": "*",
+              "x": 43,
+              "y": 8,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Gewindeverbindung",
+          "aliases": [
+            "Gewinde",
+            "Verschraubung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M21 12.5H27M21 19.5H27"
+            }
+          ]
+        },
+        {
+          "name": "Klemmflansch\u00ADverbindung",
+          "aliases": [
+            "Klemmflansch"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H22M26 16H44"
+            },
+            {
+              "d": "M22 10V22M26 10V22M20 10H28M20 22H28"
+            }
+          ]
+        },
+        {
+          "name": "Schnellkupplung",
+          "aliases": [
+            "Kupplung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H19M29 16H44",
+              "dash": true
+            },
+            {
+              "d": "M19 12L23 16L19 20M24 12L28 16L24 20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Absperr- und Drosselarmaturen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Absperrarmatur, geflanscht",
+          "aliases": [
+            "Absperrarmatur allgemein",
+            "Absperrung",
+            "Flansch"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44M10 12V20M38 12V20"
+            },
+            {
+              "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
+            }
+          ]
+        },
+        {
+          "name": "Geradsitzventil",
+          "aliases": [
+            "Absperrventil",
+            "Ventil"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2.4
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Absperrklappe",
+          "aliases": [
+            "Klappe"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
+            },
+            {
+              "d": "M19.5 20.5L28.5 11.5",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Eckventil",
+          "aliases": [
+            "Eckregulierventil"
+          ],
+          "draw": [
+            {
+              "d": "M6 13H16"
+            },
+            {
+              "d": "M16 7L24 13L16 19Z"
+            },
+            {
+              "d": "M18 22L24 13L30 22Z"
+            },
+            {
+              "d": "M24 22V30",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Kugelhahn",
+          "aliases": [
+            "Kugelventil",
+            "Absperrhahn"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 10L21.5 16L16 22ZM32 10L26.5 16L32 22Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2.5
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Druckminderer",
+          "aliases": [
+            "Druckminderventil",
+            "Druckregler"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
+            },
+            {
+              "d": "M36 2V8"
+            },
+            {
+              "d": "M34.3 6.5L36 10L37.7 6.5Z",
+              "fill": true
+            },
+            {
+              "d": "M33 10.5H39"
+            },
+            {
+              "text": "p",
+              "x": 42,
+              "y": 7,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Dreiwegeventil",
+          "aliases": [
+            "3-Wege-Ventil",
+            "Mischventil",
+            "Umschaltventil"
+          ],
+          "draw": [
+            {
+              "d": "M6 13H16M32 13H42"
+            },
+            {
+              "d": "M16 7L24 13L16 19ZM32 7L24 13L32 19Z"
+            },
+            {
+              "d": "M18 22L24 13L30 22Z"
+            },
+            {
+              "circle": [
+                24,
+                13,
+                2.4
+              ],
+              "fill": true
+            },
+            {
+              "d": "M24 22V30",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Kolbenschieber, Kolbenventil",
+          "aliases": [
+            "Kolbenschieber",
+            "Kolbenventil"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 10L21 16L16 22ZM32 10L27 16L32 22Z"
+            },
+            {
+              "d": "M21 12.5H27V19.5H21Z"
+            }
+          ]
+        },
+        {
+          "name": "Anschlussvorrichtung",
+          "aliases": [
+            "Anschluss"
+          ],
+          "draw": [
+            {
+              "d": "M7 7Q15 16 7 25"
+            },
+            {
+              "d": "M11 16L18 11.5H30V20.5H18Z"
+            },
+            {
+              "d": "M30 16H42"
+            }
+          ]
+        },
+        {
+          "name": "Vierwegeventil",
+          "aliases": [
+            "4-Wege-Ventil",
+            "Vierwegemischer"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44",
+              "dash": true
+            },
+            {
+              "d": "M16 12L24 16L16 20ZM32 12L24 16L32 20Z"
+            },
+            {
+              "d": "M20 8L24 16L28 8ZM20 24L24 16L28 24Z"
+            },
+            {
+              "d": "M24 3V8M24 24V29"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Freistromventil, Schieber",
+          "aliases": [
+            "Schieber",
+            "Freistromventil"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
+            },
+            {
+              "d": "M24 9V23"
+            }
+          ]
+        },
+        {
+          "name": "Ventilanbohrschelle",
+          "aliases": [
+            "Anbohrschelle"
+          ],
+          "draw": [
+            {
+              "d": "M11 11H16"
+            },
+            {
+              "d": "M16 6L24 11L16 16Z"
+            },
+            {
+              "d": "M19.5 19L24 11L28.5 19Z"
+            },
+            {
+              "circle": [
+                24,
+                11,
+                2
+              ],
+              "fill": true
+            },
+            {
+              "d": "M17 27Q24 18 31 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Entnahmestellen und Zubehör",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Auslaufventil, Entleerungsventil",
+          "aliases": [
+            "Auslaufventil",
+            "Entleerungsventil",
+            "Entleerung",
+            "KFE-Hahn",
+            "Zapfstelle"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H24",
+              "dash": true
+            },
+            {
+              "d": "M24 16H36"
+            },
+            {
+              "d": "M36 13.5L41 16L36 18.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Standauslaufventil",
+          "aliases": [
+            "Standventil",
+            "Zapfstelle"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H22",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                1.8
+              ],
+              "fill": true
+            },
+            {
+              "d": "M24 16H36"
+            },
+            {
+              "d": "M36 13.5L41 16L36 18.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Wandauslaufventil",
+          "aliases": [
+            "Wandventil",
+            "Zapfstelle"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H22",
+              "dash": true
+            },
+            {
+              "d": "M22 16H36M26 12V20"
+            },
+            {
+              "d": "M36 13.5L41 16L36 18.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Mischbatterie",
+          "aliases": [
+            "Mischer",
+            "Armatur"
+          ],
+          "draw": [
+            {
+              "d": "M6 9H24M6 23H24",
+              "dash": true
+            },
+            {
+              "d": "M24 9H30V23H24M30 16H36"
+            },
+            {
+              "d": "M36 13.5L41 16L36 18.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Standmischbatterie",
+          "aliases": [
+            "Standarmatur",
+            "Waschtischarmatur"
+          ],
+          "draw": [
+            {
+              "d": "M6 9H20M6 23H20",
+              "dash": true
+            },
+            {
+              "circle": [
+                22,
+                9,
+                1.8
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                22,
+                23,
+                1.8
+              ],
+              "fill": true
+            },
+            {
+              "d": "M22 9H30V23H22M30 16H36"
+            },
+            {
+              "d": "M36 13.5L41 16L36 18.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Wandmischbatterie",
+          "aliases": [
+            "Wandarmatur"
+          ],
+          "draw": [
+            {
+              "d": "M6 9H20M6 23H20",
+              "dash": true
+            },
+            {
+              "d": "M20 9H30V23H20M30 16H36M24 6V12M24 20V26"
+            },
+            {
+              "d": "M36 13.5L41 16L36 18.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Selbstschlussarmatur",
+          "aliases": [
+            "Selbstschlussventil",
+            "SC"
+          ],
+          "draw": [
+            {
+              "d": "M6 19H24",
+              "dash": true
+            },
+            {
+              "d": "M24 19H36"
+            },
+            {
+              "d": "M36 16.5L41 19L36 21.5Z",
+              "fill": true
+            },
+            {
+              "text": "SC",
+              "x": 36,
+              "y": 10,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Brause",
+          "aliases": [
+            "Dusche",
+            "Kopfbrause"
+          ],
+          "draw": [
+            {
+              "d": "M24 3V17",
+              "dash": true
+            },
+            {
+              "d": "M24 17V22M24 22L18 29M24 22V29M24 22L30 29"
+            }
+          ]
+        },
+        {
+          "name": "Schlauchbrause",
+          "aliases": [
+            "Handbrause",
+            "Dusche"
+          ],
+          "draw": [
+            {
+              "d": "M24 3V6C19 8 29 11 24 13C19 15 29 18 24 20V22"
+            },
+            {
+              "d": "M24 22L18 29M24 22V29M24 22L30 29"
+            }
+          ]
+        },
+        {
+          "name": "Druckspüler mit Rohrunterbrecher",
+          "aliases": [
+            "Druckspüler",
+            "FV"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H15M33 16H44",
+              "dash": true
+            },
+            {
+              "d": "M15 9H33V23H15Z"
+            },
+            {
+              "text": "FV",
+              "x": 24,
+              "y": 16,
+              "size": 7
+            }
+          ]
+        },
+        {
+          "name": "Spülkasten",
+          "aliases": [
+            "FC",
+            "WC-Spülkasten"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H15M33 16H44",
+              "dash": true
+            },
+            {
+              "d": "M15 9H33V23H15Z"
+            },
+            {
+              "text": "FC",
+              "x": 24,
+              "y": 16,
+              "size": 7
+            }
+          ]
+        },
+        {
+          "name": "Auslaufventil mit Schnellkupplung und Schlauchverschraubung",
+          "aliases": [
+            "Schlauchanschluss",
+            "Gartenventil",
+            "Schnellkupplung"
+          ],
+          "draw": [
+            {
+              "d": "M2 16H7",
+              "dash": true
+            },
+            {
+              "d": "M7 12L13 16L7 20ZM19 12L13 16L19 20Z"
+            },
+            {
+              "d": "M13 16V9M10 9H16"
+            },
+            {
+              "d": "M21 12L25 16L21 20M26 12L30 16L26 20"
+            },
+            {
+              "d": "M31 16C33 11 36 11 37 16S41 21 43 16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sicherungsarmaturen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Sicherungsarmatur, allgemein",
+          "aliases": [
+            "Sicherungseinrichtung"
+          ],
+          "note": "* Kennbuchstaben der Sicherungsarmatur",
+          "draw": [
+            {
+              "d": "M14 16L19 7H29L34 16L29 25H19Z"
+            },
+            {
+              "text": "*",
+              "x": 24,
+              "y": 16,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Freier Auslauf",
+          "aliases": [
+            "Luftstrecke",
+            "AA",
+            "AB"
+          ],
+          "draw": [
+            {
+              "d": "M8 7H24V12"
+            },
+            {
+              "d": "M18 15V19H30V15"
+            },
+            {
+              "d": "M24 19V29"
+            }
+          ]
+        },
+        {
+          "name": "Rohrunterbrecher",
+          "aliases": [
+            "Unterbrecher"
+          ],
+          "draw": [
+            {
+              "d": "M24 3V13M24 19V29"
+            },
+            {
+              "d": "M20.5 10.5V21.5M27.5 9.5V20.5"
+            }
+          ]
+        },
+        {
+          "name": "Rohrbelüfter",
+          "aliases": [
+            "Belüfter"
+          ],
+          "draw": [
+            {
+              "d": "M24 24V13"
+            },
+            {
+              "d": "M17 17L24 12.5L31 17"
+            }
+          ]
+        },
+        {
+          "name": "Rohrbelüfter in Durchgangsform",
+          "aliases": [
+            "Belüfter"
+          ],
+          "draw": [
+            {
+              "d": "M24 5V27"
+            },
+            {
+              "d": "M17 19L24 15L31 19"
+            }
+          ]
+        },
+        {
+          "name": "Rohrentlüfter",
+          "aliases": [
+            "Entlüfter",
+            "Schnellentlüfter"
+          ],
+          "draw": [
+            {
+              "d": "M24 29V16"
+            },
+            {
+              "d": "M19 16L24 6L29 16Z"
+            }
+          ]
+        },
+        {
+          "name": "Rückfluss\u00ADverhinderer",
+          "aliases": [
+            "RV",
+            "Rückschlagventil",
+            "Rückschlagklappe"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H18M28 16H44"
+            },
+            {
+              "d": "M18 10L28 16L18 22Z",
+              "fill": true
+            },
+            {
+              "d": "M28 10V22"
+            }
+          ]
+        },
+        {
+          "name": "Absperrventil mit integriertem Rückfluss\u00ADverhinderer",
+          "aliases": [
+            "KRV",
+            "Kombi-Ventil",
+            "RV"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H14M34 16H44"
+            },
+            {
+              "d": "M14 10L24 16L14 22Z",
+              "fill": true
+            },
+            {
+              "d": "M34 10L24 16L34 22Z"
+            },
+            {
+              "d": "M24 16V7M20 7H28"
+            }
+          ]
+        },
+        {
+          "name": "Rohrtrenner",
+          "aliases": [
+            "Systemtrenner"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H12M36 16H44"
+            },
+            {
+              "d": "M12 10H36V22H12Z"
+            },
+            {
+              "d": "M14.5 13H19M23 13H33.5M14.5 19H19M23 19H33.5"
+            }
+          ]
+        },
+        {
+          "name": "Rohrbruch- bzw. Schlauchbruch\u00ADsicherung",
+          "aliases": [
+            "Rohrbruchsicherung",
+            "Schlauchbruchsicherung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H12M36 16H44"
+            },
+            {
+              "d": "M12 10H36V22H12Z"
+            },
+            {
+              "d": "M12 10L24 16L12 22ZM36 10L24 16L36 22Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsventil, federbelastet",
+          "aliases": [
+            "SV",
+            "Sicherheitsventil"
+          ],
+          "draw": [
+            {
+              "d": "M11 15H16"
+            },
+            {
+              "d": "M16 10L24 15L16 20Z"
+            },
+            {
+              "d": "M19.5 24L24 15L28.5 24Z"
+            },
+            {
+              "circle": [
+                24,
+                15,
+                1.6
+              ],
+              "fill": true
+            },
+            {
+              "d": "M18.5 21H29.5"
+            },
+            {
+              "d": "M24 24V30"
+            },
+            {
+              "d": "M24 15V10L21 8.8L27 7.2L21 5.6L27 4L24 2.5"
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsventil, Temperaturablassventil",
+          "aliases": [
+            "Temperaturablassventil",
+            "STB-Ventil"
+          ],
+          "draw": [
+            {
+              "d": "M8 16H16M34 16H42"
+            },
+            {
+              "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2.2
+              ],
+              "fill": true
+            },
+            {
+              "d": "M34 10V22"
+            },
+            {
+              "text": "T",
+              "x": 8,
+              "y": 23,
+              "size": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Wasserbehandlung",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Dosiergerät",
+          "aliases": [
+            "Dosieranlage",
+            "Dosierung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H17M31 16H44"
+            },
+            {
+              "d": "M17 8H31V24H17Z"
+            },
+            {
+              "d": "M19 15L23.5 10.5H28"
+            },
+            {
+              "d": "M27.5 8.8L30.5 10.5L27.5 12.2Z",
+              "fill": true
+            },
+            {
+              "text": "CHO",
+              "x": 24,
+              "y": 20.5,
+              "size": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Umkehrosmose\u00ADanlage",
+          "aliases": [
+            "Umkehrosmose",
+            "RO",
+            "Osmose"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H17M31 16H44"
+            },
+            {
+              "d": "M17 8H31V24H17Z"
+            },
+            {
+              "d": "M19 10.5H29"
+            },
+            {
+              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+            },
+            {
+              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
+              "fill": true
+            },
+            {
+              "text": "RO",
+              "x": 24,
+              "y": 20.5,
+              "size": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Aktivkohlefilter",
+          "aliases": [
+            "ACF",
+            "Kohlefilter"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H17M31 16H44"
+            },
+            {
+              "d": "M17 8H31V24H17Z"
+            },
+            {
+              "d": "M19 10.5H29"
+            },
+            {
+              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+            },
+            {
+              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
+              "fill": true
+            },
+            {
+              "text": "ACF",
+              "x": 24,
+              "y": 20.5,
+              "size": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Enthärtungsanlage",
+          "aliases": [
+            "Enthärtung",
+            "SOF",
+            "Wasserenthärter"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H17M31 16H44"
+            },
+            {
+              "d": "M17 8H31V24H17Z"
+            },
+            {
+              "d": "M19 10.5H29"
+            },
+            {
+              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+            },
+            {
+              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
+              "fill": true
+            },
+            {
+              "text": "SOF",
+              "x": 24,
+              "y": 20.5,
+              "size": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Desinfektions\u00ADanlage mit UV",
+          "aliases": [
+            "UV-Anlage",
+            "Desinfektion",
+            "UV"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H17M31 16H44"
+            },
+            {
+              "d": "M17 8H31V24H17Z"
+            },
+            {
+              "d": "M19 10.5H29"
+            },
+            {
+              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+            },
+            {
+              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
+              "fill": true
+            },
+            {
+              "text": "UV",
+              "x": 24,
+              "y": 20.5,
+              "size": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Mechanischer Filter",
+          "aliases": [
+            "Filter",
+            "Feinfilter",
+            "Rückspülfilter"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 8H32V24H16Z"
+            },
+            {
+              "d": "M24 10V22",
+              "dash": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Einrichtungen mit rotierenden Teilen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Einrichtung mit rotierenden Teilen",
+          "aliases": [
+            "rotierend"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H17"
+            },
+            {
+              "circle": [
+                26,
+                16,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pumpe",
+          "aliases": [
+            "Kreiselpumpe",
+            "Druckerhöhung"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                10
+              ]
+            },
+            {
+              "d": "M16.9 8.9L34 16L16.9 23.1"
+            }
+          ]
+        },
+        {
+          "name": "Waschmaschine",
+          "aliases": [
+            "WM"
+          ],
+          "draw": [
+            {
+              "d": "M14 6H34V26H14Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                7
+              ],
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Geschirrspüler",
+          "aliases": [
+            "Spülmaschine"
+          ],
+          "draw": [
+            {
+              "d": "M14 6H34V26H14Z"
+            },
+            {
+              "d": "M17 10H31M24 10V21M18 16L20 10L22 16M26 16L28 10L30 16"
+            }
+          ]
+        },
+        {
+          "name": "Wäschetrockner",
+          "aliases": [
+            "Trockner"
+          ],
+          "draw": [
+            {
+              "d": "M15 4H33V28H15Z"
+            },
+            {
+              "d": "M24 7.5A5 6.5 0 1 0 24 20.5A5 6.5 0 1 0 24 7.5Z"
+            },
+            {
+              "d": "M26.3 8.6Q23 14 22.4 19.8"
+            }
+          ]
+        },
+        {
+          "name": "Klimagerät",
+          "aliases": [
+            "Klimaanlage",
+            "AC"
+          ],
+          "draw": [
+            {
+              "d": "M14 6H34V26H14Z"
+            },
+            {
+              "d": "M14 11H34M17 6V11M20 6V11M23 6V11M26 6V11M29 6V11M32 6V11"
+            },
+            {
+              "text": "AC",
+              "x": 24,
+              "y": 19,
+              "size": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Weitere Einrichtungen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Einrichtung ohne rotierende Teile",
+          "draw": [
+            {
+              "d": "M6 11H34V21H6Z"
+            },
+            {
+              "d": "M34 16H44",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Trichter",
+          "aliases": [
+            "Ablauftrichter",
+            "Siphontrichter"
+          ],
+          "draw": [
+            {
+              "d": "M17 7L24 15L31 7M24 15V28"
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsgruppe",
+          "aliases": [
+            "Sicherheitsgruppe Speicher",
+            "SV-Gruppe"
+          ],
+          "draw": [
+            {
+              "d": "M2 22H8"
+            },
+            {
+              "d": "M8 18.5L13 22L8 25.5ZM18 18.5L13 22L18 25.5Z"
+            },
+            {
+              "d": "M18 18.5L24 22L18 25.5Z",
+              "fill": true
+            },
+            {
+              "d": "M24 18V26"
+            },
+            {
+              "d": "M24 22H40"
+            },
+            {
+              "d": "M29 22V16.5"
+            },
+            {
+              "d": "M26.5 16.5L29 11.5L31.5 16.5Z"
+            },
+            {
+              "d": "M34 9L29 11.5L34 14Z"
+            },
+            {
+              "d": "M29 11.5V9L27.5 8L30.5 6.5L27.5 5L30.5 3.5L29 2.5"
+            },
+            {
+              "d": "M34 11.5H37V28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mess- und Regeleinrichtungen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Messgerät mit Anzeige",
+          "aliases": [
+            "Manometer",
+            "Anzeige"
+          ],
+          "draw": [
+            {
+              "d": "M2 16H15M33 16H46",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                9
+              ]
+            },
+            {
+              "d": "M19.5 10.5L24.3 14.9L27.5 20.5L22.7 16.1Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Thermometer",
+          "aliases": [
+            "Temperaturanzeige"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H20"
+            },
+            {
+              "circle": [
+                29,
+                16,
+                9
+              ]
+            },
+            {
+              "text": "°C",
+              "x": 29,
+              "y": 16,
+              "size": 7
+            }
+          ]
+        },
+        {
+          "name": "Durchflussmessgerät",
+          "aliases": [
+            "Durchflussmesser",
+            "Volumenstrom"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H15M33 16H44"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                9
+              ]
+            },
+            {
+              "text": "m³/s",
+              "x": 24,
+              "y": 16,
+              "size": 5
+            }
+          ]
+        },
+        {
+          "name": "Registriergerät, z. B. Schreiber",
+          "aliases": [
+            "Schreiber",
+            "Registriergerät"
+          ],
+          "draw": [
+            {
+              "d": "M2 16H16M32 16H46",
+              "dash": true
+            },
+            {
+              "d": "M16 8H32V24H16Z"
+            },
+            {
+              "d": "M18 11H30"
+            },
+            {
+              "circle": [
+                24,
+                18,
+                1.2
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Durchflussschreiber",
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 8H32V24H16Z"
+            },
+            {
+              "d": "M18 11H30"
+            },
+            {
+              "text": "m³/s",
+              "x": 24,
+              "y": 18,
+              "size": 5
+            }
+          ]
+        },
+        {
+          "name": "Messgerät, z. B. Wärmemengenzähler",
+          "aliases": [
+            "Wärmemengenzähler",
+            "Wärmezähler",
+            "WMZ",
+            "Messgerät"
+          ],
+          "note": "* Kennzeichen, z. B. Wh für Wärmemessgerät",
+          "draw": [
+            {
+              "d": "M2 16H16M32 16H46",
+              "dash": true
+            },
+            {
+              "d": "M16 7H32V25H16Z"
+            },
+            {
+              "d": "M16 12H32"
+            },
+            {
+              "text": "*",
+              "x": 24,
+              "y": 19,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Wasserzähler",
+          "aliases": [
+            "Wasseruhr",
+            "Zähler"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 7H32V25H16Z"
+            },
+            {
+              "d": "M16 12H32"
+            },
+            {
+              "text": "m³",
+              "x": 24,
+              "y": 19,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Steuerleitung",
+          "aliases": [
+            "Wirkleitung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Anschlussstelle für Mess- oder Regeleinrichtung",
+          "aliases": [
+            "Messstelle",
+            "Messanschluss",
+            "Fühler"
+          ],
+          "draw": [
+            {
+              "d": "M18 7Q18 14 24 14Q30 14 30 7"
+            },
+            {
+              "d": "M24 14V27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Behälter und Trinkwassererwärmer",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Trinkwasserbehälter",
+          "aliases": [
+            "Vorratsbehälter",
+            "Behälter"
+          ],
+          "note": "* Kennzeichen der Belüftung",
+          "draw": [
+            {
+              "d": "M26.5 9H8V29H40V9H29.5"
+            },
+            {
+              "d": "M8 13H40"
+            },
+            {
+              "d": "M11 13L13.5 16.5L16 13M13.5 16.5V23"
+            },
+            {
+              "d": "M26.5 9V6H24L28 2L32 6H29.5V9"
+            },
+            {
+              "text": "*",
+              "x": 36,
+              "y": 4,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Membran\u00ADdruckgefäß, -behälter",
+          "aliases": [
+            "Ausdehnungsgefäß",
+            "MAG",
+            "Druckausdehnungsgefäß",
+            "Druckbehälter"
+          ],
+          "draw": [
+            {
+              "d": "M18 8Q18 4 24 4Q30 4 30 8V24Q30 28 24 28Q18 28 18 24Z"
+            },
+            {
+              "d": "M18 14Q21 12 24 14T30 14"
+            },
+            {
+              "d": "M22 7.5H26L24 10.5Z"
+            }
+          ]
+        },
+        {
+          "name": "Speicher\u00ADtrinkwasser\u00ADerwärmer, direkt beheizt",
+          "aliases": [
+            "Speicher",
+            "Warmwasserspeicher",
+            "Boiler"
+          ],
+          "note": "* O Öl, G Gas, C Feststoff",
+          "draw": [
+            {
+              "d": "M19 6Q19 2 24 2Q29 2 29 6V21Q29 24 24 24Q19 24 19 21Z"
+            },
+            {
+              "d": "M10 20H19M29 6H37"
+            },
+            {
+              "d": "M19 31L24 26.5L29 31ZM21.5 31L24 28.5L26.5 31"
+            },
+            {
+              "text": "*",
+              "x": 33,
+              "y": 29,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Speicher\u00ADtrinkwasser\u00ADerwärmer, indirekt beheizt",
+          "aliases": [
+            "Speicher",
+            "Warmwasserspeicher",
+            "Heizwasserspeicher"
+          ],
+          "note": "* HW Heizwasser, HW-S Zulauf, HW-R Rücklauf",
+          "draw": [
+            {
+              "d": "M20 7Q20 3 25 3Q30 3 30 7V25Q30 29 25 29Q20 29 20 25Z"
+            },
+            {
+              "d": "M30 7H38"
+            },
+            {
+              "d": "M10 12H24L19 16.5H27L22 21H10"
+            },
+            {
+              "text": "*",
+              "x": 14,
+              "y": 9,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Durchlauf\u00ADerhitzer, direkt beheizt",
+          "aliases": [
+            "DLE",
+            "Durchlauferhitzer",
+            "Gastherme"
+          ],
+          "note": "* O Öl, G Gas, C Feststoff, D Fernwärme",
+          "draw": [
+            {
+              "d": "M24 2V20"
+            },
+            {
+              "d": "M8 5H24",
+              "dash": true
+            },
+            {
+              "d": "M24 5L29.5 11H18.5L24 17"
+            },
+            {
+              "d": "M24 17H33",
+              "dash": true
+            },
+            {
+              "d": "M16 30H32"
+            },
+            {
+              "d": "M18.5 30L24 23L29.5 30M21 30L24 26.5L27 30"
+            },
+            {
+              "text": "*",
+              "x": 13,
+              "y": 25,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Solar beheizt",
+          "aliases": [
+            "Solar",
+            "Sonnenenergie"
+          ],
+          "draw": [
+            {
+              "d": "M20 9L22.5 15.5L21.3 16L24 23"
+            },
+            {
+              "d": "M25 7L27.5 13.5L26.3 14L29 21"
+            }
+          ]
+        },
+        {
+          "name": "Elektrisch beheizt",
+          "aliases": [
+            "Heizstab",
+            "elektrisch",
+            "E-Heizung"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H16M32 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            },
+            {
+              "d": "M20 12V20M24 12V20M28 12V20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Heizungsanlagen",
+      "norm": "DIN 28000-4:2014-07",
+      "symbols": [
+        {
+          "name": "Heizkessel",
+          "aliases": [
+            "Kessel",
+            "Wärmeerzeuger"
+          ],
+          "draw": [
+            {
+              "d": "M24 2V7M24 25V30"
+            },
+            {
+              "d": "M17 7H31V25H17Z"
+            },
+            {
+              "d": "M24 7V11.5L27.5 14.5L20.5 18L24 21V25"
+            }
+          ]
+        },
+        {
+          "name": "Vorlauf",
+          "aliases": [
+            "VL"
+          ],
+          "note": "durchgezogene Linie",
+          "draw": [
+            {
+              "d": "M4 16H44"
+            }
+          ]
+        },
+        {
+          "name": "Rücklauf",
+          "aliases": [
+            "RL"
+          ],
+          "note": "gestrichelte Linie",
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Wärmeverbraucher",
+          "aliases": [
+            "Verbraucher"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                8
+              ]
+            },
+            {
+              "circle": [
+                24,
+                16,
+                5.5
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Wärmetauscher",
+          "aliases": [
+            "Wärmeübertrager",
+            "Plattenwärmetauscher",
+            "WT"
+          ],
+          "draw": [
+            {
+              "d": "M20 3V8M20 24V29"
+            },
+            {
+              "circle": [
+                20,
+                16,
+                8
+              ]
+            },
+            {
+              "d": "M34 12H16.5L21.5 16L16.5 20H34"
+            }
+          ]
+        },
+        {
+          "name": "Gegenstromapparat",
+          "aliases": [
+            "Gegenstromwärmetauscher"
+          ],
+          "draw": [
+            {
+              "d": "M14 8V24"
+            },
+            {
+              "d": "M14 10H30Q36 10 36 16Q36 22 30 22H14"
+            },
+            {
+              "d": "M14 16H31"
+            }
+          ]
+        },
+        {
+          "name": "Umwälzpumpe",
+          "aliases": [
+            "Heizungspumpe",
+            "Pumpe",
+            "Umwälzer"
+          ],
+          "draw": [
+            {
+              "d": "M24 2V7M24 25V30"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                9
+              ]
+            },
+            {
+              "d": "M15.4 13.5L24 7L32.6 13.5"
+            }
+          ]
+        },
+        {
+          "name": "Heizkörper",
+          "aliases": [
+            "Radiator",
+            "HK"
+          ],
+          "draw": [
+            {
+              "d": "M8 10H32V22H8Z"
+            },
+            {
+              "d": "M14 13V19M18 13V19M22 13V19M26 13V19"
+            },
+            {
+              "d": "M34 10H40V22H34Z"
+            },
+            {
+              "d": "M37 13V15M37 17V19"
+            }
+          ]
+        },
+        {
+          "name": "Konvektor",
+          "aliases": [
+            "Unterflurkonvektor"
+          ],
+          "draw": [
+            {
+              "d": "M8 11H40V23H8Z"
+            },
+            {
+              "d": "M11 19.5H37M21.5 17V22M24 17V22M26.5 17V22"
+            }
+          ]
+        },
+        {
+          "name": "Rohrregister",
+          "aliases": [
+            "Register"
+          ],
+          "draw": [
+            {
+              "d": "M12 9V23M36 9V23"
+            },
+            {
+              "d": "M12 12H36M12 16H36M12 20H36"
+            }
+          ]
+        },
+        {
+          "name": "Dampfkessel",
+          "aliases": [
+            "Dampferzeuger"
+          ],
+          "draw": [
+            {
+              "d": "M16 27V13Q16 6 24 6Q32 6 32 13V27Z"
+            },
+            {
+              "d": "M16 13H32"
+            }
+          ]
+        },
+        {
+          "name": "Membran\u00ADdruck\u00ADausdehnungs\u00ADgefäß",
+          "aliases": [
+            "MAG",
+            "Ausdehnungsgefäß",
+            "Druckausdehnungsgefäß"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                8
+              ]
+            },
+            {
+              "d": "M16.2 14.5H31.8V17.5H16.2Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Kondensatableiter",
+          "aliases": [
+            "Kondensatablass"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H19M29 16H42"
+            },
+            {
+              "d": "M24 9A5 7 0 1 0 24 23A5 7 0 1 0 24 9Z"
+            },
+            {
+              "d": "M26.5 9.94A5 7 0 0 1 21.5 22.06Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Heizungs\u00ADverteiler",
+          "aliases": [
+            "Verteiler",
+            "Heizkreisverteiler",
+            "FBH-Verteiler"
+          ],
+          "draw": [
+            {
+              "d": "M3 10H8"
+            },
+            {
+              "d": "M8 7H40V13H8Z"
+            },
+            {
+              "d": "M12 13V22M18 13V22M24 13V22M30 13V22M36 13V22"
+            },
+            {
+              "d": "M10.5 20L12 23.5L13.5 20ZM16.5 20L18 23.5L19.5 20ZM22.5 20L24 23.5L25.5 20ZM28.5 20L30 23.5L31.5 20ZM34.5 20L36 23.5L37.5 20Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Luftheizgerät",
+          "aliases": [
+            "Lufterhitzer",
+            "Warmlufterzeuger"
+          ],
+          "draw": [
+            {
+              "d": "M15 4H29V28H15Z"
+            },
+            {
+              "d": "M17 7H27V16H17Z"
+            },
+            {
+              "d": "M17 10H27M17 13H27"
+            },
+            {
+              "d": "M29 17H33V28H29"
+            },
+            {
+              "d": "M31 19V27",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Brenner",
+          "aliases": [
+            "Öl",
+            "Gas"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16"
+            },
+            {
+              "d": "M12 13.5L16 16L12 18.5Z",
+              "fill": true
+            },
+            {
+              "d": "M16 12H24V20H16Z"
+            },
+            {
+              "d": "M24 16Q30 10.5 39 16Q30 21.5 24 16Z"
+            },
+            {
+              "d": "M20 3V12"
+            },
+            {
+              "d": "M18.3 9L20 12L21.7 9",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Offenes Ausdehnungsgefäß",
+          "aliases": [
+            "Ausdehnungsgefäß offen"
+          ],
+          "draw": [
+            {
+              "d": "M19 8V26Q25 29 31 26V8"
+            },
+            {
+              "d": "M19 8Q25 5 31 8Q25 11 19 8"
+            },
+            {
+              "d": "M15 4V30"
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsventil, gewichtsbelastet",
+          "aliases": [
+            "SV",
+            "Sicherheitsventil"
+          ],
+          "note": "Breiter Querstrich auf der Austrittsseite",
+          "draw": [
+            {
+              "d": "M20 30L24 21L28 30Z"
+            },
+            {
+              "d": "M24 21L32 16V26Z"
+            },
+            {
+              "d": "M32 15V27",
+              "bold": true
+            },
+            {
+              "d": "M32 21H40"
+            },
+            {
+              "d": "M40 18.5L44 21L40 23.5Z",
+              "fill": true
+            },
+            {
+              "d": "M24 21V12M9 10L28 13"
+            },
+            {
+              "circle": [
+                9,
+                10,
+                2.2
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsventil, federbelastet (Heizung)",
+          "aliases": [
+            "SV",
+            "Sicherheitsventil Heizung"
+          ],
+          "note": "Breiter Querstrich auf der Austrittsseite",
+          "draw": [
+            {
+              "d": "M17.5 24L22 15L26.5 24Z"
+            },
+            {
+              "d": "M22 24V29"
+            },
+            {
+              "d": "M30 10.5L22 15L30 19.5Z"
+            },
+            {
+              "d": "M30.5 9.5H33V20.5H30.5Z"
+            },
+            {
+              "d": "M33 15H40"
+            },
+            {
+              "d": "M39 13L43 15L39 17Z",
+              "fill": true
+            },
+            {
+              "circle": [
+                22,
+                15,
+                1.6
+              ],
+              "fill": true
+            },
+            {
+              "d": "M22 15V11L19.5 10L24.5 8.5L19.5 7L24.5 5.5L19.5 4L22 3"
+            }
+          ]
+        },
+        {
+          "name": "Manueller Stellantrieb, gesichert",
+          "aliases": [
+            "Stellantrieb",
+            "gesichert"
+          ],
+          "draw": [
+            {
+              "d": "M12 22H15M33 22H36M12 20V24M36 20V24"
+            },
+            {
+              "d": "M15 17L24 22L15 27ZM33 17L24 22L33 27Z"
+            },
+            {
+              "d": "M24 22V10M18 10H30"
+            },
+            {
+              "d": "M27 13V5H35"
+            }
+          ]
+        },
+        {
+          "name": "Kappenventil",
+          "aliases": [
+            "gesichertes Absperrventil",
+            "MAG-Ventil",
+            "Kappenabsperrventil"
+          ],
+          "note": "Absperrventil, gegen unbeabsichtigtes Schließen gesichert (z. B. vor dem MAG); gezeichnet mit gesichertem Stellantrieb",
+          "draw": [
+            {
+              "d": "M12 22H15M33 22H36M12 20V24M36 20V24"
+            },
+            {
+              "d": "M15 17L24 22L15 27ZM33 17L24 22L33 27Z"
+            },
+            {
+              "d": "M24 22V10M18 10H30"
+            },
+            {
+              "d": "M27 13V5H35"
+            }
+          ]
+        },
+        {
+          "name": "Schmutzfänger",
+          "aliases": [
+            "Schmutzfilter",
+            "Filter",
+            "Siebfilter"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 8H32V24H16Z"
+            },
+            {
+              "d": "M19 11L29 21",
+              "dash": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Gasinstallation",
+      "norm": "DVGW-TRGI 2018",
+      "symbols": [
+        {
+          "name": "Leitung mit Nennweitenübergang",
+          "aliases": [
+            "Nennweite",
+            "Querschnittsänderung",
+            "Reduzierung"
+          ],
+          "note": "Beispiel: DN 20 auf DN 25",
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M27 7L21 25"
+            },
+            {
+              "text": "20",
+              "x": 16,
+              "y": 10,
+              "size": 6
+            },
+            {
+              "text": "25",
+              "x": 32,
+              "y": 22,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Werkstoffübergang",
+          "aliases": [
+            "Übergang",
+            "Stahl",
+            "Kupfer"
+          ],
+          "note": "Beispiel: Stahl auf Kupfer",
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M27 7L21 25"
+            },
+            {
+              "text": "St",
+              "x": 16,
+              "y": 10,
+              "size": 6
+            },
+            {
+              "text": "Cu",
+              "x": 32,
+              "y": 22,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Elektrische Trennung, Isolierstück",
+          "aliases": [
+            "Isolierstück",
+            "Isolierverbindung"
+          ],
+          "draw": [
+            {
+              "d": "M5 16H18M30 16H43M18 12V20M30 12V20"
+            },
+            {
+              "d": "M24 7V25"
+            }
+          ]
+        },
+        {
+          "name": "Lösbare Verbindung",
+          "aliases": [
+            "Verschraubung"
+          ],
+          "draw": [
+            {
+              "d": "M10 16H21M28 16H38"
+            },
+            {
+              "d": "M21 12V20"
+            },
+            {
+              "d": "M24.5 8H28V24H24.5"
+            }
+          ]
+        },
+        {
+          "name": "Wand-/Deckendurchführung mit Schutzrohr",
+          "aliases": [
+            "Wanddurchführung",
+            "Deckendurchführung",
+            "Schutzrohr",
+            "Mauerdurchführung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M14 12H34M14 20H34"
+            }
+          ]
+        },
+        {
+          "name": "Wand-/Deckendurchführung mit Abdichtung",
+          "aliases": [
+            "Wanddurchführung",
+            "Abdichtung"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M19 12.5H29V19.5H19Z"
+            }
+          ]
+        },
+        {
+          "name": "Wand-/Deckendurchführung mit Brandschutzmanschette",
+          "aliases": [
+            "Brandschutzmanschette",
+            "Brandschutz"
+          ],
+          "note": "Kennzeichnung R60, R90 oder R120",
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M20 12.5H28V19.5H20Z"
+            },
+            {
+              "d": "M16 12V20M32 12V20"
+            }
+          ]
+        },
+        {
+          "name": "Leitungsabschluss",
+          "aliases": [
+            "Leitungsende",
+            "Stopfen",
+            "Kappe"
+          ],
+          "draw": [
+            {
+              "d": "M8 16H34"
+            },
+            {
+              "d": "M23 9H28V23H23"
+            }
+          ]
+        },
+        {
+          "name": "Gasdruckregelgerät",
+          "aliases": [
+            "GR",
+            "Druckregler",
+            "Gasdruckregler"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H16M32 16H44"
+            },
+            {
+              "d": "M16 11H32V21H16Z"
+            },
+            {
+              "d": "M16 11L32 16L16 21"
+            }
+          ]
+        },
+        {
+          "name": "Gaszähler (Einstutzen)",
+          "aliases": [
+            "Gaszähler",
+            "G4",
+            "Zähler"
+          ],
+          "note": "z. B. G4",
+          "draw": [
+            {
+              "d": "M16 11H32V28H16Z"
+            },
+            {
+              "text": "Z",
+              "x": 24,
+              "y": 19.5,
+              "size": 7
+            },
+            {
+              "d": "M24 11V8M19 4L24 8L29 4"
+            }
+          ]
+        },
+        {
+          "name": "Gaszähler (Zweistutzen)",
+          "aliases": [
+            "Gaszähler",
+            "Zähler"
+          ],
+          "draw": [
+            {
+              "d": "M16 11H32V28H16Z"
+            },
+            {
+              "text": "Z",
+              "x": 24,
+              "y": 19.5,
+              "size": 7
+            },
+            {
+              "d": "M19 11V6H15M29 11V6H33"
+            }
+          ]
+        },
+        {
+          "name": "Gaszählergruppe",
+          "aliases": [
+            "Zählergruppe",
+            "G2,5"
+          ],
+          "note": "z. B. G2,5",
+          "draw": [
+            {
+              "d": "M6 6H42"
+            },
+            {
+              "circle": [
+                24,
+                6,
+                1.5
+              ]
+            },
+            {
+              "d": "M24 7.5V12"
+            },
+            {
+              "d": "M16 12H32V28H16Z"
+            },
+            {
+              "text": "ZG",
+              "x": 24,
+              "y": 20,
+              "size": 6.5
+            }
+          ]
+        },
+        {
+          "name": "Druckmessgerät",
+          "aliases": [
+            "Manometer"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H26"
+            },
+            {
+              "circle": [
+                32,
+                16,
+                6
+              ]
+            },
+            {
+              "text": "p",
+              "x": 32,
+              "y": 16,
+              "size": 7
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsgassteckdose",
+          "aliases": [
+            "GSD",
+            "Gassteckdose"
+          ],
+          "note": "9 oder 13 kW",
+          "draw": [
+            {
+              "d": "M4 21H28"
+            },
+            {
+              "text": "9 kW",
+              "x": 16,
+              "y": 14,
+              "size": 6
+            },
+            {
+              "d": "M35 13A8 8 0 0 0 35 29"
+            }
+          ]
+        },
+        {
+          "name": "Sicherheitsgasschlauchleitung",
+          "aliases": [
+            "Gasschlauch",
+            "Schlauchleitung"
+          ],
+          "draw": [
+            {
+              "d": "M5 14H10",
+              "bold": true
+            },
+            {
+              "d": "M10 14V20Q10 23 13 23Q16 23 16 20V12Q16 9 19 9Q22 9 22 12V20Q22 23 25 23Q28 23 28 20V12Q28 9 31 9Q34 9 34 12V14L37 16"
+            }
+          ]
+        },
+        {
+          "name": "Absperreinrichtung, Durchgangsform",
+          "aliases": [
+            "AE",
+            "Gashahn",
+            "Absperrung"
+          ],
+          "draw": [
+            {
+              "d": "M14 9L21 16L14 23ZM34 9L27 16L34 23Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Absperreinrichtung, Eckform",
+          "aliases": [
+            "AE",
+            "Eckhahn",
+            "Geräteanschlusshahn"
+          ],
+          "draw": [
+            {
+              "d": "M14 7L21 13L14 19Z"
+            },
+            {
+              "circle": [
+                24,
+                13,
+                3
+              ]
+            },
+            {
+              "d": "M18 27L24 16L30 27Z"
+            }
+          ]
+        },
+        {
+          "name": "Magnetventil",
+          "aliases": [
+            "MV",
+            "Gasmagnetventil"
+          ],
+          "draw": [
+            {
+              "d": "M14 16L24 22L14 28ZM34 16L24 22L34 28Z"
+            },
+            {
+              "d": "M24 22V13"
+            },
+            {
+              "d": "M20 3H28V13H20Z"
+            },
+            {
+              "d": "M20 3L28 13"
+            }
+          ]
+        },
+        {
+          "name": "Thermische Absperreinrichtung",
+          "aliases": [
+            "TAE",
+            "Brandschutz"
+          ],
+          "draw": [
+            {
+              "d": "M10 10H38V22H10Z"
+            },
+            {
+              "d": "M12 16L14 13L16 19L18 13L20 19L22 16"
+            },
+            {
+              "circle": [
+                27,
+                16,
+                2.5
+              ]
+            },
+            {
+              "d": "M33 11V21",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Absperreinrichtung in Eckform mit TAE",
+          "aliases": [
+            "AE",
+            "TAE"
+          ],
+          "draw": [
+            {
+              "d": "M14 7L21 13L14 19Z"
+            },
+            {
+              "circle": [
+                24,
+                13,
+                3
+              ]
+            },
+            {
+              "d": "M18 27L24 16L30 27Z"
+            },
+            {
+              "text": "T",
+              "x": 9,
+              "y": 6,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Gasströmungswächter",
+          "aliases": [
+            "GS",
+            "Strömungswächter"
+          ],
+          "draw": [
+            {
+              "d": "M11 16H14M34 16H37M11 13V19M37 13V19"
+            },
+            {
+              "d": "M14 11H34V21H14Z"
+            },
+            {
+              "circle": [
+                26,
+                16,
+                2.5
+              ]
+            },
+            {
+              "d": "M30.5 12V20",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Gasdruckregelgerät mit kombiniertem GS",
+          "aliases": [
+            "GS",
+            "GR"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H14M34 16H42"
+            },
+            {
+              "d": "M14 11H34V21H14Z"
+            },
+            {
+              "circle": [
+                19,
+                16,
+                2.5
+              ]
+            },
+            {
+              "d": "M21.5 12.5L32 16L21.5 19.5"
+            }
+          ]
+        },
+        {
+          "name": "GS Typ K mit TAE kombiniert",
+          "aliases": [
+            "GS-T",
+            "GS",
+            "TAE"
+          ],
+          "draw": [
+            {
+              "d": "M14 11H36V21H14Z"
+            },
+            {
+              "circle": [
+                27,
+                16,
+                2.5
+              ]
+            },
+            {
+              "d": "M32 12V20",
+              "dash": true
+            },
+            {
+              "text": "T",
+              "x": 10,
+              "y": 7,
+              "size": 6
+            },
+            {
+              "text": "K",
+              "x": 10,
+              "y": 25,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Gassicherheitsverteiler mit TAE kombiniert",
+          "aliases": [
+            "Gasverteiler",
+            "TAE"
+          ],
+          "draw": [
+            {
+              "d": "M10 6H17V23H10ZM20.5 6H27.5V23H20.5ZM31 6H38V23H31Z"
+            },
+            {
+              "circle": [
+                13.5,
+                9.5,
+                1.5
+              ]
+            },
+            {
+              "circle": [
+                24,
+                9.5,
+                1.5
+              ]
+            },
+            {
+              "circle": [
+                34.5,
+                9.5,
+                1.5
+              ]
+            },
+            {
+              "d": "M12 13H15V20H12ZM22.5 13H25.5V20H22.5ZM33 13H36V20H33Z"
+            },
+            {
+              "d": "M10 18H8V27H40V18H38M17 18H20.5M27.5 18H31"
+            },
+            {
+              "text": "T",
+              "x": 4,
+              "y": 21,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Gasdurchlaufwasserheizer",
+          "aliases": [
+            "DWH",
+            "Gastherme",
+            "Durchlauferhitzer"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                9,
+                6
+              ]
+            },
+            {
+              "d": "M24 15V30M19.5 20L28.5 28M28.5 20L19.5 28"
+            }
+          ]
+        },
+        {
+          "name": "Gasvorratswasserheizer",
+          "aliases": [
+            "VWH",
+            "Gasspeicher"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                9,
+                6
+              ]
+            },
+            {
+              "d": "M24 15V30M19.5 20L28.5 28M28.5 20L19.5 28"
+            },
+            {
+              "circle": [
+                24,
+                11,
+                2
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Gaskombiwasserheizer",
+          "aliases": [
+            "KWH",
+            "Kombitherme",
+            "Gastherme"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                9,
+                6
+              ]
+            },
+            {
+              "d": "M24 15V30M19.5 20L28.5 28M28.5 20L19.5 28"
+            },
+            {
+              "circle": [
+                24,
+                9,
+                3.2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gasheizkessel",
+          "aliases": [
+            "HK",
+            "Gaskessel"
+          ],
+          "draw": [
+            {
+              "d": "M16 4H32V22H16Z"
+            },
+            {
+              "text": "G",
+              "x": 24,
+              "y": 13,
+              "size": 7
+            },
+            {
+              "d": "M18 22H30V27H18Z"
+            }
+          ]
+        },
+        {
+          "name": "Gasheizstrahler",
+          "aliases": [
+            "HS",
+            "Hellstrahler",
+            "Dunkelstrahler"
+          ],
+          "draw": [
+            {
+              "d": "M8 11H40V21H8Z"
+            },
+            {
+              "d": "M11 13V19M13 13V19M15 13V19M17 13V19M19 13V19M21 13V19M23 13V19M25 13V19M27 13V19M29 13V19M31 13V19M33 13V19M35 13V19M37 13V19"
+            }
+          ]
+        },
+        {
+          "name": "Gasraumheizer",
+          "aliases": [
+            "RH",
+            "Gasofen"
+          ],
+          "draw": [
+            {
+              "d": "M16 7H32V25H16Z"
+            },
+            {
+              "d": "M19 10V22M21 10V22M23 10V22M25 10V22M27 10V22M29 10V22"
+            }
+          ]
+        },
+        {
+          "name": "Gaswarmlufterzeuger",
+          "aliases": [
+            "WLE",
+            "Warmlufterzeuger"
+          ],
+          "draw": [
+            {
+              "d": "M15 4H33V28H15Z"
+            },
+            {
+              "d": "M18 4V8M20 4V8M22 4V8M24 4V8M26 4V8M28 4V8M30 4V8"
+            },
+            {
+              "circle": [
+                24,
+                18,
+                6
+              ]
+            },
+            {
+              "d": "M19.5 21.5L24 12.5L28.5 21.5"
+            }
+          ]
+        },
+        {
+          "name": "Gasherd, Gasbackofen",
+          "aliases": [
+            "H",
+            "Gasherd",
+            "Herd"
+          ],
+          "draw": [
+            {
+              "d": "M14 6H34V26H14Z"
+            },
+            {
+              "d": "M17 9L21 13M21 9L17 13M27 9L31 13M31 9L27 13M17 19L21 23M21 19L17 23M27 19L31 23M31 19L27 23"
+            }
+          ]
+        },
+        {
+          "name": "Gasheizherd",
+          "aliases": [
+            "HH",
+            "Herd"
+          ],
+          "draw": [
+            {
+              "d": "M14 4H34V28H14Z"
+            },
+            {
+              "d": "M17 7L21 11M21 7L17 11M27 7L31 11M31 7L27 11M17 16L21 20M21 16L17 20M27 16L31 20M31 16L27 20"
+            },
+            {
+              "d": "M14 23H34M16 23V28M18 23V28M20 23V28M22 23V28M24 23V28M26 23V28M28 23V28M30 23V28M32 23V28"
+            }
+          ]
+        },
+        {
+          "name": "Gaswärmepumpe",
+          "aliases": [
+            "WP",
+            "Wärmepumpe"
+          ],
+          "draw": [
+            {
+              "d": "M15 3H33V22H15Z"
+            },
+            {
+              "circle": [
+                24,
+                12,
+                6
+              ]
+            },
+            {
+              "d": "M24 6L29.2 15L18.8 15Z"
+            },
+            {
+              "d": "M18 22H30V27H18Z"
+            }
+          ]
+        },
+        {
+          "name": "Gasblockheizkraftwerk",
+          "aliases": [
+            "BHKW",
+            "KWK",
+            "Blockheizkraftwerk"
+          ],
+          "draw": [
+            {
+              "d": "M14 4H34V22H14Z"
+            },
+            {
+              "text": "BHKW",
+              "x": 24,
+              "y": 13,
+              "size": 5
+            },
+            {
+              "d": "M17 22H31V27H17Z"
+            }
+          ]
+        },
+        {
+          "name": "Brennstoffzellenheizgerät",
+          "aliases": [
+            "BZ",
+            "Brennstoffzelle"
+          ],
+          "draw": [
+            {
+              "d": "M14 6H34V26H14Z"
+            },
+            {
+              "d": "M22.5 6V26M25.5 6V26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sanitär-Ausstattungsgegenstände",
+      "norm": "DIN 1986-100:2016-12",
+      "note": "Links Grundriss, rechts Aufriss",
+      "symbols": [
+        {
+          "name": "Badewanne",
+          "aliases": [
+            "Wanne"
+          ],
+          "draw": [
+            {
+              "d": "M2 9H22V23H2Z"
+            },
+            {
+              "d": "M5 11.5H19Q20 11.5 20 12.5V19.5Q20 20.5 19 20.5H5Q4 20.5 4 19.5V12.5Q4 11.5 5 11.5Z"
+            },
+            {
+              "circle": [
+                17.5,
+                16,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M26 12H46L43.5 21H28.5Z"
+            }
+          ]
+        },
+        {
+          "name": "Duschwanne",
+          "aliases": [
+            "Dusche",
+            "Brausewanne"
+          ],
+          "draw": [
+            {
+              "d": "M5 8H19V24H5Z"
+            },
+            {
+              "circle": [
+                16,
+                11,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M28 17H44V21.5H28Z"
+            },
+            {
+              "d": "M42 21.5V23.5"
+            },
+            {
+              "d": "M39 10H41M40 9V11"
+            }
+          ]
+        },
+        {
+          "name": "Waschtisch, Handwaschbecken",
+          "aliases": [
+            "Waschtisch",
+            "Handwaschbecken",
+            "WT"
+          ],
+          "draw": [
+            {
+              "d": "M4 10H20V22H4Z"
+            },
+            {
+              "d": "M6 12H18V20H6Z"
+            },
+            {
+              "circle": [
+                12,
+                14.5,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M28 13H44V17H28Z"
+            },
+            {
+              "d": "M36 17V19"
+            }
+          ]
+        },
+        {
+          "name": "Sitzwaschbecken (Bidet)",
+          "aliases": [
+            "Bidet"
+          ],
+          "draw": [
+            {
+              "d": "M7 6H17V26H7Z"
+            },
+            {
+              "d": "M9 13H15V23H9Z"
+            },
+            {
+              "circle": [
+                12,
+                16,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M30 8H42V12H30Z"
+            },
+            {
+              "d": "M31.5 12V24H40.5V12"
+            }
+          ]
+        },
+        {
+          "name": "Urinalbecken",
+          "aliases": [
+            "Urinal",
+            "Pissoir"
+          ],
+          "draw": [
+            {
+              "d": "M5 9H19L12 23Z"
+            },
+            {
+              "circle": [
+                12,
+                12.5,
+                1.3
+              ]
+            },
+            {
+              "d": "M30 8H42V18L36 24L30 18Z"
+            }
+          ]
+        },
+        {
+          "name": "Urinalbecken mit automatischer Spülung",
+          "aliases": [
+            "Urinal",
+            "Spülung automatisch"
+          ],
+          "draw": [
+            {
+              "d": "M5 11H19L12 25Z"
+            },
+            {
+              "circle": [
+                12,
+                14.5,
+                1.3
+              ]
+            },
+            {
+              "d": "M12 3L10.5 7H13.5L12 11"
+            },
+            {
+              "d": "M30 10H42V20L36 26L30 20Z"
+            },
+            {
+              "d": "M36 3L34.5 6.5H37.5L36 10"
+            }
+          ]
+        },
+        {
+          "name": "Klosettbecken",
+          "aliases": [
+            "WC",
+            "Toilette",
+            "Klosett"
+          ],
+          "draw": [
+            {
+              "d": "M7 5H17V27H7Z"
+            },
+            {
+              "d": "M7 12H17"
+            },
+            {
+              "d": "M31 5H41V16L36 24L31 16Z"
+            },
+            {
+              "d": "M31 16H41"
+            }
+          ]
+        },
+        {
+          "name": "Ausgussbecken (Sanitär)",
+          "aliases": [
+            "Ausguss",
+            "Ausgussbecken"
+          ],
+          "draw": [
+            {
+              "d": "M4 10H20V22H4Z"
+            },
+            {
+              "circle": [
+                12,
+                13,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M28 14H44V18H28Z"
+            }
+          ]
+        },
+        {
+          "name": "Spülbecken, einfach",
+          "aliases": [
+            "Spüle",
+            "Küchenspüle"
+          ],
+          "draw": [
+            {
+              "d": "M2 9H22V23H2Z"
+            },
+            {
+              "d": "M13 11H20V21H13Z"
+            },
+            {
+              "circle": [
+                18,
+                13.5,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M26 13H46",
+              "bold": true
+            },
+            {
+              "d": "M36 13V18H44V13"
+            }
+          ]
+        },
+        {
+          "name": "Spülbecken, doppelt",
+          "aliases": [
+            "Spüle",
+            "Doppelspüle"
+          ],
+          "draw": [
+            {
+              "d": "M2 9H22V23H2Z"
+            },
+            {
+              "d": "M11 11H15.5V21H11ZM16.5 11H21V21H16.5Z"
+            },
+            {
+              "circle": [
+                13.2,
+                13.5,
+                0.8
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                18.8,
+                13.5,
+                0.8
+              ],
+              "fill": true
+            },
+            {
+              "d": "M26 13H46",
+              "bold": true
+            },
+            {
+              "d": "M33 13V18H38.5V13M39.5 13V18H45V13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Brandschutzanlagen",
+      "norm": "DIN EN 806-1:2001-12",
+      "symbols": [
+        {
+          "name": "Feuerlöschleitung",
+          "aliases": [
+            "FW",
+            "Löschwasserleitung"
+          ],
+          "note": "* FW Feuerlöschleitung, FW-D trocken, FW-W nass, FW-S Steigleitung",
+          "draw": [
+            {
+              "d": "M4 20H44"
+            },
+            {
+              "text": "*",
+              "x": 24,
+              "y": 13,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Feuerlöschleitung, nass",
+          "aliases": [
+            "FW-W",
+            "Löschwasserleitung nass"
+          ],
+          "draw": [
+            {
+              "d": "M4 21H44"
+            },
+            {
+              "text": "FW-W",
+              "x": 24,
+              "y": 13,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Sprinkler",
+          "aliases": [
+            "Sprinkleranlage"
+          ],
+          "draw": [
+            {
+              "d": "M4 14H44"
+            },
+            {
+              "d": "M24 14L20.5 20M24 14V20M24 14L27.5 20"
+            }
+          ]
+        },
+        {
+          "name": "Wasservorhang",
+          "aliases": [
+            "Drencher"
+          ],
+          "draw": [
+            {
+              "d": "M4 14H44"
+            },
+            {
+              "d": "M14 14L10.5 20M14 14V20M14 14L17.5 20M24 14L20.5 20M24 14V20M24 14L27.5 20M34 14L30.5 20M34 14V20M34 14L37.5 20"
+            }
+          ]
+        },
+        {
+          "name": "Wandhydrant",
+          "aliases": [
+            "Hydrant"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2.2
+              ],
+              "fill": true
+            },
+            {
+              "d": "M20.5 12.5H27.5"
+            }
+          ]
+        },
+        {
+          "name": "Wandhydrant mit Schlauchleitung",
+          "aliases": [
+            "Hydrant",
+            "Schlauchanschluss"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                4
+              ]
+            },
+            {
+              "d": "M22 16H26M24 14V18"
+            },
+            {
+              "d": "M4 16C6 12 9 12 11 16S16 20 18 16H20M28 16H30C32 12 35 12 37 16S42 20 44 16"
+            }
+          ]
+        },
+        {
+          "name": "Unterflurhydrant",
+          "aliases": [
+            "Hydrant"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2.2
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Überflurhydrant",
+          "aliases": [
+            "Hydrant"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44",
+              "dash": true
+            },
+            {
+              "circle": [
+                24,
+                16,
+                2.2
+              ],
+              "fill": true
+            },
+            {
+              "d": "M24 16V7"
+            },
+            {
+              "d": "M22.3 10L24 6L25.7 10Z",
+              "fill": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mess-, Steuer- und Regeltechnik",
+      "norm": "DIN 19227-2:1991-02",
+      "symbols": [
+        {
+          "name": "Anschluss für Messgerät",
+          "aliases": [
+            "Messanschluss",
+            "Messstelle"
+          ],
+          "draw": [
+            {
+              "d": "M17.5 6Q19.5 13 24 15Q28.5 13 30.5 6"
+            },
+            {
+              "d": "M24 15V27"
+            }
+          ]
+        },
+        {
+          "name": "Temperaturmessgerät",
+          "aliases": [
+            "Thermometer",
+            "Temperaturfühler"
+          ],
+          "draw": [
+            {
+              "d": "M16 6H32V26H16Z"
+            },
+            {
+              "d": "M16 16H32"
+            },
+            {
+              "d": "M19 9.5H29M24 9.5V16"
+            }
+          ]
+        },
+        {
+          "name": "Widerstandsthermometer",
+          "aliases": [
+            "Pt100",
+            "Pt1000",
+            "Temperaturfühler"
+          ],
+          "draw": [
+            {
+              "d": "M21 9H27V23H21Z"
+            },
+            {
+              "d": "M18 22L30 10"
+            },
+            {
+              "text": "ϑ",
+              "x": 13,
+              "y": 16,
+              "size": 8
+            },
+            {
+              "d": "M24 9V5H34M24 23V27H34"
+            }
+          ]
+        },
+        {
+          "name": "Thermoelement",
+          "aliases": [
+            "Thermopaar"
+          ],
+          "draw": [
+            {
+              "d": "M19 5V14L24 21L29 14V5"
+            },
+            {
+              "circle": [
+                24,
+                21,
+                2
+              ],
+              "fill": true
+            },
+            {
+              "text": "−",
+              "x": 17,
+              "y": 26,
+              "size": 6
+            },
+            {
+              "text": "+",
+              "x": 31,
+              "y": 26,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Temperaturbegrenzer",
+          "aliases": [
+            "STB",
+            "Begrenzer"
+          ],
+          "draw": [
+            {
+              "d": "M15 7H33V25H15Z"
+            },
+            {
+              "d": "M17 23L31 9"
+            },
+            {
+              "d": "M20 11H28M24 11V17"
+            }
+          ]
+        },
+        {
+          "name": "Temperaturwächter",
+          "aliases": [
+            "TW",
+            "Wächter",
+            "Anlegethermostat"
+          ],
+          "draw": [
+            {
+              "d": "M15 7H33V25H15Z"
+            },
+            {
+              "d": "M17 23L31 9"
+            },
+            {
+              "d": "M20 11H28M24 11V17"
+            },
+            {
+              "text": "W",
+              "x": 29,
+              "y": 21,
+              "size": 5
+            }
+          ]
+        },
+        {
+          "name": "Druckmessgerät",
+          "aliases": [
+            "Manometer",
+            "Differenzdruck"
+          ],
+          "note": "Zusatz: Δp Differenzdruck, pᵢ Druckimpulsgeber",
+          "draw": [
+            {
+              "d": "M14 8H34V24H14Z"
+            },
+            {
+              "d": "M14 16H34"
+            },
+            {
+              "d": "M19.5 13.5L22.5 16L19.5 18.5M28.5 13.5L25.5 16L28.5 18.5"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                1.3
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Volumenstrommessgerät, Durchflussmessgerät",
+          "aliases": [
+            "Durchflussmesser",
+            "Volumenstrom"
+          ],
+          "draw": [
+            {
+              "d": "M15 7H33V25H15Z"
+            },
+            {
+              "d": "M17 11Q24 16 31 11M17 21Q24 16 31 21"
+            }
+          ]
+        },
+        {
+          "name": "Volumenzähler, Wasserzähler",
+          "aliases": [
+            "Wasserzähler",
+            "Zähler"
+          ],
+          "draw": [
+            {
+              "d": "M15 4H33V28H15Z"
+            },
+            {
+              "d": "M15 12H33"
+            },
+            {
+              "text": "000",
+              "x": 24,
+              "y": 8,
+              "size": 5
+            },
+            {
+              "text": "Σm³",
+              "x": 24,
+              "y": 20,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Wärmemengenzähler",
+          "aliases": [
+            "WMZ",
+            "Wärmezähler"
+          ],
+          "draw": [
+            {
+              "d": "M15 4H33V28H15Z"
+            },
+            {
+              "d": "M15 12H33"
+            },
+            {
+              "text": "000",
+              "x": 24,
+              "y": 8,
+              "size": 5
+            },
+            {
+              "text": "ΣJ",
+              "x": 24,
+              "y": 20,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Schreiber, Registriergerät",
+          "aliases": [
+            "Schreiber",
+            "Datenlogger"
+          ],
+          "note": "Kennzeichnung der Art, z. B. V Volumen, T Temperatur",
+          "draw": [
+            {
+              "d": "M16 6H32V26H16Z"
+            },
+            {
+              "d": "M24 9C20 11 28 14 24 16C20 18 28 21 24 23"
+            }
+          ]
+        },
+        {
+          "name": "Steuergerät",
+          "aliases": [
+            "Steuerung"
+          ],
+          "draw": [
+            {
+              "d": "M15 10H33V22H15Z"
+            },
+            {
+              "d": "M15 10L25 22"
+            }
+          ]
+        },
+        {
+          "name": "Sollwerteinsteller",
+          "aliases": [
+            "Sollwert"
+          ],
+          "draw": [
+            {
+              "d": "M17 8H33V26H17Z"
+            },
+            {
+              "d": "M15.5 15L23.5 5"
+            }
+          ]
+        },
+        {
+          "name": "Zeitschaltuhr",
+          "aliases": [
+            "Schaltuhr",
+            "Uhr"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                8
+              ]
+            },
+            {
+              "d": "M16 16H24V8"
+            }
+          ]
+        },
+        {
+          "name": "Messwerk allgemein",
+          "aliases": [
+            "Messwerk"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                6
+              ]
+            },
+            {
+              "d": "M24 11V21M19.7 13.5L28.3 18.5M28.3 13.5L19.7 18.5"
+            }
+          ]
+        },
+        {
+          "name": "Aufnehmer, Fühler allgemein",
+          "aliases": [
+            "Fühler",
+            "Sensor",
+            "Aufnehmer"
+          ],
+          "draw": [
+            {
+              "d": "M24 5V20"
+            },
+            {
+              "circle": [
+                24,
+                23,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Messblende",
+          "aliases": [
+            "Blende"
+          ],
+          "draw": [
+            {
+              "d": "M6 20H42"
+            },
+            {
+              "d": "M21.5 16V24M26.5 16V24"
+            },
+            {
+              "d": "M24 5V24",
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Venturidüse",
+          "aliases": [
+            "Venturi"
+          ],
+          "draw": [
+            {
+              "d": "M17 6H33V26H17Z"
+            },
+            {
+              "d": "M25 6V13.5H29.5M29.5 18.5H25V26"
+            }
+          ]
+        },
+        {
+          "name": "Impulszähler",
+          "aliases": [
+            "Impulsgeber",
+            "Zähler"
+          ],
+          "draw": [
+            {
+              "d": "M16 11H26V21H16Z"
+            },
+            {
+              "d": "M21 5V27"
+            },
+            {
+              "d": "M26 12.5H32V19.5H26Z"
+            },
+            {
+              "circle": [
+                29,
+                16,
+                1.5
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Betriebsstundenzähler",
+          "aliases": [
+            "Stundenzähler"
+          ],
+          "draw": [
+            {
+              "d": "M17 5H31V27H17Z"
+            },
+            {
+              "d": "M17 10H31"
+            },
+            {
+              "text": "h",
+              "x": 24,
+              "y": 19,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Messumformer, thermisch/elektrisch",
+          "aliases": [
+            "Messumformer"
+          ],
+          "draw": [
+            {
+              "d": "M16 6H32V26H16Z"
+            },
+            {
+              "d": "M16 26L32 6"
+            },
+            {
+              "text": "I",
+              "x": 28.5,
+              "y": 21.5,
+              "size": 5
+            }
+          ]
+        },
+        {
+          "name": "Signal-Messumformer",
+          "aliases": [
+            "Signalwandler"
+          ],
+          "draw": [
+            {
+              "d": "M16 6H32V26H16Z"
+            },
+            {
+              "d": "M16 26L32 6"
+            },
+            {
+              "circle": [
+                20,
+                11,
+                1.2
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                28,
+                21,
+                1.2
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Verstärker",
+          "draw": [
+            {
+              "d": "M16 7H32V25H16Z"
+            },
+            {
+              "d": "M20 11L29 16L20 21Z"
+            }
+          ]
+        },
+        {
+          "name": "Anzeigevorrichtung",
+          "aliases": [
+            "Anzeige"
+          ],
+          "draw": [
+            {
+              "d": "M21 10L24 4L27 10Z"
+            },
+            {
+              "d": "M24 10V20M19 26L24 20L29 26"
+            }
+          ]
+        },
+        {
+          "name": "Bildschirm",
+          "aliases": [
+            "Display",
+            "Monitor"
+          ],
+          "draw": [
+            {
+              "d": "M15 6H33V26H15Z"
+            },
+            {
+              "d": "M18 9H30V23H18Z"
+            },
+            {
+              "d": "M20.5 11.5H27.5V20.5H20.5Z"
+            }
+          ]
+        },
+        {
+          "name": "Lampe, Leuchtmelder",
+          "aliases": [
+            "Leuchtmelder",
+            "Meldeleuchte"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                6
+              ]
+            },
+            {
+              "d": "M19.8 11.8L28.2 20.2M28.2 11.8L19.8 20.2"
+            }
+          ]
+        },
+        {
+          "name": "Anzeige digital",
+          "aliases": [
+            "Digitalanzeige",
+            "Display"
+          ],
+          "draw": [
+            {
+              "d": "M14 11H34V21H14Z"
+            },
+            {
+              "text": "000",
+              "x": 24,
+              "y": 16,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Speicher allgemein",
+          "aliases": [
+            "Speicher"
+          ],
+          "draw": [
+            {
+              "d": "M16 6H32V26H16Z"
+            },
+            {
+              "d": "M16 6H24V16H16Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Regler",
+          "aliases": [
+            "P-Regler",
+            "PI-Regler",
+            "PID-Regler"
+          ],
+          "note": "* Reglerverhalten: P, PI oder PID",
+          "draw": [
+            {
+              "d": "M15 7H33V25H15Z"
+            },
+            {
+              "d": "M27 7L33 16L27 25"
+            },
+            {
+              "text": "*",
+              "x": 22,
+              "y": 17,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Zeitrelais",
+          "aliases": [
+            "Relais"
+          ],
+          "draw": [
+            {
+              "d": "M17 10H31V22H17Z"
+            },
+            {
+              "d": "M24 19.5V13.5"
+            },
+            {
+              "d": "M22.3 15L24 12L25.7 15Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Analog",
+          "aliases": [
+            "analoges Signal"
+          ],
+          "draw": [
+            {
+              "d": "M19 23V15Q19 9 24 9Q29 9 29 15V23"
+            }
+          ]
+        },
+        {
+          "name": "Digital",
+          "aliases": [
+            "digitales Signal"
+          ],
+          "draw": [
+            {
+              "d": "M21.5 8L19.5 24M28.5 8L26.5 24M16.5 13.5H31M15.5 18.5H30"
+            }
+          ]
+        },
+        {
+          "name": "Thermorelais",
+          "aliases": [
+            "Bimetallrelais",
+            "Relais"
+          ],
+          "draw": [
+            {
+              "d": "M16 11H34V23H16Z"
+            },
+            {
+              "d": "M25 6V28"
+            },
+            {
+              "d": "M25 13.5H19.5V20.5H25"
+            }
+          ]
+        },
+        {
+          "name": "Brandmelder, Rauchmelder",
+          "aliases": [
+            "Rauchmelder",
+            "Brandmelder"
+          ],
+          "draw": [
+            {
+              "d": "M3 9H6M28 9H31"
+            },
+            {
+              "d": "M6 4H28V14H6Z"
+            },
+            {
+              "d": "M10 6.5H24V11.5H10Z"
+            },
+            {
+              "circle": [
+                17,
+                9,
+                1.4
+              ]
+            },
+            {
+              "d": "M24 15H40V30H24Z"
+            },
+            {
+              "d": "M27 18L32.6 23.6M30.5 17L35.6 22.1"
+            },
+            {
+              "d": "M34 25L31 23.8L32.8 22ZM37 23.5L34 22.3L35.8 20.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Gerät mit automatischer Steuerung",
+          "aliases": [
+            "Automatik"
+          ],
+          "draw": [
+            {
+              "d": "M15 6H33V26H15Z"
+            },
+            {
+              "d": "M15 21H33M17 21V26M19 21V26M21 21V26M23 21V26M25 21V26M27 21V26M29 21V26M31 21V26"
+            }
+          ]
+        },
+        {
+          "name": "Schaltgerät",
+          "aliases": [
+            "Schütz",
+            "Relais"
+          ],
+          "draw": [
+            {
+              "d": "M13 5H35V27H13Z"
+            },
+            {
+              "d": "M20 9H26"
+            },
+            {
+              "d": "M23 9V18",
+              "dash": true
+            },
+            {
+              "d": "M16 23H21L28 18M29 23H32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Elektrotechnik",
+      "norm": "DIN EN 60617-3, -4, -6, -7, -9, -11:1997-08",
+      "symbols": [
+        {
+          "name": "Gleichstrom",
+          "aliases": [
+            "DC"
+          ],
+          "draw": [
+            {
+              "d": "M14 16H34"
+            }
+          ]
+        },
+        {
+          "name": "Wechselstrom",
+          "aliases": [
+            "AC"
+          ],
+          "note": "Beispiel: 50 Hz",
+          "draw": [
+            {
+              "d": "M6 16C8 10 12 10 14 16S20 22 22 16"
+            },
+            {
+              "text": "50 Hz",
+              "x": 34,
+              "y": 16,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Gleich- oder Wechselstrom",
+          "aliases": [
+            "AC/DC",
+            "Allstrom"
+          ],
+          "draw": [
+            {
+              "d": "M16 11H32"
+            },
+            {
+              "d": "M16 19C18 15 22 15 24 19S30 23 32 19"
+            }
+          ]
+        },
+        {
+          "name": "Sternschaltung",
+          "aliases": [
+            "Stern"
+          ],
+          "draw": [
+            {
+              "d": "M24 16V25M24 16L16 8M24 16L32 8"
+            }
+          ]
+        },
+        {
+          "name": "Dreieckschaltung",
+          "aliases": [
+            "Dreieck"
+          ],
+          "draw": [
+            {
+              "d": "M24 7L33 24H15Z"
+            }
+          ]
+        },
+        {
+          "name": "Reihenschaltung",
+          "aliases": [
+            "Reihe",
+            "Serie"
+          ],
+          "draw": [
+            {
+              "d": "M10 16H22M26 16H38"
+            }
+          ]
+        },
+        {
+          "name": "Parallelschaltung",
+          "aliases": [
+            "parallel"
+          ],
+          "draw": [
+            {
+              "d": "M12 13H36M12 19H36"
+            }
+          ]
+        },
+        {
+          "name": "Leitung, Leiter, Kabel, Stromweg",
+          "aliases": [
+            "Leitung",
+            "Kabel",
+            "Leiter"
+          ],
+          "draw": [
+            {
+              "d": "M8 16H40"
+            }
+          ]
+        },
+        {
+          "name": "Kennzeichnung der Leiterzahl",
+          "aliases": [
+            "Leiterzahl"
+          ],
+          "note": "Zahl: Anzahl der Leiter",
+          "draw": [
+            {
+              "d": "M6 16H42"
+            },
+            {
+              "d": "M21 21L27 11"
+            },
+            {
+              "text": "3",
+              "x": 31,
+              "y": 9,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Leiter bewegbar",
+          "aliases": [
+            "bewegliche Leitung"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H14C16 11 19 11 21 16S26 21 28 16S33 11 35 16H42"
+            }
+          ]
+        },
+        {
+          "name": "Abzweig von Leitern",
+          "aliases": [
+            "Abzweig"
+          ],
+          "draw": [
+            {
+              "d": "M8 10H22M15 10V24"
+            },
+            {
+              "d": "M26 10H40M33 10V24"
+            },
+            {
+              "circle": [
+                33,
+                10,
+                1.8
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Abzweigdose allgemein",
+          "aliases": [
+            "Abzweigdose",
+            "Verteilerdose"
+          ],
+          "draw": [
+            {
+              "d": "M6 13H42"
+            },
+            {
+              "circle": [
+                24,
+                13,
+                4.5
+              ]
+            },
+            {
+              "d": "M24 17.5V24"
+            }
+          ]
+        },
+        {
+          "name": "Steckdose allgemein",
+          "aliases": [
+            "Steckdose",
+            "Buchse"
+          ],
+          "draw": [
+            {
+              "d": "M8 16H22"
+            },
+            {
+              "d": "M31 8A8 8 0 0 0 31 24"
+            }
+          ]
+        },
+        {
+          "name": "Schutzkontaktsteckdose, vierfach",
+          "aliases": [
+            "Schuko",
+            "Steckdose",
+            "Mehrfachsteckdose"
+          ],
+          "draw": [
+            {
+              "d": "M6 8H32V19"
+            },
+            {
+              "d": "M25 27Q32 15 39 27"
+            },
+            {
+              "d": "M28 19H36"
+            },
+            {
+              "d": "M28.5 24L35.5 17.5M35.5 24L28.5 17.5"
+            },
+            {
+              "text": "4",
+              "x": 38,
+              "y": 8,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Steckverbindung, Buchse und Stecker",
+          "aliases": [
+            "Stecker",
+            "Steckverbindung"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H16"
+            },
+            {
+              "d": "M21 10A6 6 0 0 0 21 22"
+            },
+            {
+              "d": "M20 16H34",
+              "bold": true
+            },
+            {
+              "d": "M34 16H42"
+            }
+          ]
+        },
+        {
+          "name": "Leitung auf Putz",
+          "aliases": [
+            "Aufputz",
+            "AP"
+          ],
+          "draw": [
+            {
+              "d": "M8 11H40"
+            },
+            {
+              "d": "M19.5 21L22 14M23.5 21L26 14M27.5 21L30 14"
+            }
+          ]
+        },
+        {
+          "name": "Leitung im Putz",
+          "aliases": [
+            "Unterputz",
+            "UP"
+          ],
+          "draw": [
+            {
+              "d": "M8 17H40"
+            },
+            {
+              "d": "M19.5 20.5L22 13.5M23.5 20.5L26 13.5M27.5 20.5L30 13.5"
+            }
+          ]
+        },
+        {
+          "name": "Erde",
+          "aliases": [
+            "Erdung"
+          ],
+          "draw": [
+            {
+              "d": "M24 6V16M17 16H31M19.5 20H28.5M22 24H26"
+            }
+          ]
+        },
+        {
+          "name": "Schutzerde",
+          "aliases": [
+            "PE",
+            "Erdung"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                10
+              ]
+            },
+            {
+              "d": "M24 8V14M18 14H30M20 18H28M22 22H26"
+            }
+          ]
+        },
+        {
+          "name": "Masse",
+          "aliases": [
+            "Gehäuse"
+          ],
+          "draw": [
+            {
+              "d": "M24 8V16M18 16H30M18 16L15 22M24 16L21 22M30 16L27 22"
+            }
+          ]
+        },
+        {
+          "name": "Neutralleiter (N), Mittelleiter (M)",
+          "aliases": [
+            "N",
+            "Neutralleiter",
+            "Mittelleiter"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H42"
+            },
+            {
+              "d": "M21 21L27 11"
+            },
+            {
+              "circle": [
+                27,
+                11,
+                1.6
+              ],
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Schutzleiter (PE)",
+          "aliases": [
+            "PE",
+            "Schutzleiter"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H42"
+            },
+            {
+              "d": "M21 21L27 11M25 11H29"
+            }
+          ]
+        },
+        {
+          "name": "Drei Leiter, Neutralleiter und Schutzleiter",
+          "aliases": [
+            "Drehstromleitung",
+            "5-adrig",
+            "L1 L2 L3 N PE"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H44"
+            },
+            {
+              "d": "M9 21L14 11M13 21L18 11M17 21L22 11"
+            },
+            {
+              "d": "M24 21L29 11"
+            },
+            {
+              "circle": [
+                29,
+                11,
+                1.6
+              ],
+              "fill": true
+            },
+            {
+              "d": "M32 21L37 11M35 11H39"
+            }
+          ]
+        },
+        {
+          "name": "Batterie, Akkumulator",
+          "aliases": [
+            "Batterie",
+            "Akku"
+          ],
+          "draw": [
+            {
+              "d": "M4 16H21M27 16H44"
+            },
+            {
+              "d": "M21 11V21"
+            },
+            {
+              "d": "M27 5V27"
+            },
+            {
+              "text": "−",
+              "x": 18,
+              "y": 25,
+              "size": 6
+            },
+            {
+              "text": "+",
+              "x": 32,
+              "y": 25,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Fotozelle",
+          "aliases": [
+            "Solarzelle",
+            "Photovoltaik"
+          ],
+          "draw": [
+            {
+              "d": "M6 22H23M28 22H44"
+            },
+            {
+              "d": "M23 18V26"
+            },
+            {
+              "d": "M28 12V30"
+            },
+            {
+              "d": "M10 4L15.9 9.9M15 2L20.9 7.9"
+            },
+            {
+              "d": "M18 12L15 10.8L16.8 9ZM23 10L20 8.8L21.8 7Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Widerstand allgemein",
+          "aliases": [
+            "Widerstand"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H16M32 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            }
+          ]
+        },
+        {
+          "name": "Widerstand, veränderbar",
+          "aliases": [
+            "Potentiometer",
+            "Poti"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H16M32 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            },
+            {
+              "d": "M15 25L32 8"
+            },
+            {
+              "d": "M28 8.5L32.5 7.5L31.5 12Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Widerstand, temperaturabhängig",
+          "aliases": [
+            "NTC",
+            "PTC",
+            "Thermistor"
+          ],
+          "note": "Zusatz ↑↓ = NTC, ↑↑ = PTC",
+          "draw": [
+            {
+              "d": "M6 16H16M32 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            },
+            {
+              "d": "M12 25H17L32 8"
+            },
+            {
+              "text": "ϑ",
+              "x": 37,
+              "y": 25,
+              "size": 7
+            }
+          ]
+        },
+        {
+          "name": "Induktivität, Spule, Wicklung",
+          "aliases": [
+            "Spule",
+            "Wicklung",
+            "Drossel"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H12M36 16H42"
+            },
+            {
+              "d": "M12 16A3 3 0 0 1 18 16A3 3 0 0 1 24 16A3 3 0 0 1 30 16A3 3 0 0 1 36 16"
+            },
+            {
+              "d": "M12 21H36",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Kondensator allgemein",
+          "aliases": [
+            "Kondensator"
+          ],
+          "draw": [
+            {
+              "d": "M24 4V13M16 13H32M16 19H32M24 19V28"
+            }
+          ]
+        },
+        {
+          "name": "Sicherung allgemein",
+          "aliases": [
+            "Sicherung",
+            "Schmelzsicherung"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            }
+          ]
+        },
+        {
+          "name": "Wechselrichter",
+          "aliases": [
+            "Inverter"
+          ],
+          "draw": [
+            {
+              "d": "M8 16H15M33 16H40"
+            },
+            {
+              "d": "M15 7H33V25H15Z"
+            },
+            {
+              "d": "M15 25L33 7"
+            },
+            {
+              "d": "M18 11.5H23"
+            },
+            {
+              "d": "M24 21C25 19 26.5 19 27.5 21S30 23 31 21"
+            }
+          ]
+        },
+        {
+          "name": "Gleichrichter",
+          "aliases": [
+            "Netzteil"
+          ],
+          "draw": [
+            {
+              "d": "M8 16H15M33 16H40"
+            },
+            {
+              "d": "M15 7H33V25H15Z"
+            },
+            {
+              "d": "M15 25L33 7"
+            },
+            {
+              "d": "M18 12C19 10 20.5 10 21.5 12S24 14 25 12"
+            },
+            {
+              "d": "M25 21H30"
+            }
+          ]
+        },
+        {
+          "name": "Maschine allgemein",
+          "aliases": [
+            "Motor",
+            "Generator"
+          ],
+          "note": "* C Umformer, G Generator, M Motor, MS Synchronmotor",
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                9
+              ]
+            },
+            {
+              "text": "*",
+              "x": 24,
+              "y": 17,
+              "size": 9
+            }
+          ]
+        },
+        {
+          "name": "Drehstrom-Asynchronmotor mit Käfigläufer",
+          "aliases": [
+            "Drehstrommotor",
+            "Asynchronmotor",
+            "Motor"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                19,
+                9
+              ]
+            },
+            {
+              "text": "M",
+              "x": 24,
+              "y": 16,
+              "size": 6
+            },
+            {
+              "text": "3~",
+              "x": 24,
+              "y": 23,
+              "size": 5
+            },
+            {
+              "d": "M19 3V11.5M24 3V10M29 3V11.5"
+            }
+          ]
+        },
+        {
+          "name": "Transformator",
+          "aliases": [
+            "Trafo",
+            "Übertrager"
+          ],
+          "note": "Links Form 1, rechts Form 2",
+          "draw": [
+            {
+              "d": "M12 3V8M12 24V29"
+            },
+            {
+              "circle": [
+                12,
+                12.5,
+                4.5
+              ]
+            },
+            {
+              "circle": [
+                12,
+                19.5,
+                4.5
+              ]
+            },
+            {
+              "d": "M22 8V12A2.75 2.75 0 0 0 27.5 12A2.75 2.75 0 0 0 33 12A2.75 2.75 0 0 0 38.5 12V8"
+            },
+            {
+              "d": "M22 24V20A2.75 2.75 0 0 1 27.5 20A2.75 2.75 0 0 1 33 20A2.75 2.75 0 0 1 38.5 20V24"
+            }
+          ]
+        },
+        {
+          "name": "Anzeige allgemein",
+          "aliases": [
+            "Zeiger"
+          ],
+          "draw": [
+            {
+              "d": "M30 22L20.4 11.6"
+            },
+            {
+              "d": "M18 9L21.4 10.6L19.3 12.5Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Spannungsmessgerät",
+          "aliases": [
+            "Voltmeter"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                8
+              ]
+            },
+            {
+              "text": "V",
+              "x": 24,
+              "y": 16,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Strommessgerät",
+          "aliases": [
+            "Amperemeter"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                8
+              ]
+            },
+            {
+              "text": "A",
+              "x": 24,
+              "y": 16,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "Messgerät, z. B. Kurvenschreiber",
+          "aliases": [
+            "Kurvenschreiber",
+            "Messgerät"
+          ],
+          "draw": [
+            {
+              "d": "M16 8H32V24H16Z"
+            },
+            {
+              "d": "M18 20L22 14L25 18L30 12"
+            }
+          ]
+        },
+        {
+          "name": "Wattstundenzähler",
+          "aliases": [
+            "Stromzähler",
+            "kWh-Zähler",
+            "Zähler"
+          ],
+          "draw": [
+            {
+              "d": "M16 4H32V28H16Z"
+            },
+            {
+              "d": "M16 12H32"
+            },
+            {
+              "text": "Wh",
+              "x": 24,
+              "y": 20,
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "Schließer, Schalter allgemein",
+          "aliases": [
+            "Schließer",
+            "Kontakt"
+          ],
+          "draw": [
+            {
+              "d": "M24 28V22L18 10M24 4V11"
+            }
+          ]
+        },
+        {
+          "name": "Öffner",
+          "aliases": [
+            "Kontakt"
+          ],
+          "draw": [
+            {
+              "d": "M24 28V22L19 9.5M24 4V10H18"
+            }
+          ]
+        },
+        {
+          "name": "Wechsler mit Unterbrechung",
+          "aliases": [
+            "Wechsler",
+            "Umschalter"
+          ],
+          "draw": [
+            {
+              "d": "M24 28V21L19 9"
+            },
+            {
+              "d": "M18 4V10M30 4V10"
+            }
+          ]
+        },
+        {
+          "name": "Wechsler mit Mittelstellung „Aus“",
+          "aliases": [
+            "Wechsler",
+            "Umschalter"
+          ],
+          "draw": [
+            {
+              "d": "M24 28V20"
+            },
+            {
+              "circle": [
+                24,
+                18,
+                1.5
+              ]
+            },
+            {
+              "d": "M24 16.5V9"
+            },
+            {
+              "d": "M18 4V10M30 4V10"
+            }
+          ]
+        },
+        {
+          "name": "Halbleiterdiode allgemein",
+          "aliases": [
+            "Diode"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H18M30 16H42"
+            },
+            {
+              "d": "M30 10L18 16L30 22Z"
+            },
+            {
+              "d": "M18 10V22"
+            }
+          ]
+        },
+        {
+          "name": "Leuchtdiode (LED)",
+          "aliases": [
+            "LED"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H18M30 16H42"
+            },
+            {
+              "d": "M30 10L18 16L30 22Z"
+            },
+            {
+              "d": "M18 10V22"
+            },
+            {
+              "d": "M26 24L32 30M30 22L36 28"
+            },
+            {
+              "d": "M32 30l-3.2 -0.6 2.6 -2.6ZM36 28l-3.2 -0.6 2.6 -2.6Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Fotodiode",
+          "aliases": [
+            "Photodiode"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H18M30 16H42"
+            },
+            {
+              "d": "M30 10L18 16L30 22Z"
+            },
+            {
+              "d": "M18 10V22"
+            },
+            {
+              "d": "M38 3L33.1 7.9M41 6L36.1 10.9"
+            },
+            {
+              "d": "M31 10L34 8.8L32.2 7ZM34 13L37 11.8L35.2 10Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Fotowiderstand",
+          "aliases": [
+            "LDR",
+            "Photowiderstand"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H16M32 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            },
+            {
+              "d": "M18 2L24 8M22 0L28 6"
+            },
+            {
+              "d": "M24 8l-3.2 -0.6 2.6 -2.6ZM28 6l-3.2 -0.6 2.6 -2.6Z",
+              "fill": true
+            }
+          ]
+        },
+        {
+          "name": "Heizwiderstand",
+          "aliases": [
+            "Heizstab",
+            "Heizelement"
+          ],
+          "draw": [
+            {
+              "d": "M6 16H16M32 16H42"
+            },
+            {
+              "d": "M16 12H32V20H16Z"
+            },
+            {
+              "d": "M20 12V20M24 12V20M28 12V20"
+            }
+          ]
+        },
+        {
+          "name": "Heißwasserspeicher (Elektro)",
+          "aliases": [
+            "Elektrospeicher",
+            "Boiler",
+            "Speicher"
+          ],
+          "draw": [
+            {
+              "circle": [
+                17,
+                16,
+                6
+              ]
+            },
+            {
+              "circle": [
+                17,
+                16,
+                1
+              ],
+              "fill": true
+            },
+            {
+              "d": "M23 16H40M37 12V20"
+            }
+          ]
+        },
+        {
+          "name": "Durchlauferhitzer (Elektro)",
+          "aliases": [
+            "DLE",
+            "E-Durchlauferhitzer"
+          ],
+          "draw": [
+            {
+              "circle": [
+                17,
+                16,
+                6
+              ]
+            },
+            {
+              "circle": [
+                17,
+                14,
+                1
+              ],
+              "fill": true
+            },
+            {
+              "d": "M14 18H20"
+            },
+            {
+              "d": "M23 16H40M37 12V20"
+            }
+          ]
+        },
+        {
+          "name": "Heißwassergerät",
+          "aliases": [
+            "Kochendwassergerät",
+            "Untertischgerät"
+          ],
+          "draw": [
+            {
+              "circle": [
+                17,
+                16,
+                6
+              ]
+            },
+            {
+              "d": "M14 11.5V20.5M17 10V22M20 11.5V20.5"
+            },
+            {
+              "d": "M23 16H40"
+            }
+          ]
+        },
+        {
+          "name": "Speicherheizgerät",
+          "aliases": [
+            "Nachtspeicher",
+            "Nachtspeicherofen"
+          ],
+          "draw": [
+            {
+              "d": "M10 10H38V22H10Z"
+            },
+            {
+              "d": "M12.5 12.5H35.5V19.5H12.5Z"
+            },
+            {
+              "d": "M16 12V20M20 12V20M24 12V20M28 12V20M32 12V20"
+            }
+          ]
+        },
+        {
+          "name": "Schalter allgemein",
+          "aliases": [
+            "Lichtschalter",
+            "Ausschalter"
+          ],
+          "draw": [
+            {
+              "circle": [
+                20,
+                23,
+                2.5
+              ]
+            },
+            {
+              "d": "M21.5 21L29 8"
+            }
+          ]
+        },
+        {
+          "name": "Schalter mit Kontrollleuchte",
+          "aliases": [
+            "Kontrollschalter"
+          ],
+          "draw": [
+            {
+              "circle": [
+                20,
+                23,
+                2.5
+              ]
+            },
+            {
+              "d": "M18.2 21.2L21.8 24.8M21.8 21.2L18.2 24.8"
+            },
+            {
+              "d": "M21.5 21L29 8"
+            }
+          ]
+        },
+        {
+          "name": "Serienschalter",
+          "aliases": [
+            "Serie"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                22,
+                2.5
+              ]
+            },
+            {
+              "d": "M22.8 19.8L18 9L15.5 11M25.2 19.8L30 9L32.5 11"
+            }
+          ]
+        },
+        {
+          "name": "Wechselschalter",
+          "aliases": [
+            "Wechselschaltung"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                2.5
+              ]
+            },
+            {
+              "d": "M25.5 14L30.5 6L33 8M22.5 18L17.5 26L15 24"
+            }
+          ]
+        },
+        {
+          "name": "Lampe allgemein",
+          "aliases": [
+            "Leuchte",
+            "Licht"
+          ],
+          "draw": [
+            {
+              "circle": [
+                24,
+                16,
+                6
+              ]
+            },
+            {
+              "d": "M19.8 11.8L28.2 20.2M28.2 11.8L19.8 20.2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Leitungskürzel und Farben",
+      "norm": "DIN EN 806-1, Planungspraxis",
+      "note": "Übliche Farben in Strangschemata und Plänen; maßgeblich ist die Legende des jeweiligen Plans.",
+      "symbols": [
+        {
+          "name": "Trinkwasser kalt",
+          "aliases": [
+            "PWC",
+            "KW",
+            "TWK",
+            "Kaltwasser"
+          ],
+          "note": "Grün · früher KW · teils auch blau gezeichnet",
+          "draw": [
+            {
+              "text": "PWC",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "gruen",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Trinkwasser warm",
+          "aliases": [
+            "PWH",
+            "WW",
+            "TWW",
+            "Warmwasser"
+          ],
+          "note": "Rot · früher WW",
+          "draw": [
+            {
+              "text": "PWH",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "rot",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Zirkulation",
+          "aliases": [
+            "PWH-C",
+            "Zirk",
+            "TWZ",
+            "Zirkulationsleitung"
+          ],
+          "note": "Violett · früher auch rot gestrichelt",
+          "draw": [
+            {
+              "text": "PWH-C",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "violett",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Heizungsvorlauf",
+          "aliases": [
+            "VL",
+            "HVL",
+            "Vorlauf",
+            "Hz V"
+          ],
+          "note": "Rot, durchgezogen",
+          "draw": [
+            {
+              "text": "VL",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "rot",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Heizungsrücklauf",
+          "aliases": [
+            "RL",
+            "HRL",
+            "Rücklauf",
+            "Hz R"
+          ],
+          "note": "Blau, gestrichelt",
+          "draw": [
+            {
+              "text": "RL",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "blau",
+              "bold": true,
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Fernwärme-Vorlauf",
+          "aliases": [
+            "FVL",
+            "FWVL",
+            "Fernwärme"
+          ],
+          "note": "Rot",
+          "draw": [
+            {
+              "text": "FVL",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "rot",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Fernwärme-Rücklauf",
+          "aliases": [
+            "FRL",
+            "FWRL",
+            "Fernwärme"
+          ],
+          "note": "Blau",
+          "draw": [
+            {
+              "text": "FRL",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "blau",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Gasleitung",
+          "aliases": [
+            "Erdgas",
+            "Brenngas"
+          ],
+          "note": "Gelb (DIN 2403: brennbare Gase)",
+          "draw": [
+            {
+              "text": "Gas",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "gelb",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Schmutzwasser",
+          "aliases": [
+            "WAS",
+            "Abwasser",
+            "Schmutzabwasser"
+          ],
+          "note": "Schwarz",
+          "draw": [
+            {
+              "text": "WAS",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "schwarz",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "name": "Regenwasser, verschmutzt",
+          "aliases": [
+            "WAR",
+            "Regenabwasser",
+            "Regenwasser"
+          ],
+          "note": "Schwarz, gestrichelt",
+          "draw": [
+            {
+              "text": "WAR",
+              "x": 24,
+              "y": 10,
+              "size": 8
+            },
+            {
+              "d": "M4 22H44",
+              "color": "schwarz",
+              "bold": true,
+              "dash": true
+            }
+          ]
+        },
+        {
+          "name": "Mischwasser",
+          "aliases": [
+            "Mischabwasser"
+          ],
+          "note": "Schwarz, Strichpunkt",
+          "draw": [
+            {
+              "d": "M4 22H44",
+              "color": "schwarz",
+              "bold": true,
+              "dashDot": true
+            }
+          ]
+        },
+        {
+          "name": "Regenwasser, nutzbar",
+          "aliases": [
+            "Regenwassernutzung",
+            "Betriebswasser"
+          ],
+          "note": "Grün",
+          "draw": [
+            {
+              "d": "M4 22H44",
+              "color": "gruen",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rohrkennzeichnung nach Durchflussstoff",
+      "norm": "DIN 2403:2014-06",
+      "note": "Gruppenfarbe des Schilds oder Bands, Ziffer = Gruppe in Schriftfarbe, rechts ggf. die Zusatzfarbe. Dazu gehören Durchflussstoff und Durchflussrichtung.",
+      "symbols": [
+        {
+          "name": "Wasser",
+          "aliases": [
+            "Gruppe 1",
+            "Kennzeichnung"
+          ],
+          "note": "Grün, Schrift weiß",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "gruen"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "1",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "weiss"
+            }
+          ]
+        },
+        {
+          "name": "Wasserdampf",
+          "aliases": [
+            "Gruppe 2",
+            "Dampf"
+          ],
+          "note": "Rot, Schrift weiß",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "rot"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "2",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "weiss"
+            }
+          ]
+        },
+        {
+          "name": "Luft",
+          "aliases": [
+            "Gruppe 3",
+            "Druckluft"
+          ],
+          "note": "Grau, Schrift schwarz",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "grau"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "3",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "schwarz"
+            }
+          ]
+        },
+        {
+          "name": "Brennbare Gase",
+          "aliases": [
+            "Gruppe 4",
+            "Gas",
+            "Erdgas"
+          ],
+          "note": "Gelb, Zusatzfarbe rot, Schrift schwarz",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "gelb"
+            },
+            {
+              "d": "M34 9H44V23H34Z",
+              "fill": true,
+              "color": "rot"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "4",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "schwarz"
+            }
+          ]
+        },
+        {
+          "name": "Nichtbrennbare Gase",
+          "aliases": [
+            "Gruppe 5",
+            "Stickstoff",
+            "Kältemittel"
+          ],
+          "note": "Gelb, Zusatzfarbe schwarz, Schrift schwarz",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "gelb"
+            },
+            {
+              "d": "M34 9H44V23H34Z",
+              "fill": true,
+              "color": "schwarz"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "5",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "schwarz"
+            }
+          ]
+        },
+        {
+          "name": "Säuren",
+          "aliases": [
+            "Gruppe 6"
+          ],
+          "note": "Orange, Schrift schwarz",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "orange"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "6",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "schwarz"
+            }
+          ]
+        },
+        {
+          "name": "Laugen",
+          "aliases": [
+            "Gruppe 7"
+          ],
+          "note": "Violett, Schrift weiß",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "violett"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "7",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "weiss"
+            }
+          ]
+        },
+        {
+          "name": "Brennbare Flüssigkeiten und Feststoffe",
+          "aliases": [
+            "Gruppe 8",
+            "Heizöl",
+            "Öl"
+          ],
+          "note": "Braun, Zusatzfarbe rot, Schrift weiß",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "braun"
+            },
+            {
+              "d": "M34 9H44V23H34Z",
+              "fill": true,
+              "color": "rot"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "8",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "weiss"
+            }
+          ]
+        },
+        {
+          "name": "Nichtbrennbare Flüssigkeiten und Feststoffe",
+          "aliases": [
+            "Gruppe 9"
+          ],
+          "note": "Braun, Zusatzfarbe schwarz, Schrift weiß",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "braun"
+            },
+            {
+              "d": "M34 9H44V23H34Z",
+              "fill": true,
+              "color": "schwarz"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "9",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "weiss"
+            }
+          ]
+        },
+        {
+          "name": "Sauerstoff",
+          "aliases": [
+            "Gruppe 0"
+          ],
+          "note": "Blau, Schrift weiß",
+          "draw": [
+            {
+              "d": "M4 9H44V23H4Z",
+              "fill": true,
+              "color": "blau"
+            },
+            {
+              "d": "M4 9H44V23H4Z"
+            },
+            {
+              "text": "0",
+              "x": 19,
+              "y": 16,
+              "size": 9,
+              "color": "weiss"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
