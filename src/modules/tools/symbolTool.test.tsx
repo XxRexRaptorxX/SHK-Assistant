@@ -31,7 +31,7 @@ describe('Sinnbilder', () => {
         'DIN 2403:2014-06',
       ]),
     )
-    expect(symbols.status).toBe('draft')
+    expect(symbols.status).toBe('verified')
   })
 
   it('findet Sinnbilder über Name, Suchbegriff und Gruppe, auch ohne Umlaute', () => {
