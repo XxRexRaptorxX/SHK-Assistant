@@ -1240,6 +1240,88 @@
               "size": 6
             }
           ]
+        },
+        {
+          "name": "Druckerhöhungsanlage",
+          "aliases": [
+            "DEA",
+            "Druckerhöhung",
+            "Doppelpumpenanlage"
+          ],
+          "note": "Beispiel mit Förderleistung und Druck vor und nach der Anlage",
+          "draw": [
+            {
+              "d": "M2 2H46V30H2Z",
+              "dashDot": true,
+              "thin": true
+            },
+            {
+              "d": "M13 8H19.8M28.2 8H35V24H28.2M19.8 24H13V8",
+              "thin": true
+            },
+            {
+              "circle": [
+                24,
+                8,
+                4.2
+              ],
+              "thin": true
+            },
+            {
+              "d": "M24.8 3.9L28.2 8L24.8 12.1",
+              "thin": true
+            },
+            {
+              "circle": [
+                24,
+                24,
+                4.2
+              ],
+              "thin": true
+            },
+            {
+              "d": "M24.8 19.9L28.2 24L24.8 28.1",
+              "thin": true
+            },
+            {
+              "text": "30m³/h",
+              "x": 24,
+              "y": 16,
+              "size": 3.6
+            },
+            {
+              "text": "0,1",
+              "x": 7.5,
+              "y": 13,
+              "size": 3.6
+            },
+            {
+              "d": "M4.5 15.5H10.5",
+              "thin": true
+            },
+            {
+              "text": "MPa",
+              "x": 7.5,
+              "y": 18.2,
+              "size": 3.4
+            },
+            {
+              "text": "0,5",
+              "x": 40.5,
+              "y": 13,
+              "size": 3.6
+            },
+            {
+              "d": "M37.5 15.5H43.5",
+              "thin": true
+            },
+            {
+              "text": "MPa",
+              "x": 40.5,
+              "y": 18.2,
+              "size": 3.4
+            }
+          ]
         }
       ]
     },
