@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { isSymbolTool } from './schema'
 import { SymbolLookup } from './SymbolLookup'
+import { parseCollapsedGroups } from './symbolGroups'
 import { checkSymbolTool, filterSymbolGroups, symbolToolSchema, type SymbolTool } from './symbolTool'
 import { toolEntries, toolSearchDocuments } from './tools'
 
@@ -76,6 +77,27 @@ describe('Sinnbilder', () => {
     // Gruppenziffer in Schriftfarbe auf dem Band in Gruppenfarbe
     const water = renderToStaticMarkup(<SymbolLookup tool={symbols} initialQuery="Gruppe 1" />)
     expect(water).toMatch(/fill="#ffffff"[^>]*>1<\/text>/)
+  })
+
+  it('klappt Gruppen ein, zeigt beim Suchen aber alle Treffer', () => {
+    const open = renderToStaticMarkup(<SymbolLookup tool={symbols} collapsed={[]} />)
+    expect(open).toContain('aria-expanded="true"')
+    expect(open).not.toContain('hidden=""')
+    const closed = renderToStaticMarkup(<SymbolLookup tool={symbols} collapsed={['Rohrverbindungen']} />)
+    expect(closed).toContain('aria-expanded="false"')
+    expect(closed.match(/hidden=""/g)).toHaveLength(1)
+    // Anzahl je Gruppe steht neben dem Titel, auch eingeklappt
+    expect(closed).toMatch(/Rohrverbindungen <span[^>]*>\(6\)<\/span>/)
+    const searching = renderToStaticMarkup(<SymbolLookup tool={symbols} collapsed={['Rohrverbindungen']} initialQuery="Flansch" />)
+    expect(searching).not.toContain('aria-expanded')
+    expect(searching).not.toContain('hidden=""')
+  })
+
+  it('liest den gemerkten Stand robust', () => {
+    expect(parseCollapsedGroups(null)).toEqual({})
+    expect(parseCollapsedGroups('kaputt')).toEqual({})
+    expect(parseCollapsedGroups('[1]')).toEqual({})
+    expect(parseCollapsedGroups('{"tool.sinnbilder":["Gas",3],"x":"y"}')).toEqual({ 'tool.sinnbilder': ['Gas'] })
   })
 
   it('macht die Sinnbilder über die globale Suche auffindbar', () => {
