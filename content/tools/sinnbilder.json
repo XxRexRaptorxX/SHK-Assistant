@@ -2,7 +2,7 @@
   "id": "tool.sinnbilder",
   "visibility": "public",
   "status": "draft",
-  "source": "Sinnbilder nach DIN EN 806-1:2001-12 (Trinkwasserinstallation und Brandschutzanlagen), DIN 28000-4:2014-07 (Heizungsanlagen), DVGW-TRGI 2018 (Gasinstallation), DIN 1986-100:2016-12 (Sanitär-Ausstattungsgegenstände), DIN 19227-2:1991-02 (Mess-, Steuer- und Regeltechnik) und DIN EN 60617-3, -4, -6, -7, -9, -11:1997-08 (Elektrotechnik). Eigene, vereinfachte Nachzeichnung nach einer Tabellenbuch-Übersicht des Inhabers (Vorlage vom 29.10.2026); Abgleich mit dem Normtext steht aus. Sicherungsarmaturen zusätzlich abgeglichen mit den Symbolen nach DIN EN 1717 in Bosy, „Wegweiser Trinkwasserschutz – Technisches Handbuch Armaturentechnologie“, S. 13–17, http://www.bosy-online.de/WegweiserTrinkwasserSchutzTechnischesHandbuch.pdf. Kappenventil: Absperrung gegen unbeabsichtigtes Schließen gesichert nach DIN EN 12828, wiedergegeben in Afriso, Betriebsanleitung Kappenventile, https://www.afriso.com/ix_pim_assets/PDF/3/73/573/Kappenventile-BA.pdf; Sinnbild: manueller Stellantrieb, gesichert (DIN 28000-4). Leitungskürzel und Farben: PWC grün, PWH rot, PWH-C violett nach DIN EN 806-1, wiedergegeben in Wikipedia, „Rohrleitungskennzeichnung“, https://de.wikipedia.org/wiki/Rohrleitungskennzeichnung; Kaltwasser grün und Warmwasser rot auch in SBZ Monteur 07/2018, „Wie funktioniert eigentlich ein Strangschema?“; VL/RL und Hz V/Hz R ebenda (Wikipedia); Heizungs- und Fernwärme-Vorlauf rot, -Rücklauf blau (Rücklauf gestrichelt) nach MDF AG, „Graphische Darstellung von Anlagen der technischen Gebäudeausrüstung“, https://www.mdf-ag.com/media/user_upload/MFAG/PDF/Technik/LEJ/W6/W6_Graphische_Darstellung_von_Anlagen_der_technischen_Gebaeudeausruestung.pdf; Kürzel HVL, HRL, FVL, FRL, WAS, WAR sowie Kaltwasser auch blau, Zirkulation früher rot gestrichelt, Schmutzwasser schwarz, Regenwasser verschmutzt schwarz gestrichelt, Mischabwasser schwarz Strichpunkt und Regenwasser nutzbar grün nach tabelle.info, „Kennzeichnung von Rohren und Rohrleitungen“, https://www.tabelle.info/rohrleitung_kennzeichnung.html. Rohrkennzeichnung: Gruppen, Gruppen-, Zusatz- und Schriftfarben nach DIN 2403:2014-06, wiedergegeben in TRGS 201, Anhang 3, https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs201/anh3.htm. Alle abgerufen am 29.10.2026.",
+  "source": "Sinnbilder nach DIN EN 806-1:2001-12 (Trinkwasserinstallation und Brandschutzanlagen), DIN 28000-4:2014-07 (Heizungsanlagen), DVGW-TRGI 2018 (Gasinstallation), DIN 1986-100:2016-12 (Sanitär-Ausstattungsgegenstände), DIN 19227-2:1991-02 (Mess-, Steuer- und Regeltechnik) und DIN EN 60617-3, -4, -6, -7, -9, -11:1997-08 (Elektrotechnik). Eigene, vereinfachte Nachzeichnung nach einer Tabellenbuch-Übersicht des Inhabers (Vorlage vom 29.10.2026); Abgleich mit dem Normtext steht aus. Sicherungsarmaturen zusätzlich abgeglichen mit den Symbolen nach DIN EN 1717 in Bosy, „Wegweiser Trinkwasserschutz – Technisches Handbuch Armaturentechnologie“, S. 13–17, http://www.bosy-online.de/WegweiserTrinkwasserSchutzTechnischesHandbuch.pdf. Kappenventil: Absperrung gegen unbeabsichtigtes Schließen gesichert nach DIN EN 12828, wiedergegeben in Afriso, Betriebsanleitung Kappenventile, https://www.afriso.com/ix_pim_assets/PDF/3/73/573/Kappenventile-BA.pdf; Sinnbild nach Wolf, Legende Hydraulikschemen (Index 06, 23.05.2022), https://konfig.wolf.eu/hydraulik/resources/pdf/Legende_Symbole.pdf. Leitungskürzel und Farben: PWC grün, PWH rot, PWH-C violett nach DIN EN 806-1, wiedergegeben in Wikipedia, „Rohrleitungskennzeichnung“, https://de.wikipedia.org/wiki/Rohrleitungskennzeichnung; Kaltwasser grün und Warmwasser rot auch in SBZ Monteur 07/2018, „Wie funktioniert eigentlich ein Strangschema?“; VL/RL und Hz V/Hz R ebenda (Wikipedia); Heizungs- und Fernwärme-Vorlauf rot, -Rücklauf blau (Rücklauf gestrichelt) nach MDF AG, „Graphische Darstellung von Anlagen der technischen Gebäudeausrüstung“, https://www.mdf-ag.com/media/user_upload/MFAG/PDF/Technik/LEJ/W6/W6_Graphische_Darstellung_von_Anlagen_der_technischen_Gebaeudeausruestung.pdf; Kürzel HVL, HRL, FVL, FRL, WAS, WAR sowie Kaltwasser auch blau, Zirkulation früher rot gestrichelt, Schmutzwasser schwarz, Regenwasser verschmutzt schwarz gestrichelt, Mischabwasser schwarz Strichpunkt und Regenwasser nutzbar grün nach tabelle.info, „Kennzeichnung von Rohren und Rohrleitungen“, https://www.tabelle.info/rohrleitung_kennzeichnung.html. Rohrkennzeichnung: Gruppen, Gruppen-, Zusatz- und Schriftfarben nach DIN 2403:2014-06, wiedergegeben in TRGS 201, Anhang 3, https://vorschriften.bgn-branchenwissen.de/daten/tr/trgs201/anh3.htm. Alle abgerufen am 29.10.2026.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "symbols",
@@ -48,7 +48,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H22M26 16H44"
+              "d": "M4 16H44"
             },
             {
               "d": "M22 10V22M26 10V22"
@@ -109,10 +109,13 @@
           ],
           "draw": [
             {
-              "d": "M4 16H22M26 16H44"
+              "d": "M4 16H44"
             },
             {
-              "d": "M22 10V22M26 10V22M20 10H28M20 22H28"
+              "d": "M22 10.2V21.8M26 10.2V21.8"
+            },
+            {
+              "d": "M19.5 10V8.5H28.5V10M19.5 22V23.5H28.5V22"
             }
           ]
         },
@@ -146,7 +149,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44M10 12V20M38 12V20"
+              "d": "M4 16H11.6M14.4 16H16M32 16H33.6M36.4 16H44M10 12V20M38 12V20"
             },
             {
               "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
@@ -161,7 +164,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44"
+              "d": "M4 16H12M14 16H16M32 16H34M36 16H44"
             },
             {
               "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
@@ -183,13 +186,13 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44"
+              "d": "M4 16H12M14 16H16M32 16H34M36 16H44"
             },
             {
               "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
             },
             {
-              "d": "M19.5 20.5L28.5 11.5",
+              "d": "M19.5 11.5L28.5 20.5",
               "bold": true
             }
           ]
@@ -201,7 +204,7 @@
           ],
           "draw": [
             {
-              "d": "M6 13H16"
+              "d": "M6 13H12M14 13H16"
             },
             {
               "d": "M16 7L24 13L16 19Z"
@@ -223,7 +226,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44"
+              "d": "M4 16H12M14 16H16M32 16H34M36 16H44"
             },
             {
               "d": "M16 10L21.5 16L16 22ZM32 10L26.5 16L32 22Z"
@@ -277,7 +280,7 @@
           ],
           "draw": [
             {
-              "d": "M6 13H16M32 13H42"
+              "d": "M6 13H12M14 13H16M32 13H34M36 13H42"
             },
             {
               "d": "M16 7L24 13L16 19ZM32 7L24 13L32 19Z"
@@ -307,7 +310,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44"
+              "d": "M4 16H12M14 16H16M32 16H34M36 16H44"
             },
             {
               "d": "M16 10L21 16L16 22ZM32 10L27 16L32 22Z"
@@ -372,7 +375,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44"
+              "d": "M4 16H12M14 16H16M32 16H34M36 16H44"
             },
             {
               "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
@@ -406,7 +409,7 @@
               "fill": true
             },
             {
-              "d": "M17 27Q24 18 31 27"
+              "d": "M16 25Q24 13 32 25"
             }
           ]
         }
@@ -631,12 +634,12 @@
               "dash": true
             },
             {
-              "d": "M15 9H33V23H15Z"
+              "d": "M15 12H33V26H15Z"
             },
             {
               "text": "FV",
               "x": 24,
-              "y": 16,
+              "y": 19,
               "size": 7
             }
           ]
@@ -653,12 +656,12 @@
               "dash": true
             },
             {
-              "d": "M15 9H33V23H15Z"
+              "d": "M15 12H33V26H15Z"
             },
             {
               "text": "FC",
               "x": 24,
-              "y": 16,
+              "y": 19,
               "size": 7
             }
           ]
@@ -753,10 +756,10 @@
           ],
           "draw": [
             {
-              "d": "M24 24V13"
+              "d": "M17 17L24 12.5L31 17"
             },
             {
-              "d": "M17 17L24 12.5L31 17"
+              "d": "M24 16V25"
             }
           ]
         },
@@ -767,10 +770,13 @@
           ],
           "draw": [
             {
-              "d": "M24 5V27"
+              "d": "M24 4V14"
             },
             {
-              "d": "M17 19L24 15L31 19"
+              "d": "M17 18L24 14L31 18"
+            },
+            {
+              "d": "M24 17.5V27"
             }
           ]
         },
@@ -845,7 +851,7 @@
               "d": "M12 10H36V22H12Z"
             },
             {
-              "d": "M14.5 13H19M23 13H33.5M14.5 19H19M23 19H33.5"
+              "d": "M12 13H19M23 13H36M12 19H19M23 19H36"
             }
           ]
         },
@@ -911,7 +917,7 @@
           ],
           "draw": [
             {
-              "d": "M8 16H16M34 16H42"
+              "d": "M8 16H16M32 16H42"
             },
             {
               "d": "M16 10L24 16L16 22ZM32 10L24 16L32 22Z"
@@ -925,7 +931,7 @@
               "fill": true
             },
             {
-              "d": "M34 10V22"
+              "d": "M29.5 12V20"
             },
             {
               "text": "T",
@@ -955,11 +961,13 @@
               "d": "M17 8H31V24H17Z"
             },
             {
-              "d": "M19 15L23.5 10.5H28"
+              "d": "M19 10.5H29.5"
             },
             {
-              "d": "M27.5 8.8L30.5 10.5L27.5 12.2Z",
-              "fill": true
+              "d": "M27 8.5L29.5 10.5L27 12.5"
+            },
+            {
+              "d": "M19.6 14.3L23.8 10.5"
             },
             {
               "text": "CHO",
@@ -987,11 +995,10 @@
               "d": "M19 10.5H29"
             },
             {
-              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+              "d": "M23 11L28 16.5"
             },
             {
-              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
-              "fill": true
+              "d": "M27.1 13.3L28 16.5L24.9 15.3"
             },
             {
               "text": "RO",
@@ -1018,11 +1025,10 @@
               "d": "M19 10.5H29"
             },
             {
-              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+              "d": "M23 11L28 16.5"
             },
             {
-              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
-              "fill": true
+              "d": "M27.1 13.3L28 16.5L24.9 15.3"
             },
             {
               "text": "ACF",
@@ -1050,11 +1056,10 @@
               "d": "M19 10.5H29"
             },
             {
-              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+              "d": "M23 11L28 16.5"
             },
             {
-              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
-              "fill": true
+              "d": "M27.1 13.3L28 16.5L24.9 15.3"
             },
             {
               "text": "SOF",
@@ -1082,11 +1087,10 @@
               "d": "M19 10.5H29"
             },
             {
-              "d": "M23.5 11.5L26.5 14L25 14.6L28 17.5"
+              "d": "M23 11L28 16.5"
             },
             {
-              "d": "M25.8 17.3L28.6 18.1L27.8 15.4Z",
-              "fill": true
+              "d": "M27.1 13.3L28 16.5L24.9 15.3"
             },
             {
               "text": "UV",
@@ -1155,7 +1159,7 @@
               ]
             },
             {
-              "d": "M16.9 8.9L34 16L16.9 23.1"
+              "d": "M14 16L24 6L34 16"
             }
           ]
         },
@@ -1188,7 +1192,10 @@
               "d": "M14 6H34V26H14Z"
             },
             {
-              "d": "M17 10H31M24 10V21M18 16L20 10L22 16M26 16L28 10L30 16"
+              "d": "M17 11H31M24 11V22"
+            },
+            {
+              "d": "M19 11L17 16M19 11V16M19 11L21 16M29 11L27 16M29 11V16M29 11L31 16"
             }
           ]
         },
@@ -1199,13 +1206,17 @@
           ],
           "draw": [
             {
-              "d": "M15 4H33V28H15Z"
+              "d": "M15 5H33V26H15Z"
             },
             {
-              "d": "M24 7.5A5 6.5 0 1 0 24 20.5A5 6.5 0 1 0 24 7.5Z"
+              "circle": [
+                24,
+                15.5,
+                6.5
+              ]
             },
             {
-              "d": "M26.3 8.6Q23 14 22.4 19.8"
+              "d": "M22.3 9.2L18.5 19M25.7 9.2L29.6 18.3"
             }
           ]
         },
@@ -1290,6 +1301,9 @@
               "d": "M26.5 16.5L29 11.5L31.5 16.5Z"
             },
             {
+              "d": "M26 14.8H32"
+            },
+            {
               "d": "M34 9L29 11.5L34 14Z"
             },
             {
@@ -1325,7 +1339,10 @@
               ]
             },
             {
-              "d": "M19.5 10.5L24.3 14.9L27.5 20.5L22.7 16.1Z",
+              "d": "M28 21L21.2 12"
+            },
+            {
+              "d": "M19.5 9.8L22.8 11.1L20.4 12.9Z",
               "fill": true
             }
           ]
@@ -1397,12 +1414,10 @@
               "d": "M18 11H30"
             },
             {
-              "circle": [
-                24,
-                18,
-                1.2
-              ],
-              "fill": true
+              "text": "*",
+              "x": 24,
+              "y": 19,
+              "size": 8
             }
           ]
         },
@@ -1521,21 +1536,27 @@
           "note": "* Kennzeichen der Belüftung",
           "draw": [
             {
-              "d": "M26.5 9H8V29H40V9H29.5"
+              "d": "M26.8 9H8V29H40V9H32.1"
             },
             {
-              "d": "M8 13H40"
+              "d": "M26.8 9V6.6M32.1 9V6.6"
             },
             {
-              "d": "M11 13L13.5 16.5L16 13M13.5 16.5V23"
+              "d": "M29.5 2V9.5"
             },
             {
-              "d": "M26.5 9V6H24L28 2L32 6H29.5V9"
+              "d": "M25.2 6.6L29.5 2L33.8 6.6"
+            },
+            {
+              "d": "M8 14.6H40"
+            },
+            {
+              "d": "M11.1 11.8L13.6 14.6L16 11.8M13.6 14.6V23.6"
             },
             {
               "text": "*",
-              "x": 36,
-              "y": 4,
+              "x": 37.3,
+              "y": 3.8,
               "size": 6
             }
           ]
@@ -1605,6 +1626,9 @@
               "d": "M10 12H24L19 16.5H27L22 21H10"
             },
             {
+              "d": "M12 26H20"
+            },
+            {
               "text": "*",
               "x": 14,
               "y": 9,
@@ -1657,10 +1681,11 @@
           ],
           "draw": [
             {
-              "d": "M20 9L22.5 15.5L21.3 16L24 23"
+              "d": "M18 9L23.6 15.6M23 5L28.6 11.6"
             },
             {
-              "d": "M25 7L27.5 13.5L26.3 14L29 21"
+              "d": "M25 17.2L24 14.1L22.1 15.8ZM30 13.2L29 10.1L27.1 11.8Z",
+              "fill": true
             }
           ]
         },
@@ -1828,16 +1853,30 @@
           ],
           "draw": [
             {
-              "d": "M8 10H32V22H8Z"
+              "d": "M5 12H8M5 20H8"
             },
             {
-              "d": "M14 13V19M18 13V19M22 13V19M26 13V19"
+              "d": "M8 10H30V22H8Z"
             },
             {
-              "d": "M34 10H40V22H34Z"
+              "d": "M14 13V19M19 13V19M24 13V19"
             },
             {
-              "d": "M37 13V15M37 17V19"
+              "d": "M32 10H38V22H32Z"
+            },
+            {
+              "circle": [
+                35,
+                13.5,
+                1.2
+              ]
+            },
+            {
+              "circle": [
+                35,
+                18.5,
+                1.2
+              ]
             }
           ]
         },
@@ -1851,7 +1890,7 @@
               "d": "M8 11H40V23H8Z"
             },
             {
-              "d": "M11 19.5H37M21.5 17V22M24 17V22M26.5 17V22"
+              "d": "M11 18H37M21.5 16V20M24 16V20M26.5 16V20"
             }
           ]
         },
@@ -1899,8 +1938,7 @@
               ]
             },
             {
-              "d": "M16.2 14.5H31.8V17.5H16.2Z",
-              "fill": true
+              "d": "M14.5 14.5H33.5V17.5H14.5Z"
             }
           ]
         },
@@ -1937,10 +1975,46 @@
               "d": "M8 7H40V13H8Z"
             },
             {
-              "d": "M12 13V22M18 13V22M24 13V22M30 13V22M36 13V22"
+              "d": "M12 13V25M18 13V25M24 13V25M30 13V25M36 13V25"
             },
             {
-              "d": "M10.5 20L12 23.5L13.5 20ZM16.5 20L18 23.5L19.5 20ZM22.5 20L24 23.5L25.5 20ZM28.5 20L30 23.5L31.5 20ZM34.5 20L36 23.5L37.5 20Z",
+              "circle": [
+                12,
+                19,
+                1.4
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                18,
+                19,
+                1.4
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                24,
+                19,
+                1.4
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                30,
+                19,
+                1.4
+              ],
+              "fill": true
+            },
+            {
+              "circle": [
+                36,
+                19,
+                1.4
+              ],
               "fill": true
             }
           ]
@@ -1962,10 +2036,10 @@
               "d": "M17 10H27M17 13H27"
             },
             {
-              "d": "M29 17H33V28H29"
+              "d": "M29 17H33V28"
             },
             {
-              "d": "M31 19V27",
+              "d": "M29 19.5H31V28",
               "dash": true
             }
           ]
@@ -2000,23 +2074,6 @@
           ]
         },
         {
-          "name": "Offenes Ausdehnungsgefäß",
-          "aliases": [
-            "Ausdehnungsgefäß offen"
-          ],
-          "draw": [
-            {
-              "d": "M19 8V26Q25 29 31 26V8"
-            },
-            {
-              "d": "M19 8Q25 5 31 8Q25 11 19 8"
-            },
-            {
-              "d": "M15 4V30"
-            }
-          ]
-        },
-        {
           "name": "Sicherheitsventil, gewichtsbelastet",
           "aliases": [
             "SV",
@@ -2025,31 +2082,41 @@
           "note": "Breiter Querstrich auf der Austrittsseite",
           "draw": [
             {
-              "d": "M20 30L24 21L28 30Z"
-            },
-            {
-              "d": "M24 21L32 16V26Z"
-            },
-            {
-              "d": "M32 15V27",
-              "bold": true
-            },
-            {
-              "d": "M32 21H40"
-            },
-            {
-              "d": "M40 18.5L44 21L40 23.5Z",
+              "circle": [
+                12,
+                9,
+                2.4
+              ],
               "fill": true
             },
             {
-              "d": "M24 21V12M9 10L28 13"
+              "d": "M14.4 9H22V15"
             },
             {
               "circle": [
-                9,
-                10,
-                2.2
+                22,
+                15,
+                1.6
               ],
+              "fill": true
+            },
+            {
+              "d": "M17.5 24L22 15L26.5 24Z"
+            },
+            {
+              "d": "M22 24V29"
+            },
+            {
+              "d": "M30 10.5L22 15L30 19.5Z"
+            },
+            {
+              "d": "M30.5 9.5H33V20.5H30.5Z"
+            },
+            {
+              "d": "M33 15H40"
+            },
+            {
+              "d": "M39 13L43 15L39 17Z",
               "fill": true
             }
           ]
@@ -2102,7 +2169,7 @@
           ],
           "draw": [
             {
-              "d": "M12 22H15M33 22H36M12 20V24M36 20V24"
+              "d": "M10 22H15M33 22H38"
             },
             {
               "d": "M15 17L24 22L15 27ZM33 17L24 22L33 27Z"
@@ -2122,19 +2189,24 @@
             "MAG-Ventil",
             "Kappenabsperrventil"
           ],
-          "note": "Absperrventil, gegen unbeabsichtigtes Schließen gesichert (z. B. vor dem MAG); gezeichnet mit gesichertem Stellantrieb",
+          "note": "Absperrventil, gegen unbeabsichtigtes Schließen gesichert (z. B. vor dem MAG); Ventil mit Kappe",
           "draw": [
             {
-              "d": "M12 22H15M33 22H36M12 20V24M36 20V24"
+              "d": "M16 12L24 18L16 24ZM32 12L24 18L32 24Z"
             },
             {
-              "d": "M15 17L24 22L15 27ZM33 17L24 22L33 27Z"
+              "circle": [
+                24,
+                18,
+                2.2
+              ],
+              "fill": true
             },
             {
-              "d": "M24 22V10M18 10H30"
+              "d": "M24 18V8"
             },
             {
-              "d": "M27 13V5H35"
+              "d": "M19 10V7.5H29V10"
             }
           ]
         },
@@ -2244,10 +2316,10 @@
           ],
           "draw": [
             {
-              "d": "M10 16H21M28 16H38"
+              "d": "M10 16H26M28 16H38"
             },
             {
-              "d": "M21 12V20"
+              "d": "M26 12V20"
             },
             {
               "d": "M24.5 8H28V24H24.5"
@@ -2330,7 +2402,7 @@
           ],
           "draw": [
             {
-              "d": "M4 16H16M32 16H44"
+              "d": "M4 16H44"
             },
             {
               "d": "M16 11H32V21H16Z"
@@ -2400,7 +2472,8 @@
                 24,
                 6,
                 1.5
-              ]
+              ],
+              "fill": true
             },
             {
               "d": "M24 7.5V12"
@@ -2517,7 +2590,7 @@
               ]
             },
             {
-              "d": "M18 27L24 16L30 27Z"
+              "d": "M18 23L24 16L30 23Z"
             }
           ]
         },
@@ -2586,7 +2659,7 @@
               ]
             },
             {
-              "d": "M18 27L24 16L30 27Z"
+              "d": "M18 23L24 16L30 23Z"
             },
             {
               "text": "T",
@@ -2604,7 +2677,7 @@
           ],
           "draw": [
             {
-              "d": "M11 16H14M34 16H37M11 13V19M37 13V19"
+              "d": "M10 16H14M34 16H38"
             },
             {
               "d": "M14 11H34V21H14Z"
@@ -2691,40 +2764,44 @@
           ],
           "draw": [
             {
-              "d": "M10 6H17V23H10ZM20.5 6H27.5V23H20.5ZM31 6H38V23H31Z"
+              "d": "M9.1 5H16.2V18.7H9.1ZM20.4 5H27.6V18.7H20.4ZM31.8 5H38.9V18.7H31.8Z",
+              "thin": true
+            },
+            {
+              "d": "M9.1 7.9H11.55M13.75 7.9H16.2M20.4 7.9H22.9M25.1 7.9H27.6M31.8 7.9H34.25M36.45 7.9H38.9",
+              "thin": true
             },
             {
               "circle": [
-                13.5,
-                9.5,
+                12.65,
+                10.9,
                 1.5
-              ]
+              ],
+              "thin": true
             },
             {
               "circle": [
-                24,
-                9.5,
+                24.0,
+                10.9,
                 1.5
-              ]
+              ],
+              "thin": true
             },
             {
               "circle": [
-                34.5,
-                9.5,
+                35.35,
+                10.9,
                 1.5
-              ]
+              ],
+              "thin": true
             },
             {
-              "d": "M12 13H15V20H12ZM22.5 13H25.5V20H22.5ZM33 13H36V20H33Z"
+              "d": "M9.1 15.7H7V24H41V15.7H38.9M16.2 15.7H20.4M27.6 15.7H31.8M18.3 15.7V24M29.7 15.7V24",
+              "thin": true
             },
             {
-              "d": "M10 18H8V27H40V18H38M17 18H20.5M27.5 18H31"
-            },
-            {
-              "text": "T",
-              "x": 4,
-              "y": 21,
-              "size": 6
+              "d": "M2.5 12H5.7M4.1 12V19.3",
+              "thin": true
             }
           ]
         },
@@ -2768,7 +2845,7 @@
             {
               "circle": [
                 24,
-                11,
+                13,
                 2
               ],
               "fill": true
@@ -2862,10 +2939,10 @@
           ],
           "draw": [
             {
-              "d": "M15 4H33V28H15Z"
+              "d": "M15 6.5V28H33V6.5"
             },
             {
-              "d": "M18 4V8M20 4V8M22 4V8M24 4V8M26 4V8M28 4V8M30 4V8"
+              "d": "M18 4V9M20 4V9M22 4V9M24 4V9M26 4V9M28 4V9M30 4V9"
             },
             {
               "circle": [
@@ -2934,6 +3011,13 @@
               "d": "M24 6L29.2 15L18.8 15Z"
             },
             {
+              "circle": [
+                24,
+                12,
+                3
+              ]
+            },
+            {
               "d": "M18 22H30V27H18Z"
             }
           ]
@@ -2971,7 +3055,7 @@
               "d": "M14 6H34V26H14Z"
             },
             {
-              "d": "M22.5 6V26M25.5 6V26"
+              "d": "M22 6V26M24 6V26M26 6V26"
             }
           ]
         }
@@ -3030,9 +3114,6 @@
             },
             {
               "d": "M42 21.5V23.5"
-            },
-            {
-              "d": "M39 10H41M40 9V11"
             }
           ]
         },
@@ -3256,6 +3337,70 @@
               "d": "M33 13V18H38.5V13M39.5 13V18H45V13"
             }
           ]
+        },
+        {
+          "name": "Geschirrspülmaschine",
+          "aliases": [
+            "Geschirrspüler",
+            "Spülmaschine"
+          ],
+          "note": "Grundriss und Aufriss gleich",
+          "draw": [
+            {
+              "d": "M13.5 16H17.5"
+            },
+            {
+              "d": "M17.5 9H30.5V23H17.5Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                4
+              ]
+            },
+            {
+              "circle": [
+                24,
+                16,
+                0.9
+              ],
+              "fill": true
+            },
+            {
+              "d": "M17.5 9L21.3 13.1M30.5 9L26.7 13.1M17.5 23L21.3 18.9M30.5 23L26.7 18.9"
+            }
+          ]
+        },
+        {
+          "name": "Waschmaschine",
+          "aliases": [
+            "WM"
+          ],
+          "note": "Grundriss und Aufriss gleich",
+          "draw": [
+            {
+              "d": "M13.5 16H17.5"
+            },
+            {
+              "d": "M17.5 9H30.5V23H17.5Z"
+            },
+            {
+              "circle": [
+                24,
+                16,
+                4
+              ]
+            },
+            {
+              "circle": [
+                24,
+                16,
+                0.9
+              ],
+              "fill": true
+            }
+          ]
         }
       ]
     },
@@ -3434,10 +3579,10 @@
           ],
           "draw": [
             {
-              "d": "M17.5 6Q19.5 13 24 15Q28.5 13 30.5 6"
+              "d": "M18 6A6 6 0 0 0 30 6"
             },
             {
-              "d": "M24 15V27"
+              "d": "M24 12V26"
             }
           ]
         },
@@ -3455,7 +3600,7 @@
               "d": "M16 16H32"
             },
             {
-              "d": "M19 9.5H29M24 9.5V16"
+              "d": "M19 9.5H29M24 9.5V21"
             }
           ]
         },
@@ -3526,10 +3671,10 @@
               "d": "M15 7H33V25H15Z"
             },
             {
-              "d": "M17 23L31 9"
+              "d": "M15 23H17L31 9H33"
             },
             {
-              "d": "M20 11H28M24 11V17"
+              "d": "M20 11H28M24 11V23"
             }
           ]
         },
@@ -3545,10 +3690,10 @@
               "d": "M15 7H33V25H15Z"
             },
             {
-              "d": "M17 23L31 9"
+              "d": "M15 23H17L31 9H33"
             },
             {
-              "d": "M20 11H28M24 11V17"
+              "d": "M20 11H28M24 11V23"
             },
             {
               "text": "W",
@@ -3611,12 +3756,12 @@
               "d": "M15 4H33V28H15Z"
             },
             {
-              "d": "M15 12H33"
+              "d": "M17.5 5.5V11.5H30.5V5.5"
             },
             {
               "text": "000",
               "x": 24,
-              "y": 8,
+              "y": 8.5,
               "size": 5
             },
             {
@@ -3638,12 +3783,12 @@
               "d": "M15 4H33V28H15Z"
             },
             {
-              "d": "M15 12H33"
+              "d": "M17.5 5.5V11.5H30.5V5.5"
             },
             {
               "text": "000",
               "x": 24,
-              "y": 8,
+              "y": 8.5,
               "size": 5
             },
             {
@@ -3694,7 +3839,11 @@
               "d": "M17 8H33V26H17Z"
             },
             {
-              "d": "M15.5 15L23.5 5"
+              "d": "M15.5 15L21.8 7.1"
+            },
+            {
+              "d": "M23.5 5L22.7 8.5L20.5 6.7Z",
+              "fill": true
             }
           ]
         },
@@ -3762,7 +3911,7 @@
           ],
           "draw": [
             {
-              "d": "M6 20H42"
+              "d": "M6 20H21.5M26.5 20H42"
             },
             {
               "d": "M21.5 16V24M26.5 16V24"
@@ -3795,19 +3944,19 @@
           ],
           "draw": [
             {
-              "d": "M16 11H26V21H16Z"
+              "d": "M15 11H26V21H15Z"
             },
             {
-              "d": "M21 5V27"
+              "d": "M22 5V11M22 21V27"
             },
             {
-              "d": "M26 12.5H32V19.5H26Z"
+              "d": "M26 11H33V21H26Z"
             },
             {
               "circle": [
-                29,
+                29.5,
                 16,
-                1.5
+                1.6
               ]
             }
           ]
@@ -3845,10 +3994,7 @@
               "d": "M16 26L32 6"
             },
             {
-              "text": "I",
-              "x": 28.5,
-              "y": 21.5,
-              "size": 5
+              "d": "M27.3 17.5H29.7M28.5 17.5V23.5M27.3 23.5H29.7"
             }
           ]
         },
@@ -3926,10 +4072,9 @@
           ]
         },
         {
-          "name": "Lampe, Leuchtmelder",
+          "name": "Lampe",
           "aliases": [
-            "Leuchtmelder",
-            "Meldeleuchte"
+            "Leuchte"
           ],
           "draw": [
             {
@@ -3945,6 +4090,31 @@
           ]
         },
         {
+          "name": "Leuchtmelder",
+          "aliases": [
+            "Meldeleuchte",
+            "Kontrollleuchte"
+          ],
+          "draw": [
+            {
+              "d": "M8 20H18.5M29.5 20H40"
+            },
+            {
+              "circle": [
+                24,
+                20,
+                5.5
+              ]
+            },
+            {
+              "d": "M20.1 16.1L27.9 23.9M27.9 16.1L20.1 23.9"
+            },
+            {
+              "d": "M21 11.5Q24 9.5 27 11.5"
+            }
+          ]
+        },
+        {
           "name": "Anzeige digital",
           "aliases": [
             "Digitalanzeige",
@@ -3952,12 +4122,12 @@
           ],
           "draw": [
             {
-              "d": "M14 11H34V21H14Z"
+              "d": "M14 11V21H34V11"
             },
             {
               "text": "000",
               "x": 24,
-              "y": 16,
+              "y": 15.5,
               "size": 6
             }
           ]
@@ -4036,7 +4206,7 @@
           ],
           "draw": [
             {
-              "d": "M21.5 8L19.5 24M28.5 8L26.5 24M16.5 13.5H31M15.5 18.5H30"
+              "d": "M21 8V24M27 8V24M16 13H32M16 19H32"
             }
           ]
         },
@@ -4051,10 +4221,7 @@
               "d": "M16 11H34V23H16Z"
             },
             {
-              "d": "M25 6V28"
-            },
-            {
-              "d": "M25 13.5H19.5V20.5H25"
+              "d": "M25 6V13.5H19.5V20.5H25V28"
             }
           ]
         },
@@ -4346,7 +4513,7 @@
               "d": "M28 19H36"
             },
             {
-              "d": "M28.5 24L35.5 17.5M35.5 24L28.5 17.5"
+              "d": "M34.5 26L38.5 15.5"
             },
             {
               "text": "4",
@@ -4389,7 +4556,7 @@
               "d": "M8 11H40"
             },
             {
-              "d": "M19.5 21L22 14M23.5 21L26 14M27.5 21L30 14"
+              "d": "M21 15H31M21 15L19 21.5M26 15L24 21.5M31 15L29 21.5"
             }
           ]
         },
@@ -4401,10 +4568,10 @@
           ],
           "draw": [
             {
-              "d": "M8 17H40"
+              "d": "M8 18.5H40"
             },
             {
-              "d": "M19.5 20.5L22 13.5M23.5 20.5L26 13.5M27.5 20.5L30 13.5"
+              "d": "M21 14.5H31M21 14.5L19 22M26 14.5L24 22M31 14.5L29 22"
             }
           ]
         },
@@ -4429,12 +4596,12 @@
             {
               "circle": [
                 24,
-                16,
-                10
+                17,
+                9.5
               ]
             },
             {
-              "d": "M24 8V14M18 14H30M20 18H28M22 22H26"
+              "d": "M24 2V15M18 15H30M20 19H28M22 23H26"
             }
           ]
         },
@@ -4928,7 +5095,7 @@
           ],
           "draw": [
             {
-              "d": "M24 28V22L19 9.5M24 4V10H18"
+              "d": "M24 28V22L29 9.5M24 4V10H30"
             }
           ]
         },
@@ -4940,10 +5107,13 @@
           ],
           "draw": [
             {
-              "d": "M24 28V21L19 9"
+              "d": "M29 28V22L20.5 9.25"
             },
             {
-              "d": "M18 4V10M30 4V10"
+              "d": "M18 3V10H22"
+            },
+            {
+              "d": "M30 3V9"
             }
           ]
         },
@@ -4979,7 +5149,7 @@
           ],
           "draw": [
             {
-              "d": "M6 16H18M30 16H42"
+              "d": "M6 16H42"
             },
             {
               "d": "M30 10L18 16L30 22Z"
@@ -4996,7 +5166,7 @@
           ],
           "draw": [
             {
-              "d": "M6 16H18M30 16H42"
+              "d": "M6 16H42"
             },
             {
               "d": "M30 10L18 16L30 22Z"
@@ -5005,10 +5175,10 @@
               "d": "M18 10V22"
             },
             {
-              "d": "M26 24L32 30M30 22L36 28"
+              "d": "M28 25L34 31M32 23L38 29"
             },
             {
-              "d": "M32 30l-3.2 -0.6 2.6 -2.6ZM36 28l-3.2 -0.6 2.6 -2.6Z",
+              "d": "M34 31l-3.2 -0.6 2.6 -2.6ZM38 29l-3.2 -0.6 2.6 -2.6Z",
               "fill": true
             }
           ]
@@ -5020,7 +5190,7 @@
           ],
           "draw": [
             {
-              "d": "M6 16H18M30 16H42"
+              "d": "M6 16H42"
             },
             {
               "d": "M30 10L18 16L30 22Z"
@@ -5029,10 +5199,10 @@
               "d": "M18 10V22"
             },
             {
-              "d": "M38 3L33.1 7.9M41 6L36.1 10.9"
+              "d": "M41 1L36.1 5.9M44 4L39.1 8.9"
             },
             {
-              "d": "M31 10L34 8.8L32.2 7ZM34 13L37 11.8L35.2 10Z",
+              "d": "M34 8L37 6.8L35.2 5ZM37 11L40 9.8L38.2 8Z",
               "fill": true
             }
           ]
@@ -5122,13 +5292,17 @@
             {
               "circle": [
                 17,
-                14,
+                13.5,
                 1
               ],
               "fill": true
             },
             {
-              "d": "M14 18H20"
+              "d": "M13.5 18H19.5"
+            },
+            {
+              "d": "M19 16.5L21.2 18L19 19.5Z",
+              "fill": true
             },
             {
               "d": "M23 16H40M37 12V20"
@@ -5171,7 +5345,7 @@
               "d": "M12.5 12.5H35.5V19.5H12.5Z"
             },
             {
-              "d": "M16 12V20M20 12V20M24 12V20M28 12V20M32 12V20"
+              "d": "M16 12.5V19.5M20 12.5V19.5M24 12.5V19.5M28 12.5V19.5M32 12.5V19.5"
             }
           ]
         },

@@ -71,6 +71,8 @@ describe('Sinnbilder', () => {
     expect(cold).toContain('>PWC</text>')
     // Sinnbilder ohne Farbe bleiben in Textfarbe ohne weißen Grund
     expect(renderToStaticMarkup(<SymbolLookup tool={symbols} initialQuery="Kugelhahn" />)).not.toContain('fill="#ffffff"')
+    // Dicht stehende Details werden dünner gezeichnet
+    expect(renderToStaticMarkup(<SymbolLookup tool={symbols} initialQuery="Gassicherheitsverteiler" />)).toContain('stroke-width="0.9"')
     // Gruppenziffer in Schriftfarbe auf dem Band in Gruppenfarbe
     const water = renderToStaticMarkup(<SymbolLookup tool={symbols} initialQuery="Gruppe 1" />)
     expect(water).toMatch(/fill="#ffffff"[^>]*>1<\/text>/)

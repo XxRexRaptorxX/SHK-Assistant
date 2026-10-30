@@ -12,6 +12,8 @@ import {
 
 const BOLD_STROKE = 3
 const STROKE = 1.5
+/** Feine Details, z. B. dicht stehende Linien im Gassicherheitsverteiler */
+const THIN_STROKE = 0.9
 /** Strichfarbe auf weißem Grund (farbige Sinnbilder) */
 const PAPER_INK = '#1f2937'
 
@@ -36,7 +38,7 @@ function Shape({ shape }: { shape: SymbolShape }) {
   const props = {
     fill: shape.fill ? (color ?? 'currentColor') : 'none',
     stroke: color,
-    strokeWidth: shape.bold ? BOLD_STROKE : STROKE,
+    strokeWidth: shape.bold ? BOLD_STROKE : shape.thin ? THIN_STROKE : STROKE,
     // Fette Striche brauchen größere Lücken, sonst schließen die runden Enden sie
     strokeDasharray: shape.dash
       ? shape.bold

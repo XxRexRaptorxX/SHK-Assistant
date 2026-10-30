@@ -36,12 +36,13 @@ export const SYMBOL_COLORS = {
 
 const colorName = z.enum(Object.keys(SYMBOL_COLORS) as [keyof typeof SYMBOL_COLORS, ...(keyof typeof SYMBOL_COLORS)[]])
 
-/** Gemeinsame Strichangaben: gefüllt, gestrichelt, Strichpunkt, fett (z. B. breiter Querstrich) und Farbe */
+/** Gemeinsame Strichangaben: gefüllt, gestrichelt, Strichpunkt, fett (z. B. breiter Querstrich), dünn (feine Details) und Farbe */
 const strokeShape = {
   fill: z.boolean().optional(),
   dash: z.boolean().optional(),
   dashDot: z.boolean().optional(),
   bold: z.boolean().optional(),
+  thin: z.boolean().optional(),
   color: colorName.optional(),
 }
 

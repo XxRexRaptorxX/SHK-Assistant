@@ -104,8 +104,8 @@ Suchbegriffe, z. B. „RV“), `note` (z. B. was ein Stern im Sinnbild bedeutet)
 als Liste einfacher Formen auf einer Fläche von 48 × 32 (Leitung waagerecht auf Höhe 16). Formen:
 `{"d": "M4 16H44"}` (SVG-Pfad, nur Pfadbefehle und Zahlen), `{"circle": [cx, cy, r]}` und
 `{"text": "FV", "x": 24, "y": 16, "size": 7}`; Pfade und Kreise optional mit `"fill": true`
-(gefüllt), `"dash": true` (gestrichelt), `"dashDot": true` (Strichpunkt) oder `"bold": true` (breiter
-Strich). Alle Formen dürfen eine `color` haben (`rot`, `blau`, `gruen`, `gelb`, `violett`, `orange`,
+(gefüllt), `"dash": true` (gestrichelt), `"dashDot": true` (Strichpunkt), `"bold": true` (breiter
+Strich) oder `"thin": true` (dünner Strich für dicht stehende Details). Alle Formen dürfen eine `color` haben (`rot`, `blau`, `gruen`, `gelb`, `violett`, `orange`,
 `braun`, `grau`, `schwarz`, `weiss`), z. B. für Leitungsfarben; ohne Farbe gilt die Textfarbe. Sinnbilder
 mit Farbe stehen wie auf einem Plan auf weißem Grund. Die Zeichnungen sind
 eigene Nachzeichnungen, keine Bilder aus Normen oder Büchern. Der Build prüft doppelte Namen und
