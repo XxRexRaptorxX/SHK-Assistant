@@ -23,7 +23,7 @@
     },
     {
       "value": "14 gradDH",
-      "expected": "17.542 gradEH",
+      "expected": "17.53 gradEH",
       "tolerance": 0.005
     },
     {

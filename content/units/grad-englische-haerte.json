@@ -2,18 +2,18 @@
   "id": "unit.grad-englische-haerte",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia „Wasserhärte“, https://de.wikipedia.org/wiki/Wasserh%C3%A4rte (1 °dH = 0,1783 mmol/l, 1 °fH = 0,1 mmol/l, 1 °e = 0,142 mmol/l); Testfälle aus der Spezifikation „Wasserhärte umrechnen“ des Nutzers",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia (englisch) „Hard water“, https://en.wikipedia.org/wiki/Hard_water (1 °e = 1 grain CaCO₃ je britische Gallone = 14,254 mg/l CaCO₃ = 0,1424 mmol/l; 1 mmol/l = 7,022 °e); die deutsche Wikipedia „Wasserhärte“ rundet auf 0,142 mmol/l. Abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "symbol": "gradEH",
   "name": "Grad englischer Härte (Clark-Grad)",
   "label": "°e",
-  "definition": "0.142 mmol/l",
+  "definition": "0.1424 mmol/l",
   "aliases": [],
   "examples": [
     {
       "value": "1 mmol/l",
-      "expected": "7.0423 gradEH",
+      "expected": "7.0225 gradEH",
       "tolerance": 0.005
     }
   ]

@@ -163,20 +163,22 @@ describe('Wasserhärte (Spezifikation, Testfälle A–D)', () => {
 
   it('A: 14 °dH', () => {
     near(convert(14, 'gradDH', 'gradFH'), 24.92)
-    near(convert(14, 'gradDH', 'gradEH'), 17.542)
+    near(convert(14, 'gradDH', 'gradEH'), 17.53)
     near(convert(14, 'gradDH', 'mmol/l'), 2.4962)
   })
 
   it('B: 10 °fH', () => {
     near(convert(10, 'gradFH', 'gradDH'), 5.618)
-    near(convert(10, 'gradFH', 'gradEH'), 7.04)
+    near(convert(10, 'gradFH', 'gradEH'), 7.022)
     near(convert(10, 'gradFH', 'mmol/l'), 1)
   })
 
   it('C: 1 mmol/l', () => {
     near(convert(1, 'mmol/l', 'gradDH'), 5.6085)
     near(convert(1, 'mmol/l', 'gradFH'), 10)
-    near(convert(1, 'mmol/l', 'gradEH'), 7.0423)
+    near(convert(1, 'mmol/l', 'gradEH'), 7.0225)
+    // °e genau: 1 grain CaCO₃ je britische Gallone = 0,1424 mmol/l (nicht gerundet 0,142)
+    expect(convert(1, 'mmol/l', 'gradEH')).toBeCloseTo(7.0225, 3)
   })
 
   const hardness = converterEntries.find((e) => e.id === 'converter.wasserhaerte')!
