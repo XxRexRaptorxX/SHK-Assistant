@@ -2,9 +2,9 @@
   "id": "lexicon.kaeltemittelbefuellung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kältemittel“, https://de.wikipedia.org/wiki/K%C3%A4ltemittel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kältemittelbefüllung",
   "synonyms": [
     "refrigerant charging"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Einbringen einer vorgegebenen Kältemittelmasse in einen Kältekreislauf unter Einhaltung der Herstellervorgaben und Sicherheitsanforderungen.",
+  "definition": "Einbringen einer vorgegebenen Kältemittelmasse in einen Kältekreislauf unter Einhaltung der Herstellervorgaben und Sicherheitsanforderungen. Befüllt wird meist nach Gewicht mit einer Waage, nachdem der Kreis evakuiert und auf Dichtheit geprüft wurde.",
   "related": []
 }

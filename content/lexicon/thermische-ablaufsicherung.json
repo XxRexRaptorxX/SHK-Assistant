@@ -2,14 +2,14 @@
   "id": "lexicon.thermische-ablaufsicherung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Thermische Ablaufsicherung“, https://de.wikipedia.org/wiki/Thermische_Ablaufsicherung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Thermische Ablaufsicherung",
   "synonyms": [],
   "categories": [
     "normen"
   ],
-  "definition": "Sicherheitseinrichtung, die bei bestimmten Festbrennstoffkesseln überschüssige Wärme durch einen vorgesehenen Kühlvorgang abführt, sofern der Kessel dafür ausgelegt ist.",
+  "definition": "Sicherheitseinrichtung, die bei bestimmten Festbrennstoffkesseln überschüssige Wärme durch einen vorgesehenen Kühlvorgang abführt, sofern der Kessel dafür ausgelegt ist. Sie arbeitet ohne Hilfsenergie, also auch bei Stromausfall: Bei zu hoher Kesseltemperatur öffnet sie ein Ventil, sodass Kaltwasser durch einen Sicherheitswärmeübertrager strömt.",
   "related": []
 }

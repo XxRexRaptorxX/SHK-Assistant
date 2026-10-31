@@ -2,9 +2,9 @@
   "id": "lexicon.waermebedarf",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heizenergiebedarf“, https://de.wikipedia.org/wiki/Heizenergiebedarf (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmebedarf",
   "synonyms": [
     "heat demand"

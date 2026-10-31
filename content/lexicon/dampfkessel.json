@@ -2,9 +2,9 @@
   "id": "lexicon.dampfkessel",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Dampfkessel“, https://de.wikipedia.org/wiki/Dampfkessel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Dampfkessel",
   "synonyms": [
     "steam boiler"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Druckgerät, das Wasser erhitzt und Dampf erzeugt; es unterliegt besonderen technischen und rechtlichen Anforderungen.",
+  "definition": "Druckgerät, das Wasser erhitzt und Dampf erzeugt; es unterliegt besonderen technischen und rechtlichen Anforderungen. Als Dampfkessel gelten Druckgeräte, die Dampf mit Überdruck oder Heißwasser über 110 °C erzeugen; Errichtung, Betrieb und Prüfung regelt in Deutschland unter anderem die Betriebssicherheitsverordnung.",
   "related": []
 }

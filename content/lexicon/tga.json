@@ -2,14 +2,14 @@
   "id": "lexicon.tga",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Versorgungstechnik“, https://de.wikipedia.org/wiki/Versorgungstechnik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "TGA",
   "synonyms": [],
   "categories": [
     "normen"
   ],
-  "definition": "Technische Gebäudeausrüstung: technische Systeme eines Gebäudes, beispielsweise Heizung, Lüftung, Klima, Sanitär und Elektrotechnik.",
+  "definition": "Technische Gebäudeausrüstung: technische Systeme eines Gebäudes, beispielsweise Heizung, Lüftung, Klima, Sanitär und Elektrotechnik. Sie umfasst die Gewerke Sanitär, Heizung, Lüftung, Klima, Elektro und Gebäudeautomation; die HOAI fasst sie als technische Ausrüstung zusammen.",
   "related": []
 }

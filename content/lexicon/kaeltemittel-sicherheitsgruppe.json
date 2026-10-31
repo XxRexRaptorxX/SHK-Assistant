@@ -2,9 +2,9 @@
   "id": "lexicon.kaeltemittel-sicherheitsgruppe",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kältemittel“ (Abschnitt Sicherheitsgruppen nach DIN EN 378 / ISO 817), https://de.wikipedia.org/wiki/K%C3%A4ltemittel; Definition eigenständig formuliert",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kältemittel-Sicherheitsgruppe",
   "synonyms": [
     "refrigerant safety group"
@@ -13,6 +13,6 @@
     "kaelte",
     "normen"
   ],
-  "definition": "Sicherheitseinrichtungen und Überwachungsfunktionen, die je nach Kälteanlage Risiken durch Druck, Temperatur oder Kältemittelaustritt begrenzen.",
+  "definition": "Einstufung eines Kältemittels nach Toxizität (A = geringer, B = höher) und Brennbarkeit (1 = keine Flammenausbreitung, 2L, 2, 3 = höher), z. B. A1, A2L oder A3. Sie bestimmt unter anderem Anforderungen an Aufstellung und Füllmenge.",
   "related": []
 }

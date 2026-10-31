@@ -1,10 +1,10 @@
 {
   "id": "lexicon.differenzdruckmessgeraet",
   "visibility": "public",
-  "status": "draft",
-  "source": "Eigene Kurzbeschreibung des branchenüblichen Werkzeugs, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Druckmessgerät“, https://de.wikipedia.org/wiki/Druckmessger%C3%A4t (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Differenzdruckmessgerät",
   "synonyms": [
     "Differenzdruckmanometer"

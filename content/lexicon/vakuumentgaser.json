@@ -2,9 +2,9 @@
   "id": "lexicon.vakuumentgaser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Entgasung“, https://de.wikipedia.org/wiki/Entgasung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Vakuumentgaser",
   "synonyms": [
     "vacuum degasser"
@@ -13,6 +13,6 @@
     "heizung",
     "hydraulik"
   ],
-  "definition": "Anlage, die durch Absenken des Drucks gelöste Gase aus Heizungswasser freisetzt und abführt.",
+  "definition": "Anlage, die durch Absenken des Drucks gelöste Gase aus Heizungswasser freisetzt und abführt. Er arbeitet meist im Teilstrom und entfernt auch gelösten Sauerstoff und Stickstoff, die sonst Korrosion und Luftprobleme verursachen; viele Geräte übernehmen zusätzlich die Nachspeisung.",
   "related": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.megawatt",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Leistung“; Wikipedia „Megawatt“, https://de.wikipedia.org/wiki/Megawatt",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Megawatt",
   "synonyms": [
     "MW"

@@ -2,14 +2,14 @@
   "id": "lexicon.druckverlust-filter",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Druckverlust“, https://de.wikipedia.org/wiki/Druckverlust (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Druckverlust Filter",
   "synonyms": [],
   "categories": [
     "hydraulik"
   ],
-  "definition": "Druckabfall über einem Filter, der mit zunehmender Beladung steigen kann.",
+  "definition": "Druckabfall über einem Filter, der mit zunehmender Beladung steigen kann. Ein deutlich gestiegener Druckverlust zeigt an, dass der Filter gereinigt oder gewechselt werden muss.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.temperaturhaltung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Warmwasserzirkulation“, https://de.wikipedia.org/wiki/Warmwasserzirkulation (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Temperaturhaltung",
   "synonyms": [
     "temperature maintenance"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Maßnahmen zur Aufrechterhaltung einer vorgesehenen Temperatur in einem Speicher oder Leitungsnetz.",
+  "definition": "Maßnahmen zur Aufrechterhaltung einer vorgesehenen Temperatur in einem Speicher oder Leitungsnetz. In Trinkwarmwassernetzen erfolgt sie über Zirkulation oder selbstregelnde Begleitheizbänder; Mindesttemperaturen dafür nennt das DVGW-Arbeitsblatt W 551.",
   "related": []
 }

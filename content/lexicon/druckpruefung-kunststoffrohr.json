@@ -2,15 +2,15 @@
   "id": "lexicon.druckpruefung-kunststoffrohr",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Druckprüfung“, https://de.wikipedia.org/wiki/Druckpr%C3%BCfung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Druckprüfung Kunststoffrohr",
   "synonyms": [],
   "categories": [
     "werkstoffe",
     "normen"
   ],
-  "definition": "Prüfung eines Kunststoffrohrsystems nach einem geeigneten Verfahren, das Werkstoffverhalten und Temperaturabhängigkeit berücksichtigt.",
+  "definition": "Prüfung eines Kunststoffrohrsystems nach einem geeigneten Verfahren, das Werkstoffverhalten und Temperaturabhängigkeit berücksichtigt. Weil sich Kunststoffrohre unter Druck nachdehnen, sehen die Verfahren eine Vorprüfung mit Nachpumpen vor, bevor die eigentliche Prüfung beginnt.",
   "related": []
 }

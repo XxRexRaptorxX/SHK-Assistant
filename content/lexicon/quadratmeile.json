@@ -1,10 +1,10 @@
 {
   "id": "lexicon.quadratmeile",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Fläche“; Wikipedia „Quadratmeile“, https://de.wikipedia.org/wiki/Quadratmeile",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Quadratmeile",
   "synonyms": [
     "mi²",

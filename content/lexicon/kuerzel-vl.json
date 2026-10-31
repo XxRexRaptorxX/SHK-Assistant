@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-vl",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Heizkreis“, https://de.wikipedia.org/wiki/Heizkreis (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "VL – Vorlauf",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "heizung"
   ],
-  "definition": "Abkürzung für Vorlauf: die Leitung, die das erwärmte Wasser vom Wärmeerzeuger zu den Heizflächen führt.",
+  "definition": "Abkürzung für Vorlauf: die Leitung, die das erwärmte Wasser vom Wärmeerzeuger zu den Heizflächen führt. Auf Plänen wird der Vorlauf häufig rot dargestellt.",
   "related": [
     "lexicon.vorlauftemperatur",
     "lexicon.kuerzel-rl"

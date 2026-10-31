@@ -2,9 +2,9 @@
   "id": "lexicon.mikroblasenabscheider",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Entgasung“, https://de.wikipedia.org/wiki/Entgasung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Mikroblasenabscheider",
   "synonyms": [
     "microbubble separator"
@@ -13,6 +13,6 @@
     "heizung",
     "hydraulik"
   ],
-  "definition": "Luftabscheider, der kleine Gasblasen aus dem strömenden Wasser entfernt und damit die Entgasung des Systems unterstützt.",
+  "definition": "Luftabscheider, der kleine Gasblasen aus dem strömenden Wasser entfernt und damit die Entgasung des Systems unterstützt. Er wird bevorzugt an der wärmsten Stelle eingebaut, etwa im Vorlauf nach dem Wärmeerzeuger, weil sich dort am meisten Gas aus dem Wasser löst.",
   "related": []
 }

@@ -2,14 +2,14 @@
   "id": "lexicon.hydraulische-weiche-isolierung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche Isolierung",
   "synonyms": [],
   "categories": [
     "hydraulik"
   ],
-  "definition": "Wärmedämmung der Weiche zur Verringerung von Wärmeverlusten und unerwünschter Wärmeabgabe.",
+  "definition": "Wärmedämmung der Weiche zur Verringerung von Wärmeverlusten und unerwünschter Wärmeabgabe. Umgangssprachlich wird Isolierung oft für Wärmedämmung gesagt; Entlüfter, Entleerung und Fühler müssen zugänglich bleiben.",
   "related": []
 }

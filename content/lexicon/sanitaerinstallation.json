@@ -2,9 +2,9 @@
   "id": "lexicon.sanitaerinstallation",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Sanitärtechnik“, https://de.wikipedia.org/wiki/Sanit%C3%A4rtechnik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sanitärinstallation",
   "synonyms": [
     "plumbing installation"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Gesamtheit der Trinkwasser-, Warmwasser- und Entwässerungsleitungen sowie zugehöriger Armaturen und Sanitärobjekte eines Gebäudes.",
+  "definition": "Gesamtheit der Trinkwasser-, Warmwasser- und Entwässerungsleitungen sowie zugehöriger Armaturen und Sanitärobjekte eines Gebäudes. Maßgeblich sind unter anderem DIN EN 806 und DIN 1988 für Trinkwasser sowie DIN EN 12056 und DIN 1986-100 für die Entwässerung.",
   "related": []
 }

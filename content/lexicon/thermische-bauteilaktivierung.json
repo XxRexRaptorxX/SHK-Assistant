@@ -2,9 +2,9 @@
   "id": "lexicon.thermische-bauteilaktivierung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Thermische Bauteilaktivierung“, https://de.wikipedia.org/wiki/Thermische_Bauteilaktivierung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Thermische Bauteilaktivierung",
   "synonyms": [
     "thermally activated building systems"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Nutzung der thermischen Masse von Gebäudebauteilen, etwa Decken, zur Speicherung und zeitversetzten Abgabe von Wärme oder Kälte.",
+  "definition": "Nutzung der thermischen Masse von Gebäudebauteilen, etwa Decken, zur Speicherung und zeitversetzten Abgabe von Wärme oder Kälte. Dazu werden Rohre in Betondecken eingelegt; wegen der großen Speichermasse reagiert das System träge und eignet sich vor allem zur Grundlastkühlung oder -heizung.",
   "related": []
 }

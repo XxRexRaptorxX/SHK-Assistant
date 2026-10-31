@@ -2,9 +2,9 @@
   "id": "lexicon.kaeltekreis",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kältemaschine“, https://de.wikipedia.org/wiki/K%C3%A4ltemaschine (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kältekreis",
   "synonyms": [
     "refrigerant circuit"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Geschlossener Kreislauf einer Kälteanlage, in dem das Kältemittel durch Verdampfen, Verdichten, Verflüssigen und Entspannen Wärme transportiert.",
+  "definition": "Geschlossener Kreislauf einer Kälteanlage, in dem das Kältemittel durch Verdampfen, Verdichten, Verflüssigen und Entspannen Wärme transportiert. Hauptbauteile sind Verdampfer, Verdichter, Verflüssiger und Expansionsventil; derselbe Kreisprozess arbeitet auch in Wärmepumpen.",
   "related": []
 }

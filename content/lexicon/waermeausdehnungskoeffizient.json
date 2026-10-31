@@ -2,9 +2,9 @@
   "id": "lexicon.waermeausdehnungskoeffizient",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Ausdehnungskoeffizient“, https://de.wikipedia.org/wiki/Ausdehnungskoeffizient (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmeausdehnungskoeffizient",
   "synonyms": [
     "coefficient of thermal expansion"
@@ -13,6 +13,6 @@
     "werkstoffe",
     "physik"
   ],
-  "definition": "Werkstoffkennwert, der beschreibt, wie stark sich die Abmessung eines Materials bei einer Temperaturänderung relativ verändert.",
+  "definition": "Werkstoffkennwert, der beschreibt, wie stark sich die Abmessung eines Materials bei einer Temperaturänderung relativ verändert. Für die Längenänderung gilt Δl = α · l · ΔT; Kunststoffrohre dehnen sich deutlich stärker aus als Metallrohre.",
   "related": []
 }

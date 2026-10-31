@@ -2,9 +2,9 @@
   "id": "lexicon.spezifische-ventilatorleistung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Spezifische Ventilatorleistung“, https://de.wikipedia.org/wiki/Spezifische_Ventilatorleistung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Spezifische Ventilatorleistung",
   "synonyms": [
     "SFP",
@@ -13,6 +13,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Kennwert, der die elektrische Leistungsaufnahme eines Lüftungssystems auf den geförderten Luftvolumenstrom bezieht.",
+  "definition": "Kennwert, der die elektrische Leistungsaufnahme eines Lüftungssystems auf den geförderten Luftvolumenstrom bezieht. Sie wird in W/(m³/s) angegeben und dient zum Vergleich der Energieeffizienz von Lüftungsanlagen; Klassen enthält DIN EN 16798-3.",
   "related": []
 }

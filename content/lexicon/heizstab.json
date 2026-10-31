@@ -2,9 +2,9 @@
   "id": "lexicon.heizstab",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heizelement“, https://de.wikipedia.org/wiki/Heizelement (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Heizstab",
   "synonyms": [
     "immersion heater"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Elektrisches Widerstandsheizelement, das elektrische Energie direkt in Wärme umwandelt und beispielsweise als Zusatzheizung in Speichern oder Wärmepumpensystemen eingesetzt wird.",
+  "definition": "Elektrisches Widerstandsheizelement, das elektrische Energie direkt in Wärme umwandelt und beispielsweise als Zusatzheizung in Speichern oder Wärmepumpensystemen eingesetzt wird. Er wandelt 1 kWh Strom in höchstens 1 kWh Wärme um und wird daher meist nur zur Spitzenlastdeckung, für den Notbetrieb oder zur thermischen Desinfektion genutzt.",
   "related": []
 }

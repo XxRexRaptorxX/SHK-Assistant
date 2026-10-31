@@ -2,9 +2,9 @@
   "id": "lexicon.schallleistungspegel",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Schallleistung“, https://de.wikipedia.org/wiki/Schallleistung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Schallleistungspegel",
   "synonyms": [
     "sound power level"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Kenngröße für die von einer Schallquelle abgestrahlte akustische Leistung, angegeben in Dezibel bezogen auf einen Referenzwert.",
+  "definition": "Kenngröße für die von einer Schallquelle abgestrahlte akustische Leistung, angegeben in Dezibel bezogen auf einen Referenzwert. Er ist unabhängig vom Abstand und wird deshalb in Datenblättern von Wärmepumpen und Ventilatoren angegeben; daraus lässt sich der Schalldruckpegel an einem bestimmten Ort berechnen.",
   "related": []
 }

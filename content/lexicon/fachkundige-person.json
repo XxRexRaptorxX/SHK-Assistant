@@ -2,14 +2,14 @@
   "id": "lexicon.fachkundige-person",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Befähigte Person“, https://de.wikipedia.org/wiki/Bef%C3%A4higte_Person (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Fachkundige Person",
   "synonyms": [],
   "categories": [
     "normen"
   ],
-  "definition": "Person mit den für eine konkrete Tätigkeit erforderlichen Kenntnissen, Erfahrungen und gegebenenfalls formellen Qualifikationen.",
+  "definition": "Person mit den für eine konkrete Tätigkeit erforderlichen Kenntnissen, Erfahrungen und gegebenenfalls formellen Qualifikationen. Davon zu unterscheiden ist die zur Prüfung befähigte Person nach der Betriebssicherheitsverordnung, die Berufsausbildung, Berufserfahrung und eine zeitnahe berufliche Tätigkeit im Prüfbereich nachweisen muss.",
   "related": []
 }

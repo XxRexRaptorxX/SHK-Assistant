@@ -2,9 +2,9 @@
   "id": "lexicon.kaeltemittel-leckage",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kältemittel“, https://de.wikipedia.org/wiki/K%C3%A4ltemittel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kältemittel-Leckage",
   "synonyms": [
     "refrigerant leakage"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Unbeabsichtigter Austritt von Kältemittel aus einem Kältekreislauf.",
+  "definition": "Unbeabsichtigter Austritt von Kältemittel aus einem Kältekreislauf. Undichte Kältekreise verlieren Leistung und Effizienz; bei fluorierten Kältemitteln schreibt die F-Gase-Verordnung je nach Füllmenge regelmäßige Dichtheitskontrollen vor.",
   "related": []
 }

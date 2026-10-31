@@ -2,9 +2,9 @@
   "id": "lexicon.hydraulische-entkopplung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Entkopplung",
   "synonyms": [
     "hydraulic separation"
@@ -12,6 +12,6 @@
   "categories": [
     "hydraulik"
   ],
-  "definition": "Trennung der Druck- und Volumenstrombeziehungen zweier Kreise, sodass deren Pumpen sich möglichst wenig gegenseitig beeinflussen.",
+  "definition": "Trennung der Druck- und Volumenstrombeziehungen zweier Kreise, sodass deren Pumpen sich möglichst wenig gegenseitig beeinflussen. Erreicht wird sie zum Beispiel mit einer hydraulischen Weiche, einem Pufferspeicher mit vier Anschlüssen oder einem differenzdruckarmen Verteiler.",
   "related": []
 }

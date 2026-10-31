@@ -2,9 +2,9 @@
   "id": "lexicon.pumpenwartung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Umwälzpumpe (Heiztechnik)“, https://de.wikipedia.org/wiki/Umw%C3%A4lzpumpe_(Heiztechnik) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Pumpenwartung",
   "synonyms": [
     "pump maintenance"
@@ -13,6 +13,6 @@
     "hydraulik",
     "normen"
   ],
-  "definition": "Prüfung einer Pumpe auf Funktion, Dichtheit, Geräusch, Lagerzustand und elektrische beziehungsweise hydraulische Betriebswerte.",
+  "definition": "Prüfung einer Pumpe auf Funktion, Dichtheit, Geräusch, Lagerzustand und elektrische beziehungsweise hydraulische Betriebswerte. Moderne Nassläuferpumpen sind weitgehend wartungsfrei; geprüft werden vor allem Laufgeräusche, Einstellung, Dichtheit und Fehlermeldungen.",
   "related": []
 }

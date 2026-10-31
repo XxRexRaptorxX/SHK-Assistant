@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kuerzel-mag",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Ausdehnungsgefäß“, https://de.wikipedia.org/wiki/Ausdehnungsgef%C3%A4%C3%9F (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "MAG – Membran-Ausdehnungsgefäß",
   "synonyms": [],
   "categories": [
@@ -12,7 +12,7 @@
     "heizung",
     "hydraulik"
   ],
-  "definition": "Abkürzung für Membran-Ausdehnungsgefäß.",
+  "definition": "Abkürzung für Membran-Ausdehnungsgefäß. Es nimmt in geschlossenen Heizungs- und Trinkwasseranlagen die temperaturbedingte Volumenänderung auf.",
   "related": [
     "lexicon.membran-ausdehnungsgefaess"
   ]

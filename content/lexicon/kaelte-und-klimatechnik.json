@@ -2,9 +2,9 @@
   "id": "lexicon.kaelte-und-klimatechnik",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kälte (Technik)“, https://de.wikipedia.org/wiki/K%C3%A4lte_(Technik) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kälte- und Klimatechnik",
   "synonyms": [
     "refrigeration and air conditioning"
@@ -13,6 +13,6 @@
     "kaelte",
     "lueftung"
   ],
-  "definition": "Fachgebiet zur Erzeugung und Verteilung von Kälte sowie zur Beeinflussung von Temperatur, Feuchte und Luftqualität.",
+  "definition": "Fachgebiet zur Erzeugung und Verteilung von Kälte sowie zur Beeinflussung von Temperatur, Feuchte und Luftqualität. Typische Anlagen sind Kältemaschinen, Wärmepumpen sowie Klima- und Lüftungsanlagen; Arbeiten am Kältekreis erfordern je nach Kältemittel eine Sachkunde oder Zertifizierung.",
   "related": []
 }

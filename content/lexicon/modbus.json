@@ -2,14 +2,14 @@
   "id": "lexicon.modbus",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Modbus“, https://de.wikipedia.org/wiki/Modbus (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Modbus",
   "synonyms": [],
   "categories": [
     "msr"
   ],
-  "definition": "Kommunikationsprotokoll, das in Gebäude- und Industrieautomation zum Datenaustausch zwischen Steuerungen und Geräten verwendet wird.",
+  "definition": "Kommunikationsprotokoll, das in Gebäude- und Industrieautomation zum Datenaustausch zwischen Steuerungen und Geräten verwendet wird. Es wurde 1979 von Modicon entwickelt, ist offen und wird über serielle Leitungen (Modbus RTU) oder Ethernet (Modbus TCP) übertragen.",
   "related": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.winkelsekunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Winkel“; Wikipedia „Winkelsekunde“, https://de.wikipedia.org/wiki/Winkelsekunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Winkelsekunde",
   "synonyms": [
     "arcsecond"

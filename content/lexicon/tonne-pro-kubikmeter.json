@@ -1,10 +1,10 @@
 {
   "id": "lexicon.tonne-pro-kubikmeter",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Dichte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Tonne%20pro%20Kubikmeter",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Tonne pro Kubikmeter",
   "synonyms": [
     "t/m³",

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kilokalorie-pro-stunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Leistung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilokalorie%20pro%20Stunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kilokalorie pro Stunde",
   "synonyms": [
     "kcal/h",

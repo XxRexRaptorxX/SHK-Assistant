@@ -2,9 +2,9 @@
   "id": "lexicon.ventilator",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Ventilator“, https://de.wikipedia.org/wiki/Ventilator (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Ventilator",
   "synonyms": [
     "fan"
@@ -12,6 +12,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Strömungsmaschine, die Luft bewegt und dabei einen Druckunterschied erzeugt.",
+  "definition": "Strömungsmaschine, die Luft bewegt und dabei einen Druckunterschied erzeugt. In der Lüftungstechnik sind vor allem Radial- und Axialventilatoren verbreitet; EC-Motoren erlauben eine sparsame Drehzahlregelung.",
   "related": []
 }

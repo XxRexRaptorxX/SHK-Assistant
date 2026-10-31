@@ -2,14 +2,14 @@
   "id": "lexicon.sensor",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Sensor“, https://de.wikipedia.org/wiki/Sensor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sensor",
   "synonyms": [],
   "categories": [
     "msr"
   ],
-  "definition": "Bauteil, das eine physikalische Größe wie Temperatur, Druck, Feuchte oder Durchfluss erfasst und in ein auswertbares Signal umsetzt.",
+  "definition": "Bauteil, das eine physikalische Größe wie Temperatur, Druck, Feuchte oder Durchfluss erfasst und in ein auswertbares Signal umsetzt. In SHK-Anlagen sind zum Beispiel NTC- und Platin-Temperaturfühler, Drucksensoren und Durchflusssensoren verbreitet.",
   "related": []
 }

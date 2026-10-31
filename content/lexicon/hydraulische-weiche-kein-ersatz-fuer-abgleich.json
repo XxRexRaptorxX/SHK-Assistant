@@ -2,14 +2,14 @@
   "id": "lexicon.hydraulische-weiche-kein-ersatz-fuer-abgleich",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche kein Ersatz für Abgleich",
   "synonyms": [],
   "categories": [
     "hydraulik"
   ],
-  "definition": "Eine hydraulische Weiche entkoppelt Kreise, ersetzt aber nicht automatisch die korrekte Dimensionierung und Einregulierung der Verbraucherkreise.",
+  "definition": "Eine hydraulische Weiche entkoppelt Kreise, ersetzt aber nicht automatisch die korrekte Dimensionierung und Einregulierung der Verbraucherkreise. Ohne Abgleich können einzelne Heizflächen trotz Weiche unter- oder überversorgt sein.",
   "related": []
 }

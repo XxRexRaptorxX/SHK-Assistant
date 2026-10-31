@@ -2,9 +2,9 @@
   "id": "lexicon.steuerung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Steuerungstechnik“, https://de.wikipedia.org/wiki/Steuerungstechnik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Steuerung",
   "synonyms": [
     "open-loop control"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Beeinflussung eines Ablaufs durch vorgegebene Signale oder Logik, ohne dass zwingend eine Rückführung des tatsächlichen Ergebnisses erfolgt.",
+  "definition": "Beeinflussung eines Ablaufs durch vorgegebene Signale oder Logik, ohne dass zwingend eine Rückführung des tatsächlichen Ergebnisses erfolgt. Ein typisches Beispiel ist eine Zeitschaltuhr; anders als bei der Regelung wird das Ergebnis nicht zurückgemeldet (offene Wirkungskette).",
   "related": []
 }

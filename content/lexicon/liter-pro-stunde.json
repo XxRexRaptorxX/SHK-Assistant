@@ -1,10 +1,10 @@
 {
   "id": "lexicon.liter-pro-stunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Liter%20pro%20Stunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Liter pro Stunde",
   "synonyms": [
     "l/h",

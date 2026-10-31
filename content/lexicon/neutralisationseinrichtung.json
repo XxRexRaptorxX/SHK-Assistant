@@ -2,9 +2,9 @@
   "id": "lexicon.neutralisationseinrichtung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Brennwertkessel“, https://de.wikipedia.org/wiki/Brennwertkessel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Neutralisationseinrichtung",
   "synonyms": [
     "Neutralisationsbox",
@@ -13,6 +13,6 @@
   "categories": [
     "abwasser"
   ],
-  "definition": "Einrichtung, die saures Kondensat durch geeignete Reaktionsmittel weniger sauer macht, bevor es entsprechend den geltenden Anforderungen abgeleitet wird.",
+  "definition": "Einrichtung, die saures Kondensat durch geeignete Reaktionsmittel weniger sauer macht, bevor es entsprechend den geltenden Anforderungen abgeleitet wird. Meist ist es eine Box mit Granulat, das regelmäßig kontrolliert und ersetzt werden muss.",
   "related": []
 }

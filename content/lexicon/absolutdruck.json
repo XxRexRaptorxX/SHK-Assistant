@@ -2,9 +2,9 @@
   "id": "lexicon.absolutdruck",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Druck (Physik)“, https://de.wikipedia.org/wiki/Druck_(Physik) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Absolutdruck",
   "synonyms": [
     "absolute pressure"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Druck bezogen auf das absolute Vakuum als Nullpunkt.",
+  "definition": "Druck bezogen auf das absolute Vakuum als Nullpunkt. Er kann nicht negativ werden und ergibt sich aus Überdruck plus Umgebungsluftdruck; Manometer zeigen dagegen meist den Überdruck an.",
   "related": []
 }

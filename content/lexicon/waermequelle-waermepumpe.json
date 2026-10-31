@@ -2,9 +2,9 @@
   "id": "lexicon.waermequelle-waermepumpe",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmepumpenheizung“, https://de.wikipedia.org/wiki/W%C3%A4rmepumpenheizung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmequelle Wärmepumpe",
   "synonyms": [
     "heat source"
@@ -13,6 +13,6 @@
     "kaelte",
     "solar"
   ],
-  "definition": "Umgebung oder Medium, aus dem die Wärmepumpe Wärme aufnimmt, beispielsweise Luft, Erdreich oder Wasser.",
+  "definition": "Umgebung oder Medium, aus dem die Wärmepumpe Wärme aufnimmt, beispielsweise Luft, Erdreich oder Wasser. Je höher und gleichmäßiger ihre Temperatur ist, desto effizienter arbeitet die Wärmepumpe; Erdreich und Grundwasser sind im Winter wärmer als die Außenluft.",
   "related": []
 }

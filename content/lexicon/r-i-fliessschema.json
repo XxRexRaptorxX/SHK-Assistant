@@ -2,9 +2,9 @@
   "id": "lexicon.r-i-fliessschema",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Rohrleitungs- und Instrumentenfließschema“, https://de.wikipedia.org/wiki/Rohrleitungs-_und_Instrumentenflie%C3%9Fschema (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "R&I-Fließschema",
   "synonyms": [
     "P&ID",
@@ -14,6 +14,6 @@
     "hydraulik",
     "msr"
   ],
-  "definition": "Rohrleitungs- und Instrumentierungsfließschema, das Medienwege, Apparate, Armaturen und Mess- beziehungsweise Regelstellen einer technischen Anlage darstellt.",
+  "definition": "Rohrleitungs- und Instrumentierungsfließschema, das Medienwege, Apparate, Armaturen und Mess- beziehungsweise Regelstellen einer technischen Anlage darstellt. Die Sinnbilder sind in DIN EN ISO 10628 und für Mess- und Regelstellen in DIN EN 62424 genormt; es ist Grundlage für Planung, Bau und Betrieb.",
   "related": []
 }

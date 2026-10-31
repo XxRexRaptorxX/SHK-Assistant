@@ -2,14 +2,14 @@
   "id": "lexicon.hygienespeicher",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Puffer (Heiztechnik)“, https://de.wikipedia.org/wiki/Puffer_(Heiztechnik) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hygienespeicher",
   "synonyms": [],
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Umgangssprachliche Bezeichnung für einen Heizungs-Pufferspeicher, der Trinkwasser im Durchfluss über einen Wärmeübertrager erwärmt, statt große Mengen Trinkwarmwasser zu bevorraten.",
+  "definition": "Umgangssprachliche Bezeichnung für einen Heizungs-Pufferspeicher, der Trinkwasser im Durchfluss über einen Wärmeübertrager erwärmt, statt große Mengen Trinkwarmwasser zu bevorraten. Das Trinkwasser fließt meist durch ein Edelstahl-Wellrohr im Speicher und wird nur im Durchfluss erwärmt; dadurch steht kaum Trinkwarmwasser still.",
   "related": []
 }

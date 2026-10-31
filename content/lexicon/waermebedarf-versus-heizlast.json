@@ -2,14 +2,14 @@
   "id": "lexicon.waermebedarf-versus-heizlast",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heizlast“, https://de.wikipedia.org/wiki/Heizlast (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmebedarf versus Heizlast",
   "synonyms": [],
   "categories": [
     "heizung"
   ],
-  "definition": "Der Wärmebedarf beschreibt eine Energiemenge über einen Zeitraum; die Heizlast beschreibt eine erforderliche momentane Wärmeleistung unter Auslegungsbedingungen.",
+  "definition": "Der Wärmebedarf beschreibt eine Energiemenge über einen Zeitraum; die Heizlast beschreibt eine erforderliche momentane Wärmeleistung unter Auslegungsbedingungen. Die Heizlast in kW dient zur Auslegung von Wärmeerzeuger und Heizflächen, der Wärmebedarf in kWh zur Abschätzung von Verbrauch und Kosten.",
   "related": []
 }

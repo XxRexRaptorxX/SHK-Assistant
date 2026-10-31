@@ -2,9 +2,9 @@
   "id": "lexicon.waerme-aus-abwasser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Abwasserwärmerückgewinnung“, https://de.wikipedia.org/wiki/Abwasserw%C3%A4rmer%C3%BCckgewinnung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärme aus Abwasser",
   "synonyms": [
     "wastewater heat recovery"
@@ -13,6 +13,6 @@
     "abwasser",
     "solar"
   ],
-  "definition": "Nutzung von Wärme aus Abwasser über einen geeigneten Wärmeübertrager, beispielsweise zur Vorwärmung oder als Wärmequelle einer Wärmepumpe.",
+  "definition": "Nutzung von Wärme aus Abwasser über einen geeigneten Wärmeübertrager, beispielsweise zur Vorwärmung oder als Wärmequelle einer Wärmepumpe. Genutzt wird sie zum Beispiel über Duschwasser-Wärmeübertrager oder mit Wärmepumpen an Abwasserkanälen; Ablagerungen am Wärmeübertrager sind bei der Planung zu berücksichtigen.",
   "related": []
 }

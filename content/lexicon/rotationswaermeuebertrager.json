@@ -2,9 +2,9 @@
   "id": "lexicon.rotationswaermeuebertrager",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Rotationswärmeübertrager“, https://de.wikipedia.org/wiki/Rotationsw%C3%A4rme%C3%BCbertrager (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Rotationswärmeübertrager",
   "synonyms": [
     "Rotationswärmetauscher",
@@ -13,6 +13,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Wärmerückgewinnungssystem mit rotierendem Speichermedium, das Wärme und je nach Ausführung auch Feuchte zwischen Abluft und Zuluft übertragen kann.",
+  "definition": "Wärmerückgewinnungssystem mit rotierendem Speichermedium, das Wärme und je nach Ausführung auch Feuchte zwischen Abluft und Zuluft übertragen kann. Er erreicht hohe Rückwärmzahlen, kann aber in geringem Umfang Abluft in die Zuluft übertragen; er wird daher vor allem bei unkritischer Abluft eingesetzt.",
   "related": []
 }

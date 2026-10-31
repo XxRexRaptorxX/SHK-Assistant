@@ -1,10 +1,10 @@
 {
   "id": "lexicon.spannungspruefer",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Spannungsprüfer“, https://de.wikipedia.org/wiki/Spannungsprüfer; Kurzbeschreibung eigenständig formuliert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Spannungsprüfer",
   "synonyms": [
     "Spannungsprüfgerät",
@@ -14,7 +14,7 @@
     "werkzeuge",
     "msr"
   ],
-  "definition": "Prüfmittel, mit dem festgestellt wird, ob an einem Teil Spannung anliegt.",
+  "definition": "Prüfmittel, mit dem festgestellt wird, ob an einem Teil Spannung anliegt. Für das Feststellen der Spannungsfreiheit sind zweipolige Spannungsprüfer nach DIN EN 61243-3 vorgesehen; einpolige Phasenprüfer sind dafür nicht zulässig.",
   "related": [
     "lexicon.schutzleiter",
     "lexicon.rcd"

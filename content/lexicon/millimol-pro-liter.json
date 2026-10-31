@@ -1,10 +1,10 @@
 {
   "id": "lexicon.millimol-pro-liter",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Wasserhärte“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Millimol%20pro%20Liter",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Millimol pro Liter",
   "synonyms": [
     "mmol/l",

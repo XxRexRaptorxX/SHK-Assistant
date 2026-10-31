@@ -2,14 +2,14 @@
   "id": "lexicon.fluessigkeitskategorie-trinkwasser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Gefährdungsklasse (Trinkwasser)“, https://de.wikipedia.org/wiki/Gef%C3%A4hrdungsklasse_(Trinkwasser) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Flüssigkeitskategorie Trinkwasser",
   "synonyms": [],
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Einstufung einer Flüssigkeit nach ihrem potenziellen Gesundheitsrisiko, die zur Auswahl geeigneter Sicherungseinrichtungen gegen Rückfließen dient.",
+  "definition": "Einstufung einer Flüssigkeit nach ihrem potenziellen Gesundheitsrisiko, die zur Auswahl geeigneter Sicherungseinrichtungen gegen Rückfließen dient. DIN EN 1717 unterscheidet die Kategorien 1 bis 5, von Trinkwasser (Kategorie 1) bis zu Flüssigkeiten mit Krankheitserregern (Kategorie 5).",
   "related": []
 }

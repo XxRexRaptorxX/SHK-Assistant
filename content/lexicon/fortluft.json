@@ -2,9 +2,9 @@
   "id": "lexicon.fortluft",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Fortluft“, https://de.wikipedia.org/wiki/Fortluft (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Fortluft",
   "synonyms": [
     "exhaust air"
@@ -12,6 +12,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Luft, die nach einer Lüftungsanlage ins Freie abgegeben wird.",
+  "definition": "Luft, die nach einer Lüftungsanlage ins Freie abgegeben wird. Vorher kann ihr über eine Wärmerückgewinnung Energie entzogen werden; die Fortluftöffnung ist so anzuordnen, dass die Luft nicht wieder angesaugt wird.",
   "related": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.rechtwinkliges-dreieck",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Wikipedia „Rechtwinkliges Dreieck“, https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck; Wikipedia „Satz des Pythagoras“, https://de.wikipedia.org/wiki/Satz_des_Pythagoras",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Rechtwinkliges Dreieck",
   "synonyms": [
     "Hypotenuse",

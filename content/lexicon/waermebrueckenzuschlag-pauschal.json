@@ -2,14 +2,14 @@
   "id": "lexicon.waermebrueckenzuschlag-pauschal",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmebrücke“, https://de.wikipedia.org/wiki/W%C3%A4rmebr%C3%BCcke (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmebrückenzuschlag pauschal",
   "synonyms": [],
   "categories": [
     "physik"
   ],
-  "definition": "Pauschaler Zuschlag zur Berücksichtigung von Wärmebrückenverlusten in einem vereinfachten energetischen Berechnungsverfahren.",
+  "definition": "Pauschaler Zuschlag zur Berücksichtigung von Wärmebrückenverlusten in einem vereinfachten energetischen Berechnungsverfahren. In Deutschland wird ohne weiteren Nachweis zum Beispiel 0,10 W/(m²·K) angesetzt; bei Ausführung der Details nach DIN 4108 Beiblatt 2 sind kleinere Werte zulässig.",
   "related": []
 }

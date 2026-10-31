@@ -2,9 +2,9 @@
   "id": "lexicon.hydrostatischer-druck",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydrostatischer Druck“, https://de.wikipedia.org/wiki/Hydrostatischer_Druck (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydrostatischer Druck",
   "synonyms": [
     "hydrostatic pressure"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Druck in einer ruhenden Flüssigkeit, der durch die Höhe der Flüssigkeitssäule und deren Dichte bestimmt wird.",
+  "definition": "Druck in einer ruhenden Flüssigkeit, der durch die Höhe der Flüssigkeitssäule und deren Dichte bestimmt wird. Er beträgt p = ρ · g · h und ist unabhängig von der Form des Behälters; je 10 m Wassersäule kommt etwa 1 bar hinzu.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.sicherheitsdatenblatt",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Sicherheitsdatenblatt“, https://de.wikipedia.org/wiki/Sicherheitsdatenblatt (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sicherheitsdatenblatt",
   "synonyms": [
     "SDB",
@@ -13,6 +13,6 @@
   "categories": [
     "normen"
   ],
-  "definition": "Dokument mit Informationen zu Gefahren, Schutzmaßnahmen, Lagerung, Handhabung und Notfallmaßnahmen eines Gefahrstoffs oder Gemischs.",
+  "definition": "Dokument mit Informationen zu Gefahren, Schutzmaßnahmen, Lagerung, Handhabung und Notfallmaßnahmen eines Gefahrstoffs oder Gemischs. Es ist nach der REACH-Verordnung in 16 Abschnitte gegliedert und bei der Gefährdungsbeurteilung zu beachten, etwa für Kältemittel, Frostschutzmittel oder Reiniger.",
   "related": []
 }

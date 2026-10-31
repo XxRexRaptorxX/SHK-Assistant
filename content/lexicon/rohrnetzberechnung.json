@@ -2,9 +2,9 @@
   "id": "lexicon.rohrnetzberechnung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Rohrnetzberechnung“, https://de.wikipedia.org/wiki/Rohrnetzberechnung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Rohrnetzberechnung",
   "synonyms": [
     "pipe network calculation"
@@ -12,6 +12,6 @@
   "categories": [
     "hydraulik"
   ],
-  "definition": "Berechnung von Rohrdimensionen, Volumenströmen und Druckverlusten, damit eine Anlage die erforderlichen Medienmengen innerhalb ihrer Betriebsgrenzen transportiert.",
+  "definition": "Berechnung von Rohrdimensionen, Volumenströmen und Druckverlusten, damit eine Anlage die erforderlichen Medienmengen innerhalb ihrer Betriebsgrenzen transportiert. In der Gebäudetechnik erfolgt sie zum Beispiel für Trinkwasser nach DIN 1988-300 und bei Heizungsanlagen als Grundlage des hydraulischen Abgleichs.",
   "related": []
 }

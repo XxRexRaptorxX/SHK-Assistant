@@ -2,9 +2,9 @@
   "id": "lexicon.drucksensor",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Drucksensor“, https://de.wikipedia.org/wiki/Drucksensor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Drucksensor",
   "synonyms": [
     "pressure sensor"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Sensor, der Druck in ein elektrisches oder anderes auswertbares Signal umwandelt.",
+  "definition": "Sensor, der Druck in ein elektrisches oder anderes auswertbares Signal umwandelt. In Heizgeräten überwacht er zum Beispiel den Anlagendruck und meldet Wassermangel an die Regelung.",
   "related": []
 }

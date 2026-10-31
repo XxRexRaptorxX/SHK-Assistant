@@ -2,15 +2,15 @@
   "id": "lexicon.hydraulische-weiche-wartungszugang",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche Wartungszugang",
   "synonyms": [],
   "categories": [
     "hydraulik",
     "normen"
   ],
-  "definition": "Zugänglichkeit für Prüfung, Entlüftung, Entleerung und Austausch der Weiche muss bei der Montage berücksichtigt werden.",
+  "definition": "Zugänglichkeit für Prüfung, Entlüftung, Entleerung und Austausch der Weiche muss bei der Montage berücksichtigt werden. Entlüfter, Entleerung und Fühler sollten auch nach dem Dämmen erreichbar bleiben.",
   "related": []
 }

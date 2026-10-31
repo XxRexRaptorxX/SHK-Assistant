@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-enev",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Energieeinsparverordnung“, https://de.wikipedia.org/wiki/Energieeinsparverordnung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "EnEV – Energieeinsparverordnung",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "normen"
   ],
-  "definition": "Abkürzung für Energieeinsparverordnung; seit 1. November 2020 durch das Gebäudeenergiegesetz (GEG) abgelöst.",
+  "definition": "Abkürzung für Energieeinsparverordnung. Sie wurde zum 1. November 2020 durch das Gebäudeenergiegesetz (GEG) abgelöst, das seit 2026 Gebäudemodernisierungsgesetz (GModG) heißt.",
   "related": [
     "lexicon.gebaeudeenergiegesetz"
   ]

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.amperestunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Ladung“; Wikipedia „Amperestunde“, https://de.wikipedia.org/wiki/Amperestunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Amperestunde",
   "synonyms": [
     "Ah",

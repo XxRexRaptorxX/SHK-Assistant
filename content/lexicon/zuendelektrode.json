@@ -2,9 +2,9 @@
   "id": "lexicon.zuendelektrode",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Zündkerze“, https://de.wikipedia.org/wiki/Z%C3%BCndkerze (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Zündelektrode",
   "synonyms": [
     "ignition electrode"
@@ -12,6 +12,6 @@
   "categories": [
     "gas"
   ],
-  "definition": "Bauteil, das bei entsprechenden Brennern einen elektrischen Funken zur Zündung des Brennstoff-Luft-Gemischs erzeugt.",
+  "definition": "Bauteil, das bei entsprechenden Brennern einen elektrischen Funken zur Zündung des Brennstoff-Luft-Gemischs erzeugt. Sie wird von einem Zündtrafo mit Hochspannung versorgt; Elektrodenabstand und Verschmutzung beeinflussen die Zündsicherheit.",
   "related": []
 }

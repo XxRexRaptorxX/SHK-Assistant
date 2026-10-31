@@ -2,9 +2,9 @@
   "id": "lexicon.kuehllastberechnung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kühllast“, https://de.wikipedia.org/wiki/K%C3%BChllast (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kühllastberechnung",
   "synonyms": [
     "cooling load calculation"
@@ -13,6 +13,6 @@
     "kaelte",
     "lueftung"
   ],
-  "definition": "Ermittlung der erforderlichen Kälteleistung eines Raums oder Gebäudes unter festgelegten Auslegungsbedingungen.",
+  "definition": "Ermittlung der erforderlichen Kälteleistung eines Raums oder Gebäudes unter festgelegten Auslegungsbedingungen. In Deutschland erfolgt sie nach VDI 2078; dabei werden äußere Lasten wie Sonneneinstrahlung und innere Lasten wie Personen, Beleuchtung und Geräte erfasst.",
   "related": []
 }

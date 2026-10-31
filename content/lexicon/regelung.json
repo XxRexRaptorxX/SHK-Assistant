@@ -2,9 +2,9 @@
   "id": "lexicon.regelung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Regelungstechnik“, https://de.wikipedia.org/wiki/Regelungstechnik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Regelung",
   "synonyms": [
     "closed-loop control"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Beeinflussung einer Größe durch Vergleich des Istwerts mit einem Sollwert und Rückführung der Abweichung, um die Größe möglichst passend zu halten.",
+  "definition": "Beeinflussung einer Größe durch Vergleich des Istwerts mit einem Sollwert und Rückführung der Abweichung, um die Größe möglichst passend zu halten. Im Unterschied zur Steuerung wird das Ergebnis ständig gemessen und zurückgeführt (geschlossener Regelkreis).",
   "related": []
 }

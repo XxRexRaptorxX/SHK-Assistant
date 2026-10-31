@@ -2,9 +2,9 @@
   "id": "lexicon.abwasserhebeanlage",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hebeanlage“, https://de.wikipedia.org/wiki/Hebeanlage (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Abwasserhebeanlage",
   "synonyms": [
     "Hebeanlage",
@@ -13,6 +13,6 @@
   "categories": [
     "abwasser"
   ],
-  "definition": "Anlage, die Abwasser sammelt und über die Rückstauebene in eine höher liegende Entwässerungsleitung fördert.",
+  "definition": "Anlage, die Abwasser sammelt und über die Rückstauebene in eine höher liegende Entwässerungsleitung fördert. Sie ist erforderlich, wenn Abwasser unterhalb der Rückstauebene anfällt und nicht mit natürlichem Gefälle abgeleitet werden kann.",
   "related": []
 }

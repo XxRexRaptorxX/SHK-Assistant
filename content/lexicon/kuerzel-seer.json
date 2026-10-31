@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-seer",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Leistungszahl“, https://de.wikipedia.org/wiki/Leistungszahl (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "SEER – Seasonal Energy Efficiency Ratio",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "kaelte"
   ],
-  "definition": "Abkürzung für Seasonal Energy Efficiency Ratio: jahreszeitbezogene Leistungszahl im Kühlbetrieb.",
+  "definition": "Abkürzung für Seasonal Energy Efficiency Ratio: jahreszeitbezogene Leistungszahl im Kühlbetrieb. Er bezieht Teillast und wechselnde Außentemperaturen über eine Kühlperiode ein und ist Grundlage des EU-Energielabels für Klimageräte.",
   "related": [
     "lexicon.kuerzel-eer",
     "lexicon.scop"

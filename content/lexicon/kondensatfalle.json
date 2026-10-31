@@ -2,9 +2,9 @@
   "id": "lexicon.kondensatfalle",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Geruchsverschluss“, https://de.wikipedia.org/wiki/Geruchsverschluss (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kondensatfalle",
   "synonyms": [
     "condensate trap"
@@ -12,6 +12,6 @@
   "categories": [
     "gas"
   ],
-  "definition": "Bauteil oder Anordnung, die Kondensat sammelt oder eine definierte Flüssigkeitsbarriere bildet, abhängig vom Systemaufbau.",
+  "definition": "Bauteil oder Anordnung, die Kondensat sammelt oder eine definierte Flüssigkeitsbarriere bildet, abhängig vom Systemaufbau. In der Gebäudetechnik ist damit meist ein Siphon im Kondensatablauf gemeint, der das Austreten von Abgas oder Luft verhindert.",
   "related": []
 }

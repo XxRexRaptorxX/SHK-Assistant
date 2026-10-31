@@ -2,9 +2,9 @@
   "id": "lexicon.betriebsanleitung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Gebrauchsanleitung“, https://de.wikipedia.org/wiki/Gebrauchsanleitung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Betriebsanleitung",
   "synonyms": [
     "operating instructions"
@@ -12,6 +12,6 @@
   "categories": [
     "normen"
   ],
-  "definition": "Dokument mit Informationen zum bestimmungsgemäßen Gebrauch, zu Einstellungen, Sicherheit, Betrieb und Pflege eines Geräts.",
+  "definition": "Dokument mit Informationen zum bestimmungsgemäßen Gebrauch, zu Einstellungen, Sicherheit, Betrieb und Pflege eines Geräts. Sie gehört zur Anlagendokumentation und ist dem Betreiber zu übergeben; Einstellungen und Wartungshinweise darin gelten vorrangig vor allgemeinen Faustregeln.",
   "related": []
 }

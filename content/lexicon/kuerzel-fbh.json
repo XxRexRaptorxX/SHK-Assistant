@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-fbh",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Fußbodenheizung“, https://de.wikipedia.org/wiki/Fu%C3%9Fbodenheizung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "FBH – Fußbodenheizung",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "heizung"
   ],
-  "definition": "Abkürzung für Fußbodenheizung.",
+  "definition": "Abkürzung für Fußbodenheizung. Meist ist sie eine wassergeführte Flächenheizung, die mit niedriger Vorlauftemperatur auskommt.",
   "related": [
     "lexicon.fussbodenheizung"
   ]

@@ -2,9 +2,9 @@
   "id": "lexicon.cav-regler",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Volumenstromregler“, https://de.wikipedia.org/wiki/Volumenstromregler (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "CAV-Regler",
   "synonyms": [
     "konstanter Volumenstromregler",
@@ -14,6 +14,6 @@
     "lueftung",
     "msr"
   ],
-  "definition": "Constant-Air-Volume-Regler, der den Luftvolumenstrom innerhalb seines Arbeitsbereichs konstant hält.",
+  "definition": "Constant-Air-Volume-Regler, der den Luftvolumenstrom innerhalb seines Arbeitsbereichs konstant hält. Er arbeitet häufig mechanisch selbsttätig und gleicht Druckschwankungen im Kanalnetz aus.",
   "related": []
 }

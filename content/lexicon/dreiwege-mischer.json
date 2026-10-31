@@ -2,9 +2,9 @@
   "id": "lexicon.dreiwege-mischer",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Mischventil“, https://de.wikipedia.org/wiki/Mischventil (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Dreiwege-Mischer",
   "synonyms": [
     "three-way mixing valve"
@@ -12,6 +12,6 @@
   "categories": [
     "hydraulik"
   ],
-  "definition": "Regelarmatur mit drei Anschlüssen, die zwei Ströme mischt oder einen Strom auf unterschiedliche Wege verteilt.",
+  "definition": "Regelarmatur mit drei Anschlüssen, die zwei Ströme mischt oder einen Strom auf unterschiedliche Wege verteilt. In Heizungsanlagen mischt er heißes Vorlaufwasser mit kühlerem Rücklaufwasser, um die Vorlauftemperatur eines Heizkreises zu regeln; gestellt wird er von Hand oder über einen Mischermotor.",
   "related": []
 }

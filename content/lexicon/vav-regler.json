@@ -2,9 +2,9 @@
   "id": "lexicon.vav-regler",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Volumenstromregler“, https://de.wikipedia.org/wiki/Volumenstromregler (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "VAV-Regler",
   "synonyms": [
     "variabler Volumenstromregler",
@@ -14,6 +14,6 @@
     "lueftung",
     "msr"
   ],
-  "definition": "Variable-Air-Volume-Regler, der den Luftvolumenstrom in einem Lüftungssystem bedarfsgerecht verändert.",
+  "definition": "Variable-Air-Volume-Regler, der den Luftvolumenstrom in einem Lüftungssystem bedarfsgerecht verändert. Er wird zum Beispiel nach Raumtemperatur, CO₂-Gehalt oder Anwesenheit angesteuert und ermöglicht eine bedarfsgerechte Lüftung mit geringerem Energiebedarf.",
   "related": []
 }

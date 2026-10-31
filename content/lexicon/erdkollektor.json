@@ -2,9 +2,9 @@
   "id": "lexicon.erdkollektor",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Erdwärmekollektor“, https://de.wikipedia.org/wiki/Erdw%C3%A4rmekollektor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Erdkollektor",
   "synonyms": [
     "ground collector"
@@ -13,6 +13,6 @@
     "kaelte",
     "solar"
   ],
-  "definition": "Flächig im Erdreich verlegter Wärmeübertrager, der Wärme aus dem oberflächennahen Boden aufnimmt oder abgibt.",
+  "definition": "Flächig im Erdreich verlegter Wärmeübertrager, der Wärme aus dem oberflächennahen Boden aufnimmt oder abgibt. Er besteht meist aus horizontal in geringer Tiefe verlegten Kunststoffrohren und dient vor allem als Wärmequelle für Sole-Wasser-Wärmepumpen; der Ertrag hängt stark von Bodenart, Bodenfeuchte und Jahreszeit ab.",
   "related": []
 }

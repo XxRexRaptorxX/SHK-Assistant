@@ -1,10 +1,10 @@
 {
   "id": "lexicon.waermedurchlasswiderstand",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Wikipedia „Wärmedurchlasswiderstand“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchlasswiderstand",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmedurchlasswiderstand",
   "synonyms": [
     "thermal resistance"

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kuerzel-pwc",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Branchenübliche Abkürzung nach DIN EN 806 und DIN 1988 (englisch „potable water“); eigene Kurzbeschreibung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "PWC – Trinkwasser kalt",
   "synonyms": [
     "potable water cold"

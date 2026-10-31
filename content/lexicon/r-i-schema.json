@@ -2,9 +2,9 @@
   "id": "lexicon.r-i-schema",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Rohrleitungs- und Instrumentenfließschema“, https://de.wikipedia.org/wiki/Rohrleitungs-_und_Instrumentenflie%C3%9Fschema (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "R&I-Schema",
   "synonyms": [
     "piping and instrumentation diagram"
@@ -13,6 +13,6 @@
     "hydraulik",
     "msr"
   ],
-  "definition": "Schematische Darstellung von Rohrleitungen, Apparaten, Armaturen sowie Mess- und Regelkomponenten einer Anlage.",
+  "definition": "Schematische Darstellung von Rohrleitungen, Apparaten, Armaturen sowie Mess- und Regelkomponenten einer Anlage. Es wird auch R&I-Fließschema genannt; die Sinnbilder sind genormt, zum Beispiel in DIN EN ISO 10628.",
   "related": []
 }

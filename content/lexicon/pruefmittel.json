@@ -2,9 +2,9 @@
   "id": "lexicon.pruefmittel",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Prüfmittel“, https://de.wikipedia.org/wiki/Pr%C3%BCfmittel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Prüfmittel",
   "synonyms": [
     "test equipment"
@@ -12,6 +12,6 @@
   "categories": [
     "normen"
   ],
-  "definition": "Mess- oder Prüfgerät, das zur Feststellung von Eigenschaften oder zur Überprüfung einer Anlage verwendet wird.",
+  "definition": "Mess- oder Prüfgerät, das zur Feststellung von Eigenschaften oder zur Überprüfung einer Anlage verwendet wird. Prüfmittel müssen regelmäßig kalibriert oder überprüft werden, damit die Messergebnisse belastbar sind.",
   "related": []
 }

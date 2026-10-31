@@ -2,9 +2,9 @@
   "id": "lexicon.waermedaemmverbundsystem",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmedämmverbundsystem“, https://de.wikipedia.org/wiki/W%C3%A4rmed%C3%A4mmverbundsystem (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmedämmverbundsystem",
   "synonyms": [
     "WDVS",
@@ -13,6 +13,6 @@
   "categories": [
     "werkstoffe"
   ],
-  "definition": "Außenseitiges Dämmsystem für Gebäude, bei dem Dämmplatten mit weiteren Schichten wie Armierung und Putz kombiniert werden.",
+  "definition": "Außenseitiges Dämmsystem für Gebäude, bei dem Dämmplatten mit weiteren Schichten wie Armierung und Putz kombiniert werden. Verbreitete Dämmstoffe sind EPS, Mineralwolle und Holzfaser; Brandschutz und Anschlüsse an Fenster und Sockel sind besonders zu beachten.",
   "related": []
 }

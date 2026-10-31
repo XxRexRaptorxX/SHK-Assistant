@@ -1,10 +1,10 @@
 {
   "id": "lexicon.elektrischer-widerstand",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Wikipedia „Elektrischer Widerstand“, https://de.wikipedia.org/wiki/Elektrischer_Widerstand",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Elektrischer Widerstand",
   "synonyms": [
     "Widerstand",

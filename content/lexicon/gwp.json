@@ -2,9 +2,9 @@
   "id": "lexicon.gwp",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Treibhauspotential“, https://de.wikipedia.org/wiki/Treibhauspotential (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "GWP",
   "synonyms": [
     "Treibhauspotenzial",
@@ -13,6 +13,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Global Warming Potential: Kennwert für das relative Treibhauspotenzial eines Stoffes über einen festgelegten Zeitraum im Vergleich zu Kohlendioxid.",
+  "definition": "Global Warming Potential: Kennwert für das relative Treibhauspotenzial eines Stoffes über einen festgelegten Zeitraum im Vergleich zu Kohlendioxid. Üblich ist der Bezug auf 100 Jahre (GWP100); der Wert ist Grundlage für die Bewertung von Kältemitteln nach der F-Gase-Verordnung.",
   "related": []
 }

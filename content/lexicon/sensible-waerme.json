@@ -2,9 +2,9 @@
   "id": "lexicon.sensible-waerme",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Fühlbare Wärme“, https://de.wikipedia.org/wiki/F%C3%BChlbare_W%C3%A4rme (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sensible Wärme",
   "synonyms": [
     "sensible heat"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Wärmeenergie, die mit einer Temperaturänderung eines Stoffes verbunden ist, ohne dass dabei notwendigerweise ein Phasenwechsel stattfindet.",
+  "definition": "Wärmeenergie, die mit einer Temperaturänderung eines Stoffes verbunden ist, ohne dass dabei notwendigerweise ein Phasenwechsel stattfindet. Sie lässt sich mit dem Thermometer messen; die Wärmemenge ergibt sich aus Masse, spezifischer Wärmekapazität und Temperaturänderung.",
   "related": []
 }

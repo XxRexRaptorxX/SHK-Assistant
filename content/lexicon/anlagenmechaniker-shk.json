@@ -2,14 +2,14 @@
   "id": "lexicon.anlagenmechaniker-shk",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Anlagenmechaniker für Sanitär-, Heizungs- und Klimatechnik“, https://de.wikipedia.org/wiki/Anlagenmechaniker_f%C3%BCr_Sanit%C3%A4r-,_Heizungs-_und_Klimatechnik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Anlagenmechaniker SHK",
   "synonyms": [],
   "categories": [
     "normen"
   ],
-  "definition": "Fachkraft, die Anlagen der Sanitär-, Heizungs- und Klimatechnik installiert, wartet, prüft und instand hält, entsprechend Qualifikation und betrieblichem Aufgabenbereich.",
+  "definition": "Fachkraft, die Anlagen der Sanitär-, Heizungs- und Klimatechnik installiert, wartet, prüft und instand hält, entsprechend Qualifikation und betrieblichem Aufgabenbereich. Der Ausbildungsberuf besteht in Deutschland seit 2003 und fasst unter anderem die früheren Berufe Gas- und Wasserinstallateur sowie Zentralheizungs- und Lüftungsbauer zusammen.",
   "related": []
 }

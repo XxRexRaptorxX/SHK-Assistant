@@ -2,9 +2,9 @@
   "id": "lexicon.justierung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Justierung“, https://de.wikipedia.org/wiki/Justierung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Justierung",
   "synonyms": [
     "adjustment"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Eingriff an einem Messgerät, um dessen Anzeige oder Verhalten so zu verändern, dass es näher an vorgegebene Werte gelangt.",
+  "definition": "Eingriff an einem Messgerät, um dessen Anzeige oder Verhalten so zu verändern, dass es näher an vorgegebene Werte gelangt. Sie folgt oft auf eine Kalibrierung, die die Abweichung erst feststellt.",
   "related": []
 }

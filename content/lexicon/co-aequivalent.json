@@ -2,9 +2,9 @@
   "id": "lexicon.co-aequivalent",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Treibhauspotential“, https://de.wikipedia.org/wiki/Treibhauspotential (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "CO₂-Äquivalent",
   "synonyms": [
     "CO₂ equivalent"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Einheit, mit der die Klimawirkung verschiedener Treibhausgase anhand ihres Treibhauspotenzials vergleichbar ausgedrückt wird.",
+  "definition": "Maßeinheit, mit der die Klimawirkung verschiedener Treibhausgase anhand ihres Treibhauspotenzials vergleichbar ausgedrückt wird. Dazu wird die Masse eines Gases mit seinem Treibhauspotenzial (GWP) multipliziert, angegeben zum Beispiel in Tonnen CO₂-Äquivalent.",
   "related": []
 }

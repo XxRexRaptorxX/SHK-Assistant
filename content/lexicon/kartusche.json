@@ -2,9 +2,9 @@
   "id": "lexicon.kartusche",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Mischbatterie“, https://de.wikipedia.org/wiki/Mischbatterie (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kartusche",
   "synonyms": [
     "cartridge"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Austauschbare Funktionseinheit in bestimmten Mischarmaturen, die Durchfluss und Mischung von Warm- und Kaltwasser steuert.",
+  "definition": "Austauschbare Funktionseinheit in bestimmten Mischarmaturen, die Durchfluss und Mischung von Warm- und Kaltwasser steuert. Bei Einhebelmischern arbeitet sie meist mit Keramikscheiben, bei Thermostatarmaturen mit einem Dehnstoffelement; tropft die Armatur oder wird sie schwergängig, wird die Kartusche getauscht.",
   "related": []
 }

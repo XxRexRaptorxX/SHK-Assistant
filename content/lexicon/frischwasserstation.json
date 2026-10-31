@@ -2,9 +2,9 @@
   "id": "lexicon.frischwasserstation",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Frischwasserstation“, https://de.wikipedia.org/wiki/Frischwasserstation (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Frischwasserstation",
   "synonyms": [
     "fresh water station"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Wärmeübertragerstation, die Trinkwasser im Durchfluss aus einem Heizungs- oder Pufferspeicher erwärmt, statt große Mengen Trinkwarmwasser im Speicher vorzuhalten.",
+  "definition": "Wärmeübertragerstation, die Trinkwasser im Durchfluss aus einem Heizungs- oder Pufferspeicher erwärmt, statt große Mengen Trinkwarmwasser im Speicher vorzuhalten. Das Trinkwasser wird meist in einem Plattenwärmeübertrager erwärmt; weil kaum Trinkwarmwasser bevorratet wird, gilt das Prinzip als hygienisch günstig.",
   "related": []
 }

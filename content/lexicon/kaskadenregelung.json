@@ -2,9 +2,9 @@
   "id": "lexicon.kaskadenregelung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kaskadenregelung“, https://de.wikipedia.org/wiki/Kaskadenregelung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kaskadenregelung",
   "synonyms": [
     "cascade control"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Regelung, die mehrere Wärmeerzeuger stufenweise oder koordiniert zuschaltet, um den Wärmebedarf effizient abzudecken.",
+  "definition": "In der Heizungstechnik bezeichnet der Begriff meist die Folgeschaltung mehrerer Wärmeerzeuger, die je nach Wärmebedarf stufenweise oder koordiniert zugeschaltet werden. In der Regelungstechnik steht Kaskadenregelung allgemein für ineinander geschachtelte Regelkreise, bei denen ein Führungsregler den Sollwert eines unterlagerten Folgereglers vorgibt.",
   "related": []
 }

@@ -2,14 +2,14 @@
   "id": "lexicon.lueftungskonzept",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kontrollierte Wohnraumlüftung“, https://de.wikipedia.org/wiki/Kontrollierte_Wohnrauml%C3%BCftung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Lüftungskonzept",
   "synonyms": [],
   "categories": [
     "lueftung"
   ],
-  "definition": "Planung, wie der erforderliche Luftaustausch eines Gebäudes oder einer Nutzung sichergestellt wird, unter Berücksichtigung von Feuchteschutz, Komfort und Energiebedarf.",
+  "definition": "Planung, wie der erforderliche Luftaustausch eines Gebäudes oder einer Nutzung sichergestellt wird, unter Berücksichtigung von Feuchteschutz, Komfort und Energiebedarf. Für Wohngebäude beschreibt DIN 1946-6 das Vorgehen; ein Konzept ist bei Neubauten und bei bestimmten Sanierungen, etwa einem umfangreichen Fenstertausch, zu erstellen.",
   "related": []
 }

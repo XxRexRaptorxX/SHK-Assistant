@@ -2,9 +2,9 @@
   "id": "lexicon.druckstoss",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Druckstoß“, https://de.wikipedia.org/wiki/Drucksto%C3%9F (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Druckstoß",
   "synonyms": [
     "pressure surge"
@@ -12,6 +12,6 @@
   "categories": [
     "hydraulik"
   ],
-  "definition": "Kurzzeitige starke Druckänderung in einem System, häufig ausgelöst durch schnelle Strömungsänderungen.",
+  "definition": "Kurzzeitige starke Druckänderung in einem System, häufig ausgelöst durch schnelle Strömungsänderungen. Er entsteht zum Beispiel beim schnellen Schließen einer Armatur (Joukowsky-Stoß) und kann Geräusche und Schäden verursachen; langsam schließende Armaturen und Dämpfer mindern ihn.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.waermeleitgruppe",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmeleitfähigkeitsgruppe“, https://de.wikipedia.org/wiki/W%C3%A4rmeleitf%C3%A4higkeitsgruppe (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmeleitgruppe",
   "synonyms": [
     "WLG"
@@ -12,6 +12,6 @@
   "categories": [
     "werkstoffe"
   ],
-  "definition": "Klassifizierung von Dämmstoffen anhand ihrer Wärmeleitfähigkeit nach einem definierten Schema.",
+  "definition": "Klassifizierung von Dämmstoffen anhand ihrer Wärmeleitfähigkeit nach einem definierten Schema. Die Angabe WLG 035 bedeutet eine Wärmeleitfähigkeit von 0,035 W/(m·K); im Zuge der europäischen Normung wird die WLG durch die Wärmeleitfähigkeitsstufe (WLS) ersetzt.",
   "related": []
 }

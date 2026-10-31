@@ -1,10 +1,10 @@
 {
   "id": "lexicon.milligramm",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Gewicht“; Wikipedia „Liste von Größenordnungen der Masse“, https://de.wikipedia.org/wiki/Liste_von_Gr%C3%B6%C3%9Fenordnungen_der_Masse",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Milligramm",
   "synonyms": [
     "mg",

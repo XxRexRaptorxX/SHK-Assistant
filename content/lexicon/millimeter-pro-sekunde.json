@@ -1,10 +1,10 @@
 {
   "id": "lexicon.millimeter-pro-sekunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Geschwindigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Millimeter%20pro%20Sekunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Millimeter pro Sekunde",
   "synonyms": [
     "mm/s",

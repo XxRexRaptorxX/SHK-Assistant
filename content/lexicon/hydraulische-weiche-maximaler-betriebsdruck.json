@@ -2,14 +2,14 @@
   "id": "lexicon.hydraulische-weiche-maximaler-betriebsdruck",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche maximaler Betriebsdruck",
   "synonyms": [],
   "categories": [
     "hydraulik"
   ],
-  "definition": "Vom Hersteller angegebener maximal zulässiger Druck für die Weiche.",
+  "definition": "Vom Hersteller angegebener maximal zulässiger Druck für die Weiche. Er muss mindestens dem Ansprechdruck des Sicherheitsventils der Anlage entsprechen.",
   "related": []
 }

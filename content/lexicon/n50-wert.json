@@ -2,14 +2,14 @@
   "id": "lexicon.n50-wert",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Differenzdruck-Messverfahren“, https://de.wikipedia.org/wiki/Differenzdruck-Messverfahren (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "n50-Wert",
   "synonyms": [],
   "categories": [
     "lueftung"
   ],
-  "definition": "Kennwert für die Luftwechselrate eines Gebäudes bei einer Druckdifferenz von 50 Pa im Rahmen einer Luftdichtheitsmessung.",
+  "definition": "Kennwert für die Luftwechselrate eines Gebäudes bei einer Druckdifferenz von 50 Pa im Rahmen einer Luftdichtheitsmessung. Er gibt an, wie oft das Luftvolumen des Gebäudes bei 50 Pa Druckdifferenz pro Stunde ausgetauscht wird; Anforderungen dazu enthält das Gebäudemodernisierungsgesetz (GModG, früher GEG).",
   "related": []
 }

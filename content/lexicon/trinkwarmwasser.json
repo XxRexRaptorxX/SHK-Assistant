@@ -2,9 +2,9 @@
   "id": "lexicon.trinkwarmwasser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Warmwasser“, https://de.wikipedia.org/wiki/Warmwasser (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Trinkwarmwasser",
   "synonyms": [
     "Warmwasser",
@@ -13,6 +13,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Erwärmtes Trinkwasser, das für Körperpflege, Reinigung oder andere häusliche Zwecke bereitgestellt wird.",
+  "definition": "Erwärmtes Trinkwasser, das für Körperpflege, Reinigung oder andere häusliche Zwecke bereitgestellt wird. Nach Norm wird es mit PWH bezeichnet; Temperaturen und Hygiene richten sich unter anderem nach DVGW W 551 und der Trinkwasserverordnung.",
   "related": []
 }

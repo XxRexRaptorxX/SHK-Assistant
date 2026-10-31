@@ -2,9 +2,9 @@
   "id": "lexicon.sollwert",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Sollwert“, https://de.wikipedia.org/wiki/Sollwert (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sollwert",
   "synonyms": [
     "setpoint"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Vorgegebener Zielwert einer zu regelnden Größe, beispielsweise gewünschte Raum- oder Vorlauftemperatur.",
+  "definition": "Vorgegebener Zielwert einer zu regelnden Größe, beispielsweise gewünschte Raum- oder Vorlauftemperatur. Er kann fest eingestellt oder zeitabhängig sein, etwa über eine Heizkurve oder ein Zeitprogramm; der Regler vergleicht ihn ständig mit dem Istwert.",
   "related": []
 }

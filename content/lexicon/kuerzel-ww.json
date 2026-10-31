@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-ww",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Warmwasser“, https://de.wikipedia.org/wiki/Warmwasser (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "WW – Warmwasser",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "trinkwasser"
   ],
-  "definition": "Abkürzung für Warmwasser, im Trinkwasserbereich das erwärmte Trinkwasser (nach Norm PWH).",
+  "definition": "Abkürzung für Warmwasser, im Trinkwasserbereich das erwärmte Trinkwasser (nach Norm PWH). Um Verwechslungen mit Heizungswasser zu vermeiden, ist die Kennzeichnung PWH eindeutiger.",
   "related": [
     "lexicon.trinkwarmwasser",
     "lexicon.kuerzel-pwh"

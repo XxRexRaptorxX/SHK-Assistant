@@ -2,9 +2,9 @@
   "id": "lexicon.ausdehnungsgefaessdimensionierung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Ausdehnungsgefäß“, https://de.wikipedia.org/wiki/Ausdehnungsgef%C3%A4%C3%9F (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Ausdehnungsgefäßdimensionierung",
   "synonyms": [
     "expansion vessel sizing"
@@ -13,6 +13,6 @@
     "heizung",
     "hydraulik"
   ],
-  "definition": "Berechnung der erforderlichen Gefäßgröße und Vordruckeinstellung anhand von Anlagenvolumen, Temperaturbereich, statischer Höhe und zulässigen Drücken.",
+  "definition": "Berechnung der erforderlichen Gefäßgröße und Vordruckeinstellung anhand von Anlagenvolumen, Temperaturbereich, statischer Höhe und zulässigen Drücken. Grundlage ist die Ausdehnung des Wassers zwischen Füll- und höchster Betriebstemperatur zuzüglich einer Wasservorlage; ein Berechnungsverfahren beschreibt DIN EN 12828.",
   "related": []
 }

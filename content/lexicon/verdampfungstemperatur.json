@@ -2,9 +2,9 @@
   "id": "lexicon.verdampfungstemperatur",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Siedepunkt“, https://de.wikipedia.org/wiki/Siedepunkt (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Verdampfungstemperatur",
   "synonyms": [
     "evaporating temperature"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Sättigungstemperatur des Kältemittels auf der Niederdruckseite während der Verdampfung.",
+  "definition": "Sättigungstemperatur des Kältemittels auf der Niederdruckseite während der Verdampfung. Sie hängt direkt vom Druck im Verdampfer ab und lässt sich mit einer Kältemitteltabelle aus dem gemessenen Niederdruck ermitteln.",
   "related": []
 }

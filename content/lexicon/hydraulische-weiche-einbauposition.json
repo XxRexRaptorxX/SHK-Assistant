@@ -2,14 +2,14 @@
   "id": "lexicon.hydraulische-weiche-einbauposition",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche Einbauposition",
   "synonyms": [],
   "categories": [
     "hydraulik"
   ],
-  "definition": "Position der Weiche im Hydraulikschema, die sich aus dem Anlagenkonzept ergibt.",
+  "definition": "Position der Weiche im Hydraulikschema, die sich aus dem Anlagenkonzept ergibt. In der Regel sitzt sie senkrecht zwischen Wärmeerzeuger und Heizkreisverteiler, damit sich Luft oben und Schlamm unten sammeln kann.",
   "related": []
 }

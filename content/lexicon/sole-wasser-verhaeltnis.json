@@ -2,14 +2,14 @@
   "id": "lexicon.sole-wasser-verhaeltnis",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Gefrierschutzmittel“, https://de.wikipedia.org/wiki/Gefrierschutzmittel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sole-Wasser-Verhältnis",
   "synonyms": [],
   "categories": [
     "kaelte"
   ],
-  "definition": "Mischungsverhältnis von Wasser und Frostschutzmittel in einem Solekreis.",
+  "definition": "Mischungsverhältnis von Wasser und Frostschutzmittel in einem Solekreis. Es bestimmt den Frostschutz und wird zum Beispiel mit einem Refraktometer geprüft; ein zu hoher Glykolanteil erhöht Viskosität und Pumpenleistung.",
   "related": []
 }

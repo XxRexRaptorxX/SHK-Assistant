@@ -2,9 +2,9 @@
   "id": "lexicon.sicherheitsventilauslegung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Sicherheitsventil“, https://de.wikipedia.org/wiki/Sicherheitsventil (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sicherheitsventilauslegung",
   "synonyms": [
     "safety valve sizing"
@@ -12,6 +12,6 @@
   "categories": [
     "normen"
   ],
-  "definition": "Auswahl eines Sicherheitsventils nach erforderlicher Abblaseleistung, Ansprechdruck, Medium und zulässigem Druck der abgesicherten Anlage.",
+  "definition": "Auswahl eines Sicherheitsventils nach erforderlicher Abblaseleistung, Ansprechdruck, Medium und zulässigem Druck der abgesicherten Anlage. Bei Heizungsanlagen richtet sich die Größe nach der Nennwärmeleistung des Wärmeerzeugers, bei Trinkwassererwärmern nach Speicherinhalt oder Beheizungsleistung; Tabellen enthalten DIN EN 12828 und DIN 1988-200.",
   "related": []
 }

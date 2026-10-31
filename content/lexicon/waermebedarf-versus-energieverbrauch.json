@@ -2,14 +2,14 @@
   "id": "lexicon.waermebedarf-versus-energieverbrauch",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Energieausweis“, https://de.wikipedia.org/wiki/Energieausweis (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmebedarf versus Energieverbrauch",
   "synonyms": [],
   "categories": [
     "heizung"
   ],
-  "definition": "Energiebedarf ist in der Regel berechnet und basiert auf definierten Annahmen; Energieverbrauch ist gemessen oder abgerechnet und hängt auch von Nutzerverhalten und Wetter ab.",
+  "definition": "Energiebedarf ist in der Regel berechnet und basiert auf definierten Annahmen; Energieverbrauch ist gemessen oder abgerechnet und hängt auch von Nutzerverhalten und Wetter ab. Deshalb unterscheidet man beim Energieausweis zwischen Bedarfs- und Verbrauchsausweis.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.abtauung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmepumpe“, https://de.wikipedia.org/wiki/W%C3%A4rmepumpe (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Abtauung",
   "synonyms": [
     "defrosting"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Vorgang, bei dem Eis auf einem Wärmeübertrager entfernt wird, beispielsweise durch Umkehr des Kältekreislaufs oder andere gerätespezifische Verfahren.",
+  "definition": "Vorgang, bei dem Eis auf einem Wärmeübertrager entfernt wird, beispielsweise durch Umkehr des Kältekreislaufs oder andere gerätespezifische Verfahren. Sie ist vor allem bei Luft-Wasser-Wärmepumpen nötig, weil sich bei niedrigen Außentemperaturen und hoher Luftfeuchte Reif am Verdampfer bildet; die dafür nötige Energie mindert die Effizienz.",
   "related": []
 }

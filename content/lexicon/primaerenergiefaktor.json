@@ -2,9 +2,9 @@
   "id": "lexicon.primaerenergiefaktor",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Primärenergiefaktor“, https://de.wikipedia.org/wiki/Prim%C3%A4renergiefaktor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Primärenergiefaktor",
   "synonyms": [
     "primary energy factor"
@@ -13,6 +13,6 @@
     "normen",
     "physik"
   ],
-  "definition": "Kennwert, der den Aufwand an Primärenergie je Einheit bereitgestellter Endenergie nach einer festgelegten Bewertungsmethode beschreibt.",
+  "definition": "Kennwert, der den Aufwand an Primärenergie je Einheit bereitgestellter Endenergie nach einer festgelegten Bewertungsmethode beschreibt. In Deutschland sind die Faktoren im Gebäudemodernisierungsgesetz (GModG, früher GEG) festgelegt; erneuerbare Energieträger haben meist niedrige Faktoren.",
   "related": []
 }

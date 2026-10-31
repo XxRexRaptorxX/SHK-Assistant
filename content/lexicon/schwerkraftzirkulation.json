@@ -2,9 +2,9 @@
   "id": "lexicon.schwerkraftzirkulation",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Natürliche Konvektion“, https://de.wikipedia.org/wiki/Nat%C3%BCrliche_Konvektion (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Schwerkraftzirkulation",
   "synonyms": [
     "gravity circulation"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Strömung, die durch Dichteunterschiede infolge unterschiedlicher Temperaturen entsteht, ohne dass eine Umwälzpumpe erforderlich ist.",
+  "definition": "Strömung, die durch Dichteunterschiede infolge unterschiedlicher Temperaturen entsteht, ohne dass eine Umwälzpumpe erforderlich ist. In Heizungs- und Warmwasseranlagen kann sie unerwünschte Wärmeverluste verursachen und wird dann zum Beispiel durch Schwerkraftbremsen verhindert.",
   "related": []
 }

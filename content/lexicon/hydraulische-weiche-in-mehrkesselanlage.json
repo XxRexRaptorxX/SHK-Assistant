@@ -2,15 +2,15 @@
   "id": "lexicon.hydraulische-weiche-in-mehrkesselanlage",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche in Mehrkesselanlage",
   "synonyms": [],
   "categories": [
     "heizung",
     "hydraulik"
   ],
-  "definition": "Kann die hydraulische Entkopplung zwischen mehreren Wärmeerzeugern und Verbraucherkreisen unterstützen, wenn das Gesamtschema dafür ausgelegt ist.",
+  "definition": "Kann die hydraulische Entkopplung zwischen mehreren Wärmeerzeugern und Verbraucherkreisen unterstützen, wenn das Gesamtschema dafür ausgelegt ist. Jeder Wärmeerzeuger kann dann mit eigener Pumpe und eigenem Volumenstrom arbeiten, unabhängig davon, wie viele Verbraucherkreise gerade Wärme abnehmen.",
   "related": []
 }

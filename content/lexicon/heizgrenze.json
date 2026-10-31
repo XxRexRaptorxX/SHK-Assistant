@@ -2,9 +2,9 @@
   "id": "lexicon.heizgrenze",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heizgrenze“, https://de.wikipedia.org/wiki/Heizgrenze (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Heizgrenze",
   "synonyms": [
     "heating limit temperature"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Außentemperatur, oberhalb derer unter festgelegten Bedingungen keine Raumheizung erforderlich ist oder die Heizungsregelung den Heizbetrieb reduziert.",
+  "definition": "Außentemperatur, oberhalb derer unter festgelegten Bedingungen keine Raumheizung erforderlich ist oder die Heizungsregelung den Heizbetrieb reduziert. Sie bezieht sich auf die Tagesmitteltemperatur; Tage darunter heißen Heiztage. Bei gut gedämmten Gebäuden liegt sie niedriger als bei wenig gedämmten.",
   "related": []
 }

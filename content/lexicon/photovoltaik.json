@@ -2,9 +2,9 @@
   "id": "lexicon.photovoltaik",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Photovoltaik“, https://de.wikipedia.org/wiki/Photovoltaik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Photovoltaik",
   "synonyms": [
     "PV",
@@ -13,6 +13,6 @@
   "categories": [
     "solar"
   ],
-  "definition": "Technologie, die Licht mithilfe von Solarzellen direkt in elektrische Energie umwandelt.",
+  "definition": "Technologie, die Licht mithilfe von Solarzellen direkt in elektrische Energie umwandelt. Die erzeugte Gleichspannung wird meist von einem Wechselrichter umgewandelt; zusammen mit Wärmepumpe oder Heizstab kann der Strom auch zum Heizen genutzt werden.",
   "related": []
 }

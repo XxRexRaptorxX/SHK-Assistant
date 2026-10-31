@@ -2,9 +2,9 @@
   "id": "lexicon.niedertemperaturheizung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Niedertemperaturheizung“, https://de.wikipedia.org/wiki/Niedertemperaturheizung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Niedertemperaturheizung",
   "synonyms": [
     "low-temperature heating"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Heizsystem, das mit vergleichsweise niedrigen Vorlauftemperaturen arbeitet, beispielsweise eine Fußbodenheizung oder passend ausgelegte Heizkörperanlage.",
+  "definition": "Heizsystem, das mit vergleichsweise niedrigen Vorlauftemperaturen arbeitet, beispielsweise eine Fußbodenheizung oder passend ausgelegte Heizkörperanlage. Niedrige Vorlauftemperaturen verbessern die Effizienz von Wärmepumpen und die Brennwertnutzung; dafür sind ausreichend große Heizflächen nötig.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.ventilwartung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Ventil“, https://de.wikipedia.org/wiki/Ventil (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Ventilwartung",
   "synonyms": [
     "valve maintenance"
@@ -13,6 +13,6 @@
     "hydraulik",
     "normen"
   ],
-  "definition": "Prüfung von Ventilen auf Dichtheit, Beweglichkeit, Funktion und gegebenenfalls Reinigung oder Austausch.",
+  "definition": "Prüfung von Ventilen auf Dichtheit, Beweglichkeit, Funktion und gegebenenfalls Reinigung oder Austausch. Dazu gehört bei selten betätigten Armaturen auch das regelmäßige Durchbewegen, damit sie im Bedarfsfall funktionieren.",
   "related": []
 }

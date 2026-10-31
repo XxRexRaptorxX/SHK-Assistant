@@ -2,9 +2,9 @@
   "id": "lexicon.waermeverlust",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmeverlust“, https://de.wikipedia.org/wiki/W%C3%A4rmeverlust (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmeverlust",
   "synonyms": [
     "heat loss"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Wärmeenergie, die ein System an eine unerwünschte Umgebung abgibt oder die seinen Nutzbereich verlässt.",
+  "definition": "Wärmeenergie, die ein System an eine unerwünschte Umgebung abgibt oder die seinen Nutzbereich verlässt. Beispiele sind Abgas-, Oberflächen- und Leitungsverluste; Dämmung und niedrige Systemtemperaturen verringern sie.",
   "related": []
 }

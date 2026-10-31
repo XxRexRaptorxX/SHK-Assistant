@@ -1,10 +1,10 @@
 {
   "id": "lexicon.newton-pro-quadratzentimeter",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Druck“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Newton%20pro%20Quadratzentimeter",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Newton pro Quadratzentimeter",
   "synonyms": [
     "N/cm²",

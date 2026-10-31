@@ -2,14 +2,14 @@
   "id": "lexicon.hydraulische-weiche-funktion",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche Funktion",
   "synonyms": [],
   "categories": [
     "hydraulik"
   ],
-  "definition": "Eine hydraulische Weiche schafft zwischen Erzeuger- und Verbraucherkreisen einen Bereich mit geringem hydraulischem Widerstand, sodass die Kreise unterschiedliche Volumenströme haben können.",
+  "definition": "Eine hydraulische Weiche schafft zwischen Erzeuger- und Verbraucherkreisen einen Bereich mit geringem hydraulischem Widerstand, sodass die Kreise unterschiedliche Volumenströme haben können. Ohne Entkopplung können Pumpen in ungünstigen Betriebspunkten laufen, mit höherem Stromverbrauch, Geräuschen und Kavitation, und die Temperaturregelung der Verbraucherkreise wird erschwert.",
   "related": []
 }

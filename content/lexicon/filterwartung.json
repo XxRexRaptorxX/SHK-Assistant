@@ -2,9 +2,9 @@
   "id": "lexicon.filterwartung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Luftfilter“, https://de.wikipedia.org/wiki/Luftfilter (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Filterwartung",
   "synonyms": [
     "filter maintenance"
@@ -13,6 +13,6 @@
     "lueftung",
     "normen"
   ],
-  "definition": "Prüfung, Reinigung oder Austausch von Filtern in Wasser- oder Luftsystemen nach Druckverlust, Zustand und Herstellerangaben.",
+  "definition": "Prüfung, Reinigung oder Austausch von Filtern in Wasser- oder Luftsystemen nach Druckverlust, Zustand und Herstellerangaben. Verschmutzte Filter erhöhen Druckverlust und Energiebedarf und können in Lüftungsanlagen hygienische Probleme verursachen.",
   "related": []
 }

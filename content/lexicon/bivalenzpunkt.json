@@ -2,9 +2,9 @@
   "id": "lexicon.bivalenzpunkt",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hybridheizung“, https://de.wikipedia.org/wiki/Hybridheizung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Bivalenzpunkt",
   "synonyms": [
     "bivalent point"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Betriebspunkt, häufig bezogen auf die Außentemperatur, bei dem in einem bivalenten Heizsystem ein zusätzlicher Wärmeerzeuger zugeschaltet wird oder die alleinige Leistung des Hauptwärmeerzeugers nicht mehr ausreicht.",
+  "definition": "Betriebspunkt, häufig bezogen auf die Außentemperatur, bei dem in einem bivalenten Heizsystem ein zusätzlicher Wärmeerzeuger zugeschaltet wird oder die alleinige Leistung des Hauptwärmeerzeugers nicht mehr ausreicht. Er wird bei der Auslegung anhand der Heizlast und der temperaturabhängigen Leistung des Hauptwärmeerzeugers festgelegt.",
   "related": []
 }

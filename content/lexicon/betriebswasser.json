@@ -2,9 +2,9 @@
   "id": "lexicon.betriebswasser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Betriebswasser“, https://de.wikipedia.org/wiki/Betriebswasser (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Betriebswasser",
   "synonyms": [
     "non-potable water"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Wasser, das für technische oder gewerbliche Zwecke genutzt wird und nicht notwendigerweise Trinkwasserqualität besitzt.",
+  "definition": "Wasser, das für technische oder gewerbliche Zwecke genutzt wird und nicht notwendigerweise Trinkwasserqualität besitzt. Es wird umgangssprachlich auch Brauch- oder Nutzwasser genannt; Betriebswasserleitungen dürfen nicht mit der Trinkwasserinstallation verbunden werden.",
   "related": []
 }

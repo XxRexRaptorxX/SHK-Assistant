@@ -2,9 +2,9 @@
   "id": "lexicon.fernwaermeuebergabestation",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmeübergabestation“, https://de.wikipedia.org/wiki/W%C3%A4rme%C3%BCbergabestation (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Fernwärmeübergabestation",
   "synonyms": [
     "district heating substation"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Anlage, die Wärme aus einem Fernwärmenetz über einen Wärmeübertrager und Regelkomponenten an die Gebäudeheizung übergibt.",
+  "definition": "Anlage, die Wärme aus einem Fernwärmenetz über einen Wärmeübertrager und Regelkomponenten an die Gebäudeheizung übergibt. Sie stellt die gewünschte Vorlauftemperatur im Gebäude ein und enthält meist den Wärmemengenzähler; primärseitig kann sie mit Heißwasser, Heizwasser oder Dampf versorgt werden.",
   "related": []
 }

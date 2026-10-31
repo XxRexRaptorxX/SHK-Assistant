@@ -2,9 +2,9 @@
   "id": "lexicon.rueckschlagventil",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Rückschlagarmatur“, https://de.wikipedia.org/wiki/R%C3%BCckschlagarmatur (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Rückschlagventil",
   "synonyms": [
     "Rückflussverhinderer",
@@ -14,6 +14,6 @@
     "hydraulik",
     "trinkwasser"
   ],
-  "definition": "Armatur, die den Durchfluss nur in einer vorgesehenen Richtung zulässt und Rückströmung automatisch verhindert.",
+  "definition": "Armatur, die den Durchfluss nur in einer vorgesehenen Richtung zulässt und Rückströmung automatisch verhindert. Es öffnet durch den Strömungsdruck und schließt selbsttätig, zum Beispiel über eine Feder; in der Trinkwasserinstallation wird meist ein prüfbarer Rückflussverhinderer verwendet.",
   "related": []
 }

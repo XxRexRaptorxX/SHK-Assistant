@@ -2,9 +2,9 @@
   "id": "lexicon.kondensationsentfeuchter",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Luftentfeuchter“, https://de.wikipedia.org/wiki/Luftentfeuchter (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kondensationsentfeuchter",
   "synonyms": [
     "condensation dehumidifier"
@@ -12,6 +12,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Gerät, das feuchte Luft unter ihren Taupunkt abkühlt, Wasser kondensiert und das entfeuchtete Medium wieder erwärmt oder abführt.",
+  "definition": "Gerät, das feuchte Luft unter ihren Taupunkt abkühlt, Wasser kondensiert und das entfeuchtete Medium wieder erwärmt oder abführt. Er arbeitet meist mit einem kleinen Kältekreis: Am Verdampfer kondensiert der Wasserdampf, am Verflüssiger wird die Luft wieder erwärmt.",
   "related": []
 }

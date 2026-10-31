@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kiloamperestunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Ladung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kiloamperestunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kiloamperestunde",
   "synonyms": [
     "kAh",

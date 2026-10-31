@@ -2,9 +2,9 @@
   "id": "lexicon.waermeuebergabe",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Fernwärme“, https://de.wikipedia.org/wiki/Fernw%C3%A4rme (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmeübergabe",
   "synonyms": [
     "heat emission"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Übertragung von Wärme von einem Versorgungs- oder Verteilnetz an ein Gebäude oder einen Verbraucher, beispielsweise über eine Übergabestation.",
+  "definition": "Übertragung von Wärme von einem Versorgungs- oder Verteilnetz an ein Gebäude oder einen Verbraucher, beispielsweise über eine Übergabestation. Im Gebäude bezeichnet der Begriff auch die Wärmeabgabe über Heizflächen an den Raum; bei Fernwärme liegt die Grenze zwischen Netz und Kundenanlage meist an der Übergabestation.",
   "related": []
 }

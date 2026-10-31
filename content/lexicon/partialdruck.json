@@ -1,10 +1,10 @@
 {
   "id": "lexicon.partialdruck",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Wikipedia „Partialdruck“, https://de.wikipedia.org/wiki/Partialdruck",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Partialdruck",
   "synonyms": [
     "Teildruck",

@@ -2,9 +2,9 @@
   "id": "lexicon.kaeltemittelueberhitzung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Thermostatisches Expansionsventil“, https://de.wikipedia.org/wiki/Thermostatisches_Expansionsventil (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kältemittelüberhitzung",
   "synonyms": [
     "superheat"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Temperaturdifferenz zwischen dem tatsächlichen gasförmigen Kältemittelzustand und der Sättigungstemperatur beim gleichen Druck.",
+  "definition": "Temperaturdifferenz zwischen dem tatsächlichen gasförmigen Kältemittelzustand und der Sättigungstemperatur beim gleichen Druck. Sie wird am Verdampferausgang gemessen und zeigt, ob der Verdichter sicher nur gasförmiges Kältemittel ansaugt; thermostatische und elektronische Expansionsventile regeln auf sie.",
   "related": []
 }

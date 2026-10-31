@@ -2,9 +2,9 @@
   "id": "lexicon.abgasanlage",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Schornstein“, https://de.wikipedia.org/wiki/Schornstein (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Abgasanlage",
   "synonyms": [
     "flue system"
@@ -12,6 +12,6 @@
   "categories": [
     "gas"
   ],
-  "definition": "System aus Abgasleitung beziehungsweise Schornstein und zugehörigen Bauteilen, das Verbrennungsprodukte sicher ins Freie führt.",
+  "definition": "System aus Abgasleitung beziehungsweise Schornstein und zugehörigen Bauteilen, das Verbrennungsprodukte sicher ins Freie führt. Dazu zählen Schornsteine, Abgasleitungen und Luft-Abgas-Systeme; sie müssen für die angeschlossene Feuerstätte, deren Abgastemperatur und Betriebsweise geeignet sein.",
   "related": []
 }

@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-rl",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Heizkreis“, https://de.wikipedia.org/wiki/Heizkreis (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "RL – Rücklauf",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "heizung"
   ],
-  "definition": "Abkürzung für Rücklauf: die Leitung, die das abgekühlte Wasser von den Heizflächen zum Wärmeerzeuger zurückführt.",
+  "definition": "Abkürzung für Rücklauf: die Leitung, die das abgekühlte Wasser von den Heizflächen zum Wärmeerzeuger zurückführt. Auf Plänen wird der Rücklauf häufig blau dargestellt.",
   "related": [
     "lexicon.ruecklauftemperatur",
     "lexicon.kuerzel-vl"

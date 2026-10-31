@@ -2,9 +2,9 @@
   "id": "lexicon.geblaesekonvektor",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Gebläsekonvektor“, https://de.wikipedia.org/wiki/Gebl%C3%A4sekonvektor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Gebläsekonvektor",
   "synonyms": [
     "Fan-Coil",
@@ -14,6 +14,6 @@
     "heizung",
     "lueftung"
   ],
-  "definition": "Wärmeübertrager mit Ventilator, der Luft über eine Heiz- oder Kühlfläche bewegt und dadurch die Wärmeübertragung verstärkt.",
+  "definition": "Wärmeübertrager mit Ventilator, der Luft über eine Heiz- oder Kühlfläche bewegt und dadurch die Wärmeübertragung verstärkt. Er wird auch Fan-Coil genannt und kann je nach Anschluss heizen und kühlen; beim Kühlen unter den Taupunkt entsteht Kondensat, das abgeführt werden muss.",
   "related": []
 }

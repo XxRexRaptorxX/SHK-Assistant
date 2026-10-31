@@ -2,9 +2,9 @@
   "id": "lexicon.nutzenergie",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Nutzenergie“, https://de.wikipedia.org/wiki/Nutzenergie (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Nutzenergie",
   "synonyms": [
     "useful energy"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Energie, die nach Umwandlungsverlusten tatsächlich für den gewünschten Zweck verfügbar ist, etwa Raumwärme oder Warmwasser.",
+  "definition": "Energie, die nach Umwandlungsverlusten tatsächlich für den gewünschten Zweck verfügbar ist, etwa Raumwärme oder Warmwasser. Sie ist die letzte Stufe der Energiekette nach Primär- und Endenergie.",
   "related": []
 }

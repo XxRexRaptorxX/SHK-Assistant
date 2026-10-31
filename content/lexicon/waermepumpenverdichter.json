@@ -2,9 +2,9 @@
   "id": "lexicon.waermepumpenverdichter",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Verdichter“, https://de.wikipedia.org/wiki/Verdichter (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmepumpenverdichter",
   "synonyms": [
     "heat pump compressor"
@@ -13,6 +13,6 @@
     "kaelte",
     "solar"
   ],
-  "definition": "Komponente der Wärmepumpe, die gasförmiges Kältemittel verdichtet und damit Druck und Temperatur erhöht.",
+  "definition": "Komponente der Wärmepumpe, die gasförmiges Kältemittel verdichtet und damit Druck und Temperatur erhöht. Verbreitet sind Scroll- und Rollkolbenverdichter, oft drehzahlgeregelt (Inverter), damit sich die Leistung dem Wärmebedarf anpasst.",
   "related": []
 }

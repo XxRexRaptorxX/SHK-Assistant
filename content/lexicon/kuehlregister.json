@@ -2,9 +2,9 @@
   "id": "lexicon.kuehlregister",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kühlregister“, https://de.wikipedia.org/wiki/K%C3%BChlregister (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kühlregister",
   "synonyms": [
     "cooling coil"
@@ -13,6 +13,6 @@
     "kaelte",
     "lueftung"
   ],
-  "definition": "Wärmeübertrager in einem Luftstrom, der Luft abkühlt und bei Unterschreiten des Taupunkts auch entfeuchten kann.",
+  "definition": "Wärmeübertrager in einem Luftstrom, der Luft abkühlt und bei Unterschreiten des Taupunkts auch entfeuchten kann. Je nach Oberflächentemperatur kühlt es trocken, ohne den Feuchtegehalt zu ändern, oder entfeuchtet zusätzlich; dann muss das Kondensat über eine Wanne abgeleitet werden.",
   "related": []
 }

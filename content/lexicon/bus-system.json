@@ -2,14 +2,14 @@
   "id": "lexicon.bus-system",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Bus (Datenverarbeitung)“, https://de.wikipedia.org/wiki/Bus_(Datenverarbeitung) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Bus-System",
   "synonyms": [],
   "categories": [
     "msr"
   ],
-  "definition": "Kommunikationssystem, über das mehrere Geräte Daten oder Steuerinformationen über eine gemeinsame Leitung oder ein definiertes Netzwerk austauschen.",
+  "definition": "Kommunikationssystem, über das mehrere Geräte Daten oder Steuerinformationen über eine gemeinsame Leitung oder ein definiertes Netzwerk austauschen. In der Gebäudetechnik sind zum Beispiel KNX, BACnet, Modbus und M-Bus verbreitet.",
   "related": []
 }

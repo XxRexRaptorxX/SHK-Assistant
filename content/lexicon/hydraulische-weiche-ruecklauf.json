@@ -2,15 +2,15 @@
   "id": "lexicon.hydraulische-weiche-ruecklauf",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Hydraulische Weiche“, https://de.wikipedia.org/wiki/Hydraulische_Weiche (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulische Weiche Rücklauf",
   "synonyms": [],
   "categories": [
     "heizung",
     "hydraulik"
   ],
-  "definition": "Rücklaufanschluss einer hydraulischen Weiche, über den abgekühltes Medium aus dem Kreis zurückgeführt wird.",
+  "definition": "Rücklaufanschluss einer hydraulischen Weiche, über den abgekühltes Medium aus dem Kreis zurückgeführt wird. Auf der Verbraucherseite strömt das abgekühlte Wasser in die Weiche, auf der Erzeugerseite verlässt es sie zum Wärmeerzeuger.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.pe-x",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Polyethylen“, https://de.wikipedia.org/wiki/Polyethylen (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "PE-X",
   "synonyms": [
     "PEX"
@@ -12,6 +12,6 @@
   "categories": [
     "werkstoffe"
   ],
-  "definition": "Vernetztes Polyethylen, das als Rohrwerkstoff unter anderem für Heizungs- und Trinkwasseranwendungen eingesetzt wird, sofern Rohrsystem und Einsatzbereich dafür geeignet sind.",
+  "definition": "Vernetztes Polyethylen, das als Rohrwerkstoff unter anderem für Heizungs- und Trinkwasseranwendungen eingesetzt wird, sofern Rohrsystem und Einsatzbereich dafür geeignet sind. Die Vernetzung macht den Werkstoff temperatur- und zeitstandfester; nach Herstellverfahren unterscheidet man PE-Xa, PE-Xb und PE-Xc. Für Heizungen werden meist Rohre mit Sauerstoffsperrschicht verwendet.",
   "related": []
 }

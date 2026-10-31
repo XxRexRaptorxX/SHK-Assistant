@@ -2,9 +2,9 @@
   "id": "lexicon.witterungsgefuehrte-regelung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heizkurve“, https://de.wikipedia.org/wiki/Heizkurve (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Witterungsgeführte Regelung",
   "synonyms": [
     "weather-compensated control"
@@ -13,6 +13,6 @@
     "heizung",
     "msr"
   ],
-  "definition": "Regelstrategie, bei der die Vorlauftemperatur oder Heizleistung unter anderem anhand der Außentemperatur angepasst wird.",
+  "definition": "Regelstrategie, bei der die Vorlauftemperatur oder Heizleistung unter anderem anhand der Außentemperatur angepasst wird. Grundlage ist die Heizkurve, die jeder Außentemperatur eine Vorlauftemperatur zuordnet; den Messwert liefert ein Außentemperaturfühler.",
   "related": []
 }

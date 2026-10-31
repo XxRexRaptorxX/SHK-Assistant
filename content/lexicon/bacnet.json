@@ -2,14 +2,14 @@
   "id": "lexicon.bacnet",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „BACnet“, https://de.wikipedia.org/wiki/BACnet (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "BACnet",
   "synonyms": [],
   "categories": [
     "msr"
   ],
-  "definition": "Kommunikationsprotokoll für die Gebäudeautomation, das den Austausch von Informationen zwischen Automations- und Managementsystemen unterstützt.",
+  "definition": "Kommunikationsprotokoll für die Gebäudeautomation, das den Austausch von Informationen zwischen Automations- und Managementsystemen unterstützt. Es ist durch ASHRAE, ANSI und als ISO 16484-5 genormt und kann über Gateways mit anderen Bussystemen wie KNX gekoppelt werden.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.istwert",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Regelgröße“, https://de.wikipedia.org/wiki/Regelgr%C3%B6%C3%9Fe (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Istwert",
   "synonyms": [
     "actual value"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Aktuell gemessener oder ermittelter Wert einer Größe, die überwacht oder geregelt wird.",
+  "definition": "Aktuell gemessener oder ermittelter Wert einer Größe, die überwacht oder geregelt wird. Der Regler vergleicht ihn mit dem Sollwert; die Differenz ist die Regelabweichung.",
   "related": []
 }

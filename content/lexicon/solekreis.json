@@ -2,9 +2,9 @@
   "id": "lexicon.solekreis",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Erdwärmesonde“, https://de.wikipedia.org/wiki/Erdw%C3%A4rmesonde (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Solekreis",
   "synonyms": [
     "brine circuit"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Hydraulischer Kreislauf mit Sole als Wärmeträger, häufig zwischen Erdreich-Wärmeübertrager und Wärmepumpe.",
+  "definition": "Hydraulischer Kreislauf mit Sole als Wärmeträger, häufig zwischen Erdreich-Wärmeübertrager und Wärmepumpe. Er ist geschlossen und hat eigene Umwälzpumpe, Ausdehnungsgefäß und Sicherheitsventil; vor der Inbetriebnahme wird er gespült und entlüftet.",
   "related": []
 }

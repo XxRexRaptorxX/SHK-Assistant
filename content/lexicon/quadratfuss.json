@@ -1,10 +1,10 @@
 {
   "id": "lexicon.quadratfuss",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Fläche“; Wikipedia „Quadratfuß“, https://de.wikipedia.org/wiki/Quadratfu%C3%9F",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Quadratfuß",
   "synonyms": [
     "ft²",

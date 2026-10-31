@@ -2,14 +2,14 @@
   "id": "lexicon.wasserstoppsystem",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Aquastop“, https://de.wikipedia.org/wiki/Aquastop (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wasserstoppsystem",
   "synonyms": [],
   "categories": [
     "trinkwasser"
   ],
-  "definition": "System zur Erkennung oder Begrenzung von Wasserleckagen, das beispielsweise ein Absperrventil automatisch schließen kann.",
+  "definition": "System zur Erkennung oder Begrenzung von Wasserleckagen, das beispielsweise ein Absperrventil automatisch schließen kann. Es arbeitet zum Beispiel mit Feuchtesensoren, Durchflussüberwachung oder einem Schlauchplatzschutz (Aquastop) und kann einzelne Geräte oder die ganze Installation absperren.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.dynamischer-druck",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Staupunktströmung“, https://de.wikipedia.org/wiki/Staupunktstr%C3%B6mung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Dynamischer Druck",
   "synonyms": [
     "dynamic pressure"
@@ -13,6 +13,6 @@
     "hydraulik",
     "physik"
   ],
-  "definition": "Druckanteil, der mit der Strömungsgeschwindigkeit eines Fluids zusammenhängt.",
+  "definition": "Druckanteil, der mit der Strömungsgeschwindigkeit eines Fluids zusammenhängt. Er beträgt ½ · ρ · v² und entspricht betragsmäßig dem Staudruck; zusammen mit dem statischen Druck ergibt er den Gesamtdruck.",
   "related": []
 }

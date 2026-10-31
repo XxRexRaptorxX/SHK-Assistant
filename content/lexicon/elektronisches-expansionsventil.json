@@ -2,9 +2,9 @@
   "id": "lexicon.elektronisches-expansionsventil",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Expansionsventil“, https://de.wikipedia.org/wiki/Expansionsventil (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Elektronisches Expansionsventil",
   "synonyms": [
     "EEV",
@@ -13,6 +13,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Elektrisch angesteuertes Expansionsventil, das den Kältemittelmassenstrom anhand von Messwerten präzise regeln kann.",
+  "definition": "Elektrisch angesteuertes Expansionsventil, das den Kältemittelmassenstrom anhand von Messwerten präzise regeln kann. Ein Schrittmotor stellt die Öffnung anhand von Druck- und Temperaturmesswerten; dadurch lässt sich die Überhitzung auch im Teillastbetrieb genau halten.",
   "related": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kuerzel-bimschv",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Verordnung zur Durchführung des Bundes-Immissionsschutzgesetzes“, https://de.wikipedia.org/wiki/Verordnung_zur_Durchf%C3%BChrung_des_Bundes-Immissionsschutzgesetzes (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "1. BImSchV – Verordnung über kleine und mittlere Feuerungsanlagen",
   "synonyms": [
     "BImSchV"
@@ -14,7 +14,7 @@
     "normen",
     "gas"
   ],
-  "definition": "Erste Verordnung zur Durchführung des Bundes-Immissionsschutzgesetzes (Verordnung über kleine und mittlere Feuerungsanlagen).",
+  "definition": "Erste Verordnung zur Durchführung des Bundes-Immissionsschutzgesetzes (Verordnung über kleine und mittlere Feuerungsanlagen). Sie legt unter anderem Emissionsgrenzwerte und Messpflichten für Öl-, Gas- und Festbrennstofffeuerungen fest, deren Einhaltung der Schornsteinfeger überwacht.",
   "related": [
     "lexicon.abgasverlust"
   ]

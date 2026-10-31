@@ -2,14 +2,14 @@
   "id": "lexicon.druckminderer-trinkwasser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Druckminderer“, https://de.wikipedia.org/wiki/Druckminderer (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Druckminderer Trinkwasser",
   "synonyms": [],
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Armatur, die den Eingangsdruck des Trinkwassers auf einen eingestellten Ausgangsdruck reduziert.",
+  "definition": "Armatur, die den Eingangsdruck des Trinkwassers auf einen eingestellten Ausgangsdruck reduziert. Er wird meist nach dem Wasserzähler eingebaut, oft zusammen mit einem Filter, und schützt die Installation vor zu hohem Ruhedruck; er muss regelmäßig gewartet werden.",
   "related": []
 }

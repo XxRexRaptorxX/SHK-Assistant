@@ -1,10 +1,10 @@
 {
   "id": "lexicon.millisiemens-pro-meter",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Leitfähigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Millisiemens%20pro%20Meter",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Millisiemens pro Meter",
   "synonyms": [
     "mS/m",

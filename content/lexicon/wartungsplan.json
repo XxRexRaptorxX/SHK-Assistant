@@ -2,9 +2,9 @@
   "id": "lexicon.wartungsplan",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Serviceplan“, https://de.wikipedia.org/wiki/Serviceplan (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wartungsplan",
   "synonyms": [
     "maintenance schedule"
@@ -12,6 +12,6 @@
   "categories": [
     "normen"
   ],
-  "definition": "Plan, der regelmäßige Prüf-, Reinigungs- und Instandhaltungsarbeiten sowie deren Intervalle festlegt.",
+  "definition": "Plan, der regelmäßige Prüf-, Reinigungs- und Instandhaltungsarbeiten sowie deren Intervalle festlegt. Er beruht auf Herstellervorgaben und Regelwerken und wird häufig als Checkliste mit Terminen und Dokumentation geführt.",
   "related": []
 }

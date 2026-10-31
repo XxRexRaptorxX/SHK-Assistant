@@ -2,9 +2,9 @@
   "id": "lexicon.durchflusssensor",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Durchflusssensor“, https://de.wikipedia.org/wiki/Durchflusssensor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Durchflusssensor",
   "synonyms": [
     "flow sensor"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Sensor oder Messgerät, das den Volumen- oder Massenstrom eines Mediums erfasst.",
+  "definition": "Sensor oder Messgerät, das den Volumen- oder Massenstrom eines Mediums erfasst. In Heizgeräten und Wärmepumpen erkennt er zum Beispiel den Mindestvolumenstrom oder eine Warmwasserzapfung; Messprinzipien sind unter anderem Flügelrad, Ultraschall und magnetisch-induktive Messung.",
   "related": []
 }

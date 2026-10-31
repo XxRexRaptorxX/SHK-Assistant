@@ -2,9 +2,9 @@
   "id": "lexicon.spezifisches-volumen",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Spezifisches Volumen“, https://de.wikipedia.org/wiki/Spezifisches_Volumen (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Spezifisches Volumen",
   "synonyms": [
     "specific volume"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Volumen pro Masseneinheit eines Stoffes; es ist der Kehrwert der Dichte, sofern beide Größen auf denselben Zustand bezogen sind.",
+  "definition": "Volumen pro Masseneinheit eines Stoffes; es ist der Kehrwert der Dichte, sofern beide Größen auf denselben Zustand bezogen sind. Es wird in m³/kg angegeben und vor allem bei Gasen und Dampf verwendet, etwa in Kältemitteltabellen.",
   "related": []
 }

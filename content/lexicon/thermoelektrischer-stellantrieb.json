@@ -2,9 +2,9 @@
   "id": "lexicon.thermoelektrischer-stellantrieb",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Stellantrieb“, https://de.wikipedia.org/wiki/Stellantrieb (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Thermoelektrischer Stellantrieb",
   "synonyms": [
     "thermoelectric actuator"
@@ -13,6 +13,6 @@
     "heizung",
     "msr"
   ],
-  "definition": "Stellantrieb, der durch Erwärmung eines Elements eine Ventilbewegung erzeugt und häufig für Heizkreisverteiler verwendet wird.",
+  "definition": "Stellantrieb, der durch Erwärmung eines Elements eine Ventilbewegung erzeugt und häufig für Heizkreisverteiler verwendet wird. Ein elektrisch beheiztes Dehnstoffelement bewegt dabei den Ventilstößel; die Antriebe gibt es stromlos geschlossen oder stromlos offen.",
   "related": []
 }

@@ -2,15 +2,15 @@
   "id": "lexicon.waermebrueckennachweis",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmebrücke“, https://de.wikipedia.org/wiki/W%C3%A4rmebr%C3%BCcke (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmebrückennachweis",
   "synonyms": [],
   "categories": [
     "normen",
     "physik"
   ],
-  "definition": "Berechnung oder Bewertung der Wärmebrückenwirkung eines Gebäudes, um zusätzliche Wärmeverluste und kritische Oberflächentemperaturen einzuschätzen.",
+  "definition": "Berechnung oder Bewertung der Wärmebrückenwirkung eines Gebäudes, um zusätzliche Wärmeverluste und kritische Oberflächentemperaturen einzuschätzen. Er kann detailliert für einzelne Anschlüsse oder über einen Gleichwertigkeitsnachweis nach DIN 4108 Beiblatt 2 erfolgen und bestimmt den anzusetzenden Wärmebrückenzuschlag.",
   "related": []
 }

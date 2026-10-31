@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-kfe",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Absperrhahn“, https://de.wikipedia.org/wiki/Absperrhahn (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "KFE – Kesselfüll- und Entleerungshahn",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "heizung"
   ],
-  "definition": "Abkürzung für Kesselfüll- und Entleerungshahn.",
+  "definition": "Abkürzung für Kesselfüll- und Entleerungshahn. Der Hahn dient zum Befüllen und Entleeren von Heizungsanlagen und Wärmeerzeugern.",
   "related": [
     "lexicon.kfe-hahn"
   ]

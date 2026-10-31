@@ -2,14 +2,14 @@
   "id": "lexicon.nutzungsgrad",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Nutzungsgrad“, https://de.wikipedia.org/wiki/Nutzungsgrad (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Nutzungsgrad",
   "synonyms": [],
   "categories": [
     "physik"
   ],
-  "definition": "Verhältnis von nutzbar abgegebener Energie zu zugeführter Energie über einen definierten Zeitraum oder Prozess.",
+  "definition": "Verhältnis von nutzbar abgegebener Energie zu zugeführter Energie über einen definierten Zeitraum oder Prozess. Im Unterschied zum Wirkungsgrad, der einen Betriebspunkt beschreibt, erfasst er auch Teillast-, Bereitschafts- und Stillstandsverluste.",
   "related": []
 }

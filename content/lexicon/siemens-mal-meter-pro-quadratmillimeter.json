@@ -1,10 +1,10 @@
 {
   "id": "lexicon.siemens-mal-meter-pro-quadratmillimeter",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Elektr. Leitfähigkeit“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Siemens%20mal%20Meter%20pro%20Quadratmillimeter",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Siemens mal Meter pro Quadratmillimeter",
   "synonyms": [
     "S·m/mm²"

@@ -2,9 +2,9 @@
   "id": "lexicon.trinkwassererwaermung-im-durchfluss",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Frischwasserstation“, https://de.wikipedia.org/wiki/Frischwasserstation (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Trinkwassererwärmung im Durchfluss",
   "synonyms": [
     "instantaneous water heating"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Erwärmung von Trinkwasser bei Bedarf während des Durchströmens eines Wärmeübertragers, ohne große Mengen Warmwasser im Trinkwasserbehälter zu speichern.",
+  "definition": "Erwärmung von Trinkwasser bei Bedarf während des Durchströmens eines Wärmeübertragers, ohne große Mengen Warmwasser im Trinkwasserbehälter zu speichern. Beispiele sind Durchlauferhitzer und Frischwasserstationen; wegen des geringen Wasserinhalts gilt sie als hygienisch günstig, braucht aber eine hohe momentane Leistung.",
   "related": []
 }

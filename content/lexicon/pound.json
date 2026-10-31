@@ -1,10 +1,10 @@
 {
   "id": "lexicon.pound",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Gewicht“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Pound",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Pound",
   "synonyms": [
     "Pound (avoirdupois)",

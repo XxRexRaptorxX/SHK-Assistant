@@ -2,9 +2,9 @@
   "id": "lexicon.pufferspeicherladung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Puffer (Heiztechnik)“, https://de.wikipedia.org/wiki/Puffer_(Heiztechnik) (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Pufferspeicherladung",
   "synonyms": [
     "buffer tank charging"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Übertragung von Wärme in einen Pufferspeicher, bis eine definierte Ladebedingung erreicht wird.",
+  "definition": "Übertragung von Wärme in einen Pufferspeicher, bis eine definierte Ladebedingung erreicht wird. Gesteuert wird sie meist über Temperaturfühler in verschiedenen Höhen; eine gute Schichtung erhält die nutzbare Temperatur im oberen Bereich.",
   "related": []
 }

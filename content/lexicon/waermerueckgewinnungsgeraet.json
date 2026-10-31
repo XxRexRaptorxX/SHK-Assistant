@@ -2,9 +2,9 @@
   "id": "lexicon.waermerueckgewinnungsgeraet",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmerückgewinnung“, https://de.wikipedia.org/wiki/W%C3%A4rmer%C3%BCckgewinnung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmerückgewinnungsgerät",
   "synonyms": [
     "heat recovery unit"
@@ -12,6 +12,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Gerät, das Wärme aus einem Abluft- oder Prozessstrom auf einen anderen Strom überträgt.",
+  "definition": "Gerät, das Wärme aus einem Abluft- oder Prozessstrom auf einen anderen Strom überträgt. In der Wohnungslüftung sind Kreuz- oder Kreuzgegenstrom-Plattenwärmeübertrager verbreitet, in größeren Anlagen auch Rotations- oder Kreislaufverbundsysteme.",
   "related": []
 }

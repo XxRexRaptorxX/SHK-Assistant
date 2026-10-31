@@ -2,9 +2,9 @@
   "id": "lexicon.feuerungsautomat",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Feuerungsautomat“, https://de.wikipedia.org/wiki/Feuerungsautomat (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Feuerungsautomat",
   "synonyms": [
     "burner control unit"
@@ -13,6 +13,6 @@
     "gas",
     "msr"
   ],
-  "definition": "Steuer- und Überwachungseinrichtung, die Start, Zündung, Flammenüberwachung und sicherheitsbedingte Abschaltungen einer Feuerung kontrolliert.",
+  "definition": "Steuer- und Überwachungseinrichtung, die Start, Zündung, Flammenüberwachung und sicherheitsbedingte Abschaltungen einer Feuerung kontrolliert. Er überwacht die Flamme meist über eine Ionisationselektrode und geht bei Störungen in eine Störabschaltung mit Verriegelung.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.temperaturhub",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmepumpe“, https://de.wikipedia.org/wiki/W%C3%A4rmepumpe (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Temperaturhub",
   "synonyms": [
     "temperature lift"
@@ -13,6 +13,6 @@
     "kaelte",
     "physik"
   ],
-  "definition": "Temperaturdifferenz zwischen Eintritts- und Austrittstemperatur eines Mediums oder zwischen Ausgangs- und Zieltemperatur.",
+  "definition": "Temperaturdifferenz, um die ein Medium oder Prozess angehoben wird, zum Beispiel von der Eintritts- zur Austrittstemperatur. Bei Wärmepumpen bezeichnet er die Differenz zwischen Wärmequelle und Wärmesenke; je kleiner er ist, desto höher ist die Leistungszahl.",
   "related": []
 }

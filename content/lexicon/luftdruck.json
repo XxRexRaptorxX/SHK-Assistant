@@ -1,10 +1,10 @@
 {
   "id": "lexicon.luftdruck",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Wikipedia „Luftdruck“, https://de.wikipedia.org/wiki/Luftdruck",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Luftdruck",
   "synonyms": [
     "air pressure"

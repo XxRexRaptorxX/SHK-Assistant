@@ -2,9 +2,9 @@
   "id": "lexicon.thermostatarmatur-dusche",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Mischbatterie“, https://de.wikipedia.org/wiki/Mischbatterie (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Thermostatarmatur Dusche",
   "synonyms": [
     "thermostatic shower mixer"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Duscharmatur, die die eingestellte Mischwassertemperatur reguliert und je nach Ausführung einen Verbrühungsschutz bietet.",
+  "definition": "Duscharmatur, die die eingestellte Mischwassertemperatur reguliert und je nach Ausführung einen Verbrühungsschutz bietet. Ein Dehnstoffelement gleicht Schwankungen von Druck und Temperatur aus; eine Temperatursperre, meist bei 38 °C, erschwert unbeabsichtigtes Verbrühen.",
   "related": []
 }

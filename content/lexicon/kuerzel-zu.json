@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kuerzel-zu",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Branchenübliche Abkürzung; deutsche Kurzzeichen nach VDI 4700 Blatt 2, englische nach DIN EN 16798-3; eigene Kurzbeschreibung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "ZU – Zuluft",
   "synonyms": [
     "ZUL",

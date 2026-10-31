@@ -2,9 +2,9 @@
   "id": "lexicon.spezifische-verdampfungswaerme",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Verdampfungsenthalpie“, https://de.wikipedia.org/wiki/Verdampfungsenthalpie (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Spezifische Verdampfungswärme",
   "synonyms": [
     "specific latent heat of vaporisation"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Wärmeenergie pro Masseneinheit, die bei einem definierten Phasenwechsel von Flüssigkeit zu Dampf benötigt wird.",
+  "definition": "Wärmeenergie pro Masseneinheit, die bei einem definierten Phasenwechsel von Flüssigkeit zu Dampf benötigt wird. Für Wasser beträgt sie bei 100 °C rund 2.257 kJ/kg; bei niedrigeren Temperaturen ist sie etwas größer.",
   "related": []
 }

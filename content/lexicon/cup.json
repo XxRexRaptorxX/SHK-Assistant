@@ -1,10 +1,10 @@
 {
   "id": "lexicon.cup",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumen“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Cup",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Cup",
   "synonyms": [
     "Cup (US)"

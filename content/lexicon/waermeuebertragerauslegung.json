@@ -2,9 +2,9 @@
   "id": "lexicon.waermeuebertragerauslegung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmetauscher“, https://de.wikipedia.org/wiki/W%C3%A4rmetauscher (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmeübertragerauslegung",
   "synonyms": [
     "heat exchanger sizing"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Dimensionierung eines Wärmeübertragers anhand der erforderlichen Leistung, Temperaturdifferenzen, Medien, Druckverluste und Betriebsbedingungen.",
+  "definition": "Dimensionierung eines Wärmeübertragers anhand der erforderlichen Leistung, Temperaturdifferenzen, Medien, Druckverluste und Betriebsbedingungen. Wichtige Größen sind Wärmeübertragungsfläche, Wärmedurchgangskoeffizient und mittlere logarithmische Temperaturdifferenz.",
   "related": []
 }

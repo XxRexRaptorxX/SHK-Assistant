@@ -2,14 +2,14 @@
   "id": "lexicon.nennwaermeleistung-versus-feuerungswaermeleistung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Nennleistung“, https://de.wikipedia.org/wiki/Nennleistung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Nennwärmeleistung versus Feuerungswärmeleistung",
   "synonyms": [],
   "categories": [
     "heizung"
   ],
-  "definition": "Nennwärmeleistung bezeichnet die nutzbare Wärmeabgabe eines Wärmeerzeugers; Feuerungswärmeleistung bezeichnet die über den Brennstoff zugeführte Leistung.",
+  "definition": "Nennwärmeleistung bezeichnet die nutzbare Wärmeabgabe eines Wärmeerzeugers; Feuerungswärmeleistung bezeichnet die über den Brennstoff zugeführte Leistung. Die Differenz entspricht den Verlusten, vor allem dem Abgasverlust; bei Brennwertgeräten kann die Nennwärmeleistung sogar über der auf den Heizwert bezogenen Feuerungswärmeleistung liegen.",
   "related": []
 }

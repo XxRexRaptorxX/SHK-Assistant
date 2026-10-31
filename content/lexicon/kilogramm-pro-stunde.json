@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kilogramm-pro-stunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Massenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilogramm%20pro%20Stunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kilogramm pro Stunde",
   "synonyms": [
     "kg/h",

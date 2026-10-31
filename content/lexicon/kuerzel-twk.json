@@ -1,17 +1,17 @@
 {
   "id": "lexicon.kuerzel-twk",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Trinkwasser“, https://de.wikipedia.org/wiki/Trinkwasser (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "TWK – Trinkwasser kalt",
   "synonyms": [],
   "categories": [
     "kuerzel",
     "trinkwasser"
   ],
-  "definition": "Ältere deutsche Abkürzung für Trinkwasser kalt; heute nach Norm meist PWC.",
+  "definition": "Ältere deutsche Abkürzung für Trinkwasser kalt; heute nach Norm meist PWC. In älteren Plänen und Unterlagen ist die Abkürzung weiterhin häufig zu finden.",
   "related": [
     "lexicon.kuerzel-pwc"
   ]

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kubikmeter-pro-sekunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Volumenstrom“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kubikmeter%20pro%20Sekunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kubikmeter pro Sekunde",
   "synonyms": [
     "m³/s",

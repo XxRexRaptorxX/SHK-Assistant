@@ -2,9 +2,9 @@
   "id": "lexicon.feuerungswaermeleistung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Feuerungswärmeleistung“, https://de.wikipedia.org/wiki/Feuerungsw%C3%A4rmeleistung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Feuerungswärmeleistung",
   "synonyms": [
     "heat input"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Wärmeleistung, die dem Verbrennungsprozess über den Brennstoff zugeführt wird, bezogen auf den verwendeten Heiz- oder Brennwert gemäß Angabe.",
+  "definition": "Wärmeleistung, die einer Feuerungsanlage im Dauerbetrieb über den Brennstoff zugeführt wird, üblicherweise bezogen auf den Heizwert. Nach Abzug der Verluste ergibt sich daraus die Wärmeleistung der Anlage; die Feuerungswärmeleistung ist zum Beispiel für immissionsschutzrechtliche Einstufungen maßgeblich.",
   "related": []
 }

@@ -2,9 +2,9 @@
   "id": "lexicon.a2l-kaeltemittel",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kältemittel“, https://de.wikipedia.org/wiki/K%C3%A4ltemittel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "A2L-Kältemittel",
   "synonyms": [
     "A2L refrigerant"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Sicherheitsklasse für Kältemittel mit geringer Brennbarkeit und niedriger Flammenausbreitungsgeschwindigkeit nach der entsprechenden Klassifizierung.",
+  "definition": "Sicherheitsgruppe nach DIN EN 378 beziehungsweise ISO 817 für Kältemittel mit geringer Giftigkeit (A) und geringer Brennbarkeit (2L) bei niedriger Flammenausbreitungsgeschwindigkeit. Beispiele sind R32 und R1234yf; für Aufstellung, Füllmenge und Lüftung gelten besondere Anforderungen.",
   "related": []
 }

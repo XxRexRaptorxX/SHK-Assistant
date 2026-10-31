@@ -2,9 +2,9 @@
   "id": "lexicon.kaelteleistungsbedarf",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kühllast“, https://de.wikipedia.org/wiki/K%C3%BChllast (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kälteleistungsbedarf",
   "synonyms": [
     "required cooling capacity"
@@ -12,6 +12,6 @@
   "categories": [
     "kaelte"
   ],
-  "definition": "Erforderliche Kälteleistung zur Abdeckung der Wärmeeinträge eines Raums oder Prozesses unter festgelegten Auslegungsbedingungen.",
+  "definition": "Erforderliche Kälteleistung zur Abdeckung der Wärmeeinträge eines Raums oder Prozesses unter festgelegten Auslegungsbedingungen. Er ergibt sich aus der Kühllast, in Deutschland berechnet nach VDI 2078, zuzüglich etwaiger Prozess- und Verteilverluste.",
   "related": []
 }

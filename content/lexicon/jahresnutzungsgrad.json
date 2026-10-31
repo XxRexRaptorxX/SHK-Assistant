@@ -2,15 +2,15 @@
   "id": "lexicon.jahresnutzungsgrad",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Nutzungsgrad“, https://de.wikipedia.org/wiki/Nutzungsgrad (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Jahresnutzungsgrad",
   "synonyms": [],
   "categories": [
     "heizung",
     "physik"
   ],
-  "definition": "Verhältnis der über einen Zeitraum nutzbar abgegebenen Energie zur zugeführten Energie, unter Berücksichtigung der gewählten Systemgrenze und des Betriebsverlaufs.",
+  "definition": "Verhältnis der über einen Zeitraum nutzbar abgegebenen Energie zur zugeführten Energie, unter Berücksichtigung der gewählten Systemgrenze und des Betriebsverlaufs. Anders als der Wirkungsgrad bei Nennlast berücksichtigt er Teillast, Stillstandsverluste und Taktbetrieb und liegt daher meist niedriger.",
   "related": []
 }

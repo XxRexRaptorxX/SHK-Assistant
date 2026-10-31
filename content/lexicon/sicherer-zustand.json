@@ -2,9 +2,9 @@
   "id": "lexicon.sicherer-zustand",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Funktionale Sicherheit“, https://de.wikipedia.org/wiki/Funktionale_Sicherheit (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Sicherer Zustand",
   "synonyms": [
     "safe state"
@@ -12,6 +12,6 @@
   "categories": [
     "normen"
   ],
-  "definition": "Zustand einer Anlage, in dem die betrachteten Gefährdungen ausreichend begrenzt sind, beispielsweise durch Abschaltung oder sichere Druckentlastung.",
+  "definition": "Zustand einer Anlage, in dem die betrachteten Gefährdungen ausreichend begrenzt sind, beispielsweise durch Abschaltung oder sichere Druckentlastung. Er wird bei der Planung festgelegt und muss auch bei Energieausfall erreicht werden, zum Beispiel durch Federrücklauf oder stromlos schließende Ventile.",
   "related": []
 }

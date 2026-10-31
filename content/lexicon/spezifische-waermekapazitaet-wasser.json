@@ -2,9 +2,9 @@
   "id": "lexicon.spezifische-waermekapazitaet-wasser",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Spezifische Wärmekapazität“, https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Spezifische Wärmekapazität Wasser",
   "synonyms": [
     "specific heat capacity of water"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Wärmekapazität pro Masseneinheit von Wasser; der Wert hängt von Temperatur und Zustand ab und wird für technische Berechnungen häufig näherungsweise angesetzt.",
+  "definition": "Wärmekapazität pro Masseneinheit von Wasser; der Wert hängt von Temperatur und Zustand ab und wird für technische Berechnungen häufig näherungsweise angesetzt. Im üblichen Heizungsbereich rechnet man mit etwa 4,18 kJ/(kg·K) beziehungsweise 1,163 Wh/(kg·K).",
   "related": []
 }

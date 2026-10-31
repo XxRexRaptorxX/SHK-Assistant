@@ -2,9 +2,9 @@
   "id": "lexicon.heizungstechnik",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heiztechnik“, https://de.wikipedia.org/wiki/Heiztechnik (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Heizungstechnik",
   "synonyms": [
     "heating technology"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Fachgebiet zur Erzeugung, Verteilung und Abgabe von Wärme in Gebäuden und Prozessen.",
+  "definition": "Fachgebiet zur Erzeugung, Verteilung und Abgabe von Wärme in Gebäuden und Prozessen. Sie ist Teil der technischen Gebäudeausrüstung und eng mit Sanitär-, Lüftungs- und Klimatechnik verbunden.",
   "related": []
 }

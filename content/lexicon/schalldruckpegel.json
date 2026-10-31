@@ -2,9 +2,9 @@
   "id": "lexicon.schalldruckpegel",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Schalldruckpegel“, https://de.wikipedia.org/wiki/Schalldruckpegel (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Schalldruckpegel",
   "synonyms": [
     "sound pressure level"
@@ -12,6 +12,6 @@
   "categories": [
     "physik"
   ],
-  "definition": "Logarithmisches Maß für den Schalldruck relativ zu einem Referenzwert, angegeben in Dezibel (dB).",
+  "definition": "Logarithmisches Maß für den Schalldruck relativ zu einem Referenzwert, angegeben in Dezibel (dB). Der Bezugswert ist 20 µPa; eine Erhöhung um etwa 10 dB wird als Verdopplung der Lautstärke empfunden. Der Wert hängt vom Abstand zur Schallquelle ab.",
   "related": []
 }

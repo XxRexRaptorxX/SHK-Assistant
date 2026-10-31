@@ -2,14 +2,14 @@
   "id": "lexicon.waermebedarf-warmwasser-berechnen",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Wärmekapazität“, https://de.wikipedia.org/wiki/W%C3%A4rmekapazit%C3%A4t (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Wärmebedarf Warmwasser berechnen",
   "synonyms": [],
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Der Wärmebedarf für die Wassererwärmung hängt von Wassermasse, spezifischer Wärmekapazität und Temperaturerhöhung ab; Speicher- und Verteilverluste können zusätzlich anfallen.",
+  "definition": "Der Wärmebedarf für die Wassererwärmung hängt von Wassermasse, spezifischer Wärmekapazität und Temperaturerhöhung ab; Speicher- und Verteilverluste können zusätzlich anfallen. Es gilt Q = m · c · ΔT; für 100 l Wasser von 10 auf 60 °C sind das etwa 5,8 kWh.",
   "related": []
 }

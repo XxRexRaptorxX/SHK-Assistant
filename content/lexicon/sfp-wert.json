@@ -2,9 +2,9 @@
   "id": "lexicon.sfp-wert",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Spezifische Ventilatorleistung“, https://de.wikipedia.org/wiki/Spezifische_Ventilatorleistung (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "SFP-Wert",
   "synonyms": [
     "SFP"
@@ -12,6 +12,6 @@
   "categories": [
     "lueftung"
   ],
-  "definition": "Specific Fan Power: spezifische Ventilatorleistung, häufig angegeben als elektrische Leistung pro gefördertem Luftvolumenstrom.",
+  "definition": "Specific Fan Power: spezifische Ventilatorleistung, häufig angegeben als elektrische Leistung pro gefördertem Luftvolumenstrom. Die Einheit ist W/(m³/s); kleine Werte stehen für einen sparsamen Ventilatorbetrieb, Klassen dafür enthält DIN EN 16798-3.",
   "related": []
 }

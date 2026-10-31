@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kuerzel-trwi",
   "visibility": "public",
-  "status": "draft",
-  "source": "Branchenübliche Abkürzung; eigene Kurzbeschreibung, nicht einzeln verifiziert",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Wikipedia „Liste der DIN-Normen“, https://de.wikipedia.org/wiki/Liste_der_DIN-Normen (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "TRWI – Technische Regeln für Trinkwasser-Installationen",
   "synonyms": [],
   "categories": [
@@ -12,7 +12,7 @@
     "normen",
     "trinkwasser"
   ],
-  "definition": "Abkürzung für Technische Regeln für Trinkwasser-Installationen, die Normenreihe DIN 1988.",
+  "definition": "Abkürzung für Technische Regeln für Trinkwasser-Installationen, die Normenreihe DIN 1988. Die DIN 1988 ergänzt in Deutschland die europäische Normenreihe DIN EN 806.",
   "related": [
     "lexicon.din-1988"
   ]

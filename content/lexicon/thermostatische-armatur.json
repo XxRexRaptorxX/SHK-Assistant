@@ -2,9 +2,9 @@
   "id": "lexicon.thermostatische-armatur",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Mischbatterie“, https://de.wikipedia.org/wiki/Mischbatterie (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Thermostatische Armatur",
   "synonyms": [
     "thermostatic mixer"
@@ -12,6 +12,6 @@
   "categories": [
     "trinkwasser"
   ],
-  "definition": "Armatur, die durch ein thermostatisches Regelelement die Mischwassertemperatur weitgehend konstant hält, solange die Betriebsbedingungen dies erlauben.",
+  "definition": "Armatur, die durch ein thermostatisches Regelelement die Mischwassertemperatur weitgehend konstant hält, solange die Betriebsbedingungen dies erlauben. Fällt das Kaltwasser aus, sperren viele Ausführungen auch das Warmwasser, um Verbrühungen zu verhindern.",
   "related": []
 }

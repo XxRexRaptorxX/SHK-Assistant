@@ -2,9 +2,9 @@
   "id": "lexicon.pumpenkennlinie",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Kennlinie“, https://de.wikipedia.org/wiki/Kennlinie (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Pumpenkennlinie",
   "synonyms": [
     "pump curve"
@@ -12,6 +12,6 @@
   "categories": [
     "hydraulik"
   ],
-  "definition": "Kurve, die den Zusammenhang zwischen Förderstrom und Förderhöhe einer Pumpe bei festgelegten Bedingungen beschreibt.",
+  "definition": "Kurve, die den Zusammenhang zwischen Förderstrom und Förderhöhe einer Pumpe bei festgelegten Bedingungen beschreibt. Mit steigendem Volumenstrom sinkt die Förderhöhe; der Schnittpunkt mit der Anlagenkennlinie ergibt den Betriebspunkt. Bei drehzahlgeregelten Pumpen gilt für jede Drehzahl eine eigene Kennlinie.",
   "related": []
 }

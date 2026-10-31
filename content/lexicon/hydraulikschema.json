@@ -2,9 +2,9 @@
   "id": "lexicon.hydraulikschema",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Rohrleitungs- und Instrumentenfließschema“, https://de.wikipedia.org/wiki/Rohrleitungs-_und_Instrumentenflie%C3%9Fschema (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Hydraulikschema",
   "synonyms": [
     "hydraulic schematic"
@@ -12,6 +12,6 @@
   "categories": [
     "hydraulik"
   ],
-  "definition": "Schematische Darstellung der hydraulischen Komponenten und Verbindungen einer Anlage, beispielsweise Wärmeerzeuger, Pumpen, Ventile, Speicher und Heizkreise.",
+  "definition": "Schematische Darstellung der hydraulischen Komponenten und Verbindungen einer Anlage, beispielsweise Wärmeerzeuger, Pumpen, Ventile, Speicher und Heizkreise. Es verwendet genormte Sinnbilder und ist Grundlage für Montage, Inbetriebnahme, hydraulischen Abgleich und Fehlersuche.",
   "related": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "lexicon.kilometer-pro-stunde-und-sekunde",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Eigene Kurzbeschreibung; Umrechnung berechnet aus dem Umrechner „Beschleunigung“; Wikipedia-Suche: https://de.wikipedia.org/w/index.php?search=Kilometer%20pro%20Stunde%20und%20Sekunde",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kilometer pro Stunde und Sekunde",
   "synonyms": [
     "km/(h·s)",

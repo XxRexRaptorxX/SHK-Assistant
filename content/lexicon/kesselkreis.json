@@ -2,9 +2,9 @@
   "id": "lexicon.kesselkreis",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Heizkreis“, https://de.wikipedia.org/wiki/Heizkreis (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Kesselkreis",
   "synonyms": [
     "boiler circuit"
@@ -12,6 +12,6 @@
   "categories": [
     "heizung"
   ],
-  "definition": "Hydraulischer Kreislauf zwischen Wärmeerzeuger und unmittelbar zugehörigen Komponenten, beispielsweise hydraulischer Weiche oder Speicher.",
+  "definition": "Hydraulischer Kreislauf zwischen Wärmeerzeuger und unmittelbar zugehörigen Komponenten, beispielsweise hydraulischer Weiche oder Speicher. Er hat oft eine eigene Pumpe und ist bei Anlagen mit hydraulischer Weiche von den Heizkreisen entkoppelt.",
   "related": []
 }

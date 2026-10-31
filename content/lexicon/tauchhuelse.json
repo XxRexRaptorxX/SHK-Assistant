@@ -2,9 +2,9 @@
   "id": "lexicon.tauchhuelse",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Tauchhülse“, https://de.wikipedia.org/wiki/Tauchh%C3%BClse (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Tauchhülse",
   "synonyms": [
     "thermowell"
@@ -12,6 +12,6 @@
   "categories": [
     "msr"
   ],
-  "definition": "Hülse, in die ein Temperaturfühler eingesetzt wird, damit er die Temperatur eines Mediums erfasst, ohne direkt mit diesem in Kontakt zu stehen.",
+  "definition": "Hülse, in die ein Temperaturfühler eingesetzt wird, damit er die Temperatur eines Mediums erfasst, ohne direkt mit diesem in Kontakt zu stehen. Der Fühler lässt sich so ohne Entleeren der Anlage tauschen; Wärmeleitpaste und passende Einbautiefe verbessern die Messgenauigkeit.",
   "related": []
 }

@@ -2,16 +2,18 @@
   "id": "lexicon.gebaeudeenergiegesetz",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia als Recherche-Einstieg; Definition eigenständig formuliert, nicht einzeln verifiziert",
-  "verifiedBy": "RR",
-  "verifiedAt": "2026-10-21",
+  "source": "Wikipedia „Gebäudemodernisierungsgesetz“, https://de.wikipedia.org/wiki/Geb%C3%A4udemodernisierungsgesetz (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
   "term": "Gebäudeenergiegesetz",
   "synonyms": [
-    "GEG"
+    "GEG",
+    "GModG",
+    "Gebäudemodernisierungsgesetz"
   ],
   "categories": [
     "normen"
   ],
-  "definition": "Deutsches Gesetz mit Anforderungen unter anderem an die energetische Qualität von Gebäuden und den Einsatz von Energie in Gebäuden. Für konkrete Projekte ist die geltende Fassung zu prüfen.",
+  "definition": "Deutsches Gesetz mit Anforderungen unter anderem an die energetische Qualität von Gebäuden, an Heizungsanlagen und an den Einsatz erneuerbarer Energien. Es wurde 2020 als Gebäudeenergiegesetz (GEG) erlassen und löste die EnEV ab; seit der Änderung vom 23. Juli 2026 heißt es Gebäudemodernisierungsgesetz (GModG). Für konkrete Projekte ist die geltende Fassung zu prüfen.",
   "related": []
 }
