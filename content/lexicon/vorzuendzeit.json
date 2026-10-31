@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.vorzuendzeit",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG5.../1-A LN, 83051201 1/2026-07, Kap. 3.3.4 Programmablauf, https://www.weishaupt.de/uploads/tx_weishaupt_documents/documents/83051201.pdf; Siemens, Datenblatt Ölfeuerungsautomaten LMO14/LMO24/LMO44, CC1N7130de (13.06.2012), https://www.meinhausshop.de/media/pdf/meinhausshop-20_033_32--DBL-01-de.pdf; Viessmann, Serviceanleitung Vitodens 300 Typ WB3, 5681397 (2002), Brennersteuergerät LGM29 Programmablauf, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/17457/1/5681397VSA00001_1.PDF; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Vorzündzeit",
+  "synonyms": [
+    "Vorzündung",
+    "VZZ"
+  ],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
+  "definition": "Die **Vorzündzeit** ist die Zeit, in der die Zündung bereits arbeitet, bevor das Brennstoffventil öffnet. So steht der Funke sicher, wenn der Brennstoff austritt. Bei Gasbrennern sind es meist wenige Sekunden (Weishaupt WG5: 2 s, Viessmann Vitodens 300: 3 s); bei Ölbrennern läuft die Zündung oft während der ganzen Vorspülzeit mit (Siemens LMO14: mindestens 15 s).",
+  "related": [
+    "lexicon.vorspuelzeit",
+    "lexicon.sicherheitszeit",
+    "lexicon.zuendelektrode"
+  ]
+}

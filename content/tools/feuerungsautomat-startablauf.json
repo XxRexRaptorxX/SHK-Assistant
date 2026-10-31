@@ -1,0 +1,804 @@
+{
+  "id": "tool.feuerungsautomat-startablauf",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Gas-Gebläsebrenner: Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG5.../1-A LN, 83051201 1/2026-07, Kap. 3.3.4 Programmablauf, Kap. 7.1.1 Ionisationsstrom und Kap. 10 Fehlersuche, https://www.weishaupt.de/uploads/tx_weishaupt_documents/documents/83051201.pdf. Öl-Gebläsebrenner: Siemens, Datenblatt Ölfeuerungsautomaten LMO14/LMO24/LMO44, CC1N7130de (13.06.2012), Typ LMO14.111C2 (Vergleichstyp LOA24.171B27), https://www.meinhausshop.de/media/pdf/meinhausshop-20_033_32--DBL-01-de.pdf. Gas-Brennwertgerät: Viessmann, Serviceanleitung Vitodens 300 Typ WB3, 5681397 (2002), Brennersteuergerät LGM29 Programmablauf und Diagnosetabelle, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/17457/1/5681397VSA00001_1.PDF; Prüfreihenfolge bei fehlender Flamme nach Buderus, Installations- und Wartungsanleitung Logamax plus GB192i.2, 6721831082 (2024/03), Störungscodes, https://www.heizungsdiscount24.de/pdf/Buderus-Gas-Brennwertkessel-GB192i-2i-Installationsanleitung.pdf. Atmosphärisches Gasgerät: Wikipedia „Zündsicherung“, Abschnitt Thermoelektrische Zündsicherung, https://de.wikipedia.org/wiki/Z%C3%BCndsicherung. Zeiten sind Werte dieser Beispielgeräte; Ursachen bei Motor, Zündung und thermoelektrischer Zündsicherung teils eigene Zusammenstellung. Alle abgerufen am 31.10.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "sequence",
+  "title": "Startablauf Feuerungsautomat",
+  "description": "Zeigt den Startablauf von Gas- und Ölbrennern als Zeitdiagramm, misst die Phasen mit der Stoppuhr mit und nennt bei einer Störung die Ursachen in Prüfreihenfolge.\n\nDie Zeiten stammen von verbreiteten Beispielgeräten. Maßgeblich sind immer die Angaben des eingebauten Automaten bzw. Geräts.",
+  "category": "Wartung",
+  "name": "Brennerart",
+  "variants": [
+    {
+      "key": "gas",
+      "label": "Gas",
+      "note": "Gebläse",
+      "title": "Gas-Gebläsebrenner",
+      "description": "Zeiten am Beispiel des Weishaupt-Gasbrenners WG5 (Stand 2026). Flammenüberwachung über eine Ionisationselektrode.",
+      "signals": [
+        {
+          "key": "regler",
+          "label": "Wärme\u00adanforderung"
+        },
+        {
+          "key": "gasdruck",
+          "label": "Gasdruck\u00adwächter"
+        },
+        {
+          "key": "motor",
+          "label": "Gebläse\u00admotor"
+        },
+        {
+          "key": "luftdruck",
+          "label": "Luftdruck\u00adwächter"
+        },
+        {
+          "key": "zuendung",
+          "label": "Zündung"
+        },
+        {
+          "key": "ventil",
+          "label": "Gasventil"
+        },
+        {
+          "key": "flamme",
+          "label": "Flammen\u00adsignal"
+        }
+      ],
+      "phases": [
+        {
+          "key": "init",
+          "label": "Wartezeit",
+          "abbr": "WZ",
+          "term": "Wartezeit",
+          "duration": "1 s",
+          "seconds": 1,
+          "repeat": {
+            "short": "10 min",
+            "text": "Bei Gasmangel startet der Brenner nicht; nach 10 Minuten Wartezeit versucht er es automatisch erneut."
+          },
+          "event": "Regler fordert Wärme an",
+          "signals": [
+            "regler",
+            "gasdruck"
+          ],
+          "description": "Der Feuerungsmanager prüft nach der Wärmeanforderung seine Eingänge (bei Weishaupt Initialisierungszeit TI). Der Gasdruckwächter muss ausreichenden Gasanschlussdruck melden; sonst läuft ein Gasmangelprogramm.",
+          "check": "Kommt keine Wärmeanforderung an, Regler und Temperatur- oder Druckbegrenzer prüfen. Läuft der Brenner gar nicht an, Gasanschlussdruck messen."
+        },
+        {
+          "key": "vorbelueftung",
+          "label": "Vorspülzeit",
+          "abbr": "VS",
+          "term": "Vorspülzeit",
+          "duration": "20 s",
+          "seconds": 20,
+          "repeat": {
+            "short": "keine",
+            "text": "Keine. Schaltet der Luftdruckwächter nicht, verriegelt der Brenner nach etwa 2 Minuten."
+          },
+          "event": "Gebläsemotor läuft an",
+          "signals": [
+            "regler",
+            "gasdruck",
+            "motor",
+            "luftdruck"
+          ],
+          "description": "Das Gebläse spült Feuerraum und Abgasweg mit Luft (bei Weishaupt Vorbelüftung TV). Dabei muss der Luftdruckwächter schalten. Insgesamt dauert die Vorspülung rund 22 s; in den letzten 2 s ist bereits die Zündung an.",
+          "check": "Gebläse hörbar? Schaltet der Luftdruckwächter nicht, geht der Brenner nach etwa 2 Minuten auf Störung: Schläuche, Einstellung und Leitung des Luftdruckwächters prüfen."
+        },
+        {
+          "key": "vorzuendung",
+          "label": "Vorzündzeit",
+          "abbr": "VZZ",
+          "term": "Vorzündzeit",
+          "duration": "2 s",
+          "seconds": 2,
+          "event": "Zündfunke hörbar",
+          "signals": [
+            "regler",
+            "gasdruck",
+            "motor",
+            "luftdruck",
+            "zuendung"
+          ],
+          "description": "Kurz vor Ende der Vorspülzeit startet die Zündung. Der Funke steht, bevor Gas fließt.",
+          "check": "Zündfunke hörbar bzw. im Schauglas sichtbar? Sonst Zündelektrode (Abstand, Verschmutzung, Feuchte, Keramik), Zündleitung und Zündgerät prüfen."
+        },
+        {
+          "key": "sicherheitszeit",
+          "label": "Sicherheitszeit",
+          "abbr": "SZ",
+          "term": "Sicherheitszeit",
+          "duration": "max. 3 s",
+          "seconds": 3,
+          "limit": "max",
+          "repeat": {
+            "short": "keine",
+            "text": "Keine. Ohne Flamme am Ende der Sicherheitszeit verriegelt der Brenner. Von Hand höchstens 2-mal hintereinander entriegeln."
+          },
+          "event": "Gasventil öffnet, Flamme bildet sich",
+          "signals": [
+            "regler",
+            "gasdruck",
+            "motor",
+            "luftdruck",
+            "zuendung",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Das Gasdoppelventil gibt den Brennstoff frei; gleichzeitig beginnen Sicherheitszeit (3 s) und Nachzündzeit (rund 3 s). Innerhalb der Sicherheitszeit muss die Ionisationselektrode die Flamme melden, sonst schließt das Ventil und der Brenner verriegelt.",
+          "check": "Ionisationsstrom messen (Messgerät in Reihe): mindestens 1,5 µA, empfohlen 5 bis 20 µA. Ein Flammensignal ab 0,8 µA vor dem Start gilt als Fremdlicht."
+        },
+        {
+          "key": "betrieb",
+          "label": "Betrieb",
+          "abbr": "B",
+          "term": "Brennerbetrieb",
+          "repeat": {
+            "short": "keine",
+            "text": "Keine. Fällt die Flamme im Betrieb aus, verriegelt der Brenner."
+          },
+          "event": "Flamme brennt, Zündung aus",
+          "signals": [
+            "regler",
+            "gasdruck",
+            "motor",
+            "luftdruck",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Der Feuerungsmanager überwacht die Flamme, solange Wärme angefordert wird. Endet die Anforderung, schließt das Gasventil und das Gebläse belüftet noch rund 5 s nach.",
+          "check": "Bei schwachem Flammensignal Brennereinstellung und Ionisationselektrode prüfen."
+        }
+      ],
+      "faults": [
+        {
+          "symptom": "Brenner läuft nicht an",
+          "phase": "init",
+          "causes": [
+            "Keine Wärmeanforderung: Regler sowie Temperatur- oder Druckbegrenzer prüfen",
+            "Gasmangel: Gasanschlussdruck prüfen, Gasdruckwächter einstellen bzw. prüfen (nach 10 Minuten startet der Brenner selbst neu)",
+            "Spannungsversorgung prüfen: Über- oder Unterspannung, interne Gerätesicherung",
+            "Feuerungsmanager: Parameter geändert oder defekt; entriegeln, bei erneutem Auftreten tauschen"
+          ]
+        },
+        {
+          "symptom": "Gebläsemotor läuft nicht",
+          "phase": "init",
+          "causes": [
+            "Kondensator des Brennermotors defekt",
+            "Leitung zum Brennermotor defekt",
+            "Brennermotor defekt"
+          ]
+        },
+        {
+          "symptom": "Flammensignal schon vor dem Start",
+          "phase": "init",
+          "causes": [
+            "Störeinfluss auf die Ionisationsleitung suchen und beseitigen",
+            "Magnetventil undicht, Flamme bildet sich ohne Freigabe: Mehrfachstellgerät tauschen",
+            "Ionisationselektrode defekt"
+          ]
+        },
+        {
+          "symptom": "Gebläse läuft, Luftdruckwächter schaltet nicht",
+          "phase": "vorbelueftung",
+          "causes": [
+            "Schläuche am Luftdruckwächter nicht dicht angeschlossen",
+            "Luftdruckwächter falsch eingestellt",
+            "Bei Fremdluftansaugung die Luftzuführung prüfen",
+            "Leitung defekt",
+            "Luftdruckwächter defekt"
+          ]
+        },
+        {
+          "symptom": "Kein Zündfunke",
+          "phase": "vorzuendung",
+          "causes": [
+            "Zündelektrode falsch eingestellt",
+            "Zündelektrode verschmutzt oder feucht",
+            "Keramikkörper der Zündelektrode defekt",
+            "Zündleitung defekt",
+            "Zündgerät defekt"
+          ]
+        },
+        {
+          "symptom": "Zündfunke da, aber keine Flamme",
+          "phase": "sicherheitszeit",
+          "causes": [
+            "Gasdoppelventil öffnet nicht: Leitung prüfen, Spule defekt",
+            "Mischdruck in Zündposition zu hoch",
+            "Zündelektrode falsch eingestellt",
+            "Mischeinrichtung oder Zündlast falsch eingestellt"
+          ],
+          "note": "Nicht mehr als 2 Entriegelungen hintereinander; danach muss die Ursache von Fachpersonal behoben werden."
+        },
+        {
+          "symptom": "Flamme brennt kurz, Störung am Ende der Sicherheitszeit",
+          "phase": "sicherheitszeit",
+          "causes": [
+            "Ionisationsstrom zu schwach: messen (mindestens 1,5 µA, empfohlen 5 bis 20 µA)",
+            "Ionisationselektrode falsch eingestellt",
+            "Übergangswiderstand an Klemmen und Steckern prüfen",
+            "Brennereinstellung korrigieren",
+            "Netz ohne Verbindung zum Potenzialausgleich (z. B. Steuertrafo): Neutralleiter mit dem Potenzialausgleich des Gebäudes verbinden",
+            "Ionisationselektrode abgenutzt",
+            "Ionisationsleitung defekt"
+          ],
+          "note": "Nicht mehr als 2 Entriegelungen hintereinander; danach muss die Ursache von Fachpersonal behoben werden."
+        },
+        {
+          "symptom": "Flamme geht im Betrieb aus",
+          "phase": "betrieb",
+          "causes": [
+            "Brennereinstellung falsch: Flammensignal prüfen",
+            "Ionisationselektrode verschmutzt",
+            "Ionisationselektrode falsch eingestellt",
+            "Ionisationselektrode defekt"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "oel",
+      "label": "Öl",
+      "note": "Gebläse",
+      "title": "Öl-Gebläsebrenner",
+      "description": "Zeiten am Beispiel des verbreiteten Ölfeuerungsautomaten Siemens LMO14.111C2 (Nachfolger des LOA24.171B27) für Brenner unter 30 kg/h. Flammenüberwachung mit Fotowiderstand (gelbe Flamme) oder Blauflammenfühler.",
+      "signals": [
+        {
+          "key": "regler",
+          "label": "Wärme\u00adanforderung"
+        },
+        {
+          "key": "vorwaermer",
+          "label": "Ölvor\u00adwärmer"
+        },
+        {
+          "key": "motor",
+          "label": "Brenner\u00admotor"
+        },
+        {
+          "key": "zuendung",
+          "label": "Zündung"
+        },
+        {
+          "key": "ventil",
+          "label": "Ölventil"
+        },
+        {
+          "key": "flamme",
+          "label": "Flammen\u00adfühler"
+        }
+      ],
+      "phases": [
+        {
+          "key": "wartezeit",
+          "label": "Wartezeit",
+          "abbr": "WZ",
+          "term": "Wartezeit",
+          "duration": "3 s",
+          "seconds": 3,
+          "repeat": {
+            "short": "40 s",
+            "text": "Bei Fremdlicht wartet der Automat höchstens 40 s und verriegelt dann; mit Ölvorwärmer wartet er bis zu 10 Minuten auf die Freigabe."
+          },
+          "event": "Regler fordert Wärme an",
+          "signals": [
+            "regler",
+            "vorwaermer"
+          ],
+          "description": "Der Automat prüft sich selbst und den Flammenfühler; dieser muss dunkel sein. Mit Ölvorwärmer wartet er, bis dessen Freigabekontakt schließt.",
+          "check": "Schließt der Freigabekontakt des Ölvorwärmers nicht innerhalb von 10 Minuten, folgt Störabschaltung. Fremdlicht in der Wartezeit verhindert den Start, nach höchstens 40 s folgt Störabschaltung."
+        },
+        {
+          "key": "vorlueftung",
+          "label": "Vorspülzeit",
+          "abbr": "VS",
+          "term": "Vorspülzeit",
+          "duration": "min. 15 s",
+          "seconds": 15,
+          "limit": "min",
+          "repeat": {
+            "short": "keine",
+            "text": "Keine. Fremdlicht in der Vorspülzeit führt an deren Ende zur Verriegelung."
+          },
+          "event": "Brennermotor läuft an, Zündfunke hörbar",
+          "signals": [
+            "regler",
+            "vorwaermer",
+            "motor",
+            "zuendung"
+          ],
+          "description": "Motor mit Gebläse und Ölpumpe läuft, der Feuerraum wird gespült. Die Vorzündung beginnt gleichzeitig und dauert ebenfalls mindestens 15 s, damit der Funke steht, bevor Öl eingespritzt wird.",
+          "check": "Fremdlicht während der Vorspülzeit führt an deren Ende zur Störabschaltung."
+        },
+        {
+          "key": "sicherheitszeit",
+          "label": "Sicherheitszeit",
+          "abbr": "SZ",
+          "term": "Sicherheitszeit",
+          "duration": "max. 10 s",
+          "seconds": 10,
+          "limit": "max",
+          "repeat": {
+            "short": "in 10 s",
+            "text": "Reißt die Flamme in der Sicherheitszeit ab, zündet der Automat sofort erneut, aber nur bis zum Ende der 10 s. Danach ohne Flamme: Verriegelung."
+          },
+          "event": "Ölventil öffnet, Flamme bildet sich",
+          "signals": [
+            "regler",
+            "vorwaermer",
+            "motor",
+            "zuendung",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Das Ölventil gibt den Brennstoff frei. Innerhalb der Sicherheitszeit muss der Flammenfühler die Flamme melden. Reißt die Flamme in dieser Zeit ab, zündet der Automat erneut, aber nur bis zum Ende der Sicherheitszeit. Die Nachzündung läuft bis zu 10 s weiter.",
+          "check": "Flammenfühler sauber und richtig ausgerichtet? Ohne Flammenmeldung am Ende der Sicherheitszeit verriegelt der Automat."
+        },
+        {
+          "key": "betrieb",
+          "label": "Betrieb",
+          "abbr": "B",
+          "term": "Brennerbetrieb",
+          "repeat": {
+            "short": "3×",
+            "text": "Reißt die Flamme im Betrieb ab, startet der Automat bis zu 3-mal neu; beim 4. Flammenabriss verriegelt er. Der Zähler beginnt bei jeder neuen Wärmeanforderung von vorn."
+          },
+          "event": "Flamme brennt, Zündung aus",
+          "signals": [
+            "regler",
+            "vorwaermer",
+            "motor",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Bei zweistufigen Brennern gibt der Automat die zweite Stufe frühestens 15 s nach der Flammenmeldung frei (LMO24). Nach spätestens 24 Stunden Dauerbetrieb schaltet er zur Selbstprüfung ab und startet neu.",
+          "check": "Unter etwa 165 V Netzspannung schaltet der Automat ab und läuft bei wiederkehrender Spannung neu an."
+        }
+      ],
+      "faults": [
+        {
+          "symptom": "Brenner läuft nicht an",
+          "phase": "wartezeit",
+          "causes": [
+            "Keine Wärmeanforderung: Regler, Sicherheitstemperaturbegrenzer und Kontakte in der Phasenzuleitung prüfen",
+            "Automat verriegelt: Störung ablesen, Entriegelungstaster etwa 1 s drücken",
+            "Unterspannung",
+            "Ölvorwärmer gibt nicht frei (Störabschaltung nach 10 Minuten)",
+            "Fremdlicht am Flammenfühler: Startverhinderung, nach höchstens 40 s Störabschaltung"
+          ]
+        },
+        {
+          "symptom": "Brennermotor läuft nicht",
+          "phase": "wartezeit",
+          "causes": [
+            "Motorkondensator defekt",
+            "Ölpumpe oder Motor schwergängig bzw. blockiert",
+            "Leitung zum Motor defekt",
+            "Brennermotor defekt"
+          ]
+        },
+        {
+          "symptom": "Störung wegen Fremdlicht beim Start",
+          "phase": "vorlueftung",
+          "causes": [
+            "Flammenfühler erhält Licht von außen: Sitz und Abdichtung prüfen",
+            "Ölventil schließt nicht dicht, Brenner brennt nach",
+            "Flammenfühler defekt"
+          ]
+        },
+        {
+          "symptom": "Kein Zündfunke",
+          "phase": "vorlueftung",
+          "causes": [
+            "Zündelektroden verstellt oder verschmutzt",
+            "Keramik der Zündelektroden gerissen",
+            "Zündkabel defekt",
+            "Zündtrafo defekt"
+          ]
+        },
+        {
+          "symptom": "Keine Flamme am Ende der Sicherheitszeit",
+          "phase": "sicherheitszeit",
+          "causes": [
+            "Kein Brennstoff: Ölstand, Absperrung, Filter, Saugleitung und Ölpumpe prüfen",
+            "Brennstoffventil defekt oder verschmutzt",
+            "Flammenfühler defekt oder verschmutzt",
+            "Schlechte Brennereinstellung (Düse, Pumpendruck, Luft)",
+            "Zündeinrichtung defekt"
+          ],
+          "note": "Der Automat verriegelt am Ende der Sicherheitszeit; Entriegelung ist sofort möglich."
+        },
+        {
+          "symptom": "Flamme reißt im Betrieb ab",
+          "phase": "betrieb",
+          "causes": [
+            "Brennstoffventil defekt oder verschmutzt",
+            "Flammenfühler defekt oder verschmutzt",
+            "Schlechte Brennereinstellung"
+          ],
+          "note": "Bis zu 3 Wiederholungen, beim vierten Flammenabriss Störabschaltung."
+        }
+      ]
+    },
+    {
+      "key": "brennwert",
+      "label": "Brennwert",
+      "note": "Wandgerät",
+      "title": "Gas-Brennwertgerät",
+      "description": "Zeiten am Beispiel des Viessmann Vitodens 300 (Typ WB3) mit Brennersteuergerät LGM29. Viele neuere Geräte überwachen nur noch die Gebläsedrehzahl und haben keinen Luftdruckwächter; ihre Zeiten stehen in der jeweiligen Serviceanleitung.",
+      "signals": [
+        {
+          "key": "regler",
+          "label": "Wärme\u00adanforderung"
+        },
+        {
+          "key": "kette",
+          "label": "Sicher\u00adheitskette"
+        },
+        {
+          "key": "geblaese",
+          "label": "Gebläse (Drehzahl)"
+        },
+        {
+          "key": "luftdruck",
+          "label": "Luftdruck\u00adwächter"
+        },
+        {
+          "key": "zuendung",
+          "label": "Zündung"
+        },
+        {
+          "key": "ventil",
+          "label": "Gasventil"
+        },
+        {
+          "key": "flamme",
+          "label": "Flammen\u00adsignal"
+        }
+      ],
+      "phases": [
+        {
+          "key": "bereit",
+          "label": "Bereitschaft",
+          "abbr": "BB",
+          "term": "Betriebsbereitschaft",
+          "event": "Regler fordert Wärme an",
+          "signals": [
+            "regler",
+            "kette"
+          ],
+          "description": "Vor dem Start muss der Luftdruckwächter in Grundstellung sein und die Drehzahlrückmeldung den Stillstand des Gebläses melden. Die Sicherheitskette, z. B. mit dem Sicherheitstemperaturbegrenzer, muss geschlossen sein.",
+          "check": "Steht das Gerät verriegelt, Störcode ablesen und einmal entriegeln."
+        },
+        {
+          "key": "hochlauf",
+          "label": "Gebläsehochlauf",
+          "abbr": "GH",
+          "term": "Gebläsehochlauf",
+          "duration": "bis 70 s",
+          "seconds": 70,
+          "limit": "max",
+          "repeat": {
+            "short": "keine",
+            "text": "Keine. Liegen Drehzahl- und Luftdrucksignal nach 70 s nicht vor, folgt eine Störmeldung."
+          },
+          "event": "Gebläse läuft an",
+          "signals": [
+            "regler",
+            "kette",
+            "geblaese",
+            "luftdruck"
+          ],
+          "description": "Das Gebläse läuft hoch, dabei testet sich das Steuergerät selbst. Innerhalb von etwa 70 s müssen Drehzahlsignal und Luftdrucksignal vorliegen, sonst folgt eine Störmeldung.",
+          "check": "Gebläse läuft gleichmäßig hoch? Stecker und Kabel am Gebläse, Luftdruckwächter und Schläuche prüfen."
+        },
+        {
+          "key": "vorlueftung",
+          "label": "Vorspülzeit",
+          "abbr": "VS",
+          "term": "Vorspülzeit",
+          "duration": "29 s",
+          "seconds": 29,
+          "event": "Gebläse hat Drehzahl erreicht",
+          "signals": [
+            "regler",
+            "kette",
+            "geblaese",
+            "luftdruck"
+          ],
+          "description": "Das Gebläse spült Brennkammer und Abgasweg.",
+          "check": ""
+        },
+        {
+          "key": "vorzuendung",
+          "label": "Vorzündzeit",
+          "abbr": "VZZ",
+          "term": "Vorzündzeit",
+          "duration": "3 s",
+          "seconds": 3,
+          "event": "Zündfunke hörbar",
+          "signals": [
+            "regler",
+            "kette",
+            "geblaese",
+            "luftdruck",
+            "zuendung"
+          ],
+          "description": "Der Zündfunke setzt ein, bevor das Gasventil öffnet.",
+          "check": "Zündfunke hörbar? Sonst Zündelektroden, Zündkabel und Zündbaustein prüfen."
+        },
+        {
+          "key": "sicherheitszeit",
+          "label": "Sicherheitszeit",
+          "abbr": "SZ",
+          "term": "Sicherheitszeit",
+          "duration": "unter 5 s",
+          "seconds": 5,
+          "limit": "max",
+          "repeat": {
+            "short": "keine",
+            "text": "Keine. Ohne Flammenerkennung folgt Störabschaltung. Erst nach dem Entriegeln wird der Zündvorgang wiederholt."
+          },
+          "event": "Gasventil öffnet, Flamme bildet sich",
+          "signals": [
+            "regler",
+            "kette",
+            "geblaese",
+            "luftdruck",
+            "zuendung",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Die Magnetventile erhalten Spannung, die Flammenüberwachung wird aktiv. Nach etwa 4 s schaltet die Zündung ab. Erkennt das Steuergerät keine Flamme, folgt Störabschaltung.",
+          "check": "Ionisationsstrom gleich bei der Flammenbildung messen; Mindestwert laut Serviceanleitung des Geräts."
+        },
+        {
+          "key": "uebernahme",
+          "label": "Flammenübernahme",
+          "abbr": "FÜ",
+          "term": "Flammenübernahme",
+          "duration": "5 s",
+          "seconds": 5,
+          "event": "Zündung aus, Flamme brennt",
+          "signals": [
+            "regler",
+            "kette",
+            "geblaese",
+            "luftdruck",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Das Gerät brennt mit Zündlast weiter, bis die Flamme stabil ist.",
+          "check": ""
+        },
+        {
+          "key": "betrieb",
+          "label": "Betrieb",
+          "abbr": "B",
+          "term": "Brennerbetrieb",
+          "event": "Gerät moduliert",
+          "signals": [
+            "regler",
+            "kette",
+            "geblaese",
+            "luftdruck",
+            "ventil",
+            "flamme"
+          ],
+          "description": "Das Steuergerät moduliert aus der Zündlast nach dem Sollwert. Flammenausfall oder eine offene Sicherheitskette führen sofort zur Abschaltung. Nach der Regelabschaltung folgen Eigentests: Der Luftdruckwächter muss zurückschalten und die Flamme erloschen sein.",
+          "check": "Liegt nach dem Abschalten länger als 3 s noch ein Flammensignal an, geht das Gerät auf Störung."
+        }
+      ],
+      "faults": [
+        {
+          "symptom": "Gerät startet nicht",
+          "phase": "bereit",
+          "causes": [
+            "Steuergerät noch verriegelt: einmal entriegeln",
+            "Sicherheitskette offen, z. B. Sicherheitstemperaturbegrenzer ausgelöst: Umlauf des Heizwassers und Anlagendruck prüfen",
+            "Luftdruckwächter nach dem letzten Lauf nicht in Grundstellung",
+            "Gebläse nach dem letzten Lauf nicht im Stillstand"
+          ]
+        },
+        {
+          "symptom": "Flammensignal ohne Flamme",
+          "phase": "bereit",
+          "causes": [
+            "Ionisationskabel prüfen, ggf. ersetzen",
+            "Elektrodenset prüfen, ggf. ersetzen",
+            "Gasventil auf Dichtheit prüfen",
+            "Steuergerät ersetzen"
+          ]
+        },
+        {
+          "symptom": "Gebläse läuft, Störung vor der Zündung",
+          "phase": "hochlauf",
+          "causes": [
+            "Anschlussstecker und Kabel am Gebläse prüfen",
+            "Gebläsedrehzahl beim Start zu hoch oder zu niedrig",
+            "Luftdruck für das Zündniveau wird nicht erreicht: Luftdruckwächter und Schläuche prüfen",
+            "Steuergerät (Leiterplatte) defekt"
+          ]
+        },
+        {
+          "symptom": "Kein Zündfunke",
+          "phase": "vorzuendung",
+          "causes": [
+            "Zündelektrode prüfen, ggf. ersetzen",
+            "Zündkabel prüfen, ggf. ersetzen",
+            "Zündbaustein prüfen",
+            "Steuergerät prüfen"
+          ]
+        },
+        {
+          "symptom": "Kein Flammensignal nach der Zündung",
+          "phase": "sicherheitszeit",
+          "causes": [
+            "Hauptabsperreinrichtung und Geräteabsperrhahn öffnen",
+            "Gasleitung prüfen; bei der Erstinbetriebnahme kann Luft in der Leitung sein",
+            "Gasanschlussdruck prüfen",
+            "Brennerfunktion und CO₂-Gehalt prüfen, ggf. einstellen",
+            "Schutzleiteranschluss (PE) im Schaltkasten prüfen",
+            "Funktionstest für Zündung und Ionisation; Stecker der Zünd- und Ionisationsstrecke prüfen",
+            "Stecker an der Gasarmatur prüfen",
+            "Kondensatablauf prüfen",
+            "Abgasseite des Wärmetauschers auf Verschmutzung prüfen",
+            "Ionisations- und Zündelektrode prüfen, ggf. ersetzen",
+            "Zünd- und Ionisationskabel prüfen, ggf. ersetzen",
+            "Gasarmatur prüfen, ggf. ersetzen",
+            "Steuergerät prüfen, ggf. ersetzen"
+          ]
+        },
+        {
+          "symptom": "Flamme geht im Betrieb aus",
+          "phase": "betrieb",
+          "causes": [
+            "Gaszufuhr prüfen: Absperrungen und Gasleitung",
+            "Ionisationselektrode und Ionisationskabel prüfen",
+            "Schutzleiteranschluss (PE) prüfen",
+            "Brenner einstellen, auch bei minimaler Nennbelastung",
+            "Abgasanlage und Verbrennungsluftversorgung prüfen",
+            "Gasarmatur prüfen",
+            "Signalauswertung auf der Leiterplatte defekt"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "atmosphaerisch",
+      "label": "Atmosph.",
+      "note": "Zündflamme",
+      "title": "Atmosphärisches Gasgerät mit thermoelektrischer Zündsicherung",
+      "description": "Zum Beispiel ältere Gas-Durchlauferhitzer, Gasherde oder Heizstrahler: Die Zündflamme heizt ein Thermoelement, dessen Spannung den Magneteinsatz offen hält. Feste Zeiten gibt es nicht; die Haltezeit des Zündtasters steht in der Bedienungsanleitung.",
+      "signals": [
+        {
+          "key": "taster",
+          "label": "Zündtaster gedrückt"
+        },
+        {
+          "key": "magnet",
+          "label": "Magnet\u00adeinsatz offen"
+        },
+        {
+          "key": "funke",
+          "label": "Zündfunke"
+        },
+        {
+          "key": "zuendflamme",
+          "label": "Zünd\u00adflamme"
+        },
+        {
+          "key": "thermo",
+          "label": "Thermo\u00adelement warm"
+        },
+        {
+          "key": "haupt",
+          "label": "Haupt\u00adbrenner"
+        }
+      ],
+      "phases": [
+        {
+          "key": "druecken",
+          "label": "Taster drücken",
+          "abbr": "TD",
+          "term": "Thermoelektrische Zündsicherung",
+          "event": "Zündtaster drücken",
+          "signals": [
+            "taster",
+            "magnet"
+          ],
+          "description": "Der gedrückte Zündtaster hält den Magneteinsatz von Hand offen; Gas strömt zum Zündbrenner.",
+          "check": ""
+        },
+        {
+          "key": "zuenden",
+          "label": "Zünden",
+          "abbr": "ZÜ",
+          "term": "Thermoelektrische Zündsicherung",
+          "repeat": {
+            "short": "beliebig",
+            "text": "Von Hand wiederholbar, bis die Zündflamme brennt. Nach Arbeiten an der Leitung kann zunächst Luft austreten."
+          },
+          "event": "Piezozünder betätigen (Klicken)",
+          "signals": [
+            "taster",
+            "magnet",
+            "funke",
+            "zuendflamme"
+          ],
+          "description": "Der Funke entzündet das Gas am Zündbrenner.",
+          "check": "Kommt keine Zündflamme, mehrmals zünden: Nach Arbeiten an der Leitung kann zunächst Luft austreten."
+        },
+        {
+          "key": "halten",
+          "label": "Halten",
+          "abbr": "HA",
+          "term": "Thermoelektrische Zündsicherung",
+          "duration": "laut Hersteller",
+          "event": "Zündflamme brennt",
+          "signals": [
+            "taster",
+            "magnet",
+            "zuendflamme",
+            "thermo"
+          ],
+          "description": "Den Taster gedrückt halten, bis das Thermoelement genug Spannung liefert, damit der Magneteinsatz von selbst offen bleibt.",
+          "check": "Die Zündflamme muss die Spitze des Thermoelements umspülen."
+        },
+        {
+          "key": "betrieb",
+          "label": "Betrieb",
+          "abbr": "B",
+          "term": "Thermoelektrische Zündsicherung",
+          "event": "Taster loslassen, Zündflamme brennt weiter",
+          "signals": [
+            "magnet",
+            "zuendflamme",
+            "thermo",
+            "haupt"
+          ],
+          "description": "Der Magneteinsatz bleibt offen, solange das Thermoelement warm ist. Der Hauptbrenner zündet an der Zündflamme, sobald Regler oder Wasserschalter Gas freigeben. Erlischt die Flamme, kühlt das Thermoelement ab und der Magneteinsatz schließt verzögert.",
+          "check": ""
+        }
+      ],
+      "faults": [
+        {
+          "symptom": "Keine Zündflamme",
+          "phase": "zuenden",
+          "causes": [
+            "Gasabsperrung geschlossen oder Luft in der Leitung",
+            "Zünddüse verstopft",
+            "Piezozünder oder Zündelektrode defekt, Funkenstrecke verstellt",
+            "Gasanschlussdruck zu gering"
+          ]
+        },
+        {
+          "symptom": "Zündflamme geht beim Loslassen aus",
+          "phase": "halten",
+          "causes": [
+            "Taster zu kurz gehalten",
+            "Zündflamme zu klein oder trifft das Thermoelement nicht: Zünddüse reinigen",
+            "Anschluss des Thermoelements am Magneteinsatz locker oder oxidiert",
+            "Thermoelement defekt",
+            "Magneteinsatz defekt",
+            "Abgasüberwachung hat den Thermoelementkreis unterbrochen: Abgasweg prüfen"
+          ]
+        },
+        {
+          "symptom": "Hauptbrenner zündet nicht",
+          "phase": "betrieb",
+          "causes": [
+            "Keine Wärmeanforderung bzw. zu geringer Wasserdurchfluss am Wasserschalter",
+            "Gasanschlussdruck zu gering",
+            "Hauptbrennerdüsen verschmutzt"
+          ]
+        }
+      ]
+    }
+  ]
+}

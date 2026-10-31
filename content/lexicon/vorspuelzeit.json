@@ -1,0 +1,26 @@
+{
+  "id": "lexicon.vorspuelzeit",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Siemens, Datenblatt Ölfeuerungsautomaten LMO14/LMO24/LMO44, CC1N7130de (13.06.2012), https://www.meinhausshop.de/media/pdf/meinhausshop-20_033_32--DBL-01-de.pdf; Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG5.../1-A LN, 83051201 1/2026-07, Kap. 3.3.4 Programmablauf, https://www.weishaupt.de/uploads/tx_weishaupt_documents/documents/83051201.pdf; Viessmann, Serviceanleitung Vitodens 300 Typ WB3, 5681397 (2002), Brennersteuergerät LGM29 Programmablauf, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/17457/1/5681397VSA00001_1.PDF; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Vorspülzeit",
+  "synonyms": [
+    "Vorbelüftungszeit",
+    "Vorbelüftung",
+    "Vorlüftzeit",
+    "Vorlüftung",
+    "VS"
+  ],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
+  "definition": "Die **Vorspülzeit** ist die Phase, in der das Gebläse vor der Zündung Feuerraum und Abgasweg mit Luft spült, damit kein zündfähiges Gemisch aus Brennstoffresten zurückbleibt. Bei Gasgebläsebrennern überwacht dabei meist ein Luftdruckwächter den Luftstrom. Übliche Werte liegen bei etwa 15 bis 30 s, zum Beispiel mindestens 15 s beim Ölfeuerungsautomaten Siemens LMO14, rund 22 s beim Weishaupt-Gasbrenner WG5 und 29 s beim Viessmann Vitodens 300.",
+  "related": [
+    "lexicon.wartezeit",
+    "lexicon.vorzuendzeit",
+    "lexicon.feuerungsautomat"
+  ]
+}

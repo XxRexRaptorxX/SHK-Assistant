@@ -284,3 +284,13 @@ export function WarningIcon(props: IconProps) {
     </Icon>
   )
 }
+
+/** Stoppuhr: Zifferblatt mit Zeiger und Drücker oben */
+export function StopwatchIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <circle cx="12" cy="14" r="7" />
+      <path d="M12 14V10.5M10 3h4M12 3v4M18.5 6.5l1.5-1.5" />
+    </Icon>
+  )
+}

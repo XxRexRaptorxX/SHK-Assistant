@@ -3,7 +3,17 @@ import { content } from '../../content'
 import type { SearchDocument } from '../../search/search'
 import { TOOL_ID_PREFIX } from './constants'
 import type { FormulaEntry } from '../formulas/schema'
-import { isChoiceTool, isFactorTool, isFormulaTool, isSymbolTool, isTableTool, isVariantTool, type ToolEntry } from './schema'
+import {
+  isChoiceTool,
+  isFactorTool,
+  isFormulaTool,
+  isSequenceTool,
+  isSymbolTool,
+  isTableTool,
+  isVariantTool,
+  type ToolEntry,
+} from './schema'
+import { sequenceKeywords } from './sequenceTool'
 import { symbolKeywords } from './symbolTool'
 import { variantFormulas } from './variantTool'
 
@@ -21,6 +31,7 @@ export function toolResultNames(entry: ToolEntry): string | undefined {
   if (isChoiceTool(entry)) return entry.sections.map((section) => section.title).join(', ')
   if (isFactorTool(entry)) return entry.results.map((result) => result.name).join(', ')
   if (isSymbolTool(entry)) return 'Sinnbild und Norm'
+  if (isSequenceTool(entry)) return 'Ablauf, Stoppuhr und Fehlersuche'
   if (isVariantTool(entry)) {
     return [...new Set(entry.variants.flatMap((variant) => (variant.result ? [variant.result.name] : [])))].join(', ')
   }
@@ -58,6 +69,7 @@ function toolKeywords(entry: ToolEntry): string[] {
     ]
   }
   if (isSymbolTool(entry)) return symbolKeywords(entry)
+  if (isSequenceTool(entry)) return sequenceKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

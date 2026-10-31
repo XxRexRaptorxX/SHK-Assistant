@@ -1,0 +1,23 @@
+{
+  "id": "lexicon.wartezeit",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Siemens, Datenblatt Ölfeuerungsautomaten LMO14/LMO24/LMO44, CC1N7130de (13.06.2012), https://www.meinhausshop.de/media/pdf/meinhausshop-20_033_32--DBL-01-de.pdf; Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG5.../1-A LN, 83051201 1/2026-07, Kap. 3.3.4 Programmablauf, https://www.weishaupt.de/uploads/tx_weishaupt_documents/documents/83051201.pdf; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Wartezeit",
+  "synonyms": [
+    "Initialisierungszeit",
+    "WZ"
+  ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
+  "definition": "Die **Wartezeit** ist beim Feuerungsautomaten die erste Phase des Brennerstarts nach der Wärmeanforderung. Der Automat prüft dabei sich selbst und die angeschlossenen Wächter; der Flammenfühler muss dunkel sein. Beim Ölfeuerungsautomaten Siemens LMO14 dauert sie etwa 3 s, mit Ölvorwärmer bis zu dessen Freigabe; der Weishaupt-Gasbrenner WG5 nennt sie Initialisierungszeit (1 s).",
+  "related": [
+    "lexicon.feuerungsautomat",
+    "lexicon.vorspuelzeit",
+    "lexicon.sicherheitszeit"
+  ]
+}

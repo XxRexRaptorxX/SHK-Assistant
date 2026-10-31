@@ -63,6 +63,7 @@ describe('Tools', () => {
       'Rohrschellenabstand',
       'Sinnbilder',
       'Solaranlage: Kollektorfläche und Speichergröße',
+      'Startablauf Feuerungsautomat',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Wartungsintervalle',
     ])

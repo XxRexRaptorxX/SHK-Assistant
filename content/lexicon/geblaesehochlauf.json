@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.geblaesehochlauf",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Viessmann, Serviceanleitung Vitodens 300 Typ WB3, 5681397 (2002), Brennersteuergerät LGM29 Programmablauf, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/17457/1/5681397VSA00001_1.PDF; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Gebläsehochlauf",
+  "synonyms": [],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
+  "definition": "Der **Gebläsehochlauf** ist beim Start eines Gas-Brennwertgeräts die Phase, in der das Gebläse auf Startdrehzahl hochläuft und das Steuergerät Eigentests durchführt. Drehzahlrückmeldung und gegebenenfalls Luftdruckwächter müssen innerhalb einer festgelegten Zeit melden, beim Viessmann Vitodens 300 (LGM29) etwa 70 s, sonst folgt eine Störmeldung.",
+  "related": [
+    "lexicon.betriebsbereitschaft",
+    "lexicon.vorspuelzeit",
+    "lexicon.brennwertkessel"
+  ]
+}

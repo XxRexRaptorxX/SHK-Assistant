@@ -1,0 +1,22 @@
+{
+  "id": "lexicon.brennerbetrieb",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Siemens, Datenblatt Ölfeuerungsautomaten LMO14/LMO24/LMO44, CC1N7130de (13.06.2012), https://www.meinhausshop.de/media/pdf/meinhausshop-20_033_32--DBL-01-de.pdf; Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG5.../1-A LN, 83051201 1/2026-07, Kap. 3.3.4 Programmablauf, https://www.weishaupt.de/uploads/tx_weishaupt_documents/documents/83051201.pdf; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Brennerbetrieb",
+  "synonyms": [
+    "Betrieb (Brenner)"
+  ],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
+  "definition": "Der **Brennerbetrieb** ist die Phase nach erfolgreichem Start: Das Brennstoffventil ist offen, die Zündung aus und der Feuerungsautomat überwacht die Flamme ständig. Fällt die Flamme aus, schließt er sofort das Brennstoffventil; je nach Automat folgt ein Neustart oder die Verriegelung, beim Siemens LMO14 sind bis zu 3 Neustarts zulässig. Endet die Wärmeanforderung, belüftet das Gebläse bei vielen Gebläsebrennern noch kurz nach.",
+  "related": [
+    "lexicon.flammenueberwachung",
+    "lexicon.feuerungsautomat",
+    "lexicon.sicherheitszeit"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "lexicon.betriebsbereitschaft",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Viessmann, Serviceanleitung Vitodens 300 Typ WB3, 5681397 (2002), Brennersteuergerät LGM29 Programmablauf, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/17457/1/5681397VSA00001_1.PDF; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Betriebsbereitschaft",
+  "synonyms": [],
+  "categories": [
+    "heizung",
+    "msr"
+  ],
+  "definition": "Die **Betriebsbereitschaft** ist der Ruhezustand eines Brennersteuergeräts zwischen zwei Wärmeanforderungen. Vor einem neuen Start prüft das Gerät, ob das Gebläse stillsteht, der Luftdruckwächter in Grundstellung ist und kein Flammensignal anliegt; sonst startet es nicht. Ein verriegeltes Gerät muss zuerst entriegelt werden.",
+  "related": [
+    "lexicon.geblaesehochlauf",
+    "lexicon.feuerungsautomat"
+  ]
+}

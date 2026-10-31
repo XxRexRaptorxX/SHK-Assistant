@@ -1,0 +1,21 @@
+{
+  "id": "lexicon.thermoelektrische-zuendsicherung",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „Zündsicherung“, Abschnitt Thermoelektrische Zündsicherung, https://de.wikipedia.org/wiki/Z%C3%BCndsicherung; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Thermoelektrische Zündsicherung",
+  "synonyms": [
+    "Thermoelement-Zündsicherung",
+    "thermoelektrische Flammenüberwachung"
+  ],
+  "categories": [
+    "gas"
+  ],
+  "definition": "Bei der **thermoelektrischen Zündsicherung** erwärmt die Zündflamme ein Thermoelement. Dessen Spannung hält einen Magneteinsatz in der Gasarmatur offen; erlischt die Flamme, fällt die Spannung weg und das Ventil schließt. Beim Zünden muss der Zündtaster gedrückt bleiben, bis das Thermoelement warm ist; verbreitet ist sie zum Beispiel bei Gasherden, Heizstrahlern und älteren Gasgeräten.",
+  "related": [
+    "lexicon.flammenueberwachung",
+    "lexicon.zuendelektrode"
+  ]
+}

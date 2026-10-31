@@ -111,6 +111,18 @@ mit Farbe stehen wie auf einem Plan auf weißem Grund. Die Zeichnungen sind
 eigene Nachzeichnungen, keine Bilder aus Normen oder Büchern. Der Build prüft doppelte Namen und
 Koordinaten außerhalb der Fläche.
 
+**Ablauf-Tools** (`"kind": "sequence"`) zeigen einen Programmablauf als Zeitdiagramm, z. B. den Start
+eines Feuerungsautomaten, mit Stoppuhr zum Mitmessen und Fehlersuche. Felder: `title`, `description`,
+`category`, `name` (was umgeschaltet wird, z. B. „Brennerart“) und `variants`, je Variante `key`,
+`label`, optional `note` (kleine zweite Zeile in der Leiste), `title`, `description` (z. B.
+Beispielgerät der Zeiten), `signals` (Zeilen: `key`, `label`), `phases` (Spalten in Ablauf-Reihenfolge:
+`key`, `label`, `abbr` (Kürzel, höchstens 4 Zeichen), optional `duration` (Anzeige, z. B. „max. 3 s“),
+`seconds` (Vergleichswert für die Stoppuhr) mit `limit` (`typ`, `max` oder `min`; nur Höchst- und
+Mindestwerte werden bewertet, mit 1 s Spielraum), `event` (woran man den Beginn erkennt, z. B.
+„Zündfunke hörbar“), `signals` (anliegende Signale), `description` und optional `check`) und `faults`
+(`symptom`, `phase`, `causes` in Prüfreihenfolge, optional `note`). Der Build prüft unbekannte Signale
+und Phasen, doppelte Schlüssel und Signale, die in keiner Phase vorkommen.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

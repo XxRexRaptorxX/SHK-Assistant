@@ -1,0 +1,20 @@
+{
+  "id": "lexicon.flammenuebernahme",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Viessmann, Serviceanleitung Vitodens 300 Typ WB3, 5681397 (2002), Brennersteuergerät LGM29 Programmablauf, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/17457/1/5681397VSA00001_1.PDF; Definition eigenständig formuliert, abgerufen am 31.10.2026",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-10-31",
+  "term": "Flammenübernahme",
+  "synonyms": [],
+  "categories": [
+    "heizung",
+    "gas"
+  ],
+  "definition": "Die **Flammenübernahme** ist eine kurze Phase nach der Sicherheitszeit, in der ein Gas-Brennwertgerät mit Zündlast weiterbrennt, bis die Flamme stabil ist; danach moduliert es nach Bedarf. Beim Viessmann Vitodens 300 (LGM29) dauert sie etwa 5 s.",
+  "related": [
+    "lexicon.sicherheitszeit",
+    "lexicon.brennerbetrieb",
+    "lexicon.brennwertkessel"
+  ]
+}
