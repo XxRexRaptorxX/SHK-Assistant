@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { content } from '../../content'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import { formatUnit } from '../../lib/units'
 import { asTargetUnit, math } from '../../lib/math'
@@ -166,6 +167,20 @@ describe('Wählbare Einheiten', () => {
     expect(units('formula.elektrotechnik.leistung-spannung-strom')).not.toContain('Pferdestaerke')
     expect(units('formula.thermodynamik.waermemenge')).toContain('kcal')
     expect(units('formula.thermodynamik.waermeleistung-aus-masse')).toContain('kcal/h')
+  })
+
+  it('führt die spezifische Wärmekapazität überall in Wh/(kg*K), kJ/(kg*K) bleibt wählbar', () => {
+    const isHeatCapacity = (item: { name: string; term?: string }) =>
+      item.name === 'Spezifische Wärmekapazität' || item.term === 'Spezifische Wärmekapazität'
+    const items = formulaEntries.flatMap((f) => [...f.variables, ...(f.result ? [f.result] : [])]).filter(isHeatCapacity)
+    expect(items.length).toBeGreaterThan(0)
+    for (const item of items) {
+      expect(item.unit).toBe('Wh/(kg*K)')
+      expect(item.units).toContain('kJ/(kg*K)')
+    }
+    const materials = content.materials.filter((set) => set.quantities.includes('Spezifische Wärmekapazität'))
+    expect(materials.map((set) => set.unit)).toEqual(['Wh/(kg*K)'])
+    expect(math.unit(1, 'Wh/(kg*K)').toNumber('kJ/(kg*K)')).toBeCloseTo(3.6)
   })
 
   it('vermischt Scheinleistung (VA) nicht mit Wirkleistung (W)', () => {

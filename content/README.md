@@ -25,7 +25,7 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `description` | Kurze eigene Erklärung, wann und wofür                                  |
 | `category`    | Gruppe in der Liste, z. B. „Hydraulik“ (leer = „Allgemein“)            |
 | `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert) |
-| `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"4.19 kJ/(kg K)"` |
+| `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"1.163 Wh/(kg*K)"` |
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2) |
 | `expression`  | Formel als mathjs-Ausdruck mit den Symbolen, z. B. `Q / (c * dT)`      |
 | `examples`    | Testbeispiele: `inputs` je Symbol (Zahl in der Haupteinheit oder Text mit Einheit, z. B. `"10 kW"`), `expected` (Referenzwert), optional `tolerance` (relativ, Standard 0.001 = 0,1 %) |
@@ -37,7 +37,8 @@ Eintrag mit genau diesem Begriff oder Synonym gibt. Ist der Name genauer als der
 das geht bei Variablen, Konstanten und beim Ergebnis.
 
 Einheiten in mathjs-Schreibweise, z. B. `kW`, `m^3/h`, `kg/h`, `K`, `bar`. Für Temperatur­differenzen
-`K` verwenden, nicht `degC` (°C ist eine Skala mit Nullpunkt-Verschiebung).
+`K` verwenden, nicht `degC` (°C ist eine Skala mit Nullpunkt-Verschiebung). Die spezifische
+Wärmekapazität hat immer die Haupteinheit `Wh/(kg*K)`, `kJ/(kg*K)` steht als Alternative in `units`.
 
 Im Rechner lassen sich Einheiten antippen und umstellen. Angeboten werden automatisch alle
 gleichartigen Einheiten aus dem Umrechner (z. B. für `m^2` auch `cm^2`, `ha`) plus die in `units`

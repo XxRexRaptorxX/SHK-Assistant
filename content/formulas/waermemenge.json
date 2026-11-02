@@ -17,7 +17,10 @@
     {
       "symbol": "c",
       "name": "Spezifische Wärmekapazität",
-      "unit": "kJ/(kg*K)"
+      "unit": "Wh/(kg*K)",
+      "units": [
+        "kJ/(kg*K)"
+      ]
     },
     {
       "symbol": "dT",
@@ -41,7 +44,7 @@
     {
       "inputs": {
         "m": 2,
-        "c": 4.19,
+        "c": "4.19 kJ/(kg*K)",
         "dT": 10
       },
       "expected": 83.8

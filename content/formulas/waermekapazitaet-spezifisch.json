@@ -33,8 +33,11 @@
   "result": {
     "symbol": "c",
     "name": "Spezifische Wärmekapazität",
-    "unit": "kJ/(kg*K)",
-    "decimals": 2
+    "unit": "Wh/(kg*K)",
+    "units": [
+      "kJ/(kg*K)"
+    ],
+    "decimals": 3
   },
   "expression": "Q / (m * dT)",
   "examples": [
@@ -44,7 +47,7 @@
         "m": 2,
         "dT": 10
       },
-      "expected": 4.19
+      "expected": "4.19 kJ/(kg*K)"
     }
   ],
   "figure": "figure.erwaermen"

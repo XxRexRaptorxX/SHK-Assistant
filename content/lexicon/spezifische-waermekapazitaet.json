@@ -2,9 +2,9 @@
   "id": "lexicon.spezifische-waermekapazitaet",
   "visibility": "public",
   "status": "verified",
-  "source": "https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t",
+  "source": "https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t; Wert für Wasser (1,163 Wh/(kg·K)): Vorgabe des Inhabers vom 02.11.2026",
   "verifiedBy": "AI",
-  "verifiedAt": "2026-10-31",
+  "verifiedAt": "2026-11-02",
   "term": "Spezifische Wärmekapazität",
   "synonyms": [
     "c-Wert",
@@ -14,7 +14,7 @@
   "categories": [
     "physik"
   ],
-  "definition": "Die **spezifische Wärmekapazität** gibt an, wie viel Wärmeenergie benötigt wird, um ein Kilogramm eines Stoffes um ein Kelvin zu erwärmen. Die Einheit ist J/(kg·K), häufig werden kJ/(kg·K) verwendet. Der Wert ist stoff- und temperaturabhängig; bei Wasser liegt er im üblichen Heizungsbereich näherungsweise bei 4,18 kJ/(kg·K).",
+  "definition": "Die **spezifische Wärmekapazität** gibt an, wie viel Wärmeenergie benötigt wird, um ein Kilogramm eines Stoffes um ein Kelvin zu erwärmen. Sie wird hier in Wh/(kg·K) angegeben; die SI-Einheit ist J/(kg·K), außerdem ist kJ/(kg·K) verbreitet (1 Wh/(kg·K) = 3,6 kJ/(kg·K)). Der Wert ist stoff- und temperaturabhängig; bei Wasser liegt er im üblichen Heizungsbereich näherungsweise bei 1,163 Wh/(kg·K).",
   "related": [
     "lexicon.waermemenge",
     "lexicon.wasserhaerte"

@@ -2,58 +2,59 @@
   "id": "material.waermekapazitaet",
   "visibility": "public",
   "status": "draft",
-  "source": "Wikipedia „Spezifische Wärmekapazität“, https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t",
+  "source": "Wikipedia „Spezifische Wärmekapazität“, https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t; Werte aus kJ/(kg·K) umgerechnet (1 Wh = 3,6 kJ)",
   "verifiedBy": "",
   "verifiedAt": "",
   "quantities": [
     "Spezifische Wärmekapazität"
   ],
-  "unit": "kJ/(kg*K)",
+  "unit": "Wh/(kg*K)",
   "values": [
     {
       "name": "Wasser",
-      "value": 4.18
+      "value": 1.163,
+      "source": "Vorgabe des Inhabers vom 02.11.2026"
     },
     {
       "name": "Wasser",
       "note": "14,5 °C",
-      "value": 4.184,
-      "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers"
+      "value": 1.1622,
+      "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers; Wert aus kJ/(kg·K) umgerechnet (1 Wh = 3,6 kJ)"
     },
     {
       "name": "Eis",
       "note": "0 °C",
-      "value": 2.06
+      "value": 0.5722
     },
     {
       "name": "Wasserdampf",
       "note": "100 °C",
-      "value": 2.08
+      "value": 0.5778
     },
     {
       "name": "Luft",
       "note": "trocken",
-      "value": 1.01
+      "value": 0.2806
     },
     {
       "name": "Kupfer",
-      "value": 0.382
+      "value": 0.1061
     },
     {
       "name": "Aluminium",
-      "value": 0.9
+      "value": 0.25
     },
     {
       "name": "Beton",
-      "value": 0.88
+      "value": 0.2444
     },
     {
       "name": "Mineralfaser",
-      "value": 0.8
+      "value": 0.2222
     },
     {
       "name": "Polystyrol",
-      "value": 1.4
+      "value": 0.3889
     }
   ]
 }

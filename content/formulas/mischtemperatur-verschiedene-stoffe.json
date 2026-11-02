@@ -19,7 +19,10 @@
       "symbol": "ck",
       "name": "Spezifische Wärmekapazität des kalten Stoffes",
       "term": "Spezifische Wärmekapazität",
-      "unit": "kJ/(kg*K)"
+      "unit": "Wh/(kg*K)",
+      "units": [
+        "kJ/(kg*K)"
+      ]
     },
     {
       "symbol": "Tk",
@@ -40,7 +43,10 @@
       "symbol": "cw",
       "name": "Spezifische Wärmekapazität des warmen Stoffes",
       "term": "Spezifische Wärmekapazität",
-      "unit": "kJ/(kg*K)"
+      "unit": "Wh/(kg*K)",
+      "units": [
+        "kJ/(kg*K)"
+      ]
     },
     {
       "symbol": "Tw",
@@ -68,10 +74,10 @@
     {
       "inputs": {
         "mk": 1,
-        "ck": 4,
+        "ck": "4 kJ/(kg*K)",
         "Tk": 300,
         "mw": 2,
-        "cw": 2,
+        "cw": "2 kJ/(kg*K)",
         "Tw": 350
       },
       "expected": 325
