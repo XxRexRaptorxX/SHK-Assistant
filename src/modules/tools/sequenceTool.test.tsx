@@ -178,7 +178,7 @@ describe('Startablauf Feuerungsautomat', () => {
 
   it('ist über die Suche zu finden', () => {
     const document = toolSearchDocuments([tool])[0]!
-    expect(document.subtitle).toBe('Ablauf, Stoppuhr und Fehlersuche')
+    expect(document.subtitle).toBe(tool.summary)
     expect(document.keywords).toContain('Sicherheitszeit')
     expect(document.keywords).toContain('Kein Zündfunke')
   })

@@ -7,6 +7,7 @@
   "verifiedAt": "",
   "kind": "variants",
   "title": "Ausgerollte Länge von Rohr- und Kabelrollen",
+  "summary": "Länge auf der Rolle und verbaute Länge aus mehreren Rollen.",
   "description": "Berechnet Rohr- und Kabellängen auf Rollen. Oben den Rechenweg wählen: schnell über die Wicklungen, genauer über den Ringquerschnitt oder die verbaute Länge, wenn mehrere Rollen verbraucht wurden.",
   "category": "Aufmaß",
   "name": "Berechnung",

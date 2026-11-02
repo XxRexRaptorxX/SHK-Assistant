@@ -7,6 +7,7 @@
   "verifiedAt": "",
   "kind": "choice",
   "title": "Thermostatkopf-Einstellung und Raumtemperatur",
+  "summary": "Temperatur je Stufe und Norm-Innentemperatur je Raumart.",
   "description": "Zeigt, welche Raumtemperatur eine Stufe am Thermostatkopf ungefähr ergibt und für welche Räume sie passt. Darunter steht die Norm-Innentemperatur je Raumart, die bei der Heizlastberechnung nach DIN EN 12831 angesetzt wird, wenn der Auftraggeber keine anderen Innentemperaturen wünscht; abweichende Wünsche werden vertraglich festgehalten. Die Zuordnung der Stufen kann je nach Hersteller abweichen, maßgeblich ist die Anleitung des Thermostatkopfs.",
   "category": "Demonstration",
   "sections": [

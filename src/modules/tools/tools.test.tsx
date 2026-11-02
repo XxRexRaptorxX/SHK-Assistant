@@ -188,6 +188,7 @@ describe('Tools', () => {
     verifiedAt: '',
     kind: 'table',
     title: 'Testtabelle',
+    summary: 'Testdaten',
     description: 'Testdaten',
     category: '',
     input: { name: 'Baujahr', unit: '' },

@@ -21,6 +21,7 @@ const variantSchema = z.strictObject({
 export const variantToolSchema = defineEntrySchema({
   kind: z.literal('variants'),
   title: z.string().trim().min(1),
+  summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Was umgeschaltet wird, z. B. „Berechnung“ */

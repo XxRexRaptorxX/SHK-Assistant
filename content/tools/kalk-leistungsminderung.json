@@ -6,6 +6,7 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "title": "Leistungsminderung durch Kalk am Wärmetauscher",
+  "summary": "Schätzt den Leistungsverlust aus der Dicke der Kalkschicht.",
   "description": "Zeigt überschlägig, wie viel Leistung eine Kalkschicht auf einem Wärmetauscher kostet, z. B. zur Demonstration beim Kunden. Gerechnet wird mit einem Faustwert für 1 mm Kalk (vorausgefüllt, änderbar), der linear auf die eingegebene Schichtdicke hochgerechnet wird. Die Quelle nennt den Faustwert nur für 1 mm; wie die Minderung bei dickeren Schichten tatsächlich verläuft, ist damit nicht belegt.",
   "category": "Demonstration",
   "variables": [

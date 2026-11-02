@@ -100,6 +100,7 @@ const exampleSchema = z.strictObject({
 export const factorToolSchema = defineEntrySchema({
   kind: z.literal('factor'),
   title: z.string().trim().min(1),
+  summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Eingabefelder; leer, wenn das Ergebnis nur von der Auswahl abhängt */

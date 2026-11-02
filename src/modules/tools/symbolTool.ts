@@ -81,6 +81,7 @@ const symbolGroupSchema = z.strictObject({
 export const symbolToolSchema = defineEntrySchema({
   kind: z.literal('symbols'),
   title: z.string().trim().min(1),
+  summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   groups: z.array(symbolGroupSchema).min(1),

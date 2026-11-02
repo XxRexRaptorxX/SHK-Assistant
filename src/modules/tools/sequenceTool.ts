@@ -77,6 +77,7 @@ const variantSchema = z.strictObject({
 export const sequenceToolSchema = defineEntrySchema({
   kind: z.literal('sequence'),
   title: z.string().trim().min(1),
+  summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Was umgeschaltet wird, z. B. „Brennerart“ */

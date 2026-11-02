@@ -61,6 +61,9 @@ wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie e
 „Planung“ (Nachschlagen beim Lesen und Zeichnen von Schemata, z. B. Sinnbilder) und „Wartung“
 (Richtwerte für Messungen, z. B. Abgaswerte).
 
+Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
+der Tool-Übersicht und in der Suche unter dem Titel; die ausführliche Erklärung bleibt in `description`.
+
 **Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
 Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
 

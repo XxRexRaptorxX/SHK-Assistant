@@ -25,19 +25,6 @@ export const formulaToolEntries: FormulaEntry[] = toolEntries.flatMap((entry) =>
   isFormulaTool(entry) ? [entry] : isVariantTool(entry) ? variantFormulas(entry) : [],
 )
 
-/** Was ein Tool liefert, z. B. „Ausgerollte Länge“ oder „Heizlast, Wärmebedarf“ */
-export function toolResultNames(entry: ToolEntry): string | undefined {
-  if (isTableTool(entry)) return entry.columns.map((column) => column.name).join(', ')
-  if (isChoiceTool(entry)) return entry.sections.map((section) => section.title).join(', ')
-  if (isFactorTool(entry)) return entry.results.map((result) => result.name).join(', ')
-  if (isSymbolTool(entry)) return 'Sinnbild und Norm'
-  if (isSequenceTool(entry)) return 'Ablauf, Stoppuhr und Fehlersuche'
-  if (isVariantTool(entry)) {
-    return [...new Set(entry.variants.flatMap((variant) => (variant.result ? [variant.result.name] : [])))].join(', ')
-  }
-  return entry.result?.name
-}
-
 export const toolSlug = (id: string) => id.slice(TOOL_ID_PREFIX.length + 1)
 export const toolPath = (id: string) => `${modules.tools.path}/${toolSlug(id)}`
 
@@ -85,9 +72,9 @@ export function toolSearchDocuments(entries: readonly ToolEntry[] = toolEntries)
     id: entry.id,
     moduleTitle: modules.tools.title,
     title: entry.title,
-    subtitle: toolResultNames(entry),
+    subtitle: entry.summary,
     keywords: toolKeywords(entry),
-    text: entry.description,
+    text: `${entry.summary} ${entry.description}`,
     path: toolPath(entry.id),
     status: entry.status,
   }))

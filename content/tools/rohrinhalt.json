@@ -6,6 +6,7 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "title": "Wasserinhalt einer Rohrleitung",
+  "summary": "Berechnet die Wassermenge aus Innendurchmesser und Länge.",
   "description": "Berechnet, wie viel Wasser in einer Rohrstrecke steht, z. B. für die Befüllmenge oder den Anlageninhalt. Einzusetzen ist der Innendurchmesser des Rohrs, nicht der Außendurchmesser oder die Nennweite DN. Bei mehreren Dimensionen jede Strecke einzeln rechnen und die Liter addieren. Heizkörper, Kessel und Speicher sind nicht enthalten.",
   "category": "Aufmaß",
   "variables": [

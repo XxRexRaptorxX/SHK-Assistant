@@ -22,6 +22,8 @@ import { checkVariantTool, variantReferences, variantToolSchema, type VariantToo
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
+  /** Ein Satz für die Tool-Übersicht und die Suche: was das Tool leistet */
+  summary: z.string().trim().min(1),
   kind: z.undefined().optional(),
 }).superRefine(checkFormulaRequirements)
 
@@ -62,6 +64,7 @@ const tableRowSchema = z.strictObject({
 const tableToolSchema = defineEntrySchema({
   kind: z.literal('table'),
   title: z.string().trim().min(1),
+  summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Die eine Eingabe, nach der nachgeschlagen wird */
@@ -120,6 +123,7 @@ const choiceSectionSchema = z.strictObject({
 const choiceToolSchema = defineEntrySchema({
   kind: z.literal('choice'),
   title: z.string().trim().min(1),
+  summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /**
