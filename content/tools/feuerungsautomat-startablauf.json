@@ -56,7 +56,6 @@
           "duration": "1 s",
           "seconds": 1,
           "repeat": {
-            "short": "10 min",
             "text": "Bei Gasmangel startet der Brenner nicht; nach 10 Minuten Wartezeit versucht er es automatisch erneut."
           },
           "event": "Regler fordert Wärme an",
@@ -74,10 +73,6 @@
           "term": "Vorspülzeit",
           "duration": "20 s",
           "seconds": 20,
-          "repeat": {
-            "short": "keine",
-            "text": "Keine. Schaltet der Luftdruckwächter nicht, verriegelt der Brenner nach etwa 2 Minuten."
-          },
           "event": "Gebläsemotor läuft an",
           "signals": [
             "regler",
@@ -115,8 +110,8 @@
           "seconds": 3,
           "limit": "max",
           "repeat": {
-            "short": "keine",
-            "text": "Keine. Ohne Flamme am Ende der Sicherheitszeit verriegelt der Brenner. Von Hand höchstens 2-mal hintereinander entriegeln."
+            "count": 2,
+            "text": "Keine automatische Wiederholung: Ohne Flamme verriegelt der Brenner. Von Hand höchstens 2-mal hintereinander entriegeln."
           },
           "event": "Gasventil öffnet, Flamme bildet sich",
           "signals": [
@@ -136,10 +131,6 @@
           "label": "Betrieb",
           "abbr": "B",
           "term": "Brennerbetrieb",
-          "repeat": {
-            "short": "keine",
-            "text": "Keine. Fällt die Flamme im Betrieb aus, verriegelt der Brenner."
-          },
           "event": "Flamme brennt, Zündung aus",
           "signals": [
             "regler",
@@ -281,10 +272,6 @@
           "term": "Wartezeit",
           "duration": "3 s",
           "seconds": 3,
-          "repeat": {
-            "short": "40 s",
-            "text": "Bei Fremdlicht wartet der Automat höchstens 40 s und verriegelt dann; mit Ölvorwärmer wartet er bis zu 10 Minuten auf die Freigabe."
-          },
           "event": "Regler fordert Wärme an",
           "signals": [
             "regler",
@@ -301,10 +288,6 @@
           "duration": "min. 15 s",
           "seconds": 15,
           "limit": "min",
-          "repeat": {
-            "short": "keine",
-            "text": "Keine. Fremdlicht in der Vorspülzeit führt an deren Ende zur Verriegelung."
-          },
           "event": "Brennermotor läuft an, Zündfunke hörbar",
           "signals": [
             "regler",
@@ -324,7 +307,6 @@
           "seconds": 10,
           "limit": "max",
           "repeat": {
-            "short": "in 10 s",
             "text": "Reißt die Flamme in der Sicherheitszeit ab, zündet der Automat sofort erneut, aber nur bis zum Ende der 10 s. Danach ohne Flamme: Verriegelung."
           },
           "event": "Ölventil öffnet, Flamme bildet sich",
@@ -345,8 +327,8 @@
           "abbr": "B",
           "term": "Brennerbetrieb",
           "repeat": {
-            "short": "3×",
-            "text": "Reißt die Flamme im Betrieb ab, startet der Automat bis zu 3-mal neu; beim 4. Flammenabriss verriegelt er. Der Zähler beginnt bei jeder neuen Wärmeanforderung von vorn."
+            "count": 3,
+            "text": "Reißt die Flamme im Betrieb ab, startet der Automat höchstens 3-mal neu; beim 4. Flammenabriss verriegelt er. Der Zähler beginnt bei jeder neuen Wärmeanforderung von vorn."
           },
           "event": "Flamme brennt, Zündung aus",
           "signals": [
@@ -483,10 +465,6 @@
           "duration": "bis 70 s",
           "seconds": 70,
           "limit": "max",
-          "repeat": {
-            "short": "keine",
-            "text": "Keine. Liegen Drehzahl- und Luftdrucksignal nach 70 s nicht vor, folgt eine Störmeldung."
-          },
           "event": "Gebläse läuft an",
           "signals": [
             "regler",
@@ -540,10 +518,6 @@
           "duration": "unter 5 s",
           "seconds": 5,
           "limit": "max",
-          "repeat": {
-            "short": "keine",
-            "text": "Keine. Ohne Flammenerkennung folgt Störabschaltung. Erst nach dem Entriegeln wird der Zündvorgang wiederholt."
-          },
           "event": "Gasventil öffnet, Flamme bildet sich",
           "signals": [
             "regler",
@@ -721,7 +695,6 @@
           "abbr": "ZÜ",
           "term": "Thermoelektrische Zündsicherung",
           "repeat": {
-            "short": "beliebig",
             "text": "Von Hand wiederholbar, bis die Zündflamme brennt. Nach Arbeiten an der Leitung kann zunächst Luft austreten."
           },
           "event": "Piezozünder betätigen (Klicken)",

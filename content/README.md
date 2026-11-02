@@ -119,7 +119,9 @@ Beispielgerät der Zeiten), `signals` (Zeilen: `key`, `label`), `phases` (Spalte
 `key`, `label`, `abbr` (Kürzel, höchstens 4 Zeichen), optional `duration` (Anzeige, z. B. „max. 3 s“),
 `seconds` (Vergleichswert für die Stoppuhr) mit `limit` (`typ`, `max` oder `min`; nur Höchst- und
 Mindestwerte werden bewertet, mit 1 s Spielraum), `event` (woran man den Beginn erkennt, z. B.
-„Zündfunke hörbar“), `signals` (anliegende Signale), `description` und optional `check`) und `faults`
+„Zündfunke hörbar“), `signals` (anliegende Signale), `description` und optional `term` (Lexikon-Begriff für die Verlinkung),
+`repeat` (nur wenn die Phase wiederholt werden darf: `text` und, falls die Quelle sie nennt, die
+Höchstzahl `count`, angezeigt als „max. 3×“) und `check`) und `faults`
 (`symptom`, `phase`, `causes` in Prüfreihenfolge, optional `note`). Der Build prüft unbekannte Signale
 und Phasen, doppelte Schlüssel und Signale, die in keiner Phase vorkommen.
 

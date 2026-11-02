@@ -151,7 +151,12 @@ describe('Startablauf Feuerungsautomat', () => {
   it('zeigt im Diagramm und in den Einzelheiten, wie oft eine Phase wiederholt werden darf', () => {
     const html = render(<SequenceLookup tool={tool} initialVariant="oel" initialWatch={{ state: 'stopped', marks: [0, 3000, 18000, 21000], end: 25000, phase: 3 }} />)
     expect(html).toContain('Wieder­holung')
-    expect(html).toContain('>3×</td>')
+    expect(html).toContain('>max. 3×</td>')
+    expect(html).toContain('text-muted')
+    // Ohne genannte Anzahl keine Zeile im Diagramm und nie „keine“ als Wert
+    const none = render(<SequenceLookup tool={tool} initialVariant="brennwert" />)
+    expect(none).not.toContain('Wieder­holung')
+    expect(tool.variants.flatMap((candidate) => candidate.phases).filter((phase) => phase.repeat?.count).map((phase) => phase.repeat!.count)).toEqual([2, 3])
     expect(html).toContain('beim 4. Flammenabriss verriegelt er')
   })
 
@@ -160,14 +165,14 @@ describe('Startablauf Feuerungsautomat', () => {
     const [, vs, vzz, sz, betrieb] = gas
     expect(renderToStaticMarkup(<PhaseEnd phase={vs!} next={vzz} elapsed={12.3} />)).toContain('Phase endet in etwa 8 s.')
     const over = renderToStaticMarkup(<PhaseEnd phase={vs!} next={vzz} elapsed={20.2} />)
-    expect(over).toContain('Phase jetzt vorbei: Bei „Zündfunke hörbar“ weiter tippen.')
+    expect(over).toContain('Phase vorbei, wenn: Zündfunke hörbar')
     expect(over).toContain('role="status"')
     expect(renderToStaticMarkup(<PhaseEnd phase={sz!} next={betrieb} elapsed={1.2} />)).toContain('Noch höchstens 2 s')
     expect(renderToStaticMarkup(<PhaseEnd phase={sz!} next={betrieb} elapsed={3.4} />)).toContain('Höchstzeit erreicht')
     // Ohne Vergleichswert: nur der Hinweis auf das nächste Ereignis
     const atmo = variant('atmosphaerisch').phases
     expect(renderToStaticMarkup(<PhaseEnd phase={atmo[2]!} next={atmo[3]} elapsed={5} />)).toBe(
-      '<p class="mt-2 text-base font-semibold">Weiter tippen, sobald „Taster loslassen, Zündflamme brennt weiter“.</p>',
+      '<p class="mt-2 text-base font-semibold">Phase vorbei, wenn: Taster loslassen, Zündflamme brennt weiter</p>',
     )
   })
 

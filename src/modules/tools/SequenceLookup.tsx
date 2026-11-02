@@ -32,6 +32,9 @@ const faultsId = (variant: SequenceVariant) => `faults-${variant.key}`
 /** Zahl und Einheit nicht trennen, z. B. „max. 3 s“ */
 const keepUnit = (text: string) => text.replace(/ s\b/g, ' s')
 
+/** Höchstzahl der Wiederholungen, z. B. „max. 3×“ */
+const repeatCount = (count: number) => `max. ${count}×`
+
 /** Lexikon-Eintrag einer Phase, z. B. „Vorspülzeit“ */
 const phasePath = (phase: SequencePhase) => lexiconPathFor([phase.term, phase.label])
 
@@ -193,25 +196,26 @@ export function SequenceDiagram({
               </td>
             ))}
           </tr>
-          {variant.phases.some((phase) => phase.repeat) && (
-            <tr>
-              <th scope="row" className="pt-1 pr-1 text-left text-xs leading-tight font-semibold text-muted">
+          {/* Nur Phasen mit genannter Höchstzahl an Wiederholungen; die übrigen Zellen bleiben leer */}
+          {variant.phases.some((phase) => phase.repeat?.count) && (
+            <tr className="text-muted">
+              <th scope="row" className="pt-1 pr-1 text-left text-xs leading-tight font-normal">
                 Wieder&shy;holung
               </th>
               {variant.phases.map((phase, index) => (
                 <td
                   key={phase.key}
-                  title={phase.repeat?.text}
-                  className={`px-0.5 pt-1 text-center text-xs leading-tight font-semibold ${column(index)}`}
+                  title={phase.repeat?.count ? phase.repeat.text : undefined}
+                  className={`px-0.5 pt-1 text-center text-xs leading-tight ${column(index)}`}
                 >
-                  {phase.repeat?.short ?? '–'}
+                  {phase.repeat?.count ? repeatCount(phase.repeat.count) : ''}
                 </td>
               ))}
             </tr>
           )}
         </tfoot>
       </table>
-      <figcaption className="mt-2 text-sm text-muted">Phase antippen für Einzelheiten.</figcaption>
+      <figcaption className="mt-2 text-center text-sm text-muted">Phase antippen für Einzelheiten.</figcaption>
     </figure>
   )
 }
@@ -282,12 +286,7 @@ function StopwatchPanel({
             <span className="text-base text-muted">{expected(current)}</span>
           </p>
           <PhaseEnd phase={current} next={next} elapsed={elapsed ?? 0} />
-          {current.repeat && (
-            <p className="mt-2 text-sm">
-              <span className="font-semibold">Wiederholung: </span>
-              {current.repeat.text}
-            </p>
-          )}
+          {current.repeat && <RepeatNote repeat={current.repeat} className="mt-2 text-sm" />}
           {next ? (
             <button
               type="button"
@@ -388,6 +387,16 @@ function StopwatchPanel({
   )
 }
 
+/** Wiederholungsregel einer Phase in Grau, mit Höchstzahl, wenn die Quelle eine nennt */
+function RepeatNote({ repeat, className }: { repeat: NonNullable<SequencePhase['repeat']>; className: string }) {
+  return (
+    <p className={`${className} text-muted`}>
+      <span className="font-semibold">Wiederholung{repeat.count ? ` (${repeatCount(repeat.count)})` : ''}: </span>
+      {repeat.text}
+    </p>
+  )
+}
+
 /** Ist der übliche Wert bzw. die Grenze der Phase erreicht? */
 const phaseOver = (phase: SequencePhase, elapsed: number) => phase.seconds !== undefined && elapsed >= phase.seconds
 
@@ -399,7 +408,7 @@ export function PhaseEnd({ phase, next, elapsed }: { phase: SequencePhase; next?
   const remaining = remainingSeconds(phase, elapsed)
   const cue = next ? `„${next.event}“` : 'den Betrieb'
   if (remaining === undefined) {
-    return next ? <p className="mt-2 text-base font-semibold">Weiter tippen, sobald {cue}.</p> : null
+    return next ? <p className="mt-2 text-base font-semibold">Phase vorbei, wenn: {next.event}</p> : null
   }
   const over = phaseOver(phase, elapsed)
   const share = Math.min(1, elapsed / phase.seconds!)
@@ -407,7 +416,7 @@ export function PhaseEnd({ phase, next, elapsed }: { phase: SequencePhase; next?
   const message = over
     ? phase.limit === 'max'
       ? `Höchstzeit erreicht: Ohne ${cue} bleibt der Start hier stehen.`
-      : `Phase jetzt vorbei: Bei ${cue} weiter tippen.`
+      : `Phase vorbei, wenn: ${next ? next.event : 'Betrieb erreicht'}`
     : phase.limit === 'max'
       ? `Noch höchstens ${countdown}, dann muss ${cue} kommen.`
       : phase.limit === 'min'
@@ -479,12 +488,7 @@ function PhaseDetails({
         </TermLink>
       </h3>
       {phase.duration && <p className="text-base text-muted">Dauer: {keepUnit(phase.duration)}</p>}
-      {phase.repeat && (
-        <p className="text-base">
-          <span className="font-semibold">Wiederholung: </span>
-          {phase.repeat.text}
-        </p>
-      )}
+      {phase.repeat && <RepeatNote repeat={phase.repeat} className="text-base" />}
       <p className="mt-1 text-base">
         <span className="font-semibold">Beginn: </span>
         {phase.event}

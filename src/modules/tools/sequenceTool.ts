@@ -29,10 +29,13 @@ const phaseSchema = z.strictObject({
   seconds: z.number().positive().optional(),
   /** Bedeutung von seconds: üblicher Wert, Höchstwert (z. B. Sicherheitszeit) oder Mindestwert */
   limit: z.enum(['typ', 'max', 'min']).default('typ'),
-  /** Wie oft die Phase wiederholt werden darf: Kurzform im Diagramm (z. B. „3×“, „keine“) und Erklärung */
+  /**
+   * Nur wenn die Phase wiederholt werden darf: höchste Anzahl (im Diagramm „max. 3×“; fehlt, wenn die
+   * Quelle keine Zahl nennt) und Erklärung
+   */
   repeat: z
     .strictObject({
-      short: z.string().trim().min(1).max(8),
+      count: z.number().int().positive().optional(),
       text: z.string().trim().min(1),
     })
     .optional(),
