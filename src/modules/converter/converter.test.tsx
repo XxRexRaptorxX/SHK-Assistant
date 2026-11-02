@@ -625,6 +625,13 @@ describe('Datenmenge, Leitfähigkeit und angloamerikanische Einheiten', () => {
     expect(formatAnyUnit('b')).toBe('bit')
   })
 
+  it('sortiert die Datenmengen streng nach Größe, damit die Werte in der Liste durchgehend fallen', () => {
+    const { units } = converterEntries.find((e) => e.id === 'converter.datenmenge')!
+    const values = units.map((unit) => convert(1, 'MB', unit))
+    expect(values).toEqual([...values].sort((a, b) => b - a))
+    expect(new Set(values).size).toBe(units.length)
+  })
+
   it('rechnet die Leitfähigkeit für Wasseranalysen', () => {
     expect(convert(1, 'mS/cm', 'uS/cm')).toBeCloseTo(1000, 9)
     expect(convert(1, 'mS/cm', 'mS/m')).toBeCloseTo(100, 9)
