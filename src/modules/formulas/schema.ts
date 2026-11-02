@@ -75,6 +75,8 @@ export const formulaShape = {
   examples: z.array(exampleSchema).default([]),
   /** Optionale Skizze aus content/figures, z. B. "figure.kreis" */
   figure: z.string().trim().min(1).optional(),
+  /** Formelzeile, Legende und Überschrift „Rechner“ weglassen, z. B. bei einfachen Tools */
+  hideFormula: z.boolean().optional(),
 }
 
 /** Pflichtangaben einer geprüften Formel */

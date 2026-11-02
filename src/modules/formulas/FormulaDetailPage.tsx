@@ -106,24 +106,28 @@ export function FormulaBody({ formula }: { formula: FormulaEntry }) {
         <p className="mt-4 font-semibold">Die Formel ist noch nicht hinterlegt.</p>
       ) : (
         <>
-          <FormulaLine formula={formula} resultLabel={result.label ?? result.symbol} />
-          <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
-            {legend.map((item) => (
-              <div key={item.key} className="contents">
-                <dt className="font-mono font-semibold">{item.label}</dt>
-                <dd>
-                  <TermLink to={item.nameHref}>{item.name}</TermLink>
-                  {item.unit && (
-                    <span className="text-muted">
-                      {' ['}
-                      <TermLink to={item.unitHref}>{item.unit}</TermLink>]
-                    </span>
-                  )}
-                  {item.detail && <span className="text-muted"> {item.detail}</span>}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          {!formula.hideFormula && (
+            <>
+              <FormulaLine formula={formula} resultLabel={result.label ?? result.symbol} />
+              <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
+                {legend.map((item) => (
+                  <div key={item.key} className="contents">
+                    <dt className="font-mono font-semibold">{item.label}</dt>
+                    <dd>
+                      <TermLink to={item.nameHref}>{item.name}</TermLink>
+                      {item.unit && (
+                        <span className="text-muted">
+                          {' ['}
+                          <TermLink to={item.unitHref}>{item.unit}</TermLink>]
+                        </span>
+                      )}
+                      {item.detail && <span className="text-muted"> {item.detail}</span>}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </>
+          )}
           <Calculator key={formula.id} formula={formula} />
         </>
       )}

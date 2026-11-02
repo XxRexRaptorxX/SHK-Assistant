@@ -1,5 +1,5 @@
 import { useId, useMemo, useState } from 'react'
-import { HeadingWithClear } from '../../components/ClearInputsButton'
+import { ClearInputsButton, HeadingWithClear } from '../../components/ClearInputsButton'
 import { EqualsIcon, WorkingIcon } from '../../components/icons'
 import { updateSettings, useSettings } from '../../settings/settings'
 import { formatNumber, formatSignificant, parseDecimal } from '../../lib/number'
@@ -169,11 +169,18 @@ export function Calculator({
   const ToggleIcon = working ? EqualsIcon : WorkingIcon
 
   return (
-    <section className="mt-6" aria-labelledby={`${idPrefix}-heading`}>
-      <HeadingWithClear id={`${idPrefix}-heading`} onClear={clear} disabled={!changed}>
-        Rechner
-      </HeadingWithClear>
-      <div className="mt-3 space-y-4">
+    <section className={formula.hideFormula ? 'mt-4' : 'mt-6'} aria-labelledby={`${idPrefix}-heading`}>
+      {formula.hideFormula ? (
+        // Ohne sichtbare Überschrift keine eigene Zeile: Der Löschen-Knopf steht im Ergebnisfeld
+        <h2 id={`${idPrefix}-heading`} className="sr-only">
+          Rechner
+        </h2>
+      ) : (
+        <HeadingWithClear id={`${idPrefix}-heading`} onClear={clear} disabled={!changed}>
+          Rechner
+        </HeadingWithClear>
+      )}
+      <div className={`${formula.hideFormula ? '' : 'mt-3'} space-y-4`}>
         {formula.variables.map((variable) => {
           const inputId = `${idPrefix}-${variable.symbol}`
           const raw = values[variable.symbol] ?? ''
@@ -237,18 +244,21 @@ export function Calculator({
       <div className="mt-5 rounded-2xl border-2 border-accent bg-surface p-4" aria-live="polite">
         <div className="flex items-start justify-between gap-3">
           <p className="pt-2 font-semibold">{result.name}</p>
-          {canShowWorking && (
-            <button
-              type="button"
-              aria-label={toggleLabel}
-              aria-pressed={working}
-              title={toggleLabel}
-              onClick={() => updateSettings({ showWorking: !working })}
-              className="flex size-11 shrink-0 items-center justify-center rounded-full border border-edge bg-raised text-muted print:hidden"
-            >
-              <ToggleIcon className="size-6" />
-            </button>
-          )}
+          <div className="flex shrink-0 items-center gap-2">
+            {formula.hideFormula && <ClearInputsButton onClear={clear} disabled={!changed} />}
+            {canShowWorking && (
+              <button
+                type="button"
+                aria-label={toggleLabel}
+                aria-pressed={working}
+                title={toggleLabel}
+                onClick={() => updateSettings({ showWorking: !working })}
+                className="flex size-11 shrink-0 items-center justify-center rounded-full border border-edge bg-raised text-muted print:hidden"
+              >
+                <ToggleIcon className="size-6" />
+              </button>
+            )}
+          </div>
         </div>
         {working ? (
           // Rechenweg: Formel mit eingesetzten Zahlen, dahinter das Ergebnis

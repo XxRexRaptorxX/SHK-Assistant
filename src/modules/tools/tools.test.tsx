@@ -3,7 +3,10 @@ import { MemoryRouter, Route, Routes } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { App } from '../../App'
 import { homeTileModules, modules } from '../../app/modules'
+import { content } from '../../content'
 import { checkFormula, evaluateFormula } from '../formulas/engine'
+import { FormulaBody } from '../formulas/FormulaDetailPage'
+import type { FormulaEntry } from '../formulas/schema'
 import { presetsFor } from '../materials/materials'
 import { ensureCustomUnits } from '../units/customUnits'
 import ToolPage from './ToolPage'
@@ -66,7 +69,39 @@ describe('Tools', () => {
       'Startablauf Feuerungsautomat',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Wartungsintervalle',
+      'Wasserinhalt einer Rohrleitung',
     ])
+  })
+
+  it('rechnet den Wasserinhalt wie die gleichnamige Formel', () => {
+    const tool = formulaToolEntries.find((entry) => entry.id === 'tool.rohrinhalt')!
+    const formula = content.formulas.find((entry) => entry.id === 'formula.hydraulik.rohrinhalt')!
+    const inputs = { d: { value: 20, unit: 'mm' }, l: { value: 10, unit: 'm' } }
+    expect(evaluateFormula(tool, inputs)).toBeCloseTo(evaluateFormula(formula, inputs), 9)
+    expect(tool.expression).toBe(formula.expression)
+    expect(tool.category).toBe('Aufmaß')
+  })
+
+  it('zeigt beim Wasserinhalt nur Skizze und Eingaben, ohne Formelzeile, Legende und sichtbare Überschrift', () => {
+    const tool = formulaToolEntries.find((entry) => entry.id === 'tool.rohrinhalt')!
+    const render = (entry: FormulaEntry) =>
+      renderToStaticMarkup(
+        <MemoryRouter>
+          <FormulaBody formula={entry} />
+        </MemoryRouter>,
+      )
+    const html = render(tool)
+    expect(html).not.toContain('Linear anzeigen')
+    expect(html).not.toContain('Kreiszahl')
+    expect(html).toContain('class="sr-only">Rechner</h2>')
+    // Keine eigene Zeile über den Feldern: Der Löschen-Knopf steht im Ergebnisfeld
+    expect(html.indexOf('Innendurchmesser')).toBeGreaterThan(-1)
+    expect(html.indexOf('Innendurchmesser')).toBeLessThan(html.indexOf('Alle Eingaben löschen'))
+    const withFormula = render({ ...tool, hideFormula: false })
+    expect(withFormula).toContain('Linear anzeigen')
+    expect(withFormula).toContain('Kreiszahl')
+    expect(withFormula).toContain('text-xl font-bold">Rechner</h2>')
+    expect(withFormula.lastIndexOf('Alle Eingaben löschen')).toBeLessThan(withFormula.lastIndexOf('Innendurchmesser'))
   })
 
   it('rechnet die verbaute Länge aus angefangener, vollen und letzter Rolle', () => {
