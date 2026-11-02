@@ -6,10 +6,11 @@ import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
 import { COMPANY_URL } from '../config/links'
 import { ShakeToReport } from '../feedback/ShakeToReport'
+import { useFavoriteIds } from '../favorites/favoritesStore'
 import { DisclaimerGate } from '../modules/legal/DisclaimerDialog'
 import { InstallHint } from '../settings/InstallHint'
 import { useApplyTheme } from '../theme/useTheme'
-import { bottomNavModules, modules, type AppModule } from './modules'
+import { modules, visibleBottomNavModules, type AppModule } from './modules'
 
 const iconButton =
   'flex size-12 items-center justify-center rounded-full text-bar-ink hover:bg-bar-active active:bg-bar-active'
@@ -77,19 +78,18 @@ function Header() {
   )
 }
 
-const bottomItems: AppModule[] = [
-  { path: '/', title: 'Start', description: '', icon: HomeIcon },
-  ...bottomNavModules,
-]
+const startItem: AppModule = { path: '/', title: 'Start', description: '', icon: HomeIcon }
 
 /** Schwebende Leiste mit runden Ecken; der aktive Reiter ist als Fläche in Akzentfarbe hervorgehoben */
 function BottomNav() {
+  const hasFavorites = useFavoriteIds().size > 0
+  const bottomItems = [startItem, ...visibleBottomNavModules(hasFavorites)]
   return (
     <nav
       aria-label="Module"
       className="fixed inset-x-1.5 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-10 print:hidden"
     >
-      <ul className="mx-auto grid max-w-xl grid-cols-7 rounded-full border border-edge bg-surface/90 p-1 shadow-xl shadow-black/25 backdrop-blur-md">
+      <ul className={`mx-auto grid max-w-xl ${hasFavorites ? 'grid-cols-7' : 'grid-cols-6'} rounded-full border border-edge bg-surface/90 p-1 shadow-xl shadow-black/25 backdrop-blur-md`}>
         {bottomItems.map((item) => {
           const Icon = item.icon
           return (

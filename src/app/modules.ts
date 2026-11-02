@@ -100,13 +100,23 @@ export const bottomNavModules: AppModule[] = [
   modules.formulas,
   modules.converter,
   modules.calculator,
-  modules.checklists,
   modules.lexicon,
+  modules.favorites,
 ]
+
+/** Sichtbare Module der unteren Leiste: Favoriten erst, wenn etwas gemerkt ist */
+export function visibleBottomNavModules(hasFavorites: boolean): AppModule[] {
+  return hasFavorites ? bottomNavModules : bottomNavModules.filter((module) => module !== modules.favorites)
+}
 
 /** Kacheln auf der Startseite */
 export const homeTileModules: AppModule[] = [
-  ...bottomNavModules,
+  modules.tools,
+  modules.formulas,
+  modules.converter,
+  modules.calculator,
+  modules.checklists,
+  modules.lexicon,
   modules.news,
   modules.expert,
   modules.favorites,

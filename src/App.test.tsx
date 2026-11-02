@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { App } from './App'
-import { bottomNavModules, modules } from './app/modules'
+import { homeTileModules, modules, visibleBottomNavModules } from './app/modules'
 import { pageTitle } from './components/headings'
 
 function renderAt(path: string): string {
@@ -30,9 +30,16 @@ describe('App-Routen', () => {
 
   it('zeigt auf der Startseite Kacheln zu den Modulen', () => {
     const html = renderAt('/')
-    for (const module of bottomNavModules) {
+    for (const module of homeTileModules) {
       expect(html).toContain(module.description)
     }
+  })
+
+  it('hat Favoriten ganz rechts in der unteren Leiste, Checklisten bleiben über die Startseite erreichbar', () => {
+    expect(visibleBottomNavModules(true).at(-1)).toBe(modules.favorites)
+    expect(visibleBottomNavModules(true)).not.toContain(modules.checklists)
+    expect(homeTileModules).toContain(modules.checklists)
+    expect(new Set(homeTileModules).size).toBe(homeTileModules.length)
   })
 
   it('zeigt für unbekannte Adressen "Seite nicht gefunden"', () => {
@@ -41,9 +48,20 @@ describe('App-Routen', () => {
 
   it('enthält die untere Navigation mit Start und allen Hauptmodulen', () => {
     const html = renderAt('/')
-    for (const path of ['/', ...bottomNavModules.map((m) => m.path)]) {
+    for (const path of ['/', ...visibleBottomNavModules(false).map((m) => m.path)]) {
       expect(html).toContain(`href="${path}"`)
     }
+  })
+
+  it('zeigt Favoriten in der unteren Leiste erst, wenn etwas gemerkt ist', () => {
+    expect(visibleBottomNavModules(false)).not.toContain(modules.favorites)
+    expect(visibleBottomNavModules(true)).toContain(modules.favorites)
+    // Ohne geladene Favoriten: sechs Spalten und kein Knopf in der Leiste, der Stern oben bleibt
+    const html = renderAt('/')
+    const nav = html.slice(html.indexOf('aria-label="Module"'))
+    expect(nav).toContain('grid-cols-6')
+    expect(nav).not.toContain('>Favoriten</span>')
+    expect(html).toContain('aria-label="Favoriten"')
   })
 
   it('markiert in der internen Edition die Kopfzeile', () => {

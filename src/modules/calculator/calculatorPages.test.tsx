@@ -27,11 +27,11 @@ describe('Taschenrechner-Seiten', () => {
     expect(neighbours('grafik')?.next.slug).toBe('standard')
   })
 
-  it('steht in der unteren Leiste als „Rechner“ vor den Checklisten', () => {
+  it('steht in der unteren Leiste als „Rechner“ vor dem Lexikon', () => {
     const html = at('/')
     const nav = html.slice(html.indexOf('aria-label="Module"'))
-    expect(nav).toContain('grid-cols-7')
-    expect(nav.indexOf('>Rechner</span>')).toBeLessThan(nav.indexOf('>Checklisten</span>'))
+    expect(nav.indexOf('>Rechner</span>')).toBeGreaterThan(-1)
+    expect(nav.indexOf('>Rechner</span>')).toBeLessThan(nav.indexOf('>Lexikon</span>'))
   })
 
   it('zeigt den Standardrechner mit 20 großen Tasten und Ergebnis', () => {
