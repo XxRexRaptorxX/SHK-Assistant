@@ -34,7 +34,7 @@ describe('Tools', () => {
         <App />
       </MemoryRouter>,
     )
-    expect(html.indexOf('Praktische Rechenhelfer')).toBeLessThan(html.indexOf('Formelsammlung mit Rechner'))
+    expect(html.indexOf('Praktische Praxishelfer')).toBeLessThan(html.indexOf('Formelsammlung mit Rechner'))
   })
 
   it('rechnet die Rollenlänge wie im Beispiel des Inhabers', () => {

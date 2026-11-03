@@ -28,7 +28,7 @@ export const modules = {
   tools: {
     path: '/tools',
     title: 'Tools',
-    description: 'Praktische Rechenhelfer',
+    description: 'Praktische Praxishelfer',
     icon: ToolsIcon,
   },
   formulas: {
