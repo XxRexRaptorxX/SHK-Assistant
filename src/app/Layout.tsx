@@ -111,7 +111,8 @@ export function Layout() {
     <div className="flex min-h-dvh flex-col">
       <TechBackdrop />
       <Header />
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 pt-5 pb-32 print:p-0">
+      {/* Seiten mit dem Marker page-fill dürfen die volle Höhe bis zur unteren Leiste nutzen */}
+      <main className="mx-auto w-full max-w-3xl flex-1 px-4 pt-5 pb-32 has-[>.page-fill]:flex has-[>.page-fill]:flex-col print:p-0">
         <Outlet />
       </main>
       <BottomNav />

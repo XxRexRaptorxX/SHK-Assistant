@@ -1,10 +1,13 @@
 import { createStoredState } from '../../lib/storedState'
 import { EXPERT_UNLOCK_KEY } from './constants'
 
-// Einfache Sperre, kein Schutz: Code und PIN stehen im Bundle der internen Edition.
+// Einfache Sperre, kein Schutz: Codes und PINs stehen im Bundle.
 // Nach richtiger Eingabe merkt sich das Gerät die Freischaltung dauerhaft.
 
-export const EXPERT_PIN = '0815'
+/** Gültige PINs; alle gleich lang, weil das Formular bei dieser Länge automatisch prüft */
+export const EXPERT_PINS: readonly string[] = ['0815', '1163']
+
+export const EXPERT_PIN_LENGTH = 4
 
 const unlockState = createStoredState<boolean>({
   key: EXPERT_UNLOCK_KEY,
@@ -30,7 +33,7 @@ export const useExpertUnlocked = unlockState.useValue
 
 /** Prüft die PIN und schaltet bei Erfolg dauerhaft frei */
 export function tryUnlockExpert(pin: string): boolean {
-  if (pin.trim() !== EXPERT_PIN) return false
+  if (!EXPERT_PINS.includes(pin.trim())) return false
   unlockState.set(true)
   return true
 }

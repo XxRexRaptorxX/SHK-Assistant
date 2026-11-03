@@ -1,13 +1,14 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import { CONTACT_EMAIL } from '../../config/links'
 import { createSearch } from '../../search/search'
 import { ExpertPage } from './ExpertPage'
 import { expertCodeEntries, filterExpertCodes, plainText, sortExpertCodes, splitShades } from './expertCodes'
 import { checkExpertCode, type ExpertCodeEntry } from './schema'
 import { expertCodeSearchDocuments } from './search'
 import { EXPERT_UNLOCK_KEY } from './constants'
-import { tryUnlockExpert } from './unlock'
+import { EXPERT_PIN_LENGTH, EXPERT_PINS, tryUnlockExpert } from './unlock'
 
 const fixture: ExpertCodeEntry = {
   id: 'expert-code.test-regler',
@@ -91,6 +92,14 @@ describe('Fachmann-Seite', () => {
     expect(html).not.toContain('admin')
   })
 
+  it('zeigt bei der PIN-Abfrage den Tipp und den Knopf zum Anfordern per E-Mail', () => {
+    const html = render(false)
+    expect(html).toContain('<span class="underline">Tipp:</span> c der Heizungsbauerhauptformel')
+    expect(html).toContain(`href="mailto:${CONTACT_EMAIL}?subject=`)
+    expect(html).toContain('PIN per E-Mail anfordern')
+    expect(render(true)).not.toContain('Heizungsbauerhauptformel')
+  })
+
   it('zeigt freigeschaltet die Codes mit dunkel- und hellgrauen Stellen ohne Klammern', () => {
     const html = render(true)
     expect(html).not.toContain('PIN eingeben')
@@ -107,7 +116,7 @@ describe('Fachmann-Seite', () => {
 describe('PIN', () => {
   afterEach(() => vi.unstubAllGlobals())
 
-  it('schaltet nur mit 0815 frei und merkt sich das', () => {
+  it.each(['0815', '1163'])('schaltet mit %s frei und merkt sich das, sonst nicht', (pin) => {
     const stored = new Map<string, string>()
     vi.stubGlobal('localStorage', {
       getItem: (key: string) => stored.get(key) ?? null,
@@ -116,7 +125,11 @@ describe('PIN', () => {
     })
     expect(tryUnlockExpert('1234')).toBe(false)
     expect(stored.has(EXPERT_UNLOCK_KEY)).toBe(false)
-    expect(tryUnlockExpert('0815')).toBe(true)
+    expect(tryUnlockExpert(pin)).toBe(true)
     expect(stored.get(EXPERT_UNLOCK_KEY)).toBe('1')
+  })
+
+  it('hat nur PINs in der Länge, bei der das Formular automatisch prüft', () => {
+    expect(EXPERT_PINS.every((pin) => pin.length === EXPERT_PIN_LENGTH)).toBe(true)
   })
 })

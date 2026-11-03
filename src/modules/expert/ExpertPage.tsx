@@ -1,17 +1,19 @@
 import { useState, type FormEvent } from 'react'
 import { modules } from '../../app/modules'
-import { primaryButton } from '../../components/buttons'
+import { primaryButton, secondaryButton } from '../../components/buttons'
 import { DraftBadge } from '../../components/DraftBadge'
 import { categoryHeading, pageTitle } from '../../components/headings'
+import { MailIcon } from '../../components/icons'
 import { SearchInput } from '../../components/SearchInput'
 import { SourceInfo } from '../../components/SourceInfo'
 import { fieldBase, listCard } from '../../components/surfaces'
+import { CONTACT_EMAIL } from '../../config/links'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { useFavoriteIds } from '../../favorites/favoritesStore'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { expertCodeEntries, filterExpertCodes, plainText, splitShades, type Shade } from './expertCodes'
 import type { ExpertCodeEntry } from './schema'
-import { EXPERT_PIN, tryUnlockExpert, useExpertUnlocked } from './unlock'
+import { EXPERT_PIN_LENGTH, tryUnlockExpert, useExpertUnlocked } from './unlock'
 
 interface ExpertPageProps {
   /** Für Tests überschreibbar */
@@ -46,7 +48,7 @@ export function PinForm() {
   const change = (value: string) => {
     setPin(value)
     setWrong(false)
-    if (value.length === EXPERT_PIN.length) check(value)
+    if (value.length === EXPERT_PIN_LENGTH) check(value)
   }
 
   const submit = (event: FormEvent) => {
@@ -55,7 +57,11 @@ export function PinForm() {
   }
 
   return (
-    <form onSubmit={submit} className="mx-auto mt-6 max-w-xs">
+    // Negativer Rand: der Mail-Knopf sitzt knapp über der unteren Leiste statt über deren Freiraum
+    <form
+      onSubmit={submit}
+      className="page-fill mx-auto mt-6 mb-[calc(env(safe-area-inset-bottom)-2.5rem)] flex w-full max-w-xs flex-1 flex-col"
+    >
       <label htmlFor="expert-pin" className="block text-center font-semibold">
         PIN eingeben
       </label>
@@ -64,7 +70,7 @@ export function PinForm() {
         type="password"
         inputMode="numeric"
         autoComplete="off"
-        maxLength={EXPERT_PIN.length}
+        maxLength={EXPERT_PIN_LENGTH}
         value={pin}
         onChange={(event) => change(event.target.value)}
         aria-invalid={wrong}
@@ -79,6 +85,17 @@ export function PinForm() {
       <button type="submit" className={`${primaryButton} mt-3 w-full`}>
         Entsperren
       </button>
+      <p className="my-auto py-6 text-center text-muted italic">
+        <span className="underline">Tipp:</span> c der Heizungsbauerhauptformel
+      </p>
+      <a
+        href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('SHK-Assistant: PIN für Fachmann-Codes')}`}
+        aria-label={`PIN per E-Mail anfordern an ${CONTACT_EMAIL}`}
+        className={`${secondaryButton} w-full`}
+      >
+        PIN per E-Mail anfordern
+        <MailIcon className="size-6 text-accent" />
+      </a>
     </form>
   )
 }

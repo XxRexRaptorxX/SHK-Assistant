@@ -250,7 +250,7 @@ Graue Stellen werden mit Klammern markiert, die in der App entfallen: `[eckige K
 `[Bsp.:] (1)[9](.0)`. Klammern müssen paarweise stehen und dürfen nicht verschachtelt sein. Echte
 Klammern im Text sind daher nicht möglich. Fachmann-Codes dürfen `public` sein und erscheinen dann auch
 in der öffentlichen Version. In der App liegen sie im Bereich „Fachmann“ hinter einer PIN-Abfrage. Die
-PIN ist nur eine Hürde, kein Schutz: Codes und PIN stehen lesbar im Bundle.
+PIN ist nur eine Hürde, kein Schutz: Codes und PINs stehen lesbar im Bundle.
 
 ## Rechtliches (`legal/`, Präfix `legal.`)
 
