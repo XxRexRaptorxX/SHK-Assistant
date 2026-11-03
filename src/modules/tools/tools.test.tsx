@@ -58,6 +58,7 @@ describe('Tools', () => {
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Gebäudeklasse',
       'Heizlast überschlägig',
+      'Kabelarten',
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Material zurückschreiben',
       'Mehrverbrauch durch Ruß im Kessel',

@@ -1,0 +1,700 @@
+{
+  "id": "tool.kabelarten",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Kabeldaten: NYM-J: HELUKABEL, Datenblatt NYM-J/-O, https://www.zajadacz.de/documents/AZ_DB_HE_HELU-NYM-J-O.pdf; „nicht im Erdreich“ nur Händlerangabe: elektrikshop.de, https://www.elektrikshop.de/nym-j-3x2-5.html; NYY-J: HELUKABEL, Datenblatt NYY (14.06.2024), https://assets-cdn.helukabel.com/suppliers/Helukabel/documents/db/HELUKABEL_M32001_DE.pdf; UV-Beständigkeit: EMSKABEL, Technisches Datenblatt NYY, https://www.sentinel-holding.eu/Kunden/EMSKABEL%20GmbH/Produkte/NYY-J%20-%20NYY-O%20Starkstromkabel%20nach%20DIN%20VDE%200276-603/TDB%20Starkstromkabel%20NYY.pdf; H07RN-F: Lapp, Datenblatt 1600096 (gültig ab 26.08.2024), https://www.offgridtec.com/media/product_attachements/Lapp_H07RN-F_Datenblatt_neu.pdf; UV- und Ozonbeständigkeit: Hornbach, Technisches Datenblatt, https://media.hornbach.de/hb/technicaldatasheet/as.46281508.pdf; H05RN-F und Zuordnung zu 60245 IEC 57: Lapp, Katalogblatt H05RN-F, https://t3.lappcdn.com/fileadmin/DAM/Lapp_APAC/One_Asia_Catalogue_FY20_21/Power_and_Control/LAPP_KABEL_H05RN-F_Pg30.pdf; H05VV-F: Faber Kabel, Datenblatt, https://asset.conrad.com/media10/add/160267/c1/-/de/001152275DS01/adatlap-1152275-toemlos-vezetek-h05vv-f-3-g-15-mm-fekete-faber-kabel-030020-meteraru.pdf; H07V-K: Waskönig+Walter, Datenblatt (Stand 03.11.2026), https://www.waskoenig.de/download/0060?locale=de; Lapp, Datenblatt 4520001 (gültig ab 28.09.2021), https://b2b.offgridtec.com/media/product_attachements/Lapp_H07V-K_Datenblatt.pdf; H1Z2Z2-K: Lapp, Datenblatt H1Z2Z2-K, https://t3.lappcdn.com/fileadmin/DAM/Lapp_South_Africa/2019-Repository/Photovoltaic/H1Z2Z2-K.pdf; DIN EN 50618 (VDE 0283-618):2015-11, Normeintrag, https://www.din.de/en/getting-involved/standards-committees/dke/publications/wdc-beuth:din21:240741133; LiYCY: Lynxeo, Datenblatt LiYCY, https://www.lynxeogroup.com/.rest/catalog/v1/family/pdf/26027/LiYCY; Lapp, Produktinformation JE-LiYCY...BD, https://www.zajadacz.de/documents/AZ_DB_LA_LAPP_JE-LIYCY.pdf; J-Y(St)Y: nur Händlerangabe: elektrikshop.de, https://www.elektrikshop.de/j-ysty-2x2x0-8-fernmeldeleitung.html; SiHF: Lapp, ÖLFLEX HEAT 180 SiHF, https://products.lappgroup.com/online-catalogue/power-and-control-cables/expanded-ambient-temperatures/silicone-cables/oelflex-heat-180-sihf.html. Zuordnung: Vaillant, aroTHERM plus VWL ../8.1 A, Installations- und Wartungsanleitung 8000041775_04 (22.09.2026), Abschnitt 7.2, S. 31, https://www.vaillant.de/api/download/product/de/installationsanleitung_arotherm-plus_1483575.pdf; Panasonic, Installationshandbuch WH-WXG09ME8, WH-WXG12ME8, WH-WXG16ME8, S. 12, https://zup24.de/up/img/Installationsanleitung-Panasonic-WH-WXG-ME8.pdf; Wilo, Datenblatt Wilo-Connector 4200870, https://www.solarics.de/cdn/shop/files/wilo-datasheet_at_de_4200870_wilo-connector.pdf; Wilo-Economy MHIL, Einbau- und Betriebsanleitung 4 088 957-Ed.05/2016-08, https://cms.media.wilo.com/dcidocpfinder/wilo_f_0200002b00025c8800050092/1183400/wilo_f_0200002b00025c8800050092.pdf; Rapido, Montage- und Betriebsanleitung Heizkreisregelung Rapidomatic T2.3S, S. 3–4, https://www.uttscheid.de/product-downloads/2999%20-%20Montage-%20und%20Betriebsanleitung%20Heizkreisregelung%20Rapido%20Typ%20Rapidomatic%20T2.3S%20-%20010876.pdf; Viessmann, Montageanleitung Raumtemperatursensor 5443 961 (12/2014), https://assets.heizung-billiger.de/documents/5443961VMA00004_1.pdf; Eberle, Datenblatt Eismelder ESF/ESD/TFD, https://www.eberle.de/fileadmin/Datenblatt/ESF-524001-002_ESD-524003_TFD-524004_ESF-524011.pdf. Alle abgerufen am 03.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "cables",
+  "title": "Kabelarten",
+  "summary": "Zeigt passende Kabelarten je Komponente oder Einbausituation.",
+  "description": "Oben umschalten und wählen: eine Komponente, z. B. Fühler, Außengerät, Steckdose, Pumpe oder PV, oder eine Einbausituation, z. B. Aufputz, Unterputz, innen oder außen. Das Tool zeigt die Kabelarten, die in den Quellen dafür genannt sind, mit ihren Eigenschaften. „Vorgeschrieben“ steht nur, wo eine Quelle es konkret verlangt, und gilt dann für das dort genannte Gerät. Maßgeblich sind immer die Anleitung des Geräts, die gültigen Normen und die Elektrofachkraft; Querschnitt und Absicherung ermittelt das Tool nicht.",
+  "category": "Montage",
+  "properties": [
+    { "key": "uv", "name": "UV-beständig" },
+    { "key": "outdoor", "name": "Im Freien" },
+    { "key": "ground", "name": "In Erde" },
+    { "key": "flexible", "name": "Feindrähtig (flexibel)" },
+    { "key": "shield", "name": "Abgeschirmt" },
+    { "key": "oil", "name": "Ölbeständig" },
+    { "key": "halogenFree", "name": "Halogenfrei" }
+  ],
+  "cables": [
+    {
+      "key": "nymJ",
+      "name": "NYM-J",
+      "aliases": ["NYM", "Mantelleitung", "Installationsleitung"],
+      "description": "PVC-Mantelleitung für die feste Installation, mit grün-gelbem Schutzleiter.",
+      "standard": "DIN VDE 0250-204",
+      "voltage": "300/500 V",
+      "temperature": "fest verlegt −40 bis +70 °C, bewegt +5 bis +70 °C",
+      "use": "Industrie- und Hausinstallation: trockene, feuchte und nasse Räume, auf, in und unter Putz, im Mauerwerk und im Beton.",
+      "limits": "Nicht direkt in Schüttel-, Rüttel- oder Stampfbeton. Im Freien nur vor direkter Sonne geschützt.",
+      "properties": {
+        "uv": { "value": "no" },
+        "outdoor": { "value": "conditional", "note": "vor direkter Sonne geschützt" },
+        "ground": { "value": "no" },
+        "flexible": { "value": "no" },
+        "shield": { "value": "no" }
+      },
+      "source": "HELUKABEL, Datenblatt NYM-J/-O; „nicht in Erde“ nur laut Händler (elektrikshop.de)"
+    },
+    {
+      "key": "nyyJ",
+      "name": "NYY-J",
+      "aliases": ["NYY", "Erdkabel"],
+      "description": "Energie- und Steuerkabel mit schwarzem PVC-Mantel, mit grün-gelbem Schutzleiter.",
+      "standard": "DIN VDE 0276-603",
+      "voltage": "0,6/1 kV",
+      "temperature": "fest verlegt −40 bis +70 °C, bewegt −5 bis +50 °C",
+      "use": "In Erde, im Wasser, im Freien, in Beton, in Innenräumen und Kabelkanälen.",
+      "limits": "Nur wo keine mechanischen Schäden zu erwarten sind.",
+      "properties": {
+        "uv": { "value": "yes" },
+        "outdoor": { "value": "yes" },
+        "ground": { "value": "yes" },
+        "flexible": { "value": "no" },
+        "shield": { "value": "no" }
+      },
+      "source": "HELUKABEL, Datenblatt NYY (14.06.2024); UV: EMSKABEL, Datenblatt NYY"
+    },
+    {
+      "key": "h07rnF",
+      "name": "H07RN-F",
+      "aliases": ["Gummischlauchleitung", "Gummileitung", "Neopren"],
+      "description": "Schwere Gummischlauchleitung für hohe Beanspruchung.",
+      "standard": "EN 50525-2-21",
+      "voltage": "450/750 V",
+      "temperature": "−25 bis +60 °C maximale Leitertemperatur",
+      "use": "Trockene und feuchte Räume sowie im Freien, z. B. Geräte in Werkstätten, transportable Motoren.",
+      "limits": "Nicht für andauernde betriebsmäßige Bewegung, Leitungstrommeln oder Zwangsführungen.",
+      "properties": {
+        "uv": { "value": "yes" },
+        "outdoor": { "value": "yes" },
+        "flexible": { "value": "yes" },
+        "shield": { "value": "no" },
+        "oil": { "value": "yes" }
+      },
+      "source": "Lapp, Datenblatt 1600096 (26.08.2024); UV: Hornbach, Technisches Datenblatt"
+    },
+    {
+      "key": "h05rnF",
+      "name": "H05RN-F",
+      "aliases": ["60245 IEC 57", "IEC 57", "Gummischlauchleitung", "Gummileitung"],
+      "description": "Mittlere Gummischlauchleitung, Typ 60245 IEC 57.",
+      "standard": "EN 50525-2-21, IEC 60245-4",
+      "voltage": "300/500 V",
+      "temperature": "−25 bis +60 °C",
+      "use": "Geräte in Haushalt, Küche und Büro, leichte Werkzeuge; trockene und feuchte Innenräume.",
+      "properties": {
+        "outdoor": { "value": "conditional", "note": "nur eingeschränkt" },
+        "flexible": { "value": "yes" },
+        "shield": { "value": "no" },
+        "oil": { "value": "yes" }
+      },
+      "source": "Lapp, Katalogblatt H05RN-F"
+    },
+    {
+      "key": "h05vvF",
+      "name": "H05VV-F",
+      "aliases": ["PVC-Schlauchleitung", "Schlauchleitung", "Anschlussleitung"],
+      "description": "Flexible PVC-Schlauchleitung für Geräte.",
+      "standard": "VDE 0285-525-2-11",
+      "voltage": "300/500 V",
+      "temperature": "maximal 60 °C Leitertemperatur, fest verlegt bis 50 °C außen",
+      "use": "Mittlere Beanspruchung in Haushalt, Küche und Büro; Hausgeräte auch in feuchten Räumen.",
+      "limits": "Nicht dauerhaft im Freien. Kein Kontakt mit heißen Teilen, keine Wärmestrahlung.",
+      "properties": {
+        "outdoor": { "value": "no" },
+        "flexible": { "value": "yes" },
+        "shield": { "value": "no" }
+      },
+      "source": "Faber Kabel, Datenblatt H05VV-F"
+    },
+    {
+      "key": "h07vK",
+      "name": "H07V-K",
+      "aliases": ["Aderleitung", "Verdrahtungsleitung", "Litze"],
+      "description": "Einzelader mit PVC-Isolierung, ohne Mantel.",
+      "standard": "EN 50525-2-31",
+      "voltage": "450/750 V",
+      "temperature": "nach der Montage −40 bis +70 °C, bei der Montage +5 bis +70 °C",
+      "use": "In Rohren auf, in und unter Putz, in geschlossenen Kanälen und zur inneren Verdrahtung von Geräten und Verteilern.",
+      "limits": "Nur geschützt verlegen.",
+      "properties": {
+        "flexible": { "value": "yes" },
+        "shield": { "value": "no" }
+      },
+      "source": "Waskönig+Walter, Datenblatt H07V-K; Lapp, Datenblatt 4520001"
+    },
+    {
+      "key": "h1z2z2K",
+      "name": "H1Z2Z2-K",
+      "aliases": ["Solarkabel", "PV-Kabel", "EN 50618"],
+      "description": "Einadrige Solarleitung mit vernetzter Isolierung und Mantel.",
+      "standard": "EN 50618",
+      "voltage": "DC 1,5/1,5 kV, AC 1,0/1,0 kV",
+      "temperature": "Umgebung −40 bis +90 °C, Leiter bis +120 °C",
+      "use": "Zwischen den Solarmodulen und als Verlängerung von den Strängen zum Wechselrichter.",
+      "limits": "Laut Lapp nicht für die direkte Verlegung in Erde.",
+      "properties": {
+        "uv": { "value": "yes" },
+        "outdoor": { "value": "yes" },
+        "ground": { "value": "no" },
+        "flexible": { "value": "yes" },
+        "halogenFree": { "value": "yes" }
+      },
+      "source": "Lapp, Datenblatt H1Z2Z2-K; DIN EN 50618, Normeintrag"
+    },
+    {
+      "key": "liycy",
+      "name": "LiYCY",
+      "aliases": ["Steuerleitung", "Datenleitung", "Fühlerleitung", "Signalleitung"],
+      "description": "Flexible Daten- und Signalleitung mit Kupfergeflecht-Schirm.",
+      "standard": "",
+      "voltage": "300 V Betriebsspannung",
+      "temperature": "−30 bis +80 °C, ruhend",
+      "use": "Daten und Signale, auch als Anschluss an Schaltschränke und Sensoren; laut Lapp (Bauart JE-LiYCY) fest auf und unter Putz in trockenen und feuchten Räumen.",
+      "limits": "",
+      "properties": {
+        "flexible": { "value": "yes" },
+        "shield": { "value": "yes" }
+      },
+      "source": "Lynxeo, Datenblatt LiYCY; Lapp, Produktinformation JE-LiYCY...BD"
+    },
+    {
+      "key": "jyStY",
+      "name": "J-Y(St)Y",
+      "aliases": ["JYSTY", "Fernmeldeleitung", "Busleitung", "Telefonleitung", "Klingelleitung"],
+      "description": "Fernmelde- und Signalleitung mit Schirm aus kunststoffkaschierter Alufolie.",
+      "standard": "",
+      "voltage": "300 V",
+      "temperature": "verlegt −30 bis +70 °C, beim Verlegen −5 bis +50 °C",
+      "use": "Telefon-, Mess- und Signalübertragung; trockene und feuchte Räume, in und unter Putz, fest verlegt auch im Freien.",
+      "limits": "",
+      "properties": {
+        "outdoor": { "value": "conditional", "note": "fest verlegt" },
+        "shield": { "value": "yes" }
+      },
+      "source": "nur Händlerangabe: elektrikshop.de, J-Y(St)Y 2x2x0,8"
+    },
+    {
+      "key": "sihf",
+      "name": "SiHF",
+      "aliases": ["Silikonleitung", "Silikonkabel", "hitzebeständig", "ÖLFLEX HEAT 180"],
+      "description": "Silikon-Schlauchleitung für hohe Umgebungstemperaturen.",
+      "standard": "angelehnt an EN 50525-2-83",
+      "voltage": "300/500 V",
+      "temperature": "−60 bis +180 °C mit ausreichender Belüftung",
+      "use": "Bereiche mit hoher Umgebungstemperatur, z. B. Heizelemente, Industrieöfen, Lüfter- und Klimatechnik.",
+      "limits": "Ohne ausreichende Belüftung lassen die mechanischen Eigenschaften ab etwa +100 °C nach.",
+      "properties": {
+        "flexible": { "value": "yes" },
+        "oil": { "value": "conditional", "note": "gegen viele Öle" },
+        "halogenFree": { "value": "yes" }
+      },
+      "source": "Lapp, ÖLFLEX HEAT 180 SiHF, Online-Katalog"
+    }
+  ],
+  "components": [
+    {
+      "key": "fuehler",
+      "label": "Fühler (Temperatur, Raum, Außen)",
+      "group": "Heizung und Regelung",
+      "aliases": ["Sensor", "Außenfühler", "Speicherfühler", "Raumfühler", "NTC", "Pt1000"],
+      "note": "Keine Quelle schreibt eine bestimmte Kabelart vor. Rapido nennt für Fühler 0,5 mm², höchstens 50 m und mindestens 2 cm Abstand zu Netzleitungen. Viessmann: Raumtemperatursensor höchstens 30 m, nicht unmittelbar mit 230/400-V-Leitungen zusammen. Panasonic: Speicherfühler 2 × mindestens 0,3 mm². Eberle erlaubt für den Eismelder-Fühler die Verlängerung mit 2-adriger 230-V-Leitung 1,5 mm² bis 50 m.",
+      "recommendations": [
+        {
+          "cable": "liycy",
+          "level": "suitable",
+          "note": "Für trockene und feuchte Räume; zum Freien nennen die Quellen nichts.",
+          "source": "Lynxeo, Datenblatt LiYCY (Anschluss von Sensoren)"
+        },
+        {
+          "cable": "jyStY",
+          "level": "suitable",
+          "note": "Auch für den Außenfühler, wenn fest verlegt.",
+          "source": "eigene Zuordnung aus der Händlerangabe „Mess- und Signalübertragung“"
+        }
+      ]
+    },
+    {
+      "key": "bus",
+      "label": "Bus und Raumgerät (Regler-Datenleitung)",
+      "group": "Heizung und Regelung",
+      "aliases": ["eBUS", "Datenbus", "Busleitung", "Kommunikationskabel", "Bedieneinheit"],
+      "note": "Rapido verlangt abgeschirmte Datenbusleitungen, Schirm einseitig erden, höchstens 50 m, mindestens 2 cm Abstand zu Netzleitungen. Vaillant aroTHERM plus: ab 10 m Länge Netz- und Sensor-/Buskabel getrennt verlegen. Panasonic: Bedieneinheit 2 × mindestens 0,3 mm².",
+      "recommendations": [
+        {
+          "cable": "jyStY",
+          "level": "suitable",
+          "note": "Von Rapido empfohlene Ausführung: J-Y(St)Y 2 × 2 × 0,6.",
+          "source": "Rapido, Anleitung Rapidomatic T2.3S, S. 4"
+        },
+        {
+          "cable": "liycy",
+          "level": "suitable",
+          "source": "Lynxeo, Datenblatt LiYCY (Daten- und Signalübertragung)"
+        }
+      ]
+    },
+    {
+      "key": "pumpe",
+      "label": "Umwälzpumpe",
+      "group": "Heizung und Regelung",
+      "aliases": ["Pumpe", "Heizungspumpe", "Hocheffizienzpumpe", "Wilo-Connector"],
+      "note": "Wilo (Economy MHIL): Kabel darf Rohrleitung und Pumpe nie berühren und muss vor Feuchtigkeit geschützt sein. Rapido nennt für netzspannungsführende Leitungen, auch Pumpen, 1,5 mm². Fester Anschluss: Kabelart laut Anleitung der Pumpe.",
+      "recommendations": [
+        {
+          "cable": "h05vvF",
+          "level": "suitable",
+          "note": "So ab Werk beim Wilo-Connector: 3G0,75 mm², 2 m, mit Schuko-Stecker. Nicht an heißen Teilen entlangführen.",
+          "source": "Wilo, Datenblatt Wilo-Connector 4200870"
+        }
+      ]
+    },
+    {
+      "key": "heizstab",
+      "label": "Heizstab, Heizelement",
+      "group": "Heizung und Regelung",
+      "aliases": ["Einschraubheizkörper", "E-Heizstab", "heiße Bauteile"],
+      "note": "Keine Herstellerangabe zum Heizstab gefunden. Maßgeblich ist die Anleitung des Heizstabs.",
+      "recommendations": [
+        {
+          "cable": "sihf",
+          "level": "suitable",
+          "note": "Für die heiße Anschlussstelle; Lapp nennt Heizelemente als Einsatzgebiet.",
+          "source": "Lapp, ÖLFLEX HEAT 180 SiHF"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "avoid",
+          "note": "Darf heiße Teile nicht berühren und keiner Wärmestrahlung ausgesetzt sein.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        }
+      ]
+    },
+    {
+      "key": "schaltkasten",
+      "label": "Verdrahtung im Schaltkasten",
+      "group": "Heizung und Regelung",
+      "aliases": ["Regelung", "Verteiler", "Klemmkasten", "Geräteverdrahtung"],
+      "recommendations": [
+        {
+          "cable": "h07vK",
+          "level": "suitable",
+          "note": "Einzelader ohne Mantel, nur innerhalb des Geräts oder Verteilers oder im Rohr.",
+          "source": "Waskönig+Walter, Datenblatt H07V-K"
+        }
+      ]
+    },
+    {
+      "key": "aussengeraet",
+      "label": "Außengerät Wärmepumpe, Klima",
+      "group": "Wärmepumpe und Klima",
+      "aliases": ["Außeneinheit", "Monoblock", "Luft-Wasser-Wärmepumpe", "Split", "Klimaanlage"],
+      "note": "Vorgabe je Modell, hier nur Vaillant und Panasonic. Andere Geräte: Anleitung prüfen. Panasonic WH-WXG: Verbindung zwischen Innen- und Außengerät 2 × mindestens 0,75 mm².",
+      "recommendations": [
+        {
+          "cable": "h05rnF",
+          "level": "required",
+          "note": "Vaillant aroTHERM plus verlangt für den Netzanschluss den Typ 60245 IEC 57, zusätzlich für das Freie geeignet und UV-beständig. Panasonic WH-WXG ..ME8: flexibel mit Polychloroprenmantel, 60245 IEC 57 oder schwerer. H05RN-F ist dieser Typ, laut Lapp aber im Freien nur eingeschränkt: Eignung am Aufstellort prüfen.",
+          "source": "Vaillant, Anleitung 8000041775_04, S. 31; Panasonic, Installationshandbuch, S. 12; Lapp, Katalogblatt H05RN-F"
+        },
+        {
+          "cable": "h07rnF",
+          "level": "suitable",
+          "note": "Schwerere Bauart als H05RN-F, im Freien geeignet: passt zu „oder schwerer“ bei Panasonic.",
+          "source": "eigene Zuordnung aus Panasonic, S. 12, und Lapp, Datenblatt 1600096"
+        },
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Nur wenn die Anleitung starre Kabel zulässt: Vaillant lässt sie grundsätzlich zu, wenn sie für das Freie geeignet sind und fachgerecht verlegt werden. Panasonic verlangt ein flexibles Kabel.",
+          "source": "Vaillant, Anleitung 8000041775_04, S. 31"
+        },
+        {
+          "cable": "nymJ",
+          "level": "avoid",
+          "note": "Direkt in der Sonne nicht geeignet, im Freien nur vor direkter Sonne geschützt.",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "avoid",
+          "note": "Nicht für die ständige Verwendung im Freien.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        }
+      ]
+    },
+    {
+      "key": "pvDc",
+      "label": "PV-Module (Gleichstromseite)",
+      "group": "Photovoltaik",
+      "aliases": ["PV", "Photovoltaik", "Solarmodul", "DC", "Strang", "String"],
+      "note": "DIN VDE 0100-712 verweist auf DIN EN 50618. Eine Pflicht zu dieser Kabelart konnte nicht aus dem Normtext belegt werden, deshalb hier „Geeignet“.",
+      "recommendations": [
+        {
+          "cable": "h1z2z2K",
+          "level": "suitable",
+          "note": "Laut Lapp für die Verkabelung zwischen den Modulen und von den Strängen zum Wechselrichter.",
+          "source": "Lapp, Datenblatt H1Z2Z2-K; DIN EN 50618, Normeintrag"
+        }
+      ]
+    },
+    {
+      "key": "pvAc",
+      "label": "PV-Wechselrichter (Wechselstromseite)",
+      "group": "Photovoltaik",
+      "aliases": ["PV", "Wechselrichter", "AC", "Photovoltaik", "Zuleitung"],
+      "note": "Keine Herstelleranleitung geprüft. Die Klemmen mancher Wechselrichter können eine bestimmte Leiterart verlangen, deshalb Anleitung des Wechselrichters prüfen.",
+      "recommendations": [
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Im Gebäude; im Freien nur vor direkter Sonne geschützt.",
+          "source": "eigene Zuordnung aus den Verwendungsangaben, HELUKABEL NYM-J/-O"
+        },
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Im Freien oder in Erde.",
+          "source": "eigene Zuordnung aus den Verwendungsangaben, HELUKABEL NYY"
+        }
+      ]
+    },
+    {
+      "key": "steckdoseInnen",
+      "label": "Steckdose im Gebäude",
+      "group": "Allgemeine Installation",
+      "aliases": ["Schuko", "Steckdosenstromkreis", "Festinstallation"],
+      "recommendations": [
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Feste Installation in trockenen, feuchten und nassen Räumen.",
+          "source": "eigene Zuordnung aus den Verwendungsangaben, HELUKABEL NYM-J/-O"
+        }
+      ]
+    },
+    {
+      "key": "steckdoseAussen",
+      "label": "Steckdose im Freien",
+      "group": "Allgemeine Installation",
+      "aliases": ["Außensteckdose", "Garten", "Terrasse"],
+      "recommendations": [
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Auch der Sonne ausgesetzt und in Erde.",
+          "source": "eigene Zuordnung aus den Verwendungsangaben, HELUKABEL NYY; EMSKABEL (UV)"
+        },
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Nur vor direkter Sonne geschützt.",
+          "source": "eigene Zuordnung aus den Verwendungsangaben, HELUKABEL NYM-J/-O"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "avoid",
+          "note": "Nicht für die ständige Verwendung im Freien.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        }
+      ]
+    }
+  ],
+  "situations": [
+    {
+      "key": "aufputz",
+      "label": "Aufputz",
+      "group": "Verlegung",
+      "aliases": ["auf Putz", "AP", "sichtbare Verlegung"],
+      "recommendations": [
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        },
+        {
+          "cable": "h07vK",
+          "level": "suitable",
+          "note": "Nur im Elektroinstallationsrohr auf Putz, weil die Einzelader keinen Mantel hat.",
+          "source": "Lapp, Datenblatt 4520001; Waskönig+Walter, Datenblatt H07V-K"
+        },
+        {
+          "cable": "liycy",
+          "level": "suitable",
+          "note": "Nur für Daten und Signale, fest verlegt.",
+          "source": "Lapp, Produktinformation JE-LiYCY...BD"
+        }
+      ]
+    },
+    {
+      "key": "unterputz",
+      "label": "Unterputz",
+      "group": "Verlegung",
+      "aliases": ["unter Putz", "in Putz", "UP", "Mauerwerk", "Schlitz"],
+      "recommendations": [
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Auch in Putz und im Mauerwerk.",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        },
+        {
+          "cable": "h07vK",
+          "level": "suitable",
+          "note": "Nur im Elektroinstallationsrohr, weil die Einzelader keinen Mantel hat.",
+          "source": "Lapp, Datenblatt 4520001; Waskönig+Walter, Datenblatt H07V-K"
+        },
+        {
+          "cable": "liycy",
+          "level": "suitable",
+          "note": "Nur für Daten und Signale, fest verlegt.",
+          "source": "Lapp, Produktinformation JE-LiYCY...BD"
+        },
+        {
+          "cable": "jyStY",
+          "level": "suitable",
+          "note": "Nur für Fernmelde-, Mess- und Signalleitungen.",
+          "source": "nur Händlerangabe: elektrikshop.de, J-Y(St)Y 2x2x0,8"
+        }
+      ]
+    },
+    {
+      "key": "rohr",
+      "label": "Im Installationsrohr",
+      "group": "Verlegung",
+      "aliases": ["Leerrohr", "Elektroinstallationsrohr", "Rohr"],
+      "note": "Zu anderen Kabelarten im Rohr nennen die Quellen nichts.",
+      "recommendations": [
+        {
+          "cable": "h07vK",
+          "level": "suitable",
+          "source": "Lapp, Datenblatt 4520001; Waskönig+Walter, Datenblatt H07V-K"
+        }
+      ]
+    },
+    {
+      "key": "kanal",
+      "label": "Im Kabelkanal",
+      "group": "Verlegung",
+      "aliases": ["Installationskanal", "Kabelkanal", "Kanal"],
+      "note": "Zu anderen Kabelarten im Kanal nennen die Quellen nichts.",
+      "recommendations": [
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "source": "HELUKABEL, Datenblatt NYY (14.06.2024)"
+        },
+        {
+          "cable": "h07vK",
+          "level": "suitable",
+          "note": "Nur in geschlossenen Kanälen.",
+          "source": "Waskönig+Walter, Datenblatt H07V-K"
+        }
+      ]
+    },
+    {
+      "key": "beton",
+      "label": "Im Beton",
+      "group": "Verlegung",
+      "aliases": ["Betondecke", "einbetoniert"],
+      "recommendations": [
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Sofern keine mechanischen Schäden zu erwarten sind.",
+          "source": "HELUKABEL, Datenblatt NYY (14.06.2024)"
+        },
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Nicht direkt in Schüttel-, Rüttel- oder Stampfbeton.",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        }
+      ]
+    },
+    {
+      "key": "erdreich",
+      "label": "Im Erdreich",
+      "group": "Verlegung",
+      "aliases": ["Erdkabel", "Erdverlegung", "Gartenleitung", "in Erde"],
+      "recommendations": [
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Sofern keine mechanischen Schäden zu erwarten sind.",
+          "source": "HELUKABEL, Datenblatt NYY (14.06.2024)"
+        },
+        {
+          "cable": "nymJ",
+          "level": "avoid",
+          "note": "Nicht für die Verlegung in Erde; Beleg bisher nur eine Händlerangabe.",
+          "source": "elektrikshop.de, NYM-J 3x2,5"
+        },
+        {
+          "cable": "h1z2z2K",
+          "level": "avoid",
+          "note": "Laut Lapp nicht für die direkte Verlegung in Erde.",
+          "source": "Lapp, Datenblatt H1Z2Z2-K"
+        }
+      ]
+    },
+    {
+      "key": "innenTrocken",
+      "label": "Innen, trocken",
+      "group": "Umgebung",
+      "aliases": ["innen", "Innenraum", "Wohnraum", "Heizraum", "trockener Raum"],
+      "recommendations": [
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Für die feste Installation.",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        },
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Für die feste Verlegung, sofern keine mechanischen Schäden zu erwarten sind.",
+          "source": "HELUKABEL, Datenblatt NYY (14.06.2024)"
+        },
+        {
+          "cable": "h07rnF",
+          "level": "suitable",
+          "note": "Für Geräteanschlüsse bei hoher Beanspruchung.",
+          "source": "Lapp, Datenblatt 1600096"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "suitable",
+          "note": "Für Geräteanschlüsse in Haushalt, Küche und Büro; heiße Teile nicht berühren.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        },
+        {
+          "cable": "liycy",
+          "level": "suitable",
+          "note": "Nur für Daten und Signale.",
+          "source": "Lapp, Produktinformation JE-LiYCY...BD"
+        },
+        {
+          "cable": "jyStY",
+          "level": "suitable",
+          "note": "Nur für Fernmelde-, Mess- und Signalleitungen.",
+          "source": "nur Händlerangabe: elektrikshop.de, J-Y(St)Y 2x2x0,8"
+        }
+      ]
+    },
+    {
+      "key": "innenFeucht",
+      "label": "Innen, feucht oder nass",
+      "group": "Umgebung",
+      "aliases": ["innen", "Feuchtraum", "Nassraum", "Keller", "feuchter Raum"],
+      "note": "Für nasse Räume nennt von den Kabelarten hier nur das Datenblatt von NYM-J die Eignung ausdrücklich.",
+      "recommendations": [
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "In feuchten und nassen Räumen.",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        },
+        {
+          "cable": "h07rnF",
+          "level": "suitable",
+          "note": "In feuchten Räumen, für Geräteanschlüsse.",
+          "source": "Lapp, Datenblatt 1600096"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "suitable",
+          "note": "In feuchten Räumen nur für Hausgeräte.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        },
+        {
+          "cable": "liycy",
+          "level": "suitable",
+          "note": "In feuchten Räumen, nur für Daten und Signale.",
+          "source": "Lapp, Produktinformation JE-LiYCY...BD"
+        },
+        {
+          "cable": "jyStY",
+          "level": "suitable",
+          "note": "In feuchten Räumen, nur für Fernmelde-, Mess- und Signalleitungen.",
+          "source": "nur Händlerangabe: elektrikshop.de, J-Y(St)Y 2x2x0,8"
+        }
+      ]
+    },
+    {
+      "key": "aussen",
+      "label": "Außen, im Freien",
+      "group": "Umgebung",
+      "aliases": ["außen", "im Freien", "Außenbereich", "Fassade", "Dach", "UV", "Sonne"],
+      "recommendations": [
+        {
+          "cable": "nyyJ",
+          "level": "suitable",
+          "note": "Für die feste Verlegung, UV-beständig.",
+          "source": "HELUKABEL, Datenblatt NYY (14.06.2024); UV: EMSKABEL, Datenblatt NYY"
+        },
+        {
+          "cable": "h07rnF",
+          "level": "suitable",
+          "note": "Für flexible Anschlüsse, UV-beständig.",
+          "source": "Lapp, Datenblatt 1600096; UV: Hornbach, Technisches Datenblatt"
+        },
+        {
+          "cable": "h1z2z2K",
+          "level": "suitable",
+          "note": "Nur für PV-Anlagen.",
+          "source": "Lapp, Datenblatt H1Z2Z2-K"
+        },
+        {
+          "cable": "nymJ",
+          "level": "suitable",
+          "note": "Nur vor direkter Sonne geschützt.",
+          "source": "HELUKABEL, Datenblatt NYM-J/-O"
+        },
+        {
+          "cable": "h05rnF",
+          "level": "suitable",
+          "note": "Laut Lapp nur eingeschränkt im Freien.",
+          "source": "Lapp, Katalogblatt H05RN-F"
+        },
+        {
+          "cable": "jyStY",
+          "level": "suitable",
+          "note": "Nur für Signalleitungen und fest verlegt; zur UV-Beständigkeit keine Angabe.",
+          "source": "nur Händlerangabe: elektrikshop.de, J-Y(St)Y 2x2x0,8"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "avoid",
+          "note": "Nicht für die ständige Verwendung im Freien.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        }
+      ]
+    },
+    {
+      "key": "heiss",
+      "label": "Hohe Temperatur, heiße Bauteile",
+      "group": "Umgebung",
+      "aliases": ["hitzebeständig", "Wärme", "Heizelement", "Hitze"],
+      "note": "Zulässige Temperatur am Einbauort mit dem Datenblatt der Leitung und der Anleitung des Geräts abgleichen.",
+      "recommendations": [
+        {
+          "cable": "sihf",
+          "level": "suitable",
+          "note": "Bis +180 °C mit ausreichender Belüftung.",
+          "source": "Lapp, ÖLFLEX HEAT 180 SiHF"
+        },
+        {
+          "cable": "h05vvF",
+          "level": "avoid",
+          "note": "Darf heiße Teile nicht berühren und keiner Wärmestrahlung ausgesetzt sein.",
+          "source": "Faber Kabel, Datenblatt H05VV-F"
+        }
+      ]
+    }
+  ]
+}

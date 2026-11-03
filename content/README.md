@@ -130,6 +130,29 @@ Höchstzahl `count`, angezeigt als „max. 3×“) und `check`) und `faults`
 (`symptom`, `phase`, `causes` in Prüfreihenfolge, optional `note`). Der Build prüft unbekannte Signale
 und Phasen, doppelte Schlüssel und Signale, die in keiner Phase vorkommen.
 
+**Kabel-Tools** (`"kind": "cables"`) zeigen zu einer gewählten Elektro-Komponente oder Einbausituation die
+Kabelarten mit ihren Eigenschaften; oben schaltet eine Leiste zwischen beiden Listen um. Felder: `title`,
+`summary`, `description`, `category` und:
+
+- `properties`: was bei jeder Kabelart angezeigt wird, je `key`, `name` (z. B. „UV-beständig“).
+- `cables`: je `key`, `name` (z. B. „NYM-J“), optional `aliases` (Suchbegriffe), `description` (eigene
+  Kurzbeschreibung), `standard`, `voltage`, `temperature`, `use` (Verwendung laut Datenblatt), optional
+  `limits` (Einschränkung), `source` (kurz, woher die Daten stammen) und `properties`: Eigenschafts-`key` →
+  `{ "value": "yes" | "no" | "conditional", "note": "…" }`. Eine fehlende Eigenschaft bedeutet „die Quelle
+  nennt dazu nichts“ und erscheint als „Keine Angabe“; `conditional` braucht `note`.
+- `components`: je `key`, `label`, `group` (Gruppe in der Auswahl), optional `aliases`, `note` (Hinweis zur
+  ganzen Komponente) und `recommendations`, je `cable` (`key` der Kabelart), `level`, `source` (kurz, woher
+  die Zuordnung stammt) und `note` (Bedingung oder Grund; Pflicht außer bei `suitable`).
+- `situations`: Einbausituationen, z. B. „Unterputz“ oder „Außen, im Freien“, gleicher Aufbau wie `components`.
+
+`level` ist `required` („Vorgeschrieben“: nur wenn die Quelle es konkret verlangt, z. B. die Anleitung eines
+bestimmten Geräts; das Gerät gehört in `note`), `suitable` („Geeignet“; ist die Zuordnung aus den
+Verwendungsangaben eines Datenblatts abgeleitet, steht das in `source`) oder `avoid` („Nicht geeignet“, nur mit
+Beleg). Nur Typnummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Die Links aller Quellen stehen im
+`source` des Eintrags. Fehlt eine belegte Kabelart, bleibt `recommendations` leer und `note` beginnt mit
+`TODO: Inhalt fehlt`; bei `verified` ist das nicht erlaubt. Der Build prüft unbekannte Eigenschaften und
+Kabelarten, doppelte Schlüssel und Kabelarten, die in keiner der beiden Listen vorkommen.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

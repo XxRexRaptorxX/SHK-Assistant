@@ -2,6 +2,7 @@ import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
 import { checkFormulaRequirements, formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
+import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool.ts'
 import { checkSequenceTool, sequenceToolSchema, type SequenceTool } from './sequenceTool.ts'
@@ -19,6 +20,7 @@ import { checkVariantTool, variantReferences, variantToolSchema, type VariantToo
 // - Varianten-Tools ("kind": "variants"): mehrere Formeln zu einer Aufgabe mit Umschalter (siehe variantTool.ts).
 // - Sinnbild-Tools ("kind": "symbols"): Sinnbilder aus Anlagenschemata zum Durchsuchen (siehe symbolTool.ts).
 // - Ablauf-Tools ("kind": "sequence"): Programmablauf als Zeitdiagramm mit Stoppuhr und Fehlersuche (siehe sequenceTool.ts).
+// - Kabel-Tools ("kind": "cables"): Komponente wählen, Kabelarten mit Eigenschaften sehen (siehe cableTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -154,6 +156,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   variantToolSchema,
   symbolToolSchema,
   sequenceToolSchema,
+  cableToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -161,8 +164,8 @@ export type TableTool = z.output<typeof tableToolSchema>
 export type TableRow = z.output<typeof tableRowSchema>
 export type ChoiceTool = z.output<typeof choiceToolSchema>
 export type ChoiceSection = z.output<typeof choiceSectionSchema>
-export type ToolEntry = FormulaTool | TableTool | ChoiceTool | FactorTool | VariantTool | SymbolTool | SequenceTool
-export type { FactorTool, SequenceTool, SymbolTool, VariantTool }
+export type ToolEntry = FormulaTool | TableTool | ChoiceTool | FactorTool | VariantTool | SymbolTool | SequenceTool | CableTool
+export type { CableTool, FactorTool, SequenceTool, SymbolTool, VariantTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -170,6 +173,7 @@ export const isFactorTool = (entry: ToolEntry): entry is FactorTool => entry.kin
 export const isVariantTool = (entry: ToolEntry): entry is VariantTool => entry.kind === 'variants'
 export const isSymbolTool = (entry: ToolEntry): entry is SymbolTool => entry.kind === 'symbols'
 export const isSequenceTool = (entry: ToolEntry): entry is SequenceTool => entry.kind === 'sequence'
+export const isCableTool = (entry: ToolEntry): entry is CableTool => entry.kind === 'cables'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -270,7 +274,9 @@ export const toolCollection = defineCollection({
               ? checkSymbolTool(entry)
               : isSequenceTool(entry)
                 ? checkSequenceTool(entry)
-                : formulaCollection.check!(entry as FormulaEntry),
+                : isCableTool(entry)
+                  ? checkCableTool(entry)
+                  : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)

@@ -3,7 +3,9 @@ import { content } from '../../content'
 import type { SearchDocument } from '../../search/search'
 import { TOOL_ID_PREFIX } from './constants'
 import type { FormulaEntry } from '../formulas/schema'
+import { cableKeywords } from './cableTool'
 import {
+  isCableTool,
   isChoiceTool,
   isFactorTool,
   isFormulaTool,
@@ -57,6 +59,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   }
   if (isSymbolTool(entry)) return symbolKeywords(entry)
   if (isSequenceTool(entry)) return sequenceKeywords(entry)
+  if (isCableTool(entry)) return cableKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,
