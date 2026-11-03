@@ -1,10 +1,10 @@
 {
   "id": "formula.elektrotechnik.drehstrom-wirkleistung",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Dreiphasenwechselstrom“, https://de.wikipedia.org/wiki/Dreiphasenwechselstrom (Abschnitt Leistung: P = I · U · √3 · cos φ; Rechenbeispiel 400 V, 50 A, cos φ = 1 → 34,6 kW); Wikipedia „Leistungsfaktor“, https://de.wikipedia.org/wiki/Leistungsfaktor",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Wirkleistung bei Drehstrom",
   "description": "Berechnet die Wirkleistung eines symmetrischen Drehstromsystems aus verketteter Spannung, Leiterstrom und Leistungsfaktor cos φ. Bei ohmscher Last (z. B. Heizstab) ist cos φ = 1.",
   "category": "Elektrotechnik",

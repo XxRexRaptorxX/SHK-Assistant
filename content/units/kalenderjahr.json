@@ -16,5 +16,6 @@
       "expected": "8760 h",
       "tolerance": 0.001
     }
-  ]
+  ],
+  "offerInFormulas": false
 }

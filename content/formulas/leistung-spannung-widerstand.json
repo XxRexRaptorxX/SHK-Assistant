@@ -1,10 +1,10 @@
 {
   "id": "formula.elektrotechnik.leistung-spannung-widerstand",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Elektrische Leistung“, https://de.wikipedia.org/wiki/Elektrische_Leistung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Elektrische Leistung aus Spannung und Widerstand",
   "description": "Berechnet die elektrische Leistung bei ohmscher Belastung aus Spannung und Widerstand.",
   "category": "Elektrotechnik",

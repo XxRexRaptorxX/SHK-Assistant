@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { content } from '../../content'
-import { formatNumber, parseDecimal } from '../../lib/number'
+import { formatNumber, formatResult, parseDecimal } from '../../lib/number'
 import { formatUnit } from '../../lib/units'
 import { asTargetUnit, math } from '../../lib/math'
 import { alternativeUnits } from '../units/alternatives'
@@ -11,6 +11,7 @@ import {
   evaluateFormula,
   exampleInputs,
   formatExpression,
+  NOT_COMPUTABLE,
   rangeError,
 } from './engine'
 import { ensureCustomUnits } from '../units/customUnits'
@@ -108,6 +109,8 @@ describe('Formel-Engine', () => {
     expect(parseDecimal('abc')).toBeUndefined()
     expect(formatNumber(1234.5, 2)).toBe('1.234,50')
     expect(formatUnit('kJ/(kg K)')).toBe('kJ/(kg·K)')
+    expect(formatUnit('kJ/(kg*K)')).toBe('kJ/(kg·K)')
+    expect(formatUnit('ohm*mm^2/m')).toBe('Ω·mm²/m')
     expect(formatUnit('m^3/h')).toBe('m³/h')
     expect(formatUnit('kohm')).toBe('kΩ')
     expect(formatUnit('degC')).toBe('°C')
@@ -117,13 +120,74 @@ describe('Formel-Engine', () => {
   })
 })
 
+describe('Ergebnisanzeige', () => {
+  it('zeigt die festen Nachkommastellen, solange mindestens zwei gültige Stellen bleiben', () => {
+    expect(formatResult(1234.5, 2)).toBe('1.234,50')
+    expect(formatResult(0.29, 2)).toBe('0,29')
+    expect(formatResult(1, 2)).toBe('1,00')
+    expect(formatResult(0, 2)).toBe('0,00')
+  })
+
+  it('zeigt kleine Werte mit drei gültigen Stellen statt 0,00', () => {
+    expect(formatResult(0.000314159, 2)).toBe('0,000314')
+    expect(formatResult(0.0628, 2)).toBe('0,0628')
+    expect(formatResult(0.0000405, 3)).toBe('0,0000405')
+    expect(formatResult(0.000157, 4)).toBe('0,000157')
+    expect(formatResult(-0.0119, 2)).toBe('-0,0119')
+    expect(formatResult(7.6, 0)).toBe('7,6')
+  })
+})
+
+describe('Ergebnisse außerhalb des sinnvollen Bereichs', () => {
+  ensureCustomUnits()
+  const find = (id: string) => formulaEntries.find((f) => f.id === id)!
+  const inputs = (formula: FormulaEntry, values: Record<string, number>) =>
+    Object.fromEntries(formula.variables.map((v) => [v.symbol, { value: values[v.symbol]!, unit: v.unit }]))
+  const message = (id: string, values: Record<string, number>) => {
+    const formula = find(id)
+    try {
+      evaluateFormula(formula, inputs(formula, values))
+      return 'kein Fehler'
+    } catch (error) {
+      return (error as Error).message
+    }
+  }
+
+  it.each([
+    ['formula.geometrie.pythagoras-kathete', { c: 3, b: 4 }, /Hypotenuse muss länger/],
+    ['formula.geometrie.kreisring-flaeche', { D: 20, d: 22 }, /Außendurchmesser muss/],
+    ['formula.thermodynamik.mischtemperatur-masse-kalt', { mw: 1, Tw: 330, Tm: 340, Tk: 290 }, /zwischen/],
+    ['formula.thermodynamik.mischtemperatur-masse-warm', { mk: 1, Tm: 280, Tk: 290, Tw: 330 }, /zwischen/],
+    ['formula.thermodynamik.mischtemperatur-masse-warm', { mk: 1, Tm: 330, Tk: 290, Tw: 330 }, /zwischen/],
+  ])('%s: verständlicher Hinweis statt unsinnigem Ergebnis', (id, values, expected) => {
+    expect(message(id, values)).toMatch(expected)
+  })
+
+  it('meldet Wurzeln aus negativen Zahlen ohne Fachchinesisch', () => {
+    const noLimit: FormulaEntry = { ...find('formula.geometrie.pythagoras-kathete') }
+    noLimit.result = { ...noLimit.result!, min: undefined, minMessage: undefined }
+    expect(() => evaluateFormula(noLimit, inputs(noLimit, { c: 3, b: 4 }))).toThrow(NOT_COMPUTABLE)
+  })
+
+  it('lässt keine negativen Werte unter der Wurzel zu', () => {
+    expect(rangeError(find('formula.geometrie.kreisdurchmesser').variables[0]!, -1)).toBe('muss mindestens 0 sein')
+    const speed = find('formula.hydraulik.geschwindigkeit-aus-druck')
+    expect(rangeError(speed.variables.find((v) => v.symbol === 'pdy')!, -1)).toBe('muss mindestens 0 sein')
+  })
+
+  it('rechnet gültige Werte weiter normal', () => {
+    expect(message('formula.geometrie.kreisring-flaeche', { D: 22, d: 20 })).toBe('kein Fehler')
+    expect(message('formula.geometrie.pythagoras-kathete', { c: 5, b: 5 })).toBe('kein Fehler')
+  })
+})
+
 describe('Wählbare Einheiten', () => {
   ensureCustomUnits()
 
   it('bietet gleichartige Einheiten aus dem Umrechner an', () => {
     const areas = alternativeUnits('m^2')
     expect(areas).toContain('cm^2')
-    expect(areas).toContain('hectare')
+    expect(areas).toContain('mm^2')
     expect(alternativeUnits('m^3/h')).toContain('l/min')
     // ausdrücklich genannte Einheiten kommen dazu, unbekannte Kombinationen bleiben allein
     expect(alternativeUnits('kJ/(kg K)', ['J/(kg K)'])).toEqual(['kJ/(kg K)', 'J/(kg K)'])
@@ -181,6 +245,28 @@ describe('Wählbare Einheiten', () => {
     const materials = content.materials.filter((set) => set.quantities.includes('Spezifische Wärmekapazität'))
     expect(materials.map((set) => set.unit)).toEqual(['Wh/(kg*K)'])
     expect(math.unit(1, 'Wh/(kg*K)').toNumber('kJ/(kg*K)')).toBeCloseTo(3.6)
+  })
+
+  it('bietet beim Brennwert keine Druckeinheiten an, obwohl die Dimension dieselbe ist', () => {
+    expect(alternativeUnits('kWh/m^3')).toEqual(['kWh/m^3'])
+    const fuel = formulaEntries.flatMap((f) => f.variables).filter((v) => v.term === 'Brennwert')
+    expect(fuel.length).toBeGreaterThan(0)
+    for (const variable of fuel) expect(alternativeUnits(variable.unit, variable.units)).not.toContain('bar')
+    expect(alternativeUnits('bar')).not.toContain('kWh/m^3')
+  })
+
+  it('bietet in Formeln nur Einheiten an, die im Handwerk vorkommen', () => {
+    const offered = formulaEntries
+      .flatMap((f) => [...f.variables, f.result!])
+      .flatMap((item) => alternativeUnits(item.unit, item.units))
+    for (const unit of ['hectare', 'acre', 'km^2', 'km^3', 'mile', 'yd', 'gal', 'oilbarrel', 'lbm', 'uV', 'MV', 'Quartal', 'Kalenderjahr', 'Industrieminute']) {
+      expect(offered).not.toContain(unit)
+    }
+    expect(alternativeUnits('m')).toEqual(expect.arrayContaining(['mm', 'cm', 'm', 'inch']))
+    expect(alternativeUnits('bar')).toEqual(expect.arrayContaining(['mbar', 'Pa', 'psi', 'mWS']))
+    expect(alternativeUnits('m^3')).toEqual(expect.arrayContaining(['l', 'm^3']))
+    expect(alternativeUnits('kg')).toEqual(expect.arrayContaining(['g', 'kg', 't']))
+    expect(alternativeUnits('s')).toEqual(expect.arrayContaining(['s', 'min', 'h', 'day']))
   })
 
   it('vermischt Scheinleistung (VA) nicht mit Wirkleistung (W)', () => {

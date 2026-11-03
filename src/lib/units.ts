@@ -29,7 +29,7 @@ const UNIT_LABELS: Record<string, string> = {
 }
 
 /**
- * mathjs-Einheit lesbar darstellen, z. B. "m^3/h" → "m³/h", "kJ/(kg K)" → "kJ/(kg·K)", "kohm" → "kΩ".
+ * mathjs-Einheit lesbar darstellen, z. B. "m^3/h" → "m³/h", "kJ/(kg*K)" → "kJ/(kg·K)", "kohm" → "kΩ".
  * extraLabels: zusätzliche Bezeichnungen, z. B. aus content/units ("gradDH" → "°dH").
  */
 export function formatUnit(unit: string, extraLabels?: ReadonlyMap<string, string>): string {
@@ -37,5 +37,5 @@ export function formatUnit(unit: string, extraLabels?: ReadonlyMap<string, strin
     .replace(/[A-Za-z_][A-Za-z0-9_]*/g, (name) => extraLabels?.get(name) ?? UNIT_LABELS[name] ?? name)
     .replace(/\^2\b/g, '²')
     .replace(/\^3\b/g, '³')
-    .replace(/(?<=\S) (?=\S)/g, '·')
+    .replace(/(?<=\S) (?=\S)|\*/g, '·')
 }

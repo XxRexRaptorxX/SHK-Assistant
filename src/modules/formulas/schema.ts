@@ -47,6 +47,10 @@ const resultSchema = z.strictObject({
   term: z.string().trim().min(1).optional(),
   unit,
   units: z.array(unit).default([]),
+  /** Kleinstes sinnvolles Ergebnis in der Haupteinheit, z. B. 0 bei einer Fläche; darunter gilt minMessage */
+  min: z.number().optional(),
+  /** Hinweis, wenn das Ergebnis unter min liegt oder kein reelles Ergebnis entsteht */
+  minMessage: z.string().trim().min(1).optional(),
   /** Nachkommastellen in der Anzeige */
   decimals: z.number().int().min(0).max(6).default(2),
 })

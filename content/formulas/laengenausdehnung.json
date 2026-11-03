@@ -1,10 +1,10 @@
 {
   "id": "formula.thermodynamik.laengenausdehnung",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Wärmeausdehnung“, https://de.wikipedia.org/wiki/W%C3%A4rmeausdehnung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Längenausdehnung",
   "description": "Berechnet, um wie viel sich ein Bauteil wie ein Rohr beim Erwärmen verlängert. Der Längenausdehnungskoeffizient hängt vom Werkstoff ab.",
   "category": "Thermodynamik",

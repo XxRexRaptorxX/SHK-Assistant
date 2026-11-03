@@ -94,4 +94,10 @@ describe('Rechenweg', () => {
     expect(working).toContain('aria-pressed="true" title="Nur Ergebnis anzeigen"')
     expect(working).toContain('9,80665')
   })
+
+  it('zeigt die Hinweise zu den Eingaben', () => {
+    const html = renderToStaticMarkup(<Calculator formula={formula('formula.hydraulik.pumpe-antriebsleistung')} showWorking={false} />)
+    expect(html).toContain('Als Dezimalzahl, z. B. 0,5 für 50 %')
+    expect(html).toMatch(/aria-describedby="[^"]*-hint"/)
+  })
 })

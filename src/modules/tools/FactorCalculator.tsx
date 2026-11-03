@@ -1,7 +1,7 @@
 import { useId, useState } from 'react'
 import { HeadingWithClear } from '../../components/ClearInputsButton'
 import { fieldBase } from '../../components/surfaces'
-import { formatNumber, parseDecimal } from '../../lib/number'
+import { formatResult, parseDecimal } from '../../lib/number'
 import {
   availableOptions,
   computeFactorTool,
@@ -140,7 +140,7 @@ export function FactorCalculator({
               ) : (
                 <p className="text-3xl font-bold">
                   {result.label ?? result.symbol} ={' '}
-                  {computed ? withUnit(formatNumber(computed.value, result.decimals), result.unit) : '–'}
+                  {computed ? withUnit(formatResult(computed.value, result.decimals), result.unit) : '–'}
                 </p>
               )}
               {computed && <p className="text-base text-muted">{computed.rule}</p>}

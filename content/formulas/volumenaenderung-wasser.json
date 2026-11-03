@@ -1,10 +1,10 @@
 {
   "id": "formula.thermodynamik.volumenaenderung-wasser",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden. Wikipedia „Spezifisches Volumen“, https://de.wikipedia.org/wiki/Spezifisches_Volumen",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Volumenänderung",
   "description": "Berechnet die Volumenänderung aus Masse und Differenz des spezifischen Volumens.",
   "category": "Thermodynamik",

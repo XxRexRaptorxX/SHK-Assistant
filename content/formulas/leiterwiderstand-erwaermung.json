@@ -1,10 +1,10 @@
 {
   "id": "formula.elektrotechnik.leiterwiderstand-erwaermung",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Temperaturkoeffizient“, https://de.wikipedia.org/wiki/Temperaturkoeffizient",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Leiterwiderstand nach Erwärmung",
   "description": "Berechnet den temperaturabhängigen Widerstand relativ zum Bezugswert bei 20 °C.",
   "category": "Elektrotechnik",
@@ -13,7 +13,8 @@
       "symbol": "R20",
       "name": "Widerstand bei 20 °C",
       "term": "Elektrischer Widerstand",
-      "unit": "ohm"
+      "unit": "ohm",
+      "label": "R₂₀"
     },
     {
       "symbol": "alpha",

@@ -1,9 +1,9 @@
 {
   "id": "formula.gastechnik.luftdruck-aus-hoehe",
   "visibility": "public",
-  "status": "draft",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
   "title": "Mittlerer Luftdruck aus der Höhe",
   "description": "Schätzt den Jahresmittelwert des Luftdrucks aus der geodätischen Höhe des Aufstellorts, z. B. für die Zustandszahl.",

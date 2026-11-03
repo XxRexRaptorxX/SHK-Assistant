@@ -1,10 +1,10 @@
 {
   "id": "formula.lueftung.luftwechselzahl",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Luftwechsel“, https://de.wikipedia.org/wiki/Luftwechsel",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Luftwechselzahl",
   "description": "Berechnet, wie oft die Raumluft pro Stunde ausgetauscht wird, aus Luftvolumenstrom und Raumvolumen.",
   "category": "Lüftung",

@@ -1,19 +1,19 @@
 {
   "id": "formula.elektrotechnik.leiterwiderstand",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Spezifischer Widerstand“, https://de.wikipedia.org/wiki/Spezifischer_Widerstand",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Widerstand eines Leiters bei 20 °C",
   "description": "Berechnet den Leiterwiderstand aus spezifischem elektrischem Widerstand, Leiterlänge und Querschnitt.",
   "category": "Elektrotechnik",
   "variables": [
     {
-      "symbol": "gamma",
+      "symbol": "rho",
       "name": "Spezifischer elektrischer Widerstand",
       "unit": "ohm*mm^2/m",
-      "label": "γ"
+      "label": "ρ"
     },
     {
       "symbol": "l",
@@ -36,11 +36,11 @@
     "unit": "ohm",
     "decimals": 2
   },
-  "expression": "gamma * l / q",
+  "expression": "rho * l / q",
   "examples": [
     {
       "inputs": {
-        "gamma": 0.0178,
+        "rho": 0.0178,
         "l": 10,
         "q": 1
       },

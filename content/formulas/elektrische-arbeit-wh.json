@@ -1,10 +1,10 @@
 {
   "id": "formula.elektrotechnik.elektrische-arbeit-wh",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Elektrische Arbeit“, https://de.wikipedia.org/wiki/Elektrische_Arbeit",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Elektrische Arbeit aus Leistung und Stunden",
   "description": "Berechnet die elektrische Arbeit in Wattstunden aus Leistung und Zeit in Stunden.",
   "category": "Elektrotechnik",

@@ -1,10 +1,10 @@
 {
   "id": "formula.heizungstechnik.wirkungsgrad",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Wirkungsgrad“, https://de.wikipedia.org/wiki/Wirkungsgrad",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Wirkungsgrad",
   "description": "Berechnet den Wirkungsgrad als Verhältnis von abgegebener (genutzter) zu zugeführter Leistung, z. B. bei einem Wärmeerzeuger.",
   "category": "Heizungstechnik",

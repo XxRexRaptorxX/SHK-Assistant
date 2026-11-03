@@ -16,6 +16,9 @@ export class FormulaError extends Error {
   }
 }
 
+/** Meldung, wenn eine Rechnung kein brauchbares Ergebnis hat, z. B. bei Division durch null */
+export const NOT_COMPUTABLE = 'Mit diesen Werten nicht berechenbar.'
+
 /** Symbole, die ohne Definition in Formeln erlaubt sind */
 const BUILTIN_SYMBOLS = new Set(['pi', 'e'])
 
@@ -81,7 +84,16 @@ export function evaluateFormula(
   // Erst in der Haupteinheit des Ergebnisses ausrechnen, dann als einfache Einheit umrechnen:
   // bei zusammengesetzten Einheiten (z. B. kg·K/kg) übergeht mathjs sonst den Nullpunkt von °C.
   const mainUnit = formula.result.unit
-  const value = toNumberIn(compile(formula.expression).evaluate(scope), mainUnit)
+  const { min, minMessage } = formula.result
+  const raw: unknown = compile(formula.expression).evaluate(scope)
+  // Wurzel aus einer negativen Zahl: kein reelles Ergebnis
+  if (math.isComplex(raw) || (math.isUnit(raw) && math.isComplex(raw.value))) {
+    throw new FormulaError(minMessage ?? NOT_COMPUTABLE)
+  }
+  const value = toNumberIn(raw, mainUnit)
+  if (min !== undefined && (!Number.isFinite(value) || value < min)) {
+    throw new FormulaError(minMessage ?? NOT_COMPUTABLE)
+  }
   if (resultUnit === mainUnit) return value
   if (mainUnit === '') throw new FormulaError(`Ergebnis hat keine Einheit, erwartet ${resultUnit}`)
   try {

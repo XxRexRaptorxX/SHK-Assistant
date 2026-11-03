@@ -1,10 +1,10 @@
 {
   "id": "formula.hydraulik.fliessgeschwindigkeit-rohr",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Volumenstrom“, https://de.wikipedia.org/wiki/Volumenstrom; Wikipedia „Darcy-Weisbach-Gleichung“, https://de.wikipedia.org/wiki/Darcy-Weisbach-Gleichung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Fließgeschwindigkeit im Rohr",
   "description": "Berechnet die mittlere Fließgeschwindigkeit aus Volumenstrom und Innendurchmesser eines Rohrs.",
   "category": "Hydraulik",

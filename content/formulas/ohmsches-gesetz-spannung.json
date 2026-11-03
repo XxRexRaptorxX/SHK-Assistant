@@ -1,10 +1,10 @@
 {
   "id": "formula.elektrotechnik.ohmsches-gesetz-spannung",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 3; keine Seitenangabe vorhanden. Wikipedia „Ohmsches Gesetz“, https://de.wikipedia.org/wiki/Ohmsches_Gesetz",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Ohmsches Gesetz: Spannung",
   "description": "Berechnet die Spannung aus Widerstand und Stromstärke.",
   "category": "Elektrotechnik",

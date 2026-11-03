@@ -5,8 +5,10 @@ import { formatIsoDate } from '../src/lib/format.ts'
 import { splitLinks } from '../src/lib/links.ts'
 import { splitSources } from '../src/lib/sources.ts'
 import { splitParagraphs, stripEmphasis } from '../src/lib/text.ts'
+import { formatUnit } from '../src/lib/units.ts'
 import type { ChecklistEntry } from '../src/modules/checklists/schema.ts'
 import type { ConverterEntry } from '../src/modules/converter/schema.ts'
+import { formatExpression } from '../src/modules/formulas/engine.ts'
 import type { FormulaEntry } from '../src/modules/formulas/schema.ts'
 import { LEXICON_CATEGORIES } from '../src/modules/lexicon/constants.ts'
 import type { LexiconEntry } from '../src/modules/lexicon/schema.ts'
@@ -179,7 +181,23 @@ function converterItem(entry: ConverterEntry): SeoItem {
   }
 }
 
+/** Formel als lesbarer Text wie in der App: ΔT statt dT, π statt pi, d² statt d ^ 2 */
+function formulaText(entry: FormulaEntry): string {
+  return formatExpression(entry)
+    .replace(/ \^ 2\b/g, '²')
+    .replace(/ \^ 3\b/g, '³')
+    .replace(/\bsqrt\(/g, '√(')
+}
+
+/** Konstante wie "9.80665 m/s^2" lesbar; Ausdrücke wie sqrt(3) stehen schon im Formelzeichen (√3) */
+function constantText(value: string): string {
+  const match = /^([\d.]+)\s*(.*)$/.exec(value)
+  return match ? `${match[1]!.replace('.', ',')} ${formatUnit(match[2]!)}`.trim() : ''
+}
+
 function formulaItem(entry: FormulaEntry): SeoItem {
+  const quantity = (item: { symbol: string; label?: string; name: string }, value: string) =>
+    `${escapeHtml(item.label ?? item.symbol)}: ${escapeHtml(item.name)}${value ? ` (${escapeHtml(value)})` : ''}`
   return {
     entry,
     name: entry.title,
@@ -190,15 +208,14 @@ function formulaItem(entry: FormulaEntry): SeoItem {
       [
         richText(entry.description),
         entry.result && entry.expression && !entry.hideFormula
-          ? `<h2>Formel</h2><p><code>${escapeHtml(entry.result.label ?? entry.result.symbol)} = ${escapeHtml(entry.expression)}</code></p>`
+          ? `<h2>Formel</h2><p><code>${escapeHtml(entry.result.label ?? entry.result.symbol)} = ${escapeHtml(formulaText(entry))}</code></p>`
           : '',
-        entry.variables.length > 0
-          ? `<h2>Größen</h2>${list(
-              entry.variables.map(
-                (variable) =>
-                  `${escapeHtml(variable.label ?? variable.symbol)}: ${escapeHtml(variable.name)}${variable.unit ? ` (${escapeHtml(variable.unit)})` : ''}`,
-              ),
-            )}`
+        entry.variables.length > 0 || entry.constants.length > 0
+          ? `<h2>Größen</h2>${list([
+              ...entry.variables.map((variable) => quantity(variable, formatUnit(variable.unit))),
+              ...entry.constants.map((constant) => quantity(constant, constantText(constant.value))),
+              ...(entry.result ? [quantity(entry.result, formatUnit(entry.result.unit))] : []),
+            ])}`
           : '',
       ].join(''),
   }

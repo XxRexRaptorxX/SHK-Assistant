@@ -1,10 +1,10 @@
 {
   "id": "formula.geometrie.kreisdurchmesser",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 1; keine Seitenangabe vorhanden. Wikipedia „Kreis“, https://de.wikipedia.org/wiki/Kreis",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Kreisdurchmesser aus Fläche",
   "description": "Ermittelt den Durchmesser eines Kreises aus seiner Fläche.",
   "category": "Geometrie",
@@ -13,7 +13,8 @@
       "symbol": "A",
       "name": "Kreisfläche",
       "term": "Fläche",
-      "unit": "m^2"
+      "unit": "m^2",
+      "min": 0
     }
   ],
   "constants": [],

@@ -1,10 +1,10 @@
 {
   "id": "formula.hydraulik.kontinuitaet-volumenstrom",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden. Wikipedia „Kontinuitätsgleichung“, https://de.wikipedia.org/wiki/Kontinuit%C3%A4tsgleichung",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Kontinuitätsgesetz: Volumenstrom",
   "description": "Bei stationärer Strömung ohne Zu- oder Abfluss bleibt der Volumenstrom entlang des betrachteten Strömungswegs gleich.",
   "category": "Hydraulik",

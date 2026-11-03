@@ -2,10 +2,10 @@ import { useId, useMemo, useState } from 'react'
 import { ClearInputsButton, HeadingWithClear } from '../../components/ClearInputsButton'
 import { EqualsIcon, WorkingIcon } from '../../components/icons'
 import { updateSettings, useSettings } from '../../settings/settings'
-import { formatNumber, formatSignificant, parseDecimal } from '../../lib/number'
+import { formatResult, formatSignificant, parseDecimal } from '../../lib/number'
 import { alternativeUnits } from '../units/alternatives'
 import { formatAnyUnit } from '../units/labels'
-import { evaluateFormula, FormulaError, rangeError, toMainUnit, type Quantity } from './engine'
+import { evaluateFormula, FormulaError, NOT_COMPUTABLE, rangeError, toMainUnit, type Quantity } from './engine'
 import { constantSubstitution, FormulaMath, quantitySubstitution, type Substitution } from './FormulaMath'
 import type { FormulaEntry, FormulaVariable } from './schema'
 import { fieldBase } from '../../components/surfaces'
@@ -137,12 +137,12 @@ export function Calculator({
     if (incomplete) return { kind: 'incomplete' }
     try {
       const value = evaluateFormula(formula, inputs, resultUnit)
-      if (!Number.isFinite(value)) return { kind: 'error', message: 'Mit diesen Werten nicht berechenbar.' }
+      if (!Number.isFinite(value)) return { kind: 'error', message: NOT_COMPUTABLE }
       return { kind: 'result', value }
     } catch (error) {
       return {
         kind: 'error',
-        message: error instanceof FormulaError ? error.message : 'Mit diesen Werten nicht berechenbar.',
+        message: error instanceof FormulaError ? error.message : NOT_COMPUTABLE,
       }
     }
   }, [formula, values, units, resultUnit])
@@ -153,7 +153,7 @@ export function Calculator({
     calculation.kind === 'result'
       ? // Nachkommastellen gelten für die Haupteinheit; in anderen Einheiten gültige Stellen
         resultUnit === result.unit
-        ? formatNumber(calculation.value, result.decimals)
+        ? formatResult(calculation.value, result.decimals)
         : formatSignificant(calculation.value)
       : '–'
   const resultUnitSelect = (
@@ -197,7 +197,9 @@ export function Calculator({
               autoComplete="off"
               value={raw}
               aria-invalid={invalid}
-              aria-describedby={invalid ? `${inputId}-error` : undefined}
+              aria-describedby={
+                [variable.description && `${inputId}-hint`, invalid && `${inputId}-error`].filter(Boolean).join(' ') || undefined
+              }
               onChange={(event) => setValues({ ...values, [variable.symbol]: event.target.value })}
               className={`${fieldClass} w-full min-w-0 ${presets.length > 0 ? 'pr-12' : ''} ${invalid ? 'border-warn-ink outline-2 outline-warn' : ''}`}
             />
@@ -207,6 +209,11 @@ export function Calculator({
               <label htmlFor={inputId} className="block font-semibold">
                 {variable.name} <span className="font-normal text-muted">({variable.label ?? variable.symbol})</span>
               </label>
+              {variable.description && (
+                <p id={`${inputId}-hint`} className="text-base text-muted">
+                  {variable.description}
+                </p>
+              )}
               <div className="mt-1 flex items-center gap-2">
                 {presets.length > 0 ? (
                   <MaterialPicker

@@ -1,9 +1,9 @@
 {
   "id": "formula.gastechnik.gasleistung-zaehler",
   "visibility": "public",
-  "status": "draft",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl; Wikipedia „Leistung (Physik)“, https://de.wikipedia.org/wiki/Leistung_(Physik)",
   "title": "Gasleistung aus der Zählermessung",
   "description": "Berechnet die Leistung eines Gasgeräts aus dem in einer Messzeit am Zähler durchgelaufenen Volumen (Zählermethode). Je nachdem, worauf sich die Angabe des Geräts bezieht, Heizwert oder Brennwert im Normzustand einsetzen.",

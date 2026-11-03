@@ -23,3 +23,12 @@ export function formatNumber(value: number, decimals: number): string {
     maximumFractionDigits: decimals,
   }).format(value)
 }
+
+/**
+ * Ergebnis mit fester Anzahl Nachkommastellen. Blieben damit weniger als zwei gültige Stellen
+ * (0,000314 mit zwei Nachkommastellen wäre 0,00), wird mit drei gültigen Stellen dargestellt.
+ */
+export function formatResult(value: number, decimals: number): string {
+  const shownDigits = Math.floor(Math.log10(Math.abs(value))) + 1 + decimals
+  return value !== 0 && shownDigits < 2 ? formatSignificant(value, 3) : formatNumber(value, decimals)
+}

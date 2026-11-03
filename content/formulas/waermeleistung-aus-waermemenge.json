@@ -1,10 +1,10 @@
 {
   "id": "formula.thermodynamik.waermeleistung-aus-waermemenge",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Vom Nutzer bereitgestellte Formeltafel, Bild 2; keine Seitenangabe vorhanden. Wikipedia „Wärmestrom“, https://de.wikipedia.org/wiki/W%C3%A4rmestrom",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Wärmeleistung aus Wärmemenge",
   "description": "Berechnet die mittlere Wärmeleistung aus übertragener Wärmemenge und Zeit.",
   "category": "Thermodynamik",

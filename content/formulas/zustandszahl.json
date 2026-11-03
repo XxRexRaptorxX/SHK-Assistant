@@ -1,9 +1,9 @@
 {
   "id": "formula.gastechnik.zustandszahl",
   "visibility": "public",
-  "status": "draft",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
   "title": "Zustandszahl",
   "description": "Berechnet die Zustandszahl Z: das Verhältnis von Gasvolumen im Normzustand zum Volumen im Betriebszustand am Gaszähler. Damit wird das am Zähler gemessene Volumen auf den Normzustand umgerechnet.",
@@ -46,7 +46,7 @@
       "name": "Kompressibilitätszahl",
       "unit": "",
       "min": 0.01,
-      "description": "Laut Quelle 1 bei Betriebsdrücken bis 1000 hPa"
+      "description": "Laut Quelle gilt K = 1 bei einem Überdruck bis 1000 hPa"
     }
   ],
   "constants": [

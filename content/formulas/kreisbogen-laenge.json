@@ -1,10 +1,10 @@
 {
   "id": "formula.geometrie.kreisbogen-laenge",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Kreissektor“, https://de.wikipedia.org/wiki/Kreissektor; Wikipedia „Kreisbogen“, https://de.wikipedia.org/wiki/Kreisbogen",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "title": "Kreisbogenlänge",
   "description": "Berechnet die Länge eines Kreisbogens aus Durchmesser und Mittelpunktswinkel, z. B. die gestreckte Länge eines Rohrbogens.",
   "category": "Geometrie",
