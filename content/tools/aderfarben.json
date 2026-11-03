@@ -1,0 +1,544 @@
+{
+  "id": "tool.aderfarben",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Aderfarben und Zuordnung der Außenleiter: „Farben für Einzeladern“, de 5/2015, S. 15–16, mit Tabellen nach DIN VDE 0293-308, Abschnitt 514.3 von DIN VDE 0100-510:2011-03 und der Empfehlung des ZVEH, https://www.elektro.net/file/show/80378/e70522/015-016_DE_2015_5_PP1.pdf; Lapp, Technische Tabelle T9, Ader-Ident-Code nach VDE 0293-308/HD 308 S2, https://contentmedia.lappcdn.com/e/lapp/c0Sf91rDUKICEMNwQb9Fcg~~; Kabeltronik, Farbcode nach DIN VDE 0293-308, https://www.kabeltronik.de/en/kabeltronik/info-download/technical/color-code-power-lines. Neutralleiter, PEN-Leiter und Blau ohne Neutralleiter: Kiefer, VDE 0100 und die Praxis, 15. Auflage, Abschnitt 19.9, S. 697–701, https://content.voltimum.com/de/128010/vde_0100_und_die_praxis_603616_seite_697-701.pdf. Altanlagen: BAYKA, Kennzeichnung der Adern von Energiekabeln und -leitungen, https://www.bayka.de/?p=4487. Gleichstrom: DIN EN 60445 (VDE 0197):2018-02, zusammengefasst in FORUM VERLAG, „Kabelkennzeichnung nach DIN EN 60445“ (30.11.2021), https://forum-verlag.com/fachwissen/elektrosicherheit-und-elektrotechnik/kabelkennzeichnung-din-en-60445/, und WEKA, Ernst Schneider (03.08.2018), https://www.weka.de/produktsicherheit/kennzeichnung-kabeln-leitern-din-en-60445-vde-0197/; aktuelle Ausgabe laut Normeintrag DIN EN IEC 60445 (VDE 0197):2023-02, https://www.din.de/en/getting-involved/standards-committees/dke/publications/wdc-beuth:din21:357427160. Solarleitungen: Solis, „Ensuring DC Polarity is Correctly Connected“, https://www.solisinverters.com/de/documentation/Ensuring_DC_Polarity_is_Correctly_Connected_07271623.html; Lapp, Datenblatt H1Z2Z2-K, https://t3.lappcdn.com/fileadmin/DAM/Lapp_South_Africa/2019-Repository/Photovoltaic/H1Z2Z2-K.pdf. Kabeltypen und Adern ab 6: HELUKABEL, Datenblätter NYM-J/-O, https://www.zajadacz.de/documents/AZ_DB_HE_HELU-NYM-J-O.pdf, und NYY, https://assets-cdn.helukabel.com/suppliers/Helukabel/documents/db/HELUKABEL_M32001_DE.pdf; Lapp, Datenblatt H07RN-F, https://www.offgridtec.com/media/product_attachements/Lapp_H07RN-F_Datenblatt_neu.pdf; Lapp, Katalogblatt H05RN-F, https://t3.lappcdn.com/fileadmin/DAM/Lapp_APAC/One_Asia_Catalogue_FY20_21/Power_and_Control/LAPP_KABEL_H05RN-F_Pg30.pdf; Faber Kabel, Datenblatt H05VV-F, https://asset.conrad.com/media10/add/160267/c1/-/de/001152275DS01/adatlap-1152275-toemlos-vezetek-h05vv-f-3-g-15-mm-fekete-faber-kabel-030020-meteraru.pdf; Lapp, Datenblatt H07V-K, https://b2b.offgridtec.com/media/product_attachements/Lapp_H07V-K_Datenblatt.pdf. Alter Farbcode nach VDE 0293: Lapp, Technische Tabelle T9 (siehe oben). Alte Typnamen: DGUV Information 203-005, Anhang 3, Tabelle 2, https://vorschriften.bgn-branchenwissen.de/daten/dguv/203_005/anh3.htm. Farben vor 1965: Bosch DIY, „Stromkabel Farben“, https://www.bosch-diy.com/de/de/all-about-diy/stromkabel-farben; Heinz Kerp, „Farben von Kabeln und Leitungen“, sanier.de (24.07.2025), https://www.sanier.de/elektroinstallation/farben-von-kabeln-und-leitungen; Utopia, „Das bedeuten die Farben bei Stromkabeln“, https://utopia.de/ratgeber/das-bedeuten-die-farben-bei-stromkabeln. Stegleitung NYIF-J: Klaus Faber, Datenblatt (2016), https://www.mikrocontroller.net/attachment/291690/DBL_NYIF.PDF; Waskönig+Walter, Datenblatt (Stand 03.11.2026), https://www.waskoenig.de/download/0088?locale=de. Kleinspannung: DIN 47100-Farbfolge in Lapp, Technische Tabelle T9 (siehe oben); Lynxeo, Datenblatt LiYCY, https://www.lynxeogroup.com/.rest/catalog/v1/family/pdf/26027/LiYCY; Faber Kabel, Datenblatt J-Y(St)Y nach VDE 0815, https://www.meinhausshop.de/media/pdf/meinhausshop-62-074-97-dbl-01-de.pdf. Alle abgerufen am 03.11.2026. Schwarz als Schaltdraht bei 230 V: Angabe des Inhabers vom 03.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "wireColors",
+  "title": "Aderfarben",
+  "summary": "Zeigt, welche Aderfarbe wofür genutzt wird.",
+  "description": "System, Kabeltyp und Aderzahl wählen. Das Tool zeigt, welche Farbe standardmäßig wofür genutzt wird. Grün-Gelb ist immer der Schutzleiter, als PEN-Leiter mit blauer Markierung an den Enden. Blau ist der Neutralleiter; nur wenn im Stromkreis keiner gebraucht wird, darf Blau anders genutzt werden, nie als Schutzleiter. Für alte Installationen und alte Typen wie NYA oder NYMHY gibt es das System „Altanlage“. Die Farbe ersetzt nicht das Prüfen vor Ort.",
+  "category": "Montage",
+  "systems": [
+    {
+      "key": "wechselstrom",
+      "label": "Wechselstrom",
+      "note": "230 V"
+    },
+    {
+      "key": "drehstrom",
+      "label": "Starkstrom",
+      "note": "Drehstrom 400 V",
+      "hint": "Die Norm legt L1, L2 und L3 auf keine Farbe fest. Die Zuordnung hier ist die Empfehlung des ZVEH; wichtig ist, sie in einer Anlage einheitlich zu halten."
+    },
+    {
+      "key": "gleichstrom",
+      "label": "Gleichstrom",
+      "note": "DC",
+      "hint": "Für mehradrige Leitungen wie NYM-J nennen die Quellen keine Belegung bei Gleichstrom, deshalb stehen sie hier nicht zur Wahl."
+    },
+    {
+      "key": "kleinspannung",
+      "label": "Kleinspannung",
+      "note": "Fühler, Bus",
+      "hint": "Die Farben zeigen hier nur die Reihenfolge der Adern und sagen nichts über die Funktion. Die Belegung steht im Schaltplan oder in der Anleitung des Geräts."
+    },
+    {
+      "key": "altanlage",
+      "label": "Altanlage",
+      "note": "alte Farben",
+      "warning": "Alte Farben belegen die Funktion nicht. Rot kann Schutzleiter, geschalteter Draht oder bei Drehstrom eine Phase sein, Grau ein früherer Neutralleiter (PEN). Jede Ader vorher zweipolig prüfen.",
+      "hint": "Bei einer Erweiterung gelten ab dem Erweiterungspunkt die heutigen Farben. Neue graue Adern nicht an einen alten grauen PEN-Leiter anschließen."
+    }
+  ],
+  "cables": [
+    { "key": "nymJ", "name": "NYM-J", "aliases": ["NYM", "Mantelleitung"] },
+    { "key": "nymO", "name": "NYM-O", "aliases": ["NYM ohne Schutzleiter"] },
+    { "key": "nyyJ", "name": "NYY-J", "aliases": ["NYY", "Erdkabel"] },
+    { "key": "nyyO", "name": "NYY-O", "aliases": ["NYY ohne Schutzleiter"] },
+    { "key": "h07rnF", "name": "H07RN-F", "aliases": ["Gummischlauchleitung", "Gummileitung"] },
+    { "key": "h05rnF", "name": "H05RN-F", "aliases": ["Gummischlauchleitung"] },
+    { "key": "h05vvF", "name": "H05VV-F", "aliases": ["PVC-Schlauchleitung", "Anschlussleitung"] },
+    { "key": "h07vK", "name": "H07V-K", "aliases": ["Aderleitung", "Einzelader", "Litze"] },
+    { "key": "h07vU", "name": "H07V-U", "aliases": ["Aderleitung", "Einzelader", "Verdrahtungsleitung"] },
+    { "key": "h1z2z2K", "name": "H1Z2Z2-K", "aliases": ["Solarkabel", "PV-Kabel", "Photovoltaik"] },
+    {
+      "key": "nyifJ",
+      "name": "NYIF-J (Stegleitung)",
+      "aliases": ["NYIF", "NYIFY", "Stegleitung", "Flachkabel", "Flachleitung", "Stegkabel"],
+      "note": "Flachkabel: nur im oder unter Putz in trockenen Räumen; ohne Putz nur in Hohlräumen von Decken und Wänden aus nicht brennbaren Baustoffen."
+    },
+    { "key": "nya", "name": "NYA (heute H07V-U)", "aliases": ["NYA", "Aderleitung", "alte Einzelader"] },
+    { "key": "nyaf", "name": "NYAF (heute H07V-K)", "aliases": ["NYAF", "Aderleitung", "alte Einzelader"] },
+    { "key": "nymhy", "name": "NYMHY (heute H05VV-F)", "aliases": ["NYMHY", "alte Schlauchleitung"] },
+    { "key": "nmh", "name": "NMH (heute H05RN-F)", "aliases": ["NMH", "alte Gummischlauchleitung"] },
+    { "key": "nmhoeu", "name": "NMHöu (heute H07RN-F)", "aliases": ["NMHöu", "NMHoeu", "alte Gummischlauchleitung"] },
+    { "key": "nlh", "name": "NLH (heute H05RR-F)", "aliases": ["NLH", "alte Gummischlauchleitung"] },
+    { "key": "unbekannt", "name": "Typ unbekannt, Altbau vor 1965", "aliases": ["Altbau", "Rot Schwarz Grau", "alte Installation"] },
+    { "key": "liycy", "name": "LiYCY", "aliases": ["Steuerleitung", "Fühlerleitung", "DIN 47100", "Datenleitung"] },
+    {
+      "key": "jyStY",
+      "name": "J-Y(St)Y",
+      "aliases": ["JYSTY", "Fernmeldeleitung", "Busleitung", "Telefonleitung", "VDE 0815"],
+      "note": "Nicht für Starkstromanwendungen zugelassen."
+    }
+  ],
+  "assignments": [
+    {
+      "system": "wechselstrom",
+      "cables": ["nymO", "nyyO", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "2",
+      "wires": [
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" }
+      ],
+      "note": "Leitung ohne Schutzleiter.",
+      "source": "de 5/2015, Tabelle 2; Lapp, Tabelle T9"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymJ", "nyyJ", "nyifJ", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "3",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" }
+      ],
+      "source": "de 5/2015, Tabelle 1; Lapp, Tabelle T9"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "3",
+      "wires": [
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" },
+        { "color": "schwarz", "use": "Weiterer Außenleiter", "note": "Oft als Schaltdraht genutzt." }
+      ],
+      "note": "Leitung ohne Schutzleiter; diese Farbfolge nur für bestimmte Anwendungen.",
+      "source": "de 5/2015, Tabelle 2 (3a); Lapp, Tabelle T9; Schaltdraht: Angabe des Inhabers"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymJ", "nyyJ", "nyifJ", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "4",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" },
+        { "color": "schwarz", "use": "Weiterer Außenleiter", "note": "Oft als Schaltdraht genutzt." }
+      ],
+      "note": "Diese Farbfolge nur für bestimmte Anwendungen. Die übliche vieradrige Leitung hat kein Blau, siehe Starkstrom.",
+      "source": "de 5/2015, Tabelle 1 (4a); Lapp, Tabelle T9; Schaltdraht: Angabe des Inhabers"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "4",
+      "wires": [
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" },
+        { "color": "schwarz", "use": "Weiterer Außenleiter", "note": "Oft als Schaltdraht genutzt." },
+        { "color": "grau", "use": "Weiterer Außenleiter" }
+      ],
+      "note": "Leitung ohne Schutzleiter.",
+      "source": "de 5/2015, Tabelle 2; Lapp, Tabelle T9; Schaltdraht: Angabe des Inhabers"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymJ", "nyyJ", "nyifJ", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "5",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" },
+        { "color": "schwarz", "use": "Weiterer Außenleiter", "note": "Oft als Schaltdraht genutzt." },
+        { "color": "grau", "use": "Weiterer Außenleiter" }
+      ],
+      "source": "de 5/2015, Tabelle 1; Lapp, Tabelle T9; Schaltdraht: Angabe des Inhabers"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymJ", "nyyJ", "h07rnF"],
+      "cores": "6+",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Alle übrigen Adern, mit Zahlenaufdruck", "note": "Die Farbe sagt hier nichts über die Nutzung." }
+      ],
+      "source": "Lapp, Tabelle T9; Kabeltronik, Farbcode"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "6+",
+      "wires": [
+        { "color": "schwarz", "use": "Alle Adern, mit Zahlenaufdruck", "note": "Die Farbe sagt hier nichts über die Nutzung." }
+      ],
+      "note": "Leitung ohne Schutzleiter.",
+      "source": "Lapp, Tabelle T9; Kabeltronik, Farbcode"
+    },
+    {
+      "system": "wechselstrom",
+      "cables": ["h07vK", "h07vU"],
+      "cores": "Einzeln",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" },
+        { "color": "schwarz", "use": "Außenleiter (L)", "note": "Oft als Schaltdraht genutzt." },
+        { "color": "grau", "use": "Außenleiter (L)" }
+      ],
+      "note": "Außenleiter braun, schwarz oder grau; alle Außenleiter eines Stromkreises dürfen dieselbe Farbe haben.",
+      "source": "de 5/2015 (DIN VDE 0100-510, Abschnitt 514.3); Schaltdraht: Angabe des Inhabers"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "3",
+      "wires": [
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "grau", "use": "Außenleiter" }
+      ],
+      "note": "Leitung ohne Schutzleiter und ohne Neutralleiter.",
+      "source": "de 5/2015, Tabelle 2; Lapp, Tabelle T9"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymJ", "nyyJ", "nyifJ", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "4",
+      "coresNote": "ohne N",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "braun", "use": "Außenleiter L1", "note": "L1 bis L3: Empfehlung des ZVEH" },
+        { "color": "schwarz", "use": "Außenleiter L2" },
+        { "color": "grau", "use": "Außenleiter L3" }
+      ],
+      "source": "de 5/2015, Tabelle 1 und 3; Lapp, Tabelle T9"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymJ", "nyyJ", "nyifJ", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "4",
+      "coresNote": "mit N",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter L1", "note": "L1 und L2: Empfehlung des ZVEH" },
+        { "color": "schwarz", "use": "Außenleiter L2" }
+      ],
+      "note": "Diese Farbfolge nur für bestimmte Anwendungen.",
+      "source": "de 5/2015, Tabelle 1 (4a) und 3; Lapp, Tabelle T9"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "4",
+      "wires": [
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "grau", "use": "Außenleiter" }
+      ],
+      "note": "Leitung ohne Schutzleiter.",
+      "source": "de 5/2015, Tabelle 2; Lapp, Tabelle T9"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymJ", "nyyJ", "nyifJ", "h07rnF", "h05rnF", "h05vvF"],
+      "cores": "5",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter L1", "note": "L1 bis L3: Empfehlung des ZVEH" },
+        { "color": "schwarz", "use": "Außenleiter L2" },
+        { "color": "grau", "use": "Außenleiter L3" }
+      ],
+      "source": "de 5/2015, Tabelle 1 und 3; Lapp, Tabelle T9"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "5",
+      "wires": [
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "grau", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Weitere Ader" }
+      ],
+      "note": "Leitung ohne Schutzleiter.",
+      "source": "de 5/2015, Tabelle 2; Lapp, Tabelle T9"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymJ", "nyyJ", "h07rnF"],
+      "cores": "6+",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Alle übrigen Adern, mit Zahlenaufdruck", "note": "Die Farbe sagt hier nichts über die Nutzung." }
+      ],
+      "source": "Lapp, Tabelle T9; Kabeltronik, Farbcode"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["nymO", "nyyO"],
+      "cores": "6+",
+      "wires": [
+        { "color": "schwarz", "use": "Alle Adern, mit Zahlenaufdruck", "note": "Die Farbe sagt hier nichts über die Nutzung." }
+      ],
+      "note": "Leitung ohne Schutzleiter.",
+      "source": "Lapp, Tabelle T9; Kabeltronik, Farbcode"
+    },
+    {
+      "system": "drehstrom",
+      "cables": ["h07vK", "h07vU"],
+      "cores": "Einzeln",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "grau", "use": "Außenleiter" }
+      ],
+      "note": "Außenleiter braun, schwarz oder grau; alle Außenleiter eines Stromkreises dürfen dieselbe Farbe haben.",
+      "source": "de 5/2015 (DIN VDE 0100-510, Abschnitt 514.3)"
+    },
+    {
+      "system": "gleichstrom",
+      "cables": ["h07vK", "h07vU"],
+      "cores": "Einzeln",
+      "wires": [
+        { "color": "rot", "use": "Positiver Außenleiter (L+)" },
+        { "color": "weiss", "use": "Negativer Außenleiter (L−)" }
+      ],
+      "note": "Bevorzugte Farben nach DIN EN 60445 (VDE 0197):2018-02; die Ausgabe 2023-02 ist nicht geprüft.",
+      "source": "FORUM VERLAG (30.11.2021); WEKA (03.08.2018)"
+    },
+    {
+      "system": "gleichstrom",
+      "cables": ["h1z2z2K"],
+      "cores": "Einzeln",
+      "wires": [
+        { "color": "rot", "use": "Plus" },
+        { "color": "schwarz", "use": "Minus" }
+      ],
+      "note": "Empfehlung des Wechselrichter-Herstellers Solis, keine Normvorgabe: Plus und Minus nicht in derselben Farbe. Weicht von Rot und Weiß nach DIN EN 60445 ab.",
+      "source": "Solis, „Ensuring DC Polarity is Correctly Connected“"
+    },
+    {
+      "system": "kleinspannung",
+      "cables": ["liycy"],
+      "cores": "Bis 10",
+      "wires": [
+        { "color": "weiss", "use": "Ader 1" },
+        { "color": "braun", "use": "Ader 2" },
+        { "color": "gruen", "use": "Ader 3" },
+        { "color": "gelb", "use": "Ader 4" },
+        { "color": "grau", "use": "Ader 5" },
+        { "color": "rosa", "use": "Ader 6" },
+        { "color": "blau", "use": "Ader 7" },
+        { "color": "rot", "use": "Ader 8" },
+        { "color": "schwarz", "use": "Ader 9" },
+        { "color": "violett", "use": "Ader 10" }
+      ],
+      "note": "Farbfolge nach DIN 47100, ab Ader 11 mit zweifarbigen Adern. Lapp nennt für 4-adrige Schnüre eine Ausnahme: Weiß, Gelb, Braun, Grün. Bei paarweise verseilten Leitungen gilt eine andere Folge.",
+      "source": "Lapp, Tabelle T9; Lynxeo, Datenblatt LiYCY"
+    },
+    {
+      "system": "kleinspannung",
+      "cables": ["jyStY"],
+      "cores": "2 Paare",
+      "wires": [
+        { "color": "rot", "use": "Ader 1" },
+        { "color": "schwarz", "use": "Ader 2" },
+        { "color": "weiss", "use": "Ader 3" },
+        { "color": "gelb", "use": "Ader 4" }
+      ],
+      "note": "Zwei Paare als Sternvierer verseilt.",
+      "source": "Faber Kabel, Datenblatt J-Y(St)Y nach VDE 0815"
+    },
+    {
+      "system": "kleinspannung",
+      "cables": ["jyStY"],
+      "cores": "Mehr",
+      "coresNote": "ab 3 Paare",
+      "wires": [
+        { "color": "weiss", "use": "Erste Ader jedes Paars", "note": "Im 1. Paar jeder Lage stattdessen Rot." },
+        { "color": "blau", "use": "Zweite Ader, 1. Paar der Folge" },
+        { "color": "gelb", "use": "Zweite Ader, 2. Paar der Folge" },
+        { "color": "gruen", "use": "Zweite Ader, 3. Paar der Folge" },
+        { "color": "braun", "use": "Zweite Ader, 4. Paar der Folge" },
+        { "color": "schwarz", "use": "Zweite Ader, 5. Paar der Folge" }
+      ],
+      "source": "Faber Kabel, Datenblatt J-Y(St)Y nach VDE 0815"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymJ", "nyyJ", "nyifJ"],
+      "cores": "3",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Außenleiter (L)" },
+        { "color": "blau", "use": "Neutralleiter (N)" }
+      ],
+      "note": "Alter Farbcode nach VDE 0293 für feste Verlegung.",
+      "source": "Lapp, Tabelle T9 (alter Code); Kiefer, Tabelle 19.10"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymJ", "nyyJ", "nyifJ"],
+      "cores": "4",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)", "note": "Ohne Neutralleiter im Stromkreis auch als Außenleiter möglich." },
+        { "color": "braun", "use": "Außenleiter" }
+      ],
+      "note": "Alter Farbcode nach VDE 0293 für feste Verlegung.",
+      "source": "Lapp, Tabelle T9 (alter Code); Kiefer, Abschnitt 514.3.Z4"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymJ", "nyyJ", "nyifJ"],
+      "cores": "5",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Außenleiter" }
+      ],
+      "note": "Alter Farbcode nach VDE 0293 für feste Verlegung; zwei Adern sind schwarz.",
+      "source": "Lapp, Tabelle T9 (alter Code); Kiefer, Tabelle 19.10"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymJ", "nyyJ", "nmhoeu"],
+      "cores": "6+",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)", "note": "In der Außenlage." },
+        { "color": "schwarz", "use": "Alle übrigen Adern, mit Zahlenaufdruck", "note": "Zählung von innen, beginnend mit 1." }
+      ],
+      "source": "Lapp, Tabelle T9 (alter Code)"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymO", "nyyO"],
+      "cores": "2",
+      "wires": [
+        { "color": "schwarz", "use": "Außenleiter (L)" },
+        { "color": "blau", "use": "Neutralleiter (N)" }
+      ],
+      "note": "Leitung ohne Schutzleiter, alter Farbcode.",
+      "source": "Lapp, Tabelle T9 (alter Code)"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymO", "nyyO"],
+      "cores": "3",
+      "wires": [
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "schwarz", "use": "Außenleiter" }
+      ],
+      "note": "Leitung ohne Schutzleiter, alter Farbcode.",
+      "source": "Lapp, Tabelle T9 (alter Code)"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymO", "nyyO"],
+      "cores": "4",
+      "wires": [
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "schwarz", "use": "Außenleiter" }
+      ],
+      "note": "Leitung ohne Schutzleiter, alter Farbcode.",
+      "source": "Lapp, Tabelle T9 (alter Code)"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymO", "nyyO"],
+      "cores": "5",
+      "wires": [
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Weitere Ader" }
+      ],
+      "note": "Leitung ohne Schutzleiter, alter Farbcode.",
+      "source": "Lapp, Tabelle T9 (alter Code)"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymhy", "nmh", "nmhoeu", "nlh"],
+      "cores": "2",
+      "wires": [
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter (L)" }
+      ],
+      "note": "Alter Farbcode für ortsveränderliche Verbraucher, ohne Schutzleiter.",
+      "source": "Lapp, Tabelle T9 (alter Code); Typname: DGUV Information 203-005"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymhy", "nmh", "nmhoeu", "nlh"],
+      "cores": "3",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "braun", "use": "Außenleiter (L)" },
+        { "color": "blau", "use": "Neutralleiter (N)" }
+      ],
+      "note": "Alter Farbcode für ortsveränderliche Verbraucher.",
+      "source": "Lapp, Tabelle T9 (alter Code); Typname: DGUV Information 203-005"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymhy", "nmh", "nmhoeu", "nlh"],
+      "cores": "4",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)", "note": "Ohne Neutralleiter im Stromkreis auch als Außenleiter möglich." },
+        { "color": "braun", "use": "Außenleiter" }
+      ],
+      "note": "Alter Farbcode für ortsveränderliche Verbraucher.",
+      "source": "Lapp, Tabelle T9 (alter Code); Kiefer, Abschnitt 514.3.Z4; Typname: DGUV Information 203-005"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nymhy", "nmh", "nmhoeu", "nlh"],
+      "cores": "5",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "blau", "use": "Neutralleiter (N)" },
+        { "color": "braun", "use": "Außenleiter" },
+        { "color": "schwarz", "use": "Außenleiter" }
+      ],
+      "note": "Alter Farbcode für ortsveränderliche Verbraucher; zwei Adern sind schwarz.",
+      "source": "Lapp, Tabelle T9 (alter Code); Typname: DGUV Information 203-005"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nya", "nyaf"],
+      "cores": "Einzeln",
+      "coresNote": "ab 1965",
+      "wires": [
+        { "color": "gruenGelb", "use": "Schutzleiter (PE)" },
+        { "color": "blau", "use": "Neutralleiter (N)", "note": "Früher als Hellblau bezeichnet." },
+        { "color": "schwarz", "use": "Außenleiter" },
+        { "color": "braun", "use": "Außenleiter" }
+      ],
+      "note": "Grau als Außenleiter kam erst 2003 dazu.",
+      "source": "Utopia (seit 1965); Kiefer, Abschnitt 19.9.5; Grau: sanier.de; Typname: DGUV Information 203-005"
+    },
+    {
+      "system": "altanlage",
+      "cables": ["nya", "nyaf", "unbekannt"],
+      "cores": "Einzeln",
+      "coresNote": "vor 1965",
+      "wires": [
+        { "color": "rot", "use": "Früherer Schutzleiter", "note": "Kann auch ein geschalteter Draht oder bei Drehstrom eine Phase (L2) sein und dann unter Spannung stehen." },
+        { "color": "grau", "use": "Früherer Neutralleiter (PEN)" },
+        { "color": "schwarz", "use": "Außenleiter (Phase)" }
+      ],
+      "note": "Altbauten vor 1965; die Farben wurden oft nicht einheitlich verwendet.",
+      "source": "Bosch DIY, „Stromkabel Farben“; sanier.de (24.07.2025); BAYKA (grauer PEN-Leiter)"
+    }
+  ]
+}

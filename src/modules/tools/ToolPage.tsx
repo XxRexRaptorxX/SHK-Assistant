@@ -7,7 +7,17 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { FormulaBody } from '../formulas/FormulaDetailPage'
 import { ensureCustomUnits } from '../units/customUnits'
 import { findTool, toolEntries } from './tools'
-import { isCableTool, isChoiceTool, isFactorTool, isSequenceTool, isSymbolTool, isTableTool, isVariantTool, type ToolEntry } from './schema'
+import {
+  isCableTool,
+  isChoiceTool,
+  isFactorTool,
+  isSequenceTool,
+  isSymbolTool,
+  isTableTool,
+  isVariantTool,
+  isWireColorTool,
+  type ToolEntry,
+} from './schema'
 import { CableLookup } from './CableLookup'
 import { FactorCalculator } from './FactorCalculator'
 import { ChoiceLookup } from './ChoiceLookup'
@@ -15,6 +25,7 @@ import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
 import { VariantCalculator } from './VariantCalculator'
+import { WireColorLookup } from './WireColorLookup'
 
 const BACK = { to: modules.tools.path, label: modules.tools.title }
 
@@ -47,6 +58,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <SequenceLookup tool={tool} />
       ) : isCableTool(tool) ? (
         <CableLookup tool={tool} />
+      ) : isWireColorTool(tool) ? (
+        <WireColorLookup tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

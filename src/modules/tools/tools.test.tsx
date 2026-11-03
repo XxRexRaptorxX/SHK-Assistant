@@ -54,6 +54,7 @@ describe('Tools', () => {
     expect(length).toBeCloseTo(6 * Math.PI, 6)
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Abgaswerte je Brennerart',
+      'Aderfarben',
       'Ausgerollte Länge von Rohr- und Kabelrollen',
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Gebäudeklasse',

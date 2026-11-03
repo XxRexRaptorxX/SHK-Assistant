@@ -153,6 +153,24 @@ Beleg). Nur Typnummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Di
 `TODO: Inhalt fehlt`; bei `verified` ist das nicht erlaubt. Der Build prüft unbekannte Eigenschaften und
 Kabelarten, doppelte Schlüssel und Kabelarten, die in keiner der beiden Listen vorkommen.
 
+**Aderfarben-Tools** (`"kind": "wireColors"`) zeigen zu System, Kabeltyp und Aderzahl, welche Farbe wofür
+genutzt wird. Felder: `title`, `summary`, `description`, `category` und:
+
+- `systems`: Leiste oben, je `key`, `label` (z. B. „Starkstrom“), optional `note` (kleine zweite Zeile), `hint`
+  (Hinweis unter der Leiste, wenn dieses System gewählt ist) und `warning` (deutliche Warnung, z. B. bei
+  Altanlagen).
+- `cables`: Kabeltypen, je `key`, `name` (z. B. „NYM-J“, alte Typen mit Nachfolger: „NYA (heute H07V-U)“),
+  optional `aliases` (Suchbegriffe) und `note` (Hinweis, wenn der Typ gewählt ist).
+- `assignments`: Belegungen, je `system`, `cables` (Liste von Kabel-`key`s, für die sie gilt), `cores` (Aderzahl
+  in der Leiste, z. B. „3“, „6+“, „Einzeln“), optional `coresNote` (kleine zweite Zeile, trennt gleiche
+  Aderzahlen, z. B. „mit N“ oder „vor 1965“), `wires`, optional `note` und `source` (kurz, woher die Belegung
+  stammt). Je Ader in `wires`: `color` (`gruenGelb`, `blau`, `braun`, `schwarz`, `grau`, `rot`, `weiss`, `gruen`,
+  `gelb`, `rosa`, `violett`), `use` (Nutzung) und optional `note`.
+
+Angeboten wird nur, was eine Belegung hat: Kabeltypen und Aderzahlen ohne Belegung erscheinen nicht. Eine reine
+Empfehlung, z. B. die Zuordnung zu L1, L2, L3, muss als solche im `note` stehen. Der Build prüft unbekannte
+Systeme und Kabeltypen, doppelte Belegungen und ob eine Aderzahl wie „3“ zur Zahl der Einträge in `wires` passt.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

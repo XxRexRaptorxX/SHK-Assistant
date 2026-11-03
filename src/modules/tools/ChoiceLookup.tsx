@@ -118,15 +118,22 @@ export function SelectionBar({
   bar,
   selected,
   onSelect,
+  wrap = false,
 }: {
   bar: ChoiceBar
   selected: string | undefined
   onSelect: (key: string) => void
+  /** Bei vielen Optionen: höchstens drei nebeneinander, der Rest in der nächsten Zeile */
+  wrap?: boolean
 }) {
   return (
     <div className="mt-6">
       <p className="font-semibold">{bar.name}</p>
-      <div role="group" aria-label={bar.name} className="mt-1 flex rounded-xl border-2 border-line bg-surface p-1">
+      <div
+        role="group"
+        aria-label={bar.name}
+        className={`mt-1 flex rounded-xl border-2 border-line bg-surface p-1 ${wrap ? 'flex-wrap' : ''}`}
+      >
         {bar.options.map((option) => {
           const active = option.key === selected
           return (
@@ -136,8 +143,8 @@ export function SelectionBar({
               aria-pressed={active}
               onClick={() => onSelect(option.key)}
               className={`flex min-h-14 min-w-0 flex-1 flex-col items-center justify-center rounded-lg px-1 text-center leading-tight ${
-                active ? 'bg-accent text-accent-ink' : ''
-              }`}
+                wrap ? 'basis-[30%]' : ''
+              } ${active ? 'bg-accent text-accent-ink' : ''}`}
             >
               <span className="text-sm font-bold min-[400px]:text-base">{option.label}</span>
               {option.note && <span className={`text-xs ${active ? '' : 'text-muted'}`}>{option.note}</span>}

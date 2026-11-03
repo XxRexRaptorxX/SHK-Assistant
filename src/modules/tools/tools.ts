@@ -13,11 +13,13 @@ import {
   isSymbolTool,
   isTableTool,
   isVariantTool,
+  isWireColorTool,
   type ToolEntry,
 } from './schema'
 import { sequenceKeywords } from './sequenceTool'
 import { symbolKeywords } from './symbolTool'
 import { variantFormulas } from './variantTool'
+import { wireColorKeywords } from './wireColorTool'
 
 /** Alle Tools der aktuellen Edition, alphabetisch */
 export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.title.localeCompare(b.title, 'de'))
@@ -60,6 +62,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isSymbolTool(entry)) return symbolKeywords(entry)
   if (isSequenceTool(entry)) return sequenceKeywords(entry)
   if (isCableTool(entry)) return cableKeywords(entry)
+  if (isWireColorTool(entry)) return wireColorKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,
