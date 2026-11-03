@@ -57,9 +57,9 @@ describe('Checklisten-Daten', () => {
     expect(checklistEntries.every((entry) => checkChecklist(entry).length === 0)).toBe(true)
   })
 
-  it('enthält die acht Checklisten des Inhabers mit allen 98 Punkten und Notizfeld', () => {
-    expect(checklistEntries).toHaveLength(8)
-    expect(checklistEntries.reduce((sum, entry) => sum + countDone(entry, new Set()).total, 0)).toBe(98)
+  it('enthält alle neun Checklisten mit allen 103 Punkten und Notizfeld', () => {
+    expect(checklistEntries).toHaveLength(9)
+    expect(checklistEntries.reduce((sum, entry) => sum + countDone(entry, new Set()).total, 0)).toBe(103)
     expect(checklistEntries.every((entry) => entry.notes?.label === 'Notizen')).toBe(true)
     const lpg = checklistEntries.find((entry) => entry.id === 'checklist.lpg-inspection')
     expect(lpg?.category).toBe('Prüfung')

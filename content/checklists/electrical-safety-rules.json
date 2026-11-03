@@ -1,0 +1,40 @@
+{
+  "id": "checklist.electrical-safety-rules",
+  "visibility": "public",
+  "status": "verified",
+  "source": "DIN VDE 0105-100 (fünf Sicherheitsregeln)",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-11-03",
+  "title": "Die 5 Sicherheitsregeln der Elektrotechnik",
+  "description": "Vor Beginn der Arbeiten in dieser Reihenfolge abarbeiten.",
+  "category": "Sicherheit",
+  "sections": [
+    {
+      "items": [
+        {
+          "id": "disconnect",
+          "text": "Freischalten"
+        },
+        {
+          "id": "secure-against-reconnection",
+          "text": "Gegen Wiedereinschalten sichern"
+        },
+        {
+          "id": "verify-absence-of-voltage",
+          "text": "Spannungsfreiheit feststellen"
+        },
+        {
+          "id": "earth-and-short-circuit",
+          "text": "Erden und kurzschließen"
+        },
+        {
+          "id": "cover-adjacent-live-parts",
+          "text": "Benachbarte, unter Spannung stehende Teile abdecken oder abschranken"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}
