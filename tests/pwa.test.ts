@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import { isSeoFile } from '../src/config/seo'
 import { buildApp, listFiles } from './helpers/build-app'
 import { createTempDir } from './helpers/temp-content'
 
@@ -38,9 +39,9 @@ describe('PWA-Build', () => {
 
   it('cacht alle ausgelieferten Dateien vor (offline-first)', () => {
     const serviceWorker = read('sw.js')
-    // sw.js selbst und die Workbox-Laufzeit gehören nicht in den Precache
+    // sw.js selbst, die Workbox-Laufzeit und die Suchmaschinen-Seiten gehören nicht in den Precache
     const deliverables = listFiles(outDir.root).filter(
-      (file) => file !== 'sw.js' && !/^workbox-[\w-]+\.js$/.test(file),
+      (file) => file !== 'sw.js' && !/^workbox-[\w-]+\.js$/.test(file) && !isSeoFile(file),
     )
     expect(deliverables).toContain('index.html')
     const missing = deliverables.filter((file) => !serviceWorker.includes(`"${file}"`))

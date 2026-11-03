@@ -5,6 +5,7 @@ import { pageTitle } from '../components/headings'
 import { SearchInput } from '../components/SearchInput'
 import { Slogan } from '../components/Slogan'
 import { chip, featureCard } from '../components/surfaces'
+import { SEO_SECTIONS } from '../config/seo'
 import { content } from '../content'
 import { CALCULATORS } from '../modules/calculator/calculators'
 import { useFavoriteIds } from '../favorites/favoritesStore'
@@ -51,6 +52,31 @@ function Tile({ module, chipText }: { module: AppModule; chipText?: string }) {
   )
 }
 
+/**
+ * Echte Links auf die statischen Übersichten: Suchmaschinen folgen den Hash-Adressen der App nicht.
+ * Offline ausgeblendet, weil diese Seiten nicht im Offline-Cache liegen.
+ */
+function DirectoryLinks() {
+  const sections = SEO_SECTIONS.filter((section) =>
+    content[section.collection].some((entry) => entry.status === 'verified'),
+  )
+  if (globalThis.navigator?.onLine === false || sections.length === 0) return null
+  return (
+    <nav aria-label="Verzeichnis" className="mt-6 flex flex-wrap items-center gap-x-4 text-base text-muted">
+      <span>Verzeichnis:</span>
+      {sections.map((section) => (
+        <a
+          key={section.dir}
+          href={`${import.meta.env.BASE_URL}${section.dir}/`}
+          className="inline-flex min-h-12 items-center font-semibold text-accent underline"
+        >
+          {section.title}
+        </a>
+      ))}
+    </nav>
+  )
+}
+
 export function HomePage() {
   usePageTitle()
   const navigate = useNavigate()
@@ -92,6 +118,7 @@ export function HomePage() {
           </li>
         ))}
       </ul>
+      <DirectoryLinks />
     </>
   )
 }

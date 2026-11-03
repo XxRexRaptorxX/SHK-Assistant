@@ -37,13 +37,26 @@ erscheinen in der App als **ungeprüft**. Freigeben: `status: "verified"`, Quell
 ## Veröffentlichung (GitHub Pages)
 
 Jeder Push auf `main` baut und testet die App und veröffentlicht sie unter
-<https://xxrexraptorxx.github.io/SHK-Assistant/> (Ablauf: `.github/workflows/pages.yml`).
+<https://shk-assistant.app/> (Ablauf: `.github/workflows/pages.yml`).
 Schlägt ein Test fehl, bleibt die bisherige Version online. Einmalig nötig: Repository-Einstellungen
-→ Pages → Source „GitHub Actions“.
+→ Pages → Source „GitHub Actions“. Die Domain steht ebenfalls dort unter „Custom domain“ (bei
+Veröffentlichung über GitHub Actions wird keine `CNAME`-Datei gebraucht).
 
 **Achtung:** Die Seite und dieses (öffentliche) Repository sind für jeden einsehbar. Veröffentlicht
 wird derzeit die interne Edition (`.env`). Einträge mit `visibility: "internal"` gehören deshalb
 nicht in dieses Repository; dafür wäre ein privates Repository mit geschütztem Hosting nötig.
+
+## Suchmaschinen
+
+Die App nutzt Hash-Adressen (`#/lexikon/…`), die Suchmaschinen nicht als eigene Seiten erfassen. Der
+Build erzeugt deshalb je **geprüftem** Eintrag eine statische Seite (`/lexikon/<begriff>/` usw., siehe
+`tools/seo-pages.ts`) mit Link in die App, dazu `sitemap.xml` und `robots.txt`. Entwürfe,
+Fachmann-Codes und Einträge anderer Editionen bekommen keine Seite; Freigeben genügt, dann erscheint
+der Eintrag beim nächsten Build von selbst. Die Adresse steht in `.env` (`VITE_SITE_URL`).
+
+Einmalig nötig: In der [Google Search Console](https://search.google.com/search-console) die
+Eigenschaft mit der Adresse aus `VITE_SITE_URL` anlegen (Typ „URL-Präfix“), die Bestätigungsdatei
+nach `public/` legen und `sitemap.xml` einreichen.
 
 ## Updates
 

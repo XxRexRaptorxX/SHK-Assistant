@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { App } from './App'
 import { homeTileModules, modules, visibleBottomNavModules } from './app/modules'
 import { pageTitle } from './components/headings'
+import { SEO_SECTIONS } from './config/seo'
 
 function renderAt(path: string): string {
   return renderToStaticMarkup(
@@ -40,6 +41,15 @@ describe('App-Routen', () => {
     expect(visibleBottomNavModules(true)).not.toContain(modules.checklists)
     expect(homeTileModules).toContain(modules.checklists)
     expect(new Set(homeTileModules).size).toBe(homeTileModules.length)
+  })
+
+  it('nutzt für die Suchmaschinen-Seiten dieselben Adressen wie die App', () => {
+    const paths = Object.values(modules).map((module) => module.path)
+    for (const section of SEO_SECTIONS) expect(paths).toContain(`/${section.dir}`)
+  })
+
+  it('verlinkt von der Startseite auf die Verzeichnisse für Suchmaschinen', () => {
+    expect(renderAt('/')).toContain('lexikon/"')
   })
 
   it('zeigt für unbekannte Adressen "Seite nicht gefunden"', () => {
