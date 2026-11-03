@@ -212,7 +212,7 @@ describe('Aderfarben', () => {
         </Routes>
       </MemoryRouter>,
     )
-    expect(html).toContain('Aderfarben')
+    expect(html).toContain('Kabel Aderfarben')
     expect(html).toContain('noch nicht geprüft')
     expect(html).toContain('de 5/2015')
   })

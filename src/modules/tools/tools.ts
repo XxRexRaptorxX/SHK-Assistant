@@ -2,6 +2,7 @@ import { modules } from '../../app/modules'
 import { content } from '../../content'
 import type { SearchDocument } from '../../search/search'
 import { TOOL_ID_PREFIX } from './constants'
+import { groupFormulasByCategory } from '../formulas/formulas'
 import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
 import {
@@ -28,6 +29,18 @@ export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.titl
 export const formulaToolEntries: FormulaEntry[] = toolEntries.flatMap((entry) =>
   isFormulaTool(entry) ? [entry] : isVariantTool(entry) ? variantFormulas(entry) : [],
 )
+
+/** Reihenfolge der Kategorien in der Tool-Liste; nicht genannte stehen danach, alphabetisch */
+export const TOOL_CATEGORY_ORDER = ['Montage', 'Wartung', 'Demonstration', 'Aufmaß', 'Auslegung', 'Planung']
+
+/** Tools je Kategorie für die Liste; innerhalb einer Kategorie bleibt die Reihenfolge der Einträge */
+export function groupToolsByCategory<T extends { category: string }>(entries: readonly T[]): { category: string; entries: T[] }[] {
+  const rank = (category: string) => {
+    const index = TOOL_CATEGORY_ORDER.indexOf(category)
+    return index === -1 ? TOOL_CATEGORY_ORDER.length : index
+  }
+  return groupFormulasByCategory(entries).sort((a, b) => rank(a.category) - rank(b.category))
+}
 
 export const toolSlug = (id: string) => id.slice(TOOL_ID_PREFIX.length + 1)
 export const toolPath = (id: string) => `${modules.tools.path}/${toolSlug(id)}`

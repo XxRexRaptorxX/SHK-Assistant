@@ -18,7 +18,7 @@ import { isFactorTool, isVariantTool } from './schema'
 import { matchingRows, TableLookup } from './TableLookup'
 import { shiftFloorHeight } from './floorOffset'
 import { Calculator } from '../formulas/Calculator'
-import { formulaToolEntries, toolEntries } from './tools'
+import { formulaToolEntries, groupToolsByCategory, TOOL_CATEGORY_ORDER, toolEntries } from './tools'
 import { checkVariantTool } from './variantTool'
 import { VariantCalculator } from './VariantCalculator'
 
@@ -54,11 +54,11 @@ describe('Tools', () => {
     expect(length).toBeCloseTo(6 * Math.PI, 6)
     expect(toolEntries.map((entry) => entry.title)).toEqual([
       'Abgaswerte je Brennerart',
-      'Aderfarben',
       'Ausgerollte Länge von Rohr- und Kabelrollen',
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Gebäudeklasse',
       'Heizlast überschlägig',
+      'Kabel Aderfarben',
       'Kabelarten',
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Material zurückschreiben',
@@ -828,6 +828,24 @@ describe('Tools', () => {
     expect(html).toContain('<option value="ht110" selected="">DN 110</option>')
     expect(html).toContain('L = 1,10 m')
     expect(html).toContain('Lᵥ = 2,00 m')
+  })
+
+  it('zeigt die Kategorien in der festgelegten Reihenfolge', () => {
+    const order = ['Montage', 'Wartung', 'Demonstration', 'Aufmaß', 'Auslegung', 'Planung']
+    expect(groupToolsByCategory(toolEntries).map((group) => group.category)).toEqual(order)
+    const list = renderToStaticMarkup(
+      <MemoryRouter initialEntries={['/tools']}>
+        <App />
+      </MemoryRouter>,
+    )
+    const positions = order.map((category) => list.indexOf(`>${category}</h2>`))
+    expect(positions.every((position) => position > -1)).toBe(true)
+    expect(positions).toEqual([...positions].sort((a, b) => a - b))
+    // Neue Kategorien stehen danach, ohne Kategorie ganz am Ende
+    const categories = ['', 'Zubehör', 'Planung', 'Montage'].map((category) => ({ category }))
+    expect(groupToolsByCategory(categories).map((group) => group.category)).toEqual(['Montage', 'Planung', 'Zubehör', 'Allgemein'])
+    // Jede Kategorie aus dem Inhalt hat ihren Platz
+    for (const entry of toolEntries) expect(TOOL_CATEGORY_ORDER).toContain(entry.category)
   })
 
   it('listet die Tools und zeigt ein Tool mit Formel, Legende und Rechner', () => {

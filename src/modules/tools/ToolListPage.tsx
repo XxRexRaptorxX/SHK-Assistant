@@ -5,8 +5,7 @@ import { categoryHeading, pageTitle } from '../../components/headings'
 import { listCard } from '../../components/surfaces'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { usePageTitle } from '../../lib/usePageTitle'
-import { groupFormulasByCategory } from '../formulas/formulas'
-import { toolEntries, toolPath } from './tools'
+import { groupToolsByCategory, toolEntries, toolPath } from './tools'
 import type { ToolEntry } from './schema'
 
 export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] }) {
@@ -18,7 +17,7 @@ export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] 
       {entries.length === 0 ? (
         <p className="mt-2 text-muted">Noch keine Tools vorhanden.</p>
       ) : (
-        groupFormulasByCategory(entries).map((group) => (
+        groupToolsByCategory(entries).map((group) => (
           <section key={group.category} className="mt-5">
             <h2 className={categoryHeading}>{group.category}</h2>
             <ul className={`mt-2 ${listCard}`}>

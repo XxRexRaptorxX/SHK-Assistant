@@ -55,11 +55,12 @@ Bei `verified` sind `expression`, `result` und mindestens ein Testbeispiel Pflic
 
 Praktische Rechenhelfer für die Baustelle, z. B. die Länge auf einer Rohrrolle. Aufbau und Prüfung
 wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie erscheinen aber unter
-„Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, derzeit „Aufmaß“
-(Mengen auf der Baustelle ermitteln), „Auslegung“ (Bedarf vorab abschätzen), „Demonstration“
-(Faustwerte zum Zeigen beim Kunden), „Montage“ (Vorgaben für den Einbau, z. B. Rohrschellenabstände),
-„Planung“ (Nachschlagen beim Lesen und Zeichnen von Schemata, z. B. Sinnbilder) und „Wartung“
-(Richtwerte für Messungen, z. B. Abgaswerte).
+„Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, in dieser Reihenfolge: „Montage“ (Vorgaben für
+den Einbau, z. B. Rohrschellenabstände), „Wartung“ (Richtwerte für Messungen, z. B. Abgaswerte),
+„Demonstration“ (Faustwerte zum Zeigen beim Kunden), „Aufmaß“ (Mengen auf der Baustelle ermitteln),
+„Auslegung“ (Bedarf vorab abschätzen) und „Planung“ (Nachschlagen beim Lesen und Zeichnen von Schemata,
+z. B. Sinnbilder). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
+Kategorie gehört dort dazu.
 
 Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
 der Tool-Übersicht und in der Suche unter dem Titel; die ausführliche Erklärung bleibt in `description`.
