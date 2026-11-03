@@ -14,6 +14,7 @@ import { useTheme } from '../theme/useTheme'
 import { promptInstall, useInstallState, type Platform } from './install'
 import { currentPlatform, INSTALL_GUIDES, InstallGuide } from './InstallGuide'
 import { updateSettings, useSettings } from './settings'
+import { CompanyLogoLink } from '../components/CompanyLogo'
 import { pageTitle } from '../components/headings'
 import { Slogan } from '../components/Slogan'
 import { listCard } from '../components/surfaces'
@@ -200,6 +201,11 @@ function AboutSection() {
   return (
     <>
       <Slogan className="mb-4 text-center" />
+      {/* Helle Fläche wie die Kopfzeile, damit das blaue Logo auch im dunklen Design gut sichtbar ist */}
+      <CompanyLogoLink
+        className="mx-auto mb-4 flex w-fit items-center rounded-2xl bg-bar px-4 py-2"
+        imageClassName="h-14 w-auto"
+      />
       {/* Block mittig, Bezeichnungen und Werte jeweils linksbündig untereinander */}
       <dl className="mx-auto grid w-fit grid-cols-[auto_auto] gap-x-4 gap-y-1 text-base">
         <dt className="font-semibold">Version</dt>

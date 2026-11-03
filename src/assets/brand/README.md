@@ -3,7 +3,7 @@
 Hier das Firmenlogo als `firmenlogo.svg`, `firmenlogo.png` oder `firmenlogo.webp` ablegen
 (am besten mit transparentem Hintergrund, Querformat).
 
-Die App zeigt es dann dezent unten auf der Startseite und unter „Über die App“ in den
+Die App zeigt es dann in der Kopfzeile (nicht auf Handys) und unter „Über die App“ in den
 Einstellungen. Fehlt die Datei, erscheint an diesen Stellen nichts.
 
 `hintergrund-{dunkel,hell}-{hoch,quer}.webp` sind die Fotohintergründe für dunkles und helles

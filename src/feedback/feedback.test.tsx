@@ -70,12 +70,12 @@ describe('Schüttel-Erkennung', () => {
 })
 
 describe('Firmenlogo', () => {
-  it('führt in der Kopfzeile zur Webseite von Biebl Haustechnik', () => {
+  it('führt in der Kopfzeile zur Webseite von Biebl Haustechnik, auf Handys ausgeblendet', () => {
     const html = renderToStaticMarkup(
       <MemoryRouter>
         <Layout />
       </MemoryRouter>,
     )
-    expect(html).toMatch(/<a href="https:\/\/www\.biebl-haustechnik\.de" target="_blank" rel="noopener noreferrer"/)
+    expect(html).toMatch(/<a href="https:\/\/www\.biebl-haustechnik\.de" target="_blank" rel="noopener noreferrer"[^>]*class="hidden [^"]*sm:flex"/)
   })
 })

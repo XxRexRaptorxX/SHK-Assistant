@@ -82,6 +82,12 @@ describe('Einstellungen-Seite', () => {
     expect(html.indexOf('>Kontakt<')).toBeLessThan(html.indexOf('Entwicklung unterstützen'))
   })
 
+  it('zeigt das Firmenlogo mit Link zur Firmenwebseite unter dem Slogan', () => {
+    const logo = html.indexOf('<a href="https://www.biebl-haustechnik.de" target="_blank" rel="noopener noreferrer"')
+    expect(logo).toBeGreaterThan(html.indexOf('Heizungsbauern!'))
+    expect(logo).toBeLessThan(html.indexOf('>Version<'))
+  })
+
   it('verlinkt die Ko-fi-Seite zum Unterstützen', () => {
     expect(html).toContain('href="https://ko-fi.com/xxrexraptorxx" target="_blank" rel="noopener noreferrer"')
     expect(html).toContain('aria-label="Entwicklung unterstützen auf Ko-fi"')

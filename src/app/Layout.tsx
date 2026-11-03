@@ -1,10 +1,9 @@
 import { Link, NavLink, Outlet } from 'react-router'
-import { COMPANY_LINK_LABEL, companyLogoUrl } from '../components/CompanyLogo'
+import { CompanyLogoLink } from '../components/CompanyLogo'
 import { HomeIcon } from '../components/icons'
 import { ShareButton } from '../components/ShareButton'
 import { TechBackdrop } from '../components/TechBackdrop'
 import { isInternalEdition } from '../config/edition'
-import { COMPANY_URL } from '../config/links'
 import { ShakeToReport } from '../feedback/ShakeToReport'
 import { useFavoriteIds } from '../favorites/favoritesStore'
 import { DisclaimerGate } from '../modules/legal/DisclaimerDialog'
@@ -38,7 +37,7 @@ function Header() {
           to="/"
           className="flex min-h-12 items-center gap-1.5 rounded-xl px-1 font-bold whitespace-nowrap"
         >
-          {/* App-Symbol erst ab etwas breiteren Bildschirmen, damit das Firmenlogo Platz hat */}
+          {/* App-Symbol erst ab etwas breiteren Bildschirmen, damit Name und Knöpfe in die Zeile passen */}
           <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="hidden size-9 shrink-0 min-[430px]:block" />
           {/* "Intern" unter dem Namen, damit die Kopfzeile auch auf 320 px passt */}
           <span className="flex flex-col leading-tight">
@@ -52,20 +51,12 @@ function Header() {
             )}
           </span>
         </Link>
-        {/* Firmenlogo mittig im freien Raum zwischen Name und Knöpfen */}
+        {/* Firmenlogo mittig im freien Raum zwischen Name und Knöpfen, auf Handys nicht in der Kopfzeile */}
         <div className="flex min-w-0 justify-center">
-          {companyLogoUrl && (
-            <a
-              href={COMPANY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={COMPANY_LINK_LABEL}
-              title={COMPANY_LINK_LABEL}
-              className="flex min-h-12 min-w-0 items-center rounded-xl px-1"
-            >
-              <img src={companyLogoUrl} alt="" className="max-h-10 w-auto max-w-full object-contain" />
-            </a>
-          )}
+          <CompanyLogoLink
+            className="hidden min-h-12 min-w-0 items-center rounded-xl px-1 sm:flex"
+            imageClassName="max-h-10 w-auto max-w-full object-contain"
+          />
         </div>
         <nav aria-label="Werkzeuge" className="flex shrink-0 items-center">
           <HeaderLink module={modules.search} />
