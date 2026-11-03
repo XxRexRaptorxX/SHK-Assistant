@@ -59,8 +59,8 @@ describe('Tools', () => {
       'Gebäudeklasse',
       'Heizlast überschlägig',
       'Leistungsminderung durch Kalk am Wärmetauscher',
-      'Leistungsminderung durch Ruß im Kessel',
       'Material zurückschreiben',
+      'Mehrverbrauch durch Ruß im Kessel',
       'Mindestdämmdicke von Rohrleitungen',
       'Rohrlänge einer Fußbodenheizung',
       'Rohrschellenabstand',
@@ -162,7 +162,7 @@ describe('Tools', () => {
     expect(byStandard).not.toContain('value="j1920"')
   })
 
-  it('rechnet die Leistungsminderung durch Ruß und Kalk mit dem Faustwert je mm', () => {
+  it('rechnet den Mehrverbrauch durch Ruß und die Leistungsminderung durch Kalk mit dem Faustwert je mm', () => {
     for (const [id, perMm] of [
       ['tool.russ-leistungsminderung', 5],
       ['tool.kalk-leistungsminderung', 10],

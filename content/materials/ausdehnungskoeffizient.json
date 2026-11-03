@@ -1,10 +1,10 @@
 {
   "id": "material.ausdehnungskoeffizient",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Ausdehnungskoeffizient“, https://de.wikipedia.org/wiki/Ausdehnungskoeffizient",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "quantities": [
     "Wärmeausdehnungskoeffizient",
     "Längenausdehnungskoeffizient"
@@ -15,6 +15,11 @@
       "name": "Stahl",
       "note": "bis 0,5 % C, 0–100 °C",
       "value": 0.000011
+    },
+    {
+      "name": "Kupfer",
+      "note": "rein, 20 °C",
+      "value": 0.0000165
     },
     {
       "name": "Grauguss",
@@ -44,7 +49,8 @@
     {
       "name": "PE-LD",
       "value": 0.00017,
-      "source": "Wikipedia „Polyethylen“, https://de.wikipedia.org/wiki/Polyethylen"
+      "source": "Wikipedia „Polyethylen“, https://de.wikipedia.org/wiki/Polyethylen",
+      "note": "laut Quelle längs gemessen auch 0,0002"
     }
   ]
 }

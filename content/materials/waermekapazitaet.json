@@ -1,10 +1,10 @@
 {
   "id": "material.waermekapazitaet",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Spezifische Wärmekapazität“, https://de.wikipedia.org/wiki/Spezifische_W%C3%A4rmekapazit%C3%A4t; Werte aus kJ/(kg·K) umgerechnet (1 Wh = 3,6 kJ)",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "quantities": [
     "Spezifische Wärmekapazität"
   ],

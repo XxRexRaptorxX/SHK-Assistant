@@ -1,10 +1,10 @@
 {
   "id": "material.verdampfungswaerme",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Wikipedia „Eigenschaften des Wassers“, https://de.wikipedia.org/wiki/Eigenschaften_des_Wassers",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "quantities": [
     "Spezifische Verdampfungswärme"
   ],

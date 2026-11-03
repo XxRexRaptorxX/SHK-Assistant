@@ -1,10 +1,10 @@
 {
   "id": "material.russ-mehrverbrauch",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "heizung.de, Ratgeber „Heizungswartung: Kosten, Nutzen, Zeitpunkt“, https://www.heizung.de/ratgeber/diverses/heizungswartung-kosten-nutzen-und-zeitpunkt.html (abgerufen am 23.10.2026)",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "quantities": [
     "Mehrverbrauch je mm Rußschicht"
   ],

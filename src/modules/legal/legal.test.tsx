@@ -118,7 +118,8 @@ describe('Rechtliche Seiten', () => {
         </MemoryRouter>,
       )
       expect(html).toContain(`${page.title}</h1>`)
-      expect(html).toContain('Ungeprüft')
+      // Der Haftungshinweis erklärt die Markierung „Ungeprüft“ im Text
+      if (page.path !== DISCLAIMER_PAGE.path) expect(html).not.toContain('Ungeprüft')
     }
   })
 })

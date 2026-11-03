@@ -1,10 +1,10 @@
 {
   "id": "material.verlegeabstand",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Angabe des Inhabers, übermittelt am 23.10.2026",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "quantities": [
     "Verlegeabstand"
   ],

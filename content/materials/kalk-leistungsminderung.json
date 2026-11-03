@@ -1,10 +1,10 @@
 {
   "id": "material.kalk-leistungsminderung",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "thermondo, Ratgeber „VDI 2035“, https://www.thermondo.de/info/rat/heizen/vdi-2035/ (abgerufen am 23.10.2026)",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-03",
   "quantities": [
     "Leistungsminderung je mm Kalkschicht"
   ],

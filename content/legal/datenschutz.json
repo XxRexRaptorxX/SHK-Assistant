@@ -1,10 +1,10 @@
 {
   "id": "legal.datenschutz",
   "visibility": "public",
-  "status": "draft",
+  "status": "verified",
   "source": "Datenschutzerklärung des Inhabers, erstellt mit dem Generator von eRecht24, https://www.e-recht24.de",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-11-03",
   "title": "Datenschutzerklärung",
   "sections": [
     {

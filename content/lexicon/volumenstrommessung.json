@@ -2,17 +2,22 @@
   "id": "lexicon.volumenstrommessung",
   "visibility": "public",
   "status": "verified",
-  "source": "Wikipedia „Durchflusssensor“, https://de.wikipedia.org/wiki/Durchflusssensor (abgerufen am 31.10.2026); Definition eigenständig formuliert und mit dem Artikel abgeglichen",
+  "source": "Wikipedia „Durchflusssensor“, https://de.wikipedia.org/wiki/Durchflusssensor (abgerufen am 31.10.2026); Wikipedia „Durchflussmessung“, https://de.wikipedia.org/wiki/Durchflussmessung; Definition eigenständig formuliert",
   "verifiedBy": "AI",
-  "verifiedAt": "2026-10-31",
+  "verifiedAt": "2026-11-03",
   "term": "Volumenstrommessung",
   "synonyms": [
+    "Durchflussmessung",
     "flow measurement"
   ],
   "categories": [
     "hydraulik",
     "msr"
   ],
-  "definition": "Ermittlung des pro Zeiteinheit durch eine Leitung strömenden Volumens, beispielsweise mithilfe eines Durchflussmessers oder aus geeigneten Messgrößen. In Heizungsanlagen wird oft über Strangregulierventile mit Messnippeln oder mit Ultraschall-Durchflussmessern gemessen.",
-  "related": []
+  "definition": "Die **Volumenstrommessung** bestimmt, welches Fluidvolumen pro Zeit einen Messquerschnitt passiert, beispielsweise mit einem Durchflussmesser oder aus geeigneten Messgrößen. Je nach Medium und Genauigkeitsanforderung werden etwa Differenzdruck-, Ultraschall-, magnetisch-induktive oder mechanische Messverfahren eingesetzt. In Heizungsanlagen wird oft über Strangregulierventile mit Messnippeln oder mit Ultraschall-Durchflussmessern gemessen. Messbereich, Einbaubedingungen, Strömungsprofil und Kalibrierung beeinflussen die Messunsicherheit.",
+  "related": [
+    "lexicon.volumenstrom",
+    "lexicon.waermemengenzaehler",
+    "lexicon.differenzdruck"
+  ]
 }
