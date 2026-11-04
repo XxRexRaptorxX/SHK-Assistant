@@ -12,5 +12,8 @@
     "normen"
   ],
   "definition": "Norm zur Lüftung von Wohnungen, die unter anderem Anforderungen an Lüftungskonzepte behandelt. Aktuelle Ausgabe und Anwendungsbereich sind zu prüfen.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.normenfinder"
+  ]
 }

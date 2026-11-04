@@ -11,6 +11,7 @@ import {
   isCableTool,
   isChoiceTool,
   isFactorTool,
+  isNormFinderTool,
   isSequenceTool,
   isSymbolTool,
   isTableTool,
@@ -21,6 +22,7 @@ import {
 import { CableLookup } from './CableLookup'
 import { FactorCalculator } from './FactorCalculator'
 import { ChoiceLookup } from './ChoiceLookup'
+import { NormFinder } from './NormFinder'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
@@ -60,6 +62,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <CableLookup tool={tool} />
       ) : isWireColorTool(tool) ? (
         <WireColorLookup tool={tool} />
+      ) : isNormFinderTool(tool) ? (
+        <NormFinder tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

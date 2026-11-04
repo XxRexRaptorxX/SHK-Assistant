@@ -58,8 +58,8 @@ wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie e
 „Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, in dieser Reihenfolge: „Montage“ (Vorgaben für
 den Einbau, z. B. Rohrschellenabstände), „Wartung“ (Richtwerte für Messungen, z. B. Abgaswerte),
 „Demonstration“ (Faustwerte zum Zeigen beim Kunden), „Aufmaß“ (Mengen auf der Baustelle ermitteln),
-„Auslegung“ (Bedarf vorab abschätzen) und „Planung“ (Nachschlagen beim Lesen und Zeichnen von Schemata,
-z. B. Sinnbilder). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
+„Auslegung“ (Bedarf vorab abschätzen) und „Planung“ (Nachschlagen beim Planen, z. B. Sinnbilder in Schemata
+oder zuständige Normen). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
 Kategorie gehört dort dazu.
 
 Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
@@ -171,6 +171,30 @@ genutzt wird. Felder: `title`, `summary`, `description`, `category` und:
 Angeboten wird nur, was eine Belegung hat: Kabeltypen und Aderzahlen ohne Belegung erscheinen nicht. Eine reine
 Empfehlung, z. B. die Zuordnung zu L1, L2, L3, muss als solche im `note` stehen. Der Build prüft unbekannte
 Systeme und Kabeltypen, doppelte Belegungen und ob eine Aderzahl wie „3“ zur Zahl der Einträge in `wires` passt.
+
+**Normen-Tools** (`"kind": "normFinder"`) zeigen zu einem oder mehreren im Menü gewählten Themenbereichen die zuständigen
+Regelwerke, sortiert nach rechtlichem Rang; innerhalb eines Rangs steht vorn, was zu mehreren gewählten Themen gehört.
+Schalter blenden einzelne Arten (`type`, z. B. nur Normen) und alles mit `lowPractice` aus; standardmäßig sind alle an. Felder: `title`, `summary`,
+`description`, `category` und:
+
+- `closingNote`: Einschränkungen der Liste, z. B. Auswahl und Stand der Ausgaben; steht am Seitenende, damit `description`
+  kurz bleibt und das Menü schnell erreichbar ist.
+- `levels`: die Rangstufen, das Verbindlichste zuerst, je `key`, `label` (z. B. „Bundesverordnung“), `binding` (ob das
+  Dokument selbst bindet; bindende Stufen müssen vorn stehen) und `description` (Erklärung unter „Wie wird sortiert?“).
+  Landesrecht ist bisher nur für Bayern erfasst (Stufe `land`); solche Einträge müssen in `note` sagen, dass sie nur dort gelten.
+- `levelNote`: Einordnung, die unter dieser Erklärung steht.
+- `topics`: Themenbereiche, je `key`, `label` (z. B. „Heizöl“), optional `note` (Zusatz in Klammern im Menü), `aliases`
+  (Suchbegriffe) und `practical` (Praxistipp: `norm` = key des Regelwerks, das in diesem Thema am meisten hilft, und
+  `reason` = warum). Ohne `practical` zeigt das Thema keinen Tipp, z. B. wenn es für eine einzelne Empfehlung zu breit ist.
+- `norms`: Regelwerke, je `key`, `name` (Kurzzeichen, z. B. „DVGW G 600 (TRGI)“), `title` (worum es geht), `type` (`law`:
+  Gesetz/Verordnung, `standard`: Norm, `rule`: Technische Regel, `accident`: Unfallverhütung, `guide`: Fachbuch oder
+  Muster), `level` (key der Rangstufe), `description` (eigene Kurzbeschreibung), `url` (https, zum Herausgeber oder
+  Katalogeintrag), `topics` (Liste von Themen-`key`s), optional `aliases`, `edition` (Ausgabe laut Herausgeber oder
+  Katalog; bei Gesetzen leer, ihr Link zeigt die geltende Fassung), `note` (wichtiger Zusatz) und `lowPractice` (Grund für
+  die Kennzeichnung „Wenig Praxisbezug“, z. B. „Richtet sich vor allem an Kesselhersteller“; nicht beim Praxistipp eines Themas).
+
+Nur Nummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Der Build prüft unbekannte Themen, Rangstufen und
+Praxistipps, doppelte Schlüssel und Namen sowie Themen und Rangstufen ohne Regelwerk.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:

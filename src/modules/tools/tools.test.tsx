@@ -64,6 +64,7 @@ describe('Tools', () => {
       'Material zurückschreiben',
       'Mehrverbrauch durch Ruß im Kessel',
       'Mindestdämmdicke von Rohrleitungen',
+      'Regelwerk-Finder',
       'Rohrlänge einer Fußbodenheizung',
       'Rohrschellenabstand',
       'Sinnbilder',

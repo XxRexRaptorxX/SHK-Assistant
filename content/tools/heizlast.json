@@ -97,7 +97,7 @@
         },
         {
           "key": "j2021",
-          "label": "ab 2021 (GEG)",
+          "label": "ab 2021 (GEG, heute GModG)",
           "when": {
             "quelle": "baujahr"
           }

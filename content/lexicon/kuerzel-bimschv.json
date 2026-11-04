@@ -19,6 +19,7 @@
     "lexicon.abgasverlust"
   ],
   "tools": [
-    "tool.abgaswerte"
+    "tool.abgaswerte",
+    "tool.normenfinder"
   ]
 }

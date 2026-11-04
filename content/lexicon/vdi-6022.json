@@ -12,5 +12,8 @@
     "normen"
   ],
   "definition": "Richtlinienreihe zu hygienischen Anforderungen an raumlufttechnische Anlagen und Geräte. Für konkrete Anlagen ist die einschlägige aktuelle Ausgabe maßgeblich.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.normenfinder"
+  ]
 }

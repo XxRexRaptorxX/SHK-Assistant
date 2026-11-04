@@ -15,5 +15,8 @@
   "definition": "Abkürzung für Technische Regeln für Trinkwasser-Installationen, die Normenreihe DIN 1988. Die DIN 1988 ergänzt in Deutschland die europäische Normenreihe DIN EN 806.",
   "related": [
     "lexicon.din-1988"
+  ],
+  "tools": [
+    "tool.normenfinder"
   ]
 }

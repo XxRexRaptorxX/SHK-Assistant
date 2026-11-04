@@ -12,5 +12,8 @@
     "normen"
   ],
   "definition": "Deutsche technische Regeln für Trinkwasserinstallationen, die ergänzend zu europäischen Normen angewendet werden. Maßgeblich ist die jeweils aktuelle, einschlägige Ausgabe.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.normenfinder"
+  ]
 }

@@ -5,11 +5,13 @@ import { TOOL_ID_PREFIX } from './constants'
 import { groupFormulasByCategory } from '../formulas/formulas'
 import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
+import { normFinderKeywords } from './normFinderTool'
 import {
   isCableTool,
   isChoiceTool,
   isFactorTool,
   isFormulaTool,
+  isNormFinderTool,
   isSequenceTool,
   isSymbolTool,
   isTableTool,
@@ -79,6 +81,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isSequenceTool(entry)) return sequenceKeywords(entry)
   if (isCableTool(entry)) return cableKeywords(entry)
   if (isWireColorTool(entry)) return wireColorKeywords(entry)
+  if (isNormFinderTool(entry)) return normFinderKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

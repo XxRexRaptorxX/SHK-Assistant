@@ -14,6 +14,7 @@
   "related": [],
   "tools": [
     "tool.heizlast",
+    "tool.normenfinder",
     "tool.thermostat-raumtemperatur"
   ]
 }
