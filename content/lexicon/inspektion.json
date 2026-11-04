@@ -13,5 +13,8 @@
     "normen"
   ],
   "definition": "Feststellung und Beurteilung des Ist-Zustands einer Anlage oder Komponente, beispielsweise durch Sichtprüfung und Messung. Sie ist Teil der Instandhaltung und dient dazu, Abnutzung frühzeitig zu erkennen und Wartung oder Instandsetzung zu planen.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.wartungsintervalle"
+  ]
 }

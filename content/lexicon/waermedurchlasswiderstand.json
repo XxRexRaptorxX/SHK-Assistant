@@ -17,5 +17,8 @@
     "lexicon.waermeleitfaehigkeit",
     "lexicon.waermedurchgangskoeffizient",
     "lexicon.waermeuebergangswiderstand"
+  ],
+  "formulas": [
+    "formula.thermodynamik.waermedurchlasswiderstand"
   ]
 }

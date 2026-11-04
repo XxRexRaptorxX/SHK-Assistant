@@ -18,5 +18,8 @@
     "lexicon.inbetriebnahme",
     "lexicon.sicherheitsventil",
     "lexicon.gasfeuerungsautomat"
+  ],
+  "tools": [
+    "tool.wartungsintervalle"
   ]
 }

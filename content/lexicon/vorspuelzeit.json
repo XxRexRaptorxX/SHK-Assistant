@@ -22,5 +22,8 @@
     "lexicon.wartezeit",
     "lexicon.vorzuendzeit",
     "lexicon.feuerungsautomat"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

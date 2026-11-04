@@ -14,5 +14,8 @@
     "physik"
   ],
   "definition": "Dimensionslose Kennzahl zur Einordnung des Strömungszustands in einem Fluid. Sie hängt unter anderem von Geschwindigkeit, charakteristischer Länge, Dichte und Viskosität ab.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.reynolds-zahl"
+  ]
 }

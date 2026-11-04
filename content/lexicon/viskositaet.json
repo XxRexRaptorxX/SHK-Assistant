@@ -13,5 +13,8 @@
     "physik"
   ],
   "definition": "Maß für den inneren Fließwiderstand eines Fluids. Sie beeinflusst Druckverluste und Pumpenbetrieb und ist häufig temperaturabhängig.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.reynolds-zahl"
+  ]
 }

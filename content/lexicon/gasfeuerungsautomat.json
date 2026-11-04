@@ -22,5 +22,8 @@
     "lexicon.sicherheitszeit",
     "lexicon.flammenueberwachung",
     "lexicon.ionisationselektrode"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

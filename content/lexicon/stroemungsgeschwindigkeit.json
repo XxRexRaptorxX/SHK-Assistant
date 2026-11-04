@@ -17,5 +17,11 @@
   "definition": "**Strömungsgeschwindigkeit** (auch Fließgeschwindigkeit) ist die Geschwindigkeit, mit der sich ein Fluid wie Wasser oder Luft bewegt. In Rohren rechnet man meist mit der mittleren Geschwindigkeit über den Querschnitt, angegeben in m/s.",
   "related": [
     "lexicon.volumenstrom"
+  ],
+  "formulas": [
+    "formula.hydraulik.fliessgeschwindigkeit-rohr",
+    "formula.hydraulik.geschwindigkeit-aus-druck",
+    "formula.hydraulik.kontinuitaet-geschwindigkeit",
+    "formula.hydraulik.kontinuitaet-geschwindigkeit-1"
   ]
 }

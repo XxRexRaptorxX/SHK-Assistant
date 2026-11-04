@@ -19,5 +19,8 @@
     "lexicon.wasserhaerte",
     "lexicon.enthaertungsanlage",
     "lexicon.waermetauscher"
+  ],
+  "tools": [
+    "tool.kalk-leistungsminderung"
   ]
 }

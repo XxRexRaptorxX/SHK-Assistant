@@ -13,5 +13,8 @@
     "physik"
   ],
   "definition": "Druck in einer ruhenden Flüssigkeit, der durch die Höhe der Flüssigkeitssäule und deren Dichte bestimmt wird. Er beträgt p = ρ · g · h und ist unabhängig von der Form des Behälters; je 10 m Wassersäule kommt etwa 1 bar hinzu.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.hydrostatischer-druck"
+  ]
 }

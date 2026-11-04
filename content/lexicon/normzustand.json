@@ -18,5 +18,8 @@
     "lexicon.zustandszahl",
     "lexicon.brennwert",
     "lexicon.heizwert"
+  ],
+  "formulas": [
+    "formula.gastechnik.zustandszahl"
   ]
 }

@@ -19,5 +19,8 @@
     "lexicon.waermeleitfaehigkeit",
     "lexicon.taupunkt",
     "lexicon.rohrleitung"
+  ],
+  "tools": [
+    "tool.rohrdaemmung"
   ]
 }

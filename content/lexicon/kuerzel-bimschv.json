@@ -17,5 +17,8 @@
   "definition": "Erste Verordnung zur Durchführung des Bundes-Immissionsschutzgesetzes (Verordnung über kleine und mittlere Feuerungsanlagen). Sie legt unter anderem Emissionsgrenzwerte und Messpflichten für Öl-, Gas- und Festbrennstofffeuerungen fest, deren Einhaltung der Schornsteinfeger überwacht.",
   "related": [
     "lexicon.abgasverlust"
+  ],
+  "tools": [
+    "tool.abgaswerte"
   ]
 }

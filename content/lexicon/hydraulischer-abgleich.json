@@ -22,5 +22,8 @@
     "lexicon.volumenstrom",
     "lexicon.differenzdruck",
     "lexicon.umwaelzpumpe"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.volumenstrom-aus-waermeleistung"
   ]
 }

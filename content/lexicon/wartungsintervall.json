@@ -13,5 +13,8 @@
     "normen"
   ],
   "definition": "Vorgesehener zeitlicher Abstand zwischen Wartungsmaßnahmen. Er richtet sich nach Herstellerangaben, Nutzung, Betriebsbedingungen und gegebenenfalls gesetzlichen Vorgaben.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.wartungsintervalle"
+  ]
 }

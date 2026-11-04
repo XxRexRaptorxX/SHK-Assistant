@@ -13,5 +13,8 @@
     "kaelte"
   ],
   "definition": "Coefficient of Performance: Verhältnis der abgegebenen Heiz- oder Kälteleistung zur aufgenommenen Antriebsleistung unter festgelegten Betriebsbedingungen. Der Wert gilt für einen bestimmten Betriebspunkt.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.heizungstechnik.leistungszahl-waermepumpe"
+  ]
 }

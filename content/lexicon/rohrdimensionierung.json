@@ -18,5 +18,9 @@
     "lexicon.volumenstrom",
     "lexicon.druckverlust",
     "lexicon.nenndurchmesser"
+  ],
+  "formulas": [
+    "formula.hydraulik.druckverlust-rohr",
+    "formula.hydraulik.fliessgeschwindigkeit-rohr"
   ]
 }

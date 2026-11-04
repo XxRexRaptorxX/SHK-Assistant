@@ -14,5 +14,8 @@
     "solar"
   ],
   "definition": "Technologie, die Licht mithilfe von Solarzellen direkt in elektrische Energie umwandelt. Die erzeugte Gleichspannung wird meist von einem Wechselrichter umgewandelt; zusammen mit Wärmepumpe oder Heizstab kann der Strom auch zum Heizen genutzt werden.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.kabelarten"
+  ]
 }

@@ -19,5 +19,19 @@
   "related": [
     "lexicon.laenge",
     "lexicon.volumen"
+  ],
+  "formulas": [
+    "formula.geometrie.dreieck-flaeche",
+    "formula.geometrie.kreisausschnitt-flaeche",
+    "formula.geometrie.kreisflaeche",
+    "formula.geometrie.kreisflaeche-naeherung",
+    "formula.geometrie.kreisring-flaeche",
+    "formula.geometrie.kugel-oberflaeche",
+    "formula.geometrie.parallelogramm-flaeche",
+    "formula.geometrie.quader-oberflaeche",
+    "formula.geometrie.rechteck-flaeche",
+    "formula.geometrie.trapez-flaeche",
+    "formula.geometrie.zylinder-mantelflaeche",
+    "formula.geometrie.zylinder-oberflaeche"
   ]
 }

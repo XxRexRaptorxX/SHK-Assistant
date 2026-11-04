@@ -13,5 +13,9 @@
     "physik"
   ],
   "definition": "Druck eines Fluids, der unabhängig von der lokalen Strömungsgeschwindigkeit betrachtet wird. In Heizungsanlagen ist damit oft der Druck der Wassersäule bis zum höchsten Anlagenpunkt gemeint; er ist Grundlage für den Vordruck des Ausdehnungsgefäßes.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.gesamtdruck",
+    "formula.hydraulik.hydrostatischer-druck"
+  ]
 }

@@ -13,5 +13,8 @@
     "physik"
   ],
   "definition": "Wärmeverlust durch die Gebäudehülle infolge von Temperaturunterschieden zwischen innen und außen. Er hängt von Fläche, U-Wert und Temperaturdifferenz ab und ist neben dem Lüftungswärmeverlust der wichtigste Teil der Heizlast.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.waermedurchgang"
+  ]
 }

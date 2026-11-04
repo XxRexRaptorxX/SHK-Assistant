@@ -14,5 +14,11 @@
     "hydraulik"
   ],
   "definition": "Berechnung der erforderlichen Gefäßgröße und Vordruckeinstellung anhand von Anlagenvolumen, Temperaturbereich, statischer Höhe und zulässigen Drücken. Grundlage ist die Ausdehnung des Wassers zwischen Füll- und höchster Betriebstemperatur zuzüglich einer Wasservorlage; ein Berechnungsverfahren beschreibt DIN EN 12828.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.volumenaenderung-wasser"
+  ],
+  "tools": [
+    "tool.solar-mag"
+  ]
 }

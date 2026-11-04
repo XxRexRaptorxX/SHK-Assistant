@@ -15,5 +15,8 @@
   "related": [
     "lexicon.geblaesehochlauf",
     "lexicon.feuerungsautomat"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

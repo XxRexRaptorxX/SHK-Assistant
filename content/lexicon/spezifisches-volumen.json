@@ -13,5 +13,10 @@
     "physik"
   ],
   "definition": "Volumen pro Masseneinheit eines Stoffes; es ist der Kehrwert der Dichte, sofern beide Größen auf denselben Zustand bezogen sind. Es wird in m³/kg angegeben und vor allem bei Gasen und Dampf verwendet, etwa in Kältemitteltabellen.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.differenz-spezifisches-volumen",
+    "formula.thermodynamik.spezifisches-volumen",
+    "formula.thermodynamik.volumenaenderung-wasser"
+  ]
 }

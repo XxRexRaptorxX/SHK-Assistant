@@ -16,5 +16,8 @@
     "lexicon.betriebsbereitschaft",
     "lexicon.vorspuelzeit",
     "lexicon.brennwertkessel"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

@@ -11,5 +11,9 @@
     "normen"
   ],
   "definition": "Normenreihe zur Berechnung der Norm-Heizlast von Gebäuden und Räumen. Die jeweils gültige Ausgabe und nationale Ergänzungen sind maßgeblich.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.heizlast",
+    "tool.thermostat-raumtemperatur"
+  ]
 }

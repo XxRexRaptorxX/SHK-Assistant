@@ -17,5 +17,8 @@
   "related": [
     "lexicon.solarthermie",
     "lexicon.waermetraeger"
+  ],
+  "tools": [
+    "tool.solar-auslegung"
   ]
 }

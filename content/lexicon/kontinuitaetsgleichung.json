@@ -13,5 +13,10 @@
     "physik"
   ],
   "definition": "Erhaltungsgleichung für Masse in einer Strömung. Bei inkompressibler Strömung bleibt der Volumenstrom in einem unverzweigten, dichten Leitungsabschnitt konstant.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.kontinuitaet-geschwindigkeit",
+    "formula.hydraulik.kontinuitaet-geschwindigkeit-1",
+    "formula.hydraulik.kontinuitaet-volumenstrom"
+  ]
 }

@@ -18,5 +18,8 @@
     "lexicon.abgas",
     "lexicon.brennwertkessel",
     "lexicon.verbrennung"
+  ],
+  "tools": [
+    "tool.abgaswerte"
   ]
 }

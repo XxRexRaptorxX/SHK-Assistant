@@ -21,5 +21,10 @@
     "lexicon.differenzdruck",
     "lexicon.umwaelzpumpe",
     "lexicon.waermemengenzaehler"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.volumenstrom-aus-waermeleistung",
+    "formula.hydraulik.kontinuitaet-volumenstrom",
+    "formula.hydraulik.volumenstrom"
   ]
 }

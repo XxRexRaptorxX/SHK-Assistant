@@ -18,5 +18,8 @@
     "lexicon.rohrleitung",
     "lexicon.thermische-laengenausdehnung",
     "lexicon.schallschutz"
+  ],
+  "tools": [
+    "tool.rohrschellenabstand"
   ]
 }

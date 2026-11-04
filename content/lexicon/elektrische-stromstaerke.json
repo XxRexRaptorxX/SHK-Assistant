@@ -19,5 +19,8 @@
     "lexicon.elektrische-spannung",
     "lexicon.elektrischer-widerstand",
     "lexicon.ampere"
+  ],
+  "formulas": [
+    "formula.elektrotechnik.ohmsches-gesetz-stromstaerke"
   ]
 }

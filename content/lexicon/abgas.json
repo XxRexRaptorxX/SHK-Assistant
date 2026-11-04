@@ -19,5 +19,8 @@
     "lexicon.schornstein",
     "lexicon.brennwertkessel",
     "lexicon.kohlenmonoxid"
+  ],
+  "tools": [
+    "tool.abgaswerte"
   ]
 }

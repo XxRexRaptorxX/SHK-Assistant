@@ -19,5 +19,9 @@
     "lexicon.kreis",
     "lexicon.durchmesser",
     "lexicon.umfang"
+  ],
+  "formulas": [
+    "formula.geometrie.kreisflaeche",
+    "formula.geometrie.kreisumfang"
   ]
 }

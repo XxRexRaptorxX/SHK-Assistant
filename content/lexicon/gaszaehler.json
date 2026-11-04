@@ -18,5 +18,9 @@
   "related": [
     "lexicon.gasinstallation",
     "lexicon.brennstoff"
+  ],
+  "formulas": [
+    "formula.gastechnik.energiemenge-gas",
+    "formula.gastechnik.gasleistung-zaehler"
   ]
 }

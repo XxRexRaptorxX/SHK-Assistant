@@ -17,5 +17,8 @@
   "definition": "Messgerät für das Abgas von Feuerstätten, z. B. für Sauerstoff, Kohlenmonoxid und Abgastemperatur, aus denen Kenngrößen wie der Abgasverlust berechnet werden.",
   "related": [
     "lexicon.abgasverlust"
+  ],
+  "tools": [
+    "tool.abgaswerte"
   ]
 }

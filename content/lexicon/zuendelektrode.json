@@ -13,5 +13,8 @@
     "gas"
   ],
   "definition": "Bauteil, das bei entsprechenden Brennern einen elektrischen Funken zur Zündung des Brennstoff-Luft-Gemischs erzeugt. Sie wird von einem Zündtrafo mit Hochspannung versorgt; Elektrodenabstand und Verschmutzung beeinflussen die Zündsicherheit.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
+  ]
 }

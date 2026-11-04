@@ -18,5 +18,14 @@
     "lexicon.umfang",
     "lexicon.flaeche",
     "lexicon.kreisbogen"
+  ],
+  "formulas": [
+    "formula.geometrie.kreisausschnitt-flaeche",
+    "formula.geometrie.kreisbogen-laenge",
+    "formula.geometrie.kreisdurchmesser",
+    "formula.geometrie.kreisflaeche",
+    "formula.geometrie.kreisflaeche-naeherung",
+    "formula.geometrie.kreisring-flaeche",
+    "formula.geometrie.kreisumfang"
   ]
 }

@@ -21,5 +21,8 @@
     "lexicon.luftwechselrate",
     "lexicon.luftfilter",
     "lexicon.brandschutzklappe"
+  ],
+  "formulas": [
+    "formula.lueftung.luftvolumenstrom"
   ]
 }

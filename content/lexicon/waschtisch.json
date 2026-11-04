@@ -18,5 +18,8 @@
     "lexicon.armatur",
     "lexicon.ablaufgarnitur",
     "lexicon.geruchsverschluss"
+  ],
+  "tools": [
+    "tool.montagehoehen"
   ]
 }

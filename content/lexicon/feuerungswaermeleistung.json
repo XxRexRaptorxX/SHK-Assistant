@@ -13,5 +13,8 @@
     "heizung"
   ],
   "definition": "Wärmeleistung, die einer Feuerungsanlage im Dauerbetrieb über den Brennstoff zugeführt wird, üblicherweise bezogen auf den Heizwert. Nach Abzug der Verluste ergibt sich daraus die Wärmeleistung der Anlage; die Feuerungswärmeleistung ist zum Beispiel für immissionsschutzrechtliche Einstufungen maßgeblich.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.gastechnik.gasleistung-zaehler"
+  ]
 }

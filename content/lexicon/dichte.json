@@ -18,5 +18,9 @@
   "related": [
     "lexicon.massenstrom",
     "lexicon.volumenstrom"
+  ],
+  "formulas": [
+    "formula.hydraulik.massenstrom-aus-volumenstrom",
+    "formula.thermodynamik.spezifisches-volumen"
   ]
 }

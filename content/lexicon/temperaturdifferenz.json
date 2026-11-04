@@ -19,5 +19,10 @@
     "lexicon.vorlauftemperatur",
     "lexicon.ruecklauftemperatur",
     "lexicon.waermeleistung"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.logarithmische-temperaturdifferenz",
+    "formula.thermodynamik.temperaturanstieg-aus-waerme",
+    "formula.thermodynamik.temperaturdifferenz"
   ]
 }

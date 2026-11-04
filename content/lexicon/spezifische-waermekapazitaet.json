@@ -18,5 +18,9 @@
   "related": [
     "lexicon.waermemenge",
     "lexicon.wasserhaerte"
+  ],
+  "formulas": [
+    "formula.thermodynamik.waermekapazitaet-spezifisch",
+    "formula.thermodynamik.waermemenge"
   ]
 }

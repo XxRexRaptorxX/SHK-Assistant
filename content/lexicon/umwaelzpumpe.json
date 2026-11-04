@@ -20,5 +20,12 @@
     "lexicon.volumenstrom",
     "lexicon.druckverlust",
     "lexicon.kavitation"
+  ],
+  "formulas": [
+    "formula.hydraulik.hydraulische-leistung",
+    "formula.hydraulik.pumpe-antriebsleistung"
+  ],
+  "tools": [
+    "tool.kabelarten"
   ]
 }

@@ -26,6 +26,8 @@ function lexiconEntry(overrides: Partial<LexiconEntry>): LexiconEntry {
     categories: ['heizung'],
     definition: 'Erster Absatz.\n\nZweiter Absatz.',
     related: [],
+    formulas: [],
+    tools: [],
     ...overrides,
   }
 }
@@ -90,6 +92,9 @@ describe('Lexikon-Daten', () => {
     // Kürzel überdecken in der Verlinkung keine vollen Begriffe (z. B. Zuluft, kW)
     expect(lexiconPathFor(['Zuluft'])).toBe('/lexikon/zuluft')
     expect(lexiconPathFor(['kW'])).toBe('/lexikon/kilowatt')
+    // Verweise auf Formeln und Tools
+    expect(lexiconEntries.find((e) => e.id === 'lexicon.volumenstrom')?.formulas).toContain('formula.hydraulik.volumenstrom')
+    expect(lexiconEntries.find((e) => e.id === 'lexicon.ausdehnungsgefaess')?.tools).toContain('tool.solar-mag')
   })
 })
 
@@ -151,6 +156,35 @@ describe('Lexikon-Seiten', () => {
     expect(html).toContain('Siehe auch')
     expect(html).toContain('href="/lexikon/ausdehnungsgefaess"')
     expect(html).not.toContain('nur-intern')
+  })
+
+  it('verlinkt Formeln und Tools zum Begriff und lässt nicht vorhandene weg', () => {
+    const entry = lexiconEntry({
+      id: 'lexicon.volumenstrom',
+      term: 'Volumenstrom',
+      formulas: ['formula.hydraulik.volumenstrom', 'formula.nur-intern'],
+      tools: ['tool.solar-mag', 'tool.nur-intern'],
+    })
+    const html = renderToStaticMarkup(
+      <MemoryRouter initialEntries={['/lexikon/volumenstrom']}>
+        <Routes>
+          <Route path="/lexikon/:slug" element={<LexiconDetailPage entries={[entry]} />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+    expect(html).toContain('Formeln</h2>')
+    expect(html).toContain('href="/formeln/hydraulik.volumenstrom"')
+    expect(html).toContain('Tools</h2>')
+    expect(html).toContain('href="/tools/solar-mag"')
+    expect(html).not.toContain('nur-intern')
+    // Tool mit status "draft" ist auch in der Liste als ungeprüft markiert
+    expect(html).toContain('Ungeprüft')
+  })
+
+  it('zeigt ohne Verweise keine leeren Abschnitte', () => {
+    const html = renderAt('/lexikon/ausdehnungsgefaess')
+    expect(html).not.toContain('Formeln</h2>')
+    expect(html).not.toContain('Tools</h2>')
   })
 
   it('meldet unbekannte Begriffe', () => {

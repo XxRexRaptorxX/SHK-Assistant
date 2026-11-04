@@ -19,5 +19,8 @@
   "related": [
     "lexicon.thermostatventil",
     "lexicon.temperaturfuehler"
+  ],
+  "tools": [
+    "tool.thermostat-raumtemperatur"
   ]
 }

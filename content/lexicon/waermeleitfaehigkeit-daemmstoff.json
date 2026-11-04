@@ -11,5 +11,8 @@
     "werkstoffe"
   ],
   "definition": "Materialkennwert, der angibt, wie gut ein Dämmstoff Wärme leitet. Ein kleinerer Wert bedeutet bei vergleichbaren Bedingungen eine bessere Dämmwirkung.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.rohrdaemmung"
+  ]
 }

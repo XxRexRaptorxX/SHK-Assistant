@@ -12,5 +12,9 @@
     "physik"
   ],
   "definition": "Über einen Zeitraum umgesetzte elektrische Energie. Sie wird beispielsweise in Joule oder Kilowattstunden angegeben.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.elektrotechnik.elektrische-arbeit-joule",
+    "formula.elektrotechnik.elektrische-arbeit-wh"
+  ]
 }

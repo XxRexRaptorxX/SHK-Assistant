@@ -19,5 +19,11 @@
   "related": [
     "lexicon.elektrische-energie",
     "lexicon.waermepumpen-cop"
+  ],
+  "formulas": [
+    "formula.elektrotechnik.drehstrom-wirkleistung",
+    "formula.elektrotechnik.leistung-spannung-strom",
+    "formula.elektrotechnik.leistung-spannung-widerstand",
+    "formula.elektrotechnik.leistung-strom-widerstand"
   ]
 }

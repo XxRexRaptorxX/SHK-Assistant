@@ -13,5 +13,8 @@
     "trinkwasser"
   ],
   "definition": "Einrichtung zur Nutzung von Trinkwasser oder zur Aufnahme und Ableitung von Abwasser, beispielsweise Waschbecken, WC, Dusche oder Badewanne. Sanitärobjekte bestehen meist aus Keramik, Stahl-Email, Mineralguss oder Acryl und werden über Armaturen und Geruchsverschlüsse angeschlossen.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.montagehoehen"
+  ]
 }

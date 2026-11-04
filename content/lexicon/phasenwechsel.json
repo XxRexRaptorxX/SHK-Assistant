@@ -18,5 +18,9 @@
     "lexicon.kondensat",
     "lexicon.kaeltemittel",
     "lexicon.waermemenge"
+  ],
+  "formulas": [
+    "formula.thermodynamik.schmelzwaerme",
+    "formula.thermodynamik.verdampfungswaerme"
   ]
 }

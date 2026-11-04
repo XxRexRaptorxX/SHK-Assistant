@@ -13,5 +13,8 @@
     "normen"
   ],
   "definition": "Gesamtheit von Maßnahmen zur Bewahrung oder Wiederherstellung der Funktionsfähigkeit einer Anlage; dazu zählen Wartung, Inspektion und Instandsetzung. Als weitere Grundmaßnahme kommt die Verbesserung hinzu; die Begriffe sind in DIN 31051 festgelegt.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.wartungsintervalle"
+  ]
 }

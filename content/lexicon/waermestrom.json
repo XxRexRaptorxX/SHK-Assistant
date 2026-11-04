@@ -17,5 +17,9 @@
   "related": [
     "lexicon.waermeleistung",
     "lexicon.waermedurchgangskoeffizient"
+  ],
+  "formulas": [
+    "formula.thermodynamik.waermedurchgang",
+    "formula.thermodynamik.waermeleitung-wand"
   ]
 }

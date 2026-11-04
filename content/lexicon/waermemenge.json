@@ -18,5 +18,8 @@
     "lexicon.waermeleistung",
     "lexicon.spezifische-waermekapazitaet",
     "lexicon.waermemengenzaehler"
+  ],
+  "formulas": [
+    "formula.thermodynamik.waermemenge"
   ]
 }

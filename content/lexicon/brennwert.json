@@ -19,5 +19,8 @@
   "related": [
     "lexicon.heizwert",
     "lexicon.brennwerttechnik"
+  ],
+  "formulas": [
+    "formula.gastechnik.energiemenge-gas"
   ]
 }

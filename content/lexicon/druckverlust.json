@@ -19,5 +19,8 @@
     "lexicon.volumenstrom",
     "lexicon.differenzdruck",
     "lexicon.rohrdimensionierung"
+  ],
+  "formulas": [
+    "formula.hydraulik.druckverlust-rohr"
   ]
 }

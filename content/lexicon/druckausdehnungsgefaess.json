@@ -20,5 +20,8 @@
     "lexicon.ausdehnungsgefaess",
     "lexicon.anlagendruck",
     "lexicon.sicherheitsventil"
+  ],
+  "tools": [
+    "tool.solar-mag"
   ]
 }

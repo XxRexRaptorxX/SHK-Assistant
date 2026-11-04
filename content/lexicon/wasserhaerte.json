@@ -19,5 +19,8 @@
     "lexicon.kalkablagerung",
     "lexicon.enthaertungsanlage",
     "lexicon.wasseraufbereitung"
+  ],
+  "tools": [
+    "tool.kalk-leistungsminderung"
   ]
 }

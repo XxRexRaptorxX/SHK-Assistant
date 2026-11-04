@@ -13,5 +13,8 @@
     "hydraulik"
   ],
   "definition": "Berechnung von Rohrdimensionen, Volumenströmen und Druckverlusten, damit eine Anlage die erforderlichen Medienmengen innerhalb ihrer Betriebsgrenzen transportiert. In der Gebäudetechnik erfolgt sie zum Beispiel für Trinkwasser nach DIN 1988-300 und bei Heizungsanlagen als Grundlage des hydraulischen Abgleichs.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.druckverlust-rohr"
+  ]
 }

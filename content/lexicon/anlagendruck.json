@@ -18,5 +18,8 @@
     "lexicon.ausdehnungsgefaess",
     "lexicon.sicherheitsventil",
     "lexicon.heizungswasser"
+  ],
+  "tools": [
+    "tool.solar-mag"
   ]
 }

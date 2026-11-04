@@ -13,5 +13,9 @@
     "heizung"
   ],
   "definition": "Ablagerung oder Belag auf Wärmeübertragungsflächen, der den Wärmeübergang und den Druckverlust verschlechtern kann. Typisch sind Kalk, Magnetit, Schlamm oder biologische Beläge; sie zeigen sich durch steigenden Druckverlust und sinkende Leistung und werden durch Spülen oder chemische Reinigung entfernt.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.kalk-leistungsminderung",
+    "tool.russ-leistungsminderung"
+  ]
 }

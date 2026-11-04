@@ -14,5 +14,8 @@
   "definition": "Abkürzung für Fußbodenheizung. Meist ist sie eine wassergeführte Flächenheizung, die mit niedriger Vorlauftemperatur auskommt.",
   "related": [
     "lexicon.fussbodenheizung"
+  ],
+  "tools": [
+    "tool.fbh-rohrlaenge"
   ]
 }

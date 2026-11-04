@@ -20,5 +20,8 @@
     "lexicon.heizkreis",
     "lexicon.mischer",
     "lexicon.hydraulischer-abgleich"
+  ],
+  "tools": [
+    "tool.fbh-rohrlaenge"
   ]
 }

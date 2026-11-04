@@ -18,5 +18,8 @@
   "related": [
     "lexicon.waermepumpe",
     "lexicon.jahresarbeitszahl"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.leistungszahl-waermepumpe"
   ]
 }

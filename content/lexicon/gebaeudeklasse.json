@@ -1,0 +1,24 @@
+{
+  "id": "lexicon.gebaeudeklasse",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Bayerische Bauordnung (BayBO), Art. 2 Abs. 3, https://www.gesetze-bayern.de/Content/Document/BayBO-2 (abgerufen am 04.11.2026); Wikipedia „Gebäudeklasse“, https://de.wikipedia.org/wiki/Geb%C3%A4udeklasse (abgerufen am 04.11.2026); Definition eigenständig formuliert",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-11-04",
+  "term": "Gebäudeklasse",
+  "synonyms": [
+    "GK",
+    "GKL"
+  ],
+  "categories": [
+    "normen"
+  ],
+  "definition": "Die **Gebäudeklasse** teilt Gebäude im Bauordnungsrecht nach Höhe sowie nach Zahl und Größe der Nutzungseinheiten ein, in den unteren Klassen auch danach, ob sie freistehen. Je höher die Klasse, desto strenger sind in der Regel die Brandschutzanforderungen an die Bauteile. Geregelt ist sie in den Landesbauordnungen, die sich weitgehend an der Musterbauordnung orientieren; im Einzelnen weichen die Bundesländer teils voneinander ab.\n\nNach der Bayerischen Bauordnung gilt:\n\n**Klasse 1:** freistehend, bis 7 m, höchstens zwei Nutzungseinheiten mit zusammen höchstens 400 m²; außerdem land- oder forstwirtschaftlich genutzte Gebäude.\n\n**Klasse 2:** wie Klasse 1, aber nicht freistehend.\n\n**Klasse 3:** sonstige Gebäude bis 7 m.\n\n**Klasse 4:** bis 13 m, jede Nutzungseinheit höchstens 400 m².\n\n**Klasse 5:** alle sonstigen Gebäude, auch unterirdische.\n\nDie Höhe wird von der mittleren Geländeoberfläche bis zur Oberkante des Fußbodens im höchstgelegenen Geschoss gemessen, in dem ein Aufenthaltsraum möglich ist, also nicht bis zum First. Flächen im Kellergeschoss zählen nicht mit.",
+  "related": [
+    "lexicon.brandschutzabschottung",
+    "lexicon.brandschutzklappe"
+  ],
+  "tools": [
+    "tool.gebaeudeklasse"
+  ]
+}

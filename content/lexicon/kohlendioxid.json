@@ -20,5 +20,8 @@
     "lexicon.co2-sensor",
     "lexicon.verbrennung",
     "lexicon.raumluftqualitaet"
+  ],
+  "tools": [
+    "tool.abgaswerte"
   ]
 }

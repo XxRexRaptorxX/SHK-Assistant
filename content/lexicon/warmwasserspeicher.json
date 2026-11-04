@@ -20,5 +20,8 @@
     "lexicon.zirkulationsleitung",
     "lexicon.sicherheitsgruppe",
     "lexicon.waermetauscher"
+  ],
+  "tools": [
+    "tool.solar-auslegung"
   ]
 }

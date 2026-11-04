@@ -19,5 +19,8 @@
     "lexicon.solarthermie",
     "lexicon.solarkollektor",
     "lexicon.frostschutzmittel"
+  ],
+  "tools": [
+    "tool.solar-mag"
   ]
 }

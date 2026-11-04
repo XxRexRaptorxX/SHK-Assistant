@@ -19,5 +19,10 @@
     "lexicon.fliessdruck",
     "lexicon.ruhedruck",
     "lexicon.nenndruck"
+  ],
+  "formulas": [
+    "formula.hydraulik.dynamischer-druck",
+    "formula.hydraulik.gesamtdruck",
+    "formula.hydraulik.hydrostatischer-druck"
   ]
 }

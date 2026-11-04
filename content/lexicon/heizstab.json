@@ -13,5 +13,8 @@
     "heizung"
   ],
   "definition": "Elektrisches Widerstandsheizelement, das elektrische Energie direkt in Wärme umwandelt und beispielsweise als Zusatzheizung in Speichern oder Wärmepumpensystemen eingesetzt wird. Er wandelt 1 kWh Strom in höchstens 1 kWh Wärme um und wird daher meist nur zur Spitzenlastdeckung, für den Notbetrieb oder zur thermischen Desinfektion genutzt.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.kabelarten"
+  ]
 }

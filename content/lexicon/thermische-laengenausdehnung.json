@@ -20,5 +20,8 @@
     "lexicon.rohrleitung",
     "lexicon.rohrschelle",
     "lexicon.rohrdaemmung"
+  ],
+  "formulas": [
+    "formula.thermodynamik.laengenausdehnung"
   ]
 }

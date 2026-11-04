@@ -15,5 +15,10 @@
     "lexicon.normzustand",
     "lexicon.brennwert",
     "lexicon.kompressibilitaetszahl"
+  ],
+  "formulas": [
+    "formula.gastechnik.energiemenge-gas",
+    "formula.gastechnik.gasleistung-zaehler",
+    "formula.gastechnik.zustandszahl"
   ]
 }

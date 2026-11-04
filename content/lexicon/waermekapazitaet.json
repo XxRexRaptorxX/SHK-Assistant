@@ -13,5 +13,8 @@
     "physik"
   ],
   "definition": "Wärmeenergie, die erforderlich ist, um die Temperatur eines Körpers oder Systems um ein Kelvin zu erhöhen. Sie hängt von Masse und spezifischer Wärmekapazität ab.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.waermekapazitaet-spezifisch"
+  ]
 }

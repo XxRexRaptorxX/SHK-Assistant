@@ -14,5 +14,8 @@
     "physik"
   ],
   "definition": "Änderung der Länge eines Bauteils infolge einer Temperaturänderung. Bei Rohrleitungen muss sie durch Führung, Dehnungsausgleich oder flexible Abschnitte berücksichtigt werden.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.laengenausdehnung"
+  ]
 }

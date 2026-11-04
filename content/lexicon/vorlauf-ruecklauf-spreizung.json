@@ -14,5 +14,9 @@
     "heizung"
   ],
   "definition": "Temperaturdifferenz zwischen Vorlauf und Rücklauf eines Heiz- oder Kühlkreises. Sie hängt unter anderem von Volumenstrom und übertragener Wärmeleistung ab.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.heizungstechnik.massenstrom-aus-waermeleistung",
+    "formula.heizungstechnik.volumenstrom-aus-waermeleistung"
+  ]
 }

@@ -17,5 +17,12 @@
   "related": [
     "lexicon.flaeche",
     "lexicon.volumenstrom"
+  ],
+  "formulas": [
+    "formula.geometrie.kegel-volumen",
+    "formula.geometrie.kugel-volumen",
+    "formula.geometrie.quader-volumen",
+    "formula.geometrie.zylinder-volumen",
+    "formula.hydraulik.ausflussvolumen"
   ]
 }

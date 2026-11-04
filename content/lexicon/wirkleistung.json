@@ -18,5 +18,8 @@
     "lexicon.scheinleistung",
     "lexicon.leistungsfaktor",
     "lexicon.elektrische-leistung"
+  ],
+  "formulas": [
+    "formula.elektrotechnik.drehstrom-wirkleistung"
   ]
 }

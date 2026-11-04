@@ -19,5 +19,8 @@
     "lexicon.gasfeuerungsautomat",
     "lexicon.ionisationselektrode",
     "lexicon.brenner"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

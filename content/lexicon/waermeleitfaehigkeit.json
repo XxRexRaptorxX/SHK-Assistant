@@ -17,5 +17,10 @@
   "related": [
     "lexicon.rohrdaemmung",
     "lexicon.waermebruecke"
+  ],
+  "formulas": [
+    "formula.thermodynamik.u-wert-einschichtig",
+    "formula.thermodynamik.waermedurchlasswiderstand",
+    "formula.thermodynamik.waermeleitung-wand"
   ]
 }

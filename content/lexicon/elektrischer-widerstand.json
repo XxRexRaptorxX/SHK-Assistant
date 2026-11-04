@@ -20,5 +20,10 @@
     "lexicon.elektrische-stromstaerke",
     "lexicon.ohm",
     "lexicon.spezifischer-elektrischer-widerstand"
+  ],
+  "formulas": [
+    "formula.elektrotechnik.leiterwiderstand",
+    "formula.elektrotechnik.leiterwiderstand-erwaermung",
+    "formula.elektrotechnik.ohmsches-gesetz-widerstand"
   ]
 }

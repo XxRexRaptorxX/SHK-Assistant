@@ -23,5 +23,8 @@
     "lexicon.verfluessiger",
     "lexicon.expansionsventil",
     "lexicon.heizlast"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.leistungszahl-waermepumpe"
   ]
 }

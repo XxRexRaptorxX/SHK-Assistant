@@ -11,5 +11,8 @@
     "trinkwasser"
   ],
   "definition": "Der Wärmebedarf für die Wassererwärmung hängt von Wassermasse, spezifischer Wärmekapazität und Temperaturerhöhung ab; Speicher- und Verteilverluste können zusätzlich anfallen. Es gilt Q = m · c · ΔT; für 100 l Wasser von 10 auf 60 °C sind das etwa 5,8 kWh.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.waermemenge"
+  ]
 }

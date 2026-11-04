@@ -20,5 +20,11 @@
     "lexicon.sicherheitsventil",
     "lexicon.anlagendruck",
     "lexicon.heizungswasser"
+  ],
+  "formulas": [
+    "formula.thermodynamik.volumenaenderung-wasser"
+  ],
+  "tools": [
+    "tool.solar-mag"
   ]
 }

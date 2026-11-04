@@ -19,5 +19,8 @@
     "lexicon.vorspuelzeit",
     "lexicon.sicherheitszeit",
     "lexicon.zuendelektrode"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

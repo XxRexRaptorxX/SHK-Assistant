@@ -13,5 +13,9 @@
     "physik"
   ],
   "definition": "Idealisierte Energiegleichung für eine stationäre Strömung, die Druck-, Geschwindigkeits- und Höhenanteile entlang einer Stromlinie verknüpft. Für reale Rohrströmungen wird sie um ein Verlustglied für den Druckverlust erweitert.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.dynamischer-druck",
+    "formula.hydraulik.gesamtdruck"
+  ]
 }

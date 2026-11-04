@@ -19,5 +19,9 @@
     "lexicon.solarkollektor",
     "lexicon.pufferspeicher",
     "lexicon.waermetraeger"
+  ],
+  "tools": [
+    "tool.solar-auslegung",
+    "tool.solar-mag"
   ]
 }

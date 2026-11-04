@@ -13,5 +13,9 @@
     "physik"
   ],
   "definition": "Wärmeenergie, die bei einem Phasenwechsel aufgenommen oder abgegeben wird, ohne dass sich die Temperatur während des idealisierten Phasenwechsels ändern muss. Ein Beispiel ist die Kondensationswärme, die Brennwertgeräte zusätzlich nutzen; in der Thermodynamik heißt sie Umwandlungsenthalpie.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.schmelzwaerme",
+    "formula.thermodynamik.verdampfungswaerme"
+  ]
 }

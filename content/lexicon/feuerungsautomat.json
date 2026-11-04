@@ -14,5 +14,8 @@
     "msr"
   ],
   "definition": "Steuer- und Überwachungseinrichtung, die Start, Zündung, Flammenüberwachung und sicherheitsbedingte Abschaltungen einer Feuerung kontrolliert. Er überwacht die Flamme meist über eine Ionisationselektrode und geht bei Störungen in eine Störabschaltung mit Verriegelung.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
+  ]
 }

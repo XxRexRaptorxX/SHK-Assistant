@@ -19,5 +19,8 @@
     "lexicon.heizwert",
     "lexicon.brennwert",
     "lexicon.waermepumpen-cop"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.wirkungsgrad"
   ]
 }

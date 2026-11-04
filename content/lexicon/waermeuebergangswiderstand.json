@@ -16,5 +16,8 @@
   "related": [
     "lexicon.waermedurchgangskoeffizient",
     "lexicon.waermedurchlasswiderstand"
+  ],
+  "formulas": [
+    "formula.thermodynamik.u-wert-einschichtig"
   ]
 }

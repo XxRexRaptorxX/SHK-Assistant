@@ -20,5 +20,8 @@
     "lexicon.heizflaeche",
     "lexicon.vorlauftemperatur",
     "lexicon.waermepumpe"
+  ],
+  "tools": [
+    "tool.heizlast"
   ]
 }

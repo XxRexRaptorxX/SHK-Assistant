@@ -19,5 +19,11 @@
     "lexicon.verfluessiger",
     "lexicon.verdampfer",
     "lexicon.waermerueckgewinnung"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.logarithmische-temperaturdifferenz"
+  ],
+  "tools": [
+    "tool.kalk-leistungsminderung"
   ]
 }

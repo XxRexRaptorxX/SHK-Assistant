@@ -14,5 +14,9 @@
     "physik"
   ],
   "definition": "Kennwert U, der den Wärmestrom durch ein Bauteil pro Fläche und Temperaturdifferenz beschreibt. Die Einheit ist W/(m²·K).",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.u-wert-einschichtig",
+    "formula.thermodynamik.waermedurchgang"
+  ]
 }

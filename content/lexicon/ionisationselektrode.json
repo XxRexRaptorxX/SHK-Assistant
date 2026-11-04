@@ -18,5 +18,8 @@
   "related": [
     "lexicon.flammenueberwachung",
     "lexicon.gasfeuerungsautomat"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

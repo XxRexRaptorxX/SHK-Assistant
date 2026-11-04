@@ -19,5 +19,8 @@
     "lexicon.aussentemperaturfuehler",
     "lexicon.pt100",
     "lexicon.ntc"
+  ],
+  "tools": [
+    "tool.kabelarten"
   ]
 }

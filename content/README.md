@@ -359,6 +359,11 @@ jeder Wert in jedes passende Formelfeld umgerechnet werden kann.
 | `categories` | Kategorien, mindestens eine (`heizung`, `hydraulik`, `trinkwasser`, `abwasser`, `kaelte`, `lueftung`, `gas`, `solar`, `msr`, `werkstoffe`, `werkzeuge`, `normen`, `physik`, `einheiten`, `kuerzel`); ein Begriff darf in mehreren stehen |
 | `definition` | Erklärung als Text; eine Leerzeile (`\n\n`) beginnt einen neuen Absatz, `**Wort**` wird fett |
 | `related`    | IDs verwandter Lexikon-Einträge („Siehe auch“)                |
+| `formulas`   | Optional: IDs von Formeln, die mit dem Begriff zu tun haben (Abschnitt „Formeln“) |
+| `tools`      | Optional: IDs von Tools, die mit dem Begriff zu tun haben (Abschnitt „Tools“) |
+
+`formulas` und `tools` nur setzen, wenn der Begriff Ergebnis oder Kern der Formel bzw. des Tools ist, nicht
+bei bloßen Eingabegrößen wie Länge oder Zeit. Neue Formeln und Tools hier von Hand eintragen.
 
 Datenbestand: Der erste Bestand (724 Einträge) ist `internal` und `draft`. Die Erklärungen sind
 eigenständig formulierte Kurzbeschreibungen, Wikipedia diente als Recherche-Einstieg. Das ist keine

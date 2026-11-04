@@ -12,5 +12,8 @@
     "physik"
   ],
   "definition": "Der Volumenstrom ergibt sich bei gleichmäßiger Betrachtung aus mittlerer Strömungsgeschwindigkeit multipliziert mit der Querschnittsfläche. Es gilt V̇ = A · v; zum Beispiel ergibt 1 m/s in einem Rohr mit 20 mm Innendurchmesser etwa 0,31 l/s.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.hydraulik.volumenstrom"
+  ]
 }

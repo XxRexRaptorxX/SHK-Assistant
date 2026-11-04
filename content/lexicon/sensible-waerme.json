@@ -13,5 +13,8 @@
     "physik"
   ],
   "definition": "Wärmeenergie, die mit einer Temperaturänderung eines Stoffes verbunden ist, ohne dass dabei notwendigerweise ein Phasenwechsel stattfindet. Sie lässt sich mit dem Thermometer messen; die Wärmemenge ergibt sich aus Masse, spezifischer Wärmekapazität und Temperaturänderung.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.waermemenge"
+  ]
 }

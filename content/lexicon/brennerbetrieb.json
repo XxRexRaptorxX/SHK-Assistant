@@ -18,5 +18,8 @@
     "lexicon.flammenueberwachung",
     "lexicon.feuerungsautomat",
     "lexicon.sicherheitszeit"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

@@ -16,5 +16,8 @@
     "lexicon.sicherheitszeit",
     "lexicon.brennerbetrieb",
     "lexicon.brennwertkessel"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

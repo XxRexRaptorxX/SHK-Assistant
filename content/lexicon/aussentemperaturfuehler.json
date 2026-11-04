@@ -18,5 +18,8 @@
     "lexicon.temperaturfuehler",
     "lexicon.heizkurve",
     "lexicon.regelungstechnik"
+  ],
+  "tools": [
+    "tool.kabelarten"
   ]
 }

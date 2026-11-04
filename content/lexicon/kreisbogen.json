@@ -17,5 +17,8 @@
   "related": [
     "lexicon.kreis",
     "lexicon.winkel"
+  ],
+  "formulas": [
+    "formula.geometrie.kreisbogen-laenge"
   ]
 }

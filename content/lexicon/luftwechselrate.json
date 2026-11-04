@@ -19,5 +19,9 @@
     "lexicon.lueftungsanlage",
     "lexicon.kuehllast",
     "lexicon.raumluftqualitaet"
+  ],
+  "formulas": [
+    "formula.lueftung.luftvolumenstrom",
+    "formula.lueftung.luftwechselzahl"
   ]
 }

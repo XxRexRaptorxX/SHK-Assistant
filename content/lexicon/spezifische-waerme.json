@@ -17,5 +17,8 @@
   "related": [
     "lexicon.spezifische-waermekapazitaet",
     "lexicon.waermemenge"
+  ],
+  "formulas": [
+    "formula.thermodynamik.waermekapazitaet-spezifisch"
   ]
 }

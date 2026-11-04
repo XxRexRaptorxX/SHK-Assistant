@@ -14,5 +14,11 @@
     "heizung"
   ],
   "definition": "Bauteil, das Wärme zwischen zwei Medien über eine Trennfläche überträgt, ohne dass sich die Medien im Normalbetrieb vermischen. Bauformen sind zum Beispiel Platten-, Rohrbündel-, Koaxial- und Lamellenwärmeübertrager; umgangssprachlich heißt er Wärmetauscher.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.heizungstechnik.logarithmische-temperaturdifferenz"
+  ],
+  "tools": [
+    "tool.kalk-leistungsminderung"
+  ]
 }

@@ -17,5 +17,8 @@
   "related": [
     "lexicon.flammenueberwachung",
     "lexicon.zuendelektrode"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

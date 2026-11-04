@@ -11,5 +11,8 @@
     "heizung"
   ],
   "definition": "Wärmeenergie, die ein Gebäude über einen Zeitraum für Raumheizung und gegebenenfalls weitere Zwecke benötigt. Er wird zum Beispiel in kWh pro Jahr angegeben und hängt von Gebäudehülle, Lüftung, Klima und Nutzung ab.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.heizlast"
+  ]
 }

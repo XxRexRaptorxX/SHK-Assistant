@@ -19,5 +19,11 @@
     "lexicon.nenndurchmesser",
     "lexicon.nenndruck",
     "lexicon.rohrdaemmung"
+  ],
+  "formulas": [
+    "formula.hydraulik.rohrinhalt"
+  ],
+  "tools": [
+    "tool.rohrinhalt"
   ]
 }

@@ -17,5 +17,8 @@
   "related": [
     "lexicon.wirkleistung",
     "lexicon.leistungsfaktor"
+  ],
+  "formulas": [
+    "formula.elektrotechnik.drehstromleistung"
   ]
 }

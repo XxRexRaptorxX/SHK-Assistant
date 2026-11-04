@@ -12,5 +12,8 @@
     "werkstoffe"
   ],
   "definition": "Symptom, das auf eine Oberflächentemperatur unterhalb des Taupunkts hinweist. Dämmung und Dampfsperre sind zu prüfen.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.rohrdaemmung"
+  ]
 }

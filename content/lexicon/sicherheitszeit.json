@@ -19,5 +19,8 @@
     "lexicon.gasfeuerungsautomat",
     "lexicon.flammenueberwachung",
     "lexicon.brenner"
+  ],
+  "tools": [
+    "tool.feuerungsautomat-startablauf"
   ]
 }

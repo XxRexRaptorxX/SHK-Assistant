@@ -19,5 +19,8 @@
     "lexicon.heizkoerper",
     "lexicon.hydraulischer-abgleich",
     "lexicon.stellantrieb"
+  ],
+  "tools": [
+    "tool.thermostat-raumtemperatur"
   ]
 }

@@ -13,5 +13,8 @@
     "physik"
   ],
   "definition": "Wärmeenergie, die benötigt wird, um eine Flüssigkeit bei gegebenem Zustand in Dampf umzuwandeln. Bei Wasser beträgt sie bei 100 °C rund 2.257 kJ/kg; bei der Kondensation wird dieselbe Wärmemenge wieder frei.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.thermodynamik.verdampfungswaerme"
+  ]
 }

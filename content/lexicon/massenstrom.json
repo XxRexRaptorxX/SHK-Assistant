@@ -18,5 +18,9 @@
   "related": [
     "lexicon.volumenstrom",
     "lexicon.dichte"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.massenstrom-aus-waermeleistung",
+    "formula.hydraulik.massenstrom-aus-volumenstrom"
   ]
 }

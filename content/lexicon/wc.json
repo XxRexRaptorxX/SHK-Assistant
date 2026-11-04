@@ -19,5 +19,8 @@
     "lexicon.wc-spuelkasten",
     "lexicon.geruchsverschluss",
     "lexicon.abwasserleitung"
+  ],
+  "tools": [
+    "tool.montagehoehen"
   ]
 }

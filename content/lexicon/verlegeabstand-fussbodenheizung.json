@@ -13,5 +13,8 @@
     "heizung"
   ],
   "definition": "Abstand zwischen benachbarten Rohrabschnitten einer Fußbodenheizung. Er beeinflusst Wärmeabgabe und Temperaturverteilung.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.fbh-rohrlaenge"
+  ]
 }

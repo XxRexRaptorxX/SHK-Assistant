@@ -19,5 +19,9 @@
     "lexicon.heizkreispumpe",
     "lexicon.hebeanlage",
     "lexicon.volumenstrom"
+  ],
+  "formulas": [
+    "formula.hydraulik.hydraulische-leistung",
+    "formula.hydraulik.pumpe-antriebsleistung"
   ]
 }

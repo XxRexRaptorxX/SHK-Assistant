@@ -17,5 +17,8 @@
   "related": [
     "lexicon.druckverlust",
     "lexicon.reynolds-zahl"
+  ],
+  "formulas": [
+    "formula.hydraulik.druckverlust-rohr"
   ]
 }

@@ -16,5 +16,10 @@
   "related": [
     "lexicon.kreis",
     "lexicon.laenge"
+  ],
+  "formulas": [
+    "formula.geometrie.dreieck-umfang",
+    "formula.geometrie.kreisumfang",
+    "formula.geometrie.rechteck-umfang"
   ]
 }

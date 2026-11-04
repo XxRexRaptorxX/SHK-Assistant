@@ -17,5 +17,9 @@
     "lexicon.waermeleitfaehigkeit",
     "lexicon.waermetauscher",
     "lexicon.heizkoerper"
+  ],
+  "formulas": [
+    "formula.thermodynamik.waermedurchgang",
+    "formula.thermodynamik.waermeleitung-wand"
   ]
 }

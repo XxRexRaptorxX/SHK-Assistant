@@ -19,5 +19,11 @@
   "related": [
     "lexicon.waermemenge",
     "lexicon.heizlast"
+  ],
+  "formulas": [
+    "formula.heizungstechnik.massenstrom-aus-waermeleistung",
+    "formula.heizungstechnik.volumenstrom-aus-waermeleistung",
+    "formula.thermodynamik.waermeleistung-aus-masse",
+    "formula.thermodynamik.waermeleistung-aus-waermemenge"
   ]
 }

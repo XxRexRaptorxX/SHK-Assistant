@@ -13,5 +13,8 @@
     "heizung"
   ],
   "definition": "Wärmeleistung, die ein Wärmeübertrager unter definierten Temperatur- und Durchflussbedingungen übertragen kann. Sie folgt aus Q̇ = k · A · Δϑm und wird im Datenblatt für bestimmte Temperaturen und Volumenströme angegeben.",
-  "related": []
+  "related": [],
+  "formulas": [
+    "formula.heizungstechnik.logarithmische-temperaturdifferenz"
+  ]
 }

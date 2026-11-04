@@ -16,5 +16,8 @@
   "related": [
     "lexicon.druck",
     "lexicon.ueberdruck"
+  ],
+  "formulas": [
+    "formula.gastechnik.luftdruck-aus-hoehe"
   ]
 }
