@@ -176,19 +176,29 @@ Systeme und Kabeltypen, doppelte Belegungen und ob eine Aderzahl wie „3“ zur
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 
 - `inputs`: Eingabefelder, je `symbol`, `name`, optional `label` (Formelzeichen), `unit`, `min`,
-  `max`, `default` (Vorbelegung, z. B. ein Standardwert) und `whenEmpty` (Feld darf leer bleiben,
-  dann wird mit diesem Wert gerechnet). Darf leer sein, wenn das Ergebnis nur von der Auswahl abhängt.
+  `max`, `default` (Vorbelegung, z. B. ein Standardwert), `whenEmpty` (Feld darf leer bleiben,
+  dann wird mit diesem Wert gerechnet), `optional` (Feld darf leer bleiben; Ergebnisse, die es brauchen,
+  bleiben offen, die übrigen erscheinen trotzdem), `when` (Feld nur anzeigen, wenn eine Auswahl so steht) und
+  `unless` (Feld ausblenden, wenn die Auswahl so steht). Darf leer sein, wenn das Ergebnis nur von der Auswahl abhängt.
 - `choices`: Varianten zum Antippen, je `key`, `name`, `options` (je `key`, `label`, optional `when`:
-  Option nur anbieten, wenn eine andere Auswahl so steht), optional `default` (vorausgewählte Option)
-  und `display` (`"bar"`: Knöpfe nebeneinander, Standard; `"dropdown"`: Auswahlliste).
+  Option nur anbieten, wenn eine andere Auswahl so steht), optional `default` (vorausgewählte Option),
+  `display` (`"bar"`: Knöpfe nebeneinander, Standard; `"dropdown"`: Auswahlliste) und `top` (über den
+  Eingabefeldern anzeigen statt darunter, z. B. ein Umschalter für den Rechenweg). Eine Option darf `info`
+  haben: Der Text steht hinter einem Info-Knopf im Schaltfeld und wird mit durchsucht (nur bei `"bar"`).
+- `hideHeading`: `true` lässt die Überschrift „Rechner“ weg; der Löschen-Knopf steht dann im Ergebnisfeld.
 - `results`: je `symbol`, `name`, `unit`, `decimals` und `cases`. Ein Fall nennt `when` (für welche
   Auswahl er gilt, fehlende Auswahl = alle) und genau eins von: `factor` mit `per` (Bezugsgröße: das
   Symbol einer Eingabe oder eines vorher stehenden Ergebnisses), festem `value`, `text` (z. B.
-  „keine Anforderung“) oder `expression` (Rechenausdruck ohne Einheiten mit Eingaben und vorherigen
-  Ergebnissen). Dazu `rule`: der Richtwert in Worten wie in der Quelle. Hängt ein Ergebnis von der
+  „keine Anforderung“), `expression` (Rechenausdruck ohne Einheiten mit Eingaben und vorherigen
+  Ergebnissen) oder `table` (Nachschlagetabelle: `rowOf` und `colOf` nennen die Größen, `rows` und `cols`
+  die aufsteigenden Grenzen, `values` die Werte je Zeile, `beyond` den Text über der letzten Grenze; bei
+  Zwischenwerten gilt die nächsthöhere Grenze). Dazu `rule`: der Richtwert in Worten wie in der Quelle. Hängt ein Ergebnis von der
   Größe eines Werts ab (z. B. Dämmdicke vom Innendurchmesser), grenzen `above` (über,
   ausschließlich) und `upTo` (bis, einschließlich) den Bereich ein; `of` nennt den Wert (Standard:
-  erste Eingabe). Die Bereiche müssen lückenlos aneinander anschließen.
+  erste Eingabe). Die Bereiche müssen lückenlos aneinander anschließen. Optional je Ergebnis: `hidden`
+  (nur Zwischenwert für spätere Ergebnisse, wird nicht angezeigt), `whenMissing` (Hinweis, solange das
+  Ergebnis offen ist, weil optionale Felder fehlen), `when` und `unless` (Ergebnis nur bei dieser bzw. nicht
+  bei dieser Auswahl berechnen und anzeigen).
 - `examples`: Testbeispiele mit `inputs`, `choices` und `expected` je Ergebnis-Symbol.
 
 Der Build prüft, dass für jede Kombination genau ein Fall passt, dass Ausdrücke nur bekannte Größen

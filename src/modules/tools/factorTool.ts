@@ -16,6 +16,8 @@ const optionSchema = z.strictObject({
   label: z.string().trim().min(1),
   /** Nur anbieten, wenn eine andere Auswahl so steht: Auswahl-key → Options-key */
   when: z.record(z.string(), z.string()).default({}),
+  /** Erklärung hinter einem Info-Knopf im Schaltfeld (nur bei display "bar"); Absätze und **fett** wie im Lexikon */
+  info: z.string().trim().min(1).optional(),
 })
 
 const choiceSchema = z.strictObject({
@@ -27,6 +29,8 @@ const choiceSchema = z.strictObject({
   default: key.optional(),
   /** "bar": Knöpfe nebeneinander (wenige, kurze Optionen); "dropdown": Auswahlliste (viele Optionen) */
   display: z.enum(['bar', 'dropdown']).default('bar'),
+  /** Über den Eingabefeldern anzeigen statt darunter, z. B. ein Umschalter für den Rechenweg */
+  top: z.boolean().optional(),
 })
 
 const inputSchema = z.strictObject({
@@ -41,6 +45,26 @@ const inputSchema = z.strictObject({
   default: z.number().optional(),
   /** Feld darf leer bleiben; dann wird mit diesem Wert gerechnet */
   whenEmpty: z.number().optional(),
+  /** Feld darf leer bleiben; Ergebnisse, die es brauchen, bleiben dann offen, die übrigen erscheinen trotzdem */
+  optional: z.boolean().optional(),
+  /** Nur anzeigen, wenn eine Auswahl so steht: Auswahl-key → Options-key */
+  when: z.record(z.string(), z.string()).default({}),
+  /** Ausblenden, wenn die Auswahl so steht */
+  unless: z.record(z.string(), z.string()).default({}),
+})
+
+/** Nachschlagetabelle: je Größe gilt die erste Grenze, die mindestens so groß ist (Zwischenwerte: nächsthöherer Wert) */
+const lookupTableSchema = z.strictObject({
+  /** Größe für die Zeilen: Symbol einer Eingabe oder eines vorherigen Ergebnisses */
+  rowOf: symbol,
+  rows: z.array(z.number()).min(1),
+  /** Größe für die Spalten */
+  colOf: symbol,
+  cols: z.array(z.number()).min(1),
+  /** Werte je Zeile und Spalte */
+  values: z.array(z.array(z.number())).min(1),
+  /** Text, wenn eine Größe über der letzten Zeile oder Spalte liegt */
+  beyond: z.string().trim().min(1),
 })
 
 const caseSchema = z
@@ -57,6 +81,8 @@ const caseSchema = z
     text: z.string().trim().min(1).optional(),
     /** … oder ein Rechenausdruck (mathjs, ohne Einheiten) mit Eingaben und vorherigen Ergebnissen */
     expression: z.string().trim().min(1).optional(),
+    /** … oder ein Wert aus einer Nachschlagetabelle */
+    table: lookupTableSchema.optional(),
     /** Bereich: nur wenn die Größe `of` (Standard: erste Eingabe) über `above` (ausschließlich) … */
     above: z.number().optional(),
     /** … und bis `upTo` (einschließlich) liegt */
@@ -72,8 +98,9 @@ const caseSchema = z
         item.value !== undefined,
         item.text !== undefined,
         item.expression !== undefined,
+        item.table !== undefined,
       ].filter(Boolean).length === 1 && (item.factor === undefined) === (item.per === undefined),
-    { message: 'Genau eins angeben: factor und per, value, text oder expression' },
+    { message: 'Genau eins angeben: factor und per, value, text, expression oder table' },
   )
 
 const resultSchema = z.strictObject({
@@ -84,6 +111,14 @@ const resultSchema = z.strictObject({
   /** Einheit zur Anzeige, z. B. "m²" */
   unit: z.string().trim().default(''),
   decimals: z.number().int().min(0).max(6).default(1),
+  /** Nur Zwischenwert für spätere Ergebnisse, wird nicht angezeigt */
+  hidden: z.boolean().optional(),
+  /** Nur berechnen und anzeigen, wenn eine Auswahl so steht */
+  when: z.record(z.string(), z.string()).default({}),
+  /** Weglassen, wenn die Auswahl so steht */
+  unless: z.record(z.string(), z.string()).default({}),
+  /** Hinweis, solange das Ergebnis offen ist, weil optionale Felder fehlen */
+  whenMissing: z.string().trim().min(1).optional(),
   cases: z.array(caseSchema).min(1),
 })
 
@@ -103,6 +138,8 @@ export const factorToolSchema = defineEntrySchema({
   summary: z.string().trim().min(1),
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
+  /** Überschrift „Rechner“ weglassen; der Löschen-Knopf steht dann im Ergebnisfeld */
+  hideHeading: z.boolean().optional(),
   /** Eingabefelder; leer, wenn das Ergebnis nur von der Auswahl abhängt */
   inputs: z.array(inputSchema).default([]),
   choices: z.array(choiceSchema).default([]),
@@ -132,6 +169,32 @@ const inRange = (candidate: FactorCase, value: number | undefined) =>
   (value !== undefined &&
     (candidate.above === undefined || value > candidate.above) &&
     (candidate.upTo === undefined || value <= candidate.upTo))
+
+/** Eingabe oder Ergebnis passt zur Auswahl */
+const applies = (item: { when: Record<string, string>; unless: Record<string, string> }, selection: Record<string, string>) =>
+  matches(item.when, selection) && !(Object.keys(item.unless).length > 0 && matches(item.unless, selection))
+
+/** Eingabefelder, die zur Auswahl passen */
+export function visibleInputs(tool: FactorTool, selection: Record<string, string>) {
+  return tool.inputs.filter((input) => applies(input, selection))
+}
+
+/** Ergebnisse, die angezeigt werden: passend zur Auswahl und keine Zwischenwerte */
+export function visibleResults(tool: FactorTool, selection: Record<string, string>) {
+  return tool.results.filter((result) => !result.hidden && applies(result, selection))
+}
+
+const BEYOND_TABLE = Symbol('beyond')
+
+/** Tabellenwert zu den Größen; offen, solange eine Größe fehlt */
+function lookupValue(table: NonNullable<FactorCase['table']>, scope: Record<string, number>) {
+  const row = scope[table.rowOf]
+  const col = scope[table.colOf]
+  if (row === undefined || col === undefined) return undefined
+  const rowIndex = table.rows.findIndex((bound) => row <= bound)
+  const colIndex = table.cols.findIndex((bound) => col <= bound)
+  return rowIndex === -1 || colIndex === -1 ? BEYOND_TABLE : table.values[rowIndex]?.[colIndex]
+}
 
 /** Optionen einer Auswahl, die zur übrigen Auswahl passen */
 export function availableOptions(choice: FactorChoice, selection: Record<string, string>) {
@@ -176,13 +239,21 @@ export function computeFactorTool(
   const scope: Record<string, number> = { ...inputs }
   const values: Record<string, FactorValue | undefined> = {}
   for (const result of tool.results) {
+    if (!applies(result, selection)) continue
     const match = matchingCase(tool, result, selection, scope)
     if (match?.text !== undefined) {
       values[result.symbol] = { text: match.text, rule: match.rule }
       continue
     }
     let value: number | undefined
-    if (match?.value !== undefined) value = match.value
+    if (match?.table !== undefined) {
+      const found = lookupValue(match.table, scope)
+      if (found === BEYOND_TABLE) {
+        values[result.symbol] = { text: match.table.beyond, rule: match.rule }
+        continue
+      }
+      value = found
+    } else if (match?.value !== undefined) value = match.value
     else if (match?.factor !== undefined && match.per !== undefined && scope[match.per] !== undefined) {
       value = match.factor * scope[match.per]!
     } else if (match?.expression !== undefined) {
@@ -244,6 +315,34 @@ function expressionSymbols(expression: string): string[] {
     .filter((name) => !(name in math) || typeof (math as unknown as Record<string, unknown>)[name] !== 'function')
 }
 
+/** Unbekannte Auswahlen oder Optionen in einer Bedingung */
+function selectionIssues(entry: FactorTool, at: string, condition: Record<string, string>): string[] {
+  return Object.entries(condition).flatMap(([choiceKey, optionKey]) => {
+    const choice = entry.choices.find((item) => item.key === choiceKey)
+    if (!choice) return [`${at}: unbekannte Auswahl "${choiceKey}"`]
+    return choice.options.some((option) => option.key === optionKey)
+      ? []
+      : [`${at}: unbekannte Option "${optionKey}" bei "${choiceKey}"`]
+  })
+}
+
+const ascending = (bounds: number[]) => bounds.every((bound, index) => index === 0 || bound > bounds[index - 1]!)
+
+/** Tabelle passt zu ihren Zeilen und Spalten und nutzt nur bekannte Größen */
+function lookupIssues(table: NonNullable<FactorCase['table']>, at: string, known: string[]): string[] {
+  const issues: string[] = []
+  for (const name of [table.rowOf, table.colOf]) {
+    if (!known.includes(name)) issues.push(`${at}: "${name}" ist weder eine Eingabe noch ein vorheriges Ergebnis`)
+  }
+  if (!ascending(table.rows)) issues.push(`${at}: rows müssen aufsteigen`)
+  if (!ascending(table.cols)) issues.push(`${at}: cols müssen aufsteigen`)
+  if (table.values.length !== table.rows.length) issues.push(`${at}: ${table.values.length} Zeilen, erwartet ${table.rows.length}`)
+  table.values.forEach((row, index) => {
+    if (row.length !== table.cols.length) issues.push(`${at}: Zeile ${index + 1} hat ${row.length} Werte, erwartet ${table.cols.length}`)
+  })
+  return issues
+}
+
 export function checkFactorTool(entry: FactorTool): string[] {
   const issues: string[] = []
   const inputSymbols = entry.inputs.map((input) => input.symbol)
@@ -258,10 +357,15 @@ export function checkFactorTool(entry: FactorTool): string[] {
     }
   }
 
+  for (const input of entry.inputs) {
+    issues.push(...selectionIssues(entry, `inputs (${input.symbol})`, { ...input.when, ...input.unless }))
+  }
+
   const known = [...inputSymbols]
   for (const result of entry.results) {
     const where = `results (${result.symbol})`
     if (known.includes(result.symbol)) issues.push(`${where}: Symbol doppelt vergeben`)
+    issues.push(...selectionIssues(entry, where, { ...result.when, ...result.unless }))
     result.cases.forEach((candidate, index) => {
       const at = `${where}, cases[${index}]`
       if (candidate.per !== undefined && !known.includes(candidate.per)) {
@@ -278,15 +382,11 @@ export function checkFactorTool(entry: FactorTool): string[] {
           issues.push(`${at}: Ausdruck nicht lesbar: ${candidate.expression}`)
         }
       }
-      for (const [choiceKey, optionKey] of Object.entries(candidate.when)) {
-        const choice = entry.choices.find((item) => item.key === choiceKey)
-        if (!choice) issues.push(`${at}: unbekannte Auswahl "${choiceKey}"`)
-        else if (!choice.options.some((option) => option.key === optionKey)) {
-          issues.push(`${at}: unbekannte Option "${optionKey}" bei "${choiceKey}"`)
-        }
-      }
+      if (candidate.table !== undefined) issues.push(...lookupIssues(candidate.table, at, known))
+      issues.push(...selectionIssues(entry, at, candidate.when))
     })
     for (const selection of allSelections(entry)) {
+      if (!applies(result, selection)) continue
       const found = result.cases.filter((candidate) => matches(candidate.when, selection))
       const label = Object.values(selection).join(' + ') || 'ohne Auswahl'
       if (found.length === 0) issues.push(`${where}: kein Faktor für ${label}`)

@@ -1,0 +1,1182 @@
+{
+  "id": "tool.solar-mag",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Buderus, Planungsunterlage Logasol, 6 721 821 430 (2020/10), Kapitel 6.4, S. 123–128 (Formeln 10–16, Tabellen 73, 74 und 77, Rechenbeispiele S. 126 und 127), https://www.heima24.de/shop/images/products/media/pu-buderus-Logasol-Solartechnik.pdf. Zuschläge für Vordruck und Betriebsdruck zusätzlich aus: Buderus, Installations- und Wartungsanleitung Logasol KS, 6720801165 (2023/12), Kapitel 6.5.3 und 7.2.3, https://www.intec-heizung.de/media/pdf/7e/4b/de/Buderus-Logasol-KS-Installations-und-Wartungsanleitung.pdf. Rechenweg und Schnellauswahl Vaillant: Auszug „Anlagenplanung, Auslegung der Solarkomponenten“ aus der Planungsinformation auroTHERM (PLI auroTHERM), S. 126–130 (Schnellauswahltabellen S. 127 und 128), Ausgabe nicht genannt, PDF erstellt 2012, https://www.loebbeshop.de/Media/Default/Uploaded/static/doc/solar-ad-berechnung_3461.pdf. Abgerufen am 03. und 04.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Solaranlage: Anlagendruck und MAG",
+  "summary": "Vordruck und Anlagendruck aus der statischen Höhe, dazu die MAG-Größe (Rechenweg Buderus oder Vaillant).",
+  "description": "Zeigt aus der statischen Höhe den Vordruck des Membran-Ausdehnungsgefäßes (MAG) und den Anlagendruck einer Solaranlage. Für die Höhe zählt der Abstand vom MAG bis zum höchsten Anlagenpunkt, nicht die Gebäudehöhe. Mit den Angaben zur Anlage kommt die nötige MAG-Größe dazu; ohne sie bleiben nur die beiden Drücke. Die Rohrlänge zählt einfach; Vor- und Rücklauf rechnet das Tool selbst doppelt. Oben lässt sich der Rechenweg umschalten, beide gelten für ein 6-bar-Sicherheitsventil; das i im Schaltfeld erklärt den jeweiligen Rechenweg. Bei anderen Fabrikaten gilt deren Anleitung.",
+  "category": "Auslegung",
+  "hideHeading": true,
+  "inputs": [
+    {
+      "symbol": "h",
+      "name": "Statische Höhe (MAG-Mitte bis höchster Anlagenpunkt)",
+      "unit": "m",
+      "min": 0
+    },
+    {
+      "symbol": "n",
+      "name": "Anzahl Kollektoren",
+      "min": 1,
+      "optional": true,
+      "unless": {
+        "methode": "tabelle",
+        "kollektor": "vtk"
+      }
+    },
+    {
+      "symbol": "A",
+      "name": "Nettofläche der Röhrenkollektoren",
+      "unit": "m²",
+      "min": 0,
+      "optional": true,
+      "when": {
+        "methode": "tabelle",
+        "kollektor": "vtk"
+      }
+    },
+    {
+      "symbol": "VK",
+      "name": "Inhalt je Kollektor",
+      "unit": "l",
+      "min": 0,
+      "optional": true,
+      "unless": {
+        "methode": "tabelle"
+      }
+    },
+    {
+      "symbol": "Lr",
+      "name": "Einfache Rohrlänge",
+      "unit": "m",
+      "min": 0,
+      "optional": true
+    },
+    {
+      "symbol": "Ld",
+      "name": "Davon einfache Rohrlänge oberhalb der Kollektorunterkante",
+      "unit": "m",
+      "min": 0,
+      "optional": true,
+      "when": {
+        "kollektor": "vakuum"
+      }
+    },
+    {
+      "symbol": "VWT",
+      "name": "Inhalt Solar-Wärmetauscher im Speicher",
+      "unit": "l",
+      "min": 0,
+      "optional": true,
+      "unless": {
+        "methode": "tabelle"
+      }
+    }
+  ],
+  "choices": [
+    {
+      "key": "hersteller",
+      "name": "Rechenweg",
+      "top": true,
+      "options": [
+        {
+          "key": "buderus",
+          "label": "Buderus",
+          "info": "**Buderus (Logasol):** Die Solarstation Logasol KS ist mit etwa 1 l Inhalt eingerechnet. Kollektorinhalte: SKN4.0 0,94 l (senkrecht) oder 1,35 l (waagerecht), SKT1.0 1,61 l oder 1,95 l, SKR10 CPC 0,85 l. Bei Vakuumröhren nennt Buderus mindestens 2 m Höhenunterschied zwischen Kollektor und Solarstation, sonst einen Leitungssack am Kollektorfeld. Ein Vorschaltgefäß empfiehlt Buderus besonders bei Heizungsunterstützung. Ein zweites Kollektorfeld einer Ost/West-Anlage braucht ein eigenes Gefäß."
+        },
+        {
+          "key": "vaillant",
+          "label": "Vaillant",
+          "info": "**Vaillant (auroTHERM):** Die Unterlage ist ein älterer Auszug. Die Schnellauswahl liest die Gefäßgröße aus der Vaillant-Tabelle, nur für VFK 145 und 150 sowie VTK 570/2 (1 m² Nettofläche) und VTK 1140/2 (2 m²). Sie setzt die dort genannten Rohre und Wärmetauscher voraus: Flachkollektoren bis 4 Stück Rohr 18, bis 8 Stück Rohr 22, bis 14 Stück Rohr 28; Röhren bis 11 m² Rohr 18, bis 19 m² Rohr 22, bei 20 m² Rohr 28. Die Tabelle rechnet den Anlagendruck ohne das Minimum von 2 bar.\n\nDie Berechnung gilt für andere Rohre und Speicher und folgt der vereinfachten Vorgabe für kleine Anlagen: Die gesamte Rohrleitung zählt als mitverdampfend, der Anlagendruck beträgt im Ein- und Zweifamilienhaus mindestens 2 bar. Sie ergibt deshalb oft ein größeres Gefäß als die Schnellauswahl. Kollektorinhalte: VFK 145 und 150 2,16 l (H) oder 1,85 l (V), VTK 570/2 0,90 l, VTK 1140/2 1,80 l. Ein Vorschaltgefäß empfiehlt Vaillant für jedes System."
+        }
+      ]
+    },
+    {
+      "key": "methode",
+      "name": "MAG-Größe",
+      "top": true,
+      "options": [
+        {
+          "key": "tabelle",
+          "label": "Schnellauswahl",
+          "when": {
+            "hersteller": "vaillant"
+          }
+        },
+        {
+          "key": "formel",
+          "label": "Berechnung",
+          "when": {
+            "hersteller": "vaillant"
+          }
+        }
+      ]
+    },
+    {
+      "key": "kollektor",
+      "name": "Kollektor",
+      "top": true,
+      "options": [
+        {
+          "key": "flach",
+          "label": "Flachkollektor",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "vakuum",
+          "label": "Vakuumröhren",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "vfk",
+          "label": "Flachkollektor VFK",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "tabelle"
+          }
+        },
+        {
+          "key": "vtk",
+          "label": "Röhren VTK",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "tabelle"
+          }
+        }
+      ]
+    },
+    {
+      "key": "rohr",
+      "name": "Rohrleitung (für die MAG-Größe)",
+      "options": [
+        {
+          "key": "cu15",
+          "label": "Rohr 15 × 1,0",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "cu18",
+          "label": "Rohr 18 × 1,0",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "cu22",
+          "label": "Rohr 22 × 1,0",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "cu28",
+          "label": "Rohr 28 × 1,5",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "cu35",
+          "label": "Rohr 35 × 1,5",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "bflex16",
+          "label": "Flexrohr DN 16",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "bflex20",
+          "label": "Flexrohr DN 20",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "bflex25",
+          "label": "Flexrohr DN 25",
+          "when": {
+            "hersteller": "buderus"
+          }
+        },
+        {
+          "key": "vcu12",
+          "label": "Rohr 12 × 1",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vcu15",
+          "label": "Rohr 15 × 1",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vcu18",
+          "label": "Rohr 18 × 1",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vcu22",
+          "label": "Rohr 22 × 1",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vcu28",
+          "label": "Rohr 28 × 1,5",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vcu32",
+          "label": "Rohr 32 × 1,5",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vflex16",
+          "label": "Flexrohr DN 16",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        },
+        {
+          "key": "vflex20",
+          "label": "Flexrohr DN 20",
+          "when": {
+            "hersteller": "vaillant",
+            "methode": "formel"
+          }
+        }
+      ],
+      "display": "dropdown"
+    }
+  ],
+  "results": [
+    {
+      "symbol": "pV",
+      "label": "pᵥ",
+      "name": "MAG-Vordruck",
+      "unit": "bar",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "kollektor": "flach"
+          },
+          "expression": "max(1.2, 0.1 * h + 0.4)",
+          "rule": "0,1 bar je Meter + 0,4 bar, mindestens 1,2 bar. Am drucklosen Gefäß einstellen."
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "expression": "0.1 * h + 1.7",
+          "rule": "0,1 bar je Meter + 1,7 bar. Am drucklosen Gefäß einstellen."
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "expression": "0.1 * h",
+          "rule": "0,1 bar je Meter, ohne Zuschlag. Vaillant-Gefäße kommen mit 2,5 bar: am abgekoppelten Gefäß anpassen."
+        }
+      ]
+    },
+    {
+      "symbol": "p0",
+      "label": "p₀",
+      "name": "Anlagendruck (Fülldruck, kalt)",
+      "unit": "bar",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "hersteller": "buderus"
+          },
+          "expression": "pV + 0.3",
+          "rule": "Vordruck + 0,3 bar. Im kalten Zustand (20 °C) nach dem Entlüften am Manometer prüfen."
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "expression": "max(2, pV + 0.5)",
+          "rule": "Statischer Druck + 0,5 bar, im Ein- und Zweifamilienhaus mindestens 2,0 bar. Bei Inbetriebnahme einstellen."
+        }
+      ]
+    },
+    {
+      "symbol": "Lges",
+      "name": "Rohrlänge Vor- und Rücklauf zusammen",
+      "unit": "m",
+      "hidden": true,
+      "cases": [
+        {
+          "expression": "2 * Lr",
+          "rule": "Doppelte einfache Rohrlänge"
+        }
+      ]
+    },
+    {
+      "symbol": "q",
+      "name": "Rohrinhalt je Meter",
+      "unit": "l/m",
+      "hidden": true,
+      "unless": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "rohr": "cu15"
+          },
+          "value": 0.133,
+          "rule": "Tabelle 73"
+        },
+        {
+          "when": {
+            "rohr": "cu18"
+          },
+          "value": 0.201,
+          "rule": "Tabelle 73"
+        },
+        {
+          "when": {
+            "rohr": "cu22"
+          },
+          "value": 0.314,
+          "rule": "Tabelle 73"
+        },
+        {
+          "when": {
+            "rohr": "cu28"
+          },
+          "value": 0.491,
+          "rule": "Tabelle 73"
+        },
+        {
+          "when": {
+            "rohr": "cu35"
+          },
+          "value": 0.804,
+          "rule": "Tabelle 73"
+        },
+        {
+          "when": {
+            "rohr": "bflex16"
+          },
+          "value": 0.26,
+          "rule": "Tabelle 73 (Aeroline INOX), Inhalt je Einzelrohr"
+        },
+        {
+          "when": {
+            "rohr": "bflex20"
+          },
+          "value": 0.41,
+          "rule": "Tabelle 73 (Aeroline INOX), Inhalt je Einzelrohr"
+        },
+        {
+          "when": {
+            "rohr": "bflex25"
+          },
+          "value": 0.61,
+          "rule": "Tabelle 73 (Aeroline INOX), Inhalt je Einzelrohr"
+        },
+        {
+          "when": {
+            "rohr": "vcu12"
+          },
+          "value": 0.08,
+          "rule": "Vaillant, Inhaltstabelle S. 126"
+        },
+        {
+          "when": {
+            "rohr": "vcu15"
+          },
+          "value": 0.13,
+          "rule": "Vaillant, Inhaltstabelle S. 126"
+        },
+        {
+          "when": {
+            "rohr": "vcu18"
+          },
+          "value": 0.2,
+          "rule": "Vaillant, Inhaltstabelle S. 126"
+        },
+        {
+          "when": {
+            "rohr": "vcu22"
+          },
+          "value": 0.3,
+          "rule": "Vaillant, Inhaltstabelle S. 126"
+        },
+        {
+          "when": {
+            "rohr": "vcu28"
+          },
+          "value": 0.5,
+          "rule": "Vaillant, Inhaltstabelle S. 126"
+        },
+        {
+          "when": {
+            "rohr": "vcu32"
+          },
+          "value": 0.8,
+          "rule": "Vaillant, Inhaltstabelle S. 126"
+        },
+        {
+          "when": {
+            "rohr": "vflex16"
+          },
+          "value": 0.265,
+          "rule": "Vaillant, Inhaltstabelle S. 126: 2-in-1-Rohr hat 2 × 0,265 l/m, hier je Einzelrohr"
+        },
+        {
+          "when": {
+            "rohr": "vflex20"
+          },
+          "value": 0.36,
+          "rule": "Vaillant, Inhaltstabelle S. 126: 2-in-1-Rohr hat 2 × 0,36 l/m, hier je Einzelrohr"
+        }
+      ]
+    },
+    {
+      "symbol": "Vsum",
+      "name": "Inhalt des Solarkreises ohne Wasservorlage",
+      "unit": "l",
+      "hidden": true,
+      "unless": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "hersteller": "buderus"
+          },
+          "expression": "n * VK + VWT + 1 + Lges * q",
+          "rule": "Kollektoren + Wärmetauscher + Solarstation (ca. 1 l) + Rohrleitung, Formel 10"
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "expression": "n * VK + VWT + Lges * q",
+          "rule": "Kollektoren + Wärmetauscher + Rohrleitung"
+        }
+      ]
+    },
+    {
+      "symbol": "VV",
+      "name": "Wasservorlage",
+      "unit": "l",
+      "hidden": true,
+      "unless": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "hersteller": "buderus"
+          },
+          "expression": "max(3, Vsum * 0.02 / 0.98)",
+          "rule": "2 % des Anlagenfüllvolumens, mindestens 3 l"
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "expression": "max(3, Vsum * 0.04 / 0.96)",
+          "rule": "4 % des Anlagenvolumens, mindestens 3 l"
+        }
+      ]
+    },
+    {
+      "symbol": "VD",
+      "name": "Verdampfungsvolumen",
+      "unit": "l",
+      "hidden": true,
+      "unless": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "kollektor": "flach"
+          },
+          "expression": "n * VK + 5 * q",
+          "rule": "Kollektoren + ca. 5 m Anschlussleitung, Formel 14"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "expression": "n * VK + 2 * Ld * q",
+          "rule": "Kollektoren + Rohrleitung oberhalb der Kollektorunterkante"
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "expression": "n * VK + Lges * q",
+          "rule": "Kollektoren + gesamte Rohrleitung (vereinfacht für kleine Anlagen)"
+        }
+      ]
+    },
+    {
+      "symbol": "DF",
+      "name": "Druckfaktor",
+      "hidden": true,
+      "unless": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "kollektor": "flach"
+          },
+          "expression": "(5.4 + 1) / (5.4 - p0)",
+          "rule": "Enddruck 0,9 × 6 bar = 5,4 bar, Formel 13 und 15"
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "expression": "(5.4 + 1) / (5.4 - p0)",
+          "rule": "Enddruck 90 % von 6 bar = 5,4 bar (Vaillant, Schritt 4.1)"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "upTo": 2,
+          "value": 2.21,
+          "rule": "Tabelle 77, 2 m (Tabellenanfang)"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 2,
+          "upTo": 3,
+          "value": 2.27,
+          "rule": "Tabelle 77, 3 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 3,
+          "upTo": 4,
+          "value": 2.34,
+          "rule": "Tabelle 77, 4 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 4,
+          "upTo": 5,
+          "value": 2.41,
+          "rule": "Tabelle 77, 5 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 5,
+          "upTo": 6,
+          "value": 2.49,
+          "rule": "Tabelle 77, 6 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 6,
+          "upTo": 7,
+          "value": 2.58,
+          "rule": "Tabelle 77, 7 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 7,
+          "upTo": 8,
+          "value": 2.67,
+          "rule": "Tabelle 77, 8 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 8,
+          "upTo": 9,
+          "value": 2.77,
+          "rule": "Tabelle 77, 9 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 9,
+          "upTo": 10,
+          "value": 2.88,
+          "rule": "Tabelle 77, 10 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 10,
+          "upTo": 11,
+          "value": 3,
+          "rule": "Tabelle 77, 11 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 11,
+          "upTo": 12,
+          "value": 3.13,
+          "rule": "Tabelle 77, 12 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 12,
+          "upTo": 13,
+          "value": 3.28,
+          "rule": "Tabelle 77, 13 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 13,
+          "upTo": 14,
+          "value": 3.43,
+          "rule": "Tabelle 77, 14 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 14,
+          "upTo": 15,
+          "value": 3.61,
+          "rule": "Tabelle 77, 15 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 15,
+          "upTo": 16,
+          "value": 3.8,
+          "rule": "Tabelle 77, 16 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 16,
+          "upTo": 17,
+          "value": 4.02,
+          "rule": "Tabelle 77, 17 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 17,
+          "upTo": 18,
+          "value": 4.27,
+          "rule": "Tabelle 77, 18 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 18,
+          "upTo": 19,
+          "value": 4.54,
+          "rule": "Tabelle 77, 19 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 19,
+          "upTo": 20,
+          "value": 4.86,
+          "rule": "Tabelle 77, 20 m"
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 20,
+          "text": "außerhalb der Tabelle",
+          "rule": "Tabelle 77 endet bei 20 m"
+        }
+      ]
+    },
+    {
+      "symbol": "Vmin",
+      "label": "V",
+      "name": "MAG-Größe (Mindestvolumen)",
+      "unit": "l",
+      "decimals": 1,
+      "whenMissing": "Für die MAG-Größe alle Felder oben ausfüllen.",
+      "unless": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "kollektor": "flach"
+          },
+          "of": "p0",
+          "upTo": 5.4,
+          "expression": "((Vsum + VV) * 0.073 + VD + VV) * DF",
+          "rule": "(Anlagenfüllvolumen × 7,3 % + Verdampfungsvolumen + Wasservorlage) × Druckfaktor. Das nächstgrößere Gefäß wählen."
+        },
+        {
+          "when": {
+            "kollektor": "flach"
+          },
+          "of": "p0",
+          "above": 5.4,
+          "text": "Nicht auslegbar",
+          "rule": "Der Anlagendruck liegt über dem Enddruck von 5,4 bar (6-bar-Sicherheitsventil)."
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "upTo": 20,
+          "expression": "(Vsum * 0.1 + VD * 1.25) * DF",
+          "rule": "(Anlagenfüllvolumen × 10 % + Dampfvolumen × 1,25) × Druckfaktor aus der Buderus-Tabelle für die nächsthöhere volle Meterzahl. Das nächstgrößere Gefäß wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vakuum"
+          },
+          "above": 20,
+          "text": "Nicht in der Tabelle",
+          "rule": "Die Buderus-Tabelle für Vakuumröhren endet bei 20 m statischer Höhe."
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "of": "p0",
+          "upTo": 5.4,
+          "expression": "((Vsum + VV) * 0.085 + VD + VV) * DF",
+          "rule": "(Anlagenvolumen × 8,5 % + Dampfvolumen + Wasservorlage) × Druckfaktor. Das nächstgrößere Gefäß wählen."
+        },
+        {
+          "when": {
+            "hersteller": "vaillant"
+          },
+          "of": "p0",
+          "above": 5.4,
+          "text": "Nicht auslegbar",
+          "rule": "Der Anlagendruck liegt über dem Enddruck von 5,4 bar (6-bar-Sicherheitsventil)."
+        }
+      ]
+    },
+    {
+      "symbol": "Vtab",
+      "label": "V",
+      "name": "MAG-Größe (Schnellauswahl)",
+      "unit": "l",
+      "decimals": 0,
+      "whenMissing": "Für die MAG-Größe alle Felder oben ausfüllen.",
+      "when": {
+        "methode": "tabelle"
+      },
+      "cases": [
+        {
+          "when": {
+            "kollektor": "vfk"
+          },
+          "upTo": 10,
+          "table": {
+            "rowOf": "n",
+            "rows": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+            "colOf": "Lges",
+            "cols": [30, 40, 50],
+            "values": [
+              [18, 18, 18],
+              [25, 25, 25],
+              [25, 25, 25],
+              [35, 35, 35],
+              [50, 50, 50],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [100, 100, 100],
+              [100, 100, 100],
+              [118, 118, 118],
+              [118, 118, 118],
+              [125, 125, 125]
+            ],
+            "beyond": "Nicht in der Tabelle"
+          },
+          "rule": "Vaillant-Tabelle für VFK bis 14 Kollektoren und 25 m einfache Rohrlänge (Spalte 10 m Höhe). Gefäß dieser Nenngröße wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vfk"
+          },
+          "above": 10,
+          "upTo": 20,
+          "table": {
+            "rowOf": "n",
+            "rows": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+            "colOf": "Lges",
+            "cols": [40, 50, 60],
+            "values": [
+              [18, 18, 25],
+              [25, 25, 25],
+              [35, 35, 35],
+              [50, 50, 50],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [118, 118, 118],
+              [118, 118, 118],
+              [125, 125, 125],
+              [150, 150, 150],
+              [180, 180, 180],
+              [180, 180, 180]
+            ],
+            "beyond": "Nicht in der Tabelle"
+          },
+          "rule": "Vaillant-Tabelle für VFK bis 14 Kollektoren und 30 m einfache Rohrlänge (Spalte 20 m Höhe). Gefäß dieser Nenngröße wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vfk"
+          },
+          "above": 20,
+          "upTo": 30,
+          "table": {
+            "rowOf": "n",
+            "rows": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+            "colOf": "Lges",
+            "cols": [60, 70, 80],
+            "values": [
+              [35, 35, 35],
+              [50, 50, 50],
+              [50, 50, 50],
+              [80, 80, 80],
+              [100, 100, 100],
+              [118, 118, 118],
+              [118, 118, 118],
+              [180, 180, 180],
+              [180, 180, 180],
+              [200, 200, 200],
+              [218, 218, 218],
+              [235, 235, 235],
+              [250, 250, 250]
+            ],
+            "beyond": "Nicht in der Tabelle"
+          },
+          "rule": "Vaillant-Tabelle für VFK bis 14 Kollektoren und 40 m einfache Rohrlänge (Spalte 30 m Höhe). Gefäß dieser Nenngröße wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vfk"
+          },
+          "above": 30,
+          "text": "Nicht in der Tabelle",
+          "rule": "Die Vaillant-Tabelle endet bei 30 m statischer Höhe."
+        },
+        {
+          "when": {
+            "kollektor": "vtk"
+          },
+          "upTo": 10,
+          "table": {
+            "rowOf": "A",
+            "rows": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+            "colOf": "Lges",
+            "cols": [30, 40, 50],
+            "values": [
+              [18, 18, 18],
+              [25, 25, 25],
+              [25, 25, 25],
+              [25, 25, 25],
+              [35, 35, 35],
+              [35, 35, 35],
+              [35, 35, 35],
+              [50, 50, 50],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [100, 100, 100],
+              [125, 125, 125]
+            ],
+            "beyond": "Nicht in der Tabelle"
+          },
+          "rule": "Vaillant-Tabelle für VTK bis 20 m² und 25 m einfache Rohrlänge (Spalte 10 m Höhe). Gefäß dieser Nenngröße wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vtk"
+          },
+          "above": 10,
+          "upTo": 20,
+          "table": {
+            "rowOf": "A",
+            "rows": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+            "colOf": "Lges",
+            "cols": [40, 50, 60],
+            "values": [
+              [25, 25, 25],
+              [25, 25, 25],
+              [35, 35, 35],
+              [35, 35, 35],
+              [50, 50, 50],
+              [50, 50, 50],
+              [50, 50, 50],
+              [50, 50, 50],
+              [80, 80, 80],
+              [80, 80, 100],
+              [100, 100, 100],
+              [100, 100, 100],
+              [100, 100, 100],
+              [118, 118, 118],
+              [118, 118, 118],
+              [118, 118, 118],
+              [180, 180, 180]
+            ],
+            "beyond": "Nicht in der Tabelle"
+          },
+          "rule": "Vaillant-Tabelle für VTK bis 20 m² und 30 m einfache Rohrlänge (Spalte 20 m Höhe). Gefäß dieser Nenngröße wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vtk"
+          },
+          "above": 20,
+          "upTo": 30,
+          "table": {
+            "rowOf": "A",
+            "rows": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+            "colOf": "Lges",
+            "cols": [60, 70, 80],
+            "values": [
+              [35, 35, 35],
+              [50, 50, 50],
+              [50, 50, 50],
+              [50, 50, 50],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [80, 80, 80],
+              [118, 118, 118],
+              [125, 125, 125],
+              [135, 135, 135],
+              [150, 150, 150],
+              [150, 150, 150],
+              [180, 180, 180],
+              [180, 180, 180],
+              [235, 235, 235],
+              [280, 280, 280]
+            ],
+            "beyond": "Nicht in der Tabelle"
+          },
+          "rule": "Vaillant-Tabelle für VTK bis 20 m² und 40 m einfache Rohrlänge (Spalte 30 m Höhe). Gefäß dieser Nenngröße wählen."
+        },
+        {
+          "when": {
+            "kollektor": "vtk"
+          },
+          "above": 30,
+          "text": "Nicht in der Tabelle",
+          "rule": "Die Vaillant-Tabelle endet bei 30 m statischer Höhe."
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": {
+        "h": 10,
+        "n": 4,
+        "VK": 1.61,
+        "Lr": 15,
+        "VWT": 16.4
+      },
+      "choices": {
+        "hersteller": "buderus",
+        "kollektor": "flach",
+        "rohr": "cu15"
+      },
+      "expected": {
+        "pV": 1.4,
+        "p0": 1.7,
+        "Vmin": 21.38
+      },
+      "note": "Rechenbeispiel der Planungsunterlage, S. 126: 4 SKT1.0-s, Kombispeicher P750 S, 2 × 15 m Cu 15, 10 m"
+    },
+    {
+      "inputs": {
+        "h": 9,
+        "n": 5,
+        "VK": 0.85,
+        "Lr": 15,
+        "Ld": 1,
+        "VWT": 5.4
+      },
+      "choices": {
+        "hersteller": "buderus",
+        "kollektor": "vakuum",
+        "rohr": "cu15"
+      },
+      "expected": {
+        "pV": 2.6,
+        "p0": 2.9,
+        "Vmin": 19.7
+      },
+      "note": "Rechenbeispiel der Planungsunterlage, S. 127: 5 SKR10 CPC, 2 × 15 m Cu 15, davon 2 × 1 m im Dampfbereich, Wärmetauscher und Solarstation zusammen 6,4 l, 9 m"
+    },
+    {
+      "inputs": {
+        "h": 5
+      },
+      "choices": {
+        "hersteller": "buderus",
+        "kollektor": "flach",
+        "rohr": "cu15"
+      },
+      "expected": {
+        "pV": 1.2,
+        "p0": 1.5
+      },
+      "note": "Eigenes Rechenbeispiel: unter 8 m greift der Mindestvordruck von 1,2 bar, passend zum Mindest-Betriebsdruck von 1,5 bar in der Anleitung"
+    },
+    {
+      "inputs": {
+        "h": 10
+      },
+      "choices": {
+        "hersteller": "buderus",
+        "kollektor": "vakuum",
+        "rohr": "cu15"
+      },
+      "expected": {
+        "pV": 2.7,
+        "p0": 3
+      },
+      "note": "Beispiel der Installationsanleitung (Tab. 6 und 8) und Zeile 10 m der Tabelle 77"
+    },
+    {
+      "inputs": {
+        "h": 14,
+        "n": 6,
+        "VK": 2.16,
+        "Lr": 15,
+        "VWT": 17.5
+      },
+      "choices": {
+        "hersteller": "vaillant",
+        "methode": "formel",
+        "rohr": "vflex20"
+      },
+      "expected": {
+        "pV": 1.4,
+        "p0": 2,
+        "Vmin": 57.45
+      },
+      "note": "Beispielrechnung der Vaillant-Unterlage, S. 129: 6 VFK 150 H, 15 m Flexrohr 2 in 1 DN 20, VPS SC 700, 14 m. Vaillant rechnet dort gerundet und mit 5,5 bar Enddruck und kommt auf 57 l; gewählt wird in beiden Fällen 80 l. Hier gilt der Enddruck 5,4 bar aus Schritt 4.1."
+    },
+    {
+      "inputs": {
+        "h": 20
+      },
+      "choices": {
+        "hersteller": "vaillant",
+        "methode": "formel",
+        "rohr": "vcu22"
+      },
+      "expected": {
+        "pV": 2,
+        "p0": 2.5
+      },
+      "note": "Eigenes Rechenbeispiel: über 15 m liegt der Anlagendruck über dem Mindestwert von 2 bar"
+    },
+    {
+      "inputs": {
+        "h": 20,
+        "n": 8,
+        "Lr": 25
+      },
+      "choices": {
+        "hersteller": "vaillant",
+        "methode": "tabelle",
+        "kollektor": "vfk"
+      },
+      "expected": {
+        "Vtab": 80
+      },
+      "note": "Lesebeispiel der Vaillant-Unterlage, S. 127: 8 VFK 150, 20 m Höhe, 50 m Rohr gesamt (also 25 m einfach) ergibt 80 l"
+    },
+    {
+      "inputs": {
+        "h": 20,
+        "A": 13,
+        "Lr": 30
+      },
+      "choices": {
+        "hersteller": "vaillant",
+        "methode": "tabelle",
+        "kollektor": "vtk"
+      },
+      "expected": {
+        "Vtab": 100
+      },
+      "note": "Zeile 13 m² der Vaillant-Tabelle S. 128, Spalte 20 m Höhe und 60 m Rohr gesamt"
+    }
+  ]
+}

@@ -67,6 +67,7 @@ describe('Tools', () => {
       'Rohrlänge einer Fußbodenheizung',
       'Rohrschellenabstand',
       'Sinnbilder',
+      'Solaranlage: Anlagendruck und MAG',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Startablauf Feuerungsautomat',
       'Thermostatkopf-Einstellung und Raumtemperatur',
