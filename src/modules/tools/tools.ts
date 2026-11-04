@@ -17,6 +17,7 @@ import {
   isTableTool,
   isVariantTool,
   isWireColorTool,
+  isWorkHoursTool,
   type ToolEntry,
 } from './schema'
 import { sequenceKeywords } from './sequenceTool'
@@ -33,7 +34,7 @@ export const formulaToolEntries: FormulaEntry[] = toolEntries.flatMap((entry) =>
 )
 
 /** Reihenfolge der Kategorien in der Tool-Liste; nicht genannte stehen danach, alphabetisch */
-export const TOOL_CATEGORY_ORDER = ['Montage', 'Wartung', 'Demonstration', 'Aufmaß', 'Auslegung', 'Planung']
+export const TOOL_CATEGORY_ORDER = ['Montage', 'Wartung', 'Demonstration', 'Aufmaß', 'Auslegung', 'Planung', 'Organisation']
 
 /** Tools je Kategorie für die Liste; innerhalb einer Kategorie bleibt die Reihenfolge der Einträge */
 export function groupToolsByCategory<T extends { category: string }>(entries: readonly T[]): { category: string; entries: T[] }[] {
@@ -82,6 +83,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isCableTool(entry)) return cableKeywords(entry)
   if (isWireColorTool(entry)) return wireColorKeywords(entry)
   if (isNormFinderTool(entry)) return normFinderKeywords(entry)
+  if (isWorkHoursTool(entry)) return entry.keywords
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

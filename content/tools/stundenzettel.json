@@ -1,0 +1,15 @@
+{
+  "id": "tool.stundenzettel",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Eigenes Werkzeug ohne Fachdaten: Es rechnet nur mit den eigenen Eingaben. Adressen über den GPS-Knopf: © OpenStreetMap-Mitwirkende, https://www.openstreetmap.org/copyright",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-05",
+  "kind": "workHours",
+  "title": "Stundenzettel",
+  "summary": "Notiert die Arbeitsstunden der Woche je Bauvorhaben, auch per Knopfdruck, und exportiert sie als Datei.",
+  "description": "Bauvorhaben und Stunden eintragen. **Bis jetzt** rechnet die Stunden aus: aktuelle Uhrzeit minus regulärer Arbeitsbeginn oder minus Ende des letzten Eintrags von heute. Über das Uhr-Zeichen daneben lassen sich statt der Stunden Start und Ende angeben. **Pause** trägt die eingestellte Pausendauer ein, sie zählt nicht zur Arbeitszeit.",
+  "closingNote": "Die Einträge bleiben nur auf diesem Gerät gespeichert. Nur der Knopf GPS sendet den Standort an OpenStreetMap, um die Adresse dazu abzufragen.",
+  "category": "Organisation",
+  "keywords": ["Arbeitszeit", "Arbeitsstunden", "Bauvorhaben", "Baustelle", "Zeiterfassung", "Stundenliste", "Wochenzettel", "Pause", "Notiz"]
+}

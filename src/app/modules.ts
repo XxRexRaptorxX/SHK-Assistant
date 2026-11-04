@@ -3,6 +3,7 @@ import {
   BookIcon,
   CalculatorIcon,
   ChecklistIcon,
+  ClockIcon,
   ConvertIcon,
   FormulaIcon,
   GearIcon,
@@ -94,8 +95,18 @@ export const modules = {
   },
 } satisfies Record<string, AppModule>
 
+/** Einzelnes Tool mit eigenem Platz in der unteren Leiste; kein eigenes Modul, die Adresse ist die des Tools „tool.stundenzettel“ */
+export const workHoursNavItem: AppModule = {
+  path: `${modules.tools.path}/stundenzettel`,
+  title: 'Stundenzettel',
+  navTitle: 'Arbeitszeit',
+  description: 'Arbeitsstunden je Bauvorhaben notieren',
+  icon: ClockIcon,
+}
+
 /** Untere Navigationsleiste (neben "Start") */
 export const bottomNavModules: AppModule[] = [
+  workHoursNavItem,
   modules.tools,
   modules.formulas,
   modules.converter,

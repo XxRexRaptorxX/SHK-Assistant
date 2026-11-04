@@ -10,6 +10,7 @@ import { checkSequenceTool, sequenceToolSchema, type SequenceTool } from './sequ
 import { checkSymbolTool, symbolToolSchema, type SymbolTool } from './symbolTool.ts'
 import { checkVariantTool, variantReferences, variantToolSchema, type VariantTool } from './variantTool.ts'
 import { checkWireColorTool, wireColorToolSchema, type WireColorTool } from './wireColorTool.ts'
+import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 
 // Tools sind Rechenhelfer für die Praxis. Zwei Arten:
 // - Formel-Tools (ohne "kind"): Aufbau und Prüfung wie bei den Formeln.
@@ -25,6 +26,7 @@ import { checkWireColorTool, wireColorToolSchema, type WireColorTool } from './w
 // - Kabel-Tools ("kind": "cables"): Komponente wählen, Kabelarten mit Eigenschaften sehen (siehe cableTool.ts).
 // - Aderfarben-Tools ("kind": "wireColors"): System, Kabeltyp und Aderzahl wählen, Farben mit Nutzung sehen (siehe wireColorTool.ts).
 // - Normen-Tools ("kind": "normFinder"): Themenbereiche wählen, zuständige Regelwerke mit Link sehen (siehe normFinderTool.ts).
+// - Stundenzettel ("kind": "workHours"): Arbeitsstunden je Bauvorhaben notieren und exportieren (siehe workHoursTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -163,6 +165,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   cableToolSchema,
   wireColorToolSchema,
   normFinderToolSchema,
+  workHoursToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -181,7 +184,8 @@ export type ToolEntry =
   | CableTool
   | WireColorTool
   | NormFinderTool
-export type { CableTool, FactorTool, NormFinderTool, SequenceTool, SymbolTool, VariantTool, WireColorTool }
+  | WorkHoursTool
+export type { CableTool, FactorTool, NormFinderTool, SequenceTool, SymbolTool, VariantTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -192,6 +196,7 @@ export const isSequenceTool = (entry: ToolEntry): entry is SequenceTool => entry
 export const isCableTool = (entry: ToolEntry): entry is CableTool => entry.kind === 'cables'
 export const isWireColorTool = (entry: ToolEntry): entry is WireColorTool => entry.kind === 'wireColors'
 export const isNormFinderTool = (entry: ToolEntry): entry is NormFinderTool => entry.kind === 'normFinder'
+export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -298,7 +303,9 @@ export const toolCollection = defineCollection({
                     ? checkWireColorTool(entry)
                     : isNormFinderTool(entry)
                       ? checkNormFinderTool(entry)
-                      : formulaCollection.check!(entry as FormulaEntry),
+                      : isWorkHoursTool(entry)
+                        ? []
+                        : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)

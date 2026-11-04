@@ -71,6 +71,7 @@ describe('Tools', () => {
       'Solaranlage: Anlagendruck und MAG',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Startablauf Feuerungsautomat',
+      'Stundenzettel',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Wartungsintervalle',
       'Wasserinhalt einer Rohrleitung',
@@ -833,7 +834,7 @@ describe('Tools', () => {
   })
 
   it('zeigt die Kategorien in der festgelegten Reihenfolge', () => {
-    const order = ['Montage', 'Wartung', 'Demonstration', 'Aufmaß', 'Auslegung', 'Planung']
+    const order = ['Montage', 'Wartung', 'Demonstration', 'Aufmaß', 'Auslegung', 'Planung', 'Organisation']
     expect(groupToolsByCategory(toolEntries).map((group) => group.category)).toEqual(order)
     const list = renderToStaticMarkup(
       <MemoryRouter initialEntries={['/tools']}>

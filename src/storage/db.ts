@@ -1,6 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
 
-// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt). Bleiben nur auf dem Gerät.
+// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel). Bleiben nur auf dem Gerät.
 
 export interface FavoriteRecord {
   /** id des Inhaltseintrags, z. B. "lexicon.ausdehnungsgefaess" */
@@ -20,15 +20,37 @@ export interface ChecklistProgressRecord {
   updatedAt: string
 }
 
+/** Ein Eintrag im Stundenzettel */
+export interface WorkEntry {
+  id: string
+  /** Bauvorhaben als Freitext */
+  project: string
+  /** Arbeitstag als lokales Datum "YYYY-MM-DD" */
+  date: string
+  /** Beginn in Minuten seit Mitternacht; fehlt nur bei frühen Einträgen, die ohne Arbeitsbeginn erfasst wurden */
+  startMinute?: number
+  /** Dauer in ganzen Minuten; das Ende ist startMinute + minutes */
+  minutes: number
+  /** ISO-Zeitstempel der Erfassung */
+  recordedAt: string
+  /** Freitext zum Eintrag (fehlt, wenn leer) */
+  note?: string
+  /** Pause statt Arbeitszeit; project ist dann leer */
+  isBreak?: boolean
+  /** ISO-Zeitstempel der letzten nachträglichen Änderung */
+  editedAt?: string
+}
+
 export interface ShkDbSchema extends DBSchema {
   favorites: { key: string; value: FavoriteRecord }
   checklistProgress: { key: string; value: ChecklistProgressRecord }
+  workEntries: { key: string; value: WorkEntry }
 }
 
 export type ShkDb = IDBPDatabase<ShkDbSchema>
 
 export const DB_NAME = 'shk-assistant'
-const DB_VERSION = 1
+const DB_VERSION = 2
 
 let dbPromise: Promise<ShkDb> | undefined
 
@@ -39,6 +61,9 @@ export function getDb(): Promise<ShkDb> {
       if (oldVersion < 1) {
         db.createObjectStore('favorites', { keyPath: 'id' })
         db.createObjectStore('checklistProgress', { keyPath: 'checklistId' })
+      }
+      if (oldVersion < 2) {
+        db.createObjectStore('workEntries', { keyPath: 'id' })
       }
     },
     // Eine neuere App-Version (anderer Tab) will migrieren: Verbindung freigeben.

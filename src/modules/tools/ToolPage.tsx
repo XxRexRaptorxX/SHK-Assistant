@@ -17,6 +17,7 @@ import {
   isTableTool,
   isVariantTool,
   isWireColorTool,
+  isWorkHoursTool,
   type ToolEntry,
 } from './schema'
 import { CableLookup } from './CableLookup'
@@ -28,6 +29,7 @@ import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
 import { VariantCalculator } from './VariantCalculator'
 import { WireColorLookup } from './WireColorLookup'
+import { WorkHours } from './WorkHours'
 
 const BACK = { to: modules.tools.path, label: modules.tools.title }
 
@@ -64,6 +66,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <WireColorLookup tool={tool} />
       ) : isNormFinderTool(tool) ? (
         <NormFinder tool={tool} />
+      ) : isWorkHoursTool(tool) ? (
+        <WorkHours closingNote={tool.closingNote} />
       ) : (
         <FormulaBody formula={tool} />
       )}

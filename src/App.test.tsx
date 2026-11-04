@@ -2,9 +2,10 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { App } from './App'
-import { homeTileModules, modules, visibleBottomNavModules } from './app/modules'
+import { homeTileModules, modules, visibleBottomNavModules, workHoursNavItem } from './app/modules'
 import { pageTitle } from './components/headings'
 import { SEO_SECTIONS } from './config/seo'
+import { toolPath } from './modules/tools/tools'
 
 function renderAt(path: string): string {
   return renderToStaticMarkup(
@@ -66,12 +67,33 @@ describe('App-Routen', () => {
   it('zeigt Favoriten in der unteren Leiste erst, wenn etwas gemerkt ist', () => {
     expect(visibleBottomNavModules(false)).not.toContain(modules.favorites)
     expect(visibleBottomNavModules(true)).toContain(modules.favorites)
-    // Ohne geladene Favoriten: sechs Spalten und kein Knopf in der Leiste, der Stern oben bleibt
+    // Ohne geladene Favoriten: kein Knopf in der Leiste, der Stern oben bleibt
     const html = renderAt('/')
     const nav = html.slice(html.indexOf('aria-label="Module"'))
-    expect(nav).toContain('grid-cols-6')
     expect(nav).not.toContain('>Favoriten</span>')
     expect(html).toContain('aria-label="Favoriten"')
+  })
+
+  it('hat den Stundenzettel als „Arbeitszeit“ in der unteren Leiste direkt hinter Start und führt zum Tool', () => {
+    const titles = (html: string) => [...html.slice(html.indexOf('aria-label="Module"')).matchAll(/<span class="max-w-full truncate">([^<]+)</g)].map((match) => match[1])
+    const start = renderAt('/')
+    expect(titles(start).slice(0, 3)).toEqual(['Start', 'Arbeitszeit', 'Tools'])
+    expect(toolPath('tool.stundenzettel')).toBe(workHoursNavItem.path)
+    expect(start).toContain(`href="${workHoursNavItem.path}"`)
+  })
+
+  it('markiert in der Leiste nur den genauesten Reiter', () => {
+    const current = (path: string) => {
+      const html = renderAt(path)
+      const nav = html.slice(html.indexOf('aria-label="Module"'))
+      return [...nav.matchAll(/<a[^>]*aria-current="page"[^>]*href="([^"]+)"|<a[^>]*href="([^"]+)"[^>]*aria-current="page"/g)].map((match) => match[1] ?? match[2])
+    }
+    expect(current('/')).toEqual(['/'])
+    expect(current(workHoursNavItem.path)).toEqual([workHoursNavItem.path])
+    expect(current('/tools/rollenlaenge')).toEqual(['/tools'])
+    expect(current('/tools')).toEqual(['/tools'])
+    expect(current('/lexikon')).toEqual(['/lexikon'])
+    expect(current('/einstellungen')).toEqual([])
   })
 
   it('markiert in der internen Edition die Kopfzeile', () => {

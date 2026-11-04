@@ -58,8 +58,8 @@ wie bei den Formeln (gleiche Felder, Testbeispiel Pflicht bei `verified`); sie e
 „Tools“ statt in der Formelsammlung. `category` gliedert die Tool-Liste, in dieser Reihenfolge: „Montage“ (Vorgaben für
 den Einbau, z. B. Rohrschellenabstände), „Wartung“ (Richtwerte für Messungen, z. B. Abgaswerte),
 „Demonstration“ (Faustwerte zum Zeigen beim Kunden), „Aufmaß“ (Mengen auf der Baustelle ermitteln),
-„Auslegung“ (Bedarf vorab abschätzen) und „Planung“ (Nachschlagen beim Planen, z. B. Sinnbilder in Schemata
-oder zuständige Normen). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
+„Auslegung“ (Bedarf vorab abschätzen), „Planung“ (Nachschlagen beim Planen, z. B. Sinnbilder in Schemata
+oder zuständige Normen) und „Organisation“ (Büroarbeit rund um die Baustelle, z. B. Stundenzettel). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
 Kategorie gehört dort dazu.
 
 Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
@@ -195,6 +195,14 @@ Schalter blenden einzelne Arten (`type`, z. B. nur Normen) und alles mit `lowPra
 
 Nur Nummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Der Build prüft unbekannte Themen, Rangstufen und
 Praxistipps, doppelte Schlüssel und Namen sowie Themen und Rangstufen ohne Regelwerk.
+
+**Stundenzettel** (`"kind": "workHours"`) notiert Arbeitsstunden je Bauvorhaben und exportiert sie. Felder: `title`, `summary`,
+`description`, `category`, `closingNote` (Hinweis am Ende des Tools, z. B. wo die Daten bleiben) und optional `keywords`
+(Suchbegriffe). In der unteren Leiste steht das Tool zusätzlich als eigener Reiter (`workHoursNavItem` in `src/app/modules.ts`);
+ändert sich seine `id`, muss die Adresse dort mit. Die Einträge sind Nutzerdaten: Sie liegen nur auf dem Gerät
+(IndexedDB, Einstellungen im localStorage) und gehören nicht in `content/` und nicht ins Favoriten-Backup. Ausnahme ist
+der GPS-Knopf: Er sendet beim Drücken den Standort an Nominatim (OpenStreetMap), um die Adresse abzufragen; die verlangte
+Quellenangabe steht in `source` des Eintrags.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:

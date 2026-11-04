@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from 'react-router'
+import { Link, NavLink, Outlet, useLocation } from 'react-router'
 import { CompanyLogoLink } from '../components/CompanyLogo'
 import { HomeIcon } from '../components/icons'
 import { ShareButton } from '../components/ShareButton'
@@ -75,28 +75,33 @@ const startItem: AppModule = { path: '/', title: 'Start', description: '', icon:
 function BottomNav() {
   const hasFavorites = useFavoriteIds().size > 0
   const bottomItems = [startItem, ...visibleBottomNavModules(hasFavorites)]
+  // Nur der genaueste Reiter leuchtet: Auf dem Stundenzettel also nicht zusätzlich „Tools“
+  const { pathname } = useLocation()
+  const activePath = bottomItems
+    .map((item) => item.path)
+    .filter((path) => pathname === path || (path !== '/' && pathname.startsWith(`${path}/`)))
+    .sort((a, b) => b.length - a.length)[0]
   return (
     <nav
       aria-label="Module"
       className="fixed inset-x-1.5 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] z-10 print:hidden"
     >
-      <ul className={`mx-auto grid max-w-xl ${hasFavorites ? 'grid-cols-7' : 'grid-cols-6'} rounded-full border border-edge bg-surface/90 p-1 shadow-xl shadow-black/25 backdrop-blur-md`}>
+      {/* Breite nach Text statt gleicher Spalten, damit auch „Stundenzettel“ auf schmalen Handys ganz zu lesen ist */}
+      <ul className={`mx-auto flex max-w-xl rounded-full border border-edge bg-surface/90 p-1 shadow-xl shadow-black/25 backdrop-blur-md`}>
         {bottomItems.map((item) => {
           const Icon = item.icon
           return (
-            <li key={item.path}>
-              <NavLink
+            <li key={item.path} className="min-w-0 flex-auto">
+              <Link
                 to={item.path}
-                end={item.path === '/'}
-                className={({ isActive }) =>
-                  `flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-full text-[0.5625rem] font-semibold tracking-tighter min-[360px]:text-[0.625rem] min-[400px]:text-xs min-[400px]:tracking-normal ${
-                    isActive ? 'bg-raised text-accent' : 'text-ink'
-                  }`
-                }
+                aria-current={item.path === activePath ? 'page' : undefined}
+                className={`flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-full text-[0.5625rem] font-semibold tracking-tighter min-[360px]:text-[0.625rem] min-[400px]:text-xs min-[400px]:tracking-normal ${
+                  item.path === activePath ? 'bg-raised text-accent' : 'text-ink'
+                }`}
               >
                 <Icon className="size-6" />
                 <span className="max-w-full truncate">{item.navTitle ?? item.title}</span>
-              </NavLink>
+              </Link>
             </li>
           )
         })}
