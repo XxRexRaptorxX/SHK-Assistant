@@ -79,7 +79,10 @@ describe('Rechtliche Seiten', () => {
       '2. Hosting',
       '3. Allgemeine Hinweise und Pflichtinformationen',
       '4. Datenerfassung auf dieser Website',
+      '5. Stundenzettel und Standortabfrage',
     ])
+    expect(text).toContain('nicht an uns übertragen')
+    expect(text).toContain('Nominatim der OpenStreetMap Foundation')
     expect(text).toContain('GitHub, Inc.')
     expect(text).toContain('simon@biebl-haustechnik.de')
     expect(text).not.toMatch(/\[[^\]]*\]/)
@@ -118,8 +121,11 @@ describe('Rechtliche Seiten', () => {
         </MemoryRouter>,
       )
       expect(html).toContain(`${page.title}</h1>`)
-      // Der Haftungshinweis erklärt die Markierung „Ungeprüft“ im Text
-      if (page.path !== DISCLAIMER_PAGE.path) expect(html).not.toContain('Ungeprüft')
+      // Der Haftungshinweis erklärt die Markierung „Ungeprüft“ im Text; sonst erscheint sie nur bei nicht freigegebenen Seiten
+      if (page.path === DISCLAIMER_PAGE.path) continue
+      const entry = legalEntries.find((candidate) => candidate.id === page.id)
+      if (entry?.status === 'draft') expect(html).toContain('Ungeprüft')
+      else expect(html).not.toContain('Ungeprüft')
     }
   })
 })
