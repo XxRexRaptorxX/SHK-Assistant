@@ -19,5 +19,8 @@
   ],
   "formulas": [
     "formula.gastechnik.luftdruck-aus-hoehe"
+  ],
+  "tools": [
+    "tool.luftdruck"
   ]
 }

@@ -12,7 +12,8 @@
     {
       "symbol": "h",
       "name": "Geodätische Höhe über dem Meer",
-      "unit": "m"
+      "unit": "m",
+      "locate": "altitude"
     }
   ],
   "constants": [

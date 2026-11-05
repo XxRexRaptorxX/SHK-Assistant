@@ -28,6 +28,12 @@ describe('Bruchschreibweise', () => {
     expect(plain(formula('formula.gastechnik.zustandszahl'))).toBe('Tₙ·(pamb+pₑ−φ·pₛ)|T·pₙ·K')
   })
 
+  it('zeigt ein Anzeige-Zeichen mit Schrägstrich als Bruch, linear bleibt der Schrägstrich', () => {
+    const entry = formula('formula.gastechnik.luftdruck-aus-hoehe')
+    expect(plain(entry)).toBe('p₀−Δp|Δh·h')
+    expect(renderToStaticMarkup(<FormulaLine formula={entry} resultLabel="pamb" linear />)).toContain('p₀ - Δp/Δh · h')
+  })
+
   it('lässt eingeklammerte Brüche als eigene Brüche stehen (Lehrbuchform)', () => {
     expect(plain(formula('formula.hydraulik.druckverlust-rohr'))).toBe('λ·l|d·ρ|2·v^2')
   })

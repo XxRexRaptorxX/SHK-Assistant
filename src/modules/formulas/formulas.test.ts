@@ -89,6 +89,17 @@ describe('Formel-Engine', () => {
     expect(checkFormula({ ...fixture, result: { ...fixture.result!, unit: 'xyz' } })[0]).toMatch(/unbekannte Einheit/)
   })
 
+  it('erlaubt die Höhe per GPS nur bei Längeneinheiten', () => {
+    const withLocate = (unit: string, units: string[] = []): FormulaEntry => ({
+      ...fixture,
+      variables: fixture.variables.map((v) => (v.symbol === 'l' ? { ...v, unit, units, locate: 'altitude' as const } : v)),
+      examples: [],
+    })
+    expect(checkFormula(withLocate('m', ['cm']))).toEqual([])
+    expect(checkFormula(withLocate('ft'))).toEqual([])
+    expect(checkFormula(withLocate('kg'))).toEqual(expect.arrayContaining([expect.stringMatching(/locate "altitude" braucht eine Längeneinheit/)]))
+  })
+
   it('prüft den erlaubten Bereich von Eingaben (z. B. cos φ zwischen 0 und 1)', () => {
     const cos = { symbol: 'c', name: 'Leistungsfaktor', unit: '', units: [], description: '', min: 0, max: 1 }
     expect(rangeError(cos, 0.85)).toBeUndefined()

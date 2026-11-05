@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { currentPosition, formatAddress, formatCoordinates, LocationError, reverseGeocode } from './location'
+import { currentAltitude, currentPosition, formatAddress, formatCoordinates, LocationError, reverseGeocode } from './location'
 
 const POSITION = { latitude: 48.137431, longitude: 11.575491 }
 
@@ -67,5 +67,34 @@ describe('Standort', () => {
 
   it('meldet Geräte ohne GPS', async () => {
     await expect(currentPosition(undefined)).rejects.toBeInstanceOf(LocationError)
+  })
+})
+
+describe('Höhe', () => {
+  const withCoords = (coords: Partial<GeolocationCoordinates>, seen: PositionOptions[] = []) =>
+    ({
+      getCurrentPosition: (success: PositionCallback, _: PositionErrorCallback, options: PositionOptions) => {
+        seen.push(options)
+        success({ coords: { ...POSITION, altitude: null, altitudeAccuracy: null, ...coords } } as GeolocationPosition)
+      },
+    }) as unknown as Geolocation
+
+  it('liefert Höhe und Genauigkeit aus einer frischen Messung', async () => {
+    const seen: PositionOptions[] = []
+    await expect(currentAltitude(withCoords({ altitude: 562.4, altitudeAccuracy: 8 }, seen))).resolves.toEqual({ meters: 562.4, accuracy: 8 })
+    expect(seen[0]).toMatchObject({ enableHighAccuracy: true, maximumAge: 0 })
+  })
+
+  it('kommt ohne Angabe der Genauigkeit aus', async () => {
+    await expect(currentAltitude(withCoords({ altitude: 30 }))).resolves.toEqual({ meters: 30 })
+    await expect(currentAltitude(withCoords({ altitude: 30, altitudeAccuracy: 0 }))).resolves.toEqual({ meters: 30 })
+  })
+
+  it('liefert nichts, wenn das Gerät keine Höhe kennt', async () => {
+    await expect(currentAltitude(withCoords({}))).resolves.toBeUndefined()
+  })
+
+  it('meldet Geräte ohne GPS', async () => {
+    await expect(currentAltitude(undefined)).rejects.toMatchObject({ reason: 'unavailable' })
   })
 })

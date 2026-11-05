@@ -27,6 +27,8 @@ const variableSchema = z.strictObject({
   max: z.number().optional(),
   /** Vorbelegung im Rechner in der Haupteinheit, z. B. ein Faustwert; bleibt änderbar */
   default: z.number().optional(),
+  /** "altitude": Knopf „GPS“ füllt das Feld mit der Höhe des Standorts (nur bei Längeneinheiten) */
+  locate: z.literal('altitude').optional(),
 })
 
 const constantSchema = z.strictObject({
@@ -81,6 +83,8 @@ export const formulaShape = {
   figure: z.string().trim().min(1).optional(),
   /** Formelzeile, Legende und Überschrift „Rechner“ weglassen, z. B. bei einfachen Tools */
   hideFormula: z.boolean().optional(),
+  /** Formelzeile und Legende unter dem Ergebnis statt über dem Rechner, z. B. bei Tools, die man meist nur ausrechnet */
+  formulaBelow: z.boolean().optional(),
 }
 
 /** Pflichtangaben einer geprüften Formel */

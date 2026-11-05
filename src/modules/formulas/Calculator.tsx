@@ -11,6 +11,7 @@ import type { FormulaEntry, FormulaVariable } from './schema'
 import { fieldBase } from '../../components/surfaces'
 import { MaterialPicker } from '../materials/MaterialPicker'
 import { presetInput, presetsFor } from '../materials/materials'
+import { AltitudeButton, type AltitudeMessage } from './AltitudeButton'
 
 type CalculationState =
   | { kind: 'incomplete' }
@@ -111,6 +112,8 @@ export function Calculator({
   const [values, setValues] = useState<Record<string, string>>(initialValues)
   const [units, setUnits] = useState<Record<string, string>>(initialUnits)
   const [resultUnit, setResultUnit] = useState(result?.unit ?? '')
+  /** Hinweis nach dem Knopf „GPS“ je Symbol */
+  const [locateMessages, setLocateMessages] = useState<Record<string, AltitudeMessage | undefined>>({})
   const changed =
     formula.variables.some((v) => (values[v.symbol] ?? '') !== (initialValues()[v.symbol] ?? '') || units[v.symbol] !== v.unit) ||
     resultUnit !== (result?.unit ?? '')
@@ -118,6 +121,7 @@ export function Calculator({
     setValues(initialValues())
     setUnits(initialUnits())
     setResultUnit(result?.unit ?? '')
+    setLocateMessages({})
   }
 
   const calculation = useMemo((): CalculationState => {
@@ -189,6 +193,7 @@ export function Calculator({
           const error = fieldError(variable, raw, currentUnit)
           const invalid = error !== undefined
           const presets = presetsFor(variable)
+          const locateMessage = locateMessages[variable.symbol]
           const input = (
             <input
               id={inputId}
@@ -237,10 +242,29 @@ export function Calculator({
                   value={currentUnit}
                   onChange={(unit) => setUnits({ ...units, [variable.symbol]: unit })}
                 />
+                {variable.locate === 'altitude' && (
+                  <AltitudeButton
+                    fieldName={variable.name}
+                    unit={variable.unit}
+                    // Eingetragen in der Haupteinheit; funktionale Updates, weil die Messung dauert
+                    onAltitude={(text) => {
+                      setValues((current) => ({ ...current, [variable.symbol]: text }))
+                      setUnits((current) => ({ ...current, [variable.symbol]: variable.unit }))
+                    }}
+                    onMessage={(message) =>
+                      setLocateMessages((current) => ({ ...current, [variable.symbol]: message }))
+                    }
+                  />
+                )}
               </div>
               {invalid && (
                 <p id={`${inputId}-error`} className="mt-1 text-base font-semibold">
                   {error}
+                </p>
+              )}
+              {locateMessage && (
+                <p role="status" className={`mt-1 text-base ${locateMessage.kind === 'error' ? 'font-semibold' : 'text-muted'}`}>
+                  {locateMessage.text}
                 </p>
               )}
             </div>

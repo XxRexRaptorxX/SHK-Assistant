@@ -106,33 +106,44 @@ export function FormulaBody({ formula }: { formula: FormulaEntry }) {
         <p className="mt-4 font-semibold">Die Formel ist noch nicht hinterlegt.</p>
       ) : (
         <>
-          {!formula.hideFormula && (
-            <>
-              <FormulaLine formula={formula} resultLabel={result.label ?? result.symbol} />
-              <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
-                {legend.map((item) => (
-                  <div key={item.key} className="contents">
-                    <dt className="font-mono font-semibold">{item.label}</dt>
-                    <dd>
-                      <TermLink to={item.nameHref}>{item.name}</TermLink>
-                      {item.unit && (
-                        <span className="text-muted">
-                          {' ['}
-                          <TermLink to={item.unitHref}>{item.unit}</TermLink>]
-                        </span>
-                      )}
-                      {item.detail && <span className="text-muted"> {item.detail}</span>}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </>
-          )}
+          {!formula.hideFormula && !formula.formulaBelow && formulaBlock(result.label ?? result.symbol)}
           <Calculator key={formula.id} formula={formula} />
+          {/* Bei formulaBelow stehen Formel und Legende unter dem Ergebnis */}
+          {!formula.hideFormula && formula.formulaBelow && (
+            <section className="mt-14">
+              <h2 className="text-xl font-bold">Rechenweg</h2>
+              {formulaBlock(result.label ?? result.symbol)}
+            </section>
+          )}
         </>
       )}
     </>
   )
+
+  function formulaBlock(resultLabel: string) {
+    return (
+      <>
+        <FormulaLine formula={formula} resultLabel={resultLabel} />
+        <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
+          {legend.map((item) => (
+            <div key={item.key} className="contents">
+              <dt className="font-mono font-semibold">{item.label}</dt>
+              <dd>
+                <TermLink to={item.nameHref}>{item.name}</TermLink>
+                {item.unit && (
+                  <span className="text-muted">
+                    {' ['}
+                    <TermLink to={item.unitHref}>{item.unit}</TermLink>]
+                  </span>
+                )}
+                {item.detail && <span className="text-muted"> {item.detail}</span>}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </>
+    )
+  }
 }
 
 /** Formelzeile: Standard Bruchschreibweise, rechts ein Knopf zum Umschalten auf linear (Einstellung) */

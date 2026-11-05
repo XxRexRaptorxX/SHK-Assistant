@@ -111,6 +111,9 @@ export function renderNode(node: MathNode, labels: Labels): ReactNode {
   if (math.isSymbolNode(node)) {
     const label = labels.get(node.name)
     if (typeof label === 'object') return label.node
+    // Anzeige-Zeichen wie „Δp/Δh“ (ein Zeichen für einen Quotienten) auch als Bruch übereinander
+    const quotient = label === undefined ? null : /^([^/]+)\/([^/]+)$/.exec(label)
+    if (quotient) return <Fraction numerator={quotient[1]!.trim()} denominator={quotient[2]!.trim()} />
     return label ?? BUILTIN_CONSTANTS[node.name]?.label ?? node.name
   }
   if (math.isConstantNode(node)) return formatNumber(node.value)

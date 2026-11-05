@@ -1,0 +1,55 @@
+{
+  "id": "tool.luftdruck",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wikipedia „Zustandszahl“, https://de.wikipedia.org/wiki/Zustandszahl",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Luftdruck aus der Höhe",
+  "summary": "Schätzt den mittleren Luftdruck am Aufstellort aus seiner Höhe, auf Wunsch per GPS.",
+  "description": "Schätzt den Jahresmittelwert des Luftdrucks aus der Höhe des Aufstellorts über dem Meer, z. B. für die Zustandszahl beim Einstellen eines Gasgeräts nach dem Volumenverfahren. Die Höhe lässt sich eintippen oder mit dem Knopf „GPS“ vom Gerät übernehmen. Das aktuelle Wetter ist nicht berücksichtigt; für den tatsächlichen Luftdruck ein Barometer verwenden.",
+  "category": "Wartung",
+  "variables": [
+    {
+      "symbol": "h",
+      "name": "Höhe über dem Meer",
+      "term": "Höhe",
+      "unit": "m",
+      "locate": "altitude"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "p0",
+      "label": "p₀",
+      "name": "Bezugswert",
+      "term": "Luftdruck",
+      "value": "1016 hPa"
+    },
+    {
+      "symbol": "grad",
+      "label": "Δp/Δh",
+      "name": "Luftdruckabnahme je Meter",
+      "term": "Luftdruck",
+      "value": "0.12 hPa/m"
+    }
+  ],
+  "result": {
+    "symbol": "pamb",
+    "name": "Mittlerer Luftdruck",
+    "term": "Luftdruck",
+    "unit": "hPa",
+    "decimals": 1
+  },
+  "expression": "p0 - grad * h",
+  "examples": [
+    {
+      "inputs": {
+        "h": 562
+      },
+      "expected": 948.56,
+      "note": "Beispiel München aus dem Wikipedia-Artikel „Zustandszahl“ (dort gerundet 948,6 hPa)"
+    }
+  ],
+  "formulaBelow": true
+}

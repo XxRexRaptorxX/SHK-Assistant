@@ -61,6 +61,7 @@ describe('Tools', () => {
       'Kabel Aderfarben',
       'Kabelarten',
       'Leistungsminderung durch Kalk am Wärmetauscher',
+      'Luftdruck aus der Höhe',
       'Material zurückschreiben',
       'Mehrverbrauch durch Ruß im Kessel',
       'Mindestdämmdicke von Rohrleitungen',
@@ -86,6 +87,48 @@ describe('Tools', () => {
     expect(evaluateFormula(tool, inputs)).toBeCloseTo(evaluateFormula(formula, inputs), 9)
     expect(tool.expression).toBe(formula.expression)
     expect(tool.category).toBe('Aufmaß')
+  })
+
+  it('rechnet den Luftdruck wie die gleichnamige Formel und bietet GPS an', () => {
+    const tool = formulaToolEntries.find((entry) => entry.id === 'tool.luftdruck')!
+    const formula = content.formulas.find((entry) => entry.id === 'formula.gastechnik.luftdruck-aus-hoehe')!
+    const inputs = { h: { value: 562, unit: 'm' } }
+    expect(evaluateFormula(tool, inputs)).toBeCloseTo(evaluateFormula(formula, inputs), 9)
+    expect(tool.expression).toBe(formula.expression)
+    expect(tool.constants).toEqual(formula.constants)
+    expect(tool.variables[0]!.locate).toBe('altitude')
+    expect(formula.variables[0]!.locate).toBe('altitude')
+    const html = renderToStaticMarkup(<Calculator formula={tool} />)
+    expect(html).toContain('aria-label="Höhe über dem Meer per GPS übernehmen"')
+    expect(html).toContain('>GPS</button>')
+  })
+
+  it('setzt Formel und Legende beim Luftdruck unter das Ergebnis, sonst darüber', () => {
+    const position = (id: string) => {
+      const html = renderToStaticMarkup(
+        <MemoryRouter>
+          <FormulaBody formula={formulaToolEntries.find((entry) => entry.id === id)!} />
+        </MemoryRouter>,
+      )
+      return {
+        result: html.indexOf('aria-live="polite"'),
+        heading: html.indexOf('>Rechenweg</h2>'),
+        legend: html.indexOf('<dl'),
+        calculator: html.indexOf('Rechner</h2>'),
+      }
+    }
+    const below = position('tool.luftdruck')
+    expect(below.heading).toBeGreaterThan(below.result)
+    expect(below.legend).toBeGreaterThan(below.heading)
+    const above = position('tool.kalk-leistungsminderung')
+    expect(above.legend).toBeGreaterThan(-1)
+    expect(above.legend).toBeLessThan(above.calculator)
+    expect(above.heading).toBe(-1)
+  })
+
+  it('zeigt den Knopf „GPS“ nur bei Feldern mit locate', () => {
+    const tool = formulaToolEntries.find((entry) => entry.id === 'tool.rohrinhalt')!
+    expect(renderToStaticMarkup(<Calculator formula={tool} />)).not.toContain('per GPS')
   })
 
   it('zeigt beim Wasserinhalt nur Skizze und Eingaben, ohne Formelzeile, Legende und sichtbare Überschrift', () => {

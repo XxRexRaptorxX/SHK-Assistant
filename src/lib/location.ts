@@ -24,19 +24,47 @@ export class LocationError extends Error {
   }
 }
 
-/** Aktueller Standort des Geräts; wirft LocationError */
-export function currentPosition(geolocation: Geolocation | undefined = globalThis.navigator?.geolocation): Promise<Coordinates> {
+/** Messwerte des GPS; wirft LocationError */
+function readPosition(geolocation: Geolocation | undefined, maximumAge: number): Promise<GeolocationCoordinates> {
   return new Promise((resolve, reject) => {
     if (!geolocation) {
       reject(new LocationError('unavailable'))
       return
     }
     geolocation.getCurrentPosition(
-      ({ coords }) => resolve({ latitude: coords.latitude, longitude: coords.longitude }),
+      ({ coords }) => resolve(coords),
       (error) => reject(new LocationError(error.code === error.PERMISSION_DENIED ? 'denied' : 'unavailable')),
-      { enableHighAccuracy: true, timeout: GPS_TIMEOUT_MS, maximumAge: 60_000 },
+      { enableHighAccuracy: true, timeout: GPS_TIMEOUT_MS, maximumAge },
     )
   })
+}
+
+/** Aktueller Standort des Geräts; wirft LocationError */
+export async function currentPosition(geolocation: Geolocation | undefined = globalThis.navigator?.geolocation): Promise<Coordinates> {
+  const { latitude, longitude } = await readPosition(geolocation, 60_000)
+  return { latitude, longitude }
+}
+
+export interface Altitude {
+  /** Höhe in m, wie das Gerät sie meldet */
+  meters: number
+  /** Genauigkeit in m laut Gerät; fehlt, wenn es keine angibt */
+  accuracy?: number
+}
+
+/**
+ * Höhe des Standorts aus dem GPS des Geräts, ohne Internet; undefined, wenn das Gerät keine Höhe liefert
+ * (z. B. viele PCs und Laptops). Wirft LocationError.
+ */
+export async function currentAltitude(
+  geolocation: Geolocation | undefined = globalThis.navigator?.geolocation,
+): Promise<Altitude | undefined> {
+  // Frische Messung: Eine zwischengespeicherte Position stammt oft aus WLAN oder Mobilfunk und hat keine Höhe
+  const { altitude, altitudeAccuracy } = await readPosition(geolocation, 0)
+  if (altitude === null || !Number.isFinite(altitude)) return undefined
+  return altitudeAccuracy !== null && Number.isFinite(altitudeAccuracy) && altitudeAccuracy > 0
+    ? { meters: altitude, accuracy: altitudeAccuracy }
+    : { meters: altitude }
 }
 
 const addressSchema = z.object({

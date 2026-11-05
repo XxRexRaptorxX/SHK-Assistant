@@ -207,6 +207,12 @@ export function checkFormula(formula: FormulaEntry): string[] {
     }
   }
 
+  for (const variable of formula.variables) {
+    if (variable.locate === 'altitude' && isValidUnit(variable.unit) && !isCompatible(variable.unit, 'm')) {
+      issues.push(`${variable.symbol}: locate "altitude" braucht eine Längeneinheit, nicht "${variable.unit}"`)
+    }
+  }
+
   for (const constant of formula.constants) {
     try {
       const value: unknown = math.evaluate(constant.value)

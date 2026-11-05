@@ -24,13 +24,14 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `title`       | Name der Formel                                                        |
 | `description` | Kurze eigene Erklärung, wann und wofür                                  |
 | `category`    | Gruppe in der Liste, z. B. „Hydraulik“ (leer = „Allgemein“)            |
-| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert) |
+| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert), `locate` (`"altitude"`: Knopf „GPS“ neben dem Feld trägt die vom Gerät gemeldete Höhe ein, auf ganze Meter gerundet; nur bei Längeneinheiten, ohne Internet) |
 | `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"1.163 Wh/(kg*K)"` |
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2; blieben damit weniger als zwei gültige Stellen, zeigt die App drei gültige Stellen), `min` (kleinstes sinnvolles Ergebnis) und `minMessage` (Hinweis, wenn es darunter liegt oder kein reelles Ergebnis entsteht) |
 | `expression`  | Formel als mathjs-Ausdruck mit den Symbolen, z. B. `Q / (c * dT)`      |
 | `examples`    | Testbeispiele: `inputs` je Symbol (Zahl in der Haupteinheit oder Text mit Einheit, z. B. `"10 kW"`), `expected` (Referenzwert), optional `tolerance` (relativ, Standard 0.001 = 0,1 %) |
 | `figure`      | Optional: Skizze aus `figures/`, z. B. `"figure.kreis"`; erscheint auf der Formelseite unter den Formelzeichen |
 | `hideFormula` | Optional: `true` lässt Formelzeile, Legende und die Überschrift „Rechner“ weg, z. B. bei einfachen Tools; Skizze, Eingaben und Ergebnis bleiben, der Löschen-Knopf steht dann im Ergebnisfeld |
+| `formulaBelow` | Optional: `true` setzt Formelzeile und Legende unter das Ergebnis statt über den Rechner, z. B. bei Tools, die man meist nur ausrechnet |
 
 In der Legende einer Formel sind Name und Einheit mit dem Lexikon verlinkt, wenn es dort einen
 Eintrag mit genau diesem Begriff oder Synonym gibt. Ist der Name genauer als der Lexikon-Begriff
