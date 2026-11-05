@@ -276,7 +276,9 @@ function ChoiceSectionView({
   onSelect: (label: string) => void
 }) {
   const idPrefix = useId()
-  const option = section.options.find((candidate) => candidate.label === selected)
+  // Nur eine Option (z. B. „Alle Anlagen“): ohne Auswahlliste gleich anzeigen
+  const single = section.display !== 'scale' && section.options.length === 1
+  const option = single ? section.options[0] : section.options.find((candidate) => candidate.label === selected)
   const grouped = section.columns.some((column) => column.group !== undefined)
 
   return (
@@ -286,7 +288,7 @@ function ChoiceSectionView({
       </h2>
       {section.display === 'scale' ? (
         <ScaleBar section={section} selected={selected} onSelect={onSelect} />
-      ) : (
+      ) : single ? null : (
         <>
           <label htmlFor={`${idPrefix}-select`} className="sr-only">
             {section.inputName}

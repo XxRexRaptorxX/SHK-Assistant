@@ -78,7 +78,8 @@ Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
 z. B. Thermostatstufen oder Raumarten. Sie haben `sections`, je Abschnitt: `title`, `inputName`
 (z. B. „Einstellung“), `display` (`"scale"`: Stufen nebeneinander in einer Leiste mit Verlauf von
 kalt nach warm, nur für kurze Beschriftungen; `"dropdown"`: Auswahlliste, Standard), `columns` wie
-bei Tabellen-Tools und `options` mit `label`, optional `note` und `values` je Spalte. Fehlt eine
+bei Tabellen-Tools und `options` mit `label`, optional `note` und `values` je Spalte. Hat ein
+Dropdown-Abschnitt nur eine Option (z. B. „Alle Anlagen“), entfällt die Auswahlliste und die Werte stehen gleich da. Fehlt eine
 Spalte in `values`, wird sie bei dieser Option nicht angezeigt (z. B. Brausehöhen nur bei Wanne und
 Dusche); für „gibt es hier nicht“ die Spalte also weglassen statt `"–"` einzutragen. In der Leiste steht die erste Spalte als
 Kurzinfo unter jeder Stufe. Optional `group` je Spalte: Spalten mit gleicher Gruppe stehen im Ergebnis

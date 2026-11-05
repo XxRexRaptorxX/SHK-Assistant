@@ -73,6 +73,7 @@ describe('Tools', () => {
       'Startablauf Feuerungsautomat',
       'Stundenzettel',
       'Thermostatkopf-Einstellung und Raumtemperatur',
+      'Trinkwasser-Temperaturen',
       'Wartungsintervalle',
       'Wasserinhalt einer Rohrleitung',
     ])

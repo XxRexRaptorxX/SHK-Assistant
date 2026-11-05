@@ -1,0 +1,256 @@
+{
+  "id": "tool.trinkwasser-temperaturen",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Warmwasser, Zirkulation, Groß- und Kleinanlagen, Abschalten der Zirkulationspumpe: DVGW-Information „Energieeinsparungen im Warmwasserbereich in Trinkwasser-Installationen – geht das?“, Stand März 2023, Abschnitte 1, 2, 3, 4, 5.3 und 7, https://lhm.muenchen.swm.de/dam/jcr:68299e5b-5ed1-49e0-936c-56da7dec09d7/dvgw_energie_sparen_ww.pdf. Abkühlung in der Zirkulation höchstens 5 K, Berechnung nach W 553, Schwerkraftzirkulation, 3 Liter je Leitung ohne Zirkulationsleitung: K. Gerhardy (DVGW), „Das DVGW-Arbeitsblatt W 551 und die 3-Liter-Regel“, energie | wasser-praxis 2/2012, S. 42–45, https://www.dvgw.de/medien/dvgw/wasser/verbraucher/1202gerhardy.pdf (bezieht sich auf W 551:2004-04). Kaltwasser 25 °C nach 30 Sekunden, Technikzentralen und Schächte, Wasseraustausch spätestens alle 72 Stunden: H. Köhler, C. Schauer, „Temperaturhaltung beachten, Wasseraustausch sicherstellen“, IKZ-Fachplaner November 2018, S. 8–12 (nach DIN 1988-200:2012-05), https://www.viega.de/content/dam/viegadm/en/temp/download_assets/de/temperaturhaltung_web_12122018.pdf. Temperaturbereich der Legionellenvermehrung und 55 °C an jeder Stelle der Zirkulation: DVGW, „Legionellen in der Trinkwasserinstallation: Vermehrung und Vermeidung“, https://www.dvgw.de/themen/wasser/wasserqualitaet/legionellen. Neufassung W 551-1 (Entwurf 2025, Zirkulation 55/50 °C nur mit Auflagen): P. Arens, „Was ist neu im aktuellen Entwurf des Arbeitsblattes DVGW W 551-1“, tga-praxis, 23.07.2025, https://www.tga-praxis.de/news/was-ist-neu-im-aktuellen-entwurf-des-arbeitsblattes-dvgw-w-551-1.html. Alle abgerufen am 05.11.2026. Die Arbeitsblätter und Normen selbst wurden nicht eingesehen; die Werte stammen aus diesen Zusammenfassungen und sind noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "choice",
+  "title": "Trinkwasser-Temperaturen",
+  "summary": "Vorgeschriebene Temperaturen für Kaltwasser, Warmwasser und Zirkulation.",
+  "description": "Leitung wählen und die einzuhaltenden Temperaturen mit den wichtigsten Kenndaten ablesen. Beim Warmwasser hängen die Werte von der Anlagenart ab. Grundlage sind DVGW W 551 und DIN 1988-200. W 551 wird derzeit als W 551-1 neu gefasst, einzelne Werte können sich noch ändern.",
+  "category": "Wartung",
+  "bars": [
+    {
+      "key": "leitung",
+      "name": "Leitung",
+      "options": [
+        {
+          "key": "kalt",
+          "label": "Kaltwasser",
+          "note": "PWC"
+        },
+        {
+          "key": "warm",
+          "label": "Warmwasser",
+          "note": "PWH"
+        },
+        {
+          "key": "zirkulation",
+          "label": "Zirkulation",
+          "note": "PWH-C"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Trinkwasser kalt (PWC)",
+      "when": {
+        "leitung": "kalt"
+      },
+      "inputName": "Anlage",
+      "columns": [
+        {
+          "key": "entnahme",
+          "name": "An der Entnahmestelle, 30 s nach vollem Öffnen",
+          "unit": "°C",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "umgebung",
+          "name": "Erwärmung in Technikzentralen, Schächten und Kanälen",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "legionellen",
+          "name": "Legionellen vermehren sich bei",
+          "unit": "°C",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "austausch",
+          "name": "Vollständiger Wasseraustausch an allen Entnahmestellen",
+          "group": "Betrieb"
+        },
+        {
+          "key": "messung",
+          "name": "Häufige Ursachen für zu warmes Kaltwasser",
+          "group": "Betrieb"
+        }
+      ],
+      "options": [
+        {
+          "label": "Alle Anlagen",
+          "values": {
+            "entnahme": "höchstens 25",
+            "umgebung": "möglichst nicht über 25 °C",
+            "legionellen": "ca. 25 bis 45",
+            "austausch": "spätestens alle 72 Stunden (bei ca. 20 °C Raumtemperatur)",
+            "messung": "Stagnation, warme Umgebung, fehlende Dämmung, ungünstige Leitungsführung, Wärmeübergang an Armaturen mit Warmwasser- oder Zirkulationsanschluss"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Trinkwasser warm (PWH)",
+      "when": {
+        "leitung": "warm"
+      },
+      "inputName": "Anlagenart",
+      "columns": [
+        {
+          "key": "austritt",
+          "name": "Austritt Trinkwassererwärmer",
+          "unit": "°C",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "zirkulation",
+          "name": "In der gesamten Zirkulation",
+          "unit": "°C",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "hoeher",
+          "name": "Höhere Temperatur",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "legionellenschaltung",
+          "name": "Legionellenschaltung (z. B. 70 °C nachts)",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "speicher",
+          "name": "Inhalt Trinkwassererwärmer",
+          "group": "Kennzeichen"
+        },
+        {
+          "key": "leitung",
+          "name": "Wasserinhalt im Fließweg bis zur entferntesten Entnahmestelle",
+          "group": "Kennzeichen"
+        },
+        {
+          "key": "zirkulationNoetig",
+          "name": "Zirkulation oder Begleitheizung",
+          "group": "Kennzeichen"
+        },
+        {
+          "key": "hinweis",
+          "name": "Hinweis",
+          "hideName": true,
+          "group": "Hinweis"
+        }
+      ],
+      "options": [
+        {
+          "label": "Großanlage (zentraler Trinkwassererwärmer)",
+          "note": "z. B. Mehrfamilienhaus, Hotel, Gewerbe",
+          "values": {
+            "austritt": "mindestens 60",
+            "zirkulation": "mindestens 55",
+            "hoeher": "nach den technischen Regeln nicht erforderlich",
+            "legionellenschaltung": "kann ausgeschaltet werden",
+            "speicher": "mehr als 400 l",
+            "leitung": "mehr als 3 l (ohne Zirkulationsleitung)",
+            "zirkulationNoetig": "erforderlich",
+            "hinweis": "Ein Merkmal genügt: Speicher über 400 l oder über 3 l Wasserinhalt bis zu einer Entnahmestelle. Wird die Temperatur am Austritt unter 55 °C abgesenkt, sind Schutzmaßnahmen von Fachpersonal festzulegen und mikrobiologisch nachzuweisen."
+          }
+        },
+        {
+          "label": "Kleinanlage im Ein- oder Zweifamilienhaus",
+          "note": "ohne Zirkulation, höchstens 3 l bis zur ungünstigsten Entnahmestelle",
+          "values": {
+            "austritt": "mindestens 50",
+            "leitung": "höchstens 3 l",
+            "zirkulationNoetig": "nicht erforderlich",
+            "hinweis": "Die 50 °C sind die untere Betriebstemperatur. Hat das Haus eine Zirkulation oder einen großen Speicher mit langen Leitungen, gelten die Temperaturen der Großanlage."
+          }
+        },
+        {
+          "label": "Wohnungsstation oder Etagen-Trinkwassererwärmer",
+          "note": "eine Wohnung, ohne Zirkulation, kleiner Speicher",
+          "values": {
+            "austritt": "mindestens 50 (Speicher-Trinkwassererwärmer)",
+            "leitung": "weniger als 3 l zu jeder Entnahmestelle",
+            "zirkulationNoetig": "nicht erforderlich",
+            "hinweis": "Darf wie eine Kleinanlage im Einfamilienhaus betrieben werden, wenn es keine Zirkulation gibt, der Speicher klein ist und jeder Fließweg weniger als 3 l enthält."
+          }
+        },
+        {
+          "label": "Einzel- oder Gruppenversorgung",
+          "note": "z. B. 5-l-Kleinspeicher, Durchfluss-Trinkwassererwärmer im Bad",
+          "values": {
+            "austritt": "mindestens 50 empfohlen",
+            "zirkulationNoetig": "nicht erforderlich",
+            "hinweis": "Keine verbindlich einzuhaltenden Temperaturvorgaben. Auch in Kleinspeichern können sich Legionellen vermehren, deshalb mindestens 50 °C einstellen."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Zirkulation (PWH-C)",
+      "when": {
+        "leitung": "zirkulation"
+      },
+      "inputName": "Anlage",
+      "columns": [
+        {
+          "key": "ueberall",
+          "name": "An jeder Stelle der Zirkulation",
+          "unit": "°C",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "abkuehlung",
+          "name": "Abkühlung vom Austritt bis zum Wiedereintritt in den Trinkwassererwärmer",
+          "unit": "K",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "ruecklauf",
+          "name": "Rücklauf eines Strangs unter 55 °C",
+          "group": "Temperaturen"
+        },
+        {
+          "key": "wann",
+          "name": "Erforderlich, wenn",
+          "group": "Kenndaten"
+        },
+        {
+          "key": "stichleitung",
+          "name": "Wasserinhalt ab Abzweig (Stockwerks- und Einzelzuleitungen)",
+          "group": "Kenndaten"
+        },
+        {
+          "key": "pumpe",
+          "name": "Zirkulationspumpe abschalten",
+          "group": "Kenndaten"
+        },
+        {
+          "key": "berechnung",
+          "name": "Berechnung",
+          "group": "Kenndaten"
+        },
+        {
+          "key": "schwerkraft",
+          "name": "Schwerkraftzirkulation",
+          "group": "Kenndaten"
+        },
+        {
+          "key": "entwurf",
+          "name": "Neufassung W 551-1 (Entwurf)",
+          "hideName": true,
+          "group": "Neufassung W 551-1 (Entwurf)"
+        }
+      ],
+      "options": [
+        {
+          "label": "Großanlage",
+          "values": {
+            "ueberall": "mindestens 55",
+            "abkuehlung": "höchstens 5",
+            "ruecklauf": "Hydraulischen Abgleich prüfen",
+            "wann": "mehr als 3 l Wasserinhalt zwischen Trinkwassererwärmer und mindestens einer Entnahmestelle",
+            "stichleitung": "weniger als 3 l",
+            "pumpe": "bis zu 8 Stunden am Stück, nur in hygienisch einwandfreien Anlagen und bevorzugt nachts",
+            "berechnung": "nach DVGW W 553",
+            "schwerkraft": "hygienisch nicht geeignet",
+            "entwurf": "Der Entwurf von 2025 lässt 55/50 °C für Wärmepumpen zu, aber nur mit Auflagen, u. a. elektronische Regulierventile mit Temperaturerfassung und drei Legionellenuntersuchungen im ersten Jahr. Bis zur endgültigen Fassung gelten die Werte oben."
+          }
+        }
+      ]
+    }
+  ]
+}
