@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { App } from './App'
 import { homeTileModules, modules, visibleBottomNavModules, workHoursNavItem } from './app/modules'
 import { pageTitle } from './components/headings'
-import { SEO_SECTIONS } from './config/seo'
+import { HOME_HEADING, SEO_SECTIONS, SITE_DESCRIPTION } from './config/seo'
 import { toolPath } from './modules/tools/tools'
 
 function renderAt(path: string): string {
@@ -47,6 +47,13 @@ describe('App-Routen', () => {
   it('nutzt für die Suchmaschinen-Seiten dieselben Adressen wie die App', () => {
     const paths = Object.values(modules).map((module) => module.path)
     for (const section of SEO_SECTIONS) expect(paths).toContain(`/${section.dir}`)
+  })
+
+  it('nennt auf der Startseite den Namen der App in der Hauptüberschrift und die Beschreibung', () => {
+    const html = renderAt('/')
+    const heading = html.match(/<h1[^>]*>(.*?)<\/h1>/)?.[1]?.replace(/<[^>]+>/g, '')
+    expect(heading).toBe(`${HOME_HEADING.name} – ${HOME_HEADING.tagline}`)
+    expect(html).toContain(SITE_DESCRIPTION)
   })
 
   it('verlinkt von der Startseite auf die Verzeichnisse für Suchmaschinen', () => {

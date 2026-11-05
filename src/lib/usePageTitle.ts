@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
-
-const APP_NAME = 'SHK-Assistant'
-/** Wie der Titel in index.html: Suchmaschinen lesen den Titel nach dem Rendern */
-const HOME_TITLE = `${APP_NAME} – Werkzeugkasten für Heizungsbauer`
+// HOME_TITLE wie in index.html: Suchmaschinen lesen den Titel nach dem Rendern
+import { APP_NAME, HOME_TITLE } from '../config/seo'
 
 export function usePageTitle(title?: string) {
   useEffect(() => {

@@ -2,7 +2,14 @@ import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { build, type Rollup } from 'vite'
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest'
-import { isSeoFile, parseSiteUrl, SEO_SECTIONS } from '../src/config/seo'
+import {
+  APP_ALTERNATE_NAMES,
+  HOME_TITLE,
+  isSeoFile,
+  parseSiteUrl,
+  SEO_SECTIONS,
+  SITE_DESCRIPTION,
+} from '../src/config/seo'
 import { collections } from '../src/content/collections'
 import { loadContent } from '../tools/content-loader'
 import { escapeHtml, metaDescription } from '../tools/seo-pages'
@@ -81,6 +88,24 @@ describe('Suchmaschinen-Seiten im Build der App', () => {
     expect(html).toContain('"@type":"WebApplication"')
     expect(html).toContain('<noscript>')
     expect(html).toContain('href="./lexikon/"')
+  })
+
+  it('nennt auf der Startseite Titel, Beschreibung und andere Schreibweisen des Namens', () => {
+    const html = read('index.html')
+    expect(html).toContain(`<title>${escapeHtml(HOME_TITLE)}</title>`)
+    expect(html).toContain(`<meta name="description" content="${escapeHtml(SITE_DESCRIPTION)}"`)
+    expect(html.match(/<title>/g)).toHaveLength(1)
+    expect(html.match(/name="description"/g)).toHaveLength(1)
+
+    const json = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)?.[1] ?? '{}'
+    const graph = (JSON.parse(json) as { '@graph': { '@type': string; alternateName?: string[] }[] })['@graph']
+    const website = graph.find((node) => node['@type'] === 'WebSite')
+    const app = graph.find((node) => node['@type'] === 'WebApplication')
+    for (const name of ['SHK Assistent', 'SHK Assistant']) {
+      expect(APP_ALTERNATE_NAMES).toContain(name)
+      expect(website?.alternateName).toContain(name)
+      expect(app?.alternateName).toContain(name)
+    }
   })
 
   it('hält die Seiten aus dem Offline-Cache heraus und leitet sie nicht auf die App um', () => {

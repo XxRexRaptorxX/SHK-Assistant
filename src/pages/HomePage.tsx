@@ -4,8 +4,8 @@ import { homeTileModules, modules, type AppModule } from '../app/modules'
 import { pageTitle } from '../components/headings'
 import { SearchInput } from '../components/SearchInput'
 import { Slogan } from '../components/Slogan'
-import { chip, featureCard } from '../components/surfaces'
-import { SEO_SECTIONS } from '../config/seo'
+import { card, chip, featureCard } from '../components/surfaces'
+import { HOME_HEADING, SEO_SECTIONS, SITE_DESCRIPTION } from '../config/seo'
 import { content } from '../content'
 import { CALCULATORS } from '../modules/calculator/calculators'
 import { useFavoriteIds } from '../favorites/favoritesStore'
@@ -94,7 +94,11 @@ export function HomePage() {
 
   return (
     <>
-      <h1 className={pageTitle}>Werkzeugkasten</h1>
+      <h1 className={pageTitle}>
+        {/* Name nur für Suchmaschinen und Screenreader: sichtbar steht er schon in der Kopfzeile */}
+        <span className="sr-only">{HOME_HEADING.name} – </span>
+        {HOME_HEADING.tagline}
+      </h1>
       <Slogan className="mt-1" />
       <form role="search" onSubmit={submit} className="mt-4 mb-5 flex gap-2">
         <SearchInput
@@ -118,6 +122,7 @@ export function HomePage() {
           </li>
         ))}
       </ul>
+      <p className={`${card} mt-6 p-4 text-base text-ink`}>{SITE_DESCRIPTION}</p>
       <DirectoryLinks />
     </>
   )

@@ -1,6 +1,13 @@
 import type { ContentData } from '../src/content/collections.ts'
 import type { BaseEntry } from '../src/content/schema/base.ts'
-import { SEO_SECTIONS, type SeoSection } from '../src/config/seo.ts'
+import {
+  APP_ALTERNATE_NAMES,
+  APP_NAME,
+  HOME_TITLE,
+  SEO_SECTIONS,
+  SITE_DESCRIPTION,
+  type SeoSection,
+} from '../src/config/seo.ts'
 import { formatIsoDate } from '../src/lib/format.ts'
 import { splitLinks } from '../src/lib/links.ts'
 import { splitSources } from '../src/lib/sources.ts'
@@ -18,9 +25,7 @@ import type { ToolEntry } from '../src/modules/tools/schema.ts'
 // erfassen. Deshalb entsteht beim Build je geprüftem Eintrag eine kleine statische Seite mit
 // eigener Adresse. Alle Texte kommen aus content/; Entwürfe werden nicht veröffentlicht.
 
-export const APP_NAME = 'SHK-Assistant'
-export const SITE_DESCRIPTION =
-  'Werkzeugkasten für Heizungsbauer: Formeln mit Rechner, Umrechner, Checklisten und Lexikon. Läuft auch offline und lässt sich auf dem Handy installieren.'
+export { APP_NAME, HOME_TITLE, SITE_DESCRIPTION }
 export const SOCIAL_IMAGE = 'pwa-512x512.png'
 const DESCRIPTION_LENGTH = 155
 
@@ -450,17 +455,41 @@ export function buildRobots(siteUrl: string): string {
   return `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}sitemap.xml\n`
 }
 
-/** Strukturierte Daten der Startseite */
-export function appJsonLd(siteUrl: string): object {
+/**
+ * Strukturierte Daten der Startseite: die Website (daraus liest Google den Namen in den
+ * Suchergebnissen, alternateName für andere Schreibweisen) und die App selbst.
+ */
+export function appJsonLd(siteUrl: string, sections: readonly SeoSection[] = []): object {
+  const website = `${siteUrl}#website`
   return {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: APP_NAME,
-    description: SITE_DESCRIPTION,
-    url: siteUrl,
-    inLanguage: 'de',
-    applicationCategory: 'UtilitiesApplication',
-    operatingSystem: 'Alle (Webbrowser)',
-    image: `${siteUrl}${SOCIAL_IMAGE}`,
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': website,
+        name: APP_NAME,
+        alternateName: [...APP_ALTERNATE_NAMES],
+        headline: HOME_TITLE,
+        description: SITE_DESCRIPTION,
+        url: siteUrl,
+        inLanguage: 'de',
+      },
+      {
+        '@type': 'WebApplication',
+        '@id': `${siteUrl}#app`,
+        name: APP_NAME,
+        alternateName: [...APP_ALTERNATE_NAMES],
+        description: SITE_DESCRIPTION,
+        url: siteUrl,
+        inLanguage: 'de',
+        applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'Alle (Webbrowser)',
+        browserRequirements: 'Benötigt JavaScript. Läuft nach dem ersten Aufruf auch offline.',
+        image: `${siteUrl}${SOCIAL_IMAGE}`,
+        isPartOf: { '@id': website },
+        audience: { '@type': 'Audience', audienceType: 'Sanitär-, Heizungs- und Klimatechnik-Handwerk' },
+        ...(sections.length > 0 ? { featureList: sections.map((section) => section.heading) } : {}),
+      },
+    ],
   }
 }
