@@ -11,10 +11,10 @@
   "variables": [
     {
       "symbol": "R20",
+      "label": "R_20",
       "name": "Widerstand bei 20 °C",
       "term": "Elektrischer Widerstand",
-      "unit": "ohm",
-      "label": "R₂₀"
+      "unit": "ohm"
     },
     {
       "symbol": "alpha",
@@ -33,7 +33,7 @@
   "constants": [],
   "result": {
     "symbol": "Rtheta",
-    "label": "Rθ",
+    "label": "R_θ",
     "name": "Widerstand nach Erwärmung",
     "term": "Elektrischer Widerstand",
     "unit": "ohm",

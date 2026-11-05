@@ -20,6 +20,7 @@ import { BUILTIN_CONSTANTS, builtinConstantsUsed, formatExpression } from './eng
 import { findFormula, formulaEntries, formulaPath, relatedFormulas } from './formulas'
 import { FormulaTitle } from './FormulaTitle'
 import type { FormulaEntry } from './schema'
+import { renderSymbol } from './SymbolText'
 
 const BACK = { to: '/formeln', label: 'Formeln' }
 
@@ -111,7 +112,7 @@ export function FormulaBody({ formula }: { formula: FormulaEntry }) {
           {/* Bei formulaBelow stehen Formel und Legende unter dem Ergebnis */}
           {!formula.hideFormula && formula.formulaBelow && (
             <section className="mt-14">
-              <h2 className="text-xl font-bold">Rechenweg</h2>
+              <h2 className="text-xl font-bold">Formel</h2>
               {formulaBlock(result.label ?? result.symbol)}
             </section>
           )}
@@ -127,7 +128,7 @@ export function FormulaBody({ formula }: { formula: FormulaEntry }) {
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
           {legend.map((item) => (
             <div key={item.key} className="contents">
-              <dt className="font-mono font-semibold">{item.label}</dt>
+              <dt className="font-mono font-semibold">{renderSymbol(item.label)}</dt>
               <dd>
                 <TermLink to={item.nameHref}>{item.name}</TermLink>
                 {item.unit && (
@@ -160,7 +161,7 @@ export function FormulaLine({ formula, resultLabel, linear: linearOverride }: {
   return (
     <div className="mt-4 flex items-center gap-2 rounded-2xl border border-edge bg-surface py-2 pr-2 pl-4">
       <p className={`min-w-0 flex-1 overflow-x-auto py-2 text-xl ${linear ? 'font-mono' : ''}`}>
-        {resultLabel} = {linear ? formatExpression(formula) : <FormulaMath formula={formula} />}
+        {renderSymbol(resultLabel)} = {linear ? renderSymbol(formatExpression(formula)) : <FormulaMath formula={formula} />}
       </p>
       <button
         type="button"

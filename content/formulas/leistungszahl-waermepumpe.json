@@ -11,13 +11,13 @@
   "variables": [
     {
       "symbol": "QdotH",
+      "label": "Q̇_h",
       "name": "Heizleistung",
-      "unit": "kW",
-      "label": "Q̇ₕ"
+      "unit": "kW"
     },
     {
       "symbol": "Pel",
-      "label": "Pₑₗ",
+      "label": "P_el",
       "name": "Elektrische Leistungsaufnahme",
       "term": "Elektrische Leistung",
       "unit": "kW"

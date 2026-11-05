@@ -11,18 +11,21 @@
   "variables": [
     {
       "symbol": "A1",
+      "label": "A_1",
       "name": "Querschnitt 1",
       "term": "Fläche",
       "unit": "m^2"
     },
     {
       "symbol": "A2",
+      "label": "A_2",
       "name": "Querschnitt 2",
       "term": "Fläche",
       "unit": "m^2"
     },
     {
       "symbol": "v2",
+      "label": "v_2",
       "name": "Geschwindigkeit 2",
       "term": "Strömungsgeschwindigkeit",
       "unit": "m/s"
@@ -31,7 +34,7 @@
   "constants": [],
   "result": {
     "symbol": "v1",
-    "label": "v₁",
+    "label": "v_1",
     "name": "Geschwindigkeit 1",
     "term": "Strömungsgeschwindigkeit",
     "unit": "m/s",

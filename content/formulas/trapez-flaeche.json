@@ -11,14 +11,14 @@
   "variables": [
     {
       "symbol": "l1",
-      "label": "l₁",
+      "label": "l_1",
       "name": "Lange Grundseite",
       "term": "Länge",
       "unit": "m"
     },
     {
       "symbol": "l2",
-      "label": "l₂",
+      "label": "l_2",
       "name": "Kurze Grundseite",
       "term": "Länge",
       "unit": "m"

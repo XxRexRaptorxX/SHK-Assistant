@@ -24,7 +24,7 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `title`       | Name der Formel                                                        |
 | `description` | Kurze eigene Erklärung, wann und wofür                                  |
 | `category`    | Gruppe in der Liste, z. B. „Hydraulik“ (leer = „Allgemein“)            |
-| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert), `locate` (`"altitude"`: Knopf „GPS“ neben dem Feld trägt die vom Gerät gemeldete Höhe ein, auf ganze Meter gerundet; nur bei Längeneinheiten, ohne Internet) |
+| `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“; Indizes mit Unterstrich, z. B. `p_amb` oder `ΔT_1`, keine Unicode-Indizes wie ₁), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert), `locate` (`"altitude"`: Knopf „GPS“ neben dem Feld trägt die vom Gerät gemeldete Höhe ein, auf ganze Meter gerundet; nur bei Längeneinheiten, ohne Internet) |
 | `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"1.163 Wh/(kg*K)"` |
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2; blieben damit weniger als zwei gültige Stellen, zeigt die App drei gültige Stellen), `min` (kleinstes sinnvolles Ergebnis) und `minMessage` (Hinweis, wenn es darunter liegt oder kein reelles Ergebnis entsteht) |
 | `expression`  | Formel als mathjs-Ausdruck mit den Symbolen, z. B. `Q / (c * dT)`      |

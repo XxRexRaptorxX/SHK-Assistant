@@ -11,12 +11,14 @@
   "variables": [
     {
       "symbol": "mk",
+      "label": "m_k",
       "name": "Masse des kalten Stoffes",
       "term": "Masse",
       "unit": "kg"
     },
     {
       "symbol": "Tm",
+      "label": "T_m",
       "name": "Mischtemperatur",
       "unit": "K",
       "units": [
@@ -25,6 +27,7 @@
     },
     {
       "symbol": "Tk",
+      "label": "T_k",
       "name": "Temperatur des kalten Stoffes",
       "term": "Temperatur",
       "unit": "K",
@@ -34,6 +37,7 @@
     },
     {
       "symbol": "Tw",
+      "label": "T_w",
       "name": "Temperatur des warmen Stoffes",
       "term": "Temperatur",
       "unit": "K",
@@ -45,6 +49,7 @@
   "constants": [],
   "result": {
     "symbol": "mw",
+    "label": "m_w",
     "name": "Masse des warmen Stoffes",
     "term": "Masse",
     "unit": "kg",

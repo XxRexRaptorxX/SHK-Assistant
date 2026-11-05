@@ -12,7 +12,7 @@
   "variables": [
     {
       "symbol": "Mm",
-      "label": "Mₘ",
+      "label": "M_m",
       "name": "Mitgenommene Menge",
       "term": "Länge",
       "unit": "m",
@@ -20,7 +20,7 @@
     },
     {
       "symbol": "Mr",
-      "label": "Mᵣ",
+      "label": "M_r",
       "name": "Zurückgegebene Menge",
       "term": "Länge",
       "unit": "m",
@@ -30,7 +30,7 @@
   "constants": [],
   "result": {
     "symbol": "Mv",
-    "label": "Mᵥ",
+    "label": "M_v",
     "name": "Verbaute Menge",
     "term": "Länge",
     "unit": "m",

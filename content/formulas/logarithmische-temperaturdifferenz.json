@@ -11,7 +11,7 @@
   "variables": [
     {
       "symbol": "dT1",
-      "label": "ΔT₁",
+      "label": "ΔT_1",
       "name": "Temperaturdifferenz an Ende 1",
       "term": "Temperaturdifferenz",
       "unit": "K",
@@ -19,7 +19,7 @@
     },
     {
       "symbol": "dT2",
-      "label": "ΔT₂",
+      "label": "ΔT_2",
       "name": "Temperaturdifferenz an Ende 2",
       "term": "Temperaturdifferenz",
       "unit": "K",
@@ -29,7 +29,7 @@
   "constants": [],
   "result": {
     "symbol": "dTm",
-    "label": "ΔTₘ",
+    "label": "ΔT_m",
     "name": "Mittlere logarithmische Temperaturdifferenz",
     "term": "Temperaturdifferenz",
     "unit": "K",

@@ -11,14 +11,14 @@
   "variables": [
     {
       "symbol": "Pab",
-      "label": "Pab",
+      "label": "P_ab",
       "name": "Abgegebene Leistung",
       "term": "Leistung",
       "unit": "kW"
     },
     {
       "symbol": "Pzu",
-      "label": "Pzu",
+      "label": "P_zu",
       "name": "Zugeführte Leistung",
       "term": "Leistung",
       "unit": "kW"

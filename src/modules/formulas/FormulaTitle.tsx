@@ -1,4 +1,5 @@
 import type { FormulaEntry } from './schema'
+import { renderSymbol } from './SymbolText'
 
 /** Name der Formel, dahinter grau das Formelzeichen des Ergebnisses (z. B. „Kreisfläche  A“) */
 export function FormulaTitle({ entry }: { entry: Pick<FormulaEntry, 'title' | 'result'> }) {
@@ -6,7 +7,7 @@ export function FormulaTitle({ entry }: { entry: Pick<FormulaEntry, 'title' | 'r
   return (
     <>
       {entry.title}
-      {symbol && <span className="ml-2 font-normal text-muted">{symbol}</span>}
+      {symbol && <span className="ml-2 font-normal text-muted">{renderSymbol(symbol)}</span>}
     </>
   )
 }

@@ -11,11 +11,13 @@
   "variables": [
     {
       "symbol": "pst",
+      "label": "p_st",
       "name": "Statischer Druck",
       "unit": "Pa"
     },
     {
       "symbol": "pdy",
+      "label": "p_dy",
       "name": "Dynamischer Druck",
       "unit": "Pa"
     }
@@ -23,6 +25,7 @@
   "constants": [],
   "result": {
     "symbol": "pges",
+    "label": "p_ges",
     "name": "Gesamtdruck",
     "unit": "Pa",
     "decimals": 2

@@ -11,18 +11,21 @@
   "variables": [
     {
       "symbol": "l1",
+      "label": "l_1",
       "name": "Seitenlänge 1",
       "term": "Länge",
       "unit": "m"
     },
     {
       "symbol": "l2",
+      "label": "l_2",
       "name": "Seitenlänge 2",
       "term": "Länge",
       "unit": "m"
     },
     {
       "symbol": "l3",
+      "label": "l_3",
       "name": "Seitenlänge 3",
       "term": "Länge",
       "unit": "m"

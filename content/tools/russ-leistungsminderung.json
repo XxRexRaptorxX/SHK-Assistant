@@ -27,7 +27,7 @@
   "constants": [
     {
       "symbol": "s0",
-      "label": "s₀",
+      "label": "s_0",
       "name": "Bezugsdicke des Faustwerts",
       "value": "1 mm"
     }

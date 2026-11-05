@@ -25,6 +25,7 @@
   "constants": [],
   "result": {
     "symbol": "pdy",
+    "label": "p_dy",
     "name": "Dynamischer Druck",
     "unit": "Pa",
     "decimals": 2

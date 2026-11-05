@@ -39,7 +39,7 @@
     "unit": "m",
     "decimals": 2
   },
-  "expression": "A * k / VA",
+  "expression": "k * A / VA",
   "examples": [
     {
       "inputs": {

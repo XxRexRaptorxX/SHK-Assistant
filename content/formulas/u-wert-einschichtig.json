@@ -11,7 +11,7 @@
   "variables": [
     {
       "symbol": "Rsi",
-      "label": "Rₛᵢ",
+      "label": "R_si",
       "name": "Wärmeübergangswiderstand innen",
       "term": "Wärmeübergangswiderstand",
       "unit": "m^2*K/W"
@@ -30,7 +30,7 @@
     },
     {
       "symbol": "Rse",
-      "label": "Rₛₑ",
+      "label": "R_se",
       "name": "Wärmeübergangswiderstand außen",
       "term": "Wärmeübergangswiderstand",
       "unit": "m^2*K/W"

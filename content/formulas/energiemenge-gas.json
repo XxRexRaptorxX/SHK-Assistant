@@ -11,7 +11,7 @@
   "variables": [
     {
       "symbol": "VB",
-      "label": "VB",
+      "label": "V_B",
       "name": "Betriebsvolumen (Zählerstandsdifferenz)",
       "term": "Volumen",
       "unit": "m^3"
@@ -24,7 +24,7 @@
     },
     {
       "symbol": "Hs",
-      "label": "Hₛ",
+      "label": "H_s",
       "name": "Brennwert im Normzustand",
       "term": "Brennwert",
       "unit": "kWh/m^3"

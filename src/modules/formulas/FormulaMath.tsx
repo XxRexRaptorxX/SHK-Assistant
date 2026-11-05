@@ -5,6 +5,7 @@ import { formatSignificant } from '../../lib/number'
 import { formatAnyUnit } from '../units/labels'
 import { BUILTIN_CONSTANTS } from './engine'
 import type { FormulaEntry } from './schema'
+import { renderSymbol } from './SymbolText'
 
 // Formel in Bruchschreibweise: Brüche übereinander, Hochzahlen hochgestellt, Wurzeln mit Strich.
 // Aufeinanderfolgende Produkte und Quotienten werden zu einem Bruch zusammengefasst
@@ -113,8 +114,10 @@ export function renderNode(node: MathNode, labels: Labels): ReactNode {
     if (typeof label === 'object') return label.node
     // Anzeige-Zeichen wie „Δp/Δh“ (ein Zeichen für einen Quotienten) auch als Bruch übereinander
     const quotient = label === undefined ? null : /^([^/]+)\/([^/]+)$/.exec(label)
-    if (quotient) return <Fraction numerator={quotient[1]!.trim()} denominator={quotient[2]!.trim()} />
-    return label ?? BUILTIN_CONSTANTS[node.name]?.label ?? node.name
+    if (quotient) {
+      return <Fraction numerator={renderSymbol(quotient[1]!.trim())} denominator={renderSymbol(quotient[2]!.trim())} />
+    }
+    return renderSymbol(label ?? BUILTIN_CONSTANTS[node.name]?.label ?? node.name)
   }
   if (math.isConstantNode(node)) return formatNumber(node.value)
   if (math.isParenthesisNode(node)) {

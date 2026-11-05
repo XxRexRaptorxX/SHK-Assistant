@@ -23,13 +23,13 @@
   "constants": [],
   "result": {
     "symbol": "Qs",
+    "label": "Q_s",
     "name": "Schmelzwärme",
     "unit": "kJ",
     "units": [
       "kcal"
     ],
-    "decimals": 2,
-    "label": "Qₛ"
+    "decimals": 2
   },
   "expression": "m * q",
   "examples": [

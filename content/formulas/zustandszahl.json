@@ -21,20 +21,21 @@
     },
     {
       "symbol": "pamb",
+      "label": "p_amb",
       "name": "Mittlerer Luftdruck am Aufstellort",
       "term": "Luftdruck",
       "unit": "mbar"
     },
     {
       "symbol": "pe",
-      "label": "pₑ",
+      "label": "p_e",
       "name": "Betriebsdruck (Überdruck) des Gases",
       "term": "Überdruck",
       "unit": "mbar"
     },
     {
       "symbol": "pw",
-      "label": "φ·pₛ",
+      "label": "φ·p_s",
       "name": "Wasserdampfteildruck des Gases",
       "term": "Partialdruck",
       "unit": "mbar",
@@ -52,14 +53,14 @@
   "constants": [
     {
       "symbol": "Tn",
-      "label": "Tₙ",
+      "label": "T_n",
       "name": "Normtemperatur",
       "term": "Normzustand",
       "value": "273.15 K"
     },
     {
       "symbol": "pn",
-      "label": "pₙ",
+      "label": "p_n",
       "name": "Normdruck",
       "term": "Normzustand",
       "value": "1013.25 mbar"

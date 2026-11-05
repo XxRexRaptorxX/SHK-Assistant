@@ -21,7 +21,7 @@
     },
     {
       "symbol": "l0",
-      "label": "l₀",
+      "label": "l_0",
       "name": "Ausgangslänge",
       "term": "Länge",
       "unit": "m"

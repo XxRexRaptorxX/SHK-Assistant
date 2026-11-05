@@ -51,7 +51,7 @@ describe('Suchmaschinen-Seiten im Build der App', () => {
     expect(html).toContain('<code>P = √3 · U · I · cos φ</code>')
     expect(html).toContain('√3: Verkettungsfaktor</li>')
     expect(html).toContain('P: Wirkleistung (W)</li>')
-    expect(read('formeln/hydraulik.dynamischer-druck/index.html')).toContain('<code>pdy = ρ · v² / 2</code>')
+    expect(read('formeln/hydraulik.dynamischer-druck/index.html')).toContain('<code>p<sub>dy</sub> = ρ · v² / 2</code>')
     expect(read('formeln/hydraulik.hydrostatischer-druck/index.html')).toContain('g: Normfallbeschleunigung (9,80665 m/s²)</li>')
     expect(read('formeln/hydraulik.rohrinhalt/index.html')).toContain('d: Innendurchmesser (mm)</li>')
   })

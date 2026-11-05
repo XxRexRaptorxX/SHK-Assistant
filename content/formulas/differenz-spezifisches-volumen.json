@@ -11,14 +11,14 @@
   "variables": [
     {
       "symbol": "vspec2",
-      "label": "v₂",
+      "label": "v_2",
       "name": "Spezifisches Volumen im Endzustand",
       "term": "Spezifisches Volumen",
       "unit": "dm^3/kg"
     },
     {
       "symbol": "vspec1",
-      "label": "v₁",
+      "label": "v_1",
       "name": "Spezifisches Volumen im Anfangszustand",
       "term": "Spezifisches Volumen",
       "unit": "dm^3/kg"

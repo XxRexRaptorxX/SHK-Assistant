@@ -19,19 +19,20 @@ function plain(entry: FormulaEntry, substitutions?: Parameters<typeof FormulaMat
   return renderToStaticMarkup(<FormulaMath formula={entry} substitutions={substitutions} />)
     .replace(/<span class="w-full border-t-2[^>]*>/g, '|')
     .replace(/<sup[^>]*>/g, '^')
+    .replace(/<sub>/g, '_')
     .replace(/<[^>]+>/g, '')
 }
 
 describe('Bruchschreibweise', () => {
   it('fasst Produkte und Quotienten zu einem Bruch zusammen, Zahlen zuerst', () => {
     expect(plain(formula('formula.hydraulik.fliessgeschwindigkeit-rohr'))).toBe('4·V̇|π·d^2')
-    expect(plain(formula('formula.gastechnik.zustandszahl'))).toBe('Tₙ·(pamb+pₑ−φ·pₛ)|T·pₙ·K')
+    expect(plain(formula('formula.gastechnik.zustandszahl'))).toBe('T_n·(p_amb+p_e−φ·p_s)|T·p_n·K')
   })
 
   it('zeigt ein Anzeige-Zeichen mit Schrägstrich als Bruch, linear bleibt der Schrägstrich', () => {
     const entry = formula('formula.gastechnik.luftdruck-aus-hoehe')
-    expect(plain(entry)).toBe('p₀−Δp|Δh·h')
-    expect(renderToStaticMarkup(<FormulaLine formula={entry} resultLabel="pamb" linear />)).toContain('p₀ - Δp/Δh · h')
+    expect(plain(entry)).toBe('p_0−Δp|Δh·h')
+    expect(renderToStaticMarkup(<FormulaLine formula={entry} resultLabel="pamb" linear />)).toContain('p<sub>0</sub> - Δp/Δh · h')
   })
 
   it('lässt eingeklammerte Brüche als eigene Brüche stehen (Lehrbuchform)', () => {
@@ -40,13 +41,13 @@ describe('Bruchschreibweise', () => {
 
   it('zeigt Wurzeln mit Strich, ln und Brüche im Nenner einer Summe', () => {
     expect(plain(formula('formula.geometrie.kreisdurchmesser'))).toBe('√4·A|π')
-    expect(plain(formula('formula.heizungstechnik.logarithmische-temperaturdifferenz'))).toBe('ΔT₁−ΔT₂|ln(ΔT₁|ΔT₂)')
-    expect(plain(formula('formula.thermodynamik.u-wert-einschichtig'))).toBe('1|Rₛᵢ+d|λ+Rₛₑ')
+    expect(plain(formula('formula.heizungstechnik.logarithmische-temperaturdifferenz'))).toBe('ΔT_1−ΔT_2|ln(ΔT_1|ΔT_2)')
+    expect(plain(formula('formula.thermodynamik.u-wert-einschichtig'))).toBe('1|R_si+d|λ+R_se')
   })
 
   it('stellt Klammern um Summen in Produkten dar, nicht um alleinstehende Zähler', () => {
     expect(plain(formula('formula.geometrie.kreisring-flaeche'))).toBe('π·(D^2−d^2)|4')
-    expect(plain(formula('formula.thermodynamik.mischtemperatur-gleicher-stoff'))).toBe('mk·Tk+mw·Tw|mk+mw')
+    expect(plain(formula('formula.thermodynamik.mischtemperatur-gleicher-stoff'))).toBe('m_k·T_k+m_w·T_w|m_k+m_w')
   })
 
   it('kann jede Formel darstellen', () => {

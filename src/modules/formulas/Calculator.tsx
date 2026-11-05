@@ -12,6 +12,7 @@ import { fieldBase } from '../../components/surfaces'
 import { MaterialPicker } from '../materials/MaterialPicker'
 import { presetInput, presetsFor } from '../materials/materials'
 import { AltitudeButton, type AltitudeMessage } from './AltitudeButton'
+import { renderSymbol } from './SymbolText'
 
 type CalculationState =
   | { kind: 'incomplete' }
@@ -152,7 +153,7 @@ export function Calculator({
   }, [formula, values, units, resultUnit])
 
   if (!result) return null
-  const resultLabel = result.label ?? result.symbol
+  const resultLabel = renderSymbol(result.label ?? result.symbol)
   const resultText =
     calculation.kind === 'result'
       ? // Nachkommastellen gelten für die Haupteinheit; in anderen Einheiten gültige Stellen
@@ -212,7 +213,7 @@ export function Calculator({
           return (
             <div key={variable.symbol}>
               <label htmlFor={inputId} className="block font-semibold">
-                {variable.name} <span className="font-normal text-muted">({variable.label ?? variable.symbol})</span>
+                {variable.name} <span className="font-normal text-muted">({renderSymbol(variable.label ?? variable.symbol)})</span>
               </label>
               {variable.description && (
                 <p id={`${inputId}-hint`} className="text-base text-muted">

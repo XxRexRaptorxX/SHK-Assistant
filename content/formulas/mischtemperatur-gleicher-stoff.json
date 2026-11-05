@@ -11,12 +11,14 @@
   "variables": [
     {
       "symbol": "mk",
+      "label": "m_k",
       "name": "Masse des kalten Stoffes",
       "term": "Masse",
       "unit": "kg"
     },
     {
       "symbol": "Tk",
+      "label": "T_k",
       "name": "Temperatur des kalten Stoffes",
       "term": "Temperatur",
       "unit": "K",
@@ -26,12 +28,14 @@
     },
     {
       "symbol": "mw",
+      "label": "m_w",
       "name": "Masse des warmen Stoffes",
       "term": "Masse",
       "unit": "kg"
     },
     {
       "symbol": "Tw",
+      "label": "T_w",
       "name": "Temperatur des warmen Stoffes",
       "term": "Temperatur",
       "unit": "K",
@@ -43,13 +47,13 @@
   "constants": [],
   "result": {
     "symbol": "Tm",
+    "label": "T_m",
     "name": "Mischtemperatur",
     "unit": "K",
     "units": [
       "degC"
     ],
-    "decimals": 2,
-    "label": "Tₘ"
+    "decimals": 2
   },
   "expression": "(mk * Tk + mw * Tw) / (mk + mw)",
   "examples": [

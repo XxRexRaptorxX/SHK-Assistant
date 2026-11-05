@@ -30,7 +30,7 @@
   "constants": [],
   "result": {
     "symbol": "R20",
-    "label": "R₂₀",
+    "label": "R_20",
     "name": "Widerstand bei 20 °C",
     "term": "Elektrischer Widerstand",
     "unit": "ohm",

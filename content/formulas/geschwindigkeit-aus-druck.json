@@ -11,6 +11,7 @@
   "variables": [
     {
       "symbol": "pdy",
+      "label": "p_dy",
       "name": "Dynamischer Druck",
       "unit": "Pa",
       "min": 0

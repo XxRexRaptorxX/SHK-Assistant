@@ -11,7 +11,7 @@
   "variables": [
     {
       "symbol": "Vdot1",
-      "label": "V̇₁",
+      "label": "V̇_1",
       "name": "Volumenstrom 1",
       "term": "Volumenstrom",
       "unit": "m^3/s"
@@ -20,7 +20,7 @@
   "constants": [],
   "result": {
     "symbol": "Vdot2",
-    "label": "V̇₂",
+    "label": "V̇_2",
     "name": "Volumenstrom 2",
     "term": "Volumenstrom",
     "unit": "m^3/s",

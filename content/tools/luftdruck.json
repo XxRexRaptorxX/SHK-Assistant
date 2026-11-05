@@ -21,7 +21,7 @@
   "constants": [
     {
       "symbol": "p0",
-      "label": "p₀",
+      "label": "p_0",
       "name": "Bezugswert",
       "term": "Luftdruck",
       "value": "1016 hPa"
@@ -36,6 +36,7 @@
   ],
   "result": {
     "symbol": "pamb",
+    "label": "p_amb",
     "name": "Mittlerer Luftdruck",
     "term": "Luftdruck",
     "unit": "hPa",

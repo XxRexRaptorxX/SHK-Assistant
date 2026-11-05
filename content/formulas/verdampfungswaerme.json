@@ -23,13 +23,13 @@
   "constants": [],
   "result": {
     "symbol": "Qv",
+    "label": "Q_v",
     "name": "Verdampfungswärme",
     "unit": "kJ",
     "units": [
       "kcal"
     ],
-    "decimals": 2,
-    "label": "Qᵥ"
+    "decimals": 2
   },
   "expression": "m * r",
   "examples": [

@@ -112,7 +112,7 @@ describe('Tools', () => {
       )
       return {
         result: html.indexOf('aria-live="polite"'),
-        heading: html.indexOf('>Rechenweg</h2>'),
+        heading: html.indexOf('>Formel</h2>'),
         legend: html.indexOf('<dl'),
         calculator: html.indexOf('Rechner</h2>'),
       }

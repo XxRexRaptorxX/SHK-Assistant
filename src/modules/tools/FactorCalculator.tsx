@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import { ClearInputsButton, HeadingWithClear } from '../../components/ClearInputsButton'
 import { InfoIcon } from '../../components/icons'
+import { renderSymbol } from '../formulas/SymbolText'
 import { RichText } from '../../components/RichText'
 import { fieldBase } from '../../components/surfaces'
 import { formatResult, parseDecimal } from '../../lib/number'
@@ -155,7 +156,7 @@ export function FactorCalculator({
                 <p className="text-2xl font-bold">{computed.text}</p>
               ) : (
                 <p className="text-3xl font-bold">
-                  {result.label ?? result.symbol} ={' '}
+                  {renderSymbol(result.label ?? result.symbol)} ={' '}
                   {computed ? withUnit(formatResult(computed.value, result.decimals), result.unit) : '–'}
                 </p>
               )}

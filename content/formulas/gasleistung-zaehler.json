@@ -11,7 +11,7 @@
   "variables": [
     {
       "symbol": "VB",
-      "label": "VB",
+      "label": "V_B",
       "name": "Gemessenes Betriebsvolumen",
       "term": "Volumen",
       "unit": "l",

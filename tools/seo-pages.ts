@@ -200,9 +200,14 @@ function constantText(value: string): string {
   return match ? `${match[1]!.replace('.', ',')} ${formatUnit(match[2]!)}`.trim() : ''
 }
 
+/** Formelzeichen als HTML, Indizes tiefgestellt wie in der App (src/modules/formulas/SymbolText.tsx): p_amb → p<sub>amb</sub> */
+export function symbolHtml(text: string): string {
+  return escapeHtml(text).replace(/_([\p{L}\p{N}]+)/gu, '<sub>$1</sub>')
+}
+
 function formulaItem(entry: FormulaEntry): SeoItem {
   const quantity = (item: { symbol: string; label?: string; name: string }, value: string) =>
-    `${escapeHtml(item.label ?? item.symbol)}: ${escapeHtml(item.name)}${value ? ` (${escapeHtml(value)})` : ''}`
+    `${symbolHtml(item.label ?? item.symbol)}: ${escapeHtml(item.name)}${value ? ` (${escapeHtml(value)})` : ''}`
   return {
     entry,
     name: entry.title,
@@ -213,7 +218,7 @@ function formulaItem(entry: FormulaEntry): SeoItem {
       [
         richText(entry.description),
         entry.result && entry.expression && !entry.hideFormula
-          ? `<h2>Formel</h2><p><code>${escapeHtml(entry.result.label ?? entry.result.symbol)} = ${escapeHtml(formulaText(entry))}</code></p>`
+          ? `<h2>Formel</h2><p><code>${symbolHtml(entry.result.label ?? entry.result.symbol)} = ${symbolHtml(formulaText(entry))}</code></p>`
           : '',
         entry.variables.length > 0 || entry.constants.length > 0
           ? `<h2>Größen</h2>${list([
