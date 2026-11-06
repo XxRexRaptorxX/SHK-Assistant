@@ -6,12 +6,14 @@ import { groupFormulasByCategory } from '../formulas/formulas'
 import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
 import { normFinderKeywords } from './normFinderTool'
+import { refrigerantKeywords } from './refrigerantTool'
 import {
   isCableTool,
   isChoiceTool,
   isFactorTool,
   isFormulaTool,
   isNormFinderTool,
+  isRefrigerantTool,
   isSequenceTool,
   isSymbolTool,
   isTableTool,
@@ -83,6 +85,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isCableTool(entry)) return cableKeywords(entry)
   if (isWireColorTool(entry)) return wireColorKeywords(entry)
   if (isNormFinderTool(entry)) return normFinderKeywords(entry)
+  if (isRefrigerantTool(entry)) return refrigerantKeywords(entry)
   if (isWorkHoursTool(entry)) return entry.keywords
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [

@@ -198,6 +198,22 @@ Schalter blenden einzelne Arten (`type`, z. B. nur Normen) und alles mit `lowPra
 Nur Nummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Der Build prüft unbekannte Themen, Rangstufen und
 Praxistipps, doppelte Schlüssel und Namen sowie Themen und Rangstufen ohne Regelwerk.
 
+**Kältemittel-Tools** (`"kind": "refrigerantPressure"`) sind eine Dampfdrucktabelle: Kältemittel wählen, Druck oder
+Temperatur eingeben, den anderen Wert ablesen; darunter steht die ganze Tabelle des Kältemittels. Liegt die Eingabe zwischen
+zwei Zeilen, wird linear gerechnet und das Ergebnis mit „≈“ und den beiden Zeilen angezeigt; außerhalb der Tabelle gibt es
+keinen Wert. Das zuletzt gewählte Kältemittel bleibt auf dem Gerät gespeichert. Felder: `title`, `summary`, `description`,
+`category` und:
+
+- `pressureName` (Art des Drucks wie in der Quelle, z. B. „Überdruck“) und `pressureUnit` (z. B. „bar“).
+- `tableNote`: Hinweis der Quelle zu den Werten (z. B. gerundet, Taupunkt); steht unter dem Ergebnis.
+- `temperatures`: Temperaturen der Tabellenzeilen in °C, aufsteigend.
+- `refrigerants`: je `name` (z. B. „R32“), optional `aliases` (Suchbegriffe) und `pressures`: ein Druck je Zeile von
+  `temperatures`, `null`, wo die Quelle keinen Wert nennt (nur am Anfang und Ende).
+
+Die Werte werden unverändert aus der Quelle übernommen, auch wenn ein Schritt auffällig ist. Der Build prüft doppelte
+Namen, die Zahl der Drücke, Lücken mitten in der Tabelle und dass der Druck mit der Temperatur steigt (sonst wäre die
+Umrechnung vom Druck zur Temperatur nicht eindeutig).
+
 **Stundenzettel** (`"kind": "workHours"`) notiert Arbeitsstunden je Bauvorhaben und exportiert sie. Felder: `title`, `summary`,
 `description`, `category`, `closingNote` (Hinweis am Ende des Tools, z. B. wo die Daten bleiben) und optional `keywords`
 (Suchbegriffe). In der unteren Leiste steht das Tool zusätzlich als eigener Reiter (`workHoursNavItem` in `src/app/modules.ts`);

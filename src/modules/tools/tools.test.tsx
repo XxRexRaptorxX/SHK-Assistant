@@ -56,6 +56,7 @@ describe('Tools', () => {
       'Abgaswerte je Brennerart',
       'Ausgerollte Länge von Rohr- und Kabelrollen',
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
+      'Dampfdrucktabelle Kältemittel',
       'Gebäudeklasse',
       'Heizlast überschlägig',
       'Kabel Aderfarben',
