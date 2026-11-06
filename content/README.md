@@ -220,6 +220,8 @@ oder Dämmdicke nach Rohrdurchmesser. Felder:
   Eingabefeldern anzeigen statt darunter, z. B. ein Umschalter für den Rechenweg). Eine Option darf `info`
   haben: Der Text steht hinter einem Info-Knopf im Schaltfeld und wird mit durchsucht (nur bei `"bar"`).
 - `hideHeading`: `true` lässt die Überschrift „Rechner“ weg; der Löschen-Knopf steht dann im Ergebnisfeld.
+- `rulesBehindInfo`: `true` versteckt den Rechenweg (`rule`) jedes Ergebnisses hinter einem Info-Knopf neben dem
+  Ergebnisnamen, z. B. bei vielen Ergebnissen mit langen Formeln. Beim Drucken erscheint er trotzdem.
 - `results`: je `symbol`, `name`, `unit`, `decimals` und `cases`. Ein Fall nennt `when` (für welche
   Auswahl er gilt, fehlende Auswahl = alle) und genau eins von: `factor` mit `per` (Bezugsgröße: das
   Symbol einer Eingabe oder eines vorher stehenden Ergebnisses), festem `value`, `text` (z. B.

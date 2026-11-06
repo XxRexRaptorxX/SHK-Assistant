@@ -67,6 +67,14 @@ export function FactorCalculator({
   }
   const complete = inputs.every((input) => input.optional || values[input.symbol] !== undefined)
   const results = complete ? computeFactorTool(tool, values, selection) : undefined
+  // Ergebnisse, deren Rechenweg aufgeklappt ist (nur bei rulesBehindInfo)
+  const [openRules, setOpenRules] = useState<ReadonlySet<string>>(() => new Set())
+  const toggleRule = (symbol: string) =>
+    setOpenRules((current) => {
+      const next = new Set(current)
+      if (!next.delete(symbol)) next.add(symbol)
+      return next
+    })
   const select = (choice: FactorChoice, option: string) =>
     setSelection(normalizeSelection(tool, { ...selection, [choice.key]: option }))
 
@@ -146,10 +154,28 @@ export function FactorCalculator({
       <div className="mt-5 space-y-3 rounded-2xl border-2 border-accent bg-surface p-4" aria-live="polite">
         {visibleResults(tool, selection).map((result, index) => {
           const computed = results?.[result.symbol]
+          const ruleId = `${idPrefix}-rule-${result.symbol}`
+          const ruleOpen = openRules.has(result.symbol)
           return (
             <div key={result.symbol}>
               <div className="flex items-center justify-between gap-2">
-                <p className="font-semibold">{result.name}</p>
+                <div className="flex min-w-0 items-center gap-1">
+                  <p className="font-semibold">{result.name}</p>
+                  {tool.rulesBehindInfo && computed && (
+                    <button
+                      type="button"
+                      aria-label={`Rechenweg zu ${result.name}`}
+                      aria-expanded={ruleOpen}
+                      aria-controls={ruleId}
+                      onClick={() => toggleRule(result.symbol)}
+                      className={`inline-flex size-11 shrink-0 items-center justify-center rounded-lg print:hidden ${
+                        ruleOpen ? 'bg-accent text-accent-ink' : 'text-muted'
+                      }`}
+                    >
+                      <InfoIcon className="size-5" />
+                    </button>
+                  )}
+                </div>
                 {tool.hideHeading && index === 0 && <ClearInputsButton onClear={() => setRaw(defaults())} disabled={!changed} />}
               </div>
               {computed?.text !== undefined ? (
@@ -160,7 +186,15 @@ export function FactorCalculator({
                   {computed ? withUnit(formatResult(computed.value, result.decimals), result.unit) : '–'}
                 </p>
               )}
-              {computed && <p className="text-base text-muted">{renderSymbol(computed.rule)}</p>}
+              {computed &&
+                (tool.rulesBehindInfo ? (
+                  // Zugeklappt nur beim Drucken sichtbar, damit der Ausdruck den Rechenweg behält
+                  <p id={ruleId} className={`text-base text-muted ${ruleOpen ? '' : 'hidden print:block'}`}>
+                    {renderSymbol(computed.rule)}
+                  </p>
+                ) : (
+                  <p className="text-base text-muted">{renderSymbol(computed.rule)}</p>
+                ))}
               {complete && !computed && result.whenMissing && <p className="text-base text-muted">{result.whenMissing}</p>}
             </div>
           )

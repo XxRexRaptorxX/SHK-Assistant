@@ -142,6 +142,8 @@ export const factorToolSchema = defineEntrySchema({
   category: z.string().trim().default(''),
   /** Überschrift „Rechner“ weglassen; der Löschen-Knopf steht dann im Ergebnisfeld */
   hideHeading: z.boolean().optional(),
+  /** Rechenweg (`rule`) je Ergebnis hinter einem Info-Knopf statt sichtbar, z. B. bei vielen Ergebnissen mit langen Formeln */
+  rulesBehindInfo: z.boolean().optional(),
   /** Eingabefelder; leer, wenn das Ergebnis nur von der Auswahl abhängt */
   inputs: z.array(inputSchema).default([]),
   choices: z.array(choiceSchema).default([]),

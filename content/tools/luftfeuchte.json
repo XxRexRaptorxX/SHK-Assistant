@@ -2,15 +2,16 @@
   "id": "tool.luftfeuchte",
   "visibility": "public",
   "status": "draft",
-  "source": "Magnus-Formel über Wasser mit den Parametern nach Sonntag (1994) und Taupunkt aus relativer Feuchte und Temperatur (Gleichungen 10, 14 und 15): Wikipedia „Taupunkt“, Abschnitt „Abhängigkeiten“, https://de.wikipedia.org/wiki/Taupunkt. Absolute Luftfeuchtigkeit aus Dampfdruck, Gaskonstante des Wasserdampfs (461,52 J/(kg·K)) und absoluter Temperatur sowie relative Feuchte aus Dampfdruck und Sättigungsdampfdruck: Wikipedia „Luftfeuchtigkeit“, Abschnitte „Relative Luftfeuchtigkeit“ und „Dampfdichte“, https://de.wikipedia.org/wiki/Luftfeuchtigkeit. Testbeispiele: maximale Feuchte bei 10 °C und 30 °C aus „Luftfeuchtigkeit“, Abschnitt „Temperatur“; 7,6 g/m³ bei 34,4 °C und 6,8 °C aus „Luftfeuchtigkeit“, Abschnitt „Relative Luftfeuchtigkeit“; Taupunkte bei 18 °C/40 % und 22 °C/70 % aus „Taupunkt“, Abschnitt „Bauphysik“. Abgerufen am 06.11.2026.",
+  "source": "Magnus-Formel über Wasser mit den Parametern nach Sonntag (1994) und Taupunkt aus relativer Feuchte und Temperatur (Gleichungen 10, 14 und 15): Wikipedia „Taupunkt“, Abschnitt „Abhängigkeiten“, https://de.wikipedia.org/wiki/Taupunkt. Absolute Luftfeuchtigkeit aus Dampfdruck, Gaskonstante des Wasserdampfs (461,52 J/(kg·K)) und absoluter Temperatur sowie relative Feuchte aus Dampfdruck und Sättigungsdampfdruck: Wikipedia „Luftfeuchtigkeit“, Abschnitte „Relative Luftfeuchtigkeit“ und „Dampfdichte“, https://de.wikipedia.org/wiki/Luftfeuchtigkeit. Reifpunkt mit der Magnus-Formel über Eis (Parameter und Gültigkeit −65 °C bis 0 °C): Wikipedia „Sättigungsdampfdruck“, Abschnitt „Berechnung des Sättigungsdampfdrucks von Wasser über die Magnus-Formel“, https://de.wikipedia.org/wiki/S%C3%A4ttigungsdampfdruck, und „Taupunkt“, Abschnitt „Abhängigkeiten“; Begriff Reifpunkt: „Taupunkt“, Einleitung des Abschnitts „Physikalischer Hintergrund“. Testbeispiele: maximale Feuchte bei 10 °C und 30 °C aus „Luftfeuchtigkeit“, Abschnitt „Temperatur“; 7,6 g/m³ bei 34,4 °C und 6,8 °C aus „Luftfeuchtigkeit“, Abschnitt „Relative Luftfeuchtigkeit“; Taupunkte bei 18 °C/40 % und 22 °C/70 % aus „Taupunkt“, Abschnitt „Bauphysik“; Reifpunkte aus den Sättigungsdampfdrücken über Eis und über Wasser bei −10 °C, −20 °C und −30 °C nach Sonntag (1982) in Wikibooks „Tabellensammlung Chemie/ Stoffdaten Wasser“, Abschnitt „Sättigungsdampfdruck“, https://de.wikibooks.org/wiki/Tabellensammlung_Chemie/_Stoffdaten_Wasser. Abgerufen am 06.11.2026.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "factor",
   "title": "Luftfeuchte und Taupunkt",
-  "summary": "Rechnet relative in absolute Luftfeuchte um und umgekehrt, dazu den Taupunkt.",
-  "description": "Oben wählen, welche Feuchte bekannt ist, dann Lufttemperatur und Feuchte eingeben. Das Tool zeigt die jeweils andere Feuchte, den Taupunkt sowie Sättigungswerte und Dampfdruck. Absolute Feuchte meint hier die Wasserdampfmenge je Kubikmeter Luft in g/m³, nicht den Wassergehalt in g/kg trockener Luft. Gerechnet wird mit der Magnus-Formel über Wasser, gültig von −45 °C bis 60 °C; unter 0 °C gilt sie für unterkühltes Wasser, nicht über Eis. Kühlt eine Oberfläche unter den Taupunkt der Raumluft ab, kann sich dort Kondenswasser bilden.",
+  "summary": "Rechnet relative in absolute Luftfeuchte um und umgekehrt, dazu Taupunkt und Reifpunkt.",
+  "description": "Oben wählen, welche Feuchte bekannt ist, dann Lufttemperatur und Feuchte eingeben. Das Tool zeigt die jeweils andere Feuchte, den Taupunkt sowie Sättigungswerte und Dampfdruck. Absolute Feuchte meint hier die Wasserdampfmenge je Kubikmeter Luft in g/m³, nicht den Wassergehalt in g/kg trockener Luft. Gerechnet wird mit der Magnus-Formel über Wasser, gültig von −45 °C bis 60 °C; relative Feuchte und Taupunkt beziehen sich auch unter 0 °C auf Wasser. Kühlt eine Oberfläche unter den Taupunkt der Raumluft ab, kann sich dort Kondenswasser bilden. Liegt der Taupunkt unter 0 °C, bildet sich stattdessen Reif; der Reifpunkt kommt aus der Magnus-Formel über Eis und liegt etwas über dem Taupunkt.",
   "category": "Wartung",
   "hideHeading": true,
+  "rulesBehindInfo": true,
   "inputs": [
     {
       "symbol": "t",
@@ -150,6 +151,30 @@
       ]
     },
     {
+      "symbol": "tauRaw",
+      "name": "Taupunkt (Zwischenwert)",
+      "unit": "°C",
+      "hidden": true,
+      "cases": [
+        {
+          "expression": "243.12 * log(pv / 6.112) / (17.62 - log(pv / 6.112))",
+          "rule": "Umkehrung der Magnus-Formel über Wasser"
+        }
+      ]
+    },
+    {
+      "symbol": "tauIRaw",
+      "name": "Reifpunkt (Zwischenwert)",
+      "unit": "°C",
+      "hidden": true,
+      "cases": [
+        {
+          "expression": "272.62 * log(pv / 6.112) / (22.46 - log(pv / 6.112))",
+          "rule": "Umkehrung der Magnus-Formel über Eis"
+        }
+      ]
+    },
+    {
       "symbol": "tau",
       "label": "τ",
       "name": "Taupunkt",
@@ -157,8 +182,44 @@
       "decimals": 1,
       "cases": [
         {
-          "expression": "243.12 * log(pv / 6.112) / (17.62 - log(pv / 6.112))",
+          "of": "tauRaw",
+          "upTo": -45,
+          "text": "Unter −45 °C",
+          "rule": "Außerhalb des Bereichs der Magnus-Formel über Wasser (−45 °C bis 60 °C)."
+        },
+        {
+          "of": "tauRaw",
+          "above": -45,
+          "expression": "tauRaw",
           "rule": "Umkehrung der Magnus-Formel: τ = 243,12 °C · ln(e / 6,112 hPa) / (17,62 − ln(e / 6,112 hPa))"
+        }
+      ]
+    },
+    {
+      "symbol": "tauI",
+      "label": "τ_i",
+      "name": "Reifpunkt",
+      "unit": "°C",
+      "decimals": 1,
+      "cases": [
+        {
+          "of": "tauIRaw",
+          "upTo": -65,
+          "text": "Unter −65 °C",
+          "rule": "Außerhalb des Bereichs der Magnus-Formel über Eis (−65 °C bis 0 °C)."
+        },
+        {
+          "of": "tauIRaw",
+          "above": -65,
+          "upTo": 0,
+          "expression": "tauIRaw",
+          "rule": "Umkehrung der Magnus-Formel über Eis: τ_i = 272,62 °C · ln(e / 6,112 hPa) / (22,46 − ln(e / 6,112 hPa))"
+        },
+        {
+          "of": "tauIRaw",
+          "above": 0,
+          "text": "Kein Reif",
+          "rule": "Der Taupunkt liegt über 0 °C: Der Wasserdampf schlägt sich als Tau nieder, nicht als Reif."
         }
       ]
     },
@@ -298,6 +359,48 @@
       },
       "tolerance": 0.01,
       "note": "Wikipedia „Luftfeuchtigkeit“, Abschnitt „Relative Luftfeuchtigkeit“: dieselben 7,6 g/m³ sind bei 6,8 °C 100 % (Magnus: 99,5 %)"
+    },
+    {
+      "inputs": {
+        "t": -10,
+        "phi": 90.61
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "tauI": -10
+      },
+      "tolerance": 0.002,
+      "note": "Wikibooks-Tabelle nach Sonntag: bei −10 °C über Eis 259,66 Pa, über Wasser 286,57 Pa. Bei φ = 259,66 / 286,57 = 90,61 % ist die Luft über Eis gesättigt, der Reifpunkt also −10 °C (Magnus: −9,99 °C)"
+    },
+    {
+      "inputs": {
+        "t": -20,
+        "phi": 82.03
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "tauI": -20
+      },
+      "tolerance": 0.002,
+      "note": "Wikibooks-Tabelle nach Sonntag: bei −20 °C über Eis 103,06 Pa, über Wasser 125,63 Pa, also φ = 82,03 % und Reifpunkt −20 °C"
+    },
+    {
+      "inputs": {
+        "t": -30,
+        "phi": 74.23
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "tauI": -30
+      },
+      "tolerance": 0.002,
+      "note": "Wikibooks-Tabelle nach Sonntag: bei −30 °C über Eis 37,903 Pa, über Wasser 51,06 Pa, also φ = 74,23 % und Reifpunkt −30 °C"
     }
   ]
 }
