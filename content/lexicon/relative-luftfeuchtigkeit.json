@@ -20,5 +20,8 @@
     "lexicon.taupunkt",
     "lexicon.lueftungsanlage",
     "lexicon.raumluftqualitaet"
+  ],
+  "tools": [
+    "tool.luftfeuchte"
   ]
 }

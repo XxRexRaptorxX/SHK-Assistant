@@ -1,0 +1,303 @@
+{
+  "id": "tool.luftfeuchte",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Magnus-Formel über Wasser mit den Parametern nach Sonntag (1994) und Taupunkt aus relativer Feuchte und Temperatur (Gleichungen 10, 14 und 15): Wikipedia „Taupunkt“, Abschnitt „Abhängigkeiten“, https://de.wikipedia.org/wiki/Taupunkt. Absolute Luftfeuchtigkeit aus Dampfdruck, Gaskonstante des Wasserdampfs (461,52 J/(kg·K)) und absoluter Temperatur sowie relative Feuchte aus Dampfdruck und Sättigungsdampfdruck: Wikipedia „Luftfeuchtigkeit“, Abschnitte „Relative Luftfeuchtigkeit“ und „Dampfdichte“, https://de.wikipedia.org/wiki/Luftfeuchtigkeit. Testbeispiele: maximale Feuchte bei 10 °C und 30 °C aus „Luftfeuchtigkeit“, Abschnitt „Temperatur“; 7,6 g/m³ bei 34,4 °C und 6,8 °C aus „Luftfeuchtigkeit“, Abschnitt „Relative Luftfeuchtigkeit“; Taupunkte bei 18 °C/40 % und 22 °C/70 % aus „Taupunkt“, Abschnitt „Bauphysik“. Abgerufen am 06.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Luftfeuchte und Taupunkt",
+  "summary": "Rechnet relative in absolute Luftfeuchte um und umgekehrt, dazu den Taupunkt.",
+  "description": "Oben wählen, welche Feuchte bekannt ist, dann Lufttemperatur und Feuchte eingeben. Das Tool zeigt die jeweils andere Feuchte, den Taupunkt sowie Sättigungswerte und Dampfdruck. Absolute Feuchte meint hier die Wasserdampfmenge je Kubikmeter Luft in g/m³, nicht den Wassergehalt in g/kg trockener Luft. Gerechnet wird mit der Magnus-Formel über Wasser, gültig von −45 °C bis 60 °C; unter 0 °C gilt sie für unterkühltes Wasser, nicht über Eis. Kühlt eine Oberfläche unter den Taupunkt der Raumluft ab, kann sich dort Kondenswasser bilden.",
+  "category": "Wartung",
+  "hideHeading": true,
+  "inputs": [
+    {
+      "symbol": "t",
+      "label": "ϑ",
+      "name": "Lufttemperatur",
+      "unit": "°C",
+      "min": -45,
+      "max": 60
+    },
+    {
+      "symbol": "phi",
+      "label": "φ",
+      "name": "Relative Luftfeuchtigkeit",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "when": {
+        "gegeben": "relativ"
+      }
+    },
+    {
+      "symbol": "rho",
+      "label": "ρ_w",
+      "name": "Absolute Luftfeuchtigkeit",
+      "unit": "g/m³",
+      "min": 0,
+      "when": {
+        "gegeben": "absolut"
+      }
+    }
+  ],
+  "choices": [
+    {
+      "key": "gegeben",
+      "name": "Bekannt ist die",
+      "top": true,
+      "options": [
+        {
+          "key": "relativ",
+          "label": "Relative Feuchte"
+        },
+        {
+          "key": "absolut",
+          "label": "Absolute Feuchte"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "Es",
+      "name": "Sättigungsdampfdruck (Zwischenwert)",
+      "unit": "hPa",
+      "hidden": true,
+      "cases": [
+        {
+          "expression": "6.112 * exp(17.62 * t / (243.12 + t))",
+          "rule": "Magnus-Formel über Wasser"
+        }
+      ]
+    },
+    {
+      "symbol": "pv",
+      "name": "Wasserdampfdruck (Zwischenwert)",
+      "unit": "hPa",
+      "hidden": true,
+      "cases": [
+        {
+          "when": {
+            "gegeben": "relativ"
+          },
+          "expression": "phi / 100 * Es",
+          "rule": "e = φ · p_s"
+        },
+        {
+          "when": {
+            "gegeben": "absolut"
+          },
+          "expression": "rho / 1000 * 461.52 * (t + 273.15) / 100",
+          "rule": "e = ρ_w · R_w · T"
+        }
+      ]
+    },
+    {
+      "symbol": "phiRaw",
+      "name": "Relative Luftfeuchtigkeit (Zwischenwert)",
+      "unit": "%",
+      "hidden": true,
+      "when": {
+        "gegeben": "absolut"
+      },
+      "cases": [
+        {
+          "expression": "pv / Es * 100",
+          "rule": "φ = e / p_s · 100 %"
+        }
+      ]
+    },
+    {
+      "symbol": "rhoW",
+      "label": "ρ_w",
+      "name": "Absolute Luftfeuchtigkeit",
+      "unit": "g/m³",
+      "decimals": 2,
+      "when": {
+        "gegeben": "relativ"
+      },
+      "cases": [
+        {
+          "expression": "pv * 100 / (461.52 * (t + 273.15)) * 1000",
+          "rule": "ρ_w = e / (R_w · T) mit e = φ · p_s, R_w = 461,52 J/(kg·K) und T = ϑ + 273,15 K"
+        }
+      ]
+    },
+    {
+      "symbol": "phiOut",
+      "label": "φ",
+      "name": "Relative Luftfeuchtigkeit",
+      "unit": "%",
+      "decimals": 1,
+      "when": {
+        "gegeben": "absolut"
+      },
+      "cases": [
+        {
+          "of": "phiRaw",
+          "upTo": 100,
+          "expression": "phiRaw",
+          "rule": "φ = e / p_s · 100 % mit e = ρ_w · R_w · T, R_w = 461,52 J/(kg·K) und T = ϑ + 273,15 K"
+        },
+        {
+          "of": "phiRaw",
+          "above": 100,
+          "text": "Über 100 %",
+          "rule": "Mehr Wasserdampf, als die Luft bei dieser Temperatur aufnehmen kann: Eingaben prüfen. Die maximale Feuchte steht unten."
+        }
+      ]
+    },
+    {
+      "symbol": "tau",
+      "label": "τ",
+      "name": "Taupunkt",
+      "unit": "°C",
+      "decimals": 1,
+      "cases": [
+        {
+          "expression": "243.12 * log(pv / 6.112) / (17.62 - log(pv / 6.112))",
+          "rule": "Umkehrung der Magnus-Formel: τ = 243,12 °C · ln(e / 6,112 hPa) / (17,62 − ln(e / 6,112 hPa))"
+        }
+      ]
+    },
+    {
+      "symbol": "rhoMax",
+      "label": "ρ_max",
+      "name": "Maximale Feuchte bei dieser Temperatur (Sättigung)",
+      "unit": "g/m³",
+      "decimals": 2,
+      "cases": [
+        {
+          "expression": "Es * 100 / (461.52 * (t + 273.15)) * 1000",
+          "rule": "ρ_max = p_s / (R_w · T), also die absolute Feuchte bei φ = 100 %"
+        }
+      ]
+    },
+    {
+      "symbol": "ps",
+      "label": "p_s",
+      "name": "Sättigungsdampfdruck",
+      "unit": "hPa",
+      "decimals": 1,
+      "cases": [
+        {
+          "expression": "Es",
+          "rule": "Magnus-Formel über Wasser: p_s = 6,112 hPa · exp(17,62 · ϑ / (243,12 °C + ϑ))"
+        }
+      ]
+    },
+    {
+      "symbol": "pD",
+      "label": "e",
+      "name": "Wasserdampfdruck",
+      "unit": "hPa",
+      "decimals": 1,
+      "cases": [
+        {
+          "when": {
+            "gegeben": "relativ"
+          },
+          "expression": "pv",
+          "rule": "e = φ · p_s"
+        },
+        {
+          "when": {
+            "gegeben": "absolut"
+          },
+          "expression": "pv",
+          "rule": "e = ρ_w · R_w · T"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": {
+        "t": 10,
+        "phi": 100
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "rhoW": 9.41,
+        "rhoMax": 9.41,
+        "tau": 10
+      },
+      "tolerance": 0.005,
+      "note": "Wikipedia „Luftfeuchtigkeit“: bei 10 °C maximal 9,41 g Wasser je m³ (Tabellenwert; Magnus ergibt 9,38 g/m³)"
+    },
+    {
+      "inputs": {
+        "t": 30,
+        "phi": 100
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "rhoW": 30.38
+      },
+      "tolerance": 0.005,
+      "note": "Wikipedia „Luftfeuchtigkeit“: bei 30 °C maximal 30,38 g Wasser je m³ (Tabellenwert; Magnus ergibt 30,26 g/m³)"
+    },
+    {
+      "inputs": {
+        "t": 22,
+        "phi": 70
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "tau": 16
+      },
+      "tolerance": 0.02,
+      "note": "Wikipedia „Taupunkt“: 22 °C und 70 % ergeben einen Taupunkt von ca. 16 °C (Magnus: 16,3 °C)"
+    },
+    {
+      "inputs": {
+        "t": 18,
+        "phi": 40
+      },
+      "choices": {
+        "gegeben": "relativ"
+      },
+      "expected": {
+        "tau": 4
+      },
+      "tolerance": 0.05,
+      "note": "Wikipedia „Taupunkt“: 18 °C und 40 % ergeben einen Taupunkt von rund 4 °C (Magnus: 4,2 °C)"
+    },
+    {
+      "inputs": {
+        "t": 34.4,
+        "rho": 7.6
+      },
+      "choices": {
+        "gegeben": "absolut"
+      },
+      "expected": {
+        "phiOut": 20
+      },
+      "tolerance": 0.01,
+      "note": "Wikipedia „Luftfeuchtigkeit“, Abschnitt „Relative Luftfeuchtigkeit“: 7,6 g Wasserdampf je m³ sind bei 34,4 °C 20 % (Magnus: 19,9 %)"
+    },
+    {
+      "inputs": {
+        "t": 6.8,
+        "rho": 7.6
+      },
+      "choices": {
+        "gegeben": "absolut"
+      },
+      "expected": {
+        "phiOut": 100
+      },
+      "tolerance": 0.01,
+      "note": "Wikipedia „Luftfeuchtigkeit“, Abschnitt „Relative Luftfeuchtigkeit“: dieselben 7,6 g/m³ sind bei 6,8 °C 100 % (Magnus: 99,5 %)"
+    }
+  ]
+}

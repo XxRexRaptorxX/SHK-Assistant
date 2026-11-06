@@ -119,7 +119,7 @@ export function FactorCalculator({
             <div key={input.symbol}>
               <label htmlFor={inputId} className="block font-semibold">
                 {input.name}
-                {input.label && <span className="font-normal text-muted"> ({input.label})</span>}
+                {input.label && <span className="font-normal text-muted"> ({renderSymbol(input.label)})</span>}
               </label>
               <div className="mt-1 flex items-center gap-2">
                 <input
@@ -160,7 +160,7 @@ export function FactorCalculator({
                   {computed ? withUnit(formatResult(computed.value, result.decimals), result.unit) : '–'}
                 </p>
               )}
-              {computed && <p className="text-base text-muted">{computed.rule}</p>}
+              {computed && <p className="text-base text-muted">{renderSymbol(computed.rule)}</p>}
               {complete && !computed && result.whenMissing && <p className="text-base text-muted">{result.whenMissing}</p>}
             </div>
           )

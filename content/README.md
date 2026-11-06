@@ -226,14 +226,16 @@ oder Dämmdicke nach Rohrdurchmesser. Felder:
   „keine Anforderung“), `expression` (Rechenausdruck ohne Einheiten mit Eingaben und vorherigen
   Ergebnissen) oder `table` (Nachschlagetabelle: `rowOf` und `colOf` nennen die Größen, `rows` und `cols`
   die aufsteigenden Grenzen, `values` die Werte je Zeile, `beyond` den Text über der letzten Grenze; bei
-  Zwischenwerten gilt die nächsthöhere Grenze). Dazu `rule`: der Richtwert in Worten wie in der Quelle. Hängt ein Ergebnis von der
+  Zwischenwerten gilt die nächsthöhere Grenze). Dazu `rule`: der Richtwert in Worten wie in der Quelle
+  (Indizes in Formelzeichen wie bei `label` mit Unterstrich, z. B. `p_s`). Hängt ein Ergebnis von der
   Größe eines Werts ab (z. B. Dämmdicke vom Innendurchmesser), grenzen `above` (über,
   ausschließlich) und `upTo` (bis, einschließlich) den Bereich ein; `of` nennt den Wert (Standard:
   erste Eingabe). Die Bereiche müssen lückenlos aneinander anschließen. Optional je Ergebnis: `hidden`
   (nur Zwischenwert für spätere Ergebnisse, wird nicht angezeigt), `whenMissing` (Hinweis, solange das
   Ergebnis offen ist, weil optionale Felder fehlen), `when` und `unless` (Ergebnis nur bei dieser bzw. nicht
   bei dieser Auswahl berechnen und anzeigen).
-- `examples`: Testbeispiele mit `inputs`, `choices` und `expected` je Ergebnis-Symbol.
+- `examples`: Testbeispiele mit `inputs`, `choices` und `expected` je Ergebnis-Symbol, optional `tolerance`
+  (relativ, Standard 0.001 = 0,1 %; größer nur, wenn die Quelle gerundete Werte nennt, z. B. „rund 4 °C“).
 
 Der Build prüft, dass für jede Kombination genau ein Fall passt, dass Ausdrücke nur bekannte Größen
 nutzen, und rechnet die Beispiele nach. Lange Wörter in `label` dürfen eine weiche Trennstelle

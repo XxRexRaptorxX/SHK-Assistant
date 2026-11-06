@@ -18,5 +18,8 @@
     "lexicon.relative-luftfeuchtigkeit",
     "lexicon.kondensat",
     "lexicon.rohrdaemmung"
+  ],
+  "tools": [
+    "tool.luftfeuchte"
   ]
 }

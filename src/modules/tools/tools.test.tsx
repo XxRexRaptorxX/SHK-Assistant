@@ -62,6 +62,7 @@ describe('Tools', () => {
       'Kabelarten',
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Luftdruck aus der Höhe',
+      'Luftfeuchte und Taupunkt',
       'Material zurückschreiben',
       'Mehrverbrauch durch Ruß im Kessel',
       'Mindestdämmdicke von Rohrleitungen',
@@ -404,7 +405,7 @@ describe('Tools', () => {
       ...tool,
       choices: tool.choices.filter((choice) => choice.key === 'nutzung' || choice.key === 'kollektor'),
       results: [{ ...area!, cases: area!.cases.slice(1) }, { ...storage!, cases: [{ ...storage!.cases[0]!, when: {}, per: 'X' }] }],
-      examples: [{ inputs: { n: 1 }, choices: { nutzung: 'warmwasser', kollektor: 'vakuum' }, expected: { A: 2 } }],
+      examples: [{ inputs: { n: 1 }, choices: { nutzung: 'warmwasser', kollektor: 'vakuum' }, expected: { A: 2 }, tolerance: 0.001 }],
     }
     expect(checkFactorTool(broken)).toEqual([
       'results (A): kein Faktor für warmwasser + flach',

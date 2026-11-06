@@ -129,6 +129,8 @@ const exampleSchema = z.strictObject({
   choices: z.record(z.string(), z.string()),
   /** Erwartete Ergebnisse je Symbol: Zahl oder Text (z. B. „keine Anforderung“) */
   expected: z.record(z.string(), z.union([z.number(), z.string()])),
+  /** Erlaubte relative Abweichung der Zahlen, Standard 0,1 %; größer z. B. bei gerundeten Werten aus der Quelle */
+  tolerance: z.number().positive().max(0.1).default(0.001),
   note: z.string().optional(),
 })
 
@@ -408,7 +410,7 @@ export function checkFactorTool(entry: FactorTool): string[] {
       const ok =
         typeof expected === 'string'
           ? actual?.text === expected
-          : actual?.value !== undefined && Math.abs(actual.value - expected) <= Math.abs(expected) * 0.001
+          : actual?.value !== undefined && Math.abs(actual.value - expected) <= Math.abs(expected) * example.tolerance
       if (!ok) {
         issues.push(`examples[${index}]: ${resultSymbol} ergibt ${actual?.value ?? actual?.text ?? 'nichts'}, erwartet ${expected}`)
       }

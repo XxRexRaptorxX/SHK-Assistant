@@ -19,5 +19,8 @@
     "lexicon.relative-luftfeuchtigkeit",
     "lexicon.taupunkt",
     "lexicon.entfeuchtung"
+  ],
+  "tools": [
+    "tool.luftfeuchte"
   ]
 }
