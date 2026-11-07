@@ -214,6 +214,35 @@ Die Werte werden unverändert aus der Quelle übernommen, auch wenn ein Schritt 
 Namen, die Zahl der Drücke, Lücken mitten in der Tabelle und dass der Druck mit der Temperatur steigt (sonst wäre die
 Umrechnung vom Druck zur Temperatur nicht eindeutig).
 
+**Aufstellungs-Tools** (`"kind": "placement"`) zeigen zu Kältemittel, Aufstellort und Umgebung eines Außengeräts die
+Vorgaben aus einem herstellerübergreifenden Leitfaden (z. B. BWP). Maße von Schutzbereich und Mindestabständen sind
+herstellerspezifisch und stehen deshalb nur in Beispielen aus Herstelleranleitungen, deutlich als Beispiel gekennzeichnet und
+eingeklappt. Das Tool bewertet nichts selbst: Vorgaben der Stufe „Nicht zulässig“, die über den Aufstellort oder ein gewähltes
+Merkmal zutreffen, stehen oben; sonst steht dort nur, dass keine Angabe als nicht zulässig genannt ist. Gleiche Vorgaben (gleicher
+`text`) erscheinen nur einmal. Felder: `title`, `summary`, `description`, `category`, `closingNote` (z. B. dass die
+Herstelleranleitung vorgeht), optional `keywords` und:
+
+- `deviceTypes`: Leiste oben, je `key`, `label` (z. B. „Wärmepumpe“) und, solange der Leitfaden den Typ nicht abdeckt, `todo`
+  (beginnt mit `TODO: Inhalt fehlt`; bei `verified` nicht erlaubt).
+- `refrigerants`: Kältemittel nach Sicherheitsgruppe, je `key`, `label` (z. B. „A3“), optional `note` (z. B. „R290 (Propan)“), `aliases`.
+- `locations`: Aufstellorte, je `key`, `label`, optional `note`, `aliases` und `walls` (`back` = Wand hinter der Ansaugseite,
+  `left` = Wand daneben; nur für die Skizze).
+- `features`: Umgebungsmerkmale zum Antippen, je `key`, `group` (Überschrift in der Auswahl), `label`, optional `note`, `aliases`.
+  Jedes Merkmal muss in mindestens einer Vorgabe vorkommen.
+- `guide`: `name` (Kurzname vor den Seitenangaben, z. B. „BWP-Leitfaden“), `source` (Herausgeber, Titel, Stand), `deviceTypes`
+  (abgedeckte Gerätetypen), optional `zone` (`name`, `refrigerants` = für welche Gruppen er gilt, `description`, `page`; ohne Maße,
+  die Skizze zeigt nur die Form) und `rules`.
+- `examples`: Beispiele aus Herstelleranleitungen, je Geräteserie: `key`, `type`, `refrigerant` (Gruppen-key), `manufacturer`,
+  `series`, `refrigerantName` (z. B. „R290“), `source`, optional `zone` (`name`, `meters`, `byLocation` mit abweichendem Abstand je
+  Aufstellort, `description`, `page`), `clearances` (je `label`, `value` wie in der Quelle, optional `meters` mit `side` = `intake`,
+  `exhaust`, `side` oder `top` für die Skizze, `note`, `page`) und `rules` (ohne `refrigerants`).
+
+Eine Vorgabe (`rules`) hat `level` (`forbidden`, `required`, `avoid`, `recommended` oder `note`), `text` als eigene Kurzfassung,
+`page` und optional `refrigerants` (gilt nur für diese Gruppen), `locations` (gilt nur dort) und `features` (betrifft diese Merkmale);
+ohne `locations` und `features` gilt sie immer. Keine Texte oder Bilder aus den Quellen übernehmen, nur Werte, eigene Kurzfassungen
+und Seitenangaben. Der Build prüft unbekannte Gerätetypen, Kältemittel, Aufstellorte und Merkmale, doppelte Schlüssel, Merkmale
+ohne Vorgabe und Gerätetypen ohne Leitfaden und ohne `todo`.
+
 **Stundenzettel** (`"kind": "workHours"`) notiert Arbeitsstunden je Bauvorhaben und exportiert sie. Felder: `title`, `summary`,
 `description`, `category`, `closingNote` (Hinweis am Ende des Tools, z. B. wo die Daten bleiben) und optional `keywords`
 (Suchbegriffe). In der unteren Leiste steht das Tool zusätzlich als eigener Reiter (`workHoursNavItem` in `src/app/modules.ts`);

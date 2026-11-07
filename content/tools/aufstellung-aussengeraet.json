@@ -1,0 +1,881 @@
+{
+  "id": "tool.aufstellung-aussengeraet",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Bundesverband Wärmepumpe (BWP) e. V., Leitfaden „Außenaufstellung von Wärmepumpen mit brennbaren Kältemitteln“, Stand 26.07.2021, S. 3–8 (gelesen in der Fassung unter https://www.windhager.com/fileadmin/PDF_Documents/Landingpage_Waermepumpe/BWP_LF_Kaeltemittel_WEB.pdf, abgerufen am 07.11.2026). Beispiel: iDM, Montage- und Betriebsanleitung AERO ALM 2-18, Kapitel 4 „Aufstellung“, S. 39–47 (Auszug als PDF vom Inhaber am 07.11.2026 bereitgestellt). Vorgaben eigenständig zusammengefasst.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "placement",
+  "title": "Aufstellung Außengerät Wärmepumpe und Klimagerät",
+  "summary": "Zeigt zu Kältemittel, Aufstellort und Umgebung, was im Schutzbereich nicht liegen darf und was bei der Aufstellung gilt.",
+  "description": "Kältemittel des Geräts wählen, dann angeben, wo das Außengerät stehen soll und was sich in der Nähe befindet. Die allgemeinen Vorgaben stammen aus dem Leitfaden des Bundesverbands Wärmepumpe. Für die Außenaufstellung gibt es keine offiziellen Vorschriften, und die Maße von Schutzbereich und Mindestabständen legt der Hersteller fest. Sie stehen deshalb nur im Beispiel aus einer Herstelleranleitung.",
+  "category": "Montage",
+  "closingNote": "Der Leitfaden ist nicht rechtsverbindlich; die Angaben des Herstellers gehen immer vor. Maßgeblich ist die Anleitung des eingebauten Geräts in der aktuellen Ausgabe. Örtliche Vorschriften, z. B. zu Brandschutz, Schallschutz und Grenzabständen, gelten zusätzlich.",
+  "keywords": [
+    "Aufstellung",
+    "Außengerät",
+    "Außeneinheit",
+    "Platzierung",
+    "Standort",
+    "Mindestabstand",
+    "Luft-Wasser-Wärmepumpe",
+    "Klimaanlage",
+    "Split-Gerät",
+    "BWP",
+    "Bundesverband Wärmepumpe",
+    "brennbare Kältemittel"
+  ],
+  "deviceTypes": [
+    {
+      "key": "heatPump",
+      "label": "Wärmepumpe"
+    },
+    {
+      "key": "airConditioner",
+      "label": "Klimagerät",
+      "todo": "TODO: Inhalt fehlt – der Leitfaden behandelt nur Wärmepumpen. Für Klimageräte wird eine passende Quelle benötigt."
+    }
+  ],
+  "refrigerants": [
+    {
+      "key": "a3",
+      "label": "A3",
+      "note": "R290 (Propan)",
+      "aliases": [
+        "R290",
+        "Propan",
+        "leicht entflammbar"
+      ]
+    },
+    {
+      "key": "a2l",
+      "label": "A2L",
+      "note": "R32, R454B, R454C",
+      "aliases": [
+        "R32",
+        "R454B",
+        "R454C",
+        "schwer entflammbar"
+      ]
+    },
+    {
+      "key": "a1",
+      "label": "A1",
+      "note": "R410A, R134a, R407C",
+      "aliases": [
+        "R410A",
+        "R134a",
+        "R407C",
+        "R404A",
+        "nicht brennbar"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "key": "free",
+      "label": "Freistehend",
+      "note": "Garten, Hof",
+      "aliases": [
+        "Garten",
+        "Bodenaufstellung"
+      ]
+    },
+    {
+      "key": "wall",
+      "label": "Vor einer Wand",
+      "note": "am Boden",
+      "walls": [
+        "back"
+      ],
+      "aliases": [
+        "Wandaufstellung"
+      ]
+    },
+    {
+      "key": "corner",
+      "label": "In einer Ecke",
+      "note": "zwei Wände",
+      "walls": [
+        "back",
+        "left"
+      ],
+      "aliases": [
+        "Eckaufstellung",
+        "Gebäudeecke"
+      ]
+    },
+    {
+      "key": "wallMount",
+      "label": "An der Wand",
+      "note": "Wandkonsole",
+      "walls": [
+        "back"
+      ],
+      "aliases": [
+        "Wandkonsole",
+        "wandhängend"
+      ]
+    },
+    {
+      "key": "flatRoof",
+      "label": "Auf dem Dach",
+      "note": "Flach- oder Pultdach",
+      "aliases": [
+        "Flachdach",
+        "Pultdach",
+        "Dachaufstellung",
+        "Attika"
+      ]
+    },
+    {
+      "key": "garage",
+      "label": "In Garage o. Ä.",
+      "note": "Parkhaus, Nebengebäude",
+      "aliases": [
+        "Garage",
+        "Tiefgarage",
+        "Parkhaus",
+        "Innenaufstellung",
+        "Wirtschaftsgebäude",
+        "Carport"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "key": "opening",
+      "group": "Im Umkreis des Geräts",
+      "label": "Fenster, Tür, Lichtschacht oder Lüftungsöffnung",
+      "note": "auch Flachdachfenster, Dachentlüfter",
+      "aliases": [
+        "Gebäudeöffnung",
+        "Lichtschacht",
+        "Kellerschacht",
+        "Dachfenster",
+        "Dachentlüfter"
+      ]
+    },
+    {
+      "key": "ignition",
+      "group": "Im Umkreis des Geräts",
+      "label": "Steckdose, Leuchte, Schalter oder andere Zündquelle",
+      "note": "auch Hausanschluss, PV-Anlage, heiße Oberflächen",
+      "aliases": [
+        "Zündquelle",
+        "Hausanschluss",
+        "Photovoltaik",
+        "PV-Anlage",
+        "Außensteckdose"
+      ]
+    },
+    {
+      "key": "drain",
+      "group": "Im Umkreis des Geräts",
+      "label": "Gully, Abwasser- oder Pumpenschacht",
+      "aliases": [
+        "Gully",
+        "Kanaleinlauf",
+        "Pumpenschacht",
+        "Abwasserschacht"
+      ]
+    },
+    {
+      "key": "gutter",
+      "group": "Im Umkreis des Geräts",
+      "label": "Dachrinne, Fallrohr oder Wasserleitung",
+      "aliases": [
+        "Regenrinne",
+        "Dachentwässerung",
+        "Regentonne"
+      ]
+    },
+    {
+      "key": "path",
+      "group": "Im Umkreis des Geräts",
+      "label": "Gehweg, Zufahrt oder Fahrweg",
+      "aliases": [
+        "Gehweg",
+        "Einfahrt"
+      ]
+    },
+    {
+      "key": "parking",
+      "group": "Im Umkreis des Geräts",
+      "label": "Parkplatz oder Stellplatz",
+      "aliases": [
+        "Parkplatz",
+        "Stellplatz",
+        "Anfahrschutz",
+        "Rammschutz"
+      ]
+    },
+    {
+      "key": "boundary",
+      "group": "Im Umkreis des Geräts",
+      "label": "Grundstücksgrenze",
+      "aliases": [
+        "Nachbargrundstück",
+        "Grenzabstand"
+      ]
+    },
+    {
+      "key": "seating",
+      "group": "Im Umkreis des Geräts",
+      "label": "Terrasse oder Sitzplatz",
+      "aliases": [
+        "Aufenthaltsbereich"
+      ]
+    },
+    {
+      "key": "bedroom",
+      "group": "Im Umkreis des Geräts",
+      "label": "Wohn- oder Schlafraum direkt dahinter",
+      "aliases": [
+        "Schall",
+        "Schlafzimmer",
+        "Lärm"
+      ]
+    },
+    {
+      "key": "fireLoad",
+      "group": "Im Umkreis des Geräts",
+      "label": "Brennbares in der Nähe",
+      "note": "z. B. Holzlager, Mülltonnen",
+      "aliases": [
+        "Brandlast",
+        "Brandschutz"
+      ]
+    },
+    {
+      "key": "vegetation",
+      "group": "Im Umkreis des Geräts",
+      "label": "Gras, Laub oder Büsche direkt am Gerät",
+      "aliases": [
+        "Nagetiere",
+        "Laub",
+        "Hecke"
+      ]
+    },
+    {
+      "key": "depression",
+      "group": "Gelände und Bauweise",
+      "label": "Senke, Mulde oder tiefer liegender Bereich",
+      "aliases": [
+        "Senke",
+        "Bodensenke",
+        "Kessel",
+        "Mulde"
+      ]
+    },
+    {
+      "key": "elevated",
+      "group": "Gelände und Bauweise",
+      "label": "Erhöht, z. B. auf einem Hügel oder einer Böschung",
+      "aliases": [
+        "Geländeerhebung",
+        "Hang"
+      ]
+    },
+    {
+      "key": "niche",
+      "group": "Gelände und Bauweise",
+      "label": "Mauernische, Innenhof oder kaum belüftet",
+      "aliases": [
+        "Nische",
+        "Innenhof"
+      ]
+    },
+    {
+      "key": "roofed",
+      "group": "Gelände und Bauweise",
+      "label": "Überdacht oder auf mehreren Seiten eingefasst",
+      "aliases": [
+        "Überdachung",
+        "Einfassung"
+      ]
+    },
+    {
+      "key": "enclosure",
+      "group": "Gelände und Bauweise",
+      "label": "Schallschutzhaube oder Einhausung geplant",
+      "aliases": [
+        "Schallhaube",
+        "Einhausung",
+        "Verkleidung"
+      ]
+    },
+    {
+      "key": "windy",
+      "group": "Gelände und Bauweise",
+      "label": "Windanfälliger Standort",
+      "aliases": [
+        "Wind",
+        "Windrichtung"
+      ]
+    },
+    {
+      "key": "coast",
+      "group": "Gelände und Bauweise",
+      "label": "Nähe zur Küste",
+      "aliases": [
+        "Küste",
+        "Meer",
+        "Salzluft"
+      ]
+    },
+    {
+      "key": "multiple",
+      "group": "Gelände und Bauweise",
+      "label": "Mehrere Außengeräte nebeneinander",
+      "aliases": [
+        "Kaskade",
+        "mehrere Wärmepumpen"
+      ]
+    }
+  ],
+  "guide": {
+    "name": "BWP-Leitfaden",
+    "source": "Bundesverband Wärmepumpe (BWP) e. V., Leitfaden „Außenaufstellung von Wärmepumpen mit brennbaren Kältemitteln“, Stand 26.07.2021",
+    "deviceTypes": [
+      "heatPump"
+    ],
+    "zone": {
+      "name": "Schutzbereich",
+      "refrigerants": [
+        "a3"
+      ],
+      "description": "Der Hersteller gibt einen Schutzbereich um das Außengerät an. Freistehend umschließt er das Gerät rundum; an einer geschlossenen Wand endet er an der Wand und wird zum Boden hin breiter. Die Maße sind herstellerspezifisch, der Leitfaden nennt keine Zahlen.",
+      "page": "S. 6, 7"
+    },
+    "rules": [
+      {
+        "level": "forbidden",
+        "text": "Keine Gebäudeöffnungen im Schutzbereich: Fenster, Türen, Lichtschächte, Flachdachfenster, Öffnungen von Lüftungsanlagen.",
+        "page": "S. 7",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "opening"
+        ]
+      },
+      {
+        "level": "forbidden",
+        "text": "Keine Zündquellen im Schutzbereich, weder dauerhaft noch kurzzeitig: offene Flammen, Steckdosen, Lampen, Lichtschalter, elektrische Hausanschlüsse, funkenbildende Werkzeuge, heiße Oberflächen.",
+        "page": "S. 6",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "ignition"
+        ]
+      },
+      {
+        "level": "forbidden",
+        "text": "Der Schutzbereich darf nicht über die Grundstücksgrenze auf das Nachbargrundstück reichen.",
+        "page": "S. 7",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "boundary"
+        ]
+      },
+      {
+        "level": "forbidden",
+        "text": "Keine Geh- und Fahrwege im Schutzbereich.",
+        "page": "S. 7",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "path"
+        ]
+      },
+      {
+        "level": "forbidden",
+        "text": "Keine Senken oder Bodenvertiefungen im Schutzbereich.",
+        "page": "S. 7",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "depression"
+        ]
+      },
+      {
+        "level": "forbidden",
+        "text": "Keine Pumpenschächte, Einläufe in die Kanalisation oder Abwasserschächte im Schutzbereich.",
+        "page": "S. 7",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "drain"
+        ]
+      },
+      {
+        "level": "forbidden",
+        "text": "Auf dem Dach zusätzlich: keine Dachentlüfter und keine Dachentwässerung im Schutzbereich.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a3"
+        ],
+        "locations": [
+          "flatRoof"
+        ],
+        "features": [
+          "opening",
+          "gutter",
+          "drain"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Bei einer Undichtigkeit darf kein Kältemittel ins Gebäude gelangen, und Personen im Freien oder in Nachbargebäuden dürfen nicht gefährdet werden.",
+        "page": "S. 6"
+      },
+      {
+        "level": "required",
+        "text": "Mindestabstände für Wartung und Service nach Herstellerangabe einhalten. Sie gelten unabhängig vom Schutzbereich.",
+        "page": "S. 7"
+      },
+      {
+        "level": "required",
+        "text": "Den Schutzbereich laut Herstelleranleitung dauerhaft freihalten; dafür ist der Betreiber verantwortlich.",
+        "page": "S. 6",
+        "refrigerants": [
+          "a3"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Kondensat nicht direkt ablaufen lassen, sondern z. B. über einen Siphon an Abwasser-, Regenwasser- oder Drainagesystem anschließen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a3"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Kabel- und Leitungsdurchführungen ins Gebäude gasdicht ausführen; Potenzialausgleich besonders sorgfältig ausführen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a2l",
+          "a3"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Bei Arbeiten am Gerät Zündquellen vermeiden, auch Bohr- und Schleifarbeiten mit heißen Oberflächen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a3"
+        ]
+      },
+      {
+        "level": "note",
+        "text": "Wandhängende Montage: Es gelten dieselben Vorgaben wie bei der Aufstellung am Boden.",
+        "page": "S. 7",
+        "refrigerants": [
+          "a3"
+        ],
+        "locations": [
+          "wallMount"
+        ]
+      },
+      {
+        "level": "note",
+        "text": "Der Leitfaden nennt einen Schutzbereich bei Außenaufstellung nur für A3-Kältemittel. Ob das Gerät trotzdem einen hat, steht in der Herstelleranleitung.",
+        "page": "S. 6–8",
+        "refrigerants": [
+          "a1",
+          "a2l"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Erst klären, ob die Garagen- und Stellplatzverordnung des Bundeslands die Aufstellung dort erlaubt. Sie ist Landesrecht und nicht bundesweit einheitlich. Herstellerangaben zusätzlich beachten.",
+        "page": "S. 8",
+        "locations": [
+          "garage"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Rammschutz außerhalb des Schutzbereichs, ausgelegt auf die dort zulässige Höchstgeschwindigkeit. Zündquellenverbot im Schutzbereich mit Hinweisschildern kennzeichnen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a3"
+        ],
+        "locations": [
+          "garage"
+        ]
+      },
+      {
+        "level": "required",
+        "text": "Rammschutz außerhalb des Schutzbereichs, ausgelegt auf die dort zulässige Höchstgeschwindigkeit. Zündquellenverbot im Schutzbereich mit Hinweisschildern kennzeichnen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a3"
+        ],
+        "features": [
+          "parking"
+        ]
+      },
+      {
+        "level": "recommended",
+        "text": "Rammschutz wird auch bei Geräten mit anderen Kältemitteln empfohlen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a1",
+          "a2l"
+        ],
+        "locations": [
+          "garage"
+        ]
+      },
+      {
+        "level": "recommended",
+        "text": "Rammschutz wird auch bei Geräten mit anderen Kältemitteln empfohlen.",
+        "page": "S. 8",
+        "refrigerants": [
+          "a1",
+          "a2l"
+        ],
+        "features": [
+          "parking"
+        ]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "key": "idmAeroAlm218",
+      "type": "heatPump",
+      "refrigerant": "a3",
+      "manufacturer": "iDM",
+      "series": "AERO ALM 2-18",
+      "refrigerantName": "R290",
+      "source": "iDM, Montage- und Betriebsanleitung AERO ALM 2-18, Kapitel 4 „Aufstellung“, S. 39–47",
+      "zone": {
+        "name": "Schutzbereich",
+        "meters": 1,
+        "byLocation": {
+          "corner": 1.5
+        },
+        "description": "Gilt für das Außengerät, nicht für die Inneneinheit. Reicht von der Oberkante des Geräts bis zum Boden und am Boden 1 m rund um das Gerät; in der Vorderansicht ist er an der Oberkante 0,5 m breit und wird nach unten breiter. Bei Eckaufstellung 1,5 m zu den offenen Seiten. Unter dem Gerät ist immer Schutzbereich, auch wenn es mehr als 1 m über dem Boden steht. Der Bereich ist keine ATEX-Zone, die Vorgaben gelten trotzdem.",
+        "page": "S. 40, 41, 46"
+      },
+      "clearances": [
+        {
+          "label": "Ansaugseite zu Wand oder Hindernis",
+          "value": "min. 0,6 m",
+          "meters": 0.6,
+          "side": "intake",
+          "page": "S. 44"
+        },
+        {
+          "label": "Seitlich zu Wand oder Hindernis",
+          "value": "min. 0,6 m",
+          "meters": 0.6,
+          "side": "side",
+          "note": "Eine Seite (links oder rechts) muss frei bleiben.",
+          "page": "S. 44"
+        },
+        {
+          "label": "Ausblasseite",
+          "value": "frei lassen",
+          "side": "exhaust",
+          "note": "Kein Hindernis, das den Luftstrom bremst oder zurückwirft; vom Gebäude abgewandt.",
+          "page": "S. 40, 44"
+        },
+        {
+          "label": "Nach oben (Wartungsbereich)",
+          "value": "min. 500 mm",
+          "side": "top",
+          "page": "S. 44"
+        },
+        {
+          "label": "Sockel über Gelände",
+          "value": "empfohlen min. 200 mm",
+          "note": "Liegt mehr Schnee als die Sockelhöhe, Ansaug- und Ausblasseite bei Bedarf freiräumen.",
+          "page": "S. 39, 46"
+        },
+        {
+          "label": "Mehrere Wärmepumpen hintereinander",
+          "value": "≥ 1 m",
+          "note": "Von der Ausblasseite des einen zur Ansaugseite des nächsten Geräts. Die Schutzbereiche dürfen sich überlappen.",
+          "page": "S. 44"
+        },
+        {
+          "label": "Mehrere Wärmepumpen nebeneinander",
+          "value": "≥ 0,6 m",
+          "note": "Seitlich zwischen den Geräten.",
+          "page": "S. 44"
+        },
+        {
+          "label": "Zur Küste",
+          "value": "min. 5 km",
+          "page": "S. 47"
+        }
+      ],
+      "rules": [
+        {
+          "level": "forbidden",
+          "text": "Nur für die Aufstellung im Freien. Nicht in Garagen, Wirtschaftsgebäuden oder ähnlichen Bauten, auch wenn sie an einer oder mehreren Seiten offen sind.",
+          "page": "S. 39",
+          "locations": [
+            "garage"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Keine Gebäudeöffnungen im Schutzbereich: Fenster, Türen, Schächte, Lüftungsöffnungen o. Ä.",
+          "page": "S. 40",
+          "features": [
+            "opening"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Keine Zündquellen im Schutzbereich, z. B. offene Flammen, heiße Oberflächen, Steckdosen, Leuchten, Lichtschalter, PV-Anlagen, Rasenmäher oder Funken durch Werkzeug.",
+          "page": "S. 40",
+          "features": [
+            "ignition"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Schalteinrichtungen für Begleitheizungen nicht im Schutzbereich.",
+          "page": "S. 45",
+          "features": [
+            "ignition"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Keine Geh- und Fahrwege im Schutzbereich.",
+          "page": "S. 40",
+          "features": [
+            "path"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Der Schutzbereich darf nicht über die Grundstücksgrenze reichen.",
+          "page": "S. 40",
+          "features": [
+            "boundary"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Auf der Ausblasseite droht Frost und Eis: Dachrinnen, wasserführende Leitungen, Wasserbehälter, Aufenthaltsbereiche und Gehwege nicht in unmittelbarer Nähe der Ausblasseite.",
+          "page": "S. 40",
+          "features": [
+            "gutter",
+            "seating",
+            "path"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Nicht in oder nahe Bodensenken und Kesseln: Propan ist schwerer als Luft und sammelt sich am tiefsten Punkt. Im Schutzbereich darf keine Senke liegen.",
+          "page": "S. 39, 43",
+          "features": [
+            "depression"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Nicht in Nischen, Innenhöfen oder anderen kaum belüfteten Bereichen. In Mauernischen nur, wenn austretendes Kältemittel abfließen kann.",
+          "page": "S. 43, 44",
+          "features": [
+            "niche"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Keine Schallschutzhauben oder andere Einhausungen: Austretendes Kältemittel könnte sich darin sammeln.",
+          "page": "S. 44",
+          "features": [
+            "enclosure"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Mindestens 5 km Abstand zur Küste.",
+          "page": "S. 47",
+          "features": [
+            "coast"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Regenrinnen und Entwässerungsabläufe nicht im Schutzbereich.",
+          "page": "S. 41",
+          "locations": [
+            "flatRoof"
+          ],
+          "features": [
+            "gutter",
+            "drain"
+          ]
+        },
+        {
+          "level": "forbidden",
+          "text": "Kein umlaufender Sockel: Der Sockel darf keine Senke bilden.",
+          "page": "S. 46"
+        },
+        {
+          "level": "forbidden",
+          "text": "Kondensat nicht in oder durch das Gebäude führen.",
+          "page": "S. 41, 45"
+        },
+        {
+          "level": "required",
+          "text": "So aufstellen, dass bei einer Leckage kein Kältemittel ins Gebäude oder in andere geschlossene Räume gelangt. Mauerdurchführungen gasdicht ausführen.",
+          "page": "S. 39"
+        },
+        {
+          "level": "required",
+          "text": "Untergrund eben und fest; Sockel bzw. Unterlage muss das Gerät tragen. Gerät mit den 4 Stellfüßen nivellieren (50 mm).",
+          "page": "S. 39, 46, 47"
+        },
+        {
+          "level": "required",
+          "text": "Körperschall vermeiden: Gerät, Sockel und Verbindungsleitungen vom Gebäude entkoppeln. Bei höheren Anforderungen zusätzliche Schwingungsdämpfer.",
+          "page": "S. 39, 47"
+        },
+        {
+          "level": "required",
+          "text": "Als Wärmequelle nur Außenluft ohne Sand oder aggressive Stoffe (z. B. Ammoniak, Schwefel, Chlor, Salz). Ansaugseite frei halten, nicht verengen oder zustellen.",
+          "page": "S. 39, 40"
+        },
+        {
+          "level": "required",
+          "text": "Ausblasseite vom Gebäude abgewandt und frei. Mauern oder Wände dürfen die kalte Luft nicht stauen; sie darf nicht wieder angesaugt werden (Luftkurzschluss).",
+          "page": "S. 40, 44"
+        },
+        {
+          "level": "required",
+          "text": "Kondensat frostsicher ableiten, pro Abtauung bis zu 15 l. Versickerung: Kiesschicht unter der Frostgrenze, kein Siphon. Kanalisation: frostsicherer Siphon. Liegt der Siphon nicht frostfrei, Ablaufheizung außentemperaturabhängig ansteuern.",
+          "page": "S. 45, 46"
+        },
+        {
+          "level": "required",
+          "text": "Bohrungen für die Montagekrallen in den Sockel setzen, bevor das Gerät platziert wird (Funken als Zündquelle).",
+          "page": "S. 47"
+        },
+        {
+          "level": "required",
+          "text": "Maximale Länge der hydraulischen Verbindungsleitungen beim Platzieren des Sockels beachten.",
+          "page": "S. 46"
+        },
+        {
+          "level": "recommended",
+          "text": "Gerät etwas höher als das umgebende Gelände aufstellen, empfohlen min. 200 mm.",
+          "page": "S. 39, 46"
+        },
+        {
+          "level": "required",
+          "text": "Mindestabstände zu den Gebäudekanten und Absturzsicherung nach den geltenden nationalen Vorschriften.",
+          "page": "S. 41",
+          "locations": [
+            "flatRoof"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Reicht der Schutzbereich bis zur Dachkante oder darüber, gehört der Bereich darunter ebenfalls zum Schutzbereich. Fenster, Lichtschächte, Lüftungsöffnungen o. Ä. sind dort nur zulässig, wenn sie mindestens 0,5 m über dem Umgebungsniveau liegen.",
+          "page": "S. 41",
+          "locations": [
+            "flatRoof"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Nur bis zu einer Windgeschwindigkeit von 33 m/s (120 km/h) am Aufstellort. Tragfähigkeit der Unterkonstruktion und Befestigung bauseits sicherstellen.",
+          "page": "S. 43",
+          "locations": [
+            "flatRoof"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Bei Eckaufstellung die Mindestabstände zur Wand einhalten; der Schutzbereich reicht 1,5 m zu den offenen Seiten.",
+          "page": "S. 41",
+          "locations": [
+            "corner"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Anfahrschutz anbringen, wenn Fahrzeuge das Gerät treffen könnten. Er muss außerhalb des Schutzbereichs stehen.",
+          "page": "S. 40",
+          "features": [
+            "path"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Auf einer Geländeerhebung sicherstellen, dass sich austretendes Kältemittel nicht in Senken sammelt, auch in Senken knapp außerhalb des Schutzbereichs.",
+          "page": "S. 43",
+          "features": [
+            "elevated"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Gerät so drehen, dass der zu erwartende Wind quer zur Ansaug- und Ausblasrichtung weht.",
+          "page": "S. 47",
+          "features": [
+            "windy"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Gerät vor starker Wärmestrahlung schützen. Brandlasten vermeiden oder so anordnen, dass sich das Gerät bei einem Brand nicht gefährlich erwärmt; örtliche Brandschutzvorschriften prüfen.",
+          "page": "S. 39",
+          "features": [
+            "fireLoad"
+          ]
+        },
+        {
+          "level": "required",
+          "text": "Bei mehreren Wärmepumpen die Mindestabstände zwischen den Geräten einhalten; die Schutzbereiche dürfen sich überlappen.",
+          "page": "S. 44",
+          "features": [
+            "multiple"
+          ]
+        },
+        {
+          "level": "avoid",
+          "text": "Einfassung auf mehreren Seiten vermeiden, z. B. Ecke mit Überdachung. Wenn doch: ausreichende Luftzu- und -abfuhr sicherstellen; Kernbohrungen durch Mauern reichen meist nicht.",
+          "page": "S. 44",
+          "features": [
+            "roofed"
+          ]
+        },
+        {
+          "level": "avoid",
+          "text": "Aus Schallschutzgründen möglichst nicht direkt bei Wohn- oder Schlafräumen aufstellen.",
+          "page": "S. 46",
+          "features": [
+            "bedroom"
+          ]
+        },
+        {
+          "level": "recommended",
+          "text": "Umgebung frei von Gras, Laub und Müll halten (Schutz vor Nagetieren). Laub und Gras dürfen die Ansaugseite nicht zusetzen.",
+          "page": "S. 39, 40",
+          "features": [
+            "vegetation"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
+import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
 import { checkSequenceTool, sequenceToolSchema, type SequenceTool } from './sequenceTool.ts'
 import { checkSymbolTool, symbolToolSchema, type SymbolTool } from './symbolTool.ts'
@@ -28,6 +29,7 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Aderfarben-Tools ("kind": "wireColors"): System, Kabeltyp und Aderzahl wählen, Farben mit Nutzung sehen (siehe wireColorTool.ts).
 // - Normen-Tools ("kind": "normFinder"): Themenbereiche wählen, zuständige Regelwerke mit Link sehen (siehe normFinderTool.ts).
 // - Kältemittel-Tools ("kind": "refrigerantPressure"): Dampfdrucktabelle, Druck ↔ Temperatur (siehe refrigerantTool.ts).
+// - Aufstellungs-Tools ("kind": "placement"): Gerät, Aufstellort und Umgebung wählen, Vorgaben des Herstellers sehen (siehe placementTool.ts).
 // - Stundenzettel ("kind": "workHours"): Arbeitsstunden je Bauvorhaben notieren und exportieren (siehe workHoursTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
@@ -168,6 +170,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   wireColorToolSchema,
   normFinderToolSchema,
   refrigerantToolSchema,
+  placementToolSchema,
   workHoursToolSchema,
 ])
 
@@ -188,8 +191,9 @@ export type ToolEntry =
   | WireColorTool
   | NormFinderTool
   | RefrigerantTool
+  | PlacementTool
   | WorkHoursTool
-export type { CableTool, FactorTool, NormFinderTool, RefrigerantTool, SequenceTool, SymbolTool, VariantTool, WireColorTool, WorkHoursTool }
+export type { CableTool, FactorTool, NormFinderTool, PlacementTool, RefrigerantTool, SequenceTool, SymbolTool, VariantTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -201,6 +205,7 @@ export const isCableTool = (entry: ToolEntry): entry is CableTool => entry.kind 
 export const isWireColorTool = (entry: ToolEntry): entry is WireColorTool => entry.kind === 'wireColors'
 export const isNormFinderTool = (entry: ToolEntry): entry is NormFinderTool => entry.kind === 'normFinder'
 export const isRefrigerantTool = (entry: ToolEntry): entry is RefrigerantTool => entry.kind === 'refrigerantPressure'
+export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => entry.kind === 'placement'
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
@@ -310,9 +315,11 @@ export const toolCollection = defineCollection({
                       ? checkNormFinderTool(entry)
                       : isRefrigerantTool(entry)
                         ? checkRefrigerantTool(entry)
-                        : isWorkHoursTool(entry)
-                          ? []
-                          : formulaCollection.check!(entry as FormulaEntry),
+                        : isPlacementTool(entry)
+                          ? checkPlacementTool(entry)
+                          : isWorkHoursTool(entry)
+                            ? []
+                            : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)

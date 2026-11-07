@@ -12,6 +12,7 @@ import {
   isChoiceTool,
   isFactorTool,
   isNormFinderTool,
+  isPlacementTool,
   isRefrigerantTool,
   isSequenceTool,
   isSymbolTool,
@@ -25,6 +26,7 @@ import { CableLookup } from './CableLookup'
 import { FactorCalculator } from './FactorCalculator'
 import { ChoiceLookup } from './ChoiceLookup'
 import { NormFinder } from './NormFinder'
+import { PlacementLookup } from './PlacementLookup'
 import { RefrigerantLookup } from './RefrigerantLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
@@ -70,6 +72,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <NormFinder tool={tool} />
       ) : isRefrigerantTool(tool) ? (
         <RefrigerantLookup tool={tool} />
+      ) : isPlacementTool(tool) ? (
+        <PlacementLookup tool={tool} />
       ) : isWorkHoursTool(tool) ? (
         <WorkHours closingNote={tool.closingNote} />
       ) : (
