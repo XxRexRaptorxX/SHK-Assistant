@@ -13,6 +13,7 @@ import {
   isFactorTool,
   isNormFinderTool,
   isPlacementTool,
+  isRadiatorSurveyTool,
   isRefrigerantTool,
   isSequenceTool,
   isSymbolTool,
@@ -28,6 +29,7 @@ import { FactorCalculator } from './FactorCalculator'
 import { ChoiceLookup } from './ChoiceLookup'
 import { NormFinder } from './NormFinder'
 import { PlacementLookup } from './PlacementLookup'
+import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
@@ -80,6 +82,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <WorkHours closingNote={tool.closingNote} />
       ) : isValveSurveyTool(tool) ? (
         <ValveSurvey tool={tool} />
+      ) : isRadiatorSurveyTool(tool) ? (
+        <RadiatorSurvey tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

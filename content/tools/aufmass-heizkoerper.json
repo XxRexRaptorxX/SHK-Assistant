@@ -1,0 +1,388 @@
+{
+  "id": "tool.aufmass-heizkoerper",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Modelle laut Vorgabe des Inhabers vom 07.11.2026 (Kompakt-, Bad-, Flach-, Rippenheizkörper; weitere als Vorschlag ergänzt, bitte prüfen). Welche Maße je Modell abgefragt werden: Vorschlag, bitte prüfen. Thermostattypen aus der Aufmaß-Vorlage des Inhabers „Thermostatventile - Aufmaß.xlsx“. Auswahlwerte Kompakt- und Flachheizkörper (Typen, Bauhöhen, Baulängen): Purmo Datenblätter „Compact“ und „Plan Compact“ vom 27.05.2025, S. 1 und 4 (https://www.heizungsdiscount24.de/pdf/Purmo-Compact-Datenblatt.pdf, https://www.heizungsdiscount24.de/pdf/Purmo-Plan-Compact-Datenblatt.pdf); Typ 20 aus Viessmann „Ventilkompaktheizkörper“ 5683977, 4/2013, S. 5.1-1 (https://loebbeshop.de/Media/Default/Uploaded/static/doc/technische-angaben-kompaktheizkoerper_7855.pdf). Auswahlwerte Gliederheizkörper (Bauhöhe, Nabenabstand, Bautiefe): HG-TEC „Stahlradiatoren nach DIN 4703 und EN 442“, Technische Daten 8/2009 (https://www.hg-tec.de/downloads/technischedatenstahlradiatorenmailversion.pdf). Abgerufen am 07.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "radiatorSurvey",
+  "title": "Aufmaß Heizkörper",
+  "summary": "Erfasst die Heizkörper je Raum mit Modell, passenden Maßen und Thermostat und gibt die Liste als Datei, Ausdruck oder E-Mail weiter.",
+  "description": "Bauvorhaben eintragen, Raum wählen und je Heizkörper das Modell wählen: Es bestimmt, welche Maße abgefragt werden; Pflichtmaße sind markiert. Gleiche Heizkörper im selben Raum über die Anzahl zusammenfassen. Die Übersicht unten fasst gleiche Heizkörper zusammen.",
+  "closingNote": "Die Aufmaße bleiben nur auf diesem Gerät gespeichert. Die E-Mail wird im eigenen Mailprogramm geöffnet und erst von dort gesendet.",
+  "todo": "TODO: Inhalt fehlt – Auswahlwerte für Bad-, Rippen-, Röhren- und Sonstige Heizkörper sowie Konvektoren (keine herstellerübergreifenden Angaben gefunden); bis dahin werden diese Maße eingetippt.",
+  "category": "Aufmaß",
+  "dimensions": [
+    {
+      "key": "bauart",
+      "label": "Bauart / Typ",
+      "numeric": false
+    },
+    {
+      "key": "hoehe",
+      "label": "Höhe",
+      "unit": "mm"
+    },
+    {
+      "key": "laenge",
+      "label": "Länge",
+      "unit": "mm"
+    },
+    {
+      "key": "breite",
+      "label": "Breite",
+      "unit": "mm"
+    },
+    {
+      "key": "tiefe",
+      "label": "Tiefe",
+      "unit": "mm"
+    },
+    {
+      "key": "nabenabstand",
+      "label": "Nabenabstand",
+      "unit": "mm"
+    },
+    {
+      "key": "glieder",
+      "label": "Gliederzahl"
+    }
+  ],
+  "defaultDimensions": [
+    {
+      "key": "hoehe",
+      "required": true
+    },
+    {
+      "key": "laenge",
+      "required": true
+    },
+    {
+      "key": "tiefe"
+    }
+  ],
+  "models": [
+    {
+      "key": "kompakt",
+      "label": "Kompaktheizkörper",
+      "dimensions": [
+        {
+          "key": "bauart",
+          "options": [
+            "10",
+            "11",
+            "20",
+            "21",
+            "22",
+            "33"
+          ]
+        },
+        {
+          "key": "hoehe",
+          "required": true,
+          "options": [
+            "300",
+            "400",
+            "500",
+            "550",
+            "600",
+            "900",
+            "950"
+          ]
+        },
+        {
+          "key": "laenge",
+          "required": true,
+          "options": [
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "1000",
+            "1100",
+            "1200",
+            "1400",
+            "1600",
+            "1800",
+            "2000",
+            "2300",
+            "2600",
+            "3000"
+          ]
+        },
+        {
+          "key": "tiefe"
+        }
+      ]
+    },
+    {
+      "key": "flach",
+      "label": "Flachheizkörper",
+      "dimensions": [
+        {
+          "key": "bauart",
+          "options": [
+            "10",
+            "11",
+            "20",
+            "21",
+            "22",
+            "33"
+          ]
+        },
+        {
+          "key": "hoehe",
+          "required": true,
+          "options": [
+            "300",
+            "400",
+            "500",
+            "550",
+            "600",
+            "900",
+            "950"
+          ]
+        },
+        {
+          "key": "laenge",
+          "required": true,
+          "options": [
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "1000",
+            "1100",
+            "1200",
+            "1400",
+            "1600",
+            "1800",
+            "2000",
+            "2300",
+            "2600",
+            "3000"
+          ]
+        },
+        {
+          "key": "tiefe"
+        }
+      ]
+    },
+    {
+      "key": "bad",
+      "label": "Badheizkörper",
+      "dimensions": [
+        {
+          "key": "hoehe",
+          "required": true
+        },
+        {
+          "key": "breite",
+          "required": true
+        },
+        {
+          "key": "tiefe"
+        },
+        {
+          "key": "nabenabstand"
+        }
+      ]
+    },
+    {
+      "key": "rippen",
+      "label": "Rippenheizkörper",
+      "dimensions": [
+        {
+          "key": "hoehe",
+          "required": true
+        },
+        {
+          "key": "laenge",
+          "required": true
+        },
+        {
+          "key": "tiefe"
+        },
+        {
+          "key": "nabenabstand"
+        }
+      ]
+    },
+    {
+      "key": "glieder",
+      "label": "Gliederheizkörper",
+      "dimensions": [
+        {
+          "key": "hoehe",
+          "required": true,
+          "options": [
+            "300",
+            "450",
+            "600",
+            "1000"
+          ]
+        },
+        {
+          "key": "glieder",
+          "required": true
+        },
+        {
+          "key": "tiefe",
+          "options": [
+            "110",
+            "160",
+            "220",
+            "250"
+          ]
+        },
+        {
+          "key": "nabenabstand",
+          "options": [
+            "200",
+            "350",
+            "500",
+            "900"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "roehren",
+      "label": "Röhrenheizkörper",
+      "dimensions": [
+        {
+          "key": "hoehe",
+          "required": true
+        },
+        {
+          "key": "laenge",
+          "required": true
+        },
+        {
+          "key": "tiefe"
+        },
+        {
+          "key": "glieder"
+        },
+        {
+          "key": "nabenabstand"
+        }
+      ]
+    },
+    {
+      "key": "konvektor",
+      "label": "Konvektor",
+      "dimensions": [
+        {
+          "key": "hoehe",
+          "required": true
+        },
+        {
+          "key": "laenge",
+          "required": true
+        },
+        {
+          "key": "tiefe"
+        }
+      ]
+    },
+    {
+      "key": "sonstiger",
+      "label": "Sonstiger Heizkörper",
+      "dimensions": [
+        {
+          "key": "hoehe",
+          "required": true
+        },
+        {
+          "key": "laenge",
+          "required": true
+        },
+        {
+          "key": "tiefe"
+        }
+      ]
+    }
+  ],
+  "thermostats": [
+    {
+      "key": "durchgang38",
+      "label": "3/8\" Durchgang"
+    },
+    {
+      "key": "durchgang12",
+      "label": "1/2\" Durchgang"
+    },
+    {
+      "key": "durchgang34",
+      "label": "3/4\" Durchgang"
+    },
+    {
+      "key": "eck38",
+      "label": "3/8\" Eck"
+    },
+    {
+      "key": "eck12",
+      "label": "1/2\" Eck"
+    },
+    {
+      "key": "eck34",
+      "label": "3/4\" Eck"
+    },
+    {
+      "key": "axial38",
+      "label": "3/8\" Axial"
+    },
+    {
+      "key": "axial12",
+      "label": "1/2\" Axial"
+    },
+    {
+      "key": "axial34",
+      "label": "3/4\" Axial"
+    },
+    {
+      "key": "winkeleckLinks38",
+      "label": "3/8\" Winkeleck links"
+    },
+    {
+      "key": "winkeleckLinks12",
+      "label": "1/2\" Winkeleck links"
+    },
+    {
+      "key": "winkeleckRechts38",
+      "label": "3/8\" Winkeleck rechts"
+    },
+    {
+      "key": "winkeleckRechts12",
+      "label": "1/2\" Winkeleck rechts"
+    },
+    {
+      "key": "einbauventil",
+      "label": "Einbauventil"
+    }
+  ],
+  "keywords": [
+    "Aufmaß",
+    "Heizkörper",
+    "Heizkörpertausch",
+    "Heizkörpergröße",
+    "Bauhöhe",
+    "Baulänge",
+    "Bautiefe",
+    "Nabenabstand",
+    "Gliederzahl",
+    "Kompaktheizkörper",
+    "Flachheizkörper",
+    "Badheizkörper",
+    "Rippenheizkörper",
+    "Thermostat",
+    "Thermostatventil",
+    "Raumliste",
+    "Materialliste"
+  ]
+}

@@ -10,25 +10,19 @@ import {
   addRoom,
   clampCount,
   createSurvey,
-  formatSurveyDate,
   isEmptySurvey,
-  MAILTO_MAX_LENGTH,
   MAX_COUNT,
-  parseRecipients,
   removeRoom,
-  renameRoom,
   ROOMS_TOO_LONG,
   roomLines,
   setCount,
-  setNote,
-  setProject,
   showRoomBreakdown,
   surveyBill,
   surveyCsv,
-  surveyFileName,
   surveyMailto,
   surveyText,
 } from './valveSurveyCalc'
+import { formatSurveyDate, MAILTO_MAX_LENGTH, parseRecipients, renameRoom, setNote, setProject, surveyFileName } from './surveyCommon'
 import { checkValveSurveyTool, valveTypes, type ValveSurveyTool } from './valveSurveyTool'
 
 const NOW = new Date(2026, 10, 7, 9, 30)
@@ -236,8 +230,8 @@ describe('Weitergeben', () => {
   })
 
   it('benennt die Datei nach Tool, Bauvorhaben und Datum', () => {
-    expect(surveyFileName(tool, full)).toBe('aufmass-thermostatventile-mueller-hauptstr-5-2026-11-07.csv')
-    expect(surveyFileName(tool, setProject(full, '  ', NOW))).toBe('aufmass-thermostatventile-2026-11-07.csv')
+    expect(surveyFileName(tool.id, full)).toBe('aufmass-thermostatventile-mueller-hauptstr-5-2026-11-07.csv')
+    expect(surveyFileName(tool.id, setProject(full, '  ', NOW))).toBe('aufmass-thermostatventile-2026-11-07.csv')
   })
 
   it('liest Empfänger und lehnt Ungültiges ab', () => {

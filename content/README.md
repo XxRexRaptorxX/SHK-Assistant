@@ -265,6 +265,26 @@ Unter dem `key` eines Typs sind die Zählungen auf dem Gerät gespeichert: nach 
 die Stück in der Stückliste (das Tool weist darauf hin). Der Build prüft doppelte Schlüssel, unbekannte Summen und Summen, zu
 denen kein Typ zählt. Die Aufmaße sind Nutzerdaten (IndexedDB, Empfänger der E-Mail im localStorage) und gehören nicht in `content/`.
 
+**Heizkörper-Aufmaß** (`"kind": "radiatorSurvey"`) erfasst die Heizkörper je Raum: Modell, die Maße, die das Modell abfragt,
+wahlweise Thermostat, Anzahl gleicher Heizkörper und Notiz. Darunter stehen die Liste je Raum, gleiche Heizkörper über alle Räume
+zusammengefasst und die Anzahl je Thermostat; weitergeben wie beim Ventil-Aufmaß. Felder: `title`, `summary`, `description`,
+`category`, `closingNote`, optional `keywords` und `todo` (beginnt mit `TODO: Inhalt fehlt`, steht im Tool; bei `verified` nicht
+erlaubt) sowie:
+
+- `dimensions`: alle Maße, je `key`, `label` (z. B. „Höhe“), optional `unit` (z. B. „mm“) und `numeric` (Standard `true`: ganze
+  Zahl von 1 bis 10 000; `false` für Text wie die Bauart „22“). Ihre Reihenfolge gilt für Formular, Anzeige und CSV-Spalten.
+- `models`: je `key`, `label` und `dimensions`, die das Modell abfragt; `defaultDimensions` gilt, wenn kein Modell gewählt ist. Je
+  Maß `key` (aus `dimensions`), optional `required` (Pflichtmaß, mindestens eins je Modell), `options` (Auswahlwerte als Text, z. B.
+  `"600"`) und `allowOther` (Standard `true`: zusätzlich „Anderes Maß“ eintippen). Bis 8 Auswahlwerte erscheinen als Knöpfe,
+  mehr als Auswahlliste, ohne Auswahlwerte als Eingabefeld.
+- `thermostats`: je `key` und `label`.
+
+Unter den `key`s ist die Wahl auf dem Gerät gespeichert: nach dem ersten Einsatz nicht mehr ändern (ein unbekanntes Modell erscheint
+als „Unbekanntes Modell“, ein unbekanntes Maß mit seinem `key`). Der Build prüft doppelte Schlüssel und Bezeichnungen, unbekannte,
+doppelte und ungenutzte Maße, Modelle ohne Pflichtmaß, ungültige Auswahlwerte und Maße ohne Auswahlwerte, bei denen auch nichts
+eingetippt werden darf. Beide Aufmaß-Tools teilen sich Bausteine (`surveyCommon.ts`, `SurveyParts.tsx`) und die gespeicherte
+E-Mail-Adresse.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

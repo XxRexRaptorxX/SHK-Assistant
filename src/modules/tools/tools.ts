@@ -7,6 +7,7 @@ import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
 import { normFinderKeywords } from './normFinderTool'
 import { placementKeywords } from './placementTool'
+import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
 import {
   isCableTool,
@@ -15,6 +16,7 @@ import {
   isFormulaTool,
   isNormFinderTool,
   isPlacementTool,
+  isRadiatorSurveyTool,
   isRefrigerantTool,
   isSequenceTool,
   isSymbolTool,
@@ -93,6 +95,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isPlacementTool(entry)) return placementKeywords(entry)
   if (isWorkHoursTool(entry)) return entry.keywords
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)
+  if (isRadiatorSurveyTool(entry)) return radiatorSurveyKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

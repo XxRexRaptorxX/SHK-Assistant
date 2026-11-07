@@ -1,20 +1,25 @@
 import { csvFile, csvText } from '../../lib/csv'
-import { normalizeForSearch } from '../../lib/text'
 import type { ValveSurvey, ValveSurveyRoom } from '../../storage/db'
+import {
+  appendRoom,
+  headerCsvLines,
+  headerTextLines,
+  isBlankHeader,
+  mailtoUrl,
+  newId,
+  projectLabel,
+  removeRoom as removeAnyRoom,
+  ensureRoom as ensureAnyRoom,
+  roomLabel,
+  touch,
+} from './surveyCommon'
 import { valveTypes, type ValveSurveyTool, type ValveType } from './valveSurveyTool'
 
-// Logik des Ventil-Aufmaßes, ohne Oberfläche und Speicher. Alle Änderungen liefern ein neues Aufmaß
-// mit neuem updatedAt zurück; das alte bleibt unverändert.
+// Logik des Ventil-Aufmaßes, ohne Oberfläche und Speicher. Gemeinsames (Bauvorhaben, Räume, mailto) in surveyCommon.ts.
 
 /** Höchste Stückzahl je Raum und Ventiltyp */
 export const MAX_COUNT = 999
-/** Längste mailto-Adresse; manche Mailprogramme schneiden längere ab */
-export const MAILTO_MAX_LENGTH = 1800
-export const NO_PROJECT = 'Ohne Bauvorhaben'
-export const NO_ROOM = 'Ohne Raumangabe'
 export const ROOMS_TOO_LONG = 'Die Aufteilung nach Räumen passt nicht in die E-Mail. Bitte die CSV-Datei anhängen.'
-
-const newId = (now: Date) => `${now.toISOString()}-${Math.random().toString(36).slice(2, 8)}`
 
 export function createRoom(name: string, now: Date): ValveSurveyRoom {
   return { id: newId(now), name: name.trim(), counts: {} }
@@ -26,47 +31,21 @@ export function createSurvey(toolId: string, now: Date): ValveSurvey {
   return { id: newId(now), toolId, project: '', rooms: [createRoom('', now)], createdAt: stamp, updatedAt: stamp }
 }
 
-function touch(survey: ValveSurvey, change: Partial<ValveSurvey>, now: Date): ValveSurvey {
-  return { ...survey, ...change, updatedAt: now.toISOString() }
-}
-
-export function setProject(survey: ValveSurvey, project: string, now: Date): ValveSurvey {
-  return touch(survey, { project }, now)
-}
-
-export function setNote(survey: ValveSurvey, note: string, now: Date): ValveSurvey {
-  const { note: _old, ...rest } = survey
-  return touch(rest, note.trim() ? { note } : {}, now)
-}
-
 export function addRoom(survey: ValveSurvey, name: string, now: Date): { survey: ValveSurvey; room: ValveSurveyRoom } {
   const room = createRoom(name, now)
-  return { survey: touch(survey, { rooms: [...survey.rooms, room] }, now), room }
+  return { survey: appendRoom(survey, room, now), room }
 }
 
-const mapRoom = (survey: ValveSurvey, roomId: string, change: (room: ValveSurveyRoom) => ValveSurveyRoom) =>
-  survey.rooms.map((room) => (room.id === roomId ? change(room) : room))
+export const removeRoom = (survey: ValveSurvey, roomId: string, now: Date) =>
+  removeAnyRoom(survey, roomId, () => createRoom('', now), now)
 
-export function renameRoom(survey: ValveSurvey, roomId: string, name: string, now: Date): ValveSurvey {
-  return touch(survey, { rooms: mapRoom(survey, roomId, (room) => ({ ...room, name })) }, now)
-}
+export const ensureRoom = (survey: ValveSurvey, now: Date) => ensureAnyRoom(survey, () => createRoom('', now))
 
-/** Entfernt einen Raum mit seinen Zählungen; ein Aufmaß behält immer mindestens einen Raum */
-export function removeRoom(survey: ValveSurvey, roomId: string, now: Date): ValveSurvey {
-  const rooms = survey.rooms.filter((room) => room.id !== roomId)
-  return touch(survey, { rooms: rooms.length > 0 ? rooms : [createRoom('', now)] }, now)
-}
-
-/** Für geladene Aufmaße: ohne Raum (z. B. beschädigter Speicher) bekommt es einen leeren, damit man zählen kann */
-export function ensureRoom(survey: ValveSurvey, now: Date): ValveSurvey {
-  return survey.rooms.length > 0 ? survey : { ...survey, rooms: [createRoom('', now)] }
-}
-
-export const countOf =(room: ValveSurveyRoom, typeKey: string) => room.counts[typeKey] ?? 0
+export const countOf = (room: ValveSurveyRoom, typeKey: string) => room.counts[typeKey] ?? 0
 
 /** Ganze Zahl von 0 bis MAX_COUNT; Unbrauchbares zählt als 0 */
-export function clampCount(count: number): number {
-  return Number.isFinite(count) ? Math.min(MAX_COUNT, Math.max(0, Math.trunc(count))) : 0
+export function clampCount(count: number, max = MAX_COUNT): number {
+  return Number.isFinite(count) ? Math.min(max, Math.max(0, Math.trunc(count))) : 0
 }
 
 /** Setzt die Stückzahl; Typen ohne Stück werden nicht gespeichert */
@@ -75,7 +54,8 @@ export function setCount(survey: ValveSurvey, roomId: string, typeKey: string, c
   return touch(
     survey,
     {
-      rooms: mapRoom(survey, roomId, (room) => {
+      rooms: survey.rooms.map((room) => {
+        if (room.id !== roomId) return room
         const { [typeKey]: _old, ...counts } = room.counts
         return { ...room, counts: next > 0 ? { ...counts, [typeKey]: next } : counts }
       }),
@@ -87,31 +67,8 @@ export function setCount(survey: ValveSurvey, roomId: string, typeKey: string, c
 /** Stückzahl eines Raums über alle Typen */
 export const roomPieces = (room: ValveSurveyRoom) => Object.values(room.counts).reduce((sum, count) => sum + count, 0)
 
-export const roomLabel = (room: ValveSurveyRoom) => room.name.trim() || NO_ROOM
-export const projectLabel = (survey: ValveSurvey) => survey.project.trim() || NO_PROJECT
-
 /** Noch nichts eingetragen: solche Aufmaße werden nicht gespeichert */
-export function isEmptySurvey(survey: ValveSurvey): boolean {
-  return (
-    survey.project.trim() === '' &&
-    (survey.note ?? '').trim() === '' &&
-    survey.rooms.length === 1 &&
-    survey.rooms.every((room) => room.name.trim() === '' && roomPieces(room) === 0)
-  )
-}
-
-/** Zuletzt bearbeitete zuerst */
-export const sortSurveys = (surveys: readonly ValveSurvey[]) =>
-  [...surveys].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
-
-/** ISO-Zeitstempel → lokales Datum „07.11.2026“ */
-export function formatSurveyDate(stamp: string): string {
-  const date = new Date(stamp)
-  const pad = (n: number) => String(n).padStart(2, '0')
-  return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()}`
-}
-
-export const surveyLabel = (survey: ValveSurvey) => `${projectLabel(survey)} (${formatSurveyDate(survey.createdAt)})`
+export const isEmptySurvey = (survey: ValveSurvey) => isBlankHeader(survey) && roomPieces(survey.rooms[0]!) === 0
 
 export interface BillLine {
   type: ValveType
@@ -184,12 +141,8 @@ const articleText = (type: ValveType) => (type.article ? ` – Art.-Nr. ${type.a
 /** Das Aufmaß als Text für die E-Mail; ohne Räume, wenn withRooms false ist */
 export function surveyText(tool: ValveSurveyTool, survey: ValveSurvey, withRooms = true): string {
   const bill = surveyBill(tool, survey)
-  const note = (survey.note ?? '').trim()
   const lines = [
-    tool.title,
-    `Bauvorhaben: ${projectLabel(survey)}`,
-    `Aufmaß vom: ${formatSurveyDate(survey.createdAt)}`,
-    ...(note ? [`Bemerkung: ${note}`] : []),
+    ...headerTextLines(tool.title, survey),
     '',
     `Stückliste (Ersatz ${tool.replacementName})`,
     ...(billIsEmpty(bill)
@@ -211,19 +164,12 @@ export function surveyText(tool: ValveSurveyTool, survey: ValveSurvey, withRooms
   return lines.join('\r\n')
 }
 
-/** Eine oder mehrere Adressen, getrennt durch Komma, Semikolon oder Leerzeichen; undefined, wenn eine ungültig ist */
-export function parseRecipients(text: string): string[] | undefined {
-  const parts = text.split(/[\s,;]+/).filter((part) => part !== '')
-  return parts.every((part) => /^[A-Za-z0-9._+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(part)) ? parts : undefined
-}
-
 /** mailto-Adresse mit Stückliste im Text; ist sie zu lang, fehlt die Aufteilung nach Räumen */
 export function surveyMailto(tool: ValveSurveyTool, survey: ValveSurvey, recipients: readonly string[]): string {
-  const subject = `${tool.title}: ${projectLabel(survey)}`
-  const mailto = (body: string) =>
-    `mailto:${recipients.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  const full = mailto(surveyText(tool, survey))
-  return full.length <= MAILTO_MAX_LENGTH ? full : mailto(surveyText(tool, survey, false))
+  return mailtoUrl(recipients, `${tool.title}: ${projectLabel(survey)}`, [
+    surveyText(tool, survey),
+    surveyText(tool, survey, false),
+  ])
 }
 
 /**
@@ -232,12 +178,8 @@ export function surveyMailto(tool: ValveSurveyTool, survey: ValveSurvey, recipie
  */
 export function surveyCsv(tool: ValveSurveyTool, survey: ValveSurvey): string {
   const bill = surveyBill(tool, survey)
-  const note = (survey.note ?? '').trim()
   const lines = [
-    csvText(tool.title),
-    `Bauvorhaben;${csvText(projectLabel(survey))}`,
-    `Aufmaß vom;${formatSurveyDate(survey.createdAt)}`,
-    ...(note ? [`Bemerkung;${csvText(note)}`] : []),
+    ...headerCsvLines(tool.title, survey),
     '',
     `Ventil;Art.-Nr. ${csvText(tool.replacementName)};Stück`,
     ...bill.groups.flatMap((group) => [
@@ -256,16 +198,4 @@ export function surveyCsv(tool: ValveSurveyTool, survey: ValveSurvey): string {
     }
   }
   return csvFile(lines)
-}
-
-/** z. B. „aufmass-thermostatventile-mueller-hauptstr-2026-11-07.csv“ */
-export function surveyFileName(tool: ValveSurveyTool, survey: ValveSurvey): string {
-  const slug = normalizeForSearch(survey.project)
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 40)
-    .replace(/-+$/, '')
-  const date = formatSurveyDate(survey.createdAt).split('.').reverse().join('-')
-  const toolName = tool.id.split('.').slice(1).join('-')
-  return `${[toolName, slug, date].filter((part) => part !== '').join('-')}.csv`
 }

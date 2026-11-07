@@ -1,6 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
 
-// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel, Ventil-Aufmaße). Bleiben nur auf dem Gerät.
+// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel, Aufmaße). Bleiben nur auf dem Gerät.
 
 export interface FavoriteRecord {
   /** id des Inhaltseintrags, z. B. "lexicon.ausdehnungsgefaess" */
@@ -65,17 +65,51 @@ export interface ValveSurvey {
   updatedAt: string
 }
 
+/** Ein Heizkörper im Heizkörper-Aufmaß; Modell und Thermostat sind Schlüssel aus dem Tool-Inhalt */
+export interface RadiatorEntry {
+  id: string
+  /** Modell-key, z. B. „kompakt“; fehlt ohne Angabe */
+  model?: string
+  /** Maß-key (aus dem Tool-Inhalt, z. B. „hoehe“) → Wert als Text, z. B. „600“; nur ausgefüllte Maße */
+  values: Record<string, string>
+  /** Thermostat-key; fehlt ohne Angabe */
+  thermostat?: string
+  /** Anzahl gleicher Heizkörper im Raum */
+  count: number
+  /** Freitext (fehlt, wenn leer) */
+  note?: string
+}
+
+export interface RadiatorSurveyRoom {
+  id: string
+  /** Freitext, z. B. „Bad OG“; leer = ohne Raumangabe */
+  name: string
+  radiators: RadiatorEntry[]
+}
+
+/** Ein Heizkörper-Aufmaß (Tool „radiatorSurvey“) für ein Bauvorhaben */
+export interface RadiatorSurvey {
+  id: string
+  toolId: string
+  project: string
+  note?: string
+  rooms: RadiatorSurveyRoom[]
+  createdAt: string
+  updatedAt: string
+}
+
 export interface ShkDbSchema extends DBSchema {
   favorites: { key: string; value: FavoriteRecord }
   checklistProgress: { key: string; value: ChecklistProgressRecord }
   workEntries: { key: string; value: WorkEntry }
   valveSurveys: { key: string; value: ValveSurvey }
+  radiatorSurveys: { key: string; value: RadiatorSurvey }
 }
 
 export type ShkDb = IDBPDatabase<ShkDbSchema>
 
 export const DB_NAME = 'shk-assistant'
-const DB_VERSION = 3
+const DB_VERSION = 4
 
 let dbPromise: Promise<ShkDb> | undefined
 
@@ -92,6 +126,9 @@ export function getDb(): Promise<ShkDb> {
       }
       if (oldVersion < 3) {
         db.createObjectStore('valveSurveys', { keyPath: 'id' })
+      }
+      if (oldVersion < 4) {
+        db.createObjectStore('radiatorSurveys', { keyPath: 'id' })
       }
     },
     // Eine neuere App-Version (anderer Tab) will migrieren: Verbindung freigeben.
