@@ -13,5 +13,8 @@
     "kaelte"
   ],
   "definition": "Sättigungstemperatur des Kältemittels auf der Hochdruckseite während der Kondensation. Sie hängt vom Druck auf der Hochdruckseite ab und liegt über der Temperatur der Wärmesenke; ein hoher Wert senkt die Leistungszahl.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.kaeltemittel-dampfdruck"
+  ]
 }

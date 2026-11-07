@@ -17,5 +17,8 @@
   "related": [
     "lexicon.kaeltemittel",
     "lexicon.verfluessiger"
+  ],
+  "tools": [
+    "tool.kaeltemittel-dampfdruck"
   ]
 }

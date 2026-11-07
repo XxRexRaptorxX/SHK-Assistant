@@ -18,5 +18,8 @@
     "lexicon.kaeltemittel",
     "lexicon.expansionsventil",
     "lexicon.verdampfer"
+  ],
+  "tools": [
+    "tool.kaeltemittel-dampfdruck"
   ]
 }

@@ -13,5 +13,8 @@
     "kaelte"
   ],
   "definition": "Sättigungstemperatur des Kältemittels auf der Niederdruckseite während der Verdampfung. Sie hängt direkt vom Druck im Verdampfer ab und lässt sich mit einer Kältemitteltabelle aus dem gemessenen Niederdruck ermitteln.",
-  "related": []
+  "related": [],
+  "tools": [
+    "tool.kaeltemittel-dampfdruck"
+  ]
 }

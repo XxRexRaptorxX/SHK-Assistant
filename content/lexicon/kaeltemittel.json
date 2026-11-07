@@ -17,5 +17,8 @@
     "lexicon.kaeltemaschine",
     "lexicon.verdampfer",
     "lexicon.verfluessiger"
+  ],
+  "tools": [
+    "tool.kaeltemittel-dampfdruck"
   ]
 }

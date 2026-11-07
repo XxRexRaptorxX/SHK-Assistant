@@ -18,12 +18,12 @@ const render = (refrigerant: string | undefined, mode: 'pressure' | 'temperature
   renderToStaticMarkup(<RefrigerantLookup tool={tool} initialRefrigerant={refrigerant} initialMode={mode} initialValue={value} />)
 
 describe('Dampfdrucktabelle Kältemittel', () => {
-  it('ist fehlerfrei, intern und geprüft', () => {
+  it('ist fehlerfrei, öffentlich und geprüft', () => {
     expect(checkRefrigerantTool(tool)).toEqual([])
     expect(tool.status).toBe('verified')
     expect(tool.verifiedBy).toBe('AI')
     expect(tool.verifiedAt).toBe('2026-11-06')
-    expect(tool.visibility).toBe('internal')
+    expect(tool.visibility).toBe('public')
     expect(tool.category).toBe('Wartung')
   })
 
@@ -80,7 +80,7 @@ describe('Dampfdrucktabelle Kältemittel', () => {
     expect(html).toContain('Zwischen 0 °C (1,92 bar) und 2 °C (2,14 bar) linear gerechnet.')
     expect(html.match(/aria-current="true"/g)).toHaveLength(2)
     expect(html).toContain('Alle Werte für R134a')
-    expect(html).toContain('beziehen sich auf den Taupunkt')
+    expect(html).toContain('Werte gerundet und auf den Taupunkt bezogen.')
 
     const exact = render('R410A', 'temperature', '0')
     expect(exact).toContain('Sättigungsdruck (Überdruck)')
