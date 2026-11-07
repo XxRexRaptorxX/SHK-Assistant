@@ -1,3 +1,4 @@
+import { csvFile, csvText } from '../../lib/csv'
 import { parseDecimal } from '../../lib/number'
 import type { WorkEntry } from '../../storage/db'
 
@@ -426,12 +427,6 @@ export function projectSuggestions(entries: readonly WorkEntry[], query: string,
   return suggestions.slice(0, limit)
 }
 
-/** Text für eine CSV-Zelle: Tabellen führen Texte mit = + - @ am Anfang sonst als Formel aus */
-function csvText(text: string): string {
-  const safe = /^[=+\-@\t\r]/.test(text) ? `'${text}` : text
-  return /[;"\r\n]/.test(safe) ? `"${safe.replace(/"/g, '""')}"` : safe
-}
-
 /**
  * Die Woche als CSV für Excel in deutscher Einstellung: Semikolon, Dezimalkomma, BOM für die Umlaute.
  * Oben die Summe je Bauvorhaben, darunter die einzelnen Einträge mit Zeitstempeln, am Ende der Hinweis auf Bearbeitungen.
@@ -473,7 +468,7 @@ export function workHoursCsv(entries: readonly WorkEntry[], monday: string, targ
     ...(note ? [`Hinweis;${note}`] : []),
     ...(overlap ? [`Hinweis;${overlap}`] : []),
   ]
-  return `\uFEFF${lines.join('\r\n')}\r\n`
+  return csvFile(lines)
 }
 
 /** z. B. "stundenzettel-2026-KW45.csv" */

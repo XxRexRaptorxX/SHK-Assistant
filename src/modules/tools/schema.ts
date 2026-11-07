@@ -10,6 +10,7 @@ import { checkPlacementTool, placementToolSchema, type PlacementTool } from './p
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
 import { checkSequenceTool, sequenceToolSchema, type SequenceTool } from './sequenceTool.ts'
 import { checkSymbolTool, symbolToolSchema, type SymbolTool } from './symbolTool.ts'
+import { checkValveSurveyTool, valveSurveyToolSchema, type ValveSurveyTool } from './valveSurveyTool.ts'
 import { checkVariantTool, variantReferences, variantToolSchema, type VariantTool } from './variantTool.ts'
 import { checkWireColorTool, wireColorToolSchema, type WireColorTool } from './wireColorTool.ts'
 import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
@@ -31,6 +32,7 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Kältemittel-Tools ("kind": "refrigerantPressure"): Dampfdrucktabelle, Druck ↔ Temperatur (siehe refrigerantTool.ts).
 // - Aufstellungs-Tools ("kind": "placement"): Gerät, Aufstellort und Umgebung wählen, Vorgaben des Herstellers sehen (siehe placementTool.ts).
 // - Stundenzettel ("kind": "workHours"): Arbeitsstunden je Bauvorhaben notieren und exportieren (siehe workHoursTool.ts).
+// - Ventil-Aufmaß ("kind": "valveSurvey"): vorhandene Ventile je Raum zählen, Stückliste für den Tausch (siehe valveSurveyTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -172,6 +174,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   refrigerantToolSchema,
   placementToolSchema,
   workHoursToolSchema,
+  valveSurveyToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -193,7 +196,8 @@ export type ToolEntry =
   | RefrigerantTool
   | PlacementTool
   | WorkHoursTool
-export type { CableTool, FactorTool, NormFinderTool, PlacementTool, RefrigerantTool, SequenceTool, SymbolTool, VariantTool, WireColorTool, WorkHoursTool }
+  | ValveSurveyTool
+export type { CableTool, FactorTool, NormFinderTool, PlacementTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -207,6 +211,7 @@ export const isNormFinderTool = (entry: ToolEntry): entry is NormFinderTool => e
 export const isRefrigerantTool = (entry: ToolEntry): entry is RefrigerantTool => entry.kind === 'refrigerantPressure'
 export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => entry.kind === 'placement'
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
+export const isValveSurveyTool = (entry: ToolEntry): entry is ValveSurveyTool => entry.kind === 'valveSurvey'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -319,7 +324,9 @@ export const toolCollection = defineCollection({
                           ? checkPlacementTool(entry)
                           : isWorkHoursTool(entry)
                             ? []
-                            : formulaCollection.check!(entry as FormulaEntry),
+                            : isValveSurveyTool(entry)
+                              ? checkValveSurveyTool(entry)
+                              : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)

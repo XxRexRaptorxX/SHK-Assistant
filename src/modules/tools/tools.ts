@@ -19,6 +19,7 @@ import {
   isSequenceTool,
   isSymbolTool,
   isTableTool,
+  isValveSurveyTool,
   isVariantTool,
   isWireColorTool,
   isWorkHoursTool,
@@ -26,6 +27,7 @@ import {
 } from './schema'
 import { sequenceKeywords } from './sequenceTool'
 import { symbolKeywords } from './symbolTool'
+import { valveSurveyKeywords } from './valveSurveyTool'
 import { variantFormulas } from './variantTool'
 import { wireColorKeywords } from './wireColorTool'
 
@@ -90,6 +92,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isRefrigerantTool(entry)) return refrigerantKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)
   if (isWorkHoursTool(entry)) return entry.keywords
+  if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

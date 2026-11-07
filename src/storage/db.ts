@@ -1,6 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
 
-// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel). Bleiben nur auf dem Gerät.
+// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel, Ventil-Aufmaße). Bleiben nur auf dem Gerät.
 
 export interface FavoriteRecord {
   /** id des Inhaltseintrags, z. B. "lexicon.ausdehnungsgefaess" */
@@ -41,16 +41,41 @@ export interface WorkEntry {
   editedAt?: string
 }
 
+/** Ein Raum im Ventil-Aufmaß mit der gezählten Anzahl je Ventiltyp */
+export interface ValveSurveyRoom {
+  id: string
+  /** Freitext, z. B. „Bad OG“; leer = ohne Raumangabe */
+  name: string
+  /** Ventiltyp-key (aus dem Tool-Inhalt) → Anzahl; Typen ohne Stück fehlen */
+  counts: Record<string, number>
+}
+
+/** Ein Ventil-Aufmaß (Tool „valveSurvey“) für ein Bauvorhaben */
+export interface ValveSurvey {
+  id: string
+  /** id des Tools, zu dem die Ventiltyp-keys gehören */
+  toolId: string
+  /** Bauvorhaben als Freitext */
+  project: string
+  /** Freitext zum Aufmaß (fehlt, wenn leer) */
+  note?: string
+  rooms: ValveSurveyRoom[]
+  /** ISO-Zeitstempel */
+  createdAt: string
+  updatedAt: string
+}
+
 export interface ShkDbSchema extends DBSchema {
   favorites: { key: string; value: FavoriteRecord }
   checklistProgress: { key: string; value: ChecklistProgressRecord }
   workEntries: { key: string; value: WorkEntry }
+  valveSurveys: { key: string; value: ValveSurvey }
 }
 
 export type ShkDb = IDBPDatabase<ShkDbSchema>
 
 export const DB_NAME = 'shk-assistant'
-const DB_VERSION = 2
+const DB_VERSION = 3
 
 let dbPromise: Promise<ShkDb> | undefined
 
@@ -64,6 +89,9 @@ export function getDb(): Promise<ShkDb> {
       }
       if (oldVersion < 2) {
         db.createObjectStore('workEntries', { keyPath: 'id' })
+      }
+      if (oldVersion < 3) {
+        db.createObjectStore('valveSurveys', { keyPath: 'id' })
       }
     },
     // Eine neuere App-Version (anderer Tab) will migrieren: Verbindung freigeben.

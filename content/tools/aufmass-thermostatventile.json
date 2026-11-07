@@ -1,0 +1,74 @@
+{
+  "id": "tool.aufmass-thermostatventile",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Aufmaß-Vorlage des Inhabers „Thermostatventile - Aufmaß.xlsx“ (Ventiltypen, Artikelnummern Danfoss RA-N, Summen für Ventile, Köpfe und Stellantriebe), übermittelt am 07.11.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "valveSurvey",
+  "title": "Aufmaß Thermostatventile",
+  "summary": "Zählt die vorhandenen Heizkörperventile je Raum und erstellt daraus die Stückliste für den Tausch, als Datei, Ausdruck oder E-Mail.",
+  "description": "Bauvorhaben eintragen, Raum wählen und je vorgefundenem Ventil auf **+** tippen. Die Stückliste unten zählt alles zusammen und nennt die Artikelnummer des Ersatzventils. Mehrere Aufmaße lassen sich nebeneinander speichern.",
+  "closingNote": "Die Aufmaße bleiben nur auf diesem Gerät gespeichert. Die E-Mail wird im eigenen Mailprogramm geöffnet und erst von dort gesendet.",
+  "category": "Aufmaß",
+  "replacementName": "Danfoss RA-N",
+  "groups": [
+    {
+      "key": "durchgang",
+      "name": "Durchgang",
+      "types": [
+        { "key": "durchgang38", "label": "3/8\" Durchgang", "article": "013G0032", "counts": ["ventile", "koepfe"] },
+        { "key": "durchgang12", "label": "1/2\" Durchgang", "article": "013G0034", "counts": ["ventile", "koepfe"] },
+        { "key": "durchgang34", "label": "3/4\" Durchgang", "article": "013G0036", "counts": ["ventile", "koepfe"] }
+      ]
+    },
+    {
+      "key": "eck",
+      "name": "Eck",
+      "types": [
+        { "key": "eck38", "label": "3/8\" Eck", "article": "013G0031", "counts": ["ventile", "koepfe"] },
+        { "key": "eck12", "label": "1/2\" Eck", "article": "013G0033", "counts": ["ventile", "koepfe"] },
+        { "key": "eck34", "label": "3/4\" Eck", "article": "013G0035", "counts": ["ventile", "koepfe"] }
+      ]
+    },
+    {
+      "key": "axial",
+      "name": "Axial",
+      "types": [
+        { "key": "axial38", "label": "3/8\" Axial", "article": "013G0151", "counts": ["ventile", "koepfe"] },
+        { "key": "axial12", "label": "1/2\" Axial", "article": "013G0153", "counts": ["ventile", "koepfe"] },
+        { "key": "axial34", "label": "3/4\" Axial", "article": "013G0155", "counts": ["ventile", "koepfe"] }
+      ]
+    },
+    {
+      "key": "winkeleckLinks",
+      "name": "Winkeleck links",
+      "types": [
+        { "key": "winkeleckLinks38", "label": "3/8\" Winkeleck links", "article": "013G0232", "counts": ["ventile", "koepfe"] },
+        { "key": "winkeleckLinks12", "label": "1/2\" Winkeleck links", "article": "013G0234", "counts": ["ventile", "koepfe"] }
+      ]
+    },
+    {
+      "key": "winkeleckRechts",
+      "name": "Winkeleck rechts",
+      "types": [
+        { "key": "winkeleckRechts38", "label": "3/8\" Winkeleck rechts", "article": "013G0231", "counts": ["ventile", "koepfe"] },
+        { "key": "winkeleckRechts12", "label": "1/2\" Winkeleck rechts", "article": "013G0233", "counts": ["ventile", "koepfe"] }
+      ]
+    },
+    {
+      "key": "sonstige",
+      "name": "Sonstige",
+      "types": [
+        { "key": "einbauventil", "label": "Einbauventil", "note": "zählt nur als Thermostatkopf", "counts": ["koepfe"] },
+        { "key": "fussbodenheizung", "label": "Fußbodenheizung", "note": "zählt als Stellantrieb", "counts": ["stellantriebe"] }
+      ]
+    }
+  ],
+  "totals": [
+    { "key": "ventile", "name": "Thermostatventile" },
+    { "key": "koepfe", "name": "Thermostatköpfe" },
+    { "key": "stellantriebe", "name": "Stellantriebe" }
+  ],
+  "keywords": ["Aufmaß", "Thermostatventil", "Heizkörperventil", "Ventiltausch", "Ventilunterteil", "Thermostatkopf", "Stellantrieb", "Danfoss", "RA-N", "Stückliste", "Materialliste", "Bestellung", "Eckventil", "Durchgangsventil", "Axialventil", "Winkeleckventil", "Einbauventil"]
+}

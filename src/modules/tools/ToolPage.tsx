@@ -17,6 +17,7 @@ import {
   isSequenceTool,
   isSymbolTool,
   isTableTool,
+  isValveSurveyTool,
   isVariantTool,
   isWireColorTool,
   isWorkHoursTool,
@@ -31,6 +32,7 @@ import { RefrigerantLookup } from './RefrigerantLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
+import { ValveSurvey } from './ValveSurvey'
 import { VariantCalculator } from './VariantCalculator'
 import { WireColorLookup } from './WireColorLookup'
 import { WorkHours } from './WorkHours'
@@ -76,6 +78,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <PlacementLookup tool={tool} />
       ) : isWorkHoursTool(tool) ? (
         <WorkHours closingNote={tool.closingNote} />
+      ) : isValveSurveyTool(tool) ? (
+        <ValveSurvey tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

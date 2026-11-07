@@ -251,6 +251,20 @@ ohne Vorgabe und Gerätetypen ohne Leitfaden und ohne `todo`.
 der GPS-Knopf: Er sendet beim Drücken den Standort an Nominatim (OpenStreetMap), um die Adresse abzufragen; die verlangte
 Quellenangabe steht in `source` des Eintrags.
 
+**Ventil-Aufmaß** (`"kind": "valveSurvey"`) zählt die vorhandenen Heizkörperventile je Raum und bildet daraus die Stückliste
+für den Tausch (Export als CSV, Druck, E-Mail über das eigene Mailprogramm, auf dem Handy auch Teilen als Datei). Felder: `title`,
+`summary`, `description`, `category`, `closingNote`, `replacementName` (Ersatzprodukt der Artikelnummern, z. B. „Danfoss RA-N“),
+optional `keywords` und:
+
+- `groups`: je `key`, `name` (z. B. „Eck“; bekommt in der Stückliste eine Zwischensumme) und `types`. Je Typ `key`, `label`
+  (vollständig, z. B. `1/2" Eck`, so steht er auch in Export und E-Mail), optional `article` (Artikelnummer des Ersatzes) und
+  `note`, sowie `counts`: die Summen, in die jedes Stück eingeht.
+- `totals`: Summen unter der Stückliste, je `key` und `name` (z. B. „Thermostatköpfe“).
+
+Unter dem `key` eines Typs sind die Zählungen auf dem Gerät gespeichert: nach dem ersten Einsatz nicht mehr ändern, sonst fehlen
+die Stück in der Stückliste (das Tool weist darauf hin). Der Build prüft doppelte Schlüssel, unbekannte Summen und Summen, zu
+denen kein Typ zählt. Die Aufmaße sind Nutzerdaten (IndexedDB, Empfänger der E-Mail im localStorage) und gehören nicht in `content/`.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 
