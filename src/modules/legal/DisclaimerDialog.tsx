@@ -12,6 +12,8 @@ export const DISCLAIMER_VERSION = '1'
 const acceptedState = createStoredState<boolean>({
   key: DISCLAIMER_KEY,
   read: () => {
+    // Im lokalen Dev-Server (npm run dev) nicht automatisch einblenden; Build und Vorschau zeigen ihn weiterhin
+    if (import.meta.env.DEV) return true
     try {
       return globalThis.localStorage?.getItem(DISCLAIMER_KEY) === DISCLAIMER_VERSION
     } catch {
