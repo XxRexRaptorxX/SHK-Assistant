@@ -400,6 +400,13 @@ und `category` (Gruppe in der Liste, z. B. „Hydraulik“; leer = „Allgemein�
 `approximate` fest, ob es Richtwerte sind (`true`, Standard: mit „≈“ und 3 Stellen) oder exakte
 Verhältnisse (`false`, z. B. Stückmaß).
 
+Bei `factors` kann jede Größe zusätzlich haben: `per` (wie viele Bezugsmengen `value` entspricht, Standard 1; so lassen sich
+Werte wie in der Quelle eintragen, z. B. 12,87 kWh je 1,96 l → `value: 1.96, per: 12.87`), `source` (Quelle des Faktors),
+`note` (Zusatz, z. B. „Wassergehalt 20 %“) und `group` (Überschrift in der Übersicht). Mit `base` (key der Bezugsgröße, bei
+ihr gilt `value` = `per`) zeigt der Umrechner unter dem Rechner eine Übersicht „1 Größe = … Bezugsgröße“ je Gruppe mit den
+Quellen hinter einem i-Knopf. Beispiel: `converter.energietraeger` mit den Heizwerten (Bezugsgröße 1 kWh Heizwert); der
+Heizkosten-Vergleich rechnet mit diesen Werten.
+
 `rare` listet unübliche Einheiten (bei `units`), Größen-Schlüssel (bei `factors`) bzw. Formen (bei
 `ratio`: `percent`, `permille`, `permyriad`, `ppm`, `ppb`, `decimal`, `fraction`; bei `fractions`: die Nenner `2`, `3`, `4`, `5`, `6`, `8`, `10`, `12`, `16`, `32`, `64`, `100`; bei `numeral`: `bin`, `ter`, `oct`, `dec`, `duo`, `hex`). Sie fallen weg, wenn
 in den Einstellungen „Unübliche Einheiten ausblenden“ eingeschaltet ist (Standard: aus). Mindestens

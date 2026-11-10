@@ -24,6 +24,17 @@ const factorSchema = z.strictObject({
   label: z.string().trim().min(1),
   /** Menge, die einer gemeinsamen Bezugsmenge entspricht, z. B. 1 fm = 1,4 rm → fm: 1, rm: 1.4 */
   value: z.number().positive(),
+  /**
+   * Wie viele Bezugsmengen `value` entspricht (Standard 1). Erlaubt Werte so, wie sie in der Quelle stehen,
+   * z. B. Heizwert 12,87 kWh je 1,96 l → value: 1.96, per: 12.87 (Bezugsmenge 1 kWh)
+   */
+  per: z.number().positive().optional(),
+  /** Quelle des Faktors; erscheint in der Übersicht unter dem Umrechner hinter einem i-Knopf */
+  source: z.string().trim().min(1).optional(),
+  /** Zusatz, z. B. „Wassergehalt 20 %“ */
+  note: z.string().trim().min(1).optional(),
+  /** Überschrift in der Übersicht, unter der die Größe steht, z. B. „Holzpellets“ */
+  group: z.string().trim().min(1).optional(),
 })
 
 export const converterEntrySchema = defineEntrySchema({
@@ -40,6 +51,11 @@ export const converterEntrySchema = defineEntrySchema({
   units: z.array(z.string().trim().min(1)).default([]),
   /** kind "factors": Größen mit ihren Faktoren */
   factors: z.array(factorSchema).default([]),
+  /**
+   * kind "factors": key der Bezugsgröße (value = per), z. B. "kwh". Mit ihr zeigt der Umrechner unter dem Rechner eine
+   * Übersicht „1 Größe = … Bezugsgröße“ mit den Quellen der Faktoren.
+   */
+  base: z.string().trim().min(1).optional(),
   /** kind "units"/"factors": Voreinstellung "von" und "nach" */
   from: z.string().trim().default(''),
   to: z.string().trim().default(''),
@@ -99,6 +115,11 @@ function checkFactors(entry: ConverterEntry): string[] {
   const keys = entry.factors.map((factor) => factor.key)
   if (keys.length < 2) issues.push('factors: mindestens zwei Größen nötig')
   if (new Set(keys).size !== keys.length) issues.push('factors: key doppelt vergeben')
+  if (entry.base) {
+    const base = entry.factors.find((factor) => factor.key === entry.base)
+    if (!base) issues.push(`base: "${entry.base}" steht nicht in factors`)
+    else if (base.value !== (base.per ?? 1)) issues.push(`base: "${entry.base}" muss value = per haben (Bezugsgröße)`)
+  }
   return [...issues, ...checkFromTo(entry, keys, 'factors')]
 }
 
@@ -174,16 +195,16 @@ function checkKind(entry: ConverterEntry): string[] {
 
   switch (entry.kind) {
     case 'units':
-      return [...checkUnits(entry), ...unused(['factors', 'columns', 'rows'])]
+      return [...checkUnits(entry), ...unused(['factors', 'base', 'columns', 'rows'])]
     case 'factors':
       return [...checkFactors(entry), ...unused(['units', 'columns', 'rows'])]
     case 'table':
-      return [...checkTable(entry), ...unused(['units', 'factors', 'from', 'to'])]
+      return [...checkTable(entry), ...unused(['units', 'factors', 'base', 'from', 'to'])]
     case 'slope':
     case 'ratio':
     case 'fractions':
     case 'numeral':
-      return unused(['units', 'factors', 'from', 'to', 'columns', 'rows'])
+      return unused(['units', 'factors', 'base', 'from', 'to', 'columns', 'rows'])
   }
 }
 

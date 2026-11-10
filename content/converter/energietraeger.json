@@ -1,0 +1,138 @@
+{
+  "id": "converter.energietraeger",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Heizwerte: HeizkostenV § 9 Abs. 2 und 3, DGUV Regel 110-010 Anhang 1, LWF-Merkblatt 20 (Juli 2025); Quelle je Energieträger in der Übersicht. Werte eigenständig zusammengestellt, abgerufen am 10.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Energieträger",
+  "category": "Thermodynamik",
+  "description": "Rechnet Mengen verschiedener Energieträger über ihren Energieinhalt (Heizwert Hi) ineinander um, z. B. Liter Heizöl in Kubikmeter Erdgas, kWh Strom oder kWh. Erdgas wird nach Brennwert abgerechnet; die kWh auf der Gasrechnung sind deshalb eine eigene Größe.\n\nVerglichen wird nur der Energieinhalt. Wie viel davon als Wärme im Raum ankommt, hängt vom Nutzungsgrad der Heizung ab; eine Wärmepumpe macht aus 1 kWh Strom ein Mehrfaches an Wärme. Für Nutzwärme und Kosten den Heizkosten-Vergleich nutzen.",
+  "kind": "factors",
+  "approximate": true,
+  "base": "kwh",
+  "factors": [
+    {
+      "key": "kwh",
+      "label": "kWh",
+      "value": 1
+    },
+    {
+      "key": "heizoel-l",
+      "label": "l Heizöl",
+      "value": 1,
+      "per": 10,
+      "group": "Heizöl EL",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert leichtes Heizöl EL 10 kWh je Liter (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "erdgas-m3",
+      "label": "m³ Erdgas",
+      "value": 1,
+      "per": 10,
+      "group": "Erdgas H",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert Erdgas H 10 kWh je Kubikmeter (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "erdgas-kwh-hs",
+      "label": "kWh Erdgas (Brennwert)",
+      "value": 1.11,
+      "per": 1,
+      "group": "Erdgas H",
+      "source": "HeizkostenV § 9 Abs. 2: bei brennwertbezogener Abrechnung von Erdgas Faktor 1,11 zwischen Brennwert und Heizwert (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "fluessiggas-l",
+      "label": "l Flüssiggas",
+      "value": 1.96,
+      "per": 12.87,
+      "group": "Flüssiggas (Propan)",
+      "note": "flüssig bei 15 °C",
+      "source": "DGUV Regel 110-010 „Verwendung von Flüssiggas“, Anhang 1: Propan Heizwert 12,870 kWh/kg, spezifisches Volumen flüssig bei 15 °C 1,96 l/kg (https://vorschriften.bgn-branchenwissen.de/daten/dguv/110_010/anh1.htm)"
+    },
+    {
+      "key": "fluessiggas-kg",
+      "label": "kg Flüssiggas",
+      "value": 1,
+      "per": 12.87,
+      "group": "Flüssiggas (Propan)",
+      "source": "DGUV Regel 110-010 „Verwendung von Flüssiggas“, Anhang 1: Propan Heizwert 12,870 kWh/kg (https://vorschriften.bgn-branchenwissen.de/daten/dguv/110_010/anh1.htm)"
+    },
+    {
+      "key": "strom-kwh",
+      "label": "kWh Strom",
+      "value": 1,
+      "per": 1,
+      "group": "Strom",
+      "source": "Strom wird direkt in kWh gemessen und abgerechnet: 1 kWh elektrische Energie entspricht 1 kWh."
+    },
+    {
+      "key": "pellets-kg",
+      "label": "kg Pellets",
+      "value": 1,
+      "per": 5,
+      "group": "Holzpellets",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert Holzpellets 5 kWh je Kilogramm (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "pellets-t",
+      "label": "t Pellets",
+      "value": 1,
+      "per": 5000,
+      "group": "Holzpellets",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert Holzpellets 5 kWh je Kilogramm, also 5.000 kWh je Tonne (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "hackschnitzel-t",
+      "label": "t Hackschnitzel",
+      "value": 1,
+      "per": 4000,
+      "group": "Holzhackschnitzel (lufttrocken)",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert Holzhackschnitzel (lufttrocken) 4 kWh je Kilogramm, also 4.000 kWh je Tonne (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "hackschnitzel-srm",
+      "label": "Srm Hackschnitzel",
+      "value": 1,
+      "per": 650,
+      "group": "Holzhackschnitzel (lufttrocken)",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert Holzhackschnitzel 650 kWh je Schüttraummeter (https://www.gesetze-im-internet.de/heizkostenv/__9.html)"
+    },
+    {
+      "key": "buche-rm",
+      "label": "Rm Buche",
+      "value": 1,
+      "per": 1885,
+      "group": "Scheitholz Buche",
+      "note": "Wassergehalt 20 %",
+      "source": "LWF-Merkblatt 20 „Scheitholz – Produktion, Lagerung, Kennzahlen“, Juli 2025, Tabelle Heizwerte: Buche, Wassergehalt 20 %, Raummeter pauschal 0,7 Fm/Rm (https://lwf.bayern.de/mam/cms04/service/dateien/mb20_scheitholz_2025_rz_web_bf.pdf)"
+    },
+    {
+      "key": "buche-kg",
+      "label": "kg Buche",
+      "value": 1,
+      "per": 3.86,
+      "group": "Scheitholz Buche",
+      "note": "Wassergehalt 20 %",
+      "source": "LWF-Merkblatt 20 „Scheitholz – Produktion, Lagerung, Kennzahlen“, Juli 2025, Tabelle Heizwerte: Buche, Wassergehalt 20 % (https://lwf.bayern.de/mam/cms04/service/dateien/mb20_scheitholz_2025_rz_web_bf.pdf)"
+    }
+  ],
+  "names": {
+    "kwh": "Kilowattstunden (Heizwert)",
+    "heizoel-l": "Liter Heizöl EL",
+    "erdgas-m3": "Kubikmeter Erdgas H",
+    "erdgas-kwh-hs": "Kilowattstunden Erdgas laut Gasrechnung (Brennwert)",
+    "fluessiggas-l": "Liter Flüssiggas (Propan)",
+    "fluessiggas-kg": "Kilogramm Flüssiggas (Propan)",
+    "strom-kwh": "Kilowattstunden Strom",
+    "pellets-kg": "Kilogramm Holzpellets",
+    "pellets-t": "Tonnen Holzpellets",
+    "hackschnitzel-t": "Tonnen Holzhackschnitzel",
+    "hackschnitzel-srm": "Schüttraummeter Holzhackschnitzel",
+    "buche-rm": "Raummeter (Ster) Buche",
+    "buche-kg": "Kilogramm Buche"
+  },
+  "from": "heizoel-l",
+  "to": "kwh",
+  "min": 0
+}
