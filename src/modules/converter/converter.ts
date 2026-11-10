@@ -48,22 +48,27 @@ export function groupConvertersByCategory(entries: readonly ConverterEntry[]) {
     .map(([category, items]) => ({ category, entries: items }))
 }
 
-/** Kurzbeschreibung für Listen und Suche */
-export function converterSummary(entry: ConverterEntry): string {
+/** Einheiten bzw. Formen für die Kurzbeschreibung, in der Reihenfolge des Inhalts */
+export function converterSummaryParts(entry: ConverterEntry): string[] {
   switch (entry.kind) {
     case 'units':
-      return entry.units.map(formatAnyUnit).join(' · ')
+      return entry.units.map(formatAnyUnit)
     case 'factors':
-      return entry.factors.map((factor) => factor.label).join(' · ')
+      return entry.factors.map((factor) => factor.label)
     case 'slope':
-      return '% · ‰ · ° · 1 : x'
+      return ['%', '‰', '°', '1 : x']
     case 'ratio':
-      return '% · ‰ · ‱ · ppm · ppb · pu · Bruch'
+      return ['%', '‰', '‱', 'ppm', 'ppb', 'pu', 'Bruch']
     case 'fractions':
-      return 'Halbe · Viertel · Achtel · … · Hundertstel'
+      return ['Halbe', 'Viertel', 'Achtel', '…', 'Hundertstel']
     case 'numeral':
-      return 'Dual · Ternär · Oktal · Dezimal · Duodezimal · Hexadezimal'
+      return ['Dual', 'Ternär', 'Oktal', 'Dezimal', 'Duodezimal', 'Hexadezimal']
     case 'table':
-      return entry.columns.join(' · ')
+      return entry.columns
   }
+}
+
+/** Kurzbeschreibung für Listen und Suche */
+export function converterSummary(entry: ConverterEntry): string {
+  return converterSummaryParts(entry).join(' · ')
 }

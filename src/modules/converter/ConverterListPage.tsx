@@ -1,3 +1,4 @@
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
@@ -7,9 +8,55 @@ import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
 import { usePageTitle } from '../../lib/usePageTitle'
-import { converterEntries, converterPath, converterSummary, groupConvertersByCategory } from './converter'
+import { converterEntries, converterPath, converterSummaryParts, groupConvertersByCategory } from './converter'
 import { ConverterTitle } from './converterUi'
 import type { ConverterEntry } from './schema'
+
+/** Höchstens so viele Zeilen für die Einheiten in der Liste */
+export const SUMMARY_MAX_LINES = 3
+const SEPARATOR = ' · '
+
+/** Text mit den ersten `shown` Teilen; fehlen hintere, endet er mit „…“ (wie beim Umrechner Brüche) */
+export function summaryText(parts: readonly string[], shown: number): string {
+  return shown >= parts.length ? parts.join(SEPARATOR) : [...parts.slice(0, Math.max(1, shown)), '…'].join(SEPARATOR)
+}
+
+/**
+ * Einheiten als eine Zeile „a · b · c“. Bräuchte sie mehr als SUMMARY_MAX_LINES Zeilen, fallen hinten Einheiten weg,
+ * bis sie passt. Gemessen wird nach dem Layout und bei jeder Breitenänderung neu (Drehen, Fenster).
+ */
+function ClampedSummary({ parts }: { parts: readonly string[] }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const [width, setWidth] = useState(0)
+  const [shown, setShown] = useState(parts.length)
+
+  useEffect(() => {
+    const element = ref.current
+    if (!element || typeof ResizeObserver === 'undefined') return
+    const observer = new ResizeObserver(([entry]) => setWidth(Math.round(entry?.contentRect.width ?? 0)))
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+
+  // Neue Breite: wieder mit allen Einheiten anfangen
+  useLayoutEffect(() => setShown(parts.length), [width, parts.length])
+
+  useLayoutEffect(() => {
+    const element = ref.current
+    if (!element || shown <= 1) return
+    const lineHeight = Number.parseFloat(getComputedStyle(element).lineHeight)
+    if (!Number.isFinite(lineHeight)) return
+    if (element.getBoundingClientRect().height > lineHeight * SUMMARY_MAX_LINES + 1) setShown(shown - 1)
+  })
+
+  const full = parts.join(SEPARATOR)
+  const text = summaryText(parts, shown)
+  return (
+    <span ref={ref} className="block text-base text-muted" title={text === full ? undefined : full}>
+      {text}
+    </span>
+  )
+}
 
 export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
   entries?: ConverterEntry[]
@@ -42,7 +89,7 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
                     </span>
                     {entry.status === 'draft' && <DraftBadge variant="inline" />}
                   </span>
-                  <span className="text-base text-muted">{converterSummary(entry)}</span>
+                  <ClampedSummary parts={converterSummaryParts(entry)} />
                 </Link>
               </li>
             ))}
