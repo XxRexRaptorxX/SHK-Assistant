@@ -1,0 +1,31 @@
+{
+  "id": "lexicon.holzhackschnitzel",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "HeizkostenV § 9 (https://www.gesetze-im-internet.de/heizkostenv/__9.html); C.A.R.M.E.N. e.V., Marktpreise Hackschnitzel (https://www.carmen-ev.de/service/marktueberblick-erneuerbare-energien/marktpreise-energieholz/marktpreise-hackschnitzel/); TFZ-Merkblatt 26WLs004 „Entwicklung der Brennstoffpreise von 2016 bis 2026“, Juli 2026 (https://www.tfz.bayern.de/mam/cms08/festbrennstoffe/dateien/merkblatt_entwicklung_der_brennstoffpreise.pdf); abgerufen am 10.11.2026; Definition eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Holzhackschnitzel",
+  "synonyms": [
+    "Hackschnitzel",
+    "Hackgut",
+    "Waldhackschnitzel",
+    "Tonnen Holzhackschnitzel",
+    "Schüttraummeter Holzhackschnitzel",
+    "t Hackschnitzel",
+    "Srm Hackschnitzel"
+  ],
+  "categories": [
+    "heizung",
+    "solar"
+  ],
+  "definition": "**Holzhackschnitzel** sind maschinell zerkleinertes Holz für Hackschnitzelkessel. Gehandelt werden sie nach Gewicht (t) oder nach Volumen (Schüttraummeter, Srm). Wie viel Energie sie enthalten, hängt stark vom Wassergehalt ab.\n\nFür lufttrockene Hackschnitzel nennt die Heizkostenverordnung hilfsweise 4 kWh/kg bzw. 650 kWh je Schüttraummeter. Der Preisindex von C.A.R.M.E.N. unterscheidet Wassergehalt 35 % (Lieferung 80 Srm) und 20 % (Lieferung 30 Srm); die trockenere Ware wird laut TFZ eher in kleineren Anlagen eingesetzt.",
+  "related": [
+    "lexicon.schuettraummeter",
+    "lexicon.wassergehalt-holz",
+    "lexicon.heizwert"
+  ],
+  "tools": [
+    "tool.heizkostenvergleich"
+  ]
+}

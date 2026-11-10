@@ -1,0 +1,33 @@
+{
+  "id": "lexicon.scheitholz",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "LWF-Merkblatt 20 „Scheitholz – Produktion, Lagerung, Kennzahlen“, Juli 2025 (https://lwf.bayern.de/mam/cms04/service/dateien/mb20_scheitholz_2025_rz_web_bf.pdf); TFZ-Merkblatt 26WLs003 „Scheitholzpreise“, Juli 2026 (https://www.tfz.bayern.de/mam/cms08/biogenefestbrennstoffe/dateien/mb_scheitholzpreise.pdf); abgerufen am 10.11.2026; Definition eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Scheitholz",
+  "synonyms": [
+    "Stückholz",
+    "Brennholz",
+    "Kaminholz",
+    "Raummeter (Ster) Buche",
+    "Kilogramm Buche",
+    "Rm Buche",
+    "kg Buche"
+  ],
+  "categories": [
+    "heizung",
+    "solar"
+  ],
+  "definition": "**Scheitholz** ist gespaltenes, auf Länge gesägtes Holz für Scheitholzkessel, Kamin- und Kachelöfen. Gehandelt wird es meist nach Raummeter (Ster), als Meterware oder ofenfertig in 33 cm. Nach der 1. BImSchV darf nur Brennholz mit einer Holzfeuchte unter 25 % verfeuert werden, das entspricht einem Wassergehalt von 20 %.\n\nDer Heizwert hängt von Holzart und Wassergehalt ab. Das LWF-Merkblatt 20 nennt bei 20 % Wassergehalt für Buche 3,86 kWh/kg bzw. 1.885 kWh je Raummeter, für Fichte 4,02 kWh/kg bzw. 1.333 kWh je Raummeter (Raummeter pauschal mit 0,7 Festmeter gerechnet). Laubholz ist schwerer, Nadelholz hat je Kilogramm etwas mehr Energie.",
+  "related": [
+    "lexicon.raummeter",
+    "lexicon.festmeter",
+    "lexicon.schuettraummeter",
+    "lexicon.wassergehalt-holz",
+    "lexicon.heizwert"
+  ],
+  "tools": [
+    "tool.heizkostenvergleich"
+  ]
+}

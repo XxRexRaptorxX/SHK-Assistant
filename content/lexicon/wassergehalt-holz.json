@@ -1,0 +1,27 @@
+{
+  "id": "lexicon.wassergehalt-holz",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "LWF-Merkblatt 12 „Der Energieinhalt von Holz“, November 2024 (https://lfl.bayern.de/mam/cms04/service/dateien/mb12_energiegehalt-2024_rz_web_bf.pdf); LWF-Merkblatt 20 „Scheitholz – Produktion, Lagerung, Kennzahlen“, Juli 2025 (https://lwf.bayern.de/mam/cms04/service/dateien/mb20_scheitholz_2025_rz_web_bf.pdf); abgerufen am 10.11.2026; Definition eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Wassergehalt und Holzfeuchte",
+  "synonyms": [
+    "Wassergehalt",
+    "Holzfeuchte",
+    "lufttrocken",
+    "lutro",
+    "atro",
+    "absolut trocken"
+  ],
+  "categories": [
+    "heizung",
+    "physik"
+  ],
+  "definition": "Bei Brennholz beschreiben **Wassergehalt** und **Holzfeuchte** dasselbe Wasser, bezogen auf verschiedene Massen: der Wassergehalt auf die Masse des feuchten Holzes, die Holzfeuchte auf die Masse des trockenen Holzes. Viele Messgeräte im Handel zeigen die Holzfeuchte an. Umrechnung laut LWF: Wassergehalt 15 % ≙ Holzfeuchte 18 %, 20 % ≙ 25 %, 30 % ≙ 43 %, 50 % ≙ 100 %.\n\nAbsolut trockenes Holz (atro) hat 0 % Wassergehalt, lufttrockenes (lutro) 15 bis 20 %, frisch geschlagenes über 50 %. Je nasser das Holz, desto kleiner der Heizwert, weil das Wasser erst verdampfen muss (0,68 kWh je kg Wasser). Das LWF rechnet für Laubholz mit 30 % Wassergehalt: 70 % × 5,00 kWh/kg − 30 % × 0,68 kWh/kg = 3,30 kWh/kg.",
+  "related": [
+    "lexicon.scheitholz",
+    "lexicon.holzhackschnitzel",
+    "lexicon.heizwert"
+  ]
+}

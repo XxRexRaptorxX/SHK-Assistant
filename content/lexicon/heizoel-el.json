@@ -1,0 +1,30 @@
+{
+  "id": "lexicon.heizoel-el",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "HeizkostenV § 9 (https://www.gesetze-im-internet.de/heizkostenv/__9.html); Europäische Kommission, Weekly Oil Bulletin (https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en); abgerufen am 10.11.2026; Definition eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Heizöl EL",
+  "synonyms": [
+    "Heizöl",
+    "leichtes Heizöl",
+    "Heizöl extra leichtflüssig",
+    "Liter Heizöl EL",
+    "l Heizöl"
+  ],
+  "categories": [
+    "heizung"
+  ],
+  "definition": "**Heizöl EL** (extra leichtflüssig) ist der flüssige Brennstoff von Öl-Heizungen. Es wird in Litern geliefert und abgerechnet. Gibt der Lieferant keinen Heizwert an, nennt die Heizkostenverordnung hilfsweise 10 kWh je Liter.\n\nDen Durchschnittspreis für Deutschland veröffentlicht die EU-Kommission wöchentlich im Weekly Oil Bulletin, je 1.000 l und inklusive Steuern.",
+  "related": [
+    "lexicon.heizwert",
+    "lexicon.brennwert",
+    "lexicon.brennstoff",
+    "lexicon.brennwertkessel",
+    "lexicon.heizoelaequivalent"
+  ],
+  "tools": [
+    "tool.heizkostenvergleich"
+  ]
+}

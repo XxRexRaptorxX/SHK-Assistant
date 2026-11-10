@@ -1,0 +1,26 @@
+{
+  "id": "lexicon.heizoelaequivalent",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "HeizkostenV § 9 (https://www.gesetze-im-internet.de/heizkostenv/__9.html); LWF-Merkblatt 12 „Der Energieinhalt von Holz“, November 2024 (https://lfl.bayern.de/mam/cms04/service/dateien/mb12_energiegehalt-2024_rz_web_bf.pdf); TFZ-Merkblatt 26WLs004 „Entwicklung der Brennstoffpreise von 2016 bis 2026“, Juli 2026 (https://www.tfz.bayern.de/mam/cms08/festbrennstoffe/dateien/merkblatt_entwicklung_der_brennstoffpreise.pdf); abgerufen am 10.11.2026; Definition eigenständig formuliert",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "term": "Heizöläquivalent",
+  "synonyms": [
+    "Liter Heizöläquivalent",
+    "Heizöl-Äquivalent"
+  ],
+  "categories": [
+    "heizung",
+    "einheiten"
+  ],
+  "definition": "Das **Heizöläquivalent** gibt an, wie viel eines anderen Energieträgers so viel Energie enthält wie eine Menge Heizöl, oder rechnet Preise auf einen Liter Heizöl um. Grundlage ist der Heizwert: 1 l Heizöl EL entspricht rund 10 kWh. Nach dem LWF enthalten z. B. etwa 2,5 kg Scheitholz mit 15 % Wassergehalt so viel Energie wie 1 l Heizöl.\n\nDas TFZ vergleicht Brennstoffkosten in Cent je Liter Heizöläquivalent. Wie viel davon als Wärme im Haus ankommt, hängt zusätzlich vom Nutzungsgrad der Heizung ab.",
+  "related": [
+    "lexicon.heizoel-el",
+    "lexicon.heizwert",
+    "lexicon.nutzungsgrad"
+  ],
+  "tools": [
+    "tool.heizkostenvergleich"
+  ]
+}
