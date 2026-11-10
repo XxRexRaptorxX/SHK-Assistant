@@ -509,21 +509,7 @@ export function SharePanel({
         </button>
       </div>
 
-      <label htmlFor={`${id}-recipients`} className="mt-4 block font-semibold">
-        E-Mail an <span className="font-normal text-muted">(optional, bleibt auf diesem Gerät gespeichert)</span>
-      </label>
-      <input
-        id={`${id}-recipients`}
-        type="text"
-        inputMode="email"
-        value={recipientsText}
-        placeholder="z. B. buero@firma.de"
-        onChange={(event) => recipientsState.set(event.target.value)}
-        autoComplete="email"
-        aria-invalid={recipients === undefined}
-        className={`${fieldBase} mt-1 w-full`}
-      />
-      {recipients === undefined && <WarnText text={RECIPIENTS_INVALID} />}
+      {/* E-Mail-Knopf zuerst, darunter die (optionale) Empfängeradresse */}
       <div className="mt-3 flex flex-wrap gap-2">
         {disabled || recipients === undefined ? (
           <button type="button" className={primaryButton} disabled>
@@ -548,6 +534,22 @@ export function SharePanel({
         {canShareFiles && ' „Als Datei teilen“ hängt die CSV-Datei an, z. B. in der Mail-App.'}
       </p>
       {shareFailed && <WarnText text="Teilen hat nicht geklappt." />}
+
+      <label htmlFor={`${id}-recipients`} className="mt-4 block font-semibold">
+        E-Mail an <span className="font-normal text-muted">(optional, bleibt auf diesem Gerät gespeichert)</span>
+      </label>
+      <input
+        id={`${id}-recipients`}
+        type="text"
+        inputMode="email"
+        value={recipientsText}
+        placeholder="z. B. buero@firma.de"
+        onChange={(event) => recipientsState.set(event.target.value)}
+        autoComplete="email"
+        aria-invalid={recipients === undefined}
+        className={`${fieldBase} mt-1 w-full`}
+      />
+      {recipients === undefined && <WarnText text={RECIPIENTS_INVALID} />}
     </div>
   )
 }
