@@ -77,6 +77,7 @@ describe('Tools', () => {
       'Solaranlage: Anlagendruck und MAG',
       'Solaranlage: Kollektorfläche und Speichergröße',
       'Startablauf Feuerungsautomat',
+      'Strangdimension Bad-Lüfter',
       'Stundenzettel',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Trinkwasser-Temperaturen',

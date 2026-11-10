@@ -288,6 +288,24 @@ doppelte und ungenutzte Maße, Modelle ohne Pflichtmaß, ungültige Auswahlwerte
 eingetippt werden darf. Beide Aufmaß-Tools teilen sich Bausteine (`surveyCommon.ts`, `SurveyParts.tsx`) und die gespeicherte
 E-Mail-Adresse.
 
+**Lüftungsstrang-Tools** (`"kind": "ventilationRiser"`) geben die Auswahlhilfe eines Herstellers für Einzelraumlüfter nach
+DIN 18017-3 wieder: Bereich (z. B. Normal/Komfort), Lüftergeräte pro Etage, Volumenstrom je Gerät und Anzahl der Etagen wählen,
+das Tool nennt die kleinste Strangdimension, die laut Diagramm so viele Etagen trägt, dazu Luftdurchsatz je Etage und im Strang
+(alle Geräte gleichzeitig) und die Strömungsgeschwindigkeit. Kombinationen, die die Quelle nicht zeigt, bietet das Tool nicht an.
+Felder: `title`, `summary`, `description`, `category`, optional `keywords`, `note` (Hinweis der Quelle unter dem Ergebnis) und
+`conditions` (Randbedingungen der Diagramme, z. B. „Etagenhöhe 2,6 m“) sowie:
+
+- `product`: Gerätereihe, z. B. „COSMO EL“.
+- `velocityFormula`: id einer Formel mit den Variablen `Vdot` (Volumenstrom) und `d` (Durchmesser), z. B.
+  `formula.hydraulik.fliessgeschwindigkeit-rohr`; gerechnet wird mit der Strangdimension als Innendurchmesser.
+- `diameterUnit` und `diameters`: Strangdimensionen der Diagramme, aufsteigend.
+- `ranges`: je `key`, `label` und `note` (z. B. „v < 8 m/s“).
+- `setups`: ein Eintrag je Diagramm mit `devices` (Geräte pro Etage), `airflow` (m³/h je Gerät), `page` (Seite in der Quelle) und
+  `maxFloors`: je Bereichs-`key` die höchste Etagenzahl je Strangdimension, in der Reihenfolge von `diameters`.
+
+Der Build prüft aufsteigende Dimensionen, doppelte Schlüssel und Kombinationen, fehlende oder unbekannte Bereiche, die Anzahl der
+Werte und dass die Etagenzahl mit größerem Strang nicht fällt.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

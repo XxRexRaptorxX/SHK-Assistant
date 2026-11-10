@@ -9,6 +9,7 @@ import { normFinderKeywords } from './normFinderTool'
 import { placementKeywords } from './placementTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
+import { ventilationRiserKeywords } from './riserTool'
 import {
   isCableTool,
   isChoiceTool,
@@ -23,6 +24,7 @@ import {
   isTableTool,
   isValveSurveyTool,
   isVariantTool,
+  isVentilationRiserTool,
   isWireColorTool,
   isWorkHoursTool,
   type ToolEntry,
@@ -96,6 +98,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isWorkHoursTool(entry)) return entry.keywords
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)
   if (isRadiatorSurveyTool(entry)) return radiatorSurveyKeywords(entry)
+  if (isVentilationRiserTool(entry)) return ventilationRiserKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

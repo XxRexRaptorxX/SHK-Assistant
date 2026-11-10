@@ -20,6 +20,7 @@ import {
   isTableTool,
   isValveSurveyTool,
   isVariantTool,
+  isVentilationRiserTool,
   isWireColorTool,
   isWorkHoursTool,
   type ToolEntry,
@@ -31,6 +32,7 @@ import { NormFinder } from './NormFinder'
 import { PlacementLookup } from './PlacementLookup'
 import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
+import { RiserLookup } from './RiserLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
@@ -84,6 +86,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <ValveSurvey tool={tool} />
       ) : isRadiatorSurveyTool(tool) ? (
         <RadiatorSurvey tool={tool} />
+      ) : isVentilationRiserTool(tool) ? (
+        <RiserLookup tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

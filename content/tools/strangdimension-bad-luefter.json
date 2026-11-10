@@ -1,0 +1,53 @@
+{
+  "id": "tool.strangdimension-bad-luefter",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "COSMO Katalog „Lüftung Mai 2026“ (Stand 01.05.2026), Kapitel „COSMO Bad-/WC-Entlüftungen nach DIN 18017-3“, Auswahlhilfe COSMO EL, Seiten D 9 (1 Gerät pro Etage, 60 m³/h), D 10 (1 Gerät pro Etage, 100 m³/h) und D 11 (2 Geräte pro Etage, 60 m³/h); Werte aus den Diagrammen abgezählt",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "ventilationRiser",
+  "title": "Strangdimension Bad-Lüfter",
+  "summary": "Zeigt zu Normal- oder Komfortbereich, Lüftergeräten pro Etage und Anzahl der Etagen die Strangdimension für Einzelraumlüfter mit Luftdurchsatz und Strömungsgeschwindigkeit.",
+  "description": "Bereich, Lüftergeräte pro Etage und Volumenstrom je Gerät wählen, dann die Anzahl der Etagen eintragen. Das Tool nennt die kleinste Strangdimension laut Auswahlhilfe des Herstellers und rechnet Luftdurchsatz und Strömungsgeschwindigkeit im Strang aus.",
+  "category": "Auslegung",
+  "keywords": ["Lüftung", "Entlüftung", "Einzelraumlüfter", "Abluft", "Lüftungsstrang", "Steigstrang", "Badlüfter", "WC-Lüfter", "DIN 18017-3"],
+  "product": "COSMO EL",
+  "note": "Die Auswahl ersetzt nicht den rechnerischen Nachweis nach DIN 18017-3.",
+  "conditions": ["Gleichzeitigkeitsfaktor 1,0", "Etagenhöhe 2,6 m"],
+  "velocityFormula": "formula.hydraulik.fliessgeschwindigkeit-rohr",
+  "diameterUnit": "mm",
+  "diameters": [100, 125, 140, 160, 180, 200],
+  "ranges": [
+    { "key": "normal", "label": "Normal", "note": "v < 8 m/s" },
+    { "key": "komfort", "label": "Komfort", "note": "v = 5 … 6 m/s" }
+  ],
+  "setups": [
+    {
+      "devices": 1,
+      "airflow": 60,
+      "page": "D 9",
+      "maxFloors": {
+        "normal": [3, 5, 7, 9, 11, 14],
+        "komfort": [2, 4, 5, 6, 8, 10]
+      }
+    },
+    {
+      "devices": 1,
+      "airflow": 100,
+      "page": "D 10",
+      "maxFloors": {
+        "normal": [2, 3, 4, 6, 7, 9],
+        "komfort": [1, 2, 3, 4, 5, 6]
+      }
+    },
+    {
+      "devices": 2,
+      "airflow": 60,
+      "page": "D 11",
+      "maxFloors": {
+        "normal": [1, 2, 3, 6, 8, 9],
+        "komfort": [1, 2, 3, 4, 5, 7]
+      }
+    }
+  ]
+}

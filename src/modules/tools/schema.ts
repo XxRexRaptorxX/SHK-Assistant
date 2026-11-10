@@ -11,6 +11,7 @@ import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } fro
 import { checkRadiatorSurveyTool, radiatorSurveyToolSchema, type RadiatorSurveyTool } from './radiatorSurveyTool.ts'
 import { checkSequenceTool, sequenceToolSchema, type SequenceTool } from './sequenceTool.ts'
 import { checkSymbolTool, symbolToolSchema, type SymbolTool } from './symbolTool.ts'
+import { checkVentilationRiserTool, ventilationRiserToolSchema, type VentilationRiserTool } from './riserTool.ts'
 import { checkValveSurveyTool, valveSurveyToolSchema, type ValveSurveyTool } from './valveSurveyTool.ts'
 import { checkVariantTool, variantReferences, variantToolSchema, type VariantTool } from './variantTool.ts'
 import { checkWireColorTool, wireColorToolSchema, type WireColorTool } from './wireColorTool.ts'
@@ -35,6 +36,7 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Stundenzettel ("kind": "workHours"): Arbeitsstunden je Bauvorhaben notieren und exportieren (siehe workHoursTool.ts).
 // - Ventil-Aufmaß ("kind": "valveSurvey"): vorhandene Ventile je Raum zählen, Stückliste für den Tausch (siehe valveSurveyTool.ts).
 // - Heizkörper-Aufmaß ("kind": "radiatorSurvey"): Heizkörper je Raum mit Größe, Modell und Thermostat (siehe radiatorSurveyTool.ts).
+// - Lüftungsstrang ("kind": "ventilationRiser"): Strangdimension für Einzelraumlüfter aus der Auswahlhilfe (siehe riserTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -178,6 +180,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   workHoursToolSchema,
   valveSurveyToolSchema,
   radiatorSurveyToolSchema,
+  ventilationRiserToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -201,7 +204,8 @@ export type ToolEntry =
   | WorkHoursTool
   | ValveSurveyTool
   | RadiatorSurveyTool
-export type { CableTool, FactorTool, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, WireColorTool, WorkHoursTool }
+  | VentilationRiserTool
+export type { CableTool, FactorTool, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -217,6 +221,7 @@ export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => ent
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
 export const isValveSurveyTool = (entry: ToolEntry): entry is ValveSurveyTool => entry.kind === 'valveSurvey'
 export const isRadiatorSurveyTool = (entry: ToolEntry): entry is RadiatorSurveyTool => entry.kind === 'radiatorSurvey'
+export const isVentilationRiserTool = (entry: ToolEntry): entry is VentilationRiserTool => entry.kind === 'ventilationRiser'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -333,11 +338,15 @@ export const toolCollection = defineCollection({
                               ? checkValveSurveyTool(entry)
                               : isRadiatorSurveyTool(entry)
                                 ? checkRadiatorSurveyTool(entry)
-                                : formulaCollection.check!(entry as FormulaEntry),
+                                : isVentilationRiserTool(entry)
+                                  ? checkVentilationRiserTool(entry)
+                                  : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)
       : isVariantTool(entry)
         ? variantReferences(entry)
-        : [],
+        : isVentilationRiserTool(entry)
+          ? [entry.velocityFormula]
+          : [],
 })
