@@ -14,5 +14,7 @@
     "solar"
   ],
   "definition": "Wärmeerzeuger, der Holzpellets automatisch oder teilautomatisch verbrennt und die entstehende Wärme an ein Heizsystem abgibt. Die Pellets werden meist automatisch über Schnecke oder Saugsystem aus einem Lager zugeführt; die Asche muss je nach Gerät regelmäßig entleert werden.",
-  "related": []
+  "related": [
+    "lexicon.holzpellet"
+  ]
 }

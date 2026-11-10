@@ -23,7 +23,8 @@
   "related": [
     "lexicon.schuettraummeter",
     "lexicon.wassergehalt-holz",
-    "lexicon.heizwert"
+    "lexicon.heizwert",
+    "lexicon.holzpellet"
   ],
   "tools": [
     "tool.heizkostenvergleich"

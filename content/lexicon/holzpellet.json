@@ -7,12 +7,21 @@
   "verifiedAt": "2026-10-31",
   "term": "Holzpellet",
   "synonyms": [
-    "wood pellet"
+    "wood pellet",
+    "Holzpellets",
+    "Pellets",
+    "kg Pellets",
+    "t Pellets",
+    "Kilogramm Holzpellets",
+    "Tonnen Holzpellets"
   ],
   "categories": [
     "heizung",
     "solar"
   ],
   "definition": "Pressling aus Holzpartikeln, der als Brennstoff in geeigneten Pelletfeuerungen eingesetzt wird. Pellets für Heizungen haben meist 6 mm Durchmesser; Qualitätsklassen legt DIN EN ISO 17225-2 fest, verbreitet ist die Zertifizierung nach ENplus.",
-  "related": []
+  "related": [
+    "lexicon.pelletkessel",
+    "lexicon.heizwert"
+  ]
 }
