@@ -4,6 +4,7 @@ import { defineCollection, defineEntrySchema } from '../../content/schema/base.t
 import { checkFormulaRequirements, formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
 import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
+import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
 import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
@@ -37,6 +38,7 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Ventil-Aufmaß ("kind": "valveSurvey"): vorhandene Ventile je Raum zählen, Stückliste für den Tausch (siehe valveSurveyTool.ts).
 // - Heizkörper-Aufmaß ("kind": "radiatorSurvey"): Heizkörper je Raum mit Größe, Modell und Thermostat (siehe radiatorSurveyTool.ts).
 // - Lüftungsstrang ("kind": "ventilationRiser"): Strangdimension für Einzelraumlüfter aus der Auswahlhilfe (siehe riserTool.ts).
+// - Heizkosten-Vergleich ("kind": "heatingCost"): Jahresverbrauch umrechnen, Heizsysteme mit Marktpreisen vergleichen (siehe heatingCostTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -181,6 +183,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   valveSurveyToolSchema,
   radiatorSurveyToolSchema,
   ventilationRiserToolSchema,
+  heatingCostToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -205,7 +208,8 @@ export type ToolEntry =
   | ValveSurveyTool
   | RadiatorSurveyTool
   | VentilationRiserTool
-export type { CableTool, FactorTool, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
+  | HeatingCostToolEntry
+export type { CableTool, FactorTool, HeatingCostToolEntry, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -222,6 +226,7 @@ export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => ent
 export const isValveSurveyTool = (entry: ToolEntry): entry is ValveSurveyTool => entry.kind === 'valveSurvey'
 export const isRadiatorSurveyTool = (entry: ToolEntry): entry is RadiatorSurveyTool => entry.kind === 'radiatorSurvey'
 export const isVentilationRiserTool = (entry: ToolEntry): entry is VentilationRiserTool => entry.kind === 'ventilationRiser'
+export const isHeatingCostTool = (entry: ToolEntry): entry is HeatingCostToolEntry => entry.kind === 'heatingCost'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -340,7 +345,9 @@ export const toolCollection = defineCollection({
                                 ? checkRadiatorSurveyTool(entry)
                                 : isVentilationRiserTool(entry)
                                   ? checkVentilationRiserTool(entry)
-                                  : formulaCollection.check!(entry as FormulaEntry),
+                                  : isHeatingCostTool(entry)
+                                    ? checkHeatingCostTool(entry)
+                                    : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)
@@ -348,5 +355,7 @@ export const toolCollection = defineCollection({
         ? variantReferences(entry)
         : isVentilationRiserTool(entry)
           ? [entry.velocityFormula]
-          : [],
+          : isHeatingCostTool(entry)
+            ? [entry.heatingValues]
+            : [],
 })

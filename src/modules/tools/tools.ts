@@ -5,6 +5,7 @@ import { TOOL_ID_PREFIX } from './constants'
 import { groupFormulasByCategory } from '../formulas/formulas'
 import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
+import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
 import { placementKeywords } from './placementTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
@@ -15,6 +16,7 @@ import {
   isChoiceTool,
   isFactorTool,
   isFormulaTool,
+  isHeatingCostTool,
   isNormFinderTool,
   isPlacementTool,
   isRadiatorSurveyTool,
@@ -99,6 +101,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)
   if (isRadiatorSurveyTool(entry)) return radiatorSurveyKeywords(entry)
   if (isVentilationRiserTool(entry)) return ventilationRiserKeywords(entry)
+  if (isHeatingCostTool(entry)) return heatingCostKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

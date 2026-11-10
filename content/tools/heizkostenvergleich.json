@@ -1,0 +1,324 @@
+{
+  "id": "tool.heizkostenvergleich",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Aufbau nach der Excel-Tabelle „Heizungsvergleich.xlsx“ des Inhabers (Rechenfehler behoben, alle Werte auf den Heizwert bezogen). Heizwerte: HeizkostenV § 9, LWF-Merkblatt 20 (Juli 2025), DGUV Regel 110-010 Anhang 1. Nutzungsgrade: C.A.R.M.E.N.-Infoschrift Heizkostenvergleich (Februar 2026). Jahresarbeitszahlen: Fraunhofer ISE, Presseinformation vom 03.11.2025. Preise: siehe je Energieträger. Werte eigenständig zusammengestellt, abgerufen am 10.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "heatingCost",
+  "title": "Heizkosten-Vergleich",
+  "summary": "Rechnet den Jahresverbrauch der vorhandenen Heizung in Nutzwärme um und zeigt für andere Heizsysteme Brennstoffmenge, Kosten pro Jahr und den Unterschied, mit aktuellen Marktpreisen.",
+  "description": "Die vorhandene Heizung als Referenz wählen und ihren Jahresverbrauch eintragen, z. B. Liter Heizöl oder kWh laut Gasrechnung. Das Tool rechnet daraus die Nutzwärme und zeigt für jedes andere Heizsystem, wie viel Brennstoff es für dieselbe Wärme braucht und was das im Jahr kostet. Gerechnet wird mit dem Heizwert; Erdgas wird nach Brennwert abgerechnet und deshalb umgerechnet. Preise und Nutzungsgrade lassen sich unter „Annahmen“ anpassen.",
+  "category": "Planung",
+  "keywords": [
+    "Heizkosten",
+    "Heizungsvergleich",
+    "Heizsysteme vergleichen",
+    "Brennstoffkosten",
+    "Energiekosten",
+    "Jahresverbrauch",
+    "Umrechnung",
+    "Äquivalent",
+    "Heizöläquivalent",
+    "Heizungstausch",
+    "Wärmepumpe",
+    "Pellets",
+    "Gaspreis",
+    "Heizölpreis",
+    "Strompreis",
+    "Pelletpreis"
+  ],
+  "closingNote": "Verglichen werden nur die Brennstoffkosten. Grundpreise, Zählermiete, Hilfsstrom, Schornsteinfeger, Investition und Förderung sind nicht enthalten. Marktpreise sind Durchschnittswerte; maßgeblich sind die Preise des eigenen Versorgers oder Lieferanten.",
+  "heatingValues": "converter.energietraeger",
+  "fuels": [
+    {
+      "key": "erdgas",
+      "name": "Erdgas H",
+      "units": [
+        {
+          "key": "kWhHs",
+          "symbol": "kWh",
+          "label": "kWh laut Gasrechnung (Brennwert)",
+          "factor": "erdgas-kwh-hs"
+        },
+        {
+          "key": "m3",
+          "symbol": "m³",
+          "label": "Kubikmeter",
+          "factor": "erdgas-m3"
+        }
+      ],
+      "price": {
+        "unit": "kWhHs",
+        "value": 0.1156,
+        "period": "1. Halbjahr 2026",
+        "source": "Eurostat, Datensatz nrg_pc_202: Haushalte Deutschland, Band D2 (20–199 GJ), alle Steuern und Abgaben, Bezug Brennwert"
+      },
+      "live": "eurostatGas"
+    },
+    {
+      "key": "fluessiggas",
+      "name": "Flüssiggas (Propan)",
+      "units": [
+        {
+          "key": "l",
+          "symbol": "l",
+          "label": "Liter",
+          "factor": "fluessiggas-l"
+        },
+        {
+          "key": "kg",
+          "symbol": "kg",
+          "label": "Kilogramm",
+          "factor": "fluessiggas-kg"
+        }
+      ],
+      "price": {
+        "unit": "l",
+        "value": 0.81,
+        "period": "ohne Datum",
+        "source": "Excel-Tabelle „Heizungsvergleich.xlsx“ des Inhabers; für Flüssiggas gibt es keine frei abrufbare Preisstatistik"
+      }
+    },
+    {
+      "key": "heizoel",
+      "name": "Heizöl EL",
+      "units": [
+        {
+          "key": "l",
+          "symbol": "l",
+          "label": "Liter",
+          "factor": "heizoel-l"
+        }
+      ],
+      "price": {
+        "unit": "l",
+        "value": 1.7169,
+        "period": "Woche ab 02.11.2026",
+        "source": "Europäische Kommission, Weekly Oil Bulletin, Prices with taxes: Heizöl Deutschland 1.716,90 € je 1.000 l"
+      },
+      "live": "oilBulletin"
+    },
+    {
+      "key": "strom",
+      "name": "Haushaltsstrom",
+      "units": [
+        {
+          "key": "kWh",
+          "symbol": "kWh",
+          "label": "Kilowattstunden",
+          "factor": "strom-kwh"
+        }
+      ],
+      "price": {
+        "unit": "kWh",
+        "value": 0.3618,
+        "period": "1. Halbjahr 2026",
+        "source": "Eurostat, Datensatz nrg_pc_204: Haushalte Deutschland, Band DC (2.500–4.999 kWh), alle Steuern und Abgaben"
+      },
+      "live": "eurostatElectricity"
+    },
+    {
+      "key": "waermepumpenstrom",
+      "name": "Wärmepumpenstrom",
+      "units": [
+        {
+          "key": "kWh",
+          "symbol": "kWh",
+          "label": "Kilowattstunden",
+          "factor": "strom-kwh"
+        }
+      ],
+      "price": {
+        "unit": "kWh",
+        "value": 0.26,
+        "period": "Durchschnitt 2025",
+        "source": "C.A.R.M.E.N. e.V., Infoschrift „Heizkostenvergleich“, Stand Februar 2026, Tab. 1 (Wärmepumpenstrom: Mittelwert aus Stadtwerke München und E.ON) (https://www.carmen-ev.de/wp-content/uploads/2026/02/Infoschrift_Heizkostenvergleich_2_2026.pdf)"
+      }
+    },
+    {
+      "key": "pellets",
+      "name": "Holzpellets",
+      "units": [
+        {
+          "key": "t",
+          "symbol": "t",
+          "label": "Tonnen",
+          "factor": "pellets-t"
+        },
+        {
+          "key": "kg",
+          "symbol": "kg",
+          "label": "Kilogramm",
+          "factor": "pellets-kg"
+        }
+      ],
+      "price": {
+        "unit": "t",
+        "value": 464.61,
+        "period": "Oktober 2026",
+        "source": "Deutsches Pelletinstitut (DEPI), DEPI-Pelletpreis Deutschland, 6 t, ENplus A1, inkl. Lieferung und MwSt. (https://www.depi.de/pelletpreis-wirtschaftlichkeit/)"
+      },
+      "live": "depiPellets"
+    },
+    {
+      "key": "hackschnitzel",
+      "name": "Holzhackschnitzel (lufttrocken)",
+      "units": [
+        {
+          "key": "t",
+          "symbol": "t",
+          "label": "Tonnen",
+          "factor": "hackschnitzel-t"
+        },
+        {
+          "key": "srm",
+          "symbol": "Srm",
+          "label": "Schüttraummeter",
+          "factor": "hackschnitzel-srm"
+        }
+      ],
+      "price": {
+        "unit": "t",
+        "value": 153.95,
+        "period": "3. Quartal 2026",
+        "source": "C.A.R.M.E.N. e.V., Preisindex Waldhackschnitzel, Mittelwert Deutschland, Wassergehalt 20 %, 30 Srm, Lieferung im Umkreis von 20 km, brutto"
+      },
+      "live": "carmenWoodChips"
+    },
+    {
+      "key": "buche",
+      "name": "Scheitholz Buche",
+      "units": [
+        {
+          "key": "rm",
+          "symbol": "Rm",
+          "label": "Raummeter (Ster)",
+          "factor": "buche-rm"
+        },
+        {
+          "key": "kg",
+          "symbol": "kg",
+          "label": "Kilogramm",
+          "factor": "buche-kg"
+        }
+      ],
+      "price": {
+        "unit": "rm",
+        "value": 144.66,
+        "period": "Juli 2026",
+        "source": "Technologie- und Förderzentrum (TFZ), Merkblatt 26WLs003 „Scheitholzpreise“, Stand Juli 2026, Tabelle 1: Buche 33 cm, Lieferung 10 km, inkl. MwSt. (https://www.tfz.bayern.de/mam/cms08/biogenefestbrennstoffe/dateien/mb_scheitholzpreise.pdf)"
+      }
+    }
+  ],
+  "systems": [
+    {
+      "key": "gasBrennwert",
+      "name": "Erdgas-Brennwertkessel",
+      "fuel": "erdgas",
+      "efficiency": {
+        "value": 0.9,
+        "kind": "efficiency",
+        "source": "C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“, Februar 2026, Tab. 1: Jahresnutzungsgrad Erdgas-Brennwert 90 %, Gewinn aus Kondensation nicht berücksichtigt"
+      },
+      "purchase": 1,
+      "maintenance": 1
+    },
+    {
+      "key": "fluessiggasBrennwert",
+      "name": "Flüssiggas-Brennwertkessel",
+      "fuel": "fluessiggas",
+      "efficiency": {
+        "value": 0.9,
+        "kind": "efficiency",
+        "source": "Wert des Erdgas-Brennwertkessels (C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“, Februar 2026)"
+      },
+      "purchase": 2,
+      "maintenance": 1
+    },
+    {
+      "key": "oelBrennwert",
+      "name": "Heizöl-Brennwertkessel",
+      "fuel": "heizoel",
+      "efficiency": {
+        "value": 0.85,
+        "kind": "efficiency",
+        "source": "C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“, Februar 2026, Tab. 1: Jahresnutzungsgrad Heizöl-Brennwert 85 %, Gewinn aus Kondensation nicht berücksichtigt"
+      },
+      "purchase": 1,
+      "maintenance": 2
+    },
+    {
+      "key": "luftWasserWp",
+      "name": "Luft/Wasser-Wärmepumpe",
+      "fuel": "waermepumpenstrom",
+      "efficiency": {
+        "value": 3.4,
+        "kind": "performanceFactor",
+        "source": "Fraunhofer ISE, Presseinformation vom 03.11.2025 „Wärmepumpen heizen auch im Altbau klimafreundlich“: mittlere Jahresarbeitszahl 3,4 (2,6 bis 4,9) in 77 Bestandsgebäuden (https://www.ise.fraunhofer.de/content/dam/ise/de/documents/presseinformationen/2025/3025_ISE_PI_Waermepumpen-heizen-auch-im-Altbau-klimafreundlich.pdf)"
+      },
+      "purchase": 2,
+      "maintenance": 1
+    },
+    {
+      "key": "soleWasserWp",
+      "name": "Sole/Wasser-Wärmepumpe (Erdsonde)",
+      "fuel": "waermepumpenstrom",
+      "efficiency": {
+        "value": 4.3,
+        "kind": "performanceFactor",
+        "source": "Fraunhofer ISE, Presseinformation vom 03.11.2025 „Wärmepumpen heizen auch im Altbau klimafreundlich“: mittlere Jahresarbeitszahl erdgekoppelter Anlagen 4,3 (3,6 bis 5,4) (https://www.ise.fraunhofer.de/content/dam/ise/de/documents/presseinformationen/2025/3025_ISE_PI_Waermepumpen-heizen-auch-im-Altbau-klimafreundlich.pdf)"
+      },
+      "purchase": 3,
+      "maintenance": 1
+    },
+    {
+      "key": "pelletkessel",
+      "name": "Pelletkessel",
+      "fuel": "pellets",
+      "efficiency": {
+        "value": 0.88,
+        "kind": "efficiency",
+        "source": "C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“, Februar 2026, Tab. 1: Jahresnutzungsgrad Holzpellets 88 %"
+      },
+      "purchase": 2,
+      "maintenance": 3
+    },
+    {
+      "key": "hackschnitzelkessel",
+      "name": "Hackschnitzelkessel",
+      "fuel": "hackschnitzel",
+      "efficiency": {
+        "value": 0.85,
+        "kind": "efficiency",
+        "source": "Wert des Scheitholzkessels (C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“, Februar 2026)"
+      },
+      "purchase": 3,
+      "maintenance": 3
+    },
+    {
+      "key": "scheitholzkessel",
+      "name": "Scheitholzkessel",
+      "fuel": "buche",
+      "efficiency": {
+        "value": 0.85,
+        "kind": "efficiency",
+        "source": "C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“, Februar 2026, Tab. 1: Jahresnutzungsgrad Scheitholz 85 %"
+      },
+      "purchase": 2,
+      "maintenance": 2
+    },
+    {
+      "key": "elektro",
+      "name": "Elektro-Direktheizung",
+      "fuel": "strom",
+      "efficiency": {
+        "value": 1,
+        "kind": "efficiency",
+        "source": "Excel-Tabelle „Heizungsvergleich.xlsx“ des Inhabers (Wirkungsgrad 1): Strom wird im Gerät vollständig zu Wärme"
+      },
+      "purchase": 1,
+      "maintenance": 1
+    }
+  ]
+}

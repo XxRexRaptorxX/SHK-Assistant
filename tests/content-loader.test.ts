@@ -155,5 +155,6 @@ describe('echte Inhalte in content/', () => {
   it('sind gültig', () => {
     const contentDir = fileURLToPath(new URL('../content', import.meta.url))
     expect(() => loadContent({ contentDir, edition: 'internal', collections })).not.toThrow()
-  })
+    // Liest und prüft alle Inhalte; parallel zu den übrigen Tests dauert das länger als die üblichen 5 s
+  }, 30_000)
 })

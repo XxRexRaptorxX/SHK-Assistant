@@ -11,6 +11,7 @@ import {
   isCableTool,
   isChoiceTool,
   isFactorTool,
+  isHeatingCostTool,
   isNormFinderTool,
   isPlacementTool,
   isRadiatorSurveyTool,
@@ -27,6 +28,7 @@ import {
 } from './schema'
 import { CableLookup } from './CableLookup'
 import { FactorCalculator } from './FactorCalculator'
+import { HeatingCostComparison } from './HeatingCostComparison'
 import { ChoiceLookup } from './ChoiceLookup'
 import { NormFinder } from './NormFinder'
 import { PlacementLookup } from './PlacementLookup'
@@ -88,6 +90,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <RadiatorSurvey tool={tool} />
       ) : isVentilationRiserTool(tool) ? (
         <RiserLookup tool={tool} />
+      ) : isHeatingCostTool(tool) ? (
+        <HeatingCostComparison tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

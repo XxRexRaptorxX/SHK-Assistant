@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "content:report": "node tools/content-report.ts",
     "icons": "node tools/generate-icons.ts",
-    "news": "node tools/fetch-news.ts"
+    "news": "node tools/fetch-news.ts",
+    "prices": "node tools/fetch-prices.ts"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",

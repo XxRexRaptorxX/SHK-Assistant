@@ -306,6 +306,26 @@ Felder: `title`, `summary`, `description`, `category`, optional `keywords`, `not
 Der Build prüft aufsteigende Dimensionen, doppelte Schlüssel und Kombinationen, fehlende oder unbekannte Bereiche, die Anzahl der
 Werte und dass die Etagenzahl mit größerem Strang nicht fällt.
 
+**Heizkosten-Vergleich** (`"kind": "heatingCost"`) rechnet den Jahresverbrauch einer Referenzheizung in Nutzwärme um
+(Verbrauch × Heizwert × Nutzungsgrad bzw. JAZ) und zeigt für jedes andere System Brennstoffmenge, Kosten pro Jahr, Unterschied
+zur Referenz, Kosten je kWh Wärme sowie Anschaffung und Wartung (€ bis €€€). Alles wird auf den **Heizwert Hi** bezogen; Einheiten,
+die nach Brennwert abgerechnet werden (Erdgas in kWh laut Rechnung), haben im Umrechner den Faktor 1,11. Felder: `title`, `summary`,
+`description`, `category`, optional `keywords`, `closingNote` (was nicht enthalten ist) sowie:
+
+- `heatingValues`: id des Umrechners mit den Heizwerten (kind `factors`, Bezugsgröße 1 kWh Heizwert), z. B.
+  `converter.energietraeger`. Heizwerte und ihre Quellen stehen nur dort.
+- `fuels`: Energieträger mit `key`, `name`, `units` (je `key`, `symbol`, `label` und `factor` = key des Faktors im Umrechner,
+  z. B. `heizoel-l`; ein Test prüft, dass es ihn gibt), `price` (`unit` = key aus units, `value` in Euro, `period`, `source`;
+  ohne `value` ein `todo`, das mit `TODO: Inhalt fehlt` beginnt) und optional `live`: Quelle des täglich abgerufenen Marktpreises
+  (`eurostatGas`, `eurostatElectricity`, `oilBulletin`, `depiPellets`, `carmenWoodChips`, siehe
+  `src/modules/tools/heatingCostSources.ts`). Die Preiseinheit muss zur Quelle passen.
+- `systems`: je `key`, `name`, `fuel`, `efficiency` (`value`, `kind` = `efficiency` für Jahresnutzungsgrad als Anteil oder
+  `performanceFactor` für JAZ, `source`, solange die Quelle fehlt `todo`), `purchase` und `maintenance` (1 bis 3).
+
+Preise in der App: eigener Preis (auf dem Gerät gespeichert) vor Marktpreis aus `public/prices.json` vor dem hinterlegten Preis.
+`npm run prices` (täglich in der GitHub-Action) ruft die Marktpreise ab; eine nicht erreichbare Quelle wird übersprungen. Der Build
+prüft doppelte Schlüssel, unbekannte Energieträger und Einheiten, fehlende Zeiträume, Nutzungsgrade über 1,11 und JAZ unter 1.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

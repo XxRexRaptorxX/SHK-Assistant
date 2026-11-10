@@ -1,4 +1,4 @@
-# Baut die App bei jedem Push auf main und täglich (für die News) und veröffentlicht sie über GitHub Pages.
+# Baut die App bei jedem Push auf main und täglich (für News und Marktpreise) und veröffentlicht sie über GitHub Pages.
 # Voraussetzung: Repository-Einstellungen → Pages → Source: „GitHub Actions“.
 # Veröffentlicht wird nur, wenn Build und Tests durchlaufen.
 name: GitHub Pages
@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Täglich 04:00 UTC (06:00 Sommerzeit, 05:00 Winterzeit): News neu abrufen
+  # Täglich 04:00 UTC (06:00 Sommerzeit, 05:00 Winterzeit): News und Marktpreise neu abrufen
   schedule:
     - cron: '0 4 * * *'
 
@@ -33,6 +33,9 @@ jobs:
       - run: npm ci
       # Branchen-News aus content/news-feeds abrufen (public/news.json); bricht nie ab
       - run: npm run news
+        continue-on-error: true
+      # Marktpreise für den Heizkosten-Vergleich (public/prices.json); bricht nie ab
+      - run: npm run prices
         continue-on-error: true
       # Edition aus .env (derzeit: internal)
       - run: npm run build
