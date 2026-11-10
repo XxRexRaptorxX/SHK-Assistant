@@ -2,20 +2,24 @@ import { useId, useState, type ReactNode } from 'react'
 import { ClearInputsButton } from '../../components/ClearInputsButton'
 import { InfoIcon, WarningIcon } from '../../components/icons'
 import { RichText } from '../../components/RichText'
-import { formatNumber } from '../../lib/number'
+import { fieldBase } from '../../components/surfaces'
 import { SelectionBar } from './ChoiceLookup'
 import {
-  exampleZoneMeters,
+  clearancesAt,
+  manufacturersFor,
   PLACEMENT_LEVELS,
   placementResult,
-  type PlacementExample,
+  zoneRowsAt,
   type PlacementLocation,
+  type PlacementManufacturer,
   type PlacementResult,
   type PlacementRule,
+  type PlacementSeries,
   type PlacementTool,
 } from './placementTool'
 
 const card = 'mt-4 rounded-2xl border-2 border-line bg-surface p-4'
+const listCard = 'mt-2 divide-y divide-edge rounded-2xl border-2 border-line bg-surface px-4'
 
 const LEVEL_STYLES: Record<PlacementRule['level'], string> = {
   forbidden: 'bg-warn text-warn-ink',
@@ -24,8 +28,6 @@ const LEVEL_STYLES: Record<PlacementRule['level'], string> = {
   recommended: 'bg-raised text-ink',
   note: 'border-2 border-line text-muted',
 }
-
-const meters = (value: number) => `${formatNumber(value, value % 1 === 0 ? 0 : 1)} m`
 
 /** Ein Umgebungsmerkmal zum An- und Abwählen; gewählt mit Häkchen, damit der Zustand nicht nur an der Farbe hängt */
 function FeatureToggle({ label, note, active, onToggle }: { label: string; note: string; active: boolean; onToggle: () => void }) {
@@ -56,7 +58,7 @@ function FeatureToggle({ label, note, active, onToggle }: { label: string; note:
 
 function RuleList({ rules, sourceName }: { rules: PlacementRule[]; sourceName: string }) {
   return (
-    <ul className="mt-2 divide-y divide-edge rounded-2xl border-2 border-line bg-surface px-4">
+    <ul className={listCard}>
       {rules.map((rule) => (
         <li key={`${rule.page}-${rule.text}`} className="py-3">
           <span className={`inline-block rounded-md px-2 py-0.5 text-sm font-bold ${LEVEL_STYLES[rule.level]}`}>
@@ -72,7 +74,7 @@ function RuleList({ rules, sourceName }: { rules: PlacementRule[]; sourceName: s
   )
 }
 
-/** Vorgaben eines Abschnitts: Ausschlüsse oben, dann passende, immer geltende und eingeklappt die übrigen */
+/** Vorgaben einer Quelle: Ausschlüsse oben, dann passende, immer geltende und eingeklappt die übrigen */
 function RuleSections({ result, sourceName, title }: { result: PlacementResult; sourceName: string; title: string }) {
   return (
     <>
@@ -123,57 +125,31 @@ function RuleSections({ result, sourceName, title }: { result: PlacementResult; 
   )
 }
 
-/** Gerätegröße und Abstände in der Skizze ohne Maße (schematisch, in Metern) */
+/** Skizze in Metern; die Abstände sind nur schematisch, weil die Maße je Hersteller verschieden sind */
 const DEVICE_W = 1.2
 const DEVICE_H = 0.6
+const ZONE = 1
+const WALL_GAP = 0.6
 const SCALE = 100
 
-interface SketchDistances {
-  zone: number
-  /** Abstand zur Wand hinter der Ansaugseite bzw. daneben */
-  back?: number
-  left?: number
-}
-
 /**
- * Draufsicht: Gerät mit Ansaugseite hinten (oben) und Ausblasseite vorn (unten), Schutzbereich als Fläche, Wände je
- * Aufstellort. Mit Maßen (Beispiel aus einer Anleitung) maßstäblich, ohne Maße nur als Form.
+ * Draufsicht, schematisch: Gerät mit Ansaugseite hinten (oben) und Ausblasseite vorn (unten), Schutzbereich als Fläche,
+ * an Wänden abgeschnitten. Statt Maßen steht „Hersteller“ an der Maßlinie.
  */
-function PlacementSketch({
-  location,
-  distances,
-  labeled,
-  zoneName,
-  children,
-}: {
-  location: PlacementLocation
-  distances: SketchDistances
-  /** Maße anschreiben; sonst steht an den Maßlinien „Hersteller“ */
-  labeled: boolean
-  zoneName: string
-  children?: ReactNode
-}) {
+function PlacementSketch({ location, zoneName, children }: { location: PlacementLocation; zoneName: string; children?: ReactNode }) {
   const clipId = useId().replace(/:/g, '')
-  const zoneMeters = distances.zone
-  const back = location.walls.includes('back') ? distances.back : undefined
-  const left = location.walls.includes('left') ? distances.left : undefined
+  const back = location.walls.includes('back') ? WALL_GAP : undefined
+  const left = location.walls.includes('left') ? WALL_GAP : undefined
   const wall = 0.15
   const margin = 0.2
   // Hinter einer Wand wird nichts gezeichnet: Dort endet die Skizze knapp hinter der Wand
-  const minX = (left !== undefined ? -left - wall : -zoneMeters) - margin
-  const minY = (back !== undefined ? -back - wall : -zoneMeters) - margin
-  const maxX = DEVICE_W + zoneMeters + margin
-  const maxY = DEVICE_H + zoneMeters + margin + 0.15
+  const minX = (left !== undefined ? -left - wall : -ZONE) - margin
+  const minY = (back !== undefined ? -back - wall : -ZONE) - margin
+  const maxX = DEVICE_W + ZONE + margin
+  const maxY = DEVICE_H + ZONE + margin + 0.15
   const s = (value: number) => Math.round(value * SCALE * 10) / 10
-  const text = (value: number) => (labeled ? meters(value) : 'Hersteller')
-  const zone = { x: -zoneMeters, y: -zoneMeters, w: DEVICE_W + 2 * zoneMeters, h: DEVICE_H + 2 * zoneMeters }
   const clip = { x: left !== undefined ? -left : minX, y: back !== undefined ? -back : minY }
   const walls = [back !== undefined && 'Wand hinter der Ansaugseite', left !== undefined && 'Wand seitlich'].filter(Boolean).join(', ')
-  const label = labeled
-    ? `Draufsicht: ${zoneName} ${meters(zoneMeters)} um das Gerät${back !== undefined ? `, Wand hinter der Ansaugseite im Abstand ${meters(back)}` : ''}${
-        left !== undefined ? `, Wand seitlich im Abstand ${meters(left)}` : ''
-      }`
-    : `Draufsicht, schematisch: ${zoneName} um das Gerät${walls ? `, ${walls}` : ''}; Maße laut Hersteller`
   const arrow = `${clipId}-arrow`
   const dimHead = `${clipId}-dim`
   const wallStartX = left !== undefined ? -left - wall : minX
@@ -181,7 +157,11 @@ function PlacementSketch({
 
   return (
     <figure className="mt-3 rounded-2xl border border-edge bg-surface p-3 break-inside-avoid">
-      <div className="figure-art" role="img" aria-label={label}>
+      <div
+        className="figure-art"
+        role="img"
+        aria-label={`Draufsicht, schematisch: ${zoneName} um das Gerät${walls ? `, ${walls}` : ''}; Maße laut Hersteller`}
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox={`${s(minX)} ${s(minY)} ${s(maxX - minX)} ${s(maxY - minY)}`}>
           <defs>
             <clipPath id={clipId}>
@@ -195,10 +175,9 @@ function PlacementSketch({
             </marker>
           </defs>
 
-          {/* Schutzbereich: Rechteck mit um den Abstand gerundeten Ecken, an Wänden abgeschnitten */}
           <g clipPath={`url(#${clipId})`}>
-            <rect className="area" x={s(zone.x)} y={s(zone.y)} width={s(zone.w)} height={s(zone.h)} rx={s(zoneMeters)} opacity="0.6" />
-            <rect className="dim dash" x={s(zone.x)} y={s(zone.y)} width={s(zone.w)} height={s(zone.h)} rx={s(zoneMeters)} />
+            <rect className="area" x={s(-ZONE)} y={s(-ZONE)} width={s(DEVICE_W + 2 * ZONE)} height={s(DEVICE_H + 2 * ZONE)} rx={s(ZONE)} opacity="0.6" />
+            <rect className="dim dash" x={s(-ZONE)} y={s(-ZONE)} width={s(DEVICE_W + 2 * ZONE)} height={s(DEVICE_H + 2 * ZONE)} rx={s(ZONE)} />
           </g>
 
           {/* Wände treffen sich in der Ecke, statt sich zu kreuzen */}
@@ -227,144 +206,115 @@ function PlacementSketch({
             className="dim"
             x1={s(DEVICE_W)}
             y1={s(DEVICE_H / 2)}
-            x2={s(DEVICE_W + zoneMeters)}
+            x2={s(DEVICE_W + ZONE)}
             y2={s(DEVICE_H / 2)}
             markerStart={`url(#${dimHead})`}
             markerEnd={`url(#${dimHead})`}
           />
-          <text style={{ fontSize: labeled ? 19 : 16 }} x={s(DEVICE_W + zoneMeters / 2)} y={s(DEVICE_H / 2) - 6} textAnchor="middle">
-            {text(zoneMeters)}
+          <text style={{ fontSize: 16 }} x={s(DEVICE_W + ZONE / 2)} y={s(DEVICE_H / 2) - 6} textAnchor="middle">
+            Hersteller
           </text>
-          {back !== undefined && labeled && (
-            <>
-              <line
-                className="dim"
-                x1={s(DEVICE_W * 0.25)}
-                y1={s(-back)}
-                x2={s(DEVICE_W * 0.25)}
-                y2="0"
-                markerStart={`url(#${dimHead})`}
-                markerEnd={`url(#${dimHead})`}
-              />
-              <text style={{ fontSize: 19 }} x={s(DEVICE_W * 0.25) + 6} y={s(-back / 2) + 5}>
-                {meters(back)}
-              </text>
-            </>
-          )}
-          {left !== undefined && labeled && (
-            <>
-              <line
-                className="dim"
-                x1={s(-left)}
-                y1={s(DEVICE_H * 0.7)}
-                x2="0"
-                y2={s(DEVICE_H * 0.7)}
-                markerStart={`url(#${dimHead})`}
-                markerEnd={`url(#${dimHead})`}
-              />
-              <text style={{ fontSize: 19 }} x={s(-left / 2)} y={s(DEVICE_H * 0.7) - 6} textAnchor="middle">
-                {meters(left)}
-              </text>
-            </>
-          )}
         </svg>
       </div>
-      <figcaption className="mt-2 text-sm text-muted">
-        {labeled ? 'Draufsicht, Abstände maßstäblich, Gerät schematisch.' : 'Draufsicht, schematisch. Maße laut Herstelleranleitung.'}
-      </figcaption>
+      <figcaption className="mt-2 text-sm text-muted">Draufsicht, schematisch. Maße laut Herstelleranleitung.</figcaption>
       {children}
     </figure>
   )
 }
 
-/** Beispiel aus einer Herstelleranleitung, eingeklappt: Maße, Abstände und Vorgaben dieser Geräteserie */
-function ExampleView({
-  example,
+/** Vorgaben einer Baureihe: Schutzbereich am gewählten Ort, Mindestabstände und Vorgaben */
+function SeriesView({
+  manufacturer,
+  series,
   location,
   features,
 }: {
-  example: PlacementExample
+  manufacturer: PlacementManufacturer
+  series: PlacementSeries
   location: PlacementLocation
   features: readonly string[]
 }) {
-  const result = placementResult(example.rules, example.refrigerant, location.key, features)
-  const zoneMeters = exampleZoneMeters(example, location.key)
-  const distance = (side: string) => example.clearances.find((clearance) => clearance.side === side)?.meters
-  const name = `${example.manufacturer} ${example.series}`
+  const result = placementResult(series.rules, series.refrigerant, location.key, features)
+  const zones = zoneRowsAt(series, location.key)
+  const clearances = clearancesAt(series, location.key)
+  const name = `${manufacturer.name} ${series.name}`
   return (
-    <details className="mt-8 rounded-2xl border-2 border-line bg-surface/95 px-4">
-      <summary className="min-h-14 cursor-pointer py-3 font-bold">
-        Beispiel aus einer Herstelleranleitung: {name} ({example.refrigerantName})
-        {result.excluded.length > 0 && (
-          <span className="mt-1 block text-base font-semibold text-warn-ink">
-            <WarningIcon className="mr-1 inline size-5 align-text-bottom" aria-hidden="true" />
-            {result.excluded.length} Angabe{result.excluded.length === 1 ? '' : 'n'} dort nicht zulässig
-          </span>
-        )}
-      </summary>
-      <div className="pb-4">
-        <p className="text-base">
-          So sehen Maße und Vorgaben in einer konkreten Anleitung aus. Andere Geräte haben andere Werte. Quelle: {example.source}.
-        </p>
-        {example.zone && zoneMeters !== undefined && (
-          <>
-            <h4 className="mt-5 text-lg font-bold">
-              {example.zone.name}: {meters(zoneMeters)}
-            </h4>
-            <PlacementSketch
-              location={location}
-              distances={{ zone: zoneMeters, back: distance('intake') ?? zoneMeters, left: distance('side') ?? zoneMeters }}
-              labeled
-              zoneName={example.zone.name}
-            >
-              <p className="mt-2 text-base">{example.zone.description}</p>
-              <p className="text-sm text-muted">
-                {example.manufacturer}, {example.zone.page}
-              </p>
-            </PlacementSketch>
-          </>
-        )}
-        {example.clearances.length > 0 && (
-          <>
-            <h4 className="mt-5 text-lg font-bold">Mindestabstände</h4>
-            <dl className="mt-2 divide-y divide-edge rounded-2xl border-2 border-line bg-surface px-4">
-              {example.clearances.map((clearance) => (
-                <div key={clearance.label} className="py-3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                    <dt className="font-semibold">{clearance.label}</dt>
-                    <dd className="text-lg font-bold">{clearance.value}</dd>
-                  </div>
-                  {clearance.note && <dd className="mt-1 text-base">{clearance.note}</dd>}
-                  <dd className="text-sm text-muted">
-                    {example.manufacturer}, {clearance.page}
-                  </dd>
+    <section className="mt-10 border-t-2 border-line pt-6" aria-label={`Laut ${name}`}>
+      <h2 className="text-xl font-bold">
+        Laut {name} ({series.refrigerantName})
+      </h2>
+      {series.covers && <p className="mt-1 text-base">{series.covers}</p>}
+
+      <h3 className="mt-5 text-lg font-bold">Schutzbereich bei „{location.label}“</h3>
+      {zones.length === 0 ? (
+        <div className={card}>
+          <p className="text-base">Die Anleitung nennt für diesen Aufstellort keinen Schutzbereich. Prüfen, ob sie diese Aufstellung überhaupt vorsieht; siehe Vorgaben unten.</p>
+        </div>
+      ) : (
+        <dl className={listCard}>
+          {zones.map((row) => (
+            <div key={`${row.condition}-${row.value}`} className="py-3">
+              {row.condition && <dt className="text-sm font-semibold text-muted">{row.condition}</dt>}
+              <dd className="text-lg font-bold">{row.value}</dd>
+              {row.note && <dd className="mt-1 text-base">{row.note}</dd>}
+              <dd className="text-sm text-muted">
+                {manufacturer.name}, {row.page}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {series.zoneNote && <p className="mt-2 text-base">{series.zoneNote}</p>}
+
+      {clearances.length > 0 && (
+        <>
+          <h3 className="mt-5 text-lg font-bold">Mindestabstände</h3>
+          <dl className={listCard}>
+            {clearances.map((clearance) => (
+              <div key={clearance.label} className="py-3">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                  <dt className="font-semibold">{clearance.label}</dt>
+                  <dd className="text-lg font-bold">{clearance.value}</dd>
                 </div>
-              ))}
-            </dl>
-          </>
-        )}
-        <RuleSections result={result} sourceName={example.manufacturer} title={`Laut ${name}`} />
-      </div>
-    </details>
+                {clearance.note && <dd className="mt-1 text-base">{clearance.note}</dd>}
+                <dd className="text-sm text-muted">
+                  {manufacturer.name}, {clearance.page}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </>
+      )}
+
+      <RuleSections result={result} sourceName={manufacturer.name} title={`Laut ${manufacturer.name}`} />
+      <p className="mt-4 text-sm text-muted">Quelle: {series.source}</p>
+    </section>
   )
 }
 
-/** Aufstellungs-Tool: Kältemittel, Aufstellort und Umgebung wählen; darunter die Vorgaben des Leitfadens und Beispiele */
+/** Aufstellungs-Tool: Kältemittel, optional Hersteller, Aufstellort und Umgebung wählen; darunter Leitfaden und Hersteller */
 export function PlacementLookup({
   tool,
   initialType,
   initialRefrigerant,
+  initialManufacturer,
+  initialSeries,
   initialLocation,
   initialFeatures = [],
 }: {
   tool: PlacementTool
   initialType?: string
   initialRefrigerant?: string
+  initialManufacturer?: string
+  initialSeries?: string
   initialLocation?: string
   initialFeatures?: string[]
 }) {
+  const idPrefix = useId()
   const [type, setType] = useState(initialType ?? tool.deviceTypes[0]!.key)
   const [refrigerant, setRefrigerant] = useState(initialRefrigerant)
+  const [manufacturerKey, setManufacturerKey] = useState(initialManufacturer ?? '')
+  const [seriesKey, setSeriesKey] = useState(initialSeries)
   const [location, setLocation] = useState(initialLocation)
   const [features, setFeatures] = useState<string[]>(initialFeatures)
 
@@ -372,17 +322,20 @@ export function PlacementLookup({
   const covered = tool.guide.deviceTypes.includes(type)
   const place = tool.locations.find((entry) => entry.key === location)
   const chosenRefrigerant = tool.refrigerants.find((entry) => entry.key === refrigerant)
+  const manufacturers = chosenRefrigerant ? manufacturersFor(tool, type, chosenRefrigerant.key) : []
+  const manufacturer = manufacturers.find((entry) => entry.key === manufacturerKey)
+  // Bei nur einer Baureihe gleich auswählen
+  const series = manufacturer?.series.find((entry) => entry.key === seriesKey) ?? (manufacturer?.series.length === 1 ? manufacturer.series[0] : undefined)
   const ready = covered && chosenRefrigerant && place
   const result = ready ? placementResult(tool.guide.rules, chosenRefrigerant.key, place.key, features) : undefined
   const zone = ready && tool.guide.zone?.refrigerants.includes(chosenRefrigerant.key) ? tool.guide.zone : undefined
-  const examples = ready
-    ? tool.examples.filter((example) => example.type === type && example.refrigerant === chosenRefrigerant.key)
-    : []
 
   const toggle = (key: string) =>
     setFeatures((current) => (current.includes(key) ? current.filter((value) => value !== key) : [...current, key]))
   const reset = () => {
     setRefrigerant(undefined)
+    setManufacturerKey('')
+    setSeriesKey(undefined)
     setLocation(undefined)
     setFeatures([])
   }
@@ -392,7 +345,10 @@ export function PlacementLookup({
     <section className="mt-6">
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-xl font-bold">Gerät</h2>
-        <ClearInputsButton onClear={reset} disabled={refrigerant === undefined && location === undefined && features.length === 0} />
+        <ClearInputsButton
+          onClear={reset}
+          disabled={refrigerant === undefined && manufacturerKey === '' && location === undefined && features.length === 0}
+        />
       </div>
       {tool.deviceTypes.length > 1 && (
         <SelectionBar
@@ -412,7 +368,57 @@ export function PlacementLookup({
         </div>
       ) : (
         <>
-          <SelectionBar bar={{ key: 'refrigerant', name: 'Kältemittel', options: tool.refrigerants }} selected={refrigerant} onSelect={setRefrigerant} />
+          <SelectionBar
+            bar={{ key: 'refrigerant', name: 'Kältemittel', options: tool.refrigerants }}
+            selected={refrigerant}
+            onSelect={(key) => {
+              setRefrigerant(key)
+              setManufacturerKey('')
+              setSeriesKey(undefined)
+            }}
+          />
+
+          {chosenRefrigerant && (
+            <>
+              <label htmlFor={`${idPrefix}-manufacturer`} className="mt-6 block font-semibold">
+                Hersteller
+              </label>
+              {manufacturers.length === 0 ? (
+                <p className="mt-1 text-base text-muted">
+                  Für {chosenRefrigerant.label} sind noch keine Herstellerangaben hinterlegt. Es gelten die allgemeinen Vorgaben.
+                </p>
+              ) : (
+                <select
+                  id={`${idPrefix}-manufacturer`}
+                  value={manufacturer?.key ?? ''}
+                  onChange={(event) => {
+                    setManufacturerKey(event.target.value)
+                    setSeriesKey(undefined)
+                  }}
+                  className={`${fieldBase} mt-1 w-full`}
+                >
+                  <option value="">Kein bestimmter Hersteller</option>
+                  {manufacturers.map((entry) => (
+                    <option key={entry.key} value={entry.key}>
+                      {entry.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+              {manufacturer && manufacturer.series.length > 1 && (
+                <SelectionBar
+                  bar={{ key: 'series', name: 'Baureihe', options: manufacturer.series.map((entry) => ({ key: entry.key, label: entry.name, note: '' })) }}
+                  selected={series?.key}
+                  onSelect={setSeriesKey}
+                  wrap
+                />
+              )}
+              {series && manufacturer && manufacturer.series.length === 1 && (
+                <p className="mt-1 text-sm text-muted">Angaben aus der Anleitung {series.name}.</p>
+              )}
+            </>
+          )}
+
           <SelectionBar bar={{ key: 'location', name: 'Aufstellort', options: tool.locations }} selected={location} onSelect={setLocation} wrap />
 
           {tool.features.length > 0 && (
@@ -451,13 +457,13 @@ export function PlacementLookup({
         {ready && result && (
           <>
             <h2 className="mt-8 text-xl font-bold">
-              Ergebnis für {chosenRefrigerant.label} ({chosenRefrigerant.note})
+              Allgemein für {chosenRefrigerant.label} ({chosenRefrigerant.note})
             </h2>
             <RuleSections result={result} sourceName={tool.guide.name} title={`Laut ${tool.guide.name}`} />
             {zone && (
               <>
                 <h3 className="mt-6 text-lg font-bold">{zone.name}</h3>
-                <PlacementSketch location={place} distances={{ zone: 1, back: 0.6, left: 0.6 }} labeled={false} zoneName={zone.name}>
+                <PlacementSketch location={place} zoneName={zone.name}>
                   <p className="mt-2 text-base">{zone.description}</p>
                   <p className="text-sm text-muted">
                     {tool.guide.name}, {zone.page}
@@ -466,9 +472,14 @@ export function PlacementLookup({
               </>
             )}
             <p className="mt-4 text-sm text-muted">Quelle: {tool.guide.source}</p>
-            {examples.map((example) => (
-              <ExampleView key={example.key} example={example} location={place} features={features} />
-            ))}
+            {manufacturer && series && <SeriesView manufacturer={manufacturer} series={series} location={place} features={features} />}
+            {manufacturers.length > 0 && !manufacturer && (
+              <div className={card}>
+                <p className="text-base">
+                  Maße von Schutzbereich und Mindestabständen legt der Hersteller fest. Hersteller wählen, um sie zu sehen.
+                </p>
+              </div>
+            )}
           </>
         )}
       </div>

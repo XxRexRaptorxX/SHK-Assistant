@@ -2,9 +2,10 @@ import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
 
-// Aufstellungs-Tools ("kind": "placement"): Kältemittel, Aufstellort und Umgebung eines Außengeräts angeben, dann die
-// allgemeinen Vorgaben aus einem herstellerübergreifenden Leitfaden sehen. Maße von Schutzbereichen und Mindestabständen
-// sind herstellerspezifisch; sie stehen nur in Beispielen aus Herstelleranleitungen, deutlich als Beispiel gekennzeichnet.
+// Aufstellungs-Tools ("kind": "placement"): Kältemittel, optional Hersteller, Aufstellort und Umgebung eines Außengeräts
+// angeben, dann die allgemeinen Vorgaben aus einem herstellerübergreifenden Leitfaden sehen und, wenn ein Hersteller gewählt
+// ist, die Vorgaben aus dessen Anleitung. Maße von Schutzbereichen und Mindestabständen sind herstellerspezifisch; sie stehen
+// nur bei den Herstellern, je Baureihe, sobald sich die Vorgaben innerhalb eines Herstellers unterscheiden.
 // Es gibt keine Logik, die Zulässigkeit aus allgemeinen Regeln ableitet: Treffen Vorgaben der Stufe „Nicht zulässig“ über
 // Aufstellort oder ein gewähltes Merkmal zu, werden sie genannt, sonst nur, dass keine zutrifft.
 
@@ -22,9 +23,6 @@ export const PLACEMENT_LEVELS = {
 export type PlacementLevel = keyof typeof PLACEMENT_LEVELS
 
 export const PLACEMENT_LEVEL_KEYS = Object.keys(PLACEMENT_LEVELS) as [PlacementLevel, ...PlacementLevel[]]
-
-/** Seite des Geräts für die Skizze (Draufsicht): Ansaugseite hinten, Ausblasseite vorn */
-export const PLACEMENT_SIDES = ['intake', 'exhaust', 'side', 'top'] as const
 
 /** Wände in der Skizze: hinter der Ansaugseite und links daneben */
 export const PLACEMENT_WALLS = ['back', 'left'] as const
@@ -79,10 +77,8 @@ const clearanceSchema = z.strictObject({
   label: z.string().trim().min(1),
   /** Wert wie in der Quelle, z. B. „min. 0,6 m“ oder „frei lassen“ */
   value: z.string().trim().min(1),
-  /** Zahl in Metern für die Skizze; nur mit side */
-  meters: z.number().positive().optional(),
-  /** Seite in der Skizze */
-  side: z.enum(PLACEMENT_SIDES).optional(),
+  /** Gilt nur bei diesen Aufstellorten (key); leer = überall */
+  locations: keys,
   /** Zusatz, z. B. eine Bedingung */
   note: z.string().trim().default(''),
   page,
@@ -110,34 +106,48 @@ const guideSchema = z.strictObject({
   rules: z.array(ruleSchema).min(1),
 })
 
-/** Beispiel aus einer Herstelleranleitung, je Geräteserie; zeigt, wie Maße und Vorgaben dort aussehen */
-const exampleSchema = z.strictObject({
+/** Eine Zeile zum Schutzbereich einer Baureihe */
+const zoneRowSchema = z.strictObject({
+  /** Aufstellorte (key), für die die Zeile gilt; leer = alle */
+  locations: keys,
+  /** Bedingung, z. B. „Montagehöhe < 400 mm“; leer = immer */
+  condition: z.string().trim().default(''),
+  /** Maße wie in der Anleitung, z. B. „1.000 mm rundum“ */
+  value: z.string().trim().min(1),
+  note: z.string().trim().default(''),
+  page,
+})
+
+/** Baureihe eines Herstellers mit den Vorgaben aus ihrer Anleitung */
+const seriesSchema = z.strictObject({
   key,
   /** key des Gerätetyps */
   type: key,
   /** key der Kältemittel-Gruppe */
   refrigerant: key,
-  manufacturer: z.string().trim().min(1),
-  /** Geräteserie; Maße gelten immer je Serie, nie pauschal je Hersteller */
-  series: z.string().trim().min(1),
+  /** Baureihe bzw. Außeneinheit, z. B. „aroTHERM plus/8“ */
+  name: z.string().trim().min(1),
+  /** Für welche Geräte die Anleitung gilt, z. B. Leistungsgrößen oder zugehörige Inneneinheiten */
+  covers: z.string().trim().default(''),
   /** Kältemittel wie in der Anleitung, z. B. „R290“ */
   refrigerantName: z.string().trim().min(1),
-  /** Dokument mit Ausgabe, Seiten und, wenn vorhanden, Link */
+  /** Dokumente mit Ausgabe, Seiten und, wenn vorhanden, Link */
   source: z.string().trim().min(1),
-  zone: z
-    .strictObject({
-      name: z.string().trim().min(1),
-      /** Abstand rund um das Gerät in Metern */
-      meters: z.number().positive(),
-      /** Abweichender Abstand je Aufstellort (key → Meter), z. B. Eckaufstellung zu den offenen Seiten */
-      byLocation: z.record(key, z.number().positive()).default({}),
-      description: z.string().trim().min(1),
-      page,
-    })
-    .optional(),
+  /** Schutzbereich je Aufstellort, wie in der Anleitung; mehrere Zeilen je Ort bei Bedingungen (z. B. Montagehöhe) */
+  zones: z.array(zoneRowSchema).default([]),
+  /** Hinweis zum Schutzbereich, der für alle Aufstellorte gilt */
+  zoneNote: z.string().trim().default(''),
   clearances: z.array(clearanceSchema).default([]),
   /** Vorgaben dieser Anleitung; refrigerants bleibt hier leer */
   rules: z.array(ruleSchema).default([]),
+})
+
+/** Hersteller mit einer oder mehreren Baureihen; mehrere nur, wenn sich die Vorgaben unterscheiden */
+const manufacturerSchema = z.strictObject({
+  key,
+  name: z.string().trim().min(1),
+  aliases: z.array(z.string().trim().min(1)).default([]),
+  series: z.array(seriesSchema).min(1),
 })
 
 export const placementToolSchema = defineEntrySchema({
@@ -155,14 +165,17 @@ export const placementToolSchema = defineEntrySchema({
   locations: z.array(locationSchema).min(1),
   features: z.array(featureSchema).default([]),
   guide: guideSchema,
-  examples: z.array(exampleSchema).default([]),
+  /** Hersteller mit Vorgaben aus ihren Anleitungen; Maße gelten je Baureihe */
+  manufacturers: z.array(manufacturerSchema).default([]),
 })
 
 export type PlacementTool = z.output<typeof placementToolSchema>
 export type PlacementGuide = PlacementTool['guide']
-export type PlacementExample = PlacementTool['examples'][number]
+export type PlacementManufacturer = PlacementTool['manufacturers'][number]
+export type PlacementSeries = PlacementManufacturer['series'][number]
+export type PlacementZoneRow = PlacementSeries['zones'][number]
 export type PlacementRule = PlacementGuide['rules'][number]
-export type PlacementClearance = PlacementExample['clearances'][number]
+export type PlacementClearance = PlacementSeries['clearances'][number]
 export type PlacementLocation = PlacementTool['locations'][number]
 export type PlacementFeature = PlacementTool['features'][number]
 
@@ -212,9 +225,21 @@ export function placementResult(
   return { excluded, matching: matching.sort(byLevel), general: general.sort(byLevel), other: other.sort(byLevel) }
 }
 
-/** Abstand des Schutzbereichs eines Beispiels am gewählten Aufstellort */
-export const exampleZoneMeters = (example: PlacementExample, location: string) =>
-  example.zone ? (example.zone.byLocation[location] ?? example.zone.meters) : undefined
+/** Zeilen zum Schutzbereich einer Baureihe am gewählten Aufstellort */
+export const zoneRowsAt = (series: PlacementSeries, location: string) =>
+  series.zones.filter((row) => row.locations.length === 0 || row.locations.includes(location))
+
+/** Mindestabstände einer Baureihe am gewählten Aufstellort */
+export const clearancesAt = (series: PlacementSeries, location: string) =>
+  series.clearances.filter((clearance) => clearance.locations.length === 0 || clearance.locations.includes(location))
+
+/** Hersteller, die Baureihen für Gerätetyp und Kältemittel-Gruppe haben, jeweils nur mit diesen Baureihen */
+export function manufacturersFor(tool: PlacementTool, type: string, refrigerant: string): PlacementManufacturer[] {
+  return tool.manufacturers.flatMap((manufacturer) => {
+    const series = manufacturer.series.filter((entry) => entry.type === type && entry.refrigerant === refrigerant)
+    return series.length > 0 ? [{ ...manufacturer, series }] : []
+  })
+}
 
 function duplicates(values: readonly string[]): string[] {
   return [...new Set(values.filter((value, index) => values.indexOf(value) !== index))]
@@ -230,7 +255,9 @@ export function checkPlacementTool(tool: PlacementTool): string[] {
   for (const value of duplicates(refrigerantKeys)) issues.push(`refrigerants: key "${value}" doppelt vergeben`)
   for (const value of duplicates(locationKeys)) issues.push(`locations: key "${value}" doppelt vergeben`)
   for (const value of duplicates(featureKeys)) issues.push(`features: key "${value}" doppelt vergeben`)
-  for (const value of duplicates(tool.examples.map((example) => example.key))) issues.push(`examples: key "${value}" doppelt vergeben`)
+  for (const value of duplicates(tool.manufacturers.map((manufacturer) => manufacturer.key))) {
+    issues.push(`manufacturers: key "${value}" doppelt vergeben`)
+  }
   for (const location of tool.locations) {
     if (duplicates(location.walls).length > 0) issues.push(`locations (${location.key}): Wand doppelt`)
   }
@@ -269,22 +296,23 @@ export function checkPlacementTool(tool: PlacementTool): string[] {
   }
   checkRules(tool.guide.rules, 'guide')
 
-  for (const example of tool.examples) {
-    const where = `examples (${example.key})`
-    if (!typeKeys.includes(example.type)) issues.push(`${where}: unbekannter Gerätetyp "${example.type}"`)
-    if (!refrigerantKeys.includes(example.refrigerant)) issues.push(`${where}: unbekanntes Kältemittel "${example.refrigerant}"`)
-    if (example.rules.some((rule) => rule.refrigerants.length > 0)) {
-      issues.push(`${where}: refrigerants in Vorgaben eines Beispiels nicht erlaubt (gilt für das Beispiel)`)
+  for (const manufacturer of tool.manufacturers) {
+    for (const value of duplicates(manufacturer.series.map((series) => series.key))) {
+      issues.push(`manufacturers (${manufacturer.key}): Baureihe "${value}" doppelt vergeben`)
     }
-    for (const location of Object.keys(example.zone?.byLocation ?? {})) {
-      if (!locationKeys.includes(location)) issues.push(`${where}: zone.byLocation mit unbekanntem Aufstellort "${location}"`)
+    for (const series of manufacturer.series) {
+      const where = `manufacturers (${manufacturer.key}/${series.key})`
+      if (!typeKeys.includes(series.type)) issues.push(`${where}: unbekannter Gerätetyp "${series.type}"`)
+      if (!refrigerantKeys.includes(series.refrigerant)) issues.push(`${where}: unbekanntes Kältemittel "${series.refrigerant}"`)
+      if (series.rules.some((rule) => rule.refrigerants.length > 0)) {
+        issues.push(`${where}: refrigerants in Vorgaben einer Baureihe nicht erlaubt (das Kältemittel steht an der Baureihe)`)
+      }
+      for (const location of [...series.zones, ...series.clearances].flatMap((row) => row.locations)) {
+        if (!locationKeys.includes(location)) issues.push(`${where}: unbekannter Aufstellort "${location}" bei Schutzbereich oder Abstand`)
+      }
+      if (series.rules.length === 0) issues.push(`${where}: keine Vorgaben`)
+      checkRules(series.rules, where)
     }
-    for (const clearance of example.clearances) {
-      if (clearance.meters !== undefined && !clearance.side) issues.push(`${where}: Abstand „${clearance.label}“ hat meters ohne side`)
-    }
-    const sides = example.clearances.flatMap((clearance) => (clearance.meters !== undefined && clearance.side ? [clearance.side] : []))
-    for (const value of duplicates(sides)) issues.push(`${where}: mehrere Abstände mit Zahl für die Seite "${value}"`)
-    checkRules(example.rules, where)
   }
   // Ein Merkmal ohne Vorgabe würde angeboten, aber nie etwas zeigen
   for (const feature of featureKeys) {
@@ -303,5 +331,10 @@ export function placementKeywords(tool: PlacementTool): string[] {
     ...tool.features.flatMap((feature) => [feature.label, ...feature.aliases]),
     ...(tool.guide.zone ? [tool.guide.zone.name] : []),
     tool.guide.name,
+    ...tool.manufacturers.flatMap((manufacturer) => [
+      manufacturer.name,
+      ...manufacturer.aliases,
+      ...manufacturer.series.flatMap((series) => [series.name, `${manufacturer.name} ${series.name}`, series.refrigerantName]),
+    ]),
   ]
 }
