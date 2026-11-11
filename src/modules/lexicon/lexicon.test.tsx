@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { normalizeForSearch, splitParagraphs } from '../../lib/text'
 import { filterLexicon, findLexiconEntry, lexiconEntries, lexiconPath, sortLexicon } from './lexicon'
 import { LexiconDetailPage } from './LexiconDetailPage'
-import { LexiconListPage } from './LexiconListPage'
+import { LexiconListPage, matchesLexiconFilter, offersCategoryFilter } from './LexiconListPage'
 import type { LexiconEntry } from './schema'
 import { LEXICON_CATEGORIES } from './constants'
 import { buildTermIndex, lexiconPathFor, unitNameFor } from './termLinks'
@@ -199,6 +199,35 @@ describe('Lexikon-Seiten', () => {
       </MemoryRouter>,
     )
     expect(html).toContain('Keine Begriffe gefunden.')
+  })
+})
+
+describe('Filter der Lexikon-Suchleiste', () => {
+  const pumpe = lexiconEntry({ id: 'lexicon.pumpe', categories: ['hydraulik', 'heizung'], tags: ['heizung'] })
+  const zange = lexiconEntry({ id: 'lexicon.zange', categories: ['werkzeuge'], tags: ['allgemein'] })
+  const bar = lexiconEntry({ id: 'lexicon.bar', categories: ['einheiten'], tags: ['allgemein'] })
+  const ids = (filter: Parameters<typeof matchesLexiconFilter>[1]) =>
+    [pumpe, zange, bar].filter((entry) => matchesLexiconFilter(entry, filter)).map((entry) => entry.id)
+
+  it('bietet Kategorien in der Übersicht und in „Alles“ an, nicht in einer einzelnen Kategorie', () => {
+    expect(offersCategoryFilter(null)).toBe(true)
+    expect(offersCategoryFilter('alles')).toBe(true)
+    expect(offersCategoryFilter('heizung')).toBe(false)
+  })
+
+  it('ohne Auswahl lässt er alles durch', () => {
+    expect(ids({ categories: [], tags: [] })).toEqual(['lexicon.pumpe', 'lexicon.zange', 'lexicon.bar'])
+  })
+
+  it('filtert nach Kategorien; eine passende genügt', () => {
+    expect(ids({ categories: ['werkzeuge'], tags: [] })).toEqual(['lexicon.zange'])
+    expect(ids({ categories: ['werkzeuge', 'einheiten'], tags: [] })).toEqual(['lexicon.zange', 'lexicon.bar'])
+    expect(ids({ categories: ['heizung'], tags: [] })).toEqual(['lexicon.pumpe'])
+  })
+
+  it('verknüpft Kategorien und Themen mit „und“', () => {
+    expect(ids({ categories: ['werkzeuge', 'hydraulik'], tags: ['heizung'] })).toEqual(['lexicon.pumpe'])
+    expect(ids({ categories: ['einheiten'], tags: ['heizung'] })).toEqual([])
   })
 })
 

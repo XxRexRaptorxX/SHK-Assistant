@@ -9,7 +9,7 @@ import { DraftBadge } from '../../components/DraftBadge'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
-import { ALL_CATEGORIES, LEXICON_CATEGORIES } from './constants'
+import { ALL_CATEGORIES, LEXICON_CATEGORIES, type LexiconCategory } from './constants'
 import { categoryLabel, entriesInCategory, filterLexicon, lexiconEntries, lexiconPath } from './lexicon'
 import type { LexiconEntry } from './schema'
 import { listCard } from '../../components/surfaces'
@@ -31,7 +31,8 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
   const label = category === null ? undefined : categoryLabel(category)
   usePageTitle(label ? `${label} – Lexikon` : 'Lexikon')
   const [query, setQuery] = useState(initialQuery)
-  // Themen-Filter (Mehrfachauswahl); ein passender Tag genügt
+  // Filter (Mehrfachauswahl): Kategorien (nur in der Übersicht) und Themen; je Gruppe genügt ein Treffer
+  const [categories, setCategories] = useState<readonly LexiconCategory[]>([])
   const [tags, setTags] = useState<readonly TopicTag[]>([])
   const [filtersOpen, setFiltersOpen] = useState(false)
   const tagOptions = useMemo(() => {
@@ -49,10 +50,15 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
   }
 
   const inCategory = label && category ? entriesInCategory(entries, category) : entries
-  const searching = query.trim() !== '' || tags.length > 0
-  const shown = filterLexicon(inCategory, query).filter(
-    (entry) => tags.length === 0 || entry.tags.some((tag) => tags.includes(tag)),
+  const categoryFilter = offersCategoryFilter(label ? category : null)
+  const activeCategories = categoryFilter ? categories : []
+  const filterCount = activeCategories.length + tags.length
+  const searching = query.trim() !== '' || filterCount > 0
+  const shown = filterLexicon(inCategory, query).filter((entry) =>
+    matchesLexiconFilter(entry, { categories: activeCategories, tags }),
   )
+  const labelOf = (key: LexiconCategory) => LEXICON_CATEGORIES.find((item) => item.key === key)!.label
+  const keyOf = (text: string) => LEXICON_CATEGORIES.find((item) => item.label === text)!.key
 
   return (
     <>
@@ -70,17 +76,22 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
           trailing={
             <SearchFilterButton
               open={filtersOpen}
-              activeCount={tags.length}
+              activeCount={filterCount}
               onToggle={() => setFiltersOpen((open) => !open)}
             />
           }
         />
       </div>
       {filtersOpen && (
+        // Kategorien laufen über die erste Auswahl der Suchfilter (dort „Bereiche“), angezeigt mit ihrem Namen
         <SearchFilters
-          options={{ modules: [], tags: tagOptions }}
-          filter={{ modules: [], tags }}
-          onChange={(next) => setTags(next.tags)}
+          modulesLegend="Kategorien"
+          options={{ modules: categoryFilter ? LEXICON_CATEGORIES.map((item) => item.label) : [], tags: tagOptions }}
+          filter={{ modules: activeCategories.map(labelOf), tags }}
+          onChange={(next) => {
+            setCategories(next.modules.map(keyOf))
+            setTags(next.tags)
+          }}
         />
       )}
 
@@ -91,6 +102,23 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
       )}
     </>
   )
+}
+
+/**
+ * Kategorien als Filter: in der Übersicht (null) und in „Alles“, weil dort alle Begriffe stehen.
+ * In einer einzelnen Kategorie ist sie schon gewählt; dort gibt es nur die Themen.
+ */
+export const offersCategoryFilter = (category: string | null): boolean =>
+  category === null || category === ALL_CATEGORIES
+
+/** Filter der Lexikon-Suchleiste: leere Liste = keine Einschränkung; innerhalb einer Gruppe genügt ein Treffer */
+export function matchesLexiconFilter(
+  entry: LexiconEntry,
+  filter: { categories: readonly LexiconCategory[]; tags: readonly TopicTag[] },
+): boolean {
+  if (filter.categories.length > 0 && !entry.categories.some((key) => filter.categories.includes(key))) return false
+  if (filter.tags.length > 0 && !entry.tags.some((tag) => filter.tags.includes(tag))) return false
+  return true
 }
 
 /** Kacheln der Kategorien mit Anzahl der Begriffe; „Alles“ zuerst */

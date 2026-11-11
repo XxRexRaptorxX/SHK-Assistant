@@ -46,6 +46,7 @@ export function SearchFilters({
   filter,
   onChange,
   tagNote,
+  modulesLegend = 'Bereiche',
 }: {
   /** Ohne Module (z. B. im Lexikon) entfällt der Abschnitt „Bereiche“ */
   options: SearchEngine['filterOptions']
@@ -53,13 +54,15 @@ export function SearchFilters({
   onChange: (filter: SearchFilter) => void
   /** Zusatz hinter „Themen“, z. B. „(nur Tools und Lexikon)“ */
   tagNote?: string
+  /** Überschrift der ersten Auswahl, z. B. „Kategorien“ im Lexikon */
+  modulesLegend?: string
 }) {
   const active = filter.modules.length + filter.tags.length > 0
   return (
     <div id={SEARCH_FILTERS_ID} className="mt-2 rounded-2xl border border-edge bg-surface p-4">
       {options.modules.length > 0 && (
         <fieldset className="mb-4">
-          <legend className="font-bold">Bereiche</legend>
+          <legend className="font-bold">{modulesLegend}</legend>
           <div className="mt-2 flex flex-wrap gap-2">
             {options.modules.map((module) => {
               const on = filter.modules.includes(module)
