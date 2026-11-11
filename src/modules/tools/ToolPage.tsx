@@ -11,6 +11,7 @@ import {
   isCableTool,
   isChoiceTool,
   isFactorTool,
+  isHazmatPointsTool,
   isHeatingCostTool,
   isMaterialListTool,
   isNormFinderTool,
@@ -29,6 +30,7 @@ import {
 } from './schema'
 import { CableLookup } from './CableLookup'
 import { FactorCalculator } from './FactorCalculator'
+import { HazmatPoints } from './HazmatPoints'
 import { HeatingCostComparison } from './HeatingCostComparison'
 import { ChoiceLookup } from './ChoiceLookup'
 import { MaterialList } from './MaterialList'
@@ -98,6 +100,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <HeatingCostComparison tool={tool} />
       ) : isMaterialListTool(tool) ? (
         <MaterialList tool={tool} />
+      ) : isHazmatPointsTool(tool) ? (
+        <HazmatPoints tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

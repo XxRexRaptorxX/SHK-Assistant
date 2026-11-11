@@ -1,0 +1,534 @@
+{
+  "id": "tool.gefahrgut-1000-punkte",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Beförderungskategorien, Höchstmengen, Faktoren und die bei der Freistellung weiter geltenden Vorschriften: Freistellungsmöglichkeiten nach ADR 2025, Anlage 1 (Stand 11/2024), gefahrgut-duennebier.de, https://gefahrgut-foren.de/ubbthreads.php/ubb/download/Number/1326/filename/Freistellung%201.1.3%20mit%201.1.3.6%20ADR%202025.pdf; Zählweise der Mengen (Liter, Nettomasse, Fassungsraum): industrie-fachwissen.de, ADR-Beförderungskategorien, https://industrie-fachwissen.de/verpackung/adr-befoerderungskategorien-0-1-2-3-4-tabelle-hoechstmengen; Beispiele, Gasflaschen, Spraydosen, Ladungssicherung: BG RCI, Kurz & bündig KB 008 „Gefahrgut im Pkw und Kleintransporter“, 8/2016, https://res.jedermann.de/data/downloads/KB008_Gesamtdokument.pdf; Handwerkerregelung, Beispieltabelle, Ladungssicherung, Pflichten über der Grenze: Ministerium für Wirtschaft, Verkehr, Landwirtschaft und Weinbau Rheinland-Pfalz, „Sichere Beförderung gefährlicher Güter durch Handwerksbetriebe“, 14. Auflage, Dezember 2020 (Stand ADR 2021), https://mwvlw.rlp.de/fileadmin/08/Broschueren/Sichere_Befoerderung_gefaehrlicher_Gueter_durch_Handwerksbetriebe_RLP_2020.pdf; Flaschengröße 11 kg: Hessische Landesfeuerwehrschule, Lernunterlage Kennzeichnung/1000-Punkte-Regel, https://hlfs.hessen.de/sites/hlfs.hessen.de/files/2024-12/f-iii-iv-gabc-wefue_lernu_kennzeichnung_1000_punkte-regel_10.00.00.pdf; UN-Nummern: umwelt-online, ADR Kapitel 3.2 Tabelle B, https://umwelt-online.de/recht/gefahr.gut/adr/adr_rid23/32tbg.htm (und weitere Buchstaben); Heizöl/Diesel: IHK, Merkblatt Heizöl nach ADR, https://www.ihk.de/blueprint/servlet/resource/blob/6704116/c2f67dad372d7eb92343c702009dafb4/heizoel-merkblatt-adr-data.pdf; Formiergas: Linde, Datenblatt Formiergas, https://static.prd.echannel.linde.com/wcsstore/CH_REC_Industrial_Ntl_Store/datasheets/de_CH/MS-27431-formiergas-5-8-10-25-df.pdf; Air Liquide, Sicherheitsdatenblatt ARCAL F5, https://de.airliquide.com/product-assets/6/3/b/2/63b21e9ae31b07a6a821b3f99cb0ba6eee8e9b40_ARCAL%E2%84%A2_F5_de_DE_v2.2.pdf; Carbo, Produktdatenblatt CARBOform 90/10, https://www.carbo.de/sites/default/files/downloads/12.2-CARBOform-90_10-N2_H2_11_2020.pdf; Gaskartuschen: DHL, Nationaler Gefahrgutversand 11/2016, https://www.ufz.de/export/data/9/232604_dhl-nationaler-gefahrgutversand-112016.pdf; Lüftungsöffnungen und Gestelle: BG BAU, Baustein A 065 „Transport von Druckgasflaschen“, 07/2021, https://www.bgbau-medien.de/app/daten/bausteine/a_065/a_065.htm; Befestigung und Belüftung von Flüssiggasflaschen: DVFG, Merkblatt „Transport von Flüssiggasflaschen mit Kraftfahrzeugen“, Stand 2021-06, https://www.dvfg.de/wp-content/uploads/2026/06/DVFG_Merkblatt_Gas-Flaschen-Transport_Download.pdf; Kältemittelflaschen: Bundesfachschule Kälte-Klima-Technik, „Kältemitteltransport im PKW“, 01.12.2020, https://www.bfs-kaelte-klima.de/aktuelles/fragen-aus-der-praxis/detail?tx_ttnews%5Btt_news%5D=2198&cHash=f83bcf56f45549dbf176794c1c579ede; Lüftungsöffnungen nach DVS 0211: Bundesfachschule Kälte-Klima-Technik, „Transport von Druckgasflaschen“, 01.10.2010, https://www.bfs-kaelte-klima.de/aktuelles/fragen-aus-der-praxis/detail?tx_ttnews%5Btt_news%5D=1268&cHash=e2d6a031f4af6ac467c947e15e44c56b, und 29.02.2020, https://www.bfs-kaelte-klima.de/aktuelles/fragen-aus-der-praxis/detail/?tx_ttnews[tt_news]=2099&cHash=7b3cbdac7330403047243686ca2ed31f; zwei Zurrgurte über Kreuz: Air Liquide, Georg Schroeder, Vortrag „Transport von Druckgasflaschen und Ladungssicherung im Fahrzeug“, KSB-Seminar 11/2009, Unfallkasse NRW, https://www.unfallkasse-nrw.de/fileadmin/server/download/Feuerwehr/KSB/Vortrag_Schroeder2_Fw_Berneustadt_Atemschutzflaschen.pdf",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "hazmatPoints",
+  "title": "Gefahrgut: 1000-Punkte-Regel",
+  "summary": "Punkte für Gefahrgut im Firmenwagen nach ADR 1.1.3.6 berechnen, mit den Pflichten für die Fahrt.",
+  "tags": ["allgemein"],
+  "category": "Organisation",
+  "description": "Rechnet für eine Ladung aus einem oder mehreren Gefahrgütern die Punkte nach ADR 1.1.3.6 („1000-Punkte-Regel“): Menge × Faktor der Beförderungskategorie, für alle Güter zusammengezählt. Bleibt die Summe bei höchstens 1000 Punkten, gelten Erleichterungen, z. B. keine orangefarbenen Warntafeln. Welche Pflichten trotzdem bleiben, steht unter dem Ergebnis.",
+  "edition": "ADR 2025",
+  "limit": 1000,
+  "categories": [
+    { "category": 0, "factor": null, "maxQuantity": "0" },
+    { "category": 1, "factor": 50, "maxQuantity": "20" },
+    { "category": 2, "factor": 3, "maxQuantity": "333" },
+    { "category": 3, "factor": 1, "maxQuantity": "1000" },
+    { "category": 4, "factor": 0, "maxQuantity": "unbegrenzt" }
+  ],
+  "groups": [
+    { "key": "gase", "label": "Gase in Flaschen" },
+    { "key": "kaeltemittel", "label": "Kältemittel" },
+    { "key": "fluessig", "label": "Kraftstoffe, Farben, Kleber, Säuren" },
+    { "key": "sonstiges", "label": "Spraydosen, Kartuschen, Akkus" },
+    { "key": "leergut", "label": "Leergut" }
+  ],
+  "substances": [
+    {
+      "key": "fluessiggas",
+      "name": "Propan / Flüssiggas",
+      "aliases": ["Propan", "Butan", "Flüssiggas", "Propangas", "Gasflasche"],
+      "group": "gase",
+      "un": "1965",
+      "officialName": "Kohlenwasserstoffgas, Gemisch, verflüssigt, n.a.g. (wie Propan, Butan)",
+      "classInfo": "Klasse 2, entzündbar (Gefahrzettel 2.1)",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Füllmenge (Nettomasse) in kg",
+      "sizes": [5, 11, 33],
+      "rules": ["gasflaschen", "belueftung"],
+      "source": "RLP-Broschüre 2020, S. 16 und 18; Flaschengrößen 5 und 33 kg: RLP-Broschüre S. 18, 11 kg: HLFS-Lernunterlage"
+    },
+    {
+      "key": "acetylen",
+      "name": "Acetylen",
+      "aliases": ["Acetylenflasche", "Autogen", "Schweißgas"],
+      "group": "gase",
+      "un": "1001",
+      "officialName": "Acetylen, gelöst",
+      "classInfo": "Klasse 2, entzündbar (Gefahrzettel 2.1)",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Nettomasse des gelösten Gases in kg",
+      "rules": ["gasflaschen", "belueftung"],
+      "source": "BG RCI KB 008, S. 4 (Beispiel 2); RLP-Broschüre 2020, S. 16"
+    },
+    {
+      "key": "sauerstoff",
+      "name": "Sauerstoff",
+      "aliases": ["Sauerstoffflasche", "Autogen", "Schweißgas"],
+      "group": "gase",
+      "un": "1072",
+      "officialName": "Sauerstoff, verdichtet",
+      "classInfo": "Klasse 2, oxidierend (Gefahrzettel 2.2 + 5.1)",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Fassungsraum der Flasche in Litern (mit Wasser ausgelitert), nicht die Gasmenge",
+      "rules": ["gasflaschen", "belueftung"],
+      "source": "BG RCI KB 008, S. 4 (Beispiel 2); RLP-Broschüre 2020, S. 16; Zählweise: industrie-fachwissen.de"
+    },
+    {
+      "key": "stickstoff",
+      "name": "Stickstoff",
+      "aliases": ["Stickstoffflasche", "Druckprobe", "Dichtheitsprüfung"],
+      "group": "gase",
+      "un": "1066",
+      "officialName": "Stickstoff, verdichtet",
+      "classInfo": "Klasse 2, erstickend",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Fassungsraum der Flasche in Litern (mit Wasser ausgelitert), nicht die Gasmenge",
+      "rules": ["gasflaschen", "belueftung"],
+      "source": "BG RCI KB 008, S. 4 (Beispiel 2); Zählweise: industrie-fachwissen.de"
+    },
+    {
+      "key": "formiergasBis55",
+      "name": "Formiergas, H₂ bis 5,5 %",
+      "aliases": ["Formiergas", "N2/H2", "95/5", "Lecksuche"],
+      "group": "gase",
+      "un": "1956",
+      "officialName": "Verdichtetes Gas, n.a.g. (Stickstoff, Wasserstoff)",
+      "classInfo": "Klasse 2, Klassifizierungscode 1A (nicht entzündbar)",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Fassungsraum der Flasche in Litern (mit Wasser ausgelitert), nicht die Gasmenge",
+      "note": "Bis 5,5 % Wasserstoff UN 1956, darüber UN 1954 (entzündbar). Den Anteil zeigt das Flaschenetikett.",
+      "rules": ["gasflaschen", "belueftung"],
+      "source": "Linde, Datenblatt Formiergas; Air Liquide, SDB ARCAL F5 (UN 1956, Code 1A); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe A)"
+    },
+    {
+      "key": "formiergasUeber55",
+      "name": "Formiergas, H₂ über 5,5 %",
+      "aliases": ["Formiergas", "N2/H2", "90/10", "Lecksuche"],
+      "group": "gase",
+      "un": "1954",
+      "officialName": "Verdichtetes Gas, entzündbar, n.a.g. (Stickstoff, Wasserstoff)",
+      "classInfo": "Klasse 2, entzündbar (Gefahrzettel 2.1)",
+      "transportCategory": 2,
+      "unit": "l",
+      "quantityBasis": "Fassungsraum der Flasche in Litern (mit Wasser ausgelitert), nicht die Gasmenge",
+      "rules": ["gasflaschen", "belueftung"],
+      "source": "Linde, Datenblatt Formiergas; Carbo, Produktdatenblatt CARBOform 90/10 (UN 1954); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe F)"
+    },
+    {
+      "key": "r32",
+      "name": "Kältemittel R32",
+      "aliases": ["R32", "R 32", "Difluormethan", "Klimagerät", "Wärmepumpe"],
+      "group": "kaeltemittel",
+      "un": "3252",
+      "officialName": "Gas als Kältemittel R 32 (Difluormethan)",
+      "classInfo": "Klasse 2, Klassifizierungscode 2F (entzündbar)",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Füllmenge (Nettomasse) in kg",
+      "rules": ["gasflaschen", "belueftung", "kaeltemittelflaschen"],
+      "source": "umwelt-online, ADR Tabelle B (UN 3252); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe F)"
+    },
+    {
+      "key": "r290",
+      "name": "Kältemittel R290 (Propan)",
+      "aliases": ["R290", "R 290", "Propan", "Wärmepumpe"],
+      "group": "kaeltemittel",
+      "un": "1978",
+      "officialName": "Propan",
+      "classInfo": "Klasse 2, Klassifizierungscode 2F (entzündbar)",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Füllmenge (Nettomasse) in kg",
+      "rules": ["gasflaschen", "belueftung", "kaeltemittelflaschen"],
+      "source": "umwelt-online, ADR Tabelle B (UN 1978, Code 2F); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe F)"
+    },
+    {
+      "key": "r134a",
+      "name": "Kältemittel R134a",
+      "aliases": ["R134a", "R 134a", "Tetrafluorethan"],
+      "group": "kaeltemittel",
+      "un": "3159",
+      "officialName": "Gas als Kältemittel R 134a (1,1,1,2-Tetrafluorethan)",
+      "classInfo": "Klasse 2, Klassifizierungscode 2A (nicht entzündbar)",
+      "transportCategory": 3,
+      "unit": "kg",
+      "quantityBasis": "Füllmenge (Nettomasse) in kg",
+      "rules": ["gasflaschen", "belueftung", "kaeltemittelflaschen"],
+      "source": "umwelt-online, ADR Tabelle B (UN 3159, Code 2A); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe A)"
+    },
+    {
+      "key": "r410a",
+      "name": "Kältemittel R410A",
+      "aliases": ["R410A", "R 410A", "Klimagerät", "Split"],
+      "group": "kaeltemittel",
+      "un": "3163",
+      "officialName": "Verflüssigtes Gas, n.a.g.",
+      "classInfo": "Klasse 2, Klassifizierungscode 2A (nicht entzündbar)",
+      "transportCategory": 3,
+      "unit": "kg",
+      "quantityBasis": "Füllmenge (Nettomasse) in kg",
+      "note": "Zuordnung zur Sammelbezeichnung UN 3163 abgeleitet, nicht namentlich belegt. UN-Nummer im Sicherheitsdatenblatt, Abschnitt 14, prüfen.",
+      "rules": ["gasflaschen", "belueftung", "kaeltemittelflaschen"],
+      "source": "umwelt-online, ADR Tabelle B (UN 3163, Code 2A für nicht entzündbare Gemische); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe A)"
+    },
+    {
+      "key": "heizoelDiesel",
+      "name": "Heizöl EL / Diesel",
+      "aliases": ["Heizöl", "Diesel", "Dieselkraftstoff", "Kanister", "Ölheizung"],
+      "group": "fluessig",
+      "un": "1202",
+      "officialName": "Dieselkraftstoff oder Heizöl, leicht",
+      "classInfo": "Klasse 3, Verpackungsgruppe III, umweltgefährdend",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "rules": ["wassergefaehrdend"],
+      "source": "IHK, Merkblatt Heizöl nach ADR; umwelt-online, ADR Tabelle B (UN 1202); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Verpackungsgruppe III)"
+    },
+    {
+      "key": "benzin",
+      "name": "Benzin",
+      "aliases": ["Ottokraftstoff", "Kraftstoff", "Kanister", "Stromerzeuger"],
+      "group": "fluessig",
+      "un": "1203",
+      "officialName": "Benzin",
+      "classInfo": "Klasse 3, Verpackungsgruppe II",
+      "transportCategory": 2,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "rules": ["wassergefaehrdend"],
+      "source": "BG RCI KB 008, S. 4 (Beispiel 1); RLP-Broschüre 2020, S. 17"
+    },
+    {
+      "key": "farbeVg2",
+      "name": "Farbe/Lack, Verpackungsgruppe II",
+      "aliases": ["Farbe", "Lack", "Verdünnung"],
+      "group": "fluessig",
+      "un": "1263",
+      "officialName": "Farbe",
+      "classInfo": "Klasse 3, Verpackungsgruppe II",
+      "transportCategory": 2,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "note": "Verpackungsgruppe steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "rules": ["gebinde"],
+      "source": "ADR 2025, Muster-Beförderungspapier (UN 1263, 3, II, Faktor 3), gefahrgut-duennebier.de"
+    },
+    {
+      "key": "farbeVg3",
+      "name": "Farbe/Lack, Verpackungsgruppe III",
+      "aliases": ["Farbe", "Lack", "Verdünnung"],
+      "group": "fluessig",
+      "un": "1263",
+      "officialName": "Farbe",
+      "classInfo": "Klasse 3, Verpackungsgruppe III",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "note": "Verpackungsgruppe steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "rules": ["gebinde"],
+      "source": "umwelt-online, ADR Tabelle B (UN 1263); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Verpackungsgruppe III)"
+    },
+    {
+      "key": "klebstoffVg2",
+      "name": "Klebstoff, Verpackungsgruppe II",
+      "aliases": ["Kleber", "Klebstoff", "Kontaktkleber"],
+      "group": "fluessig",
+      "un": "1133",
+      "officialName": "Klebstoffe, mit entzündbarem flüssigem Stoff",
+      "classInfo": "Klasse 3, Verpackungsgruppe II",
+      "transportCategory": 2,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "note": "Verpackungsgruppe steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "rules": ["gebinde"],
+      "source": "RLP-Broschüre 2020, S. 16 (UN 1133, 3, II, Kategorie 2)"
+    },
+    {
+      "key": "klebstoffVg3",
+      "name": "Klebstoff, Verpackungsgruppe III",
+      "aliases": ["Kleber", "Klebstoff", "Kontaktkleber"],
+      "group": "fluessig",
+      "un": "1133",
+      "officialName": "Klebstoffe, mit entzündbarem flüssigem Stoff",
+      "classInfo": "Klasse 3, Verpackungsgruppe III",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "note": "Verpackungsgruppe steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "rules": ["gebinde"],
+      "source": "BG RCI KB 008, S. 5 (Beispiel 3: UN 1133, Verpackungsgruppe III, Kategorie 3)"
+    },
+    {
+      "key": "salzsaeureVg2",
+      "name": "Salzsäure, Verpackungsgruppe II",
+      "aliases": ["Salzsäure", "Chlorwasserstoffsäure", "Säure"],
+      "group": "fluessig",
+      "un": "1789",
+      "officialName": "Chlorwasserstoffsäure",
+      "classInfo": "Klasse 8 (ätzend), Verpackungsgruppe II",
+      "transportCategory": 2,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "note": "Verpackungsgruppe steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "rules": ["gebinde"],
+      "source": "umwelt-online, ADR Tabelle B (Salzsäure: UN 1789); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Verpackungsgruppe II)"
+    },
+    {
+      "key": "salzsaeureVg3",
+      "name": "Salzsäure, Verpackungsgruppe III",
+      "aliases": ["Salzsäure", "Chlorwasserstoffsäure", "Säure"],
+      "group": "fluessig",
+      "un": "1789",
+      "officialName": "Chlorwasserstoffsäure",
+      "classInfo": "Klasse 8 (ätzend), Verpackungsgruppe III",
+      "transportCategory": 3,
+      "unit": "l",
+      "quantityBasis": "Inhalt in Litern",
+      "note": "Verpackungsgruppe steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "rules": ["gebinde"],
+      "source": "umwelt-online, ADR Tabelle B (Salzsäure: UN 1789); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Verpackungsgruppe III)"
+    },
+    {
+      "key": "spraydosenEntzuendbar",
+      "name": "Spraydosen, entzündbar",
+      "aliases": ["Spraydose", "Sprühdose", "Montageschaum", "Sprühlack", "Lecksuchspray", "Druckgaspackung"],
+      "group": "sonstiges",
+      "un": "1950",
+      "officialName": "Druckgaspackungen, entzündbar",
+      "classInfo": "Klasse 2, Gruppe F (entzündbar)",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Masse in kg (BG RCI rechnet 0,5 kg je Dose)",
+      "sizes": [0.5],
+      "rules": ["spraydosen"],
+      "source": "BG RCI KB 008, S. 5 (Beispiel 3); RLP-Broschüre 2020, S. 16"
+    },
+    {
+      "key": "spraydosenNichtEntzuendbar",
+      "name": "Spraydosen, nicht entzündbar",
+      "aliases": ["Spraydose", "Sprühdose", "Druckgaspackung"],
+      "group": "sonstiges",
+      "un": "1950",
+      "officialName": "Druckgaspackungen",
+      "classInfo": "Klasse 2, Gruppe A (nicht entzündbar)",
+      "transportCategory": 3,
+      "unit": "kg",
+      "quantityBasis": "Masse in kg",
+      "rules": ["spraydosen"],
+      "source": "ADR 2025, Tabelle 1.1.3.6.3 (Druckgaspackungen Gruppe A und O: Kategorie 3)"
+    },
+    {
+      "key": "gaskartusche",
+      "name": "Gaskartuschen (z. B. Lötgas)",
+      "aliases": ["Kartusche", "Lötgas", "Gaspatrone", "Lötbrenner"],
+      "group": "sonstiges",
+      "un": "2037",
+      "officialName": "Gefäße, klein, mit Gas (Gaspatronen), ohne Entnahmeeinrichtung, nicht wiederbefüllbar",
+      "classInfo": "Klasse 2, Klassifizierungscode 5F (entzündbar)",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Masse in kg",
+      "note": "Gilt für entzündbares Gas. Nachfüllbare Flaschen gehören zu „Propan / Flüssiggas“.",
+      "rules": ["spraydosen"],
+      "source": "umwelt-online, ADR Tabelle B (UN 2037); DHL, Nationaler Gefahrgutversand (UN 2037, Klasse 2, 5F); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 2, Gruppe F)"
+    },
+    {
+      "key": "lithiumAkkus",
+      "name": "Lithium-Ionen-Akkus (Ersatzakkus)",
+      "aliases": ["Akku", "Akkus", "Lithium", "Li-Ion", "Werkzeugakku"],
+      "group": "sonstiges",
+      "un": "3480",
+      "officialName": "Lithium-Ionen-Batterien",
+      "classInfo": "Klasse 9",
+      "transportCategory": 2,
+      "unit": "kg",
+      "quantityBasis": "Masse der Akkus in kg",
+      "note": "Akkus in Geräten (UN 3481) gehören ebenfalls zu Kategorie 2.",
+      "rules": ["lithium"],
+      "source": "umwelt-online, ADR Tabelle B (UN 3480, 3481); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 9: UN 3480 und 3481)"
+    },
+    {
+      "key": "bleiakku",
+      "name": "Bleiakkus, nass (Säure)",
+      "aliases": ["Batterie", "Bleibatterie", "Autobatterie", "Starterbatterie"],
+      "group": "sonstiges",
+      "un": "2794",
+      "officialName": "Batterien, nass, gefüllt mit Säure, elektrische Sammler",
+      "classInfo": "Klasse 8 (ätzend)",
+      "transportCategory": 3,
+      "unit": "kg",
+      "quantityBasis": "Masse der Akkus in kg",
+      "source": "umwelt-online, ADR Tabelle B (UN 2794); Kategorie: ADR 2025, Tabelle 1.1.3.6.3 (Klasse 8: UN 2794)"
+    },
+    {
+      "key": "leergut",
+      "name": "Leere, ungereinigte Gebinde",
+      "aliases": ["Leergut", "leere Gasflasche", "leerer Kanister", "Leerflasche"],
+      "group": "leergut",
+      "officialName": "Ungereinigte leere Verpackung",
+      "classInfo": "wie der frühere Inhalt",
+      "transportCategory": 4,
+      "unit": "Stk.",
+      "quantityBasis": "zählt mit 0 Punkten",
+      "note": "Gilt nicht, wenn das Gebinde einen Stoff der Kategorie 0 enthielt.",
+      "rules": ["leergut"],
+      "source": "BG RCI KB 008, S. 4; ADR 2025, Tabelle 1.1.3.6.3 (Kategorie 4)"
+    }
+  ],
+  "rules": [
+    {
+      "key": "keineWarntafel",
+      "title": "Erleichterungen bis 1000 Punkte",
+      "text": "Keine orangefarbenen Warntafeln und keine schriftlichen Weisungen. Ein Gefahrgutführerschein (ADR-Schulungsbescheinigung) ist nicht nötig.",
+      "when": "withinLimit",
+      "source": "ADR 2025, 1.1.3.6 (5.3 und 5.4.3 nicht anzuwenden), gefahrgut-duennebier.de; RLP-Broschüre 2020, S. 36"
+    },
+    {
+      "key": "feuerloescher",
+      "title": "Feuerlöscher mit 2 kg",
+      "text": "Mindestens einen tragbaren Feuerlöscher mit 2 kg Pulver mitführen und alle zwei Jahre prüfen lassen.",
+      "when": "withinLimit",
+      "source": "BG RCI KB 008, S. 5; ADR 2025, 8.1.4.2 bis 8.1.4.5"
+    },
+    {
+      "key": "befoerderungspapier",
+      "title": "Beförderungspapier",
+      "text": "Ein Beförderungspapier mitführen. Darin für jede Beförderungskategorie die Gesamtmenge und die berechneten Punkte angeben (Werte unter „Für das Beförderungspapier“). Laut BG RCI nötig, wenn das Gefahrgut nicht nur für eigene Zwecke befördert oder an andere weitergegeben wird.",
+      "when": "withinLimit",
+      "source": "ADR 2025, 8.1.2.1 a) und 5.4.1.1.1 f), gefahrgut-duennebier.de; BG RCI KB 008, S. 5"
+    },
+    {
+      "key": "unterweisung",
+      "title": "Unterweisung",
+      "text": "Alle Beteiligten, also Fahrer, Mitfahrer und wer verlädt, müssen gefahrgutrechtlich unterwiesen sein. Die Inhalte schriftlich festhalten.",
+      "when": "withinLimit",
+      "source": "BG RCI KB 008, S. 2 (Frage 5); ADR 2025, 8.2.3; RLP-Broschüre 2020, S. 26"
+    },
+    {
+      "key": "verhalten",
+      "title": "Rauchverbot, Versandstücke geschlossen lassen",
+      "text": "Beim Laden und während der Fahrt nicht rauchen. Versandstücke unterwegs nicht öffnen. Die Vorgaben für tragbare Leuchten beachten.",
+      "when": "withinLimit",
+      "source": "ADR 2025, 8.3.3 bis 8.3.5, gefahrgut-duennebier.de"
+    },
+    {
+      "key": "ueberGrenze",
+      "title": "Über der Grenze: volle ADR-Pflichten",
+      "text": "Fahrzeug mit orangefarbenen Warntafeln kennzeichnen, Fahrer mit ADR-Schulungsbescheinigung, zwei Feuerlöscher, Schutzausrüstung, schriftliche Weisungen und Beförderungspapier mitführen. Nur die Fahrzeugbesatzung darf mitfahren; Personen, die an der Baustelle mit dem Gefahrgut arbeiten, dürfen mit.",
+      "when": "overLimit",
+      "source": "RLP-Broschüre 2020, S. 21"
+    },
+    {
+      "key": "verpackung",
+      "title": "Verpackung und Kennzeichnung",
+      "text": "Nur dichte, verschlossene, unbeschädigte und außen saubere Verpackungen verwenden, am besten das Originalgebinde. Bei der 1000-Punkte-Regel sind bauartgeprüfte Verpackungen nötig, gekennzeichnet mit UN-Nummer und Gefahrzettel.",
+      "when": "always",
+      "source": "BG RCI KB 008, S. 2 (Frage 4) und S. 5"
+    },
+    {
+      "key": "ladungssicherung",
+      "title": "Ladung sichern",
+      "text": "Alles so sichern, dass es auch bei einer Vollbremsung oder Ausweichbewegung nicht verrutscht, umfällt oder herumfliegt (§ 22 StVO). Geeignet sind Zurrgurte an gekennzeichneten Zurrpunkten, Netze, Antirutschmatten und feste Einbauten. Keine Ladelücken lassen. Im Pkw-Kombi auch nach oben sichern, z. B. mit am Boden verankerten Netzen.",
+      "when": "always",
+      "source": "BG RCI KB 008, S. 2 (Frage 7); RLP-Broschüre 2020, S. 27 bis 33"
+    },
+    {
+      "key": "gasflaschen",
+      "title": "Gasflaschen",
+      "text": "Ventile schließen und auf Dichtheit achten, Schutzkappe oder Schutzkragen aufschrauben, Druckminderer abschrauben. Befestigen mit Zurrgurten, verstellbaren Halterungen oder Gestellen mit Bügeln, Ketten oder Gurten an der Wand bzw. Stirnwand, dazu rutschhemmende Unterlagen. Stehend nur bei ausreichender Standfestigkeit oder in Kisten bzw. Paletten, sonst liegend quer zur Fahrtrichtung. Gurte nicht so stark spannen, dass sich die Flasche verformt.\n\nEinzelne liegende Flasche im Kofferraum oder auf der Ladefläche: immer zwei Zurrgurte an den Zurrpunkten, unter der Flasche über Kreuz geführt; danach die Flasche quer zur Fahrtrichtung formschlüssig gegen seitliches Rutschen sichern, z. B. mit einer Decke. Nicht auf Sitze oder in den vorderen Fußraum legen: Sicherheitsgurte und normale Gepäcknetze halten eine Gasflasche nicht.\n\nAlternativ an einem fest im Fahrzeug montierten Rahmen bzw. Gestell mit zwei Zurrgurten befestigen.",
+      "when": "selected",
+      "source": "BG RCI KB 008, S. 2 (Frage 8); RLP-Broschüre 2020, S. 20; BG BAU Baustein A 065, 07/2021 (Gestelle); DVFG-Merkblatt, Stand 2021-06 (stehend/liegend, Gurte nicht überspannen); Air Liquide, G. Schroeder, Vortrag „Transport von Druckgasflaschen und Ladungssicherung im Fahrzeug“, 11/2009, Folien 18 und 22 bis 29 (zwei Zurrgurte über Kreuz, Sitze, Gepäcknetz, Druckminderer); Rahmen mit zwei Zurrgurten: Angabe des Inhabers vom 11.11.2026, Gestelle mit Zurrgurten auch in BG BAU Baustein A 065"
+    },
+    {
+      "key": "belueftung",
+      "title": "Laderaum belüften",
+      "text": "Gasflaschen vorzugsweise in offenen oder belüfteten Fahrzeugen befördern. Kastenwagen und geschlossene Aufbauten: zwei Lüftungsöffnungen von je mindestens 100 cm² freiem Querschnitt, eine in Boden- oder Seitenwandnähe und eine in Deckennähe, diagonal versetzt; nicht abdecken oder zukleben und regelmäßig kontrollieren. Ohne Lüftung im geschlossenen Aufbau alle Laderaumtüren mit „ACHTUNG KEINE BELÜFTUNG VORSICHTIG ÖFFNEN“ kennzeichnen.\n\nPkw oder Kombi ohne Trennwand: Flaschen erst unmittelbar vor der Abfahrt einladen, Fenster öffnen, Gebläse auf Außenluft (kein Umluftbetrieb) und höchste Stufe, nach der Ankunft sofort ausladen.",
+      "when": "selected",
+      "source": "BG RCI KB 008, S. 2 (Frage 8); DVFG-Merkblatt, Stand 2021-06 („vorzugsweise in offenen oder belüfteten Fahrzeugen“); Bundesfachschule Kälte-Klima-Technik, „Transport von Druckgasflaschen“, 01.10.2010 und 29.02.2020 (DVS-Merkblatt 0211, Empfehlung des Bundesverkehrsministeriums: zwei Öffnungen je 100 cm²); BG BAU Baustein A 065, 07/2021; BFS „Kältemitteltransport im PKW“, 01.12.2020 (Kennzeichnung nur bei geschlossenen Aufbauten); Air Liquide-Vortrag 11/2009, Folien 19 und 30 (Umluft, Fenster, Gebläse)"
+    },
+    {
+      "key": "kaeltemittelflaschen",
+      "title": "Kältemittelflaschen",
+      "text": "Im Pkw ohne Trennwand und ohne eigene Lüftung statt offener Fenster auch möglich: den Kofferraum leicht geöffnet sichern, ohne dass Abgase in den Innenraum ziehen. Kältemittelflaschen nicht im parkenden Fahrzeug lassen, weil die Lüftung dort nicht wirkt.",
+      "when": "selected",
+      "source": "Bundesfachschule Kälte-Klima-Technik, Fragen aus der Praxis „Kältemitteltransport im PKW“, 01.12.2020"
+    },
+    {
+      "key": "spraydosen",
+      "title": "Spraydosen und Kartuschen",
+      "text": "Nicht über 50 °C erwärmen, also im Sommer nicht im abgestellten Fahrzeug lassen. Lose Dosen in einem festen Behälter mit Deckel befördern, z. B. Kiste oder Eimer.",
+      "when": "selected",
+      "source": "BG RCI KB 008, S. 2 (Fragen 4 und 8); RLP-Broschüre 2020, S. 28"
+    },
+    {
+      "key": "lithium",
+      "title": "Lithium-Akkus",
+      "text": "Ersatzakkus gegen Kurzschluss schützen, z. B. im Akkufach der Werkzeugkiste, in Akkugürtel oder Akkurucksack, und in der Verpackung gegen Verrutschen sichern. Stark beschädigte Akkus nicht in geschlossenen Räumen aufbewahren.",
+      "when": "selected",
+      "source": "RLP-Broschüre 2020, S. 24"
+    },
+    {
+      "key": "wassergefaehrdend",
+      "title": "Wassergefährdende Flüssigkeiten",
+      "text": "Bei mehr als 20 Litern wassergefährdender Ladung gilt das Verkehrsverbot nach Zeichen 269 StVO, z. B. in Wasserschutzgebieten. Ob der Stoff wassergefährdend ist, steht im Sicherheitsdatenblatt (Wassergefährdungsklasse, Abschnitt 15).",
+      "when": "selected",
+      "source": "BG RCI KB 008, S. 2 (Frage 10)"
+    },
+    {
+      "key": "gebinde",
+      "title": "Farben, Kleber und Säuren",
+      "text": "Nur im Originalgebinde oder in einem dafür geeigneten Behälter befördern, nicht lose im Fußraum. Die Verpackungsgruppe und damit die Kategorie steht im Sicherheitsdatenblatt, Abschnitt 14.",
+      "when": "selected",
+      "source": "RLP-Broschüre 2020, S. 6 (Unfallbeispiel Salzsäure) und S. 9; BG RCI KB 008, S. 2 (Frage 4)"
+    },
+    {
+      "key": "leergut",
+      "title": "Leere, ungereinigte Gebinde",
+      "text": "Gelten weiter als Gefahrgut: wie gefüllt verschließen und die Kennzeichnung dranlassen.",
+      "when": "selected",
+      "source": "RLP-Broschüre 2020, S. 10 und 19"
+    }
+  ],
+  "craftsmanRule": {
+    "title": "Handwerkerregelung (ADR 1.1.3.1 c)",
+    "text": "Befördert der Betrieb Gefahrgut im Zusammenhang mit seiner Haupttätigkeit, z. B. Material zur Baustelle, zum Kunden oder zum direkten Verbrauch wie Sauerstoff- und Acetylenflaschen eines Schweißbetriebs, ist er von fast allen Gefahrgutvorschriften befreit. Bedingungen: höchstens 450 Liter je Verpackung, die Höchstmengen der 1000-Punkte-Regel werden eingehalten, und es wird verhindert, dass unter normalen Beförderungsbedingungen etwas austritt.\n\nNicht darunter fallen Fahrten zur internen oder externen Versorgung, z. B. das Beliefern von Lagern oder Baustellen zur Bevorratung, und Gefahrgut für andere Unternehmen. Aus Sicherheitsgründen die Hinweise oben trotzdem einhalten.",
+    "source": "BG RCI KB 008, S. 3; RLP-Broschüre 2020, S. 13, 14, 18 und 19"
+  },
+  "closingNote": "Gilt nur für verpacktes Gefahrgut (Versandstücke), nicht für Tanks oder lose Schüttung. Die Liste zeigt typische Güter im SHK-Betrieb; für das eigene Produkt gelten UN-Nummer, Klasse und Verpackungsgruppe aus dem Sicherheitsdatenblatt, Abschnitt 14. Die Beförderungskategorie steht im ADR, Kapitel 3.2, Tabelle A, Spalte 15. Das Tool ersetzt keine Beratung durch eine fachkundige Person oder den Gefahrgutbeauftragten.",
+  "examples": [
+    {
+      "label": "20 kg Acetylen, 50 l Stickstoff, 50 l Sauerstoff",
+      "items": [
+        { "substance": "acetylen", "quantity": 20 },
+        { "substance": "stickstoff", "quantity": 50 },
+        { "substance": "sauerstoff", "quantity": 50 }
+      ],
+      "expected": 160,
+      "source": "BG RCI KB 008, S. 4, Beispiel 2"
+    },
+    {
+      "label": "10 Flüssiggasflaschen à 33 kg",
+      "items": [{ "substance": "fluessiggas", "quantity": 330 }],
+      "expected": 990,
+      "source": "RLP-Broschüre 2020, S. 18"
+    },
+    {
+      "label": "Flüssiggas, Acetylen, Spraydosen und Klebstoff (Auszug)",
+      "items": [
+        { "substance": "fluessiggas", "quantity": 100 },
+        { "substance": "acetylen", "quantity": 100 },
+        { "substance": "spraydosenEntzuendbar", "quantity": 50 },
+        { "substance": "klebstoffVg2", "quantity": 50 }
+      ],
+      "expected": 900,
+      "source": "RLP-Broschüre 2020, S. 16 (Zeilen mit Menge, ohne UN 1139)"
+    },
+    {
+      "label": "4 × 10 l Farbe, Verpackungsgruppe II",
+      "items": [{ "substance": "farbeVg2", "quantity": 40 }],
+      "expected": 120,
+      "source": "ADR 2025, Muster-Beförderungspapier, gefahrgut-duennebier.de"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
 import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool.ts'
+import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } from './hazmatPointsTool.ts'
 import { materialListToolSchema, type MaterialListTool } from './materialListTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
@@ -42,6 +43,7 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Lüftungsstrang ("kind": "ventilationRiser"): Strangdimension für Einzelraumlüfter aus der Auswahlhilfe (siehe riserTool.ts).
 // - Heizkosten-Vergleich ("kind": "heatingCost"): Jahresverbrauch umrechnen, Heizsysteme mit Marktpreisen vergleichen (siehe heatingCostTool.ts).
 // - Materialliste ("kind": "materialList"): eigene Artikel mit Menge je Bauvorhaben notieren und abhaken (siehe materialListTool.ts).
+// - Gefahrgut-Tools ("kind": "hazmatPoints"): 1000-Punkte-Regel nach ADR 1.1.3.6 für mehrere Güter (siehe hazmatPointsTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -191,6 +193,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   ventilationRiserToolSchema,
   heatingCostToolSchema,
   materialListToolSchema,
+  hazmatPointsToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -217,7 +220,8 @@ export type ToolEntry =
   | VentilationRiserTool
   | HeatingCostToolEntry
   | MaterialListTool
-export type { CableTool, FactorTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
+  | HazmatPointsTool
+export type { CableTool, FactorTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -236,6 +240,7 @@ export const isRadiatorSurveyTool = (entry: ToolEntry): entry is RadiatorSurveyT
 export const isVentilationRiserTool = (entry: ToolEntry): entry is VentilationRiserTool => entry.kind === 'ventilationRiser'
 export const isHeatingCostTool = (entry: ToolEntry): entry is HeatingCostToolEntry => entry.kind === 'heatingCost'
 export const isMaterialListTool = (entry: ToolEntry): entry is MaterialListTool => entry.kind === 'materialList'
+export const isHazmatPointsTool = (entry: ToolEntry): entry is HazmatPointsTool => entry.kind === 'hazmatPoints'
 export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -356,6 +361,8 @@ export const toolCollection = defineCollection({
                                   ? checkVentilationRiserTool(entry)
                                   : isHeatingCostTool(entry)
                                     ? checkHeatingCostTool(entry)
+                                    : isHazmatPointsTool(entry)
+                                      ? checkHazmatPointsTool(entry)
                                     : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) =>
     isFormulaTool(entry)

@@ -342,6 +342,25 @@ Preise in der App: eigener Preis (auf dem Gerät gespeichert) vor Marktpreis aus
 `npm run prices` (täglich in der GitHub-Action) ruft die Marktpreise ab; eine nicht erreichbare Quelle wird übersprungen. Der Build
 prüft doppelte Schlüssel, unbekannte Energieträger und Einheiten, fehlende Zeiträume, Nutzungsgrade über 1,11 und JAZ unter 1.
 
+**Gefahrgut-Tools** (`"kind": "hazmatPoints"`) rechnen die 1000-Punkte-Regel nach ADR 1.1.3.6: mehrere Güter antippen, je
+Gut Anzahl und Menge je Gebinde eingeben (auch mehrere Gebindegrößen), Punkte = Menge × Faktor der Beförderungskategorie.
+Darunter die Summe, die Mengen je Kategorie für das Beförderungspapier und die Vorschriften für diese Ladung. Felder: `title`,
+`summary`, `description`, `category`, `edition` (z. B. „ADR 2025“), `limit` (1000) und:
+
+- `categories`: genau die Kategorien 0 bis 4 mit `factor` (null nur bei 0: keine Freistellung) und `maxQuantity` (Anzeige).
+- `groups`: Gruppen der Auswahl, je `key`, `label`.
+- `substances`: je `key`, `name`, optional `aliases`, `group`, `un` (vierstellig, fehlt bei Leergut), `officialName`,
+  `classInfo` (Klasse und Einstufung wie in der Quelle), `transportCategory`, `unit` (`kg`, `l` oder `Stk.` für Güter, die nur
+  gezählt werden), `quantityBasis` (wie gezählt wird, z. B. Fassungsraum der Flasche), optional `sizes` (Gebindegrößen zum
+  Antippen), `note`, `rules` (keys der Vorschriften mit `when: "selected"`) und `source`.
+- `rules`: je `key`, `title`, `text` (eigene Kurzfassung), `source` und `when`: `always` (jede Ladung), `withinLimit` (nur bis
+  zur Grenze), `overLimit` (darüber oder bei Kategorie 0) oder `selected` (nur wenn ein gewählter Stoff sie nennt).
+- `craftsmanRule` (`title`, `text`, `source`): aufklappbarer Hinweis zur Handwerkerregelung; `closingNote` am Seitenende.
+- `examples`: Rechenbeispiele aus den Quellen (`label`, `items` mit `substance` und `quantity`, `expected`, `source`).
+
+Der Build prüft fehlende Kategorien, doppelte Schlüssel und Namen, unbekannte Gruppen und Vorschriften, Vorschriften ohne
+Stoff und dass jedes Beispiel die Punktsumme der Quelle ergibt.
+
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:
 

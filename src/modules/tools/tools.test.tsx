@@ -61,6 +61,7 @@ describe('Tools', () => {
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Dampfdrucktabelle Kältemittel',
       'Gebäudeklasse',
+      'Gefahrgut: 1000-Punkte-Regel',
       'Heizkosten-Vergleich',
       'Heizlast überschlägig',
       'Kabel Aderfarben',
