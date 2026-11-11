@@ -11,6 +11,7 @@
     "trinkwasser",
     "werkstoffe"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Symptom, das auf eine Oberflächentemperatur unterhalb des Taupunkts hinweist. Dämmung und Dampfsperre sind zu prüfen.",
   "related": [],
   "tools": [

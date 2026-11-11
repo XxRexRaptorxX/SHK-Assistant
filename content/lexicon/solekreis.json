@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Hydraulischer Kreislauf mit Sole als Wärmeträger, häufig zwischen Erdreich-Wärmeübertrager und Wärmepumpe. Er ist geschlossen und hat eigene Umwälzpumpe, Ausdehnungsgefäß und Sicherheitsventil; vor der Inbetriebnahme wird er gespült und entlüftet.",
   "related": []
 }

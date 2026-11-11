@@ -13,6 +13,7 @@
     "trinkwasser",
     "normen"
   ],
+  "tags": ["sanitaer", "trinkwasser", "planung"],
   "definition": "Mikrobiologische Untersuchung einer Trinkwasserprobe auf Legionellen nach einem geeigneten Verfahren und unter den vorgeschriebenen Bedingungen. Für bestimmte Anlagen zur Trinkwassererwärmung, etwa größere Anlagen in gewerblich oder öffentlich genutzten Gebäuden, schreibt die Trinkwasserverordnung sie regelmäßig vor; Probenahme und Analyse übernimmt ein zugelassenes Labor.",
   "related": []
 }

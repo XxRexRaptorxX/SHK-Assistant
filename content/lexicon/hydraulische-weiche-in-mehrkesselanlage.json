@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kann die hydraulische Entkopplung zwischen mehreren Wärmeerzeugern und Verbraucherkreisen unterstützen, wenn das Gesamtschema dafür ausgelegt ist. Jeder Wärmeerzeuger kann dann mit eigener Pumpe und eigenem Volumenstrom arbeiten, unabhängig davon, wie viele Verbraucherkreise gerade Wärme abnehmen.",
   "related": []
 }

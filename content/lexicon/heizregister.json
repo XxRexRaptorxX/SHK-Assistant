@@ -13,6 +13,7 @@
     "heizung",
     "lueftung"
   ],
+  "tags": ["heizung", "lueftung", "klima"],
   "definition": "Wärmeübertrager in einem Luftstrom, der Luft erwärmt, beispielsweise mit Heizwasser oder elektrischer Energie. Je nach Aufgabe dient es als Vorerhitzer, etwa zum Frostschutz nachgeschalteter Bauteile, als Erhitzer für die Zuluft oder als Nacherhitzer nach Kühlung und Entfeuchtung.",
   "related": []
 }

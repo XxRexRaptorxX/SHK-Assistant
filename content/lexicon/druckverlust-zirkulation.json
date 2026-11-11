@@ -11,6 +11,7 @@
     "hydraulik",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Druckabfall im Trinkwarmwasser-Zirkulationskreis, der bei Pumpen- und Ventilauslegung zu berücksichtigen ist. Er entsteht durch Rohrreibung, Formstücke und Regulierventile und bestimmt zusammen mit dem erforderlichen Zirkulationsvolumenstrom die Förderhöhe der Pumpe.",
   "related": []
 }

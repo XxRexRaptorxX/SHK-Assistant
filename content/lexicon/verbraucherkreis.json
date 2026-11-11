@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Hydraulischer Kreislauf, der Wärme zu Heizflächen oder anderen Wärmeverbrauchern transportiert. Bei Anlagen mit hydraulischer Weiche oder Pufferspeicher ist er vom Erzeugerkreis hydraulisch entkoppelt und hat meist eine eigene Pumpe.",
   "related": []
 }

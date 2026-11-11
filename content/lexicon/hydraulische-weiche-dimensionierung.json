@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Auslegung anhand der erforderlichen Volumenströme, Temperaturverhältnisse und Druckverluste. Pauschale Größenregeln ersetzen keine anlagenspezifische Auslegung.",
   "related": []
 }

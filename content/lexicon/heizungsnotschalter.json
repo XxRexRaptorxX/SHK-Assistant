@@ -11,6 +11,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Schalter zum Abschalten einer Heizungsanlage oder bestimmter Funktionen; Ausführung und Einbauort hängen von geltenden Vorschriften und Anlagenkonzept ab. Für bestimmte Feuerungsanlagen schreiben die Feuerungsverordnungen der Länder einen Notschalter außerhalb des Aufstellraums vor, damit der Brenner im Notfall von außen abgeschaltet werden kann.",
   "related": []
 }

@@ -14,6 +14,7 @@
     "kuerzel",
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Fortluft: die Luft, die von der Lüftungsanlage ins Freie abgegeben wird.",
   "related": [
     "lexicon.fortluft",

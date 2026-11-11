@@ -9,7 +9,7 @@
   "summary": "Verbaute Menge aus mitgenommener und zurückgegebener Menge.",
   "description": "Ermittelt das tatsächlich verbaute Material, wenn Material zur Baustelle mitgenommen und der Rest wieder ins Lager zurückgegeben wurde. Mitgenommene und zurückgegebene Menge in derselben Einheit eintragen.",
   "category": "Aufmaß",
-  "tags": ["buero"],
+  "tags": ["planung"],
   "variables": [
     {
       "symbol": "Mm",

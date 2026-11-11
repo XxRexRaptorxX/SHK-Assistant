@@ -13,6 +13,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Im Boden eingebrachter Wärmeübertrager, häufig als vertikale Bohrung mit Rohrkreislauf ausgeführt, der Wärme zwischen Erdreich und Wärmeträger austauscht. Sie dient meist als Wärmequelle für Sole-Wasser-Wärmepumpen und liefert wegen der gleichmäßigen Temperatur im tieferen Erdreich ganzjährig stabile Quellentemperaturen; Bohrungen bedürfen in der Regel einer wasserrechtlichen Anzeige oder Erlaubnis.",
   "related": []
 }

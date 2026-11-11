@@ -11,6 +11,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Differenz zwischen der Temperatur der Wärmesenke und der Wärmequelle, die den thermodynamischen Aufwand der Wärmepumpe wesentlich beeinflusst. Je kleiner er ist, etwa durch niedrige Vorlauftemperaturen, desto höher ist die Leistungszahl.",
   "related": []
 }

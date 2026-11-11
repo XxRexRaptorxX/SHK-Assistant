@@ -14,6 +14,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer"],
   "definition": "Ein **WC-Spülkasten** speichert eine begrenzte Wassermenge und gibt sie zur Spülung des WCs frei. Ein Füllventil regelt die Wiederbefüllung, ein Ablauf- beziehungsweise Spülventil die Entleerung. Undichte Ventile können zu dauerhaftem Wasserverlust führen.",
   "related": [
     "lexicon.wc"

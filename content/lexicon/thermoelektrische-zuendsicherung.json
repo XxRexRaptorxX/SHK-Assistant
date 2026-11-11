@@ -13,6 +13,7 @@
   "categories": [
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Bei der **thermoelektrischen Zündsicherung** erwärmt die Zündflamme ein Thermoelement. Dessen Spannung hält einen Magneteinsatz in der Gasarmatur offen; erlischt die Flamme, fällt die Spannung weg und das Ventil schließt. Beim Zünden muss der Zündtaster gedrückt bleiben, bis das Thermoelement warm ist; verbreitet ist sie zum Beispiel bei Gasherden, Heizstrahlern und älteren Gasgeräten.",
   "related": [
     "lexicon.flammenueberwachung",

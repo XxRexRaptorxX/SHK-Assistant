@@ -12,6 +12,7 @@
   "categories": [
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Bereich von Druck, Temperatur, Durchfluss oder anderen Größen, innerhalb dessen ein Gerät bestimmungsgemäß betrieben werden darf. Die Grenzwerte stehen im Datenblatt oder in der Herstelleranleitung; ein Betrieb außerhalb kann zu Schäden und zum Verlust von Gewährleistungsansprüchen führen.",
   "related": []
 }

@@ -11,6 +11,7 @@
     "heizung",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Sicherheitsventil, das einen geschlossenen Heizkreis gegen unzulässigen Überdruck schützt. Es ist zwischen Wärmeerzeuger und Ventil ohne Absperrung einzubauen und bei kleineren Anlagen meist mit 2,5 oder 3 bar Ansprechdruck ausgeführt; Anforderungen enthält DIN EN 12828.",
   "related": []
 }

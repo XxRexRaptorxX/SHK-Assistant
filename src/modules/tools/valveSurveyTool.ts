@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Aufmaß-Tools ("kind": "valveSurvey"): vorhandene Ventile je Raum zählen und daraus die Stückliste für den
 // Tausch bilden, siehe ValveSurvey.tsx und valveSurveyCalc.ts. Im Inhalt stehen nur die Ventiltypen mit
@@ -26,7 +26,7 @@ export const valveSurveyToolSchema = defineEntrySchema({
   kind: z.literal('valveSurvey'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Hinweis am Ende des Tools, z. B. wo die Daten bleiben */

@@ -14,6 +14,7 @@
     "msr",
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Sicherheitseinrichtung, die bei Überschreiten einer festgelegten Temperatur die Wärmezufuhr abschaltet oder eine Sicherheitsabschaltung auslöst. Er verriegelt nach dem Auslösen und muss von Hand entriegelt werden, nachdem die Ursache behoben ist; darin unterscheidet er sich vom Temperaturwächter.",
   "related": []
 }

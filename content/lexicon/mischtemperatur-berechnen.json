@@ -10,6 +10,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Temperatur, die sich beim Mischen von Medien mit unterschiedlichen Temperaturen ergibt; bei idealer Mischung ohne Wärmeverlust hängt sie von Masse und spezifischer Wärmekapazität ab. Nach der Richmannschen Mischungsregel gilt für zwei Mengen desselben Stoffes: tm = (m1 · t1 + m2 · t2) / (m1 + m2).",
   "related": [],
   "formulas": [

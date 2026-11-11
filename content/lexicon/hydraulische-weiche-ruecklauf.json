@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Rücklaufanschluss einer hydraulischen Weiche, über den abgekühltes Medium aus dem Kreis zurückgeführt wird. Auf der Verbraucherseite strömt das abgekühlte Wasser in die Weiche, auf der Erzeugerseite verlässt es sie zum Wärmeerzeuger.",
   "related": []
 }

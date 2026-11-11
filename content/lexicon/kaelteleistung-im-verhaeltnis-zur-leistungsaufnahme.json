@@ -10,6 +10,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Kennwert einer Kälteanlage, der abgeführte Kälteleistung und aufgenommene Antriebsleistung ins Verhältnis setzt. Dieser Kennwert heißt Leistungszahl im Kühlbetrieb (EER); über eine Kühlperiode gemittelt spricht man vom SEER.",
   "related": []
 }

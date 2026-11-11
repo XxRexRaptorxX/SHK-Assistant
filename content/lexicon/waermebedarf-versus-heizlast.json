@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Der Wärmebedarf beschreibt eine Energiemenge über einen Zeitraum; die Heizlast beschreibt eine erforderliche momentane Wärmeleistung unter Auslegungsbedingungen. Die Heizlast in kW dient zur Auslegung von Wärmeerzeuger und Heizflächen, der Wärmebedarf in kWh zur Abschätzung von Verbrauch und Kosten.",
   "related": [],
   "tools": [

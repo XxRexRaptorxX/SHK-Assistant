@@ -13,6 +13,7 @@
     "hydraulik",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "**Rohrreibungszahl** λ ist eine dimensionslose Kennzahl für den Reibungswiderstand einer Strömung in einem geraden Rohr. Sie hängt vom Rohr (Wandrauheit) und von der Strömung ab und wird für die Druckverlustberechnung nach Darcy-Weisbach gebraucht.",
   "related": [
     "lexicon.druckverlust",

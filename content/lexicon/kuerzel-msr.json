@@ -11,6 +11,7 @@
     "kuerzel",
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Abkürzung für Mess-, Steuer- und Regelungstechnik. Sie umfasst das Erfassen, Steuern und Regeln von Größen wie Temperatur, Druck und Volumenstrom und ist Grundlage der Gebäudeautomation.",
   "related": [
     "lexicon.regelungstechnik",

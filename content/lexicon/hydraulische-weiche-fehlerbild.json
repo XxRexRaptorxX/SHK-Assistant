@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Mögliche Auffälligkeiten sind unerwartet hohe Rücklauftemperatur, unzureichende Wärmeversorgung oder ungünstige Pumpenbetriebspunkte. Die Ursache muss durch Messung ermittelt werden.",
   "related": []
 }

@@ -10,6 +10,7 @@
   "categories": [
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Kennwert für die Luftwechselrate eines Gebäudes bei einer Druckdifferenz von 50 Pa im Rahmen einer Luftdichtheitsmessung. Er gibt an, wie oft das Luftvolumen des Gebäudes bei 50 Pa Druckdifferenz pro Stunde ausgetauscht wird; Anforderungen dazu enthält das Gebäudemodernisierungsgesetz (GModG, früher GEG).",
   "related": []
 }

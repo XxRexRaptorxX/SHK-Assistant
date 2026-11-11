@@ -14,6 +14,7 @@
     "heizung",
     "lueftung"
   ],
+  "tags": ["heizung", "lueftung"],
   "definition": "Wärmeübertrager mit Ventilator, der Luft über eine Heiz- oder Kühlfläche bewegt und dadurch die Wärmeübertragung verstärkt. Er wird auch Fan-Coil genannt und kann je nach Anschluss heizen und kühlen; beim Kühlen unter den Taupunkt entsteht Kondensat, das abgeführt werden muss.",
   "related": []
 }

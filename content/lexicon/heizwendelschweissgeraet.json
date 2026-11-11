@@ -14,6 +14,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["heizung"],
   "definition": "Gerät für das Heizwendelschweißen: Muffen mit eingebettetem Heizdraht verbinden Kunststoffrohre, z. B. aus PE, PP oder PB; für PE z. B. nach der Richtlinie DVS 2207-1.",
   "related": [
     "lexicon.pe-rohr",

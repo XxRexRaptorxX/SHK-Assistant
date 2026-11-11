@@ -11,6 +11,7 @@
     "kuerzel",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Ältere deutsche Abkürzung für Trinkwasser warm; heute nach Norm meist PWH. In älteren Plänen und Unterlagen ist die Abkürzung weiterhin häufig zu finden.",
   "related": [
     "lexicon.kuerzel-pwh",

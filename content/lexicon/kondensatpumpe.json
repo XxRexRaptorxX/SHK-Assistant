@@ -13,6 +13,7 @@
     "heizung",
     "abwasser"
   ],
+  "tags": ["heizung", "sanitaer", "abwasser"],
   "definition": "Pumpe, die anfallendes Kondenswasser aus einem Gerät zu einem geeigneten Ablauf fördert. Sie schaltet meist über einen Schwimmer selbsttätig ein und wird bei Klima- und Brennwertgeräten eingesetzt, wenn kein Gefälle zum Ablauf vorhanden ist.",
   "related": []
 }

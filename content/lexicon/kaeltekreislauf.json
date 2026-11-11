@@ -13,6 +13,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Der **Kältekreislauf** beschreibt den Umlauf des Kältemittels durch Verdampfer, Verdichter, Verflüssiger und Expansionsorgan in einer typischen Kompressionskälteanlage. Im Verdampfer wird Wärme aufgenommen, im Verflüssiger abgegeben; der Verdichter stellt das erforderliche Druckniveau her. Reale Anlagen weisen zusätzlich Druckverluste und nichtideale Wärmeübertragung auf.",
   "related": [
     "lexicon.kaeltemaschine",

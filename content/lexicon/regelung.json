@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Beeinflussung einer Größe durch Vergleich des Istwerts mit einem Sollwert und Rückführung der Abweichung, um die Größe möglichst passend zu halten. Im Unterschied zur Steuerung wird das Ergebnis ständig gemessen und zurückgeführt (geschlossener Regelkreis).",
   "related": []
 }

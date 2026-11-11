@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Beeinflussung eines Ablaufs durch vorgegebene Signale oder Logik, ohne dass zwingend eine Rückführung des tatsächlichen Ergebnisses erfolgt. Ein typisches Beispiel ist eine Zeitschaltuhr; anders als bei der Regelung wird das Ergebnis nicht zurückgemeldet (offene Wirkungskette).",
   "related": []
 }

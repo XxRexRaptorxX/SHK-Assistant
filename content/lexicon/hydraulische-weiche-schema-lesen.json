@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Erkennen der Anschlüsse für Erzeugervorlauf, Erzeugerrücklauf, Verbrauchervorlauf und Verbraucherrücklauf im Hydraulikschema. Meist liegen die Erzeugeranschlüsse auf der einen und die Verbraucheranschlüsse auf der anderen Seite; die Vorläufe sind oben, die Rückläufe unten angeordnet.",
   "related": []
 }

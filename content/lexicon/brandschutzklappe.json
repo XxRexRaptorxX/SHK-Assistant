@@ -14,6 +14,7 @@
     "lueftung",
     "normen"
   ],
+  "tags": ["lueftung", "planung"],
   "definition": "Eine **Brandschutzklappe** verschließt bei definierten Brandbedingungen eine Lüftungsleitung, um die Ausbreitung von Feuer und Rauch über eine bauliche Trennung zu begrenzen. Zulassung, Einbausituation, Befestigung und Wartung sind sicherheitsrelevant. Es dürfen nur für die konkrete Anwendung geeignete und entsprechend dokumentierte Systeme verwendet werden.",
   "related": [
     "lexicon.luftkanal",

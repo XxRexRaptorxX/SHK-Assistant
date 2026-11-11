@@ -13,6 +13,7 @@
     "normen",
     "physik"
   ],
+  "tags": ["planung"],
   "definition": "Berechnete Energiemenge, die für einen festgelegten Zweck unter definierten Annahmen benötigt wird. Er wird zum Beispiel im Energieausweis als End- oder Primärenergiebedarf angegeben und ist vom gemessenen Energieverbrauch zu unterscheiden.",
   "related": []
 }

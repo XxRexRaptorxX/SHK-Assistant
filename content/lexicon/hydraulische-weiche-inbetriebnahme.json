@@ -11,6 +11,7 @@
     "hydraulik",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Prüfung und Einstellung der angeschlossenen Kreise und Volumenströme nach dem vorgesehenen Anlagenkonzept. Dazu gehören Entlüften, Einstellen der Pumpen und eine Kontrolle der Temperaturen an den Anschlüssen; die Werte sind zu dokumentieren.",
   "related": []
 }

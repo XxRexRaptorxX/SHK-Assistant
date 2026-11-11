@@ -13,6 +13,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Kenngröße, die beschreibt, welcher Dicke einer ruhenden Luftschicht der Wasserdampfdiffusionswiderstand eines Bauteils entspricht. Der sd-Wert ergibt sich aus Schichtdicke mal Diffusionswiderstandszahl μ und wird in Metern angegeben; große Werte kennzeichnen dampfbremsende oder dampfsperrende Schichten.",
   "related": []
 }

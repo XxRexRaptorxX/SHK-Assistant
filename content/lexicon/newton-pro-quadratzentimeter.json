@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Newton pro Quadratzentimeter** (N/cm²) ist eine Einheit für den Druck. 1 N/cm² = 10.000 Pa.",
   "related": [
     "lexicon.pascal"

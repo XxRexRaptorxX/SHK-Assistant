@@ -13,6 +13,7 @@
     "kaelte",
     "lueftung"
   ],
+  "tags": ["lueftung", "kaelte"],
   "definition": "Ermittlung der erforderlichen Kälteleistung eines Raums oder Gebäudes unter festgelegten Auslegungsbedingungen. In Deutschland erfolgt sie nach VDI 2078; dabei werden äußere Lasten wie Sonneneinstrahlung und innere Lasten wie Personen, Beleuchtung und Geräte erfasst.",
   "related": []
 }

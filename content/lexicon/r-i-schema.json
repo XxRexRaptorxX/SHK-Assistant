@@ -13,6 +13,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Schematische Darstellung von Rohrleitungen, Apparaten, Armaturen sowie Mess- und Regelkomponenten einer Anlage. Es wird auch R&I-Fließschema genannt; die Sinnbilder sind genormt, zum Beispiel in DIN EN ISO 10628.",
   "related": [],
   "tools": [

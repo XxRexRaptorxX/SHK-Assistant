@@ -10,6 +10,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Kommunikationsprotokoll, das in Gebäude- und Industrieautomation zum Datenaustausch zwischen Steuerungen und Geräten verwendet wird. Es wurde 1979 von Modicon entwickelt, ist offen und wird über serielle Leitungen (Modbus RTU) oder Ethernet (Modbus TCP) übertragen.",
   "related": []
 }

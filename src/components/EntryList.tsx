@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
-import { ToolTags } from '../modules/tools/ToolTagList'
+import { TopicTags } from './TopicTags'
 import type { SearchDocument, SearchGroup } from '../search/search'
 import { DraftBadge } from './DraftBadge'
 import { categoryHeading } from './headings'
@@ -39,7 +39,7 @@ export function EntryRows({ entries, action }: { entries: readonly SearchDocumen
               // Rechte Spalte wie in der Tool-Liste: „Ungeprüft“ oben, darunter die Themen-Tags
               <span className="flex shrink-0 flex-col items-end gap-1.5">
                 {entry.status === 'draft' && <DraftBadge variant="inline" />}
-                {entry.tags && <ToolTags tags={entry.tags} stacked />}
+                {entry.tags && <TopicTags tags={entry.tags} stacked />}
               </span>
             )}
           </Link>

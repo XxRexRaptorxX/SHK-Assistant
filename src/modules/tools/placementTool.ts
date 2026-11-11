@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Aufstellungs-Tools ("kind": "placement"): Kältemittel, optional Hersteller, Aufstellort und Umgebung eines Außengeräts
 // angeben, dann die allgemeinen Vorgaben aus einem herstellerübergreifenden Leitfaden sehen und, wenn ein Hersteller gewählt
@@ -155,7 +155,7 @@ export const placementToolSchema = defineEntrySchema({
   kind: z.literal('placement'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Hinweis am Ende, z. B. dass die Herstelleranleitung vorgeht */

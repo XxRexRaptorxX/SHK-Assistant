@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Materialliste ("kind": "materialList"): je Bauvorhaben eigene Artikel mit Menge notieren, die beim nächsten Mal
 // mitgenommen werden müssen, und abhaken; siehe MaterialList.tsx und materialListCalc.ts. Listen und gemerkte Eingaben
@@ -11,7 +11,7 @@ export const materialListToolSchema = defineEntrySchema({
   kind: z.literal('materialList'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Hinweis am Ende des Tools, z. B. wo die Daten bleiben */

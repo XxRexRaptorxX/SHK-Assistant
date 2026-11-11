@@ -13,6 +13,7 @@
     "heizung",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "Flüssigkeit oder Gas, das Wärme innerhalb eines technischen Systems transportiert, beispielsweise Heizungswasser oder ein Wasser-Glykol-Gemisch. Dichte, Wärmekapazität und Viskosität bestimmen, welcher Volumenstrom für eine bestimmte Leistung nötig ist; Glykolgemische brauchen mehr als reines Wasser.",
   "related": []
 }

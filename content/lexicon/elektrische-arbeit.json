@@ -11,6 +11,7 @@
     "msr",
     "physik"
   ],
+  "tags": ["strom"],
   "definition": "Über einen Zeitraum umgesetzte elektrische Energie. Sie wird beispielsweise in Joule oder Kilowattstunden angegeben.",
   "related": [],
   "formulas": [

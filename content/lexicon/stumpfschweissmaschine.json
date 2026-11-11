@@ -14,6 +14,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["heizung"],
   "definition": "Maschine für das Heizelementstumpfschweißen (für PE z. B. nach DVS 2207-1): Die Rohrenden aus Kunststoff werden an einem Heizelement erwärmt und stumpf zusammengefügt, vor allem bei großen Durchmessern.",
   "related": [
     "lexicon.pe-rohr",

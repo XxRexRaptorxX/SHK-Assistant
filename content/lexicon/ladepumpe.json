@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Pumpe, die Wärmeübertragungsmedium zwischen Wärmeerzeuger und Speicher oder zwischen zwei Anlagenteilen fördert, um einen Speicher zu laden. Typisch ist die Speicherladepumpe, die Heizungswasser vom Wärmeerzeuger durch den Wärmeübertrager eines Trinkwarmwasserspeichers fördert.",
   "related": []
 }

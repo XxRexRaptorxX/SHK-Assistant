@@ -11,6 +11,7 @@
     "heizung",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Technische Richtlinienreihe zur Vermeidung von Schäden durch Steinbildung und wasserseitige Korrosion in Warmwasser-Heizungsanlagen. Maßgeblich sind die aktuelle Ausgabe und die konkreten Anlagenbedingungen.",
   "related": [],
   "tools": [

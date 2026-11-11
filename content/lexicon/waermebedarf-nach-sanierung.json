@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Neu ermittelter Wärmebedarf nach baulichen Verbesserungen; er kann deutlich vom ursprünglichen Bedarf abweichen. Nach Dämmung oder Fenstertausch sollten Heizlast, Heizkurve und hydraulischer Abgleich neu bewertet werden, damit der Wärmeerzeuger nicht überdimensioniert ist.",
   "related": []
 }

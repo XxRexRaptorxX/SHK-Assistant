@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Strömung, die durch Dichteunterschiede infolge unterschiedlicher Temperaturen entsteht, ohne dass eine Umwälzpumpe erforderlich ist. In Heizungs- und Warmwasseranlagen kann sie unerwünschte Wärmeverluste verursachen und wird dann zum Beispiel durch Schwerkraftbremsen verhindert.",
   "related": []
 }

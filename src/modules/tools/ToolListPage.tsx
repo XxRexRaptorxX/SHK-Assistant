@@ -7,7 +7,7 @@ import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { groupToolsByCategory, toolEntries, toolPath } from './tools'
 import type { ToolEntry } from './schema'
-import { ToolTags } from './ToolTagList'
+import { TopicTags } from '../../components/TopicTags'
 
 export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] }) {
   usePageTitle(modules.tools.title)
@@ -32,7 +32,7 @@ export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] 
                     {/* Rechte Spalte: „Ungeprüft“ oben, darunter die Themen-Tags untereinander */}
                     <span className="flex shrink-0 flex-col items-end gap-1.5">
                       {entry.status === 'draft' && <DraftBadge variant="inline" />}
-                      <ToolTags tags={entry.tags} stacked />
+                      <TopicTags tags={entry.tags} stacked />
                     </span>
                   </Link>
                 </li>

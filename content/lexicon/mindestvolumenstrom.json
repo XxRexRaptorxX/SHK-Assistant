@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kleinster Volumenstrom, der durch ein Gerät oder einen Anlagenabschnitt fließen muss, damit ein sicherer oder bestimmungsgemäßer Betrieb gewährleistet ist. Er wird zum Beispiel von Wärmepumpen, Brennwertgeräten und Durchlauferhitzern verlangt; wird er unterschritten, kann das Gerät abschalten oder Schaden nehmen.",
   "related": []
 }

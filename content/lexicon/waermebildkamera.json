@@ -14,6 +14,7 @@
     "werkzeuge",
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Kamera, die Infrarotstrahlung als Bild darstellt, z. B. um verlegte Heizrohre oder Wärmebrücken sichtbar zu machen.",
   "related": [
     "lexicon.fussbodenheizung",

@@ -10,6 +10,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Bauteil, das eine physikalische Größe wie Temperatur, Druck, Feuchte oder Durchfluss erfasst und in ein auswertbares Signal umsetzt. In SHK-Anlagen sind zum Beispiel NTC- und Platin-Temperaturfühler, Drucksensoren und Durchflusssensoren verbreitet.",
   "related": []
 }

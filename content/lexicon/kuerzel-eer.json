@@ -11,6 +11,7 @@
     "kuerzel",
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Abkürzung für Energy Efficiency Ratio: Verhältnis von Kälteleistung zu elektrischer Leistungsaufnahme im Kühlbetrieb. Über eine Kühlperiode gemittelt heißt der Kennwert SEER.",
   "related": [
     "lexicon.kaelteleistung-im-verhaeltnis-zur-leistungsaufnahme",

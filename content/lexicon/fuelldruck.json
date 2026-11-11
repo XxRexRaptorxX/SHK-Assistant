@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Druck, mit dem eine Heizungsanlage im kalten Zustand befüllt beziehungsweise auf Betriebsbereitschaft gebracht wird. Der erforderliche Wert hängt unter anderem von der statischen Höhe und den Herstellerangaben ab.",
   "related": []
 }

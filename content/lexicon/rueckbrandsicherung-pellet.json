@@ -12,6 +12,7 @@
     "gas",
     "solar"
   ],
+  "tags": ["heizung"],
   "definition": "Sicherheitseinrichtung, die eine Rückübertragung von Feuer in das Brennstofffördersystem begrenzen soll. Übliche Maßnahmen sind zum Beispiel Zellradschleusen, Fallschächte, Absperrklappen und Löscheinrichtungen; welche nötig sind, gibt der Hersteller vor.",
   "related": []
 }

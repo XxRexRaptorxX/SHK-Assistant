@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Fehlerstrom-Schutzeinrichtung, die bei einem ausreichend großen Differenzstrom den Stromkreis abschaltet. Sie schützt vor gefährlichen Körperströmen und Bränden; für den Personenschutz werden meist Geräte mit 30 mA Bemessungsdifferenzstrom verwendet und regelmäßig über die Prüftaste getestet.",
   "related": []
 }

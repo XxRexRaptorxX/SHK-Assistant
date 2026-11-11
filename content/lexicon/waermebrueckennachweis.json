@@ -11,6 +11,7 @@
     "normen",
     "physik"
   ],
+  "tags": ["planung"],
   "definition": "Berechnung oder Bewertung der Wärmebrückenwirkung eines Gebäudes, um zusätzliche Wärmeverluste und kritische Oberflächentemperaturen einzuschätzen. Er kann detailliert für einzelne Anschlüsse oder über einen Gleichwertigkeitsnachweis nach DIN 4108 Beiblatt 2 erfolgen und bestimmt den anzusetzenden Wärmebrückenzuschlag.",
   "related": []
 }

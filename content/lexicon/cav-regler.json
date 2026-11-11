@@ -14,6 +14,7 @@
     "lueftung",
     "msr"
   ],
+  "tags": ["lueftung", "strom"],
   "definition": "Constant-Air-Volume-Regler, der den Luftvolumenstrom innerhalb seines Arbeitsbereichs konstant hält. Er arbeitet häufig mechanisch selbsttätig und gleicht Druckschwankungen im Kanalnetz aus.",
   "related": []
 }

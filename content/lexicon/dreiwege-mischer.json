@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Regelarmatur mit drei Anschlüssen, die zwei Ströme mischt oder einen Strom auf unterschiedliche Wege verteilt. In Heizungsanlagen mischt er heißes Vorlaufwasser mit kühlerem Rücklaufwasser, um die Vorlauftemperatur eines Heizkreises zu regeln; gestellt wird er von Hand oder über einen Mischermotor.",
   "related": []
 }

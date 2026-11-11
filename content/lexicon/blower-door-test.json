@@ -10,6 +10,7 @@
   "categories": [
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Verfahren zur Messung der Luftdichtheit eines Gebäudes mithilfe eines Ventilators, der eine definierte Druckdifferenz erzeugt. Üblich ist eine Messung bei 50 Pa Druckdifferenz, aus der sich der n50-Wert ergibt; dabei lassen sich auch Leckagen in der Gebäudehülle aufspüren.",
   "related": []
 }

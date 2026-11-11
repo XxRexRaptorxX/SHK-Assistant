@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 import { FORMULA_ID_PREFIX } from '../formulas/constants.ts'
 import { TOOL_ID_PREFIX } from '../tools/constants.ts'
 import { LEXICON_CATEGORIES, LEXICON_ID_PREFIX, type LexiconCategory } from './constants.ts'
@@ -14,6 +15,8 @@ export const lexiconEntrySchema = defineEntrySchema({
   categories: z
     .array(z.enum(LEXICON_CATEGORIES.map((category) => category.key) as [LexiconCategory, ...LexiconCategory[]]))
     .min(1),
+  /** Themen-Tags (mindestens einer), siehe TOPIC_TAGS; „allgemein“, wenn kein Fachgebiet passt */
+  tags: topicTagsSchema,
   /** Erklärung als Text; Leerzeilen trennen Absätze */
   definition: z.string().trim().min(1),
   /** Verwandte Lexikon-Einträge ("Siehe auch") */

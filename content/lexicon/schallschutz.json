@@ -13,6 +13,7 @@
     "lueftung",
     "physik"
   ],
+  "tags": ["lueftung"],
   "definition": "**Schallschutz** in SHK-Anlagen begrenzt die Übertragung von Geräuschen und Schwingungen auf Räume und Gebäudeteile. Geräuschquellen sind unter anderem Pumpen, Ventile, hohe Strömungsgeschwindigkeiten und Körperschallbrücken. Geeignete Dimensionierung, elastische Entkopplung, Schalldämmung und fachgerechte Befestigung wirken zusammen.",
   "related": [
     "lexicon.rohrschelle",

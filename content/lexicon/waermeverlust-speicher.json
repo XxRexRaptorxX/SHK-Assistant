@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Wärmeenergie, die ein Speicher über einen definierten Zeitraum an seine Umgebung abgibt. Er wird meist als Bereitschaftswärmeverlust in kWh pro 24 h oder als Warmhalteverlust in Watt angegeben und ist Grundlage der Effizienzklasse auf dem Energielabel.",
   "related": []
 }

@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Schematische Darstellung der hydraulischen Komponenten und Verbindungen einer Anlage, beispielsweise Wärmeerzeuger, Pumpen, Ventile, Speicher und Heizkreise. Es verwendet genormte Sinnbilder und ist Grundlage für Montage, Inbetriebnahme, hydraulischen Abgleich und Fehlersuche.",
   "related": [],
   "tools": [

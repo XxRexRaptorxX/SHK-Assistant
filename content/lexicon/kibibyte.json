@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Kibibyte** (KiB) ist eine Einheit für die Datenmenge. 1 KiB = 1.024 B.",
   "related": [
     "lexicon.byte"

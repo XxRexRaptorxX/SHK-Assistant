@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Millibar** (mbar) ist eine Einheit für den Druck. 1 mbar = 100 Pa.",
   "related": [
     "lexicon.pascal"

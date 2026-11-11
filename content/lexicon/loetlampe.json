@@ -14,6 +14,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["heizung"],
   "definition": "Handlicher, meist mit Propan oder Butan betriebener Gasbrenner, mit dem Rohre und Fittings beim Löten erwärmt werden. Für das Hartlöten werden oft leistungsstärkere Brenner eingesetzt, etwa mit Acetylen; beim Arbeiten sind Brandschutzmaßnahmen nötig, auf Baustellen gegebenenfalls mit Erlaubnisschein für feuergefährliche Arbeiten.",
   "related": [
     "lexicon.weichloeten",

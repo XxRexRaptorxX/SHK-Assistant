@@ -14,6 +14,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Rohrleitungs- und Instrumentierungsfließschema, das Medienwege, Apparate, Armaturen und Mess- beziehungsweise Regelstellen einer technischen Anlage darstellt. Die Sinnbilder sind in DIN EN ISO 10628 und für Mess- und Regelstellen in DIN EN 62424 genormt; es ist Grundlage für Planung, Bau und Betrieb.",
   "related": [],
   "tools": [

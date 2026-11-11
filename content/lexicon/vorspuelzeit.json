@@ -17,6 +17,7 @@
     "heizung",
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Die **Vorspülzeit** ist die Phase, in der das Gebläse vor der Zündung Feuerraum und Abgasweg mit Luft spült, damit kein zündfähiges Gemisch aus Brennstoffresten zurückbleibt. Bei Gasgebläsebrennern überwacht dabei meist ein Luftdruckwächter den Luftstrom. Übliche Werte liegen bei etwa 15 bis 30 s, zum Beispiel mindestens 15 s beim Ölfeuerungsautomaten Siemens LMO14, rund 22 s beim Weishaupt-Gasbrenner WG5 und 29 s beim Viessmann Vitodens 300.",
   "related": [
     "lexicon.wartezeit",

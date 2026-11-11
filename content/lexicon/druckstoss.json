@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kurzzeitige starke Druckänderung in einem System, häufig ausgelöst durch schnelle Strömungsänderungen. Er entsteht zum Beispiel beim schnellen Schließen einer Armatur (Joukowsky-Stoß) und kann Geräusche und Schäden verursachen; langsam schließende Armaturen und Dämpfer mindern ihn.",
   "related": []
 }

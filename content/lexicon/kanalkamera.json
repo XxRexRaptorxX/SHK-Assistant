@@ -15,6 +15,7 @@
     "werkzeuge",
     "abwasser"
   ],
+  "tags": ["sanitaer", "abwasser", "kundendienst"],
   "definition": "Kamera zur Inspektion von Rohren, Kanälen und Schornsteinen, die sonst nicht einsehbar sind. Sie wird auf einem Schiebeaal oder Fahrwagen eingeführt und zeigt Schäden, Verstopfungen und Fehlanschlüsse; die Aufnahmen dienen auch zur Dokumentation, etwa bei der Prüfung von Grundleitungen.",
   "related": [
     "lexicon.rohrreinigung",

@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Maßnahme, die die Rücklauftemperatur zum Wärmeerzeuger erhöht, um bestimmte Mindesttemperaturen einzuhalten. Bei Brennwertgeräten kann sie die Brennwertnutzung verringern.",
   "related": []
 }

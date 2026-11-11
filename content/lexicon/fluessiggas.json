@@ -19,6 +19,7 @@
     "gas",
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "**Flüssiggas** lagert unter seinem eigenen Dampfdruck flüssig im Behälter und wird gasförmig verbrannt. Die DGUV Regel 110-010 nennt die Kennwerte von Propan und n-Butan: Propan siedet bei Normaldruck schon bei −42 °C, n-Butan erst bei −0,5 °C; bei 20 °C hat Propan rund 7,4 bar Überdruck.\n\nPropan hat einen Heizwert von 12,87 kWh/kg. Ein Kilogramm nimmt flüssig bei 15 °C 1,96 l ein, ein Liter enthält also rund 6,57 kWh. Gasförmiges Propan ist rund 1,55-mal so schwer wie Luft und sinkt deshalb nach unten, z. B. in Keller und Gruben.",
   "related": [
     "lexicon.heizwert",

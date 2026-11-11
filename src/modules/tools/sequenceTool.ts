@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Ablauf-Tools ("kind": "sequence"): Programmablauf eines Geräts als Zeitdiagramm, z. B. der Start
 // eines Feuerungsautomaten. Je Variante (z. B. Brennerart) gibt es Signale (Zeilen), Phasen (Spalten,
@@ -79,7 +79,7 @@ export const sequenceToolSchema = defineEntrySchema({
   kind: z.literal('sequence'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Was umgeschaltet wird, z. B. „Brennerart“ */

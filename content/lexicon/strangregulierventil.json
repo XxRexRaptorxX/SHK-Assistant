@@ -13,6 +13,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Einstellbare Armatur zum Begrenzen und Einregulieren des Volumenstroms in einem Rohrleitungsstrang. Viele Ausführungen haben Messnippel, über die Differenzdruck und Volumenstrom gemessen werden können; sie dienen außerdem zum Absperren.",
   "related": []
 }

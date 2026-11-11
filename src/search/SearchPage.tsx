@@ -71,7 +71,14 @@ export function SearchPage({ engine }: { /** Für Tests überschreibbar */ engin
           }
         />
       </div>
-      {filtersOpen && <SearchFilters options={options} filter={filter} onChange={(next) => update(query, next)} />}
+      {filtersOpen && (
+        <SearchFilters
+          options={options}
+          filter={filter}
+          onChange={(next) => update(query, next)}
+          tagNote="(nur Tools und Lexikon)"
+        />
+      )}
 
       <p className="mt-2 text-base text-muted" aria-live="polite">
         {status}

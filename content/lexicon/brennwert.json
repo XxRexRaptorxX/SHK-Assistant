@@ -15,6 +15,7 @@
     "heizung",
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Der **Brennwert** (Hs) berücksichtigt bei vollständiger Verbrennung auch die Kondensationswärme des entstehenden Wasserdampfs. Er liegt deshalb über dem Heizwert desselben Brennstoffs. Wirkungsgrade, die auf Heizwert oder Brennwert bezogen sind, sind nicht direkt miteinander vergleichbar.",
   "related": [
     "lexicon.heizwert",

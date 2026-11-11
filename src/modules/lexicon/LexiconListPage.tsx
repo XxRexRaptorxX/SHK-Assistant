@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import { TopicTags } from '../../components/TopicTags'
+import { TOPIC_TAGS, type TopicTag } from '../../content/schema/topicTags'
+import { SearchFilterButton, SearchFilters } from '../../search/SearchFilters'
 import { Link, useSearchParams } from 'react-router'
 import { modules } from '../../app/modules'
 import { BackLink } from '../../components/ContentPage'
@@ -28,6 +31,13 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
   const label = category === null ? undefined : categoryLabel(category)
   usePageTitle(label ? `${label} – Lexikon` : 'Lexikon')
   const [query, setQuery] = useState(initialQuery)
+  // Themen-Filter (Mehrfachauswahl); ein passender Tag genügt
+  const [tags, setTags] = useState<readonly TopicTag[]>([])
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const tagOptions = useMemo(() => {
+    const used = new Set(entries.flatMap((entry) => entry.tags))
+    return TOPIC_TAGS.map((tag) => tag.key).filter((tag) => used.has(tag))
+  }, [entries])
 
   if (entries.length === 0) {
     return (
@@ -39,7 +49,10 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
   }
 
   const inCategory = label && category ? entriesInCategory(entries, category) : entries
-  const searching = query.trim() !== ''
+  const searching = query.trim() !== '' || tags.length > 0
+  const shown = filterLexicon(inCategory, query).filter(
+    (entry) => tags.length === 0 || entry.tags.some((tag) => tags.includes(tag)),
+  )
 
   return (
     <>
@@ -54,13 +67,27 @@ export function LexiconListPage({ entries = lexiconEntries, initialQuery = '' }:
           value={query}
           onChange={setQuery}
           placeholder={label ? 'Begriff filtern …' : 'Begriff suchen …'}
+          trailing={
+            <SearchFilterButton
+              open={filtersOpen}
+              activeCount={tags.length}
+              onToggle={() => setFiltersOpen((open) => !open)}
+            />
+          }
         />
       </div>
+      {filtersOpen && (
+        <SearchFilters
+          options={{ modules: [], tags: tagOptions }}
+          filter={{ modules: [], tags }}
+          onChange={(next) => setTags(next.tags)}
+        />
+      )}
 
       {!label && !searching ? (
         <CategoryTiles entries={entries} />
       ) : (
-        <TermList entries={filterLexicon(inCategory, query)} total={inCategory.length} />
+        <TermList entries={shown} total={inCategory.length} />
       )}
     </>
   )
@@ -110,7 +137,11 @@ function TermList({ entries, total }: { entries: readonly LexiconEntry[]; total:
                     <span className="block text-base text-muted">{entry.synonyms.join(', ')}</span>
                   )}
                 </span>
-                {entry.status === 'draft' && <DraftBadge variant="inline" />}
+                {/* Rechte Spalte wie in der Tool-Liste: „Ungeprüft“ oben, darunter die Themen-Tags */}
+                <span className="flex shrink-0 flex-col items-end gap-1.5">
+                  {entry.status === 'draft' && <DraftBadge variant="inline" />}
+                  <TopicTags tags={entry.tags} stacked />
+                </span>
               </Link>
             </li>
           ))}

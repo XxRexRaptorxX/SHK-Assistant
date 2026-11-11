@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Wärmeübertrager, in dem zwei Medien in entgegengesetzten Richtungen strömen. Diese Anordnung überträgt bei gleicher Fläche die meiste Wärme; das erwärmte Medium kann dabei wärmer austreten, als das abgekühlte Medium den Übertrager verlässt.",
   "related": [],
   "formulas": [

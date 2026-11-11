@@ -24,6 +24,7 @@ function lexiconEntry(overrides: Partial<LexiconEntry>): LexiconEntry {
     term: 'Beispiel',
     synonyms: [],
     categories: ['heizung'],
+    tags: ['heizung'],
     definition: 'Erster Absatz.\n\nZweiter Absatz.',
     related: [],
     formulas: [],

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Normen-Tools ("kind": "normFinder"): Man wählt einen oder mehrere Themenbereiche im Menü, z. B. Heizöl und Gewerblich,
 // und bekommt die dafür zuständigen Normen und Regelwerke mit eigener Kurzbeschreibung und Link.
@@ -81,7 +81,7 @@ export const normFinderToolSchema = defineEntrySchema({
   kind: z.literal('normFinder'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Einschränkungen der Liste; stehen am Seitenende, damit das Menü oben schnell erreichbar bleibt */

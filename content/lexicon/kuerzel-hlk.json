@@ -12,6 +12,7 @@
     "heizung",
     "lueftung"
   ],
+  "tags": ["heizung", "lueftung", "klima"],
   "definition": "Abkürzung für Heizung, Lüftung, Klima. Der Begriff wird ähnlich wie TGA für das Fachgebiet der Gebäudetechnik verwendet; im Englischen entspricht ihm HVAC.",
   "related": [
     "lexicon.tga",

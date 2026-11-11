@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Sicherung durch einen physischen Luftspalt zwischen Trinkwasserzufluss und nachgeschaltetem Medium, um Rückfließen zu verhindern. Er gehört zu den Sicherungseinrichtungen der Familie A nach DIN EN 1717; die Bauart AA schützt gegen alle Flüssigkeitskategorien bis 5.",
   "related": []
 }

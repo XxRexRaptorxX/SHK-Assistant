@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Sensor, der Druck in ein elektrisches oder anderes auswertbares Signal umwandelt. In Heizgeräten überwacht er zum Beispiel den Anlagendruck und meldet Wassermangel an die Regelung.",
   "related": []
 }

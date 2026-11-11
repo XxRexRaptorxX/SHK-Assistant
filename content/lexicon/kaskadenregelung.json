@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "In der Heizungstechnik bezeichnet der Begriff meist die Folgeschaltung mehrerer Wärmeerzeuger, die je nach Wärmebedarf stufenweise oder koordiniert zugeschaltet werden. In der Regelungstechnik steht Kaskadenregelung allgemein für ineinander geschachtelte Regelkreise, bei denen ein Führungsregler den Sollwert eines unterlagerten Folgereglers vorgibt.",
   "related": []
 }

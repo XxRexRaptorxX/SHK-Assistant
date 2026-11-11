@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Bauteil, das unerwünschte Schwerkraftzirkulation in einer Leitung begrenzt, wenn keine Pumpe läuft. Es ist nicht mit jeder Bauart eines Rückschlagventils gleichzusetzen.",
   "related": []
 }

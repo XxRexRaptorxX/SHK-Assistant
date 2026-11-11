@@ -14,6 +14,7 @@
     "msr",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Messgerät für den Druckunterschied zwischen zwei Messstellen, z. B. an Strangregulierventilen beim hydraulischen Abgleich.",
   "related": [
     "lexicon.differenzdruck",

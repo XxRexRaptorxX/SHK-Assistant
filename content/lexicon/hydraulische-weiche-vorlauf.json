@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Vorlaufanschluss einer hydraulischen Weiche, über den warmes Medium in die Weiche gelangt. Auf der Erzeugerseite tritt dort das erwärmte Wasser ein, auf der Verbraucherseite wird es zu den Heizkreisen weitergeführt.",
   "related": []
 }

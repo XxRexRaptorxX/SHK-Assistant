@@ -13,6 +13,7 @@
     "kuerzel",
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Abkürzung für Direct Digital Control: frei programmierbare digitale Regelung in der Gebäudeautomation. DDC-Regler bilden die Automationsebene der Gebäudeautomation und können über Bussysteme mit der Gebäudeleittechnik verbunden werden.",
   "related": [
     "lexicon.gebaeudeautomation",

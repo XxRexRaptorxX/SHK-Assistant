@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Übertragung von Wärme in einen Pufferspeicher, bis eine definierte Ladebedingung erreicht wird. Gesteuert wird sie meist über Temperaturfühler in verschiedenen Höhen; eine gute Schichtung erhält die nutzbare Temperatur im oberen Bereich.",
   "related": []
 }

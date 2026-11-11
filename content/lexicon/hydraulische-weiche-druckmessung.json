@@ -11,6 +11,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Messung von Druck oder Druckdifferenz an geeigneten Stellen der Weiche und angeschlossenen Kreise. Ein geringer Differenzdruck zwischen Vor- und Rücklaufanschluss zeigt, dass die Weiche die Kreise wie vorgesehen entkoppelt.",
   "related": []
 }

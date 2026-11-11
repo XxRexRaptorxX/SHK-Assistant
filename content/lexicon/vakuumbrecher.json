@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Sicherheitseinrichtung, die bei unzulässigem Unterdruck Luft einlassen kann, um einen Behälter oder ein System vor Schäden durch Vakuum zu schützen. In Trinkwasseranlagen übernehmen Rohrbelüfter diese Aufgabe, indem sie bei Unterdruck Luft einlassen und so ein Rücksaugen verhindern.",
   "related": []
 }

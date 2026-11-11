@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Armatur, die den Eingangsdruck des Trinkwassers auf einen eingestellten Ausgangsdruck reduziert. Er wird meist nach dem Wasserzähler eingebaut, oft zusammen mit einem Filter, und schützt die Installation vor zu hohem Ruhedruck; er muss regelmäßig gewartet werden.",
   "related": []
 }

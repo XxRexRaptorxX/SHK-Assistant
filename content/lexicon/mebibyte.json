@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Mebibyte** (MiB) ist eine Einheit für die Datenmenge. 1 MiB = 1.048.576 B.",
   "related": [
     "lexicon.byte"

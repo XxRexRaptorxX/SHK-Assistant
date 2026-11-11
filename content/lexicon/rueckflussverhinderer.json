@@ -15,6 +15,7 @@
     "hydraulik",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Ein **Rückflussverhinderer** lässt Wasser grundsätzlich in vorgesehener Richtung durch und verhindert beziehungsweise begrenzt Rückströmung. Er schützt damit je nach Einbauort die Trinkwasserinstallation oder andere Anlagenteile vor unerwünschtem Rückfluss. Er ist kein pauschaler Ersatz für eine nach Gefährdungsbeurteilung erforderliche Sicherungsarmatur.",
   "related": [
     "lexicon.trinkwasserinstallation",

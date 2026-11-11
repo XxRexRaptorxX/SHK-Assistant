@@ -13,6 +13,7 @@
     "werkstoffe",
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Werkstoffkennwert, der beschreibt, wie stark sich die Abmessung eines Materials bei einer Temperaturänderung relativ verändert. Für die Längenänderung gilt Δl = α · l · ΔT; Kunststoffrohre dehnen sich deutlich stärker aus als Metallrohre.",
   "related": [],
   "formulas": [

@@ -15,6 +15,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Ein **Thermostatkopf** erfasst die Temperatur in seiner Umgebung und betätigt das zugehörige Thermostatventil. Er kann mit Flüssigkeits-, Gas- oder Wachsausdehnung arbeiten; elektronische Ausführungen nutzen Sensoren und einen Antrieb. Eine verdeckte oder durch Fremdwärme beeinflusste Montage kann zu falscher Regelung führen.",
   "related": [
     "lexicon.thermostatventil",

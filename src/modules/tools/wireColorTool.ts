@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Aderfarben-Tools ("kind": "wireColors"): System, Kabeltyp und Aderzahl wählen und sehen, welche Farbe
 // üblicherweise wofür genutzt wird. Angeboten wird nur, was der Inhalt belegt: Eine Kombination ohne
@@ -55,7 +55,7 @@ export const wireColorToolSchema = defineEntrySchema({
   kind: z.literal('wireColors'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   systems: z

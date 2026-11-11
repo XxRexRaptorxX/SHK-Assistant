@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Wasservolumen, das innerhalb eines Zeitraums genutzt oder entnommen wird. Er wird mit Wasserzählern gemessen, meist in m³, und ist Grundlage für Abrechnung und Planung, etwa bei Warmwasserbereitung oder Enthärtung.",
   "related": []
 }

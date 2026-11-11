@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Druckabfall über einem Filter, der mit zunehmender Beladung steigen kann. Ein deutlich gestiegener Druckverlust zeigt an, dass der Filter gereinigt oder gewechselt werden muss.",
   "related": []
 }

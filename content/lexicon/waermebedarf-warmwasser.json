@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Wärmeenergie, die benötigt wird, um eine entnommene Trinkwassermenge auf die gewünschte Temperatur zu erwärmen, gegebenenfalls zuzüglich berücksichtigter Verluste. Er hängt vom Zapfverhalten und der Zahl der Nutzer ab; hinzu kommen Speicher-, Verteil- und Zirkulationsverluste.",
   "related": [],
   "formulas": [

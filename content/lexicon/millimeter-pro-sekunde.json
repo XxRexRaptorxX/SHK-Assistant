@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Millimeter pro Sekunde** (mm/s) ist eine Einheit für die Geschwindigkeit. 1 mm/s = 0,001 m/s.",
   "related": [
     "lexicon.meter-pro-sekunde"

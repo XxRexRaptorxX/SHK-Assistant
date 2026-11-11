@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Rohrleitungsnetz zur Verteilung von Wärme von einem Erzeuger oder Übergabepunkt zu mehreren Verbrauchern. Es umfasst Leitungen, Pumpen und Armaturen; Wärmeverluste lassen sich durch Dämmung, kurze Leitungswege und niedrige Temperaturen begrenzen.",
   "related": []
 }

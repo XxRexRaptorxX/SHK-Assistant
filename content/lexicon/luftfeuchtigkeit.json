@@ -14,6 +14,7 @@
     "lueftung",
     "physik"
   ],
+  "tags": ["lueftung"],
   "definition": "**Luftfeuchtigkeit** bezeichnet den Wasserdampfgehalt der Luft und kann absolut, spezifisch oder relativ beschrieben werden. Für Gebäude und Anlagen sind relative Feuchte und Taupunkt besonders wichtig, weil sie Kondensationsrisiken und Behaglichkeit beeinflussen. Temperatur und Druck müssen bei der Interpretation von Messwerten berücksichtigt werden.",
   "related": [
     "lexicon.relative-luftfeuchtigkeit",

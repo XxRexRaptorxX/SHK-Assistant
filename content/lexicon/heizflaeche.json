@@ -13,6 +13,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Eine **Heizfläche** überträgt Wärme an einen Raum oder ein anderes Medium. Dazu zählen unter anderem Heizkörper, Fußbodenheizungen, Wandheizungen und Deckenheizungen. Ihre erforderliche Leistung hängt von Bauart, Fläche, mittlerer Heizmitteltemperatur und Raumtemperatur ab.",
   "related": [
     "lexicon.heizlast",

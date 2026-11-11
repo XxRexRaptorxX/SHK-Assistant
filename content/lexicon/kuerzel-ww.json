@@ -11,6 +11,7 @@
     "kuerzel",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Abkürzung für Warmwasser, im Trinkwasserbereich das erwärmte Trinkwasser (nach Norm PWH). Um Verwechslungen mit Heizungswasser zu vermeiden, ist die Kennzeichnung PWH eindeutiger.",
   "related": [
     "lexicon.trinkwarmwasser",

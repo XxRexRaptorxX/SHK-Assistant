@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Kilobyte** (kB) ist eine Einheit für die Datenmenge. 1 kB = 1.000 B.",
   "related": [
     "lexicon.byte"

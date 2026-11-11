@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Dimensionierung eines Wärmeübertragers anhand der erforderlichen Leistung, Temperaturdifferenzen, Medien, Druckverluste und Betriebsbedingungen. Wichtige Größen sind Wärmeübertragungsfläche, Wärmedurchgangskoeffizient und mittlere logarithmische Temperaturdifferenz.",
   "related": [],
   "formulas": [

@@ -15,6 +15,7 @@
     "trinkwasser",
     "heizung"
   ],
+  "tags": ["heizung", "sanitaer", "trinkwasser"],
   "definition": "Hand- oder Motorpumpe mit Manometer, mit der Leitungen für die Druckprüfung gefüllt und auf Prüfdruck gebracht werden. Sie wird an einen Füll- oder Entleeranschluss gekoppelt; Prüfdruck und Haltezeit richten sich nach dem jeweiligen Prüfverfahren.",
   "related": [
     "lexicon.druckpruefung",

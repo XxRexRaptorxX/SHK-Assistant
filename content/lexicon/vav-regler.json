@@ -14,6 +14,7 @@
     "lueftung",
     "msr"
   ],
+  "tags": ["lueftung", "strom"],
   "definition": "Variable-Air-Volume-Regler, der den Luftvolumenstrom in einem Lüftungssystem bedarfsgerecht verändert. Er wird zum Beispiel nach Raumtemperatur, CO₂-Gehalt oder Anwesenheit angesteuert und ermöglicht eine bedarfsgerechte Lüftung mit geringerem Energiebedarf.",
   "related": []
 }

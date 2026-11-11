@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Eine Kombination aus Weiche und Pufferspeicher ist möglich, wenn sowohl Wärmespeicherung als auch hydraulische Entkopplung benötigt und passend ausgelegt werden. Ein Pufferspeicher mit vier Anschlüssen kann die Aufgabe der Weiche auch allein übernehmen; eine zusätzliche Weiche ist dann meist nicht nötig.",
   "related": []
 }

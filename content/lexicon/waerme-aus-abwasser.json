@@ -13,6 +13,7 @@
     "abwasser",
     "solar"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Nutzung von Wärme aus Abwasser über einen geeigneten Wärmeübertrager, beispielsweise zur Vorwärmung oder als Wärmequelle einer Wärmepumpe. Genutzt wird sie zum Beispiel über Duschwasser-Wärmeübertrager oder mit Wärmepumpen an Abwasserkanälen; Ablagerungen am Wärmeübertrager sind bei der Planung zu berücksichtigen.",
   "related": []
 }

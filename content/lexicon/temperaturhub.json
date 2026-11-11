@@ -13,6 +13,7 @@
     "kaelte",
     "physik"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Temperaturdifferenz, um die ein Medium oder Prozess angehoben wird, zum Beispiel von der Eintritts- zur Austrittstemperatur. Bei Wärmepumpen bezeichnet er die Differenz zwischen Wärmequelle und Wärmesenke; je kleiner er ist, desto höher ist die Leistungszahl.",
   "related": []
 }

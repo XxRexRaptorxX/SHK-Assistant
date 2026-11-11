@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Komponente zur hydraulischen Entkopplung von Erzeuger- und Verbraucherkreisen; ihre konkrete Wirkung hängt von Volumenstromverhältnissen und Einbindung ab. Sie wird auch hydraulischer Entkoppler genannt und erlaubt in den Kreisen eigene Pumpen mit unterschiedlichen Volumenströmen.",
   "related": []
 }

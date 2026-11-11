@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Im Hydraulikschema sind typischerweise Erzeugervorlauf, Erzeugerrücklauf, Verbrauchervorlauf und Verbraucherrücklauf zu erkennen. Sie wird meist als senkrechtes Rohrstück mit vier Anschlüssen zwischen Wärmeerzeuger und Verteiler dargestellt.",
   "related": []
 }

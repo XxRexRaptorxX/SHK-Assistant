@@ -11,6 +11,7 @@
     "trinkwasser",
     "normen"
   ],
+  "tags": ["sanitaer", "trinkwasser", "planung"],
   "definition": "Armaturengruppe zur Absicherung eines Trinkwassererwärmers gegen unzulässigen Druck und Rückfluss, abhängig von der konkreten Ausführung. Sie sitzt in der Kaltwasserzuleitung des Speichers und enthält meist Absperrventil, Prüfeinrichtung, Rückflussverhinderer und Sicherheitsventil; zwischen Speicher und Sicherheitsventil darf nicht abgesperrt werden können.",
   "related": []
 }

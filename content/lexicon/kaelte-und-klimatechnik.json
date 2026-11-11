@@ -13,6 +13,7 @@
     "kaelte",
     "lueftung"
   ],
+  "tags": ["heizung", "lueftung", "klima", "kaelte"],
   "definition": "Fachgebiet zur Erzeugung und Verteilung von Kälte sowie zur Beeinflussung von Temperatur, Feuchte und Luftqualität. Typische Anlagen sind Kältemaschinen, Wärmepumpen sowie Klima- und Lüftungsanlagen; Arbeiten am Kältekreis erfordern je nach Kältemittel eine Sachkunde oder Zertifizierung.",
   "related": []
 }

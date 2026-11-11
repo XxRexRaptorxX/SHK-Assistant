@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Messgerät, das die vom Wärmenetz an einen Verbraucher übertragene Wärmeenergie erfasst. Er ist meist Teil der Übergabestation und Grundlage der Abrechnung; er unterliegt dem Mess- und Eichrecht.",
   "related": []
 }

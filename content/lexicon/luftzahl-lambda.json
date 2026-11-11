@@ -13,6 +13,7 @@
   "categories": [
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Verhältnis der tatsächlich zugeführten Verbrennungsluft zur theoretisch erforderlichen Luftmenge. Lambda größer 1 bedeutet Luftüberschuss.",
   "related": [],
   "tools": [

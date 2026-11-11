@@ -11,6 +11,7 @@
     "kuerzel",
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Abkürzung für Kesselfüll- und Entleerungshahn. Der Hahn dient zum Befüllen und Entleeren von Heizungsanlagen und Wärmeerzeugern.",
   "related": [
     "lexicon.kfe-hahn"

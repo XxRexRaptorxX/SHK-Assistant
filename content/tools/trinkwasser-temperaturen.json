@@ -10,7 +10,7 @@
   "summary": "Vorgeschriebene Temperaturen für Kaltwasser, Warmwasser und Zirkulation.",
   "description": "Leitung wählen und die einzuhaltenden Temperaturen mit den wichtigsten Kenndaten ablesen. Beim Warmwasser hängen die Werte von der Anlagenart ab. Grundlage sind DVGW W 551 und DIN 1988-200. W 551 wird derzeit als W 551-1 neu gefasst, einzelne Werte können sich noch ändern.",
   "category": "Wartung",
-  "tags": ["sanitaer"],
+  "tags": ["sanitaer", "trinkwasser"],
   "bars": [
     {
       "key": "leitung",

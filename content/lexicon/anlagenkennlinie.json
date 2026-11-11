@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kurve, die den erforderlichen Druck beziehungsweise die Förderhöhe eines Rohrnetzes in Abhängigkeit vom Volumenstrom beschreibt. Weil der Druckverlust etwa quadratisch mit dem Volumenstrom steigt, verläuft sie annähernd als Parabel; ihr Schnittpunkt mit der Pumpenkennlinie ergibt den Betriebspunkt.",
   "related": []
 }

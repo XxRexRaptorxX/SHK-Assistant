@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Sensor oder Regelfunktion, die kritische Taupunktbedingungen überwacht und Kühlung begrenzt, um Kondensation an kalten Oberflächen zu vermeiden. Er wird zum Beispiel an Vorlaufleitungen von Kühldecken oder Flächenkühlungen angebracht und schaltet die Kühlung ab, bevor sich Kondensat bildet.",
   "related": []
 }

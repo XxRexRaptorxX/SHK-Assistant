@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Trennung der Druck- und Volumenstrombeziehungen zweier Kreise, sodass deren Pumpen sich möglichst wenig gegenseitig beeinflussen. Erreicht wird sie zum Beispiel mit einer hydraulischen Weiche, einem Pufferspeicher mit vier Anschlüssen oder einem differenzdruckarmen Verteiler.",
   "related": []
 }

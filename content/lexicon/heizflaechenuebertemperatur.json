@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Differenz zwischen der mittleren Temperatur einer Heizfläche und der Raumtemperatur. Sie beeinflusst die Wärmeabgabe der Heizfläche.",
   "related": []
 }

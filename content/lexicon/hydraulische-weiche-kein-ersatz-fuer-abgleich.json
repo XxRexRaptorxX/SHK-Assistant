@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Eine hydraulische Weiche entkoppelt Kreise, ersetzt aber nicht automatisch die korrekte Dimensionierung und Einregulierung der Verbraucherkreise. Ohne Abgleich können einzelne Heizflächen trotz Weiche unter- oder überversorgt sein.",
   "related": []
 }

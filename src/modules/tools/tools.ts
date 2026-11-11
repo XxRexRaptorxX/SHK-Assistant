@@ -34,7 +34,7 @@ import {
 } from './schema'
 import { sequenceKeywords } from './sequenceTool'
 import { symbolKeywords } from './symbolTool'
-import { toolTagLabel } from './toolTags'
+import { topicTagLabel } from '../../content/schema/topicTags'
 import { valveSurveyKeywords } from './valveSurveyTool'
 import { variantFormulas } from './variantTool'
 import { wireColorKeywords } from './wireColorTool'
@@ -120,7 +120,7 @@ export function toolSearchDocuments(entries: readonly ToolEntry[] = toolEntries)
     moduleTitle: modules.tools.title,
     title: entry.title,
     subtitle: entry.summary,
-    keywords: [...entry.tags.map(toolTagLabel), ...toolKeywords(entry)],
+    keywords: [...entry.tags.map(topicTagLabel), ...toolKeywords(entry)],
     text: `${entry.summary} ${entry.description}`,
     path: toolPath(entry.id),
     status: entry.status,

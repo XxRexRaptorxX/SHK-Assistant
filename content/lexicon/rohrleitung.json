@@ -13,6 +13,7 @@
   "categories": [
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Eine **Rohrleitung** transportiert Flüssigkeiten oder Gase zwischen Anlagenteilen. Sie besteht neben geraden Rohrabschnitten häufig aus Formstücken, Verbindungen, Armaturen, Halterungen und Dämmung. Werkstoff, Nenndruck, Temperaturbereich, Korrosionsbeständigkeit und Montageverfahren richten sich nach Medium und Betriebsbedingungen.",
   "related": [
     "lexicon.rohrdimensionierung",

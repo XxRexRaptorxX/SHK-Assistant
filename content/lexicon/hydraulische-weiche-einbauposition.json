@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Position der Weiche im Hydraulikschema, die sich aus dem Anlagenkonzept ergibt. In der Regel sitzt sie senkrecht zwischen Wärmeerzeuger und Heizkreisverteiler, damit sich Luft oben und Schlamm unten sammeln kann.",
   "related": []
 }

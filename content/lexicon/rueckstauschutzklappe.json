@@ -10,6 +10,7 @@
   "categories": [
     "abwasser"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Klappe oder Rückstausicherung, die den Rückfluss von Abwasser bei Rückstau begrenzen soll. Sie darf nur in dafür geeigneten Fällen nach den geltenden Regeln eingesetzt werden.",
   "related": []
 }

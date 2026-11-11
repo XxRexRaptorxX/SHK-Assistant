@@ -10,7 +10,7 @@
   "summary": "Mindestdicke für Heizung, Warmwasser, Kälte und Kaltwasser.",
   "description": "Zeigt die Mindestdicke der Dämmschicht für Heizungs-, Warmwasser- und Kälteleitungen nach dem Gebäudemodernisierungsgesetz (GModG, früher GEG), Anlage 8, und für Trinkwasserleitungen kalt nach DIN 1988-200. Das Gesetz gilt, wenn Leitungen neu eingebaut oder ersetzt werden, und für die Nachrüstpflicht bei ungedämmten, zugänglichen Heizungs- und Warmwasserleitungen außerhalb beheizter Räume (§ 69). Für Trinkwasser kalt gibt es keine gesetzliche Mindestdicke; die Richtwerte der Norm schützen vor Erwärmung und Tauwasser. Das Gesetz und die Norm stufen nach dem Innendurchmesser ab; ohne Wandstärke rechnet das Tool mit dem Außendurchmesser und liegt damit auf der sicheren Seite.",
   "category": "Auslegung",
-  "tags": ["heizung"],
+  "tags": ["heizung", "trinkwasser"],
   "inputs": [
     {
       "symbol": "da",

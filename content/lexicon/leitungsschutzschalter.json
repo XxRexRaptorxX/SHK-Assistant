@@ -13,6 +13,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Schutzgerät, das elektrische Leitungen bei Überlast oder Kurzschluss automatisch abschaltet. Er wird auch Sicherungsautomat genannt und lässt sich nach dem Auslösen wieder einschalten; Bemessungsstrom und Auslösecharakteristik müssen zu Leitung und Verbraucher passen.",
   "related": []
 }

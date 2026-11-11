@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Elektrisch oder hydraulisch angetriebenes Gerät, das mit Pressbacken oder Pressschlingen Pressfittings auf Rohren verpresst. Backen und Fittings gehören zum jeweiligen Presssystem.",
   "related": [
     "lexicon.pressfitting",

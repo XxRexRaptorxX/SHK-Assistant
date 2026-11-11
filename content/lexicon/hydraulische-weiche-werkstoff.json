@@ -11,6 +11,7 @@
     "hydraulik",
     "werkstoffe"
   ],
+  "tags": ["heizung"],
   "definition": "Werkstoff der Weiche, der zu Druck, Temperatur und Heizungswasser passen muss. Üblich sind Stahl, Edelstahl oder Kunststoff; der Werkstoff muss zum übrigen System passen, damit keine Kontaktkorrosion entsteht.",
   "related": []
 }

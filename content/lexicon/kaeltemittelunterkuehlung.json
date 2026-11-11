@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Temperaturdifferenz, um die flüssiges Kältemittel unter seiner Sättigungstemperatur bei gleichem Druck abgekühlt ist. Sie wird am Verflüssigerausgang gemessen und stellt sicher, dass vor dem Expansionsventil nur flüssiges Kältemittel ankommt.",
   "related": []
 }

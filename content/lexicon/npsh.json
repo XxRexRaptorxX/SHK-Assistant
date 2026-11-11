@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Net Positive Suction Head: Kennwert zur Beurteilung der Druckverhältnisse auf der Saugseite einer Pumpe im Hinblick auf Kavitation. Der vorhandene NPSH-Wert der Anlage muss größer sein als der erforderliche NPSH-Wert der Pumpe, sonst droht Kavitation.",
   "related": []
 }

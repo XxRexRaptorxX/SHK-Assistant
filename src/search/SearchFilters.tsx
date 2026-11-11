@@ -1,6 +1,6 @@
 import { FilterIcon } from '../components/icons'
-import { toolTagColor } from '../modules/tools/ToolTagList'
-import { toolTagLabel, type ToolTag } from '../modules/tools/toolTags'
+import { topicTagColor } from '../components/TopicTags'
+import { topicTagLabel, type TopicTag } from '../content/schema/topicTags'
 import type { SearchEngine, SearchFilter } from './search'
 
 export const SEARCH_FILTERS_ID = 'search-filters'
@@ -45,41 +45,47 @@ export function SearchFilters({
   options,
   filter,
   onChange,
+  tagNote,
 }: {
+  /** Ohne Module (z. B. im Lexikon) entfällt der Abschnitt „Bereiche“ */
   options: SearchEngine['filterOptions']
   filter: SearchFilter
   onChange: (filter: SearchFilter) => void
+  /** Zusatz hinter „Themen“, z. B. „(nur Tools und Lexikon)“ */
+  tagNote?: string
 }) {
   const active = filter.modules.length + filter.tags.length > 0
   return (
     <div id={SEARCH_FILTERS_ID} className="mt-2 rounded-2xl border border-edge bg-surface p-4">
-      <fieldset>
-        <legend className="font-bold">Bereiche</legend>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {options.modules.map((module) => {
-            const on = filter.modules.includes(module)
-            return (
-              <button
-                key={module}
-                type="button"
-                aria-pressed={on}
-                onClick={() => onChange({ ...filter, modules: toggle(filter.modules, module) })}
-                className={`${chipBase} ${on ? 'border-accent bg-accent text-accent-ink' : chipOff}`}
-              >
-                {on && <span aria-hidden="true">✓</span>}
-                {module}
-              </button>
-            )
-          })}
-        </div>
-      </fieldset>
+      {options.modules.length > 0 && (
+        <fieldset className="mb-4">
+          <legend className="font-bold">Bereiche</legend>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {options.modules.map((module) => {
+              const on = filter.modules.includes(module)
+              return (
+                <button
+                  key={module}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => onChange({ ...filter, modules: toggle(filter.modules, module) })}
+                  className={`${chipBase} ${on ? 'border-accent bg-accent text-accent-ink' : chipOff}`}
+                >
+                  {on && <span aria-hidden="true">✓</span>}
+                  {module}
+                </button>
+              )
+            })}
+          </div>
+        </fieldset>
+      )}
       {options.tags.length > 0 && (
-        <fieldset className="mt-4">
+        <fieldset>
           <legend className="font-bold">
-            Themen <span className="font-normal text-muted">(nur Tools)</span>
+            Themen {tagNote && <span className="font-normal text-muted">{tagNote}</span>}
           </legend>
           <div className="mt-2 flex flex-wrap gap-2">
-            {options.tags.map((tag: ToolTag) => {
+            {options.tags.map((tag: TopicTag) => {
               const on = filter.tags.includes(tag)
               return (
                 <button
@@ -87,10 +93,10 @@ export function SearchFilters({
                   type="button"
                   aria-pressed={on}
                   onClick={() => onChange({ ...filter, tags: toggle(filter.tags, tag) })}
-                  className={`${chipBase} ${on ? toolTagColor(tag) : chipOff}`}
+                  className={`${chipBase} ${on ? topicTagColor(tag) : chipOff}`}
                 >
                   {on && <span aria-hidden="true">✓</span>}
-                  {toolTagLabel(tag)}
+                  {topicTagLabel(tag)}
                 </button>
               )
             })}

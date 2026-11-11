@@ -10,6 +10,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Standardisiertes Bussystem für Gebäudeautomation, das unter anderem Beleuchtung, Beschattung, Heizung und Lüftung vernetzen kann. Es ist Nachfolger des Europäischen Installationsbusses (EIB) und als EN 50090 sowie ISO/IEC 14543-3 genormt.",
   "related": []
 }

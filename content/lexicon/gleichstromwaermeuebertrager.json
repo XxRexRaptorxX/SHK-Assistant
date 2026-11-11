@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Wärmeübertrager, in dem zwei Medien in derselben Richtung strömen. Die Austrittstemperaturen beider Medien nähern sich einander an, ohne sich zu kreuzen; die übertragbare Wärme ist daher geringer als im Gegenstrom.",
   "related": [],
   "formulas": [

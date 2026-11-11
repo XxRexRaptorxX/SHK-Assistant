@@ -13,6 +13,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Pumpe, deren Drehzahl elektronisch verändert wird, um Förderstrom oder Differenzdruck an den Bedarf anzupassen und den Energieverbrauch zu senken. In Heizungsanlagen sind solche Hocheffizienzpumpen heute üblich; typische Regelarten sind konstanter oder proportionaler Differenzdruck.",
   "related": []
 }

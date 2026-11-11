@@ -14,6 +14,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Die **spezifische Wärmekapazität** gibt an, wie viel Wärmeenergie benötigt wird, um ein Kilogramm eines Stoffes um ein Kelvin zu erwärmen. Sie wird hier in Wh/(kg·K) angegeben; die SI-Einheit ist J/(kg·K), außerdem ist kJ/(kg·K) verbreitet (1 Wh/(kg·K) = 3,6 kJ/(kg·K)). Der Wert ist stoff- und temperaturabhängig; bei Wasser liegt er im üblichen Heizungsbereich näherungsweise bei 1,163 Wh/(kg·K).",
   "related": [
     "lexicon.waermemenge",

@@ -13,6 +13,7 @@
     "hydraulik",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "Druckanteil, der mit der Strömungsgeschwindigkeit eines Fluids zusammenhängt. Er beträgt ½ · ρ · v² und entspricht betragsmäßig dem Staudruck; zusammen mit dem statischen Druck ergibt er den Gesamtdruck.",
   "related": [],
   "formulas": [

@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Masse des Kältemittels, mit der ein Kältekreislauf befüllt ist. Zulässige Menge und Dokumentation hängen von Gerät, Kältemittel und geltenden Anforderungen ab.",
   "related": []
 }

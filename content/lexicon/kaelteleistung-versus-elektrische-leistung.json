@@ -10,6 +10,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Kälteleistung beschreibt die Wärmeabfuhr; elektrische Leistung beschreibt den Strombedarf des Geräts. Bei Kälteanlagen sind beide Größen nicht identisch.",
   "related": []
 }

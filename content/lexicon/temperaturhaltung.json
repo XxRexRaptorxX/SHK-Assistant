@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Maßnahmen zur Aufrechterhaltung einer vorgesehenen Temperatur in einem Speicher oder Leitungsnetz. In Trinkwarmwassernetzen erfolgt sie über Zirkulation oder selbstregelnde Begleitheizbänder; Mindesttemperaturen dafür nennt das DVGW-Arbeitsblatt W 551.",
   "related": []
 }

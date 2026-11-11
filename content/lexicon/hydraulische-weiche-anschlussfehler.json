@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Fehlerhafte Anschlussanordnung kann unerwünschte Durchmischung oder hydraulische Beeinflussung verursachen; das Hydraulikschema und die Montage sind zu prüfen. Typisch sind vertauschte Vor- und Rücklaufanschlüsse, durch die warmes Vorlaufwasser direkt in den Erzeugerrücklauf gelangt.",
   "related": []
 }

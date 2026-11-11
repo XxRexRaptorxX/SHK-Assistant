@@ -11,6 +11,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Messfühler an geeigneten Anschlüssen können zur Überwachung des Temperaturverhaltens eingesetzt werden, sofern das Anlagenkonzept dies vorsieht. Häufig sitzt ein Fühler im Verbrauchervorlauf oder in der Weiche, damit der Wärmeerzeuger nach der tatsächlich bereitgestellten Vorlauftemperatur geregelt wird.",
   "related": []
 }

@@ -12,6 +12,7 @@
   "categories": [
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Zustand einer Anlage, in dem die betrachteten Gefährdungen ausreichend begrenzt sind, beispielsweise durch Abschaltung oder sichere Druckentlastung. Er wird bei der Planung festgelegt und muss auch bei Energieausfall erreicht werden, zum Beispiel durch Federrücklauf oder stromlos schließende Ventile.",
   "related": []
 }

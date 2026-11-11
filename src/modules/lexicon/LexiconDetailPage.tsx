@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router'
 import { BackLink, ContentPage } from '../../components/ContentPage'
 import { DraftBadge } from '../../components/DraftBadge'
 import { listCard } from '../../components/surfaces'
+import { TopicTags } from '../../components/TopicTags'
 import type { BaseEntry } from '../../content/schema/base'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { RichText } from '../../components/RichText'
@@ -43,6 +44,7 @@ export function LexiconDetailPage({
       title={entry.term}
       back={BACK}
       actions={<FavoriteButton id={entry.id} title={entry.term} />}
+      meta={<TopicTags tags={entry.tags} />}
     >
       {entry.synonyms.length > 0 && (
         <p className="text-muted">

@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Vom Hersteller angegebener maximaler Volumenstrom unter definierten Bedingungen. Er beruht meist auf einer empfohlenen Strömungsgeschwindigkeit in der Weiche; maßgeblich ist der größere der Volumenströme von Erzeuger- und Verbraucherseite.",
   "related": []
 }

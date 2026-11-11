@@ -13,6 +13,7 @@
     "trinkwasser",
     "msr"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Automatische Übertragung von Messwerten eines Wasserzählers an ein Auswerte- oder Abrechnungssystem. Genutzt werden zum Beispiel Funkzähler, M-Bus oder Smart-Meter-Gateways; Datenschutz und Eichrecht sind zu beachten.",
   "related": []
 }

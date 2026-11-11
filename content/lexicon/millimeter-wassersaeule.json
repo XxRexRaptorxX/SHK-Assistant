@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Millimeter Wassersäule** (mmH2O) ist eine Einheit für den Druck. 1 mmH2O = 9,80665 Pa.",
   "related": [
     "lexicon.pascal"

@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Logarithmisches Maß für den Schalldruck relativ zu einem Referenzwert, angegeben in Dezibel (dB). Der Bezugswert ist 20 µPa; eine Erhöhung um etwa 10 dB wird als Verdopplung der Lautstärke empfunden. Der Wert hängt vom Abstand zur Schallquelle ab.",
   "related": []
 }

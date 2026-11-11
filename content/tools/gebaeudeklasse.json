@@ -10,7 +10,7 @@
   "summary": "Ermittelt die Klasse 1 bis 5 nach Bayerischer Bauordnung.",
   "description": "Ermittelt die Gebäudeklasse 1 bis 5 nach der Bayerischen Bauordnung (Art. 2 Abs. 3 BayBO). Höhe h ist die Fußbodenoberkante des höchstgelegenen Geschosses, in dem ein Aufenthaltsraum möglich ist, über der Geländeoberfläche im Mittel – nicht die Firsthöhe. Flächen sind Brutto-Grundflächen; Flächen im Kellergeschoss zählen nicht mit. Bei Gebäuden bis 13 m dürfen statt ganzer Nutzungseinheiten auch Teile von Nutzungseinheiten jeweils höchstens 400 m² haben, wenn sie durch Wände nach Art. 27 Abs. 2 Nr. 1 BayBO abgetrennt sind und eigene Rettungswege nach Art. 31 Abs. 1 BayBO haben. Ob zusätzlich ein Sonderbau vorliegt (Art. 2 Abs. 4 BayBO, z. B. Schule, Krankenhaus, Versammlungsstätte, Verkaufsstätte über 800 m²), prüft das Tool nur für Hochhäuser. Andere Bundesländer haben eigene Bauordnungen mit teils abweichenden Regeln.",
   "category": "Auslegung",
-  "tags": ["buero"],
+  "tags": ["planung"],
   "choices": [
     {
       "key": "gebaeude",

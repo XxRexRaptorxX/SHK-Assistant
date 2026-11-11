@@ -12,6 +12,7 @@
   "categories": [
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Auswahl eines Sicherheitsventils nach erforderlicher Abblaseleistung, Ansprechdruck, Medium und zulässigem Druck der abgesicherten Anlage. Bei Heizungsanlagen richtet sich die Größe nach der Nennwärmeleistung des Wärmeerzeugers, bei Trinkwassererwärmern nach Speicherinhalt oder Beheizungsleistung; Tabellen enthalten DIN EN 12828 und DIN 1988-200.",
   "related": []
 }

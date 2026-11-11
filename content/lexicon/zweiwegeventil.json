@@ -13,6 +13,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Zweiwegeventil** besitzt einen Ein- und einen Ausgang und verändert beziehungsweise sperrt den Durchfluss in einer Leitung. Als Regelventil beeinflusst es Volumenstrom und Druckverhältnisse im System. Auswahl und Dimensionierung müssen zum Medium, Durchflussbereich und verfügbaren Differenzdruck passen.",
   "related": [
     "lexicon.stellventil",

@@ -68,10 +68,12 @@ der Tool-Übersicht und in der Suche unter dem Titel; die ausführliche Erkläru
 
 Außerdem braucht jedes Tool `tags`: das Fachgebiet als farbiges Etikett in der Liste und auf der Tool-Seite,
 mindestens eins, auch mehrere, z. B. `"tags": ["heizung", "kundendienst"]`. Erlaubt sind `heizung` (Heizung),
-`sanitaer` (Sanitär), `lueftung` (Lüftung), `klima` (Klima), `kaelte` (Kälte), `solar` (Solar), `strom` (Strom),
-`kundendienst` (Kundendienst) und `buero` (Büro: Planung, Aufmaß-Listen, Organisation). Die Liste steht in
-`src/modules/tools/toolTags.ts`, die Farben in `ToolTagList.tsx`; ein neuer Tag gehört in beide. Die Suche
-findet Tools auch über den Tag-Namen.
+`sanitaer` (Sanitär), `trinkwasser` (Trinkwasser), `abwasser` (Abwasser), `lueftung` (Lüftung), `klima` (Klima),
+`kaelte` (Kälte), `solar` (Solar), `strom` (Strom), `kundendienst` (Kundendienst), `planung` (Planung: Normen,
+Aufmaß-Listen, Organisation) und `allgemein` (Allgemein: nur, wenn kein Fachgebiet passt, nie zusammen mit einem
+anderen Tag). Dieselben Tags haben die Lexikon-Begriffe. Die Liste steht in `src/content/schema/topicTags.ts`,
+die Farben in `src/components/TopicTags.tsx`; ein neuer Tag gehört in beide. Die Suche findet Tools auch über
+den Tag-Namen und filtert über den Filter-Knopf nach Themen.
 
 **Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
 Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
@@ -536,6 +538,7 @@ jeder Wert in jedes passende Formelfeld umgerechnet werden kann.
 | `term`       | Begriff, wie er in der Liste erscheint                        |
 | `synonyms`   | andere Bezeichnungen, Abkürzungen (werden mit durchsucht)     |
 | `categories` | Kategorien, mindestens eine (`heizung`, `hydraulik`, `trinkwasser`, `abwasser`, `kaelte`, `lueftung`, `gas`, `solar`, `msr`, `werkstoffe`, `werkzeuge`, `normen`, `physik`, `einheiten`, `kuerzel`); ein Begriff darf in mehreren stehen |
+| `tags` | Themen-Tags, mindestens einer, wie bei den Tools (`heizung`, `sanitaer`, `trinkwasser`, `abwasser`, `lueftung`, `klima`, `kaelte`, `solar`, `strom`, `kundendienst`, `planung`, `allgemein`); `allgemein` nur, wenn kein Fachgebiet passt. Stehen in der Liste rechts und sind im Lexikon und in der Suche filterbar |
 | `definition` | Erklärung als Text; eine Leerzeile (`\n\n`) beginnt einen neuen Absatz, `**Wort**` wird fett |
 | `related`    | IDs verwandter Lexikon-Einträge („Siehe auch“)                |
 | `formulas`   | Optional: IDs von Formeln, die mit dem Begriff zu tun haben (Abschnitt „Formeln“) |

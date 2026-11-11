@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Hydraulischer Kreislauf zwischen Wärmeerzeuger und unmittelbar zugehörigen Komponenten, beispielsweise hydraulischer Weiche oder Speicher. Er hat oft eine eigene Pumpe und ist bei Anlagen mit hydraulischer Weiche von den Heizkreisen entkoppelt.",
   "related": []
 }

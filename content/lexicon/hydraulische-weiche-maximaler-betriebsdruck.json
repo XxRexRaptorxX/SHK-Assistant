@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Vom Hersteller angegebener maximal zulässiger Druck für die Weiche. Er muss mindestens dem Ansprechdruck des Sicherheitsventils der Anlage entsprechen.",
   "related": []
 }

@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Chronologische Aufzeichnung von Stör- und Alarmmeldungen, die bei Diagnose und Ursachenanalyse hilft. Bei Heizgeräten wird sie im Fehlerspeicher geführt und lässt sich über Display oder Servicesoftware auslesen.",
   "related": []
 }

@@ -11,6 +11,7 @@
     "gas",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Prüfung, ob Abgase einer Feuerstätte ordnungsgemäß abgeführt werden und keine unzulässigen Abgasaustritte vorliegen; Umfang und Anforderungen richten sich nach den einschlägigen Regeln. Bei Gasfeuerstätten führt sie in Deutschland der Schornsteinfeger im Rahmen der wiederkehrenden Überprüfung durch, häufig zusammen mit einer CO-Messung.",
   "related": []
 }

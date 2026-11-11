@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Symptom mit möglichen Ursachen in Wärmeerzeugung, Speicherladung, Sensorik, Regelung, Mischventil oder Durchfluss. Die Diagnose erfordert systematisches Prüfen.",
   "related": []
 }

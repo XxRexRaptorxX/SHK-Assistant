@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Häufiges Ein- und Ausschalten eines Wärmeerzeugers in kurzen Abständen. Es kann unter anderem bei Überdimensionierung, geringer Wärmeabnahme oder ungeeigneter Regelung auftreten.",
   "related": []
 }

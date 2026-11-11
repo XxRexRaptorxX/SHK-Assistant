@@ -11,6 +11,7 @@
     "heizung",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "Verhältnis der über einen Zeitraum nutzbar abgegebenen Energie zur zugeführten Energie, unter Berücksichtigung der gewählten Systemgrenze und des Betriebsverlaufs. Anders als der Wirkungsgrad bei Nennlast berücksichtigt er Teillast, Stillstandsverluste und Taktbetrieb und liegt daher meist niedriger.",
   "related": []
 }

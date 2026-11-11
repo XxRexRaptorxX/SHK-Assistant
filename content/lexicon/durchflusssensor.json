@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Sensor oder Messgerät, das den Volumen- oder Massenstrom eines Mediums erfasst. In Heizgeräten und Wärmepumpen erkennt er zum Beispiel den Mindestvolumenstrom oder eine Warmwasserzapfung; Messprinzipien sind unter anderem Flügelrad, Ultraschall und magnetisch-induktive Messung.",
   "related": []
 }

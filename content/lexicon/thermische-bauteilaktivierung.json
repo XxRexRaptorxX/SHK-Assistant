@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Nutzung der thermischen Masse von Gebäudebauteilen, etwa Decken, zur Speicherung und zeitversetzten Abgabe von Wärme oder Kälte. Dazu werden Rohre in Betondecken eingelegt; wegen der großen Speichermasse reagiert das System träge und eignet sich vor allem zur Grundlastkühlung oder -heizung.",
   "related": []
 }

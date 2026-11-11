@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Werkzeug, mit dem Rohrenden nach dem Ablängen innen und außen entgratet und angefast werden. Entgraten verhindert Beschädigungen der Dichtringe in Pressfittings und Strömungsgeräusche; bei Lötverbindungen erleichtert es das Einführen in die Muffe.",
   "related": [
     "lexicon.rohrabschneider",

@@ -14,6 +14,7 @@
     "werkzeuge",
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Armaturenblock mit Manometern und Schläuchen, über den Kältekreise gemessen, evakuiert und mit Kältemittel befüllt werden. Sie hat meist ein Niederdruck- und ein Hochdruckmanometer mit Temperaturskalen für die Kältemittel; digitale Ausführungen berechnen Überhitzung und Unterkühlung direkt.",
   "related": [
     "lexicon.kaeltemittelbefuellung",

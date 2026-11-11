@@ -11,6 +11,7 @@
     "kuerzel",
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Abkürzung für Gebäudeleittechnik: die übergeordnete Bedien- und Überwachungsebene der Gebäudeautomation. Sie liegt über Feld- und Automationsebene und dient der zentralen Bedienung, Alarmierung und Auswertung.",
   "related": [
     "lexicon.gebaeudeautomation"

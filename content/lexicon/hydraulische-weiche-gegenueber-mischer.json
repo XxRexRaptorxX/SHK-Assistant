@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein Mischer verändert gezielt das Mischungsverhältnis zur Temperaturregelung; eine hydraulische Weiche dient primär der Entkopplung und kann dabei ebenfalls Mischströmungen aufweisen. Beide werden häufig kombiniert: Die Weiche entkoppelt Erzeuger und Verteiler, der Mischer regelt die Temperatur des einzelnen Heizkreises.",
   "related": []
 }

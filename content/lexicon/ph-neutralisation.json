@@ -10,6 +10,7 @@
   "categories": [
     "abwasser"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Chemische Behandlung, bei der eine saure oder basische Lösung in Richtung eines vorgesehenen pH-Bereichs eingestellt wird. In der SHK-Technik betrifft das vor allem saures Kondensat aus Brennwertgeräten, dessen pH-Wert zum Beispiel mit Granulat angehoben wird.",
   "related": []
 }

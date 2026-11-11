@@ -40,7 +40,7 @@ import { RiserLookup } from './RiserLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
-import { ToolTags } from './ToolTagList'
+import { TopicTags } from '../../components/TopicTags'
 import { ValveSurvey } from './ValveSurvey'
 import { VariantCalculator } from './VariantCalculator'
 import { WireColorLookup } from './WireColorLookup'
@@ -61,7 +61,7 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
       title={tool.title}
       back={BACK}
       actions={<FavoriteButton id={tool.id} title={tool.title} />}
-      meta={<ToolTags tags={tool.tags} />}
+      meta={<TopicTags tags={tool.tags} />}
     >
       <RichText text={tool.description} />
       {isTableTool(tool) ? (

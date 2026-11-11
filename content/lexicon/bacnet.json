@@ -10,6 +10,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Kommunikationsprotokoll für die Gebäudeautomation, das den Austausch von Informationen zwischen Automations- und Managementsystemen unterstützt. Es ist durch ASHRAE, ANSI und als ISO 16484-5 genormt und kann über Gateways mit anderen Bussystemen wie KNX gekoppelt werden.",
   "related": []
 }

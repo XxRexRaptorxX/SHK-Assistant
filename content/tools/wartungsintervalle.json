@@ -10,7 +10,7 @@
   "summary": "Für Anlagenteile in Heizung, Trinkwasser und Abwasser.",
   "description": "Vorgeschriebene und empfohlene Inspektions-, Wartungs- und Prüfintervalle für typische Anlagenteile. Oben den Bereich wählen, darunter das Anlagenteil. Verlangt der Hersteller kürzere Intervalle, gelten diese.",
   "category": "Wartung",
-  "tags": ["heizung", "sanitaer", "kundendienst"],
+  "tags": ["heizung", "sanitaer", "trinkwasser", "abwasser", "kundendienst"],
   "bars": [
     {
       "key": "bereich",

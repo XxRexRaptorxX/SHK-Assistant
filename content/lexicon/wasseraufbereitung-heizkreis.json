@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Maßnahmen zur Einstellung geeigneter Wasserparameter in einem Heizkreis, um Ablagerungen und Korrosion zu begrenzen. Grundlage in Deutschland ist VDI 2035; üblich ist eine Enthärtung oder Vollentsalzung des Füllwassers, die Werte sind im Anlagenbuch zu dokumentieren.",
   "related": []
 }

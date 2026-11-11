@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Gesamtheit der Komponenten zur Wärmeerzeugung, Wärmeverteilung und Wärmeabgabe in einem Gebäude. Dazu gehören Wärmeerzeuger, Rohrnetz, Pumpen, Armaturen, Sicherheitseinrichtungen, Regelung und Heizflächen.",
   "related": []
 }

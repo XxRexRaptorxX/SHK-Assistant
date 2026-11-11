@@ -12,6 +12,7 @@
   "categories": [
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Wärmeverlust, der durch den Austausch warmer Innenluft gegen kältere Außenluft entsteht. Er hängt vom Luftwechsel und der Temperaturdifferenz ab, ist ein Teil der Heizlast und lässt sich durch Wärmerückgewinnung deutlich senken.",
   "related": []
 }

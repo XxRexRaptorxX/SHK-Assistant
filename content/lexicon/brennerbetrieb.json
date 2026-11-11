@@ -13,6 +13,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Der **Brennerbetrieb** ist die Phase nach erfolgreichem Start: Das Brennstoffventil ist offen, die Zündung aus und der Feuerungsautomat überwacht die Flamme ständig. Fällt die Flamme aus, schließt er sofort das Brennstoffventil; je nach Automat folgt ein Neustart oder die Verriegelung, beim Siemens LMO14 sind bis zu 3 Neustarts zulässig. Endet die Wärmeanforderung, belüftet das Gebläse bei vielen Gebläsebrennern noch kurz nach.",
   "related": [
     "lexicon.flammenueberwachung",

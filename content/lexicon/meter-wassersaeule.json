@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Meter Wassersäule** (mWS) ist eine Einheit für den Druck. 1 mWS = 9.806,65 Pa.",
   "related": [
     "lexicon.pascal"

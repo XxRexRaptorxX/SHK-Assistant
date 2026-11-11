@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Außentemperatur, oberhalb derer unter festgelegten Bedingungen keine Raumheizung erforderlich ist oder die Heizungsregelung den Heizbetrieb reduziert. Sie bezieht sich auf die Tagesmitteltemperatur; Tage darunter heißen Heiztage. Bei gut gedämmten Gebäuden liegt sie niedriger als bei wenig gedämmten.",
   "related": []
 }

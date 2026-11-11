@@ -14,6 +14,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Schichtenspeicher** ist ein Wärmespeicher, der Wasser möglichst stabil nach Temperatur geschichtet hält: heißes Wasser oben, kühleres unten. Eine stabile Schichtung kann die nutzbare Temperaturqualität verbessern. Ladeeinrichtungen führen das Wasser in der Höhe passender Temperatur ein, ohne die Schichten zu verwirbeln. Einströmgeschwindigkeit, Anschlusshöhen und interne Strömungsführung beeinflussen die Schichtung.",
   "related": [
     "lexicon.pufferspeicher",

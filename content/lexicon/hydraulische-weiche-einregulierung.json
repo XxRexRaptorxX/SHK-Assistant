@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Einstellung der angeschlossenen Pumpen und Kreise anhand der geplanten Volumenströme. Welcher Volumenstrom größer sein soll, richtet sich nach Wärmeerzeuger und Anlagenkonzept; bei Brennwertgeräten wird meist ein etwas kleinerer Erzeugervolumenstrom angestrebt, damit der Rücklauf kalt bleibt.",
   "related": []
 }

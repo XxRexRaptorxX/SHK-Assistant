@@ -13,6 +13,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Ein **Manometer** zeigt den Druck eines Mediums an, meist als Relativdruck gegenüber der Umgebung. Es ermöglicht die Kontrolle von Betriebsdruck, Fülldruck oder Prüfdruck innerhalb des vorgesehenen Messbereichs. Messbereich, Genauigkeit, Mediumverträglichkeit und Einbauposition müssen für die Messaufgabe geeignet sein.",
   "related": [
     "lexicon.druck",

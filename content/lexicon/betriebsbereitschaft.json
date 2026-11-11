@@ -11,6 +11,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Die **Betriebsbereitschaft** ist der Ruhezustand eines Brennersteuergeräts zwischen zwei Wärmeanforderungen. Vor einem neuen Start prüft das Gerät, ob das Gebläse stillsteht, der Luftdruckwächter in Grundstellung ist und kein Flammensignal anliegt; sonst startet es nicht. Ein verriegeltes Gerät muss zuerst entriegelt werden.",
   "related": [
     "lexicon.geblaesehochlauf",

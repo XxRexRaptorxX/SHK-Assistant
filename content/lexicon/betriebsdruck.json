@@ -13,6 +13,7 @@
     "heizung",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "Druck, bei dem eine Anlage oder ein Bauteil im vorgesehenen Betrieb arbeitet. Er muss innerhalb der zulässigen Grenzen aller Komponenten liegen.",
   "related": []
 }

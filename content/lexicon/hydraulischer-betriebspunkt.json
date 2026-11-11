@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Betriebszustand, der sich aus den Kennlinien der Pumpe und des hydraulischen Systems ergibt. Ändert sich die Anlagenkennlinie, etwa weil Thermostatventile schließen, verschiebt sich der Betriebspunkt auf der Pumpenkennlinie.",
   "related": []
 }

@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Gesamtheit der Trinkwasser-, Warmwasser- und Entwässerungsleitungen sowie zugehöriger Armaturen und Sanitärobjekte eines Gebäudes. Maßgeblich sind unter anderem DIN EN 806 und DIN 1988 für Trinkwasser sowie DIN EN 12056 und DIN 1986-100 für die Entwässerung.",
   "related": []
 }

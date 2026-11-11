@@ -12,6 +12,7 @@
     "kaelte",
     "heizung"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Abkürzung für Wärmepumpe. Sie nutzt Wärme aus Luft, Erdreich oder Wasser und hebt sie mit Antriebsenergie auf Heiztemperatur.",
   "related": [
     "lexicon.waermepumpe"

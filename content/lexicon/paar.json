@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Paar** ist eine Einheit für Stückzahlen. 1 Paar = 2 Stk.",
   "related": [
     "lexicon.stueck"

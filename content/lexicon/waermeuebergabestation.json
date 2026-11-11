@@ -13,6 +13,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Eine **Wärmeübergabestation** verbindet ein Fern- oder Nahwärmenetz mit der hausinternen Heizungsanlage und überträgt die Wärme an die Gebäudeanlage. Sie stellt die gewünschte Vorlauftemperatur im Gebäude ein und enthält meist Wärmeübertrager, Regelventil und Wärmemengenzähler, je nach Aufbau auch Temperatur- und Druckmessung sowie Sicherheitskomponenten. Primär- und Sekundärseite sind hydraulisch und regelungstechnisch entsprechend dem Netzkonzept zu behandeln.",
   "related": [
     "lexicon.fernwaerme",

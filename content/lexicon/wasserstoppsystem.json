@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "System zur Erkennung oder Begrenzung von Wasserleckagen, das beispielsweise ein Absperrventil automatisch schließen kann. Es arbeitet zum Beispiel mit Feuchtesensoren, Durchflussüberwachung oder einem Schlauchplatzschutz (Aquastop) und kann einzelne Geräte oder die ganze Installation absperren.",
   "related": []
 }

@@ -13,6 +13,7 @@
     "werkzeuge",
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Pumpe zum Erzeugen eines Unterdrucks; in der Kältetechnik zum Evakuieren eines Kältekreises vor dem Befüllen. Durch das Evakuieren werden Luft und Feuchtigkeit entfernt; der erreichte Unterdruck wird mit einem Vakuummeter kontrolliert, bevor Kältemittel eingefüllt wird.",
   "related": [
     "lexicon.kaeltekreis",

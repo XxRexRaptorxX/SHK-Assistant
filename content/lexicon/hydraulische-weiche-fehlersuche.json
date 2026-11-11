@@ -11,6 +11,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Analyse von Temperatur- und Durchflussproblemen, die mit Weiche, Pumpen oder angeschlossenen Kreisen zusammenhängen können. Hilfreich ist ein Vergleich der Temperaturen an allen vier Anschlüssen; daraus lässt sich ablesen, in welche Richtung Wasser durch die Weiche strömt.",
   "related": []
 }

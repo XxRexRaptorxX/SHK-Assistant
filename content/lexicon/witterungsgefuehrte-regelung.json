@@ -13,6 +13,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Regelstrategie, bei der die Vorlauftemperatur oder Heizleistung unter anderem anhand der Außentemperatur angepasst wird. Grundlage ist die Heizkurve, die jeder Außentemperatur eine Vorlauftemperatur zuordnet; den Messwert liefert ein Außentemperaturfühler.",
   "related": []
 }

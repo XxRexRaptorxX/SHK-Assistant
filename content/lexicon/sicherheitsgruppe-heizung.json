@@ -11,6 +11,7 @@
     "heizung",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Zusammenstellung von Sicherheitseinrichtungen für einen Heizkreis oder Wärmeerzeuger; konkrete Ausstattung und Einbau richten sich nach Anlage und Vorgaben. Bei kleineren Wärmeerzeugern umfasst sie meist Sicherheitsventil, Manometer und automatischen Entlüfter auf einem gemeinsamen Verteilerstück.",
   "related": []
 }

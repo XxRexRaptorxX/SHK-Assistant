@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Vorgegebener Zielwert einer zu regelnden Größe, beispielsweise gewünschte Raum- oder Vorlauftemperatur. Er kann fest eingestellt oder zeitabhängig sein, etwa über eine Heizkurve oder ein Zeitprogramm; der Regler vergleicht ihn ständig mit dem Istwert.",
   "related": []
 }

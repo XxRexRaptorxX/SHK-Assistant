@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Druck des Anlagenwassers im kalten Zustand, der zur statischen Höhe und den Herstellerangaben passen muss. Er wird am Manometer der Anlage abgelesen und liegt über dem Vordruck des Ausdehnungsgefäßes, damit dieses eine Wasservorlage aufnimmt.",
   "related": []
 }

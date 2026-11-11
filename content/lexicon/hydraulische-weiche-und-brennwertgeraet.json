@@ -12,6 +12,7 @@
     "hydraulik",
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Bei Brennwertsystemen müssen Volumenströme und Rücklauftemperaturen abgestimmt werden, damit unnötige Rücklaufbeimischung und Effizienzverluste vermieden werden. Strömt Vorlaufwasser über die Weiche in den Rücklauf, steigt die Rücklauftemperatur und die Brennwertnutzung sinkt; der Erzeugervolumenstrom sollte daher nicht größer als nötig sein.",
   "related": []
 }

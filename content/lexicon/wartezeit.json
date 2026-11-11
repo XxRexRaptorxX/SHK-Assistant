@@ -14,6 +14,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Die **Wartezeit** ist beim Feuerungsautomaten die erste Phase des Brennerstarts nach der Wärmeanforderung. Der Automat prüft dabei sich selbst und die angeschlossenen Wächter; der Flammenfühler muss dunkel sein. Beim Ölfeuerungsautomaten Siemens LMO14 dauert sie etwa 3 s, mit Ölvorwärmer bis zu dessen Freigabe; der Weishaupt-Gasbrenner WG5 nennt sie Initialisierungszeit (1 s).",
   "related": [
     "lexicon.feuerungsautomat",

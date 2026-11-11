@@ -11,6 +11,7 @@
     "werkstoffe",
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Eine PN-Kennzeichnung allein reicht nicht zur Festlegung des zulässigen Betriebsdrucks bei jeder Temperatur. Herstellerangaben und Druck-Temperatur-Grenzen sind zu prüfen.",
   "related": []
 }

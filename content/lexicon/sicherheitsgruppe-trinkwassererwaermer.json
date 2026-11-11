@@ -11,6 +11,7 @@
     "trinkwasser",
     "normen"
   ],
+  "tags": ["sanitaer", "trinkwasser", "planung"],
   "definition": "Armaturengruppe, die einen Trinkwassererwärmer gegen unzulässigen Druck schützt und je nach Ausführung Rückflussverhinderung und Absperrung umfasst. Die Abblaseleitung führt über einen Trichter mit freiem Auslauf zur Entwässerung, damit austretendes Wasser sichtbar wird.",
   "related": []
 }

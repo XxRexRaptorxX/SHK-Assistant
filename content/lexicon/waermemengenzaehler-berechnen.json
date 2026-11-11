@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Ein Wärmemengenzähler berechnet die übertragene Wärmeenergie typischerweise aus dem gemessenen Volumenstrom, der Temperaturdifferenz und den Stoffeigenschaften des Mediums. Vereinfacht gilt Q = V · ρ · c · (tVL − tRL); das Rechenwerk berücksichtigt die temperaturabhängigen Stoffwerte und gegebenenfalls einen Glykolanteil.",
   "related": [],
   "formulas": [

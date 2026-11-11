@@ -11,6 +11,7 @@
     "heizung",
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Wasser, das bei der Abkühlung von Verbrennungsabgasen im Brennwertgerät entsteht. Zusammensetzung und pH-Wert hängen unter anderem von Brennstoff und Betriebsbedingungen ab.",
   "related": []
 }

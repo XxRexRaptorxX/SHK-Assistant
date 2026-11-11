@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Parameter, der die Streuung von Werten beschreibt, die dem Messobjekt aufgrund der Messung vernünftigerweise zugeordnet werden können. Sie wird meist als Bereich um den Messwert angegeben, etwa ± 0,1 bar, in dem der wahre Wert mit einer bestimmten Wahrscheinlichkeit liegt.",
   "related": []
 }

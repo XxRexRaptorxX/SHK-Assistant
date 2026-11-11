@@ -15,6 +15,7 @@
     "msr",
     "hydraulik"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Messgerät, das die Strömungsgeschwindigkeit eines Mediums in einer Leitung mit Ultraschall erfasst. Aus der Geschwindigkeit und dem Rohrquerschnitt ergibt sich der Volumenstrom; Clamp-on-Geräte werden außen auf das Rohr gespannt und messen ohne Eingriff in die Leitung, etwa beim hydraulischen Abgleich.",
   "related": [
     "lexicon.volumenstrommessung",

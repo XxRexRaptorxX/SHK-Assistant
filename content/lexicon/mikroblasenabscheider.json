@@ -14,6 +14,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Mikroblasenabscheider** ist ein Luftabscheider, der kleine Gasblasen aus dem strömenden Heizungswasser entfernt und damit die Entgasung des Systems unterstützt. Die Blasen sammeln sich an geeigneten Stellen und lassen sich durch Koaleszenz leichter abscheiden. Er wird bevorzugt an der wärmsten Stelle eingebaut, etwa im Vorlauf nach dem Wärmeerzeuger, weil sich dort am meisten Gas aus dem Wasser löst. Die Eignung für den Systemvolumenstrom ist nach Herstellerangaben zu prüfen.",
   "related": [
     "lexicon.luftabscheider",

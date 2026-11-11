@@ -11,6 +11,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Elektrischer oder thermischer Antrieb, der ein Ventil am Heizkreisverteiler öffnet oder schließt, meist anhand eines Raumreglersignals. Verbreitet sind thermoelektrische Antriebe in stromlos geschlossener Ausführung, die nach dem Einschalten innerhalb einiger Minuten öffnen.",
   "related": []
 }

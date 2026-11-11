@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Temperaturdifferenz zwischen dem tatsächlichen gasförmigen Kältemittelzustand und der Sättigungstemperatur beim gleichen Druck. Sie wird am Verdampferausgang gemessen und zeigt, ob der Verdichter sicher nur gasförmiges Kältemittel ansaugt; thermostatische und elektronische Expansionsventile regeln auf sie.",
   "related": []
 }

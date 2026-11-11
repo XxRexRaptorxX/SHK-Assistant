@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Kenngröße für die von einer Schallquelle abgestrahlte akustische Leistung, angegeben in Dezibel bezogen auf einen Referenzwert. Er ist unabhängig vom Abstand und wird deshalb in Datenblättern von Wärmepumpen und Ventilatoren angegeben; daraus lässt sich der Schalldruckpegel an einem bestimmten Ort berechnen.",
   "related": []
 }

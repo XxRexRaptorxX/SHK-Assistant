@@ -14,6 +14,7 @@
   "categories": [
     "abwasser"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Ein **Geruchsverschluss** hält durch eine Flüssigkeitsbarriere – meist Wasser – Kanalgase und Gerüche von Aufenthaltsräumen fern. Typische Bauformen sind Siphons an Waschtischen, Duschen und Bodenabläufen. Austrocknung, Absaugung oder Fehlbelüftung können die Sperrwasserhöhe vermindern und die Geruchssperre beeinträchtigen.",
   "related": [
     "lexicon.ablaufgarnitur",

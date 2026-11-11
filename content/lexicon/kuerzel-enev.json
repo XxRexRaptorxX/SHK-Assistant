@@ -11,6 +11,7 @@
     "kuerzel",
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Abkürzung für Energieeinsparverordnung. Sie wurde zum 1. November 2020 durch das Gebäudeenergiegesetz (GEG) abgelöst, das seit 2026 Gebäudemodernisierungsgesetz (GModG) heißt.",
   "related": [
     "lexicon.gebaeudeenergiegesetz"

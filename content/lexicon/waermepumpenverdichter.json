@@ -13,6 +13,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Komponente der Wärmepumpe, die gasförmiges Kältemittel verdichtet und damit Druck und Temperatur erhöht. Verbreitet sind Scroll- und Rollkolbenverdichter, oft drehzahlgeregelt (Inverter), damit sich die Leistung dem Wärmebedarf anpasst.",
   "related": []
 }

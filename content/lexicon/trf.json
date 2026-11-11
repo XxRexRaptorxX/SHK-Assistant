@@ -11,6 +11,7 @@
     "gas",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Technische Regeln Flüssiggas. Sie behandeln Anforderungen an Planung, Errichtung und Betrieb von Flüssiggasanlagen; aktuelle Vorgaben sind zu beachten.",
   "related": [],
   "tools": [

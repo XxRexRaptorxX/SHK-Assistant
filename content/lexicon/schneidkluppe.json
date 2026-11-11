@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Werkzeug zum Schneiden von Außengewinden an Rohren in der Sanitär-, Heizungs- und Klimatechnik, von Hand oder mit Maschinenantrieb. Sie schneidet meist kegelige Whitworth-Rohrgewinde nach DIN EN 10226; beim Schneiden wird Gewindeschneidöl verwendet.",
   "related": [
     "lexicon.gewindeverbindung",

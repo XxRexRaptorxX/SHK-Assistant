@@ -10,6 +10,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "pH-Wert von Trinkwasser, der im Rahmen der Trinkwasserqualität nach den geltenden Anforderungen bewertet wird. Die Trinkwasserverordnung nennt dafür einen Bereich von 6,5 bis 9,5.",
   "related": []
 }

@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Verhältnis zwischen Volumenstrom auf Erzeugerseite und Verbraucherseite, das die Temperaturmischung in der Weiche beeinflusst. Ist der Erzeugervolumenstrom größer, steigt die Rücklauftemperatur zum Erzeuger; ist der Verbrauchervolumenstrom größer, sinkt die Vorlauftemperatur der Verbraucher.",
   "related": []
 }

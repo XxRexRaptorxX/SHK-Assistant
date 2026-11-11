@@ -14,6 +14,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Füll- und Entleerhahn** ermöglicht das kontrollierte Befüllen oder Entleeren eines Anlagenabschnitts. Ausführung und Einbindung müssen zu Medium, Druck und Temperatur passen. Bei Heizungs- und insbesondere Trinkwassersystemen sind die jeweils erforderlichen Sicherungen gegen Rückfließen und eine hygienisch geeignete Handhabung zu beachten.",
   "related": [
     "lexicon.heizungswasser",

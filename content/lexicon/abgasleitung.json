@@ -13,6 +13,7 @@
   "categories": [
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Eine **Abgasleitung** führt Abgase von einer Feuerstätte zum vorgesehenen Auslass. Sie muss zum Gerät, zur Abgastemperatur, zum Druckbetrieb und gegebenenfalls zum feuchten beziehungsweise kondensierenden Betrieb passen. Planung, Montage und Prüfung richten sich nach geltenden Vorschriften und Herstellerunterlagen.",
   "related": [
     "lexicon.abgas",

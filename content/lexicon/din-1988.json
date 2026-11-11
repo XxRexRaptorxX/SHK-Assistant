@@ -11,6 +11,7 @@
     "trinkwasser",
     "normen"
   ],
+  "tags": ["sanitaer", "trinkwasser", "planung"],
   "definition": "Deutsche technische Regeln für Trinkwasserinstallationen, die ergänzend zu europäischen Normen angewendet werden. Maßgeblich ist die jeweils aktuelle, einschlägige Ausgabe.",
   "related": [],
   "tools": [

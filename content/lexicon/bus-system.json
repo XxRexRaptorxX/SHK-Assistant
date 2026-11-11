@@ -10,6 +10,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Kommunikationssystem, über das mehrere Geräte Daten oder Steuerinformationen über eine gemeinsame Leitung oder ein definiertes Netzwerk austauschen. In der Gebäudetechnik sind zum Beispiel KNX, BACnet, Modbus und M-Bus verbreitet.",
   "related": [],
   "tools": [

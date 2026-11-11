@@ -11,6 +11,7 @@
     "hydraulik",
     "werkstoffe"
   ],
+  "tags": ["heizung"],
   "definition": "Wärmedämmung der Weiche zur Verringerung von Wärmeverlusten und unerwünschter Wärmeabgabe. Sie sollte die ganze Weiche einschließlich der Anschlüsse umfassen; Entlüfter, Entleerung und Fühler müssen zugänglich bleiben.",
   "related": []
 }

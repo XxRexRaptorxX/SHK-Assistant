@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Wärmeleistung, die pro Zeiteinheit zwischen zwei Medien oder zwischen einem Bauteil und seiner Umgebung übertragen wird. Sie wird in Watt angegeben und entspricht physikalisch dem Wärmestrom.",
   "related": []
 }

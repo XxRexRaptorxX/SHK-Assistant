@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Wärmeleistung, die ein Heizkörper unter definierten Temperatur- und Einbaubedingungen abgeben kann. Hersteller-Nennleistungen beziehen sich auf bestimmte Prüfbedingungen.",
   "related": []
 }

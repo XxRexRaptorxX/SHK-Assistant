@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Temperaturunterschiede zwischen den Anschlüssen der Weiche ergeben sich aus Wärmebedarf und Volumenströmen der angeschlossenen Kreise. Ist der Erzeugervolumenstrom größer, strömt Vorlaufwasser in den Rücklauf und hebt die Rücklauftemperatur; ist er kleiner, wird der Verbrauchervorlauf mit Rücklaufwasser gemischt.",
   "related": []
 }

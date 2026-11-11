@@ -11,6 +11,7 @@
     "msr",
     "normen"
   ],
+  "tags": ["strom", "planung"],
   "definition": "Verknüpfung sicherheitsrelevanter Schalt- und Überwachungselemente, deren Zustand die Betriebsfreigabe oder Abschaltung eines Geräts bestimmt. Typische Glieder sind Sicherheitstemperaturbegrenzer, Wassermangelsicherung, Abgasüberwachung und Flammenüberwachung; öffnet ein Glied, schaltet das Gerät ab.",
   "related": []
 }

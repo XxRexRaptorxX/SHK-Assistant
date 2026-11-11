@@ -10,7 +10,7 @@
   "summary": "Rechnet den Jahresverbrauch der vorhandenen Heizung in Nutzwärme um und zeigt für andere Heizsysteme Brennstoffmenge, Kosten pro Jahr und den Unterschied, mit aktuellen Marktpreisen.",
   "description": "Die vorhandene Heizung als Referenz wählen und ihren Jahresverbrauch eintragen, z. B. Liter Heizöl oder kWh laut Gasrechnung. Das Tool rechnet daraus die Nutzwärme und zeigt für jedes andere Heizsystem, wie viel Brennstoff es für dieselbe Wärme braucht und was das im Jahr kostet. Gerechnet wird mit dem Heizwert; Erdgas wird nach Brennwert abgerechnet und deshalb umgerechnet. Preise und Nutzungsgrade lassen sich unter „Annahmen“ anpassen.",
   "category": "Planung",
-  "tags": ["heizung", "buero"],
+  "tags": ["heizung", "planung"],
   "keywords": [
     "Heizkosten",
     "Heizungsvergleich",

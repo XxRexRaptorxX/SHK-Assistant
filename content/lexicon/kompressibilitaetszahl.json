@@ -15,6 +15,7 @@
     "gas",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "**Kompressibilitätszahl** (Realgasfaktor) beschreibt, wie stark ein reales Gas vom Verhalten eines idealen Gases abweicht. In der Zustandszahl für die Gasabrechnung wird sie bei Betriebsdrücken bis 1000 hPa mit 1 angesetzt.",
   "related": [
     "lexicon.zustandszahl"

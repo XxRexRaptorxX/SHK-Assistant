@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Austausch eines Heizkörpers, beispielsweise zur Erhöhung der Wärmeabgabe bei niedrigeren Systemtemperaturen. Größere oder leistungsstärkere Heizkörper erlauben niedrigere Vorlauftemperaturen, was besonders den Betrieb einer Wärmepumpe verbessert; danach ist der hydraulische Abgleich anzupassen.",
   "related": []
 }

@@ -13,6 +13,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "System oder Medium, an das die Wärmepumpe nutzbare Wärme abgibt, beispielsweise Heizungswasser oder Trinkwarmwasser. Je niedriger ihre Temperatur ist, etwa bei einer Fußbodenheizung, desto effizienter arbeitet die Wärmepumpe.",
   "related": []
 }

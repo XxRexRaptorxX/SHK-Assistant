@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Vorgang, bei dem Eis auf einem Wärmeübertrager entfernt wird, beispielsweise durch Umkehr des Kältekreislaufs oder andere gerätespezifische Verfahren. Sie ist vor allem bei Luft-Wasser-Wärmepumpen nötig, weil sich bei niedrigen Außentemperaturen und hoher Luftfeuchte Reif am Verdampfer bildet; die dafür nötige Energie mindert die Effizienz.",
   "related": []
 }

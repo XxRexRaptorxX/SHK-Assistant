@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Abstimmung der Pumpen auf Erzeuger- und Verbraucherkreise, damit erforderliche Volumenströme erreicht und unnötige Wechselwirkungen begrenzt werden. Das Verhältnis der Volumenströme bestimmt, ob in der Weiche Vorlaufwasser in den Rücklauf strömt oder Rücklaufwasser in den Verbrauchervorlauf.",
   "related": []
 }

@@ -14,6 +14,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Schlammabscheider** hält Partikel und Ablagerungen aus dem Heizungswasser zurück, bevor sie empfindliche Komponenten beeinträchtigen. Je nach Bauart werden Schwerkraft, Siebe oder andere Abscheidemechanismen genutzt. Einbauposition, Durchflussbereich und regelmäßige Reinigung beeinflussen die Wirksamkeit.",
   "related": [
     "lexicon.magnetitabscheider",

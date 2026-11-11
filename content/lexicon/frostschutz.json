@@ -13,6 +13,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "**Frostschutz** verhindert Schäden durch Gefrieren eines Mediums oder durch Eisbildung in Leitungen und Geräten. Maßnahmen können geeignete Dämmung, beheizte Bereiche, Entleerbarkeit, Frostschutzmittel oder eine konstruktive Betriebsstrategie umfassen. Der passende Schutz ist von Einbausituation, Medium, Stillstandszeiten und Mindesttemperaturen abhängig.",
   "related": [
     "lexicon.waermetraeger",

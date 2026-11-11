@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Maß für den inneren Fließwiderstand eines Fluids. Sie beeinflusst Druckverluste und Pumpenbetrieb und ist häufig temperaturabhängig.",
   "related": [],
   "formulas": [

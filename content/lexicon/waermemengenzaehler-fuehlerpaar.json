@@ -13,6 +13,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Zusammengehörige Temperaturfühler, die Vorlauf- und Rücklauftemperatur für die Berechnung der übertragenen Wärmemenge erfassen. Die Fühler sind als Paar abgeglichen und werden nur paarweise getauscht; Einbauort und Einbautiefe sind vorgegeben.",
   "related": []
 }

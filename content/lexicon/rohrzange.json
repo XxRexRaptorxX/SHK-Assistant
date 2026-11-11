@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Zange mit verstellbarer Maulweite und gezahnten Backen zum Festhalten und Drehen von Rohren, Fittings und Verschraubungen. Klassisches Werkzeug der Sanitär-, Heizungs- und Lüftungsinstallation.",
   "related": [
     "lexicon.gewindeverbindung",

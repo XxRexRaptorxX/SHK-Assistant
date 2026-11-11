@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Eine hydraulische Weiche schafft zwischen Erzeuger- und Verbraucherkreisen einen Bereich mit geringem hydraulischem Widerstand, sodass die Kreise unterschiedliche Volumenströme haben können. Ohne Entkopplung können Pumpen in ungünstigen Betriebspunkten laufen, mit höherem Stromverbrauch, Geräuschen und Kavitation, und die Temperaturregelung der Verbraucherkreise wird erschwert.",
   "related": []
 }

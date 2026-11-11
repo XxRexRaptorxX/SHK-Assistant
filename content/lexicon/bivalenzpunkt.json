@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Betriebspunkt, häufig bezogen auf die Außentemperatur, bei dem in einem bivalenten Heizsystem ein zusätzlicher Wärmeerzeuger zugeschaltet wird oder die alleinige Leistung des Hauptwärmeerzeugers nicht mehr ausreicht. Er wird bei der Auslegung anhand der Heizlast und der temperaturabhängigen Leistung des Hauptwärmeerzeugers festgelegt.",
   "related": []
 }

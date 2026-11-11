@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Werkzeug zum Kaltbiegen von Rohren, mit dem Bögen ohne Formstück hergestellt werden. Für Kupfer- und Verbundrohre gibt es Handbieger mit Biegeschablonen; der Mindestbiegeradius nach Herstellerangabe verhindert Knicke und Querschnittsverengungen.",
   "related": [
     "lexicon.kupferrohr",

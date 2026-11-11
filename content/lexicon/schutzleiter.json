@@ -13,6 +13,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Leiter, der berührbare leitfähige Teile mit dem Schutzsystem verbindet, um im Fehlerfall gefährliche Berührungsspannungen zu begrenzen. Er hat die Kurzbezeichnung PE und ist grün-gelb gekennzeichnet; er darf nicht unterbrochen oder für andere Zwecke verwendet werden.",
   "related": [],
   "tools": [

@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Vom Hersteller angegebene maximal zulässige Betriebstemperatur der Weiche. Sie muss über der höchsten möglichen Vorlauftemperatur des Wärmeerzeugers liegen; auch Dämmung und Fühler sind darauf abzustimmen.",
   "related": []
 }

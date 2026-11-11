@@ -10,6 +10,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["heizung", "klima", "kaelte"],
   "definition": "Seasonal Coefficient of Performance: saisonaler Effizienzkennwert, der die Effizienz einer Wärmepumpe über eine definierte Heizperiode unter standardisierten Bedingungen beschreibt. Er wird nach DIN EN 14825 für bestimmte Klimazonen und Vorlauftemperaturen ermittelt und ist Grundlage des Energielabels; die reale Jahresarbeitszahl kann davon abweichen.",
   "related": []
 }

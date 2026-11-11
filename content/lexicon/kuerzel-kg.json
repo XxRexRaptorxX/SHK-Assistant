@@ -14,6 +14,7 @@
     "abwasser",
     "werkstoffe"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Abkürzung für Kanalgrundrohr: Kunststoffrohr für erdverlegte Grund- und Anschlussleitungen der Entwässerung. Die meist orangebraunen Rohre bestehen in der Regel aus PVC-U oder PP und werden mit Steckmuffen verbunden.",
   "related": [
     "lexicon.grundleitung",

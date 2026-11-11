@@ -18,6 +18,7 @@
     "heizung",
     "physik"
   ],
+  "tags": ["heizung"],
   "definition": "Bei Brennholz beschreiben **Wassergehalt** und **Holzfeuchte** dasselbe Wasser, bezogen auf verschiedene Massen: der Wassergehalt auf die Masse des feuchten Holzes, die Holzfeuchte auf die Masse des trockenen Holzes. Viele Messgeräte im Handel zeigen die Holzfeuchte an. Umrechnung laut LWF: Wassergehalt 15 % ≙ Holzfeuchte 18 %, 20 % ≙ 25 %, 30 % ≙ 43 %, 50 % ≙ 100 %.\n\nAbsolut trockenes Holz (atro) hat 0 % Wassergehalt, lufttrockenes (lutro) 15 bis 20 %, frisch geschlagenes über 50 %. Je nasser das Holz, desto kleiner der Heizwert, weil das Wasser erst verdampfen muss (0,68 kWh je kg Wasser). Das LWF rechnet für Laubholz mit 30 % Wassergehalt: 70 % × 5,00 kWh/kg − 30 % × 0,68 kWh/kg = 3,30 kWh/kg.",
   "related": [
     "lexicon.scheitholz",

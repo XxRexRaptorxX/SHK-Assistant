@@ -11,6 +11,7 @@
     "heizung",
     "trinkwasser"
   ],
+  "tags": ["heizung", "sanitaer", "trinkwasser"],
   "definition": "Kombination von Armaturen zur kontrollierten Befüllung einer Anlage. Die erforderliche Rückflusssicherung richtet sich nach Medium und Regelwerk.",
   "related": []
 }

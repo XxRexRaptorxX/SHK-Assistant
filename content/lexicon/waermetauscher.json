@@ -13,6 +13,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Wärmetauscher** überträgt Wärme zwischen zwei Medien, die je nach Bauart direkt oder durch eine Trennwand getrennt sind. Beispiele sind Plattenwärmetauscher, Rohrbündelwärmetauscher und Luftregister. Wärmeübertragungsleistung, Druckverlust, Werkstoffverträglichkeit und Reinigbarkeit beeinflussen die Auswahl.",
   "related": [
     "lexicon.waermeuebertragung",

@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Grad** (°) ist eine Einheit für Winkel. 1 ° = 0,0174533 rad.",
   "related": [
     "lexicon.radiant"

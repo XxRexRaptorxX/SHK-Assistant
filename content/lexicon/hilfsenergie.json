@@ -13,6 +13,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "**Hilfsenergie** ist der Strom, den eine Heizung zusätzlich zum Brennstoff braucht, z. B. für Umwälzpumpe, Gebläse und Regelung. Er steht nicht auf der Brennstoff-, sondern auf der Stromrechnung.\n\nIn Heizkostenvergleichen wird er oft pauschal angesetzt. Die C.A.R.M.E.N.-Infoschrift „Heizkostenvergleich“ (Februar 2026) rechnet mit einem Anteil am Jahreswärmebedarf von 1,5 % bei Heizöl, 1 % bei Gas, 1,5 % bei Stückholz, 2 % bei Pellets und 0,5 % bei Nahwärme; bei Wärmepumpen ist er in der Jahresarbeitszahl enthalten. Der Heizkosten-Vergleich der App rechnet ohne Hilfsenergie.",
   "related": [
     "lexicon.jahresarbeitszahl",

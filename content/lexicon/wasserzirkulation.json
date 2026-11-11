@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Umlauf eines Mediums in einem Kreislauf. Bei Trinkwarmwasser dient Zirkulation häufig dazu, Wartezeiten zu verringern; Wärmeverluste und Hygieneanforderungen sind zu berücksichtigen.",
   "related": []
 }

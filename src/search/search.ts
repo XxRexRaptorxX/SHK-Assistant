@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js'
 import { groupByModule } from '../components/EntryList'
 import { normalizeForSearch } from '../lib/text'
-import { TOOL_TAGS, type ToolTag } from '../modules/tools/toolTags'
+import { TOPIC_TAGS, type TopicTag } from '../content/schema/topicTags'
 
 /** Ein durchsuchbarer Eintrag. Jedes Modul liefert seine Einträge in dieser Form. */
 export interface SearchDocument {
@@ -19,8 +19,8 @@ export interface SearchDocument {
   text: string
   path: string
   status: 'draft' | 'verified'
-  /** Nur Tools: Themen-Tags, rechts unter „Ungeprüft“ angezeigt */
-  tags?: readonly ToolTag[]
+  /** Themen-Tags (Tools, Lexikon), rechts unter „Ungeprüft“ angezeigt */
+  tags?: readonly TopicTag[]
 }
 
 export interface SearchGroup {
@@ -42,8 +42,8 @@ interface IndexedDocument {
 export interface SearchFilter {
   /** Modulnamen, z. B. „Tools“ */
   modules: readonly string[]
-  /** Themen-Tags; nur Tools haben Tags, andere Einträge fallen dann heraus */
-  tags: readonly ToolTag[]
+  /** Themen-Tags; nur Tools und Lexikon haben Tags, andere Einträge fallen dann heraus */
+  tags: readonly TopicTag[]
 }
 
 export const NO_FILTER: SearchFilter = { modules: [], tags: [] }
@@ -60,7 +60,7 @@ export interface SearchEngine {
   /** Ohne Suchbegriff, aber mit Filter: alle passenden Einträge in Index-Reihenfolge */
   search(query: string, filter?: SearchFilter): SearchGroup[]
   /** Auswahl für den Filter: Module und Themen, die im Index vorkommen */
-  filterOptions: { modules: string[]; tags: ToolTag[] }
+  filterOptions: { modules: string[]; tags: TopicTag[] }
 }
 
 export function createSearch(documents: readonly SearchDocument[]): SearchEngine {
@@ -101,7 +101,7 @@ export function createSearch(documents: readonly SearchDocument[]): SearchEngine
     },
     filterOptions: {
       modules: [...new Set(documents.map((doc) => doc.moduleTitle))],
-      tags: TOOL_TAGS.map((tag) => tag.key).filter((tag) => usedTags.has(tag)),
+      tags: TOPIC_TAGS.map((tag) => tag.key).filter((tag) => usedTags.has(tag)),
     },
   }
 }

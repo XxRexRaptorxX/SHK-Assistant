@@ -10,6 +10,7 @@
   "categories": [
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Kennwert für den Temperatur- oder Wärmeübertragungsgrad eines Wärmerückgewinners nach einem definierten Berechnungs- oder Prüfverfahren. Meist wird der Temperaturänderungsgrad der Zuluft angegeben; gute Kreuzgegenstromgeräte erreichen Werte über 80 %.",
   "related": []
 }

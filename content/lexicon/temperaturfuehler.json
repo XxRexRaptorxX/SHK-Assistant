@@ -13,6 +13,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Ein **Temperaturfühler** erfasst eine Temperatur und stellt ein elektrisches oder mechanisches Signal für Anzeige, Überwachung oder Regelung bereit. Bauarten unterscheiden sich unter anderem in Messprinzip, Genauigkeit, Ansprechzeit und Messbereich. Montageort und thermischer Kontakt müssen zur Messaufgabe passen.",
   "related": [
     "lexicon.regelungstechnik",

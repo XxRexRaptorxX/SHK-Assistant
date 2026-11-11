@@ -13,6 +13,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Elektrisch angesteuertes Expansionsventil, das den Kältemittelmassenstrom anhand von Messwerten präzise regeln kann. Ein Schrittmotor stellt die Öffnung anhand von Druck- und Temperaturmesswerten; dadurch lässt sich die Überhitzung auch im Teillastbetrieb genau halten.",
   "related": []
 }

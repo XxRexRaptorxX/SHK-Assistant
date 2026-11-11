@@ -11,6 +11,7 @@
     "kuerzel",
     "kaelte"
   ],
+  "tags": ["klima", "kaelte"],
   "definition": "Abkürzung für Seasonal Energy Efficiency Ratio: jahreszeitbezogene Leistungszahl im Kühlbetrieb. Er bezieht Teillast und wechselnde Außentemperaturen über eine Kühlperiode ein und ist Grundlage des EU-Energielabels für Klimageräte.",
   "related": [
     "lexicon.kuerzel-eer",

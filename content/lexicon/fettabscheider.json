@@ -12,6 +12,7 @@
   "categories": [
     "abwasser"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Anlage, die Fette und Öle aus Abwasser abtrennt, bevor es in die Entwässerung eingeleitet wird, wenn der Anwendungsfall dies erfordert. Er trennt Fette durch Schwerkraft ab und ist zum Beispiel für Abwasser aus gewerblichen Küchen erforderlich; Anforderungen legen DIN EN 1825 und DIN 4040-100 fest.",
   "related": []
 }

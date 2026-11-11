@@ -13,6 +13,7 @@
     "kaelte",
     "normen"
   ],
+  "tags": ["kaelte", "planung"],
   "definition": "Einstufung eines Kältemittels nach Toxizität (A = geringer, B = höher) und Brennbarkeit (1 = keine Flammenausbreitung, 2L, 2, 3 = höher), z. B. A1, A2L oder A3. Sie bestimmt unter anderem Anforderungen an Aufstellung und Füllmenge.",
   "related": []
 }

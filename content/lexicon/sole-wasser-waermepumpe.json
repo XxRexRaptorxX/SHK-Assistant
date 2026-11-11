@@ -15,6 +15,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Eine **Sole-Wasser-Wärmepumpe** nutzt einen geschlossenen Solekreislauf als Wärmequelle, etwa über Erdsonden oder Erdkollektoren. Die Sole transportiert Wärme aus dem Erdreich zum Verdampfer. Auslegung und Genehmigung der Wärmequelle sowie Frostschutz und Druckhaltung des Solekreises sind zu beachten.",
   "related": [
     "lexicon.waermepumpe",

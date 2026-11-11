@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Gerät zum Gasschmelzschweißen: Die Flamme aus Brenngas und Sauerstoff schmilzt die Fügestelle auf. Als Brenngas dient meist Acetylen; in der Installationstechnik wird die Flamme vor allem zum Hartlöten und für Schweißarbeiten an Stahlrohren genutzt. Flaschen, Druckminderer und Sicherungen gegen Flammenrückschlag gehören zur Ausrüstung.",
   "related": [
     "lexicon.schweissen",

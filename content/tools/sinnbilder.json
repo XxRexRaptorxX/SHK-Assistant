@@ -10,7 +10,7 @@
   "summary": "Schaltzeichen aus Schemata und Leitungskürzel mit Farben.",
   "description": "Sinnbilder (Schaltzeichen) aus Strang- und Anlagenschemata für Trinkwasser, Heizung, Gas, Sanitär, Brandschutz, MSR und Elektro, dazu Leitungskürzel mit ihren Farben. Bauteil eintippen, z. B. „Kugelhahn“ oder „RV“.",
   "category": "Planung",
-  "tags": ["buero"],
+  "tags": ["planung"],
   "groups": [
     {
       "title": "Rohrverbindungen",

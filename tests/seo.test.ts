@@ -127,6 +127,7 @@ describe('Suchmaschinen-Seiten je Edition', () => {
     verifiedBy: 'TS',
     verifiedAt: '2026-01-15',
     categories: ['heizung'],
+    tags: ['heizung'],
     ...overrides,
   })
 

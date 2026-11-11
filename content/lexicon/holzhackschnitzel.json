@@ -19,6 +19,7 @@
     "heizung",
     "solar"
   ],
+  "tags": ["heizung"],
   "definition": "**Holzhackschnitzel** sind maschinell zerkleinertes Holz für Hackschnitzelkessel. Gehandelt werden sie nach Gewicht (t) oder nach Volumen (Schüttraummeter, Srm). Wie viel Energie sie enthalten, hängt stark vom Wassergehalt ab.\n\nFür lufttrockene Hackschnitzel nennt die Heizkostenverordnung hilfsweise 4 kWh/kg bzw. 650 kWh je Schüttraummeter. Der Preisindex von C.A.R.M.E.N. unterscheidet Wassergehalt 35 % (Lieferung 80 Srm) und 20 % (Lieferung 30 Srm); die trockenere Ware wird laut TFZ eher in kleineren Anlagen eingesetzt.",
   "related": [
     "lexicon.schuettraummeter",

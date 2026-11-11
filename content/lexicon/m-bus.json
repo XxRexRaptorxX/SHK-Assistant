@@ -10,6 +10,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Kommunikationsstandard für die Fernauslesung von Verbrauchszählern, beispielsweise Wasser-, Wärme- oder Gaszählern. Er ist in EN 13757 genormt; neben der Kabelvariante gibt es die Funkvariante wireless M-Bus.",
   "related": []
 }

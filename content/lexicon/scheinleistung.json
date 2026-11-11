@@ -13,6 +13,7 @@
     "msr",
     "physik"
   ],
+  "tags": ["strom"],
   "definition": "**Scheinleistung** wird aus den Effektivwerten von Spannung und Stromstärke gebildet und setzt sich aus Wirk- und Blindleistung zusammen. Sie ist für die Auslegung von Leitungen und Bauteilen maßgebend und wird in Voltampere (VA) angegeben.",
   "related": [
     "lexicon.wirkleistung",

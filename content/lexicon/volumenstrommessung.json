@@ -14,6 +14,7 @@
     "hydraulik",
     "msr"
   ],
+  "tags": ["heizung", "strom"],
   "definition": "Die **Volumenstrommessung** bestimmt, welches Fluidvolumen pro Zeit einen Messquerschnitt passiert, beispielsweise mit einem Durchflussmesser oder aus geeigneten Messgrößen. Je nach Medium und Genauigkeitsanforderung werden etwa Differenzdruck-, Ultraschall-, magnetisch-induktive oder mechanische Messverfahren eingesetzt. In Heizungsanlagen wird oft über Strangregulierventile mit Messnippeln oder mit Ultraschall-Durchflussmessern gemessen. Messbereich, Einbaubedingungen, Strömungsprofil und Kalibrierung beeinflussen die Messunsicherheit.",
   "related": [
     "lexicon.volumenstrom",

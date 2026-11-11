@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Maßnahmen, die das Einfrieren eines Wärmeübertragers verhindern, beispielsweise durch Regelung, geeignete Medien oder Entleerung. Gefährdet sind vor allem wasserführende Lufterhitzer in Außenluftströmen; Frostschutzthermostate schließen dann zum Beispiel die Außenluftklappe oder öffnen das Heizventil.",
   "related": []
 }

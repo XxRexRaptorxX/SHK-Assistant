@@ -13,6 +13,7 @@
     "normen",
     "physik"
   ],
+  "tags": ["planung"],
   "definition": "Kennwert, der den Aufwand an Primärenergie je Einheit bereitgestellter Endenergie nach einer festgelegten Bewertungsmethode beschreibt. In Deutschland sind die Faktoren im Gebäudemodernisierungsgesetz (GModG, früher GEG) festgelegt; erneuerbare Energieträger haben meist niedrige Faktoren.",
   "related": []
 }

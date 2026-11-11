@@ -11,6 +11,7 @@
     "kuerzel",
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Je nach Zusammenhang Abkürzung für Heizkörper oder Heizkreis. Die Bedeutung ergibt sich aus Plan oder Schema, zum Beispiel HK 1 für den ersten Heizkreis.",
   "related": [
     "lexicon.heizkoerper",

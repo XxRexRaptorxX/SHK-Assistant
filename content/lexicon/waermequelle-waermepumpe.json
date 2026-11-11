@@ -13,6 +13,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Umgebung oder Medium, aus dem die Wärmepumpe Wärme aufnimmt, beispielsweise Luft, Erdreich oder Wasser. Je höher und gleichmäßiger ihre Temperatur ist, desto effizienter arbeitet die Wärmepumpe; Erdreich und Grundwasser sind im Winter wärmer als die Außenluft.",
   "related": []
 }

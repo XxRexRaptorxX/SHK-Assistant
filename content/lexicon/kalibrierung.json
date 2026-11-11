@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Vergleich eines Messgeräts mit einem Referenzstandard unter festgelegten Bedingungen, um dessen Anzeigeabweichung zu bestimmen. Kalibrierung ist nicht automatisch eine Justierung.",
   "related": []
 }

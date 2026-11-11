@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "**Winkel** ist in der Geometrie der Teil einer Ebene zwischen zwei Strahlen mit gemeinsamem Anfangspunkt. Er wird meist in Grad (°) angegeben; ein Vollkreis hat 360°.",
   "related": [
     "lexicon.grad",

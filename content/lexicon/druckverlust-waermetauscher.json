@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Druckabfall eines Mediums beim Durchströmen eines Wärmeübertragers. Der Wert für den Nennvolumenstrom steht im Datenblatt und ist bei der Pumpenauslegung zu berücksichtigen.",
   "related": []
 }

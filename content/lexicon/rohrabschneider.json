@@ -15,6 +15,7 @@
     "werkzeuge",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Handwerkzeug zum Trennen von Metallrohren: Ein Schneidrädchen im C-förmigen Bügel wird über eine Spindel zugestellt und rund um das Rohr geführt. Es entsteht ein gratarmer, rechtwinkliger Schnitt; danach wird das Rohr innen und außen entgratet. Für Kunststoff- und Verbundrohre gibt es eigene Rohrscheren und Schneider.",
   "related": [
     "lexicon.kupferrohr",

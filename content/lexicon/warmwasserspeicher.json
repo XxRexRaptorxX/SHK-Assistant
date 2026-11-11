@@ -14,6 +14,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Ein **Warmwasserspeicher** bevorratet erwärmtes Trinkwasser oder Heizungswasser für einen späteren Bedarf. Bei Trinkwarmwasserspeichern sind Temperaturhaltung, Wärmedämmung, Werkstoffverträglichkeit, Verkalkung und Hygiene besonders wichtig. Die erforderliche Größe hängt unter anderem vom Zapfprofil und der verfügbaren Nachheizleistung ab.",
   "related": [
     "lexicon.trinkwasserhygiene",

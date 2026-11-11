@@ -14,6 +14,7 @@
     "kaelte",
     "lueftung"
   ],
+  "tags": ["lueftung", "klima", "kaelte"],
   "definition": "Die **Kühllast** beschreibt die Kühlleistung, die erforderlich ist, um vorgegebene Raum- oder Prozessbedingungen bei festgelegten Auslegungsbedingungen einzuhalten. Beiträge können beispielsweise aus Sonneneinstrahlung, Personen, Beleuchtung, Geräten und Außenluft entstehen. Sie ist eine Grundlage für die Dimensionierung von Kälteerzeuger und Raumkühlflächen.",
   "related": [
     "lexicon.kaelteleistung",

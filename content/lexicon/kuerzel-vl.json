@@ -11,6 +11,7 @@
     "kuerzel",
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Abkürzung für Vorlauf: die Leitung, die das erwärmte Wasser vom Wärmeerzeuger zu den Heizflächen führt. Auf Plänen wird der Vorlauf häufig rot dargestellt.",
   "related": [
     "lexicon.vorlauftemperatur",

@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Typische Bauform mit Erzeugervorlauf, Erzeugerrücklauf, Verbrauchervorlauf und Verbraucherrücklauf. Es gibt auch Bauformen mit weiteren Anschlüssen, etwa für einen zweiten Wärmeerzeuger oder für Entlüfter, Entleerung und Fühler.",
   "related": []
 }

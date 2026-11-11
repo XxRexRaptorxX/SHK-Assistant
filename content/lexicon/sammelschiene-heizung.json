@@ -15,6 +15,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Heizungsverteiler** verteilt den Wärmeträger auf mehrere Heizkreise oder Heizflächen und führt ihn wieder zusammen. Bei Flächenheizungen enthält der Verteiler oft Durchflussanzeigen, voreinstellbare Ventile und Entlüftungs- beziehungsweise Füll-/Entleeranschlüsse. Die einzelnen Kreise müssen entsprechend Auslegung eingestellt und hydraulisch abgeglichen werden.",
   "related": [
     "lexicon.heizkreis",

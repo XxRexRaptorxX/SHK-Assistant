@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Mischung von heißem Vorlaufwasser in den Rücklauf, die die Rücklauftemperatur erhöht und die Brennwertnutzung reduzieren kann. Sie tritt zum Beispiel an hydraulischen Weichen oder Überströmventilen auf, wenn mehr Wasser durch den Erzeugerkreis gefördert wird, als die Verbraucher abnehmen.",
   "related": []
 }

@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Strukturiertes Vorgehen zur Eingrenzung einer Störungsursache anhand von Beobachtungen, Messungen, Schaltplänen und technischen Unterlagen. Bewährt ist ein schrittweises Vorgehen vom Symptom über Fehlerspeicher und Messwerte zur Ursache; Arbeiten an Gas- und Elektroteilen dürfen nur dafür befugte Fachkräfte ausführen.",
   "related": []
 }

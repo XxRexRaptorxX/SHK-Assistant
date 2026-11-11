@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Behälter in einer Druckhalteanlage, der zur Aufnahme von Volumenänderungen und Stabilisierung des Drucks dient. Je nach System ist es ein Membrangefäß mit Gaspolster oder ein Gefäß, dessen Druck über Pumpe oder Kompressor gehalten wird.",
   "related": []
 }

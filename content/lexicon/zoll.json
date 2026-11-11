@@ -14,6 +14,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Zoll (Inch)** (in) ist eine Einheit für die Länge. 1 in = 0,0254 m.",
   "related": [
     "lexicon.meter"

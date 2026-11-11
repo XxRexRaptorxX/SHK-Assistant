@@ -12,6 +12,7 @@
   "categories": [
     "abwasser"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Behandlung von Kondensat zur Einstellung eines geeigneten pH-Werts vor der Ableitung, soweit dies erforderlich ist. Sie erfolgt meist mit einer Neutralisationsbox mit Granulat; ob sie nötig ist, hängt unter anderem von Leistung, Brennstoff und örtlicher Abwassersatzung ab, Hinweise gibt das DWA-Arbeitsblatt A 251.",
   "related": []
 }

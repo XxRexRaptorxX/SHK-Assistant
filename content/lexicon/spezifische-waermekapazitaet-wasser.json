@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Wärmekapazität pro Masseneinheit von Wasser; der Wert hängt von Temperatur und Zustand ab und wird für technische Berechnungen häufig näherungsweise angesetzt. Im üblichen Heizungsbereich rechnet man mit etwa 1,163 Wh/(kg·K), das entspricht rund 4,19 kJ/(kg·K).",
   "related": [],
   "formulas": [

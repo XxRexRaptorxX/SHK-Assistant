@@ -14,6 +14,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Eine **Fußbodenheizung** ist eine Flächenheizung, bei der Heizrohre oder elektrische Heizelemente im Fußbodenaufbau liegen. Wassergeführte Systeme arbeiten aufgrund der großen Übertragungsfläche oft mit niedrigen Vorlauftemperaturen. Estrich und Bodenbelag beeinflussen Wärmeabgabe und Reaktionszeit.",
   "related": [
     "lexicon.heizflaeche",

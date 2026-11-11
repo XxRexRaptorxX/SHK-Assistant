@@ -14,6 +14,7 @@
     "gas",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Die **Sicherheitszeit** ist in einer Feuerungssteuerung ein festgelegtes Zeitfenster, innerhalb dessen nach dem Zündversuch eine ausreichende Flamme erkannt werden muss. Wird die Flamme nicht rechtzeitig erkannt oder fällt sie unzulässig aus, muss die Steuerung den Brennstofffluss sicher abschalten. Die konkreten Zeiten hängen von Gerät, Feuerungsautomat und geltenden Anforderungen ab; sie dürfen nicht pauschal angenommen werden.",
   "related": [
     "lexicon.gasfeuerungsautomat",

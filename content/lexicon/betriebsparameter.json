@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Mess- oder Einstellgrößen, die den Anlagenbetrieb beschreiben, beispielsweise Druck, Temperatur, Durchfluss und Drehzahl. Sie werden bei Inbetriebnahme und Wartung erfasst und dokumentiert, damit spätere Abweichungen erkannt werden können.",
   "related": []
 }

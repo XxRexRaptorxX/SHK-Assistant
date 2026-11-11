@@ -14,5 +14,6 @@ export function lexiconSearchDocuments(entries: readonly LexiconEntry[] = lexico
     text: stripEmphasis(entry.definition),
     path: lexiconPath(entry.id),
     status: entry.status,
+    tags: entry.tags,
   }))
 }

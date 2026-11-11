@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Verfahren zur Ermittlung der benötigten Heizleistung eines Gebäudes oder Raums unter Auslegungsbedingungen. In Deutschland ist insbesondere die einschlägige Fassung der DIN EN 12831 zu beachten.",
   "related": [],
   "tools": [

@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 import { formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
 
 // Varianten-Tools ("kind": "variants"): mehrere Rechenwege zu einer Aufgabe (z. B. Länge einer
@@ -23,7 +23,7 @@ export const variantToolSchema = defineEntrySchema({
   kind: z.literal('variants'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Was umgeschaltet wird, z. B. „Berechnung“ */

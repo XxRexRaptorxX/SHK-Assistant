@@ -12,6 +12,7 @@
     "heizung",
     "solar"
   ],
+  "tags": ["heizung"],
   "definition": "Abkürzung für Blockheizkraftwerk: erzeugt gleichzeitig Strom und Wärme (Kraft-Wärme-Kopplung). Es wird meist mit einem Verbrennungsmotor betrieben und vorzugsweise dort aufgestellt, wo die Wärme genutzt wird.",
   "related": [
     "lexicon.waermeerzeuger"

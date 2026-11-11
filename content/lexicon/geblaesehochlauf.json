@@ -11,6 +11,7 @@
     "heizung",
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Der **Gebläsehochlauf** ist beim Start eines Gas-Brennwertgeräts die Phase, in der das Gebläse auf Startdrehzahl hochläuft und das Steuergerät Eigentests durchführt. Drehzahlrückmeldung und gegebenenfalls Luftdruckwächter müssen innerhalb einer festgelegten Zeit melden, beim Viessmann Vitodens 300 (LGM29) etwa 70 s, sonst folgt eine Störmeldung.",
   "related": [
     "lexicon.betriebsbereitschaft",

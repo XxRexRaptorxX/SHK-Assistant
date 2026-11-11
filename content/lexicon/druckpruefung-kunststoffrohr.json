@@ -11,6 +11,7 @@
     "werkstoffe",
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Prüfung eines Kunststoffrohrsystems nach einem geeigneten Verfahren, das Werkstoffverhalten und Temperaturabhängigkeit berücksichtigt. Weil sich Kunststoffrohre unter Druck nachdehnen, sehen die Verfahren eine Vorprüfung mit Nachpumpen vor, bevor die eigentliche Prüfung beginnt.",
   "related": []
 }

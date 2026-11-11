@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Technische Angaben zu Volumenstrom, Druckverlust, Leistung, Abmessungen und Betriebsgrenzen sind dem Herstellerdatenblatt zu entnehmen. Sie sind bei der Auswahl maßgeblich, weil Weichen gleicher Anschlussgröße unterschiedliche Volumenströme zulassen können.",
   "related": []
 }

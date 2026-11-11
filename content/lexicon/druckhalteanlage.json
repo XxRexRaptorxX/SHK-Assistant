@@ -13,6 +13,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Anlage zur Stabilisierung des Drucks in einem geschlossenen Heizungs- oder Kühlkreislauf, beispielsweise mit Pumpen, Kompressor oder Druckbehälter je nach System. Sie nimmt die temperaturbedingte Volumenänderung des Wassers auf und hält den Druck in festgelegten Grenzen; in kleineren Anlagen übernimmt das meist ein Membran-Ausdehnungsgefäß.",
   "related": []
 }

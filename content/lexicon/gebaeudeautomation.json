@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Überwachung, Steuerung und Regelung technischer Gebäudesysteme wie Heizung, Lüftung, Klima, Beleuchtung und Beschattung. Ziel ist ein energieeffizienter, sicherer und komfortabler Betrieb; Bussysteme wie KNX oder BACnet verbinden die Geräte.",
   "related": []
 }

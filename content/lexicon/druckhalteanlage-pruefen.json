@@ -12,6 +12,7 @@
     "hydraulik",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Kontrolle der Funktion und Einstellung einer Druckhalteanlage gemäß Herstellerangaben und Systemanforderungen. Dazu gehören zum Beispiel Vordruck und Wasservorlage des Gefäßes, Anlagendruck, Nachspeisung und Schaltpunkte; die Ergebnisse sind zu dokumentieren.",
   "related": []
 }

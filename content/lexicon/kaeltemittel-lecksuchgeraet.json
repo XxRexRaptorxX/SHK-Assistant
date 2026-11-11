@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["kaelte"],
   "definition": "Messgerät zur Erkennung bestimmter Kältemittel in der Umgebung oder an Leitungsverbindungen. Es arbeitet zum Beispiel mit beheizter Diode, Infrarot- oder Halbleitersensor und muss für das jeweilige Kältemittel geeignet sein.",
   "related": []
 }

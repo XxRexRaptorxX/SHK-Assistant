@@ -11,6 +11,7 @@
     "kuerzel",
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Abkürzung für Zentralverband Sanitär Heizung Klima, den Bundesverband des SHK-Handwerks in Deutschland. Er gibt unter anderem Fachregeln und Merkblätter für das Handwerk heraus; der vollständige Name lautet heute Zentralverband Sanitär Heizung Klima/Gebäude- und Energietechnik Deutschland (ZVSHK/GED).",
   "related": [
     "lexicon.shk"

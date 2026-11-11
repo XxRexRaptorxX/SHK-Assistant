@@ -13,6 +13,7 @@
     "werkzeuge",
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Messgerät für mehrere elektrische Größen, mindestens Spannung und Strom, meist auch Widerstand. In der SHK-Technik dient es zum Beispiel zum Prüfen von Fühlern, Sicherungen und Spannungen; für Messungen an Netzspannung muss es die passende Messkategorie haben, etwa CAT III.",
   "related": [
     "lexicon.elektrische-spannung",

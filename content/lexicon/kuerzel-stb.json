@@ -12,6 +12,7 @@
     "heizung",
     "normen"
   ],
+  "tags": ["heizung", "planung"],
   "definition": "Abkürzung für Sicherheitstemperaturbegrenzer.",
   "related": [
     "lexicon.sicherheitstemperaturbegrenzer",

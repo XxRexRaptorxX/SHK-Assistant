@@ -1,7 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
-import { toolTagsSchema } from './toolTags.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 
 // Lüftungsstrang-Tools ("kind": "ventilationRiser"): Auswahlhilfe eines Herstellers für Einzelraumlüfter nach
 // DIN 18017-3. Bereich (z. B. Normal/Komfort), Lüftergeräte pro Etage mit Volumenstrom je Gerät und Anzahl der
@@ -14,7 +14,7 @@ export const ventilationRiserToolSchema = defineEntrySchema({
   kind: z.literal('ventilationRiser'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
-  tags: toolTagsSchema,
+  tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   keywords: z.array(z.string().trim().min(1)).default([]),

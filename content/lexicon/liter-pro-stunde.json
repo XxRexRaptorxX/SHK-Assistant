@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Liter pro Stunde** (l/h) ist eine Einheit für den Volumenstrom. 1 l/h = 0,001 m³/h.",
   "related": [
     "lexicon.kubikmeter-pro-stunde"

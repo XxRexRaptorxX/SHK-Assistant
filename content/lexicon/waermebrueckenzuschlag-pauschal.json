@@ -10,6 +10,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Pauschaler Zuschlag zur Berücksichtigung von Wärmebrückenverlusten in einem vereinfachten energetischen Berechnungsverfahren. In Deutschland wird ohne weiteren Nachweis zum Beispiel 0,10 W/(m²·K) angesetzt; bei Ausführung der Details nach DIN 4108 Beiblatt 2 sind kleinere Werte zulässig.",
   "related": []
 }

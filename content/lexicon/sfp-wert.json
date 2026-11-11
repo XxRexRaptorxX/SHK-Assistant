@@ -12,6 +12,7 @@
   "categories": [
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Specific Fan Power: spezifische Ventilatorleistung, häufig angegeben als elektrische Leistung pro gefördertem Luftvolumenstrom. Die Einheit ist W/(m³/s); kleine Werte stehen für einen sparsamen Ventilatorbetrieb, Klassen dafür enthält DIN EN 16798-3.",
   "related": []
 }

@@ -11,6 +11,7 @@
     "kuerzel",
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Abkürzung für Polypropylen, einen Kunststoff, aus dem u. a. HT-Abflussrohre bestehen.",
   "related": [
     "lexicon.ht-rohr"

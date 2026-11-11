@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Berechnung des Druckabfalls durch Rohrleitungen und Formteile anhand von Geometrie, Strömungszustand und Mediumeigenschaften. Der Reibungsanteil folgt aus Rohrreibungszahl, Länge, Durchmesser und Geschwindigkeit (Darcy-Weisbach); Einzelwiderstände werden über Verlustbeiwerte (Zeta-Werte) erfasst.",
   "related": [],
   "formulas": [

@@ -20,6 +20,7 @@
     "gas",
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "**Erdgas** ist ein gasförmiger Brennstoff aus dem öffentlichen Gasnetz. Die Heizkostenverordnung unterscheidet Erdgas H und Erdgas L und nennt hilfsweise einen Heizwert von 10 bzw. 9 kWh je Kubikmeter.\n\nAuf der Gasrechnung stehen kWh nach dem Brennwert: Der Versorger rechnet das am Gaszähler gemessene Volumen mit der Zustandszahl auf den Normzustand um und multipliziert es mit dem Brennwert. Für den Heizwert teilt man diese kWh durch 1,11; das ist der Faktor der Heizkostenverordnung bei brennwertbezogener Abrechnung.",
   "related": [
     "lexicon.zustandszahl",

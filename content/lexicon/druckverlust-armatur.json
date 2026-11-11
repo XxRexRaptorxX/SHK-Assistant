@@ -11,6 +11,7 @@
     "hydraulik",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Druckabfall, der beim Durchströmen einer Armatur entsteht. Er wird meist über den Kv-Wert berechnet und steigt etwa quadratisch mit dem Volumenstrom.",
   "related": []
 }

@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Die Weiche kann die gegenseitige Beeinflussung von Pumpen unterschiedlicher Kreise reduzieren; sie ersetzt keine korrekte Pumpenauslegung. Jeder Kreis braucht eine eigene Pumpe, die nur den Druckverlust ihres Kreises bis zur Weiche überwinden muss.",
   "related": []
 }

@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Leistungs- oder Volumenstrombereich, für den eine Weiche vorgesehen ist; genaue Werte sind Herstellerangaben zu entnehmen. Wird er überschritten, steigen Strömungsgeschwindigkeit und Druckverlust in der Weiche, und die Entkopplung funktioniert schlechter.",
   "related": []
 }

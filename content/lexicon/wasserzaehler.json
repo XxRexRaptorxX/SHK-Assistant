@@ -14,6 +14,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Ein **Wasserzähler** misst das durchströmende Wasservolumen, beispielsweise zur Verbrauchserfassung oder Abrechnung. Bauarten können mechanisch oder elektronisch arbeiten. Einbaulage, Messbereich, zulässiger Durchfluss und Anforderungen an die Messstelle müssen zum Einsatz passen.",
   "related": [
     "lexicon.volumenstrom",

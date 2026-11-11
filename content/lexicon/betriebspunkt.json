@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kombination der Betriebsgrößen einer Komponente, beispielsweise Förderstrom und Förderhöhe einer Pumpe oder Druck und Temperatur eines Kältemittels. Bei einer Pumpe ergibt er sich als Schnittpunkt von Pumpen- und Anlagenkennlinie.",
   "related": []
 }

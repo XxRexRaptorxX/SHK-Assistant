@@ -11,6 +11,7 @@
     "abwasser",
     "werkstoffe"
   ],
+  "tags": ["sanitaer", "abwasser"],
   "definition": "Hochtemperaturbeständiges Kunststoff-Abwasserrohr für bestimmte Entwässerungsleitungen innerhalb von Gebäuden. Es ist nicht mit druckführenden Trinkwasserleitungen gleichzusetzen.",
   "related": []
 }

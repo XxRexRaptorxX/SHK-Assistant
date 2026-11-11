@@ -12,6 +12,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kurve, die den Zusammenhang zwischen Förderstrom und Förderhöhe einer Pumpe bei festgelegten Bedingungen beschreibt. Mit steigendem Volumenstrom sinkt die Förderhöhe; der Schnittpunkt mit der Anlagenkennlinie ergibt den Betriebspunkt. Bei drehzahlgeregelten Pumpen gilt für jede Drehzahl eine eigene Kennlinie.",
   "related": []
 }

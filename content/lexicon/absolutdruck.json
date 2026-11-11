@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Druck bezogen auf das absolute Vakuum als Nullpunkt. Er kann nicht negativ werden und ergibt sich aus Überdruck plus Umgebungsluftdruck; Manometer zeigen dagegen meist den Überdruck an.",
   "related": []
 }

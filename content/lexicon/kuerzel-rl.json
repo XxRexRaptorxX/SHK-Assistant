@@ -11,6 +11,7 @@
     "kuerzel",
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Abkürzung für Rücklauf: die Leitung, die das abgekühlte Wasser von den Heizflächen zum Wärmeerzeuger zurückführt. Auf Plänen wird der Rücklauf häufig blau dargestellt.",
   "related": [
     "lexicon.ruecklauftemperatur",

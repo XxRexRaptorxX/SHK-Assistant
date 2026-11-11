@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Erwärmung von Trinkwasser bei Bedarf während des Durchströmens eines Wärmeübertragers, ohne große Mengen Warmwasser im Trinkwasserbehälter zu speichern. Beispiele sind Durchlauferhitzer und Frischwasserstationen; wegen des geringen Wasserinhalts gilt sie als hygienisch günstig, braucht aber eine hohe momentane Leistung.",
   "related": []
 }

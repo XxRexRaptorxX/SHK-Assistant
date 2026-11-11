@@ -13,6 +13,7 @@
     "werkstoffe",
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Maßnahmen zur Vermeidung unerwünschter Tauwasserbildung auf kalten Oberflächen, häufig durch Dämmung und eine durchgängige Dampfsperre. Bei Kaltwasser- und Kälteleitungen muss die Dämmung diffusionsdicht und an allen Stößen verklebt sein, weil schon kleine Lücken zu Tauwasser hinter der Dämmung führen.",
   "related": [],
   "tools": [

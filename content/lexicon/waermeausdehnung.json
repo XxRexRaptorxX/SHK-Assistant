@@ -14,6 +14,7 @@
     "werkstoffe",
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Änderung des Volumens eines Stoffes durch Temperaturänderung. In geschlossenen Anlagen muss die Volumenvergrößerung erwärmter Flüssigkeit sicher aufgenommen werden.",
   "related": [],
   "formulas": [

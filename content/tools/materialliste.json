@@ -11,6 +11,6 @@
   "description": "Bauvorhaben eintragen, dann Artikel mit Menge hinzufügen. Frühere Bauvorhaben und Artikel werden beim Tippen vorgeschlagen. Was eingepackt ist, einfach **abhaken**. Jede Liste wird mit Datum gespeichert und lässt sich wieder öffnen oder löschen.",
   "closingNote": "Listen, Bauvorhaben und Artikel bleiben nur auf diesem Gerät gespeichert. Die E-Mail wird im eigenen Mailprogramm geöffnet und erst von dort gesendet.",
   "category": "Aufmaß",
-  "tags": ["buero"],
+  "tags": ["planung"],
   "keywords": ["Material", "Materialbedarf", "Mitnehmen", "Einkaufsliste", "Bestellung", "Merkliste", "Bauvorhaben", "Baustelle", "Artikel", "Abhaken"]
 }

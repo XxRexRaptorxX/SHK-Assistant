@@ -14,6 +14,7 @@
     "hydraulik",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Armatur, die den Durchfluss nur in einer vorgesehenen Richtung zulässt und Rückströmung automatisch verhindert. Es öffnet durch den Strömungsdruck und schließt selbsttätig, zum Beispiel über eine Feder; in der Trinkwasserinstallation wird meist ein prüfbarer Rückflussverhinderer verwendet.",
   "related": []
 }

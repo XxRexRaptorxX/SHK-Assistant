@@ -3,34 +3,63 @@ import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { EntryList } from '../../components/EntryList'
 import { createSearch } from '../../search/search'
+import { lexiconEntries } from '../lexicon/lexicon'
+import { LexiconListPage } from '../lexicon/LexiconListPage'
+import { lexiconSearchDocuments } from '../lexicon/search'
 import { ToolListPage } from './ToolListPage'
-import { ToolTags } from './ToolTagList'
+import { TopicTags } from '../../components/TopicTags'
 import { toolEntries, toolSearchDocuments } from './tools'
-import { sortToolTags, TOOL_TAGS, toolTagsSchema } from './toolTags'
+import { sortTopicTags, TOPIC_TAGS, topicTagsSchema } from '../../content/schema/topicTags'
 
 describe('Themen-Tags der Tools', () => {
   it('verlangt mindestens einen bekannten Tag ohne Doppelung', () => {
-    expect(toolTagsSchema.safeParse(['heizung', 'strom']).success).toBe(true)
-    expect(toolTagsSchema.safeParse([]).success).toBe(false)
-    expect(toolTagsSchema.safeParse(['garten']).success).toBe(false)
-    expect(toolTagsSchema.safeParse(['heizung', 'heizung']).success).toBe(false)
+    expect(topicTagsSchema.safeParse(['heizung', 'strom']).success).toBe(true)
+    expect(topicTagsSchema.safeParse([]).success).toBe(false)
+    expect(topicTagsSchema.safeParse(['garten']).success).toBe(false)
+    expect(topicTagsSchema.safeParse(['heizung', 'heizung']).success).toBe(false)
   })
 
-  it('jedes Tool hat Tags', () => {
+  it('jedes Tool und jeder Lexikon-Begriff hat Tags', () => {
     for (const entry of toolEntries) expect(entry.tags.length, entry.id).toBeGreaterThan(0)
+    for (const entry of lexiconEntries) expect(entry.tags.length, entry.id).toBeGreaterThan(0)
+  })
+
+  it('„Allgemein“ steht nie neben einem Fachgebiet', () => {
+    for (const entry of [...toolEntries, ...lexiconEntries]) {
+      if (entry.tags.includes('allgemein')) expect(entry.tags, entry.id).toEqual(['allgemein'])
+    }
+  })
+
+  it('zeigt die Tags in der Lexikon-Liste und hat dort einen Filter-Knopf', () => {
+    const entry = lexiconEntries.find((candidate) => candidate.tags.includes('trinkwasser'))!
+    const html = renderToStaticMarkup(
+      <MemoryRouter>
+        <LexiconListPage entries={[entry]} initialQuery={entry.term} />
+      </MemoryRouter>,
+    )
+    expect(html).toContain('Trinkwasser</span>')
+    expect(html).toContain('aria-label="Filter"')
+  })
+
+  it('bietet im Themen-Filter der Suche auch Lexikon-Tags an und filtert danach', () => {
+    const engine = createSearch(lexiconSearchDocuments())
+    expect(engine.filterOptions.tags).toContain('abwasser')
+    const results = engine.search('', { modules: [], tags: ['abwasser'] }).flatMap((group) => group.results)
+    expect(results.length).toBeGreaterThan(0)
+    for (const result of results) expect(result.tags).toContain('abwasser')
   })
 
   it('zeigt Tags in fester Reihenfolge, egal wie sie im Inhalt stehen', () => {
-    expect(sortToolTags(['buero', 'heizung'])).toEqual(['heizung', 'buero'])
-    const html = renderToStaticMarkup(<ToolTags tags={['kundendienst', 'heizung']} />)
+    expect(sortTopicTags(['planung', 'heizung'])).toEqual(['heizung', 'planung'])
+    const html = renderToStaticMarkup(<TopicTags tags={['kundendienst', 'heizung']} />)
     expect(html.indexOf('Heizung')).toBeLessThan(html.indexOf('Kundendienst'))
   })
 
   it('hat für jeden Tag eine eigene Farbe', () => {
-    const html = renderToStaticMarkup(<ToolTags tags={TOOL_TAGS.map((tag) => tag.key)} />)
+    const html = renderToStaticMarkup(<TopicTags tags={TOPIC_TAGS.map((tag) => tag.key)} />)
     const classes = [...html.matchAll(/class="rounded-full ([^"]+)"/g)].map((match) => match[1])
-    expect(classes).toHaveLength(TOOL_TAGS.length)
-    expect(new Set(classes).size).toBe(TOOL_TAGS.length)
+    expect(classes).toHaveLength(TOPIC_TAGS.length)
+    expect(new Set(classes).size).toBe(TOPIC_TAGS.length)
   })
 
   it('zeigt die Tags in der Tool-Liste', () => {

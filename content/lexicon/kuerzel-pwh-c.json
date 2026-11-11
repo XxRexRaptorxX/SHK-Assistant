@@ -13,6 +13,7 @@
     "kuerzel",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Zirkulationsleitung des warmen Trinkwassers.",
   "related": [
     "lexicon.zirkulationsleitung",

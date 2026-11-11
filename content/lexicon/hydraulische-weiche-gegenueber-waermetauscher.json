@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Eine hydraulische Weiche trennt Kreise nicht stofflich; ein Wärmeübertrager hält die Medien in getrennten Kreisläufen. Ein Wärmeübertrager ist nötig, wenn unterschiedliche Medien oder Drücke getrennt werden müssen, etwa bei Glykolkreisen; er verursacht aber eine zusätzliche Temperaturdifferenz.",
   "related": []
 }

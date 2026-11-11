@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Radiant** (rad) ist eine Einheit für Winkel. 1 rad = 57,2958 °.",
   "related": [
     "lexicon.grad"

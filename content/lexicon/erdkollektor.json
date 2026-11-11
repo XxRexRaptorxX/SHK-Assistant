@@ -13,6 +13,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Flächig im Erdreich verlegter Wärmeübertrager, der Wärme aus dem oberflächennahen Boden aufnimmt oder abgibt. Er besteht meist aus horizontal in geringer Tiefe verlegten Kunststoffrohren und dient vor allem als Wärmequelle für Sole-Wasser-Wärmepumpen; der Ertrag hängt stark von Bodenart, Bodenfeuchte und Jahreszeit ab.",
   "related": []
 }

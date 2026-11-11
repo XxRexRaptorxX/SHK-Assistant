@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Elektromotor, der mit einem dreiphasigen Wechselstromsystem betrieben wird. Er treibt in SHK-Anlagen häufig Pumpen und Ventilatoren an.",
   "related": [],
   "formulas": [

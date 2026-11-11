@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["strom"],
   "definition": "Elektronisches Gerät, das die Frequenz und meist auch Spannung einer Wechselstromversorgung verändert, um die Drehzahl eines geeigneten Elektromotors zu regeln. In der Gebäudetechnik regelt er zum Beispiel die Drehzahl von Pumpen, Ventilatoren und Verdichtern und senkt so den Energiebedarf im Teillastbetrieb.",
   "related": []
 }

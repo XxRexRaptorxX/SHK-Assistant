@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kv-Wert eines Ventils bei vollständig geöffnetem Ventil unter festgelegten Referenzbedingungen. Er wird für die Auslegung von Regelventilen verwendet und bezieht sich wie der Kv-Wert auf Wasser bei 1 bar Druckverlust über dem Ventil.",
   "related": []
 }

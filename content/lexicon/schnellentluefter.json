@@ -14,6 +14,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Schnellentlüfter** ist eine Bauform des automatischen Entlüfters, die angesammelte Luft aus einem wasserführenden System abführt. Er wird häufig an dafür vorgesehenen Hochpunkten oder Entlüftungssammlern installiert. Einbauort, Betriebsdruck und Wartungszustand sind wichtig, da ein defekter Entlüfter Wasser austreten lassen kann.",
   "related": [
     "lexicon.entluefter",

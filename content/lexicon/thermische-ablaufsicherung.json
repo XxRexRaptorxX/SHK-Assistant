@@ -10,6 +10,7 @@
   "categories": [
     "normen"
   ],
+  "tags": ["planung"],
   "definition": "Sicherheitseinrichtung, die bei bestimmten Festbrennstoffkesseln überschüssige Wärme durch einen vorgesehenen Kühlvorgang abführt, sofern der Kessel dafür ausgelegt ist. Sie arbeitet ohne Hilfsenergie, also auch bei Stromausfall: Bei zu hoher Kesseltemperatur öffnet sie ein Ventil, sodass Kaltwasser durch einen Sicherheitswärmeübertrager strömt.",
   "related": []
 }

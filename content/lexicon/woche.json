@@ -12,6 +12,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Woche** ist eine Einheit für die Zeit. 1 Woche = 604.800 s.",
   "related": [
     "lexicon.sekunde"

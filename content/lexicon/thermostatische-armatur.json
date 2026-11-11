@@ -12,6 +12,7 @@
   "categories": [
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Armatur, die durch ein thermostatisches Regelelement die Mischwassertemperatur weitgehend konstant hält, solange die Betriebsbedingungen dies erlauben. Fällt das Kaltwasser aus, sperren viele Ausführungen auch das Warmwasser, um Verbrühungen zu verhindern.",
   "related": []
 }

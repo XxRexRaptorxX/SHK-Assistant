@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Anlage, die Wärme aus einem Fernwärmenetz über einen Wärmeübertrager und Regelkomponenten an die Gebäudeheizung übergibt. Sie stellt die gewünschte Vorlauftemperatur im Gebäude ein und enthält meist den Wärmemengenzähler; primärseitig kann sie mit Heißwasser, Heizwasser oder Dampf versorgt werden.",
   "related": []
 }

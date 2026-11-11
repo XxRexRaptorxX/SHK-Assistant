@@ -12,6 +12,7 @@
   "categories": [
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "Angabe zur Wärmeleitfähigkeit eines Dämmstoffs; die genaue Kennzeichnung richtet sich nach der jeweiligen Norm und Produktdeklaration. Die dreistellige Zahl gibt die Wärmeleitfähigkeit in mW/(m·K) an, zum Beispiel WLS 032 für 0,032 W/(m·K); sie ersetzt die frühere Wärmeleitgruppe.",
   "related": [],
   "tools": [

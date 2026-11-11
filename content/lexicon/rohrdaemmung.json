@@ -14,6 +14,7 @@
   "categories": [
     "werkstoffe"
   ],
+  "tags": ["allgemein"],
   "definition": "**Rohrdämmung** reduziert Wärmeverluste beziehungsweise unerwünschte Wärmeaufnahme und kann bei kalten Leitungen Kondensation verhindern. Dämmstoffdicke, Wärmeleitfähigkeit, Wasserdampfdiffusionswiderstand und Temperaturbeständigkeit müssen zur Anwendung passen. Bei Trinkwarmwasser, Heizungsleitungen und Kälteleitungen gelten unterschiedliche technische Ziele und Anforderungen.",
   "related": [
     "lexicon.waermeleitfaehigkeit",

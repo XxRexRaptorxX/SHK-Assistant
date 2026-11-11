@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Temperaturverhalten der Weiche abhängig von den Volumenströmen der angeschlossenen Kreise; es kann zu Beimischung oder Rücklaufanhebung kommen. Bei annähernd gleich großen Volumenströmen auf beiden Seiten findet kaum Durchmischung statt.",
   "related": []
 }

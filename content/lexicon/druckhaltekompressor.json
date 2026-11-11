@@ -11,6 +11,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kompressor in bestimmten Druckhalteanlagen, der den Gasdruck zur Stabilisierung des Anlagendrucks beeinflusst. Er pumpt bei sinkendem Anlagendruck Luft in das Gaspolster des Gefäßes; steigt der Druck, wird Luft über ein Ventil abgelassen.",
   "related": []
 }

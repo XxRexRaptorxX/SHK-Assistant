@@ -13,6 +13,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "**Kreisbogen** ist ein zusammenhängendes Teilstück einer Kreislinie zwischen zwei Punkten. Seine Länge (Bogenlänge) ergibt sich aus dem Durchmesser und dem zugehörigen Mittelpunktswinkel.",
   "related": [
     "lexicon.kreis",

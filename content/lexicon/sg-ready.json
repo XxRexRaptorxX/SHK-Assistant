@@ -11,6 +11,7 @@
     "kaelte",
     "msr"
   ],
+  "tags": ["heizung", "kaelte", "strom"],
   "definition": "Kennzeichnung beziehungsweise Schnittstellenkonzept für bestimmte Wärmepumpen, das die Ansteuerung über definierte Betriebszustände ermöglicht; konkrete Funktionen sind herstellerabhängig. Das Label vergibt der Bundesverband Wärmepumpe; über zwei Schaltkontakte lassen sich vier Betriebszustände vorgeben, etwa eine Sperre oder ein verstärkter Betrieb bei Stromüberschuss.",
   "related": []
 }

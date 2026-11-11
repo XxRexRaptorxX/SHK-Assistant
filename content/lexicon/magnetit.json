@@ -13,6 +13,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Magnetisches Eisenoxid, das als Korrosionsprodukt in wasserführenden Heizsystemen auftreten kann und Pumpen, Ventile oder Wärmeübertrager beeinträchtigen kann. Chemisch ist es Fe₃O₄; es bildet sich bei der Korrosion von Stahl im Heizungswasser und lagert sich bevorzugt in Pumpen mit Permanentmagnetmotor ab.",
   "related": []
 }

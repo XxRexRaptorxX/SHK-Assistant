@@ -15,6 +15,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Ein **Druckausdehnungsgefäß** nimmt die temperaturbedingte Volumenänderung eines Fluids in einem geschlossenen System auf. In Heizungsanlagen ist es meistens ein Membran-Ausdehnungsgefäß mit Gasvordruck. Gefäßvolumen, Vordruck und Einbindung werden anhand des Anlageninhalts, der Temperaturbereiche und der zulässigen Druckgrenzen bestimmt.",
   "related": [
     "lexicon.ausdehnungsgefaess",

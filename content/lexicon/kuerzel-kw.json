@@ -11,6 +11,7 @@
     "kuerzel",
     "trinkwasser"
   ],
+  "tags": ["sanitaer", "trinkwasser"],
   "definition": "Abkürzung für Kaltwasser, im Trinkwasserbereich das kalte Trinkwasser (nach Norm PWC). Nicht zu verwechseln mit kW (Kilowatt).",
   "related": [
     "lexicon.trinkwasser",

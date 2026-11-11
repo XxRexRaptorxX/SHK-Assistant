@@ -13,6 +13,7 @@
   "categories": [
     "einheiten"
   ],
+  "tags": ["allgemein"],
   "definition": "**Kilogramm pro Minute** (kg/min) ist eine Einheit für den Massenstrom. 1 kg/min = 0,0166667 kg/s.",
   "related": [
     "lexicon.kilogramm-pro-sekunde"

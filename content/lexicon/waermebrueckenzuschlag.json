@@ -10,6 +10,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Pauschaler oder berechneter Zuschlag zur Berücksichtigung zusätzlicher Wärmeverluste durch Wärmebrücken, sofern das verwendete Berechnungsverfahren dies vorsieht. Er wird als Zuschlag ΔU auf die U-Werte der Hüllflächen angerechnet.",
   "related": []
 }

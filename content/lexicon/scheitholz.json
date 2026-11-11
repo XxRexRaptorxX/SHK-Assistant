@@ -19,6 +19,7 @@
     "heizung",
     "solar"
   ],
+  "tags": ["heizung"],
   "definition": "**Scheitholz** ist gespaltenes, auf Länge gesägtes Holz für Scheitholzkessel, Kamin- und Kachelöfen. Gehandelt wird es meist nach Raummeter (Ster), als Meterware oder ofenfertig in 33 cm. Nach der 1. BImSchV darf nur Brennholz mit einer Holzfeuchte unter 25 % verfeuert werden, das entspricht einem Wassergehalt von 20 %.\n\nDer Heizwert hängt von Holzart und Wassergehalt ab. Das LWF-Merkblatt 20 nennt bei 20 % Wassergehalt für Buche 3,86 kWh/kg bzw. 1.885 kWh je Raummeter, für Fichte 4,02 kWh/kg bzw. 1.333 kWh je Raummeter (Raummeter pauschal mit 0,7 Festmeter gerechnet). Laubholz ist schwerer, Nadelholz hat je Kilogramm etwas mehr Energie.",
   "related": [
     "lexicon.raummeter",

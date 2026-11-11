@@ -11,6 +11,7 @@
     "kuerzel",
     "lueftung"
   ],
+  "tags": ["lueftung"],
   "definition": "Abkürzung für Raumlufttechnik, z. B. RLT-Anlage.",
   "related": [
     "lexicon.lueftungsanlage"

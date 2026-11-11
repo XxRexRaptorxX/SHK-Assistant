@@ -15,6 +15,7 @@
     "kaelte",
     "werkstoffe"
   ],
+  "tags": ["klima", "kaelte"],
   "definition": "Werkzeug, mit dem Rohrenden, meist aus Kupfer, kegelig aufgeweitet werden, damit sie mit einer Bördelverschraubung verbunden werden können. Bördelverbindungen sind vor allem bei Kupferleitungen in der Kälte- und Klimatechnik verbreitet.",
   "related": [
     "lexicon.kupferrohr"

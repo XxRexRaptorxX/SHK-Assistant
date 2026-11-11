@@ -12,6 +12,7 @@
   "categories": [
     "kaelte"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Geschlossener Kreislauf einer Kälteanlage, in dem das Kältemittel durch Verdampfen, Verdichten, Verflüssigen und Entspannen Wärme transportiert. Hauptbauteile sind Verdampfer, Verdichter, Verflüssiger und Expansionsventil; derselbe Kreisprozess arbeitet auch in Wärmepumpen.",
   "related": []
 }

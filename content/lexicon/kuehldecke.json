@@ -13,6 +13,7 @@
     "kaelte",
     "lueftung"
   ],
+  "tags": ["klima", "kaelte"],
   "definition": "Flächenkühlsystem, das Wärme aus dem Raum über eine gekühlte Deckenfläche aufnimmt. Bei wassergeführten Systemen ist Tauwasser zu vermeiden.",
   "related": []
 }

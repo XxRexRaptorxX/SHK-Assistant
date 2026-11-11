@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Kreislauf auf der Verbraucherseite eines Wärmeübertragers; die genaue Bedeutung ergibt sich aus dem jeweiligen Schema. Bei Fernwärme ist es die Hausanlage, bei Solaranlagen die Speicherseite.",
   "related": []
 }

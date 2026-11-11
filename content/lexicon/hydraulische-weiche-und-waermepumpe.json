@@ -12,6 +12,7 @@
     "kaelte",
     "solar"
   ],
+  "tags": ["heizung", "kaelte"],
   "definition": "Bei Wärmepumpen muss eine Weiche zum Mindestvolumenstrom und Speicher- sowie Regelungskonzept passen. Unnötige Temperaturvermischung kann die Effizienz verschlechtern.",
   "related": []
 }

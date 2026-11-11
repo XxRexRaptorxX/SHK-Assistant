@@ -10,6 +10,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Technisches Dokument mit Leistungsdaten, Abmessungen und Betriebsgrenzen einer Weiche. Es nennt zum Beispiel den maximalen Volumenstrom, die Anschlussgrößen, den zulässigen Betriebsdruck und die maximale Temperatur und ist Grundlage für Auswahl und Einbau.",
   "related": []
 }

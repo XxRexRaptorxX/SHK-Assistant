@@ -13,6 +13,7 @@
     "trinkwasser",
     "normen"
   ],
+  "tags": ["sanitaer", "trinkwasser", "planung"],
   "definition": "Bewertung der Bedingungen, unter denen Legionellen in einer Trinkwasserinstallation auftreten oder sich vermehren könnten, anhand von Nutzung, Temperatur, Stagnation und technischen Gegebenheiten. Nach der Trinkwasserverordnung ist eine Gefährdungsanalyse vorgeschrieben, wenn bei einer Untersuchung der technische Maßnahmenwert für Legionellen überschritten wird.",
   "related": []
 }

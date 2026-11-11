@@ -12,6 +12,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Heizungsanlage, in der zwei Wärmeerzeuger zusammenarbeiten, beispielsweise eine Wärmepumpe und ein zusätzlicher Heizkessel. Je nach Betriebsweise arbeiten die Erzeuger abwechselnd (bivalent-alternativ) oder gemeinsam (bivalent-parallel); eine Regelung koordiniert sie.",
   "related": []
 }

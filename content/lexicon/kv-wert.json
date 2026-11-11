@@ -13,6 +13,7 @@
   "categories": [
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Kennwert eines Ventils, der den Volumenstrom von Wasser unter festgelegten Referenzbedingungen in Abhängigkeit vom Druckverlust beschreibt. Herstellerdefinition und Einheit sind zu beachten.",
   "related": []
 }

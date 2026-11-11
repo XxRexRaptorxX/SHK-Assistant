@@ -13,6 +13,7 @@
     "trinkwasser",
     "normen"
   ],
+  "tags": ["heizung", "sanitaer", "trinkwasser", "planung"],
   "definition": "Abkürzung für Sicherheitsventil. Es schützt Anlagen und Speicher vor unzulässigem Überdruck.",
   "related": [
     "lexicon.sicherheitsventil"

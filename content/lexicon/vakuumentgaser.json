@@ -13,6 +13,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Anlage, die durch Absenken des Drucks gelöste Gase aus Heizungswasser freisetzt und abführt. Er arbeitet meist im Teilstrom und entfernt auch gelösten Sauerstoff und Stickstoff, die sonst Korrosion und Luftprobleme verursachen; viele Geräte übernehmen zusätzlich die Nachspeisung.",
   "related": []
 }

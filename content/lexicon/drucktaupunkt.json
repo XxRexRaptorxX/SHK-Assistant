@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Taupunkttemperatur einer komprimierten Gasprobe bei ihrem aktuellen Druck. Er ist das wichtigste Maß für die Trocknung von Druckluft: Kühlt die Luft unter den Drucktaupunkt ab, fällt in den Leitungen Kondensat aus.",
   "related": []
 }

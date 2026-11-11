@@ -13,6 +13,7 @@
     "kaelte",
     "lueftung"
   ],
+  "tags": ["klima", "kaelte"],
   "definition": "Wärmeübertrager in einem Luftstrom, der Luft abkühlt und bei Unterschreiten des Taupunkts auch entfeuchten kann. Je nach Oberflächentemperatur kühlt es trocken, ohne den Feuchtegehalt zu ändern, oder entfeuchtet zusätzlich; dann muss das Kondensat über eine Wanne abgeleitet werden.",
   "related": []
 }

@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Summe aus statischem und dynamischem Druck in einer geeigneten Strömungsbetrachtung. Er wird auch Totaldruck genannt und lässt sich zum Beispiel mit einem Pitotrohr messen.",
   "related": [],
   "formulas": [

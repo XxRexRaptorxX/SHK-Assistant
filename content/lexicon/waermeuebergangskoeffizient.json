@@ -12,6 +12,7 @@
   "categories": [
     "physik"
   ],
+  "tags": ["allgemein"],
   "definition": "Kennwert, der den Wärmeübergang zwischen einer Oberfläche und einem Fluid beschreibt. Die Einheit ist üblicherweise W/(m²·K).",
   "related": []
 }

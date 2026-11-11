@@ -10,6 +10,7 @@
   "categories": [
     "heizung"
   ],
+  "tags": ["heizung"],
   "definition": "Energiebedarf ist in der Regel berechnet und basiert auf definierten Annahmen; Energieverbrauch ist gemessen oder abgerechnet und hängt auch von Nutzerverhalten und Wetter ab. Deshalb unterscheidet man beim Energieausweis zwischen Bedarfs- und Verbrauchsausweis.",
   "related": []
 }

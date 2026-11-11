@@ -11,6 +11,6 @@
   "description": "Bauvorhaben und Stunden eintragen. **Bis jetzt** rechnet die Stunden aus: aktuelle Uhrzeit minus regulärer Arbeitsbeginn oder minus Ende des letzten Eintrags von heute. Über das Uhr-Zeichen daneben lassen sich statt der Stunden Start und Ende angeben. **Pause** trägt die eingestellte Pausendauer ein, sie zählt nicht zur Arbeitszeit.",
   "closingNote": "Die Einträge bleiben nur auf diesem Gerät gespeichert. Nur der Knopf GPS sendet den Standort an OpenStreetMap, um die Adresse dazu abzufragen.",
   "category": "Organisation",
-  "tags": ["buero"],
+  "tags": ["planung"],
   "keywords": ["Arbeitszeit", "Arbeitsstunden", "Bauvorhaben", "Baustelle", "Zeiterfassung", "Stundenliste", "Wochenzettel", "Pause", "Notiz"]
 }

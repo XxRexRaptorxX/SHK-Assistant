@@ -12,6 +12,7 @@
   "categories": [
     "msr"
   ],
+  "tags": ["allgemein"],
   "definition": "Aktuell gemessener oder ermittelter Wert einer Größe, die überwacht oder geregelt wird. Der Regler vergleicht ihn mit dem Sollwert; die Differenz ist die Regelabweichung.",
   "related": []
 }

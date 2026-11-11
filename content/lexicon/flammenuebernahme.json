@@ -11,6 +11,7 @@
     "heizung",
     "gas"
   ],
+  "tags": ["heizung"],
   "definition": "Die **Flammenübernahme** ist eine kurze Phase nach der Sicherheitszeit, in der ein Gas-Brennwertgerät mit Zündlast weiterbrennt, bis die Flamme stabil ist; danach moduliert es nach Bedarf. Beim Viessmann Vitodens 300 (LGM29) dauert sie etwa 5 s.",
   "related": [
     "lexicon.sicherheitszeit",

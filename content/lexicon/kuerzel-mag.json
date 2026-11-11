@@ -12,6 +12,7 @@
     "heizung",
     "hydraulik"
   ],
+  "tags": ["heizung"],
   "definition": "Abkürzung für Membran-Ausdehnungsgefäß. Es nimmt in geschlossenen Heizungs- und Trinkwasseranlagen die temperaturbedingte Volumenänderung auf.",
   "related": [
     "lexicon.membran-ausdehnungsgefaess"

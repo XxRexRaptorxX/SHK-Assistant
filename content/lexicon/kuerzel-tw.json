@@ -12,6 +12,7 @@
     "heizung",
     "msr"
   ],
+  "tags": ["heizung"],
   "definition": "Abkürzung für Temperaturwächter.",
   "related": [
     "lexicon.temperaturbegrenzer",
