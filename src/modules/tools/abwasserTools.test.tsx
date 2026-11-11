@@ -15,10 +15,9 @@ import { toolEntries } from './tools'
 const ventilation = toolEntries.find((entry) => entry.id === 'tool.belueftung-anschlussleitung') as FactorTool
 const choiceTools = [
   'tool.abwasser-leitungsfuehrung',
-  'tool.lueftungsleitungen-abwasser',
 ].map((id) => toolEntries.find((entry) => entry.id === id) as ChoiceTool)
 
-describe('Belüftung von Anschlussleitungen', () => {
+describe('Abwasser Belüftung von Anschlussleitungen', () => {
   const decide = (inputs: Record<string, number>, dn: 'bis75' | 'ab90') => computeFactorTool(ventilation, inputs, { dn })
 
   it('ist gültig und zeigt die Zwischenwerte nicht an', () => {
@@ -98,7 +97,7 @@ describe('Beschreibungen der Abwasser-Tools', () => {
   })
 })
 
-describe('Gefälle und Leitungsführung Abwasser', () => {
+describe('Abwasser Leitungsführung und Gefälle', () => {
   const flow = choiceTools.find((tool) => tool.id === 'tool.abwasser-leitungsfuehrung')!
   const visible = (selection: Record<string, string>) =>
     flow.sections.filter((section) => sectionVisible(section, activeBarSelection(flow, selection)))
@@ -177,5 +176,32 @@ describe('Fallleitung im Tool Leitungsführung', () => {
       'Verzug kürzer als 2 m',
     ])
     for (const id of choiceFigures(flow)) expect(content.figures.some((figure) => figure.id === id), id).toBe(true)
+  })
+})
+
+describe('Lüftungsleitung im Tool Leitungsführung', () => {
+  const flow = choiceTools.find((tool) => tool.id === 'tool.abwasser-leitungsfuehrung')!
+  const titles = (lueftungThema: string) =>
+    flow.sections
+      .filter((section) => sectionVisible(section, activeBarSelection(flow, { leitung: 'lueftung', lueftungThema })))
+      .map((section) => section.title)
+
+  it('zeigt das Thema der Lüftung nur bei der Lüftungsleitung', () => {
+    const bars = (selection: Record<string, string>) => visibleBars(flow, selection).map((bar) => bar.key)
+    expect(bars({ leitung: 'lueftung', thema: 'umlenkung', hoehe: 'bis22' })).toEqual(['leitung', 'lueftungThema'])
+    expect(bars({ leitung: 'fall', lueftungThema: 'ventil' })).toEqual(['leitung', 'thema'])
+  })
+
+  it('übernimmt alle Themen der bisherigen Lüftungsleitungen', () => {
+    expect(titles('haupt')).toEqual(['Hauptlüftung'])
+    expect(titles('dach')).toEqual(['Austritt über Dach'])
+    expect(titles('ventil')).toEqual(['Belüftungsventile'])
+    expect(titles('sonder')).toEqual(['Hebeanlage, fäkalhaltig', 'Hebeanlage, fäkalfrei', 'Fettabscheider'])
+    expect(toolEntries.some((entry) => entry.id === 'tool.lueftungsleitungen-abwasser')).toBe(false)
+  })
+
+  it('zeigt bei der Hauptlüftung die Lage im Rohrsystem', () => {
+    const [section] = flow.sections.filter((candidate) => candidate.when.lueftungThema === 'haupt')
+    expect(section!.options[0]!.figure).toBe('figure.abwasser-system-lueftung')
   })
 })

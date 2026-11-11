@@ -6,12 +6,12 @@
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "factor",
-  "title": "Belüftung von Anschlussleitungen",
+  "title": "Abwasser Belüftung von Anschlussleitungen",
   "summary": "Prüft, ob eine Anschlussleitung belüftet werden muss und welcher Teil.",
   "description": "Maße der Anschlussleitung eintragen: Das Tool geht die Entscheidungshilfe Schritt für Schritt durch. Zuerst wird die Einzelanschlussleitung vom Siphonanschluss bis zum ersten Abzweig geprüft, dann die ganze Anschlussleitung vom entferntesten Siphonanschluss bis zur Fallleitung. Hängt nur ein Gegenstand an der Leitung, ist beides dieselbe Strecke. Belüften lässt sich eine Anschlussleitung über eine Umlüftung, eine Nebenlüftung oder ein Belüftungsventil.",
   "category": "Montage",
   "tags": ["abwasser"],
-  "related": ["tool.lueftungsleitungen-abwasser", "tool.abwasser-leitungsfuehrung"],
+  "related": ["tool.abwasser-leitungsfuehrung"],
   "inputs": [
     {
       "symbol": "L_E",

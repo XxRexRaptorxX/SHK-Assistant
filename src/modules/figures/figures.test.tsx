@@ -62,6 +62,6 @@ describe('Skizze auf der Formelseite', () => {
       ...toolEntries.filter(isChoiceTool).flatMap(choiceFigures),
     ])
     for (const entry of content.figures) expect(used).toContain(entry.id)
-    expect(content.figures).toHaveLength(54)
+    expect(content.figures).toHaveLength(55)
   })
 })

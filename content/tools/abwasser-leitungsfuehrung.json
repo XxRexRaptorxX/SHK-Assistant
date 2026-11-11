@@ -2,18 +2,19 @@
   "id": "tool.abwasser-leitungsfuehrung",
   "visibility": "public",
   "status": "draft",
-  "source": "POLOPLAST, Verlegeleitfaden Hausabfluss – Entwässerungsrohrleitungen für Gebäude, Ausgabe Deutschland (8/11.17), nach DIN EN 12056:2000-12 und DIN 1986-100:2016-09, https://poloplast.incony.de/media/poloplastData/DO/base/MAN_KAL_Verlegeleitfaden%20Deutschland_DEU.pdf: Gefälle und Übergang von Nennweiten S. 6, Bogen und Abzweig S. 7, Anschlussleitung S. 8, Fallleitung mit Einbindung und Umlenkung S. 9–12, Längen ohne Belüftung S. 14 (Belüftung von Anschlussleitungen). Längen mit Belüftung (höchstens 10 m, Höhenunterschied höchstens 3 m, Umlenkungen ohne Begrenzung): J. Göke, U. Sölken (Dallmer), „Belüftungsventile in der Gebäudeentwässerung“, IKZ-Haustechnik Heft 22/2008, S. 32 und 34, nach DIN 1986-100:2008-05, https://www.ikz.de/uploads/media/IKZH_200822_1797_Sanitaertechnik.pdf, abgerufen am 11.11.2026. Für Sammel- und Grundleitungen nennen Leitfaden und Fachartikel keine Höchstlänge. Eigene Kurzfassungen und eigene schematische, nicht maßstäbliche Skizzen; als „empfohlen“ gekennzeichnete Punkte sind Empfehlungen des Herstellers, keine Normvorgaben. Die Normen selbst wurden nicht eingesehen. Noch nicht vom Inhaber geprüft.",
+  "source": "POLOPLAST, Verlegeleitfaden Hausabfluss – Entwässerungsrohrleitungen für Gebäude, Ausgabe Deutschland (8/11.17), nach DIN EN 12056:2000-12 und DIN 1986-100:2016-09, https://poloplast.incony.de/media/poloplastData/DO/base/MAN_KAL_Verlegeleitfaden%20Deutschland_DEU.pdf: Gefälle und Übergang von Nennweiten S. 6, Bogen und Abzweig S. 7, Anschlussleitung S. 8, Fallleitung mit Einbindung und Umlenkung S. 9–12, Längen ohne Belüftung S. 14 (Belüftung von Anschlussleitungen), Lüftungsleitungen S. 14–16. Längen mit Belüftung (höchstens 10 m, Höhenunterschied höchstens 3 m, Umlenkungen ohne Begrenzung): J. Göke, U. Sölken (Dallmer), „Belüftungsventile in der Gebäudeentwässerung“, IKZ-Haustechnik Heft 22/2008, S. 32 und 34, nach DIN 1986-100:2008-05, https://www.ikz.de/uploads/media/IKZH_200822_1797_Sanitaertechnik.pdf, abgerufen am 11.11.2026. Für Sammel- und Grundleitungen nennen Leitfaden und Fachartikel keine Höchstlänge. Eigene Kurzfassungen und eigene schematische, nicht maßstäbliche Skizzen; als „empfohlen“ gekennzeichnete Punkte sind Empfehlungen des Herstellers, keine Normvorgaben. Die Normen selbst wurden nicht eingesehen. Noch nicht vom Inhaber geprüft.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "choice",
-  "title": "Gefälle und Leitungsführung Abwasser",
-  "summary": "Gefälle, Länge, Abzweige, Einbindung und Umlenkung je Abwasserleitung, mit Skizzen.",
-  "description": "Leitung wählen und Gefälle, Länge, Nennweitenwechsel, Bögen und Abzweige ablesen; bei der Fallleitung zusätzlich Einbindung von WC und Wanne und die Umlenkung nach Fallhöhe. Die erste Skizze zeigt, wo die Leitung im Rohrsystem liegt.",
+  "title": "Abwasser Leitungsführung und Gefälle",
+  "summary": "Gefälle, Länge, Abzweige, Fallleitung und Lüftung je Abwasserleitung, mit Skizzen.",
+  "description": "Leitung wählen und Gefälle, Länge, Nennweitenwechsel, Bögen und Abzweige ablesen; bei der Fallleitung zusätzlich Einbindung von WC und Wanne und die Umlenkung nach Fallhöhe, bei der Lüftungsleitung Hauptlüftung, Austritt über Dach, Belüftungsventile und Sonderfälle. Die erste Skizze zeigt, wo die Leitung im Rohrsystem liegt.",
   "category": "Montage",
-  "tags": ["abwasser"],
+  "tags": [
+    "abwasser"
+  ],
   "related": [
-    "tool.belueftung-anschlussleitung",
-    "tool.lueftungsleitungen-abwasser"
+    "tool.belueftung-anschlussleitung"
   ],
   "bars": [
     {
@@ -48,6 +49,11 @@
           "key": "grund",
           "label": "Grundleitung",
           "note": "im Erdreich"
+        },
+        {
+          "key": "lueftung",
+          "label": "Lüftungsleitung",
+          "note": "über Dach"
         }
       ]
     },
@@ -96,6 +102,34 @@
           "label": "über 22 m"
         }
       ]
+    },
+    {
+      "key": "lueftungThema",
+      "name": "Thema",
+      "options": [
+        {
+          "key": "haupt",
+          "label": "Haupt­lüftung"
+        },
+        {
+          "key": "dach",
+          "label": "Über Dach",
+          "note": "Austritt"
+        },
+        {
+          "key": "ventil",
+          "label": "Ventile",
+          "note": "Belüftung"
+        },
+        {
+          "key": "sonder",
+          "label": "Sonderfälle",
+          "note": "Hebeanlage, Fett­abscheider"
+        }
+      ],
+      "when": {
+        "leitung": "lueftung"
+      }
     }
   ],
   "sections": [
@@ -166,7 +200,7 @@
             "laenge": "4 m",
             "umlenkungen": "3",
             "fallhoehe": "1 m",
-            "darueber": "belüften, siehe Tool „Belüftung von Anschlussleitungen“",
+            "darueber": "belüften, siehe Tool „Abwasser Belüftung von Anschlussleitungen“",
             "abzweig": "höchstens 45°, keine Doppelabzweige",
             "einbindung": "h ≥ DN bei WC, Bodenablauf, Bade- und Duschwanne, damit kein Abwasser in fremde Geruchsverschlüsse gespült wird"
           },
@@ -312,7 +346,7 @@
             "gefaelleMax": "5 cm/m",
             "laengeKlein": "4 m",
             "laengeGross": "10 m",
-            "darueber": "belüften, siehe Tool „Belüftung von Anschlussleitungen“",
+            "darueber": "belüften, siehe Tool „Abwasser Belüftung von Anschlussleitungen“",
             "nennweite": "scheitelgleich: bessere Luftführung, weniger Geräusche durch Lufteinschlüsse, kein Einspülen in die kleinere Nennweite",
             "abzweig": "höchstens 45°, keine Doppelabzweige"
           },
@@ -851,6 +885,237 @@
           "figure": "figure.abwasser-system-grundleitung",
           "valueFigures": {
             "nennweite": "figure.nennweite-sohlgleich"
+          }
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Hauptlüftung",
+      "when": {
+        "leitung": "lueftung",
+        "lueftungThema": "haupt"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "fallstrang",
+          "name": "Fallstränge als Hauptlüftung",
+          "group": "Führung"
+        },
+        {
+          "key": "ohneFall",
+          "name": "Ohne Fallleitung",
+          "group": "Führung"
+        },
+        {
+          "key": "raumluft",
+          "name": "Raumentlüftung (z. B. Badlüfter)",
+          "group": "Führung"
+        },
+        {
+          "key": "gefaelle",
+          "name": "Gefälle liegender Lüftungsleitungen",
+          "group": "Verlegung"
+        },
+        {
+          "key": "umlenkung",
+          "name": "Umlenkungen",
+          "group": "Verlegung"
+        },
+        {
+          "key": "zusammen",
+          "name": "Zusammenführung",
+          "group": "Verlegung"
+        },
+        {
+          "key": "daemmung",
+          "name": "Dämmung",
+          "group": "Verlegung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Hauptlüftung",
+          "values": {
+            "fallstrang": "möglichst geradlinig und ohne Querschnittsänderung über Dach",
+            "ohneFall": "von der Grund- oder Sammelleitung eine Lüftungsleitung mindestens DN 75 über Dach führen",
+            "raumluft": "darf die Lüftungsleitung nicht mitbenutzen",
+            "gefaelle": "2 % empfohlen (die Norm nennt keinen Wert): Kondensat läuft schnell ab",
+            "umlenkung": "mit 45°-Bögen und 45°-Abzweigen",
+            "zusammen": "erst oberhalb der höchsten Anschlussleitung; Dimensionierung beachten",
+            "daemmung": "empfohlen: im Dachraum (ca. 3 m) gegen Kondensat dämmen"
+          },
+          "figure": "figure.abwasser-system-lueftung"
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Austritt über Dach",
+      "when": {
+        "leitung": "lueftung",
+        "lueftungThema": "dach"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "fenster",
+          "name": "Abstand zu Fenstern von Aufenthaltsräumen"
+        },
+        {
+          "key": "umgebung",
+          "name": "Umgebung"
+        },
+        {
+          "key": "ueberstand",
+          "name": "Über Dach"
+        },
+        {
+          "key": "flexibel",
+          "name": "Verbindung Fallleitung – Dunstrohr"
+        },
+        {
+          "key": "endrohr",
+          "name": "Endrohr"
+        }
+      ],
+      "options": [
+        {
+          "label": "Austritt über Dach",
+          "values": {
+            "fenster": "mindestens 1 m darüber oder 2 m seitlich",
+            "umgebung": "Ansaugstellen von Lüftungs-, Kälte- und Klimaanlagen und die Hauptwindrichtung beachten",
+            "ueberstand": "mindestens 15 cm senkrecht aus dem Dach führen",
+            "flexibel": "nur knickfest und flexibel, höchstens 1 m lang",
+            "endrohr": "nach oben offen, mindestens mit dem Querschnitt der Lüftungsleitung; keine Abdeckungen"
+          }
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Belüftungsventile",
+      "when": {
+        "leitung": "lueftung",
+        "lueftungThema": "ventil"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "ersatz",
+          "name": "Zulässig als Ersatz für"
+        },
+        {
+          "key": "efh",
+          "name": "In Ein- und Zweifamilienhäusern (o. Ä.)"
+        },
+        {
+          "key": "ausfuehrung",
+          "name": "Ausführung"
+        },
+        {
+          "key": "auswahl",
+          "name": "Bei der Auswahl beachten"
+        },
+        {
+          "key": "verbot",
+          "name": "Nicht einsetzen"
+        }
+      ],
+      "options": [
+        {
+          "label": "Belüftungsventile",
+          "values": {
+            "ersatz": "Umlüftungen oder indirekte Nebenlüftungen, wenn eine Hauptlüftung vorhanden ist",
+            "efh": "auch als Ersatz für Hauptlüftungsleitungen, wenn mindestens die Fallleitung mit der größten Nennweite über Dach geführt ist",
+            "ausfuehrung": "nach DIN EN 12380; bei Defekt ohne bauliche Maßnahmen austauschbar; ausreichender Luftzutritt",
+            "auswahl": "Lage der Rückstauebene und Betriebstemperatur",
+            "verbot": "in rückstaugefährdeten Bereichen und zur Lüftung von Behältern, z. B. Hebeanlagen"
+          }
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Hebeanlage, fäkalhaltig",
+      "when": {
+        "leitung": "lueftung",
+        "lueftungThema": "sonder"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "pflicht",
+          "name": "Lüftung über Dach"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschluss der Lüftungsleitung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Hebeanlage, fäkalhaltig",
+          "values": {
+            "pflicht": "immer über Dach be- und entlüften",
+            "anschluss": "an eine Hauptlüftung oder eine Sekundärlüftung, nicht an die Fallleitung"
+          }
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Hebeanlage, fäkalfrei",
+      "when": {
+        "leitung": "lueftung",
+        "lueftungThema": "sonder"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "pflicht",
+          "name": "Lüftung über Dach"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschluss der Lüftungsleitung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Hebeanlage, fäkalfrei",
+          "values": {
+            "pflicht": "nur, wenn sie geruchsdicht verschlossen ist oder werden soll",
+            "anschluss": "an eine Hauptlüftung oder eine Sekundärlüftung, nicht an die Fallleitung"
+          }
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Fettabscheider",
+      "when": {
+        "leitung": "lueftung",
+        "lueftungThema": "sonder"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "pflicht",
+          "name": "Lüftung über Dach"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschluss der Lüftungsleitung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Fettabscheider",
+          "values": {
+            "pflicht": "unmittelbar über Dach be- und entlüften",
+            "anschluss": "keine anderen Lüftungen anschließen; die Lüftung der Zulaufleitung und ggf. des Abscheiders dürfen zu einer Sammellüftung zusammengeführt werden"
           }
         }
       ],

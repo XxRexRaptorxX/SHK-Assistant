@@ -64,7 +64,7 @@ oder zuständige Normen) und „Organisation“ (Büroarbeit rund um die Baustel
 Kategorie gehört dort dazu.
 
 Auswahl- und Faktor-Tools dürfen `related` haben: ids anderer Tools, die am Seitenende unter „Passende Tools“
-verlinkt sind (z. B. Lüftungsleitungen ↔ Belüftung von Anschlussleitungen). Der Build prüft, dass es sie gibt;
+verlinkt sind (z. B. Abwasser Leitungsführung ↔ Abwasser Belüftung von Anschlussleitungen). Der Build prüft, dass es sie gibt;
 Verweise gehen in beide Richtungen nur, wenn beide Einträge sie nennen.
 
 Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
