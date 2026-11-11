@@ -1,0 +1,15 @@
+{
+  "id": "tool.materialliste",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Eigenes Werkzeug ohne Fachdaten: Es speichert nur die eigenen Eingaben (Bauvorhaben, Artikel, Mengen).",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "materialList",
+  "title": "Materialliste",
+  "summary": "Notiert je Bauvorhaben das Material, das beim nächsten Mal mit muss, zum Abhaken, als Datei, Ausdruck oder E-Mail.",
+  "description": "Bauvorhaben eintragen, dann Artikel mit Menge hinzufügen. Frühere Bauvorhaben und Artikel werden beim Tippen vorgeschlagen. Was eingepackt ist, einfach **abhaken**. Jede Liste wird mit Datum gespeichert und lässt sich wieder öffnen oder löschen.",
+  "closingNote": "Listen, Bauvorhaben und Artikel bleiben nur auf diesem Gerät gespeichert. Die E-Mail wird im eigenen Mailprogramm geöffnet und erst von dort gesendet.",
+  "category": "Aufmaß",
+  "keywords": ["Material", "Materialbedarf", "Mitnehmen", "Einkaufsliste", "Bestellung", "Merkliste", "Bauvorhaben", "Baustelle", "Artikel", "Abhaken"]
+}

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { dangerButton, primaryButton, secondaryButton } from '../../components/buttons'
 import { ClockIcon, LocationIcon, PencilIcon, TrashIcon, WarningIcon } from '../../components/icons'
+import { SuggestInput } from '../../components/SuggestInput'
 import { card, fieldBase } from '../../components/surfaces'
 import { downloadTextFile } from '../../lib/download'
 import { currentPosition, formatCoordinates, LocationError, reverseGeocode } from '../../lib/location'
@@ -157,18 +158,8 @@ function ErrorText({ text }: { text: string }) {
   return <p className="mt-3 rounded-xl bg-warn p-2 font-semibold text-warn-ink">{text}</p>
 }
 
-/**
- * Eingabefeld fürs Bauvorhaben. Frühere Bauvorhaben liegen als Liste über dem Formular und erscheinen nur, solange
- * das Feld in Benutzung ist, damit sie nichts verschieben und keinen Platz belegen.
- */
-export function ProjectInput({
-  id,
-  value,
-  onChange,
-  suggestions,
-  initialOpen = false,
-  children,
-}: {
+/** Eingabefeld fürs Bauvorhaben mit früheren Bauvorhaben als Vorschlägen */
+export function ProjectInput(props: {
   id: string
   value: string
   onChange: (value: string) => void
@@ -178,72 +169,7 @@ export function ProjectInput({
   /** Weitere Knöpfe rechts neben dem Feld */
   children?: ReactNode
 }) {
-  const [open, setOpen] = useState(initialOpen)
-  const input = useRef<HTMLInputElement>(null)
-  const list = useRef<HTMLUListElement>(null)
-  const inside = (target: EventTarget | null) =>
-    target instanceof Node && (input.current?.contains(target) === true || list.current?.contains(target) === true)
-
-  // Tippen daneben schließt die Liste; iOS nimmt dem Feld dabei nicht immer den Fokus
-  useEffect(() => {
-    if (!open) return
-    const closeOutside = (event: PointerEvent) => {
-      if (!inside(event.target)) setOpen(false)
-    }
-    document.addEventListener('pointerdown', closeOutside)
-    return () => document.removeEventListener('pointerdown', closeOutside)
-  }, [open])
-
-  return (
-    <div
-      className="relative mt-1 flex gap-2"
-      onKeyDown={(event) => {
-        if (event.key === 'Escape') setOpen(false)
-      }}
-      onBlur={(event) => {
-        // Nur beim Weitergehen per Tastatur; beim Antippen eines Vorschlags ist relatedTarget oft leer
-        if (event.relatedTarget && !inside(event.relatedTarget)) setOpen(false)
-      }}
-    >
-      <input
-        ref={input}
-        id={id}
-        type="text"
-        value={value}
-        onChange={(event) => {
-          onChange(event.target.value)
-          setOpen(true)
-        }}
-        onFocus={() => setOpen(true)}
-        autoComplete="off"
-        className={`${fieldBase} w-full min-w-0 flex-1`}
-      />
-      {children}
-      {open && suggestions.length > 0 && (
-        <ul
-          ref={list}
-          aria-label="Frühere Bauvorhaben"
-          className="absolute inset-x-0 top-full z-20 mt-1 max-h-52 divide-y divide-edge overflow-y-auto rounded-xl border-2 border-line bg-surface shadow-xl shadow-black/40"
-        >
-          {suggestions.map((suggestion) => (
-            <li key={suggestion}>
-              <button
-                type="button"
-                onClick={() => {
-                  onChange(suggestion)
-                  setOpen(false)
-                  input.current?.blur()
-                }}
-                className="min-h-12 w-full px-3 py-2 text-left font-semibold [overflow-wrap:anywhere]"
-              >
-                {suggestion}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  )
+  return <SuggestInput listLabel="Frühere Bauvorhaben" {...props} />
 }
 
 /** Auswahl aus wenigen Möglichkeiten, nebeneinander in gleich breiten Knöpfen */

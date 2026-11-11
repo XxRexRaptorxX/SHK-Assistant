@@ -69,6 +69,7 @@ describe('Tools', () => {
       'Luftdruck aus der Höhe',
       'Luftfeuchte und Taupunkt',
       'Material zurückschreiben',
+      'Materialliste',
       'Mehrverbrauch durch Ruß im Kessel',
       'Mindestdämmdicke von Rohrleitungen',
       'Regelwerk-Finder',

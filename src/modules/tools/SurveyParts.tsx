@@ -11,8 +11,10 @@ import {
   roomLabel,
   setNote,
   setProject,
+  SURVEY_DATE_LABEL,
   surveyLabel,
   type SurveyBase,
+  type SurveyHead,
   type SurveyRoomBase,
 } from './surveyCommon'
 
@@ -60,7 +62,7 @@ interface SurveyStore<S> {
  * Aufmaße aus dem Gerätespeicher. Ein neues, leeres Aufmaß bleibt nur in der Anzeige, bis etwas eingetragen ist;
  * schlägt das Speichern fehl, bleibt alles bis zum Schließen in der Anzeige.
  */
-export function useSurveys<S extends SurveyBase>({
+export function useSurveys<S extends SurveyHead>({
   toolId,
   store,
   create,
@@ -73,14 +75,17 @@ export function useSurveys<S extends SurveyBase>({
   store: SurveyStore<S>
   create: (toolId: string, now: Date) => S
   isEmpty: (survey: S) => boolean
-  ensureRoom: (survey: S, now: Date) => S
+  /** Repariert geladene Aufmaße, z. B. mindestens ein Raum; fehlt bei Listen ohne Räume */
+  ensureRoom?: (survey: S, now: Date) => S
   now: () => Date
   initialSurveys?: S[]
 }) {
   /** Ohne gespeicherte Aufmaße gibt es gleich ein leeres zum Loslegen; jedes hat mindestens einen Raum */
   const withDraft = (surveys: S[]) =>
     surveys.length > 0
-      ? [...surveys].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).map((survey) => ensureRoom(survey, now()))
+      ? [...surveys]
+          .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+          .map((survey) => (ensureRoom ? ensureRoom(survey, now()) : survey))
       : [create(toolId, now())]
   const [surveys, setSurveys] = useState<S[] | undefined>(() => (initialSurveys ? withDraft(initialSurveys) : undefined))
   const [saveFailed, setSaveFailed] = useState(false)
@@ -433,14 +438,14 @@ export function RoomBar<R extends SurveyRoomBase>({
 }
 
 /** Kopf nur auf dem Ausdruck; am Bildschirm steht das im Formular */
-export function PrintHeader({ survey }: { survey: SurveyBase }) {
+export function PrintHeader({ survey, dateLabel = SURVEY_DATE_LABEL }: { survey: SurveyHead; dateLabel?: string }) {
   return (
     <div className="hidden print:block">
       <p>
         <strong>Bauvorhaben:</strong> {projectLabel(survey)}
       </p>
       <p>
-        <strong>Aufmaß vom:</strong> {formatSurveyDate(survey.createdAt)}
+        <strong>{dateLabel}:</strong> {formatSurveyDate(survey.createdAt)}
       </p>
       {survey.note?.trim() && (
         <p className="whitespace-pre-line">

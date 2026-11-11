@@ -1,6 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
 
-// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel, Aufmaße). Bleiben nur auf dem Gerät.
+// Lokale Nutzerdaten (Favoriten, Checklisten-Fortschritt, Stundenzettel, Aufmaße, Materiallisten). Bleiben nur auf dem Gerät.
 
 export interface FavoriteRecord {
   /** id des Inhaltseintrags, z. B. "lexicon.ausdehnungsgefaess" */
@@ -98,18 +98,57 @@ export interface RadiatorSurvey {
   updatedAt: string
 }
 
+/** Ein Artikel auf der Materialliste */
+export interface MaterialItem {
+  id: string
+  /** Artikel als Freitext, z. B. „Kugelhahn 1/2"“ */
+  name: string
+  /** Menge, ganze Zahl ab 1 */
+  quantity: number
+  /** Einheit als Freitext, z. B. „m“; fehlt, wenn leer (dann Stück) */
+  unit?: string
+  /** ISO-Zeitstempel, wann abgehakt; fehlt, solange der Artikel noch fehlt */
+  doneAt?: string
+}
+
+/** Eine Materialliste (Tool „materialList“): was zum Bauvorhaben noch mitgenommen werden muss */
+export interface MaterialList {
+  id: string
+  toolId: string
+  project: string
+  note?: string
+  items: MaterialItem[]
+  createdAt: string
+  updatedAt: string
+}
+
+/** Gemerkte Eingabe der Materialliste für die Vervollständigung; bleibt auch nach dem Löschen der Liste */
+export interface MaterialMemoryRecord {
+  /** Art und vereinheitlichter Text, z. B. „article:kugelhahn 1/2"“ */
+  key: string
+  kind: 'project' | 'article'
+  /** Text wie zuletzt eingegeben */
+  text: string
+  /** Nur Artikel: zuletzt genutzte Einheit (fehlt ohne Einheit) */
+  unit?: string
+  /** ISO-Zeitstempel der letzten Nutzung */
+  usedAt: string
+}
+
 export interface ShkDbSchema extends DBSchema {
   favorites: { key: string; value: FavoriteRecord }
   checklistProgress: { key: string; value: ChecklistProgressRecord }
   workEntries: { key: string; value: WorkEntry }
   valveSurveys: { key: string; value: ValveSurvey }
   radiatorSurveys: { key: string; value: RadiatorSurvey }
+  materialLists: { key: string; value: MaterialList }
+  materialMemory: { key: string; value: MaterialMemoryRecord }
 }
 
 export type ShkDb = IDBPDatabase<ShkDbSchema>
 
 export const DB_NAME = 'shk-assistant'
-const DB_VERSION = 4
+const DB_VERSION = 5
 
 let dbPromise: Promise<ShkDb> | undefined
 
@@ -129,6 +168,10 @@ export function getDb(): Promise<ShkDb> {
       }
       if (oldVersion < 4) {
         db.createObjectStore('radiatorSurveys', { keyPath: 'id' })
+      }
+      if (oldVersion < 5) {
+        db.createObjectStore('materialLists', { keyPath: 'id' })
+        db.createObjectStore('materialMemory', { keyPath: 'key' })
       }
     },
     // Eine neuere App-Version (anderer Tab) will migrieren: Verbindung freigeben.

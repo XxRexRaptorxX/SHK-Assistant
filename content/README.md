@@ -288,6 +288,13 @@ doppelte und ungenutzte Maße, Modelle ohne Pflichtmaß, ungültige Auswahlwerte
 eingetippt werden darf. Beide Aufmaß-Tools teilen sich Bausteine (`surveyCommon.ts`, `SurveyParts.tsx`) und die gespeicherte
 E-Mail-Adresse.
 
+**Materialliste** (`"kind": "materialList"`) notiert je Bauvorhaben eigene Artikel mit Menge und optionaler Einheit, die beim
+nächsten Mal mitgenommen werden müssen. Artikel werden abgehakt, geändert oder entfernt; jede Liste wird mit Datum gespeichert und
+lässt sich wieder öffnen oder löschen; weitergeben wie beim Ventil-Aufmaß. Felder: `title`, `summary`, `description`, `category`,
+`closingNote` und optional `keywords`. Fachdaten gibt es keine: Listen und die gemerkten Bauvorhaben und Artikel für die
+Vorschläge beim Tippen sind Nutzerdaten (IndexedDB, Stores `materialLists` und `materialMemory`) und gehören nicht in `content/`.
+Gemerkte Eingaben bleiben auch nach dem Löschen einer Liste und lassen sich in der Vorschlagsliste mit × einzeln vergessen.
+
 **Lüftungsstrang-Tools** (`"kind": "ventilationRiser"`) geben die Auswahlhilfe eines Herstellers für Einzelraumlüfter nach
 DIN 18017-3 wieder: Bereich (z. B. Normal/Komfort), Lüftergeräte pro Etage, Volumenstrom je Gerät und Anzahl der Etagen wählen,
 das Tool nennt die kleinste Strangdimension, die laut Diagramm so viele Etagen trägt, dazu Luftdurchsatz je Etage und im Strang

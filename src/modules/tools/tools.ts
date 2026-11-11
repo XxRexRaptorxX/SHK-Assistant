@@ -17,6 +17,7 @@ import {
   isFactorTool,
   isFormulaTool,
   isHeatingCostTool,
+  isMaterialListTool,
   isNormFinderTool,
   isPlacementTool,
   isRadiatorSurveyTool,
@@ -97,7 +98,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isNormFinderTool(entry)) return normFinderKeywords(entry)
   if (isRefrigerantTool(entry)) return refrigerantKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)
-  if (isWorkHoursTool(entry)) return entry.keywords
+  if (isWorkHoursTool(entry) || isMaterialListTool(entry)) return entry.keywords
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)
   if (isRadiatorSurveyTool(entry)) return radiatorSurveyKeywords(entry)
   if (isVentilationRiserTool(entry)) return ventilationRiserKeywords(entry)

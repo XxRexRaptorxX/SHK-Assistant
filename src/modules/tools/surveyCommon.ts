@@ -15,7 +15,8 @@ export interface SurveyRoomBase {
   name: string
 }
 
-export interface SurveyBase<R extends SurveyRoomBase = SurveyRoomBase> {
+/** Kopf eines Aufmaßes oder einer Liste: Bauvorhaben, Bemerkung, Zeitstempel (ohne Räume, z. B. Materialliste) */
+export interface SurveyHead {
   id: string
   /** id des Tools, zu dem die Schlüssel im Aufmaß gehören */
   toolId: string
@@ -23,23 +24,29 @@ export interface SurveyBase<R extends SurveyRoomBase = SurveyRoomBase> {
   project: string
   /** Freitext zum Aufmaß (fehlt, wenn leer) */
   note?: string
-  rooms: R[]
   /** ISO-Zeitstempel */
   createdAt: string
   updatedAt: string
 }
 
+export interface SurveyBase<R extends SurveyRoomBase = SurveyRoomBase> extends SurveyHead {
+  rooms: R[]
+}
+
+/** Bezeichnung des Datums in Kopfzeilen, Ausdruck und Export */
+export const SURVEY_DATE_LABEL = 'Aufmaß vom'
+
 export const newId = (now: Date) => `${now.toISOString()}-${Math.random().toString(36).slice(2, 8)}`
 
-export function touch<S extends SurveyBase>(survey: S, change: Partial<S>, now: Date): S {
+export function touch<S extends SurveyHead>(survey: S, change: Partial<S>, now: Date): S {
   return { ...survey, ...change, updatedAt: now.toISOString() }
 }
 
-export function setProject<S extends SurveyBase>(survey: S, project: string, now: Date): S {
+export function setProject<S extends SurveyHead>(survey: S, project: string, now: Date): S {
   return touch(survey, { project } as Partial<S>, now)
 }
 
-export function setNote<S extends SurveyBase>(survey: S, note: string, now: Date): S {
+export function setNote<S extends SurveyHead>(survey: S, note: string, now: Date): S {
   const { note: _old, ...rest } = survey
   return touch(rest as S, (note.trim() ? { note } : {}) as Partial<S>, now)
 }
@@ -79,10 +86,10 @@ export function isBlankHeader(survey: SurveyBase): boolean {
 }
 
 export const roomLabel = (room: SurveyRoomBase) => room.name.trim() || NO_ROOM
-export const projectLabel = (survey: SurveyBase) => survey.project.trim() || NO_PROJECT
+export const projectLabel = (survey: SurveyHead) => survey.project.trim() || NO_PROJECT
 
 /** Zuletzt bearbeitete zuerst */
-export const sortSurveys = <S extends SurveyBase>(surveys: readonly S[]) =>
+export const sortSurveys = <S extends SurveyHead>(surveys: readonly S[]) =>
   [...surveys].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
 
 /** ISO-Zeitstempel → lokales Datum „07.11.2026“ */
@@ -92,26 +99,26 @@ export function formatSurveyDate(stamp: string): string {
   return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()}`
 }
 
-export const surveyLabel = (survey: SurveyBase) => `${projectLabel(survey)} (${formatSurveyDate(survey.createdAt)})`
+export const surveyLabel = (survey: SurveyHead) => `${projectLabel(survey)} (${formatSurveyDate(survey.createdAt)})`
 
 /** Kopfzeilen für E-Mail und Text: Titel, Bauvorhaben, Datum, Bemerkung */
-export function headerTextLines(title: string, survey: SurveyBase): string[] {
+export function headerTextLines(title: string, survey: SurveyHead, dateLabel = SURVEY_DATE_LABEL): string[] {
   const note = (survey.note ?? '').trim()
   return [
     title,
     `Bauvorhaben: ${projectLabel(survey)}`,
-    `Aufmaß vom: ${formatSurveyDate(survey.createdAt)}`,
+    `${dateLabel}: ${formatSurveyDate(survey.createdAt)}`,
     ...(note ? [`Bemerkung: ${note}`] : []),
   ]
 }
 
 /** Kopfzeilen der CSV-Datei */
-export function headerCsvLines(title: string, survey: SurveyBase): string[] {
+export function headerCsvLines(title: string, survey: SurveyHead, dateLabel = SURVEY_DATE_LABEL): string[] {
   const note = (survey.note ?? '').trim()
   return [
     csvText(title),
     `Bauvorhaben;${csvText(projectLabel(survey))}`,
-    `Aufmaß vom;${formatSurveyDate(survey.createdAt)}`,
+    `${csvText(dateLabel)};${formatSurveyDate(survey.createdAt)}`,
     ...(note ? [`Bemerkung;${csvText(note)}`] : []),
   ]
 }
@@ -134,7 +141,7 @@ export function mailtoUrl(recipients: readonly string[], subject: string, bodies
 }
 
 /** z. B. „aufmass-heizkoerper-mueller-hauptstr-5-2026-11-07.csv“ */
-export function surveyFileName(toolId: string, survey: SurveyBase): string {
+export function surveyFileName(toolId: string, survey: SurveyHead): string {
   const slug = normalizeForSearch(survey.project)
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
