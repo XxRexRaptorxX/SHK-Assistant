@@ -48,8 +48,9 @@ export function InstallHint() {
   const [pages, setPages] = useState(() => Number(read(PAGES_KEY)) || 0)
   const [seconds, setSeconds] = useState(0)
   const lastPage = useRef(pathname)
-  // Erst nach dem Haftungshinweis, nie in der installierten App
-  const waiting = !installed && !shown && disclaimerAccepted
+  // Erst nach dem Haftungshinweis, nie in der installierten App und nicht im lokalen Dev-Server
+  // (npm run dev); Build und Vorschau zeigen ihn weiterhin
+  const waiting = !import.meta.env.DEV && !installed && !shown && disclaimerAccepted
 
   // Seitenwechsel zählen (die erste Seite eines Besuchs zählt nicht)
   useEffect(() => {
