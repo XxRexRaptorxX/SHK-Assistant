@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js'
 import { groupByModule } from '../components/EntryList'
 import { normalizeForSearch } from '../lib/text'
-import type { ToolTag } from '../modules/tools/toolTags'
+import { TOOL_TAGS, type ToolTag } from '../modules/tools/toolTags'
 
 /** Ein durchsuchbarer Eintrag. Jedes Modul liefert seine Einträge in dieser Form. */
 export interface SearchDocument {
@@ -38,8 +38,29 @@ interface IndexedDocument {
   text: string
 }
 
+/** Filter der Suchleiste; leere Liste = keine Einschränkung */
+export interface SearchFilter {
+  /** Modulnamen, z. B. „Tools“ */
+  modules: readonly string[]
+  /** Themen-Tags; nur Tools haben Tags, andere Einträge fallen dann heraus */
+  tags: readonly ToolTag[]
+}
+
+export const NO_FILTER: SearchFilter = { modules: [], tags: [] }
+
+export const isFilterActive = (filter: SearchFilter): boolean => filter.modules.length > 0 || filter.tags.length > 0
+
+function matchesFilter(doc: SearchDocument, filter: SearchFilter): boolean {
+  if (filter.modules.length > 0 && !filter.modules.includes(doc.moduleTitle)) return false
+  if (filter.tags.length > 0 && !doc.tags?.some((tag) => filter.tags.includes(tag))) return false
+  return true
+}
+
 export interface SearchEngine {
-  search(query: string): SearchGroup[]
+  /** Ohne Suchbegriff, aber mit Filter: alle passenden Einträge in Index-Reihenfolge */
+  search(query: string, filter?: SearchFilter): SearchGroup[]
+  /** Auswahl für den Filter: Module und Themen, die im Index vorkommen */
+  filterOptions: { modules: string[]; tags: ToolTag[] }
 }
 
 export function createSearch(documents: readonly SearchDocument[]): SearchEngine {
@@ -64,12 +85,23 @@ export function createSearch(documents: readonly SearchDocument[]): SearchEngine
     minMatchCharLength: MIN_QUERY_LENGTH,
   })
 
+  const usedTags = new Set(documents.flatMap((doc) => doc.tags ?? []))
+
   return {
-    search(query) {
+    search(query, filter = NO_FILTER) {
       const needle = normalizeForSearch(query)
-      if (needle.length < MIN_QUERY_LENGTH) return []
-      // Treffer kommen nach Relevanz sortiert; die Gruppe mit dem besten Treffer steht zuerst
-      return groupByModule(fuse.search(needle, { limit: MAX_RESULTS }).map(({ item }) => item.doc))
+      const matches = (doc: SearchDocument) => matchesFilter(doc, filter)
+      if (needle.length < MIN_QUERY_LENGTH) {
+        return isFilterActive(filter) ? groupByModule(documents.filter(matches)) : []
+      }
+      // Treffer kommen nach Relevanz sortiert; die Gruppe mit dem besten Treffer steht zuerst.
+      // Erst filtern, dann begrenzen, damit gefilterte Treffer nicht durch andere verdrängt werden.
+      const hits = fuse.search(needle).map(({ item }) => item.doc)
+      return groupByModule(hits.filter(matches).slice(0, MAX_RESULTS))
+    },
+    filterOptions: {
+      modules: [...new Set(documents.map((doc) => doc.moduleTitle))],
+      tags: TOOL_TAGS.map((tag) => tag.key).filter((tag) => usedTags.has(tag)),
     },
   }
 }

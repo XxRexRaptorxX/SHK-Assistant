@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { lexiconSearchDocuments } from '../modules/lexicon/search'
-import { createSearch, type SearchDocument } from './search'
+import { createSearch, NO_FILTER, type SearchDocument, type SearchFilter } from './search'
 import { SearchPage } from './SearchPage'
 import { getSearchEngine } from './sources'
 
@@ -88,8 +88,61 @@ describe('Suchseite', () => {
     expect(renderAt('/suche?q=ausdehnung')).toContain('MAG</span>')
   })
 
-  it('weist auf zu kurze Eingaben und fehlende Treffer hin', () => {
-    expect(renderAt('/suche')).toContain('Mindestens 2 Zeichen eingeben.')
+  it('zeigt ohne Eingabe keinen Hinweis, bei fehlenden Treffern schon', () => {
+    expect(renderAt('/suche')).not.toContain('Mindestens')
+    expect(renderAt('/suche')).not.toContain('Treffer')
     expect(renderAt('/suche?q=W%C3%A4rmepumpe')).toContain('Keine Treffer für „Wärmepumpe“.')
+  })
+
+  it('hat einen Filter-Knopf rechts in der Suchleiste, Filter erst nach dem Öffnen', () => {
+    const html = renderAt('/suche')
+    expect(html).toContain('aria-label="Filter"')
+    expect(html).toContain('aria-expanded="false"')
+    expect(html).not.toContain('Bereiche')
+  })
+
+  it('übernimmt Filter aus der Adresse und zeigt sie geöffnet', () => {
+    const html = renderAt('/suche?q=druck&bereich=Formeln')
+    expect(html).toContain('aria-label="Filter (1 aktiv)"')
+    expect(html).toContain('Bereiche')
+    expect(html).toMatch(/aria-pressed="true"[^>]*>.*?Formeln/)
+    expect(html).toContain('1 Treffer')
+    expect(html).not.toContain('>Lexikon</h2>')
+  })
+
+  it('listet mit Filter auch ohne Suchbegriff alle passenden Einträge', () => {
+    expect(renderAt('/suche?bereich=Lexikon')).toContain('3 Einträge')
+    expect(renderAt('/suche?bereich=Unbekannt')).not.toContain('Einträge')
+  })
+})
+
+describe('Suchfilter', () => {
+  const tagged: SearchDocument[] = [
+    ...documents,
+    doc({ id: 'tool.heiz', title: 'Druckprobe Heizung', moduleTitle: 'Tools', tags: ['heizung'] }),
+    doc({ id: 'tool.lueft', title: 'Druckverlust Lüftung', moduleTitle: 'Tools', tags: ['lueftung', 'klima'] }),
+  ]
+  const filtered = createSearch(tagged)
+  const found = (query: string, filter: SearchFilter) =>
+    filtered.search(query, filter).flatMap((group) => group.results.map((result) => result.id))
+
+  it('bietet die vorhandenen Bereiche und Themen an', () => {
+    expect(filtered.filterOptions.modules).toEqual(['Lexikon', 'Formeln', 'Tools'])
+    expect(filtered.filterOptions.tags).toEqual(['heizung', 'lueftung', 'klima'])
+  })
+
+  it('schränkt auf Bereiche ein', () => {
+    expect(found('druck', { modules: ['Tools'], tags: [] }).sort()).toEqual(['tool.heiz', 'tool.lueft'])
+    expect(found('druck', { modules: ['Formeln', 'Tools'], tags: [] })).toContain('formula.druck')
+  })
+
+  it('schränkt auf Themen ein; ein passender Tag genügt', () => {
+    expect(found('druck', { modules: [], tags: ['klima'] })).toEqual(['tool.lueft'])
+    expect(found('druck', { modules: [], tags: ['heizung', 'klima'] }).sort()).toEqual(['tool.heiz', 'tool.lueft'])
+  })
+
+  it('ohne Filter und ohne Suchbegriff bleibt die Liste leer', () => {
+    expect(filtered.search('', NO_FILTER)).toEqual([])
+    expect(found('', { modules: [], tags: ['heizung'] })).toEqual(['tool.heiz'])
   })
 })

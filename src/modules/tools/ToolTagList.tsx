@@ -15,6 +15,9 @@ const TAG_COLORS: Record<ToolTag, string> = {
   buero: 'border-slate-300 bg-slate-100 text-slate-900 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100',
 }
 
+/** Farbklassen eines Tags, z. B. für den gewählten Themen-Filter der Suche */
+export const toolTagColor = (tag: ToolTag): string => TAG_COLORS[tag]
+
 /**
  * Farbige Themen-Tags eines Tools, z. B. „Heizung“ und „Kundendienst“.
  * Nur span-Elemente: steht in der Liste innerhalb eines Links.

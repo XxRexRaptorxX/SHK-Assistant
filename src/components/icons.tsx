@@ -107,6 +107,14 @@ export function SearchIcon(props: IconProps) {
   )
 }
 
+export function FilterIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3 5h18l-7 8.5V19l-4 2v-7.5z" />
+    </Icon>
+  )
+}
+
 export function KeyIcon(props: IconProps) {
   return (
     <Icon {...props}>
