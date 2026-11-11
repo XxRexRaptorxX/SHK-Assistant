@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 160">
+  <defs><marker id="e2-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dim-head" d="M0 1L10 5L0 9z"/></marker></defs>
+  <path class="stub" d="M110 55H175M110 100H48"/>
+  <path class="dim" d="M132 60V95" marker-start="url(#e2-dim)" marker-end="url(#e2-dim)"/>
+  <text class="note" x="180" y="59">WC</text><text class="note" x="14" y="90">Wanne/Dusche</text>
+  <text class="sym" x="138" y="82">h ≥ 20 cm</text>
+  <path class="pipe" d="M110 10V140"/>
+  <text class="note" x="88" y="156">Ansicht</text>
+  <path class="thin dash" d="M210 10V150"/>
+  <circle class="line" cx="268" cy="80" r="9"/>
+  <path class="stub" d="M277 80H320M259 80H222"/><path class="dim" d="M293 80A25 25 0 0 0 243 80"/>
+  <text class="sym" x="244" y="46">α ≤ 180°</text>
+  <text class="note" x="300" y="98">WC</text><text class="note" x="222" y="98">Wanne</text>
+  <text class="note" x="236" y="156">Draufsicht</text>
+</svg>

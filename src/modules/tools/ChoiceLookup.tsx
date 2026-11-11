@@ -3,7 +3,15 @@ import { ClearInputsButton } from '../../components/ClearInputsButton'
 import { fieldBase } from '../../components/surfaces'
 import { parseDecimal } from '../../lib/number'
 import { shiftFloorHeight } from './floorOffset'
-import { defaultBarSelection, sectionVisible, type ChoiceSection, type ChoiceTool } from './schema'
+import { FigureView } from '../figures/FigureView'
+import {
+  activeBarSelection,
+  defaultBarSelection,
+  sectionVisible,
+  visibleBars,
+  type ChoiceSection,
+  type ChoiceTool,
+} from './schema'
 import { withUnit } from './TableLookup'
 
 type ChoiceColumn = ChoiceSection['columns'][number]
@@ -55,6 +63,10 @@ export function ChoiceLookup({
       Object.entries(initialSelection).map(([index, label]) => [tool.sections[Number(index)]!.inputName, label]),
     ),
   )
+  // Steht je Leistenstellung nur ein Abschnitt da, sagt die Leiste schon, worum es geht; bei mehreren braucht jeder seinen Titel
+  // Ausgeblendete Leisten (when) zählen nicht, auch wenn dort noch eine alte Wahl steht
+  const activeBars = activeBarSelection(tool, bars)
+  const visibleSectionCount = tool.sections.filter((section) => sectionVisible(section, activeBars)).length
   return (
     <>
       {tool.floorBuildUp && (
@@ -87,21 +99,23 @@ export function ChoiceLookup({
           )}
         </div>
       )}
-      {tool.bars.map((bar) => (
+      {visibleBars(tool, activeBars).map((bar) => (
         <SelectionBar
           key={bar.key}
           bar={bar}
           selected={bars[bar.key]}
           onSelect={(option) => setBars({ ...bars, [bar.key]: option })}
+          // Ab fünf Optionen wird es auf dem Handy zu eng: höchstens drei nebeneinander
+          wrap={bar.options.length > 4}
         />
       ))}
       {tool.sections.map(
         (section) =>
-          sectionVisible(section, bars) && (
+          sectionVisible(section, activeBars) && (
             <ChoiceSectionView
               key={section.title}
               section={section}
-              hideTitle={tool.bars.length > 0}
+              hideTitle={tool.bars.length > 0 && visibleSectionCount === 1}
               floor={floor}
               floorBaseLabel={tool.floorBuildUp?.baseLabel}
               selected={labels[section.inputName] ?? ''}
@@ -120,7 +134,8 @@ export function SelectionBar({
   onSelect,
   wrap = false,
 }: {
-  bar: ChoiceBar
+  /** Auch von anderen Tools genutzt: when (Sichtbarkeit) entscheidet der Aufrufer */
+  bar: Omit<ChoiceBar, 'when'>
   selected: string | undefined
   onSelect: (key: string) => void
   /** Bei vielen Optionen: höchstens drei nebeneinander, der Rest in der nächsten Zeile */
@@ -169,7 +184,7 @@ function groupColumns(columns: ChoiceColumn[]): { group: string; columns: Choice
 }
 
 /** Werte eines Blocks; eine Spalte mit subheading beginnt einen Unterabschnitt mit eigener Zwischenüberschrift */
-function BlockValues({ columns, option }: { columns: ChoiceColumn[]; option: ChoiceOption }) {
+function BlockValues({ columns, option, stacked }: { columns: ChoiceColumn[]; option: ChoiceOption; stacked?: boolean }) {
   const parts: { heading?: string; columns: ChoiceColumn[] }[] = []
   for (const column of columns) {
     if (column.subheading || parts.length === 0) parts.push({ heading: column.subheading, columns: [column] })
@@ -178,7 +193,7 @@ function BlockValues({ columns, option }: { columns: ChoiceColumn[]; option: Cho
   return parts.map((part, index) => (
     <Fragment key={index}>
       {part.heading && <h4 className="mt-4 text-lg font-bold text-accent">{part.heading}</h4>}
-      <ValueList columns={part.columns} option={option} />
+      <ValueList columns={part.columns} option={option} stacked={stacked} />
     </Fragment>
   ))
 }
@@ -237,13 +252,14 @@ function FloorHeightTable({
   )
 }
 
-function ValueList({ columns, option }: { columns: ChoiceColumn[]; option: ChoiceOption }) {
+/** stacked: Bezeichnung immer über dem Wert, sonst daneben und erst bei Platzmangel darunter */
+function ValueList({ columns, option, stacked }: { columns: ChoiceColumn[]; option: ChoiceOption; stacked?: boolean }) {
   return (
-    <dl className="mt-2 space-y-1">
+    <dl className={`mt-2 ${stacked ? 'space-y-3' : 'space-y-1'}`}>
       {columns.map((column) => (
         <div
           key={column.key}
-          className={`flex flex-wrap items-baseline gap-x-3 ${column.hideName || column.valueFirst ? '' : 'justify-between'}`}
+          className={stacked ? 'flex flex-col' : `flex flex-wrap items-baseline gap-x-3 ${column.hideName || column.valueFirst ? '' : 'justify-between'}`}
         >
           <dt className={column.hideName ? 'sr-only' : 'text-base text-muted'}>{column.name}</dt>
           {/* Bei valueFirst steht der Wert per CSS vorn; im HTML bleibt dt vor dd */}
@@ -251,6 +267,11 @@ function ValueList({ columns, option }: { columns: ChoiceColumn[]; option: Choic
             {column.label && `${column.label} = `}
             {withUnit(option.values[column.key]!, column.unit)}
           </dd>
+          {option.valueFigures[column.key] && (
+            <div className="w-full basis-full">
+              <FigureView id={option.valueFigures[column.key]} />
+            </div>
+          )}
         </div>
       ))}
     </dl>
@@ -266,7 +287,7 @@ function ChoiceSectionView({
   onSelect,
 }: {
   section: ChoiceSection
-  /** Bei Leisten sagt die Stellung schon, welcher Abschnitt das ist: Titel nur für Screenreader */
+  /** Bei Leisten mit nur einem Abschnitt je Stellung sagt die Stellung schon, welcher es ist: Titel nur für Screenreader */
   hideTitle: boolean
   /** Fußbodenaufbau ausgefüllt: Höhen über Fertig- und Rohfußboden nebeneinander */
   floor: FloorView | undefined
@@ -322,6 +343,7 @@ function ChoiceSectionView({
           // Je Gruppe ein eigener Block, z. B. Montagehöhen, Bewegungsflächen, Abstandsmaße
           <>
             {option.note && <p className="mt-3 text-base text-muted">{option.note}</p>}
+            <FigureView id={option.figure} />
             {groupColumns(section.columns.filter((column) => column.key in option.values)).map(({ group, columns }) => {
               const heights = columns.some((column) => column.floorHeight)
               if (floor && group && heights) {
@@ -341,17 +363,24 @@ function ChoiceSectionView({
                       {note && <span className="text-base text-muted">{note}</span>}
                     </div>
                   )}
-                  <BlockValues columns={columns} option={option} />
+                  <BlockValues columns={columns} option={option} stacked={section.stacked} />
                 </div>
               )
             })}
           </>
         ) : (
           <div className={card}>
-            {/* Bei der Skala als Überschrift der Zusatz (z. B. „Frostschutz“), sonst die Stufe selbst */}
-            <p className="font-semibold">{section.display === 'scale' ? option.note || option.label : option.label}</p>
+            {/* Bei der Skala als Überschrift der Zusatz (z. B. „Frostschutz“), sonst die Stufe selbst; nicht doppelt zum sichtbaren Titel */}
+            {!(single && !hideTitle && option.label === section.title) && (
+              <p className="font-semibold">{section.display === 'scale' ? option.note || option.label : option.label}</p>
+            )}
             {section.display !== 'scale' && option.note && <p className="text-base text-muted">{option.note}</p>}
-            <ValueList columns={section.columns.filter((column) => column.key in option.values)} option={option} />
+            <FigureView id={option.figure} />
+            <ValueList
+              columns={section.columns.filter((column) => column.key in option.values)}
+              option={option}
+              stacked={section.stacked}
+            />
           </div>
         )}
       </div>

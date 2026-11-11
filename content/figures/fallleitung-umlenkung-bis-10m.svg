@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 170">
+  <text x="20" y="20">zulässig</text>
+  <path class="pipe" d="M60 30V120Q60 150 90 150H150"/>
+  <text class="note" x="72" y="128">87,5°-Bogen</text>
+  <path class="thin dash" d="M165 10V160"/>
+  <text x="185" y="20">empfohlen</text>
+  <path class="pipe" d="M200 30V112L238 150H315"/>
+  <text class="note" x="224" y="122">2 × 45°</text>
+</svg>

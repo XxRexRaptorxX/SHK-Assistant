@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 160">
+  <path class="stub" d="M110 75H175M110 75H48"/>
+  <text class="note" x="180" y="79">WC</text><text class="note" x="14" y="64">Wanne/Dusche</text>
+  <text class="sym" x="122" y="100">h ≥ 0</text>
+  <path class="pipe" d="M110 10V140"/>
+  <text class="note" x="88" y="156">Ansicht</text>
+  <path class="thin dash" d="M210 10V150"/>
+  <circle class="line" cx="255" cy="80" r="9"/>
+  <path class="stub" d="M264 80H308M255 71V30"/><path class="dim" d="M280 80A25 25 0 0 0 255 55"/>
+  <text class="sym" x="272" y="48">α ≤ 90°</text>
+  <text class="note" x="290" y="98">WC</text><text class="note" x="216" y="40">Wanne</text>
+  <text class="note" x="236" y="156">Draufsicht</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 140">
+  <defs><marker id="sg-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path class="flow-head" d="M0 0L10 5L0 10z"/></marker></defs>
+  <path class="water-fill" d="M20 62H150L180 82H310V90H180L150 70H20Z"/>
+  <path class="line" d="M20 40H310M20 70H150L180 90H310M20 40V70M310 40V90"/>
+  <path class="dim dash" d="M8 40H322"/>
+  <text x="70" y="30">Scheitel (oben) in einer Linie</text>
+  <text class="note" x="50" y="88">kleinere DN</text>
+  <text class="note" x="210" y="108">größere DN</text>
+  <line class="flow" x1="40" y1="124" x2="130" y2="124" marker-end="url(#sg-flow)"/>
+  <text class="note" x="142" y="128">Fließrichtung</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 230">
+  <defs><marker id="ul-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dim-head" d="M0 1L10 5L0 9z"/></marker></defs>
+  <path class="pipe" d="M90 10V163L112 185H324"/>
+  <path class="pipe-hi" d="M90 40H140V140H260V181"/>
+  <path class="stub" d="M180 140V122M210 140V122"/>
+  <path class="dim" d="M70 44V181" marker-start="url(#ul-dim)" marker-end="url(#ul-dim)"/>
+  <path class="dim" d="M94 206H256" marker-start="url(#ul-dim)" marker-end="url(#ul-dim)"/>
+  <text class="note" x="100" y="24">Fallleitung</text>
+  <text class="note" x="148" y="64">Umgehungs-</text>
+  <text class="note" x="148" y="78">leitung</text>
+  <text class="note" x="168" y="116">Anschlüsse</text>
+  <text class="note" x="8" y="116">mind. 2 m</text>
+  <text class="note" x="140" y="224">mind. 1,5 m</text>
+  <text class="note" x="268" y="204">liegende</text>
+  <text class="note" x="268" y="218">Leitung</text>
+</svg>

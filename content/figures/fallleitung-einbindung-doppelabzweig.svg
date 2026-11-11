@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 160">
+  <text class="note" x="180" y="79">WC</text><text class="note" x="8" y="56">Wanne/Dusche</text>
+  <path class="pipe" d="M110 10V140"/>
+  <!-- Doppelabzweig 87,5° mit Innenradius: waagerecht heran, kurz vor der Fallleitung schräg nach unten eingeschwenkt -->
+  <path class="stub" d="M175 75H124L110 89M48 75H96L110 89"/>
+  <text class="note" x="124" y="112">Doppelabzweig</text><text class="note" x="124" y="125">87,5° mit</text><text class="note" x="124" y="138">Innenradius</text>
+  <text class="note" x="88" y="156">Ansicht</text>
+  <path class="thin dash" d="M210 10V150"/>
+  <circle class="line" cx="268" cy="80" r="9"/>
+  <path class="stub" d="M277 80H320M259 80H222"/><path class="dim" d="M293 80A25 25 0 0 0 243 80"/>
+  <text class="sym" x="244" y="46">α = 180°</text>
+  <text class="note" x="300" y="98">WC</text><text class="note" x="222" y="98">Wanne</text>
+  <text class="note" x="236" y="156">Draufsicht</text>
+</svg>

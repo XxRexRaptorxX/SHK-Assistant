@@ -59,9 +59,11 @@ describe('Tools', () => {
       'Aufstellung Außengerät Wärmepumpe und Klimagerät',
       'Ausgerollte Länge von Rohr- und Kabelrollen',
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
+      'Belüftung von Anschlussleitungen',
       'Dampfdrucktabelle Kältemittel',
       'Gebäudeklasse',
       'Gefahrgut: 1000-Punkte-Regel',
+      'Gefälle und Leitungsführung Abwasser',
       'Heizkosten-Vergleich',
       'Heizlast überschlägig',
       'Kabel Aderfarben',
@@ -69,6 +71,7 @@ describe('Tools', () => {
       'Leistungsminderung durch Kalk am Wärmetauscher',
       'Luftdruck aus der Höhe',
       'Luftfeuchte und Taupunkt',
+      'Lüftungsleitungen Abwasser',
       'Material zurückschreiben',
       'Materialliste',
       'Mehrverbrauch durch Ruß im Kessel',
@@ -337,7 +340,7 @@ describe('Tools', () => {
     const section = tool.sections[1]!
     const broken = {
       ...tool,
-      sections: [{ ...section, options: [section.options[0]!, { label: section.options[0]!.label, note: '', values: {} }] }],
+      sections: [{ ...section, options: [section.options[0]!, { label: section.options[0]!.label, note: '', values: {}, valueFigures: {} }] }],
     }
     expect(checkChoiceTool(broken)).toEqual([
       'sections[0] (Norm-Innentemperatur nach Raumart): label doppelt vergeben',

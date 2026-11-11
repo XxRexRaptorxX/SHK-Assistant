@@ -1,0 +1,860 @@
+{
+  "id": "tool.abwasser-leitungsfuehrung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "POLOPLAST, Verlegeleitfaden Hausabfluss – Entwässerungsrohrleitungen für Gebäude, Ausgabe Deutschland (8/11.17), nach DIN EN 12056:2000-12 und DIN 1986-100:2016-09, https://poloplast.incony.de/media/poloplastData/DO/base/MAN_KAL_Verlegeleitfaden%20Deutschland_DEU.pdf: Gefälle und Übergang von Nennweiten S. 6, Bogen und Abzweig S. 7, Anschlussleitung S. 8, Fallleitung mit Einbindung und Umlenkung S. 9–12, Längen ohne Belüftung S. 14 (Belüftung von Anschlussleitungen). Längen mit Belüftung (höchstens 10 m, Höhenunterschied höchstens 3 m, Umlenkungen ohne Begrenzung): J. Göke, U. Sölken (Dallmer), „Belüftungsventile in der Gebäudeentwässerung“, IKZ-Haustechnik Heft 22/2008, S. 32 und 34, nach DIN 1986-100:2008-05, https://www.ikz.de/uploads/media/IKZH_200822_1797_Sanitaertechnik.pdf, abgerufen am 11.11.2026. Für Sammel- und Grundleitungen nennen Leitfaden und Fachartikel keine Höchstlänge. Eigene Kurzfassungen und eigene schematische, nicht maßstäbliche Skizzen; als „empfohlen“ gekennzeichnete Punkte sind Empfehlungen des Herstellers, keine Normvorgaben. Die Normen selbst wurden nicht eingesehen. Noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "choice",
+  "title": "Gefälle und Leitungsführung Abwasser",
+  "summary": "Gefälle, Länge, Abzweige, Einbindung und Umlenkung je Abwasserleitung, mit Skizzen.",
+  "description": "Leitung wählen und Gefälle, Länge, Nennweitenwechsel, Bögen und Abzweige ablesen; bei der Fallleitung zusätzlich Einbindung von WC und Wanne und die Umlenkung nach Fallhöhe. Die erste Skizze zeigt, wo die Leitung im Rohrsystem liegt.",
+  "category": "Montage",
+  "tags": ["abwasser"],
+  "related": [
+    "tool.belueftung-anschlussleitung",
+    "tool.lueftungsleitungen-abwasser"
+  ],
+  "bars": [
+    {
+      "key": "leitung",
+      "name": "Leitung",
+      "options": [
+        {
+          "key": "einzel",
+          "label": "Einzel­anschluss",
+          "note": "unbelüftet"
+        },
+        {
+          "key": "einzelBel",
+          "label": "Einzel­anschluss",
+          "note": "belüftet"
+        },
+        {
+          "key": "sammelanschluss",
+          "label": "Sammel­anschluss"
+        },
+        {
+          "key": "fall",
+          "label": "Fallleitung",
+          "note": "senkrecht"
+        },
+        {
+          "key": "sammel",
+          "label": "Sammelleitung",
+          "note": "im Gebäude"
+        },
+        {
+          "key": "grund",
+          "label": "Grundleitung",
+          "note": "im Erdreich"
+        }
+      ]
+    },
+    {
+      "key": "thema",
+      "name": "Thema",
+      "options": [
+        {
+          "key": "fuehrung",
+          "label": "Führung",
+          "note": "Anschlüsse, Wohnungen"
+        },
+        {
+          "key": "umlenkung",
+          "label": "Umlenkung",
+          "note": "in liegende Leitung"
+        },
+        {
+          "key": "einbindung",
+          "label": "Einbindung",
+          "note": "WC und Wanne"
+        }
+      ],
+      "when": {
+        "leitung": "fall"
+      }
+    },
+    {
+      "key": "hoehe",
+      "name": "Fallhöhe (höchste Sammelanschlussleitung bis Umlenkung)",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung"
+      },
+      "options": [
+        {
+          "key": "bis10",
+          "label": "bis 10 m"
+        },
+        {
+          "key": "bis22",
+          "label": "10–22 m"
+        },
+        {
+          "key": "ueber22",
+          "label": "über 22 m"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "title": "Einzelanschlussleitung, unbelüftet",
+      "when": {
+        "leitung": "einzel"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "gefaelle",
+          "name": "Mindestgefälle",
+          "group": "Gefälle"
+        },
+        {
+          "key": "gefaelleMax",
+          "name": "Maximales Gefälle (empfohlen)",
+          "group": "Gefälle"
+        },
+        {
+          "key": "laenge",
+          "name": "Maximale Länge (Siphonanschluss bis erster Abzweig)",
+          "group": "Länge"
+        },
+        {
+          "key": "umlenkungen",
+          "name": "Maximale Umlenkungen 90° (ohne Siphonwinkel)",
+          "group": "Länge"
+        },
+        {
+          "key": "fallhoehe",
+          "name": "Maximaler Höhenunterschied (Fallhöhe)",
+          "group": "Länge"
+        },
+        {
+          "key": "darueber",
+          "name": "Wird eine Grenze überschritten",
+          "group": "Länge"
+        },
+        {
+          "key": "nennweite",
+          "name": "Nennweitenwechsel (exzentrische Reduktion)",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "abzweig",
+          "name": "Abzweige",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "bogen",
+          "name": "Bögen",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Höhenunterschied Siphonanschluss bis Einbindung in die Fallleitung",
+          "group": "Leitungsführung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Einzelanschlussleitung, unbelüftet",
+          "values": {
+            "gefaelle": "1 cm/m",
+            "gefaelleMax": "5 cm/m",
+            "laenge": "4 m",
+            "umlenkungen": "3",
+            "fallhoehe": "1 m",
+            "darueber": "belüften, siehe Tool „Belüftung von Anschlussleitungen“",
+            "abzweig": "höchstens 45°, keine Doppelabzweige",
+            "einbindung": "h ≥ DN bei WC, Bodenablauf, Bade- und Duschwanne, damit kein Abwasser in fremde Geruchsverschlüsse gespült wird"
+          },
+          "figure": "figure.abwasser-system-einzel"
+        }
+      ],
+      "stacked": true,
+      "groupNotes": {
+        "Länge": "ohne Belüftung"
+      }
+    },
+    {
+      "title": "Einzelanschlussleitung, belüftet",
+      "when": {
+        "leitung": "einzelBel"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "gefaelle",
+          "name": "Mindestgefälle",
+          "group": "Gefälle"
+        },
+        {
+          "key": "gefaelleMax",
+          "name": "Maximales Gefälle (empfohlen)",
+          "group": "Gefälle"
+        },
+        {
+          "key": "laenge",
+          "name": "Maximale Länge",
+          "group": "Länge"
+        },
+        {
+          "key": "umlenkungen",
+          "name": "Maximale Umlenkungen 90°",
+          "group": "Länge"
+        },
+        {
+          "key": "fallhoehe",
+          "name": "Maximaler Höhenunterschied (Fallhöhe)",
+          "group": "Länge"
+        },
+        {
+          "key": "nennweite",
+          "name": "Nennweitenwechsel (exzentrische Reduktion)",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "abzweig",
+          "name": "Abzweige",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "bogen",
+          "name": "Bögen",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Höhenunterschied Siphonanschluss bis Einbindung in die Fallleitung",
+          "group": "Leitungsführung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Einzelanschlussleitung, belüftet",
+          "values": {
+            "gefaelle": "0,5 cm/m",
+            "gefaelleMax": "5 cm/m",
+            "laenge": "10 m",
+            "umlenkungen": "keine Begrenzung",
+            "fallhoehe": "3 m",
+            "abzweig": "höchstens 45°, keine Doppelabzweige",
+            "einbindung": "h ≥ DN bei WC, Bodenablauf, Bade- und Duschwanne, damit kein Abwasser in fremde Geruchsverschlüsse gespült wird"
+          },
+          "figure": "figure.abwasser-system-einzel-belueftet"
+        }
+      ],
+      "stacked": true,
+      "groupNotes": {
+        "Länge": "mit Belüftung"
+      }
+    },
+    {
+      "title": "Sammelanschlussleitung",
+      "when": {
+        "leitung": "sammelanschluss"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "gefaelle",
+          "name": "Mindestgefälle",
+          "group": "Gefälle"
+        },
+        {
+          "key": "gefaelleMax",
+          "name": "Maximales Gefälle (empfohlen)",
+          "group": "Gefälle"
+        },
+        {
+          "key": "laengeKlein",
+          "name": "Maximale Länge bis DN 75 (entferntester Siphonanschluss bis Fallleitung)",
+          "group": "Länge"
+        },
+        {
+          "key": "laengeGross",
+          "name": "Maximale Länge ab DN 90",
+          "group": "Länge"
+        },
+        {
+          "key": "darueber",
+          "name": "Wird eine Grenze überschritten",
+          "group": "Länge"
+        },
+        {
+          "key": "nennweite",
+          "name": "Nennweitenwechsel (exzentrische Reduktion)",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "abzweig",
+          "name": "Abzweige",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "bogen",
+          "name": "Bögen",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Höhenunterschied Siphonanschluss bis Einbindung in die Fallleitung",
+          "group": "Leitungsführung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Sammelanschlussleitung",
+          "values": {
+            "gefaelle": "1 cm/m",
+            "gefaelleMax": "5 cm/m",
+            "laengeKlein": "4 m",
+            "laengeGross": "10 m",
+            "darueber": "belüften, siehe Tool „Belüftung von Anschlussleitungen“",
+            "nennweite": "scheitelgleich: bessere Luftführung, weniger Geräusche durch Lufteinschlüsse, kein Einspülen in die kleinere Nennweite",
+            "abzweig": "höchstens 45°, keine Doppelabzweige"
+          },
+          "figure": "figure.abwasser-system-sammelanschluss",
+          "valueFigures": {
+            "nennweite": "figure.nennweite-scheitelgleich"
+          }
+        }
+      ],
+      "stacked": true,
+      "groupNotes": {
+        "Länge": "ohne Belüftung"
+      }
+    },
+    {
+      "title": "Schmutzwasserfallleitung",
+      "when": {
+        "leitung": "fall",
+        "thema": "fuehrung"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "fuehrung",
+          "name": "Führung"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschluss DN 40 bis DN 75"
+        },
+        {
+          "key": "wohnungen",
+          "name": "Nebeneinanderliegende Wohnungen"
+        },
+        {
+          "key": "reinigung",
+          "name": "Reinigungsöffnung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Schmutzwasserfallleitung",
+          "values": {
+            "fuehrung": "ohne Nennweitenänderung und möglichst geradlinig durch die Geschosse bis über Dach",
+            "anschluss": "nur mit 87,5°-Abzweig",
+            "wohnungen": "gemeinsame Fallleitung nur, wenn Schall- und Brandschutz berücksichtigt sind; bei Neubauten empfohlen: getrennte Fallstränge",
+            "reinigung": "unmittelbar am Übergang in die liegende Leitung"
+          },
+          "figure": "figure.abwasser-system-fallleitung"
+        }
+      ]
+    },
+    {
+      "title": "Worum es geht",
+      "when": {
+        "leitung": "fall",
+        "thema": "einbindung"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "problem",
+          "name": "Problem"
+        },
+        {
+          "key": "loesung",
+          "name": "Lösung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Worum es geht",
+          "values": {
+            "problem": "Spült das WC, kann Abwasser über die Fallleitung in den Geruchsverschluss eines bodennahen Siphons gedrückt werden (Bade-, Duschwanne, Bodenablauf).",
+            "loesung": "WC und bodennahen Siphon nach einer der folgenden Ausführungen einbinden. h ist der Höhenunterschied der beiden Einbindungen, α der Winkel zwischen ihnen von oben gesehen."
+          }
+        }
+      ]
+    },
+    {
+      "title": "Ausführung 1: gleiche Höhe",
+      "when": {
+        "leitung": "fall",
+        "thema": "einbindung"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhenunterschied h der Einbindungen"
+        },
+        {
+          "key": "winkel",
+          "name": "Winkel α zwischen den Anschlüssen"
+        },
+        {
+          "key": "bedingung",
+          "name": "Bedingung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Ausführung 1: gleiche Höhe",
+          "values": {
+            "hoehe": "h ≥ 0, auch auf gleicher Höhe",
+            "winkel": "höchstens 90°"
+          },
+          "figure": "figure.fallleitung-einbindung-gleiche-hoehe"
+        }
+      ]
+    },
+    {
+      "title": "Ausführung 2: Höhenversatz",
+      "when": {
+        "leitung": "fall",
+        "thema": "einbindung"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhenunterschied h der Einbindungen"
+        },
+        {
+          "key": "winkel",
+          "name": "Winkel α zwischen den Anschlüssen"
+        },
+        {
+          "key": "bedingung",
+          "name": "Bedingung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Ausführung 2: Höhenversatz",
+          "values": {
+            "hoehe": "mindestens 20 cm",
+            "winkel": "bis 180°"
+          },
+          "figure": "figure.fallleitung-einbindung-versatz"
+        }
+      ]
+    },
+    {
+      "title": "Ausführung 3: Doppelabzweig",
+      "when": {
+        "leitung": "fall",
+        "thema": "einbindung"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhenunterschied h der Einbindungen"
+        },
+        {
+          "key": "winkel",
+          "name": "Winkel α zwischen den Anschlüssen"
+        },
+        {
+          "key": "bedingung",
+          "name": "Bedingung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Ausführung 3: Doppelabzweig",
+          "values": {
+            "winkel": "180° (gegenüber)",
+            "bedingung": "Doppelabzweig 87,5° mit Innenradius; beide Anschlüsse in gleicher Nennweite"
+          },
+          "figure": "figure.fallleitung-einbindung-doppelabzweig"
+        }
+      ]
+    },
+    {
+      "title": "Zwei WCs gegenüber",
+      "when": {
+        "leitung": "fall",
+        "thema": "einbindung"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "hoehe",
+          "name": "Höhenunterschied h der Einbindungen"
+        },
+        {
+          "key": "winkel",
+          "name": "Winkel α zwischen den Anschlüssen"
+        },
+        {
+          "key": "bedingung",
+          "name": "Bedingung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Zwei WCs gegenüber",
+          "values": {
+            "hoehe": "h ≥ 0, auch auf gleicher Höhe",
+            "winkel": "180° (gegenüber)"
+          },
+          "figure": "figure.fallleitung-einbindung-wc-gegenueber"
+        }
+      ]
+    },
+    {
+      "title": "Umlenkung bis 10 m Fallhöhe",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "bis10"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "zulaessig",
+          "name": "Zulässig"
+        },
+        {
+          "key": "empfohlen",
+          "name": "Empfohlen"
+        }
+      ],
+      "options": [
+        {
+          "label": "Umlenkung bis 10 m Fallhöhe",
+          "values": {
+            "zulaessig": "ein 87,5°-Bogen",
+            "empfohlen": "trotzdem 2 × 45°-Bögen: hydraulisch und akustisch deutlich besser"
+          },
+          "figure": "figure.fallleitung-umlenkung-bis-10m"
+        }
+      ]
+    },
+    {
+      "title": "Umlenkung 10–22 m Fallhöhe",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "bis22"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "bogen",
+          "name": "Umlenkung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Einbindungen"
+        }
+      ],
+      "options": [
+        {
+          "label": "Umlenkung 10–22 m Fallhöhe",
+          "values": {
+            "bogen": "2 × 45°-Bögen mit Zwischenstück (ca. 25 cm)",
+            "einbindung": "keine im Bereich der Umlenkung; Abstände je nach Verzug unten"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Verzug länger als 2 m",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "bis22"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "frei",
+          "name": "Keine Einbindung"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschlüsse"
+        }
+      ],
+      "options": [
+        {
+          "label": "Verzug länger als 2 m",
+          "values": {
+            "frei": "mindestens 2 m Fallleitung über der oberen Umlenkung, mindestens 1 m nach der oberen und 1 m vor der unteren Umlenkung",
+            "anschluss": "im Verzug dazwischen"
+          },
+          "figure": "figure.fallleitung-verzug-lang"
+        }
+      ]
+    },
+    {
+      "title": "Verzug kürzer als 2 m",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "bis22"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "umgehung",
+          "name": "Umgehungsleitung"
+        },
+        {
+          "key": "frei",
+          "name": "Keine Einbindung"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschlüsse"
+        }
+      ],
+      "options": [
+        {
+          "label": "Verzug kürzer als 2 m",
+          "values": {
+            "umgehung": "mit Umgehungsleitung, dann ohne Zwischenstück; gleiche Dimension wie die Fallleitung, höchstens DN 110",
+            "frei": "mindestens 2 m Fallleitung über der oberen Umlenkung; die Umgehungsleitung mündet mindestens 1 m unter der unteren Umlenkung",
+            "anschluss": "an die Umgehungsleitung"
+          },
+          "figure": "figure.fallleitung-verzug-kurz"
+        }
+      ]
+    },
+    {
+      "title": "Umlenkung über 22 m Fallhöhe",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "ueber22"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "umgehung",
+          "name": "Umgehungsleitung"
+        },
+        {
+          "key": "bogen",
+          "name": "Umlenkung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Einbindungen"
+        }
+      ],
+      "options": [
+        {
+          "label": "Umlenkung über 22 m Fallhöhe",
+          "values": {
+            "umgehung": "grundsätzlich vorsehen; gleiche Dimension wie die Fallleitung, höchstens DN 110",
+            "bogen": "2 × 45°-Bögen mit Zwischenstück (ca. 25 cm)",
+            "einbindung": "keine im Bereich der Umlenkung; Abstände unten"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Übergang in die liegende Leitung",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "ueber22"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "abstand",
+          "name": "Mindestabstände"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschlüsse"
+        }
+      ],
+      "options": [
+        {
+          "label": "Übergang in die liegende Leitung",
+          "values": {
+            "abstand": "Umgehungsleitung zweigt mindestens 2 m über der Umlenkung ab und mündet mindestens 1,5 m danach in die liegende Leitung",
+            "anschluss": "an die Umgehungsleitung"
+          },
+          "figure": "figure.fallleitung-umgehung-liegend"
+        }
+      ]
+    },
+    {
+      "title": "Verzug kürzer als 2 m",
+      "when": {
+        "leitung": "fall",
+        "thema": "umlenkung",
+        "hoehe": "ueber22"
+      },
+      "inputName": "Thema",
+      "stacked": true,
+      "columns": [
+        {
+          "key": "abstand",
+          "name": "Mindestabstände"
+        },
+        {
+          "key": "anschluss",
+          "name": "Anschlüsse"
+        }
+      ],
+      "options": [
+        {
+          "label": "Verzug kürzer als 2 m",
+          "values": {
+            "abstand": "Umgehungsleitung zweigt mindestens 2 m über der oberen Umlenkung ab und mündet mindestens 1 m unter der unteren Umlenkung",
+            "anschluss": "an die Umgehungsleitung"
+          },
+          "figure": "figure.fallleitung-verzug-kurz"
+        }
+      ]
+    },
+    {
+      "title": "Sammelleitung",
+      "when": {
+        "leitung": "sammel"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "gefaelle",
+          "name": "Mindestgefälle",
+          "group": "Gefälle"
+        },
+        {
+          "key": "gefaelleMax",
+          "name": "Maximales Gefälle (empfohlen)",
+          "group": "Gefälle"
+        },
+        {
+          "key": "nennweite",
+          "name": "Nennweitenwechsel (exzentrische Reduktion)",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "abzweig",
+          "name": "Abzweige",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "bogen",
+          "name": "Bögen",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Höhenunterschied Siphonanschluss bis Einbindung in die Fallleitung",
+          "group": "Leitungsführung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Sammelleitung",
+          "values": {
+            "gefaelle": "je nach Auslegung",
+            "gefaelleMax": "5 cm/m",
+            "nennweite": "scheitelgleich empfohlen (die Norm macht keine Vorgabe)",
+            "abzweig": "höchstens 45°, keine Doppelabzweige",
+            "bogen": "höchstens 45°"
+          },
+          "figure": "figure.abwasser-system-sammelleitung",
+          "valueFigures": {
+            "nennweite": "figure.nennweite-scheitelgleich"
+          }
+        }
+      ],
+      "stacked": true
+    },
+    {
+      "title": "Grundleitung",
+      "when": {
+        "leitung": "grund"
+      },
+      "inputName": "Thema",
+      "columns": [
+        {
+          "key": "gefaelle",
+          "name": "Mindestgefälle",
+          "group": "Gefälle"
+        },
+        {
+          "key": "gefaelleMax",
+          "name": "Maximales Gefälle (empfohlen)",
+          "group": "Gefälle"
+        },
+        {
+          "key": "nennweite",
+          "name": "Nennweitenwechsel (exzentrische Reduktion)",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "abzweig",
+          "name": "Abzweige",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "bogen",
+          "name": "Bögen",
+          "group": "Leitungsführung"
+        },
+        {
+          "key": "einbindung",
+          "name": "Höhenunterschied Siphonanschluss bis Einbindung in die Fallleitung",
+          "group": "Leitungsführung"
+        }
+      ],
+      "options": [
+        {
+          "label": "Grundleitung",
+          "values": {
+            "gefaelle": "je nach Auslegung",
+            "gefaelleMax": "5 cm/m",
+            "nennweite": "sohlgleich: besser zu inspizieren, durchgehendes Gefälle für den Feststofftransport",
+            "abzweig": "höchstens 45°, keine Doppelabzweige",
+            "bogen": "höchstens 45°"
+          },
+          "figure": "figure.abwasser-system-grundleitung",
+          "valueFigures": {
+            "nennweite": "figure.nennweite-sohlgleich"
+          }
+        }
+      ],
+      "stacked": true
+    }
+  ]
+}

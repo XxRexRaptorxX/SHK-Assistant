@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 240">
+  <rect class="hot-soft" x="80" y="40" width="20" height="110"/>
+  <rect class="hot-soft" x="180" y="194" width="20" height="28"/>
+  <path class="pipe" d="M90 10V148L112 170H170L190 190V236"/>
+  <path class="pipe-hi" d="M90 40H140V120H250V222H196"/>
+  <path class="stub" d="M196 120V102M226 120V102"/>
+  <text class="note" x="100" y="24">Fallleitung</text>
+  <text class="note" x="148" y="64">Umgehungs-</text>
+  <text class="note" x="148" y="78">leitung</text>
+  <text class="note" x="6" y="86">mind. 2 m</text>
+  <text class="note" x="6" y="100">keine</text>
+  <text class="note" x="6" y="114">Einbindung</text>
+  <text class="note" x="182" y="96">Anschlüsse</text>
+  <text class="note" x="122" y="157">Verzug unter 2 m</text>
+  <text class="note" x="118" y="206">mind. 1 m</text>
+  <text class="note" x="82" y="220">keine Einbindung</text>
+</svg>

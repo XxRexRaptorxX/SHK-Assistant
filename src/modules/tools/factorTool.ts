@@ -12,6 +12,9 @@ import { math } from '../../lib/math.ts'
 const key = z.string().regex(/^[a-z][a-zA-Z0-9]*$/, 'key: Kleinbuchstabe, dann Buchstaben/Ziffern')
 const symbol = z.string().regex(/^[A-Za-z][A-Za-z0-9_]*$/, 'Symbol: nur A-Z, a-z, 0-9 und _')
 
+/** Verweise auf andere Tools (ids), stehen unter „Passende Tools“ am Seitenende; der Build prüft, dass es sie gibt */
+export const relatedToolsSchema = z.array(z.string().startsWith('tool.')).default([])
+
 const optionSchema = z.strictObject({
   key,
   label: z.string().trim().min(1),
@@ -142,6 +145,7 @@ export const factorToolSchema = defineEntrySchema({
   tags: topicTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
+  related: relatedToolsSchema,
   /** Überschrift „Rechner“ weglassen; der Löschen-Knopf steht dann im Ergebnisfeld */
   hideHeading: z.boolean().optional(),
   /** Rechenweg (`rule`) je Ergebnis hinter einem Info-Knopf statt sichtbar, z. B. bei vielen Ergebnissen mit langen Formeln */

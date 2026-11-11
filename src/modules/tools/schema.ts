@@ -6,7 +6,7 @@ import { checkFormulaRequirements, formulaCollection, formulaShape, type Formula
 import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
-import { checkFactorTool, factorToolSchema, type FactorTool } from './factorTool.ts'
+import { checkFactorTool, factorToolSchema, relatedToolsSchema, type FactorTool } from './factorTool.ts'
 import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } from './hazmatPointsTool.ts'
 import { materialListToolSchema, type MaterialListTool } from './materialListTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
@@ -112,6 +112,10 @@ const choiceOptionSchema = z.strictObject({
   note: z.string().trim().default(''),
   /** Werte je Spalte als Text, z. B. "ca. 20"; fehlt eine Spalte, wird sie bei dieser Option nicht angezeigt */
   values: z.record(z.string(), z.string().trim().min(1)),
+  /** Skizze aus content/figures, z. B. "figure.fallleitung-umlenkung-10m"; steht über den Werten */
+  figure: z.string().startsWith('figure.').optional(),
+  /** Skizzen direkt unter einem Wert: Spalten-key → Skizze, z. B. der Nennweitenwechsel */
+  valueFigures: z.record(z.string(), z.string().startsWith('figure.')).default({}),
 })
 
 const key = z.string().regex(/^[a-z][a-zA-Z0-9]*$/, 'key: Kleinbuchstabe, dann Buchstaben/Ziffern')
@@ -121,6 +125,8 @@ const choiceBarSchema = z.strictObject({
   key,
   /** Was gewählt wird, z. B. „Ausführung“ */
   name: z.string().trim().min(1),
+  /** Nur zeigen, wenn eine Leiste davor so steht: Leisten-key → Options-key */
+  when: z.record(z.string(), z.string()).default({}),
   options: z
     .array(
       z.strictObject({
@@ -144,6 +150,8 @@ const choiceSectionSchema = z.strictObject({
   columns: z.array(tableColumnSchema).min(1),
   /** Legende je Gruppe, grau rechts neben der Überschrift des Blocks, z. B. „(Breite × Tiefe)“ */
   groupNotes: z.record(z.string(), z.string().trim().min(1)).default({}),
+  /** Bezeichnung immer über dem Wert statt daneben, für Abschnitte mit Text statt kurzer Zahlen */
+  stacked: z.boolean().optional(),
   options: z.array(choiceOptionSchema).min(1),
 })
 
@@ -169,6 +177,7 @@ const choiceToolSchema = defineEntrySchema({
       raisedLabel: z.string().trim().min(1),
     })
     .optional(),
+  related: relatedToolsSchema,
   /** Optionale Auswahlleisten ganz oben, untereinander; jeweils die erste Option ist vorausgewählt */
   bars: z.array(choiceBarSchema).default([]),
   sections: z.array(choiceSectionSchema).min(1),
@@ -225,6 +234,10 @@ export type { CableTool, FactorTool, HazmatPointsTool, HeatingCostToolEntry, Mat
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
+
+/** Verweise auf passende Tools (bisher bei Auswahl- und Faktor-Tools) */
+export const relatedTools = (entry: ToolEntry): string[] =>
+  entry.kind === 'choice' || entry.kind === 'factor' ? entry.related : []
 export const isFactorTool = (entry: ToolEntry): entry is FactorTool => entry.kind === 'factor'
 export const isVariantTool = (entry: ToolEntry): entry is VariantTool => entry.kind === 'variants'
 export const isSymbolTool = (entry: ToolEntry): entry is SymbolTool => entry.kind === 'symbols'
@@ -266,9 +279,26 @@ export function checkTableTool(entry: TableTool): string[] {
   return issues
 }
 
+const matchesBars = (when: Record<string, string>, selection: Record<string, string>) =>
+  Object.entries(when).every(([bar, option]) => selection[bar] === option)
+
 /** Abschnitt passt zur Stellung der Leisten */
 export function sectionVisible(section: ChoiceSection, selection: Record<string, string>): boolean {
-  return Object.entries(section.when).every(([bar, option]) => selection[bar] === option)
+  return matchesBars(section.when, selection)
+}
+
+/** Leisten, die bei dieser Stellung zu sehen sind (eine Leiste mit when nur, wenn die früheren Leisten so stehen) */
+export function visibleBars(entry: ChoiceTool, selection: Record<string, string>): ChoiceTool['bars'] {
+  return entry.bars.filter((bar) => matchesBars(bar.when, selection))
+}
+
+/** Stellung ohne die ausgeblendeten Leisten, damit deren alte Wahl keine Abschnitte einblendet */
+export function activeBarSelection(entry: ChoiceTool, selection: Record<string, string>): Record<string, string> {
+  const active: Record<string, string> = {}
+  for (const bar of entry.bars) {
+    if (matchesBars(bar.when, active) && selection[bar.key] !== undefined) active[bar.key] = selection[bar.key]!
+  }
+  return active
 }
 
 /** Vorauswahl der Leisten: jeweils die erste Option */
@@ -276,23 +306,41 @@ export function defaultBarSelection(entry: ChoiceTool): Record<string, string> {
   return Object.fromEntries(entry.bars.map((bar) => [bar.key, bar.options[0]!.key]))
 }
 
-/** Jede mögliche Stellung der Leisten */
+/** Jede mögliche Stellung der sichtbaren Leisten */
 function allBarSelections(entry: ChoiceTool): Record<string, string>[] {
   return entry.bars.reduce<Record<string, string>[]>(
     (combinations, bar) =>
-      combinations.flatMap((combination) => bar.options.map((option) => ({ ...combination, [bar.key]: option.key }))),
+      combinations.flatMap((combination) =>
+        matchesBars(bar.when, combination)
+          ? bar.options.map((option) => ({ ...combination, [bar.key]: option.key }))
+          : [combination],
+      ),
     [{}],
   )
 }
+
+/** Skizzen der Optionen (ids aus content/figures) */
+export const choiceFigures = (entry: ChoiceTool): string[] =>
+  entry.sections.flatMap((section) =>
+    section.options.flatMap((option) => [...(option.figure ? [option.figure] : []), ...Object.values(option.valueFigures)]),
+  )
 
 export function checkChoiceTool(entry: ChoiceTool): string[] {
   const issues: string[] = []
   const barKeys = entry.bars.map((bar) => bar.key)
   if (new Set(barKeys).size !== barKeys.length) issues.push('bars: key doppelt vergeben')
-  for (const bar of entry.bars) {
+  entry.bars.forEach((bar, index) => {
     const optionKeys = bar.options.map((option) => option.key)
     if (new Set(optionKeys).size !== optionKeys.length) issues.push(`bars (${bar.key}): Options-key doppelt vergeben`)
-  }
+    // when darf nur auf Leisten davor verweisen, sonst hängt die Sichtbarkeit von der Reihenfolge ab
+    for (const [barKey, optionKey] of Object.entries(bar.when)) {
+      const earlier = entry.bars.slice(0, index).find((candidate) => candidate.key === barKey)
+      if (!earlier) issues.push(`bars (${bar.key}): when verweist auf keine Leiste davor ("${barKey}")`)
+      else if (!earlier.options.some((option) => option.key === optionKey)) {
+        issues.push(`bars (${bar.key}): unbekannte Option "${optionKey}" bei "${barKey}"`)
+      }
+    }
+  })
   for (const selection of allBarSelections(entry)) {
     if (!entry.sections.some((section) => sectionVisible(section, selection))) {
       issues.push(`bars: kein Abschnitt für ${Object.values(selection).join(' + ')}`)
@@ -319,6 +367,9 @@ export function checkChoiceTool(entry: ChoiceTool): string[] {
       // Fehlt eine Spalte, gibt es den Wert bei dieser Option nicht (Zeile wird nicht angezeigt)
       issues.push(...checkValues(`${where}, options[${index}] (${option.label})`, keys, option.values, true))
       if (Object.keys(option.values).length === 0) issues.push(`${where}, options[${index}] (${option.label}): keine Werte`)
+      for (const column of Object.keys(option.valueFigures)) {
+        if (!(column in option.values)) issues.push(`${where}, options[${index}] (${option.label}): valueFigures ohne Wert "${column}"`)
+      }
     })
   })
   return issues
@@ -364,8 +415,10 @@ export const toolCollection = defineCollection({
                                     : isHazmatPointsTool(entry)
                                       ? checkHazmatPointsTool(entry)
                                     : formulaCollection.check!(entry as FormulaEntry),
-  references: (entry) =>
-    isFormulaTool(entry)
+  references: (entry) => [
+    ...relatedTools(entry),
+    ...(isChoiceTool(entry) ? choiceFigures(entry) : []),
+    ...(isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)
       : isVariantTool(entry)
         ? variantReferences(entry)
@@ -373,5 +426,6 @@ export const toolCollection = defineCollection({
           ? [entry.velocityFormula]
           : isHeatingCostTool(entry)
             ? [entry.heatingValues]
-            : [],
+            : []),
+  ],
 })

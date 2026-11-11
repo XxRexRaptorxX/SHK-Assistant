@@ -63,6 +63,10 @@ den Einbau, z. B. Rohrschellenabstände), „Wartung“ (Richtwerte für Messung
 oder zuständige Normen) und „Organisation“ (Büroarbeit rund um die Baustelle, z. B. Stundenzettel). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
 Kategorie gehört dort dazu.
 
+Auswahl- und Faktor-Tools dürfen `related` haben: ids anderer Tools, die am Seitenende unter „Passende Tools“
+verlinkt sind (z. B. Lüftungsleitungen ↔ Belüftung von Anschlussleitungen). Der Build prüft, dass es sie gibt;
+Verweise gehen in beide Richtungen nur, wenn beide Einträge sie nennen.
+
 Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
 der Tool-Übersicht und in der Suche unter dem Titel; die ausführliche Erklärung bleibt in `description`.
 
@@ -100,7 +104,14 @@ zeigt nur den Wert, linksbündig (die Bezeichnung bleibt für Screenreader); `"v
 Wert nach links und die Bezeichnung dahinter (z. B. „90 × 75 cm davor“). Optional `bars`:
 Leisten ganz oben, untereinander (`key`, `name`, `options` mit `key`, `label`, kleiner zweiter Zeile
 `note`); jeweils die erste Option ist vorausgewählt. Abschnitte mit `when` (Leisten-key → Options-key)
-erscheinen nur bei dieser Stellung; jede Stellung braucht mindestens einen Abschnitt. Optional
+erscheinen nur bei dieser Stellung; jede Stellung braucht mindestens einen Abschnitt. Steht bei einer Stellung nur ein
+Abschnitt, entfällt sein Titel (die Leiste sagt schon, worum es geht); bei mehreren erscheinen die Titel als Überschriften.
+Ab fünf Optionen bricht eine Leiste um (höchstens drei nebeneinander). Eine Leiste mit `when` (Leisten-key → Options-key,
+nur Leisten davor) erscheint nur bei dieser Stellung, z. B. die Fallhöhe nur beim Thema Umlenkung; ihre Wahl zählt sonst
+nicht. `"stacked": true` an einem Abschnitt setzt die Bezeichnung immer über den Wert, für Abschnitte mit Text statt
+kurzer Zahlen (sonst steht ein kurzer Wert rechts daneben und ein langer darunter). `figure` an einer Option zeigt eine
+Skizze aus `figures/` über ihren Werten, `valueFigures` (Spalten-key → Skizze) eine Skizze direkt unter einem Wert, z. B.
+scheitelgleich/sohlgleich unter dem Nennweitenwechsel. Optional
 `floorBuildUp` (`name`, `unit`, `hint`, `baseLabel`, `raisedLabel`): ein Eingabefeld ganz oben, z. B. der
 Fußbodenaufbau. Ist es ausgefüllt, zeigen Blöcke mit Spalten `"floorHeight": true` die Höhen nebeneinander
 über Fertig- und Rohfußboden (`baseLabel`/`raisedLabel`, z. B. OKFF/OKRFB); Zahlen mit anderem Bezug

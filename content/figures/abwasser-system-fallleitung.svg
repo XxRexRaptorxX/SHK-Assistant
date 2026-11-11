@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 266">
+  <path class="pipe-hi" d="M22 256H44"/><text x="52" y="261">Fallleitung</text>
+  <path class="thin" d="M20 30H230M20 30V215M230 30V215M20 95H230M20 160H230M20 215H230M230 160H330"/>
+  <text class="note" x="24" y="46">OG</text><text class="note" x="24" y="128">EG</text><text class="note" x="24" y="176">KG</text>
+  <rect class="thin" x="68" y="58" width="16" height="16" rx="3"/><text class="note" x="64" y="52">WC</text>
+  <path class="thin" d="M98 80H128"/><text class="note" x="96" y="72">Dusche</text>
+  <path class="thin" d="M182 58H204L200 66H186Z"/><text class="note" x="208" y="64">WT</text>
+  <path class="pipe-hi" d="M150 8V170"/>
+  <path class="pipe" d="M150 170L160 180H230"/>
+  <path class="pipe" d="M230 180L310 228"/>
+  <path class="pipe" d="M64 86H146"/>
+  <path class="stub" d="M76 74V86M112 80V86"/>
+  <path class="stub" d="M193 66V84H154"/>
+  
+  <circle class="line" cx="318" cy="234" r="8"/><text class="note" x="270" y="246">Kanal</text>
+</svg>

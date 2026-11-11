@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 240">
+  <defs><marker id="vl-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dim-head" d="M0 1L10 5L0 9z"/></marker></defs>
+  <rect class="hot-soft" x="30" y="58" width="20" height="92"/>
+  <rect class="hot-soft" x="62" y="160" width="62" height="20"/>
+  <rect class="hot-soft" x="222" y="160" width="62" height="20"/>
+  <path class="pipe" d="M40 10V148L62 170H288Q300 170 300 182V230"/>
+  <path class="stub" d="M148 170V154M176 170V154M204 170V154"/>
+  <text class="note" x="58" y="28">Fallleitung</text>
+  <text class="note" x="58" y="92">mind. 2 m</text>
+  <text class="note" x="58" y="106">keine Einbindung</text>
+  <text class="note" x="66" y="132">2 × 45° + Zwischenstück</text>
+  <text class="note" x="140" y="148">Anschlüsse</text>
+  <text class="note" x="62" y="196">mind. 1 m</text>
+  <text class="note" x="222" y="196">mind. 1 m</text>
+  <path class="dim" d="M44 214H296" marker-start="url(#vl-dim)" marker-end="url(#vl-dim)"/>
+  <text class="note" x="110" y="232">Verzug länger als 2 m</text>
+</svg>

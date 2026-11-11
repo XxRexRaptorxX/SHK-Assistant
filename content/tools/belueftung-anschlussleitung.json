@@ -1,0 +1,208 @@
+{
+  "id": "tool.belueftung-anschlussleitung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "POLOPLAST, Verlegeleitfaden Hausabfluss – Entwässerungsrohrleitungen für Gebäude, Ausgabe Deutschland (8/11.17), nach DIN EN 12056 und DIN 1986-100:2016-09, Kapitel 11 „Lüftungsleitungen“, Abschnitt „Belüftung von Anschlussleitungen“ (Entscheidungshilfe) und Belüftungsventile, S. 14–15, https://poloplast.incony.de/media/poloplastData/DO/base/MAN_KAL_Verlegeleitfaden%20Deutschland_DEU.pdf. Die Norm selbst wurde nicht eingesehen; noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Belüftung von Anschlussleitungen",
+  "summary": "Prüft, ob eine Anschlussleitung belüftet werden muss und welcher Teil.",
+  "description": "Maße der Anschlussleitung eintragen: Das Tool geht die Entscheidungshilfe Schritt für Schritt durch. Zuerst wird die Einzelanschlussleitung vom Siphonanschluss bis zum ersten Abzweig geprüft, dann die ganze Anschlussleitung vom entferntesten Siphonanschluss bis zur Fallleitung. Hängt nur ein Gegenstand an der Leitung, ist beides dieselbe Strecke. Belüften lässt sich eine Anschlussleitung über eine Umlüftung, eine Nebenlüftung oder ein Belüftungsventil.",
+  "category": "Montage",
+  "tags": ["abwasser"],
+  "related": ["tool.lueftungsleitungen-abwasser", "tool.abwasser-leitungsfuehrung"],
+  "inputs": [
+    {
+      "symbol": "L_E",
+      "name": "Länge der Einzelanschlussleitung (Siphonanschluss bis erster Abzweig)",
+      "unit": "m",
+      "min": 0
+    },
+    {
+      "symbol": "n",
+      "name": "Umlenkungen 90° in der Einzelanschlussleitung (ohne Siphonwinkel)",
+      "unit": "Stück",
+      "min": 0
+    },
+    {
+      "symbol": "h",
+      "name": "Fallhöhe der Einzelanschlussleitung",
+      "unit": "m",
+      "min": 0
+    },
+    {
+      "symbol": "L_A",
+      "name": "Länge der gesamten Anschlussleitung (entferntester Siphonanschluss bis Fallleitung)",
+      "unit": "m",
+      "min": 0
+    }
+  ],
+  "choices": [
+    {
+      "key": "dn",
+      "name": "Nennweite der Anschlussleitung",
+      "options": [
+        {
+          "key": "bis75",
+          "label": "bis DN 75"
+        },
+        {
+          "key": "ab90",
+          "label": "ab DN 90"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "uE",
+      "name": "Überschreitung Einzelanschlussleitung",
+      "hidden": true,
+      "cases": [
+        {
+          "expression": "max(L_E - 4, n - 3, h - 1)",
+          "rule": "größer 0, wenn eine Grenze der Einzelanschlussleitung überschritten ist"
+        }
+      ]
+    },
+    {
+      "symbol": "E",
+      "name": "1. Einzelanschlussleitung über den Grenzen?",
+      "cases": [
+        {
+          "of": "uE",
+          "upTo": 0,
+          "text": "Nein",
+          "rule": "Ja, wenn länger als 4 m, mehr als 3 Umlenkungen 90° (ohne Siphonwinkel) oder Fallhöhe über 1 m"
+        },
+        {
+          "of": "uE",
+          "above": 0,
+          "text": "Ja",
+          "rule": "Ja, wenn länger als 4 m, mehr als 3 Umlenkungen 90° (ohne Siphonwinkel) oder Fallhöhe über 1 m"
+        }
+      ]
+    },
+    {
+      "symbol": "uA",
+      "name": "Überschreitung gesamte Anschlussleitung",
+      "hidden": true,
+      "cases": [
+        {
+          "when": { "dn": "bis75" },
+          "expression": "L_A - 4",
+          "rule": "größer 0, wenn die Anschlussleitung bis DN 75 länger als 4 m ist"
+        },
+        {
+          "when": { "dn": "ab90" },
+          "expression": "L_A - 10",
+          "rule": "größer 0, wenn die Anschlussleitung ab DN 90 länger als 10 m ist"
+        }
+      ]
+    },
+    {
+      "symbol": "A",
+      "name": "2. Gesamte Anschlussleitung über den Grenzen?",
+      "cases": [
+        {
+          "when": { "dn": "bis75" },
+          "of": "uA",
+          "upTo": 0,
+          "text": "Nein",
+          "rule": "Ja, wenn bis einschließlich DN 75 länger als 4 m"
+        },
+        {
+          "when": { "dn": "bis75" },
+          "of": "uA",
+          "above": 0,
+          "text": "Ja",
+          "rule": "Ja, wenn bis einschließlich DN 75 länger als 4 m"
+        },
+        {
+          "when": { "dn": "ab90" },
+          "of": "uA",
+          "upTo": 0,
+          "text": "Nein",
+          "rule": "Ja, wenn ab DN 90 länger als 10 m"
+        },
+        {
+          "when": { "dn": "ab90" },
+          "of": "uA",
+          "above": 0,
+          "text": "Ja",
+          "rule": "Ja, wenn ab DN 90 länger als 10 m"
+        }
+      ]
+    },
+    {
+      "symbol": "k",
+      "name": "Entscheidung",
+      "hidden": true,
+      "cases": [
+        {
+          "expression": "2 * sign(max(uE, 0)) + sign(max(uA, 0))",
+          "rule": "0: beides nein, 1: nur gesamte Leitung, 2: nur Einzelanschlussleitung, 3: beides ja"
+        }
+      ]
+    },
+    {
+      "symbol": "B",
+      "name": "Ergebnis",
+      "cases": [
+        {
+          "of": "k",
+          "upTo": 0,
+          "text": "Keine Belüftung notwendig",
+          "rule": "Einzelanschlussleitung und gesamte Anschlussleitung bleiben innerhalb der Grenzen"
+        },
+        {
+          "of": "k",
+          "above": 0,
+          "upTo": 1,
+          "text": "Belüftung der gesamten Anschlussleitung",
+          "rule": "Dimensionierung als Sammelleitung bzw. als Umlüftungsleitung"
+        },
+        {
+          "of": "k",
+          "above": 1,
+          "upTo": 2,
+          "text": "Belüftung der Einzelanschlussleitung",
+          "rule": "Belüftung in der Dimension der Einzelanschlussleitung"
+        },
+        {
+          "of": "k",
+          "above": 2,
+          "text": "Belüftung der gesamten Anschlussleitung",
+          "rule": "Dimensionierung als Sammelleitung bzw. als Umlüftungsleitung"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "note": "Alles innerhalb der Grenzen (Grenzwerte selbst sind noch erlaubt)",
+      "inputs": { "L_E": 4, "n": 3, "h": 1, "L_A": 4 },
+      "choices": { "dn": "bis75" },
+      "expected": { "E": "Nein", "A": "Nein", "B": "Keine Belüftung notwendig" }
+    },
+    {
+      "note": "Einzelanschlussleitung kurz, gesamte Leitung DN 75 mit 5 m zu lang",
+      "inputs": { "L_E": 2, "n": 1, "h": 0.2, "L_A": 5 },
+      "choices": { "dn": "bis75" },
+      "expected": { "E": "Nein", "A": "Ja", "B": "Belüftung der gesamten Anschlussleitung" }
+    },
+    {
+      "note": "4 Umlenkungen 90°, gesamte Leitung DN 90 mit 8 m unter 10 m",
+      "inputs": { "L_E": 3, "n": 4, "h": 0.5, "L_A": 8 },
+      "choices": { "dn": "ab90" },
+      "expected": { "E": "Ja", "A": "Nein", "B": "Belüftung der Einzelanschlussleitung" }
+    },
+    {
+      "note": "Fallhöhe 1,5 m und gesamte Leitung DN 90 mit 12 m",
+      "inputs": { "L_E": 3, "n": 2, "h": 1.5, "L_A": 12 },
+      "choices": { "dn": "ab90" },
+      "expected": { "E": "Ja", "A": "Ja", "B": "Belüftung der gesamten Anschlussleitung" }
+    }
+  ]
+}
