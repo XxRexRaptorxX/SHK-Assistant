@@ -12,6 +12,7 @@
   "category": "Montage",
   "tags": ["abwasser"],
   "related": ["tool.abwasser-leitungsfuehrung"],
+  "figure": "figure.anschlussleitung-belueftung-masse",
   "inputs": [
     {
       "symbol": "L_E",

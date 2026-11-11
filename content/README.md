@@ -385,6 +385,7 @@ oder Dämmdicke nach Rohrdurchmesser. Felder:
   `display` (`"bar"`: Knöpfe nebeneinander, Standard; `"dropdown"`: Auswahlliste) und `top` (über den
   Eingabefeldern anzeigen statt darunter, z. B. ein Umschalter für den Rechenweg). Eine Option darf `info`
   haben: Der Text steht hinter einem Info-Knopf im Schaltfeld und wird mit durchsucht (nur bei `"bar"`).
+- `figure`: Skizze aus `figures/` über dem Rechner, z. B. welche Maße gemeint sind.
 - `hideHeading`: `true` lässt die Überschrift „Rechner“ weg; der Löschen-Knopf steht dann im Ergebnisfeld.
 - `rulesBehindInfo`: `true` versteckt den Rechenweg (`rule`) jedes Ergebnisses hinter einem Info-Knopf neben dem
   Ergebnisnamen, z. B. bei vielen Ergebnissen mit langen Formeln. Beim Drucken erscheint er trotzdem.

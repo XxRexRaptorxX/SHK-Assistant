@@ -146,6 +146,8 @@ export const factorToolSchema = defineEntrySchema({
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   related: relatedToolsSchema,
+  /** Skizze aus content/figures über dem Rechner, z. B. welche Maße gemeint sind */
+  figure: z.string().startsWith('figure.').optional(),
   /** Überschrift „Rechner“ weglassen; der Löschen-Knopf steht dann im Ergebnisfeld */
   hideHeading: z.boolean().optional(),
   /** Rechenweg (`rule`) je Ergebnis hinter einem Info-Knopf statt sichtbar, z. B. bei vielen Ergebnissen mit langen Formeln */

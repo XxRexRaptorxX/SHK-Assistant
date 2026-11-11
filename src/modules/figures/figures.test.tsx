@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { content } from '../../content'
-import { choiceFigures, isChoiceTool } from '../tools/schema'
+import { choiceFigures, isChoiceTool, isFactorTool } from '../tools/schema'
 import { formulaToolEntries, toolEntries } from '../tools/tools'
 import { FigureView } from './FigureView'
 import { checkSvg, type FigureEntry } from './schema'
@@ -60,8 +60,9 @@ describe('Skizze auf der Formelseite', () => {
     const used = new Set([
       ...[...content.formulas, ...formulaToolEntries].map((formula) => formula.figure).filter(Boolean),
       ...toolEntries.filter(isChoiceTool).flatMap(choiceFigures),
+      ...toolEntries.filter(isFactorTool).flatMap((tool) => (tool.figure ? [tool.figure] : [])),
     ])
     for (const entry of content.figures) expect(used).toContain(entry.id)
-    expect(content.figures).toHaveLength(55)
+    expect(content.figures).toHaveLength(56)
   })
 })

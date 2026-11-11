@@ -164,10 +164,14 @@ function TermList({ entries, total }: { entries: readonly LexiconEntry[]; total:
                   {entry.synonyms.length > 0 && (
                     <span className="block text-base text-muted">{entry.synonyms.join(', ')}</span>
                   )}
+                  {/* Wie in der Tool-Liste: „Ungeprüft“ unter dem Text, rechts nur die Tags */}
+                  {entry.status === 'draft' && (
+                    <span className="mt-1.5 block">
+                      <DraftBadge variant="inline" />
+                    </span>
+                  )}
                 </span>
-                {/* Rechte Spalte wie in der Tool-Liste: „Ungeprüft“ oben, darunter die Themen-Tags */}
                 <span className="flex shrink-0 flex-col items-end gap-1.5">
-                  {entry.status === 'draft' && <DraftBadge variant="inline" />}
                   <TopicTags tags={entry.tags} stacked />
                 </span>
               </Link>

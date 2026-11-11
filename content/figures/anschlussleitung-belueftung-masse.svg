@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 182">
+  <defs><marker id="ab-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dim-head" d="M0 1L10 5L0 9z"/></marker></defs>
+  <!-- Fallleitung -->
+  <path class="pipe" d="M300 10V178"/>
+  <text class="note" x="236" y="24">Fallleitung</text>
+  <!-- Sammelanschlussleitung vom ersten Abzweig bis zur Fallleitung -->
+  <path class="pipe" d="M170 110H296"/>
+  <!-- nächster Anschluss (erster Abzweig) -->
+  <path class="thin" d="M156 60H184L180 68H160Z"/>
+  <path class="stub" d="M170 72V106"/>
+  <text class="note" x="170" y="52" text-anchor="middle">nächster Anschluss</text>
+  <!-- entferntester Siphon mit Einzelanschlussleitung bis zum ersten Abzweig -->
+  <path class="thin" d="M56 46H84L80 54H60Z"/>
+  <path class="pipe-hi" d="M70 58V98Q70 110 82 110H168"/>
+  <text class="note" x="70" y="22" text-anchor="middle">entferntester</text>
+  <text class="note" x="70" y="36" text-anchor="middle">Siphonanschluss</text>
+  <!-- Fallhöhe der Einzelanschlussleitung -->
+  <path class="dim" d="M54 60V108" marker-start="url(#ab-dim)" marker-end="url(#ab-dim)"/>
+  <text class="note" x="2" y="88">Fallhöhe</text>
+  <!-- Länge der Einzelanschlussleitung -->
+  <path class="dim" d="M72 136H168" marker-start="url(#ab-dim)" marker-end="url(#ab-dim)"/>
+  <text class="note" x="74" y="131">Einzelanschlussleitung</text>
+  <!-- Länge der gesamten Anschlussleitung -->
+  <path class="dim" d="M72 164H296" marker-start="url(#ab-dim)" marker-end="url(#ab-dim)"/>
+  <text class="note" x="110" y="159">gesamte Anschlussleitung</text>
+</svg>

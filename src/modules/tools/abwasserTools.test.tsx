@@ -205,3 +205,10 @@ describe('Lüftungsleitung im Tool Leitungsführung', () => {
     expect(section!.options[0]!.figure).toBe('figure.abwasser-system-lueftung')
   })
 })
+
+describe('Skizze im Belüftungs-Rechner', () => {
+  it('zeigt die abgefragten Maße der Anschlussleitung', () => {
+    expect(ventilation.figure).toBe('figure.anschlussleitung-belueftung-masse')
+    expect(content.figures.some((figure) => figure.id === ventilation.figure)).toBe(true)
+  })
+})

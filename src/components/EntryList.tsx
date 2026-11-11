@@ -24,6 +24,8 @@ export function EntryList({ groups, action }: EntryListProps) {
   ))
 }
 
+const tagged = (entry: SearchDocument) => (entry.tags?.length ?? 0) > 0
+
 /** Einfache Liste von Einträgen mit Titel, Zusatzzeile und optionalem Knopf */
 export function EntryRows({ entries, action }: { entries: readonly SearchDocument[]; action?: EntryAction }) {
   return (
@@ -34,12 +36,17 @@ export function EntryRows({ entries, action }: { entries: readonly SearchDocumen
             <span>
               <span className="block font-semibold">{entry.title}</span>
               {entry.subtitle && <span className="block text-base text-muted">{entry.subtitle}</span>}
+              {/* Mit Tags wie in der Tool-Liste: „Ungeprüft“ unter dem Text, rechts nur die Tags */}
+              {entry.status === 'draft' && tagged(entry) && (
+                <span className="mt-1.5 block">
+                  <DraftBadge variant="inline" />
+                </span>
+              )}
             </span>
-            {(entry.status === 'draft' || entry.tags) && (
-              // Rechte Spalte wie in der Tool-Liste: „Ungeprüft“ oben, darunter die Themen-Tags
+            {((entry.status === 'draft' && !tagged(entry)) || tagged(entry)) && (
               <span className="flex shrink-0 flex-col items-end gap-1.5">
-                {entry.status === 'draft' && <DraftBadge variant="inline" />}
-                {entry.tags && <TopicTags tags={entry.tags} stacked />}
+                {entry.status === 'draft' && !tagged(entry) && <DraftBadge variant="inline" />}
+                {tagged(entry) && <TopicTags tags={entry.tags!} stacked />}
               </span>
             )}
           </Link>

@@ -418,6 +418,7 @@ export const toolCollection = defineCollection({
   references: (entry) => [
     ...relatedTools(entry),
     ...(isChoiceTool(entry) ? choiceFigures(entry) : []),
+    ...(isFactorTool(entry) && entry.figure ? [entry.figure] : []),
     ...(isFormulaTool(entry)
       ? formulaCollection.references!(entry as FormulaEntry)
       : isVariantTool(entry)

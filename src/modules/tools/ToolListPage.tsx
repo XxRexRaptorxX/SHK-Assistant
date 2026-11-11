@@ -28,10 +28,15 @@ export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] 
                     <span>
                       <span className="block text-lg font-semibold">{entry.title}</span>
                       <span className="block text-base text-muted">{entry.summary}</span>
+                      {/* „Ungeprüft“ unter der Beschreibung, damit rechts nur die Tags stehen */}
+                      {entry.status === 'draft' && (
+                        <span className="mt-1.5 block">
+                          <DraftBadge variant="inline" />
+                        </span>
+                      )}
                     </span>
-                    {/* Rechte Spalte: „Ungeprüft“ oben, darunter die Themen-Tags untereinander */}
+                    {/* Rechte Spalte: die Themen-Tags untereinander */}
                     <span className="flex shrink-0 flex-col items-end gap-1.5">
-                      {entry.status === 'draft' && <DraftBadge variant="inline" />}
                       <TopicTags tags={entry.tags} stacked />
                     </span>
                   </Link>

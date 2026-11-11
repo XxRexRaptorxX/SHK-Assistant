@@ -15,6 +15,7 @@ import {
   type FactorTool,
 } from './factorTool'
 import { withUnit } from './TableLookup'
+import { FigureView } from '../figures/FigureView'
 
 type Input = FactorTool['inputs'][number]
 
@@ -103,6 +104,9 @@ export function FactorCalculator({
   }
 
   return (
+    <>
+    {/* Skizze vor dem Rechner, damit man sieht, welche Maße gemeint sind */}
+    <FigureView id={tool.figure} />
     <section className={tool.hideHeading ? undefined : 'mt-6'} aria-labelledby={`${idPrefix}-heading`}>
       {tool.hideHeading ? (
         // Ohne sichtbare Überschrift keine eigene Zeile: Der Löschen-Knopf steht im Ergebnisfeld
@@ -202,6 +206,7 @@ export function FactorCalculator({
         {!complete && <p className="text-base text-muted">Alle Werte eingeben.</p>}
       </div>
     </section>
+    </>
   )
 }
 
