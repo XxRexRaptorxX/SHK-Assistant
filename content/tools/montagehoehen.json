@@ -10,6 +10,7 @@
   "summary": "Maße im Bad: Standard, barrierefrei und rollstuhlgerecht.",
   "description": "Montagehöhen, Stellflächen, Bewegungsflächen, Abstände und elektrische Schutzbereiche im Bad. OK = Oberkante, UK = Unterkante. Maßgeblich sind die Herstellerangaben und der aktuelle Normtext; die DIN 18040-2 erscheint 2026 neu. Die Elektroinstallation gehört in die Hand einer Elektrofachkraft.",
   "category": "Montage",
+  "tags": ["sanitaer"],
   "floorBuildUp": {
     "name": "Fußbodenaufbau (Estrich und Belag)",
     "unit": "cm",

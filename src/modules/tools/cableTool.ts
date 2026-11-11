@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
+import { toolTagsSchema } from './toolTags.ts'
 
 // Kabel-Tools ("kind": "cables"): Man wählt eine Elektro-Komponente (z. B. Fühler oder Außengerät) oder eine
 // Einbausituation (z. B. unter Putz oder im Freien) und bekommt die dafür genannten Kabelarten mit ihren
@@ -78,6 +79,7 @@ export const cableToolSchema = defineEntrySchema({
   kind: z.literal('cables'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
+  tags: toolTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Was bei jeder Kabelart angezeigt wird, z. B. „UV-beständig“ */

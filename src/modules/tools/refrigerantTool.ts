@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
+import { toolTagsSchema } from './toolTags.ts'
 
 // Kältemittel-Tools ("kind": "refrigerantPressure"): Dampfdrucktabelle mehrerer Kältemittel. Kältemittel
 // wählen, Druck oder Temperatur eingeben, den anderen Wert aus der Tabelle ablesen. Zwischen zwei
@@ -10,6 +11,7 @@ export const refrigerantToolSchema = defineEntrySchema({
   kind: z.literal('refrigerantPressure'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
+  tags: toolTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Art des Drucks wie in der Quelle, z. B. „Überdruck“ */

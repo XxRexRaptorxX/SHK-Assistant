@@ -10,6 +10,7 @@
   "summary": "Größter empfohlener Abstand nach Rohrart und Größe.",
   "description": "Zeigt den größten empfohlenen Abstand zwischen zwei Rohrschellen nach Rohrart und Größe. Für Kupfer- und Edelstahlrohre empfehlen die technischen Regeln (DIN 1988) die Abstände; für Kunststoff-, Verbund- und Abwasserrohre gibt der Rohrhersteller die zulässigen Abstände verbindlich vor. Bei Abwasserrohren gelten getrennte Werte für waagerechte und senkrechte Leitungen. Fest- und Gleitpunkte für die Längenausdehnung sowie Gewicht von Dämmung und Medium sind zusätzlich zu beachten.",
   "category": "Montage",
+  "tags": ["heizung", "sanitaer"],
   "inputs": [],
   "choices": [
     {

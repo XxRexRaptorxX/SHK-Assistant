@@ -10,6 +10,7 @@
   "summary": "Rechnet den Sättigungsdruck eines Kältemittels in die Sättigungstemperatur um und umgekehrt.",
   "description": "Kältemittel wählen, dann den Druck oder die Temperatur eingeben. Das Tool zeigt den passenden Wert aus der Dampfdrucktabelle. Liegt die Eingabe zwischen zwei Tabellenzeilen, wird linear zwischen ihnen gerechnet. Die Drücke sind Überdrücke in bar.",
   "category": "Wartung",
+  "tags": ["klima", "kaelte"],
   "pressureName": "Überdruck",
   "pressureUnit": "bar",
   "tableNote": "Werte gerundet und auf den Taupunkt bezogen.",

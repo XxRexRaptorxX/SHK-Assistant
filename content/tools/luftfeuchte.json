@@ -10,6 +10,7 @@
   "summary": "Rechnet relative in absolute Luftfeuchte um und umgekehrt, dazu Taupunkt und Reifpunkt.",
   "description": "Oben wählen, welche Feuchte bekannt ist, dann Lufttemperatur und Feuchte eingeben. Das Tool zeigt die jeweils andere Feuchte, den Taupunkt sowie Sättigungswerte und Dampfdruck. Absolute Feuchte meint hier die Wasserdampfmenge je Kubikmeter Luft in g/m³, nicht den Wassergehalt in g/kg trockener Luft. Gerechnet wird mit der Magnus-Formel über Wasser, gültig von −45 °C bis 60 °C; relative Feuchte und Taupunkt beziehen sich auch unter 0 °C auf Wasser. Kühlt eine Oberfläche unter den Taupunkt der Raumluft ab, kann sich dort Kondenswasser bilden. Liegt der Taupunkt unter 0 °C, bildet sich stattdessen Reif; der Reifpunkt kommt aus der Magnus-Formel über Eis und liegt etwas über dem Taupunkt.",
   "category": "Wartung",
+  "tags": ["lueftung", "klima"],
   "hideHeading": true,
   "rulesBehindInfo": true,
   "inputs": [

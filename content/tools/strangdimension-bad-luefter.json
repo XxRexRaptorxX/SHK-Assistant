@@ -10,6 +10,7 @@
   "summary": "Zeigt zu Normal- oder Komfortbereich, Lüftergeräten pro Etage und Anzahl der Etagen die Strangdimension für Einzelraumlüfter mit Luftdurchsatz und Strömungsgeschwindigkeit.",
   "description": "Bereich, Lüftergeräte pro Etage und Volumenstrom je Gerät wählen, dann die Anzahl der Etagen eintragen. Das Tool nennt die kleinste Strangdimension laut Auswahlhilfe des Herstellers und rechnet Luftdurchsatz und Strömungsgeschwindigkeit im Strang aus.",
   "category": "Auslegung",
+  "tags": ["lueftung"],
   "keywords": ["Lüftung", "Entlüftung", "Einzelraumlüfter", "Abluft", "Lüftungsstrang", "Steigstrang", "Badlüfter", "WC-Lüfter", "DIN 18017-3"],
   "product": "COSMO EL",
   "note": "Die Auswahl ersetzt nicht den rechnerischen Nachweis nach DIN 18017-3.",

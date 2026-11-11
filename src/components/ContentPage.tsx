@@ -15,6 +15,8 @@ interface ContentPageProps {
   back?: { to: string; label: string }
   /** z. B. Favoriten-Knopf neben der Überschrift */
   actions?: ReactNode
+  /** Zusatzzeile direkt unter der Überschrift, z. B. Themen-Tags */
+  meta?: ReactNode
   /** Quelle + Prüfdatum und „Fehler im Inhalt melden“ unten; nur bei Seiten ohne Fachinhalt (Impressum, Datenschutz) aus */
   showSource?: boolean
   children: ReactNode
@@ -24,7 +26,7 @@ interface ContentPageProps {
  * Rahmen für jede Detailseite eines Inhaltseintrags.
  * Stellt sicher, dass Entwürfe markiert sind und Quelle + Prüfdatum erscheinen.
  */
-export function ContentPage({ entry, title, heading, back, actions, showSource = true, children }: ContentPageProps) {
+export function ContentPage({ entry, title, heading, back, actions, meta, showSource = true, children }: ContentPageProps) {
   usePageTitle(title)
   return (
     <article>
@@ -33,6 +35,7 @@ export function ContentPage({ entry, title, heading, back, actions, showSource =
         <h1 className="text-2xl font-bold break-words">{heading ?? title}</h1>
         {actions && <div className="flex print:hidden">{actions}</div>}
       </header>
+      {meta && <div className="-mt-2 mb-4">{meta}</div>}
       {entry.status === 'draft' && <DraftBadge />}
       <div className="mt-4">{children}</div>
       {showSource && (

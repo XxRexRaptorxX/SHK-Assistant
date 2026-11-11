@@ -66,6 +66,13 @@ Kategorie gehört dort dazu.
 Jedes Tool jeder Art braucht zusätzlich `summary`: ein kurzer Satz, was das Tool leistet. Er steht in
 der Tool-Übersicht und in der Suche unter dem Titel; die ausführliche Erklärung bleibt in `description`.
 
+Außerdem braucht jedes Tool `tags`: das Fachgebiet als farbiges Etikett in der Liste und auf der Tool-Seite,
+mindestens eins, auch mehrere, z. B. `"tags": ["heizung", "kundendienst"]`. Erlaubt sind `heizung` (Heizung),
+`sanitaer` (Sanitär), `lueftung` (Lüftung), `klima` (Klima), `kaelte` (Kälte), `solar` (Solar), `strom` (Strom),
+`kundendienst` (Kundendienst) und `buero` (Büro: Planung, Aufmaß-Listen, Organisation). Die Liste steht in
+`src/modules/tools/toolTags.ts`, die Farben in `ToolTagList.tsx`; ein neuer Tag gehört in beide. Die Suche
+findet Tools auch über den Tag-Namen.
+
 **Tabellen-Tools** (`"kind": "table"`) rechnen nicht, sondern schlagen zu einer Eingabe die passenden
 Zeilen nach, z. B. Richtwerte zum Baujahr. Statt Variablen und Formel haben sie:
 

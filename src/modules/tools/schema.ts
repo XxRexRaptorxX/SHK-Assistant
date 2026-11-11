@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
+import { toolTagsSchema } from './toolTags.ts'
 import { checkFormulaRequirements, formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
 import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
@@ -46,6 +47,7 @@ const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
   /** Ein Satz für die Tool-Übersicht und die Suche: was das Tool leistet */
   summary: z.string().trim().min(1),
+  tags: toolTagsSchema,
   kind: z.undefined().optional(),
 }).superRefine(checkFormulaRequirements)
 
@@ -87,6 +89,7 @@ const tableToolSchema = defineEntrySchema({
   kind: z.literal('table'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
+  tags: toolTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /** Die eine Eingabe, nach der nachgeschlagen wird */
@@ -146,6 +149,7 @@ const choiceToolSchema = defineEntrySchema({
   kind: z.literal('choice'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
+  tags: toolTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   /**

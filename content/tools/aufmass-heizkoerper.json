@@ -12,6 +12,7 @@
   "closingNote": "Die Aufmaße bleiben nur auf diesem Gerät gespeichert. Die E-Mail wird im eigenen Mailprogramm geöffnet und erst von dort gesendet.",
   "todo": "TODO: Inhalt fehlt – Auswahlwerte für Bad-, Rippen-, Röhren- und Sonstige Heizkörper sowie Konvektoren (keine herstellerübergreifenden Angaben gefunden); bis dahin werden diese Maße eingetippt.",
   "category": "Aufmaß",
+  "tags": ["heizung"],
   "dimensions": [
     {
       "key": "bauart",

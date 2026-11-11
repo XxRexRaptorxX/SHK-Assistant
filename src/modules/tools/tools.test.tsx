@@ -246,6 +246,7 @@ describe('Tools', () => {
     kind: 'table',
     title: 'Testtabelle',
     summary: 'Testdaten',
+    tags: ['heizung'],
     description: 'Testdaten',
     category: '',
     input: { name: 'Baujahr', unit: '' },

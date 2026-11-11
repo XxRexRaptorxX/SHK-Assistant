@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
+import { toolTagsSchema } from './toolTags.ts'
 import { LIVE_PRICE_SOURCES, type LivePriceKey, type PricesData } from './heatingCostSources.ts'
 
 // Heizkosten-Vergleich ("kind": "heatingCost"): Jahresverbrauch der eigenen (Referenz-)Heizung eingeben,
@@ -74,6 +75,7 @@ export const heatingCostToolSchema = defineEntrySchema({
   kind: z.literal('heatingCost'),
   title: text,
   summary: text,
+  tags: toolTagsSchema,
   description: text,
   category: z.string().trim().default(''),
   keywords: z.array(text).default([]),

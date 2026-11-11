@@ -10,6 +10,7 @@
   "summary": "Zeigt passende Kabelarten je Komponente oder Einbausituation.",
   "description": "Oben umschalten und wählen: eine Komponente, z. B. Fühler, Außengerät, Steckdose, Pumpe oder PV, oder eine Einbausituation, z. B. Aufputz, Unterputz, innen oder außen. Das Tool zeigt die Kabelarten, die in den Quellen dafür genannt sind, mit ihren Eigenschaften. „Vorgeschrieben“ steht nur, wo eine Quelle es konkret verlangt, und gilt dann für das dort genannte Gerät. Maßgeblich sind immer die Anleitung des Geräts, die gültigen Normen und die Elektrofachkraft; Querschnitt und Absicherung ermittelt das Tool nicht.",
   "category": "Montage",
+  "tags": ["strom"],
   "properties": [
     { "key": "uv", "name": "UV-beständig" },
     { "key": "outdoor", "name": "Im Freien" },

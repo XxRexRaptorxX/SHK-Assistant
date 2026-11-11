@@ -10,6 +10,7 @@
   "summary": "Länge auf der Rolle und verbaute Länge aus mehreren Rollen.",
   "description": "Berechnet Rohr- und Kabellängen auf Rollen. Oben den Rechenweg wählen: schnell über die Wicklungen, genauer über den Ringquerschnitt oder die verbaute Länge, wenn mehrere Rollen verbraucht wurden.",
   "category": "Aufmaß",
+  "tags": ["heizung", "strom"],
   "name": "Berechnung",
   "variants": [
     {

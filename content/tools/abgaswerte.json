@@ -10,6 +10,7 @@
   "summary": "Richtwerte und gesetzliche Grenzwerte für die Abgasmessung.",
   "description": "Zeigt je Brennerart die üblichen Abgaswerte als Anhalt für die Abgasmessung und die gesetzlichen Grenzwerte nach 1. BImSchV und Kehr- und Überprüfungsordnung (KÜO). Maßgeblich sind außerdem die Angaben des Geräteherstellers.",
   "category": "Wartung",
+  "tags": ["heizung", "kundendienst"],
   "sections": [
     {
       "title": "Abgaswerte",

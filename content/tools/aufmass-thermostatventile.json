@@ -11,6 +11,7 @@
   "description": "Bauvorhaben eintragen, Raum wählen und je vorgefundenem Ventil auf **+** tippen. Die Stückliste unten zählt alles zusammen und nennt die Artikelnummer des Ersatzventils. Mehrere Aufmaße lassen sich nebeneinander speichern.",
   "closingNote": "Die Aufmaße bleiben nur auf diesem Gerät gespeichert. Die E-Mail wird im eigenen Mailprogramm geöffnet und erst von dort gesendet.",
   "category": "Aufmaß",
+  "tags": ["heizung"],
   "replacementName": "Danfoss RA-N",
   "groups": [
     {

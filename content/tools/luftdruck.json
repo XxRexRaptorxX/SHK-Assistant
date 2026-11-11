@@ -9,6 +9,7 @@
   "summary": "Schätzt den mittleren Luftdruck am Aufstellort aus seiner Höhe, auf Wunsch per GPS.",
   "description": "Schätzt den Jahresmittelwert des Luftdrucks aus der Höhe des Aufstellorts über dem Meer, z. B. für die Zustandszahl beim Einstellen eines Gasgeräts nach dem Volumenverfahren. Die Höhe lässt sich eintippen oder mit dem Knopf „GPS“ vom Gerät übernehmen. Das aktuelle Wetter ist nicht berücksichtigt; für den tatsächlichen Luftdruck ein Barometer verwenden.",
   "category": "Wartung",
+  "tags": ["kundendienst"],
   "variables": [
     {
       "symbol": "h",

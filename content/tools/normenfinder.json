@@ -11,6 +11,7 @@
   "description": "Welche Regeln gelten für diese Arbeit? Einen oder mehrere Themenbereiche wählen: Darunter stehen die zuständigen Gesetze, Verordnungen, Normen und Technischen Regeln, jeweils mit kurzer Beschreibung und Link.",
   "closingNote": "Die Liste ist eine Auswahl und ersetzt keine Prüfung im Einzelfall. Landesrecht ist nur für Bayern erfasst. Normen und viele Technische Regeln sind kostenpflichtig, der Link führt dann zum Katalogeintrag. Die Ausgaben sind der **Stand vom 04.11.2026**, die gültige Ausgabe steht beim Herausgeber.",
   "category": "Planung",
+  "tags": ["buero"],
   "levels": [
     { "key": "eu", "label": "EU-Verordnung", "binding": true, "description": "Gilt unmittelbar in jedem EU-Staat und hat Vorrang vor entgegenstehendem deutschem Recht." },
     { "key": "gesetz", "label": "Bundesgesetz", "binding": true, "description": "Vom Bund beschlossen und bindend. Bundesrecht geht dem Landesrecht vor (Art. 31 GG)." },

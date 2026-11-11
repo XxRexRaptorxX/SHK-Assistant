@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js'
 import { groupByModule } from '../components/EntryList'
 import { normalizeForSearch } from '../lib/text'
+import type { ToolTag } from '../modules/tools/toolTags'
 
 /** Ein durchsuchbarer Eintrag. Jedes Modul liefert seine Einträge in dieser Form. */
 export interface SearchDocument {
@@ -18,6 +19,8 @@ export interface SearchDocument {
   text: string
   path: string
   status: 'draft' | 'verified'
+  /** Nur Tools: Themen-Tags, rechts unter „Ungeprüft“ angezeigt */
+  tags?: readonly ToolTag[]
 }
 
 export interface SearchGroup {

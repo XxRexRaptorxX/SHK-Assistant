@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
+import { toolTagsSchema } from './toolTags.ts'
 import { normalizeForSearch } from '../../lib/text.ts'
 
 // Sinnbild-Tools ("kind": "symbols"): Sinnbilder (Schaltzeichen) aus Strang- und Anlagenschemata
@@ -82,6 +83,7 @@ export const symbolToolSchema = defineEntrySchema({
   kind: z.literal('symbols'),
   title: z.string().trim().min(1),
   summary: z.string().trim().min(1),
+  tags: toolTagsSchema,
   description: z.string().trim().min(1),
   category: z.string().trim().default(''),
   groups: z.array(symbolGroupSchema).min(1),

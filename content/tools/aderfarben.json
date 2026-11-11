@@ -10,6 +10,7 @@
   "summary": "Zeigt, welche Aderfarbe wofür genutzt wird.",
   "description": "System, Kabeltyp und Aderzahl wählen. Das Tool zeigt, welche Farbe standardmäßig wofür genutzt wird. Grün-Gelb ist immer der Schutzleiter, als PEN-Leiter mit blauer Markierung an den Enden. Blau ist der Neutralleiter; nur wenn im Stromkreis keiner gebraucht wird, darf Blau anders genutzt werden, nie als Schutzleiter. Für alte Installationen und alte Typen wie NYA oder NYMHY gibt es das System „Altanlage“. Die Farbe ersetzt nicht das Prüfen vor Ort.",
   "category": "Montage",
+  "tags": ["strom"],
   "systems": [
     {
       "key": "wechselstrom",

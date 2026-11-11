@@ -10,6 +10,7 @@
   "summary": "Zeigt zu Kältemittel, Hersteller, Aufstellort und Umgebung den Schutzbereich, die Mindestabstände und was nicht zulässig ist.",
   "description": "Kältemittel des Geräts wählen, optional den Hersteller, dann angeben, wo das Außengerät stehen soll und was sich in der Nähe befindet. Die allgemeinen Vorgaben stammen aus dem Leitfaden des Bundesverbands Wärmepumpe; für die Außenaufstellung gibt es keine offiziellen Vorschriften. Maße von Schutzbereich und Mindestabständen legt der Hersteller fest, je nach Baureihe auch unterschiedlich. Sie erscheinen, sobald ein Hersteller gewählt ist.",
   "category": "Montage",
+  "tags": ["heizung", "klima", "kaelte"],
   "closingNote": "Der Leitfaden ist nicht rechtsverbindlich; die Angaben des Herstellers gehen immer vor. Maßgeblich ist die Anleitung des eingebauten Geräts in der aktuellen Ausgabe. Örtliche Vorschriften, z. B. zu Brandschutz, Schallschutz und Grenzabständen, gelten zusätzlich.",
   "keywords": [
     "Aufstellung",

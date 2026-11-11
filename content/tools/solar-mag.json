@@ -10,6 +10,7 @@
   "summary": "Vordruck und Anlagendruck aus der statischen Höhe, dazu die MAG-Größe (Rechenweg Buderus oder Vaillant).",
   "description": "Zeigt aus der statischen Höhe den Vordruck des Membran-Ausdehnungsgefäßes (MAG) und den Anlagendruck einer Solaranlage. Für die Höhe zählt der Abstand vom MAG bis zum höchsten Anlagenpunkt, nicht die Gebäudehöhe. Mit den Angaben zur Anlage kommt die nötige MAG-Größe dazu; ohne sie bleiben nur die beiden Drücke. Die Rohrlänge zählt einfach; Vor- und Rücklauf rechnet das Tool selbst doppelt. Oben lässt sich der Rechenweg umschalten, beide gelten für ein 6-bar-Sicherheitsventil; das i im Schaltfeld erklärt den jeweiligen Rechenweg. Bei anderen Fabrikaten gilt deren Anleitung.",
   "category": "Auslegung",
+  "tags": ["solar"],
   "hideHeading": true,
   "inputs": [
     {

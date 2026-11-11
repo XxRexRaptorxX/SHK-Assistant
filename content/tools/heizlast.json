@@ -10,6 +10,7 @@
   "summary": "Schätzt die Heizlast aus Fläche und Baujahr oder Standard.",
   "description": "Schätzt die Heizlast eines Gebäudes aus der beheizten Fläche und einem Richtwert je Quadratmeter, wahlweise nach Baujahr oder Gebäudestandard; nach Baujahr zusätzlich den jährlichen Wärmebedarf. Mit der vorhandenen Heizleistung lässt sich vergleichen, wie viel Leistung je Quadratmeter heute installiert ist. Eine normgerechte Heizlastberechnung wird dadurch nicht ersetzt.",
   "category": "Auslegung",
+  "tags": ["heizung", "buero"],
   "inputs": [
     {
       "symbol": "A",
