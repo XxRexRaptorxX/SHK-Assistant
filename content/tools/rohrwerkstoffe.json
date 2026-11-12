@@ -1,0 +1,2609 @@
+{
+  "id": "tool.rohrwerkstoffe",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Nur Quellen für Deutschland. Viega, Gebrauchsanleitung Sanpress Inox (de_DE), 2.2 Bestimmungsgemäße Verwendung S. 10–12, 2.3.6 Misch-Installationen und 2.4.1 Korrosion S. 19–20, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/e951f22969c331bbac11409464b375ca_de_DE.pdf. Viega, Gebrauchsanleitung Profipress (de_DE), S. 11–12, 20–21, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/e0311a2c727798b5ac1140951424f46a_de_DE.pdf. Viega, Gebrauchsanleitung Profipress G (de_DE), S. 9–11, 15, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/dbc5be2997759f2bac1140955e906dd5_de_DE.pdf. Viega, Gebrauchsanleitung Prestabo (de_DE), S. 8–10, 19–21, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/4455a94069c02d38ac11409523db97da_de_DE.pdf. Viega, Einsatzbereich der Rohrleitungssysteme in Löschwasseranlagen nass, nach DIN 14462 (Tab. 2), https://www.viega.de/content/dam/viega-assets/viega-worldwide-assets/products/piping-technology/cross-products-piping-technology/technical-documents/Loeschwasseranlagen_nass.pdf, und trocken, nass/trocken (Tab. 1), https://www.viega.de/content/dam/viega-assets/viega-worldwide-assets/products/piping-technology/cross-products-piping-technology/technical-documents/Loeschwasseranlagen_trocken_nasstrocken.pdf. TECE GmbH, TECEflex Technische Informationen, Stand Oktober 2024, S. 1-4 bis 1-12, https://tece.com/sites/default/files/media-documents/main/2024-10/ti_2024_de_teceflex.pdf. Netze BW, TR-G 1006 Technische Installationsvorgaben für Gasinstallationen, Version 1.1, Stand 05/2026, S. 19, https://assets.cdn.netze-bw.de/xytfb1vrn7of/MnXdge8RUxcXVY5whBaeL/c57c575fb4089c9433115dda6d3a52fa/technische-installationsvorgaben-fuer-gasinstallationen.pdf. Umweltbundesamt, Bewertungsgrundlage für metallene Werkstoffe im Kontakt mit Trinkwasser, Version vom 9. Juli 2026 (8. Änderung der Neufassung), Anlage Positivliste Abschnitt 1, S. 29–31, https://www.umweltbundesamt.de/system/files/document/Metall-Bewertungsgrundlage_8._%C3%84nderung_der_Neufassung_DE.pdf. BauNetz Wissen, Rohrleitungen: Werkstoffe, https://www.baunetzwissen.de/gebaeudetechnik/fachwissen/trink--warmwasser/rohrleitungen-werkstoffe-2456313, und Abwasserrohrleitungen, https://www.baunetzwissen.de/bad-und-sanitaer/fachwissen/abwasser---grauwasser/abwasserrohrleitungen-172796. Informationsstelle Edelstahl Rostfrei, Merkblatt 822, 4. Auflage 2012, Tabelle 1 S. 3 (Kurznamen und Gefüge), https://www.edelstahl-rostfrei.de/fileadmin/user_upload/ISER/downloads/MB_822.pdf. Viega, Herstellermitteilung „Wirtschaftliche Edelstahlinstallationen mit Sanpress-Rohr 1.4521“ (13.02.2008), https://www.baulinks.de/webplugin/2008/0263.php4. Esta Rohr GmbH, Flyer „Werkstoff 1.4520 für die Heizungsinstallation“ (03/2011), https://www.tab.de/download/356955/Estarohr_1.4520.pdf. Schallschutz: Fraunhofer-Institut für Bauphysik, Hinweise zu Prüfungen des Geräuschverhaltens von Abwassersystemen im Prüfstand nach DIN EN 14366 (01.06.2016), https://www.pruefstellen.ibp.fraunhofer.de/content/dam/ibp/pruefstellen/de/documents/Akustik/Installationen/IBP-Infobrief_Abwassermessungen_160727.pdf; Düker, Schallschutz in der Haustechnik mit gusseisernen Abflussrohrsystemen (03.11), https://de.readkong.com/page/schallschutz-in-der-haustechnik-4642781. Schwimmbad: Informationsstelle Edelstahl Rostfrei, Merkblatt 831 Edelstahl Rostfrei in Schwimmbädern, 3. Auflage 2016, S. 3–4, https://www.edelstahl-rostfrei.de/fileadmin/user_upload/ISER/downloads/MB_831_Schwimmba_776_der_Web.pdf; GF Piping Systems, Schwimmbäder, https://www.gfps.com/de-de/industries/leisure-and-life-support-systems/swimming-pools.html. Kosten: sanier.de, Das richtige Material für Trinkwasserleitungen (aktualisiert 14.08.2026), https://www.sanier.de/badezimmer/das-richtige-material-fuer-trinkwasserleitungen. Lüftung: BauNetz Wissen, Lüftungskanäle, https://www.baunetzwissen.de/gebaeudetechnik/fachwissen/lueftung/lueftungskanaele-2492245. Abwasserleitungen und Kanal: BauNetz Wissen, Abwasserleitungen: Arten und Bezeichnungen (Farbenlehre der Rohre), https://www.baunetzwissen.de/gebaeudetechnik/fachwissen/entwaesserung/abwasserleitungen-arten-und-bezeichnungen-160250; Stadt Münster, Tiefbau – Grundstücksanschluss, https://www.stadt-muenster.de/tiefbauamt/abwasser/grundstuecksanschluss. Regenwasser: Bauprofessor, Regenfallrohr (21.10.2015), https://www.bauprofessor.de/regenfallrohr/, und Regenfallleitung (30.04.2016), https://www.bauprofessor.de/regenfallleitung/. Gas mit Edelstahl: Viega, Gebrauchsanleitung Sanpress Inox G (de_DE), S. 9–11, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/484673486a815c19ac11409470a20bae_de_DE.pdf. Prozesswasser: Viega, Planungswissen Industrietechnik, Kapitel Prozesswässer (07/2021), S. 121–139, https://www.viega.de/content/dam/viegadm/download-assets/de_de/global-verticals-unterlagen/Planungswissen-Industrie_Kapitel-Prozesswaesser.pdf. Kältemittelleitung aus Kupfer nach Vorgabe des Inhabers (12.11.2026). Alle abgerufen am 12.11.2026. „Geeignet“ heißt: die Quelle nennt den Einsatzbereich; „Empfohlen“ (1–3 je Ergebnis) wägt Eignung und Preis/Leistung aus den genannten Quellen ab; die Begründung steht jeweils dabei. Wo die Verlegung zählt, werden nach Vorgabe des Inhabers unter Putz nur flexible und auf Putz nur starre Rohre empfohlen (außer Abwasser). „Veraltet“ bei SML-Guss nach Vorgabe des Inhabers vom 12.11.2026. Die Herstellerangaben gelten für das jeweilige Rohrsystem. Eigene Kurzfassungen; die Normen selbst wurden nicht eingesehen. Noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "pipeMaterials",
+  "title": "Rohrwerkstoffe",
+  "summary": "Zeigt passende Rohrwerkstoffe je Anlagensystem und Verlegung, mit Vor- und Nachteilen.",
+  "description": "Anlagensystem wählen, bei manchen Systemen noch das Untersystem und, wo es einen Unterschied macht, die Verlegung. Das Tool listet die Rohrwerkstoffe mit Bewertung, Bedingung und Quelle, darunter Vor- und Nachteile des Werkstoffs.\n\nGrundlage sind deutsche Quellen, vor allem Herstellerunterlagen für den deutschen Markt. Sie gelten für das jeweilige Rohrsystem; vor der Ausführung die Zulassung des eingesetzten Systems prüfen.",
+  "category": "Planung",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "trinkwasser",
+    "abwasser",
+    "kaelte",
+    "solar",
+    "lueftung"
+  ],
+  "related": [
+    "tool.rohrdaemmung",
+    "tool.rohrschellenabstand"
+  ],
+  "installations": [
+    {
+      "key": "aufputz",
+      "label": "Aufputz"
+    },
+    {
+      "key": "unterputz",
+      "label": "Unterputz"
+    }
+  ],
+  "materials": [
+    {
+      "key": "edelstahl4401",
+      "name": "Edelstahl 1.4401 (austenitisch)",
+      "aliases": [
+        "X5CrNiMo17-12-2",
+        "Chrom-Nickel-Molybdän-Stahl",
+        "Nichtrostender Stahl",
+        "Edelstahlrohr"
+      ],
+      "description": "Austenitischer nichtrostender Stahl mit Molybdän, Kurzname X5CrNiMo17-12-2.",
+      "pros": [
+        {
+          "text": "Für Trinkwasser uneingeschränkt verwendbar.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Auch für Mischinstallationen mit anderen Rohrwerkstoffen geeignet.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Breiter Einsatzbereich: Trinkwasser, Heizung, Solar, Druckluft, Kühlwasser und nasse Löschwasseranlagen.",
+          "source": "Viega Sanpress Inox"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Hohe Kosten; deshalb meist dort eingesetzt, wo besondere Anforderungen an die Trinkwasserqualität bestehen.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel; Dämmstoffe dürfen höchstens 0,05 % wasserlösliche Chlorid-Ionen enthalten.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Nicht unmittelbar mit verzinktem Stahl verbinden; dafür Übergänge aus Rotguss oder Siliziumbronze.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Bei einigen nichtrostenden Stählen ist örtliche Korrosion (Loch- oder Spaltkorrosion) wahrscheinlicher, z. B. bei Desinfektion mit sehr hohen Chlorkonzentrationen.",
+          "source": "UBA 2026"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Sanpress Inox",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Viega Sanpress Inox G (Gas)",
+          "source": "Viega Sanpress Inox G"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "edelstahl4521",
+      "name": "Edelstahl 1.4521 (ferritisch, nickelfrei)",
+      "aliases": [
+        "X2CrMoTi18-2",
+        "Nickelfreier Edelstahl",
+        "Nichtrostender Stahl",
+        "Edelstahlrohr"
+      ],
+      "description": "Ferritischer nichtrostender Stahl ohne Nickel, Kurzname X2CrMoTi18-2.",
+      "pros": [
+        {
+          "text": "DVGW-geprüft und laut Hersteller in allen Trinkwässern einsetzbar.",
+          "source": "Viega 2008"
+        },
+        {
+          "text": "Durch den Verzicht auf Nickel preiswerter als Edelstahl 1.4401; Mischinstallation mit 1.4401 möglich.",
+          "source": "Viega 2008"
+        },
+        {
+          "text": "Auch für Sprinkleranlagen sowie trockene und nass/trockene Löschwasseranlagen vorgesehen.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Bei Anwendungen nach Druckgeräterichtlinie Nenndruck PN 16 (1.4401: PN 10).",
+          "source": "Viega Sanpress Inox"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel; Dämmstoffe dürfen höchstens 0,05 % wasserlösliche Chlorid-Ionen enthalten.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Nicht unmittelbar mit verzinktem Stahl verbinden; dafür Übergänge aus Rotguss oder Siliziumbronze.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Bei einigen nichtrostenden Stählen ist örtliche Korrosion (Loch- oder Spaltkorrosion) wahrscheinlicher, z. B. bei Desinfektion mit sehr hohen Chlorkonzentrationen.",
+          "source": "UBA 2026"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Sanpress Inox",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Viega Sanpress (Rotguss-Pressverbinder)",
+          "source": "Viega Löschwasser DIN 14462"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "edelstahl4520",
+      "name": "Edelstahl 1.4520 (kein Trinkwasser)",
+      "aliases": [
+        "X2CrTi17",
+        "Edelstahl Heizungsrohr"
+      ],
+      "description": "Nichtrostender Stahl mit Kurzname X2CrTi17, lasergeschweißte Rohre für Heizungs-, Kühl-, Solar- und Druckluftanlagen.",
+      "pros": [
+        {
+          "text": "Betriebsdruck bis 16 bar und Betriebstemperatur bis 110 °C.",
+          "source": "Esta Rohr 2011"
+        },
+        {
+          "text": "Verarbeitung wie bei Edelstahl 1.4401 und 1.4521; bis Größe 28 mm mit r = 3,5 × d biegbar.",
+          "source": "Esta Rohr 2011"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Nicht für Trinkwasser zulässig.",
+          "source": "Esta Rohr 2011"
+        }
+      ],
+      "products": [
+        {
+          "text": "Esta Rohr 1.4520 (simplesta)",
+          "source": "Esta Rohr 2011"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "cStahlVerzinkt",
+      "name": "C-Stahl außen verzinkt",
+      "aliases": [
+        "Kohlenstoffstahl",
+        "Unlegierter Stahl",
+        "E235",
+        "E220"
+      ],
+      "description": "Unlegiertes Stahlrohr (E235, E220), außen galvanisch verzinkt, mit Pressverbindern.",
+      "pros": [
+        {
+          "text": "Für Heizungs-, Solar- und Kühlwasseranlagen in geschlossenen Kreisläufen einsetzbar.",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Nicht für Trinkwasser.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "text": "Nur für warme, trockene Umgebung: die dünne Verzinkung schützt bei Feuchtigkeit nicht dauerhaft vor Außenkorrosion.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "text": "Nur in geschlossenen Kreisläufen ohne Sauerstoffeintrag (salzarmes Wasser ≤ 0,1 mg/l Sauerstoff).",
+          "source": "Viega Prestabo"
+        },
+        {
+          "text": "Kontakt mit korrosiv wirkenden Baustoffen wie Spachtelmasse oder Ausgleichsestrich vermeiden.",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Prestabo",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "cStahlKunststoffmantel",
+      "name": "C-Stahl mit PP-Mantel",
+      "aliases": [
+        "Kunststoffummantelter C-Stahl",
+        "PP-ummanteltes Stahlrohr"
+      ],
+      "description": "Außen verzinktes C-Stahlrohr mit 1 mm Polypropylen-Mantel.",
+      "pros": [
+        {
+          "text": "Laut Hersteller besonders geeignet für Aufputz und empfohlen für Fußbodenbereich und Unterputz.",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Pressverbinder und Rohrenden zusätzlich mit Korrosionsschutzbinde versehen.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "text": "Nicht für Trinkwasser.",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Prestabo, PP-ummanteltes Rohr (Modell 1104)",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "cStahlInnenAussenVerzinkt",
+      "name": "C-Stahl innen und außen sendzimirverzinkt",
+      "aliases": [
+        "Sendzimirverzinkt"
+      ],
+      "description": "C-Stahlrohr mit Sendzimir-Verzinkung innen und außen (15–27 µm).",
+      "pros": [
+        {
+          "text": "Für Druckluftanlagen vorgesehen.",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Nicht für Heizungs- und Kühlanlagen geeignet.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "text": "Mit Frostschutz-Zusätzen kann sich die Zinkschicht lösen und Anlagenteile verstopfen.",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Prestabo-Rohr für Sonderanwendungen",
+          "source": "Viega Prestabo"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "kupfer",
+      "name": "Kupfer",
+      "aliases": [
+        "Kupferrohr",
+        "Cu-DHP",
+        "DIN EN 1057"
+      ],
+      "description": "Kupferrohr als steife Stange oder biegeweich von der Rolle, oft werkseitig kunststoffummantelt.",
+      "pros": [
+        {
+          "text": "Glatte Innenwandungen.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Korrosionsbeständig; frei verlegt in Räumen normalerweise ohne äußeren Korrosionsschutz.",
+          "source": "BauNetz Wissen; Viega Profipress"
+        },
+        {
+          "text": "Biegeweich von der Rolle oder als steife Stange lieferbar.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Breiter Einsatzbereich: Trinkwasser, Heizung, Solar, Druckluft, Kühlwasser, nasse Löschwasseranlagen, mit Gas-Pressverbindern auch Gas und Heizöl.",
+          "source": "Viega Profipress; Viega Profipress G"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Für Trinkwasser nur bei pH-Wert ≥ 7,4 oder bei pH 7,0 bis unter 7,4 mit TOC ≤ 1,5 mg/l.",
+          "source": "UBA 2026"
+        },
+        {
+          "text": "Bei Kontakt mit aggressiven Baustoffen, z. B. nitrit- oder ammoniumhaltigen, ist äußerer Korrosionsschutz nötig.",
+          "source": "Viega Profipress"
+        },
+        {
+          "text": "In Fließrichtung kein Kupferrohr unmittelbar vor verzinktem Stahlrohr (Fließregel).",
+          "source": "Viega Profipress"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Profipress",
+          "source": "Viega Profipress"
+        },
+        {
+          "text": "Viega Profipress G (Gas, Heizöl)",
+          "source": "Viega Profipress G"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "kupferInnenverzinnt",
+      "name": "Kupfer innenverzinnt",
+      "aliases": [
+        "Verzinntes Kupfer"
+      ],
+      "description": "Kupferrohr mit Verzinnung auf der Innenoberfläche.",
+      "pros": [
+        {
+          "text": "Für Trinkwasser ohne Einsatzbeschränkung, wenn die Verzinnung DVGW GW 392 bzw. DVGW W 534 entspricht.",
+          "source": "UBA 2026"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Bei einer Installation mit verschiedenen Rohrwerkstoffen ist die Fließregel einzuhalten.",
+          "source": "UBA 2026"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "verzinkterStahl",
+      "name": "Stahl schmelztauchverzinkt",
+      "aliases": [
+        "Verzinkter Stahl",
+        "Feuerverzinkter Stahl",
+        "Verzinktes Rohr",
+        "DIN EN 10255"
+      ],
+      "description": "Stahlrohr mit Zinküberzug aus dem Schmelztauchverfahren.",
+      "pros": [
+        {
+          "text": "Die Verzinkung macht Stahlrohre sehr widerstandsfähig.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Die Verzinkung schützt nicht vor Rost an den Schnittstellen.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Für Trinkwasser nur in Kaltwasser-Installationen und nur bei bestimmter Wasserbeschaffenheit (Basekapazität KB8,2 ≤ 0,20 mmol/l, Neutralsalzquotient S1 < 1).",
+          "source": "UBA 2026"
+        },
+        {
+          "text": "Korrodiert durch kupferhaltiges Wasser; darf deshalb nie hinter kupfernen Bauteilen eingebaut werden.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "products": [
+        {
+          "text": "Viega Megapress (Löschwasser nass)",
+          "source": "Viega Löschwasser DIN 14462"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "mehrschichtverbund",
+      "name": "Mehrschichtverbundrohr",
+      "aliases": [
+        "Verbundrohr",
+        "Metallverbundrohr",
+        "Aluminiumverbundrohr",
+        "PE-Xc/Al/PE-RT"
+      ],
+      "description": "Kunststoffrohr mit Aluminiumschicht, z. B. PE-Xc/Al/PE-RT nach DIN EN ISO 21003, mit Pressverbindern.",
+      "pros": [
+        {
+          "text": "Ein Rohr für Trinkwasser, Heizung, Druckluft und Gas.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Längenausdehnung ähnlich der eines Metallrohrs.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Biegefest und formstabil, dadurch leicht zu verlegen; korrosionsbeständig.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Unterputzmontage möglich, auch in der Dämmung.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Auch im Wellschutzrohr oder vorgedämmt lieferbar.",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Bauteile dürfen nie über 100 °C erwärmt werden; offene Flammen sind verboten.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Bei konstantem Heizbetrieb Vorlauftemperatur höchstens 70 °C.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Für Gas nur die gelben Gas-Verbundrohre, bis 100 mbar innerhalb von Gebäuden.",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "products": [
+        {
+          "text": "TECE TECEflex Verbundrohr PE-Xc/Al/PE-RT",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "kind": "pipe",
+      "form": "flexible"
+    },
+    {
+      "key": "peXSperre",
+      "name": "PE-X mit Sauerstoffsperre",
+      "aliases": [
+        "PE-Xc/EVOH/PE-Xc",
+        "Fußbodenheizungsrohr",
+        "Vollkunststoffrohr"
+      ],
+      "description": "Vollkunststoffrohr aus vernetztem Polyethylen mit innenliegender Diffusionssperre (EVOH).",
+      "pros": [
+        {
+          "text": "Unempfindlich gegen Außenfeuchte, z. B. Kondenswasser.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Für Trinkwasser, Heizung und Druckluft geeignet.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Von der Rolle lieferbar, auch im Wellschutzrohr.",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Nicht für Gasinstallationen.",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "products": [
+        {
+          "text": "TECE TECEflex PE-Xc 5S",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "kind": "pipe",
+      "form": "flexible"
+    },
+    {
+      "key": "peX",
+      "name": "PE-X",
+      "aliases": [
+        "Vernetztes Polyethylen",
+        "Kunststoffrohr"
+      ],
+      "description": "Kunststoffrohr aus vernetztem Polyethylen.",
+      "pros": [
+        {
+          "text": "Bei 10 bar Betriebsdruck bis 95 °C einsetzbar.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Unempfindlich gegen Korrosion, gut verlegbar, wenig anfällig für Ablagerungen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Dehnt sich bei Wärme stärker aus als Metall.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Empfindlich gegen mechanische Beanspruchung; UV-Strahlung und niedrige Temperaturen führen zur Versprödung.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "kind": "pipe",
+      "form": "flexible"
+    },
+    {
+      "key": "pb",
+      "name": "PB",
+      "aliases": [
+        "Polybuten",
+        "Kunststoffrohr"
+      ],
+      "description": "Kunststoffrohr aus Polybuten.",
+      "pros": [
+        {
+          "text": "Wie PE-X verwendbar, dabei flexibler, UV-beständiger und mit besserem Langzeitverhalten.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Unempfindlich gegen Korrosion, gut verlegbar, wenig anfällig für Ablagerungen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Dehnt sich bei Wärme stärker aus als Metall.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Empfindlich gegen mechanische Beanspruchung.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "kind": "pipe",
+      "form": "flexible"
+    },
+    {
+      "key": "pvcC",
+      "name": "PVC-C",
+      "aliases": [
+        "Chloriertes PVC",
+        "Kunststoffrohr"
+      ],
+      "description": "Kunststoffrohr aus chloriertem Polyvinylchlorid.",
+      "pros": [
+        {
+          "text": "Für Kalt- und Warmwasserleitungen verwendbar.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Unempfindlich gegen Korrosion, gut verlegbar, wenig anfällig für Ablagerungen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Dehnt sich bei Wärme stärker aus als Metall.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Empfindlich gegen mechanische Beanspruchung; UV-Strahlung und niedrige Temperaturen führen zur Versprödung.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "pvcU",
+      "name": "PVC-U",
+      "aliases": [
+        "Hart-PVC",
+        "Kunststoffrohr"
+      ],
+      "description": "Kunststoffrohr aus weichmacherfreiem, hartem Polyvinylchlorid.",
+      "pros": [
+        {
+          "text": "Unempfindlich gegen Korrosion, gut verlegbar, wenig anfällig für Ablagerungen.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Im Schwimmbad laut Hersteller chemikalien- und korrosionsbeständig sowie wartungsfrei.",
+          "source": "GF Schwimmbäder"
+        },
+        {
+          "text": "Auch für Dachrinnen und Regenfallrohre (PVC-U nach DIN EN 607 und DIN EN 1462).",
+          "source": "Bauprofessor Regenfallrohr"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Für Trinkwasser nur bis 20 °C, also nicht für Warmwasser.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Empfindlich gegen mechanische Beanspruchung; UV-Strahlung und niedrige Temperaturen führen zur Versprödung.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "products": [
+        {
+          "text": "GF Piping Systems PVC-U",
+          "source": "GF Schwimmbäder"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "blei",
+      "name": "Blei",
+      "aliases": [
+        "Bleirohr",
+        "Bleidruckrohr"
+      ],
+      "description": "Bleidruckrohr aus Hart- oder Weichblei.",
+      "pros": [],
+      "cons": [
+        {
+          "text": "Für Trinkwasser wegen gesundheitsschädlicher Wirkung nicht mehr zugelassen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "outdated": {
+        "text": "Für Trinkwasser wegen gesundheitsschädlicher Wirkung nicht mehr zugelassen.",
+        "source": "BauNetz Wissen"
+      },
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "htRohr",
+      "name": "HT-Rohr",
+      "aliases": [
+        "Hochtemperaturrohr",
+        "HT-PP",
+        "Abflussrohr"
+      ],
+      "description": "Kunststoff-Abwasserrohr mit Steckmuffe: graues PP (DN 40–150), schwarzes PE (DN 25–300) oder dunkelgraues ABS/ASA/PVC (DN 40–150).",
+      "pros": [
+        {
+          "text": "Temperaturbeständig bis 130 °C.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Beständig gegen Säuren, Laugen und Salze.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Geringes Gewicht und Steckmuffen, dadurch einfach zu verlegen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Belegte Schallwerte nennt die Quelle nicht; bei Schallschutzanforderungen Prüfbericht für Rohr und Schelle verlangen.",
+          "source": "BauNetz Wissen; Fraunhofer IBP 2016"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "schallschutzrohr",
+      "name": "Schallschutz-Abwasserrohr",
+      "aliases": [
+        "Schallgedämmtes Abwasserrohr",
+        "dB-Rohr"
+      ],
+      "description": "Weißes Kunststoffrohr mit mineralfaserverstärkter Außenschicht, meist mit „dB“ im Produktnamen (DN 70–150).",
+      "pros": [
+        {
+          "text": "Erfüllt je nach Produkt die Anforderungen der DIN 4109 (30 dB) oder der VDI 4100 (20 dB).",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Durchgängiger Schallschutz vom Anschluss über Fall- und Sammelleitungen bis zur Grundleitung.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Einsatz nach der Zulassung des jeweiligen Produkts.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "kgRohr",
+      "name": "KG-Rohr (PVC-U)",
+      "aliases": [
+        "Kanalgrundrohr",
+        "PVC-Kanalrohr",
+        "Grundrohr"
+      ],
+      "description": "Meist orange-braunes Kunststoffrohr nach DIN EN 1401-1 und DIN 19534-3, DN 100–500, Steckmuffe mit eingelegtem Lippendichtring.",
+      "pros": [
+        {
+          "text": "Für den Außenbereich gedacht.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Temperaturbeständig nur bis 60 °C.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Nicht hitzebeständig.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "key": "sml",
+      "name": "SML-Gussrohr",
+      "aliases": [
+        "Gussrohr",
+        "Grauguss",
+        "Gusseisen"
+      ],
+      "description": "Muffenloses, schutzbeschichtetes Rohr aus Grauguss nach DIN EN 877, DN 40–300, verbunden mit Spannhülsen oder Schellen.",
+      "pros": [
+        {
+          "text": "Hohe Masse dämpft Schall; die Werte hängen stark von der Befestigung ab.",
+          "source": "Düker Schallschutz"
+        }
+      ],
+      "cons": [],
+      "products": [
+        {
+          "text": "Düker SML",
+          "source": "Düker Schallschutz"
+        }
+      ],
+      "outdated": {
+        "text": "Vom Inhaber als veraltet eingestuft.",
+        "source": "Vorgabe Inhaber 12.11.2026"
+      },
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Wickelfalzrohr",
+        "Spiralfalzrohr",
+        "Lüftungskanal",
+        "Verzinktes Blech"
+      ],
+      "pros": [
+        {
+          "text": "Für Lüftungskanäle weit verbreitet.",
+          "source": "BauNetz Lüftungskanäle"
+        },
+        {
+          "text": "Runde Querschnitte haben geringere Druckverluste als eckige.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Führt der Kanal warme Luft durch unbeheizte Bereiche, gegen Wärmeverlust und Schwitzwasser dämmen.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "products": [],
+      "key": "stahlblechVerzinkt",
+      "name": "Stahlblech verzinkt",
+      "description": "Verzinktes Stahlblech, z. B. für Lüftungskanäle (feuerverzinkt, 0,5–1,2 mm, klein als rundes spiralgefalztes Rohr, größer als Rechteckkanal) oder Regenfallrohre.",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Flexrohr",
+        "Alu-Flexrohr"
+      ],
+      "pros": [],
+      "cons": [
+        {
+          "text": "Nur eingeschränkt zu reinigen; Einsatz auf das Notwendige beschränken.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "products": [],
+      "key": "flexrohrMetall",
+      "name": "Flexibles Metallrohr",
+      "description": "Flexibles Metallrohr zum Anschluss von Luftauslässen.",
+      "kind": "pipe",
+      "form": "flexible"
+    },
+    {
+      "aliases": [
+        "Kunststoffkanal"
+      ],
+      "pros": [
+        {
+          "text": "Beständig gegen aggressive Chemikalien, z. B. in Laboren.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Brennbar, deshalb nur innerhalb eines Brandabschnitts verlegbar.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "products": [],
+      "key": "kunststoffKanal",
+      "name": "Kunststoff-Lüftungskanal",
+      "description": "Lüftungskanal aus Kunststoff.",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Lüftungsschacht gemauert"
+      ],
+      "pros": [],
+      "cons": [],
+      "products": [],
+      "key": "gemauerterKanal",
+      "name": "Gemauerter Luftkanal",
+      "description": "Gemauerter Kanal für natürliche Lüftung.",
+      "outdated": {
+        "text": "Nur noch im Bestandswohnbau bei natürlicher Lüftung zu finden.",
+        "source": "BauNetz Lüftungskanäle"
+      },
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Zink",
+        "Zinkblech",
+        "DIN EN 988",
+        "DIN EN 612"
+      ],
+      "pros": [
+        {
+          "text": "Standardtext für Regenfallrohre in der Ausschreibung (STLB-Bau): Titanzink, Nenngröße 100, 0,7 mm.",
+          "source": "Bauprofessor Regenfallrohr"
+        }
+      ],
+      "cons": [],
+      "products": [],
+      "key": "titanzink",
+      "name": "Titanzink",
+      "description": "Legiertes Zink nach DIN EN 988 für Regenfallrohre nach DIN EN 612.",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Kupfer-Fallrohr",
+        "DIN EN 1172"
+      ],
+      "pros": [],
+      "cons": [],
+      "products": [],
+      "key": "kupferblech",
+      "name": "Kupferblech",
+      "description": "Kupferblech für Regenfallrohre (Bleche nach DIN EN 1172).",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Alu-Fallrohr"
+      ],
+      "pros": [],
+      "cons": [],
+      "products": [],
+      "key": "aluminiumblech",
+      "name": "Aluminium",
+      "description": "Regenfallrohr aus Aluminium.",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "PE-HD",
+        "Polyethylen",
+        "DIN EN 1519-1"
+      ],
+      "pros": [
+        {
+          "text": "Dickwandiger als HT- und KG-Rohre; meist als Grundleitung eingebaut, z. B. für Regenwasser.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "cons": [],
+      "products": [],
+      "key": "peHd",
+      "name": "PE-Rohr (schwarz)",
+      "description": "Schwarzes Polyethylen-Abwasserrohr, dickwandiger als HT- und KG-Rohre.",
+      "kind": "pipe",
+      "form": "flexible"
+    },
+    {
+      "aliases": [
+        "KG 2000",
+        "Grünes KG-Rohr"
+      ],
+      "pros": [
+        {
+          "text": "Belastbarer als das orange KG-Rohr, freiliegend verlegbar.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "cons": [],
+      "products": [],
+      "key": "kgGruen",
+      "name": "KG-Rohr grün (höher belastbar)",
+      "description": "Grünes Kanalgrundrohr, belastbarer als das orange KG-Rohr und auch freiliegend verlegbar.",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Beton"
+      ],
+      "pros": [
+        {
+          "text": "Günstige Alternative für Grundleitungen.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "cons": [],
+      "products": [],
+      "key": "beton",
+      "name": "Betonrohr",
+      "description": "Rohr aus Beton für Grundleitungen.",
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Steinzeugrohr",
+        "Tonrohr",
+        "Keramikrohr"
+      ],
+      "pros": [],
+      "cons": [
+        {
+          "text": "Deutlich teurer als andere Abwasserrohre.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "products": [],
+      "key": "steinzeug",
+      "name": "Steinzeug (Ton)",
+      "description": "Abwasserrohr aus Steinzeug (gebrannter Ton).",
+      "outdated": {
+        "text": "Deutlich teurer und heute meist nicht mehr verwendet.",
+        "source": "BauNetz Abwasserleitungen"
+      },
+      "kind": "pipe",
+      "form": "rigid"
+    },
+    {
+      "aliases": [
+        "Polypropylen",
+        "Kunststoffrohr"
+      ],
+      "pros": [
+        {
+          "text": "Unempfindlich gegen Korrosion, gut verlegbar, wenig anfällig für Ablagerungen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Dehnt sich bei Wärme stärker aus als Metall.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Empfindlich gegen mechanische Beanspruchung; UV-Strahlung und niedrige Temperaturen führen zur Versprödung.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "products": [],
+      "key": "pp",
+      "kind": "pipe",
+      "form": "rigid",
+      "name": "PP",
+      "description": "Kunststoffrohr aus Polypropylen."
+    },
+    {
+      "aliases": [
+        "Gewinderohr",
+        "Schwarzes Stahlrohr"
+      ],
+      "pros": [
+        {
+          "text": "In geschlossenen Kühlkreisläufen, auch mit Wasser-Glykol-Gemischen, einsetzbar.",
+          "source": "Viega Planungswissen Prozesswässer"
+        }
+      ],
+      "cons": [],
+      "products": [
+        {
+          "text": "Viega Megapress",
+          "source": "Viega Planungswissen Prozesswässer"
+        }
+      ],
+      "key": "stahlDickwandig",
+      "kind": "pipe",
+      "form": "rigid",
+      "name": "Stahlrohr dickwandig",
+      "description": "Dickwandiges Stahlrohr, mit Pressverbindern für dickwandigen Stahl verbunden."
+    },
+    {
+      "aliases": [
+        "Kupfer-Zink-Legierung",
+        "Messingfitting"
+      ],
+      "pros": [
+        {
+          "text": "Für Heizungs-, Gas- und Druckluftinstallationen.",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "cons": [
+        {
+          "text": "Aus korrosionstechnischen Gründen ist Standardmessing für Trinkwasser nicht freigegeben.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Für Trinkwasser nur Kupfer-Zink-Legierungen aus der Positivliste der UBA-Bewertungsgrundlage.",
+          "source": "UBA 2026"
+        }
+      ],
+      "products": [
+        {
+          "text": "TECEflex Messingfittings",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "key": "messing",
+      "kind": "fitting",
+      "name": "Messing",
+      "description": "Kupfer-Zink-Legierung für Fittings und Verbinder."
+    },
+    {
+      "aliases": [
+        "Rotgussfitting",
+        "Gussbronze"
+      ],
+      "pros": [
+        {
+          "text": "Auf der UBA-Positivliste; für Trinkwasser, Gas, Heizung und Druckluft einsetzbar.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Für Übergänge zwischen Edelstahl und verzinktem Stahl empfohlen.",
+          "source": "Viega Sanpress Inox"
+        }
+      ],
+      "cons": [],
+      "products": [
+        {
+          "text": "TECEflex Rotguss-Siliziumbronzefittings",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Viega Sanpress (Pressverbinder)",
+          "source": "Viega Löschwasser DIN 14462"
+        }
+      ],
+      "key": "rotguss",
+      "kind": "fitting",
+      "name": "Rotguss",
+      "description": "Kupfer-Gusslegierung für Fittings und Verbinder."
+    },
+    {
+      "aliases": [
+        "SiBr",
+        "Silizium-Bronze"
+      ],
+      "pros": [
+        {
+          "text": "Gleichwertig mit Rotguss und international einheitlich verwendbar; Mischinstallation mit Rotguss uneingeschränkt möglich.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Auf der UBA-Positivliste; für Trinkwasser, Gas, Heizung und Druckluft einsetzbar.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Für Übergänge zwischen Edelstahl und verzinktem Stahl empfohlen.",
+          "source": "Viega Sanpress Inox"
+        }
+      ],
+      "cons": [],
+      "products": [
+        {
+          "text": "TECEflex Rotguss-Siliziumbronzefittings",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "text": "Viega Sanpress (Pressverbinder)",
+          "source": "Viega Löschwasser DIN 14462"
+        }
+      ],
+      "key": "siliziumbronze",
+      "kind": "fitting",
+      "name": "Siliziumbronze",
+      "description": "Kupferlegierung mit Silizium für Fittings und Verbinder, Nachfolger von Rotguss."
+    }
+  ],
+  "systems": [
+    {
+      "key": "trinkwasser",
+      "label": "Trinkwasser",
+      "aliases": [
+        "Trinkwasserinstallation"
+      ],
+      "requirements": [
+        {
+          "text": "Für metallene Werkstoffe gilt die Positivliste der UBA-Bewertungsgrundlage mit ihren Einsatzbeschränkungen.",
+          "source": "UBA 2026"
+        },
+        {
+          "text": "Kunststoffrohre brauchen eine entsprechende Zulassung.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Die Werkstoffwahl hängt vor allem von der Wasserbeschaffenheit ab: sehr hartes Wasser führt zu Kalkablagerungen, sehr weiches zu Korrosion.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Bei verschiedenen Rohrwerkstoffen die Fließregel einhalten: kein Kupfer in Fließrichtung vor verzinktem Stahl; Edelstahl und verzinkten Stahl nicht unmittelbar verbinden.",
+          "source": "Viega Profipress; Viega Sanpress Inox"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "installations": [
+            "aufputz"
+          ],
+          "note": "Für Trinkwasser nach DIN 1988-200 und EN 806-2; Chlorid im Wasser höchstens 250 mg/l.",
+          "source": "Viega Sanpress Inox; BauNetz Wissen"
+        },
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "installations": [
+            "unterputz"
+          ],
+          "note": "Für Trinkwasser nach DIN 1988-200 und EN 806-2; Chlorid im Wasser höchstens 250 mg/l. Kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel.",
+          "source": "Viega Sanpress Inox; BauNetz Wissen"
+        },
+        {
+          "material": "edelstahl4521",
+          "level": "recommended",
+          "installations": [
+            "aufputz"
+          ],
+          "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Für Trinkwasser nach DIN 1988-200 und EN 806-2; Chlorid im Wasser höchstens 250 mg/l.",
+          "source": "Viega Sanpress Inox; Viega 2008"
+        },
+        {
+          "material": "edelstahl4521",
+          "level": "suitable",
+          "installations": [
+            "unterputz"
+          ],
+          "note": "4401. Für Trinkwasser nach DIN 1988-200 und EN 806-2; Chlorid im Wasser höchstens 250 mg/l. Kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel. Starres Rohr: unter Putz werden nur flexible Rohre empfohlen.",
+          "source": "Viega Sanpress Inox; Viega 2008"
+        },
+        {
+          "material": "mehrschichtverbund",
+          "level": "suitable",
+          "note": "DVGW-zertifiziert; Anwendungsklasse 2 bei 10 bar nach ISO 10508. Unterputzmontage möglich. Flexibles Rohr: auf Putz werden nur starre Rohre empfohlen.",
+          "source": "TECE TECEflex 2024; sanier.de",
+          "installations": [
+            "aufputz"
+          ]
+        },
+        {
+          "material": "mehrschichtverbund",
+          "level": "recommended",
+          "note": "Preis/Leistung: flexibel und leicht zu verlegen, ein Rohrsystem für Trinkwasser, Heizung, Druckluft und Gas. DVGW-zertifiziert; Anwendungsklasse 2 bei 10 bar nach ISO 10508. Unterputzmontage möglich.",
+          "source": "TECE TECEflex 2024; sanier.de",
+          "installations": [
+            "unterputz"
+          ]
+        },
+        {
+          "material": "peXSperre",
+          "level": "suitable",
+          "note": "Anwendungsklasse 2 bei 10 bar nach ISO 10508. Flexibles Rohr: auf Putz werden nur starre Rohre empfohlen.",
+          "source": "TECE TECEflex 2024",
+          "installations": [
+            "aufputz"
+          ]
+        },
+        {
+          "material": "peXSperre",
+          "level": "recommended",
+          "note": "Vollkunststoffrohr von der Rolle, leicht zu verlegen; Anwendungsklasse 2 bei 10 bar nach ISO 10508.",
+          "source": "TECE TECEflex 2024",
+          "installations": [
+            "unterputz"
+          ]
+        },
+        {
+          "material": "kupferInnenverzinnt",
+          "level": "suitable",
+          "note": "Ohne Einsatzbeschränkung, wenn die Verzinnung DVGW GW 392 bzw. W 534 entspricht.",
+          "source": "UBA 2026"
+        },
+        {
+          "material": "peX",
+          "level": "suitable",
+          "note": "Bei 10 bar bis 95 °C; Zulassung für Trinkwasser erforderlich.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "material": "pb",
+          "level": "suitable",
+          "note": "Wie PE-X; Zulassung für Trinkwasser erforderlich.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "material": "pvcC",
+          "level": "suitable",
+          "note": "Für Kalt- und Warmwasser; Zulassung für Trinkwasser erforderlich.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "material": "kupfer",
+          "level": "limited",
+          "installations": [
+            "aufputz"
+          ],
+          "note": "Nur bei pH-Wert ≥ 7,4 oder bei pH 7,0 bis unter 7,4 mit TOC ≤ 1,5 mg/l.",
+          "source": "UBA 2026; Viega Profipress"
+        },
+        {
+          "material": "kupfer",
+          "level": "limited",
+          "installations": [
+            "unterputz"
+          ],
+          "note": "Nur bei pH-Wert ≥ 7,4 oder bei pH 7,0 bis unter 7,4 mit TOC ≤ 1,5 mg/l. Bei Kontakt mit aggressiven, z. B. nitrit- oder ammoniumhaltigen Baustoffen äußeren Korrosionsschutz vorsehen.",
+          "source": "UBA 2026; Viega Profipress"
+        },
+        {
+          "material": "edelstahl4520",
+          "level": "avoid",
+          "note": "Laut Hersteller nicht für Trinkwasser zulässig.",
+          "source": "Esta Rohr 2011"
+        },
+        {
+          "material": "cStahlVerzinkt",
+          "level": "avoid",
+          "note": "Laut Hersteller nicht für Trinkwasser geeignet; Rohre und Pressverbinder tragen das Symbol „Kein Trinkwasser“.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "material": "cStahlKunststoffmantel",
+          "level": "avoid",
+          "note": "Laut Hersteller nicht für Trinkwasser geeignet; Rohre und Pressverbinder tragen das Symbol „Kein Trinkwasser“.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "material": "blei",
+          "level": "avoid",
+          "note": "Wegen gesundheitsschädlicher Wirkung nicht mehr zugelassen.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "material": "pp",
+          "level": "suitable",
+          "note": "Als Kunststoff für Trinkwasser genannt; Zulassung erforderlich.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "material": "peHd",
+          "level": "limited",
+          "note": "Im Wesentlichen für erdverlegte Leitungen.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "material": "rotguss",
+          "level": "suitable",
+          "note": "Für Trinkwasser freigegeben (UBA-Positivliste).",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "siliziumbronze",
+          "level": "suitable",
+          "note": "Für Trinkwasser freigegeben (UBA-Positivliste).",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "messing",
+          "level": "limited",
+          "note": "Standardmessing ist für Trinkwasser nicht freigegeben; nur Kupfer-Zink-Legierungen aus der UBA-Positivliste.",
+          "source": "TECE TECEflex 2024; UBA 2026"
+        }
+      ],
+      "subsystems": [
+        {
+          "key": "kaltwasser",
+          "label": "Kaltwasser",
+          "aliases": [
+            "Trinkwasser kalt"
+          ],
+          "recommendations": [
+            {
+              "material": "verzinkterStahl",
+              "level": "limited",
+              "note": "Nur bei Trinkwasser mit KB8,2 ≤ 0,20 mmol/l und Neutralsalzquotient S1 < 1. Nie hinter kupfernen Bauteilen einbauen.",
+              "source": "UBA 2026; BauNetz Wissen"
+            },
+            {
+              "material": "pvcU",
+              "level": "limited",
+              "note": "Nur bis 20 °C; Zulassung für Trinkwasser erforderlich.",
+              "source": "BauNetz Wissen"
+            }
+          ],
+          "protection": [
+            {
+              "text": "Kaltwasser gegen Erwärmung schützen: Kaltwasserleitungen ausreichend stark dämmen; in Vorwänden kalt unten und warm oben führen, Hohlräume gegebenenfalls mit Dämmstoff verfüllen.",
+              "source": "TECE TECEflex 2024"
+            },
+            {
+              "text": "Mindestdämmdicke für Kaltwasserleitungen: siehe Tool „Mindestdämmdicke von Rohrleitungen“.",
+              "source": "Tool „Mindestdämmdicke von Rohrleitungen“"
+            }
+          ]
+        },
+        {
+          "key": "warmwasser",
+          "label": "Warmwasser und Zirkulation",
+          "aliases": [
+            "Trinkwasser warm",
+            "Zirkulation"
+          ],
+          "recommendations": [
+            {
+              "material": "verzinkterStahl",
+              "level": "avoid",
+              "note": "Laut UBA nur für Kaltwasser-Installationen verwendbar.",
+              "source": "UBA 2026"
+            },
+            {
+              "material": "pvcU",
+              "level": "avoid",
+              "note": "Nur bis 20 °C, daher nicht für Warmwasser.",
+              "source": "BauNetz Wissen"
+            }
+          ],
+          "protection": [
+            {
+              "text": "Mindestdämmdicke für Warmwasser- und Zirkulationsleitungen: siehe Tool „Mindestdämmdicke von Rohrleitungen“.",
+              "source": "Tool „Mindestdämmdicke von Rohrleitungen“"
+            }
+          ]
+        }
+      ],
+      "protection": [
+        {
+          "text": "Edelstahl: Dämmstoffe dürfen höchstens 0,05 % wasserlösliche Chlorid-Ionen enthalten; geschlossenzellige Dämmschläuche an allen Stoß- und Schnittkanten sorgfältig verkleben.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "text": "Kupferrohr wird werkseitig oft kunststoffummantelt (Schutz gegen Schwitzwasser und äußere Einflüsse); eine Ummantelung mit Wärmedämmung ist üblich.",
+          "source": "BauNetz Wissen"
+        },
+        {
+          "text": "Mehrschichtverbund- und PE-X-Rohre gibt es auch im Wellschutzrohr, Verbundrohre auch vorgedämmt.",
+          "source": "TECE TECEflex 2024"
+        }
+      ]
+    },
+    {
+      "key": "heizung",
+      "label": "Heizung",
+      "aliases": [
+        "Heizungsrohr"
+      ],
+      "subsystems": [
+        {
+          "key": "heizkreis",
+          "label": "Heizkreis (geschlossen)",
+          "aliases": [
+            "Heizkörperanbindung",
+            "Pumpen-Warmwasser-Heizung"
+          ],
+          "requirements": [
+            {
+              "text": "Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen nach VDI 2035 Blatt 1 und 2.",
+              "source": "Viega Sanpress Inox"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "cStahlKunststoffmantel",
+              "level": "suitable",
+              "installations": [
+                "aufputz"
+              ],
+              "note": "Laut Hersteller besonders geeignet für Aufputz-Installationen. Nur geschlossene Kreisläufe ohne Sauerstoffeintrag.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "cStahlKunststoffmantel",
+              "level": "suitable",
+              "installations": [
+                "unterputz"
+              ],
+              "note": "Vom Hersteller für Fußbodenbereich und Unterputz empfohlen; Pressverbinder und Rohrenden zusätzlich mit Korrosionsschutzbinde versehen. Starres Rohr: unter Putz werden nur flexible Rohre empfohlen.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "edelstahl4401",
+              "level": "suitable",
+              "installations": [
+                "aufputz"
+              ],
+              "note": "Für Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4401",
+              "level": "suitable",
+              "installations": [
+                "unterputz"
+              ],
+              "note": "Für Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen. Kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4521",
+              "level": "suitable",
+              "installations": [
+                "aufputz"
+              ],
+              "note": "Für Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4521",
+              "level": "suitable",
+              "installations": [
+                "unterputz"
+              ],
+              "note": "Für Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen. Kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4520",
+              "level": "recommended",
+              "note": "Preis/Leistung: laut Hersteller kostengünstige Edelstahl-Alternative. Speziell für Heizungsanlagen; bis 16 bar und 110 °C.",
+              "source": "Esta Rohr 2011",
+              "installations": [
+                "aufputz"
+              ]
+            },
+            {
+              "material": "edelstahl4520",
+              "level": "suitable",
+              "note": "Speziell für Heizungsanlagen; bis 16 bar und 110 °C. Starres Rohr: unter Putz werden nur flexible Rohre empfohlen.",
+              "source": "Esta Rohr 2011",
+              "installations": [
+                "unterputz"
+              ]
+            },
+            {
+              "material": "kupfer",
+              "level": "suitable",
+              "installations": [
+                "aufputz"
+              ],
+              "note": "Für Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen; frei verlegt normalerweise ohne äußeren Korrosionsschutz.",
+              "source": "Viega Profipress"
+            },
+            {
+              "material": "kupfer",
+              "level": "suitable",
+              "installations": [
+                "unterputz"
+              ],
+              "note": "Für Heizungswasser in Pumpen-Warmwasser-Heizungsanlagen. Bei Kontakt mit aggressiven, z. B. nitrit- oder ammoniumhaltigen Baustoffen äußeren Korrosionsschutz vorsehen.",
+              "source": "Viega Profipress"
+            },
+            {
+              "material": "mehrschichtverbund",
+              "level": "suitable",
+              "note": "Anwendungsklasse 5 nach ISO 10508 (Hochtemperatur-Radiatorenanbindung); bei konstantem Heizbetrieb Vorlauf höchstens 70 °C. Unterputzmontage möglich. Flexibles Rohr: auf Putz werden nur starre Rohre empfohlen.",
+              "source": "TECE TECEflex 2024",
+              "installations": [
+                "aufputz"
+              ]
+            },
+            {
+              "material": "mehrschichtverbund",
+              "level": "recommended",
+              "note": "Preis/Leistung: leicht zu verlegen, ein Rohrsystem für mehrere Gewerke. Anwendungsklasse 5 nach ISO 10508 (Hochtemperatur-Radiatorenanbindung); bei konstantem Heizbetrieb Vorlauf höchstens 70 °C. Unterputzmontage möglich.",
+              "source": "TECE TECEflex 2024",
+              "installations": [
+                "unterputz"
+              ]
+            },
+            {
+              "material": "cStahlVerzinkt",
+              "level": "suitable",
+              "installations": [
+                "aufputz"
+              ],
+              "note": "Nur in warmer, trockener Umgebung ohne dauerhafte Feuchtigkeit; nur geschlossene Kreisläufe ohne Sauerstoffeintrag.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "cStahlVerzinkt",
+              "level": "limited",
+              "installations": [
+                "unterputz"
+              ],
+              "note": "Der Hersteller empfiehlt unter Putz das PP-ummantelte Rohr. Die Verzinkung schützt bei Feuchtigkeit nicht dauerhaft; Kontakt mit Spachtelmasse oder Ausgleichsestrich vermeiden.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "cStahlInnenAussenVerzinkt",
+              "level": "avoid",
+              "note": "Sendzimirverzinkte Rohre sind laut Hersteller nicht für Heizungs- und Kühlanlagen geeignet.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "peXSperre",
+              "level": "suitable",
+              "installations": [
+                "aufputz"
+              ],
+              "note": "Für die Heizkörperanbindung vorgesehen, Anwendungsklasse 5 bei 6 bar. Flexibles Rohr: auf Putz werden nur starre Rohre empfohlen.",
+              "source": "TECE TECEflex 2024"
+            },
+            {
+              "material": "peXSperre",
+              "level": "recommended",
+              "installations": [
+                "unterputz"
+              ],
+              "note": "Für die Heizkörperanbindung vorgesehen, Anwendungsklasse 5 bei 6 bar; Vollkunststoffrohr von der Rolle, leicht zu verlegen.",
+              "source": "TECE TECEflex 2024"
+            },
+            {
+              "material": "rotguss",
+              "level": "suitable",
+              "note": "",
+              "source": "TECE TECEflex 2024"
+            },
+            {
+              "material": "siliziumbronze",
+              "level": "suitable",
+              "note": "",
+              "source": "TECE TECEflex 2024"
+            },
+            {
+              "material": "messing",
+              "level": "suitable",
+              "note": "",
+              "source": "TECE TECEflex 2024"
+            }
+          ],
+          "protection": [
+            {
+              "text": "C-Stahl: außerhalb feuchtigkeitsgefährdeter Bereiche verlegen; im Fußbodenaufbau mit wasserundurchlässiger, dicht verklebter Trennfolie gegen Estrichfeuchte schützen; geschlossenzellige Dämmschläuche an Stoß- und Schnittkanten verkleben (kein Ersatz für Korrosionsschutz).",
+              "source": "Viega Prestabo"
+            },
+            {
+              "text": "C-Stahl mit PP-Mantel unter Putz und im Fußbodenbereich: Pressverbinder und Rohrenden mit Korrosionsschutzbinde versehen.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "text": "Edelstahl: Dämmstoffe dürfen höchstens 0,05 % wasserlösliche Chlorid-Ionen enthalten.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "text": "Mindestdämmdicke für Heizungsleitungen: siehe Tool „Mindestdämmdicke von Rohrleitungen“.",
+              "source": "Tool „Mindestdämmdicke von Rohrleitungen“"
+            }
+          ]
+        },
+        {
+          "key": "fussbodenheizung",
+          "label": "Fußbodenheizung",
+          "aliases": [
+            "Flächenheizung",
+            "FBH"
+          ],
+          "recommendations": [
+            {
+              "material": "mehrschichtverbund",
+              "level": "recommended",
+              "note": "Biegefest und formstabil, leicht zu verlegen. Laut Hersteller in den Dimensionen 14, 16 und 20 mm für Fußbodenheizung vorgesehen.",
+              "source": "TECE TECEflex 2024"
+            },
+            {
+              "material": "peXSperre",
+              "level": "recommended",
+              "note": "Vollkunststoffrohr von der Rolle, unempfindlich gegen Außenfeuchte. Mit innenliegender Diffusionssperre; für Fußbodenheizung vorgesehen, Anwendungsklasse 5 bei 6 bar nach ISO 10508.",
+              "source": "TECE TECEflex 2024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "kaelte",
+      "label": "Kälte und Kühlung",
+      "aliases": [
+        "Kälteleitung",
+        "Kühlung",
+        "Kühlwasser"
+      ],
+      "subsystems": [
+        {
+          "key": "kuehlwasser",
+          "label": "Kühlwasser (geschlossener Kreislauf)",
+          "aliases": [
+            "Kaltwasser Klima",
+            "Kühlkreislauf"
+          ],
+          "requirements": [
+            {
+              "text": "Frostschutzmittel und Kühlsolen bis zu einer Konzentration von 50 %.",
+              "source": "Viega Sanpress Inox; Viega Profipress"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "edelstahl4401",
+              "level": "suitable",
+              "note": "Für Kühlwasserleitungen im geschlossenen Kreislauf.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4521",
+              "level": "recommended",
+              "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Für Kühlwasserleitungen im geschlossenen Kreislauf.",
+              "source": "Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4520",
+              "level": "recommended",
+              "note": "Preis/Leistung: laut Hersteller kostengünstige Edelstahl-Alternative. Für Kühl- und Kältekreisläufe.",
+              "source": "Esta Rohr 2011"
+            },
+            {
+              "material": "kupfer",
+              "level": "suitable",
+              "note": "Für Kühlwasserleitungen im geschlossenen Kreislauf.",
+              "source": "Viega Profipress"
+            },
+            {
+              "material": "cStahlVerzinkt",
+              "level": "limited",
+              "note": "Nur mit lückenlosem äußerem Korrosionsschutz, weil Tauwasser sonst zu Korrosion führt; nur ohne Sauerstoffeintrag.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "cStahlKunststoffmantel",
+              "level": "limited",
+              "note": "Nur mit lückenlosem äußerem Korrosionsschutz, weil Tauwasser sonst zu Korrosion führt; nur ohne Sauerstoffeintrag.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "material": "cStahlInnenAussenVerzinkt",
+              "level": "avoid",
+              "note": "Mit Frostschutz-Zusätzen kann sich die Zinkschicht lösen und Anlagenteile verstopfen; laut Hersteller nicht für Kühlanlagen.",
+              "source": "Viega Prestabo"
+            }
+          ],
+          "protection": [
+            {
+              "text": "C-Stahl in Kühlkreisläufen: lückenloser äußerer Korrosionsschutz, damit Tauwasser nicht zu Korrosion führt.",
+              "source": "Viega Prestabo"
+            },
+            {
+              "text": "Mindestdämmdicke für Kälteleitungen: siehe Tool „Mindestdämmdicke von Rohrleitungen“.",
+              "source": "Tool „Mindestdämmdicke von Rohrleitungen“"
+            }
+          ]
+        },
+        {
+          "key": "kaeltemittel",
+          "label": "Kältemittelleitung",
+          "aliases": [
+            "Klimaanlage",
+            "Split-Wärmepumpe"
+          ],
+          "requirements": [
+            {
+              "text": "Laut Viega sind ihre Pressverbindersysteme nicht für den Transport von Kältemitteln geeignet.",
+              "source": "Viega Planungswissen Prozesswässer"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "kupfer",
+              "level": "recommended",
+              "note": "Kältemittelleitungen werden aus Kupfer ausgeführt, wie in den Anleitungen der Klimageräte; nicht mit Pressverbindern verbinden.",
+              "source": "Vorgabe Inhaber 12.11.2026; Viega Planungswissen Prozesswässer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "gas",
+      "label": "Gas (Erdgas, Flüssiggas)",
+      "aliases": [
+        "Gasleitung",
+        "Brenngas",
+        "Erdgas",
+        "Flüssiggas"
+      ],
+      "requirements": [
+        {
+          "text": "Gasinstallationen nach DVGW-TRGI 2018 (G 600), Flüssiggas nach DVFG-TRF 2021.",
+          "source": "Viega Profipress G; TECE TECEflex 2024"
+        },
+        {
+          "text": "Bei Mehrschichtverbundrohr nur Gasströmungswächter Typ K einsetzen und zwingend eine thermisch auslösende Absperreinrichtung (TAE) vorsehen.",
+          "source": "Netze BW TR-G 1006"
+        },
+        {
+          "text": "Flüssiggas mit Anforderung an höhere thermische Belastbarkeit (HTB) und Ansprechdruck des Sicherheitsabsperrventils über 1 bar: laut Hersteller das Edelstahl-Gassystem statt Kupfer verwenden.",
+          "source": "Viega Profipress G"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "kupfer",
+          "level": "recommended",
+          "installations": [
+            "aufputz"
+          ],
+          "note": "Ohne die Grenze von 100 mbar der Verbundrohre. Mit Gas-Pressverbindern (gelb gekennzeichnet); Niederdruck bis 100 mbar und Mitteldruck bis 1 bar. Frei verlegt normalerweise ohne äußeren Korrosionsschutz.",
+          "source": "Viega Profipress G"
+        },
+        {
+          "material": "kupfer",
+          "level": "limited",
+          "installations": [
+            "unterputz"
+          ],
+          "note": "Mit Gas-Pressverbindern (gelb gekennzeichnet). Bei Kontakt mit aggressiven, z. B. nitrit- oder ammoniumhaltigen Baustoffen äußeren Korrosionsschutz vorsehen; in Aussparungen in Rohdecken oder in der Ausgleichsschicht wie erdverlegte Leitungen schützen. Starres Rohr: unter Putz werden nur flexible Rohre empfohlen.",
+          "source": "Viega Profipress G"
+        },
+        {
+          "material": "mehrschichtverbund",
+          "level": "limited",
+          "note": "Nur gelbe Gas-Verbundrohre mit Kennzeichnung W/G 100, bis 100 mbar innerhalb von Gebäuden. Gasströmungswächter Typ K und TAE vorsehen. Flexibles Rohr: auf Putz werden nur starre Rohre empfohlen.",
+          "source": "TECE TECEflex 2024; Netze BW TR-G 1006",
+          "installations": [
+            "aufputz"
+          ]
+        },
+        {
+          "material": "mehrschichtverbund",
+          "level": "recommended",
+          "note": "Flexibles Gas-Verbundrohr: Nur gelbe Gas-Verbundrohre mit Kennzeichnung W/G 100, bis 100 mbar innerhalb von Gebäuden. Gasströmungswächter Typ K und TAE vorsehen.",
+          "source": "TECE TECEflex 2024; Netze BW TR-G 1006",
+          "installations": [
+            "unterputz"
+          ]
+        },
+        {
+          "material": "peXSperre",
+          "level": "avoid",
+          "note": "Laut Hersteller nicht für Gasinstallationen.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "edelstahl4401",
+          "level": "recommended",
+          "installations": [
+            "aufputz"
+          ],
+          "note": "Edelstahl-Gassystem ausschließlich mit Rohr 1.4401; Niederdruck, Mitteldruck bis 1 bar und Flüssiggas bis 5 bar.",
+          "source": "Viega Sanpress Inox G"
+        },
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "installations": [
+            "unterputz"
+          ],
+          "note": "Ausschließlich Rohr 1.4401; kein Kontakt mit chloridhaltigen Baustoffen oder Mörtel. Starres Rohr: unter Putz werden nur flexible Rohre empfohlen.",
+          "source": "Viega Sanpress Inox G; Viega Sanpress Inox"
+        },
+        {
+          "material": "edelstahl4521",
+          "level": "avoid",
+          "note": "Für Gas ist ausschließlich Edelstahlrohr 1.4401 zugelassen.",
+          "source": "Viega Sanpress Inox G"
+        },
+        {
+          "material": "rotguss",
+          "level": "suitable",
+          "note": "",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "siliziumbronze",
+          "level": "suitable",
+          "note": "",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "messing",
+          "level": "suitable",
+          "note": "",
+          "source": "TECE TECEflex 2024"
+        }
+      ],
+      "protection": [
+        {
+          "text": "In Aussparungen in Rohdecken oder in der Ausgleichsschicht Gasleitungen wie erdverlegte Leitungen gegen Korrosion schützen; bei Kontakt mit nitrit- oder ammoniumhaltigen Baustoffen äußerer Korrosionsschutz.",
+          "source": "Viega Profipress G"
+        }
+      ]
+    },
+    {
+      "key": "solar",
+      "label": "Solar (Solarkreis)",
+      "aliases": [
+        "Solarthermie",
+        "Solarleitung"
+      ],
+      "requirements": [
+        {
+          "text": "Bei Vakuum-Röhrenkollektoren nur Pressverbinder mit FKM-Dichtelement.",
+          "source": "Viega Sanpress Inox; Viega Profipress; Viega Prestabo"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "note": "Für Solaranlagen mit Flach- und Vakuum-Röhrenkollektoren.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "material": "edelstahl4521",
+          "level": "recommended",
+          "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Für Solaranlagen mit Flach- und Vakuum-Röhrenkollektoren.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "material": "edelstahl4520",
+          "level": "suitable",
+          "note": "Für Solaranlagen; bis 16 bar und 110 °C.",
+          "source": "Esta Rohr 2011"
+        },
+        {
+          "material": "kupfer",
+          "level": "recommended",
+          "note": "Preis/Leistung: höhere Anschaffungskosten, aber lange Lebensdauer und geringer Wartungsaufwand. Für Solaranlagen mit Flach- und Vakuum-Röhrenkollektoren.",
+          "source": "Viega Profipress; sanier.de"
+        },
+        {
+          "material": "cStahlVerzinkt",
+          "level": "suitable",
+          "note": "Für Solaranlagen mit Flach- und Vakuum-Röhrenkollektoren; nur in warmer, trockener Umgebung.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "material": "mehrschichtverbund",
+          "level": "limited",
+          "note": "Für den Anschluss einer Solaranlage an die Warmwasserbereitung nur, wenn die Medientemperatur sicher auf 70 °C begrenzt ist.",
+          "source": "TECE TECEflex 2024"
+        }
+      ]
+    },
+    {
+      "key": "druckluft",
+      "label": "Druckluft",
+      "aliases": [
+        "Druckluftleitung",
+        "Druckluftanlage"
+      ],
+      "requirements": [
+        {
+          "text": "Dichtelement nach Ölgehalt der Druckluft: EPDM bei unter 25 mg/m³, FKM ab 25 mg/m³.",
+          "source": "Viega Sanpress Inox; Viega Profipress; Viega Prestabo"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "note": "Für Druckluftanlagen.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "material": "edelstahl4521",
+          "level": "recommended",
+          "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Für Druckluftanlagen.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "material": "edelstahl4520",
+          "level": "suitable",
+          "note": "Für Druckluftanlagen.",
+          "source": "Esta Rohr 2011"
+        },
+        {
+          "material": "kupfer",
+          "level": "suitable",
+          "note": "Für Druckluftanlagen.",
+          "source": "Viega Profipress"
+        },
+        {
+          "material": "cStahlInnenAussenVerzinkt",
+          "level": "suitable",
+          "note": "Für trockene Druckluft vorgesehen.",
+          "source": "Viega Prestabo"
+        },
+        {
+          "material": "mehrschichtverbund",
+          "level": "suitable",
+          "note": "Vom TÜV Süd als Druckluftsystem zertifiziert; Nenndruck 16 bar, Betriebsüberdruck 12 bar, höchstens 60 °C. Zur Beständigkeit gegen ölhaltige Druckluft nennt die Quelle nichts; beim Hersteller klären.",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "rotguss",
+          "level": "suitable",
+          "note": "",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "siliziumbronze",
+          "level": "suitable",
+          "note": "",
+          "source": "TECE TECEflex 2024"
+        },
+        {
+          "material": "messing",
+          "level": "suitable",
+          "note": "",
+          "source": "TECE TECEflex 2024"
+        }
+      ]
+    },
+    {
+      "key": "loeschwasser",
+      "label": "Löschwasser (DIN 14462)",
+      "aliases": [
+        "Löschwasseranlage",
+        "Feuerlöschleitung",
+        "Hydrantenleitung"
+      ],
+      "requirements": [
+        {
+          "text": "Planung, Errichtung, Betrieb und Instandhaltung nach DIN 14462; Druckbereich der genannten Systeme 1,6 MPa.",
+          "source": "Viega Löschwasser DIN 14462"
+        }
+      ],
+      "subsystems": [
+        {
+          "key": "nass",
+          "label": "Nass",
+          "recommendations": [
+            {
+              "material": "edelstahl4401",
+              "level": "suitable",
+              "note": "Mit EPDM-Dichtelement.",
+              "source": "Viega Löschwasser DIN 14462; Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4521",
+              "level": "recommended",
+              "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Mit EPDM-Dichtelement.",
+              "source": "Viega Löschwasser DIN 14462; Viega Sanpress Inox"
+            },
+            {
+              "material": "kupfer",
+              "level": "suitable",
+              "note": "Kupfer nach DIN EN 1057, EPDM-Dichtelement.",
+              "source": "Viega Löschwasser DIN 14462"
+            },
+            {
+              "material": "verzinkterStahl",
+              "level": "suitable",
+              "note": "Verzinktes Stahlrohr nach DIN EN 10255, Verzinkung nach DIN EN 10240. Nicht an Trinkwasser-Installationen anschließen.",
+              "source": "Viega Löschwasser DIN 14462"
+            },
+            {
+              "material": "rotguss",
+              "level": "suitable",
+              "note": "Pressverbinder aus Rotguss/Siliziumbronze für Kupfer- und Edelstahlrohr.",
+              "source": "Viega Löschwasser DIN 14462"
+            },
+            {
+              "material": "siliziumbronze",
+              "level": "suitable",
+              "note": "Pressverbinder aus Rotguss/Siliziumbronze für Kupfer- und Edelstahlrohr.",
+              "source": "Viega Löschwasser DIN 14462"
+            }
+          ]
+        },
+        {
+          "key": "trocken",
+          "label": "Trocken und nass/trocken",
+          "recommendations": [
+            {
+              "material": "edelstahl4521",
+              "level": "recommended",
+              "note": "Einziger hier zugelassener Werkstoff. Mit FKM-Dichtelement (Edelstahl-Pressverbinder).",
+              "source": "Viega Löschwasser DIN 14462; Viega Sanpress Inox"
+            },
+            {
+              "material": "edelstahl4401",
+              "level": "avoid",
+              "note": "Laut Hersteller für trockene und nass/trockene Anlagen nur Edelstahl 1.4521.",
+              "source": "Viega Sanpress Inox"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "oel",
+      "label": "Heizöl und Diesel",
+      "aliases": [
+        "Heizölleitung",
+        "Ölleitung",
+        "Dieselkraftstoff"
+      ],
+      "recommendations": [
+        {
+          "material": "kupfer",
+          "level": "recommended",
+          "note": "Einziger hier genannter Werkstoff. Mit den Gas-Pressverbindern (gelb gekennzeichnet) für Heizöl- und Dieselkraftstoffleitungen.",
+          "source": "Viega Profipress G"
+        },
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "note": "Edelstahl-Gassystem auch für Heizöl und Diesel, ausschließlich Rohr 1.4401.",
+          "source": "Viega Sanpress Inox G"
+        }
+      ]
+    },
+    {
+      "key": "abwasser",
+      "label": "Abwasser",
+      "aliases": [
+        "Schmutzwasser",
+        "Entwässerung",
+        "Abflussrohr"
+      ],
+      "requirements": [
+        {
+          "text": "Abflussrohre müssen europäischen Normen oder Zulassungen entsprechen; trifft das nicht zu, müssen die Rohrwerkstoffe DIN 1986-4 entsprechen.",
+          "source": "BauNetz Wissen"
+        }
+      ],
+      "recommendations": [],
+      "subsystems": [
+        {
+          "key": "gebaeude",
+          "label": "Innerhalb des Gebäudes",
+          "aliases": [
+            "Fallleitung",
+            "Sammelleitung",
+            "Anschlussleitung"
+          ],
+          "recommendations": [
+            {
+              "material": "htRohr",
+              "level": "recommended",
+              "note": "Preis/Leistung: geringes Gewicht und Steckmuffen, einfach zu verlegen; für häusliches Abwasser bis 130 °C. Ohne belegte Schallwerte: bei Schallschutzanforderungen Prüfbericht für Rohr und Schelle verlangen.",
+              "source": "BauNetz Wissen; Fraunhofer IBP 2016"
+            },
+            {
+              "material": "schallschutzrohr",
+              "level": "recommended",
+              "note": "Bei Schallschutzanforderungen, z. B. gegenüber fremden Wohnungen; erfüllt je nach Produkt DIN 4109 (30 dB) oder VDI 4100 (20 dB). Einsatz nach Zulassung.",
+              "source": "BauNetz Wissen"
+            },
+            {
+              "material": "sml",
+              "level": "suitable",
+              "note": "Herstellerwerte bei 2 l/s: 20 dB(A) mit Elastomer-Schelle, unter 10 dB(A) mit Schall-Entkoppler (Prüfbericht 2010; laut IBP sind Berichte vor 2014 nur eingeschränkt vergleichbar).",
+              "source": "Düker Schallschutz; Fraunhofer IBP 2016"
+            }
+          ],
+          "requirements": [
+            {
+              "text": "Schallschutz nach DIN 4109: Geräusche aus Wasser- und Abwasserinstallationen einer fremden Wohnung höchstens 30 dB(A) in Wohn- und Schlafräumen; erhöhter Schallschutz 25 dB(A).",
+              "source": "Düker Schallschutz"
+            },
+            {
+              "text": "Prüfberichte nach DIN EN 14366 gelten nur für die Kombination aus Rohr und Rohrschelle; allein die Montage der Schelle kann den Wert um bis zu 15 dB(A) ändern. Zum Vergleich mit DIN 4109 den Wert bei 2 l/s heranziehen.",
+              "source": "Fraunhofer IBP 2016"
+            }
+          ],
+          "protection": [
+            {
+              "text": "Wand- und Deckendurchführungen ohne Körperschallbrücken ausführen, z. B. mit Mineralwolle oder PE-Dämmung; auch Brandschutzmanschetten dürfen keine Schallbrücken bilden. Rohrschellen mit Elastomer-Einlage oder Schall-Entkoppler.",
+              "source": "Düker Schallschutz"
+            }
+          ]
+        },
+        {
+          "key": "grundleitung",
+          "label": "Grundleitung",
+          "aliases": [
+            "Erdverlegt"
+          ],
+          "recommendations": [
+            {
+              "material": "kgRohr",
+              "level": "recommended",
+              "note": "Einziger hier genannter Werkstoff. Für Grundleitungen, bis 60 °C.",
+              "source": "BauNetz Wissen"
+            },
+            {
+              "material": "beton",
+              "level": "recommended",
+              "note": "Preis/Leistung: günstige Alternative für Grundleitungen.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "peHd",
+              "level": "suitable",
+              "note": "Dickwandiger als HT- und KG-Rohre; meist als Grundleitung eingebaut.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "steinzeug",
+              "level": "limited",
+              "note": "Deutlich teurer; heute meist nicht mehr verwendet.",
+              "source": "BauNetz Abwasserleitungen"
+            }
+          ]
+        },
+        {
+          "key": "anschlusskanal",
+          "label": "Anschlusskanal (Kanal außerhalb)",
+          "aliases": [
+            "Kanal",
+            "Hausanschluss",
+            "Grundstücksentwässerung"
+          ],
+          "note": "Der Anschlusskanal liegt zwischen öffentlichem Abwasserkanal und Grundstücksgrenze bzw. erster Reinigungsöffnung; die Nennweite legt die Behörde fest.",
+          "requirements": [
+            {
+              "text": "Nur zugelassene Rohrmaterialien verwenden; hydraulische Auslegung nach DIN 1986-100.",
+              "source": "Stadt Münster"
+            },
+            {
+              "text": "Neu verlegte Schmutzwasserleitungen nach DIN EN 1610 auf Dichtheit prüfen.",
+              "source": "Stadt Münster"
+            },
+            {
+              "text": "Örtliche Entwässerungssatzung und Vorgaben des Netzbetreibers beachten.",
+              "source": "Stadt Münster"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "kgRohr",
+              "level": "recommended",
+              "note": "Preis/Leistung: Standardrohr für den Außenbereich; nicht hitzebeständig.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "kgGruen",
+              "level": "recommended",
+              "note": "Wenn höhere Belastbarkeit gefragt ist; auch freiliegend verlegbar.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "peHd",
+              "level": "suitable",
+              "note": "Dickwandiger als HT- und KG-Rohre.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "beton",
+              "level": "suitable",
+              "note": "Günstige Alternative.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "steinzeug",
+              "level": "limited",
+              "note": "Deutlich teurer; heute meist nicht mehr verwendet.",
+              "source": "BauNetz Abwasserleitungen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "regenwasser",
+      "label": "Regenwasser",
+      "aliases": [
+        "Dachentwässerung",
+        "Regenfallrohr",
+        "Regenwasserleitung"
+      ],
+      "requirements": [
+        {
+          "text": "Innerhalb des Hauses Regen- und Schmutzwasser immer getrennt führen.",
+          "source": "BauNetz Abwasserleitungen"
+        }
+      ],
+      "subsystems": [
+        {
+          "key": "fallrohrAussen",
+          "label": "Regenfallrohr außen",
+          "aliases": [
+            "Fallrohr",
+            "Dachrinne"
+          ],
+          "requirements": [
+            {
+              "text": "Bemessung nach DIN EN 12056-3 und DIN 1986-100; Metall-Regenfallrohre nach DIN EN 612.",
+              "source": "Bauprofessor Regenfallrohr"
+            },
+            {
+              "text": "Bei mechanischer Belastung unten in ein Standrohr aus stabilerem Werkstoff münden lassen.",
+              "source": "Bauprofessor Regenfallrohr"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "titanzink",
+              "level": "recommended",
+              "note": "Standardausführung in der Ausschreibung (STLB-Bau): Titanzink nach DIN EN 988, Rohr nach DIN EN 612.",
+              "source": "Bauprofessor Regenfallrohr"
+            },
+            {
+              "material": "kupferblech",
+              "level": "suitable",
+              "note": "Als Werkstoff für Regenfallrohre genannt.",
+              "source": "Bauprofessor Regenfallrohr"
+            },
+            {
+              "material": "stahlblechVerzinkt",
+              "level": "suitable",
+              "note": "Als Werkstoff für Regenfallrohre genannt.",
+              "source": "Bauprofessor Regenfallrohr"
+            },
+            {
+              "material": "aluminiumblech",
+              "level": "suitable",
+              "note": "Als Werkstoff für Regenfallrohre genannt.",
+              "source": "Bauprofessor Regenfallrohr"
+            },
+            {
+              "material": "pvcU",
+              "level": "suitable",
+              "note": "Kunststoff-Regenfallrohre aus PVC-U.",
+              "source": "Bauprofessor Regenfallrohr"
+            }
+          ]
+        },
+        {
+          "key": "innen",
+          "label": "Regenwasserleitung innen",
+          "aliases": [
+            "Innenliegende Regenfallleitung"
+          ],
+          "requirements": [
+            {
+              "text": "Innenliegende Regenwasserleitungen müssen dem Druck standhalten, der durch Aufstau, z. B. bei Verstopfung, entstehen kann.",
+              "source": "Bauprofessor Regenfallrohr"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "peHd",
+              "level": "recommended",
+              "note": "Für Regenfallleitungen wird DIN EN 1519-1 (PE-Abwasserrohre innerhalb der Gebäudestruktur) genannt; dickwandiger als HT-Rohre.",
+              "source": "Bauprofessor Regenfallrohr; BauNetz Abwasserleitungen"
+            }
+          ]
+        },
+        {
+          "key": "grundleitungRegen",
+          "label": "Regenwasser-Grundleitung und -kanal",
+          "aliases": [
+            "Regenwasserkanal"
+          ],
+          "recommendations": [
+            {
+              "material": "peHd",
+              "level": "recommended",
+              "note": "Meist als Grundleitung eingebaut, z. B. für Regenwasser.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "kgRohr",
+              "level": "recommended",
+              "note": "Preis/Leistung: Standardrohr für den Außenbereich.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "beton",
+              "level": "suitable",
+              "note": "Günstige Alternative für Grundleitungen.",
+              "source": "BauNetz Abwasserleitungen"
+            },
+            {
+              "material": "steinzeug",
+              "level": "limited",
+              "note": "Deutlich teurer; heute meist nicht mehr verwendet.",
+              "source": "BauNetz Abwasserleitungen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lueftung",
+      "label": "Lüftung",
+      "aliases": [
+        "Lüftungskanal",
+        "Luftleitung",
+        "Lüftungsanlage"
+      ],
+      "requirements": [
+        {
+          "text": "Kanäle mit glatten, leicht zu reinigenden Innenflächen, luftdicht bzw. mit geringen Leckraten, korrosionsbeständig und nicht brennbar nach DIN 4102.",
+          "source": "BauNetz Lüftungskanäle"
+        },
+        {
+          "text": "Runde Querschnitte und große Umlenkradien bevorzugen (geringere Druckverluste).",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "stahlblechVerzinkt",
+          "level": "recommended",
+          "note": "Weit verbreitet; kleine Querschnitte als rundes spiralgefalztes Rohr.",
+          "source": "BauNetz Lüftungskanäle"
+        },
+        {
+          "material": "flexrohrMetall",
+          "level": "limited",
+          "note": "Nur zum Anschluss von Luftauslässen, weil nur eingeschränkt zu reinigen.",
+          "source": "BauNetz Lüftungskanäle"
+        },
+        {
+          "material": "kunststoffKanal",
+          "level": "limited",
+          "note": "Selten; brennbar, deshalb nur innerhalb eines Brandabschnitts. Für aggressive Chemikalien, z. B. Labore.",
+          "source": "BauNetz Lüftungskanäle"
+        },
+        {
+          "material": "gemauerterKanal",
+          "level": "limited",
+          "note": "Nur noch im Bestand bei natürlicher Lüftung.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ],
+      "protection": [
+        {
+          "text": "Kanäle, die warme Luft durch unbeheizte Bereiche führen, gegen Wärmeverlust und Schwitzwasser dämmen, z. B. mit Mineralfasermatten (Baustoffklasse A2) oder alukaschierter Steinwolle, außen mit Zinkblechmantel.",
+          "source": "BauNetz Lüftungskanäle"
+        },
+        {
+          "text": "Bei Anforderung F90 Kanäle mit Silikat- oder Mineralplatten ummanteln.",
+          "source": "BauNetz Lüftungskanäle"
+        }
+      ]
+    },
+    {
+      "key": "fernwaerme",
+      "label": "Fernwärme (Sekundärkreis)",
+      "aliases": [
+        "Fernwärme",
+        "Wärmeübergabestation",
+        "Hausstation"
+      ],
+      "requirements": [
+        {
+          "text": "Nur Sekundärkreisläufe von Fernwärme-Versorgungsanlagen; vor der Installation Rücksprache mit dem Versorgungsunternehmen halten.",
+          "source": "Viega Sanpress Inox; Viega Profipress; Viega Prestabo"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "edelstahl4521",
+          "level": "recommended",
+          "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401; für Sekundärkreisläufe vorgesehen.",
+          "source": "Viega Sanpress Inox; Viega 2008"
+        },
+        {
+          "material": "edelstahl4401",
+          "level": "suitable",
+          "note": "Für Sekundärkreisläufe vorgesehen.",
+          "source": "Viega Sanpress Inox"
+        },
+        {
+          "material": "kupfer",
+          "level": "suitable",
+          "note": "Für Sekundärkreisläufe vorgesehen.",
+          "source": "Viega Profipress"
+        },
+        {
+          "material": "cStahlVerzinkt",
+          "level": "suitable",
+          "note": "Für Sekundärkreisläufe vorgesehen; nur in warmer, trockener Umgebung.",
+          "source": "Viega Prestabo"
+        }
+      ]
+    },
+    {
+      "key": "pool",
+      "label": "Pool / Schwimmbad",
+      "aliases": [
+        "Schwimmbad",
+        "Schwimmbecken",
+        "Beckenwasser",
+        "Badewasser"
+      ],
+      "requirements": [
+        {
+          "text": "Für Edelstahl ist der Chloridgehalt des Beckenwassers maßgeblich; im Kreislauf steigt er oft auf einige 100 mg/l. Chlorung erhöht die Aggressivität, die Wassertemperatur liegt meist bei 26 bis 32 °C.",
+          "source": "ISER Merkblatt 831"
+        }
+      ],
+      "recommendations": [
+        {
+          "material": "pvcU",
+          "level": "recommended",
+          "note": "Preis/Leistung: laut Hersteller chemikalien- und korrosionsbeständig, wartungsfrei, mit geringeren Installations- und Betriebskosten.",
+          "source": "GF Schwimmbäder"
+        }
+      ],
+      "subsystems": [
+        {
+          "key": "beckenwasser",
+          "label": "Beckenwasser (Süßwasser)",
+          "recommendations": [
+            {
+              "material": "edelstahl4401",
+              "level": "limited",
+              "note": "Edelstahl wie 1.4401 oder 1.4404 bis etwa 1.000 mg/l Chlorid, bei engen Spalten nur bis etwa 500 mg/l.",
+              "source": "ISER Merkblatt 831"
+            }
+          ]
+        },
+        {
+          "key": "sole",
+          "label": "Sole-, Meer- oder Thermalwasser",
+          "recommendations": [
+            {
+              "material": "edelstahl4401",
+              "level": "avoid",
+              "note": "Sole kann über 10.000 mg/l Chlorid erreichen; dafür können höher legierte Stähle wie 1.4462, 1.4529 oder 1.4547 nötig sein.",
+              "source": "ISER Merkblatt 831"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "prozesswasser",
+      "label": "Prozesswasser",
+      "aliases": [
+        "VE-Wasser",
+        "Industriewasser"
+      ],
+      "requirements": [
+        {
+          "text": "Prozesswässer sind chemisch aggressiver als Trinkwasser; die Werkstoffwahl braucht eine Wasseranalyse und die Kenntnis möglicher Zusätze wie Korrosionsschutzmittel.",
+          "source": "Viega Planungswissen Prozesswässer"
+        },
+        {
+          "text": "Laut Viega sind ihre Pressverbindersysteme nicht für Wasser zur Arzneimittelherstellung (Aqua valde purificata) oder für Injektionszwecke geeignet.",
+          "source": "Viega Planungswissen Prozesswässer"
+        }
+      ],
+      "subsystems": [
+        {
+          "key": "offen",
+          "label": "Roh- und Kühlwasser (offene Systeme)",
+          "recommendations": [
+            {
+              "material": "edelstahl4521",
+              "level": "recommended",
+              "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Für Roh- und Kühlwasser in offenen Systemen.",
+              "source": "Viega Planungswissen Prozesswässer; Viega 2008"
+            },
+            {
+              "material": "edelstahl4401",
+              "level": "suitable",
+              "note": "Für Roh- und Kühlwasser in offenen Systemen.",
+              "source": "Viega Planungswissen Prozesswässer"
+            },
+            {
+              "material": "kupfer",
+              "level": "suitable",
+              "note": "Für Roh- und Kühlwasser in offenen Systemen.",
+              "source": "Viega Planungswissen Prozesswässer"
+            }
+          ]
+        },
+        {
+          "key": "geschlossen",
+          "label": "Kühlwasser geschlossen (Wasser-Glykol)",
+          "requirements": [
+            {
+              "text": "Für viele industrielle Kühlprozesse Wasser-Glykol-Gemische mit bis zu 50 % Glykol.",
+              "source": "Viega Planungswissen Prozesswässer"
+            }
+          ],
+          "recommendations": [
+            {
+              "material": "edelstahl4521",
+              "level": "recommended",
+              "note": "Preis/Leistung: nickelfrei und dadurch günstiger als 1.4401. Für geschlossene Kühlkreisläufe.",
+              "source": "Viega Planungswissen Prozesswässer; Viega 2008"
+            },
+            {
+              "material": "edelstahl4401",
+              "level": "suitable",
+              "note": "Für geschlossene Kühlkreisläufe.",
+              "source": "Viega Planungswissen Prozesswässer"
+            },
+            {
+              "material": "kupfer",
+              "level": "suitable",
+              "note": "Für geschlossene Kühlkreisläufe.",
+              "source": "Viega Planungswissen Prozesswässer"
+            },
+            {
+              "material": "cStahlVerzinkt",
+              "level": "suitable",
+              "note": "Für geschlossene Kühlkreisläufe.",
+              "source": "Viega Planungswissen Prozesswässer"
+            },
+            {
+              "material": "stahlDickwandig",
+              "level": "suitable",
+              "note": "Für geschlossene Kühlkreisläufe.",
+              "source": "Viega Planungswissen Prozesswässer"
+            }
+          ]
+        },
+        {
+          "key": "rein",
+          "label": "VE-, enthärtetes und Reinwasser",
+          "aliases": [
+            "VE-Wasser",
+            "Vollentsalztes Wasser",
+            "Destilliertes Wasser"
+          ],
+          "recommendations": [
+            {
+              "material": "edelstahl4401",
+              "level": "recommended",
+              "note": "Bei besonderer Wasserreinheit hat sich das Edelstahl-Pressverbindersystem besonders bewährt.",
+              "source": "Viega Planungswissen Prozesswässer"
+            },
+            {
+              "material": "edelstahl4521",
+              "level": "recommended",
+              "note": "Bei besonderer Wasserreinheit hat sich das Edelstahl-Pressverbindersystem besonders bewährt.",
+              "source": "Viega Planungswissen Prozesswässer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

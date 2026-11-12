@@ -176,6 +176,36 @@ Beleg). Nur Typnummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Di
 `TODO: Inhalt fehlt`; bei `verified` ist das nicht erlaubt. Der Build prüft unbekannte Eigenschaften und
 Kabelarten, doppelte Schlüssel und Kabelarten, die in keiner der beiden Listen vorkommen.
 
+**Rohrwerkstoff-Tools** (`"kind": "pipeMaterials"`) zeigen zu Anlagensystem, Untersystem und Verlegung die
+Rohrwerkstoffe mit Bewertung und darunter Vor- und Nachteile. Felder: `title`, `summary`, `description`,
+`category`, `related` und:
+
+- `installations`: Verlegearten als Leiste, je `key`, `label` (z. B. „Aufputz“, „Unterputz“); die erste ist
+  vorausgewählt. Die Leiste erscheint nur, wenn bei der Auswahl eine Bewertung `installations` angibt.
+- `materials`: je `key`, `name`, optional `aliases`, `description` (eigene Kurzbeschreibung), `pros` und `cons`,
+  je `{ "text": "…", "source": "kurz, woher" }`. Leere Listen erscheinen als „Keine Angabe in den Quellen“.
+  Optional `products` (Beispielprodukte aus den Quellen, gleicher Aufbau, z. B. „Viega Sanpress Inox“) und
+  `outdated` (Marke „Veraltet“ mit Begründung und Quelle, gleicher Aufbau). `kind` ist `pipe` (Rohr) oder
+  `fitting` (Fittingwerkstoff wie Rotguss, eigene Liste unter den Rohren); Rohre brauchen `form`: `rigid` (starr)
+  oder `flexible`.
+- `systems`: je `key`, `label`, optional `aliases`, `note`, `requirements` (Vorgaben und Einsatzgrenzen, gleicher
+  Aufbau wie `pros`), `protection` (empfohlene oder vorgeschriebene Dämmung, Isolierung, Schutzrohre und
+  Korrosionsschutz, gleicher Aufbau), `recommendations` und `subsystems` (gleicher Aufbau ohne eigene Untersysteme). Vorgaben und
+  Werkstoffe des Systems gelten für jedes Untersystem mit.
+- `recommendations`: je `material` (`key` des Werkstoffs), `level`, optional `installations` (Liste der
+  Verlegearten, für die die Bewertung gilt; leer = alle), `note` und `source` (kurz).
+
+`level` ist `required` („Vorgeschrieben“: nur wenn eine Quelle den Werkstoff konkret verlangt), `recommended`
+(„Empfohlen“: von der Quelle am besten bewertet), `suitable` („Geeignet“), `limited` („Eingeschränkt geeignet“)
+oder `avoid` („Nicht geeignet“). Alle Stufen außer `suitable` brauchen `note`. Jedes Ergebnis (System bzw.
+Untersystem je Verlegeart) mit Rohren nennt 1–3 Rohre mit `recommended` (Fittings zählen nicht); die Begründung,
+auch zu Preis/Leistung, steht in `note`. Wo die Verlegung zählt, dürfen nach Vorgabe des Inhabers Unterputz nur
+`flexible` und Aufputz nur `rigid` Rohre empfohlen werden; Abwasser unterscheidet die Verlegung nicht. Bei Übernahme einer
+Herstellerbewertung steht die Zuordnung der Stufen im `source` des Eintrags. Fehlt Inhalt, bleibt
+`recommendations` leer und `note` beginnt mit `TODO: Inhalt fehlt` (bei Systemen mit Untersystemen am
+Untersystem); bei `verified` ist das nicht erlaubt. Der Build prüft unbekannte Werkstoffe und Verlegearten,
+doppelte Schlüssel, doppelt bewertete Werkstoffe je Verlegeart und Werkstoffe, die nirgends vorkommen.
+
 **Aderfarben-Tools** (`"kind": "wireColors"`) zeigen zu System, Kabeltyp und Aderzahl, welche Farbe wofür
 genutzt wird. Felder: `title`, `summary`, `description`, `category` und:
 
@@ -371,6 +401,58 @@ Darunter die Summe, die Mengen je Kategorie für das Beförderungspapier und die
 
 Der Build prüft fehlende Kategorien, doppelte Schlüssel und Namen, unbekannte Gruppen und Vorschriften, Vorschriften ohne
 Stoff und dass jedes Beispiel die Punktsumme der Quelle ergibt.
+
+**Brennstofflagerung** (`"kind": "fuelStorage"`): Regelwerk und Brennstoff wählen, Lagermenge eingeben. Das Tool sagt,
+ob ein Brennstofflagerraum nötig ist, und zeigt die Vorschriften und Empfehlungen nach Thema. Felder: `title`, `summary`,
+`description`, `category`, `related`, `closingNote` und:
+
+- `regulations`: Regelwerke als Leiste (das erste ist vorausgewählt), je `key`, `label`, optional `note` und `limits`. Je
+  Brennstoff ein Eintrag mit `fuel`, `unit` (`kg` oder `l`, so wie das Regelwerk zählt), `storageRoomAbove` (ab mehr als
+  dieser Menge je Gebäude oder Brandabschnitt ist ein Brennstofflagerraum nötig), optional `maxPerRoom`, `hint` und
+  `source` (Fundstelle). Eingegeben wird in kg oder t bzw. l oder m³.
+- `fuels`: je `key`, `name`, optional `aliases` und `note`.
+- `topics`: Themen in der Reihenfolge des Ergebnisses, je `key` und `label`.
+- `rules`: je `key`, `topic`, `binding` (`pflicht`: steht in Verordnung oder Gesetz; `empfehlung`: Fachverband,
+  Merkblatt, Norm), `title`, optional `condition` (Bedingung, die das Tool nicht abfragt, erscheint als „Gilt, wenn …“),
+  `text` (eigene Kurzfassung), `source` und `applies`: Zeilen mit `regulations` (leer = alle), `fuels`, optional
+  `above` (mehr als), `upTo` (bis einschließlich, beides in der Einheit des Regelwerks) und `storageRoom` (`true`/`false`:
+  nur mit bzw. ohne Brennstofflagerraum). Eine passende Zeile genügt.
+- `examples`: Fälle aus den Quellen mit `label`, `regulation`, `fuel`, `quantity`, `storageRoom`, optional `rules` (müssen
+  erscheinen), `notRules` (dürfen nicht erscheinen) und `source`.
+
+Der Build prüft doppelte Schlüssel, unbekannte Regelwerke, Brennstoffe und Themen, Themen ohne Vorschrift, Mengengrenzen
+über Regelwerke mit verschiedenen Einheiten und dass jedes Beispiel so eingestuft wird wie in der Quelle.
+
+**Abwasser-Bemessung** (`"kind": "drainageSizing"`): Leitungsabschnitt und Gebäudeart wählen, die angeschlossenen
+Entwässerungsgegenstände zählen, das Tool nennt die Nennweite. Felder: `title`, `summary`, `description`, `category`,
+`keywords`, `related`, `closingNote` und:
+
+- `crossSections`: `system` (Rohrsystem, z. B. „POLO-KAL NG“) und `rows` je `dn` mit `area` (Querschnittsfläche in cm²).
+  Daraus rechnet der Umschalter am Ergebnis den Innendurchmesser √(4·A/π); jede angezeigte Nennweite braucht eine Fläche.
+- Eigene Gegenstände (Bezeichnung, DU, Anzahl, optional Einzelanschluss-DN und „ist ein WC“) gibt man in der App ein, sie
+  stehen nicht im Inhalt. Das Ergebnis kennzeichnet sie als eigene Angaben.
+
+- `groups` (`key`, `label`) und `fixtures`: je `key`, `name`, optional `aliases`, `group`, `du` (Anschlusswert in l/s),
+  `connectionDn` (Einzelanschlussleitung), optional `connectionNote` und `marks` (Merkmale für Grenzen, z. B. `wc`).
+- `usages`: Gebäudearten mit `key`, `label`, `examples`, `k` (Abflusskennzahl), optional `note`.
+- `lines`: Leitungsabschnitte mit `key`, `label`, optional `note`, `title`, `rules` (eigene Kurzfassung) und `type`.
+  Seitenangaben stehen nur in `source`, nicht in den angezeigten Texten:
+  - `single`: Einzelanschlussleitung, Nennweite je Gegenstand aus `connectionDn`.
+  - `branch`: unbelüftete Sammelanschlussleitung, `rows` je `dn` mit `maxSumDu` (größte ΣDU je Gebäudeart), `maxLength`
+    und `limits`; `overTable` für zu große Summen.
+  - `stack`: Fallleitung, Q<sub>tot</sub> = K·√ΣDU + Q<sub>c</sub> + Q<sub>p</sub>, mindestens der größte DU. `branchTypes`
+    (Abzweig-Arten) und `ventilations` mit `rows` je `dn`, optional `ventDn`, `capacity` je Abzweig-Art (`null` = „–“),
+    `limits` und `notes` (Grenzen, die das Tool nicht nachzählt); `overTable`.
+  - `slope`: liegende Leitung wie `stack`, aber je Nennweite das kleinste Gefälle; `tables` je `key` (aus
+    `capacityTables`), `use` (wann die Tabelle gilt) und `recommended` (Regelfall, in der Auswahl „Empfohlen“;
+    mindestens eine je Abschnitt, die erste ist vorausgewählt), optional `recommendedMinDn` (`dn`, `text`); `overTable`.
+- `limits`: `mark`, `max` (0 = nicht zulässig), optional `usages` (nur bei diesen Gebäudearten), `text` wie in der Quelle.
+- `capacityTables`: `key`, `label` (Füllungsgrad, z. B. „50 %“), `condition`, `dns` und `rows` je `slope` (in %) mit `capacity` je Nennweite.
+- `examples`: Rechenbeispiele aus der Quelle (`label`, `line`, `usage`, `fixtures` als key → Anzahl, optional `units`,
+  `ventilation`, `branchType`, `table`, `expected` mit `sumDu`, optional `flow` und `results` je `dn` und `slope`, `source`).
+
+Der Build prüft doppelte Schlüssel, unbekannte Gruppen, Gebäudearten, Merkmale und Tabellen, aufsteigende Nennweiten und
+Gefälle, dass das Abflussvermögen mit Gefälle und Nennweite steigt, und dass jedes Beispiel das Ergebnis der Quelle ergibt.
 
 **Faktor-Tools** (`"kind": "factor"`) rechnen Richtwerte hoch, z. B. Kollektorfläche pro Person
 oder Dämmdicke nach Rohrdurchmesser. Felder:

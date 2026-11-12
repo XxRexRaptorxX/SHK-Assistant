@@ -5,9 +5,12 @@ import { TOOL_ID_PREFIX } from './constants'
 import { groupFormulasByCategory } from '../formulas/formulas'
 import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
+import { drainageSizingKeywords } from './drainageSizingTool'
+import { fuelStorageKeywords } from './fuelStorageTool'
 import { hazmatPointsKeywords } from './hazmatPointsTool'
 import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
+import { pipeMaterialKeywords } from './pipeMaterialTool'
 import { placementKeywords } from './placementTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
@@ -15,12 +18,15 @@ import { ventilationRiserKeywords } from './riserTool'
 import {
   isCableTool,
   isChoiceTool,
+  isDrainageSizingTool,
   isFactorTool,
   isFormulaTool,
+  isFuelStorageTool,
   isHazmatPointsTool,
   isHeatingCostTool,
   isMaterialListTool,
   isNormFinderTool,
+  isPipeMaterialTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -107,6 +113,9 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isVentilationRiserTool(entry)) return ventilationRiserKeywords(entry)
   if (isHeatingCostTool(entry)) return heatingCostKeywords(entry)
   if (isHazmatPointsTool(entry)) return hazmatPointsKeywords(entry)
+  if (isDrainageSizingTool(entry)) return drainageSizingKeywords(entry)
+  if (isPipeMaterialTool(entry)) return pipeMaterialKeywords(entry)
+  if (isFuelStorageTool(entry)) return fuelStorageKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

@@ -1,0 +1,773 @@
+{
+  "id": "tool.abwasser-dimensionierung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "POLOPLAST, Hausabfluss Dimensionierungsleitfaden – Entwässerungsrohrleitungen für Gebäude, Ausgabe Deutschland, nach DIN EN 12056 Teil 1–5 und DIN 1986-100:2016-12, https://www.poloplast.com/fileadmin/downloads/downloads_gesamt/Gebaudeentwasserung_POLO-KAL/Dimensionierungsleitfaden_DE_V02_web.pdf, abgerufen am 12.11.2026: Einzelanschlussleitung S. 5, Anschlusswerte DU und unbelüftete Sammelanschlussleitung S. 6, Abflusskennzahl K und Qtot S. 7, Fallleitung S. 8, Sammelleitung S. 9–10 (Tabelle POLO-KAL NG/XS), Grundleitung S. 11–12, Querschnittsflächen POLO-KAL NG S. 13 (daraus der Innendurchmesser √(4·A/π)), Beispieldimensionierung S. 22–23, K = 1,2 (Labor) nur im Formblatt S. 25. Die Tabellen für Fall-, Sammel- und Grundleitungen beruhen laut Hersteller auf den POLO-KAL Rohrsystemen. Eigene Kurzfassungen; die Normen selbst wurden nicht eingesehen. Noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "drainageSizing",
+  "title": "Abwasser Dimensionierung",
+  "summary": "Nennweite von Anschluss-, Fall-, Sammel- und Grundleitungen aus den angeschlossenen Entwässerungsgegenständen.",
+  "description": "Leitungsabschnitt und Gebäudeart wählen, dann zählen, was an der Leitung hängt. Das Tool summiert die Anschlusswerte DU, rechnet bei Fall-, Sammel- und Grundleitungen den Schmutzwasserabfluss mit Gleichzeitigkeit aus und nennt die kleinste passende Nennweite aus den Tabellen des Herstellers.",
+  "category": "Auslegung",
+  "tags": [
+    "abwasser"
+  ],
+  "keywords": [
+    "Abwasser",
+    "Entwässerung",
+    "Schmutzwasser",
+    "Nennweite",
+    "Rohrdimension",
+    "Anschlusswert",
+    "DU",
+    "Abflusskennzahl",
+    "Schmutzwasserabfluss",
+    "Qww",
+    "DIN 1986-100",
+    "DIN EN 12056-2",
+    "Fallstrang",
+    "HT-Rohr",
+    "KG-Rohr"
+  ],
+  "related": [
+    "tool.abwasser-leitungsfuehrung",
+    "tool.belueftung-anschlussleitung"
+  ],
+  "crossSections": {
+    "system": "POLO-KAL NG",
+    "rows": [
+      { "dn": 40, "area": 10.41 },
+      { "dn": 50, "area": 16.62 },
+      { "dn": 75, "area": 38.26 },
+      { "dn": 90, "area": 55.42 },
+      { "dn": 110, "area": 83.65 },
+      { "dn": 125, "area": 107.88 },
+      { "dn": 160, "area": 177.19 },
+      { "dn": 200, "area": 272.89 },
+      { "dn": 250, "area": 425.65 }
+    ]
+  },
+  "groups": [
+    {
+      "key": "bad",
+      "label": "Waschtisch, Dusche, Wanne"
+    },
+    {
+      "key": "kueche",
+      "label": "Küche und Hauswirtschaft"
+    },
+    {
+      "key": "wc",
+      "label": "WC und Urinal"
+    },
+    {
+      "key": "boden",
+      "label": "Bodenablauf"
+    }
+  ],
+  "fixtures": [
+    {
+      "key": "waschbecken",
+      "name": "Waschbecken, Bidet",
+      "aliases": [
+        "Waschtisch",
+        "Handwaschbecken"
+      ],
+      "group": "bad",
+      "du": 0.5,
+      "connectionDn": 40
+    },
+    {
+      "key": "duscheOhneStoepsel",
+      "name": "Dusche ohne Stöpsel",
+      "aliases": [
+        "Duschwanne",
+        "Duschrinne"
+      ],
+      "group": "bad",
+      "du": 0.6,
+      "connectionDn": 50
+    },
+    {
+      "key": "duscheMitStoepsel",
+      "name": "Dusche mit Stöpsel",
+      "group": "bad",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "badewanne",
+      "name": "Badewanne",
+      "aliases": [
+        "Wanne"
+      ],
+      "group": "bad",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "kuechenspueleGsm",
+      "name": "Küchenspüle mit Geschirrspülmaschine",
+      "group": "kueche",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "kuechenspuele",
+      "name": "Küchenspüle, Ausgussbecken",
+      "aliases": [
+        "Spüle",
+        "Ausguss"
+      ],
+      "group": "kueche",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "geschirrspueler",
+      "name": "Geschirrspüler",
+      "aliases": [
+        "Spülmaschine"
+      ],
+      "group": "kueche",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "waschmaschine8",
+      "name": "Waschmaschine bis 8 kg",
+      "group": "kueche",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "waschmaschine12",
+      "name": "Waschmaschine bis 12 kg",
+      "group": "kueche",
+      "du": 1.5,
+      "connectionDn": 75
+    },
+    {
+      "key": "wc45",
+      "name": "WC bis 4,5 l Spülkasten",
+      "group": "wc",
+      "du": 1.8,
+      "connectionDn": 90,
+      "connectionNote": "Die Tabelle der Einzelanschlussleitungen nennt kein WC bis 4,5 l; hier wie „bis 6,0 l“ eingeordnet.",
+      "marks": [
+        "wc"
+      ]
+    },
+    {
+      "key": "wc6",
+      "name": "WC mit 6 l Spülkasten/Druckspüler",
+      "group": "wc",
+      "du": 2,
+      "connectionDn": 90,
+      "marks": [
+        "wc"
+      ]
+    },
+    {
+      "key": "wc9",
+      "name": "WC mit 9 l Spülkasten/Druckspüler",
+      "group": "wc",
+      "du": 2.5,
+      "connectionDn": 110,
+      "marks": [
+        "wc",
+        "wc9"
+      ]
+    },
+    {
+      "key": "urinalSpuelkasten",
+      "name": "Urinal mit Spülkasten",
+      "group": "wc",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "urinalDruckspueler",
+      "name": "Urinal mit Druckspüler",
+      "group": "wc",
+      "du": 0.5,
+      "connectionDn": 50
+    },
+    {
+      "key": "standurinal",
+      "name": "Standurinal",
+      "group": "wc",
+      "du": 0.2,
+      "connectionDn": 50
+    },
+    {
+      "key": "urinalOhneSpuelung",
+      "name": "Urinal ohne Wasserspülung",
+      "aliases": [
+        "wasserloses Urinal"
+      ],
+      "group": "wc",
+      "du": 0.1,
+      "connectionDn": 50
+    },
+    {
+      "key": "bodenablauf50",
+      "name": "Bodenablauf DN 50",
+      "aliases": [
+        "Gully"
+      ],
+      "group": "boden",
+      "du": 0.8,
+      "connectionDn": 50
+    },
+    {
+      "key": "bodenablauf70",
+      "name": "Bodenablauf DN 70",
+      "group": "boden",
+      "du": 1.5,
+      "connectionDn": 75
+    },
+    {
+      "key": "bodenablauf100",
+      "name": "Bodenablauf DN 100",
+      "group": "boden",
+      "du": 2,
+      "connectionDn": 110
+    }
+  ],
+  "usages": [
+    {
+      "key": "unregelmaessig",
+      "label": "Unregelmäßig",
+      "examples": "Wohnhäuser, Pensionen, Büros",
+      "k": 0.5
+    },
+    {
+      "key": "regelmaessig",
+      "label": "Regelmäßig",
+      "examples": "Krankenhäuser, Schulen, Restaurants, Hotels",
+      "k": 0.7
+    },
+    {
+      "key": "haeufig",
+      "label": "Häufig",
+      "examples": "öffentliche Toiletten und/oder Duschen",
+      "k": 1
+    },
+    {
+      "key": "speziell",
+      "label": "Speziell",
+      "examples": "Labor",
+      "k": 1.2,
+      "note": "Nur im Formblatt des Leitfadens genannt, nicht in den Tabellen der einzelnen Abschnitte."
+    }
+  ],
+  "lines": [
+    {
+      "key": "einzel",
+      "type": "single",
+      "label": "Einzel­anschluss",
+      "title": "Einzelanschlussleitung",
+      "rules": [
+        "Vom Gegenstand bis zur Einmündung in die weiterführende Leitung.",
+        "Unbelüftet bis 4 m Länge: mindestens 1 % Gefälle, höchstens 3 Bögen 90° (ohne Anschlussbogen), höchstens 1,0 m Höhenunterschied vom Anschluss bis Unterkante Fallleitungseinbindung.",
+        "Belüftet bis 10 m Länge: mindestens 0,5 % Gefälle, höchstens 3,0 m Höhenunterschied. Belüften über Umlüftung, Nebenlüftung oder zugelassenes Belüftungsventil, in der Dimension der Anschlussleitung.",
+        "Siphon und Siphonanschlussbogen zählen bei der Dimensionierung nicht mit."
+      ]
+    },
+    {
+      "key": "sammelanschluss",
+      "type": "branch",
+      "label": "Sammel­anschluss",
+      "note": "unbelüftet",
+      "title": "Unbelüftete Sammelanschlussleitung",
+      "rules": [
+        "Bemessung nach der Summe der Anschlusswerte ΣDU, ohne Wurzel.",
+        "Mindestgefälle 1 %.",
+        "Die Rohrlänge zählt von der Fallleitungseinbindung bis zum letzten Gegenstand, mit Einzelanschlussleitung.",
+        "Ist die Leitung länger als erlaubt, muss die ganze Sammelanschlussleitung belüftet werden (Umlüftung, Nebenlüftung oder zugelassenes Belüftungsventil). Sie wird dann wie eine Sammelleitung bemessen."
+      ],
+      "rows": [
+        {
+          "dn": 50,
+          "maxSumDu": {
+            "unregelmaessig": 1,
+            "regelmaessig": 1,
+            "haeufig": 0.8
+          },
+          "maxLength": 4
+        },
+        {
+          "dn": 75,
+          "maxSumDu": {
+            "unregelmaessig": 9,
+            "regelmaessig": 4.6,
+            "haeufig": 2.2
+          },
+          "maxLength": 4,
+          "limits": [
+            {
+              "mark": "wc",
+              "max": 0,
+              "text": "keine WCs"
+            }
+          ]
+        },
+        {
+          "dn": 90,
+          "maxSumDu": {
+            "unregelmaessig": 13,
+            "regelmaessig": 10,
+            "haeufig": 5
+          },
+          "maxLength": 10,
+          "limits": [
+            {
+              "mark": "wc",
+              "max": 2,
+              "usages": [
+                "unregelmaessig",
+                "regelmaessig"
+              ],
+              "text": "maximal zwei WCs"
+            }
+          ]
+        },
+        {
+          "dn": 110,
+          "maxSumDu": {
+            "unregelmaessig": 16,
+            "regelmaessig": 12,
+            "haeufig": 6.4
+          },
+          "maxLength": 10
+        }
+      ],
+      "overTable": "Die Tabelle reicht bis DN 110. Für mehr Anschlusswerte nennt der Leitfaden keine unbelüftete Sammelanschlussleitung: belüften und als Sammelleitung bemessen."
+    },
+    {
+      "key": "fall",
+      "type": "stack",
+      "label": "Fall­leitung",
+      "title": "Fallleitung",
+      "rules": [
+        "Die Fallleitung wird ohne Änderung der Nennweite über Dach geführt.",
+        "Die Hauptlüftung hat mindestens den Querschnitt der Fallleitung und ist oben offen.",
+        "Verzug mit 10° Gefälle oder mehr: in der Dimension der Fallleitung. Unter 10°: wie eine Sammelleitung mit Füllungsgrad 70 % bemessen."
+      ],
+      "branchTypes": [
+        {
+          "key": "ohneRadius",
+          "label": "Ohne Innenradius",
+          "note": "Standard-Abzweig 87,5°"
+        },
+        {
+          "key": "mitRadius",
+          "label": "Mit Innenradius",
+          "note": "Bogenabzweig 87,5°, Abzweig 45°"
+        }
+      ],
+      "ventilations": [
+        {
+          "key": "haupt",
+          "label": "Hauptlüftung",
+          "rows": [
+            {
+              "dn": 75,
+              "capacity": {
+                "ohneRadius": 1.5,
+                "mitRadius": null
+              },
+              "limits": [
+                {
+                  "mark": "wc",
+                  "max": 0,
+                  "text": "nicht zulässig für WC-Anschluss"
+                }
+              ],
+              "notes": [
+                "Maximal 4 Küchenablaufstellen."
+              ]
+            },
+            {
+              "dn": 90,
+              "capacity": {
+                "ohneRadius": 2.7,
+                "mitRadius": 3.5
+              },
+              "limits": [
+                {
+                  "mark": "wc9",
+                  "max": 0,
+                  "text": "nicht zulässig für WC mit 9-l-Spülkasten"
+                }
+              ]
+            },
+            {
+              "dn": 110,
+              "capacity": {
+                "ohneRadius": 4,
+                "mitRadius": 5.2
+              }
+            },
+            {
+              "dn": 125,
+              "capacity": {
+                "ohneRadius": 5.8,
+                "mitRadius": 7.6
+              }
+            },
+            {
+              "dn": 160,
+              "capacity": {
+                "ohneRadius": 9.5,
+                "mitRadius": 12.4
+              }
+            },
+            {
+              "dn": 200,
+              "capacity": {
+                "ohneRadius": 16,
+                "mitRadius": 21
+              }
+            }
+          ]
+        },
+        {
+          "key": "neben",
+          "label": "Nebenlüftung",
+          "rows": [
+            {
+              "dn": 75,
+              "ventDn": 50,
+              "capacity": {
+                "ohneRadius": 2,
+                "mitRadius": null
+              },
+              "limits": [
+                {
+                  "mark": "wc",
+                  "max": 0,
+                  "text": "nicht zulässig für WC-Anschluss"
+                }
+              ],
+              "notes": [
+                "Maximal 4 Küchenablaufstellen."
+              ]
+            },
+            {
+              "dn": 90,
+              "ventDn": 50,
+              "capacity": {
+                "ohneRadius": 3.5,
+                "mitRadius": 4.6
+              },
+              "limits": [
+                {
+                  "mark": "wc9",
+                  "max": 0,
+                  "text": "nicht zulässig für WC mit 9-l-Spülkasten"
+                }
+              ]
+            },
+            {
+              "dn": 110,
+              "ventDn": 50,
+              "capacity": {
+                "ohneRadius": 5.6,
+                "mitRadius": 7.3
+              }
+            },
+            {
+              "dn": 125,
+              "ventDn": 75,
+              "capacity": {
+                "ohneRadius": 12.4,
+                "mitRadius": 10
+              }
+            },
+            {
+              "dn": 160,
+              "ventDn": 90,
+              "capacity": {
+                "ohneRadius": 14.1,
+                "mitRadius": 18.3
+              }
+            },
+            {
+              "dn": 200,
+              "ventDn": 110,
+              "capacity": {
+                "ohneRadius": 21,
+                "mitRadius": 27.3
+              }
+            }
+          ]
+        }
+      ],
+      "overTable": "Mehr als die Tabelle hergibt (bis DN 200): mit dem Leitfaden nicht bemessbar."
+    },
+    {
+      "key": "sammel",
+      "type": "slope",
+      "label": "Sammel­leitung",
+      "note": "liegend",
+      "title": "Sammelleitung",
+      "rules": [
+        "An der Wand oder Decke verlegte, liegende Leitung.",
+        "Mindestgefälle 0,5 % und Mindestfließgeschwindigkeit 0,5 m/s sind in der Tabelle schon berücksichtigt.",
+        "Hinter der Einleitung einer Abwasserhebeanlage darf mit Füllungsgrad 70 % bemessen werden."
+      ],
+      "tables": [
+        {
+          "key": "fill50",
+          "use": "Sammelleitung für Schmutzwasser im Gebäude.",
+          "recommended": true
+        },
+        {
+          "key": "fill70",
+          "use": "Nur hinter der Einleitung des Volumenstroms einer Abwasserhebeanlage."
+        }
+      ],
+      "overTable": "Mehr als die Tabelle hergibt: mit dem Leitfaden nicht bemessbar."
+    },
+    {
+      "key": "grundInnen",
+      "type": "slope",
+      "label": "Grund­leitung",
+      "note": "unter dem Gebäude",
+      "title": "Grundleitung unterhalb des Gebäudes",
+      "rules": [
+        "Unter der Erde oder in der Betonplatte verlegt.",
+        "Mindestgefälle 0,5 % und Mindestfließgeschwindigkeit 0,5 m/s sind in der Tabelle schon berücksichtigt.",
+        "Empfohlene Mindestnennweite laut Norm DN 110. Kleiner ist möglich, dann möglichst kurz und inspizierbar.",
+        "Hinter der Einleitung einer Abwasserhebeanlage darf auch im Gebäude mit Füllungsgrad 70 % bemessen werden."
+      ],
+      "tables": [
+        {
+          "key": "fill50",
+          "use": "Grundleitung für Schmutzwasser unterhalb des Gebäudes.",
+          "recommended": true
+        },
+        {
+          "key": "fill70",
+          "use": "Nur hinter der Einleitung des Volumenstroms einer Abwasserhebeanlage, dann auch im Gebäude."
+        }
+      ],
+      "recommendedMinDn": {
+        "dn": 110,
+        "text": "kleiner als die empfohlene Mindestnennweite DN 110: möglichst kurz und inspizierbar"
+      },
+      "overTable": "Mehr als die Tabelle hergibt: mit dem Leitfaden nicht bemessbar."
+    },
+    {
+      "key": "grundAussen",
+      "type": "slope",
+      "label": "Grund­leitung",
+      "note": "außerhalb",
+      "title": "Grundleitung außerhalb des Gebäudes",
+      "rules": [
+        "Mindestgefälle 1 : DN und Fließgeschwindigkeit 0,7 bis 2,5 m/s sind in der Tabelle schon berücksichtigt.",
+        "Empfohlene Mindestnennweite laut Norm DN 110. Kleiner ist möglich, dann möglichst kurz und inspizierbar."
+      ],
+      "tables": [
+        {
+          "key": "fill70",
+          "use": "Grundleitung für Schmutzwasser außerhalb des Gebäudes.",
+          "recommended": true
+        }
+      ],
+      "recommendedMinDn": {
+        "dn": 110,
+        "text": "kleiner als die empfohlene Mindestnennweite DN 110: möglichst kurz und inspizierbar"
+      },
+      "overTable": "Mehr als die Tabelle hergibt: mit dem Leitfaden nicht bemessbar."
+    }
+  ],
+  "capacityTables": [
+    {
+      "key": "fill50",
+      "label": "50 %",
+      "condition": "Füllungsgrad 50 %, Fließgeschwindigkeit mindestens 0,5 m/s",
+      "dns": [
+        75,
+        90,
+        110,
+        125,
+        160,
+        200,
+        250
+      ],
+      "rows": [
+        { "slope": 0.5, "capacity": [null, null, 2.13, 3, 5.82, 10.34, 18.67] },
+        { "slope": 0.6, "capacity": [null, null, 2.34, 3.29, 6.38, 11.34, 20.47] },
+        { "slope": 0.7, "capacity": [null, 1.46, 2.53, 3.56, 6.9, 12.26, 22.13] },
+        { "slope": 0.8, "capacity": [0.95, 1.56, 2.71, 3.81, 7.38, 13.12, 23.67] },
+        { "slope": 0.9, "capacity": [1.01, 1.66, 2.87, 4.04, 7.83, 13.92, 25.12] },
+        { "slope": 1, "capacity": [1.06, 1.75, 3.03, 4.26, 8.26, 14.68, 26.49] },
+        { "slope": 1.1, "capacity": [1.11, 1.83, 3.18, 4.47, 8.67, 15.4, 27.8] },
+        { "slope": 1.2, "capacity": [1.16, 1.92, 3.33, 4.67, 9.06, 16.09, 29.04] },
+        { "slope": 1.3, "capacity": [1.21, 1.99, 3.46, 4.87, 9.43, 16.76, 30.24] },
+        { "slope": 1.4, "capacity": [1.26, 2.07, 3.59, 5.05, 9.79, 17.39, 31.38] },
+        { "slope": 1.5, "capacity": [1.3, 2.14, 3.72, 5.23, 10.14, 18.01, 32.49] },
+        { "slope": 2, "capacity": [1.51, 2.48, 4.3, 6.05, 11.72, 20.82, 37.55] },
+        { "slope": 2.5, "capacity": [1.69, 2.78, 4.82, 6.77, 13.11, 23.29, 42.01] },
+        { "slope": 3, "capacity": [1.85, 3.04, 5.28, 7.42, 14.37, 25.53, 46.04] },
+        { "slope": 3.5, "capacity": [2, 3.29, 5.71, 8.02, 15.53, 27.58, 49.75] },
+        { "slope": 4, "capacity": [2.14, 3.52, 6.11, 8.58, 16.61, 29.5, 53.2] },
+        { "slope": 4.5, "capacity": [2.27, 3.73, 6.48, 9.1, 17.63, 31.29, 56.44] },
+        { "slope": 5, "capacity": [2.4, 3.94, 6.83, 9.59, 18.58, 32.99, 59.51] }
+      ]
+    },
+    {
+      "key": "fill70",
+      "label": "70 %",
+      "condition": "Füllungsgrad 70 %, Fließgeschwindigkeit 0,7 bis 2,5 m/s",
+      "dns": [
+        75,
+        90,
+        110,
+        125,
+        160,
+        200,
+        250
+      ],
+      "rows": [
+        { "slope": 0.5, "capacity": [null, null, null, null, null, 17.98, 32.46] },
+        { "slope": 0.6, "capacity": [null, null, null, null, 11.09, 19.72, 35.6] },
+        { "slope": 0.7, "capacity": [null, null, null, null, 11.99, 21.32, 38.48] },
+        { "slope": 0.8, "capacity": [null, null, null, 6.62, 12.83, 22.8, 41.16] },
+        { "slope": 0.9, "capacity": [null, null, 5, 7.02, 13.62, 24.2, 43.68] },
+        { "slope": 1, "capacity": [null, null, 5.27, 7.41, 14.37, 25.52, 46.06] },
+        { "slope": 1.1, "capacity": [null, 3.19, 5.53, 7.77, 15.07, 26.78, 48.33] },
+        { "slope": 1.2, "capacity": [null, 3.33, 5.78, 8.12, 15.75, 27.98, 50.5] },
+        { "slope": 1.3, "capacity": [null, 3.47, 6.02, 8.46, 16.4, 29.14, 52.57] },
+        { "slope": 1.4, "capacity": [2.19, 3.6, 6.25, 8.78, 17.03, 30.24, 54.57] },
+        { "slope": 1.5, "capacity": [2.27, 3.73, 6.47, 9.09, 17.63, 31.31, 56.5] },
+        { "slope": 2, "capacity": [2.62, 4.31, 7.49, 10.52, 20.38, 36.2, 65.3] },
+        { "slope": 2.5, "capacity": [2.94, 4.83, 8.38, 11.77, 22.8, 40.5, 73.05] },
+        { "slope": 3, "capacity": [3.22, 5.29, 9.18, 12.9, 24.99, 44.38, 80.06] },
+        { "slope": 3.5, "capacity": [3.48, 5.72, 9.93, 13.94, 27.01, 47.96, null] },
+        { "slope": 4, "capacity": [3.72, 6.12, 10.62, 14.91, 28.89, 51.29, null] },
+        { "slope": 4.5, "capacity": [3.95, 6.49, 11.26, 15.82, 30.65, 54.41, null] },
+        { "slope": 5, "capacity": [4.17, 6.85, 11.88, 16.68, 32.31, null, null] }
+      ]
+    }
+  ],
+  "closingNote": "**Grenzen des Tools:** Die Tabellen für Fall-, Sammel- und Grundleitungen beruhen laut Hersteller auf den hydraulischen Eigenschaften der POLO-KAL Rohrsysteme (Sammel- und Grundleitungen: POLO-KAL NG und XS) und erlauben oft mehr Durchfluss als die allgemeinen Normtabellen. Für andere Rohrsysteme gelten die Tabellen A.3 und A.4 der DIN 1986-100:2016-12. Belüftete Sammelanschlussleitungen, Lüftungsleitungen, Regen- und Mischwasser rechnet das Tool nicht. Der Leitfaden ersetzt die Normen nicht.",
+  "examples": [
+    {
+      "label": "Einzelanschlussleitung Badewanne (TS 1)",
+      "line": "einzel",
+      "usage": "unregelmaessig",
+      "fixtures": {
+        "badewanne": 1
+      },
+      "expected": {
+        "sumDu": 0.8,
+        "results": [
+          {
+            "dn": 50
+          }
+        ]
+      },
+      "source": "S. 22"
+    },
+    {
+      "label": "Sammelanschlussleitung bis zum zweiten Waschbecken (TS 4)",
+      "line": "sammelanschluss",
+      "usage": "unregelmaessig",
+      "fixtures": {
+        "badewanne": 1,
+        "waschbecken": 2,
+        "kuechenspuele": 1
+      },
+      "expected": {
+        "sumDu": 2.6,
+        "results": [
+          {
+            "dn": 75
+          }
+        ]
+      },
+      "source": "S. 22"
+    },
+    {
+      "label": "Sammelanschlussleitung mit WC (TS 5)",
+      "line": "sammelanschluss",
+      "usage": "unregelmaessig",
+      "fixtures": {
+        "badewanne": 1,
+        "waschbecken": 2,
+        "kuechenspuele": 1,
+        "wc6": 1
+      },
+      "expected": {
+        "sumDu": 4.6,
+        "results": [
+          {
+            "dn": 90
+          }
+        ]
+      },
+      "source": "S. 22"
+    },
+    {
+      "label": "Fallleitung mit Hauptlüftung, 26 Wohneinheiten (TS 6)",
+      "line": "fall",
+      "usage": "unregelmaessig",
+      "fixtures": {
+        "badewanne": 1,
+        "waschbecken": 2,
+        "kuechenspuele": 1,
+        "wc6": 1
+      },
+      "units": 26,
+      "ventilation": "haupt",
+      "branchType": "ohneRadius",
+      "expected": {
+        "sumDu": 119.6,
+        "flow": 5.47,
+        "results": [
+          {
+            "dn": 125
+          }
+        ]
+      },
+      "source": "S. 23"
+    },
+    {
+      "label": "Sammelleitung mit 2 Fallsträngen, 52 Wohneinheiten (TS 7)",
+      "line": "sammel",
+      "usage": "unregelmaessig",
+      "fixtures": {
+        "badewanne": 1,
+        "waschbecken": 2,
+        "kuechenspuele": 1,
+        "wc6": 1
+      },
+      "units": 52,
+      "table": "fill50",
+      "expected": {
+        "sumDu": 239.2,
+        "flow": 7.73,
+        "results": [
+          {
+            "dn": 125,
+            "slope": 3.5
+          },
+          {
+            "dn": 160,
+            "slope": 0.9
+          },
+          {
+            "dn": 200,
+            "slope": 0.5
+          }
+        ]
+      },
+      "source": "S. 23"
+    }
+  ]
+}

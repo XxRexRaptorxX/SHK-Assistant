@@ -135,7 +135,10 @@ export function SelectionBar({
   wrap = false,
 }: {
   /** Auch von anderen Tools genutzt: when (Sichtbarkeit) entscheidet der Aufrufer */
-  bar: Omit<ChoiceBar, 'when'>
+  bar: Omit<ChoiceBar, 'when' | 'options'> & {
+    /** badge: kleine Marke unter der Beschriftung, z. B. „Empfohlen“ */
+    options: (ChoiceBar['options'][number] & { badge?: string })[]
+  }
   selected: string | undefined
   onSelect: (key: string) => void
   /** Bei vielen Optionen: höchstens drei nebeneinander, der Rest in der nächsten Zeile */
@@ -163,6 +166,9 @@ export function SelectionBar({
             >
               <span className="text-sm font-bold min-[400px]:text-base">{option.label}</span>
               {option.note && <span className={`text-xs ${active ? '' : 'text-muted'}`}>{option.note}</span>}
+              {option.badge && (
+                <span className="mt-0.5 rounded-full border border-current px-2 text-xs font-bold">{option.badge}</span>
+              )}
             </button>
           )
         })}

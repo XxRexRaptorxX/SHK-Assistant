@@ -13,11 +13,14 @@ import {
   relatedTools,
   isCableTool,
   isChoiceTool,
+  isDrainageSizingTool,
   isFactorTool,
+  isFuelStorageTool,
   isHazmatPointsTool,
   isHeatingCostTool,
   isMaterialListTool,
   isNormFinderTool,
+  isPipeMaterialTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -32,12 +35,15 @@ import {
   type ToolEntry,
 } from './schema'
 import { CableLookup } from './CableLookup'
+import { DrainageSizing } from './DrainageSizing'
 import { FactorCalculator } from './FactorCalculator'
+import { FuelStorage } from './FuelStorage'
 import { HazmatPoints } from './HazmatPoints'
 import { HeatingCostComparison } from './HeatingCostComparison'
 import { ChoiceLookup } from './ChoiceLookup'
 import { MaterialList } from './MaterialList'
 import { NormFinder } from './NormFinder'
+import { PipeMaterialLookup } from './PipeMaterialLookup'
 import { PlacementLookup } from './PlacementLookup'
 import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
@@ -105,6 +111,12 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <MaterialList tool={tool} />
       ) : isHazmatPointsTool(tool) ? (
         <HazmatPoints tool={tool} />
+      ) : isDrainageSizingTool(tool) ? (
+        <DrainageSizing tool={tool} />
+      ) : isPipeMaterialTool(tool) ? (
+        <PipeMaterialLookup tool={tool} />
+      ) : isFuelStorageTool(tool) ? (
+        <FuelStorage tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

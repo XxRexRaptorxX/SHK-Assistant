@@ -5,10 +5,13 @@ import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 import { checkFormulaRequirements, formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
 import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
+import { checkDrainageSizingTool, drainageSizingToolSchema, type DrainageSizingTool } from './drainageSizingTool.ts'
+import { checkFuelStorageTool, fuelStorageToolSchema, type FuelStorageTool } from './fuelStorageTool.ts'
 import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
 import { checkFactorTool, factorToolSchema, relatedToolsSchema, type FactorTool } from './factorTool.ts'
 import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } from './hazmatPointsTool.ts'
 import { materialListToolSchema, type MaterialListTool } from './materialListTool.ts'
+import { checkPipeMaterialTool, pipeMaterialToolSchema, type PipeMaterialTool } from './pipeMaterialTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
@@ -44,6 +47,9 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Heizkosten-Vergleich ("kind": "heatingCost"): Jahresverbrauch umrechnen, Heizsysteme mit Marktpreisen vergleichen (siehe heatingCostTool.ts).
 // - Materialliste ("kind": "materialList"): eigene Artikel mit Menge je Bauvorhaben notieren und abhaken (siehe materialListTool.ts).
 // - Gefahrgut-Tools ("kind": "hazmatPoints"): 1000-Punkte-Regel nach ADR 1.1.3.6 für mehrere Güter (siehe hazmatPointsTool.ts).
+// - Abwasser-Bemessung ("kind": "drainageSizing"): Gegenstände zählen, Nennweite je Leitungsabschnitt (siehe drainageSizingTool.ts).
+// - Rohrwerkstoffe ("kind": "pipeMaterials"): Anlagensystem und Verlegung wählen, Werkstoffe mit Vor- und Nachteilen (siehe pipeMaterialTool.ts).
+// - Brennstofflagerung ("kind": "fuelStorage"): Regelwerk, Brennstoff und Menge, Brennstofflagerraum ja/nein und Vorschriften (siehe fuelStorageTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -203,6 +209,9 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   heatingCostToolSchema,
   materialListToolSchema,
   hazmatPointsToolSchema,
+  drainageSizingToolSchema,
+  pipeMaterialToolSchema,
+  fuelStorageToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -230,14 +239,23 @@ export type ToolEntry =
   | HeatingCostToolEntry
   | MaterialListTool
   | HazmatPointsTool
-export type { CableTool, FactorTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
+  | DrainageSizingTool
+  | PipeMaterialTool
+  | FuelStorageTool
+export type { CableTool, DrainageSizingTool, FactorTool, FuelStorageTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
 
 /** Verweise auf passende Tools (bisher bei Auswahl- und Faktor-Tools) */
 export const relatedTools = (entry: ToolEntry): string[] =>
-  entry.kind === 'choice' || entry.kind === 'factor' ? entry.related : []
+  entry.kind === 'choice' ||
+  entry.kind === 'factor' ||
+  entry.kind === 'drainageSizing' ||
+  entry.kind === 'pipeMaterials' ||
+  entry.kind === 'fuelStorage'
+    ? entry.related
+    : []
 export const isFactorTool = (entry: ToolEntry): entry is FactorTool => entry.kind === 'factor'
 export const isVariantTool = (entry: ToolEntry): entry is VariantTool => entry.kind === 'variants'
 export const isSymbolTool = (entry: ToolEntry): entry is SymbolTool => entry.kind === 'symbols'
@@ -254,7 +272,10 @@ export const isVentilationRiserTool = (entry: ToolEntry): entry is VentilationRi
 export const isHeatingCostTool = (entry: ToolEntry): entry is HeatingCostToolEntry => entry.kind === 'heatingCost'
 export const isMaterialListTool = (entry: ToolEntry): entry is MaterialListTool => entry.kind === 'materialList'
 export const isHazmatPointsTool = (entry: ToolEntry): entry is HazmatPointsTool => entry.kind === 'hazmatPoints'
-export const isFormulaTool = (entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
+export const isDrainageSizingTool = (entry: ToolEntry): entry is DrainageSizingTool => entry.kind === 'drainageSizing'
+export const isPipeMaterialTool = (entry: ToolEntry): entry is PipeMaterialTool => entry.kind === 'pipeMaterials'
+export const isFuelStorageTool = (entry: ToolEntry): entry is FuelStorageTool => entry.kind === 'fuelStorage'
+export const isFormulaTool =(entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
 function checkValues(where: string, keys: string[], values: Record<string, string>, allowMissing = false): string[] {
@@ -414,7 +435,13 @@ export const toolCollection = defineCollection({
                                     ? checkHeatingCostTool(entry)
                                     : isHazmatPointsTool(entry)
                                       ? checkHazmatPointsTool(entry)
-                                    : formulaCollection.check!(entry as FormulaEntry),
+                                      : isDrainageSizingTool(entry)
+                                        ? checkDrainageSizingTool(entry)
+                                        : isPipeMaterialTool(entry)
+                                          ? checkPipeMaterialTool(entry)
+                                          : isFuelStorageTool(entry)
+                                            ? checkFuelStorageTool(entry)
+                                            : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) => [
     ...relatedTools(entry),
     ...(isChoiceTool(entry) ? choiceFigures(entry) : []),
