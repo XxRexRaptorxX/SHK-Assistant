@@ -7,13 +7,95 @@ import {
   classify,
   computeValue,
   findRegulation,
+  hasOpenCondition,
   INPUT_UNITS,
   limitFor,
+  questionsFor,
   rulesFor,
+  type ClassificationAnswers,
+  type ClassificationQuestion,
   type ClassificationResult,
   type ClassificationRule,
   type ClassificationTool,
 } from './classificationTool'
+
+const ANSWER_OPTIONS: { value: boolean | undefined; label: string }[] = [
+  { value: undefined, label: 'Offen' },
+  { value: true, label: 'Ja' },
+  { value: false, label: 'Nein' },
+]
+
+/** Optionale Fragen zu den Bedingungen: aufklappbar, jede mit Offen / Ja / Nein */
+function QuestionPanel({
+  questions,
+  answers,
+  onAnswer,
+  onReset,
+  regulationKey,
+}: {
+  regulationKey: string
+  questions: ClassificationQuestion[]
+  answers: ClassificationAnswers
+  onAnswer: (key: string, value: boolean | undefined) => void
+  onReset: () => void
+}) {
+  const answered = questions.filter((question) => answers[question.key] !== undefined).length
+  return (
+    <details className="mt-6 rounded-2xl border-2 border-line bg-surface px-4">
+      <summary className="min-h-14 cursor-pointer py-3 text-lg font-semibold">
+        Weitere Angaben (optional){' '}
+        <span className="text-base font-normal text-muted">
+          · {answered} von {questions.length} beantwortet
+        </span>
+      </summary>
+      <p className="text-base text-muted">
+        Ohne Angabe erscheinen die betroffenen Vorschriften mit „Gilt, wenn …“. „Nein“ blendet sie aus.
+      </p>
+      <ul className="mt-2 divide-y-2 divide-line">
+        {questions.map((question) => (
+          <li key={question.key} className="py-3">
+            <p className="font-semibold">{question.label}</p>
+            {question.hint && <p className="text-sm text-muted">{question.hint}</p>}
+            {question.links
+              .filter((link) => link.regulations.length === 0 || link.regulations.includes(regulationKey))
+              .map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 mr-2 inline-flex min-h-12 items-center gap-1 rounded-xl border-2 border-line px-3 text-base font-semibold"
+                >
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            <div role="group" aria-label={question.label} className="mt-2 flex rounded-xl border-2 border-line bg-surface p-1">
+              {ANSWER_OPTIONS.map((option) => {
+                const active = answers[question.key] === option.value
+                return (
+                  <button
+                    key={option.label}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => onAnswer(question.key, option.value)}
+                    className={`min-h-12 flex-1 rounded-lg px-2 font-bold ${active ? 'bg-accent text-accent-ink' : ''}`}
+                  >
+                    {option.label}
+                  </button>
+                )
+              })}
+            </div>
+          </li>
+        ))}
+      </ul>
+      {answered > 0 && (
+        <button type="button" onClick={onReset} className="mb-4 min-h-12 font-semibold underline">
+          Alle Angaben zurücksetzen
+        </button>
+      )}
+    </details>
+  )
+}
 
 const numberFormat = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 2 })
 const format = (value: number) => numberFormat.format(value)
@@ -50,7 +132,18 @@ function ResultCard({ result, quantity, regulationLabel }: { result: Classificat
   )
 }
 
-function RuleCard({ rule, quantity, unit }: { rule: ClassificationRule; quantity: number; unit: string }) {
+function RuleCard({
+  rule,
+  quantity,
+  unit,
+  openCondition,
+}: {
+  rule: ClassificationRule
+  quantity: number
+  unit: string
+  /** Bedingung noch nicht beantwortet: „Gilt, wenn …“ zeigen */
+  openCondition: boolean
+}) {
   const binding = BINDING_LABELS[rule.binding]
   return (
     <li className="rounded-2xl border-2 border-line bg-surface p-4">
@@ -58,7 +151,7 @@ function RuleCard({ rule, quantity, unit }: { rule: ClassificationRule; quantity
         <h4 className="text-lg font-bold">{rule.title}</h4>
         <span className={`rounded-md px-2 py-0.5 text-sm font-bold ${binding.className}`}>{binding.label}</span>
       </div>
-      {rule.condition && <p className="mt-1 text-base font-semibold">Gilt, wenn: {rule.condition}</p>}
+      {rule.condition && openCondition && <p className="mt-1 text-base font-semibold">Gilt, wenn: {rule.condition}</p>}
       <div className="mt-1 text-base">
         <RichText text={rule.text} />
       </div>
@@ -81,14 +174,19 @@ export function ClassificationLookup({
   initialRegulation,
   initialFuel = '',
   initialAmount = '',
+  initialAnswers = {},
 }: {
   tool: ClassificationTool
   /** Vorauswahlen (Tests) */
   initialRegulation?: string
   initialFuel?: string
   initialAmount?: string
+  initialAnswers?: ClassificationAnswers
 }) {
   const idPrefix = useId()
+  // Antworten je Frage bleiben beim Wechsel von Brennstoff oder Regelwerk stehen; irrelevante zählen nicht
+  const [answers, setAnswers] = useState<ClassificationAnswers>(initialAnswers)
+  const answer = (key: string, value: boolean | undefined) => setAnswers((current) => ({ ...current, [key]: value }))
   const [regulationKey, setRegulationKey] = useState(initialRegulation ?? tool.regulations[0]!.key)
   const [fuelKey, setFuelKey] = useState(initialFuel)
   const [amount, setAmount] = useState(initialAmount)
@@ -120,7 +218,12 @@ export function ClassificationLookup({
   const amountError = amount.trim() !== '' && (parsed === undefined || parsed <= 0) ? 'Zahl größer 0 eingeben' : undefined
   const quantity = parsed !== undefined && parsed > 0 && unit ? parsed * unit.factor : undefined
   const result = quantity !== undefined ? classify(tool, regulation.key, fuelKey, quantity) : undefined
-  const rules = quantity !== undefined ? rulesFor(tool, regulation.key, fuelKey, quantity) : []
+  const questions = quantity !== undefined ? questionsFor(tool, regulation.key, fuelKey, quantity, answers) : []
+  const relevantAnswers: ClassificationAnswers = Object.fromEntries(
+    questions.map((question) => [question.key, answers[question.key]]),
+  )
+  const rules = quantity !== undefined ? rulesFor(tool, regulation.key, fuelKey, quantity, relevantAnswers) : []
+  const hiddenCount = quantity !== undefined ? rulesFor(tool, regulation.key, fuelKey, quantity).length - rules.length : 0
   const topics = tool.topics
     .map((topic) => ({ topic, rules: rules.filter((rule) => rule.topic === topic.key) }))
     .filter((group) => group.rules.length > 0)
@@ -218,13 +321,34 @@ export function ClassificationLookup({
         ) : limit && result && quantity !== undefined ? (
           <>
             <ResultCard result={result} quantity={quantity} regulationLabel={regulation.label} />
+            {questions.length > 0 && (
+              <QuestionPanel
+                questions={questions}
+                regulationKey={regulation.key}
+                answers={relevantAnswers}
+                onAnswer={answer}
+                onReset={() => setAnswers({})}
+              />
+            )}
             <h2 className="mt-8 text-xl font-bold">Was einzuhalten ist</h2>
+            {hiddenCount > 0 && (
+              <p className="mt-1 text-base text-muted">
+                {hiddenCount === 1 ? '1 Vorschrift ist' : `${hiddenCount} Vorschriften sind`} ausgeblendet, weil sie laut
+                Angaben nicht zutreffen.
+              </p>
+            )}
             {topics.map(({ topic, rules: topicRules }) => (
               <section key={topic.key} className="mt-4">
                 <h3 className="text-lg font-bold">{topic.label}</h3>
                 <ul className="mt-2 space-y-3">
                   {topicRules.map((rule) => (
-                    <RuleCard key={rule.key} rule={rule} quantity={quantity} unit={limit.unit} />
+                    <RuleCard
+                      key={rule.key}
+                      rule={rule}
+                      quantity={quantity}
+                      unit={limit.unit}
+                      openCondition={hasOpenCondition(tool, rule, regulation.key, fuelKey, relevantAnswers)}
+                    />
                   ))}
                 </ul>
               </section>

@@ -2,18 +2,18 @@
   "id": "tool.heizraum",
   "visibility": "public",
   "status": "draft",
-  "source": "Muster-Feuerungsverordnung (MFeuV), Stand September 2007, geändert durch Beschluss der Fachkommission Bauaufsicht vom 28.01.2016 und 27.09.2017, §§ 2 bis 6, S. 2 bis 6, https://viega.de/content/dam/viegadm/content-assets/de/de-brandschutz/downloads-brandschutz/Muster-Feuerungsverordnung_DE_09_2017.PDF; Bayern: Feuerungsverordnung (FeuV) vom 11.11.2007, Text gilt ab 01.01.2013, §§ 2 bis 6, https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-2 bis https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-6",
+  "source": "Muster-Feuerungsverordnung (MFeuV), Stand September 2007, geändert durch Beschluss der Fachkommission Bauaufsicht vom 28.01.2016 und 27.09.2017, §§ 2 bis 6, S. 2 bis 6, https://viega.de/content/dam/viegadm/content-assets/de/de-brandschutz/downloads-brandschutz/Muster-Feuerungsverordnung_DE_09_2017.PDF; Bayern: Feuerungsverordnung (FeuV) vom 11.11.2007, Text gilt ab 01.01.2013, §§ 2 bis 6, https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-2 bis https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-6; Abgasanlagen, Mündungen, BHKW und Wärmepumpen: MFeuV §§ 7 bis 10, S. 7 bis 12; BayFeuV §§ 7 bis 10, https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-7 bis https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-10",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "classification",
   "title": "Heizraum und Aufstellraum",
-  "summary": "Brennstoff und Nennleistung der Feuerstätten eingeben: Ist ein Heizraum oder eigener Aufstellraum nötig, und was gilt für Verbrennungsluft, Brandschutz und Notschalter?",
+  "summary": "Feuerstätte, BHKW oder Wärmepumpe und Nennleistung eingeben: Ist ein Heizraum oder eigener Aufstellraum nötig, und was gilt für Verbrennungsluft, Abgas, Brandschutz und Notschalter?",
   "tags": ["heizung", "planung"],
   "category": "Planung",
-  "description": "Regelwerk und Brennstoff der Feuerstätten wählen, dann die Nennleistung aller Feuerstätten eingeben, die gleichzeitig betrieben werden sollen. Das Tool sagt, ob ein Heizraum (feste Brennstoffe) oder ein eigener Aufstellraum (Öl und Gas) nötig ist, und listet nach Thema, was einzuhalten ist. Mindestquerschnitte rechnet es für die eingegebene Leistung aus.",
+  "description": "Regelwerk und Feuerstätte bzw. Anlage wählen, dann die Leistung eingeben: bei Feuerstätten die Nennleistung aller, die gleichzeitig betrieben werden sollen. Das Tool sagt, ob ein Heizraum (feste Brennstoffe) oder ein eigener Aufstellraum (Öl, Gas, BHKW, große Wärmepumpen) nötig ist, und listet nach Thema, was einzuhalten ist. Mindestquerschnitte, Rauminhalte und Abstände rechnet es für die eingegebene Leistung aus.",
   "related": ["tool.brennstofflagerung", "tool.gebaeudeklasse"],
-  "fuelsLabel": "Brennstoff der Feuerstätten",
-  "quantityLabel": "Gesamtnennleistung",
+  "fuelsLabel": "Feuerstätte oder Anlage",
+  "quantityLabel": "Leistung",
   "regulations": [
     {
       "key": "mfeuv",
@@ -22,31 +22,65 @@
       "limits": [
         { "fuel": "fest", "unit": "kW", "above": 50, "aboveLabel": "Heizraum erforderlich", "belowLabel": "Kein Heizraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "MFeuV § 6 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" },
         { "fuel": "fluessig", "unit": "kW", "above": 100, "aboveLabel": "Eigener Aufstellraum erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "MFeuV § 5 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" },
-        { "fuel": "gas", "unit": "kW", "above": 100, "aboveLabel": "Eigener Aufstellraum erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "MFeuV § 5 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" }
+        { "fuel": "gas", "unit": "kW", "above": 100, "aboveLabel": "Eigener Aufstellraum erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "MFeuV § 5 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" },
+        { "fuel": "bhkw", "unit": "kW", "above": 35, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Nennleistung", "hint": "Nennleistung des BHKW (Gesamtleistung laut Typenschild); mehrere BHKW zusammen.", "source": "MFeuV § 10 Abs. 2 Nr. 4; Nennleistung: § 2 Abs. 1 Nr. 1" },
+        { "fuel": "wpElektrisch", "unit": "kW", "above": 50, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Antriebsleistung", "hint": "Elektrische Antriebsleistung der Verdichter zusammen, nicht die Heizleistung.", "source": "MFeuV § 10 Abs. 2 Nr. 3" },
+        { "fuel": "wpSorption", "unit": "kW", "above": 50, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Nennleistung der Feuerung", "hint": "Nennleistung der Feuerung aller Sorptionswärmepumpen zusammen.", "source": "MFeuV § 10 Abs. 2 Nr. 1" },
+        { "fuel": "wpAbgas", "unit": "kW", "above": 50, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Nennleistung der Feuerstätten", "hint": "Nennleistung der Feuerstätten, deren Abgaswärme die Wärmepumpe nutzt, zusammen.", "source": "MFeuV § 10 Abs. 2 Nr. 2" }
       ]
     },
     {
       "key": "bayern",
       "label": "Bayern (FeuV)",
-      "note": "Bayerische Feuerungsverordnung vom 11.11.2007, Text gilt ab 01.01.2013. Abweichend vom Muster: Verbrennungsluft bis 35 kW auch über den Rauminhalt (4 m³ je kW), keine Vorgabe für Gasfeuerstätten mit Überdruck über 100 kW.",
+      "note": "Bayerische Feuerungsverordnung vom 11.11.2007, Text gilt ab 01.01.2013. Abweichend vom Muster: Verbrennungsluft bis 35 kW auch über den Rauminhalt (4 m³ je kW), Abstand der Mündung zu Fenstern und Lüftungsöffnungen im Umkreis, Abgas durch die Außenwand nur bis 11 kW Heizung, keine Vorgabe für Gasfeuerstätten mit Überdruck über 100 kW.",
       "limits": [
         { "fuel": "fest", "unit": "kW", "above": 50, "aboveLabel": "Heizraum erforderlich", "belowLabel": "Kein Heizraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "BayFeuV § 6 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" },
         { "fuel": "fluessig", "unit": "kW", "above": 100, "aboveLabel": "Eigener Aufstellraum erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "BayFeuV § 5 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" },
-        { "fuel": "gas", "unit": "kW", "above": 100, "aboveLabel": "Eigener Aufstellraum erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "BayFeuV § 5 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" }
+        { "fuel": "gas", "unit": "kW", "above": 100, "aboveLabel": "Eigener Aufstellraum erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Gesamtnennleistung", "hint": "Nennleistung laut Typenschild (bzw. Zusatzschild), aller Feuerstätten zusammen, die gleichzeitig betrieben werden sollen.", "source": "BayFeuV § 5 Abs. 1 Satz 1; Nennleistung: § 2 Abs. 1" },
+        { "fuel": "bhkw", "unit": "kW", "above": 35, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Nennleistung", "hint": "Nennleistung des BHKW (Gesamtleistung laut Typenschild); mehrere BHKW zusammen.", "source": "BayFeuV § 10 Abs. 2 Nr. 5; Nennleistung: § 2 Abs. 1 Nr. 1" },
+        { "fuel": "wpElektrisch", "unit": "kW", "above": 50, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Antriebsleistung", "hint": "Elektrische Antriebsleistung der Verdichter zusammen, nicht die Heizleistung.", "source": "BayFeuV § 10 Abs. 2 Nr. 3" },
+        { "fuel": "wpSorption", "unit": "kW", "above": 50, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Nennleistung der Feuerung", "hint": "Nennleistung der Feuerung aller Sorptionswärmepumpen zusammen.", "source": "BayFeuV § 10 Abs. 2 Nr. 1" },
+        { "fuel": "wpAbgas", "unit": "kW", "above": 50, "aboveLabel": "Aufstellraum nach § 5 erforderlich", "belowLabel": "Kein besonderer Aufstellraum nötig", "scope": "Nennleistung der Feuerstätten", "hint": "Nennleistung der Feuerstätten, deren Abgaswärme die Wärmepumpe nutzt, zusammen.", "source": "BayFeuV § 10 Abs. 2 Nr. 2" }
       ]
     }
   ],
   "fuels": [
-    { "key": "fest", "name": "Feste Brennstoffe", "aliases": ["Pelletkessel", "Holzkessel", "Scheitholzkessel", "Hackschnitzel", "Kohle", "Festbrennstoff"], "note": "z. B. Pellets, Scheitholz, Kohle" },
-    { "key": "fluessig", "name": "Flüssige Brennstoffe", "aliases": ["Ölheizung", "Ölkessel", "Heizöl", "Ölbrenner"], "note": "z. B. Heizöl" },
-    { "key": "gas", "name": "Gasförmige Brennstoffe", "aliases": ["Gasheizung", "Gaskessel", "Gastherme", "Erdgas", "Flüssiggas", "Propan"], "note": "Erdgas, Flüssiggas" }
+    { "key": "fest", "name": "Feuerstätte für feste Brennstoffe", "aliases": ["Pelletkessel", "Holzkessel", "Scheitholzkessel", "Hackschnitzel", "Kohle", "Festbrennstoff"], "note": "z. B. Pellets, Scheitholz, Kohle" },
+    { "key": "fluessig", "name": "Feuerstätte für flüssige Brennstoffe", "aliases": ["Ölheizung", "Ölkessel", "Heizöl", "Ölbrenner"], "note": "z. B. Heizöl" },
+    { "key": "gas", "name": "Feuerstätte für Gas", "aliases": ["Gasheizung", "Gaskessel", "Gastherme", "Erdgas", "Flüssiggas", "Propan"], "note": "Erdgas, Flüssiggas" },
+    { "key": "bhkw", "name": "Blockheizkraftwerk (BHKW)", "aliases": ["BHKW", "Blockheizkraftwerk", "Mini-BHKW", "Kraft-Wärme-Kopplung", "KWK"], "note": "im Gebäude" },
+    { "key": "wpElektrisch", "name": "Wärmepumpe, elektrischer Verdichter", "aliases": ["Wärmepumpe", "Kompressionswärmepumpe", "Sole-Wasser-Wärmepumpe", "Luft-Wasser-Wärmepumpe"], "note": "Kompressionswärmepumpe" },
+    { "key": "wpSorption", "name": "Sorptionswärmepumpe", "aliases": ["Gas-Absorptionswärmepumpe", "Adsorptionswärmepumpe", "Gaswärmepumpe"], "note": "mit feuerbeheiztem Austreiber" },
+    { "key": "wpAbgas", "name": "Abgaswärmepumpe", "aliases": ["Abgas-Wärmepumpe"], "note": "nutzt die Abgaswärme von Feuerstätten" }
   ],
   "topics": [
     { "key": "aufstellung", "label": "Aufstellung der Feuerstätte" },
     { "key": "raum", "label": "Raum: Nutzung, Größe, Türen" },
     { "key": "brandschutz", "label": "Brandschutz" },
     { "key": "verbrennungsluft", "label": "Verbrennungsluft und Lüftung" },
+    { "key": "abgas", "label": "Abgasanlage und Mündung" },
     { "key": "notschalter", "label": "Notschalter und Absperrung" }
+  ],
+  "questions": [
+    { "key": "raumluftabhaengig", "label": "Ist die Feuerstätte bzw. Anlage raumluftabhängig?", "hint": "Raumluftunabhängig heißt: Verbrennungsluft nur über Leitungen oder Schächte direkt aus dem Freien, und kein Abgas kann in gefahrdrohender Menge in den Aufstellraum austreten." },
+    { "key": "offenerKamin", "label": "Ist es ein offener Kamin?", "fuels": ["fest"] },
+    { "key": "absaugendeAnlage", "label": "Gibt es Anlagen, die Raumluft absaugen?", "hint": "Z. B. Lüftungs- oder Warmluftheizungsanlage, Dunstabzugshaube, Abluft-Wäschetrockner." },
+    { "key": "brennbarerBoden", "label": "Ist der Fußboden vor der Feuerungsöffnung aus brennbaren Baustoffen?" },
+    { "key": "festImRaum", "label": "Stehen im selben Raum auch Feuerstätten für feste Brennstoffe?" },
+    { "key": "oelGasImHeizraum", "label": "Stehen im Heizraum auch Öl- oder Gasfeuerstätten?" },
+    { "key": "heizoelImRaum", "label": "Wird im Raum Heizöl gelagert oder ist der Heizöllagerraum nur über diesen Raum zugänglich?" },
+    { "key": "flammenueberwachung", "label": "Hat die Gasfeuerstätte eine Flammenüberwachung?" },
+    { "key": "fluessiggasTief", "label": "Flüssiggas in einem Raum, dessen Fußboden überall mehr als 1 m unter der Geländeoberfläche liegt?" },
+    { "key": "stroemungssicherung", "label": "Hat die Gasfeuerstätte eine Strömungssicherung?" },
+    { "key": "gasUeberdruck", "label": "Werden die Gasfeuerstätten mit Überdruck betrieben und die Abgase mit Überdruck abgeführt?", "hint": "Nein auch dann, wenn die Bauart verhindert, dass Abgas in gefahrdrohender Menge austritt." },
+    { "key": "ohneAbgasanlage", "label": "Wird die Gasfeuerstätte ohne Abgasanlage betrieben?" },
+    { "key": "aussenwand", "label": "Wird das Abgas durch die Außenwand geführt?" },
+    { "key": "luftAbgasSystem", "label": "Ist die Feuerstätte an ein Luft-Abgas-System angeschlossen?" },
+    { "key": "mehrfachbelegung", "label": "Hängen mehrere Feuerstätten an einem Schornstein, einer Abgasleitung oder einem Verbindungsstück?" },
+    { "key": "abgasUeberdruck", "label": "Wird die Abgasanlage (Schornstein, Abgasleitung oder Verbindungsstück) unter Überdruck betrieben?" },
+    { "key": "durchBrennbar", "label": "Führt die Abgasleitung oder das Verbindungsstück durch Bauteile aus brennbaren Baustoffen?" },
+    { "key": "verbrennungsmotor", "label": "Ortsfester Verbrennungsmotor oder Wärmepumpe mit Verbrennungsmotor?" },
+    { "key": "kombination", "label": "Wird die Anlage gemeinsam mit Feuerstätten betrieben?" }
   ],
   "rules": [
     {
@@ -55,8 +89,8 @@
       "binding": "pflicht",
       "title": "Nicht in Rettungswegen und Garagen",
       "text": "Feuerstätten dürfen nicht in notwendigen Treppenräumen, in Räumen zwischen notwendigen Treppenräumen und Ausgängen ins Freie und nicht in notwendigen Fluren stehen. In Garagen nur raumluftunabhängige Feuerstätten, deren Oberfläche bei Nennleistung höchstens 300 °C warm wird.",
-      "source": "MFeuV § 4 Abs. 1; BayFeuV § 4 Abs. 1",
-      "applies": [{ "fuels": ["fest", "fluessig", "gas"] }]
+      "source": "MFeuV § 4 Abs. 1; BayFeuV § 4 Abs. 1; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"] }]
     },
     {
       "key": "festImAufstellraum",
@@ -64,6 +98,7 @@
       "binding": "pflicht",
       "title": "Feste Brennstoffe im selben Raum höchstens 50 kW",
       "condition": "Wenn im Aufstellraum auch Feuerstätten für feste Brennstoffe stehen",
+      "ask": [{ "question": "festImRaum", "is": true }],
       "text": "In einem Aufstellraum für Öl- und Gasfeuerstätten über 100 kW dürfen Feuerstätten für feste Brennstoffe nur stehen, wenn sie zusammen höchstens 50 kW Nennleistung haben.",
       "source": "MFeuV § 5 Abs. 1 Satz 2; BayFeuV § 5 Abs. 1 Satz 2",
       "applies": [{ "fuels": ["fluessig", "gas"], "overLimit": true }]
@@ -74,6 +109,7 @@
       "binding": "pflicht",
       "title": "Gasfeuerstätten ohne Flammenüberwachung",
       "condition": "Bei Gasfeuerstätten ohne Flammenüberwachung",
+      "ask": [{ "question": "flammenueberwachung", "is": false }],
       "text": "Sie dürfen nur in Räumen stehen, in denen eine mechanische Lüftungsanlage während des Betriebs mindestens einen fünffachen Luftwechsel pro Stunde sicherstellt. Für Gas-Haushalts-Kochgeräte genügen 100 m³/h Außenluft.",
       "source": "MFeuV § 4 Abs. 3; BayFeuV § 4 Abs. 3",
       "applies": [{ "fuels": ["gas"] }]
@@ -84,6 +120,7 @@
       "binding": "pflicht",
       "title": "Flüssiggas in tiefliegenden Räumen",
       "condition": "Bei Flüssiggas-Feuerstätten in Räumen, deren Fußboden überall mehr als 1 m unter der Geländeoberfläche liegt",
+      "ask": [{ "question": "fluessiggasTief", "is": true }],
       "text": "Erlaubt nur, wenn die Feuerstätten eine Flammenüberwachung haben und auch bei abgeschalteter Feuerung kein Flüssiggas in gefahrdrohender Menge aus den Leitungen im Aufstellraum austreten kann oder eine mechanische Lüftungsanlage es sicher abführt.",
       "source": "MFeuV § 4 Abs. 6; BayFeuV § 4 Abs. 6",
       "applies": [{ "fuels": ["gas"] }]
@@ -130,8 +167,8 @@
       "binding": "pflicht",
       "title": "Abstand zu brennbaren Bauteilen",
       "text": "An Bauteilen aus brennbaren Baustoffen dürfen bei Nennleistung höchstens 85 °C auftreten. Das gilt als erfüllt mit den Abständen des Herstellers oder, wenn er keine angibt, mit mindestens 40 cm.",
-      "source": "MFeuV § 4 Abs. 7; BayFeuV § 4 Abs. 7",
-      "applies": [{ "fuels": ["fest", "fluessig", "gas"] }]
+      "source": "MFeuV § 4 Abs. 7; BayFeuV § 4 Abs. 7; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"] }]
     },
     {
       "key": "bodenbelagFest",
@@ -139,6 +176,7 @@
       "binding": "pflicht",
       "title": "Nichtbrennbarer Belag vor der Feuerungsöffnung",
       "condition": "Bei einem Fußboden aus brennbaren Baustoffen",
+      "ask": [{ "question": "brennbarerBoden", "is": true }],
       "text": "Vor der Feuerungsöffnung ist der Boden durch einen Belag aus nichtbrennbaren Baustoffen zu schützen: mindestens 50 cm nach vorn und 30 cm seitlich über die Feuerungsöffnung hinaus.",
       "source": "MFeuV § 4 Abs. 8; BayFeuV § 4 Abs. 8",
       "applies": [{ "fuels": ["fest"] }]
@@ -175,63 +213,69 @@
       "topic": "verbrennungsluft",
       "binding": "pflicht",
       "title": "Verbrennungsluft bis 50 kW",
-      "condition": "Bei raumluftabhängigen Feuerstätten",
+      "condition": "Bei raumluftabhängigen Feuerstätten, außer offenen Kaminen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "offenerKamin", "is": false }],
       "text": "Jeder Aufstellraum braucht eine Öffnung ins Freie mit mindestens 150 cm² lichtem Querschnitt, zwei Öffnungen mit je mindestens 75 cm² oder Leitungen ins Freie mit strömungstechnisch gleichwertigem Querschnitt.",
-      "source": "MFeuV § 3 Abs. 1 und 2",
-      "applies": [{ "regulations": ["mfeuv"], "fuels": ["fest", "fluessig", "gas"], "upTo": 50 }]
+      "source": "MFeuV § 3 Abs. 1 und 2; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"], "upTo": 50 }]
     },
     {
       "key": "luftBis35Bayern",
       "topic": "verbrennungsluft",
       "binding": "pflicht",
       "title": "Verbrennungsluft bis 35 kW",
-      "condition": "Bei raumluftabhängigen Feuerstätten",
+      "condition": "Bei raumluftabhängigen Feuerstätten, außer offenen Kaminen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "offenerKamin", "is": false }],
       "text": "Eine dieser Möglichkeiten genügt:\n• Der Aufstellraum hat eine Tür ins Freie oder ein Fenster, das sich öffnen lässt, und mindestens 4 m³ Rauminhalt je kW Nennleistung.\n• Verbrennungsluftverbund: Öffnungen von mindestens 150 cm² zu anderen Räumen mit Verbindung ins Freie, zusammen mindestens 4 m³ je kW; Räume ohne Verbindung ins Freie zählen nicht mit.\n• Eine Öffnung ins Freie mit mindestens 150 cm², zwei mit je 75 cm² oder gleichwertige Leitungen.",
       "computed": { "label": "Mindest-Rauminhalt (Raum bzw. Verbund)", "base": 0, "perUnit": 4, "unit": "m³" },
-      "source": "BayFeuV § 3 Abs. 1 und 2",
-      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas"], "upTo": 35 }]
+      "source": "BayFeuV § 3 Abs. 1 und 2; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"], "upTo": 35 }]
     },
     {
       "key": "luftBis50Bayern",
       "topic": "verbrennungsluft",
       "binding": "pflicht",
       "title": "Verbrennungsluft über 35 bis 50 kW",
-      "condition": "Bei raumluftabhängigen Feuerstätten",
+      "condition": "Bei raumluftabhängigen Feuerstätten, außer offenen Kaminen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "offenerKamin", "is": false }],
       "text": "Jeder Aufstellraum braucht eine Öffnung ins Freie mit mindestens 150 cm² lichtem Querschnitt, zwei Öffnungen mit je mindestens 75 cm² oder Leitungen ins Freie mit strömungstechnisch gleichwertigem Querschnitt. Der Rauminhalt allein genügt hier nicht mehr.",
-      "source": "BayFeuV § 3 Abs. 3",
-      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas"], "above": 35, "upTo": 50 }]
+      "source": "BayFeuV § 3 Abs. 3; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"], "above": 35, "upTo": 50 }]
     },
     {
       "key": "luftUeber50",
       "topic": "verbrennungsluft",
       "binding": "pflicht",
       "title": "Verbrennungsluft über 50 kW",
-      "condition": "Bei raumluftabhängigen Feuerstätten",
+      "condition": "Bei raumluftabhängigen Feuerstätten, außer offenen Kaminen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "offenerKamin", "is": false }],
       "text": "Jeder Aufstellraum braucht eine Öffnung oder Leitung ins Freie: mindestens 150 cm² und für jedes kW über 50 kW 2 cm² mehr. Leitungen strömungstechnisch gleichwertig bemessen. Der Querschnitt darf auf höchstens zwei Öffnungen oder Leitungen aufgeteilt werden.",
       "computed": { "label": "Mindestquerschnitt ins Freie", "base": 150, "perUnit": 2, "over": 50, "unit": "cm²" },
-      "source": "MFeuV § 3 Abs. 3; BayFeuV § 3 Abs. 4",
-      "applies": [{ "fuels": ["fest", "fluessig", "gas"], "above": 50 }]
+      "source": "MFeuV § 3 Abs. 3; BayFeuV § 3 Abs. 4; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"], "above": 50 }]
     },
     {
       "key": "luftNachweisMfeuv",
       "topic": "verbrennungsluft",
       "binding": "pflicht",
       "title": "Verbrennungsluft auf andere Weise nachweisen",
-      "condition": "Bei raumluftabhängigen Feuerstätten, statt der Öffnungen",
+      "condition": "Bei raumluftabhängigen Feuerstätten, außer offenen Kaminen, statt der Öffnungen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "offenerKamin", "is": false }],
       "text": "Die Verbrennungsluftversorgung darf auch anders nachgewiesen werden. Sie reicht aus, wenn ein Volumenstrom von 1,6 m³/h je kW verfügbar ist. Gilt nicht für offene Kamine; bis 50 kW auch nicht für Gas-Haushalts-Kochgeräte.",
       "computed": { "label": "Verfügbarer Volumenstrom mindestens", "base": 0, "perUnit": 1.6, "unit": "m³/h" },
-      "source": "MFeuV § 3 Abs. 5 und 6",
-      "applies": [{ "regulations": ["mfeuv"], "fuels": ["fest", "fluessig", "gas"] }]
+      "source": "MFeuV § 3 Abs. 5 und 6; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"] }]
     },
     {
       "key": "luftNachweisBayern",
       "topic": "verbrennungsluft",
       "binding": "pflicht",
       "title": "Verbrennungsluft auf andere Weise nachweisen",
-      "condition": "Bei raumluftabhängigen Feuerstätten, statt der Öffnungen",
+      "condition": "Bei raumluftabhängigen Feuerstätten, außer offenen Kaminen, statt der Öffnungen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "offenerKamin", "is": false }],
       "text": "Eine ausreichende Verbrennungsluftversorgung darf auch auf andere Weise nachgewiesen werden. Die bayerische FeuV nennt dafür keinen Zahlenwert.",
-      "source": "BayFeuV § 3 Abs. 6",
-      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas"] }]
+      "source": "BayFeuV § 3 Abs. 6; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"] }]
     },
     {
       "key": "luftNichtVerschliessen",
@@ -239,9 +283,10 @@
       "binding": "pflicht",
       "title": "Öffnungen nicht verschließen",
       "condition": "Bei raumluftabhängigen Feuerstätten",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }],
       "text": "Verbrennungsluftöffnungen und -leitungen dürfen nicht verschlossen oder zugestellt werden, außer eine Sicherheitseinrichtung sorgt dafür, dass die Feuerstätten nur bei offenem Verschluss laufen. Verschluss oder Gitter dürfen den Querschnitt nicht verengen.",
-      "source": "MFeuV § 3 Abs. 4; BayFeuV § 3 Abs. 5",
-      "applies": [{ "fuels": ["fest", "fluessig", "gas"] }]
+      "source": "MFeuV § 3 Abs. 4; BayFeuV § 3 Abs. 5; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"] }]
     },
     {
       "key": "luftAbsaugendeAnlagen",
@@ -249,9 +294,10 @@
       "binding": "pflicht",
       "title": "Lüftungsanlage, Dunstabzug, Abluft-Trockner",
       "condition": "Bei raumluftabhängigen Feuerstätten und Anlagen, die Raumluft absaugen",
+      "ask": [{ "question": "raumluftabhaengig", "is": true }, { "question": "absaugendeAnlage", "is": true }],
       "text": "Lüftungs- oder Warmluftheizungsanlagen, Dunstabzugshauben und Abluft-Wäschetrockner dürfen die Feuerstätte nicht gefährden. Das gilt als erfüllt, wenn\n• Sicherheitseinrichtungen den gleichzeitigen Betrieb verhindern,\n• Sicherheitseinrichtungen die Abgasabführung überwachen,\n• die Abgase über die absaugende Anlage abgeführt werden oder\n• anlagentechnisch kein gefährlicher Unterdruck entstehen kann.",
-      "source": "MFeuV § 4 Abs. 2; BayFeuV § 4 Abs. 2",
-      "applies": [{ "fuels": ["fest", "fluessig", "gas"] }]
+      "source": "MFeuV § 4 Abs. 2; BayFeuV § 4 Abs. 2; für BHKW und Sorptionswärmepumpen über § 10 Abs. 1",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption"] }]
     },
     {
       "key": "gasStroemungssicherung",
@@ -259,6 +305,7 @@
       "binding": "pflicht",
       "title": "Gasfeuerstätten mit Strömungssicherung",
       "condition": "Bei Gasfeuerstätten mit Strömungssicherung",
+      "ask": [{ "question": "stroemungssicherung", "is": true }],
       "text": "Zusätzlich zur Verbrennungsluft muss eine dieser Bedingungen erfüllt sein:\n• mindestens 1 m³ Rauminhalt je kW Nennleistung der Feuerstätten, die gleichzeitig laufen können,\n• Durchlüftung über je eine untere und obere Öffnung ins Freie mit mindestens 75 cm² oder\n• Öffnungen mit je mindestens 150 cm² unten und oben in derselben Wand zu direkt angrenzenden Räumen, sodass der Rauminhalt zusammen reicht.",
       "computed": { "label": "Mindest-Rauminhalt", "base": 0, "perUnit": 1, "unit": "m³" },
       "source": "MFeuV § 4 Abs. 4; BayFeuV § 4 Abs. 4",
@@ -270,6 +317,7 @@
       "binding": "pflicht",
       "title": "Gasfeuerstätten mit Überdruck über 100 kW",
       "condition": "Wenn die Gasfeuerstätten mit Überdruck betrieben und ihre Abgase mit Überdruck abgeführt werden, außer ihre Bauart verhindert, dass Abgas in gefahrdrohender Menge austritt",
+      "ask": [{ "question": "gasUeberdruck", "is": true }],
       "text": "Der Aufstellraum im Gebäude braucht zwei Öffnungen direkt ins Freie, eine unten und eine oben: je mindestens 150 cm² und für jedes kW über 100 kW 1 cm² mehr.",
       "computed": { "label": "Mindestquerschnitt je Öffnung", "base": 150, "perUnit": 1, "over": 100, "unit": "cm²" },
       "source": "MFeuV § 5 Abs. 2",
@@ -299,6 +347,7 @@
       "binding": "pflicht",
       "title": "Notschalter für Öl und Gas im Heizraum",
       "condition": "Wenn im Heizraum auch Feuerstätten für flüssige oder gasförmige Brennstoffe stehen",
+      "ask": [{ "question": "oelGasImHeizraum", "is": true }],
       "text": "Auch dann gilt die Notschalter-Pflicht: Brenner und Brennstofffördereinrichtungen über einen Schalter außerhalb des Raums abschaltbar, daneben das Schild „NOTSCHALTER-FEUERUNG“.",
       "source": "MFeuV § 6 Abs. 1 Satz 4 mit § 5 Abs. 3; BayFeuV § 6 Abs. 1 Satz 4 mit § 5 Abs. 2",
       "applies": [{ "fuels": ["fest"], "overLimit": true }]
@@ -309,15 +358,243 @@
       "binding": "pflicht",
       "title": "Heizölzufuhr vom Notschalter aus absperren",
       "condition": "Wenn im Raum Heizöl gelagert wird oder der Heizöllagerraum nur über diesen Raum zugänglich ist",
+      "ask": [{ "question": "heizoelImRaum", "is": true }],
       "text": "Die Heizölzufuhr muss sich von der Stelle des Notschalters aus über eine entsprechend gekennzeichnete Absperreinrichtung unterbrechen lassen.",
       "source": "MFeuV § 5 Abs. 4, für Heizräume über § 6 Abs. 1 Satz 2; BayFeuV § 5 Abs. 3, für Heizräume über § 6 Abs. 1 Satz 2",
-      "applies": [
-        { "fuels": ["fluessig"], "overLimit": true },
-        { "fuels": ["fest"], "overLimit": true }
-      ]
+      "applies": [{ "fuels": ["fluessig"], "overLimit": true }, { "fuels": ["fest"], "overLimit": true }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "aufstellraumAnlage",
+      "topic": "raum",
+      "title": "Aufstellraum nach § 5",
+      "text": "Die Anlage darf nur in einem Raum stehen, der die Anforderungen nach § 5 erfüllt: keine andere Nutzung (erlaubt sind Feuerstätten, Wärmepumpen, BHKW, ortsfeste Verbrennungsmotoren, zugehörige Installationen und Brennstofflagerung), zu anderen Räumen nur Türöffnungen, dicht- und selbstschließende Türen, und der Raum muss gelüftet werden können.",
+      "source": "MFeuV § 10 Abs. 2 mit § 5 Abs. 1; BayFeuV § 10 Abs. 2 mit § 5 Abs. 1",
+      "applies": [{ "fuels": ["bhkw", "wpElektrisch", "wpSorption", "wpAbgas"], "overLimit": true }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "motorImmerAufstellraum",
+      "topic": "aufstellung",
+      "title": "Verbrennungsmotoren immer im Aufstellraum",
+      "condition": "Bei ortsfesten Verbrennungsmotoren oder Kompressionswärmepumpen mit Verbrennungsmotor",
+      "ask": [{ "question": "verbrennungsmotor", "is": true }],
+      "text": "Diese dürfen unabhängig von der Leistung nur in Räumen stehen, die die Anforderungen nach § 5 erfüllen.",
+      "source": "MFeuV § 10 Abs. 2 Nr. 5 und 6; BayFeuV § 10 Abs. 2 Nr. 4 und 6",
+      "applies": [{ "fuels": ["bhkw", "wpSorption"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "kombinationAnlagen",
+      "topic": "aufstellung",
+      "title": "Kombination mit Feuerstätten über 100 kW",
+      "condition": "Wenn Feuerstätten und Wärmepumpen bzw. BHKW gemeinsam betrieben werden sollen",
+      "ask": [{ "question": "kombination", "is": true }],
+      "text": "Auch Kombinationen von Feuerstätten mit Sorptions-, Abgas- oder großen Kompressionswärmepumpen oder BHKW brauchen einen Raum nach § 5, wenn sie zusammen mehr als 100 kW Nennleistung haben.",
+      "source": "MFeuV § 10 Abs. 2 Satz 2",
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["bhkw", "wpElektrisch", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "wpElektrischHinweis",
+      "topic": "aufstellung",
+      "title": "Keine Feuerstätte",
+      "text": "Für Wärmepumpen mit elektrischem Verdichter regelt die Feuerungsverordnung nur den Aufstellraum ab mehr als 50 kW Antriebsleistung. Verbrennungsluft- und Abgasregeln gelten nicht.",
+      "source": "MFeuV § 10 Abs. 1 und 2; BayFeuV § 10 Abs. 1 und 2",
+      "applies": [{ "fuels": ["wpElektrisch"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "offenerKamin",
+      "topic": "brandschutz",
+      "title": "Offene Kamine",
+      "condition": "Bei offenen Kaminen",
+      "ask": [{ "question": "offenerKamin", "is": true }],
+      "text": "Bauteile aus brennbaren Baustoffen müssen von der Feuerraumöffnung nach oben und zu den Seiten mindestens 80 cm entfernt sein, mit beiderseits belüftetem Strahlungsschutz 40 cm. Die Mindestöffnungen für Verbrennungsluft aus diesem Tool gelten für offene Kamine nicht.",
+      "source": "MFeuV § 4 Abs. 9 und § 3 Abs. 6 Satz 2; BayFeuV § 4 Abs. 9 und § 3 Abs. 7 Satz 2",
+      "applies": [{ "fuels": ["fest"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "abstandAbgasMfeuv",
+      "topic": "brandschutz",
+      "title": "Abstand der Abgasanlage zu brennbaren Bauteilen",
+      "text": "An brennbaren Bauteilen dürfen bei Nennleistung höchstens 85 °C auftreten, bei Rußbränden im Schornstein höchstens 100 °C. Als erfüllt gilt das insbesondere mit:\n• den Mindestabständen aus der Produktkennzeichnung (harmonisierte technische Spezifikation),\n• 5 cm bei Abgastemperaturen bis 400 °C, wenn die Abgasanlage mindestens 0,12 m²K/W Wärmedurchlasswiderstand und 90 Minuten Feuerwiderstand hat (auch für solche Schächte); zu Holzbalken genügen dann 2 cm, zu kleinen Bauteilen wie Fußleisten und Dachlatten ist kein Abstand nötig, wenn Dämmung die Wärmeabfuhr nicht behindert,\n• 40 cm bei Abgastemperaturen bis 400 °C,\n• Abgasleitungen in feuerwiderstandsfähigen Schächten bei höchstens 120 °C Abgastemperatur, oder bis 200 °C mit mindestens 2 cm Hinterlüftung (runde Leitung im eckigen Schacht, sonst 3 cm).\n\nAbgasleitungen bis 300 °C außerhalb von Schächten: 20 cm, oder 5 cm mit mindestens 2 cm Ummantelung aus nichtbrennbarem, schlecht wärmeleitendem Baustoff bzw. bei höchstens 160 °C Abgastemperatur. Verbindungsstücke mit 2 cm Ummantelung: 10 cm.",
+      "source": "MFeuV § 8 Abs. 1 und 2",
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["fest", "fluessig", "gas", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "abstandAbgasBayern",
+      "topic": "brandschutz",
+      "title": "Abstand der Abgasanlage zu brennbaren Bauteilen",
+      "text": "An brennbaren Bauteilen dürfen bei Nennleistung höchstens 85 °C auftreten, bei Rußbränden im Schornstein höchstens 100 °C. Bei hinterlüfteten Abgasanlagen gilt das insbesondere als erfüllt mit:\n• den Mindestabständen aus der Produktkennzeichnung (harmonisierte technische Spezifikation),\n• 5 cm bei Abgastemperaturen bis 400 °C, wenn die Abgasanlage mindestens 0,12 m²K/W Wärmedurchlasswiderstand und 90 Minuten Feuerwiderstand hat; zu Holzbalken genügen dann 2 cm, zu kleinen Bauteilen wie Fußleisten und Dachlatten ist kein Abstand nötig, wenn Dämmung die Wärmeabfuhr nicht behindert,\n• 40 cm bei Abgastemperaturen bis 400 °C.\n\nAbgasleitungen bis 300 °C außerhalb von Schächten: 20 cm, oder 5 cm mit mindestens 2 cm Ummantelung aus nichtbrennbarem, schlecht wärmeleitendem Baustoff bzw. bei höchstens 160 °C Abgastemperatur. Verbindungsstücke zu Schornsteinen mit 2 cm Ummantelung: 10 cm.",
+      "source": "BayFeuV § 8 Abs. 1 und 2",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "durchfuehrungBrennbar",
+      "topic": "brandschutz",
+      "title": "Durch brennbare Bauteile führen",
+      "condition": "Wenn Abgasleitungen oder Verbindungsstücke (bis 400 °C) durch Bauteile aus brennbaren Baustoffen führen",
+      "ask": [{ "question": "durchBrennbar", "is": true }],
+      "text": "Schutzrohr aus nichtbrennbaren Baustoffen mit mindestens 20 cm Abstand, oder mindestens 20 cm dick mit nichtbrennbaren, schlecht wärmeleitenden Baustoffen ummanteln. Bei Öl- und Gasfeuerstätten mit höchstens 160 °C Abgastemperatur genügen 5 cm. Zwischenräume nur mit nichtbrennbaren, schlecht wärmeleitenden Baustoffen verschließen.",
+      "source": "MFeuV § 8 Abs. 3 und 4; BayFeuV § 8 Abs. 3 und 4",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "abgasSchornstein",
+      "topic": "abgas",
+      "title": "Abgas in einen Schornstein",
+      "text": "Abgase von Feuerstätten für feste Brennstoffe müssen in einen Schornstein. Schornsteine müssen\n• gegen Rußbrände beständig sein,\n• wo sie Geschosse überbrücken, 90 Minuten Feuerwiderstand haben oder in einem durchgehenden Schacht mit 90 Minuten liegen,\n• auf dem Baugrund oder einem feuerbeständigen Unterbau stehen (nichtbrennbarer Unterbau genügt in Gebäudeklasse 1 bis 3, oberhalb der obersten Geschossdecke und an Gebäuden),\n• durchgehend sein, also nicht durch Decken unterbrochen,\n• Reinigungsöffnungen mit Schornsteinreinigungsverschlüssen haben.",
+      "source": "MFeuV § 7 Abs. 2 und 7; BayFeuV § 7 Abs. 2 und 7",
+      "applies": [{ "fuels": ["fest"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "abgasLeitung",
+      "topic": "abgas",
+      "title": "Abgasleitung und Schacht",
+      "text": "Abgase von Öl- und Gasfeuerstätten dürfen auch in Abgasleitungen. Jede Abgasleitung, die im Gebäude Geschosse überbrückt, braucht einen eigenen Schacht. Ausnahmen: Gebäudeklasse 1 und 2, wenn sie durch höchstens eine Nutzungseinheit führt; einfach belegte Leitungen im Aufstellraum; Leitungen mit 90 Minuten Feuerwiderstand (Gebäudeklasse 1 und 2: 30 Minuten).\n\nSchächte nicht anderweitig nutzen, Feuerwiderstand 90 Minuten (Gebäudeklasse 1 und 2: 30 Minuten). Mehrere Leitungen in einem Schacht nur, wenn sie nichtbrennbar sind, die Feuerstätten im selben Geschoss stehen oder Absperrvorrichtungen eine Brandübertragung zwischen Geschossen verhindern.\n\nAbgasleitungen aus normalentflammbaren Baustoffen (z. B. Kunststoff) außerhalb solcher Schächte brauchen ein Schutzrohr aus nichtbrennbaren Baustoffen oder einen vergleichbaren Schutz gegen Beschädigung, außer im Aufstellraum.",
+      "source": "MFeuV § 7 Abs. 2, 5 und 6; BayFeuV § 7 Abs. 2, 5 und 6",
+      "applies": [{ "fuels": ["fluessig", "gas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "gasOhneAbgasanlage",
+      "topic": "abgas",
+      "title": "Gasfeuerstätten ohne Abgasanlage",
+      "condition": "Bei Gasfeuerstätten ohne Abgasanlage",
+      "ask": [{ "question": "ohneAbgasanlage", "is": true }],
+      "text": "Zulässig, wenn ein sicherer Luftwechsel im Aufstellraum Gefahren und unzumutbare Belästigungen verhindert. Das gilt insbesondere als erfüllt, wenn\n• eine Lüftungsanlage während des Betriebs mindestens 30 m³/h je kW ins Freie abführt,\n• Sicherheitseinrichtungen die CO-Konzentration im Raum auf höchstens 30 ppm begrenzen oder\n• bei Gas-Haushalts-Kochgeräten bis 11 kW der Raum mehr als 15 m³ hat und eine Tür ins Freie oder ein Fenster, das sich öffnen lässt.",
+      "computed": { "label": "Abluft ins Freie mindestens", "base": 0, "perUnit": 30, "unit": "m³/h" },
+      "source": "MFeuV § 7 Abs. 3; BayFeuV § 7 Abs. 3",
+      "applies": [{ "fuels": ["gas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "mehrfachbelegung",
+      "topic": "abgas",
+      "title": "Mehrere Feuerstätten an einer Abgasanlage",
+      "condition": "Wenn mehrere Feuerstätten an einem Schornstein, einer Abgasleitung oder einem Verbindungsstück hängen",
+      "ask": [{ "question": "mehrfachbelegung", "is": true }],
+      "text": "Nur zulässig, wenn\n• die Abgase in jedem Betriebszustand sicher abgeführt werden,\n• kein Abgas zwischen den Aufstellräumen übertragen wird oder über andere Feuerstätten austritt,\n• die gemeinsame Abgasleitung nichtbrennbar ist oder Absperrvorrichtungen eine Brandübertragung zwischen Geschossen verhindern und\n• die Regel zu Luft absaugenden Anlagen für alle angeschlossenen Feuerstätten gemeinsam erfüllt ist.",
+      "source": "MFeuV § 7 Abs. 4; BayFeuV § 7 Abs. 4",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "abgasUeberdruck",
+      "topic": "abgas",
+      "title": "Abgasanlage unter Überdruck",
+      "condition": "Wenn Schornstein, Abgasleitung oder Verbindungsstück unter Überdruck betrieben werden",
+      "ask": [{ "question": "abgasUeberdruck", "is": true }],
+      "text": "Im Gebäude müssen sie in vom Freien dauernd gelüfteten Räumen liegen, in Räumen mit Verbrennungsluftöffnung ins Freie (150 cm² bzw. 2 × 75 cm²), in Schächten über die ganze Länge und den ganzen Umfang hinterlüftet sein oder der Bauart nach so dicht sein, dass kein Abgas in gefahrdrohender Menge austritt.",
+      "source": "MFeuV § 7 Abs. 8 (mit § 3 Abs. 2); BayFeuV § 7 Abs. 8 (mit § 3 Abs. 1 Nr. 3)",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "bhkw", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "verbindungsstueck",
+      "topic": "abgas",
+      "title": "Verbindungsstücke",
+      "text": "Verbindungsstücke dürfen nicht in Decken, Wänden oder unzugänglichen Hohlräumen liegen und nicht in andere Geschosse oder Nutzungseinheiten geführt werden.",
+      "source": "MFeuV § 7 Abs. 9; BayFeuV § 7 Abs. 9",
+      "applies": [{ "fuels": ["fest", "fluessig", "gas", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "luftAbgasSystem",
+      "topic": "abgas",
+      "title": "Luft-Abgas-System",
+      "condition": "Bei Anschluss an ein Luft-Abgas-System",
+      "ask": [{ "question": "luftAbgasSystem", "is": true }],
+      "text": "Nur mit getrennten, durchgehenden Luft- und Abgasführungen. Anschließen dürfen nur raumluftunabhängige Feuerstätten, die der Bauart nach dafür geeignet sind.",
+      "source": "MFeuV § 7 Abs. 10; BayFeuV § 7 Abs. 10",
+      "applies": [{ "fuels": ["fluessig", "gas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "muendungMfeuv",
+      "topic": "abgas",
+      "title": "Mündung über Dach",
+      "text": "Die Mündung muss\n• den First um mindestens 40 cm überragen oder mindestens 1 m von der Dachfläche entfernt sein; 40 cm von der Dachfläche genügen, wenn nur raumluftunabhängige Öl- oder Gasfeuerstätten mit zusammen höchstens 50 kW angeschlossen sind und ein Ventilator das Abgas abführt,\n• Dachaufbauten, Gebäudeteile, Öffnungen zu Räumen und ungeschützte brennbare Bauteile (außer der Bedachung) um mindestens 1 m überragen, wenn diese näher als 1,5 m sind; das gilt nicht für Abgasleitungen untereinander mit gleicher Temperaturklasse und höchstens 160 °C Abgastemperatur,\n• bei Feststoff-Feuerstätten auf Gebäuden, deren Bedachung überwiegend nicht § 32 Abs. 1 MBO entspricht, am First austreten und ihn um mindestens 80 cm überragen.",
+      "source": "MFeuV § 9 Abs. 1",
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["fest", "fluessig", "gas", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "muendungBayern",
+      "topic": "abgas",
+      "title": "Mündung über Dach",
+      "text": "Die Mündung muss\n• den First um mindestens 40 cm überragen oder mindestens 1 m von der Dachfläche entfernt sein; 40 cm von der Dachfläche genügen, wenn nur raumluftunabhängige Öl- oder Gasfeuerstätten mit zusammen höchstens 50 kW angeschlossen sind und ein Ventilator das Abgas abführt,\n• Dachaufbauten, Gebäudeteile, Öffnungen zu Räumen und ungeschützte brennbare Bauteile (außer der Bedachung) um mindestens 1 m überragen, wenn diese näher als 1,5 m sind,\n• bei Feststoff-Feuerstätten auf Gebäuden, deren Bedachung überwiegend nicht Art. 30 Abs. 1 BayBO entspricht, am First austreten und ihn um mindestens 80 cm überragen.",
+      "source": "BayFeuV § 9 Abs. 1 Nr. 1 bis 3",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fest", "fluessig", "gas", "wpSorption", "wpAbgas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "muendungUmkreisFest",
+      "topic": "abgas",
+      "title": "Mündung über Fenstern und Lüftungsöffnungen",
+      "text": "Die Mündung muss die Oberkanten von Lüftungsöffnungen, Fenstern und Türen im Umkreis um mindestens 1 m überragen. Umkreis bei Feststoff-Feuerstätten: 15 m bis 50 kW, für jede weitere angefangene 50 kW 2 m mehr, höchstens 40 m.",
+      "computed": { "label": "Umkreis", "base": 15, "perUnit": 2, "over": 50, "step": 50, "max": 40, "unit": "m" },
+      "source": "BayFeuV § 9 Abs. 1 Nr. 4 Buchst. a",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fest"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "muendungUmkreisOelGas",
+      "topic": "abgas",
+      "title": "Mündung über Fenstern und Lüftungsöffnungen",
+      "text": "Die Mündung muss die Oberkanten von Lüftungsöffnungen, Fenstern und Türen im Umkreis um mindestens 1 m überragen. Umkreis bei Öl- und Gasfeuerstätten: 8 m bis 50 kW, für jede weitere angefangene 50 kW 1 m mehr, höchstens 40 m.",
+      "computed": { "label": "Umkreis", "base": 8, "perUnit": 1, "over": 50, "step": 50, "max": 40, "unit": "m" },
+      "source": "BayFeuV § 9 Abs. 1 Nr. 4 Buchst. b",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["fluessig", "gas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "aussenwandMfeuv",
+      "topic": "abgas",
+      "title": "Abgas durch die Außenwand",
+      "condition": "Bei raumluftunabhängigen Gasfeuerstätten mit Abgasführung durch die Außenwand",
+      "ask": [{ "question": "raumluftabhaengig", "is": false }, { "question": "aussenwand", "is": true }],
+      "text": "Nur zulässig, wenn keine Gefahren oder unzumutbaren Belästigungen entstehen. Das Abgas muss so in den freien Luftstrom gelangen, dass es nicht in Räume eintritt oder zurückgeführt wird.",
+      "source": "MFeuV § 9 Abs. 2",
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["gas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "aussenwandBayern",
+      "topic": "abgas",
+      "title": "Abgas durch die Außenwand",
+      "condition": "Bei raumluftunabhängigen Gasfeuerstätten mit Abgasführung durch die Außenwand",
+      "ask": [{ "question": "raumluftabhaengig", "is": false }, { "question": "aussenwand", "is": true }],
+      "text": "Nur zulässig, wenn alle Bedingungen erfüllt sind:\n• Abführung über Dach ist nicht möglich oder nur mit unverhältnismäßig hohem Aufwand,\n• Nennleistung höchstens 11 kW zur Beheizung bzw. 28 kW zur Warmwasserbereitung,\n• es entstehen keine Gefahren oder unzumutbaren Belästigungen.",
+      "source": "BayFeuV § 9 Abs. 2",
+      "applies": [{ "regulations": ["bayern"], "fuels": ["gas"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "bhkwAbgas",
+      "topic": "abgas",
+      "title": "Abgas von BHKW und Verbrennungsmotoren",
+      "text": "Die Verbrennungsgase im Gebäude über eigene, dichte Leitungen über Dach abführen. Mehrere Motoren an einer gemeinsamen Leitung nur unter denselben Bedingungen wie mehrere Feuerstätten an einer Abgasanlage. Außerhalb des Aufstellraums gelten für die Leitungen die Regeln zu Schächten, Überdruck und Abständen zu brennbaren Bauteilen.\n\nIn eine Abgasanlage für Feuerstätten dürfen die Verbrennungsgase nur, wenn ihre einwandfreie Abführung und die der Abgase angeschlossener Feuerstätten nachgewiesen ist.",
+      "source": "MFeuV § 10 Abs. 3 und 4; BayFeuV § 10 Abs. 3 und 4",
+      "applies": [{ "fuels": ["bhkw"] }]
+    },
+    {
+      "binding": "pflicht",
+      "key": "wpAbgasRegeln",
+      "topic": "abgas",
+      "title": "Abgas von Sorptions- und Abgaswärmepumpen",
+      "text": "Für die Abführung der Abgase gelten die Regeln für Abgasanlagen, Abstände und Mündungen der Feuerungsverordnung (§§ 7 bis 9) entsprechend.",
+      "source": "MFeuV § 10 Abs. 5; BayFeuV § 10 Abs. 5",
+      "applies": [{ "fuels": ["wpSorption", "wpAbgas"] }]
     }
   ],
-  "closingNote": "Das Tool zeigt die Muster-Feuerungsverordnung und als Beispiel die bayerische Fassung. Die Feuerungsverordnungen der anderen Länder weichen teils ab; verbindlich sind die Fassung des Bundeslands und die Landesbauordnung. Abgasanlagen (§§ 7 bis 9), Blockheizkraftwerke, Wärmepumpen und offene Kamine stehen nicht im Tool. Vorgaben des Herstellers und der technischen Regeln (z. B. für Gas- und Ölanlagen) gelten zusätzlich. Das Tool ersetzt keine Abstimmung mit dem Bezirksschornsteinfeger.",
+  "closingNote": "Das Tool zeigt die Muster-Feuerungsverordnung und als Beispiel die bayerische Fassung. Die Feuerungsverordnungen der anderen Länder weichen teils ab; verbindlich sind die Fassung des Bundeslands und die Landesbauordnung. Abgastemperatur, Temperaturklasse und Bauart (raumluftabhängig, Überdruck) fragt das Tool nicht ab; sie stehen bei den Vorschriften als Bedingung. Vorgaben des Herstellers und der technischen Regeln (z. B. für Gas- und Ölanlagen, Kältemittel von Wärmepumpen) gelten zusätzlich. Das Tool ersetzt keine Abstimmung mit dem Bezirksschornsteinfeger.",
   "examples": [
     {
       "label": "Pelletkessel 50 kW: noch kein Heizraum",
@@ -337,10 +614,7 @@
       "overLimit": true,
       "rules": ["heizraumNutzungMfeuv", "heizraumGroesse", "heizraumBauteile", "heizraumLueftung", "notschalterHeizraum"],
       "notRules": ["notschalter", "aufstellraumAnforderungen"],
-      "values": [
-        { "rule": "luftUeber50", "value": 170 },
-        { "rule": "luftNachweisMfeuv", "value": 96 }
-      ],
+      "values": [{ "rule": "luftUeber50", "value": 170 }, { "rule": "luftNachweisMfeuv", "value": 96 }],
       "source": "MFeuV § 6; § 3 Abs. 3: 150 cm² + 10 × 2 cm²; § 3 Abs. 5: 60 × 1,6 m³/h"
     },
     {
@@ -361,11 +635,7 @@
       "overLimit": true,
       "rules": ["aufstellraumAnforderungen", "notschalter", "festImAufstellraum"],
       "notRules": ["oelAbsperrung", "heizraumGroesse"],
-      "values": [
-        { "rule": "luftUeber50", "value": 290 },
-        { "rule": "gasUeberdruck", "value": 170 },
-        { "rule": "gasStroemungssicherung", "value": 120 }
-      ],
+      "values": [{ "rule": "luftUeber50", "value": 290 }, { "rule": "gasUeberdruck", "value": 170 }, { "rule": "gasStroemungssicherung", "value": 120 }],
       "source": "MFeuV § 5 Abs. 1 bis 3; § 3 Abs. 3: 150 cm² + 70 × 2 cm²; § 5 Abs. 2: 150 cm² + 20 × 1 cm²"
     },
     {
@@ -387,10 +657,7 @@
       "overLimit": false,
       "rules": ["luftBis35Bayern", "luftNachweisBayern"],
       "notRules": ["luftBis50Mfeuv", "luftBis50Bayern", "luftUeber50"],
-      "values": [
-        { "rule": "luftBis35Bayern", "value": 96 },
-        { "rule": "gasStroemungssicherung", "value": 24 }
-      ],
+      "values": [{ "rule": "luftBis35Bayern", "value": 96 }, { "rule": "gasStroemungssicherung", "value": 24 }],
       "source": "BayFeuV § 3 Abs. 1 Nr. 1: 24 × 4 m³; § 4 Abs. 4 Nr. 1: 24 × 1 m³"
     },
     {
@@ -402,6 +669,89 @@
       "rules": ["luftBis50Bayern"],
       "notRules": ["luftBis35Bayern"],
       "source": "BayFeuV § 3 Abs. 3"
+    },
+    {
+      "label": "Bayern: Holzkessel 120 kW, Umkreis 19 m",
+      "regulation": "bayern",
+      "fuel": "fest",
+      "quantity": 120,
+      "overLimit": true,
+      "rules": ["abgasSchornstein", "muendungBayern", "abstandAbgasBayern", "offenerKamin"],
+      "notRules": ["muendungMfeuv", "abgasLeitung", "muendungUmkreisOelGas"],
+      "values": [{ "rule": "muendungUmkreisFest", "value": 19 }],
+      "source": "BayFeuV § 9 Abs. 1 Nr. 4 a: 15 m + 2 angefangene 50 kW × 2 m"
+    },
+    {
+      "label": "Bayern: Gaskessel 60 kW, Umkreis 9 m",
+      "regulation": "bayern",
+      "fuel": "gas",
+      "quantity": 60,
+      "overLimit": false,
+      "rules": ["abgasLeitung", "aussenwandBayern", "gasOhneAbgasanlage"],
+      "notRules": ["abgasSchornstein", "aussenwandMfeuv"],
+      "values": [{ "rule": "muendungUmkreisOelGas", "value": 9 }, { "rule": "gasOhneAbgasanlage", "value": 1800 }],
+      "source": "BayFeuV § 9 Abs. 1 Nr. 4 b: 8 m + 1 angefangene 50 kW × 1 m; § 7 Abs. 3: 60 × 30 m³/h"
+    },
+    {
+      "label": "Bayern: Ölkessel 2.000 kW, Umkreis höchstens 40 m",
+      "regulation": "bayern",
+      "fuel": "fluessig",
+      "quantity": 2000,
+      "overLimit": true,
+      "values": [{ "rule": "muendungUmkreisOelGas", "value": 40 }],
+      "source": "BayFeuV § 9 Abs. 1 Nr. 4 b: höchstens 40 m"
+    },
+    {
+      "label": "BHKW 35 kW: noch kein Aufstellraum",
+      "regulation": "mfeuv",
+      "fuel": "bhkw",
+      "quantity": 35,
+      "overLimit": false,
+      "rules": ["bhkwAbgas", "luftBis50Mfeuv", "verboteneOrte", "motorImmerAufstellraum"],
+      "notRules": ["aufstellraumAnlage", "notschalter", "abgasSchornstein"],
+      "source": "MFeuV § 10 Abs. 2 Nr. 4 (mehr als 35 kW), Abs. 1 und 3"
+    },
+    {
+      "label": "BHKW 40 kW: Aufstellraum nach § 5",
+      "regulation": "bayern",
+      "fuel": "bhkw",
+      "quantity": 40,
+      "overLimit": true,
+      "rules": ["aufstellraumAnlage", "bhkwAbgas", "luftBis50Bayern"],
+      "notRules": ["kombinationAnlagen"],
+      "source": "BayFeuV § 10 Abs. 2 Nr. 5 (mehr als 35 kW)"
+    },
+    {
+      "label": "Wärmepumpe 60 kW Antriebsleistung: Aufstellraum",
+      "regulation": "mfeuv",
+      "fuel": "wpElektrisch",
+      "quantity": 60,
+      "overLimit": true,
+      "rules": ["aufstellraumAnlage", "wpElektrischHinweis", "kombinationAnlagen"],
+      "notRules": ["luftUeber50", "verboteneOrte", "abstandAbgasMfeuv"],
+      "source": "MFeuV § 10 Abs. 2 Nr. 3 (mehr als 50 kW)"
+    },
+    {
+      "label": "Gastherme 30 kW raumluftunabhängig mit Abgas durch die Außenwand",
+      "regulation": "mfeuv",
+      "fuel": "gas",
+      "quantity": 30,
+      "overLimit": false,
+      "rules": ["aussenwandMfeuv", "verboteneOrte"],
+      "notRules": ["luftBis50Mfeuv", "luftNichtVerschliessen", "luftAbsaugendeAnlagen", "luftNachweisMfeuv"],
+      "answers": { "raumluftabhaengig": false, "aussenwand": true },
+      "source": "MFeuV § 3 Abs. 1 (nur raumluftabhängige), § 9 Abs. 2"
+    },
+    {
+      "label": "Offener Kamin 12 kW: keine Mindestöffnungen",
+      "regulation": "mfeuv",
+      "fuel": "fest",
+      "quantity": 12,
+      "overLimit": false,
+      "rules": ["offenerKamin", "luftNichtVerschliessen"],
+      "notRules": ["luftBis50Mfeuv", "luftNachweisMfeuv", "bodenbelagFest"],
+      "answers": { "offenerKamin": true, "raumluftabhaengig": true, "brennbarerBoden": false },
+      "source": "MFeuV § 3 Abs. 6 Satz 2, § 4 Abs. 9"
     }
   ]
 }

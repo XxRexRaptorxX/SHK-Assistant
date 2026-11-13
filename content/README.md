@@ -416,17 +416,25 @@ Heizraum und Aufstellraum. Felder: `title`, `summary`, `description`, `category`
   (Fundstelle). Eingegeben wird in kg oder t, l oder m³ bzw. kW.
 - `fuels`: je `key`, `name`, optional `aliases` und `note`.
 - `topics`: Themen in der Reihenfolge des Ergebnisses, je `key` und `label`.
+- `questions`: optionale Ja/Nein-Fragen zu Bedingungen, je `key`, `label` (die Frage), optional `hint`, `fuels` und
+  `regulations` (nur dort fragen; leer = überall), `links` (je `label`, `url` mit https, optional `regulations`: Knopf
+  zum Nachschauen, z. B. Hochwasserkarten). Eine Frage erscheint nur, wenn eine Vorschrift der aktuellen Auswahl sie
+  braucht, aufklappbar unter „Weitere Angaben (optional)“ mit Offen / Ja / Nein.
 - `rules`: je `key`, `topic`, `binding` (`pflicht`: steht in Verordnung oder Gesetz; `empfehlung`: Fachverband,
-  Merkblatt, Norm), `title`, optional `condition` (Bedingung, die das Tool nicht abfragt, erscheint als „Gilt, wenn …“),
+  Merkblatt, Norm), `title`, optional `condition` (Bedingung als Text, erscheint als „Gilt, wenn …“, solange eine Frage dazu offen ist) mit
+  `ask` (je `question` und `is`: Antwort, bei der die Vorschrift gilt; alle müssen passen; eine widersprechende Antwort
+  blendet die Vorschrift aus, eine offene nicht; Fragen, die bei der Auswahl nicht gestellt werden, zählen nicht),
   `text` (eigene Kurzfassung), optional `computed` (Mindestwert für die eingegebene Menge: `label`, `base` +
-  `perUnit` × (Menge − `over`), `unit`; z. B. 150 cm² + 2 cm² je kW über 50 kW), `source` und `applies`: Zeilen mit
+  `perUnit` × (Menge − `over`), `unit`; z. B. 150 cm² + 2 cm² je kW über 50 kW; mit `step` zählt jede angefangene Stufe,
+  z. B. 2 m je angefangene 50 kW, `max` begrenzt das Ergebnis), `source` und `applies`: Zeilen mit
   `regulations` (leer = alle), `fuels`, optional `above` (mehr als), `upTo` (bis einschließlich, beides in der Einheit
   des Regelwerks) und `overLimit` (`true`/`false`: nur über bzw. bis zur Grenze). Eine passende Zeile genügt.
 - `examples`: Fälle aus den Quellen mit `label`, `regulation`, `fuel`, `quantity`, `overLimit`, optional `rules` (müssen
-  erscheinen), `notRules` (dürfen nicht erscheinen), `values` (je `rule` und `value`: nachgerechneter Mindestwert) und
-  `source`.
+  erscheinen), `notRules` (dürfen nicht erscheinen), `values` (je `rule` und `value`: nachgerechneter Mindestwert), `answers`
+  (Frage-`key` → `true`/`false`) und `source`.
 
-Der Build prüft doppelte Schlüssel, unbekannte Regelwerke, Brennstoffe und Themen, Themen ohne Vorschrift, Mengengrenzen
+Der Build prüft doppelte Schlüssel, unbekannte Regelwerke, Brennstoffe und Themen, Themen ohne Vorschrift, Bedingungen ohne Frage (und
+umgekehrt), unbekannte und ungenutzte Fragen, Mengengrenzen
 über Regelwerke mit verschiedenen Einheiten und dass jedes Beispiel so eingestuft und gerechnet wird wie in der Quelle.
 
 **Abwasser-Bemessung** (`"kind": "drainageSizing"`): Leitungsabschnitt und Gebäudeart wählen, die angeschlossenen

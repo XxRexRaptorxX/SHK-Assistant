@@ -1,7 +1,15 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { ClassificationLookup } from './ClassificationLookup'
-import { checkClassificationTool, classify, computeValue, rulesFor, type ClassificationTool } from './classificationTool'
+import {
+  checkClassificationTool,
+  classify,
+  computeValue,
+  hasOpenCondition,
+  questionsFor,
+  rulesFor,
+  type ClassificationTool,
+} from './classificationTool'
 import { isClassificationTool } from './schema'
 import { toolEntries, toolSearchDocuments } from './tools'
 
@@ -28,7 +36,7 @@ describe.each(tools.map((tool) => [tool.title, tool] as const))('Einstufungs-Too
   it('stuft die Beispiele aus den Quellen richtig ein und rechnet ihre Werte nach', () => {
     for (const example of tool.examples) {
       expect(classify(tool, example.regulation, example.fuel, example.quantity)?.overLimit, example.label).toBe(example.overLimit)
-      const shown = rulesFor(tool, example.regulation, example.fuel, example.quantity)
+      const shown = rulesFor(tool, example.regulation, example.fuel, example.quantity, example.answers)
       const shownKeys = shown.map((rule) => rule.key)
       expect(shownKeys, example.label).toEqual(expect.arrayContaining(example.rules))
       for (const ruleKey of example.notRules) expect(shownKeys, `${example.label}: ${ruleKey}`).not.toContain(ruleKey)
@@ -135,11 +143,123 @@ describe('Heizraum und Aufstellraum', () => {
     expect(html).toContain('Gesamtnennleistung')
     expect(html).toContain('Mindestquerschnitt ins Freie bei 60 kW:')
     expect(html).toContain('170 cm²')
-    expect(html).toContain('Brennstoff der Feuerstätten')
+    expect(html).toContain('Feuerstätte oder Anlage')
+  })
+
+  it('zählt beim Umkreis der Mündung jede angefangene Stufe und begrenzt ihn', () => {
+    const rule = heatingRoom.rules.find((candidate) => candidate.key === 'muendungUmkreisFest')!
+    expect(computeValue(rule.computed!, 30)).toBe(15)
+    expect(computeValue(rule.computed!, 50)).toBe(15)
+    expect(computeValue(rule.computed!, 50.5)).toBe(17)
+    expect(computeValue(rule.computed!, 100)).toBe(17)
+    expect(computeValue(rule.computed!, 101)).toBe(19)
+    expect(computeValue(rule.computed!, 10000)).toBe(40)
+  })
+
+  it('stuft BHKW ab 35 kW und elektrische Wärmepumpen ab 50 kW Antriebsleistung ein', () => {
+    expect(classify(heatingRoom, 'mfeuv', 'bhkw', 35)?.overLimit).toBe(false)
+    expect(classify(heatingRoom, 'mfeuv', 'bhkw', 36)?.overLimit).toBe(true)
+    expect(classify(heatingRoom, 'bayern', 'wpElektrisch', 51)?.overLimit).toBe(true)
+    // Für elektrische Wärmepumpen gelten weder Verbrennungsluft noch Abgasregeln
+    const rules = ruleKeys(heatingRoom, 'mfeuv', 'wpElektrisch', 80)
+    expect(rules).toEqual(expect.arrayContaining(['aufstellraumAnlage', 'wpElektrischHinweis']))
+    expect(rules.some((key) => key.startsWith('luft') || key.startsWith('muendung'))).toBe(false)
+  })
+
+  it('zeigt Feststoffen einen Schornstein und Öl und Gas die Abgasleitung', () => {
+    expect(ruleKeys(heatingRoom, 'mfeuv', 'fest', 20)).toContain('abgasSchornstein')
+    expect(ruleKeys(heatingRoom, 'mfeuv', 'fest', 20)).not.toContain('abgasLeitung')
+    expect(ruleKeys(heatingRoom, 'mfeuv', 'gas', 20)).toEqual(expect.arrayContaining(['abgasLeitung', 'aussenwandMfeuv']))
+  })
+})
+
+describe('Einstufungs-Tools: optionale Fragen', () => {
+  it('fragt nur, was bei der Auswahl eine Vorschrift betrifft', () => {
+    const gas = questionsFor(heatingRoom, 'mfeuv', 'gas', 30).map((question) => question.key)
+    expect(gas).toEqual(expect.arrayContaining(['raumluftabhaengig', 'stroemungssicherung', 'aussenwand']))
+    // Offener Kamin nur bei festen Brennstoffen, Heizöl-Absperrung erst über der Grenze
+    expect(gas).not.toContain('offenerKamin')
+    expect(questionsFor(heatingRoom, 'mfeuv', 'fest', 30).map((question) => question.key)).toContain('offenerKamin')
+    expect(questionsFor(heatingRoom, 'mfeuv', 'fluessig', 80).map((question) => question.key)).not.toContain('heizoelImRaum')
+    expect(questionsFor(heatingRoom, 'mfeuv', 'fluessig', 120).map((question) => question.key)).toContain('heizoelImRaum')
+    expect(questionsFor(heatingRoom, 'mfeuv', 'wpElektrisch', 80).map((question) => question.key)).toEqual(['kombination'])
+  })
+
+  it('lässt Fragen weg, deren Vorschriften andere Antworten schon ausschließen', () => {
+    const keys = (answers: Record<string, boolean>) =>
+      questionsFor(heatingRoom, 'mfeuv', 'gas', 30, answers).map((question) => question.key)
+    expect(keys({})).toContain('absaugendeAnlage')
+    expect(keys({ raumluftabhaengig: false })).not.toContain('absaugendeAnlage')
+    // Die beantwortete Frage selbst bleibt, damit man die Antwort ändern kann
+    expect(keys({ raumluftabhaengig: false })).toContain('raumluftabhaengig')
+  })
+
+  it('blendet bei offenen Fragen nichts aus, bei Nein die Vorschrift und bei Ja nur die Bedingung', () => {
+    const open = ruleKeys(heatingRoom, 'mfeuv', 'gas', 30)
+    expect(open).toEqual(expect.arrayContaining(['luftBis50Mfeuv', 'aussenwandMfeuv']))
+
+    const independent = rulesFor(heatingRoom, 'mfeuv', 'gas', 30, { raumluftabhaengig: false }).map((rule) => rule.key)
+    expect(independent).not.toContain('luftBis50Mfeuv')
+    expect(independent).toContain('aussenwandMfeuv')
+
+    const luft = heatingRoom.rules.find((rule) => rule.key === 'luftBis50Mfeuv')!
+    expect(hasOpenCondition(heatingRoom, luft, 'mfeuv', 'gas', {})).toBe(true)
+    // Die Frage nach dem offenen Kamin zählt bei Gas nicht mit
+    expect(hasOpenCondition(heatingRoom, luft, 'mfeuv', 'gas', { raumluftabhaengig: true })).toBe(false)
+    expect(hasOpenCondition(heatingRoom, luft, 'mfeuv', 'fest', { raumluftabhaengig: true })).toBe(true)
+  })
+
+  it('zeigt die Fragen aufklappbar und die Bedingung nur, solange sie offen ist', () => {
+    const open = renderToStaticMarkup(<ClassificationLookup tool={heatingRoom} initialFuel="gas" initialAmount="30" />)
+    expect(open).toContain('Weitere Angaben (optional)')
+    expect(open).toContain('0 von')
+    expect(open).toContain('Gilt, wenn: Bei raumluftabhängigen Feuerstätten')
+
+    const answered = renderToStaticMarkup(
+      <ClassificationLookup tool={heatingRoom} initialFuel="gas" initialAmount="30" initialAnswers={{ raumluftabhaengig: false }} />,
+    )
+    expect(answered).toContain('1 von')
+    expect(answered).not.toContain('Verbrennungsluft bis 50 kW')
+    expect(answered).toMatch(/\d+ Vorschriften sind ausgeblendet/)
+  })
+
+  it('verlinkt Hochwasserkarten, den bayerischen Dienst nur bei Bayern', () => {
+    const muster = renderToStaticMarkup(<ClassificationLookup tool={fuelStorage} initialFuel="heizoel" initialAmount="3000" />)
+    expect(muster).toContain('https://geoportal.bafg.de/karten/HWRM/')
+    expect(muster).not.toContain('iug.bayern.de')
+    const bayern = renderToStaticMarkup(
+      <ClassificationLookup tool={fuelStorage} initialRegulation="bayern" initialFuel="heizoel" initialAmount="3000" />,
+    )
+    expect(bayern).toContain('https://www.iug.bayern.de/')
+  })
+
+  it('zeigt ohne passende Fragen keinen Bereich für Angaben', () => {
+    // Bayern kennt die Regel zur Kombination mit Feuerstätten nicht: keine Frage für die elektrische Wärmepumpe
+    const html = renderToStaticMarkup(
+      <ClassificationLookup tool={heatingRoom} initialRegulation="bayern" initialFuel="wpElektrisch" initialAmount="20" />,
+    )
+    expect(html).not.toContain('Weitere Angaben')
   })
 })
 
 describe('Einstufungs-Tools: Prüfung des Inhalts', () => {
+  it('verlangt zu jeder Bedingung eine Frage', () => {
+    const broken: ClassificationTool = {
+      ...heatingRoom,
+      rules: heatingRoom.rules.map((rule) =>
+        rule.key === 'bodenbelagFest' ? { ...rule, ask: [] } : rule.key === 'verboteneOrte' ? { ...rule, ask: [{ question: 'gibtsNicht', is: true }] } : rule,
+      ),
+    }
+    expect(checkClassificationTool(broken)).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining('condition ohne ask'),
+        expect.stringContaining('ask ohne condition'),
+        expect.stringContaining('unbekannte Frage "gibtsNicht"'),
+        expect.stringContaining('keine Vorschrift fragt danach'),
+      ]),
+    )
+  })
+
   it('findet Fehler im Inhalt', () => {
     const broken: ClassificationTool = {
       ...fuelStorage,

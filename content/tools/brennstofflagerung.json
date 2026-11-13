@@ -52,6 +52,13 @@
     { "key": "gewaesserschutz", "label": "Gewässerschutz (AwSV)" },
     { "key": "betrieb", "label": "Betrieb und Sicherheit" }
   ],
+  "questions": [
+    { "key": "kesselUeber50", "label": "Haben die Feuerstätten für feste Brennstoffe zusammen mehr als 50 kW Nennleistung?", "hint": "Nur Feuerstätten, die gleichzeitig betrieben werden sollen." },
+    { "key": "feuerstaetteImRaum", "label": "Steht im Lagerraum (außerhalb der Wohnung) eine Feuerstätte?" },
+    { "key": "feuerungUeber100", "label": "Haben die Öl- und Gasfeuerstätten zusammen mehr als 100 kW Nennleistung?" },
+    { "key": "unterirdisch", "label": "Ist der Tank unterirdisch (im Boden vergraben)?" },
+    { "key": "hochwasser", "label": "Liegt das Gebäude in einem Überschwemmungs- oder Risikogebiet?", "links": [{ "label": "Hochwasserkarten Deutschland (BfG)", "url": "https://geoportal.bafg.de/karten/HWRM/" }, { "label": "Überschwemmungsgebiete Bayern (IÜG)", "url": "https://www.iug.bayern.de/", "regulations": ["bayern"] }] }
+  ],
   "rules": [
     {
       "key": "oelWohnung",
@@ -60,7 +67,7 @@
       "title": "In der Wohnung bis 100 l",
       "text": "In einer Wohnung dürfen bis zu 100 l Heizöl oder Diesel gelagert werden. In Räumen außerhalb von Wohnungen sind bis zu 1.000 l erlaubt.",
       "source": "MFeuV § 12 Abs. 2 Nr. 1 und 2; BayFeuV § 12 Abs. 2 Nr. 1 und 2",
-      "applies": [{ "fuels": [ "heizoel" ], "upTo": 100 }]
+      "applies": [{ "fuels": ["heizoel"], "upTo": 100 }]
     },
     {
       "key": "oelBis1000",
@@ -69,7 +76,7 @@
       "title": "Nicht in der Wohnung, außerhalb bis 1.000 l",
       "text": "Mehr als 100 l dürfen nicht in einer Wohnung lagern. In Räumen außerhalb von Wohnungen sind bis zu 1.000 l erlaubt.",
       "source": "MFeuV § 12 Abs. 2 Nr. 1 und 2; BayFeuV § 12 Abs. 2 Nr. 1 und 2",
-      "applies": [{ "fuels": [ "heizoel" ], "above": 100, "upTo": 1000 }]
+      "applies": [{ "fuels": ["heizoel"], "above": 100, "upTo": 1000 }]
     },
     {
       "key": "oelBis5000",
@@ -78,7 +85,7 @@
       "title": "Bis 5.000 l nur in geeignetem Raum",
       "text": "Außerhalb von Wohnungen sind bis zu 5.000 l je Gebäude oder Brandabschnitt erlaubt, wenn der Raum gelüftet werden kann und zu anderen Räumen keine Öffnungen hat, außer Öffnungen mit dichtschließenden Türen.\n\nIn Gebäuden der Gebäudeklasse 1 mit höchstens einer Nutzungseinheit sind bis zu 5.000 l auch in Räumen erlaubt, die keine Aufenthaltsräume sind und dieselben Anforderungen erfüllen.",
       "source": "MFeuV § 12 Abs. 2 Nr. 3 und 4",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "heizoel" ], "above": 1000, "upTo": 5000 }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["heizoel"], "above": 1000, "upTo": 5000 }]
     },
     {
       "key": "oelBis5000Bayern",
@@ -87,7 +94,7 @@
       "title": "Bis 5.000 l nur in geeignetem Raum",
       "text": "Außerhalb von Wohnungen sind bis zu 5.000 l je Gebäude oder Brandabschnitt erlaubt, wenn der Raum gelüftet werden kann, zu anderen Räumen keine Öffnungen hat (außer Öffnungen mit dichtschließenden Türen) und Bodenabläufe nur mit Heizölsperre oder Leichtflüssigkeitsabscheider hat.\n\nIn Gebäuden der Gebäudeklasse 1 mit höchstens einer Nutzungseinheit sind bis zu 5.000 l auch in Räumen erlaubt, die keine Aufenthaltsräume sind und dieselben Anforderungen erfüllen.",
       "source": "BayFeuV § 12 Abs. 2 Nr. 3 und 4",
-      "applies": [{ "regulations": [ "bayern" ], "fuels": [ "heizoel" ], "above": 1000, "upTo": 5000 }]
+      "applies": [{ "regulations": ["bayern"], "fuels": ["heizoel"], "above": 1000, "upTo": 5000 }]
     },
     {
       "key": "gasBis16",
@@ -96,7 +103,7 @@
       "title": "Ein Behälter bis 16 kg",
       "text": "In Wohnungen und in Räumen außerhalb von Wohnungen darf Flüssiggas in je einem Behälter mit höchstens 16 kg Füllgewicht gelagert werden, wenn der Fußboden allseitig über der Geländeoberfläche liegt und außer Abläufen mit Flüssigkeitsverschluss keine Öffnungen hat.",
       "source": "MFeuV § 12 Abs. 4; BayFeuV § 12 Abs. 4",
-      "applies": [{ "fuels": [ "fluessiggas" ], "upTo": 16 }]
+      "applies": [{ "fuels": ["fluessiggas"], "upTo": 16 }]
     },
     {
       "key": "heizraumFest",
@@ -104,9 +111,10 @@
       "binding": "pflicht",
       "title": "Heizraum für Feuerstätten über 50 kW",
       "condition": "Bei Feuerstätten für feste Brennstoffe mit zusammen mehr als 50 kW Nennleistung, die gleichzeitig betrieben werden",
+      "ask": [{ "question": "kesselUeber50", "is": true }],
       "text": "Solche Feuerstätten dürfen nur in einem Heizraum stehen. Der Heizraum darf nicht anderweitig genutzt werden; erlaubt sind unter anderem andere Feuerstätten, Wärmepumpen, BHKW und die Lagerung von Brennstoffen.",
       "source": "MFeuV § 6 Abs. 1",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "pellets", "festeBrennstoffe" ] }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["pellets", "festeBrennstoffe"] }]
     },
     {
       "key": "rettungswege",
@@ -115,7 +123,7 @@
       "title": "Nicht in Rettungswegen lagern",
       "text": "Feste Brennstoffe und Behälter für brennbare Gase und Flüssigkeiten dürfen nicht in notwendigen Treppenräumen, in Räumen zwischen notwendigen Treppenräumen und dem Ausgang ins Freie und nicht in notwendigen Fluren gelagert oder aufgestellt werden.",
       "source": "MFeuV § 12 Abs. 1; BayFeuV § 12 Abs. 1",
-      "applies": [{ "fuels": [ "heizoel", "pellets", "festeBrennstoffe", "fluessiggas" ] }]
+      "applies": [{ "fuels": ["heizoel", "pellets", "festeBrennstoffe", "fluessiggas"] }]
     },
     {
       "key": "lagerraumNutzung",
@@ -124,7 +132,7 @@
       "title": "Eigener Brennstofflagerraum",
       "text": "Die Menge darf nur in einem besonderen Raum gelagert werden (Brennstofflagerraum), der nicht zu anderen Zwecken genutzt werden darf. Die Grenze gilt für die Gesamtmenge je Gebäude oder Brandabschnitt.",
       "source": "MFeuV § 11 Abs. 1 Satz 1; BayFeuV § 11 Abs. 1 Satz 1",
-      "applies": [{ "fuels": [ "heizoel", "pellets", "festeBrennstoffe", "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["heizoel", "pellets", "festeBrennstoffe", "fluessiggas"], "overLimit": true }]
     },
     {
       "key": "lagerraumBauteile",
@@ -133,7 +141,7 @@
       "title": "Feuerbeständige Wände und Decken",
       "text": "Wände und Stützen des Brennstofflagerraums sowie die Decken darüber und darunter müssen feuerbeständig sein. Öffnungen in Wänden und Decken, die nicht direkt ins Freie führen, brauchen mindestens feuerhemmende und selbstschließende Abschlüsse. Das gilt nicht für Trennwände zwischen Brennstofflagerraum und Heizraum.",
       "source": "MFeuV § 11 Abs. 2 Satz 1, 2 und 4; BayFeuV § 11 Abs. 2 Satz 1, 2 und 4",
-      "applies": [{ "fuels": [ "heizoel", "pellets", "festeBrennstoffe", "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["heizoel", "pellets", "festeBrennstoffe", "fluessiggas"], "overLimit": true }]
     },
     {
       "key": "pelletBrandschutzBeispiel",
@@ -142,7 +150,7 @@
       "title": "Ausführungsbeispiel Pelletlager",
       "text": "Das DEPI nennt als Beispiel nach MFeuV für Pelletlager über 6,5 t: Wände und Decken F 90, Türen T 30. Die Trennwand zwischen Lager- und Heizraum, eine Tür ins Freie und nichttragende Außenwände ohne Anforderung.",
       "source": "DEPI, Sicherheit im Pelletlager, 15.07.2026, Folie „Ausführungsbeispiele Brandschutzanforderung gemäß MFeuV“",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "pellets" ], "overLimit": true }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["pellets"], "overLimit": true }]
     },
     {
       "key": "lagerraumLeitungen",
@@ -151,7 +159,7 @@
       "title": "Keine fremden Leitungen durch Wände und Decken",
       "text": "Durch Wände und Decken des Brennstofflagerraums dürfen nur Leitungen geführt werden, die für den Betrieb des Raums nötig sind, sowie Heizungs-, Wasser- und Abwasserleitungen.",
       "source": "MFeuV § 11 Abs. 2 Satz 3; BayFeuV § 11 Abs. 2 Satz 3",
-      "applies": [{ "fuels": [ "heizoel", "pellets", "festeBrennstoffe", "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["heizoel", "pellets", "festeBrennstoffe", "fluessiggas"], "overLimit": true }]
     },
     {
       "key": "oelFeuerstaette",
@@ -159,9 +167,10 @@
       "binding": "pflicht",
       "title": "Abstand zur Feuerstätte",
       "condition": "Wenn im Lagerraum außerhalb der Wohnung eine Feuerstätte steht",
+      "ask": [{ "question": "feuerstaetteImRaum", "is": true }],
       "text": "Die Feuerstätte muss außerhalb eines erforderlichen Auffangraums für auslaufenden Brennstoff stehen. Behälter für Heizöl oder Diesel brauchen mindestens 1 m Abstand zur Feuerungsanlage. Mit einem beiderseits belüfteten Strahlungsschutz darf der Abstand auf die Hälfte sinken. 0,1 m genügen, wenn nachgewiesen ist, dass die Oberfläche der Feuerstätte höchstens 40 °C warm wird.",
       "source": "MFeuV § 12 Abs. 3; BayFeuV § 12 Abs. 3",
-      "applies": [{ "fuels": [ "heizoel" ], "upTo": 5000 }]
+      "applies": [{ "fuels": ["heizoel"], "upTo": 5000 }]
     },
     {
       "key": "gasLagerraumBau",
@@ -170,7 +179,7 @@
       "title": "Fußboden und Höchstmengen",
       "text": "Der Fußboden des Flüssiggas-Lagerraums darf nicht allseitig unter der Geländeoberfläche liegen und keine Öffnungen haben. Das Fassungsvermögen der Behälter darf höchstens 6.500 l je Brennstofflagerraum und 30.000 l je Gebäude oder Brandabschnitt betragen.",
       "source": "MFeuV § 11 Abs. 1 Satz 2, Abs. 4 Nr. 3 und 4; BayFeuV § 11 Abs. 1 Satz 2, Abs. 4 Nr. 3 und 4",
-      "applies": [{ "fuels": [ "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["fluessiggas"], "overLimit": true }]
     },
     {
       "key": "oelLagerraumLueftung",
@@ -179,7 +188,7 @@
       "title": "Lüftung und Beschäumung von außen",
       "text": "Brennstofflagerräume für flüssige Brennstoffe müssen gelüftet werden können, und die Feuerwehr muss sie vom Freien aus beschäumen können.",
       "source": "MFeuV § 11 Abs. 3 Nr. 1; BayFeuV § 11 Abs. 3 Nr. 1",
-      "applies": [{ "fuels": [ "heizoel" ], "overLimit": true }]
+      "applies": [{ "fuels": ["heizoel"], "overLimit": true }]
     },
     {
       "key": "gasLagerraumLueftung",
@@ -188,7 +197,7 @@
       "title": "Ständig wirksame Lüftung",
       "text": "Der Flüssiggas-Lagerraum braucht eine ständig wirksame Lüftung. Zu anderen Räumen darf er nur Türöffnungen haben, dazu keine offenen Schächte und Kanäle.",
       "source": "MFeuV § 11 Abs. 4 Nr. 1 und 2; BayFeuV § 11 Abs. 4 Nr. 1 und 2",
-      "applies": [{ "fuels": [ "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["fluessiggas"], "overLimit": true }]
     },
     {
       "key": "pelletLueftungVorBetreten",
@@ -197,7 +206,7 @@
       "title": "Vor dem Betreten ausreichend lüften können",
       "text": "Pelletlager mit mehr als 500 kg müssen sich vor dem Betreten ausreichend lüften lassen. Das gilt als erfüllt, wenn vor dem Betreten mindestens 60 Minuten lang ein 10facher Luftwechsel stattfinden kann. Andere technische Lösungen sind zulässig, wenn sie das Schutzziel erreichen. Für bestehende Lager setzt das Landesrecht eine Frist zum Nachrüsten.",
       "source": "MFeuV § 11 Abs. 5 Satz 1 und 4, Abs. 6, § 12 Abs. 5",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "pellets" ], "above": 500 }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["pellets"], "above": 500 }]
     },
     {
       "key": "pelletBelueftungNorm",
@@ -206,7 +215,7 @@
       "title": "Dauerhafte Belüftung nach außen",
       "text": "Das Lager braucht eine dauerhafte Belüftung nach außen, z. B. über belüftende Deckel, eine Öffnung oder einen Ventilator. Art und Ausführung regeln DIN EN ISO 20023:2019-04 und VDI 3464 Blatt 1 (2023-09, für Lager bis 100 t): je nach Fassungsvermögen, Leitungslänge ins Freie oder in einen anderen Raum und freiem Querschnitt der Öffnung.\n\nTODO: Inhalt fehlt – Auslegungstabelle (Lüftungsart je Tonnage und Leitungslänge) aus Norm oder DEPV-Lagerbroschüre.",
       "source": "DEPI, Sicherheit im Pelletlager, 15.07.2026, Folien „Normkonforme Belüftung“; IVSS-Infoblatt Nr. 4, 10/2020, Anhang D (Kennzeichnung)",
-      "applies": [{ "fuels": [ "pellets" ] }]
+      "applies": [{ "fuels": ["pellets"] }]
     },
     {
       "key": "notschalter",
@@ -214,9 +223,10 @@
       "binding": "pflicht",
       "title": "Notschalter und Absperrung der Ölzufuhr",
       "condition": "Bei Feuerstätten für flüssige und gasförmige Brennstoffe mit zusammen mehr als 100 kW",
+      "ask": [{ "question": "feuerungUeber100", "is": true }],
       "text": "Brenner und Brennstofffördereinrichtungen müssen über einen Schalter außerhalb des Aufstellraums (Notschalter) jederzeit abschaltbar sein. Daneben gehört ein Schild „NOTSCHALTER-FEUERUNG“.\n\nWird im Aufstellraum Heizöl gelagert oder ist der Öllagerraum nur über den Aufstellraum zugänglich, muss sich die Heizölzufuhr von der Stelle des Notschalters aus über eine gekennzeichnete Absperreinrichtung unterbrechen lassen.",
       "source": "MFeuV § 5 Abs. 3 und 4",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "heizoel" ] }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["heizoel"] }]
     },
     {
       "key": "pelletElektroExMfeuv",
@@ -225,7 +235,7 @@
       "title": "Elektrische Anlagen für explosionsgefährdete Räume",
       "text": "Im Pelletlager dürfen nur elektrische Anlagen sein, die den Vorschriften für elektrische Anlagen in explosionsgefährdeten Räumen entsprechen (Vorschriften aufgrund § 34 Produktsicherheitsgesetz). § 12 Abs. 5 verweist für Lager über 500 kg auf § 11 Abs. 5, der diese Anforderung in Satz 3 enthält.",
       "source": "MFeuV § 11 Abs. 4 Nr. 6, Abs. 5 Satz 3, § 12 Abs. 5",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "pellets" ], "above": 500 }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["pellets"], "above": 500 }]
     },
     {
       "key": "pelletElektroExBayern",
@@ -234,7 +244,7 @@
       "title": "Elektrische Anlagen für explosionsgefährdete Räume",
       "text": "Im Brennstofflagerraum für Holzpellets dürfen nur elektrische Anlagen sein, die den Anforderungen nach § 14 GPSG für explosionsgefährdete Räume entsprechen.",
       "source": "BayFeuV § 11 Abs. 4 Nr. 6 und Abs. 5",
-      "applies": [{ "regulations": [ "bayern" ], "fuels": [ "pellets" ], "overLimit": true }]
+      "applies": [{ "regulations": ["bayern"], "fuels": ["pellets"], "overLimit": true }]
     },
     {
       "key": "gasLagerraumElektro",
@@ -243,7 +253,7 @@
       "title": "Elektrische Anlagen für explosionsgefährdete Räume",
       "text": "Im Flüssiggas-Lagerraum dürfen nur elektrische Anlagen sein, die den Vorschriften für elektrische Anlagen in explosionsgefährdeten Räumen entsprechen (MFeuV: Vorschriften aufgrund § 34 Produktsicherheitsgesetz; BayFeuV: § 14 GPSG).",
       "source": "MFeuV § 11 Abs. 4 Nr. 6; BayFeuV § 11 Abs. 4 Nr. 6",
-      "applies": [{ "fuels": [ "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["fluessiggas"], "overLimit": true }]
     },
     {
       "key": "pelletZuendquellen",
@@ -252,7 +262,7 @@
       "title": "Leuchten, Erdung und Zündquellen",
       "text": "Gegen Brand und Staubexplosion im Lager nennt das DEPI:\n• Leuchten für ATEX-Zone 22 zugelassen\n• Erdung gegen elektrostatische Aufladung, Befüllleitung aus ableitfähigem Material\n• keine Hindernisse im Einblasweg, Feinanteil und Staub gering halten\n\nDas IVSS-Infoblatt nennt dazu Potenzialausgleich und Erdung sowie das Verbot von Rauchen, Feuer und anderen Zündquellen.",
       "source": "DEPI, Sicherheit im Pelletlager, 15.07.2026, Folie „Brand und Explosion im Lager verhindern“; IVSS-Infoblatt Nr. 4, 10/2020, Abschnitt B.1 und Anhang D",
-      "applies": [{ "fuels": [ "pellets" ] }]
+      "applies": [{ "fuels": ["pellets"] }]
     },
     {
       "key": "oelLagerraumSchild",
@@ -261,7 +271,7 @@
       "title": "Schild „HEIZÖLLAGERUNG“",
       "text": "An den Zugängen zum Brennstofflagerraum muss „HEIZÖLLAGERUNG“ stehen, bei Diesel „DIESELKRAFTSTOFFLAGERUNG“.",
       "source": "MFeuV § 11 Abs. 3 Nr. 2; BayFeuV § 11 Abs. 3 Nr. 2",
-      "applies": [{ "fuels": [ "heizoel" ], "overLimit": true }]
+      "applies": [{ "fuels": ["heizoel"], "overLimit": true }]
     },
     {
       "key": "gasLagerraumSchild",
@@ -270,7 +280,7 @@
       "title": "Schild „FLÜSSIGGASANLAGE“",
       "text": "An den Zugängen zum Brennstofflagerraum muss „FLÜSSIGGASANLAGE“ stehen.",
       "source": "MFeuV § 11 Abs. 4 Nr. 5; BayFeuV § 11 Abs. 4 Nr. 5",
-      "applies": [{ "fuels": [ "fluessiggas" ], "overLimit": true }]
+      "applies": [{ "fuels": ["fluessiggas"], "overLimit": true }]
     },
     {
       "key": "pelletSchildPflicht",
@@ -279,7 +289,7 @@
       "title": "Schild „Holzpelletlagerraum“",
       "text": "Am Zugang zum Pelletlager muss stehen: „Holzpelletlagerraum Lebensgefahr durch giftige Gase – Vor Betreten ausreichend lüften!“",
       "source": "MFeuV § 11 Abs. 5 Satz 2, § 12 Abs. 5",
-      "applies": [{ "regulations": [ "mfeuv" ], "fuels": [ "pellets" ], "above": 500 }]
+      "applies": [{ "regulations": ["mfeuv"], "fuels": ["pellets"], "above": 500 }]
     },
     {
       "key": "pelletSchildEmpfehlung",
@@ -288,7 +298,7 @@
       "title": "Sicherheitshinweise an der Tür",
       "text": "Das IVSS-Infoblatt nennt als Beispiel für die Kennzeichnung:\n• Zutritt für Unbefugte verboten, Tür verschlossen halten\n• Lebensgefahr durch hohe CO-Konzentration möglich\n• in den ersten 4 Wochen nach der Befüllung nicht betreten\n• dauerhafte Belüftung nach außen sicherstellen\n• vor dem Betreten querlüften und freimessen, Tür während des Aufenthalts offen halten\n• Pelletförderung vorher ausschalten und gegen Wiedereinschalten sichern\n• Rauchen, Feuer und andere Zündquellen verboten\n• Aufenthalt nur unter Aufsicht einer Person außerhalb des Lagers, Notruf 112\n• nur mit mobilem CO-Warngerät betreten\n• Verletzungsgefahr durch bewegliche Teile wie Förderschnecken oder Rührwerke\n\nIst explosionsfähige Atmosphäre nicht sicher vermieden, zusätzlich als explosionsgefährdeten Bereich kennzeichnen. Fertige Sicherheitshinweise gibt es beim DEPI.",
       "source": "IVSS-Infoblatt Nr. 4, 10/2020, Anhang D; DEPI, Sicherheit im Pelletlager, 15.07.2026",
-      "applies": [{ "fuels": [ "pellets" ] }]
+      "applies": [{ "fuels": ["pellets"] }]
     },
     {
       "key": "awsvFachbetrieb",
@@ -297,7 +307,7 @@
       "title": "Fachbetrieb nach AwSV",
       "text": "Heizöllageranlagen mit mehr als 1.000 l Rauminhalt dürfen nur von einem zertifizierten Fachbetrieb errichtet, von innen gereinigt, instand gesetzt und stillgelegt werden (§ 62 AwSV).",
       "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen",
-      "applies": [{ "fuels": [ "heizoel" ], "above": 1000 }]
+      "applies": [{ "fuels": ["heizoel"], "above": 1000 }]
     },
     {
       "key": "awsvAnzeige",
@@ -306,25 +316,29 @@
       "title": "Anzeige bei der Behörde",
       "text": "Errichtung und wesentliche Änderung prüfpflichtiger Anlagen sind der zuständigen Behörde 6 Wochen vorher anzuzeigen (§ 40 AwSV). Das betrifft in der Regel alle unterirdischen Anlagen und oberirdische Anlagen mit mehr als 1.000 l Fassungsvermögen.",
       "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen",
-      "applies": [{ "fuels": [ "heizoel" ], "above": 1000 }]
+      "applies": [{ "fuels": ["heizoel"], "above": 1000 }]
     },
     {
       "key": "awsvPruefungBis10000",
       "topic": "gewaesserschutz",
       "binding": "pflicht",
       "title": "Prüfung durch Sachverständige",
+      "condition": "Bei oberirdischen Tanks",
+      "ask": [{ "question": "unterirdisch", "is": false }],
       "text": "Oberirdische Anlagen über 1.000 l bis 10.000 l prüft ein Sachverständiger vor der Inbetriebnahme und nach einer wesentlichen Änderung. In Wasserschutz- und Überschwemmungsgebieten kommen die wiederkehrende Prüfung alle 5 Jahre und die Prüfung vor der Stilllegung dazu.",
       "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen; LfU Bayern 2017, Abschnitt 2.1",
-      "applies": [{ "fuels": [ "heizoel" ], "above": 1000, "upTo": 10000 }]
+      "applies": [{ "fuels": ["heizoel"], "above": 1000, "upTo": 10000 }]
     },
     {
       "key": "awsvPruefungUeber10000",
       "topic": "gewaesserschutz",
       "binding": "pflicht",
       "title": "Prüfung durch Sachverständige, alle 5 Jahre",
+      "condition": "Bei oberirdischen Tanks",
+      "ask": [{ "question": "unterirdisch", "is": false }],
       "text": "Oberirdische Anlagen über 10.000 l prüft ein Sachverständiger vor der Inbetriebnahme, nach einer wesentlichen Änderung, wiederkehrend alle 5 Jahre und vor der Stilllegung. Für die rechtzeitige Prüfung ist der Betreiber verantwortlich.",
       "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen; LfU Bayern 2017, Abschnitt 2 und 2.1",
-      "applies": [{ "fuels": [ "heizoel" ], "above": 10000 }]
+      "applies": [{ "fuels": ["heizoel"], "above": 10000 }]
     },
     {
       "key": "awsvUnterirdisch",
@@ -332,9 +346,10 @@
       "binding": "pflicht",
       "title": "Unterirdische Tanks",
       "condition": "Bei unterirdischen (im Boden vergrabenen) Tanks",
+      "ask": [{ "question": "unterirdisch", "is": true }],
       "text": "Unterirdische Anlagen sind unabhängig von der Größe anzuzeigen und zu prüfen: vor der Inbetriebnahme, nach einer wesentlichen Änderung, alle 5 Jahre (in Wasserschutz- und Überschwemmungsgebieten alle 2,5 Jahre) und vor der Stilllegung.",
       "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen; LfU Bayern 2017, Abschnitt 2.1",
-      "applies": [{ "fuels": [ "heizoel" ] }]
+      "applies": [{ "fuels": ["heizoel"] }]
     },
     {
       "key": "hochwasser",
@@ -342,9 +357,10 @@
       "binding": "pflicht",
       "title": "Überschwemmungs- und Risikogebiete",
       "condition": "Wenn das Gebäude in einem Überschwemmungs- oder Risikogebiet liegt",
+      "ask": [{ "question": "hochwasser", "is": true }],
       "text": "Seit dem 05.01.2018 (Hochwasserschutzgesetz II) dürfen dort grundsätzlich keine neuen Heizölverbraucheranlagen errichtet werden. Bestehende Anlagen mussten in Überschwemmungsgebieten bis 05.01.2023 hochwassersicher nachgerüstet werden, in Risikogebieten bis spätestens 05.01.2033.\n\nHochwassersicher heißt: den Raum gegen eindringendes Wasser abdichten oder die Behälter gegen Aufschwimmen sichern (ein leerer 1.000-l-Behälter erzeugt etwa 1 t Auftrieb), mit Behältern, die dafür zugelassen sind. Entlüftungsleitungen so hoch führen, dass kein Wasser eindringt.",
       "source": "LfU Bayern, Sichere Heizöllagerung im Überschwemmungsgebiet, 2017, Abschnitt 1",
-      "applies": [{ "fuels": [ "heizoel" ] }]
+      "applies": [{ "fuels": ["heizoel"] }]
     },
     {
       "key": "oelSchaden",
@@ -353,7 +369,7 @@
       "title": "Wenn Öl ausläuft",
       "text": "Läuft Öl aus oder droht es auszulaufen: Anlage sofort außer Betrieb nehmen und sofort Polizei, Feuerwehr oder Wasserbehörde verständigen (§ 24 AwSV).",
       "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen",
-      "applies": [{ "fuels": [ "heizoel" ] }]
+      "applies": [{ "fuels": ["heizoel"] }]
     },
     {
       "key": "pelletBetreten",
@@ -362,7 +378,7 @@
       "title": "Pelletlager sicher betreten",
       "text": "• Vorher Pelletheizung und Austragung ausschalten und gegen Wiedereinschalten sichern.\n• Zwischen Zugang und belüftenden Deckeln bzw. Öffnung querlüften; das DEPI nennt 15 Minuten. Laut IVSS reichen 15 Minuten in der Praxis nicht sicher aus: danach freimessen, erst unter 30 ppm CO hineingehen und während des Aufenthalts weiter messen.\n• Zugangstür bzw. -luke bleibt offen.\n• Nur mit eingewiesener Begleitperson außerhalb des Gefahrenbereichs.\n• In den ersten 4 Wochen nach der Befüllung nicht betreten.\n• Staubmaske mit Filter P2 wird empfohlen.",
       "source": "DEPI, Sicherheit im Pelletlager, 15.07.2026, Folie „Sicherheitsvorkehrungen beim Betreten des Lagers“; IVSS-Infoblatt Nr. 4, 10/2020, Abschnitt C.3 und Anhang D",
-      "applies": [{ "fuels": [ "pellets" ] }]
+      "applies": [{ "fuels": ["pellets"] }]
     },
     {
       "key": "pelletCoWarner",
@@ -371,7 +387,7 @@
       "title": "CO-Warngerät",
       "text": "Lager über 15 t und Erdlager nur mit einem mobilen CO-Warngerät mit Signalton am Körper betreten (DEPI); das Musterschild des IVSS verlangt das mobile Warngerät für jedes Betreten.\n\nEin fest montierter CO-Warnmelder ist nicht verpflichtend und gehört nicht ins Lager: Terpene aus dem Holz können den Sensor schädigen und falsche Sicherheit vortäuschen.",
       "source": "DEPI, Sicherheit im Pelletlager, 15.07.2026, Folien „CO-Warner/-Warnmelder“ und „Sicherheitsvorkehrungen beim Betreten des Lagers“; IVSS-Infoblatt Nr. 4, 10/2020, Anhang D",
-      "applies": [{ "fuels": [ "pellets" ] }]
+      "applies": [{ "fuels": ["pellets"] }]
     },
     {
       "key": "pelletTrocken",
@@ -380,7 +396,7 @@
       "title": "Trocken lagern",
       "text": "Pellets ziehen Feuchtigkeit an. Über 10 % Feuchte steigt die Gefahr der Selbstentzündung, es können brennbare Gase und mehr CO entstehen. Mit Wasser quellen Pellets stark auf, bis zum doppelten Volumen, und können den Lagerbehälter sprengen: Ausdehnungsvolumen einplanen, z. B. mit Schrägböden, und das Lager vor Nässe schützen.",
       "source": "IVSS-Infoblatt Nr. 4, 10/2020, Abschnitt B.2; DEPI, Sicherheit im Pelletlager, 15.07.2026, Folie „Pellets in Kontakt mit Wasser“",
-      "applies": [{ "fuels": [ "pellets" ] }]
+      "applies": [{ "fuels": ["pellets"] }]
     }
   ],
   "closingNote": "Das Tool zeigt die Muster-Feuerungsverordnung und als Beispiel die bayerische Fassung. Die Feuerungsverordnungen der anderen Länder weichen teils ab; verbindlich sind die Fassung des Bundeslands, die Landesbauordnung und die Vorgaben der Wasserbehörde vor Ort. Alle Grenzen gelten für die Gesamtmenge je Gebäude oder Brandabschnitt. Anforderungen an Aufstell- und Heizräume der Feuerstätte stehen nur teilweise im Tool. Das Tool ersetzt keine Abstimmung mit Bezirksschornsteinfeger, Sachverständigen oder Behörde.",
@@ -461,6 +477,17 @@
       "rules": ["gasLagerraumLueftung", "gasLagerraumSchild", "gasLagerraumElektro"],
       "notRules": ["gasBis16"],
       "source": "MFeuV § 11 Abs. 1 Nr. 4 (mehr als 16 kg) und Abs. 4"
+    },
+    {
+      "label": "Heizöl 3.000 l im Erdtank",
+      "regulation": "mfeuv",
+      "fuel": "heizoel",
+      "quantity": 3000,
+      "overLimit": false,
+      "rules": ["awsvUnterirdisch", "awsvAnzeige", "awsvFachbetrieb"],
+      "notRules": ["awsvPruefungBis10000", "hochwasser", "oelFeuerstaette"],
+      "answers": { "unterirdisch": true, "hochwasser": false, "feuerstaetteImRaum": false },
+      "source": "Land Berlin, Informationen für Betreiber von Heizölverbraucheranlagen (unterirdische Anlagen)"
     }
   ]
 }
