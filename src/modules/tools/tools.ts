@@ -5,8 +5,8 @@ import { TOOL_ID_PREFIX } from './constants'
 import { groupFormulasByCategory } from '../formulas/formulas'
 import type { FormulaEntry } from '../formulas/schema'
 import { cableKeywords } from './cableTool'
+import { classificationKeywords } from './classificationTool'
 import { drainageSizingKeywords } from './drainageSizingTool'
-import { fuelStorageKeywords } from './fuelStorageTool'
 import { hazmatPointsKeywords } from './hazmatPointsTool'
 import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
@@ -18,10 +18,10 @@ import { ventilationRiserKeywords } from './riserTool'
 import {
   isCableTool,
   isChoiceTool,
+  isClassificationTool,
   isDrainageSizingTool,
   isFactorTool,
   isFormulaTool,
-  isFuelStorageTool,
   isHazmatPointsTool,
   isHeatingCostTool,
   isMaterialListTool,
@@ -115,7 +115,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isHazmatPointsTool(entry)) return hazmatPointsKeywords(entry)
   if (isDrainageSizingTool(entry)) return drainageSizingKeywords(entry)
   if (isPipeMaterialTool(entry)) return pipeMaterialKeywords(entry)
-  if (isFuelStorageTool(entry)) return fuelStorageKeywords(entry)
+  if (isClassificationTool(entry)) return classificationKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
       variant.label,

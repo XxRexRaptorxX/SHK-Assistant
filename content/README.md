@@ -402,26 +402,32 @@ Darunter die Summe, die Mengen je Kategorie für das Beförderungspapier und die
 Der Build prüft fehlende Kategorien, doppelte Schlüssel und Namen, unbekannte Gruppen und Vorschriften, Vorschriften ohne
 Stoff und dass jedes Beispiel die Punktsumme der Quelle ergibt.
 
-**Brennstofflagerung** (`"kind": "fuelStorage"`): Regelwerk und Brennstoff wählen, Lagermenge eingeben. Das Tool sagt,
-ob ein Brennstofflagerraum nötig ist, und zeigt die Vorschriften und Empfehlungen nach Thema. Felder: `title`, `summary`,
-`description`, `category`, `related`, `closingNote` und:
+**Einstufungs-Tools** (`"kind": "classification"`): Regelwerk und Brennstoff wählen, eine Menge eingeben (z. B. Lagermenge
+oder Nennleistung). Das Tool sagt, ob sie über der Grenze des Regelwerks liegt (z. B. „Brennstofflagerraum erforderlich“,
+„Heizraum erforderlich“), und zeigt die Vorschriften und Empfehlungen nach Thema. Beispiele: Brennstofflagerung,
+Heizraum und Aufstellraum. Felder: `title`, `summary`, `description`, `category`, `related`, `closingNote` und:
 
+- `quantityLabel`: Beschriftung der Eingabe, z. B. „Lagermenge“ oder „Gesamtnennleistung“; optional `fuelsLabel`
+  (Überschrift der Brennstoff-Auswahl, Vorgabe „Brennstoff“).
 - `regulations`: Regelwerke als Leiste (das erste ist vorausgewählt), je `key`, `label`, optional `note` und `limits`. Je
-  Brennstoff ein Eintrag mit `fuel`, `unit` (`kg` oder `l`, so wie das Regelwerk zählt), `storageRoomAbove` (ab mehr als
-  dieser Menge je Gebäude oder Brandabschnitt ist ein Brennstofflagerraum nötig), optional `maxPerRoom`, `hint` und
-  `source` (Fundstelle). Eingegeben wird in kg oder t bzw. l oder m³.
+  Brennstoff ein Eintrag mit `fuel`, `unit` (`kg`, `l` oder `kW`, so wie das Regelwerk zählt), `above` (Grenze: erst bei
+  mehr als dieser Menge gilt `aboveLabel`, sonst `belowLabel`), optional `scope` (steht hinter der Grenze, z. B. „je
+  Gebäude oder Brandabschnitt“), `max` (`value` und `text`: Höchstmenge des Regelwerks mit Hinweis), `hint` und `source`
+  (Fundstelle). Eingegeben wird in kg oder t, l oder m³ bzw. kW.
 - `fuels`: je `key`, `name`, optional `aliases` und `note`.
 - `topics`: Themen in der Reihenfolge des Ergebnisses, je `key` und `label`.
 - `rules`: je `key`, `topic`, `binding` (`pflicht`: steht in Verordnung oder Gesetz; `empfehlung`: Fachverband,
   Merkblatt, Norm), `title`, optional `condition` (Bedingung, die das Tool nicht abfragt, erscheint als „Gilt, wenn …“),
-  `text` (eigene Kurzfassung), `source` und `applies`: Zeilen mit `regulations` (leer = alle), `fuels`, optional
-  `above` (mehr als), `upTo` (bis einschließlich, beides in der Einheit des Regelwerks) und `storageRoom` (`true`/`false`:
-  nur mit bzw. ohne Brennstofflagerraum). Eine passende Zeile genügt.
-- `examples`: Fälle aus den Quellen mit `label`, `regulation`, `fuel`, `quantity`, `storageRoom`, optional `rules` (müssen
-  erscheinen), `notRules` (dürfen nicht erscheinen) und `source`.
+  `text` (eigene Kurzfassung), optional `computed` (Mindestwert für die eingegebene Menge: `label`, `base` +
+  `perUnit` × (Menge − `over`), `unit`; z. B. 150 cm² + 2 cm² je kW über 50 kW), `source` und `applies`: Zeilen mit
+  `regulations` (leer = alle), `fuels`, optional `above` (mehr als), `upTo` (bis einschließlich, beides in der Einheit
+  des Regelwerks) und `overLimit` (`true`/`false`: nur über bzw. bis zur Grenze). Eine passende Zeile genügt.
+- `examples`: Fälle aus den Quellen mit `label`, `regulation`, `fuel`, `quantity`, `overLimit`, optional `rules` (müssen
+  erscheinen), `notRules` (dürfen nicht erscheinen), `values` (je `rule` und `value`: nachgerechneter Mindestwert) und
+  `source`.
 
 Der Build prüft doppelte Schlüssel, unbekannte Regelwerke, Brennstoffe und Themen, Themen ohne Vorschrift, Mengengrenzen
-über Regelwerke mit verschiedenen Einheiten und dass jedes Beispiel so eingestuft wird wie in der Quelle.
+über Regelwerke mit verschiedenen Einheiten und dass jedes Beispiel so eingestuft und gerechnet wird wie in der Quelle.
 
 **Abwasser-Bemessung** (`"kind": "drainageSizing"`): Leitungsabschnitt und Gebäudeart wählen, die angeschlossenen
 Entwässerungsgegenstände zählen, das Tool nennt die Nennweite. Felder: `title`, `summary`, `description`, `category`,

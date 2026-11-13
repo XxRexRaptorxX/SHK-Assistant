@@ -13,9 +13,9 @@ import {
   relatedTools,
   isCableTool,
   isChoiceTool,
+  isClassificationTool,
   isDrainageSizingTool,
   isFactorTool,
-  isFuelStorageTool,
   isHazmatPointsTool,
   isHeatingCostTool,
   isMaterialListTool,
@@ -37,10 +37,10 @@ import {
 import { CableLookup } from './CableLookup'
 import { DrainageSizing } from './DrainageSizing'
 import { FactorCalculator } from './FactorCalculator'
-import { FuelStorage } from './FuelStorage'
 import { HazmatPoints } from './HazmatPoints'
 import { HeatingCostComparison } from './HeatingCostComparison'
 import { ChoiceLookup } from './ChoiceLookup'
+import { ClassificationLookup } from './ClassificationLookup'
 import { MaterialList } from './MaterialList'
 import { NormFinder } from './NormFinder'
 import { PipeMaterialLookup } from './PipeMaterialLookup'
@@ -115,8 +115,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <DrainageSizing tool={tool} />
       ) : isPipeMaterialTool(tool) ? (
         <PipeMaterialLookup tool={tool} />
-      ) : isFuelStorageTool(tool) ? (
-        <FuelStorage tool={tool} />
+      ) : isClassificationTool(tool) ? (
+        <ClassificationLookup tool={tool} />
       ) : (
         <FormulaBody formula={tool} />
       )}

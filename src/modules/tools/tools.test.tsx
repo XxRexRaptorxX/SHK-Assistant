@@ -68,6 +68,7 @@ describe('Tools', () => {
       'Gefahrgut: 1000-Punkte-Regel',
       'Heizkosten-Vergleich',
       'Heizlast überschlägig',
+      'Heizraum und Aufstellraum',
       'Kabel Aderfarben',
       'Kabelarten',
       'Leistungsminderung durch Kalk am Wärmetauscher',
