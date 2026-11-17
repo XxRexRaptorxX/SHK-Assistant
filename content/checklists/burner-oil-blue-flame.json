@@ -1,0 +1,143 @@
+{
+  "id": "checklist.burner-oil-blue-flame",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Buderus, Inbetriebnahme- und Wartungsanleitung Blaubrenner Logatop BE-A K, 6303 9740 (2024/12), Kap. 7.6 „Messwerte aufnehmen bzw. korrigieren“ (S. 19–21) und Kap. 8 „Brenner inspizieren und warten“ (S. 23–32), insbesondere 8.12 „Inspektions- und Wartungsprotokoll“, https://www.heizungsdiscount24.de/pdf/Buderus-Logatop-BE-A-Inbetriebnahme-und-wartungsanleitung.pdf, abgerufen am 17.11.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Brennerwartung - Öl-Blaubrenner",
+  "description": "Öl-Gebläsebrenner mit blauer Flamme. Arbeitsschritte nach dem Beispiel Buderus Logatop BE-A K; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
+  "category": "Wartung",
+  "sections": [
+    {
+      "title": "Vor der Wartung",
+      "items": [
+        {
+          "id": "exhaust-measured-before",
+          "text": "Abgasmessung durchgeführt",
+          "note": "Abgastemperatur, Lufttemperatur, CO₂, CO, Förderdruck, Abgasverlust, Rußtest; Sonde in den Kernstrom, Kesselwasser ca. 60 °C, Brenner länger als 5 Minuten in Betrieb"
+        },
+        {
+          "id": "burner-inspected",
+          "text": "Brenner auf Verschmutzung und Beschädigung geprüft",
+          "note": "auf Staub, Korrosion, defekte Ölleitungen, Kabel und Gehäuse achten"
+        },
+        {
+          "id": "burner-motor-checked",
+          "text": "Brennermotor geprüft, ggf. getauscht",
+          "note": "Laufgeräusche deuten auf einen Lagerschaden"
+        },
+        {
+          "id": "power-off",
+          "text": "Anlage spannungsfrei geschaltet und gegen Wiedereinschalten gesichert"
+        },
+        {
+          "id": "oil-shutoff-closed",
+          "text": "Ölabsperrhahn geschlossen"
+        },
+        {
+          "id": "burner-cover-removed",
+          "text": "Brennerhaube abgenommen"
+        }
+      ]
+    },
+    {
+      "title": "Wartung",
+      "items": [
+        {
+          "id": "oil-pump-filter-cleaned",
+          "text": "Ölpumpenfilter gereinigt, ggf. getauscht",
+          "note": "mit Waschbenzin reinigen, Dichtung prüfen"
+        },
+        {
+          "id": "fan-wheel-checked",
+          "text": "Gebläserad geprüft, ggf. gereinigt",
+          "note": "leichte Verschmutzung mit Pinsel, starke ausgebaut mit Spülmittel"
+        },
+        {
+          "id": "ignition-electrode-checked",
+          "text": "Zündelektrode geprüft, ggf. getauscht",
+          "note": "muss frei von Ablagerungen sein; Maße laut Herstellerangabe"
+        },
+        {
+          "id": "mixing-device-checked",
+          "text": "Mischeinrichtung geprüft, ggf. getauscht",
+          "note": "leichter schwarzer Belag ist normal, bei starker Verschmutzung reinigen oder tauschen"
+        },
+        {
+          "id": "perforated-cylinder-checked",
+          "text": "Lochblechzylinder geprüft, ggf. gereinigt",
+          "note": "bei Verschmutzung ausbauen und mit Spülmittel reinigen"
+        },
+        {
+          "id": "nozzle-replaced",
+          "text": "Düse getauscht",
+          "note": "Düsentyp laut technischen Daten des Herstellers"
+        },
+        {
+          "id": "preheater-shutoff-valve-checked",
+          "text": "Abschlussventil im Ölvorwärmer geprüft, ggf. getauscht",
+          "note": "Öl an der Brennerblende deutet auf ein defektes Abschlussventil"
+        },
+        {
+          "id": "flame-tube-checked",
+          "text": "Flammrohr geprüft, ggf. getauscht",
+          "note": "Keramik-Flammrohr ist stoßempfindlich; beim Tausch neue Dichtung einsetzen"
+        },
+        {
+          "id": "burner-seal-checked",
+          "text": "Brennerdichtung geprüft",
+          "note": "Dichtung zwischen Mischeinrichtung und Flammrohr; schadhafte Dichtung erneuern"
+        },
+        {
+          "id": "door-screws-tightened",
+          "text": "Befestigungsschrauben der Brennertür angezogen"
+        },
+        {
+          "id": "electrical-connections-checked",
+          "text": "Elektrische Anschlüsse auf festen Sitz geprüft"
+        }
+      ]
+    },
+    {
+      "title": "Nach der Wartung",
+      "items": [
+        {
+          "id": "oil-shutoff-opened",
+          "text": "Ölabsperrhahn geöffnet"
+        },
+        {
+          "id": "power-on",
+          "text": "Anlage eingeschaltet"
+        },
+        {
+          "id": "door-screws-retightened",
+          "text": "Befestigungsschrauben der Brennertür nachgezogen",
+          "note": "im warmen Zustand"
+        },
+        {
+          "id": "flame-monitoring-tested",
+          "text": "Flammenüberwachung geprüft",
+          "note": "Flammenfühler bei laufendem Brenner abdecken: Störabschaltung muss erfolgen; Fühler mit weichem Tuch reinigen"
+        },
+        {
+          "id": "exhaust-measured",
+          "text": "Abgasmessung durchgeführt",
+          "note": "Abgastemperatur, Lufttemperatur, CO₂, CO, Förderdruck, Abgasverlust, Rußtest; Sonde in den Kernstrom, Kesselwasser ca. 60 °C, Brenner länger als 5 Minuten in Betrieb; laut Buderus CO unter 50 ppm, Rußzahl 0"
+        },
+        {
+          "id": "burner-readjusted",
+          "text": "Brenner ggf. nachreguliert",
+          "note": "CO₂-Gehalt über den Öldruck, Brennerleistung über den Gebläsedruck einstellen"
+        },
+        {
+          "id": "burner-cover-refitted",
+          "text": "Brennerhaube montiert"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

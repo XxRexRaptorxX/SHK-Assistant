@@ -1,0 +1,169 @@
+{
+  "id": "checklist.burner-gas-premix-condensing",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Wolf, Wartungsanleitung Gas-Brennwerttherme CGB-35, CGB-50, CGB-K40-35, Art.-Nr. 3061291_1109, „Sicherheitshinweise“ (S. 3), „Wartungsablauf“ (S. 4–13), „Übersicht der Arbeitsschritte mit Wartungsprotokoll“ (S. 14–15), https://www.loebbeshop.de/Media/Default/Uploaded/static/doc/wartung-cgb35-50_5506.pdf, abgerufen am 17.11.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Brennerwartung - Gas-Brennwertgerät (Vormischbrenner)",
+  "description": "Gas-Brennwertgerät mit Vormischbrenner und Gebläse. Arbeitsschritte nach dem Beispiel Wolf CGB-35/-50/-K40-35; für andere Geräte gelten die Angaben des jeweiligen Herstellers.",
+  "category": "Wartung",
+  "sections": [
+    {
+      "title": "Vor der Wartung",
+      "items": [
+        {
+          "id": "power-off",
+          "text": "Anlage spannungsfrei geschaltet und gegen Wiedereinschalten gesichert",
+          "note": "Betriebsschalter allein reicht nicht: Netzanschlussklemmen stehen weiter unter Spannung"
+        },
+        {
+          "id": "gas-shutoff-closed",
+          "text": "Gasabsperrhahn geschlossen"
+        },
+        {
+          "id": "cold-water-closed",
+          "text": "Kaltwasserzulauf abgesperrt",
+          "note": "nur bei Kombigerät"
+        },
+        {
+          "id": "casing-removed",
+          "text": "Verkleidung abgenommen",
+          "note": "heiße Bauteile: laut Wolf ca. eine halbe Stunde abkühlen lassen oder Handschuhe tragen"
+        }
+      ]
+    },
+    {
+      "title": "Wartung",
+      "items": [
+        {
+          "id": "burner-checked",
+          "text": "Brenner geprüft, ggf. gereinigt",
+          "note": "Sichtkontrolle der ausgebauten Brennereinheit"
+        },
+        {
+          "id": "ignition-electrode-checked",
+          "text": "Zündelektrode geprüft, ggf. getauscht"
+        },
+        {
+          "id": "ionisation-electrode-replaced",
+          "text": "Ionisationselektrode getauscht",
+          "note": "bei Wolf „Überwachungselektrode“"
+        },
+        {
+          "id": "flue-heat-exchanger-cleaned",
+          "text": "Abgaswärmetauscher gereinigt",
+          "note": "mit Bürste"
+        },
+        {
+          "id": "condensate-pan-cleaned",
+          "text": "Kondensatwanne gereinigt"
+        },
+        {
+          "id": "mixing-chamber-checked",
+          "text": "Mischkammer geprüft, ggf. gereinigt"
+        },
+        {
+          "id": "combustion-chamber-insulation-checked",
+          "text": "Isolierung der Brennkammer geprüft"
+        },
+        {
+          "id": "seals-checked",
+          "text": "Dichtungen geprüft, ggf. getauscht",
+          "note": "Wärmetauscherdichtungen nicht dehnen, mit Silikonfett einfetten"
+        },
+        {
+          "id": "flue-system-checked",
+          "text": "Abgasführung geprüft",
+          "note": "Sichtkontrolle Abgasrohr sowie Luft-/Abgasführung"
+        },
+        {
+          "id": "neutralisation-refilled",
+          "text": "Granulat der Neutralisation nachgefüllt",
+          "note": "falls vorhanden"
+        },
+        {
+          "id": "anode-checked",
+          "text": "Schutzanode geprüft",
+          "note": "bei emailliertem Speicher, laut Wolf alle 2 Jahre"
+        },
+        {
+          "id": "siphon-cleaned",
+          "text": "Siphon gereinigt und gefüllt",
+          "note": "auf festen Sitz achten, sonst kann Abgas austreten"
+        },
+        {
+          "id": "cold-water-strainer-cleaned",
+          "text": "Kaltwassersieb gereinigt",
+          "note": "nur bei Kombigerät"
+        },
+        {
+          "id": "dhw-heat-exchanger-checked",
+          "text": "Warmwasserwärmetauscher geprüft, ggf. entkalkt",
+          "note": "wenn die Warmwasserleistung zu gering ist"
+        },
+        {
+          "id": "expansion-vessel-checked",
+          "text": "MAG geprüft",
+          "note": "bei Wasserverlust: Vordruck bei drucklosem Heizkreis prüfen, danach Anlage befüllen"
+        }
+      ]
+    },
+    {
+      "title": "Nach der Wartung",
+      "items": [
+        {
+          "id": "cold-water-opened",
+          "text": "Kaltwasserzulauf geöffnet",
+          "note": "nur bei Kombigerät"
+        },
+        {
+          "id": "gas-shutoff-opened",
+          "text": "Gasabsperrhahn geöffnet"
+        },
+        {
+          "id": "gas-parts-leak-checked",
+          "text": "Gasführende Bauteile auf Dichtheit geprüft"
+        },
+        {
+          "id": "water-connections-leak-checked",
+          "text": "Wasserseitige Anschlüsse auf Dichtheit geprüft"
+        },
+        {
+          "id": "casing-refitted",
+          "text": "Verkleidung montiert"
+        },
+        {
+          "id": "power-on",
+          "text": "Anlage eingeschaltet"
+        },
+        {
+          "id": "ignition-tested",
+          "text": "Zündung geprüft"
+        },
+        {
+          "id": "flue-system-leak-checked",
+          "text": "Abgassystem auf Dichtheit geprüft",
+          "note": "Ansaugluft messen: bei CO₂ über 0,2 % laut Wolf Luft-/Abgasführung auf Dichtheit prüfen"
+        },
+        {
+          "id": "controls-tested",
+          "text": "Regelung geprüft"
+        },
+        {
+          "id": "exhaust-measured",
+          "text": "Abgasmessung durchgeführt",
+          "note": "im Schornsteinfegerbetrieb: Abgastemperatur, Ansauglufttemperatur, CO₂ oder O₂, CO, Abgasverlust"
+        },
+        {
+          "id": "burner-readjusted",
+          "text": "Brenner ggf. nachreguliert",
+          "note": "CO₂-Wert laut Montageanleitung einstellen"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

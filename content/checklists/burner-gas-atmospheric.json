@@ -1,0 +1,170 @@
+{
+  "id": "checklist.burner-gas-atmospheric",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Viessmann, Serviceanleitung für die Fachkraft Vitopend 100 Typ WH1, Gas-Umlauf- und Gas-Kombiwasserheizer für raumluftabhängigen Betrieb, Erdgas, 5681 407, 5/2003, „Sicherheitshinweise“ (S. 2), „Arbeitsschritte – Erstinbetriebnahme, Inspektion und Wartung“ (S. 4), „Ruhedruck und Anschlussdruck messen“ und „Düsendruck messen“ (S. 8–12), „Brenner prüfen und reinigen“ bis „Abgasüberwachungseinrichtung prüfen“ (S. 16–23), https://www.kesselheld.de/content/uploads/2017/12/wartungsanleitung-viessmann-vitopend-100.pdf, abgerufen am 17.11.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Brennerwartung - Gas, atmosphärisch (Strömungssicherung)",
+  "description": "Raumluftabhängiges Gasgerät ohne Gebläse, mit Strömungssicherung und Abgasüberwachung. Arbeitsschritte nach dem Beispiel Viessmann Vitopend 100 Typ WH1; für andere Geräte gelten die Angaben des jeweiligen Herstellers.",
+  "category": "Wartung",
+  "sections": [
+    {
+      "title": "Vor der Wartung",
+      "items": [
+        {
+          "id": "gas-rest-pressure-measured",
+          "text": "Gasruhedruck gemessen",
+          "note": "Manometer am Messstutzen des Gaskombireglers; laut Viessmann max. 25 mbar"
+        },
+        {
+          "id": "gas-connection-pressure-measured",
+          "text": "Gasanschlussdruck gemessen",
+          "note": "Fließdruck im Betrieb; laut Viessmann 17,4 bis 25 mbar, darunter nicht in Betrieb nehmen, darüber Gasdruckregler vorschalten, jeweils Gasversorger informieren"
+        },
+        {
+          "id": "nozzle-pressure-measured",
+          "text": "Düsendruck gemessen",
+          "note": "bei oberer und unterer Nennwärmeleistung; Sollwerte laut Herstellertabelle"
+        },
+        {
+          "id": "exhaust-measured-before",
+          "text": "Abgasmessung durchgeführt",
+          "note": "mindestens CO; laut Viessmann vor und nach Arbeiten am Gasgerät vorgeschrieben"
+        },
+        {
+          "id": "power-off",
+          "text": "Anlage spannungsfrei geschaltet und gegen Wiedereinschalten gesichert",
+          "note": "z. B. an separater Sicherung oder Hauptschalter"
+        },
+        {
+          "id": "gas-shutoff-closed",
+          "text": "Gasabsperrhahn geschlossen",
+          "note": "gegen ungewolltes Öffnen sichern"
+        },
+        {
+          "id": "water-shutoff-closed",
+          "text": "Wasserseitige Absperrventile geschlossen",
+          "note": "heiz- und trinkwasserseitig"
+        },
+        {
+          "id": "device-drained",
+          "text": "Gerät heizwasserseitig entleert",
+          "note": "vorher Schutzkappe am elektromagnetischen Antrieb umstecken, nach dem Entlüften zurückstecken"
+        },
+        {
+          "id": "casing-removed",
+          "text": "Verkleidung abgenommen"
+        }
+      ]
+    },
+    {
+      "title": "Wartung",
+      "items": [
+        {
+          "id": "burner-checked",
+          "text": "Brenner geprüft, ggf. gereinigt",
+          "note": "mit Druckluft oder Seifenlauge reinigen, mit klarem Wasser nachspülen"
+        },
+        {
+          "id": "flue-heat-exchanger-cleaned",
+          "text": "Abgaswärmetauscher gereinigt",
+          "note": "mit Druckluft oder Seifenlauge reinigen, mit klarem Wasser nachspülen"
+        },
+        {
+          "id": "ignition-electrode-checked",
+          "text": "Zündelektrode geprüft und eingestellt, ggf. gereinigt oder getauscht",
+          "note": "mit kleiner Bürste oder Schleifpapier reinigen; Abstände laut Herstellerangabe"
+        },
+        {
+          "id": "ionisation-electrode-checked",
+          "text": "Ionisationselektrode geprüft und eingestellt, ggf. gereinigt oder getauscht",
+          "note": "mit kleiner Bürste oder Schleifpapier reinigen; Abstände laut Herstellerangabe"
+        },
+        {
+          "id": "plate-heat-exchanger-checked",
+          "text": "Plattenwärmetauscher geprüft, ggf. getauscht",
+          "note": "nur bei Kombiwasserheizer; Anschlüsse auf Verkalkung prüfen, neue Dichtungen einfetten"
+        },
+        {
+          "id": "flow-limiter-checked",
+          "text": "Durchflussmengenbegrenzer geprüft, ggf. getauscht",
+          "note": "nur bei Kombiwasserheizer; bei Verkalkung oder Beschädigung Anschlussnippel tauschen"
+        },
+        {
+          "id": "water-switch-strainer-cleaned",
+          "text": "Wassersieb des Wasserschalters gereinigt",
+          "note": "nur bei Kombiwasserheizer; Dichtung mit Armaturenfett einfetten"
+        },
+        {
+          "id": "expansion-vessel-checked",
+          "text": "MAG geprüft"
+        },
+        {
+          "id": "safety-valves-tested",
+          "text": "Sicherheitsventile geprüft"
+        },
+        {
+          "id": "electrical-connections-checked",
+          "text": "Elektrische Anschlüsse auf festen Sitz geprüft"
+        }
+      ]
+    },
+    {
+      "title": "Nach der Wartung",
+      "items": [
+        {
+          "id": "water-shutoff-opened",
+          "text": "Wasserseitige Absperrventile geöffnet"
+        },
+        {
+          "id": "device-filled",
+          "text": "Gerät befüllt und entlüftet"
+        },
+        {
+          "id": "heating-pressure-checked",
+          "text": "Heizungsdruck geprüft"
+        },
+        {
+          "id": "gas-shutoff-opened",
+          "text": "Gasabsperrhahn geöffnet"
+        },
+        {
+          "id": "power-on",
+          "text": "Anlage eingeschaltet"
+        },
+        {
+          "id": "gas-parts-leak-checked",
+          "text": "Gasführende Bauteile auf Dichtheit geprüft",
+          "note": "auch die Messstutzen nach der Druckmessung schließen und prüfen"
+        },
+        {
+          "id": "water-connections-leak-checked",
+          "text": "Wasserseitige Anschlüsse auf Dichtheit geprüft"
+        },
+        {
+          "id": "ionisation-current-measured",
+          "text": "Ionisationsstrom gemessen",
+          "note": "bei oberer Nennwärmeleistung; laut Viessmann mind. 4 µA, sonst Elektrodenabstand und Netzanschluss prüfen"
+        },
+        {
+          "id": "exhaust-measured",
+          "text": "Abgasmessung durchgeführt",
+          "note": "mindestens CO; laut Viessmann vor und nach Arbeiten am Gasgerät vorgeschrieben"
+        },
+        {
+          "id": "casing-refitted",
+          "text": "Verkleidung montiert"
+        },
+        {
+          "id": "flue-gas-monitor-tested",
+          "text": "Abgasüberwachung geprüft",
+          "note": "bei max. Heizleistung mit montierter Verkleidung und abgedecktem Abgasanschluss der Strömungssicherung; laut Viessmann Abschaltung nach spätestens ca. 2 Minuten"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

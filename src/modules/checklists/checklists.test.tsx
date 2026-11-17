@@ -57,13 +57,45 @@ describe('Checklisten-Daten', () => {
     expect(checklistEntries.every((entry) => checkChecklist(entry).length === 0)).toBe(true)
   })
 
-  it('enthält alle neun Checklisten mit allen 103 Punkten und Notizfeld', () => {
-    expect(checklistEntries).toHaveLength(9)
-    expect(checklistEntries.reduce((sum, entry) => sum + countDone(entry, new Set()).total, 0)).toBe(103)
+  it('enthält alle 14 Checklisten mit allen 243 Punkten und Notizfeld', () => {
+    expect(checklistEntries).toHaveLength(14)
+    expect(checklistEntries.reduce((sum, entry) => sum + countDone(entry, new Set()).total, 0)).toBe(243)
     expect(checklistEntries.every((entry) => entry.notes?.label === 'Notizen')).toBe(true)
     const lpg = checklistEntries.find((entry) => entry.id === 'checklist.lpg-inspection')
     expect(lpg?.category).toBe('Prüfung')
     expect(lpg?.sections[0]?.items.map((item) => item.id)).toContain('leak-test-passed')
+  })
+
+  it('enthält die Brenner-Checklisten als ungeprüfte Entwürfe mit Quelle', () => {
+    const burners = checklistEntries.filter((entry) => entry.id.startsWith('checklist.burner-'))
+    expect(burners.map((entry) => entry.id).sort()).toEqual([
+      'checklist.burner-gas-atmospheric',
+      'checklist.burner-gas-forced-draught',
+      'checklist.burner-gas-premix-condensing',
+      'checklist.burner-oil-blue-flame',
+      'checklist.burner-oil-yellow-flame',
+    ])
+    for (const entry of burners) {
+      expect(entry.status).toBe('draft')
+      expect(entry.source).toMatch(/https:\/\//)
+      expect(entry.sections.map((section) => section.title)).toEqual(['Vor der Wartung', 'Wartung', 'Nach der Wartung'])
+      // was vor der Wartung abgeschaltet wird, wird danach wieder eingeschaltet
+      const texts = (title: string) =>
+        entry.sections.find((section) => section.title === title)?.items.map((item) => item.text) ?? []
+      expect(texts('Vor der Wartung')).toContain('Anlage spannungsfrei geschaltet und gegen Wiedereinschalten gesichert')
+      expect(texts('Nach der Wartung')).toContain('Anlage eingeschaltet')
+      const fuel = entry.id.includes('-oil-') ? 'Ölabsperrhahn' : 'Gasabsperrhahn'
+      expect(texts('Vor der Wartung')).toContain(`${fuel} geschlossen`)
+      expect(texts('Nach der Wartung')).toContain(`${fuel} geöffnet`)
+      // jede Abgasmessung nennt im Untertitel, was gemessen wird
+      const exhaust = entry.sections.flatMap((section) => section.items).filter((item) => item.text === 'Abgasmessung durchgeführt')
+      expect(exhaust.length).toBeGreaterThan(0)
+      expect(exhaust.every((item) => item.note.includes('CO'))).toBe(true)
+      const all = entry.sections.flatMap((section) => section.items.map((item) => item.text))
+      expect(all).not.toContain('Gasart geprüft')
+      expect(all).not.toContain('Betreiber informiert')
+      expect(all.some((text) => text.includes('Protokoll'))).toBe(false)
+    }
   })
 })
 

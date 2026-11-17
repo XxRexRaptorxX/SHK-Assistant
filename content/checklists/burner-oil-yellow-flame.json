@@ -1,0 +1,145 @@
+{
+  "id": "checklist.burner-oil-yellow-flame",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Weishaupt, Montage- und Betriebsanleitung Ölbrenner WL5/2-B, Druck-Nr. 83272201, 1/2011-04, Kap. 7.3 „Abschließende Arbeiten“ und 7.4 „Verbrennung prüfen“ (S. 31–32), Kap. 9 „Wartung“ bis 9.6 „Mischeinrichtung einstellen“ (S. 34–39), https://www.intec-heizung.de/media/pdf/8f/64/ef/Weishaupt-Oelbrenner-WL5-2-B-Montage-u-Betriebsanleitung.pdf, abgerufen am 17.11.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Brennerwartung - Öl-Gelbbrenner",
+  "description": "Öl-Gebläsebrenner mit gelber Flamme. Arbeitsschritte nach dem Beispiel Weishaupt WL5/2-B; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
+  "category": "Wartung",
+  "sections": [
+    {
+      "title": "Vor der Wartung",
+      "items": [
+        {
+          "id": "power-off",
+          "text": "Anlage spannungsfrei geschaltet und gegen Wiedereinschalten gesichert"
+        },
+        {
+          "id": "oil-shutoff-closed",
+          "text": "Ölabsperrhahn geschlossen"
+        },
+        {
+          "id": "burner-cover-removed",
+          "text": "Brennerhaube abgenommen",
+          "note": "heiße Bauteile vorher abkühlen lassen"
+        }
+      ]
+    },
+    {
+      "title": "Wartung",
+      "items": [
+        {
+          "id": "nozzle-replaced",
+          "text": "Düse getauscht",
+          "note": "Düse nicht reinigen, immer neue Düse einsetzen; danach Düsenabstand und Zündelektroden einstellen"
+        },
+        {
+          "id": "oil-pump-filter-checked",
+          "text": "Ölpumpenfilter geprüft, ggf. getauscht"
+        },
+        {
+          "id": "oil-hoses-checked",
+          "text": "Ölschläuche geprüft, ggf. getauscht",
+          "note": "Lebensdauer laut Weishaupt 5 Jahre oder 30.000 Druckimpulse"
+        },
+        {
+          "id": "mixing-device-checked",
+          "text": "Mischeinrichtung geprüft und eingestellt",
+          "note": "Düsenabstand zur Stauscheibe mit Einstelllehre prüfen; Maße laut Herstellerangabe"
+        },
+        {
+          "id": "flame-tube-checked",
+          "text": "Flammrohr geprüft, ggf. gereinigt oder getauscht"
+        },
+        {
+          "id": "baffle-plate-checked",
+          "text": "Stauscheibe geprüft, ggf. gereinigt oder getauscht"
+        },
+        {
+          "id": "ignition-electrode-checked",
+          "text": "Zündelektrode geprüft und eingestellt, ggf. gereinigt oder getauscht",
+          "note": "Elektroden dürfen nicht im Zerstäubungskegel liegen; Abstände laut Herstellerangabe, ggf. nachbiegen"
+        },
+        {
+          "id": "ignition-cable-checked",
+          "text": "Zündleitung geprüft, ggf. getauscht"
+        },
+        {
+          "id": "flame-sensor-checked",
+          "text": "Flammenfühler geprüft, ggf. gereinigt oder getauscht"
+        },
+        {
+          "id": "fan-wheel-checked",
+          "text": "Gebläserad geprüft, ggf. gereinigt"
+        },
+        {
+          "id": "air-intake-housing-checked",
+          "text": "Ansauggehäuse geprüft, ggf. gereinigt"
+        },
+        {
+          "id": "air-damper-checked",
+          "text": "Luftklappe geprüft, ggf. gereinigt"
+        },
+        {
+          "id": "safety-components-lifetime-checked",
+          "text": "Lebensdauer sicherheitsrelevanter Bauteile geprüft, ggf. getauscht",
+          "note": "Feuerungsmanager, Flammenfühler, Stellantrieb, Ölmagnetventil laut Weishaupt 10 Jahre oder 250.000 Schaltspiele"
+        }
+      ]
+    },
+    {
+      "title": "Nach der Wartung",
+      "items": [
+        {
+          "id": "oil-shutoff-opened",
+          "text": "Ölabsperrhahn geöffnet"
+        },
+        {
+          "id": "power-on",
+          "text": "Anlage eingeschaltet"
+        },
+        {
+          "id": "oil-parts-leak-checked",
+          "text": "Ölführende Bauteile auf Dichtheit geprüft"
+        },
+        {
+          "id": "ignition-tested",
+          "text": "Zündung geprüft"
+        },
+        {
+          "id": "flame-monitoring-tested",
+          "text": "Flammenüberwachung geprüft"
+        },
+        {
+          "id": "oil-pump-tested",
+          "text": "Ölpumpe geprüft",
+          "note": "Pumpendruck und Saugwiderstand messen; Öldruckmessgeräte danach entfernen"
+        },
+        {
+          "id": "safety-devices-tested",
+          "text": "Sicherheitseinrichtungen geprüft",
+          "note": "Sicherheitskette sowie Regel- und Steuereinrichtungen im Betrieb"
+        },
+        {
+          "id": "exhaust-measured",
+          "text": "Abgasmessung durchgeführt",
+          "note": "O₂, Luftzahl λ, CO, Abgastemperatur, Verbrennungslufttemperatur, Abgasverlust; CO laut Weishaupt max. 50 ppm"
+        },
+        {
+          "id": "burner-readjusted",
+          "text": "Brenner ggf. nachreguliert",
+          "note": "für sicheren Luftüberschuss Luftzahl laut Weishaupt um 0,15 bis 0,2 über die Verbrennungsgrenze anheben"
+        },
+        {
+          "id": "burner-cover-refitted",
+          "text": "Brennerhaube montiert"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "id": "checklist.burner-gas-forced-draught",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG10…/1-D ZM-LN, Druck-Nr. 83055401, 1/2019-02, Kap. 7.4 „Abschließende Arbeiten“ und 7.5 „Verbrennung prüfen“ (S. 59–60), Kap. 9 „Wartung“ bis 9.5 „Ionisations- und Zündelektrode einstellen“ (S. 64–69), https://intec-heizung.de/media/pdf/2b/89/a0/Gasbrenner-WG10-1-D-ZM-LN-modulierend-Montage-und-Betriebsanleitung.pdf, abgerufen am 17.11.2026",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Brennerwartung - Gas-Gebläsebrenner",
+  "description": "Gas-Gebläsebrenner zum Anbau an einen Kessel. Arbeitsschritte nach dem Beispiel Weishaupt WG10…/1-D ZM-LN; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
+  "category": "Wartung",
+  "sections": [
+    {
+      "title": "Vor der Wartung",
+      "items": [
+        {
+          "id": "power-off",
+          "text": "Anlage spannungsfrei geschaltet und gegen Wiedereinschalten gesichert",
+          "note": "bei Frequenzumrichter laut Weishaupt ca. 5 Minuten warten, bis die Spannung abgebaut ist"
+        },
+        {
+          "id": "gas-shutoff-closed",
+          "text": "Gasabsperrhahn geschlossen"
+        },
+        {
+          "id": "burner-cover-removed",
+          "text": "Brennerhaube abgenommen",
+          "note": "heiße Bauteile vorher abkühlen lassen"
+        }
+      ]
+    },
+    {
+      "title": "Wartung",
+      "items": [
+        {
+          "id": "mixing-device-checked",
+          "text": "Mischeinrichtung geprüft und eingestellt",
+          "note": "beim Einbau auf Sitz und Sauberkeit der Dichtung achten, sonst tritt Gas aus; Maße laut Herstellerangabe"
+        },
+        {
+          "id": "flame-tube-checked",
+          "text": "Flammrohr geprüft, ggf. gereinigt oder getauscht"
+        },
+        {
+          "id": "baffle-plate-checked",
+          "text": "Stauscheibe geprüft, ggf. gereinigt oder getauscht"
+        },
+        {
+          "id": "ignition-electrode-checked",
+          "text": "Zündelektrode geprüft und eingestellt, ggf. gereinigt oder getauscht",
+          "note": "Abstände laut Herstellerangabe"
+        },
+        {
+          "id": "ignition-cable-checked",
+          "text": "Zündleitung geprüft, ggf. getauscht"
+        },
+        {
+          "id": "ionisation-electrode-checked",
+          "text": "Ionisationselektrode geprüft und eingestellt, ggf. gereinigt oder getauscht",
+          "note": "Abstände laut Herstellerangabe; Weishaupt empfiehlt den Tausch mindestens alle 2 Jahre"
+        },
+        {
+          "id": "ionisation-cable-checked",
+          "text": "Ionisationsleitung geprüft, ggf. getauscht"
+        },
+        {
+          "id": "fan-wheel-checked",
+          "text": "Gebläserad geprüft, ggf. gereinigt oder getauscht"
+        },
+        {
+          "id": "air-duct-checked",
+          "text": "Luftführung geprüft, ggf. gereinigt"
+        },
+        {
+          "id": "air-damper-checked",
+          "text": "Luftklappe geprüft, ggf. gereinigt"
+        },
+        {
+          "id": "gas-filter-insert-checked",
+          "text": "Filtereinsatz am Mehrfachstellgerät geprüft, ggf. getauscht"
+        },
+        {
+          "id": "breather-plug-checked",
+          "text": "Atmungsstopfen am Mehrfachstellgerät geprüft, ggf. getauscht"
+        },
+        {
+          "id": "safety-components-lifetime-checked",
+          "text": "Lebensdauer sicherheitsrelevanter Bauteile geprüft, ggf. getauscht",
+          "note": "z. B. Feuerungsmanager und Luftdruckwächter laut Weishaupt 250.000 Brennerstarts oder 10 Jahre, Gasdruckregler 15 Jahre"
+        }
+      ]
+    },
+    {
+      "title": "Nach der Wartung",
+      "items": [
+        {
+          "id": "gas-shutoff-opened",
+          "text": "Gasabsperrhahn geöffnet"
+        },
+        {
+          "id": "power-on",
+          "text": "Anlage eingeschaltet"
+        },
+        {
+          "id": "gas-parts-leak-checked",
+          "text": "Gasführende Bauteile auf Dichtheit geprüft",
+          "note": "auch die Messstellen nach der Druckmessung schließen und prüfen"
+        },
+        {
+          "id": "ignition-tested",
+          "text": "Zündung geprüft"
+        },
+        {
+          "id": "flame-monitoring-tested",
+          "text": "Flammenüberwachung geprüft"
+        },
+        {
+          "id": "gas-connection-pressure-measured",
+          "text": "Gasanschlussdruck gemessen"
+        },
+        {
+          "id": "setting-pressure-measured",
+          "text": "Einstelldruck gemessen"
+        },
+        {
+          "id": "air-pressure-switch-tested",
+          "text": "Luftdruckwächter geprüft",
+          "note": "Schaltpunkt"
+        },
+        {
+          "id": "gas-pressure-switch-tested",
+          "text": "Gasdruckwächter geprüft",
+          "note": "Schaltpunkt"
+        },
+        {
+          "id": "controls-tested",
+          "text": "Regelung geprüft"
+        },
+        {
+          "id": "safety-devices-tested",
+          "text": "Sicherheitseinrichtungen geprüft"
+        },
+        {
+          "id": "exhaust-measured",
+          "text": "Abgasmessung durchgeführt",
+          "note": "O₂, Luftzahl λ, CO, Abgastemperatur, Verbrennungslufttemperatur, Abgasverlust; CO laut Weishaupt max. 50 ppm; Abgasverlust bei Großlast ermitteln"
+        },
+        {
+          "id": "burner-readjusted",
+          "text": "Brenner ggf. nachreguliert",
+          "note": "für sicheren Luftüberschuss Luftzahl laut Weishaupt um 0,15 bis 0,2 über die Verbrennungsgrenze anheben"
+        },
+        {
+          "id": "burner-cover-refitted",
+          "text": "Brennerhaube montiert"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Notizen"
+  }
+}
