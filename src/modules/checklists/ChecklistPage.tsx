@@ -5,6 +5,7 @@ import { BackLink, ContentPage } from '../../components/ContentPage'
 import { RichText } from '../../components/RichText'
 import { FavoriteButton } from '../../favorites/FavoriteButton'
 import { usePageTitle } from '../../lib/usePageTitle'
+import { ToolLinks } from '../tools/ToolLinks'
 import { checklistEntries, countDone, findChecklist } from './checklists'
 import type { ChecklistEntry } from './schema'
 import { useChecklistProgress } from './useChecklistProgress'
@@ -94,6 +95,7 @@ function ChecklistDetail({ entry }: { entry: ChecklistEntry }) {
           )}
         </>
       )}
+      <ToolLinks ids={entry.tools} />
     </ContentPage>
   )
 }

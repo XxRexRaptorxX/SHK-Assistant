@@ -8,6 +8,7 @@
   "title": "Gasbrenner (atmosphärisch)",
   "description": "Raumluftabhängiges Gasgerät ohne Gebläse, mit Strömungssicherung und Abgasüberwachung. Arbeitsschritte nach dem Beispiel Viessmann Vitopend 100 Typ WH1; für andere Geräte gelten die Angaben des jeweiligen Herstellers.",
   "category": "Wartung Brenner",
+  "tools": ["tool.abgaswerte", "tool.feuerungsautomat-startablauf", "tool.kalk-leistungsminderung", "tool.heizraum", "tool.wartungsintervalle"],
   "sections": [
     {
       "title": "Vor der Wartung",

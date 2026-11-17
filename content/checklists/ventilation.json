@@ -7,6 +7,7 @@
   "verifiedAt": "2026-10-23",
   "title": "Lüftung",
   "category": "Wartung Lüftung",
+  "tools": ["tool.luftfeuchte"],
   "sections": [
     {
       "items": [

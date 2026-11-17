@@ -7,6 +7,7 @@
   "verifiedAt": "2026-10-23",
   "title": "Flüssiggasprüfung nach DVGW G 607",
   "category": "Prüfung",
+  "tools": ["tool.brennstofflagerung", "tool.normenfinder"],
   "sections": [
     {
       "items": [

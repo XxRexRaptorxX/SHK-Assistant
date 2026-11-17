@@ -7,6 +7,7 @@
   "verifiedAt": "2026-10-23",
   "title": "Pelletsheizung",
   "category": "Wartung Heizung",
+  "tools": ["tool.abgaswerte", "tool.russ-leistungsminderung", "tool.brennstofflagerung", "tool.heizraum", "tool.wartungsintervalle"],
   "sections": [
     {
       "items": [

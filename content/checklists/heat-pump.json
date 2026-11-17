@@ -7,6 +7,7 @@
   "verifiedAt": "2026-10-23",
   "title": "Wärmepumpe",
   "category": "Wartung Heizung",
+  "tools": ["tool.kaeltemittel-dampfdruck", "tool.heizraum", "tool.wartungsintervalle"],
   "sections": [
     {
       "items": [

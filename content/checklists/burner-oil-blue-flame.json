@@ -8,6 +8,7 @@
   "title": "Ölbrenner (Blaubrenner)",
   "description": "Öl-Gebläsebrenner mit blauer Flamme. Arbeitsschritte nach dem Beispiel Buderus Logatop BE-A K; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
   "category": "Wartung Brenner",
+  "tools": ["tool.abgaswerte", "tool.feuerungsautomat-startablauf", "tool.russ-leistungsminderung", "tool.wartungsintervalle"],
   "sections": [
     {
       "title": "Vor der Wartung",

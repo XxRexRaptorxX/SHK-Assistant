@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
+import { TOOL_ID_PREFIX } from '../tools/constants.ts'
 import { CHECKLIST_ID_PREFIX } from './constants.ts'
 
 /** Stabil halten: der gespeicherte Fortschritt hängt an dieser id */
@@ -29,6 +30,8 @@ export const checklistEntrySchema = defineEntrySchema({
   sections: z.array(sectionSchema).default([]),
   /** Freitextfeld unter den Punkten, z. B. für Auffälligkeiten; wird lokal gespeichert und gedruckt */
   notes: z.strictObject({ label: z.string().trim().min(1).default('Notizen') }).optional(),
+  /** Passende Tools, ganz unten verlinkt (Reihenfolge wie angegeben) */
+  tools: z.array(z.string().startsWith(`${TOOL_ID_PREFIX}.`)).default([]),
 }).superRefine((entry, ctx) => {
   if (entry.status === 'verified' && entry.sections.length === 0) {
     ctx.addIssue({ code: 'custom', path: ['sections'], message: 'Pflicht bei status "verified"' })
@@ -54,4 +57,5 @@ export const checklistCollection = defineCollection({
   idPrefix: CHECKLIST_ID_PREFIX,
   schema: checklistEntrySchema,
   check: checkChecklist,
+  references: (entry) => entry.tools,
 })

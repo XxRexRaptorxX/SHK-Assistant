@@ -8,6 +8,7 @@
   "title": "Die 5 Sicherheitsregeln der Elektrotechnik",
   "description": "Vor Beginn der Arbeiten in dieser Reihenfolge abarbeiten.",
   "category": "Sicherheit",
+  "tools": ["tool.aderfarben", "tool.kabelarten"],
   "sections": [
     {
       "items": [

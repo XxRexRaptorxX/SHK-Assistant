@@ -18,6 +18,7 @@ const fixture: ChecklistEntry = {
   title: 'Testwartung',
   description: '',
   category: 'Wartung',
+  tools: ['tool.abgaswerte', 'tool.gibt-es-nicht'],
   sections: [
     {
       title: 'Vorbereitung',
@@ -64,6 +65,12 @@ describe('Checklisten-Daten', () => {
     const lpg = checklistEntries.find((entry) => entry.id === 'checklist.lpg-inspection')
     expect(lpg?.category).toBe('Prüfung')
     expect(lpg?.sections[0]?.items.map((item) => item.id)).toContain('leak-test-passed')
+  })
+
+  it('verlinkt bei jeder Wartungs-Checkliste passende Tools', () => {
+    const maintenance = checklistEntries.filter((entry) => entry.category.startsWith('Wartung'))
+    expect(maintenance.length).toBeGreaterThan(0)
+    expect(maintenance.filter((entry) => entry.tools.length === 0).map((entry) => entry.id)).toEqual([])
   })
 
   it('enthält die Brenner-Checklisten als ungeprüfte Entwürfe mit Quelle', () => {
@@ -173,6 +180,15 @@ describe('Checklisten-Seiten', () => {
     expect(html).not.toContain('Leer drucken')
     expect(html).toContain('Zurücksetzen')
     expect(html).toContain('Unterschrift')
+  })
+
+  it('verlinkt ganz unten die passenden Tools und überspringt fehlende', () => {
+    const html = renderAt('/checklisten/test-wartung')
+    expect(html).toContain('Passende Tools</h2>')
+    expect(html).toContain('href="/tools/abgaswerte"')
+    expect(html).not.toContain('gibt-es-nicht')
+    // nach den Knöpfen, also ganz unten
+    expect(html.indexOf('Passende Tools')).toBeGreaterThan(html.indexOf('Zurücksetzen'))
   })
 
   it('weist auf fehlende Prüfpunkte und unbekannte Checklisten hin', () => {

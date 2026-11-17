@@ -8,6 +8,7 @@
   "title": "Gasbrenner (Gebläsebrenner)",
   "description": "Gas-Gebläsebrenner zum Anbau an einen Kessel. Arbeitsschritte nach dem Beispiel Weishaupt WG10…/1-D ZM-LN; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
   "category": "Wartung Brenner",
+  "tools": ["tool.abgaswerte", "tool.feuerungsautomat-startablauf", "tool.wartungsintervalle"],
   "sections": [
     {
       "title": "Vor der Wartung",
