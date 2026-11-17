@@ -5,9 +5,9 @@
   "source": "Weishaupt, Montage- und Betriebsanleitung Ölbrenner WL5/2-B, Druck-Nr. 83272201, 1/2011-04, Kap. 7.3 „Abschließende Arbeiten“ und 7.4 „Verbrennung prüfen“ (S. 31–32), Kap. 9 „Wartung“ bis 9.6 „Mischeinrichtung einstellen“ (S. 34–39), https://www.intec-heizung.de/media/pdf/8f/64/ef/Weishaupt-Oelbrenner-WL5-2-B-Montage-u-Betriebsanleitung.pdf, abgerufen am 17.11.2026",
   "verifiedBy": "",
   "verifiedAt": "",
-  "title": "Brennerwartung - Öl-Gelbbrenner",
+  "title": "Ölbrenner (Gelbbrenner)",
   "description": "Öl-Gebläsebrenner mit gelber Flamme. Arbeitsschritte nach dem Beispiel Weishaupt WL5/2-B; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
-  "category": "Wartung",
+  "category": "Wartung Brenner",
   "sections": [
     {
       "title": "Vor der Wartung",

@@ -5,9 +5,9 @@
   "source": "Weishaupt, Montage- und Betriebsanleitung Gasbrenner WG10…/1-D ZM-LN, Druck-Nr. 83055401, 1/2019-02, Kap. 7.4 „Abschließende Arbeiten“ und 7.5 „Verbrennung prüfen“ (S. 59–60), Kap. 9 „Wartung“ bis 9.5 „Ionisations- und Zündelektrode einstellen“ (S. 64–69), https://intec-heizung.de/media/pdf/2b/89/a0/Gasbrenner-WG10-1-D-ZM-LN-modulierend-Montage-und-Betriebsanleitung.pdf, abgerufen am 17.11.2026",
   "verifiedBy": "",
   "verifiedAt": "",
-  "title": "Brennerwartung - Gas-Gebläsebrenner",
+  "title": "Gasbrenner (Gebläsebrenner)",
   "description": "Gas-Gebläsebrenner zum Anbau an einen Kessel. Arbeitsschritte nach dem Beispiel Weishaupt WG10…/1-D ZM-LN; für andere Brenner gelten die Angaben des jeweiligen Herstellers.",
-  "category": "Wartung",
+  "category": "Wartung Brenner",
   "sections": [
     {
       "title": "Vor der Wartung",

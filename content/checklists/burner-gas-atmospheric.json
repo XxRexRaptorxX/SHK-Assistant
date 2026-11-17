@@ -5,9 +5,9 @@
   "source": "Viessmann, Serviceanleitung für die Fachkraft Vitopend 100 Typ WH1, Gas-Umlauf- und Gas-Kombiwasserheizer für raumluftabhängigen Betrieb, Erdgas, 5681 407, 5/2003, „Sicherheitshinweise“ (S. 2), „Arbeitsschritte – Erstinbetriebnahme, Inspektion und Wartung“ (S. 4), „Ruhedruck und Anschlussdruck messen“ und „Düsendruck messen“ (S. 8–12), „Brenner prüfen und reinigen“ bis „Abgasüberwachungseinrichtung prüfen“ (S. 16–23), https://www.kesselheld.de/content/uploads/2017/12/wartungsanleitung-viessmann-vitopend-100.pdf, abgerufen am 17.11.2026",
   "verifiedBy": "",
   "verifiedAt": "",
-  "title": "Brennerwartung - Gas, atmosphärisch (Strömungssicherung)",
+  "title": "Gasbrenner (atmosphärisch)",
   "description": "Raumluftabhängiges Gasgerät ohne Gebläse, mit Strömungssicherung und Abgasüberwachung. Arbeitsschritte nach dem Beispiel Viessmann Vitopend 100 Typ WH1; für andere Geräte gelten die Angaben des jeweiligen Herstellers.",
-  "category": "Wartung",
+  "category": "Wartung Brenner",
   "sections": [
     {
       "title": "Vor der Wartung",
