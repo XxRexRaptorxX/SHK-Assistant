@@ -40,10 +40,10 @@ const render = (
   )
 
 describe('Aufstellung Außengerät', () => {
-  it('ist fehlerfrei, intern und noch ungeprüft', () => {
+  it('ist fehlerfrei, öffentlich und noch ungeprüft', () => {
     expect(checkPlacementTool(tool)).toEqual([])
     expect(tool.status).toBe('draft')
-    expect(tool.visibility).toBe('internal')
+    expect(tool.visibility).toBe('public')
     expect(tool.category).toBe('Montage')
   })
 
