@@ -12,7 +12,7 @@ import { listCard } from '../../components/surfaces'
 import { DraftBadge } from '../../components/DraftBadge'
 import { FractionIcon, LinearIcon } from '../../components/icons'
 import { updateSettings, useSettings } from '../../settings/settings'
-import { FormulaMath } from './FormulaMath'
+import { FormulaMath, hasFractionLayout } from './FormulaMath'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
 import { Calculator } from './Calculator'
@@ -156,22 +156,26 @@ export function FormulaLine({ formula, resultLabel, linear: linearOverride }: {
 }) {
   const settings = useSettings()
   const linear = linearOverride ?? settings.linearFormulas
+  // Ohne Bruch, Hochzahl oder Wurzel sehen beide Schreibweisen gleich aus: kein Knopf
+  const switchable = hasFractionLayout(formula)
   const label = linear ? 'Als Bruch anzeigen' : 'Linear anzeigen'
   const Icon = linear ? FractionIcon : LinearIcon
   return (
-    <div className="mt-4 flex items-center gap-2 rounded-2xl border border-edge bg-surface py-2 pr-2 pl-4">
+    <div className={`mt-4 flex items-center gap-2 rounded-2xl border border-edge bg-surface py-2 pl-4 ${switchable ? 'pr-2' : 'pr-4'}`}>
       <p className={`min-w-0 flex-1 overflow-x-auto py-2 text-xl ${linear ? 'font-mono' : ''}`}>
         {renderSymbol(resultLabel)} = {linear ? renderSymbol(formatExpression(formula)) : <FormulaMath formula={formula} />}
       </p>
-      <button
-        type="button"
-        aria-label={label}
-        title={label}
-        onClick={() => updateSettings({ linearFormulas: !linear })}
-        className="flex size-11 shrink-0 items-center justify-center self-start rounded-full border border-edge bg-raised text-muted print:hidden"
-      >
-        <Icon className="size-6" />
-      </button>
+      {switchable && (
+        <button
+          type="button"
+          aria-label={label}
+          title={label}
+          onClick={() => updateSettings({ linearFormulas: !linear })}
+          className="flex size-11 shrink-0 items-center justify-center self-start rounded-full border border-edge bg-raised text-muted print:hidden"
+        >
+          <Icon className="size-6" />
+        </button>
+      )}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 import { FormulaLine } from './FormulaDetailPage'
 import { Calculator } from './Calculator'
-import { constantSubstitution, FormulaMath, quantitySubstitution } from './FormulaMath'
+import { constantSubstitution, FormulaMath, hasFractionLayout, quantitySubstitution } from './FormulaMath'
 import { formulaEntries } from './formulas'
 import type { FormulaEntry } from './schema'
 
@@ -71,6 +71,23 @@ describe('Formelzeile', () => {
     expect(html).toContain('A○ = π · d ^ 2 / 4')
     expect(html).toContain('aria-label="Als Bruch anzeigen"')
     expect(html).toContain('font-mono')
+  })
+
+  it('blendet den Knopf aus, wenn beide Schreibweisen gleich aussehen', () => {
+    const product = { ...kreis, expression: 'pi * d * d' }
+    expect(hasFractionLayout(product)).toBe(false)
+    for (const linear of [false, true]) {
+      const html = renderToStaticMarkup(<FormulaLine formula={product} resultLabel="A○" linear={linear} />)
+      expect(html).toContain('A○ = π')
+      expect(html).not.toContain('<button')
+    }
+  })
+
+  it('erkennt Bruch, Hochzahl, Wurzel und Quotienten-Zeichen', () => {
+    expect(hasFractionLayout(kreis)).toBe(true)
+    expect(hasFractionLayout({ ...kreis, expression: 'd ^ 2' })).toBe(true)
+    expect(hasFractionLayout({ ...kreis, expression: 'sqrt(d)' })).toBe(true)
+    expect(hasFractionLayout(formula('formula.gastechnik.luftdruck-aus-hoehe'))).toBe(true)
   })
 })
 

@@ -45,6 +45,12 @@ const MULTIPLY = <span className="mx-1">·</span>
 
 const OPERATOR_SIGNS: Record<string, string> = { add: '+', subtract: '−' }
 
+/** Anzeige-Zeichen für einen Quotienten wie „Δp/Δh“ */
+const QUOTIENT_LABEL = /^([^/]+)\/([^/]+)$/
+
+/** Funktionen, die in Bruchschreibweise anders aussehen als linear (Wurzelstrich, log₁₀) */
+const SPECIAL_FUNCTIONS = new Set(['sqrt', 'cbrt', 'log10'])
+
 /** Eingesetzter Wert statt eines Symbols (Rechenweg) */
 export interface Substitution {
   node: ReactNode
@@ -113,7 +119,7 @@ export function renderNode(node: MathNode, labels: Labels): ReactNode {
     const label = labels.get(node.name)
     if (typeof label === 'object') return label.node
     // Anzeige-Zeichen wie „Δp/Δh“ (ein Zeichen für einen Quotienten) auch als Bruch übereinander
-    const quotient = label === undefined ? null : /^([^/]+)\/([^/]+)$/.exec(label)
+    const quotient = label === undefined ? null : QUOTIENT_LABEL.exec(label)
     if (quotient) {
       return <Fraction numerator={renderSymbol(quotient[1]!.trim())} denominator={renderSymbol(quotient[2]!.trim())} />
     }
@@ -183,12 +189,32 @@ export function FormulaMath({
   formula: FormulaEntry
   substitutions?: ReadonlyMap<string, Substitution>
 }) {
-  const labels = new Map<string, string | Substitution>()
+  const labels = new Map<string, string | Substitution>(symbolLabels(formula))
+  for (const [symbol, substitution] of substitutions ?? []) labels.set(symbol, substitution)
+  return <>{renderNode(math.parse(formula.expression), labels)}</>
+}
+
+function symbolLabels(formula: FormulaEntry): Map<string, string> {
+  const labels = new Map<string, string>()
   for (const item of [...formula.variables, ...formula.constants]) {
     if (item.label) labels.set(item.symbol, item.label)
   }
-  for (const [symbol, substitution] of substitutions ?? []) labels.set(symbol, substitution)
-  return <>{renderNode(math.parse(formula.expression), labels)}</>
+  return labels
+}
+
+/**
+ * Sieht die Bruchschreibweise anders aus als die lineare? Nur bei Brüchen, Hochzahlen, Wurzeln
+ * und Quotienten-Zeichen wie „Δp/Δh“; sonst lohnt der Umschaltknopf nicht.
+ */
+export function hasFractionLayout(formula: FormulaEntry): boolean {
+  if (formula.expression === '') return false
+  const labels = symbolLabels(formula)
+  return math.parse(formula.expression).filter((node) => {
+    if (math.isOperatorNode(node)) return node.fn === 'divide' || node.fn === 'pow'
+    if (math.isFunctionNode(node)) return SPECIAL_FUNCTIONS.has(node.fn.name)
+    if (math.isSymbolNode(node)) return QUOTIENT_LABEL.test(labels.get(node.name) ?? '')
+    return false
+  }).length > 0
 }
 
 /** Zahl mit Einheit als eingesetzter Wert; negative Zahlen eingeklammert, damit 2 · (−3) lesbar bleibt */
