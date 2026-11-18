@@ -1,0 +1,54 @@
+{
+  "id": "formula.hydraulik.kv-wert",
+  "visibility": "public",
+  "status": "verified",
+  "source": "SBZ Monteur, „Der kv-Wert“, https://www.sbz-monteur.de/sites/default/files/wp-content/uploads/2008/06/0617-kv-wert.pdf; Belimo, Allgemeine Hinweise für die Projektierung, https://www.belimo.com.cn/mam/europe/technical-documentation/project_planning_notes/belimo_general-notes-for-project-planning_de-ch.pdf",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "kv-Wert eines Ventils",
+  "description": "Berechnet den kv-Wert, also den Volumenstrom Wasser, der bei 1 bar Druckabfall durch das Ventil fließt. Gilt für Wasser (Dichte etwa 1000 kg/m³). Der kvs-Wert ist der kv-Wert des voll geöffneten Ventils laut Hersteller.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "Vdot",
+      "label": "V̇",
+      "name": "Volumenstrom",
+      "unit": "m^3/h",
+      "units": ["l/h"]
+    },
+    {
+      "symbol": "dp",
+      "label": "Δp",
+      "name": "Druckabfall am Ventil",
+      "term": "Druck",
+      "unit": "bar",
+      "units": ["mbar", "kPa"]
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "dp0",
+      "label": "Δp_0",
+      "name": "Bezugsdruckabfall",
+      "term": "Druck",
+      "value": "1 bar"
+    }
+  ],
+  "result": {
+    "symbol": "kv",
+    "label": "k_v",
+    "name": "kv-Wert",
+    "unit": "m^3/h",
+    "decimals": 2
+  },
+  "expression": "Vdot / sqrt(dp / dp0)",
+  "examples": [
+    {
+      "inputs": {
+        "Vdot": 1,
+        "dp": 0.25
+      },
+      "expected": 2
+    }
+  ]
+}

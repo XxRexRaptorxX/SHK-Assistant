@@ -1,0 +1,90 @@
+{
+  "id": "formula.abgastechnik.abgasverlust",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Haustechnikdialog SHK-Wissen „Abgasverlust“ (Siegert'sche Formel mit O₂, Faktoren A2 und B je Brennstoff), https://www.haustechnikdialog.de/SHKwissen/94/Abgasverlust; SBZ Monteur, Erläuterung zur Abgasmessung, https://www.sbz-monteur.de/sites/default/files/wp-content/uploads/2008/04/erlaeuterungzurabgasmessung.pdf. Faktoren und Grenzwerte gelten nach 1. BImSchV in der aktuellen Fassung.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Abgasverlust (Siegert-Formel)",
+  "description": "Berechnet den Abgasverlust einer Öl- oder Gasfeuerung aus Abgastemperatur, Verbrennungslufttemperatur und O₂-Gehalt im Abgas. Die brennstoffabhängigen Faktoren A2 und B lassen sich je Brennstoff auswählen. Maßgeblich sind die Faktoren der 1. BImSchV in der aktuellen Fassung und die Werte des Abgasmessgeräts.",
+  "category": "Abgastechnik",
+  "variables": [
+    {
+      "symbol": "tA",
+      "label": "ϑ_A",
+      "name": "Abgastemperatur",
+      "term": "Temperatur",
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
+    },
+    {
+      "symbol": "tL",
+      "label": "ϑ_L",
+      "name": "Verbrennungslufttemperatur",
+      "term": "Temperatur",
+      "unit": "K",
+      "units": [
+        "degC"
+      ]
+    },
+    {
+      "symbol": "O2",
+      "label": "O_2",
+      "name": "Sauerstoffgehalt im Abgas",
+      "unit": "",
+      "min": 0,
+      "max": 20.9,
+      "unitLabel": "Vol.-%"
+    },
+    {
+      "symbol": "A2",
+      "label": "A_2",
+      "name": "Brennstofffaktor A2",
+      "unit": ""
+    },
+    {
+      "symbol": "B",
+      "name": "Brennstofffaktor B",
+      "unit": ""
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "O2L",
+      "label": "21",
+      "name": "Sauerstoffgehalt der Luft",
+      "value": "21"
+    },
+    {
+      "symbol": "K1",
+      "label": "1 K",
+      "name": "Bezugstemperaturdifferenz",
+      "value": "1 K"
+    }
+  ],
+  "result": {
+    "symbol": "qA",
+    "label": "q_A",
+    "name": "Abgasverlust",
+    "term": "Abgasverlust",
+    "unit": "",
+    "decimals": 1,
+    "unitLabel": "%"
+  },
+  "expression": "(tA - tL) / K1 * (A2 / (O2L - O2) + B)",
+  "examples": [
+    {
+      "inputs": {
+        "tA": 453.15,
+        "tL": 293.15,
+        "O2": 6,
+        "A2": 0.66,
+        "B": 0.009
+      },
+      "expected": 8.48,
+      "note": "Erdgas, Abgas 180 °C, Luft 20 °C, 6 Vol.-% O₂"
+    }
+  ]
+}

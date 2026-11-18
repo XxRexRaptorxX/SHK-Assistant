@@ -11,6 +11,12 @@ const symbol = z.string().regex(/^[A-Za-z][A-Za-z0-9_]*$/, 'Symbol: nur A-Z, a-z
 /** mathjs-Einheit, z. B. "kW", "m^3/h", "kJ/(kg K)"; leer = ohne Einheit */
 const unit = z.string().trim()
 
+/**
+ * Angezeigte Einheit für Werte ohne mathjs-Einheit, z. B. "%" oder "Vol.-%".
+ * Steht wie eine feste Einheit hinter dem Feld, rechnet aber nicht mit.
+ */
+const unitLabel = z.string().trim().min(1).optional()
+
 const variableSchema = z.strictObject({
   symbol,
   /** Anzeige statt Symbol, z. B. "ΔT" für "dT" */
@@ -19,6 +25,7 @@ const variableSchema = z.strictObject({
   /** Lexikon-Begriff für die Verlinkung, wenn name genauer ist (z. B. "Masse" bei "Masse des kalten Stoffes") */
   term: z.string().trim().min(1).optional(),
   unit,
+  unitLabel,
   /** Weitere wählbare Eingabeeinheiten (müssen zur Haupteinheit passen) */
   units: z.array(unit).default([]),
   description: z.string().default(''),
@@ -48,6 +55,7 @@ const resultSchema = z.strictObject({
   /** Lexikon-Begriff für die Verlinkung, wenn name genauer ist (z. B. "Masse" bei "Masse des kalten Stoffes") */
   term: z.string().trim().min(1).optional(),
   unit,
+  unitLabel,
   units: z.array(unit).default([]),
   /** Kleinstes sinnvolles Ergebnis in der Haupteinheit, z. B. 0 bei einer Fläche; darunter gilt minMessage */
   min: z.number().optional(),
@@ -116,6 +124,9 @@ export const formulaCollection = defineCollection({
   schema: formulaEntrySchema,
   check: (entry) => [
     ...checkFormula(entry),
+    ...[...entry.variables, ...(entry.result ? [entry.result] : [])]
+      .filter((item) => item.unitLabel !== undefined && (item.unit !== '' || item.units.length > 0))
+      .map((item) => `${item.symbol}: unitLabel nur bei Werten ohne Einheit (unit "")`),
     ...(entry.figure && !entry.figure.startsWith(`${FIGURE_ID_PREFIX}.`)
       ? [`figure: "${entry.figure}" ist keine Skizze (muss mit "${FIGURE_ID_PREFIX}." beginnen)`]
       : []),

@@ -1,0 +1,47 @@
+{
+  "id": "formula.heizungstechnik.jahresarbeitszahl",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Haustechnikdialog SHK-Wissen „Jahresarbeitszahl“, https://www.haustechnikdialog.de/SHKwissen/437/Jahresarbeitszahl; energiesparhaus.at „Arbeitszahl (Jahresarbeitszahl, JAZ)“, https://www.energiesparhaus.at/fachbegriffe/arbeitszahl.htm. Rechenverfahren für die Planung: VDI 4650 Blatt 1.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Jahresarbeitszahl einer Wärmepumpe",
+  "description": "Berechnet die Jahresarbeitszahl (JAZ) aus der in einem Jahr abgegebenen Wärme und der im selben Zeitraum aufgenommenen elektrischen Energie, z. B. aus Wärmemengen- und Stromzähler. Anders als der COP gilt sie für den realen Betrieb über ein ganzes Jahr. Welche Verbraucher (z. B. Umwälzpumpen, Heizstab) im Strom enthalten sind, hängt von der Messung ab.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "QH",
+      "label": "Q_h",
+      "name": "Abgegebene Wärme im Jahr",
+      "term": "Wärmemenge",
+      "unit": "kWh",
+      "units": ["MWh"]
+    },
+    {
+      "symbol": "Wel",
+      "label": "W_el",
+      "name": "Aufgenommene elektrische Energie im Jahr",
+      "term": "Elektrische Arbeit",
+      "unit": "kWh",
+      "units": ["MWh"]
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "beta",
+    "label": "JAZ",
+    "name": "Jahresarbeitszahl",
+    "unit": "",
+    "decimals": 2
+  },
+  "expression": "QH / Wel",
+  "examples": [
+    {
+      "inputs": {
+        "QH": 12000,
+        "Wel": 3000
+      },
+      "expected": 4
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "formula.hydraulik.pumpe-affinitaet-volumenstrom",
+  "visibility": "public",
+  "status": "verified",
+  "source": "KSB, „Auslegung von Kreiselpumpen“, Abschnitt Drehzahländerung (Affinitätsgesetze), https://www.ksb.com/blob/52816/23e6a496a8731c640f05314ad37a594a/auslegung-de-data.pdf; Haustechnikdialog SHK-Wissen, Stichwort Drehzahländerung, https://www.haustechnikdialog.de/SHKwissen/Tag/2521/Drehzahlaenderung",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Pumpe: Volumenstrom bei anderer Drehzahl",
+  "description": "Affinitätsgesetz für Kreiselpumpen: Der Volumenstrom ändert sich im gleichen Verhältnis wie die Drehzahl. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie).",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "Vdot1",
+      "label": "V̇_1",
+      "name": "Volumenstrom bei Drehzahl 1",
+      "term": "Volumenstrom",
+      "unit": "m^3/h",
+      "units": ["l/h", "l/s"]
+    },
+    {
+      "symbol": "n1",
+      "label": "n_1",
+      "name": "Drehzahl 1",
+      "unit": "1/min"
+    },
+    {
+      "symbol": "n2",
+      "label": "n_2",
+      "name": "Drehzahl 2",
+      "unit": "1/min"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Vdot2",
+    "label": "V̇_2",
+    "name": "Volumenstrom bei Drehzahl 2",
+    "term": "Volumenstrom",
+    "unit": "m^3/h",
+    "units": ["l/h", "l/s"],
+    "decimals": 2
+  },
+  "expression": "Vdot1 * n2 / n1",
+  "examples": [
+    {
+      "inputs": {
+        "Vdot1": 2,
+        "n1": 3000,
+        "n2": 1500
+      },
+      "expected": 1
+    }
+  ],
+  "figure": "figure.pumpe"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "material.brennstofffaktor-b",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Haustechnikdialog SHK-Wissen „Abgasverlust“ (Faktoren der Siegert'schen Formel), https://www.haustechnikdialog.de/SHKwissen/94/Abgasverlust; SBZ Monteur, Erläuterung zur Abgasmessung, https://www.sbz-monteur.de/sites/default/files/wp-content/uploads/2008/04/erlaeuterungzurabgasmessung.pdf. Maßgeblich ist die 1. BImSchV in der aktuellen Fassung.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "quantities": [
+    "Brennstofffaktor B"
+  ],
+  "unit": "",
+  "values": [
+    {
+      "name": "Heizöl EL",
+      "value": 0.007
+    },
+    {
+      "name": "Erdgas",
+      "value": 0.009
+    },
+    {
+      "name": "Flüssiggas",
+      "value": 0.008
+    }
+  ]
+}

@@ -16,7 +16,8 @@ import {
 } from './engine'
 import { ensureCustomUnits } from '../units/customUnits'
 import { formulaEntries } from './formulas'
-import type { FormulaEntry } from './schema'
+import { formulaCollection, type FormulaEntry } from './schema'
+import { presetsFor } from '../materials/materials'
 
 // Rein mathematisches Testgerüst (kein Fachinhalt): Fläche = Länge × Breite
 const fixture: FormulaEntry = {
@@ -348,4 +349,29 @@ describe('Formeln in content/formulas', () => {
       })
     })
   }
+})
+
+describe('Feste Anzeige-Einheiten und Auswahlwerte', () => {
+  it('nutzt unitLabel nur bei Werten ohne Einheit', () => {
+    const wrong = formulaEntries
+      .flatMap((f) => [...f.variables, ...(f.result ? [f.result] : [])].map((item) => ({ id: f.id, item })))
+      .filter(({ item }) => item.unitLabel !== undefined && (item.unit !== '' || item.units.length > 0))
+      .map(({ id, item }) => `${id}: ${item.symbol}`)
+    expect(wrong).toEqual([])
+    expect(
+      formulaCollection.check!(
+        { ...fixture, variables: fixture.variables.map((v) => ({ ...v, unitLabel: '%' })) },
+      ),
+    ).toEqual(expect.arrayContaining([expect.stringMatching(/unitLabel nur bei Werten ohne Einheit/)]))
+  })
+
+  it('bietet in der Siegert-Formel die Brennstofffaktoren zur Auswahl an', () => {
+    const siegert = formulaEntries.find((f) => f.id === 'formula.abgastechnik.abgasverlust')!
+    for (const symbol of ['A2', 'B']) {
+      const variable = siegert.variables.find((v) => v.symbol === symbol)!
+      expect(presetsFor(variable).map((p) => p.name)).toEqual(['Heizöl EL', 'Erdgas', 'Flüssiggas'])
+    }
+    expect(siegert.variables.find((v) => v.symbol === 'O2')!.unitLabel).toBe('Vol.-%')
+    expect(siegert.result!.unitLabel).toBe('%')
+  })
 })

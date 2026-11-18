@@ -1,0 +1,70 @@
+{
+  "id": "formula.heizungstechnik.heizkoerper-leistung-umrechnung",
+  "visibility": "public",
+  "status": "verified",
+  "source": "SBZ Monteur, Heizkörperleistung umrechnen (Verweis auf DIN EN 442, Exponent aus der Normliste), https://www.sbz-monteur.de/sites/default/files/sbzm_pdf/file_226319.pdf; Deutschland-Rechner „Heizkörper-Leistung“ (Bezug 75/65/20 °C, ΔT = 49,83 K), https://www.deutschland-rechner.de/heizkoerper-leistung-rechner",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Heizkörperleistung bei anderen Systemtemperaturen",
+  "description": "Rechnet die Normwärmeleistung eines Heizkörpers auf andere Vorlauf-, Rücklauf- und Raumtemperaturen um. Die logarithmische Übertemperatur dafür mit der Formel „Mittlere logarithmische Temperaturdifferenz“ berechnen. Die Norm-Übertemperatur ist für 75/65/20 °C vorbelegt. Den Heizkörperexponenten n aus dem Datenblatt des Herstellers nehmen.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "Qn",
+      "label": "Q̇_n",
+      "name": "Normwärmeleistung",
+      "term": "Wärmeleistung",
+      "unit": "W",
+      "units": [
+        "kW"
+      ]
+    },
+    {
+      "symbol": "dT",
+      "label": "ΔT_ln",
+      "name": "Logarithmische Übertemperatur im Betrieb",
+      "term": "Temperaturdifferenz",
+      "unit": "K"
+    },
+    {
+      "symbol": "dTn",
+      "label": "ΔT_n",
+      "name": "Norm-Übertemperatur",
+      "term": "Temperaturdifferenz",
+      "unit": "K",
+      "default": 49.83,
+      "description": "Vorbelegt für 75/65/20 °C. Bei Leistungsangaben für andere Normbedingungen deren Wert wählen oder eintragen."
+    },
+    {
+      "symbol": "n",
+      "name": "Heizkörperexponent",
+      "unit": "",
+      "min": 0,
+      "description": "Laut Herstellerdatenblatt."
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Q",
+    "label": "Q̇",
+    "name": "Wärmeleistung im Betrieb",
+    "term": "Wärmeleistung",
+    "unit": "W",
+    "units": [
+      "kW"
+    ],
+    "decimals": 0
+  },
+  "expression": "Qn * (dT / dTn) ^ n",
+  "examples": [
+    {
+      "inputs": {
+        "Qn": 1000,
+        "dT": 30,
+        "dTn": 49.83,
+        "n": 1.3
+      },
+      "expected": 517.0344460931726
+    }
+  ]
+}

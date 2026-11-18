@@ -1,0 +1,54 @@
+{
+  "id": "formula.heizungstechnik.ausdehnungsvolumen",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Watts, Katalog Membran-Druckausdehnungsgefäße, Auslegung nach DIN 4807-2 bzw. DIN EN 12828, https://www.kamdi24.de/download/kataloge/WATTS_Membrandruckausdehnungsgefaesse.pdf; Viessmann, Beispielrechnung MAG, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/54857/1/Beispielrechnung_MAG.pdf",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Ausdehnungsvolumen des Heizwassers",
+  "description": "Berechnet, um wie viel sich das Wasser einer Heizungsanlage beim Aufheizen ausdehnt. Die prozentuale Ausdehnung wird für die höchste Vorlauftemperatur aus einer Tabelle abgelesen (Herstellerunterlagen bzw. DIN EN 12828). Das Ergebnis ist die Eingabe für das Nennvolumen des Ausdehnungsgefäßes.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "VA",
+      "label": "V_A",
+      "name": "Wasserinhalt der Anlage",
+      "term": "Volumen",
+      "unit": "l",
+      "units": [
+        "m^3"
+      ]
+    },
+    {
+      "symbol": "n",
+      "name": "Prozentuale Ausdehnung",
+      "unit": "",
+      "min": 0,
+      "max": 100,
+      "description": "Aus der Tabelle für die höchste Vorlauftemperatur.",
+      "unitLabel": "%"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Ve",
+    "label": "V_e",
+    "name": "Ausdehnungsvolumen",
+    "term": "Volumen",
+    "unit": "l",
+    "units": [
+      "m^3"
+    ],
+    "decimals": 2
+  },
+  "expression": "VA * n / 100",
+  "examples": [
+    {
+      "inputs": {
+        "VA": 200,
+        "n": 3
+      },
+      "expected": 6
+    }
+  ]
+}

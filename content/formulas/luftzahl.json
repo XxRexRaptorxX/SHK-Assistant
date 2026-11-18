@@ -1,0 +1,46 @@
+{
+  "id": "formula.abgastechnik.luftzahl",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „Verbrennungsluftverhältnis“, https://de.wikipedia.org/wiki/Verbrennungsluftverh%C3%A4ltnis; SBZ Monteur, Erläuterung zur Abgasmessung, https://www.sbz-monteur.de/sites/default/files/wp-content/uploads/2008/04/erlaeuterungzurabgasmessung.pdf",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Luftzahl λ aus dem O₂-Gehalt",
+  "description": "Berechnet die Luftzahl (Verbrennungsluftverhältnis) näherungsweise aus dem gemessenen Sauerstoffgehalt im trockenen Abgas. λ = 1 bedeutet stöchiometrische Verbrennung, größere Werte Luftüberschuss.",
+  "category": "Abgastechnik",
+  "variables": [
+    {
+      "symbol": "O2",
+      "label": "O_2",
+      "name": "Sauerstoffgehalt im Abgas",
+      "unit": "",
+      "min": 0,
+      "max": 20.9,
+      "unitLabel": "Vol.-%"
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "O2L",
+      "label": "21",
+      "name": "Sauerstoffgehalt der Luft",
+      "value": "21"
+    }
+  ],
+  "result": {
+    "symbol": "lambda",
+    "label": "λ",
+    "name": "Luftzahl",
+    "unit": "",
+    "decimals": 2
+  },
+  "expression": "O2L / (O2L - O2)",
+  "examples": [
+    {
+      "inputs": {
+        "O2": 3
+      },
+      "expected": 1.1666666666666667
+    }
+  ]
+}

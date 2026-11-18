@@ -1,0 +1,55 @@
+{
+  "id": "formula.hydraulik.pumpe-affinitaet-leistung",
+  "visibility": "public",
+  "status": "verified",
+  "source": "KSB, „Auslegung von Kreiselpumpen“, Abschnitt Drehzahländerung (Affinitätsgesetze), https://www.ksb.com/blob/52816/23e6a496a8731c640f05314ad37a594a/auslegung-de-data.pdf; Haustechnikdialog SHK-Wissen, Stichwort Drehzahländerung, https://www.haustechnikdialog.de/SHKwissen/Tag/2521/Drehzahlaenderung",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Pumpe: Leistung bei anderer Drehzahl",
+  "description": "Affinitätsgesetz für Kreiselpumpen: Die Antriebsleistung ändert sich mit der dritten Potenz des Drehzahlverhältnisses. Halbe Drehzahl braucht also nur etwa ein Achtel der Leistung. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie), Wirkungsgradänderungen bleiben unberücksichtigt.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "P1",
+      "label": "P_1",
+      "name": "Leistung bei Drehzahl 1",
+      "term": "Leistung",
+      "unit": "W",
+      "units": ["kW"]
+    },
+    {
+      "symbol": "n1",
+      "label": "n_1",
+      "name": "Drehzahl 1",
+      "unit": "1/min"
+    },
+    {
+      "symbol": "n2",
+      "label": "n_2",
+      "name": "Drehzahl 2",
+      "unit": "1/min"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "P2",
+    "label": "P_2",
+    "name": "Leistung bei Drehzahl 2",
+    "term": "Leistung",
+    "unit": "W",
+    "units": ["kW"],
+    "decimals": 1
+  },
+  "expression": "P1 * (n2 / n1) ^ 3",
+  "examples": [
+    {
+      "inputs": {
+        "P1": 80,
+        "n1": 3000,
+        "n2": 1500
+      },
+      "expected": 10
+    }
+  ],
+  "figure": "figure.pumpe"
+}

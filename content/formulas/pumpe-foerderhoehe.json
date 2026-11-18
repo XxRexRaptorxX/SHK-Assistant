@@ -1,0 +1,54 @@
+{
+  "id": "formula.hydraulik.pumpe-foerderhoehe",
+  "visibility": "public",
+  "status": "verified",
+  "source": "KSB, „Auslegung von Kreiselpumpen“, https://www.ksb.com/blob/52816/23e6a496a8731c640f05314ad37a594a/auslegung-de-data.pdf; Haustechnikdialog SHK-Wissen, Stichwort Förderhöhe, https://www.haustechnikdialog.de/SHKwissen/Tag/246/Foerderhoehe",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Förderhöhe einer Pumpe",
+  "description": "Rechnet die Druckdifferenz, die eine Pumpe aufbringen muss (z. B. der Druckverlust des ungünstigsten Strangs), in die Förderhöhe um, wie sie in Pumpenkennlinien angegeben ist. Die Dichte ist für Wasser vorbelegt; bei Frostschutzgemischen anpassen.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "dp",
+      "label": "Δp",
+      "name": "Druckdifferenz",
+      "term": "Druck",
+      "unit": "bar",
+      "units": ["mbar", "Pa", "kPa"]
+    },
+    {
+      "symbol": "rho",
+      "label": "ρ",
+      "name": "Dichte der Flüssigkeit",
+      "term": "Dichte",
+      "unit": "kg/m^3",
+      "default": 1000
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "g",
+      "name": "Normfallbeschleunigung",
+      "value": "9.80665 m/s^2"
+    }
+  ],
+  "result": {
+    "symbol": "H",
+    "name": "Förderhöhe",
+    "term": "Höhe",
+    "unit": "m",
+    "decimals": 2
+  },
+  "expression": "dp / (rho * g)",
+  "examples": [
+    {
+      "inputs": {
+        "dp": 0.3,
+        "rho": 1000
+      },
+      "expected": 3.059148638933785
+    }
+  ],
+  "figure": "figure.pumpe"
+}

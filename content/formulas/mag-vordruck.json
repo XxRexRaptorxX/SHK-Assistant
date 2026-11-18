@@ -1,0 +1,63 @@
+{
+  "id": "formula.heizungstechnik.mag-vordruck",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Viessmann, Auslegung Ausdehnungsgefäß („überschlägig 0,3 bar über dem statischen Druck“), https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/54857/2/Auslegung_Ausdehnungsgef%C3%A4%C3%9F.pdf; Wikipedia „Hydrostatischer Druck“, https://de.wikipedia.org/wiki/Hydrostatischer_Druck",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Vordruck Membran-Ausdehnungsgefäß",
+  "description": "Berechnet den Vordruck eines Ausdehnungsgefäßes überschlägig aus dem statischen Druck der Wassersäule über dem Gefäß und einem Zuschlag. Der Zuschlag ist mit 0,3 bar vorbelegt und kann angepasst werden. Bei Vorlauftemperaturen über 100 °C kommt der Dampfdruck hinzu. Maßgeblich sind DIN EN 12828 und die Herstellerangaben.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "h",
+      "label": "h_st",
+      "name": "Statische Höhe über dem Gefäß",
+      "term": "Höhe",
+      "unit": "m"
+    },
+    {
+      "symbol": "rho",
+      "label": "ρ",
+      "name": "Dichte des Heizwassers",
+      "term": "Dichte",
+      "unit": "kg/m^3",
+      "default": 1000
+    },
+    {
+      "symbol": "dpz",
+      "label": "Δp_z",
+      "name": "Zuschlag",
+      "term": "Druck",
+      "unit": "bar",
+      "default": 0.3
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "g",
+      "name": "Normfallbeschleunigung",
+      "value": "9.80665 m/s^2"
+    }
+  ],
+  "result": {
+    "symbol": "p0",
+    "label": "p_0",
+    "name": "Vordruck",
+    "term": "Druck",
+    "unit": "bar",
+    "decimals": 2
+  },
+  "expression": "rho * g * h + dpz",
+  "examples": [
+    {
+      "inputs": {
+        "h": 7,
+        "rho": 1000,
+        "dpz": 0.3
+      },
+      "expected": 0.9864655
+    }
+  ],
+  "figure": "figure.wassersaeule"
+}

@@ -27,17 +27,20 @@ function UnitSelect({
   label,
   units,
   value,
+  fixedLabel,
   onChange,
 }: {
   id: string
   label: string
   units: string[]
   value: string
+  /** Angezeigte Einheit bei Werten ohne mathjs-Einheit, z. B. "Vol.-%" */
+  fixedLabel?: string
   onChange: (unit: string) => void
 }) {
   if (units.length <= 1) {
     // Gleiche Breite wie die Auswahlliste, damit alle Eingabefelder bündig sind
-    return <span className="min-w-24 shrink-0 px-3 text-lg">{formatAnyUnit(value)}</span>
+    return <span className="min-w-24 shrink-0 px-3 text-lg">{value === '' ? (fixedLabel ?? '') : formatAnyUnit(value)}</span>
   }
   // Antippen öffnet die Auswahl; umgerechnet wird beim Rechnen über die Einheiten (mathjs)
   return (
@@ -167,6 +170,7 @@ export function Calculator({
       label={`Einheit für ${result.name}`}
       units={alternativeUnits(result.unit, result.units)}
       value={resultUnit}
+      fixedLabel={result.unitLabel}
       onChange={setResultUnit}
     />
   )
@@ -241,6 +245,7 @@ export function Calculator({
                   label={`Einheit für ${variable.name}`}
                   units={availableUnits}
                   value={currentUnit}
+                  fixedLabel={variable.unitLabel}
                   onChange={(unit) => setUnits({ ...units, [variable.symbol]: unit })}
                 />
                 {variable.locate === 'altitude' && (

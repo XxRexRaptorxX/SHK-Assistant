@@ -1,0 +1,55 @@
+{
+  "id": "formula.hydraulik.druckverlust-ventil",
+  "visibility": "public",
+  "status": "verified",
+  "source": "SBZ Monteur, „Der kv-Wert“, https://www.sbz-monteur.de/sites/default/files/wp-content/uploads/2008/06/0617-kv-wert.pdf; Belimo, Allgemeine Hinweise für die Projektierung, https://www.belimo.com.cn/mam/europe/technical-documentation/project_planning_notes/belimo_general-notes-for-project-planning_de-ch.pdf",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Druckverlust an einem Ventil",
+  "description": "Berechnet den Druckabfall an einem Ventil, Strangregulierventil oder Mischer aus Volumenstrom und kv-Wert (Umstellung der kv-Formel). Gilt für Wasser.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "Vdot",
+      "label": "V̇",
+      "name": "Volumenstrom",
+      "unit": "m^3/h",
+      "units": ["l/h"]
+    },
+    {
+      "symbol": "kv",
+      "label": "k_v",
+      "name": "kv-Wert",
+      "unit": "m^3/h",
+      "description": "Bei voll geöffnetem Ventil der kvs-Wert, sonst der kv-Wert der Voreinstellung laut Hersteller."
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "dp0",
+      "label": "Δp_0",
+      "name": "Bezugsdruckabfall",
+      "term": "Druck",
+      "value": "1 bar"
+    }
+  ],
+  "result": {
+    "symbol": "dp",
+    "label": "Δp",
+    "name": "Druckabfall am Ventil",
+    "term": "Druck",
+    "unit": "bar",
+    "units": ["mbar", "kPa"],
+    "decimals": 3
+  },
+  "expression": "dp0 * (Vdot / kv) ^ 2",
+  "examples": [
+    {
+      "inputs": {
+        "Vdot": 0.5,
+        "kv": 1
+      },
+      "expected": 0.25
+    }
+  ]
+}

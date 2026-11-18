@@ -1,0 +1,78 @@
+{
+  "id": "formula.heizungstechnik.mag-nennvolumen",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Watts, Katalog Membran-Druckausdehnungsgefäße, Auslegung nach DIN 4807-2 bzw. DIN EN 12828, https://www.kamdi24.de/download/kataloge/WATTS_Membrandruckausdehnungsgefaesse.pdf; Viessmann, Auslegung Ausdehnungsgefäß, https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/54857/2/Auslegung_Ausdehnungsgef%C3%A4%C3%9F.pdf",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Nennvolumen Membran-Ausdehnungsgefäß",
+  "description": "Berechnet das erforderliche Nennvolumen eines Membran-Ausdehnungsgefäßes (MAG) für geschlossene Heizungsanlagen aus Ausdehnungsvolumen, Wasservorlage, Enddruck und Vordruck. Die Drücke werden als Überdruck eingegeben; der Zuschlag von 1 bar rechnet sie in Absolutdruck um. Gibt es das Gefäß nicht in dieser Größe, wird das nächstgrößere gewählt. Maßgeblich sind DIN EN 12828 und die Unterlagen des Gefäßherstellers.",
+  "category": "Heizungstechnik",
+  "variables": [
+    {
+      "symbol": "Ve",
+      "label": "V_e",
+      "name": "Ausdehnungsvolumen",
+      "term": "Volumen",
+      "unit": "l",
+      "units": ["m^3"]
+    },
+    {
+      "symbol": "Vv",
+      "label": "V_V",
+      "name": "Wasservorlage",
+      "term": "Volumen",
+      "unit": "l",
+      "units": ["m^3"],
+      "description": "Laut Quellen: bei Gefäßen bis 15 l Nennvolumen 20 % des Nennvolumens, bei größeren Gefäßen 0,5 % des Anlagenvolumens, mindestens 3 l."
+    },
+    {
+      "symbol": "pe",
+      "label": "p_e",
+      "name": "Enddruck",
+      "term": "Druck",
+      "unit": "bar",
+      "description": "Überdruck; liegt unter dem Ansprechdruck des Sicherheitsventils."
+    },
+    {
+      "symbol": "p0",
+      "label": "p_0",
+      "name": "Vordruck",
+      "term": "Druck",
+      "unit": "bar",
+      "description": "Überdruck des Gefäßes auf der Gasseite."
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "pabs",
+      "label": "1 bar",
+      "name": "Zuschlag für den Absolutdruck",
+      "term": "Absolutdruck",
+      "value": "1 bar"
+    }
+  ],
+  "result": {
+    "symbol": "Vn",
+    "label": "V_n",
+    "name": "Nennvolumen",
+    "term": "Volumen",
+    "unit": "l",
+    "units": ["m^3"],
+    "min": 0,
+    "minMessage": "Der Enddruck muss über dem Vordruck liegen.",
+    "decimals": 1
+  },
+  "expression": "(Ve + Vv) * (pe + pabs) / (pe - p0)",
+  "examples": [
+    {
+      "inputs": {
+        "Ve": 10,
+        "Vv": 3,
+        "pe": 2.5,
+        "p0": 1
+      },
+      "expected": 30.333333333333332
+    }
+  ]
+}

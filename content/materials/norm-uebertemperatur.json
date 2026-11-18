@@ -1,0 +1,24 @@
+{
+  "id": "material.norm-uebertemperatur",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Deutschland-Rechner „Heizkörper-Leistung“ (Bezug 75/65/20 °C, ΔT = 49,83 K), https://www.deutschland-rechner.de/heizkoerper-leistung-rechner; SBZ Monteur, Heizkörperleistung umrechnen, https://www.sbz-monteur.de/sites/default/files/sbzm_pdf/file_226319.pdf. Werte als mittlere logarithmische Übertemperatur aus Vorlauf-, Rücklauf- und Raumtemperatur berechnet.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "quantities": [
+    "Norm-Übertemperatur"
+  ],
+  "unit": "K",
+  "values": [
+    {
+      "name": "75/65/20 °C",
+      "note": "Leistungsangabe nach DIN EN 442",
+      "value": 49.83
+    },
+    {
+      "name": "90/70/20 °C",
+      "note": "ältere Leistungsangaben",
+      "value": 59.44
+    }
+  ]
+}

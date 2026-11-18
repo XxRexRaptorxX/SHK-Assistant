@@ -1,0 +1,53 @@
+{
+  "id": "formula.thermodynamik.u-wert-mehrschichtig",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „Wärmedurchgangskoeffizient“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchgangskoeffizient; Wikipedia „Wärmedurchlasswiderstand“, https://de.wikipedia.org/wiki/W%C3%A4rmedurchlasswiderstand",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "U-Wert eines mehrschichtigen Bauteils",
+  "description": "Berechnet den U-Wert eines Bauteils aus beliebig vielen Schichten. Zuerst den Wärmedurchlasswiderstand jeder Schicht (d / λ) berechnen und addieren, die Summe hier als R eintragen. Die Übergangswiderstände sind einzusetzen, wie sie für das Bauteil und die Richtung des Wärmestroms gelten.",
+  "category": "Thermodynamik",
+  "variables": [
+    {
+      "symbol": "Rsi",
+      "label": "R_si",
+      "name": "Wärmeübergangswiderstand innen",
+      "term": "Wärmeübergangswiderstand",
+      "unit": "m^2*K/W"
+    },
+    {
+      "symbol": "R",
+      "label": "ΣR",
+      "name": "Summe der Wärmedurchlasswiderstände",
+      "term": "Wärmedurchlasswiderstand",
+      "unit": "m^2*K/W"
+    },
+    {
+      "symbol": "Rse",
+      "label": "R_se",
+      "name": "Wärmeübergangswiderstand außen",
+      "term": "Wärmeübergangswiderstand",
+      "unit": "m^2*K/W"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "U",
+    "name": "Wärmedurchgangskoeffizient",
+    "unit": "W/(m^2*K)",
+    "decimals": 3
+  },
+  "expression": "1 / (Rsi + R + Rse)",
+  "examples": [
+    {
+      "inputs": {
+        "Rsi": 0.13,
+        "R": 3,
+        "Rse": 0.04
+      },
+      "expected": 0.31545741324921134
+    }
+  ],
+  "figure": "figure.wand"
+}

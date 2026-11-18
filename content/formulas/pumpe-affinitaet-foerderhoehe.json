@@ -1,0 +1,53 @@
+{
+  "id": "formula.hydraulik.pumpe-affinitaet-foerderhoehe",
+  "visibility": "public",
+  "status": "verified",
+  "source": "KSB, „Auslegung von Kreiselpumpen“, Abschnitt Drehzahländerung (Affinitätsgesetze), https://www.ksb.com/blob/52816/23e6a496a8731c640f05314ad37a594a/auslegung-de-data.pdf; Haustechnikdialog SHK-Wissen, Stichwort Drehzahländerung, https://www.haustechnikdialog.de/SHKwissen/Tag/2521/Drehzahlaenderung",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Pumpe: Förderhöhe bei anderer Drehzahl",
+  "description": "Affinitätsgesetz für Kreiselpumpen: Die Förderhöhe ändert sich mit dem Quadrat des Drehzahlverhältnisses. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie).",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "H1",
+      "label": "H_1",
+      "name": "Förderhöhe bei Drehzahl 1",
+      "term": "Förderhöhe",
+      "unit": "m"
+    },
+    {
+      "symbol": "n1",
+      "label": "n_1",
+      "name": "Drehzahl 1",
+      "unit": "1/min"
+    },
+    {
+      "symbol": "n2",
+      "label": "n_2",
+      "name": "Drehzahl 2",
+      "unit": "1/min"
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "H2",
+    "label": "H_2",
+    "name": "Förderhöhe bei Drehzahl 2",
+    "term": "Förderhöhe",
+    "unit": "m",
+    "decimals": 2
+  },
+  "expression": "H1 * (n2 / n1) ^ 2",
+  "examples": [
+    {
+      "inputs": {
+        "H1": 4,
+        "n1": 3000,
+        "n2": 1500
+      },
+      "expected": 1
+    }
+  ],
+  "figure": "figure.pumpe"
+}

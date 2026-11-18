@@ -1,0 +1,47 @@
+{
+  "id": "formula.hydraulik.ventilautoritaet",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Belimo, Allgemeine Hinweise für die Projektierung, Abschnitt Ventilautorität, https://www.belimo.com.cn/mam/europe/technical-documentation/project_planning_notes/belimo_general-notes-for-project-planning_de-ch.pdf",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-18",
+  "title": "Ventilautorität",
+  "description": "Berechnet die Ventilautorität eines Regelventils: Differenzdruck am voll geöffneten Ventil bei Nenndurchfluss geteilt durch den höchsten Differenzdruck am geschlossenen Ventil. Je höher, desto besser regelt das Ventil; laut Quelle wird in der Praxis mehr als 0,5 angestrebt.",
+  "category": "Hydraulik",
+  "variables": [
+    {
+      "symbol": "dpV100",
+      "label": "Δp_V100",
+      "name": "Differenzdruck am voll geöffneten Ventil",
+      "term": "Druck",
+      "unit": "bar",
+      "units": ["mbar", "kPa"]
+    },
+    {
+      "symbol": "dpV0",
+      "label": "Δp_V0",
+      "name": "Differenzdruck am geschlossenen Ventil",
+      "term": "Druck",
+      "unit": "bar",
+      "units": ["mbar", "kPa"]
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "PV",
+    "label": "P_V",
+    "name": "Ventilautorität",
+    "unit": "",
+    "decimals": 2
+  },
+  "expression": "dpV100 / dpV0",
+  "examples": [
+    {
+      "inputs": {
+        "dpV100": 0.1,
+        "dpV0": 0.2
+      },
+      "expected": 0.5
+    }
+  ]
+}
