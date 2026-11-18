@@ -39,8 +39,11 @@ function UnitSelect({
   onChange: (unit: string) => void
 }) {
   if (units.length <= 1) {
-    // Gleiche Breite wie die Auswahlliste, damit alle Eingabefelder bündig sind
-    return <span className="min-w-24 shrink-0 px-3 text-lg">{value === '' ? (fixedLabel ?? '') : formatAnyUnit(value)}</span>
+    // Feste Einheit: eingerahmt wie die Auswahlliste, nur ohne Pfeil; ohne Einheit nur ein Platzhalter.
+    // Gleiche Breite wie die Auswahlliste, damit alle Eingabefelder bündig sind.
+    const text = value === '' ? (fixedLabel ?? '') : formatAnyUnit(value)
+    if (text === '') return <span className="min-w-24 shrink-0" aria-hidden="true" />
+    return <span className={`${fieldClass} flex min-w-24 shrink-0 items-center`}>{text}</span>
   }
   // Antippen öffnet die Auswahl; umgerechnet wird beim Rechnen über die Einheiten (mathjs)
   return (
