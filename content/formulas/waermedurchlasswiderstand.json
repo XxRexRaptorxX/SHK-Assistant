@@ -39,5 +39,14 @@
       "expected": 5
     }
   ],
-  "figure": "figure.wand"
+  "figure": "figure.wand",
+  "rearrangements": [
+    {
+      "symbol": "d",
+      "expression": "R * lambda",
+      "title": "Schichtdicke für einen Wärmedurchlasswiderstand",
+      "decimals": 3,
+      "description": "Berechnet die nötige Dicke einer Schicht, z. B. einer Dämmung, für einen gewünschten Wärmedurchlasswiderstand."
+    }
+  ]
 }

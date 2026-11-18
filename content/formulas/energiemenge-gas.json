@@ -48,5 +48,14 @@
       "expected": 950
     }
   ],
-  "figure": "figure.gaszaehler"
+  "figure": "figure.gaszaehler",
+  "rearrangements": [
+    {
+      "symbol": "VB",
+      "expression": "E / (Z * Hs)",
+      "title": "Gasvolumen aus der Energiemenge",
+      "decimals": 2,
+      "description": "Berechnet, wie viel Betriebsvolumen (Zählerstandsdifferenz) einer Energiemenge entspricht."
+    }
+  ]
 }

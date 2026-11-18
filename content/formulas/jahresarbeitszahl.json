@@ -15,7 +15,9 @@
       "name": "Abgegebene Wärme im Jahr",
       "term": "Wärmemenge",
       "unit": "kWh",
-      "units": ["MWh"]
+      "units": [
+        "MWh"
+      ]
     },
     {
       "symbol": "Wel",
@@ -23,7 +25,9 @@
       "name": "Aufgenommene elektrische Energie im Jahr",
       "term": "Elektrische Arbeit",
       "unit": "kWh",
-      "units": ["MWh"]
+      "units": [
+        "MWh"
+      ]
     }
   ],
   "constants": [],
@@ -42,6 +46,15 @@
         "Wel": 3000
       },
       "expected": 4
+    }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Wel",
+      "expression": "QH / beta",
+      "title": "Strombedarf einer Wärmepumpe aus der Jahresarbeitszahl",
+      "decimals": 0,
+      "description": "Schätzt die im Jahr aufgenommene elektrische Energie einer Wärmepumpe aus der benötigten Wärme und der Jahresarbeitszahl."
     }
   ]
 }

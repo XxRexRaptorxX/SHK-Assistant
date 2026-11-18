@@ -4,6 +4,7 @@ import { defineCollection, defineEntrySchema } from '../../content/schema/base.t
 import { FIGURE_ID_PREFIX } from '../figures/constants.ts'
 import { FORMULA_ID_PREFIX } from './constants.ts'
 import { checkFormula } from './engine.ts'
+import { checkRearrangements } from './rearrangements.ts'
 
 /** Bezeichner in der Formel: Buchstabe, dann Buchstaben/Ziffern/_ (z. B. "Q", "dT", "c_w") */
 const symbol = z.string().regex(/^[A-Za-z][A-Za-z0-9_]*$/, 'Symbol: nur A-Z, a-z, 0-9 und _')
@@ -112,11 +113,46 @@ export function checkFormulaRequirements(
   }
 }
 
-export const formulaEntrySchema = defineEntrySchema(formulaShape).superRefine(checkFormulaRequirements)
+/**
+ * Umstellung der Formel nach einer ihrer Eingaben. Entweder eine eigene Seite, die aus dieser Formel
+ * entsteht (expression + title), oder ein Verweis auf eine vorhandene Formel (formula).
+ */
+const rearrangementSchema = z
+  .strictObject({
+    /** Gesuchte Größe: Symbol einer Variable dieser Formel */
+    symbol,
+    /** Umgestellte Formel als mathjs-Ausdruck mit denselben Symbolen */
+    expression: z.string().trim().min(1).optional(),
+    title: z.string().trim().min(1).optional(),
+    /** Ohne Angabe: Hinweis auf die Ausgangsformel */
+    description: z.string().trim().min(1).optional(),
+    /** Nachkommastellen des Ergebnisses, Standard 2 */
+    decimals: z.number().int().min(0).max(6).optional(),
+    /** Kleinstes sinnvolles Ergebnis, sonst das min der Variable */
+    min: z.number().optional(),
+    /** Hinweis, wenn das Ergebnis unter min liegt */
+    minMessage: z.string().trim().min(1).optional(),
+    /** Vorhandene Formel, die genau diese Umstellung ist */
+    formula: z.string().trim().min(1).optional(),
+  })
+  .superRefine((item, ctx) => {
+    if ((item.expression === undefined) === (item.formula === undefined)) {
+      ctx.addIssue({ code: 'custom', message: 'Genau eines von expression und formula angeben' })
+    }
+    if (item.expression !== undefined && item.title === undefined) {
+      ctx.addIssue({ code: 'custom', path: ['title'], message: 'Pflicht bei expression' })
+    }
+  })
+
+export const formulaEntrySchema = defineEntrySchema({
+  ...formulaShape,
+  rearrangements: z.array(rearrangementSchema).optional(),
+}).superRefine(checkFormulaRequirements)
 
 export type FormulaEntry = z.output<typeof formulaEntrySchema>
 export type FormulaVariable = z.output<typeof variableSchema>
 export type FormulaExample = z.output<typeof exampleSchema>
+export type FormulaRearrangement = z.output<typeof rearrangementSchema>
 
 export const formulaCollection = defineCollection({
   dir: 'formulas',
@@ -130,7 +166,12 @@ export const formulaCollection = defineCollection({
     ...(entry.figure && !entry.figure.startsWith(`${FIGURE_ID_PREFIX}.`)
       ? [`figure: "${entry.figure}" ist keine Skizze (muss mit "${FIGURE_ID_PREFIX}." beginnen)`]
       : []),
+    // Umgestellte Seiten rechnen das Testbeispiel rückwärts nach
+    ...checkRearrangements(entry, checkFormula),
   ],
-  // Der Build prüft, dass die Skizze existiert
-  references: (entry) => (entry.figure ? [entry.figure] : []),
+  // Der Build prüft, dass Skizze und verwiesene Formeln existieren
+  references: (entry) => [
+    ...(entry.figure ? [entry.figure] : []),
+    ...(entry.rearrangements ?? []).flatMap((item) => (item.formula ? [item.formula] : [])),
+  ],
 })

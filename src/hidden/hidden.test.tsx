@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { converterEntries } from '../modules/converter/converter'
 import { ConverterListPage } from '../modules/converter/ConverterListPage'
-import { formulaEntries } from '../modules/formulas/formulas'
+import { formulaEntries, rearrangedIds } from '../modules/formulas/formulas'
 import { FormulaListPage } from '../modules/formulas/FormulaListPage'
 import { SettingsPage } from '../settings/SettingsPage'
 import { HideButton } from './HideButton'
@@ -28,9 +28,11 @@ describe('Ausblenden', () => {
   })
 
   it('nimmt ausgeblendete Formeln aus der Liste und zeigt sie unten unter „Ausgeblendet“', () => {
-    const formula = formulaEntries[0]!
+    // Umgestellte Formeln stehen nicht in der ungefilterten Liste
+    const listed = formulaEntries.filter((entry) => !rearrangedIds.has(entry.id))
+    const formula = listed[0]!
     const html = inRouter(<FormulaListPage hiddenIds={new Set([formula.id])} />)
-    const total = formulaEntries.length
+    const total = listed.length
     expect(html).toContain(`${total - 1} von ${total - 1} Formeln`)
     expect(html).toContain('Ausgeblendet (1)')
     expect(html.indexOf(`>${formula.title}<`)).toBeGreaterThan(html.indexOf('Ausgeblendet (1)'))

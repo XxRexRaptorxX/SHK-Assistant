@@ -86,5 +86,14 @@
       "expected": 8.48,
       "note": "Erdgas, Abgas 180 °C, Luft 20 °C, 6 Vol.-% O₂"
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "tA",
+      "expression": "tL + qA * K1 / (A2 / (O2L - O2) + B)",
+      "title": "Abgastemperatur für einen Abgasverlust",
+      "decimals": 1,
+      "description": "Berechnet, bei welcher Abgastemperatur ein bestimmter Abgasverlust erreicht wird, z. B. um abzuschätzen, wie weit eine Feuerung vom Grenzwert entfernt ist. Die Faktoren A2 und B lassen sich je Brennstoff auswählen. Maßgeblich sind die 1. BImSchV in der aktuellen Fassung und die Werte des Abgasmessgeräts."
+    }
   ]
 }

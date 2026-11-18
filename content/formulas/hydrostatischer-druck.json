@@ -46,5 +46,14 @@
       "expected": 0.980665
     }
   ],
-  "figure": "figure.wassersaeule"
+  "figure": "figure.wassersaeule",
+  "rearrangements": [
+    {
+      "symbol": "h",
+      "expression": "p / (rho * g)",
+      "title": "Höhe einer Flüssigkeitssäule aus dem Druck",
+      "decimals": 2,
+      "description": "Berechnet die Höhe einer ruhenden Flüssigkeitssäule aus dem hydrostatischen Druck, z. B. die statische Höhe einer Heizungsanlage aus dem Manometerwert."
+    }
+  ]
 }

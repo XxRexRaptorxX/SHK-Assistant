@@ -15,7 +15,9 @@
       "name": "Ausdehnungsvolumen",
       "term": "Volumen",
       "unit": "l",
-      "units": ["m^3"]
+      "units": [
+        "m^3"
+      ]
     },
     {
       "symbol": "Vv",
@@ -23,7 +25,9 @@
       "name": "Wasservorlage",
       "term": "Volumen",
       "unit": "l",
-      "units": ["m^3"],
+      "units": [
+        "m^3"
+      ],
       "description": "Laut Quellen: bei Gefäßen bis 15 l Nennvolumen 20 % des Nennvolumens, bei größeren Gefäßen 0,5 % des Anlagenvolumens, mindestens 3 l."
     },
     {
@@ -58,7 +62,9 @@
     "name": "Nennvolumen",
     "term": "Volumen",
     "unit": "l",
-    "units": ["m^3"],
+    "units": [
+      "m^3"
+    ],
     "min": 0,
     "minMessage": "Der Enddruck muss über dem Vordruck liegen.",
     "decimals": 1
@@ -73,6 +79,17 @@
         "p0": 1
       },
       "expected": 30.333333333333332
+    }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Ve",
+      "expression": "Vn * (pe - p0) / (pe + pabs) - Vv",
+      "title": "Aufnehmbares Ausdehnungsvolumen eines Ausdehnungsgefäßes",
+      "decimals": 1,
+      "min": 0,
+      "minMessage": "Das Gefäß reicht nicht einmal für die Wasservorlage.",
+      "description": "Berechnet, wie viel Ausdehnungsvolumen ein vorhandenes Membran-Ausdehnungsgefäß bei gegebenem Vordruck und Enddruck aufnehmen kann, z. B. um zu prüfen, ob es für die Anlage reicht. Drücke als Überdruck eingeben. Maßgeblich sind DIN EN 12828 und die Unterlagen des Gefäßherstellers."
     }
   ]
 }

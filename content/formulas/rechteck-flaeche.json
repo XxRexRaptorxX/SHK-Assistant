@@ -39,5 +39,13 @@
       "expected": 10
     }
   ],
-  "figure": "figure.rechteck"
+  "figure": "figure.rechteck",
+  "rearrangements": [
+    {
+      "symbol": "b",
+      "expression": "A / l",
+      "title": "Breite eines Rechtecks aus der Fläche",
+      "decimals": 3
+    }
+  ]
 }

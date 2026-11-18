@@ -39,5 +39,19 @@
       "expected": 0.02
     }
   ],
-  "figure": "figure.volumenstrom"
+  "figure": "figure.volumenstrom",
+  "rearrangements": [
+    {
+      "symbol": "v",
+      "expression": "Vdot / A",
+      "title": "Strömungsgeschwindigkeit aus Volumenstrom und Querschnitt",
+      "decimals": 2
+    },
+    {
+      "symbol": "A",
+      "expression": "Vdot / v",
+      "title": "Strömungsquerschnitt aus Volumenstrom und Geschwindigkeit",
+      "decimals": 4
+    }
+  ]
 }

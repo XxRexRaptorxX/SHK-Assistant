@@ -57,5 +57,20 @@
       "expected": 4.19
     }
   ],
-  "figure": "figure.waermeleistung"
+  "figure": "figure.waermeleistung",
+  "rearrangements": [
+    {
+      "symbol": "t",
+      "expression": "m * c * dT / Qdot",
+      "title": "Aufheizzeit aus Wärmeleistung",
+      "decimals": 0,
+      "description": "Berechnet, wie lange das Aufheizen einer Masse mit gegebener Wärmeleistung dauert, z. B. eines Speichers. Verluste sind nicht berücksichtigt."
+    },
+    {
+      "symbol": "dT",
+      "expression": "Qdot * t / (m * c)",
+      "title": "Temperaturanstieg aus Wärmeleistung und Zeit",
+      "decimals": 1
+    }
+  ]
 }

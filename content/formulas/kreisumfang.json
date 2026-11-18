@@ -32,5 +32,14 @@
       "expected": 6.283185307179586
     }
   ],
-  "figure": "figure.kreis"
+  "figure": "figure.kreis",
+  "rearrangements": [
+    {
+      "symbol": "d",
+      "expression": "U / pi",
+      "title": "Durchmesser aus dem Umfang",
+      "decimals": 3,
+      "description": "Berechnet den Durchmesser aus dem Umfang, z. B. den Außendurchmesser eines Rohrs, um das ein Maßband gelegt wurde."
+    }
+  ]
 }

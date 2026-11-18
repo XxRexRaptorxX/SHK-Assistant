@@ -49,5 +49,13 @@
       "expected": 6928.203230275509
     }
   ],
-  "figure": "figure.drehstrom"
+  "figure": "figure.drehstrom",
+  "rearrangements": [
+    {
+      "symbol": "I",
+      "expression": "S / (k3 * U)",
+      "title": "Leiterstrom aus der Scheinleistung bei Drehstrom",
+      "decimals": 2
+    }
+  ]
 }

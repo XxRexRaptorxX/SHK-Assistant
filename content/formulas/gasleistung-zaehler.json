@@ -61,5 +61,21 @@
       "expected": 14.249999999999998
     }
   ],
-  "figure": "figure.gaszaehler"
+  "figure": "figure.gaszaehler",
+  "rearrangements": [
+    {
+      "symbol": "VB",
+      "expression": "P * t / (Z * H)",
+      "title": "Soll-Gasdurchfluss am Zähler für eine Belastung",
+      "decimals": 2,
+      "description": "Berechnet das Betriebsvolumen, das der Gaszähler in der Messzeit anzeigen muss, damit das Gerät die gewünschte Belastung hat, z. B. beim Einstellen nach dem volumetrischen Verfahren. Maßgeblich sind die Angaben des Geräteherstellers."
+    },
+    {
+      "symbol": "t",
+      "expression": "VB * Z * H / P",
+      "title": "Messzeit am Gaszähler für eine Belastung",
+      "decimals": 0,
+      "description": "Berechnet, wie lange der Gaszähler für ein bestimmtes Betriebsvolumen brauchen muss, damit das Gerät die gewünschte Belastung hat. Maßgeblich sind die Angaben des Geräteherstellers."
+    }
+  ]
 }

@@ -44,5 +44,19 @@
       "expected": 4.19
     }
   ],
-  "figure": "figure.waermeleistung"
+  "figure": "figure.waermeleistung",
+  "rearrangements": [
+    {
+      "symbol": "Q",
+      "expression": "Qdot * t",
+      "title": "Wärmemenge aus Wärmeleistung und Zeit",
+      "decimals": 2
+    },
+    {
+      "symbol": "t",
+      "expression": "Q / Qdot",
+      "title": "Zeit aus Wärmemenge und Wärmeleistung",
+      "decimals": 0
+    }
+  ]
 }

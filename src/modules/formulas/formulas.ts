@@ -1,10 +1,19 @@
 import { content } from '../../content'
 import { normalizeForSearch } from '../../lib/text'
 import { FORMULA_ID_PREFIX } from './constants'
+import { rearrangementGroups, withRearrangements } from './rearrangements'
 import type { FormulaEntry } from './schema'
 
-/** Alle Formeln der aktuellen Edition, alphabetisch */
-export const formulaEntries: FormulaEntry[] = sortFormulas(content.formulas)
+/** Alle Formeln der aktuellen Edition samt umgestellter Seiten, alphabetisch */
+export const formulaEntries: FormulaEntry[] = sortFormulas(withRearrangements(content.formulas))
+
+/** ids der umgestellten Seiten (stehen nur in Suchergebnissen, nicht in der Liste) */
+export const rearrangedIds: ReadonlySet<string> = new Set(
+  formulaEntries.filter((entry) => !content.formulas.some((base) => base.id === entry.id)).map((entry) => entry.id),
+)
+
+/** Zusammengehörige Umstellungen je Formel-id */
+export const formulaRearrangementGroups = rearrangementGroups(formulaEntries)
 
 export function sortFormulas(entries: readonly FormulaEntry[]): FormulaEntry[] {
   return [...entries].sort((a, b) => a.title.localeCompare(b.title, 'de'))
@@ -63,7 +72,9 @@ const GEOMETRY = 'Geometrie'
  * Formeln derselben Gruppe mit mindestens zwei gemeinsamen Eingaben.
  */
 export function relatedFormulas(formula: FormulaEntry, entries: readonly FormulaEntry[], limit = 8): FormulaEntry[] {
-  const others = entries.filter((entry) => entry.id !== formula.id)
+  // Umstellungen stehen schon als Knöpfe in der Legende
+  const group = new Set((formulaRearrangementGroups.get(formula.id) ?? []).map((entry) => entry.id))
+  const others = entries.filter((entry) => entry.id !== formula.id && !rearrangedIds.has(entry.id) && !group.has(entry.id))
   const specific = (quantity: string) => !GENERIC_QUANTITIES.has(quantity)
   const inputs = new Set(formula.variables.map(quantityOf).filter(specific))
   const result = formula.result ? quantityOf(formula.result) : undefined

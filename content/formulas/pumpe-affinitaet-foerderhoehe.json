@@ -49,5 +49,14 @@
       "expected": 1
     }
   ],
-  "figure": "figure.pumpe"
+  "figure": "figure.pumpe",
+  "rearrangements": [
+    {
+      "symbol": "n2",
+      "expression": "n1 * sqrt(H2 / H1)",
+      "title": "Pumpe: Drehzahl für eine gewünschte Förderhöhe",
+      "decimals": 0,
+      "description": "Affinitätsgesetz für Kreiselpumpen: Berechnet die Drehzahl, bei der die Pumpe die gewünschte Förderhöhe erreicht. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie)."
+    }
+  ]
 }

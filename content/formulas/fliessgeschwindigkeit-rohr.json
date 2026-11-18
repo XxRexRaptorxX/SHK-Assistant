@@ -39,5 +39,20 @@
       "expected": 0.8841941282883075
     }
   ],
-  "figure": "figure.rohrstrecke"
+  "figure": "figure.rohrstrecke",
+  "rearrangements": [
+    {
+      "symbol": "d",
+      "expression": "sqrt(4 * Vdot / (pi * v))",
+      "title": "Rohrinnendurchmesser aus Volumenstrom und Fließgeschwindigkeit",
+      "decimals": 1,
+      "description": "Berechnet den nötigen Innendurchmesser eines Rohrs für einen Volumenstrom bei gewählter Fließgeschwindigkeit. Danach die nächstgrößere Nennweite wählen."
+    },
+    {
+      "symbol": "Vdot",
+      "expression": "v * pi * d^2 / 4",
+      "title": "Volumenstrom im Rohr aus der Fließgeschwindigkeit",
+      "decimals": 3
+    }
+  ]
 }

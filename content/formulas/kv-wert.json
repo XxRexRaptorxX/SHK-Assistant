@@ -14,7 +14,9 @@
       "label": "V̇",
       "name": "Volumenstrom",
       "unit": "m^3/h",
-      "units": ["l/h"]
+      "units": [
+        "l/h"
+      ]
     },
     {
       "symbol": "dp",
@@ -22,7 +24,10 @@
       "name": "Druckabfall am Ventil",
       "term": "Druck",
       "unit": "bar",
-      "units": ["mbar", "kPa"]
+      "units": [
+        "mbar",
+        "kPa"
+      ]
     }
   ],
   "constants": [
@@ -49,6 +54,19 @@
         "dp": 0.25
       },
       "expected": 2
+    }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "dp",
+      "formula": "formula.hydraulik.druckverlust-ventil"
+    },
+    {
+      "symbol": "Vdot",
+      "expression": "kv * sqrt(dp / dp0)",
+      "title": "Volumenstrom durch ein Ventil",
+      "decimals": 3,
+      "description": "Berechnet den Volumenstrom Wasser durch ein Ventil aus kv-Wert und Druckabfall. Gilt für Wasser."
     }
   ]
 }

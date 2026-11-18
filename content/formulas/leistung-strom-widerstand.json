@@ -37,5 +37,13 @@
       "expected": 24
     }
   ],
-  "figure": "figure.stromkreis"
+  "figure": "figure.stromkreis",
+  "rearrangements": [
+    {
+      "symbol": "I",
+      "expression": "sqrt(P / R)",
+      "title": "Stromstärke aus Leistung und Widerstand",
+      "decimals": 2
+    }
+  ]
 }

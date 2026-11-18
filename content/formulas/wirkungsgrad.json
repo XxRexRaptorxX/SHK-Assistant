@@ -41,5 +41,19 @@
       },
       "expected": 0.95
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Pzu",
+      "expression": "Pab / eta",
+      "title": "Zugeführte Leistung aus dem Wirkungsgrad",
+      "decimals": 2
+    },
+    {
+      "symbol": "Pab",
+      "expression": "eta * Pzu",
+      "title": "Abgegebene Leistung aus dem Wirkungsgrad",
+      "decimals": 2
+    }
   ]
 }

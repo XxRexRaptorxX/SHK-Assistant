@@ -47,5 +47,20 @@
       "expected": 0.178
     }
   ],
-  "figure": "figure.leiter"
+  "figure": "figure.leiter",
+  "rearrangements": [
+    {
+      "symbol": "q",
+      "expression": "rho * l / R20",
+      "title": "Leiterquerschnitt aus dem Widerstand",
+      "decimals": 2
+    },
+    {
+      "symbol": "l",
+      "expression": "R20 * q / rho",
+      "title": "Leiterlänge aus dem Widerstand",
+      "decimals": 1,
+      "description": "Berechnet die Länge eines Leiters aus gemessenem Widerstand, Querschnitt und Werkstoff, z. B. um die Länge einer verlegten Leitung abzuschätzen. Der Widerstand gilt bei 20 °C."
+    }
+  ]
 }

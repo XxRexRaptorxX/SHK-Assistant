@@ -15,7 +15,10 @@
       "name": "Differenzdruck am voll geöffneten Ventil",
       "term": "Druck",
       "unit": "bar",
-      "units": ["mbar", "kPa"]
+      "units": [
+        "mbar",
+        "kPa"
+      ]
     },
     {
       "symbol": "dpV0",
@@ -23,7 +26,10 @@
       "name": "Differenzdruck am geschlossenen Ventil",
       "term": "Druck",
       "unit": "bar",
-      "units": ["mbar", "kPa"]
+      "units": [
+        "mbar",
+        "kPa"
+      ]
     }
   ],
   "constants": [],
@@ -42,6 +48,15 @@
         "dpV0": 0.2
       },
       "expected": 0.5
+    }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "dpV100",
+      "expression": "PV * dpV0",
+      "title": "Nötiger Differenzdruck am Regelventil für eine Ventilautorität",
+      "decimals": 3,
+      "description": "Berechnet, welchen Differenzdruck das voll geöffnete Regelventil bei Nenndurchfluss haben muss, um eine gewünschte Ventilautorität zu erreichen. Laut Quelle wird in der Praxis mehr als 0,5 angestrebt."
     }
   ]
 }

@@ -67,5 +67,22 @@
       "expected": 333.3333333333333
     }
   ],
-  "figure": "figure.mischen"
+  "figure": "figure.mischen",
+  "rearrangements": [
+    {
+      "symbol": "mk",
+      "formula": "formula.thermodynamik.mischtemperatur-masse-kalt"
+    },
+    {
+      "symbol": "mw",
+      "formula": "formula.thermodynamik.mischtemperatur-masse-warm"
+    },
+    {
+      "symbol": "Tw",
+      "expression": "(Tm * (mk + mw) - mk * Tk) / mw",
+      "title": "Mischtemperatur: nötige Temperatur des warmen Stoffes",
+      "decimals": 2,
+      "description": "Berechnet, wie warm der warme Stoff sein muss, damit sich beim Mischen mit dem kalten Stoff die gewünschte Mischtemperatur einstellt. Gilt für gleiche Stoffe ohne Wärmeverluste."
+    }
+  ]
 }

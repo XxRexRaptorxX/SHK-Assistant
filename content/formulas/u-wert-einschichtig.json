@@ -55,5 +55,16 @@
       "expected": 0.3125
     }
   ],
-  "figure": "figure.wand"
+  "figure": "figure.wand",
+  "rearrangements": [
+    {
+      "symbol": "d",
+      "expression": "lambda * (1 / U - Rsi - Rse)",
+      "title": "Schichtdicke für einen gewünschten U-Wert",
+      "decimals": 3,
+      "min": 0,
+      "minMessage": "Der gewünschte U-Wert ist schon mit den Übergangswiderständen allein erreicht oder überschritten.",
+      "description": "Berechnet die nötige Dicke einer einschichtigen Wand oder Dämmung für einen gewünschten U-Wert. Die Übergangswiderstände sind einzusetzen, wie sie für das Bauteil gelten."
+    }
+  ]
 }

@@ -37,5 +37,14 @@
       "expected": 24
     }
   ],
-  "figure": "figure.stromkreis"
+  "figure": "figure.stromkreis",
+  "rearrangements": [
+    {
+      "symbol": "I",
+      "expression": "P / U",
+      "title": "Stromstärke aus Leistung und Spannung",
+      "decimals": 2,
+      "description": "Berechnet den Strom eines Verbrauchers aus Leistung und Spannung, z. B. eines Heizstabs am Wechselstromnetz. Gilt für Gleichstrom und ohmsche Last."
+    }
+  ]
 }

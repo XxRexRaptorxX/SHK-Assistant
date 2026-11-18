@@ -37,5 +37,14 @@
       },
       "expected": 200
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "P",
+      "expression": "E / t",
+      "title": "Leistung aus elektrischer Arbeit und Zeit",
+      "decimals": 2,
+      "description": "Berechnet die mittlere Leistung aus der verbrauchten elektrischen Arbeit und der Zeit, z. B. aus zwei Zählerständen."
+    }
   ]
 }

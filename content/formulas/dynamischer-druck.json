@@ -40,5 +40,11 @@
       "expected": 2000
     }
   ],
-  "figure": "figure.staudruck"
+  "figure": "figure.staudruck",
+  "rearrangements": [
+    {
+      "symbol": "v",
+      "formula": "formula.hydraulik.geschwindigkeit-aus-druck"
+    }
+  ]
 }

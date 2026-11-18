@@ -10,14 +10,15 @@ import { math } from '../../lib/math'
 import { formatUnit } from '../../lib/units'
 import { listCard } from '../../components/surfaces'
 import { DraftBadge } from '../../components/DraftBadge'
-import { FractionIcon, LinearIcon } from '../../components/icons'
+import { ConvertIcon, FractionIcon, LinearIcon } from '../../components/icons'
 import { updateSettings, useSettings } from '../../settings/settings'
 import { FormulaMath, hasFractionLayout } from './FormulaMath'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { ensureCustomUnits } from '../units/customUnits'
 import { Calculator } from './Calculator'
 import { BUILTIN_CONSTANTS, builtinConstantsUsed, formatExpression } from './engine'
-import { findFormula, formulaEntries, formulaPath, relatedFormulas } from './formulas'
+import { findFormula, formulaEntries, formulaPath, formulaRearrangementGroups, relatedFormulas } from './formulas'
+import { rearrangementTargets } from './rearrangements'
 import { FormulaTitle } from './FormulaTitle'
 import type { FormulaEntry } from './schema'
 import { renderSymbol } from './SymbolText'
@@ -54,8 +55,19 @@ export default function FormulaDetailPage({ entries = formulaEntries }: { entrie
 /** Skizze, Formelzeile, Legende und Rechner einer Formel (auch für Tools) */
 export function FormulaBody({ formula }: { formula: FormulaEntry }) {
   const result = formula.result
+  // Seiten, die diese Formel nach einer ihrer Eingaben umstellen
+  const rearrangements = rearrangementTargets(formula, formulaRearrangementGroups)
   // Ergebnis zuerst, dann Eingaben und Konstanten
-  const legend = [
+  const legend: {
+    key: string
+    label: string
+    name: string
+    nameHref: string | undefined
+    unit: string
+    unitHref: string | undefined
+    detail: string
+    rearranged?: FormulaEntry
+  }[] = [
     ...(result ? [result] : []).map((r) => ({
       key: `result-${r.symbol}`,
       label: r.label ?? r.symbol,
@@ -73,6 +85,7 @@ export function FormulaBody({ formula }: { formula: FormulaEntry }) {
       unit: v.unit ? formatUnit(v.unit) : (v.unitLabel ?? ''),
       unitHref: v.unit ? lexiconPathFor([unitNameFor(v.unit), formatUnit(v.unit)]) : undefined,
       detail: '',
+      rearranged: rearrangements.get(v.symbol),
     })),
     ...formula.constants.map((c) => ({
       key: c.symbol,
@@ -125,19 +138,36 @@ export function FormulaBody({ formula }: { formula: FormulaEntry }) {
     return (
       <>
         <FormulaLine formula={formula} resultLabel={resultLabel} />
-        <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-base">
+        <dl className={`mt-3 grid grid-cols-[auto_1fr] gap-x-3 ${rearrangements.size > 0 ? 'gap-y-0.5' : 'gap-y-1'} text-base`}>
           {legend.map((item) => (
             <div key={item.key} className="contents">
-              <dt className="font-mono font-semibold">{renderSymbol(item.label)}</dt>
-              <dd>
-                <TermLink to={item.nameHref}>{item.name}</TermLink>
-                {item.unit && (
-                  <span className="text-muted">
-                    {' ['}
-                    <TermLink to={item.unitHref}>{item.unit}</TermLink>]
+              <dt className="self-center font-mono font-semibold">{renderSymbol(item.label)}</dt>
+              {/* Gibt es Umstell-Knöpfe, sind alle Zeilen so hoch wie ein Knopf: gleichmäßiger Abstand */}
+              <dd className={`flex items-center justify-between gap-2 ${rearrangements.size > 0 ? 'min-h-9' : ''}`}>
+                <span>
+                  <TermLink to={item.nameHref}>{item.name}</TermLink>
+                  {item.unit && (
+                    <span className="text-muted">
+                      {' ['}
+                      <TermLink to={item.unitHref}>{item.unit}</TermLink>]
+                    </span>
+                  )}
+                  {item.detail && <span className="text-muted"> {item.detail}</span>}
+                </span>
+                {item.rearranged && (
+                  // Nur Icon; die Spalte ist so breit wie der Knopf im Formelfeld und hat denselben
+                  // Abstand zum Rand (Rahmen + pr-2), damit alle Knöpfe auf einer senkrechten Linie liegen
+                  <span className="mr-[9px] flex w-11 shrink-0 justify-center print:hidden">
+                    <Link
+                      to={formulaPath(item.rearranged.id)}
+                      aria-label={`Formel nach ${item.name} umstellen`}
+                      title={`Nach ${item.name} umstellen`}
+                      className="flex size-9 items-center justify-center rounded-full border border-edge bg-raised text-muted"
+                    >
+                      <ConvertIcon className="size-5" />
+                    </Link>
                   </span>
                 )}
-                {item.detail && <span className="text-muted"> {item.detail}</span>}
               </dd>
             </div>
           ))}
@@ -171,7 +201,7 @@ export function FormulaLine({ formula, resultLabel, linear: linearOverride }: {
           aria-label={label}
           title={label}
           onClick={() => updateSettings({ linearFormulas: !linear })}
-          className="flex size-11 shrink-0 items-center justify-center self-start rounded-full border border-edge bg-raised text-muted print:hidden"
+          className="flex size-11 shrink-0 items-center justify-center rounded-full border border-edge bg-raised text-muted print:hidden"
         >
           <Icon className="size-6" />
         </button>

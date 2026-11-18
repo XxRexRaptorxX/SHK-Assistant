@@ -39,5 +39,13 @@
       },
       "expected": 500
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Vdot",
+      "expression": "mdot / rho",
+      "title": "Volumenstrom aus Massenstrom",
+      "decimals": 3
+    }
   ]
 }

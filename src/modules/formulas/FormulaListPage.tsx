@@ -5,7 +5,7 @@ import { DraftBadge } from '../../components/DraftBadge'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { SearchInput } from '../../components/SearchInput'
 import { usePageTitle } from '../../lib/usePageTitle'
-import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory } from './formulas'
+import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory, rearrangedIds } from './formulas'
 import { FormulaTitle } from './FormulaTitle'
 import type { FormulaEntry } from './schema'
 import { categoryHeading, pageTitle } from '../../components/headings'
@@ -25,7 +25,9 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '', h
   const [query, setQuery] = useState(initialQuery)
   const storedHidden = useHiddenIds()
   const hidden = hiddenIds ?? storedHidden
-  const listed = entries.filter((entry) => !hidden.has(entry.id))
+  // Umgestellte Formeln erscheinen erst beim Filtern, sonst würde die Liste unübersichtlich
+  const shown = entries.filter((entry) => !hidden.has(entry.id))
+  const listed = query.trim() === '' ? shown.filter((entry) => !rearrangedIds.has(entry.id)) : shown
   const visible = filterFormulas(listed, query)
 
   return (

@@ -15,7 +15,10 @@
       "name": "Volumenstrom bei Drehzahl 1",
       "term": "Volumenstrom",
       "unit": "m^3/h",
-      "units": ["l/h", "l/s"]
+      "units": [
+        "l/h",
+        "l/s"
+      ]
     },
     {
       "symbol": "n1",
@@ -37,7 +40,10 @@
     "name": "Volumenstrom bei Drehzahl 2",
     "term": "Volumenstrom",
     "unit": "m^3/h",
-    "units": ["l/h", "l/s"],
+    "units": [
+      "l/h",
+      "l/s"
+    ],
     "decimals": 2
   },
   "expression": "Vdot1 * n2 / n1",
@@ -51,5 +57,14 @@
       "expected": 1
     }
   ],
-  "figure": "figure.pumpe"
+  "figure": "figure.pumpe",
+  "rearrangements": [
+    {
+      "symbol": "n2",
+      "expression": "n1 * Vdot2 / Vdot1",
+      "title": "Pumpe: Drehzahl für einen gewünschten Volumenstrom",
+      "decimals": 0,
+      "description": "Affinitätsgesetz für Kreiselpumpen: Berechnet die Drehzahl, bei der die Pumpe den gewünschten Volumenstrom fördert. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie)."
+    }
+  ]
 }

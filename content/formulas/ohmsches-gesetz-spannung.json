@@ -37,5 +37,15 @@
       "expected": 12
     }
   ],
-  "figure": "figure.stromkreis"
+  "figure": "figure.stromkreis",
+  "rearrangements": [
+    {
+      "symbol": "I",
+      "formula": "formula.elektrotechnik.ohmsches-gesetz-stromstaerke"
+    },
+    {
+      "symbol": "R",
+      "formula": "formula.elektrotechnik.ohmsches-gesetz-widerstand"
+    }
+  ]
 }

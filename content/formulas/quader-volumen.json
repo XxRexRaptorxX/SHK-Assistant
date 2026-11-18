@@ -46,5 +46,14 @@
       "note": "Rechenbeispiel aus dem Wikipedia-Artikel „Quader“"
     }
   ],
-  "figure": "figure.quader"
+  "figure": "figure.quader",
+  "rearrangements": [
+    {
+      "symbol": "h",
+      "expression": "V / (l * b)",
+      "title": "Höhe eines Quaders aus dem Volumen",
+      "decimals": 3,
+      "description": "Berechnet die Höhe eines Quaders aus Volumen und Grundfläche, z. B. die Füllhöhe eines rechteckigen Behälters."
+    }
+  ]
 }

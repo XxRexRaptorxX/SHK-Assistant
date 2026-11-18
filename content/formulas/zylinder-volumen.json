@@ -38,5 +38,14 @@
       "expected": 0.23561944901923448
     }
   ],
-  "figure": "figure.zylinder"
+  "figure": "figure.zylinder",
+  "rearrangements": [
+    {
+      "symbol": "h",
+      "expression": "4 * V / (pi * d^2)",
+      "title": "Höhe eines Zylinders aus dem Volumen",
+      "decimals": 3,
+      "description": "Berechnet die Höhe eines Zylinders aus Volumen und Durchmesser, z. B. die Füllhöhe eines stehenden runden Behälters."
+    }
+  ]
 }

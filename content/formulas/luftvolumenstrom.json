@@ -40,5 +40,11 @@
       "expected": 60
     }
   ],
-  "figure": "figure.raum"
+  "figure": "figure.raum",
+  "rearrangements": [
+    {
+      "symbol": "n",
+      "formula": "formula.lueftung.luftwechselzahl"
+    }
+  ]
 }

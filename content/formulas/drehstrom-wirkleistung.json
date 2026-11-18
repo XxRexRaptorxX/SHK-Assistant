@@ -60,5 +60,14 @@
       "note": "Rechenbeispiel aus Wikipedia „Dreiphasenwechselstrom“"
     }
   ],
-  "figure": "figure.drehstrom"
+  "figure": "figure.drehstrom",
+  "rearrangements": [
+    {
+      "symbol": "I",
+      "expression": "P / (k3 * U * cosphi)",
+      "title": "Leiterstrom aus der Wirkleistung bei Drehstrom",
+      "decimals": 2,
+      "description": "Berechnet den Leiterstrom eines symmetrischen Drehstromverbrauchers aus Wirkleistung, verketteter Spannung und Leistungsfaktor cos φ. Bei ohmscher Last (z. B. Heizstab) ist cos φ = 1."
+    }
+  ]
 }

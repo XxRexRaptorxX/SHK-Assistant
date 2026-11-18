@@ -12,9 +12,14 @@ const related = (id: string) => {
 
 describe('Verwandte Formeln', () => {
   it('nennt zuerst die Formeln mit derselben Skizze', () => {
-    expect(related('formula.elektrotechnik.ohmsches-gesetz-spannung').slice(0, 6)).toEqual(
-      expect.arrayContaining(['formula.elektrotechnik.ohmsches-gesetz-stromstaerke', 'formula.elektrotechnik.ohmsches-gesetz-widerstand']),
-    )
+    expect(related('formula.hydraulik.ausflussvolumen').slice(0, 2)).toContain('formula.hydraulik.ausflusszeit')
+  })
+
+  it('lässt Umstellungen weg, die schon als Knopf in der Legende stehen', () => {
+    const list = related('formula.elektrotechnik.ohmsches-gesetz-spannung')
+    expect(list).not.toContain('formula.elektrotechnik.ohmsches-gesetz-stromstaerke')
+    expect(list).not.toContain('formula.elektrotechnik.ohmsches-gesetz-widerstand')
+    expect(list.some((id) => id.includes('.nach-'))).toBe(false)
   })
 
   it('verweist auf Formeln, die eine Eingabe berechnen, auch aus der Geometrie', () => {

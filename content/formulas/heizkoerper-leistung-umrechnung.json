@@ -66,5 +66,21 @@
       },
       "expected": 517.0344460931726
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Qn",
+      "expression": "Q / (dT / dTn) ^ n",
+      "title": "Benötigte Normwärmeleistung eines Heizkörpers",
+      "decimals": 0,
+      "description": "Berechnet, welche Normwärmeleistung ein Heizkörper haben muss, damit er bei den Systemtemperaturen im Betrieb die gewünschte Wärmeleistung abgibt, z. B. beim Umstieg auf eine Wärmepumpe. Den Heizkörperexponenten n aus dem Datenblatt des Herstellers nehmen."
+    },
+    {
+      "symbol": "dT",
+      "expression": "dTn * (Q / Qn) ^ (1 / n)",
+      "title": "Benötigte Übertemperatur eines Heizkörpers",
+      "decimals": 1,
+      "description": "Berechnet, welche logarithmische Übertemperatur ein vorhandener Heizkörper braucht, um die gewünschte Wärmeleistung abzugeben. Daraus lassen sich die nötigen Systemtemperaturen abschätzen. Den Heizkörperexponenten n aus dem Datenblatt des Herstellers nehmen."
+    }
   ]
 }

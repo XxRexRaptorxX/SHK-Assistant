@@ -50,5 +50,21 @@
       "expected": 83.8
     }
   ],
-  "figure": "figure.erwaermen"
+  "figure": "figure.erwaermen",
+  "rearrangements": [
+    {
+      "symbol": "dT",
+      "formula": "formula.thermodynamik.temperaturanstieg-aus-waerme"
+    },
+    {
+      "symbol": "c",
+      "formula": "formula.thermodynamik.waermekapazitaet-spezifisch"
+    },
+    {
+      "symbol": "m",
+      "expression": "Q / (c * dT)",
+      "title": "Masse aus Wärmemenge",
+      "decimals": 2
+    }
+  ]
 }

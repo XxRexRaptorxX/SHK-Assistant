@@ -39,5 +39,11 @@
       "expected": 5
     }
   ],
-  "figure": "figure.rechtwinkliges-dreieck"
+  "figure": "figure.rechtwinkliges-dreieck",
+  "rearrangements": [
+    {
+      "symbol": "a",
+      "formula": "formula.geometrie.pythagoras-kathete"
+    }
+  ]
 }

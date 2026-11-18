@@ -15,7 +15,11 @@
       "name": "Druckdifferenz",
       "term": "Druck",
       "unit": "bar",
-      "units": ["mbar", "Pa", "kPa"]
+      "units": [
+        "mbar",
+        "Pa",
+        "kPa"
+      ]
     },
     {
       "symbol": "rho",
@@ -50,5 +54,14 @@
       "expected": 3.059148638933785
     }
   ],
-  "figure": "figure.pumpe"
+  "figure": "figure.pumpe",
+  "rearrangements": [
+    {
+      "symbol": "dp",
+      "expression": "H * rho * g",
+      "title": "Druckdifferenz aus der Förderhöhe",
+      "decimals": 3,
+      "description": "Rechnet die Förderhöhe einer Pumpe, z. B. aus der Pumpenkennlinie, in die Druckdifferenz um. Die Dichte ist für Wasser vorbelegt; bei Frostschutzgemischen anpassen."
+    }
+  ]
 }

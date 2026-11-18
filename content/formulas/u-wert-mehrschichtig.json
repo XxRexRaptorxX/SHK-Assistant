@@ -49,5 +49,14 @@
       "expected": 0.31545741324921134
     }
   ],
-  "figure": "figure.wand"
+  "figure": "figure.wand",
+  "rearrangements": [
+    {
+      "symbol": "R",
+      "expression": "1 / U - Rsi - Rse",
+      "title": "Benötigter Wärmedurchlasswiderstand für einen U-Wert",
+      "decimals": 3,
+      "description": "Berechnet, welchen Wärmedurchlasswiderstand die Schichten eines Bauteils zusammen haben müssen, um einen gewünschten U-Wert zu erreichen. Die Übergangswiderstände sind einzusetzen, wie sie für das Bauteil und die Richtung des Wärmestroms gelten."
+    }
+  ]
 }

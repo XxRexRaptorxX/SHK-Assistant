@@ -49,5 +49,19 @@
       },
       "expected": 429.59427207637225
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Qdot",
+      "expression": "mdot * c * dT",
+      "title": "Wärmeleistung aus Massenstrom",
+      "decimals": 2
+    },
+    {
+      "symbol": "dT",
+      "expression": "Qdot / (mdot * c)",
+      "title": "Spreizung aus Wärmeleistung und Massenstrom",
+      "decimals": 1
+    }
   ]
 }

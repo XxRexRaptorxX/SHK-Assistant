@@ -51,5 +51,11 @@
       "expected": 2
     }
   ],
-  "figure": "figure.kontinuitaet"
+  "figure": "figure.kontinuitaet",
+  "rearrangements": [
+    {
+      "symbol": "v1",
+      "formula": "formula.hydraulik.kontinuitaet-geschwindigkeit-1"
+    }
+  ]
 }

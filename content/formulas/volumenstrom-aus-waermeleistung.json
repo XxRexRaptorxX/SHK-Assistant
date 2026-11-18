@@ -56,5 +56,21 @@
       },
       "expected": 0.42959427207637235
     }
+  ],
+  "rearrangements": [
+    {
+      "symbol": "Qdot",
+      "expression": "Vdot * rho * c * dT",
+      "title": "Wärmeleistung aus Volumenstrom",
+      "decimals": 2,
+      "description": "Berechnet die übertragene Wärmeleistung aus Volumenstrom und Spreizung, z. B. eines Heizkreises."
+    },
+    {
+      "symbol": "dT",
+      "expression": "Qdot / (Vdot * rho * c)",
+      "title": "Spreizung aus Wärmeleistung und Volumenstrom",
+      "decimals": 1,
+      "description": "Berechnet die Spreizung (Vorlauf – Rücklauf), die sich bei gegebener Wärmeleistung und gegebenem Volumenstrom einstellt."
+    }
   ]
 }

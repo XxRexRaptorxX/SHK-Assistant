@@ -54,5 +54,14 @@
       "expected": 5
     }
   ],
-  "figure": "figure.laengenausdehnung"
+  "figure": "figure.laengenausdehnung",
+  "rearrangements": [
+    {
+      "symbol": "l0",
+      "expression": "dl / (alpha * dT)",
+      "title": "Rohrlänge für eine zulässige Längenänderung",
+      "decimals": 2,
+      "description": "Berechnet, welche Länge ein Rohr bei gegebener Temperaturänderung höchstens haben darf, damit die Längenänderung einen zulässigen Wert nicht übersteigt, z. B. als Abstand zwischen Festpunkten oder Kompensatoren."
+    }
+  ]
 }
