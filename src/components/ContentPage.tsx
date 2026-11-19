@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
+import { RESTORE_SCROLL_STATE } from '../app/ScrollMemory'
 import type { BaseEntry } from '../content/schema/base'
 import { ContentReportButton } from '../feedback/ContentReport'
 import { usePageTitle } from '../lib/usePageTitle'
@@ -52,6 +53,7 @@ export function BackLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
+      state={RESTORE_SCROLL_STATE}
       className="-ml-2 mb-2 inline-flex min-h-12 items-center gap-1 rounded-xl px-2 font-semibold text-accent print:hidden"
     >
       <span aria-hidden="true">←</span> {label}

@@ -10,6 +10,7 @@ import { DisclaimerGate } from '../modules/legal/DisclaimerDialog'
 import { InstallHint } from '../settings/InstallHint'
 import { useApplyTheme } from '../theme/useTheme'
 import { modules, visibleBottomNavModules, type AppModule } from './modules'
+import { ScrollMemory } from './ScrollMemory'
 
 const iconButton =
   'flex size-12 items-center justify-center rounded-full text-bar-ink hover:bg-bar-active active:bg-bar-active'
@@ -114,6 +115,7 @@ export function Layout() {
   useApplyTheme()
   return (
     <div className="flex min-h-dvh flex-col">
+      <ScrollMemory />
       <TechBackdrop />
       <Header />
       {/* Seiten mit dem Marker page-fill dürfen die volle Höhe bis zur unteren Leiste nutzen */}
