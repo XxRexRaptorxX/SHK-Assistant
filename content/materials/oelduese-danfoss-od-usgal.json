@@ -1,0 +1,254 @@
+{
+  "id": "material.oelduese-danfoss-od-usgal",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Danfoss, Datenblatt „Ölbrennerdüse OD“ (520F0461, DKBD.PD.060.A1.03), Tabelle „Technische Daten“: Referenz-Durchsatz in USgal/h (700 kPa, 3,4 cSt, 820 kg/m³) und EN-spezifizierter Durchsatz in kg/h (1000 kPa, 3,4 cSt, 840 kg/m³, Toleranz ± 4 %), https://documents.pdod.de/danfoss/dfdb_duese_od.pdf (abgerufen am 19.11.2026). Andere Hersteller können je Größe um einige Prozent abweichen.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "quantities": [
+    "Düsengröße (USgal/h bei 7 bar)"
+  ],
+  "unit": "USgal/h",
+  "values": [
+    {
+      "name": "0,30 USgal/h",
+      "note": "Danfoss OD: 1,15 kg/h bei 10 bar",
+      "value": 0.3
+    },
+    {
+      "name": "0,35 USgal/h",
+      "note": "Danfoss OD: 1,35 kg/h bei 10 bar",
+      "value": 0.35
+    },
+    {
+      "name": "0,40 USgal/h",
+      "note": "Danfoss OD: 1,46 kg/h bei 10 bar",
+      "value": 0.4
+    },
+    {
+      "name": "0,45 USgal/h",
+      "note": "Danfoss OD: 1,66 kg/h bei 10 bar",
+      "value": 0.45
+    },
+    {
+      "name": "0,50 USgal/h",
+      "note": "Danfoss OD: 1,87 kg/h bei 10 bar",
+      "value": 0.5
+    },
+    {
+      "name": "0,55 USgal/h",
+      "note": "Danfoss OD: 2,11 kg/h bei 10 bar",
+      "value": 0.55
+    },
+    {
+      "name": "0,60 USgal/h",
+      "note": "Danfoss OD: 2,37 kg/h bei 10 bar",
+      "value": 0.6
+    },
+    {
+      "name": "0,65 USgal/h",
+      "note": "Danfoss OD: 2,67 kg/h bei 10 bar",
+      "value": 0.65
+    },
+    {
+      "name": "0,75 USgal/h",
+      "note": "Danfoss OD: 2,94 kg/h bei 10 bar",
+      "value": 0.75
+    },
+    {
+      "name": "0,85 USgal/h",
+      "note": "Danfoss OD: 3,31 kg/h bei 10 bar",
+      "value": 0.85
+    },
+    {
+      "name": "1,00 USgal/h",
+      "note": "Danfoss OD: 3,72 kg/h bei 10 bar",
+      "value": 1
+    },
+    {
+      "name": "1,10 USgal/h",
+      "note": "Danfoss OD: 4,24 kg/h bei 10 bar",
+      "value": 1.1
+    },
+    {
+      "name": "1,20 USgal/h",
+      "note": "Danfoss OD: 4,45 kg/h bei 10 bar",
+      "value": 1.2
+    },
+    {
+      "name": "1,25 USgal/h",
+      "note": "Danfoss OD: 4,71 kg/h bei 10 bar",
+      "value": 1.25
+    },
+    {
+      "name": "1,35 USgal/h",
+      "note": "Danfoss OD: 5,17 kg/h bei 10 bar",
+      "value": 1.35
+    },
+    {
+      "name": "1,50 USgal/h",
+      "note": "Danfoss OD: 5,84 kg/h bei 10 bar",
+      "value": 1.5
+    },
+    {
+      "name": "1,65 USgal/h",
+      "note": "Danfoss OD: 6,08 kg/h bei 10 bar",
+      "value": 1.65
+    },
+    {
+      "name": "1,75 USgal/h",
+      "note": "Danfoss OD: 6,55 kg/h bei 10 bar",
+      "value": 1.75
+    },
+    {
+      "name": "2,00 USgal/h",
+      "note": "Danfoss OD: 7,42 kg/h bei 10 bar",
+      "value": 2
+    },
+    {
+      "name": "2,25 USgal/h",
+      "note": "Danfoss OD: 8,35 kg/h bei 10 bar",
+      "value": 2.25
+    },
+    {
+      "name": "2,50 USgal/h",
+      "note": "Danfoss OD: 9,29 kg/h bei 10 bar",
+      "value": 2.5
+    },
+    {
+      "name": "2,75 USgal/h",
+      "note": "Danfoss OD: 10,5 kg/h bei 10 bar",
+      "value": 2.75
+    },
+    {
+      "name": "3,00 USgal/h",
+      "note": "Danfoss OD: 11,6 kg/h bei 10 bar",
+      "value": 3
+    },
+    {
+      "name": "3,50 USgal/h",
+      "note": "Danfoss OD: 12,9 kg/h bei 10 bar",
+      "value": 3.5
+    },
+    {
+      "name": "3,75 USgal/h",
+      "note": "Danfoss OD: 13,8 kg/h bei 10 bar",
+      "value": 3.75
+    },
+    {
+      "name": "4,00 USgal/h",
+      "note": "Danfoss OD: 14,2 kg/h bei 10 bar",
+      "value": 4
+    },
+    {
+      "name": "4,50 USgal/h",
+      "note": "Danfoss OD: 16,1 kg/h bei 10 bar",
+      "value": 4.5
+    },
+    {
+      "name": "5,00 USgal/h",
+      "note": "Danfoss OD: 18,5 kg/h bei 10 bar",
+      "value": 5
+    },
+    {
+      "name": "5,50 USgal/h",
+      "note": "Danfoss OD: 20,9 kg/h bei 10 bar",
+      "value": 5.5
+    },
+    {
+      "name": "6,00 USgal/h",
+      "note": "Danfoss OD: 23,4 kg/h bei 10 bar",
+      "value": 6
+    },
+    {
+      "name": "6,50 USgal/h",
+      "note": "Danfoss OD: 26,1 kg/h bei 10 bar",
+      "value": 6.5
+    },
+    {
+      "name": "7,00 USgal/h",
+      "note": "Danfoss OD: 27,9 kg/h bei 10 bar",
+      "value": 7
+    },
+    {
+      "name": "7,50 USgal/h",
+      "note": "Danfoss OD: 29,8 kg/h bei 10 bar",
+      "value": 7.5
+    },
+    {
+      "name": "8,00 USgal/h",
+      "note": "Danfoss OD: 31,5 kg/h bei 10 bar",
+      "value": 8
+    },
+    {
+      "name": "8,50 USgal/h",
+      "note": "Danfoss OD: 33,1 kg/h bei 10 bar",
+      "value": 8.5
+    },
+    {
+      "name": "9,00 USgal/h",
+      "note": "Danfoss OD: 35,4 kg/h bei 10 bar",
+      "value": 9
+    },
+    {
+      "name": "10,00 USgal/h",
+      "note": "Danfoss OD: 37,7 kg/h bei 10 bar",
+      "value": 10
+    },
+    {
+      "name": "11,00 USgal/h",
+      "note": "Danfoss OD: 42,5 kg/h bei 10 bar",
+      "value": 11
+    },
+    {
+      "name": "12,00 USgal/h",
+      "note": "Danfoss OD: 47,7 kg/h bei 10 bar",
+      "value": 12
+    },
+    {
+      "name": "13,50 USgal/h",
+      "note": "Danfoss OD: 54,3 kg/h bei 10 bar",
+      "value": 13.5
+    },
+    {
+      "name": "15,00 USgal/h",
+      "note": "Danfoss OD: 60,4 kg/h bei 10 bar",
+      "value": 15
+    },
+    {
+      "name": "17,00 USgal/h",
+      "note": "Danfoss OD: 67,4 kg/h bei 10 bar",
+      "value": 17
+    },
+    {
+      "name": "19,50 USgal/h",
+      "note": "Danfoss OD: 76,2 kg/h bei 10 bar",
+      "value": 19.5
+    },
+    {
+      "name": "22,00 USgal/h",
+      "note": "Danfoss OD: 86,4 kg/h bei 10 bar",
+      "value": 22
+    },
+    {
+      "name": "25,00 USgal/h",
+      "note": "Danfoss OD: 96,7 kg/h bei 10 bar",
+      "value": 25
+    },
+    {
+      "name": "28,00 USgal/h",
+      "note": "Danfoss OD: 109,5 kg/h bei 10 bar",
+      "value": 28
+    },
+    {
+      "name": "31,50 USgal/h",
+      "note": "Danfoss OD: 122,5 kg/h bei 10 bar",
+      "value": 31.5
+    },
+    {
+      "name": "35,00 USgal/h",
+      "note": "Danfoss OD: 133,5 kg/h bei 10 bar",
+      "value": 35
+    }
+  ]
+}

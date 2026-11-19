@@ -1,0 +1,254 @@
+{
+  "id": "material.oelduese-danfoss-od",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Danfoss, Datenblatt „Ölbrennerdüse OD“ (520F0461, DKBD.PD.060.A1.03), Tabelle „Technische Daten“: Referenz-Durchsatz in USgal/h (700 kPa, 3,4 cSt, 820 kg/m³) und EN-spezifizierter Durchsatz in kg/h (1000 kPa, 3,4 cSt, 840 kg/m³, Toleranz ± 4 %), https://documents.pdod.de/danfoss/dfdb_duese_od.pdf (abgerufen am 19.11.2026). Andere Hersteller können je Größe um einige Prozent abweichen.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "quantities": [
+    "Düsengröße (kg/h bei 10 bar)"
+  ],
+  "unit": "kg/h",
+  "values": [
+    {
+      "name": "0,30 USgal/h",
+      "note": "Danfoss OD",
+      "value": 1.15
+    },
+    {
+      "name": "0,35 USgal/h",
+      "note": "Danfoss OD",
+      "value": 1.35
+    },
+    {
+      "name": "0,40 USgal/h",
+      "note": "Danfoss OD",
+      "value": 1.46
+    },
+    {
+      "name": "0,45 USgal/h",
+      "note": "Danfoss OD",
+      "value": 1.66
+    },
+    {
+      "name": "0,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 1.87
+    },
+    {
+      "name": "0,55 USgal/h",
+      "note": "Danfoss OD",
+      "value": 2.11
+    },
+    {
+      "name": "0,60 USgal/h",
+      "note": "Danfoss OD",
+      "value": 2.37
+    },
+    {
+      "name": "0,65 USgal/h",
+      "note": "Danfoss OD",
+      "value": 2.67
+    },
+    {
+      "name": "0,75 USgal/h",
+      "note": "Danfoss OD",
+      "value": 2.94
+    },
+    {
+      "name": "0,85 USgal/h",
+      "note": "Danfoss OD",
+      "value": 3.31
+    },
+    {
+      "name": "1,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 3.72
+    },
+    {
+      "name": "1,10 USgal/h",
+      "note": "Danfoss OD",
+      "value": 4.24
+    },
+    {
+      "name": "1,20 USgal/h",
+      "note": "Danfoss OD",
+      "value": 4.45
+    },
+    {
+      "name": "1,25 USgal/h",
+      "note": "Danfoss OD",
+      "value": 4.71
+    },
+    {
+      "name": "1,35 USgal/h",
+      "note": "Danfoss OD",
+      "value": 5.17
+    },
+    {
+      "name": "1,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 5.84
+    },
+    {
+      "name": "1,65 USgal/h",
+      "note": "Danfoss OD",
+      "value": 6.08
+    },
+    {
+      "name": "1,75 USgal/h",
+      "note": "Danfoss OD",
+      "value": 6.55
+    },
+    {
+      "name": "2,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 7.42
+    },
+    {
+      "name": "2,25 USgal/h",
+      "note": "Danfoss OD",
+      "value": 8.35
+    },
+    {
+      "name": "2,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 9.29
+    },
+    {
+      "name": "2,75 USgal/h",
+      "note": "Danfoss OD",
+      "value": 10.5
+    },
+    {
+      "name": "3,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 11.6
+    },
+    {
+      "name": "3,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 12.9
+    },
+    {
+      "name": "3,75 USgal/h",
+      "note": "Danfoss OD",
+      "value": 13.8
+    },
+    {
+      "name": "4,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 14.2
+    },
+    {
+      "name": "4,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 16.1
+    },
+    {
+      "name": "5,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 18.5
+    },
+    {
+      "name": "5,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 20.9
+    },
+    {
+      "name": "6,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 23.4
+    },
+    {
+      "name": "6,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 26.1
+    },
+    {
+      "name": "7,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 27.9
+    },
+    {
+      "name": "7,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 29.8
+    },
+    {
+      "name": "8,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 31.5
+    },
+    {
+      "name": "8,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 33.1
+    },
+    {
+      "name": "9,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 35.4
+    },
+    {
+      "name": "10,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 37.7
+    },
+    {
+      "name": "11,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 42.5
+    },
+    {
+      "name": "12,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 47.7
+    },
+    {
+      "name": "13,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 54.3
+    },
+    {
+      "name": "15,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 60.4
+    },
+    {
+      "name": "17,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 67.4
+    },
+    {
+      "name": "19,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 76.2
+    },
+    {
+      "name": "22,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 86.4
+    },
+    {
+      "name": "25,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 96.7
+    },
+    {
+      "name": "28,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 109.5
+    },
+    {
+      "name": "31,50 USgal/h",
+      "note": "Danfoss OD",
+      "value": 122.5
+    },
+    {
+      "name": "35,00 USgal/h",
+      "note": "Danfoss OD",
+      "value": 133.5
+    }
+  ]
+}

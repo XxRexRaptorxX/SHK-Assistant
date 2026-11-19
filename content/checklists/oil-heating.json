@@ -7,7 +7,7 @@
   "verifiedAt": "2026-10-23",
   "title": "Ölheizung",
   "category": "Wartung Heizung",
-  "tools": ["tool.abgaswerte", "tool.feuerungsautomat-startablauf", "tool.russ-leistungsminderung", "tool.brennstofflagerung", "tool.heizraum", "tool.wartungsintervalle"],
+  "tools": ["tool.abgaswerte", "tool.feuerungsautomat-startablauf", "tool.oelduese", "tool.russ-leistungsminderung", "tool.brennstofflagerung", "tool.heizraum", "tool.wartungsintervalle"],
   "sections": [
     {
       "items": [

@@ -1,0 +1,24 @@
+{
+  "id": "unit.usgal",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „Gallone“, https://de.wikipedia.org/wiki/Gallone (US-Gallone für Flüssigkeiten = 231 Kubikzoll = 3,785411784 l); Bezeichnung „USgal/h“ wie auf Öldüsen, z. B. Danfoss-Datenblatt „Ölbrennerdüse OD“, https://documents.pdod.de/danfoss/dfdb_duese_od.pdf (abgerufen am 19.11.2026)",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "symbol": "USgal",
+  "name": "US-Gallone (Flüssigkeit)",
+  "label": "USgal",
+  "definition": "3.785411784 l",
+  "aliases": [],
+  "offerInFormulas": false,
+  "examples": [
+    {
+      "value": "1 USgal",
+      "expected": "3.785411784 l"
+    },
+    {
+      "value": "0.6 USgal/h",
+      "expected": "2.2712 l/h"
+    }
+  ]
+}

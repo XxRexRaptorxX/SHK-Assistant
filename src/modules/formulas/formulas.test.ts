@@ -261,6 +261,7 @@ describe('Wählbare Einheiten', () => {
 
   it('bietet beim Brennwert keine Druckeinheiten an, obwohl die Dimension dieselbe ist', () => {
     expect(alternativeUnits('kWh/m^3')).toEqual(['kWh/m^3'])
+    expect(alternativeUnits('kWh/l')).toEqual(['kWh/l'])
     const fuel = formulaEntries.flatMap((f) => f.variables).filter((v) => v.term === 'Brennwert')
     expect(fuel.length).toBeGreaterThan(0)
     for (const variable of fuel) expect(alternativeUnits(variable.unit, variable.units)).not.toContain('bar')

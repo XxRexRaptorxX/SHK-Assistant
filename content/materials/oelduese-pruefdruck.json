@@ -1,0 +1,24 @@
+{
+  "id": "material.oelduese-pruefdruck",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Danfoss, „Practical tips – Oil nozzles“, S. 7 Definitionspunkte (kg/h nach EN 293 = 10 bar, 3,4 mm²/s, 840 kg/m³; USgal/h = 7 bar, 3,4 mm²/s, 820 kg/m³), https://assets.danfoss.com/documents/latest/100692/AG045286451973en-010101.pdf; Danfoss, Datenblatt „Ölbrennerdüse OD“ (520F0461): EN-Spezifikationspunkt 1000 kPa (10 bar), Referenz-Spezifikationspunkt 700 kPa (7 bar), https://documents.pdod.de/danfoss/dfdb_duese_od.pdf (beide abgerufen am 19.11.2026)",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "quantities": [
+    "Prüfdruck der Düsenangabe"
+  ],
+  "unit": "bar",
+  "values": [
+    {
+      "name": "kg/h-Angabe",
+      "note": "EN 293",
+      "value": 10
+    },
+    {
+      "name": "USgal/h-Angabe",
+      "note": "Referenzpunkt",
+      "value": 7
+    }
+  ]
+}

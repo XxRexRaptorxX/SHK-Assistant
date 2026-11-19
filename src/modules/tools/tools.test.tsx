@@ -78,6 +78,7 @@ describe('Tools', () => {
       'Materialliste',
       'Mehrverbrauch durch Ruß im Kessel',
       'Mindestdämmdicke von Rohrleitungen',
+      'Öldüse auslegen',
       'Regelwerk-Finder',
       'Rohrlänge einer Fußbodenheizung',
       'Rohrschellenabstand',

@@ -1,0 +1,407 @@
+{
+  "id": "tool.oelduese",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Danfoss, „Practical tips – Oil nozzles“ (Broschüre Burner Components), S. 7 Kennzeichnung und Definitionspunkte (kg/h nach EN 293 = 10 bar, 3,4 mm²/s, 840 kg/m³; USgal/h = 7 bar, 3,4 mm²/s, 820 kg/m³), S. 6 Sprühbilder und Sprühwinkel, S. 9 Kesselleistung und Düsengröße (1 l Heizöl ≈ 10 kW, 1 l = 0,84 kg, Beispiel 20 kW = 1,68 kg/h bei 10 bar), S. 10 Rechenbeispiele V2 = V1 · √(P2 : P1), https://assets.danfoss.com/documents/latest/100692/AG045286451973en-010101.pdf (abgerufen am 19.11.2026); Düsengrößen USgal/h → kg/h: Danfoss, Datenblatt „Ölbrennerdüse OD“ (520F0461), Tabelle „Technische Daten“, https://documents.pdod.de/danfoss/dfdb_duese_od.pdf (abgerufen am 19.11.2026)",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "kind": "variants",
+  "title": "Öldüse auslegen",
+  "summary": "Düsengröße aus der Kesselleistung, Durchsatz bei anderem Pumpendruck und nötiger Pumpendruck.",
+  "description": "Hilft bei der Wahl der Öldüse: Düsengröße aus der Leistung, Durchsatz bei anderem Pumpendruck oder nötiger Pumpendruck. Oben wählen, welche Angabe auf der Düse steht: kg/h nach EN 293 (bei 10 bar) oder USgal/h (bei 7 bar).\n\nSprühbild, Sprühwinkel und Pumpendruck gibt der Brenner- bzw. Kesselhersteller vor. Seine Angaben haben Vorrang.",
+  "category": "Auslegung",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
+  "name": "Berechnung",
+  "modes": {
+    "name": "Angabe auf der Düse",
+    "options": [
+      {
+        "key": "kg",
+        "label": "kg/h",
+        "note": "EN 293, 10 bar"
+      },
+      {
+        "key": "gal",
+        "label": "USgal/h",
+        "note": "7 bar"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "key": "duesengroesse",
+      "label": "Düsengröße",
+      "note": "aus Leistung",
+      "mode": "kg",
+      "title": "Düsengröße aus der Leistung",
+      "description": "Berechnet die Düsengröße in kg/h aus der Kessel- bzw. Brennerleistung (Typschild, ohne Wirkungsgrad) und dem Pumpendruck. Heizwert und Dichte sind mit Standardwerten vorausgefüllt und änderbar. Das Ergebnis auf die nächste lieferbare Düsengröße runden, die Danfoss-Größen stehen bei den anderen Rechenwegen in der Auswahl.",
+      "variables": [
+        {
+          "symbol": "Q",
+          "label": "Q̇",
+          "name": "Kessel- bzw. Brennerleistung",
+          "term": "Leistung",
+          "unit": "kW",
+          "min": 0
+        },
+        {
+          "symbol": "Hv",
+          "label": "H_V",
+          "name": "Heizwert je Liter Heizöl",
+          "term": "Heizwert",
+          "unit": "kWh/l",
+          "min": 0,
+          "default": 10,
+          "description": "Standardwert von Danfoss: ≈ 10 kWh je Liter Heizöl."
+        },
+        {
+          "symbol": "rho",
+          "label": "ρ",
+          "name": "Dichte des Heizöls",
+          "unit": "kg/l",
+          "min": 0,
+          "default": 0.84,
+          "description": "Standardwert von Danfoss: 0,84 kg/l."
+        },
+        {
+          "symbol": "p",
+          "name": "Pumpendruck",
+          "unit": "bar",
+          "min": 0,
+          "default": 10
+        }
+      ],
+      "constants": [
+        {
+          "symbol": "pN",
+          "label": "p_N",
+          "name": "Prüfdruck der kg/h-Angabe (EN 293)",
+          "value": "10 bar"
+        }
+      ],
+      "result": {
+        "symbol": "VN",
+        "label": "V̇_N",
+        "name": "Düsengröße (kg/h bei 10 bar)",
+        "unit": "kg/h",
+        "decimals": 2
+      },
+      "expression": "Q / Hv * rho / sqrt(p / pN)",
+      "examples": [
+        {
+          "inputs": {
+            "Q": 20,
+            "Hv": 10,
+            "rho": 0.84,
+            "p": 10
+          },
+          "expected": 1.68,
+          "note": "Beispiel von Danfoss: 20 kW Kesselleistung = 2 l = 1,68 kg/h bei 10 bar"
+        },
+        {
+          "inputs": {
+            "Q": 20,
+            "Hv": 10,
+            "rho": 0.84,
+            "p": 12
+          },
+          "expected": 1.5336,
+          "note": "Eigenes Rechenbeispiel zur Kontrolle: 20 kW bei 12 bar Pumpendruck"
+        }
+      ]
+    },
+    {
+      "key": "durchsatz",
+      "label": "Durchsatz",
+      "note": "anderer Druck",
+      "mode": "kg",
+      "title": "Durchsatz bei anderem Pumpendruck",
+      "description": "Berechnet den Durchsatz einer Düse bei einem anderen Pumpendruck. Er steigt mit der Wurzel des Druckverhältnisses. Steht auf der Düse nur USgal/h, oben auf „USgal/h“ umschalten oder über den Pfeil die passende Danfoss-OD-Größe wählen.",
+      "variables": [
+        {
+          "symbol": "V1",
+          "label": "V̇_1",
+          "name": "Düsengröße (kg/h bei 10 bar)",
+          "unit": "kg/h",
+          "min": 0
+        },
+        {
+          "symbol": "p1",
+          "label": "p_1",
+          "name": "Prüfdruck der Düsenangabe",
+          "unit": "bar",
+          "min": 0,
+          "default": 10
+        },
+        {
+          "symbol": "p2",
+          "label": "p_2",
+          "name": "Eingestellter Pumpendruck",
+          "unit": "bar",
+          "min": 0
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "V2",
+        "label": "V̇_2",
+        "name": "Durchsatz beim Pumpendruck",
+        "unit": "kg/h",
+        "decimals": 2
+      },
+      "expression": "V1 * sqrt(p2 / p1)",
+      "examples": [
+        {
+          "inputs": {
+            "V1": 2.11,
+            "p1": 10,
+            "p2": 12
+          },
+          "expected": 2.31,
+          "tolerance": 0.002,
+          "note": "Beispiel 2 von Danfoss: Düse 2,11 kg/h bei 12 bar = 2,31 kg/h"
+        }
+      ]
+    },
+    {
+      "key": "pumpendruck",
+      "label": "Pumpendruck",
+      "note": "für Solldurchsatz",
+      "mode": "kg",
+      "title": "Pumpendruck für einen gewünschten Durchsatz",
+      "description": "Berechnet den Pumpendruck für einen gewünschten Durchsatz. Liegt er außerhalb des zulässigen Bereichs von Pumpe und Brenner, eine andere Düse wählen. Steht auf der Düse nur USgal/h, oben auf „USgal/h“ umschalten oder über den Pfeil die passende Danfoss-OD-Größe wählen.",
+      "variables": [
+        {
+          "symbol": "V1",
+          "label": "V̇_1",
+          "name": "Düsengröße (kg/h bei 10 bar)",
+          "unit": "kg/h",
+          "min": 0
+        },
+        {
+          "symbol": "p1",
+          "label": "p_1",
+          "name": "Prüfdruck der Düsenangabe",
+          "unit": "bar",
+          "min": 0,
+          "default": 10
+        },
+        {
+          "symbol": "V2",
+          "label": "V̇_2",
+          "name": "Gewünschter Durchsatz",
+          "unit": "kg/h",
+          "min": 0
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "p2",
+        "label": "p_2",
+        "name": "Nötiger Pumpendruck",
+        "unit": "bar",
+        "decimals": 1
+      },
+      "expression": "(V2 / V1)^2 * p1",
+      "examples": [
+        {
+          "inputs": {
+            "V1": 2.11,
+            "p1": 10,
+            "V2": 2.5
+          },
+          "expected": 14,
+          "tolerance": 0.005,
+          "note": "Beispiel 1 von Danfoss: Düse 2,11 kg/h, gewünscht 2,5 kg/h → 14 bar"
+        }
+      ]
+    },
+    {
+      "key": "duesengroesseGal",
+      "label": "Düsengröße",
+      "note": "aus Leistung",
+      "mode": "gal",
+      "title": "Düsengröße in USgal/h aus der Leistung",
+      "description": "Berechnet die Düsengröße in USgal/h (Angabe bei 7 bar) aus der Kessel- bzw. Brennerleistung (Typschild, ohne Wirkungsgrad) und dem Pumpendruck. Gerechnet wird über das Ölvolumen: 1 l Heizöl ≈ 10 kWh nach Danfoss, 1 USgal = 3,785 l. Weil die Hersteller Volumen und Dichte je Größe etwas unterschiedlich angeben, kann die Tabelle des Herstellers um einige Prozent abweichen. Das Ergebnis auf die nächste lieferbare Düsengröße runden, die Danfoss-Größen stehen bei den anderen Rechenwegen in der Auswahl.",
+      "variables": [
+        {
+          "symbol": "Q",
+          "label": "Q̇",
+          "name": "Kessel- bzw. Brennerleistung",
+          "term": "Leistung",
+          "unit": "kW",
+          "min": 0
+        },
+        {
+          "symbol": "Hv",
+          "label": "H_V",
+          "name": "Heizwert je Liter Heizöl",
+          "term": "Heizwert",
+          "unit": "kWh/l",
+          "min": 0,
+          "default": 10,
+          "description": "Standardwert von Danfoss: ≈ 10 kWh je Liter Heizöl."
+        },
+        {
+          "symbol": "p",
+          "name": "Pumpendruck",
+          "unit": "bar",
+          "min": 0,
+          "default": 10
+        }
+      ],
+      "constants": [
+        {
+          "symbol": "pR",
+          "label": "p_R",
+          "name": "Referenzdruck der USgal/h-Angabe",
+          "value": "7 bar"
+        }
+      ],
+      "result": {
+        "symbol": "VN",
+        "label": "V̇_N",
+        "name": "Düsengröße (USgal/h bei 7 bar)",
+        "unit": "USgal/h",
+        "units": [
+          "l/h"
+        ],
+        "decimals": 2
+      },
+      "expression": "Q / Hv / sqrt(p / pR)",
+      "examples": [
+        {
+          "inputs": {
+            "Q": 20,
+            "Hv": 10,
+            "p": 7
+          },
+          "expected": 0.52834,
+          "note": "Eigenes Rechenbeispiel zur Kontrolle: 20 kW = 2 l/h = 0,528 USgal/h bei 7 bar"
+        },
+        {
+          "inputs": {
+            "Q": 20,
+            "Hv": 10,
+            "p": 10
+          },
+          "expected": 0.44204,
+          "note": "Eigenes Rechenbeispiel zur Kontrolle: 20 kW bei 10 bar Pumpendruck (Danfoss-Tabelle: 0,45 USgal/h = 1,66 kg/h, gesucht 1,68 kg/h)"
+        }
+      ]
+    },
+    {
+      "key": "durchsatzGal",
+      "label": "Durchsatz",
+      "note": "anderer Druck",
+      "mode": "gal",
+      "title": "Durchsatz in USgal/h bei anderem Pumpendruck",
+      "description": "Berechnet, wie viel Öl eine Düse mit USgal/h-Angabe bei einem anderen Pumpendruck durchsetzt. Der Durchsatz steigt mit der Wurzel des Druckverhältnisses. Der Prüfdruck 7 bar ist vorausgefüllt. Über den Pfeil lassen sich die Danfoss-OD-Größen wählen, dort steht auch der kg/h-Wert der Größe. Mit dem Wurzelgesetz gerechnet, gilt das Ergebnis für jede Düse mit USgal/h-Angabe.",
+      "variables": [
+        {
+          "symbol": "V1",
+          "label": "V̇_1",
+          "name": "Düsengröße (USgal/h bei 7 bar)",
+          "unit": "USgal/h",
+          "min": 0
+        },
+        {
+          "symbol": "p1",
+          "label": "p_1",
+          "name": "Prüfdruck der Düsenangabe",
+          "unit": "bar",
+          "min": 0,
+          "default": 7
+        },
+        {
+          "symbol": "p2",
+          "label": "p_2",
+          "name": "Eingestellter Pumpendruck",
+          "unit": "bar",
+          "min": 0
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "V2",
+        "label": "V̇_2",
+        "name": "Durchsatz beim Pumpendruck",
+        "unit": "USgal/h",
+        "units": [
+          "l/h"
+        ],
+        "decimals": 2
+      },
+      "expression": "V1 * sqrt(p2 / p1)",
+      "examples": [
+        {
+          "inputs": {
+            "V1": 0.6,
+            "p1": 7,
+            "p2": 10
+          },
+          "expected": 0.71714,
+          "note": "Eigenes Rechenbeispiel zur Kontrolle: 0,60-USgal/h-Düse bei 10 bar"
+        }
+      ]
+    },
+    {
+      "key": "pumpendruckGal",
+      "label": "Pumpendruck",
+      "note": "für Solldurchsatz",
+      "mode": "gal",
+      "title": "Pumpendruck für einen gewünschten Durchsatz in USgal/h",
+      "description": "Berechnet den Pumpendruck, mit dem eine Düse mit USgal/h-Angabe einen gewünschten Durchsatz erreicht. Liegt er außerhalb des zulässigen Bereichs von Pumpe und Brenner, eine andere Düse wählen. Über den Pfeil lassen sich die Danfoss-OD-Größen wählen, dort steht auch der kg/h-Wert der Größe. Mit dem Wurzelgesetz gerechnet, gilt das Ergebnis für jede Düse mit USgal/h-Angabe.",
+      "variables": [
+        {
+          "symbol": "V1",
+          "label": "V̇_1",
+          "name": "Düsengröße (USgal/h bei 7 bar)",
+          "unit": "USgal/h",
+          "min": 0
+        },
+        {
+          "symbol": "p1",
+          "label": "p_1",
+          "name": "Prüfdruck der Düsenangabe",
+          "unit": "bar",
+          "min": 0,
+          "default": 7
+        },
+        {
+          "symbol": "V2",
+          "label": "V̇_2",
+          "name": "Gewünschter Durchsatz",
+          "unit": "USgal/h",
+          "units": [
+            "l/h"
+          ],
+          "min": 0
+        }
+      ],
+      "constants": [],
+      "result": {
+        "symbol": "p2",
+        "label": "p_2",
+        "name": "Nötiger Pumpendruck",
+        "unit": "bar",
+        "decimals": 1
+      },
+      "expression": "(V2 / V1)^2 * p1",
+      "examples": [
+        {
+          "inputs": {
+            "V1": 0.5,
+            "p1": 7,
+            "V2": 0.6
+          },
+          "expected": 10.08,
+          "note": "Eigenes Rechenbeispiel zur Kontrolle: 0,50-USgal/h-Düse für 0,60 USgal/h"
+        }
+      ]
+    }
+  ]
+}

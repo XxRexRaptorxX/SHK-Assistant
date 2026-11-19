@@ -32,7 +32,7 @@ function usesRestrictedUnit(unit: string): boolean {
  * - Temperaturen: Bei Differenzen gilt 10 K ≠ 10 °C, und ob ein Wert absolut oder eine
  *   Differenz ist, weiß nur die Formel.
  * - Scheinleistung (VA): für mathjs dimensionsgleich mit W, fachlich aber etwas anderes.
- * - Energie je Volumen (Brennwert in kWh/m³): für mathjs dimensionsgleich mit dem Druck.
+ * - Energie je Volumen (Brennwert in kWh/m³, Heizwert in kWh/l): für mathjs dimensionsgleich mit dem Druck.
  * Nicht automatisch angeboten werden außerdem:
  * - Zusatzeinheiten mit offerInFormulas: false (PS nur mechanisch, kcal nur Wärme).
  * - Einheiten, die in SHK-Berechnungen nicht vorkommen (NOT_USEFUL_IN_FORMULAS).
@@ -42,7 +42,7 @@ export function alternativeUnits(unit: string, explicit: readonly string[] = [])
   if (unit === '' || !isKnownUnit(unit)) return [unit]
   const base = math.unit(1, unit)
   const isApparentPower = /\b[kM]?VA\b/.test(unit)
-  const isEnergyDensity = /\b[kM]?(?:Wh|J)\/m\^3\b/.test(unit)
+  const isEnergyDensity = /\b[kM]?(?:Wh|J)\/(?:m\^3|l|L)\b/.test(unit)
   const fromConverter = base.equalBase(TEMPERATURE) || isApparentPower || isEnergyDensity
     ? []
     : content.converter
