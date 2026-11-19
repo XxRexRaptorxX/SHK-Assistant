@@ -65,6 +65,8 @@ export function converterSummaryParts(entry: ConverterEntry): string[] {
       return ['Dual', 'Ternär', 'Oktal', 'Dezimal', 'Duodezimal', 'Hexadezimal']
     case 'table':
       return entry.columns
+    case 'statistics':
+      return ['Durchschnitt', 'Median', 'getrimmte Mittelwerte']
   }
 }
 

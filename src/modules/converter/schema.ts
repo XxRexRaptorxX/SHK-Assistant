@@ -15,8 +15,9 @@ import { CONVERTER_ID_PREFIX, FRACTION_DENOMINATORS, NUMERAL_SYSTEMS, RATIO_FORM
  * - fractions: ein Bruch in verschiedenen Nennern (Halbe bis Hundertstel)
  * - numeral: ganze Zahlen in Dual-, Ternär-, Oktal-, Dezimal-, Duodezimal- und Hexadezimalsystem
  * - table: Nachschlagetabelle aus dem Inhalt (z. B. Rohrdimensionen)
+ * - statistics: Zahlenliste → Durchschnitt, Median und getrimmte Mittelwerte
  */
-export const CONVERTER_KINDS = ['units', 'factors', 'slope', 'ratio', 'fractions', 'numeral', 'table'] as const
+export const CONVERTER_KINDS = ['units', 'factors', 'slope', 'ratio', 'fractions', 'numeral', 'table', 'statistics'] as const
 
 const factorSchema = z.strictObject({
   /** Schlüssel für from/to, z. B. "fm" */
@@ -204,6 +205,7 @@ function checkKind(entry: ConverterEntry): string[] {
     case 'ratio':
     case 'fractions':
     case 'numeral':
+    case 'statistics':
       return unused(['units', 'factors', 'base', 'from', 'to', 'columns', 'rows'])
   }
 }

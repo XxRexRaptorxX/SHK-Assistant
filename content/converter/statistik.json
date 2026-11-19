@@ -1,0 +1,13 @@
+{
+  "id": "converter.statistik",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Wikipedia „Median“, https://de.wikipedia.org/wiki/Median; Wikipedia „Getrimmter Mittelwert“, https://de.wikipedia.org/wiki/Getrimmter_Mittelwert",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "title": "Mittelwerte",
+  "symbol": "x̄",
+  "category": "Allgemein",
+  "description": "Getrimmter Mittelwert: Die Werte werden sortiert, an beiden Enden je ⌊n · p⌋ Werte weggelassen (n = Anzahl, p = Anteil) und aus den übrigen der Durchschnitt gebildet. So fallen einzelne Ausreißer (z. B. Fehlmessungen) weniger ins Gewicht. Bei wenigen Werten wird unter Umständen nichts weggelassen.",
+  "kind": "statistics"
+}

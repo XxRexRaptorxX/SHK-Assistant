@@ -13,6 +13,7 @@ import { NumeralConverter } from './NumeralConverter'
 import { RatioConverter } from './RatioConverter'
 import type { ConverterEntry } from './schema'
 import { SlopeConverter } from './SlopeConverter'
+import { StatisticsConverter } from './StatisticsConverter'
 import { TableView } from './TableView'
 import { UnitConverter } from './UnitConverter'
 
@@ -37,6 +38,8 @@ function ConverterBody({ entry }: { entry: ConverterEntry }) {
       return <NumeralConverter rare={entry.rare} />
     case 'table':
       return <TableView entry={entry} />
+    case 'statistics':
+      return <StatisticsConverter />
   }
 }
 
