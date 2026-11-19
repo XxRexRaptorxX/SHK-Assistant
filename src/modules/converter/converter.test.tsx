@@ -48,6 +48,7 @@ const pressure: ConverterEntry = {
   names: { bar: 'Bar', mbar: 'Millibar', Pa: 'Pascal' },
   columns: [],
   rows: [],
+  tools: [],
 }
 
 /** Ergebnis im Nach-Feld mit gewählter Zieleinheit, z. B. „1.000 mbar“ */
@@ -57,7 +58,7 @@ function shownResult(html: string): string {
   return `${value} ${unit}`
 }
 
-const blank = { units: [], factors: [], from: '', to: '', names: {}, columns: [], rows: [] }
+const blank = { units: [], factors: [], from: '', to: '', names: {}, columns: [], rows: [], tools: [] }
 
 /** Prüfung ohne die Namens-Vollständigkeit (für Tests, die andere Felder variieren) */
 const checkWithoutNames = (entry: ConverterEntry) => checkConverter(entry).filter((issue) => !issue.startsWith('names:'))

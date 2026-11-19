@@ -11,6 +11,7 @@ import { FactorConverter } from './FactorConverter'
 import { FractionsConverter } from './FractionsConverter'
 import { NumeralConverter } from './NumeralConverter'
 import { RatioConverter } from './RatioConverter'
+import { ToolLinks } from '../tools/ToolLinks'
 import type { ConverterEntry } from './schema'
 import { SlopeConverter } from './SlopeConverter'
 import { StatisticsConverter } from './StatisticsConverter'
@@ -70,6 +71,7 @@ export default function ConverterPage({ entries = converterEntries }: { entries?
           </div>
         </section>
       )}
+      <ToolLinks ids={entry.tools} />
     </ContentPage>
   )
 }

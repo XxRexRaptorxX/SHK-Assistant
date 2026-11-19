@@ -2,6 +2,7 @@ import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
 import { math } from '../../lib/math.ts'
+import { TOOL_ID_PREFIX } from '../tools/constants.ts'
 import { isPendingUnit } from '../units/registry.ts'
 import { CONVERTER_ID_PREFIX, FRACTION_DENOMINATORS, NUMERAL_SYSTEMS, RATIO_FORMS } from './constants.ts'
 
@@ -72,6 +73,8 @@ export const converterEntrySchema = defineEntrySchema({
   /** kind "table": Spaltenüberschriften und Zeilen (Text je Zelle) */
   columns: z.array(z.string().trim().min(1)).default([]),
   rows: z.array(z.array(z.string())).default([]),
+  /** Passende Tools, unten auf der Seite verlinkt, z. B. ["tool.oelduese"] */
+  tools: z.array(z.string().startsWith(`${TOOL_ID_PREFIX}.`)).default([]),
 })
 
 export type ConverterEntry = z.output<typeof converterEntrySchema>
@@ -215,4 +218,6 @@ export const converterCollection = defineCollection({
   idPrefix: CONVERTER_ID_PREFIX,
   schema: converterEntrySchema,
   check: checkConverter,
+  // Der Build prüft, dass die verlinkten Tools existieren
+  references: (entry) => entry.tools,
 })

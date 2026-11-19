@@ -1,0 +1,55 @@
+{
+  "id": "converter.oeldurchsatz",
+  "visibility": "public",
+  "status": "verified",
+  "source": "Danfoss, „Practical tips – Oil nozzles“, S. 9: 1 l Heizöl ≈ 10 kW, 1 l = 0,84 kg, https://assets.danfoss.com/documents/latest/100692/AG045286451973en-010101.pdf; HeizkostenV § 9 Abs. 3: Heizwert Heizöl EL 10 kWh je Liter, https://www.gesetze-im-internet.de/heizkostenv/__9.html; US-Gallone = 3,785411784 l (Wikipedia „Gallone“, https://de.wikipedia.org/wiki/Gallone). Abgerufen am 19.11.2026.",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-19",
+  "title": "Öldurchsatz",
+  "category": "Thermodynamik",
+  "description": "Rechnet den Durchsatz von Heizöl EL zwischen kg/h, l/h, USgal/h und der Feuerungsleistung in kW um. Gerechnet wird mit 0,84 kg/l und 10 kWh je Liter.\n\nDie Werte gelten beim selben Druck. Die kg/h- und die USgal/h-Angabe auf einer Öldüse beziehen sich auf verschiedene Prüfdrücke (10 bar und 7 bar), dafür das Tool „Öldüse auslegen“ nutzen.",
+  "kind": "factors",
+  "approximate": true,
+  "base": "kw",
+  "from": "kg-h",
+  "to": "kw",
+  "min": 0,
+  "factors": [
+    {
+      "key": "kw",
+      "label": "kW",
+      "value": 1
+    },
+    {
+      "key": "kg-h",
+      "label": "kg/h",
+      "value": 0.84,
+      "per": 10,
+      "group": "Heizöl EL",
+      "source": "Danfoss „Practical tips – Oil nozzles“, S. 9: 1 l Heizöl = 0,84 kg ≈ 10 kW (https://assets.danfoss.com/documents/latest/100692/AG045286451973en-010101.pdf)"
+    },
+    {
+      "key": "l-h",
+      "label": "l/h",
+      "value": 1,
+      "per": 10,
+      "group": "Heizöl EL",
+      "source": "HeizkostenV § 9 Abs. 3: Heizwert Heizöl EL 10 kWh je Liter (https://www.gesetze-im-internet.de/heizkostenv/__9.html); ebenso Danfoss „Practical tips – Oil nozzles“, S. 9"
+    },
+    {
+      "key": "usgal-h",
+      "label": "USgal/h",
+      "value": 1,
+      "per": 37.85411784,
+      "group": "Heizöl EL",
+      "source": "1 US-Gallone = 3,785411784 l (Wikipedia „Gallone“, https://de.wikipedia.org/wiki/Gallone) mit 10 kWh je Liter nach HeizkostenV § 9 Abs. 3"
+    }
+  ],
+  "tools": ["tool.oelduese"],
+  "names": {
+    "kw": "Kilowatt Feuerungsleistung",
+    "kg-h": "Kilogramm pro Stunde",
+    "l-h": "Liter pro Stunde",
+    "usgal-h": "US-Gallonen pro Stunde"
+  }
+}
