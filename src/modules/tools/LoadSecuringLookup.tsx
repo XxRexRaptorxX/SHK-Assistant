@@ -3,6 +3,7 @@ import { RichText } from '../../components/RichText'
 import { fieldBase } from '../../components/surfaces'
 import { math } from '../../lib/math'
 import { parseDecimal } from '../../lib/number'
+import { formatAnyUnit } from '../units/labels'
 import {
   forcesFor,
   hasTippingForces,
@@ -47,8 +48,8 @@ const FORCE_DIGITS: Record<ForceUnit, number> = { daN: 0, kN: 2, N: 0 }
 
 const convert = (value: number, from: string, to: string): number => math.unit(value, from).toNumber(to)
 
-/** Einheiten-Umschalter als Tasten, die gewählte Einheit ist hervorgehoben */
-function UnitButtons<T extends string>({
+/** Einheiten-Auswahl als Auswahlliste, wie im Formelrechner */
+function UnitSelect<T extends string>({
   label,
   units,
   selected,
@@ -60,19 +61,18 @@ function UnitButtons<T extends string>({
   onSelect: (unit: T) => void
 }) {
   return (
-    <div role="group" aria-label={label} className="flex rounded-xl border-2 border-line bg-surface p-1">
-      {units.map((candidate) => (
-        <button
-          key={candidate}
-          type="button"
-          aria-pressed={candidate === selected}
-          onClick={() => onSelect(candidate)}
-          className={`min-h-12 min-w-14 rounded-lg px-3 text-lg font-bold ${candidate === selected ? 'bg-accent text-accent-ink' : ''}`}
-        >
-          {candidate}
-        </button>
+    <select
+      aria-label={label}
+      value={selected}
+      onChange={(event) => onSelect(event.target.value as T)}
+      className={`${fieldBase} min-w-24 shrink-0`}
+    >
+      {units.map((unit) => (
+        <option key={unit} value={unit}>
+          {formatAnyUnit(unit)}
+        </option>
       ))}
-    </div>
+    </select>
   )
 }
 
@@ -233,7 +233,7 @@ function ForcesSection({
         <NumberField
           id={`${idPrefix}-weight`}
           label="Gewicht der Ladung"
-          unit={<UnitButtons label="Einheit des Gewichts" units={WEIGHT_UNITS} selected={weightUnit} onSelect={setWeightUnit} />}
+          unit={<UnitSelect label="Einheit des Gewichts" units={WEIGHT_UNITS} selected={weightUnit} onSelect={setWeightUnit} />}
           value={weight}
           error={parsedWeight.error}
           onChange={setWeight}
@@ -274,7 +274,7 @@ function ForcesSection({
           <div className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="font-semibold">Kraft in</span>
-              <UnitButtons label="Einheit der Kraft" units={FORCE_UNITS} selected={forceUnit} onSelect={setForceUnit} />
+              <UnitSelect label="Einheit der Kraft" units={FORCE_UNITS} selected={forceUnit} onSelect={setForceUnit} />
             </div>
             <dl className="mt-2 divide-y-2 divide-line">
               {forces.map((entry) => (
@@ -305,41 +305,39 @@ function TippingSection({
   tool,
   initialHeight,
   initialDistance,
-  initialLengthUnit,
+  initialHeightUnit,
+  initialDistanceUnit,
 }: {
   tool: LoadSecuringTool
   initialHeight: string
   initialDistance: string
-  initialLengthUnit: LengthUnit
+  initialHeightUnit: LengthUnit
+  initialDistanceUnit: LengthUnit
 }) {
   const idPrefix = useId()
   const [height, setHeight] = useState(initialHeight)
   const [distance, setDistance] = useState(initialDistance)
-  const [lengthUnit, setLengthUnit] = useState<LengthUnit>(initialLengthUnit)
+  const [heightUnit, setHeightUnit] = useState<LengthUnit>(initialHeightUnit)
+  const [distanceUnit, setDistanceUnit] = useState<LengthUnit>(initialDistanceUnit)
   const parsedHeight = readPositive(height)
   const parsedDistance = readPositive(distance)
   const ready = parsedHeight.value !== undefined && parsedDistance.value !== undefined
-  // Gerechnet wird in m, angezeigt in der gewählten Einheit
-  const heightM = ready ? convert(parsedHeight.value!, lengthUnit, 'm') : 0
-  const distanceM = ready ? convert(parsedDistance.value!, lengthUnit, 'm') : 0
+  // Gerechnet wird in m; der Grenzwert steht in der Einheit des Abstands, damit beide Seiten vergleichbar sind
+  const heightM = ready ? convert(parsedHeight.value!, heightUnit, 'm') : 0
+  const distanceM = ready ? convert(parsedDistance.value!, distanceUnit, 'm') : 0
   const stable = ready ? isStable(tool.tipping, heightM, distanceM) : undefined
-  const limit = ready ? convert(tippingLimit(tool.tipping, heightM), 'm', lengthUnit) : 0
-  const lengthButtons = (
-    <UnitButtons label="Einheit der Länge" units={LENGTH_UNITS} selected={lengthUnit} onSelect={setLengthUnit} />
-  )
+  const limit = ready ? convert(tippingLimit(tool.tipping, heightM), 'm', distanceUnit) : 0
 
   return (
     <section className="mt-8">
       <h2 className="text-xl font-bold">Kann die Ladung kippen?</h2>
-      <div className="mt-3 flex items-center gap-2">
-        <span className="font-semibold">Längen in</span>
-        {lengthButtons}
-      </div>
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
         <NumberField
           id={`${idPrefix}-height`}
           label="Schwerpunkthöhe über der Ladefläche"
-          unit={lengthUnit}
+          unit={
+            <UnitSelect label="Einheit der Schwerpunkthöhe" units={LENGTH_UNITS} selected={heightUnit} onSelect={setHeightUnit} />
+          }
           value={height}
           error={parsedHeight.error}
           onChange={setHeight}
@@ -347,7 +345,9 @@ function TippingSection({
         <NumberField
           id={`${idPrefix}-distance`}
           label="Abstand Schwerpunkt – Kippkante"
-          unit={lengthUnit}
+          unit={
+            <UnitSelect label="Einheit des Abstands" units={LENGTH_UNITS} selected={distanceUnit} onSelect={setDistanceUnit} />
+          }
           value={distance}
           error={parsedDistance.error}
           onChange={setDistance}
@@ -362,9 +362,9 @@ function TippingSection({
               {stable ? 'Standsicher' : 'Kippgefährdet'}
             </p>
             <p className="mt-1 text-base">
-              {formatNumber(parsedDistance.value!)} {lengthUnit} {stable ? 'ist größer als' : 'ist nicht größer als'}{' '}
-              {formatNumber(tool.tipping.factor)} × {formatNumber(parsedHeight.value!)} {lengthUnit} ={' '}
-              {formatNumber(limit)} {lengthUnit}.{' '}
+              {formatNumber(parsedDistance.value!)} {distanceUnit} {stable ? 'ist größer als' : 'ist nicht größer als'}{' '}
+              {formatNumber(tool.tipping.factor)} × {formatNumber(parsedHeight.value!)} {heightUnit} ={' '}
+              {formatNumber(limit)} {distanceUnit}.{' '}
               {stable ? 'Sicherung gegen Rutschen genügt.' : 'Zusätzlich gegen Kippen sichern.'}
             </p>
           </div>
@@ -386,7 +386,8 @@ export function LoadSecuringLookup({
   initialDistance = '',
   initialWeightUnit = 'kg',
   initialForceUnit = 'daN',
-  initialLengthUnit = 'm',
+  initialHeightUnit = 'm',
+  initialDistanceUnit = 'm',
 }: {
   tool: LoadSecuringTool
   /** Vorauswahlen (Tests) */
@@ -398,7 +399,8 @@ export function LoadSecuringLookup({
   initialDistance?: string
   initialWeightUnit?: WeightUnit
   initialForceUnit?: ForceUnit
-  initialLengthUnit?: LengthUnit
+  initialHeightUnit?: LengthUnit
+  initialDistanceUnit?: LengthUnit
 }) {
   const [cargoKey, setCargoKey] = useState(initialCargo)
   const cargo = tool.cargos.find((candidate) => candidate.key === cargoKey)
@@ -500,7 +502,8 @@ export function LoadSecuringLookup({
         tool={tool}
         initialHeight={initialHeight}
         initialDistance={initialDistance}
-        initialLengthUnit={initialLengthUnit}
+        initialHeightUnit={initialHeightUnit}
+        initialDistanceUnit={initialDistanceUnit}
       />
 
       {tool.checklist.length > 0 && (

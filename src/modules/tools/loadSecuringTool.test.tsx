@@ -28,7 +28,8 @@ type RenderProps = Partial<{
   distance: string
   weightUnit: WeightUnit
   forceUnit: ForceUnit
-  lengthUnit: LengthUnit
+  heightUnit: LengthUnit
+  distanceUnit: LengthUnit
 }>
 
 const render = (props: RenderProps = {}) =>
@@ -43,7 +44,8 @@ const render = (props: RenderProps = {}) =>
       initialDistance={props.distance}
       initialWeightUnit={props.weightUnit}
       initialForceUnit={props.forceUnit}
-      initialLengthUnit={props.lengthUnit}
+      initialHeightUnit={props.heightUnit}
+      initialDistanceUnit={props.distanceUnit}
     />,
   )
 
@@ -149,13 +151,15 @@ describe('Ladungssicherung', () => {
     expect(html).toContain('600 daN')
   })
 
-  it('bietet Einheiten-Tasten an, Vorgabe kg, daN und m', () => {
+  it('bietet Auswahllisten für die Einheiten an, Vorgabe kg, daN und m', () => {
     const html = render({ weight: '2000', vehicle: 'upTo35' })
-    expect(html).toContain('aria-label="Einheit des Gewichts"')
-    expect(html).toContain('aria-label="Einheit der Kraft"')
-    expect(html).toContain('aria-label="Einheit der Länge"')
-    for (const unit of ['kg', 'daN', 'm']) expect(html).toMatch(new RegExp(`aria-pressed="true"[^>]*>${unit}</button>`))
-    expect(html).toMatch(/aria-pressed="false"[^>]*>t<\/button>/)
+    for (const label of ['Einheit des Gewichts', 'Einheit der Kraft', 'Einheit der Schwerpunkthöhe', 'Einheit des Abstands']) {
+      expect(html).toContain(`<select aria-label="${label}"`)
+    }
+    expect(html).not.toContain('aria-pressed="true">kg')
+    expect(html).not.toContain('Längen in')
+    for (const unit of ['kg', 'daN', 'm']) expect(html).toContain(`<option value="${unit}" selected="">`)
+    expect(html).toContain('<option value="t">')
   })
 
   it('rechnet das Gewicht in t um und zeigt die Kraft in kN oder N', () => {
@@ -171,10 +175,15 @@ describe('Ladungssicherung', () => {
   })
 
   it('prüft die Standsicherheit auch in cm', () => {
-    const tipping = render({ height: '100', distance: '40', lengthUnit: 'cm' })
+    const tipping = render({ height: '100', distance: '40', heightUnit: 'cm', distanceUnit: 'cm' })
     expect(tipping).toContain('Kippgefährdet')
     expect(tipping).toContain('= 60 cm')
-    expect(render({ height: '40', distance: '40', lengthUnit: 'cm' })).toContain('Standsicher')
+    expect(render({ height: '40', distance: '40', heightUnit: 'cm', distanceUnit: 'cm' })).toContain('Standsicher')
+    // Gemischt: Höhe 1 m, Abstand 40 cm → Grenze 60 cm in der Einheit des Abstands
+    const mixed = render({ height: '1', distance: '40', distanceUnit: 'cm' })
+    expect(mixed).toContain('Kippgefährdet')
+    expect(mixed).toContain('= 60 cm')
+    expect(render({ height: '1', distance: '70', distanceUnit: 'cm' })).toContain('Standsicher')
   })
 
   it('meldet Kippgefahr und ungültige Eingaben', () => {
