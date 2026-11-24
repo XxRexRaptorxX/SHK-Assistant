@@ -51,6 +51,9 @@ const QUOTIENT_LABEL = /^([^/]+)\/([^/]+)$/
 /** Funktionen, die in Bruchschreibweise anders aussehen als linear (Wurzelstrich, log₁₀) */
 const SPECIAL_FUNCTIONS = new Set(['sqrt', 'cbrt', 'log10'])
 
+/** Schreibweise wie im Lehrbuch statt mathjs-Name */
+const FUNCTION_NAMES: Record<string, string> = { asin: 'arcsin', acos: 'arccos', atan: 'arctan' }
+
 /** Eingesetzter Wert statt eines Symbols (Rechenweg) */
 export interface Substitution {
   node: ReactNode
@@ -164,11 +167,16 @@ export function renderNode(node: MathNode, labels: Labels): ReactNode {
   }
   if (math.isFunctionNode(node)) {
     const name = node.fn.name
+    // unit(x, "rad") gibt x nur eine Einheit (z. B. Winkel aus asin): in der Anzeige nur x
+    if (name === 'unit' && node.args.length === 2 && math.isConstantNode(node.args[1]!)) {
+      return renderNode(node.args[0]!, labels)
+    }
     const args = node.args.map((arg) => renderNode(unwrap(arg), labels))
     if (name === 'sqrt') return <Radical>{args[0]}</Radical>
     if (name === 'cbrt') return <Radical index="3">{args[0]}</Radical>
     // mathjs: log = natürlicher Logarithmus
-    const shown = name === 'log' && args.length === 1 ? 'ln' : name === 'log10' ? 'log₁₀' : name
+    const shown =
+      name === 'log' && args.length === 1 ? 'ln' : name === 'log10' ? 'log₁₀' : (FUNCTION_NAMES[name] ?? name)
     return (
       <>
         {shown}({join(args, '; ')})

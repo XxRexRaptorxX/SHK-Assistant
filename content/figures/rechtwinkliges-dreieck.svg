@@ -7,4 +7,7 @@
   <text class="sym" x="30" y="106">a</text>
   <text class="sym" x="146" y="182">b</text>
   <text class="sym" x="156" y="92">c</text>
+  <!-- Winkel α zwischen b und c, gegenüber der Kathete a -->
+  <path class="thin" d="M210 160A40 40 0 0 1 215.7 139.4"/>
+  <text class="sym" x="186" y="154">α</text>
 </svg>

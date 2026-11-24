@@ -35,6 +35,13 @@ describe('Bruchschreibweise', () => {
     expect(renderToStaticMarkup(<FormulaLine formula={entry} resultLabel="pamb" linear />)).toContain('p<sub>0</sub> - Δp/Δh · h')
   })
 
+  it('zeigt Arkusfunktionen als arcsin usw. ohne die Einheiten-Hülle unit(…, "rad")', () => {
+    const entry = formula('formula.geometrie.winkelfunktion-sinus')
+    const rearranged = { ...entry, expression: entry.rearrangements!.find((r) => r.symbol === 'alpha')!.expression! }
+    expect(plain(rearranged)).toBe('arcsin(a|c)')
+    expect(renderToStaticMarkup(<FormulaLine formula={rearranged} resultLabel="α" linear />)).toContain('arcsin(a / c)')
+  })
+
   it('lässt eingeklammerte Brüche als eigene Brüche stehen (Lehrbuchform)', () => {
     expect(plain(formula('formula.hydraulik.druckverlust-rohr'))).toBe('λ·l|d·ρ|2·v^2')
   })

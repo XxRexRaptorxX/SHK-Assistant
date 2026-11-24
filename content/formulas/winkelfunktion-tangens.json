@@ -1,0 +1,27 @@
+{
+  "id": "formula.geometrie.winkelfunktion-tangens",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Trigonometrie am rechtwinkligen Dreieck, vgl. Wikipedia „Sinus und Kosinus“, https://de.wikipedia.org/wiki/Sinus_und_Kosinus, und „Tangens und Kotangens“, https://de.wikipedia.org/wiki/Tangens_und_Kotangens. Vom Inhaber noch nicht geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Tangens: Gegenkathete aus Ankathete und Winkel",
+  "description": "Im rechtwinkligen Dreieck gilt tan α = Gegenkathete ÷ Ankathete. Berechnet die Gegenkathete a aus der Ankathete b und dem Winkel α, z. B. den Höhenunterschied einer Leitung aus Länge und Neigungswinkel.",
+  "category": "Geometrie",
+  "variables": [
+    { "symbol": "b", "name": "Ankathete b", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0 },
+    { "symbol": "alpha", "label": "α", "name": "Winkel α", "term": "Winkel", "unit": "deg", "min": 0, "max": 90, "description": "Spitzer Winkel gegenüber der Kathete a" }
+  ],
+  "constants": [],
+  "result": { "symbol": "a", "name": "Gegenkathete a", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0, "decimals": 3 },
+  "expression": "b * tan(alpha)",
+  "examples": [
+    { "inputs": { "b": 3, "alpha": 45 }, "expected": 3, "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): tan 45° = 1" },
+    { "inputs": { "b": 2, "alpha": 30 }, "expected": 1.1547, "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 2 m · tan 30°" }
+  ],
+  "figure": "figure.rechtwinkliges-dreieck",
+  "rearrangements": [
+    { "symbol": "b", "expression": "a / tan(alpha)", "title": "Tangens: Ankathete aus Gegenkathete und Winkel", "decimals": 3, "min": 0, "minMessage": "Bei 0° ist keine Ankathete bestimmbar." },
+    { "symbol": "alpha", "expression": "unit(atan(a / b), \"rad\")", "title": "Arkustangens: Winkel aus Gegenkathete und Ankathete", "decimals": 2, "min": 0 }
+  ]
+}

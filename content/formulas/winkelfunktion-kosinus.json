@@ -1,0 +1,27 @@
+{
+  "id": "formula.geometrie.winkelfunktion-kosinus",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Trigonometrie am rechtwinkligen Dreieck, vgl. Wikipedia „Sinus und Kosinus“, https://de.wikipedia.org/wiki/Sinus_und_Kosinus, und „Tangens und Kotangens“, https://de.wikipedia.org/wiki/Tangens_und_Kotangens. Vom Inhaber noch nicht geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kosinus: Ankathete aus Hypotenuse und Winkel",
+  "description": "Im rechtwinkligen Dreieck gilt cos α = Ankathete ÷ Hypotenuse. Berechnet die Ankathete b aus der Hypotenuse c und dem Winkel α, der an der Kathete b anliegt.",
+  "category": "Geometrie",
+  "variables": [
+    { "symbol": "c", "name": "Hypotenuse", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0 },
+    { "symbol": "alpha", "label": "α", "name": "Winkel α", "term": "Winkel", "unit": "deg", "min": 0, "max": 90, "description": "Spitzer Winkel gegenüber der Kathete a" }
+  ],
+  "constants": [],
+  "result": { "symbol": "b", "name": "Ankathete b", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0, "decimals": 3 },
+  "expression": "c * cos(alpha)",
+  "examples": [
+    { "inputs": { "c": 6, "alpha": 60 }, "expected": 3, "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): cos 60° = 0,5" },
+    { "inputs": { "c": 2, "alpha": 30 }, "expected": 1.73205, "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 2 m · cos 30°" }
+  ],
+  "figure": "figure.rechtwinkliges-dreieck",
+  "rearrangements": [
+    { "symbol": "c", "expression": "b / cos(alpha)", "title": "Kosinus: Hypotenuse aus Ankathete und Winkel", "decimals": 3, "min": 0, "minMessage": "Bei 90° ist keine Hypotenuse bestimmbar." },
+    { "symbol": "alpha", "expression": "unit(acos(b / c), \"rad\")", "title": "Arkuskosinus: Winkel aus Ankathete und Hypotenuse", "decimals": 2, "min": 0, "minMessage": "Die Ankathete darf nicht länger als die Hypotenuse sein." }
+  ]
+}

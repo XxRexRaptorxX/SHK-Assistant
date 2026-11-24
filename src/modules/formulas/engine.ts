@@ -307,7 +307,11 @@ export function formatExpression(formula: FormulaEntry): string {
     .parse(formula.expression)
     .toString({
       implicit: 'show',
-      handler: (node: MathNode) => {
+      handler: (node: MathNode, options: object) => {
+        // unit(x, "rad") gibt x nur eine Einheit (z. B. Winkel aus asin): in der Anzeige nur x
+        if (math.isFunctionNode(node) && node.fn.name === 'unit' && node.args.length === 2 && math.isConstantNode(node.args[1]!)) {
+          return node.args[0]!.toString(options)
+        }
         if (!math.isSymbolNode(node)) return undefined
         // Kreiszahl einheitlich als π (in den Inhalten als "pi", weil mathjs nur das versteht)
         if (node.name === 'pi' && !labels.has('pi')) return 'π'
@@ -317,4 +321,5 @@ export function formatExpression(formula: FormulaEntry): string {
     .replace(/ \* /g, ' · ')
     // mathjs: log = natürlicher Logarithmus; in der Anzeige wie üblich "ln", damit es nicht als lg gelesen wird
     .replace(/\blog\(/g, 'ln(')
+    .replace(/\b(asin|acos|atan)\(/g, (_, name: string) => `arc${name.slice(1)}(`)
 }

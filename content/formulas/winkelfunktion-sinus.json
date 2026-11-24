@@ -1,0 +1,27 @@
+{
+  "id": "formula.geometrie.winkelfunktion-sinus",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Trigonometrie am rechtwinkligen Dreieck, vgl. Wikipedia „Sinus und Kosinus“, https://de.wikipedia.org/wiki/Sinus_und_Kosinus, und „Tangens und Kotangens“, https://de.wikipedia.org/wiki/Tangens_und_Kotangens. Vom Inhaber noch nicht geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Sinus: Gegenkathete aus Hypotenuse und Winkel",
+  "description": "Im rechtwinkligen Dreieck gilt sin α = Gegenkathete ÷ Hypotenuse. Berechnet die Gegenkathete a aus der Hypotenuse c und dem Winkel α, der der Kathete a gegenüberliegt.",
+  "category": "Geometrie",
+  "variables": [
+    { "symbol": "c", "name": "Hypotenuse", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0 },
+    { "symbol": "alpha", "label": "α", "name": "Winkel α", "term": "Winkel", "unit": "deg", "min": 0, "max": 90, "description": "Spitzer Winkel gegenüber der Kathete a" }
+  ],
+  "constants": [],
+  "result": { "symbol": "a", "name": "Gegenkathete a", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0, "decimals": 3 },
+  "expression": "c * sin(alpha)",
+  "examples": [
+    { "inputs": { "c": 6, "alpha": 30 }, "expected": 3, "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): sin 30° = 0,5" },
+    { "inputs": { "c": 2, "alpha": 45 }, "expected": 1.41421, "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 2 m · sin 45°" }
+  ],
+  "figure": "figure.rechtwinkliges-dreieck",
+  "rearrangements": [
+    { "symbol": "c", "expression": "a / sin(alpha)", "title": "Sinus: Hypotenuse aus Gegenkathete und Winkel", "decimals": 3, "min": 0, "minMessage": "Bei 0° ist keine Hypotenuse bestimmbar." },
+    { "symbol": "alpha", "expression": "unit(asin(a / c), \"rad\")", "title": "Arkussinus: Winkel aus Gegenkathete und Hypotenuse", "decimals": 2, "min": 0, "minMessage": "Die Gegenkathete darf nicht länger als die Hypotenuse sein." }
+  ]
+}
