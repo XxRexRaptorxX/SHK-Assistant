@@ -1,0 +1,50 @@
+{
+  "id": "formula.geometrie.gehrung-schraege",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Geometrie am rechtwinkligen Dreieck: L = b ÷ tan α (Ankathete = Gegenkathete ÷ Tangens). Eigene Herleitung, nicht vom Inhaber geliefert; wie im Tool „Gehrungsmaße“.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Länge einer Schräge (Gehrung)",
+  "description": "Berechnet, wie lang eine Schräge von Anfang bis Ende sein muss, damit der Schnitt durch ein Material der Breite b genau unter dem Winkel α liegt, z. B. beim Zuschnitt von Dämmung. Der Winkel liegt zwischen Schnittfläche und Oberfläche.",
+  "category": "Geometrie",
+  "variables": [
+    {
+      "symbol": "b",
+      "name": "Breite bzw. Dicke des Materials",
+      "unit": "mm",
+      "min": 0
+    },
+    {
+      "symbol": "alpha",
+      "label": "α",
+      "name": "Schnittwinkel",
+      "term": "Winkel",
+      "unit": "deg",
+      "min": 0,
+      "max": 90
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "L",
+    "name": "Länge der Schräge",
+    "unit": "mm",
+    "min": 0,
+    "decimals": 1
+  },
+  "expression": "b / tan(alpha)",
+  "examples": [
+    {
+      "inputs": { "b": 40, "alpha": 45 },
+      "expected": 40,
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): bei 45° ist die Schräge so lang wie das Material breit"
+    },
+    {
+      "inputs": { "b": 40, "alpha": 30 },
+      "expected": 69.282,
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 40 mm ÷ tan 30°"
+    }
+  ],
+  "figure": "figure.daemmung-schnittwinkel"
+}
