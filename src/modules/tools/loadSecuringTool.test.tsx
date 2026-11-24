@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
-import { LoadSecuringLookup } from './LoadSecuringLookup'
+import { LoadSecuringLookup, todoDisplayText, type ForceUnit, type LengthUnit, type WeightUnit } from './LoadSecuringLookup'
 import {
   checkLoadSecuringTool,
   forcesFor,
@@ -26,6 +26,9 @@ type RenderProps = Partial<{
   tipping: boolean
   height: string
   distance: string
+  weightUnit: WeightUnit
+  forceUnit: ForceUnit
+  lengthUnit: LengthUnit
 }>
 
 const render = (props: RenderProps = {}) =>
@@ -38,6 +41,9 @@ const render = (props: RenderProps = {}) =>
       initialTipping={props.tipping}
       initialHeight={props.height}
       initialDistance={props.distance}
+      initialWeightUnit={props.weightUnit}
+      initialForceUnit={props.forceUnit}
+      initialLengthUnit={props.lengthUnit}
     />,
   )
 
@@ -116,8 +122,12 @@ describe('Ladungssicherung', () => {
     expect(html).not.toContain('TODO: Inhalt fehlt')
   })
 
-  it('zeigt bei Schweißgasflaschen den Hinweis auf fehlende Inhalte', () => {
-    expect(render({ cargo: 'gasCylinders' })).toContain('TODO: Inhalt fehlt')
+  it('zeigt bei Schweißgasflaschen den Hinweis auf fehlende Inhalte ohne TODO-Kennung', () => {
+    const html = render({ cargo: 'gasCylinders' })
+    expect(html).toContain('Vorgaben speziell für Acetylen, Sauerstoff und andere Druckgase')
+    expect(html).not.toContain('TODO: Inhalt fehlt')
+    expect(todoDisplayText('TODO: Inhalt fehlt – Herstellerangaben')).toBe('Herstellerangaben')
+    expect(todoDisplayText('TODO: Inhalt fehlt')).toBe('')
   })
 
   it('zeigt beim Langgut die zulässigen Überstände', () => {
@@ -137,6 +147,34 @@ describe('Ladungssicherung', () => {
     const html = render({ weight: '1000', vehicle: 'over35', tipping: true })
     expect(html).toContain('Ladung ist kippgefährdet')
     expect(html).toContain('600 daN')
+  })
+
+  it('bietet Einheiten-Tasten an, Vorgabe kg, daN und m', () => {
+    const html = render({ weight: '2000', vehicle: 'upTo35' })
+    expect(html).toContain('aria-label="Einheit des Gewichts"')
+    expect(html).toContain('aria-label="Einheit der Kraft"')
+    expect(html).toContain('aria-label="Einheit der Länge"')
+    for (const unit of ['kg', 'daN', 'm']) expect(html).toMatch(new RegExp(`aria-pressed="true"[^>]*>${unit}</button>`))
+    expect(html).toMatch(/aria-pressed="false"[^>]*>t<\/button>/)
+  })
+
+  it('rechnet das Gewicht in t um und zeigt die Kraft in kN oder N', () => {
+    const tonnes = render({ weight: '2', weightUnit: 't', vehicle: 'upTo35' })
+    expect(tonnes).toContain('1.600 daN')
+    expect(tonnes).toContain('1.200 daN')
+    const kilonewton = render({ weight: '2000', vehicle: 'upTo35', forceUnit: 'kN' })
+    expect(kilonewton).toContain('16 kN')
+    expect(kilonewton).toContain('12 kN')
+    expect(render({ weight: '0,5', weightUnit: 't', vehicle: 'upTo2', forceUnit: 'N' })).toContain('4.500 N')
+    // Nachkommastellen in kN: 0,9 × 333 kg = 299,7 daN = 3 kN (2 Stellen: 3)
+    expect(render({ weight: '333', vehicle: 'upTo2', forceUnit: 'kN' })).toContain('3 kN')
+  })
+
+  it('prüft die Standsicherheit auch in cm', () => {
+    const tipping = render({ height: '100', distance: '40', lengthUnit: 'cm' })
+    expect(tipping).toContain('Kippgefährdet')
+    expect(tipping).toContain('= 60 cm')
+    expect(render({ height: '40', distance: '40', lengthUnit: 'cm' })).toContain('Standsicher')
   })
 
   it('meldet Kippgefahr und ungültige Eingaben', () => {

@@ -1,6 +1,7 @@
-import { useId, useState } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 import { RichText } from '../../components/RichText'
 import { fieldBase } from '../../components/surfaces'
+import { math } from '../../lib/math'
 import { parseDecimal } from '../../lib/number'
 import {
   forcesFor,
@@ -32,6 +33,48 @@ const DIRECTION_LABELS: Record<LoadDirection, string> = {
 
 const formatNumber = (value: number, digits = 2) =>
   value.toLocaleString('de-DE', { maximumFractionDigits: digits })
+
+// Umschaltbare Einheiten (mathjs-Namen); die Rechnung läuft immer in kg, daN und m.
+export const WEIGHT_UNITS = ['kg', 't'] as const
+export const FORCE_UNITS = ['daN', 'kN', 'N'] as const
+export const LENGTH_UNITS = ['m', 'cm'] as const
+export type WeightUnit = (typeof WEIGHT_UNITS)[number]
+export type ForceUnit = (typeof FORCE_UNITS)[number]
+export type LengthUnit = (typeof LENGTH_UNITS)[number]
+
+/** Nachkommastellen der Kraft je Einheit */
+const FORCE_DIGITS: Record<ForceUnit, number> = { daN: 0, kN: 2, N: 0 }
+
+const convert = (value: number, from: string, to: string): number => math.unit(value, from).toNumber(to)
+
+/** Einheiten-Umschalter als Tasten, die gewählte Einheit ist hervorgehoben */
+function UnitButtons<T extends string>({
+  label,
+  units,
+  selected,
+  onSelect,
+}: {
+  label: string
+  units: readonly T[]
+  selected: T
+  onSelect: (unit: T) => void
+}) {
+  return (
+    <div role="group" aria-label={label} className="flex rounded-xl border-2 border-line bg-surface p-1">
+      {units.map((candidate) => (
+        <button
+          key={candidate}
+          type="button"
+          aria-pressed={candidate === selected}
+          onClick={() => onSelect(candidate)}
+          className={`min-h-12 min-w-14 rounded-lg px-3 text-lg font-bold ${candidate === selected ? 'bg-accent text-accent-ink' : ''}`}
+        >
+          {candidate}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 function RuleList({ tool, rules }: { tool: LoadSecuringTool; rules: readonly LoadRule[] }) {
   return (
@@ -66,8 +109,13 @@ function SpecList({ tool, specs }: { tool: LoadSecuringTool; specs: readonly Loa
   )
 }
 
+/** Die Kennung „TODO: Inhalt fehlt“ bleibt im Inhalt (Build-Prüfung), angezeigt wird nur der Text dahinter */
+export const todoDisplayText = (todo: string): string => todo.replace(/^TODO: Inhalt fehlt\s*(?:[–-]\s*)?/, '')
+
 function TodoNote({ todo }: { todo: string }) {
-  return <p className="mt-3 rounded-xl border-2 border-warn-ink bg-warn p-3 text-base font-semibold text-warn-ink">{todo}</p>
+  const text = todoDisplayText(todo)
+  if (!text) return null
+  return <p className="mt-3 rounded-xl border-2 border-warn-ink bg-warn p-3 text-base font-semibold text-warn-ink">{text}</p>
 }
 
 /** Eine Maßnahme, aufklappbar: Kennwerte und Vorgaben */
@@ -111,7 +159,8 @@ function NumberField({
 }: {
   id: string
   label: string
-  unit: string
+  /** Einheit als Text oder Umschalter */
+  unit: ReactNode
   value: string
   error?: string
   onChange: (value: string) => void
@@ -132,7 +181,7 @@ function NumberField({
           onChange={(event) => onChange(event.target.value)}
           className={`${fieldBase} w-36 ${error ? 'border-warn-ink outline-2 outline-warn' : ''}`}
         />
-        <span className="text-lg">{unit}</span>
+        {typeof unit === 'string' ? <span className="text-lg">{unit}</span> : unit}
       </div>
       {error && <p className="mt-1 text-base font-semibold">{error}</p>}
     </div>
@@ -152,20 +201,30 @@ function ForcesSection({
   initialWeight,
   initialVehicle,
   initialTipping,
+  initialWeightUnit,
+  initialForceUnit,
 }: {
   tool: LoadSecuringTool
   initialWeight: string
   initialVehicle: string
   initialTipping: boolean
+  initialWeightUnit: WeightUnit
+  initialForceUnit: ForceUnit
 }) {
   const idPrefix = useId()
   const [weight, setWeight] = useState(initialWeight)
+  const [weightUnit, setWeightUnit] = useState<WeightUnit>(initialWeightUnit)
+  const [forceUnit, setForceUnit] = useState<ForceUnit>(initialForceUnit)
   const [vehicleKey, setVehicleKey] = useState(initialVehicle)
   const [tipping, setTipping] = useState(initialTipping)
   const vehicleClass = tool.vehicleClasses.find((candidate) => candidate.key === vehicleKey)
   const parsedWeight = readPositive(weight)
+  const weightKg = parsedWeight.value !== undefined ? convert(parsedWeight.value, weightUnit, 'kg') : undefined
   const showTipping = vehicleClass ? hasTippingForces(vehicleClass) : false
-  const forces = vehicleClass && parsedWeight.value !== undefined ? forcesFor(vehicleClass, parsedWeight.value, showTipping && tipping) : []
+  const forces = vehicleClass && weightKg !== undefined ? forcesFor(vehicleClass, weightKg, showTipping && tipping) : []
+  // Kraft für die Anzeige: ungerundeter Wert (Beiwert × kg = daN) in die gewählte Einheit
+  const shownForce = (factor: number) =>
+    formatNumber(convert(factor * weightKg!, 'daN', forceUnit), FORCE_DIGITS[forceUnit])
 
   return (
     <section className="mt-8">
@@ -174,7 +233,7 @@ function ForcesSection({
         <NumberField
           id={`${idPrefix}-weight`}
           label="Gewicht der Ladung"
-          unit="kg"
+          unit={<UnitButtons label="Einheit des Gewichts" units={WEIGHT_UNITS} selected={weightUnit} onSelect={setWeightUnit} />}
           value={weight}
           error={parsedWeight.error}
           onChange={setWeight}
@@ -213,14 +272,20 @@ function ForcesSection({
       <div aria-live="polite">
         {forces.length > 0 && vehicleClass ? (
           <div className="mt-4 rounded-2xl border-2 border-accent bg-surface p-4">
-            <dl className="divide-y-2 divide-line">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="font-semibold">Kraft in</span>
+              <UnitButtons label="Einheit der Kraft" units={FORCE_UNITS} selected={forceUnit} onSelect={setForceUnit} />
+            </div>
+            <dl className="mt-2 divide-y-2 divide-line">
               {forces.map((entry) => (
                 <div key={entry.direction} className="flex items-baseline justify-between gap-3 py-2">
                   <dt className="text-base">
                     {DIRECTION_LABELS[entry.direction]}
                     <span className="block text-sm text-muted">{formatNumber(entry.factor)} × Gewicht</span>
                   </dt>
-                  <dd className="text-2xl font-bold whitespace-nowrap">{formatNumber(entry.force, 0)} daN</dd>
+                  <dd className="text-2xl font-bold whitespace-nowrap">
+                    {shownForce(entry.factor)} {forceUnit}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -240,27 +305,41 @@ function TippingSection({
   tool,
   initialHeight,
   initialDistance,
+  initialLengthUnit,
 }: {
   tool: LoadSecuringTool
   initialHeight: string
   initialDistance: string
+  initialLengthUnit: LengthUnit
 }) {
   const idPrefix = useId()
   const [height, setHeight] = useState(initialHeight)
   const [distance, setDistance] = useState(initialDistance)
+  const [lengthUnit, setLengthUnit] = useState<LengthUnit>(initialLengthUnit)
   const parsedHeight = readPositive(height)
   const parsedDistance = readPositive(distance)
   const ready = parsedHeight.value !== undefined && parsedDistance.value !== undefined
-  const stable = ready ? isStable(tool.tipping, parsedHeight.value!, parsedDistance.value!) : undefined
+  // Gerechnet wird in m, angezeigt in der gewählten Einheit
+  const heightM = ready ? convert(parsedHeight.value!, lengthUnit, 'm') : 0
+  const distanceM = ready ? convert(parsedDistance.value!, lengthUnit, 'm') : 0
+  const stable = ready ? isStable(tool.tipping, heightM, distanceM) : undefined
+  const limit = ready ? convert(tippingLimit(tool.tipping, heightM), 'm', lengthUnit) : 0
+  const lengthButtons = (
+    <UnitButtons label="Einheit der Länge" units={LENGTH_UNITS} selected={lengthUnit} onSelect={setLengthUnit} />
+  )
 
   return (
     <section className="mt-8">
       <h2 className="text-xl font-bold">Kann die Ladung kippen?</h2>
+      <div className="mt-3 flex items-center gap-2">
+        <span className="font-semibold">Längen in</span>
+        {lengthButtons}
+      </div>
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
         <NumberField
           id={`${idPrefix}-height`}
           label="Schwerpunkthöhe über der Ladefläche"
-          unit="m"
+          unit={lengthUnit}
           value={height}
           error={parsedHeight.error}
           onChange={setHeight}
@@ -268,7 +347,7 @@ function TippingSection({
         <NumberField
           id={`${idPrefix}-distance`}
           label="Abstand Schwerpunkt – Kippkante"
-          unit="m"
+          unit={lengthUnit}
           value={distance}
           error={parsedDistance.error}
           onChange={setDistance}
@@ -283,9 +362,9 @@ function TippingSection({
               {stable ? 'Standsicher' : 'Kippgefährdet'}
             </p>
             <p className="mt-1 text-base">
-              {formatNumber(parsedDistance.value!)} m {stable ? 'ist größer als' : 'ist nicht größer als'}{' '}
-              {formatNumber(tool.tipping.factor)} × {formatNumber(parsedHeight.value!)} m ={' '}
-              {formatNumber(tippingLimit(tool.tipping, parsedHeight.value!))} m.{' '}
+              {formatNumber(parsedDistance.value!)} {lengthUnit} {stable ? 'ist größer als' : 'ist nicht größer als'}{' '}
+              {formatNumber(tool.tipping.factor)} × {formatNumber(parsedHeight.value!)} {lengthUnit} ={' '}
+              {formatNumber(limit)} {lengthUnit}.{' '}
               {stable ? 'Sicherung gegen Rutschen genügt.' : 'Zusätzlich gegen Kippen sichern.'}
             </p>
           </div>
@@ -305,6 +384,9 @@ export function LoadSecuringLookup({
   initialTipping = false,
   initialHeight = '',
   initialDistance = '',
+  initialWeightUnit = 'kg',
+  initialForceUnit = 'daN',
+  initialLengthUnit = 'm',
 }: {
   tool: LoadSecuringTool
   /** Vorauswahlen (Tests) */
@@ -314,6 +396,9 @@ export function LoadSecuringLookup({
   initialTipping?: boolean
   initialHeight?: string
   initialDistance?: string
+  initialWeightUnit?: WeightUnit
+  initialForceUnit?: ForceUnit
+  initialLengthUnit?: LengthUnit
 }) {
   const [cargoKey, setCargoKey] = useState(initialCargo)
   const cargo = tool.cargos.find((candidate) => candidate.key === cargoKey)
@@ -403,8 +488,20 @@ export function LoadSecuringLookup({
         )}
       </div>
 
-      <ForcesSection tool={tool} initialWeight={initialWeight} initialVehicle={initialVehicle} initialTipping={initialTipping} />
-      <TippingSection tool={tool} initialHeight={initialHeight} initialDistance={initialDistance} />
+      <ForcesSection
+        tool={tool}
+        initialWeight={initialWeight}
+        initialVehicle={initialVehicle}
+        initialTipping={initialTipping}
+        initialWeightUnit={initialWeightUnit}
+        initialForceUnit={initialForceUnit}
+      />
+      <TippingSection
+        tool={tool}
+        initialHeight={initialHeight}
+        initialDistance={initialDistance}
+        initialLengthUnit={initialLengthUnit}
+      />
 
       {tool.checklist.length > 0 && (
         <section className="mt-8">
