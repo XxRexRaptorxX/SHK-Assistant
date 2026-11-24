@@ -9,6 +9,7 @@ import { checkDrainageSizingTool, drainageSizingToolSchema, type DrainageSizingT
 import { checkClassificationTool, classificationToolSchema, type ClassificationTool } from './classificationTool.ts'
 import { checkFallProtectionTool, fallProtectionToolSchema, type FallProtectionTool } from './fallProtectionTool.ts'
 import { checkLoadSecuringTool, loadSecuringToolSchema, type LoadSecuringTool } from './loadSecuringTool.ts'
+import { checkHeatingCurveTool, heatingCurveToolSchema, type HeatingCurveTool } from './heatingCurveTool.ts'
 import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
 import { checkFactorTool, factorToolSchema, relatedToolsSchema, type FactorTool } from './factorTool.ts'
 import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } from './hazmatPointsTool.ts'
@@ -59,6 +60,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 //   Schutzmaßnahmen in der Rangfolge mit Maßen für den Aufbau (siehe fallProtectionTool.ts).
 // - Ladungssicherungs-Tools ("kind": "loadSecuring"): Ladegut wählen, Vorgaben, Umsetzung, Zurr- und Hilfsmittel; Kräfte
 //   aus Gewicht und Fahrzeugklasse sowie Kippprüfung (siehe loadSecuringTool.ts).
+// - Heizkurven-Tools ("kind": "heatingCurve"): Heizkurve mit Neigung, Niveau, Raumsoll, Absenkung, Begrenzung und
+//   Heizgrenze simulieren, Wirkung zeigen und die Einstellung zurückrechnen (siehe heatingCurveTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -224,6 +227,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   classificationToolSchema,
   fallProtectionToolSchema,
   loadSecuringToolSchema,
+  heatingCurveToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -257,6 +261,8 @@ export type ToolEntry =
   | ClassificationTool
   | FallProtectionTool
   | LoadSecuringTool
+  | HeatingCurveTool
+export type { HeatingCurveTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -282,6 +288,7 @@ export const isRefrigerantTool = (entry: ToolEntry): entry is RefrigerantTool =>
 export const isSensorTool = (entry: ToolEntry): entry is SensorTool => entry.kind === 'sensorResistance'
 export const isFallProtectionTool = (entry: ToolEntry): entry is FallProtectionTool => entry.kind === 'fallProtection'
 export const isLoadSecuringTool = (entry: ToolEntry): entry is LoadSecuringTool => entry.kind === 'loadSecuring'
+export const isHeatingCurveTool = (entry: ToolEntry): entry is HeatingCurveTool => entry.kind === 'heatingCurve'
 export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => entry.kind === 'placement'
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
 export const isValveSurveyTool = (entry: ToolEntry): entry is ValveSurveyTool => entry.kind === 'valveSurvey'
@@ -465,6 +472,8 @@ export const toolCollection = defineCollection({
                                               ? checkFallProtectionTool(entry)
                                               : isLoadSecuringTool(entry)
                                                 ? checkLoadSecuringTool(entry)
+                                                : isHeatingCurveTool(entry)
+                                                  ? checkHeatingCurveTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) => [
     ...relatedTools(entry),

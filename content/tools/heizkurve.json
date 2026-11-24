@@ -1,0 +1,278 @@
+{
+  "id": "tool.heizkurve",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Viessmann „Heizkurve richtig einstellen – Anleitung und Tipps“, https://www.viessmann.de/de/wissen/anleitungen-und-tipps/heizkurve-einstellen.html; Viessmann-Community, Anhänge „Wie kann die Heizkennlinie optimiert werden?“ und „ReadMeHeizkurven“; Wikipedia „Heizkurve“ (Version vom 29.06.2026); alle abgerufen am 24.11.2026. Regeln eigenständig zusammengefasst.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "heatingCurve",
+  "title": "Heizkurve simulieren und einstellen",
+  "summary": "Zeichnet die Heizkurve, verändert sie über Neigung, Niveau, Raumsoll, Absenkung, Begrenzung und Heizgrenze und zeigt die Wirkung. Rechnet aus einem Problem oder einer Messung die passende Einstellung zurück.",
+  "description": "Neigung, Niveau und Raumsoll einstellen und sehen, was sich bei Frost und in der Übergangszeit ändert. Unter „Einstellung finden“ das Problem beschreiben und Neigung und Niveau als Empfehlung bekommen.",
+  "category": "Wartung",
+  "tags": ["heizung", "kundendienst"],
+  "keywords": [
+    "Heizkurve",
+    "Heizkennlinie",
+    "Heizungskennlinie",
+    "Steilheit",
+    "Parallelverschiebung",
+    "Fußpunkt",
+    "Endpunkt",
+    "Vorlauftemperatur",
+    "Außentemperatur",
+    "witterungsgeführt",
+    "außentemperaturgeführt",
+    "Nachtabsenkung",
+    "reduzierter Betrieb",
+    "Sommerabschaltung",
+    "Vitotronic",
+    "zu kalt",
+    "zu warm"
+  ],
+  "closingNote": "Die Kennlinie des Tools ist aus Anzeigewerten eines Viessmann-Reglers abgeleitet (Viessmann-Community), sie ist keine Herstellerangabe. Andere Regler können mit anderen Kennlinien rechnen; dieselbe Zahl für Neigung oder Niveau ergibt dort andere Vorlauftemperaturen. Die geschätzte Raumtemperatur setzt voraus, dass die Ausgangseinstellung zum Gebäude gepasst hat. Empfehlungen sind Startwerte: in kleinen Schritten übernehmen und beobachten. Die Anleitung des Reglers geht vor.",
+  "sources": [
+    {
+      "key": "viessmann",
+      "name": "Viessmann Heizkurve einstellen",
+      "source": "Viessmann „Heizkurve richtig einstellen – Anleitung und Tipps“, https://www.viessmann.de/de/wissen/anleitungen-und-tipps/heizkurve-einstellen.html, abgerufen am 24.11.2026"
+    },
+    {
+      "key": "optimieren",
+      "name": "Viessmann-Community Heizkennlinie optimieren",
+      "source": "Viessmann-Community, Anhang „Wie kann die Heizkennlinie optimiert werden?“ (Grafiken heizung.de), https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/65161/1/Wie%20kann%20die%20Heizkennlinie%20optimiert%20werden.pdf, abgerufen am 24.11.2026"
+    },
+    {
+      "key": "kennlinie",
+      "name": "Viessmann-Community ReadMeHeizkurven",
+      "source": "Viessmann-Community, Anhang „ReadMeHeizkurven“ (Gleichung nach https://www.viessmann-community.com/t5/Gas/Mathematische-Formel-fuer-Vorlauftemperatur-aus-den-vier/m-p/68890), https://community.viessmann.de/viessmann/attachments/viessmann/customers-gas/89775/1/ReadMeHeizkurven.pdf, abgerufen am 24.11.2026"
+    },
+    {
+      "key": "wikipedia",
+      "name": "Wikipedia Heizkurve",
+      "source": "Wikipedia „Heizkurve“, Version vom 29.06.2026 (oldid 268322628), https://de.wikipedia.org/wiki/Heizkurve, abgerufen am 24.11.2026"
+    }
+  ],
+  "model": {
+    "name": "Kennlinie nach Viessmann-Community",
+    "coefficients": [1.4347, 0.021, 0.0002479],
+    "text": "VL ist der Vorlauf-Sollwert, RT_soll die eingestellte Raumtemperatur, AT die Außentemperatur, mit der der Regler rechnet; f(D) sorgt für die leichte Krümmung der Kurve. Die Gleichung wurde in der Viessmann-Community aus Anzeigewerten eines Reglers ermittelt. Bei AT = RT_soll liegt der Vorlauf bei RT_soll + Niveau.",
+    "ref": { "source": "kennlinie", "where": "Abschn. 1.1 und 1.2, S. 1" },
+    "examples": [
+      { "label": "Messung 1 (Tabelle 1)", "neigung": 1.4, "niveau": 0, "roomSetpoint": 17, "outdoor": -5, "flow": 50.7, "ref": { "source": "kennlinie", "where": "Abschn. 2.3.1, S. 5" } },
+      { "label": "Messung 2 (Tabelle 1)", "neigung": 1.4, "niveau": 0, "roomSetpoint": 18, "outdoor": 5, "flow": 39.9, "ref": { "source": "kennlinie", "where": "Abschn. 2.3.2, S. 5" } },
+      { "label": "Tabelle 2, Zeile 1", "neigung": 1.4, "niveau": 0, "roomSetpoint": 16, "outdoor": -8, "flow": 52.1, "ref": { "source": "kennlinie", "where": "Abschn. 2.3.4, Tabelle 2, S. 6" } },
+      { "label": "Neigung 0,8 (Abb. 4)", "neigung": 0.8, "niveau": 5, "roomSetpoint": 15, "outdoor": 5, "flow": 30.0, "ref": { "source": "kennlinie", "where": "Abschn. 1.4.3, Abb. 4, S. 3" } },
+      { "label": "Neigung 1,6 (Abb. 4)", "neigung": 1.6, "niveau": 5, "roomSetpoint": 15, "outdoor": 5, "flow": 40.0, "ref": { "source": "kennlinie", "where": "Abschn. 1.4.3, Abb. 4, S. 3" } },
+      { "label": "Abb. 5, RT_soll 22,1 °C", "neigung": 1.1, "niveau": -3, "roomSetpoint": 22.1, "outdoor": -8, "flow": 53.1, "ref": { "source": "kennlinie", "where": "Abschn. 2.3.4, Abb. 5, S. 6" } }
+    ],
+    "fitExamples": [
+      {
+        "label": "Zwei Messungen bei −5 °C und +5 °C",
+        "neigung": 1.4,
+        "niveau": 0,
+        "measurements": [
+          { "roomSetpoint": 17, "outdoor": -5, "room": 22.3 },
+          { "roomSetpoint": 18, "outdoor": 5, "room": 21.7 }
+        ],
+        "expectedNeigung": 1.091,
+        "expectedNiveau": -2.804,
+        "ref": { "source": "kennlinie", "where": "Abschn. 2.3.3 und Tabelle 3, S. 6–7" }
+      }
+    ]
+  },
+  "parameters": {
+    "neigung": {
+      "label": "Neigung",
+      "min": 0.2,
+      "max": 3.5,
+      "step": 0.1,
+      "default": 1.4,
+      "text": "Bestimmt, wie stark der Vorlauf auf sinkende Außentemperaturen reagiert. Die Kurve dreht sich um den Punkt AT = Raumsoll: Je kälter es ist, desto stärker wirkt eine Änderung, in der Übergangszeit nur wenig.",
+      "ref": { "source": "kennlinie", "where": "Abschn. 1.4.3, S. 3" }
+    },
+    "niveau": {
+      "label": "Niveau",
+      "unit": "K",
+      "min": -13,
+      "max": 40,
+      "step": 1,
+      "default": 0,
+      "text": "Verschiebt die ganze Kurve senkrecht: Der Vorlauf ändert sich bei jeder Außentemperatur genau um die Änderung des Niveaus.",
+      "ref": { "source": "kennlinie", "where": "Abschn. 1.4.1, S. 2" }
+    },
+    "roomSetpoint": {
+      "label": "Raumsoll (normal)",
+      "unit": "°C",
+      "min": 10,
+      "max": 30,
+      "step": 0.5,
+      "default": 20,
+      "text": "Verschiebt die Kurve schräg, waagerecht und senkrecht um die Änderung. Bei Neigung 1 ändert sich der Vorlauf etwa um das Doppelte der Änderung.",
+      "ref": { "source": "kennlinie", "where": "Abschn. 1.4.2, S. 2" }
+    },
+    "reducedSetpoint": {
+      "label": "Absenkbetrieb (reduziertes Raumsoll)",
+      "unit": "°C",
+      "min": 5,
+      "max": 30,
+      "step": 0.5,
+      "default": null,
+      "start": 17,
+      "text": "Im reduzierten Betrieb, z. B. nachts, rechnet der Regler mit diesem Raumsoll; die Kurve liegt für diese Zeit tiefer. Nach der Absenkphase braucht das Haus ausreichend Zeit zum Aufheizen.",
+      "ref": { "source": "optimieren", "where": "Einflussfaktor 3, S. 2" }
+    },
+    "maxFlow": {
+      "label": "Maximalbegrenzung (maximale Vorlauftemperatur)",
+      "unit": "°C",
+      "min": 20,
+      "max": 90,
+      "step": 1,
+      "default": null,
+      "start": 60,
+      "text": "Der Sollwert steigt nicht darüber, auch wenn die Kurve mehr verlangt; die Kurve läuft ab dort waagerecht weiter. Bei großer Kälte fehlt dann Vorlauf."
+    },
+    "minFlow": {
+      "label": "Minimalbegrenzung (minimale Vorlauftemperatur)",
+      "unit": "°C",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "default": null,
+      "start": 25,
+      "text": "Der Sollwert fällt nicht darunter, auch wenn die Kurve weniger verlangt; die Kurve läuft dort waagerecht. Das hebt den Vorlauf vor allem in der Übergangszeit an."
+    },
+    "heatingLimit": {
+      "label": "Heizgrenze (Abschalttemperatur außen)",
+      "unit": "°C",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": null,
+      "start": 18,
+      "text": "Liegt die Außentemperatur über der Heizgrenze, schaltet der Regler den Heizbetrieb ab.",
+      "ref": { "source": "wikipedia", "where": "Abschnitt Heizgrenze" }
+    }
+  },
+  "chart": { "outdoorFrom": -20, "outdoorTo": 20 },
+  "comparePoints": [
+    { "label": "Frost", "outdoor": -10 },
+    { "label": "Kalter Tag", "outdoor": 0 },
+    { "label": "Übergangszeit", "outdoor": 10 }
+  ],
+  "bands": [
+    { "label": "Übergangszeit", "from": 5, "to": 15, "ref": { "source": "viessmann", "where": "Praxis-Anleitung, Niveau" } }
+  ],
+  "symptomPoints": {
+    "cold": -10,
+    "transition": 10,
+    "text": "Für die Rechnung setzt das Tool „bei Kälte“ = −10 °C und „Übergangszeit“ = +10 °C Außentemperatur an und nimmt an, dass die Abweichung dort so groß ist wie angegeben."
+  },
+  "symptoms": [
+    {
+      "key": "immerKalt",
+      "label": "Immer zu kalt",
+      "cold": -1,
+      "transition": -1,
+      "neigung": "keep",
+      "niveau": "up",
+      "text": "Niveau erhöhen, die Kurve also senkrecht nach oben verschieben.",
+      "ref": { "source": "optimieren", "where": "Richtwerte, S. 1" }
+    },
+    {
+      "key": "immerWarm",
+      "label": "Immer zu warm",
+      "cold": 1,
+      "transition": 1,
+      "neigung": "keep",
+      "niveau": "down",
+      "text": "Niveau senken, die Kurve also senkrecht nach unten verschieben.",
+      "ref": { "source": "optimieren", "where": "Richtwerte, S. 1" }
+    },
+    {
+      "key": "kaltBeiFrost",
+      "label": "Nur an kalten Tagen zu kalt",
+      "cold": -1,
+      "transition": 0,
+      "neigung": "up",
+      "niveau": "keep",
+      "text": "Neigung erhöhen, also eine steilere Kurve wählen.",
+      "ref": { "source": "optimieren", "where": "Richtwerte, S. 1" }
+    },
+    {
+      "key": "warmBeiFrost",
+      "label": "Nur an kalten Tagen zu warm",
+      "cold": 1,
+      "transition": 0,
+      "neigung": "down",
+      "niveau": "keep",
+      "text": "Neigung schrittweise senken.",
+      "ref": { "source": "viessmann", "where": "Praxis-Anleitung, Faustregel Neigung" }
+    },
+    {
+      "key": "kaltUebergang",
+      "label": "In der Übergangszeit zu kalt, im Winter in Ordnung",
+      "cold": 0,
+      "transition": -1,
+      "neigung": "down",
+      "niveau": "up",
+      "text": "Niveau erhöhen und Neigung senken: eine flachere Kurve, die nach oben verschoben wird.",
+      "ref": { "source": "optimieren", "where": "Richtwerte, S. 1" }
+    },
+    {
+      "key": "warmUebergang",
+      "label": "In der Übergangszeit zu warm, im Winter in Ordnung",
+      "cold": 0,
+      "transition": 1,
+      "neigung": "up",
+      "niveau": "down",
+      "text": "Niveau senken und Neigung erhöhen: eine steilere Kurve, die nach unten verschoben wird.",
+      "ref": { "source": "optimieren", "where": "Richtwerte, S. 1" }
+    }
+  ],
+  "twoPoint": {
+    "footOutdoor": 20,
+    "foot": { "label": "Fußpunkt (Vorlauf bei +20 °C außen)", "min": 15, "max": 50, "step": 1, "text": "Hebt oder senkt das warme Ende der Kurve. Die Kurve dreht sich dabei um den Endpunkt: Der Vorlauf ändert sich vor allem in der Übergangszeit, bei Frost kaum." },
+    "end": { "label": "Endpunkt (Vorlauf am kalten Ende)", "min": 20, "max": 90, "step": 1, "text": "Hebt oder senkt das kalte Ende der Kurve. Die Kurve dreht sich dabei um den Fußpunkt und wird steiler oder flacher: Der Vorlauf ändert sich vor allem bei Frost, in der Übergangszeit kaum." },
+    "endOutdoor": { "label": "Endpunkt bei Außentemperatur", "min": -25, "max": 0, "step": 1, "default": -10, "text": "Legt fest, bei welcher Außentemperatur der Endpunkt abgelesen wird, z. B. die tiefste Außentemperatur, für die die Anlage ausgelegt ist. Die Kurve selbst bleibt gleich, nur der Endpunkt wandert auf ihr." },
+    "text": "Statt Neigung und Niveau legst du zwei Punkte fest: den Vorlauf am Fußpunkt (+20 °C außen) und am Endpunkt, dem kalten Ende der Kurve. Das Tool legt seine Kennlinie durch beide Punkte und rechnet Neigung und Niveau dazu aus. Wie ein bestimmter Regler zwischen den Punkten rechnet und auf welche Außentemperatur er den Fußpunkt bezieht, steht in seiner Anleitung.",
+    "ref": { "source": "wikipedia", "where": "Abschnitt Fußpunkt (Bildbeschreibung)" }
+  },
+  "infos": [
+    {
+      "title": "Erst hydraulisch abgleichen",
+      "text": "Der hydraulische Abgleich ist die Voraussetzung. Erst danach bringt das Optimieren der Heizkurve die volle Wirkung. Ist unklar, ob abgeglichen wurde, oder bleiben einzelne Heizkörper kühl: zuerst das prüfen.",
+      "ref": { "source": "viessmann", "where": "Abschnitt hydraulischer Abgleich" }
+    },
+    {
+      "title": "Thermostate ganz öffnen",
+      "text": "Während des Einstellens alle Thermostatventile (mindestens im Referenzraum) ganz öffnen. Sonst regeln die Ventile mit und verfälschen, was die Heizkurve tatsächlich liefert.",
+      "ref": { "source": "viessmann", "where": "Praxis-Anleitung, Vorbereitung" }
+    },
+    {
+      "title": "Neigung bei Kälte, Niveau in der Übergangszeit",
+      "text": "Die Neigung an kalten Tagen unter 5 °C Außentemperatur anpassen, danach das Niveau in der Übergangszeit bei 5 bis 15 °C feinjustieren.",
+      "ref": { "source": "viessmann", "where": "Praxis-Anleitung" }
+    },
+    {
+      "title": "Kleine Schritte, dann abwarten",
+      "text": "Nur in kleinen Schritten ändern und danach mindestens 12 bis 24 Stunden abwarten. Bei Fußbodenheizung dauert es wegen der Trägheit deutlich länger, manchmal mehrere Tage. Ein Protokoll mit Datum, Außentemperatur, Neigung und Niveau hilft.",
+      "ref": { "source": "viessmann", "where": "Praxis-Anleitung" }
+    },
+    {
+      "title": "Der Regler rechnet mit gedämpfter Außentemperatur",
+      "text": "Die Außentemperatur in der Kennlinie ist stark geglättet und nicht der Augenblickswert. Für Messungen die Außentemperatur verwenden, die der Regler anzeigt.",
+      "ref": { "source": "kennlinie", "where": "Abschn. 1.2 und 2.3, S. 1 und 5" }
+    },
+    {
+      "title": "Andere Einflüsse auf die Raumtemperatur",
+      "text": "Wind, Sonne, geschlossene Rollläden, Personen und Geräte verändern die Raumtemperatur um einige Kelvin, und das Gebäude reagiert erst nach Stunden bis Tagen. Messungen am besten nachts oder früh morgens, dann ohne Absenkbetrieb.",
+      "ref": { "source": "kennlinie", "where": "Abschn. 2.1, S. 4" }
+    },
+    {
+      "title": "Mieter",
+      "text": "Mieter dürfen die Heizkurve in der Regel nicht selbst verändern.",
+      "ref": { "source": "viessmann", "where": "Abschnitt Mietwohnung" }
+    }
+  ]
+}

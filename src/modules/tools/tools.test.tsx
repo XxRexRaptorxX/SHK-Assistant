@@ -69,6 +69,7 @@ describe('Tools', () => {
       'Gefahrgut: 1000-Punkte-Regel',
       'Gehrungsmaße',
       'Heizkosten-Vergleich',
+      'Heizkurve simulieren und einstellen',
       'Heizlast überschlägig',
       'Heizraum und Aufstellraum',
       'Kabel Aderfarben',

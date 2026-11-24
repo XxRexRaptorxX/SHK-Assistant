@@ -503,6 +503,33 @@ Richtung (Beiwert × Gewicht, 1 kg ≙ 1 daN) und prüft die Standsicherheit. Be
 Der Build prüft doppelte Schlüssel, unbekannte Quellen, Gruppen und Maßnahmen, Maßnahmen ohne Inhalt oder ohne Ladegut,
 Ladegüter ohne Vorgaben und Schritte, nicht zitierte Quellen und dass jedes Kipp-Beispiel so ausgeht wie in der Quelle.
 
+**Heizkurven-Tools** (`"kind": "heatingCurve"`): Diagramm der Heizkurve mit Neigung, Niveau und Raumsoll, zuschaltbar
+Absenkbetrieb, Vorlauf höchstens/mindestens und Heizgrenze. Vergleicht mit einer Ausgangseinstellung (Vorlauf und
+geschätzte Raumtemperatur an den Vergleichspunkten) und rechnet aus einem Problem, einer Messung oder einem Wunsch-Vorlauf
+Neigung und Niveau zurück. Beispiel: Heizkurve simulieren und einstellen. Felder: `title`, `summary`, `description`,
+`category`, `keywords`, `closingNote`, optional `todo` (beginnt mit „TODO: Inhalt fehlt“) und:
+
+- `sources` und Fundstellen (`ref`) wie bei der Absturzsicherung.
+- `model`: `name`, `coefficients` (c0, c1, c2 der Kennlinie VL = RT_soll + Niveau − Neigung · D · (c0 + c1·D + c2·D²),
+  D = AT − RT_soll; die Formel im Rechenweg wird daraus erzeugt), `text`, `ref`, `examples` aus der Quelle (`label`, `neigung`, `niveau`,
+  `roomSetpoint`, `outdoor`, `flow`, `ref`) und optional `fitExamples` (zwei `measurements` mit `roomSetpoint`, `outdoor`,
+  `room` sowie `expectedNeigung`, `expectedNiveau`).
+- `parameters`: je Einstellung (`neigung`, `niveau`, `roomSetpoint`, `reducedSetpoint`, `maxFlow`, `minFlow`,
+  `heatingLimit`) `label`, `unit`, `min`, `max`, `step`, `default` (`null` = aus, nur bei den zuschaltbaren), bei den
+  zuschaltbaren `start` (Wert beim Einschalten), `text` (Wirkung, eigene Kurzfassung) und optional `ref`.
+- `chart`: `outdoorFrom`, `outdoorTo` (x-Achse); `comparePoints`: je `label`, `outdoor`; `bands`: hinterlegte Bereiche je
+  `label`, `from`, `to`, `ref`.
+- `symptomPoints`: `cold`, `transition` (Außentemperaturen für die Rückrechnung) und `text`.
+- `symptoms`: je `key`, `label`, `cold`/`transition` (−1 zu kalt, 0 passt, 1 zu warm), Regel der Quelle als `neigung`
+  und `niveau` (`up`, `down`, `keep`), `text`, `ref`.
+- `twoPoint`: zweite Einstellart Fußpunkt/Endpunkt: `footOutdoor` (Außentemperatur des Fußpunkts), `foot` und `end`
+  (je `label`, `min`, `max`, `step` für den Vorlauf), `endOutdoor` (einstellbare Außentemperatur des Endpunkts mit
+  `default`), `text`, `ref`. Das Tool legt die Kennlinie durch beide Punkte.
+- `infos`: Hinweise zum Einstellen, je `title`, `text`, `ref`.
+
+Der Build prüft, dass die Kennlinie jedes Beispiel der Quelle trifft (auf 0,05 K), die Rückrechnung die `fitExamples`
+ergibt und bei jedem Problem in die Richtung der Regel zeigt, außerdem doppelte Schlüssel, Wertebereiche und Quellen.
+
 **Abwasser-Bemessung** (`"kind": "drainageSizing"`): Leitungsabschnitt und Gebäudeart wählen, die angeschlossenen
 Entwässerungsgegenstände zählen, das Tool nennt die Nennweite. Felder: `title`, `summary`, `description`, `category`,
 `keywords`, `related`, `closingNote` und:
