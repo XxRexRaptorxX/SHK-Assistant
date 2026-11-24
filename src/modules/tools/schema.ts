@@ -462,6 +462,7 @@ export const toolCollection = defineCollection({
           ? [entry.velocityFormula]
           : isHeatingCostTool(entry)
             ? [entry.heatingValues]
+    ...(isFactorTool(entry) && entry.guideFigure ? [entry.guideFigure] : []),
             : []),
   ],
 })

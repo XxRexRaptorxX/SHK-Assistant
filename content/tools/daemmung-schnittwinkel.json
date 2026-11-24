@@ -1,0 +1,84 @@
+{
+  "id": "tool.daemmung-schnittwinkel",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Geometrie am rechtwinkligen Dreieck: L = d ÷ tan α (Ankathete = Gegenkathete ÷ Tangens). Eigene Herleitung, nicht vom Inhaber geliefert.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "factor",
+  "title": "Gehrungsmaße",
+  "summary": "Länge der Schräge aus Dämmdicke und Schnittwinkel.",
+  "description": "Berechnet, wie lang die Schräge auf der Oberfläche der Dämmung sein muss, damit der Schnitt genau unter dem gewählten Winkel liegt. Der Winkel α liegt zwischen Schnittfläche und Oberfläche der Dämmung. Anfang der Schräge an der einen Kante anzeichnen, Ende im Abstand L an der gegenüberliegenden Kante, auf der Seitenfläche verbinden und entlang dieser Linie durchschneiden.",
+  "category": "Montage",
+  "tags": ["heizung", "sanitaer", "kaelte"],
+  "related": ["tool.rohrdaemmung"],
+  "figure": "figure.daemmung-schnittwinkel",
+  "guideFigure": "figure.daemmung-zuschnitt",
+  "inputs": [
+    {
+      "symbol": "d",
+      "name": "Dicke der Dämmung",
+      "unit": "mm",
+      "min": 0
+    }
+  ],
+  "choices": [
+    {
+      "key": "winkel",
+      "name": "Schnittwinkel α",
+      "default": "w45",
+      "options": [
+        { "key": "w15", "label": "15°" },
+        { "key": "w22", "label": "22,5°" },
+        { "key": "w30", "label": "30°" },
+        { "key": "w45", "label": "45°" },
+        { "key": "w60", "label": "60°" },
+        { "key": "w67", "label": "67,5°" },
+        { "key": "w75", "label": "75°" }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "symbol": "L",
+      "name": "Länge der Schräge (Anfang bis Ende)",
+      "unit": "mm",
+      "decimals": 0,
+      "cases": [
+        { "when": { "winkel": "w15" }, "factor": 3.732050808, "per": "d", "rule": "L = d ÷ tan 15° ≈ 3,732 × d" },
+        { "when": { "winkel": "w22" }, "factor": 2.414213562, "per": "d", "rule": "L = d ÷ tan 22,5° ≈ 2,414 × d" },
+        { "when": { "winkel": "w30" }, "factor": 1.732050808, "per": "d", "rule": "L = d ÷ tan 30° ≈ 1,732 × d" },
+        { "when": { "winkel": "w45" }, "factor": 1, "per": "d", "rule": "L = d ÷ tan 45° = d" },
+        { "when": { "winkel": "w60" }, "factor": 0.577350269, "per": "d", "rule": "L = d ÷ tan 60° ≈ 0,577 × d" },
+        { "when": { "winkel": "w67" }, "factor": 0.414213562, "per": "d", "rule": "L = d ÷ tan 67,5° ≈ 0,414 × d" },
+        { "when": { "winkel": "w75" }, "factor": 0.267949192, "per": "d", "rule": "L = d ÷ tan 75° ≈ 0,268 × d" }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "inputs": { "d": 40 },
+      "choices": { "winkel": "w45" },
+      "expected": { "L": 40 },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): bei 45° ist die Schräge so lang wie die Dämmung dick"
+    },
+    {
+      "inputs": { "d": 40 },
+      "choices": { "winkel": "w30" },
+      "expected": { "L": 69.282 },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 40 mm ÷ tan 30°"
+    },
+    {
+      "inputs": { "d": 50 },
+      "choices": { "winkel": "w60" },
+      "expected": { "L": 28.868 },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 50 mm ÷ tan 60°"
+    },
+    {
+      "inputs": { "d": 100 },
+      "choices": { "winkel": "w22" },
+      "expected": { "L": 241.42 },
+      "note": "Eigenes Rechenbeispiel zur Kontrolle (nicht vom Inhaber): 100 mm ÷ tan 22,5°"
+    }
+  ]
+}

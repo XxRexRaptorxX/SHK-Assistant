@@ -67,6 +67,7 @@ describe('Tools', () => {
       'Gebäudeklasse',
       'Gefahrgut: 1000-Punkte-Regel',
       'Heizkosten-Vergleich',
+      'Gehrungsmaße',
       'Heizlast überschlägig',
       'Heizraum und Aufstellraum',
       'Kabel Aderfarben',

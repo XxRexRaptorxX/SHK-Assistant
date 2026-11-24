@@ -206,6 +206,12 @@ export function FactorCalculator({
         {!complete && <p className="text-base text-muted">Alle Werte eingeben.</p>}
       </div>
     </section>
+    {/* Zusätzliche Anleitung unter dem Ergebnis */}
+    {tool.guideFigure && (
+      <div className="mt-6">
+        <FigureView id={tool.guideFigure} />
+      </div>
+    )}
     </>
   )
 }

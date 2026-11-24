@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <marker id="daemmung-zuschnitt-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Überschriften -->
+  <text x="100" y="22" text-anchor="middle">Bogen 2 × 45°</text>
+  <text x="300" y="22" text-anchor="middle">Bogen 90°</text>
+  <text x="500" y="22" text-anchor="middle">T-Stück 90°</text>
+
+  <!-- 1: zwei Keile je 45°, Dämmung bleibt innen zusammen -->
+  <path class="area" d="M20 44L70 44L80 68L90 44L110 44L120 68L130 44L180 44L180 68L20 68Z"/>
+  <path class="line" d="M20 44L70 44L80 68L90 44L110 44L120 68L130 44L180 44L180 68L20 68Z"/>
+  <path class="area" d="M20 150L80 150L117 187L117 290L93 290L93 197L70 174L20 174Z"/>
+  <path class="line" d="M20 150L80 150L117 187L117 290L93 290L93 197L70 174L20 174Z"/>
+  <path class="thin" d="M80 150L70 174M117 187L93 197"/>
+
+  <!-- 2: zwei Teile, Enden je 45° -->
+  <path class="area" d="M210 44L296 44L272 68L210 68Z"/>
+  <path class="line" d="M210 44L296 44L272 68L210 68Z"/>
+  <path class="area" d="M390 44L304 44L328 68L390 68Z"/>
+  <path class="line" d="M390 44L304 44L328 68L390 68Z"/>
+  <path class="area" d="M210 150L322 150L322 290L298 290L298 174L210 174Z"/>
+  <path class="line" d="M210 150L322 150L322 290L298 290L298 174L210 174Z"/>
+  <path class="thin" d="M322 150L298 174"/>
+
+  <!-- 3: 90°-Kerbe im durchgehenden Teil, Abzweig mit 90°-Spitze -->
+  <path class="area" d="M410 44L590 44L590 68L512 68L500 56L488 68L410 68Z"/>
+  <path class="line" d="M410 44L590 44L590 68L512 68L500 56L488 68L410 68Z"/>
+  <path class="area" d="M430 84L556 84L568 96L556 108L430 108Z"/>
+  <path class="line" d="M430 84L556 84L568 96L556 108L430 108Z"/>
+  <path class="area" d="M410 150L590 150L590 174L512 174L500 162L488 174L410 174Z"/>
+  <path class="line" d="M410 150L590 150L590 174L512 174L500 162L488 174L410 174Z"/>
+  <path class="area" d="M488 290L488 174L500 162L512 174L512 290Z"/>
+  <path class="line" d="M488 290L488 174L500 162L512 174L512 290Z"/>
+
+  <!-- Pfeile: zuschneiden → zusammensetzen -->
+  <line class="dim" x1="100" y1="88" x2="100" y2="136" marker-end="url(#daemmung-zuschnitt-arrow)"/>
+  <line class="dim" x1="300" y1="88" x2="300" y2="136" marker-end="url(#daemmung-zuschnitt-arrow)"/>
+  <line class="dim" x1="500" y1="114" x2="500" y2="140" marker-end="url(#daemmung-zuschnitt-arrow)"/>
+</svg>

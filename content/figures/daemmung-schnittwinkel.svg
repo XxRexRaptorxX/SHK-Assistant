@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 145">
+  <defs>
+    <marker id="daemmung-schnittwinkel-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="dim-head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <!-- Dämmung von der Seite, links abgebrochen, rechts schräg geschnitten -->
+  <path class="area" d="M50 50L170 50L284 130L50 130L56 110L44 90L56 70Z"/>
+  <path class="line" d="M50 50L170 50L284 130L50 130L56 110L44 90L56 70Z"/>
+  <circle class="dim-head" cx="170" cy="50" r="3.5"/>
+  <circle class="dim-head" cx="284" cy="130" r="3.5"/>
+  <!-- Dicke d -->
+  <line class="dim" x1="40" y1="50" x2="18" y2="50"/>
+  <line class="dim" x1="40" y1="130" x2="18" y2="130"/>
+  <line class="dim" x1="24" y1="51" x2="24" y2="129" marker-start="url(#daemmung-schnittwinkel-dim)" marker-end="url(#daemmung-schnittwinkel-dim)"/>
+  <text class="sym" x="8" y="95">d</text>
+  <!-- Länge L der Schräge, auf der Oberfläche gemessen -->
+  <line class="dim" x1="170" y1="46" x2="170" y2="24"/>
+  <line class="dim dash" x1="284" y1="126" x2="284" y2="24"/>
+  <line class="dim" x1="171" y1="32" x2="283" y2="32" marker-start="url(#daemmung-schnittwinkel-dim)" marker-end="url(#daemmung-schnittwinkel-dim)"/>
+  <text class="sym" x="223" y="26">L</text>
+  <text class="note" x="170" y="14" text-anchor="middle">Anfang</text>
+  <text class="note" x="284" y="14" text-anchor="middle">Ende</text>
+  <!-- Schnittwinkel α zwischen Schnittfläche und Oberfläche -->
+  <path class="thin" d="M244 130A40 40 0 0 1 251.3 107"/>
+  <text class="sym" x="224" y="122">α</text>
+</svg>

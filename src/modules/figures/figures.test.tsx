@@ -60,9 +60,9 @@ describe('Skizze auf der Formelseite', () => {
     const used = new Set([
       ...[...content.formulas, ...formulaToolEntries].map((formula) => formula.figure).filter(Boolean),
       ...toolEntries.filter(isChoiceTool).flatMap(choiceFigures),
-      ...toolEntries.filter(isFactorTool).flatMap((tool) => (tool.figure ? [tool.figure] : [])),
+      ...toolEntries.filter(isFactorTool).flatMap((tool) => [tool.figure, tool.guideFigure].filter((id) => id !== undefined)),
     ])
     for (const entry of content.figures) expect(used).toContain(entry.id)
-    expect(content.figures).toHaveLength(56)
+    expect(content.figures).toHaveLength(58)
   })
 })
