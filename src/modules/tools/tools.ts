@@ -8,6 +8,7 @@ import { cableKeywords } from './cableTool'
 import { classificationKeywords } from './classificationTool'
 import { drainageSizingKeywords } from './drainageSizingTool'
 import { fallProtectionKeywords } from './fallProtectionTool'
+import { loadSecuringKeywords } from './loadSecuringTool'
 import { hazmatPointsKeywords } from './hazmatPointsTool'
 import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
@@ -24,6 +25,7 @@ import {
   isDrainageSizingTool,
   isFactorTool,
   isFallProtectionTool,
+  isLoadSecuringTool,
   isFormulaTool,
   isHazmatPointsTool,
   isHeatingCostTool,
@@ -112,6 +114,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isRefrigerantTool(entry)) return refrigerantKeywords(entry)
   if (isSensorTool(entry)) return sensorKeywords(entry)
   if (isFallProtectionTool(entry)) return fallProtectionKeywords(entry)
+  if (isLoadSecuringTool(entry)) return loadSecuringKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)
   if (isWorkHoursTool(entry) || isMaterialListTool(entry)) return entry.keywords
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)

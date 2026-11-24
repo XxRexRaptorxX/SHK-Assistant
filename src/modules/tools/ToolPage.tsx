@@ -15,6 +15,7 @@ import {
   isClassificationTool,
   isDrainageSizingTool,
   isFallProtectionTool,
+  isLoadSecuringTool,
   isFactorTool,
   isHazmatPointsTool,
   isHeatingCostTool,
@@ -51,6 +52,7 @@ import { RefrigerantLookup } from './RefrigerantLookup'
 import { RiserLookup } from './RiserLookup'
 import { SensorLookup } from './SensorLookup'
 import { FallProtectionLookup } from './FallProtectionLookup'
+import { LoadSecuringLookup } from './LoadSecuringLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
@@ -100,6 +102,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <RefrigerantLookup tool={tool} />
       ) : isFallProtectionTool(tool) ? (
         <FallProtectionLookup tool={tool} />
+      ) : isLoadSecuringTool(tool) ? (
+        <LoadSecuringLookup tool={tool} />
       ) : isSensorTool(tool) ? (
         <SensorLookup tool={tool} />
       ) : isPlacementTool(tool) ? (

@@ -452,11 +452,6 @@ Der Build prüft doppelte Schlüssel, unbekannte Regelwerke, Brennstoffe und The
 umgekehrt), unbekannte und ungenutzte Fragen, Mengengrenzen
 über Regelwerke mit verschiedenen Einheiten und dass jedes Beispiel so eingestuft und gerechnet wird wie in der Quelle.
 
-**Abwasser-Bemessung** (`"kind": "drainageSizing"`): Leitungsabschnitt und Gebäudeart wählen, die angeschlossenen
-Entwässerungsgegenstände zählen, das Tool nennt die Nennweite. Felder: `title`, `summary`, `description`, `category`,
-`keywords`, `related`, `closingNote` und:
-
-- `crossSections`: `system` (Rohrsystem, z. B. „POLO-KAL NG“) und `rows` je `dn` mit `area` (Querschnittsfläche in cm²).
 **Absturzsicherungs-Tools** (`"kind": "fallProtection"`): Arbeitsplatz wählen (z. B. Flachdach, Gerüst, Leiter) und die
 Absturz- bzw. Standhöhe eingeben. Das Tool zeigt den passenden Höhenbereich der Quelle (z. B. „Absturzsicherung
 erforderlich“) und die Schutzmaßnahmen in der Rangfolge, aufklappbar mit Maßen und Vorgaben zum Aufbau. Beispiel:
@@ -479,6 +474,34 @@ Absturzsicherung. Felder: `title`, `summary`, `description`, `category`, `keywor
 Der Build prüft doppelte Schlüssel, unbekannte Quellen, Stufen und Maßnahmen, Lücken in den Höhenbereichen, Maßnahmen ohne
 Inhalt oder ohne Arbeitsplatz, nicht zitierte Quellen und dass jedes Beispiel im erwarteten Bereich landet.
 
+**Ladungssicherungs-Tools** (`"kind": "loadSecuring"`): Ladegut wählen (z. B. Kisten, Gasflaschen, Minibagger). Das Tool
+zeigt die Umsetzung Schritt für Schritt, die Vorgaben und die passenden Maßnahmen (Sicherungsarten, Zurr- und Hilfsmittel,
+Ausstattung am Fahrzeug) aufklappbar mit Kennwerten. Darunter rechnet es aus Gewicht und Fahrzeugklasse die Kräfte je
+Richtung (Beiwert × Gewicht, 1 kg ≙ 1 daN) und prüft die Standsicherheit. Beispiel: Ladungssicherung. Felder: `title`,
+`summary`, `description`, `category`, `keywords`, `closingNote` und:
+
+- `sources` und Fundstellen (`ref`) wie bei der Absturzsicherung.
+- `generalRules`: Vorgaben für jedes Ladegut, je `level` (`forbidden`, `required`, `note`), `text` (eigene Kurzfassung), `ref`.
+- `forcesText`, `forcesRef`: Erklärung unter der Kräfteberechnung.
+- `vehicleClasses`: je `key`, `label`, optional `note`, `ref` und `forces` mit den Beiwerten `forward`, `backward`, `side`,
+  optional `backwardTipping` und `sideTipping` für kippgefährdete Ladung (nur dann zeigt das Tool den Kipp-Schalter).
+- `tipping`: `factor` (standsicher, wenn Abstand Schwerpunkt – Kippkante > factor × Schwerpunkthöhe), `text`, `ref` und
+  `examples` aus der Quelle (`label`, `height`, `distance`, `stable`, `ref`).
+- `groups`: Gruppen der Maßnahmen in Anzeigereihenfolge, je `key`, `label`.
+- `measures`: je `key`, `group`, `label`, `summary`, optional `aliases`, `specs` (je `label`, `value`, optional `note`,
+  `ref`), `rules` und `todo` (beginnt mit „TODO: Inhalt fehlt“, bei `verified` nicht erlaubt).
+- `cargos`: je `key`, `label`, optional `note`, `aliases`, `rules`, `specs`, `steps` (je `text`, `ref`), `measures` (keys)
+  und `todo`.
+- `checklist`: Gruppen mit `label`, `items` und `ref`.
+
+Der Build prüft doppelte Schlüssel, unbekannte Quellen, Gruppen und Maßnahmen, Maßnahmen ohne Inhalt oder ohne Ladegut,
+Ladegüter ohne Vorgaben und Schritte, nicht zitierte Quellen und dass jedes Kipp-Beispiel so ausgeht wie in der Quelle.
+
+**Abwasser-Bemessung** (`"kind": "drainageSizing"`): Leitungsabschnitt und Gebäudeart wählen, die angeschlossenen
+Entwässerungsgegenstände zählen, das Tool nennt die Nennweite. Felder: `title`, `summary`, `description`, `category`,
+`keywords`, `related`, `closingNote` und:
+
+- `crossSections`: `system` (Rohrsystem, z. B. „POLO-KAL NG“) und `rows` je `dn` mit `area` (Querschnittsfläche in cm²).
   Daraus rechnet der Umschalter am Ergebnis den Innendurchmesser √(4·A/π); jede angezeigte Nennweite braucht eine Fläche.
 - Eigene Gegenstände (Bezeichnung, DU, Anzahl, optional Einzelanschluss-DN und „ist ein WC“) gibt man in der App ein, sie
   stehen nicht im Inhalt. Das Ergebnis kennzeichnet sie als eigene Angaben.

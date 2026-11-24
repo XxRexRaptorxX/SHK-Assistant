@@ -1,0 +1,1198 @@
+{
+  "id": "tool.ladungssicherung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "BG BAU „Ladungssicherung auf Fahrzeugen der Bauwirtschaft“, Abruf-Nr. 681, Ausgabe 2021, https://www.bgbau-medien.de/handlungshilfen_gb/daten/pdf/ladungssicherung.pdf; DGUV Information 210-001 „Beförderung von Flüssiggas mit Fahrzeugen auf der Straße“, Ausgabe Februar 2020, https://publikationen.dguv.de/widgets/pdf/download/article/790; beide abgerufen am 24.11.2026. Vorgaben eigenständig zusammengefasst.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "loadSecuring",
+  "title": "Ladungssicherung",
+  "summary": "Zeigt je Ladegut, wie es gesichert werden muss: Vorgaben, Umsetzung Schritt für Schritt, Zurrmittel mit Kennwerten. Rechnet die Kräfte aus dem Gewicht.",
+  "description": "Ladegut wählen, z. B. Kisten, Gasflaschen oder Minibagger. Das Tool zeigt die Vorgaben für dieses Ladegut, die Umsetzung Schritt für Schritt und die passenden Sicherungsarten, Zurr- und Hilfsmittel mit ihren Kennwerten. Mit Gewicht und Fahrzeugklasse rechnet es die Kräfte, die die Sicherung nach vorne, hinten und zur Seite aufnehmen muss, und prüft auf Wunsch, ob die Ladung kippen kann.",
+  "category": "Montage",
+  "tags": ["allgemein"],
+  "keywords": [
+    "Ladung sichern",
+    "Ladungssicherung",
+    "Zurren",
+    "Verzurren",
+    "Spanngurt",
+    "Ratschengurt",
+    "Transporter",
+    "Kastenwagen",
+    "Pritsche",
+    "Anhänger",
+    "StVO § 22",
+    "DIN EN 12195",
+    "LC",
+    "STF",
+    "Zurrkraft",
+    "Vorspannkraft",
+    "Abfahrtkontrolle"
+  ],
+  "closingNote": "Die Beispiele der Quelle sind mit der DIN EN 12195-1:2011 gerechnet. Wie viele Zurrmittel du im Einzelfall brauchst, ermittelst du mit den Tabellen der Quelle (Anhang 3 und 4), einem Zurrkraftrechner oder einer Hersteller-App. Angaben der Fahrzeug-, Aufbau- und Maschinenhersteller gehen vor. Für Gefahrgut gelten zusätzlich GGVSEB und ADR, siehe auch das Tool „Gefahrgut: 1000-Punkte-Regel“. Das Tool ersetzt keine Betriebsanweisung und keine Unterweisung.",
+  "sources": [
+    {
+      "key": "bgbau",
+      "name": "BG BAU Ladungssicherung",
+      "source": "BG BAU „Ladungssicherung auf Fahrzeugen der Bauwirtschaft“, Abruf-Nr. 681, Ausgabe 2021, https://www.bgbau-medien.de/handlungshilfen_gb/daten/pdf/ladungssicherung.pdf"
+    },
+    {
+      "key": "i210001",
+      "name": "DGUV Information 210-001",
+      "source": "DGUV Information 210-001 „Beförderung von Flüssiggas mit Fahrzeugen auf der Straße“, Ausgabe Februar 2020, https://publikationen.dguv.de/widgets/pdf/download/article/790"
+    }
+  ],
+  "generalRules": [
+    {
+      "level": "required",
+      "text": "Ladung und Hilfsmittel so verstauen und sichern, dass sie auch bei Vollbremsung oder plötzlichem Ausweichen nicht verrutschen, umfallen, hin- und herrollen, herabfallen oder vermeidbaren Lärm machen (StVO § 22 Abs. 1). Maßstab sind die anerkannten Regeln der Technik, z. B. DIN EN 12195-1 und VDI 2700.",
+      "ref": { "source": "bgbau", "where": "Abschn. 2, S. 6" }
+    },
+    {
+      "level": "required",
+      "text": "Formschlüssig sichern (anlegen an Stirn- oder Trennwand, verkeilen, Direktzurren) geht vor kraftschlüssig (Niederzurren). Auch bei hoher Reibung und trockenem Wetter müssen die Bewegungskräfte durch eine Sicherung aufgenommen werden.",
+      "ref": { "source": "bgbau", "where": "Abschn. 5, S. 19" }
+    },
+    {
+      "level": "required",
+      "text": "Ladefläche vor dem Beladen besenrein machen. Die Reibwerte gelten nur für saubere Flächen ohne Frost, Eis und Schnee; sonst darf nur mit höchstens μ = 0,2 gerechnet werden.",
+      "ref": { "source": "bgbau", "where": "Abschn. 4.2, S. 16; Abschn. 9.3, S. 46" }
+    },
+    {
+      "level": "required",
+      "text": "Zulässige Gesamtmasse, Achslasten und den Lastverteilungsplan des Fahrzeugs einhalten. Schwere Ladung mit dem Schwerpunkt möglichst niedrig und nahe der Längsmittelachse stellen.",
+      "ref": { "source": "bgbau", "where": "Abschn. 6.1, S. 21; Anhang 1, S. 159" }
+    },
+    {
+      "level": "required",
+      "text": "Der Fahrer kontrolliert die Ladungssicherung vor der Abfahrt, nach Fahrtunterbrechungen und bei Bedarf, z. B. nach einer Vollbremsung oder schlechter Wegstrecke. Nach Teilentladungen neu sichern.",
+      "ref": { "source": "bgbau", "where": "Abschn. 3.3, S. 12; Anhang 2, S. 161" }
+    },
+    {
+      "level": "required",
+      "text": "Zurrmittel nicht zum Heben verwenden. Vor dem Lösen der Zurrmittel sicherstellen, dass die Ladung auch ohne Sicherung sicher steht und niemand durch kippende oder herabfallende Teile gefährdet wird.",
+      "ref": { "source": "bgbau", "where": "Abschn. 8, S. 34" }
+    },
+    {
+      "level": "note",
+      "text": "Verantwortlich sind alle, die mit der Ladungssicherung betraut sind: Der Unternehmer stellt geeignete Fahrzeuge, Hilfsmittel und geeignete Fahrer, der Verlader sorgt für die beförderungssichere Verladung, der Fahrer für die betriebssichere Beladung seines Fahrzeugs.",
+      "ref": { "source": "bgbau", "where": "Abschn. 3, S. 8–12" }
+    },
+    {
+      "level": "note",
+      "text": "Für wiederkehrende Transporte legt der Unternehmer in einer Betriebsanweisung fest, wie die Ladung gesichert wird, und unterweist die Beschäftigten.",
+      "ref": { "source": "bgbau", "where": "Abschn. 2, S. 8; Abschn. 11, S. 155; Anhang 1, S. 159" }
+    },
+    {
+      "level": "note",
+      "text": "Fahrgeschwindigkeit an Ladegut, Straße und Verkehr anpassen.",
+      "ref": { "source": "bgbau", "where": "Anhang 2, S. 161" }
+    }
+  ],
+  "forcesText": "Gerechnet wird mit 1 kg Ladung ≙ 1 daN Gewichtskraft. Die Werte sind die Kräfte, die bei Bremsen, Anfahren und in Kurven auf die Ladung wirken. Die Sicherung muss sie aufnehmen; abziehen darf man nur die Reibung zwischen Ladung und Ladefläche.",
+  "forcesRef": { "source": "bgbau", "where": "Abschn. 4.1, S. 13; Tabelle 1, S. 14; Abschn. 4.4, S. 18" },
+  "vehicleClasses": [
+    {
+      "key": "upTo2",
+      "label": "bis 2,0 t",
+      "note": "z. B. Pkw, kleiner Kastenwagen",
+      "forces": { "forward": 0.9, "backward": 0.5, "side": 0.7 },
+      "ref": { "source": "bgbau", "where": "Tabelle 1, S. 14" }
+    },
+    {
+      "key": "upTo35",
+      "label": "über 2,0 t bis 3,5 t",
+      "note": "z. B. Transporter, Pritsche, Anhänger bis 3,5 t",
+      "forces": { "forward": 0.8, "backward": 0.5, "side": 0.6 },
+      "ref": { "source": "bgbau", "where": "Tabelle 1, S. 14" }
+    },
+    {
+      "key": "over35",
+      "label": "über 3,5 t",
+      "note": "Lkw",
+      "forces": { "forward": 0.8, "backward": 0.5, "side": 0.5, "backwardTipping": 0.6, "sideTipping": 0.6 },
+      "ref": { "source": "bgbau", "where": "Tabelle 1, S. 14" }
+    }
+  ],
+  "tipping": {
+    "factor": 0.6,
+    "text": "Die Ladung ist standsicher, wenn der waagerechte Abstand vom Schwerpunkt zur Kippkante größer ist als 0,6 × Schwerpunkthöhe. Sonst ist sie kippgefährdet und braucht zusätzlich eine Sicherung gegen Kippen. Bei runden Böden ist der Abstand der Radius.",
+    "ref": { "source": "bgbau", "where": "Abschn. 4.3, Bild 11, S. 17" },
+    "examples": [
+      {
+        "label": "Holzkiste 2,0 × 0,8 m, Schwerpunkt 1,0 m hoch",
+        "height": 1.0,
+        "distance": 0.4,
+        "stable": false,
+        "ref": { "source": "bgbau", "where": "Bild 11, S. 17" }
+      },
+      {
+        "label": "Holzkiste 0,8 × 0,8 m, Schwerpunkt 0,4 m hoch",
+        "height": 0.4,
+        "distance": 0.4,
+        "stable": true,
+        "ref": { "source": "bgbau", "where": "Bild 11, S. 17" }
+      },
+      {
+        "label": "Minibagger mit Standardfahrwerk",
+        "height": 0.85,
+        "distance": 0.4,
+        "stable": false,
+        "ref": { "source": "bgbau", "where": "Bild 93, S. 58" }
+      },
+      {
+        "label": "Minibagger mit verbreitertem Fahrwerk",
+        "height": 0.85,
+        "distance": 0.66,
+        "stable": true,
+        "ref": { "source": "bgbau", "where": "Bild 94, S. 59" }
+      }
+    ]
+  },
+  "groups": [
+    { "key": "method", "label": "Sicherungsarten" },
+    { "key": "gear", "label": "Zurr- und Hilfsmittel" },
+    { "key": "vehicle", "label": "Am Fahrzeug" }
+  ],
+  "measures": [
+    {
+      "key": "formLock",
+      "group": "method",
+      "label": "Formschlüssig sichern",
+      "summary": "Ladung lückenlos an Stirnwand, Trennwand oder Bordwand anlegen, verkeilen oder Lücken füllen. Bevorzugte Art.",
+      "aliases": ["Formschluss", "Festsetzen", "Verkeilen", "Füllhölzer", "Blockierbalken", "Stirnwand"],
+      "specs": [
+        {
+          "label": "Belastbarkeit Stirnwand (Aufbau DIN EN 12642, über 3,5 t)",
+          "value": "Code L: 40 % der Nutzlast, max. 5000 daN; Code XL: 50 % der Nutzlast",
+          "note": "Nur bei gleichmäßiger Belastung der ganzen Fläche bis 1,60 m Höhe.",
+          "ref": { "source": "bgbau", "where": "Tabelle 3, S. 22" }
+        },
+        {
+          "label": "Belastbarkeit Rückwand (Aufbau DIN EN 12642, über 3,5 t)",
+          "value": "Code L: 25 % der Nutzlast, max. 3100 daN; Code XL: 30 % der Nutzlast",
+          "ref": { "source": "bgbau", "where": "Tabelle 3, S. 22" }
+        },
+        {
+          "label": "Belastbarkeit Seitenwände (Aufbau DIN EN 12642, über 3,5 t)",
+          "value": "Code L: 30 % der Nutzlast; Code XL: 40 % der Nutzlast",
+          "ref": { "source": "bgbau", "where": "Tabelle 3, S. 22" }
+        },
+        {
+          "label": "Blockierbalken (Beispiel)",
+          "value": "Blockierkraft BC bis 1000 daN",
+          "note": "Bei gleichmäßiger Belastung über die ganze Breite, keine Punktlast. Der Aufbau muss die Kräfte aufnehmen können.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.6, Bild 79 und 80, S. 49" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Ladelücken so ausfüllen, dass die Ladung ihre Lage nicht ändern kann, z. B. mit Füllhölzern, Paletten oder einer Holzkonstruktion. Sonst nimmt die Ladung beim Bremsen „Anlauf“ oder die Zurrmittel lockern sich.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.5, S. 48–49" }
+        },
+        {
+          "level": "note",
+          "text": "Die Bordwände halten weniger, als viele Fahrer annehmen. Bei Aufbauten vor Baujahr 2002 gelten nur die Angaben des Herstellers.",
+          "ref": { "source": "bgbau", "where": "Abschn. 6.3, S. 22–23" }
+        },
+        {
+          "level": "note",
+          "text": "Keile lassen sich nicht auf jeder Ladefläche festnageln und eignen sich nicht für kippgefährdete Ladung.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.5, S. 49" }
+        },
+        {
+          "level": "note",
+          "text": "Blockierbalken werden zwischen den Bordwänden verspannt und halten Ladung an beliebiger Stelle der Pritsche fest, z. B. um den Lastverteilungsplan einzuhalten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.6, S. 49" }
+        }
+      ]
+    },
+    {
+      "key": "tieDown",
+      "group": "method",
+      "label": "Niederzurren",
+      "summary": "Zurrmittel über die Ladung spannen. Die Vorspannkraft drückt die Ladung auf die Ladefläche und erhöht so die Reibung (kraftschlüssig).",
+      "aliases": ["Niederzurrverfahren", "kraftschlüssig", "Überspannen"],
+      "specs": [
+        {
+          "label": "Maßgeblicher Wert am Zurrmittel",
+          "value": "STF (Vorspannkraft der Ratsche)",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 36" }
+        },
+        {
+          "label": "Reibung hält höchstens",
+          "value": "etwa 70 % der Gewichtskraft",
+          "note": "Beispiel rauer Beton auf Schnittholz. Den Rest muss die Sicherung aufnehmen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 4.2, S. 16" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Nur Zurrgurte verwenden, auf deren Etikett der STF-Wert angegeben ist.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 36" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Spannelemente mit einer Vorspannkraft (STF) über der zulässigen Zugkraft des Zurrpunkts (FLP). Der Zurrpunkt kann beim Spannen ausreißen und den Bediener verletzen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 60; Abschn. 10.5, S. 138" }
+        },
+        {
+          "level": "required",
+          "text": "Freistehende Ladung, z. B. eine Maschine, mit mindestens zwei Zurrmitteln niederzurren, damit sie sich nicht verdrehen und das Zurrmittel lösen kann.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 139 und 141" }
+        },
+        {
+          "level": "note",
+          "text": "Kanten mindern die Vorspannkraft auf der anderen Seite. Darum Kantengleiter einsetzen; mit Antirutschmatten braucht man deutlich weniger Zurrmittel.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.1, S. 42; Abschn. 9.3, S. 45–46" }
+        },
+        {
+          "level": "note",
+          "text": "Die Anzahl der Zurrmittel hängt von Gewicht, Reibbeiwert, Zurrwinkel und STF ab. Ablesen aus der Tabelle Niederzurren der Quelle, mit einem Zurrkraftrechner oder einer Hersteller-App.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.8, S. 52–53; Anhang 3, S. 162" }
+        },
+        {
+          "level": "note",
+          "text": "Spannung der Zurrmittel unterwegs regelmäßig prüfen und bei Bedarf nachspannen.",
+          "ref": { "source": "bgbau", "where": "Anhang 1, S. 159" }
+        }
+      ]
+    },
+    {
+      "key": "directLashing",
+      "group": "method",
+      "label": "Direktzurren (diagonal, schräg, horizontal)",
+      "summary": "Zurrmittel verbindet einen Zurrpunkt an der Ladung direkt mit einem Zurrpunkt am Fahrzeug. Formschlüssig, das Zurrmittel wird auf Zug belastet.",
+      "aliases": ["Diagonalzurren", "Schrägzurren", "Horizontalzurren", "Direktzurrverfahren"],
+      "specs": [
+        {
+          "label": "Maßgeblicher Wert am Zurrmittel",
+          "value": "LC (Zurrkraft im geraden Zug)",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 36" }
+        },
+        {
+          "label": "Gültigkeit der Tabelle Diagonalzurren",
+          "value": "vertikaler Zurrwinkel 20° bis 65°, horizontaler Zurrwinkel 6° bis 55°",
+          "note": "Die gemessenen Winkel dürfen diese Bereiche nicht verlassen.",
+          "ref": { "source": "bgbau", "where": "Anhang 4, S. 163; Abschn. 10.1, S. 68" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Mit vier Zurrmitteln sichern. Die LC jedes Zurrmittels und die zulässige Zugkraft (FLP) jedes Zurrpunkts müssen mindestens den Wert aus der Tabelle Diagonalzurren erreichen.",
+          "ref": { "source": "bgbau", "where": "Anhang 4, S. 163" }
+        },
+        {
+          "level": "required",
+          "text": "Mindest-Zurrwinkel vom Schild am Zurrpunkt beachten (z. B. „30° min.“). Flacher nur nach Rückfrage beim Hersteller.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 56; Bild 199, S. 137" }
+        },
+        {
+          "level": "required",
+          "text": "Zurrmittel, die zusammen wirken, müssen gleiche LC und gleiche Dehnung haben. Die Farbe der Gurte ist nicht genormt.",
+          "ref": { "source": "bgbau", "where": "Bild 213 und 214, S. 143" }
+        },
+        {
+          "level": "note",
+          "text": "Mit rutschhemmendem Material reichen Zurrmittel mit kleinerer LC, und die Zurrpunkte werden weniger belastet.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45–46" }
+        },
+        {
+          "level": "note",
+          "text": "Auch der horizontale Zurrwinkel hat großen Einfluss auf die nötige Rückhaltekraft.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 79–80" }
+        }
+      ]
+    },
+    {
+      "key": "loop",
+      "group": "method",
+      "label": "Umreifen und Kopfschlinge",
+      "summary": "Für Ladung ohne Zurrpunkte: Rundschlingen, Paletten oder Zurrecken um die Ladung legen und so einen Hilfszurrpunkt schaffen.",
+      "aliases": ["Kopflashing", "Kopfschlingenzurren", "Umreifungszurren", "Rundschlinge", "Zurrecke"],
+      "rules": [
+        {
+          "level": "note",
+          "text": "Rundschlingen um die Ladung legen und mit Zurrmitteln mit Spitzhaken im Formschluss sichern. So wird die hohe LC des Zurrmittels genutzt. Statt Rundschlingen gehen auch Paletten oder Zurrecken.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.4, S. 47–48" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Anschlagmittel, die einmal als Hilfsmittel zur Ladungssicherung gedient haben, wieder zum Heben einsetzen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.4, S. 47" }
+        },
+        {
+          "level": "note",
+          "text": "Als Kopfschlinge eignen sich genormte Anschlagmittel aus dem Hebezeugbetrieb (mit CE-Kennzeichnung), wenn sie die Kräfte aufnehmen können.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.4, S. 47" }
+        }
+      ]
+    },
+    {
+      "key": "loadUnit",
+      "group": "method",
+      "label": "Ladeeinheit bilden",
+      "summary": "Einzelteile, die allein nicht stabil sind (Steine, Rohre usw.), zu einer Einheit zusammenfassen, die sich als Ganzes sichern lässt.",
+      "aliases": ["Ladeeinheit", "Palette", "bündeln"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Instabile Einzelgüter zu Ladeeinheiten zusammenfassen, z. B. mit Paletten und einteiligen Zurrgurten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.4, S. 32" }
+        },
+        {
+          "level": "note",
+          "text": "Umreifungsbänder der Verpackung ersetzen keine Ladeeinheit.",
+          "ref": { "source": "bgbau", "where": "Bild 48, S. 32" }
+        },
+        {
+          "level": "note",
+          "text": "Beispiele: Palette mit Umreifungsgurt, Palette mit Steinen im Formschluss nach vorne, Paletten mit Umreifungsgurt und Kantenschutz verzurren.",
+          "ref": { "source": "bgbau", "where": "Bild 50, S. 33" }
+        }
+      ]
+    },
+    {
+      "key": "cover",
+      "group": "method",
+      "label": "Abdecken mit Netz oder Plane",
+      "summary": "Gegen Herabwehen und Herabfallen: Netz für leichte, grobe Ladung, Plane für feinkörnige Ladung.",
+      "aliases": ["Abdecknetz", "Plane", "Abdeckplane"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Leichte, grobe Ladung (z. B. Baumschnitt, Styropor, Mineralfaserwolle) mit Abdecknetz sichern, feinkörnige Ladung (z. B. Sand, Kies) mit Plane.",
+          "ref": { "source": "bgbau", "where": "Abschn. 5.1, S. 20" }
+        },
+        {
+          "level": "note",
+          "text": "Am Fahrzeug müssen Punkte zum Befestigen des Netzes vorhanden sein.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.2, S. 43" }
+        }
+      ]
+    },
+    {
+      "key": "strap",
+      "group": "gear",
+      "label": "Zurrgurt",
+      "summary": "Gurtband aus Chemiefasern (meist Polyester) mit Ratsche, nach DIN EN 12195-2.",
+      "aliases": ["Spanngurt", "Ratschengurt", "Zurrgurt", "DIN EN 12195-2"],
+      "specs": [
+        {
+          "label": "LC (Lashing Capacity)",
+          "value": "größte Kraft im geraden Zug",
+          "note": "Sagt nicht, welches Ladungsgewicht gesichert werden kann.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 35–36" }
+        },
+        {
+          "label": "STF (Standard Tension Force)",
+          "value": "Vorspannkraft der Ratsche, z. B. 500 daN",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, Bild 54, S. 35" }
+        },
+        {
+          "label": "SHF (Standard Hand Force)",
+          "value": "50 daN",
+          "note": "Handkraft, mit der die angegebene STF erreicht wird.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, Bild 54, S. 35" }
+        },
+        {
+          "label": "Ablegereif bei Garnbrüchen oder -schnitten",
+          "value": "mehr als 10 % des Querschnitts",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 37" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Jeder Zurrgurt muss gekennzeichnet sein. Bei zweiteiligen Gurten tragen Losende und Festende ein Etikett und nehmen die gleiche Zurrkraft auf.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 35" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Gurt ohne oder mit unleserlichem Etikett, geknotet, verdreht, zum Heben oder ohne Kantenschutz an scharfen Kanten und rauen Flächen verwenden.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 36" }
+        },
+        {
+          "level": "required",
+          "text": "Ratsche nach dem Spannen arretieren. Spann- und Verbindungselemente nicht auf Biegung belasten, nicht mit Verlängerung spannen (außer Handkraft-Messgerät). Haken nur im Hakengrund belasten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 37" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Ablegereife Gurte weiterverwenden: Garnbrüche oder -schnitte über 10 % des Querschnitts, fehlende oder unleserliche Kennzeichnung, verformte, angerissene oder gebrochene Spann- und Verbindungselemente, beschädigte tragende Nähte, Wärmeschäden (z. B. durch Reibung), Schäden durch aggressive Stoffe.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 37" }
+        },
+        {
+          "level": "note",
+          "text": "Zurrgurte für die Ladungssicherung dürfen keine CE-Kennzeichnung haben; sie fallen nicht unter die Maschinenrichtlinie.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.1, S. 36" }
+        },
+        {
+          "level": "required",
+          "text": "Vor jeder Benutzung auf sichtbare Mängel prüfen. Mängel, die die Sicherheit beeinträchtigen: Gurt nicht mehr benutzen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.3, S. 41" }
+        },
+        {
+          "level": "note",
+          "text": "Bewährte Praxis: mindestens einmal jährlich durch eine zur Prüfung befähigte Person prüfen und das dokumentieren, z. B. mit einer Prüfplakette. Art, Umfang und Fristen legt der Unternehmer nach Betriebssicherheitsverordnung fest.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.3, S. 41" }
+        }
+      ]
+    },
+    {
+      "key": "chain",
+      "group": "gear",
+      "label": "Zurrkette",
+      "summary": "Kurzgliedrige Rundstahlkette mit Spannelement für schwere Lasten, nach DIN EN 12195-3.",
+      "aliases": ["Kette", "Ratschenspanner", "DIN EN 12195-3"],
+      "specs": [
+        {
+          "label": "Werkstoff",
+          "value": "kurzgliedrige Rundstahlkette, Güteklasse 8 oder höher",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.2, S. 39" }
+        },
+        {
+          "label": "Kennzeichnung",
+          "value": "LC, STF, Warnhinweis „Darf nicht zum Heben verwendet werden!“, Hersteller, Rückverfolgbarkeits-Code, EN 12195-3",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.2, S. 39" }
+        },
+        {
+          "label": "Ablegereif bei",
+          "value": "Dehnung über 3 %, Verschleiß über 10 % der Nenndicke",
+          "note": "Ebenso bei Oberflächenrissen oder sichtbaren Verformungen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.2, S. 40" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Spannschlösser mit Spindel-Ausdrehsicherung, hakenförmige Endteile mit Hakensicherung, Verbindungs- und Verkürzungsteile mit Sicherung gegen unbeabsichtigtes Lösen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.2, S. 39–40" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Kettenglieder unzulässig verbinden.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.2, S. 39" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Ablegereife Ketten weiterverwenden: Kennzeichnung fehlt oder unleserlich, Risse, Dehnung über 3 %, Verschleiß über 10 % der Nenndicke, Verformungen, Risse, starker Verschleiß oder Korrosion an Verbindungsteilen und Spannelementen, beschädigte Sicherungen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 8.2, S. 40" }
+        }
+      ]
+    },
+    {
+      "key": "edgeProtection",
+      "group": "gear",
+      "label": "Kantenschoner und Kantengleiter",
+      "summary": "Schützen das Zurrmittel an Kanten und verringern den Verlust an Vorspannkraft beim Niederzurren.",
+      "aliases": ["Kantenschutz", "Kantenschoner", "Kantengleiter", "Kantenwinkel"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Beim Niederzurren über Kanten Kantengleiter verwenden.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.1, S. 42" }
+        },
+        {
+          "level": "forbidden",
+          "text": "C-Schläuche, Förderbandgurte, Antirutschmatten oder Ähnliches beim Niederzurren als Kantenschoner verwenden; sie mindern die Vorspannkraft noch stärker.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.1, S. 42" }
+        },
+        {
+          "level": "note",
+          "text": "Am besten Kantenschoner verwenden, die der Hersteller dafür anbietet.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.1, S. 42" }
+        }
+      ]
+    },
+    {
+      "key": "antiSlip",
+      "group": "gear",
+      "label": "Antirutschmatte (rutschhemmendes Material)",
+      "summary": "Erhöht die Reibung zwischen Ladung und Ladefläche. Mit Niederzurren oder Direktzurren kombiniert die schnellste und wirtschaftlichste Art.",
+      "aliases": ["RHM", "Antirutschmatte", "rutschhemmende Matte", "Gummimatte"],
+      "specs": [
+        {
+          "label": "Reibbeiwert Gummi",
+          "value": "μ = 0,6",
+          "note": "Andere Materialien nur mit Herstellerbescheinigung über den Reibbeiwert.",
+          "ref": { "source": "bgbau", "where": "Tabelle 2, S. 15; Abschn. 4.2, S. 16" }
+        },
+        {
+          "label": "Überstand unter der Ladung",
+          "value": "ca. 2 cm",
+          "note": "Damit die Ladung auch bei Kippbewegungen noch auf der Matte steht.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45" }
+        },
+        {
+          "label": "Reibbeiwert ohne Herstellerangabe",
+          "value": "mindestens μ = 0,4 ansetzen (VDI 2700 Blatt 15)",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45" }
+        },
+        {
+          "label": "Verschmutzt, Frost, Eis, Schnee",
+          "value": "höchstens μ = 0,2",
+          "ref": { "source": "bgbau", "where": "Abschn. 4.2, S. 16" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Die Ladung darf die Ladefläche nicht berühren, auch nicht, wenn sie sich durchbiegt.",
+          "ref": { "source": "bgbau", "where": "Abschn. 4.2, S. 16; Abschn. 9.3, S. 45" }
+        },
+        {
+          "level": "required",
+          "text": "Zwischen alle Flächen legen, die aufeinander gleiten können, z. B. auch zwischen gestapelte Teile.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45" }
+        },
+        {
+          "level": "required",
+          "text": "Die Matte muss das Gewicht der Ladung aushalten, für schwere Ladung z. B. Schwerlast-Antirutschmatten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45" }
+        }
+      ]
+    },
+    {
+      "key": "net",
+      "group": "gear",
+      "label": "Ladungssicherungsnetz",
+      "summary": "Netz, das die Kräfte über Ratschen oder Klemmschlösser in die Zurrpunkte leitet; vertikale Netze halten Ladung beim Bremsen und Anfahren.",
+      "aliases": ["Netz", "Haltenetz", "Trennnetz", "Gepäcknetz"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Das Netz muss die auftretenden Kräfte aufnehmen können.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.2, S. 43" }
+        },
+        {
+          "level": "note",
+          "text": "Abdecknetze halten nur leichte Ladung gegen Fahrtwind. Ladungssicherungsnetze werden in die Zurrpunkte gespannt, vertikale Netze sperren den Laderaum quer ab.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.2, S. 43–44" }
+        }
+      ]
+    },
+    {
+      "key": "lashingPoints",
+      "group": "vehicle",
+      "label": "Zurrpunkte",
+      "summary": "Verankerungen am Fahrzeug, die die Kräfte aus den Zurrmitteln in den Aufbau leiten. Ihre zulässige Zugkraft (FLP) begrenzt die Sicherung.",
+      "aliases": ["Zurrpunkt", "Zurröse", "Zurrschiene", "FLP", "DIN EN 12640", "DIN ISO 27956"],
+      "specs": [
+        {
+          "label": "Pkw, Kombi, Mehrzweck-Pkw (DIN ISO 27955)",
+          "value": "FLP 300 bis 350 daN",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25" }
+        },
+        {
+          "label": "Kastenwagen bis 2,5 t (DIN ISO 27956)",
+          "value": "FLP 300 bis 400 daN",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25" }
+        },
+        {
+          "label": "Kastenwagen über 2,5 t bis 5,0 t (DIN ISO 27956)",
+          "value": "FLP 350 bis 500 daN",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25" }
+        },
+        {
+          "label": "Kastenwagen über 5,0 t bis 7,5 t (DIN ISO 27956)",
+          "value": "FLP 350 bis 800 daN",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25" }
+        },
+        {
+          "label": "Pritsche, Anhänger bis 0,75 t (DIN EN 12640:2020, ab 06/2020)",
+          "value": "FLP 400 daN",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25" }
+        },
+        {
+          "label": "Pritsche, Anhänger über 0,75 t bis 3,5 t (DIN EN 12640:2020, ab 06/2020)",
+          "value": "FLP 600 daN",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25" }
+        },
+        {
+          "label": "Abstände bei Pritschen (DIN EN 12640)",
+          "value": "untereinander ≤ 1000 mm (über den Achsen ≤ 1200 mm), zu Stirn- und Heckwand ≤ 500 mm, zu den Bordwänden ≤ 250 mm",
+          "ref": { "source": "bgbau", "where": "Abschn. 6.4, S. 24" }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Pritschenaufbauten müssen Verankerungen für Zurrmittel haben (DGUV Vorschrift 70, § 22 Abs. 1). Auf der Ladefläche mindestens 2 Zurrpunktpaare.",
+          "ref": { "source": "bgbau", "where": "Abschn. 6.4, S. 24" }
+        },
+        {
+          "level": "required",
+          "text": "Die zulässige Zugkraft (FLP) steht auf dem Schild am Zurrpunkt bzw. bei Kastenwagen und Kombis in der Bedienungsanleitung des Herstellers (dort keine Kennzeichnungspflicht). Sie darf in keiner Fahrsituation überschritten werden.",
+          "ref": { "source": "bgbau", "where": "Abschn. 6.4, S. 25; Anhang 1, S. 159" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Anschlagpunkte zum Heben (z. B. Drahtseilösen an Fertigteilen) ohne Vorgabe des Herstellers als Zurrpunkt nutzen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.3, S. 31" }
+        },
+        {
+          "level": "note",
+          "text": "Bei Fahrzeugen bis 05/2020 und bei Lkw gelten andere Normen und Werte; die Tabelle der Quelle beachten. Bei Kippern werden Zurrpunkte oft erst nachgerüstet.",
+          "ref": { "source": "bgbau", "where": "Tabelle 4, S. 25; Abschn. 3.1, S. 9" }
+        }
+      ]
+    },
+    {
+      "key": "partition",
+      "group": "vehicle",
+      "label": "Trennwand, Trenngitter, Trennnetz",
+      "summary": "Lastverschiebeschutz zwischen Fahrerhaus und Laderaum in Kastenwagen und geschlossenen Mehrzweck-Pkw.",
+      "aliases": ["Trennwand", "Trenngitter", "Trennnetz", "Laderaumtrennung"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Kastenwagen und geschlossene Mehrzweck-Pkw brauchen einen Lastverschiebeschutz aus Rückhalteeinrichtung (Trennwand, Trenngitter oder Trennnetz) und Zurrpunkten. Für die Belastbarkeit ist ein Nachweis des Herstellers nach DIN 75410-3 nötig.",
+          "ref": { "source": "bgbau", "where": "Abschn. 6.2, S. 22" }
+        },
+        {
+          "level": "note",
+          "text": "Formschluss an der Trennwand ist eine einfache Sicherung, z. B. eine Leiter an der Trennwand, zusätzlich mit Umreifung an der Zurrschiene.",
+          "ref": { "source": "bgbau", "where": "Bild 14, S. 19" }
+        }
+      ]
+    }
+  ],
+  "cargos": [
+    {
+      "key": "boxes",
+      "label": "Kisten, Kartons, Werkzeugkoffer",
+      "note": "Stückgut ohne Zurrpunkte",
+      "aliases": ["Kiste", "Karton", "Werkzeugkoffer", "Koffer", "Stückgut", "Material", "Systainer"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Das Ladegut muss Stapelung, Transport und dem Druck der Zurrgurte standhalten. Kartons oder Kunststofffässer halten das selten; dann eine stabile Umverpackung verwenden.",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.3, S. 31" }
+        },
+        {
+          "level": "note",
+          "text": "Hohe, schmale Kisten auf Kippen prüfen (Kippprüfung unten).",
+          "ref": { "source": "bgbau", "where": "Abschn. 4.3, S. 17" }
+        }
+      ],
+      "steps": [
+        { "text": "Ladefläche besenrein machen.", "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 46" } },
+        { "text": "Schwere Teile unten und vorne an die Stirn- oder Trennwand stellen.", "ref": { "source": "bgbau", "where": "Abschn. 5.1, S. 19; Anhang 1, S. 159" } },
+        { "text": "Lücken mit Füllhölzern, Paletten oder Ähnlichem schließen.", "ref": { "source": "bgbau", "where": "Abschn. 9.5, S. 48–49" } },
+        { "text": "Antirutschmatte unterlegen, ca. 2 cm überstehen lassen.", "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45" } },
+        { "text": "Mit Ladungssicherungsnetz oder Zurrgurten an den Zurrpunkten sichern, an Kanten Kantenschutz.", "ref": { "source": "bgbau", "where": "Abschn. 9.1–9.2, S. 42–44" } },
+        { "text": "Vor der Abfahrt und nach jeder Pause kontrollieren.", "ref": { "source": "bgbau", "where": "Abschn. 3.3, S. 12" } }
+      ],
+      "measures": ["formLock", "loadUnit", "tieDown", "loop", "net", "strap", "antiSlip", "edgeProtection", "partition", "lashingPoints"]
+    },
+    {
+      "key": "pallets",
+      "label": "Paletten und gestapeltes Material",
+      "note": "z. B. Steine, Platten, Dämmstoffpakete",
+      "aliases": ["Palette", "Europalette", "Steine", "Steinpaket", "Platten", "Gitterbox"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Einzelteile, die allein nicht stabil sind, zu einer Ladeeinheit zusammenfassen, z. B. auf Paletten mit einteiligen Zurrgurten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.4, S. 32" }
+        },
+        {
+          "level": "note",
+          "text": "Umreifungsbänder der Verpackung ersetzen keine Ladeeinheit.",
+          "ref": { "source": "bgbau", "where": "Bild 48, S. 32" }
+        },
+        {
+          "level": "note",
+          "text": "Gitterbox auf Siebdruck-Ladeboden: Reibbeiwert trocken nur 0,25.",
+          "ref": { "source": "bgbau", "where": "Tabelle 2, S. 15" }
+        }
+      ],
+      "steps": [
+        { "text": "Ladefläche besenrein machen, Antirutschmatte unter die Palette legen.", "ref": { "source": "bgbau", "where": "Abschn. 9.3, S. 45–46; Bild 73, S. 47" } },
+        { "text": "Lose Teile mit Umreifungsgurt zu einer Ladeeinheit zusammenfassen.", "ref": { "source": "bgbau", "where": "Abschn. 7.4, Bild 50, S. 32–33" } },
+        { "text": "Palette formschlüssig an die Stirnwand stellen oder mit Kopfschlinge (Rundschlinge) diagonal verzurren.", "ref": { "source": "bgbau", "where": "Bild 50, S. 33; Abschn. 9.4, S. 47" } },
+        { "text": "Kantenschutz an allen Kanten, über die ein Gurt läuft.", "ref": { "source": "bgbau", "where": "Abschn. 9.1, S. 42; Bild 50, S. 33" } },
+        { "text": "Gurte nach den ersten Kilometern und nach Pausen nachspannen.", "ref": { "source": "bgbau", "where": "Anhang 1, S. 159" } }
+      ],
+      "measures": ["loadUnit", "formLock", "loop", "directLashing", "tieDown", "strap", "antiSlip", "edgeProtection", "lashingPoints"]
+    },
+    {
+      "key": "lpgCylinders",
+      "label": "Flüssiggasflaschen",
+      "note": "Propan, Butan",
+      "aliases": ["Gasflasche", "Propanflasche", "Propan", "Butan", "Flüssiggas", "11-kg-Flasche", "Gefahrgut"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Mindestanforderungen bei jeder Beförderung, auch bei Kleinmengen und nach der Handwerkerregel: Unterweisung, Kennzeichnung, nur dichte und unbeschädigte Flaschen, Ventilschutz, Ladungssicherung, Schutz vor Erwärmung, Be- und Entlüftung, Rauchverbot, kein offenes Feuer.",
+          "ref": { "source": "i210001", "where": "Abschn. 4.2, S. 15" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Beschädigte, insbesondere undichte Flaschen befördern. Der Verlader prüft vor dem Einladen auf Schäden.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 37" }
+        },
+        {
+          "level": "required",
+          "text": "Vor der Fahrt Ventile schließen und Ventilschutzkappen aufsetzen, auch bei leeren Flaschen.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 37" }
+        },
+        {
+          "level": "required",
+          "text": "Flaschen so sichern, dass sie ihre Lage zueinander und zu den Fahrzeugwänden nicht ändern können, z. B. mit Zurrgurten, Schiebewänden, verstellbaren Halterungen, Klemmbalken oder rutschhemmenden Unterlagen.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 37" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Gurte so stark spannen, dass Flaschen beschädigt oder verformt werden. Flaschen werfen oder Stößen aussetzen.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 38" }
+        },
+        {
+          "level": "required",
+          "text": "Stehend nur, wenn die Flaschen standfest sind oder in Einrichtungen stehen, die sie gegen Umfallen schützen. Liegend parallel oder quer zur Fahrzeuglängsachse, nahe der Stirnwand quer, und gegen Verschieben verkeilt oder festgebunden.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 38–39" }
+        },
+        {
+          "level": "note",
+          "text": "Kurze Flaschen mit großem Durchmesser (über 30 cm, z. B. 11 kg Füllgewicht) dürfen längs liegen; die Ventile zeigen dann zur Fahrzeugmitte.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 39" }
+        },
+        {
+          "level": "required",
+          "text": "Vorzugsweise offene Fahrzeuge (Pritsche) nehmen. In geschlossenen Fahrzeugen (Kastenwagen, Pkw) nur mit mindestens zwei Lüftungsöffnungen von je mindestens 100 cm², eine in Bodennähe, eine in Deckennähe; Öffnungen frei halten.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.3.1, S. 41–42" }
+        },
+        {
+          "level": "required",
+          "text": "Flaschen erst unmittelbar vor der Abfahrt einladen und gleich nach der Fahrt ausladen, weil die Lüftung nur während der Fahrt wirkt.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.3.1, S. 42" }
+        },
+        {
+          "level": "required",
+          "text": "Flaschen vor unzulässiger Erwärmung schützen.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.4, S. 40" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Rauchen (auch E-Zigarette), Feuer und offenes Licht beim Laden in der Nähe des Fahrzeugs und im Fahrzeug.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.4.6–7.4.7, S. 46" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Zusammen mit Versandstücken laden, die als explosiv oder explosionsgefährlich gekennzeichnet sind.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.5, S. 40" }
+        },
+        {
+          "level": "note",
+          "text": "Jede Flasche trägt den Gefahrzettel 2.1 (entzündbare Gase), üblich als Aufkleber auf der Flasche.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.2.1, S. 34–35" }
+        },
+        {
+          "level": "note",
+          "text": "Kleinmenge: nur Flüssiggas bis 333 kg Füllmenge (ohne Flaschengewicht) je Fahrzeug, gemischt mit anderen Gefahrgütern bis zu einem berechneten Wert von 1000. Darüber gelten alle Vorschriften des ADR.",
+          "ref": { "source": "i210001", "where": "Abschn. 5.1, S. 16–17" }
+        },
+        {
+          "level": "note",
+          "text": "Handwerkerregel: Eigene Fahrten zur Baustelle zur unmittelbaren Verwendung sind vom ADR freigestellt, wenn je Verpackung 450 Liter und die Höchstmengen nicht überschritten werden. Die Mindestanforderungen bleiben. Nicht für die Versorgung mehrerer Baustellen, von Lagern oder anderer Unternehmen.",
+          "ref": { "source": "i210001", "where": "Abschn. 5.2.1, S. 19–20" }
+        },
+        {
+          "level": "note",
+          "text": "Feuerlöscher: bei einem berechneten Wert bis 1000 mindestens ein tragbarer Feuerlöscher mit 2 kg ABC-Pulver; bei Beförderung im Rahmen der Haupttätigkeit nicht erforderlich.",
+          "ref": { "source": "i210001", "where": "Abschn. 7.3.2, S. 43" }
+        }
+      ],
+      "steps": [
+        { "text": "Flasche prüfen: dicht, unbeschädigt, Gefahrzettel vorhanden.", "ref": { "source": "i210001", "where": "Abschn. 7.2.1–7.2.2, S. 34–37" } },
+        { "text": "Ventil schließen, Ventilschutzkappe aufsetzen.", "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 37" } },
+        { "text": "Möglichst Pritsche nehmen; im Kastenwagen nur mit freien Lüftungsöffnungen oben und unten.", "ref": { "source": "i210001", "where": "Abschn. 7.3.1, S. 41–42" } },
+        { "text": "Stehend in eine Halterung stellen oder liegend quer (11-kg-Flaschen auch längs, Ventil zur Mitte) gegen Verrutschen festlegen.", "ref": { "source": "i210001", "where": "Abschn. 7.2.2, S. 38–39" } },
+        { "text": "Mit Umreifungsgurt an Bordwand oder Halterung sichern, ohne die Flasche zu verformen.", "ref": { "source": "bgbau", "where": "Bild 189 und 190, S. 134" } },
+        { "text": "Erst kurz vor der Abfahrt einladen, nach der Fahrt sofort ausladen.", "ref": { "source": "i210001", "where": "Abschn. 7.3.1, S. 42" } }
+      ],
+      "measures": ["formLock", "strap", "antiSlip", "partition", "lashingPoints"]
+    },
+    {
+      "key": "gasCylinders",
+      "label": "Schweißgas- und andere Druckgasflaschen",
+      "note": "z. B. Acetylen, Sauerstoff, Stickstoff",
+      "aliases": ["Acetylen", "Sauerstoff", "Schweißgas", "Stickstoff", "Formiergas", "Druckgasflasche", "Lötgerät"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Gefahrgutvorschriften (GGVSEB, ADR) beachten; bei Verstößen drohen Bußgelder.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" }
+        },
+        {
+          "level": "required",
+          "text": "Ventile mit Schutzkappe schützen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" }
+        },
+        {
+          "level": "required",
+          "text": "Das Fahrzeug braucht Einrichtungen, mit denen sich die Flaschen sichern lassen. Bewegungen durch Blockieren, Verspannen oder Auffüllen von Hohlräumen verhindern.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" }
+        },
+        {
+          "level": "note",
+          "text": "Beispiel: Schweißgasflaschen im Kastenwagen stehend in einer festen Halterung mit Gurten.",
+          "ref": { "source": "bgbau", "where": "Bild 191 und 192, S. 134" }
+        }
+      ],
+      "steps": [
+        { "text": "Ventile schließen, Schutzkappe aufsetzen.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" } },
+        { "text": "Flaschen in eine feste Halterung stellen und mit Gurt sichern.", "ref": { "source": "bgbau", "where": "Bild 191 und 192, S. 134" } }
+      ],
+      "measures": ["formLock", "strap", "partition", "lashingPoints"],
+      "todo": "TODO: Inhalt fehlt – Vorgaben speziell für Acetylen, Sauerstoff und andere Druckgase (Lage, Lüftung, Mengengrenzen, Kennzeichnung), z. B. aus DGUV Information 213-012 oder dem IGV-Merkblatt „Ladungssicherung bei Kleintransportern“."
+    },
+    {
+      "key": "canisters",
+      "label": "Kanister, Spraydosen, Chemikalien",
+      "note": "z. B. Kraftstoff, Reiniger, Frostschutz, Farben in Kleinverpackungen",
+      "aliases": ["Kanister", "Benzinkanister", "Spraydose", "Reiniger", "Chemikalien", "Gefahrstoffe", "Frostschutz", "Inhibitor"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Gefahrgutvorschriften (GGVSEB, ADR) beachten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" }
+        },
+        {
+          "level": "required",
+          "text": "Sprayflaschen mit Schutzkappe, Flaschen und Kanister mit dicht schließendem Deckel, damit nichts austreten kann.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" }
+        },
+        {
+          "level": "required",
+          "text": "Bewegungen der Versandstücke verhindern, z. B. durch Auffüllen von Hohlräumen mit Stauhölzern, durch Blockieren oder Verspannen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" }
+        },
+        {
+          "level": "note",
+          "text": "Kleine Flaschen in einem Flaschenträger gegen Umkippen oder in einer Außenverpackung transportieren; Hohlräume darin auffüllen.",
+          "ref": { "source": "bgbau", "where": "Bild 183 und 184, S. 132" }
+        },
+        {
+          "level": "note",
+          "text": "Außenverpackungen (Kisten, Behälter) durch Blockieren, mit Ladungssicherungsnetz oder mit Umreifungsgurt sichern, im Kofferraum, auf der Ladefläche oder im Fahrzeugregal.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133; Bild 185 und 186, S. 132" }
+        },
+        {
+          "level": "note",
+          "text": "Kraftstoffkanister mit Umreifungsgurt oder in einer Halterung sichern.",
+          "ref": { "source": "bgbau", "where": "Bild 187 und 188, S. 133" }
+        }
+      ],
+      "steps": [
+        { "text": "Deckel und Schutzkappen kontrollieren.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" } },
+        { "text": "Kleingebinde in Flaschenträger oder Kiste stellen, Hohlräume auffüllen.", "ref": { "source": "bgbau", "where": "Bild 183 und 184, S. 132" } },
+        { "text": "Kiste oder Kanister mit Gurt, Netz oder Halterung im Regal bzw. an den Zurrpunkten sichern.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 133" } }
+      ],
+      "measures": ["formLock", "net", "strap", "partition", "lashingPoints"]
+    },
+    {
+      "key": "excavator",
+      "label": "Minibagger und Baumaschinen",
+      "note": "auf Anhänger oder Pritsche",
+      "aliases": ["Minibagger", "Bagger", "Baumaschine", "Radlader", "Rüttelplatte", "Tandemanhänger", "Kettenfahrzeug"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Der Hersteller muss Erd- und Straßenbaumaschinen mit geeigneten Zurrpunkten versehen und deren Nutzung in der Betriebsanleitung beschreiben. Fehlen sie oder sitzen sie ungünstig, fachgerecht nachrüsten (in Abstimmung mit dem Hersteller).",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.2, S. 29–30" }
+        },
+        {
+          "level": "required",
+          "text": "Vorher klären: Zurrpunkte am Anhänger und ihre zulässige Zugkraft (FLP), Zurrpunkte an der Maschine, zulässiger Zurrwinkel, Standsicherheit, Ketten und Ladefläche besenrein und frei von Eis und Schnee, zulässige Gesamtmasse des Anhängers, Zuglast und Stützlast.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 56–57" }
+        },
+        {
+          "level": "required",
+          "text": "Ist die Maschine kippgefährdet, die Standsicherheit herstellen, z. B. durch Ausfahren der hydraulischen Fahrwerksverbreiterung.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 59" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Minibagger auf dem Tandemanhänger niederzurren: Es wären zu viele Zurrmittel und Zurrpunkte nötig, und Gurte über die Kabine zu spannen ist nicht zulässig.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 62, 67; Anhang 5, Bild 246, S. 168" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Minibagger (2 t) bei verschmutzter Ladefläche, Eis, Schnee oder Frost (μ = 0,2) auf einem Tandemanhänger bis 3,5 t mit 400-daN-Zurrpunkten transportieren: Die Zurrpunkte werden überlastet.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 76; Anhang 5, S. 167" }
+        },
+        {
+          "level": "note",
+          "text": "Beispiel der Quelle: 2-t-Minibagger auf Tandemanhänger mit 400-daN-Zurrpunkten, Diagonalzurren mit 4 Zurrmitteln und Gummi-Antirutschmatten: LC je Zurrmittel ≥ 226 daN bzw. ≥ 181 daN (je nach horizontalem Winkel), die Zurrpunkte werden nicht überlastet.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 79" }
+        },
+        {
+          "level": "note",
+          "text": "Ohne Antirutschmatten, aber mit sauberer Ladefläche: Bei einem horizontalen Zurrwinkel über 30° zusätzlich in Fahrtrichtung sichern, z. B. die Schaufel gegen die Stirnwand blockieren.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 72, 78, 80" }
+        },
+        {
+          "level": "note",
+          "text": "Auffahrrampen auf Spurweite einstellen und sicher arretieren; nach dem Verladen die abnehmbaren Rampen ebenfalls sichern.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 136, 147" }
+        },
+        {
+          "level": "note",
+          "text": "Für Baumaschinen soll der Hersteller nach VDMA 24121 vorgeben, wie die Maschine beim Transport zu sichern ist.",
+          "ref": { "source": "bgbau", "where": "Abschn. 2, S. 8" }
+        }
+      ],
+      "steps": [
+        { "text": "Betriebsanleitung der Maschine: Gewicht, Zurrpunkte und Vorgaben zum Transport nachlesen.", "ref": { "source": "bgbau", "where": "Abschn. 7.2, S. 29; Abschn. 10.1, S. 63" } },
+        { "text": "Ladefläche und Ketten säubern, Gummi-Antirutschmatten auslegen.", "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 57, 79" } },
+        { "text": "Maschine so abstellen, dass Stützlast und Achslasten eingehalten werden; Fahrwerk ggf. verbreitern, Schaufel und Schild ablegen.", "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 57, 59" } },
+        { "text": "Mit vier Zurrmitteln diagonal von den Zurrpunkten der Maschine zu denen des Anhängers zurren; LC und FLP mit der Tabelle Diagonalzurren prüfen.", "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 67–69; Anhang 4, S. 163" } },
+        { "text": "Zurrwinkel messen und mit dem Mindestwinkel der Zurrpunkte vergleichen.", "ref": { "source": "bgbau", "where": "Abschn. 10.1, S. 56, 68" } },
+        { "text": "Auffahrrampen arretieren bzw. verstauen und sichern.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 136, 147" } }
+      ],
+      "measures": ["directLashing", "formLock", "antiSlip", "chain", "strap", "edgeProtection", "lashingPoints"]
+    },
+    {
+      "key": "machines",
+      "label": "Geräte und Maschinen ohne Zurrpunkte",
+      "note": "z. B. Aufsitzmäher, Reinigungsmaschinen, Geräte auf Rädern",
+      "aliases": ["Maschine", "Aufsitzmäher", "Rasenmäher", "Reinigungsmaschine", "Gerät", "Kompressor", "Stromerzeuger"],
+      "rules": [
+        {
+          "level": "note",
+          "text": "Hersteller sehen oft keine Zurrpunkte vor. Beim Niederzurren können Kunststoffgehäuse durch die Vorspannkraft beschädigt werden.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 135" }
+        },
+        {
+          "level": "required",
+          "text": "Der Anhänger muss passen: genug Nutzlast, genug Zurrpunkte, ausreichend breite Auffahrrampen, auf Spurweite eingestellt und arretiert.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 136" }
+        },
+        {
+          "level": "required",
+          "text": "Zulässige Zugkraft der Zurrpunkte sowie zulässige und Mindest-Stützlast von Anhänger und Zugfahrzeug nicht überschreiten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 136" }
+        },
+        {
+          "level": "required",
+          "text": "Freistehende Maschinen mit mindestens zwei Zurrmitteln sichern, damit sie sich nicht verdrehen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 139, 141" }
+        },
+        {
+          "level": "required",
+          "text": "Lose eingehängte Anbauteile (z. B. Fangkorb) mitsichern, damit sie sich bei Bodenwellen nicht lösen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 141" }
+        },
+        {
+          "level": "note",
+          "text": "Ohne Zurrpunkte: Maschine diagonal in der Umreifung sichern (Gurt um ein stabiles Bauteil), bei scharfen Kanten mit Kantenschoner. Alternativ stabile Ösen nutzen, z. B. die Traverse für ein Räumschild.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 142–143" }
+        },
+        {
+          "level": "note",
+          "text": "Beispiel der Quelle: Aufsitzmäher 230 kg auf Tandemanhänger, Zurrpunkte 400 daN, Diagonalzurren: bei μ = 0,2 vier Gurte mit LC ≥ 500 daN im geraden Zug bzw. zwei Gurte mit LC ≥ 1000 daN in der Umreifung; bei μ = 0,6 vier Gurte mit LC ≥ 250 daN bzw. zwei mit LC ≥ 500 daN in der Umreifung.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 144" }
+        },
+        {
+          "level": "note",
+          "text": "Niederzurren desselben Mähers bei μ = 0,2 bräuchte sieben Gurte (14 Zurrpunkte) und ist auf dem Anhänger nicht umsetzbar.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 138, 141" }
+        }
+      ],
+      "steps": [
+        { "text": "Gewicht der Maschine aus Bedienungsanleitung oder Typschild entnehmen.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 140" } },
+        { "text": "Ladefläche besenrein machen; Maschine mit angezogener Bremse abstellen.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 138" } },
+        { "text": "Mit zwei oder vier Gurten diagonal bzw. in der Umreifung zurren, Kantenschoner an scharfen Kanten.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 142–144" } },
+        { "text": "Anbauteile und Auffahrrampen sichern.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 141, 147" } }
+      ],
+      "measures": ["directLashing", "loop", "tieDown", "antiSlip", "strap", "edgeProtection", "lashingPoints"]
+    },
+    {
+      "key": "longGoods",
+      "label": "Rohre, Profile und Langgut",
+      "note": "auch Dachlatten, Kabelkanäle",
+      "aliases": ["Rohr", "Rohre", "Langgut", "Profile", "Dachlatten", "Stangen", "Überstand"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Rohre und ähnliche Einzelteile, die allein nicht stabil liegen, zu Bündeln bzw. Ladeeinheiten zusammenfassen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.4, S. 32" }
+        },
+        {
+          "level": "note",
+          "text": "Für Langgut, das länger als die Ladefläche ist, eignen sich Pritschen mit erhöhter Stirnwand: Material auf Stirnwand bzw. Rückwand auflegen und verzurren.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 50" }
+        },
+        {
+          "level": "required",
+          "text": "Zulässige Belastung der Aufbauten (Schild am Aufbau) und die Außenmaße des Fahrzeugs nicht überschreiten.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 51" }
+        }
+      ],
+      "specs": [
+        {
+          "label": "Überstand nach vorne",
+          "value": "nicht zulässig; ab 2,50 m Höhe max. 0,50 m über das ziehende Fahrzeug",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 51 (StVO § 22 Abs. 3 und 4)" }
+        },
+        {
+          "label": "Überstand nach hinten",
+          "value": "max. 1,50 m; bei bis zu 100 km Fahrstrecke max. 3,0 m",
+          "note": "Gesamtlänge des Fahrzeugs max. 20,75 m.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 51 (StVO § 22 Abs. 3 und 4)" }
+        },
+        {
+          "label": "Kennzeichnungspflicht",
+          "value": "ab 1,0 m Überstand über die Rückstrahler",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 51 (StVO § 22 Abs. 4)" }
+        }
+      ],
+      "steps": [
+        { "text": "Rohre zu Bündeln zusammenfassen, z. B. mit einteiligen Zurrgurten.", "ref": { "source": "bgbau", "where": "Abschn. 7.4, S. 32" } },
+        { "text": "Bündel formschlüssig an die Stirnwand legen oder auf erhöhter Stirnwand und Rückwand auflegen.", "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 50" } },
+        { "text": "Mit Zurrgurten an den Zurrpunkten bzw. am Aufbau verzurren, Kantenschutz an Kanten.", "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 50; Abschn. 9.1, S. 42" } },
+        { "text": "Überstand messen; ab 1,0 m hinter den Rückstrahlern kennzeichnen.", "ref": { "source": "bgbau", "where": "Abschn. 9.7, S. 51" } }
+      ],
+      "measures": ["loadUnit", "formLock", "tieDown", "strap", "edgeProtection", "lashingPoints"]
+    },
+    {
+      "key": "ladders",
+      "label": "Leitern",
+      "note": "im Fahrzeug oder auf dem Dachträger",
+      "aliases": ["Leiter", "Stehleiter", "Anlegeleiter", "Dachträger", "Leiterträger", "Dachgepäckträger"],
+      "rules": [
+        {
+          "level": "note",
+          "text": "Kurze Leitern, z. B. Stehleitern, im Kastenwagen stehend an der Seitenwand befestigen. Lange Leitern auf dem Dachträger oder einem Spriegelgestell transportieren.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 151" }
+        },
+        {
+          "level": "required",
+          "text": "Beim Sichern auf dem Fahrzeugdach darauf achten, dass niemand herunterfällt. Systeme mit Tragschlitten erlauben das Befestigen vom Boden aus.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 152" }
+        },
+        {
+          "level": "required",
+          "text": "Arbeitsplätze auf Fahrzeugen, die 2 m oder höher über dem Boden liegen und betriebsmäßig begangen werden, brauchen feste Geländer von mindestens 1 m Höhe; geht das nicht, klapp- oder versenkbare Geländer, die nicht nach außen klappen (DGUV Vorschrift 70, § 24).",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 153" }
+        },
+        {
+          "level": "required",
+          "text": "Aufstiege mit ausreichend breiten und tiefen, rutschhemmenden Trittflächen und Haltegriffen; am oberen Leiterende eine Haltemöglichkeit, die 1 m über die Austrittsstelle reicht.",
+          "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 154" }
+        }
+      ],
+      "steps": [
+        { "text": "Kurze Leiter im Kastenwagen an Trennwand oder Seitenwand stellen und mit Gurt an der Zurrschiene sichern.", "ref": { "source": "bgbau", "where": "Bild 14, S. 19; Abschn. 10.5, S. 151" } },
+        { "text": "Lange Leiter auf den Dachträger legen und mit Leitersicherung bzw. Zurrgurten an Zurrschienen befestigen.", "ref": { "source": "bgbau", "where": "Bild 231 bis 237, S. 152" } },
+        { "text": "Zum Befestigen auf dem Dach Aufstieg und Geländer nutzen oder vom Boden aus über Tragschlitten arbeiten.", "ref": { "source": "bgbau", "where": "Abschn. 10.5, S. 152–154" } }
+      ],
+      "measures": ["formLock", "strap", "partition", "lashingPoints"]
+    },
+    {
+      "key": "bulk",
+      "label": "Schüttgut und leichte Ladung",
+      "note": "z. B. Sand, Kies, Bauschutt, Dämmwolle, Styropor, Verpackung",
+      "aliases": ["Schüttgut", "Sand", "Kies", "Bauschutt", "Dämmwolle", "Mineralwolle", "Styropor", "Verpackungsmüll", "Grünschnitt"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Schüttgut so sichern, dass auch unwesentliche Teile nicht herabfallen können, z. B. mit Planen (Verwaltungsvorschrift zu StVO § 22 Abs. 1).",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.1, S. 28" }
+        },
+        {
+          "level": "required",
+          "text": "Ladung, die vom Wind herabgeweht werden kann, abdecken (VDI 2700).",
+          "ref": { "source": "bgbau", "where": "Abschn. 7.1, S. 28" }
+        }
+      ],
+      "steps": [
+        { "text": "Feinkörniges (Sand, Kies) mit Plane abdecken.", "ref": { "source": "bgbau", "where": "Abschn. 5.1, S. 20" } },
+        { "text": "Leichtes, grobes Material (Dämmwolle, Styropor, Schnittgut) mit Abdecknetz abdecken.", "ref": { "source": "bgbau", "where": "Abschn. 5.1, S. 20; Abschn. 9.2, S. 43" } },
+        { "text": "Netz bzw. Plane rundum an den Befestigungspunkten des Fahrzeugs festmachen.", "ref": { "source": "bgbau", "where": "Abschn. 9.2, S. 43" } }
+      ],
+      "measures": ["cover", "net"]
+    },
+    {
+      "key": "tallItems",
+      "label": "Hohe Einzelstücke",
+      "note": "z. B. Speicher, Kessel, Schränke, hohe Kisten",
+      "aliases": ["Speicher", "Warmwasserspeicher", "Pufferspeicher", "Kessel", "Wärmepumpe", "Schrank", "kippgefährdet", "Kippen"],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Standsicherheit prüfen (Kippprüfung unten). Ist der Abstand vom Schwerpunkt zur Kippkante kleiner als 0,6 × Schwerpunkthöhe, sind zusätzliche Maßnahmen gegen Kippen nötig; sonst reicht die Sicherung gegen Rutschen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 4.3, Bild 11, S. 17" }
+        },
+        {
+          "level": "note",
+          "text": "Bei Fahrzeugen über 3,5 t wirkt bei kippgefährdeter Ladung quer zur Fahrtrichtung das 0,6-fache der Gewichtskraft statt des 0,5-fachen.",
+          "ref": { "source": "bgbau", "where": "Abschn. 4.1, Tabelle 1, S. 14" }
+        },
+        {
+          "level": "note",
+          "text": "Keile eignen sich nicht für kippgefährdete Ladung. Gegen Kippen helfen Formschluss an der Stirn- oder Trennwand, Kopfschlinge oder Umreifung.",
+          "ref": { "source": "bgbau", "where": "Abschn. 9.5, S. 49; Abschn. 9.4, S. 47" }
+        }
+      ],
+      "steps": [
+        { "text": "Schwerpunkthöhe und Abstand zur Kippkante schätzen und unten prüfen.", "ref": { "source": "bgbau", "where": "Abschn. 4.3, S. 17" } },
+        { "text": "Stück an Stirn- oder Trennwand stellen, auf Antirutschmatte.", "ref": { "source": "bgbau", "where": "Abschn. 5.1, S. 19; Abschn. 9.3, S. 45" } },
+        { "text": "Kippgefährdet: zusätzlich mit Kopfschlinge oder Umreifung zur Wand hin verzurren.", "ref": { "source": "bgbau", "where": "Abschn. 9.4, S. 47; Bild 15, S. 19" } },
+        { "text": "Gegen Rutschen nach vorne, hinten und zur Seite sichern; Kantenschutz an Kanten.", "ref": { "source": "bgbau", "where": "Abschn. 4.3, S. 17; Abschn. 9.1, S. 42" } }
+      ],
+      "measures": ["formLock", "loop", "tieDown", "antiSlip", "strap", "edgeProtection", "partition", "lashingPoints"],
+      "todo": "TODO: Inhalt fehlt – Herstellerangaben zum Transport von Speichern, Kesseln und Wärmepumpen (z. B. ob liegender Transport erlaubt ist, zulässige Neigung, Anschlagpunkte)."
+    }
+  ],
+  "checklist": [
+    {
+      "label": "Fahrzeug",
+      "items": [
+        "Transportfahrzeug geeignet?",
+        "Zulässige Gesamtmasse, Lastverteilungsplan und Achslasten berücksichtigt?",
+        "Ladefläche besenrein?",
+        "Zurrpunkte vorhanden und für die Ladung geeignet?"
+      ],
+      "ref": { "source": "bgbau", "where": "Anhang 2, S. 160" }
+    },
+    {
+      "label": "Ladegut",
+      "items": [
+        "Zurrpunkte am Ladegut vorhanden und geeignet?",
+        "Schwerpunkt bekannt?",
+        "Ladegut kippgefährdet?",
+        "Gewicht bekannt?"
+      ],
+      "ref": { "source": "bgbau", "where": "Anhang 2, S. 160" }
+    },
+    {
+      "label": "Ladungssicherung",
+      "items": [
+        "Zurrgurte geprüft und Angaben auf dem Etikett beachtet?",
+        "Kantenschutz bzw. Kantengleiter verwendet?",
+        "Höchste Belastbarkeit der Zurrpunkte eingehalten?",
+        "Ladelücken geschlossen?",
+        "Niederzurren: nötige Vorspannkraft ermittelt und Zurrmittel mit ausreichender STF verwendet?",
+        "Direktzurren: Zurrmittel mit ausreichender Zurrkraft (LC) verwendet?",
+        "Fahr- und Verladepersonal unterwiesen?"
+      ],
+      "ref": { "source": "bgbau", "where": "Anhang 2, S. 160–161" }
+    },
+    {
+      "label": "Nach Fahrtantritt",
+      "items": [
+        "Bei Fahrtunterbrechungen die Ladungssicherung kontrollieren.",
+        "Nach Teilentladungen die Ladung ggf. neu sichern.",
+        "Geschwindigkeit an Ladegut, Straße und Verkehr anpassen."
+      ],
+      "ref": { "source": "bgbau", "where": "Anhang 2, S. 161" }
+    }
+  ]
+}
