@@ -16,6 +16,7 @@ import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from '
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
 import { checkRadiatorSurveyTool, radiatorSurveyToolSchema, type RadiatorSurveyTool } from './radiatorSurveyTool.ts'
+import { checkSensorTool, sensorToolSchema, type SensorTool } from './sensorTool.ts'
 import { checkSequenceTool, sequenceToolSchema, type SequenceTool } from './sequenceTool.ts'
 import { checkSymbolTool, symbolToolSchema, type SymbolTool } from './symbolTool.ts'
 import { checkVentilationRiserTool, ventilationRiserToolSchema, type VentilationRiserTool } from './riserTool.ts'
@@ -39,6 +40,7 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Aderfarben-Tools ("kind": "wireColors"): System, Kabeltyp und Aderzahl wählen, Farben mit Nutzung sehen (siehe wireColorTool.ts).
 // - Normen-Tools ("kind": "normFinder"): Themenbereiche wählen, zuständige Regelwerke mit Link sehen (siehe normFinderTool.ts).
 // - Kältemittel-Tools ("kind": "refrigerantPressure"): Dampfdrucktabelle, Druck ↔ Temperatur (siehe refrigerantTool.ts).
+// - Fühler-Tools ("kind": "sensorResistance"): Widerstandstabelle von Temperaturfühlern, Temperatur ↔ Widerstand (siehe sensorTool.ts).
 // - Aufstellungs-Tools ("kind": "placement"): Gerät, Aufstellort und Umgebung wählen, Vorgaben des Herstellers sehen (siehe placementTool.ts).
 // - Stundenzettel ("kind": "workHours"): Arbeitsstunden je Bauvorhaben notieren und exportieren (siehe workHoursTool.ts).
 // - Ventil-Aufmaß ("kind": "valveSurvey"): vorhandene Ventile je Raum zählen, Stückliste für den Tausch (siehe valveSurveyTool.ts).
@@ -202,6 +204,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   wireColorToolSchema,
   normFinderToolSchema,
   refrigerantToolSchema,
+  sensorToolSchema,
   placementToolSchema,
   workHoursToolSchema,
   valveSurveyToolSchema,
@@ -232,6 +235,7 @@ export type ToolEntry =
   | WireColorTool
   | NormFinderTool
   | RefrigerantTool
+  | SensorTool
   | PlacementTool
   | WorkHoursTool
   | ValveSurveyTool
@@ -243,7 +247,7 @@ export type ToolEntry =
   | DrainageSizingTool
   | PipeMaterialTool
   | ClassificationTool
-export type { CableTool, DrainageSizingTool, ClassificationTool, FactorTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
+export type { CableTool, DrainageSizingTool, ClassificationTool, FactorTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -265,6 +269,7 @@ export const isCableTool = (entry: ToolEntry): entry is CableTool => entry.kind 
 export const isWireColorTool = (entry: ToolEntry): entry is WireColorTool => entry.kind === 'wireColors'
 export const isNormFinderTool = (entry: ToolEntry): entry is NormFinderTool => entry.kind === 'normFinder'
 export const isRefrigerantTool = (entry: ToolEntry): entry is RefrigerantTool => entry.kind === 'refrigerantPressure'
+export const isSensorTool = (entry: ToolEntry): entry is SensorTool => entry.kind === 'sensorResistance'
 export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => entry.kind === 'placement'
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
 export const isValveSurveyTool = (entry: ToolEntry): entry is ValveSurveyTool => entry.kind === 'valveSurvey'
@@ -422,6 +427,8 @@ export const toolCollection = defineCollection({
                       ? checkNormFinderTool(entry)
                       : isRefrigerantTool(entry)
                         ? checkRefrigerantTool(entry)
+                        : isSensorTool(entry)
+                          ? checkSensorTool(entry)
                         : isPlacementTool(entry)
                           ? checkPlacementTool(entry)
                           : isWorkHoursTool(entry) || isMaterialListTool(entry)

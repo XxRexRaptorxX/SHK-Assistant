@@ -14,6 +14,7 @@ import { pipeMaterialKeywords } from './pipeMaterialTool'
 import { placementKeywords } from './placementTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
+import { sensorKeywords } from './sensorTool'
 import { ventilationRiserKeywords } from './riserTool'
 import {
   isCableTool,
@@ -30,6 +31,7 @@ import {
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
+  isSensorTool,
   isSequenceTool,
   isSymbolTool,
   isTableTool,
@@ -106,6 +108,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isWireColorTool(entry)) return wireColorKeywords(entry)
   if (isNormFinderTool(entry)) return normFinderKeywords(entry)
   if (isRefrigerantTool(entry)) return refrigerantKeywords(entry)
+  if (isSensorTool(entry)) return sensorKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)
   if (isWorkHoursTool(entry) || isMaterialListTool(entry)) return entry.keywords
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)

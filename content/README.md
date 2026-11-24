@@ -264,6 +264,21 @@ Die Werte werden unverändert aus der Quelle übernommen, auch wenn ein Schritt 
 Namen, die Zahl der Drücke, Lücken mitten in der Tabelle und dass der Druck mit der Temperatur steigt (sonst wäre die
 Umrechnung vom Druck zur Temperatur nicht eindeutig).
 
+**Fühler-Tools** (`"kind": "sensorResistance"`) sind eine Widerstandstabelle von Temperaturfühlern: Fühlertyp wählen,
+Temperatur oder gemessenen Widerstand (in Ω oder kΩ) eingeben, den anderen Wert ablesen; darunter steht die ganze Kennlinie.
+Gerechnet wird wie bei den Kältemittel-Tools (linear zwischen zwei Zeilen, nichts außerhalb der Tabelle). Ob der Widerstand mit
+der Temperatur steigt oder fällt, zeigt das Tool als Hinweis an; das wird aus den Tabellenwerten abgeleitet, nicht eingetragen.
+Der zuletzt gewählte Fühler bleibt auf dem Gerät gespeichert. Felder: `title`, `summary`, `description`, `category` und:
+
+- `resistanceUnit` (z. B. „Ω“) und `tableNote` (Hinweis zu den Werten; steht unter dem Ergebnis).
+- `temperatures`: Temperaturen der Tabellenzeilen in °C, aufsteigend.
+- `sensors`: je `name` (wie in der Quelle, z. B. „PT1000“), optional `aliases` (Suchbegriffe, z. B. „NTC 10k“), `equivalent`
+  (Hersteller mit dieser Kennlinie laut Quelle) und `resistances`: ein Widerstand je Zeile von `temperatures`, `null`, wo die
+  Quelle keinen Wert nennt (nur am Anfang und Ende).
+
+Der Build prüft doppelte Namen, die Zahl der Werte, Lücken mitten in der Tabelle und dass der Widerstand durchgehend steigt
+oder durchgehend fällt (sonst wäre die Umrechnung vom Widerstand zur Temperatur nicht eindeutig).
+
 **Aufstellungs-Tools** (`"kind": "placement"`) zeigen zu Kältemittel, optional Hersteller, Aufstellort und Umgebung eines
 Außengeräts die Vorgaben aus einem herstellerübergreifenden Leitfaden (z. B. BWP) und, wenn ein Hersteller gewählt ist, die aus
 dessen Anleitung. Maße von Schutzbereich und Mindestabständen sind herstellerspezifisch und stehen nur bei den Herstellern; die

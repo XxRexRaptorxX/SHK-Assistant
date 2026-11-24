@@ -23,6 +23,7 @@ import {
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
+  isSensorTool,
   isSequenceTool,
   isSymbolTool,
   isTableTool,
@@ -47,6 +48,7 @@ import { PlacementLookup } from './PlacementLookup'
 import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
 import { RiserLookup } from './RiserLookup'
+import { SensorLookup } from './SensorLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
@@ -94,6 +96,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <NormFinder tool={tool} />
       ) : isRefrigerantTool(tool) ? (
         <RefrigerantLookup tool={tool} />
+      ) : isSensorTool(tool) ? (
+        <SensorLookup tool={tool} />
       ) : isPlacementTool(tool) ? (
         <PlacementLookup tool={tool} />
       ) : isWorkHoursTool(tool) ? (
