@@ -26,10 +26,20 @@ export const sensorToolSchema = defineEntrySchema({
       z.strictObject({
         /** Bezeichnung wie in der Quelle, z. B. „PT1000“ */
         name: z.string().trim().min(1),
+        /** Gruppe in der Auswahlliste, z. B. „Standardfühler“ oder ein Hersteller */
+        group: z.string().trim().default(''),
         /** Weitere Suchbegriffe, z. B. „NTC 10k“ */
         aliases: z.array(z.string().trim().min(1)).default([]),
         /** Hersteller mit dieser Kennlinie laut Quelle */
         equivalent: z.string().trim().default(''),
+        /** Zusatz unter der Auswahl, z. B. Bauart oder für welche Geräte die Kennlinie gilt */
+        note: z.string().trim().default(''),
+        /** Hinweis der Quelle zum Messen, steht unter dem Ergebnis, z. B. „Messtoleranz ± 10 %“ */
+        resultNote: z.string().trim().default(''),
+        /** Eigene Quelle dieses Fühlers, wenn sie von der Quelle des Tools abweicht */
+        source: z.string().trim().default(''),
+        /** Eigene Temperaturstufen in °C (aufsteigend), wenn die Quelle andere Zeilen hat als das Tool */
+        temperatures: z.array(z.number()).min(2).optional(),
         /** Widerstand je Tabellenzeile; null = die Quelle nennt keinen Wert (nur am Anfang und Ende) */
         resistances: z.array(z.number().positive().nullable()),
       }),
@@ -48,9 +58,14 @@ export interface SensorPoint {
 
 export type SensorQuantity = keyof SensorPoint
 
+/** Temperaturstufen eines Fühlers: eigene oder die gemeinsamen des Tools */
+export const sensorTemperatures = (tool: SensorTool, sensor: Sensor): number[] => sensor.temperatures ?? tool.temperatures
+
+const ascending = (values: readonly number[]) => values.every((value, index) => index === 0 || value > values[index - 1]!)
+
 /** Die Tabellenzeilen eines Fühlers, für die die Quelle einen Widerstand nennt (nach Temperatur aufsteigend) */
 export function sensorPoints(tool: SensorTool, sensor: Sensor): SensorPoint[] {
-  return tool.temperatures.flatMap((temperature, index) => {
+  return sensorTemperatures(tool, sensor).flatMap((temperature, index) => {
     const resistance = sensor.resistances[index]
     return resistance === null || resistance === undefined ? [] : [{ temperature, resistance }]
   })
@@ -98,15 +113,18 @@ export function lookupSensor(points: readonly SensorPoint[], given: SensorQuanti
 
 export function checkSensorTool(tool: SensorTool): string[] {
   const issues: string[] = []
-  if (tool.temperatures.some((temperature, index) => index > 0 && temperature <= tool.temperatures[index - 1]!)) {
-    issues.push('temperatures: nicht aufsteigend')
-  }
+  if (!ascending(tool.temperatures)) issues.push('temperatures: nicht aufsteigend')
   const names = tool.sensors.map((sensor) => sensor.name)
   if (new Set(names).size !== names.length) issues.push('sensors: name doppelt vergeben')
   for (const sensor of tool.sensors) {
     const where = `sensors (${sensor.name})`
-    if (sensor.resistances.length !== tool.temperatures.length) {
-      issues.push(`${where}: ${sensor.resistances.length} Widerstände für ${tool.temperatures.length} Temperaturen`)
+    const temperatures = sensorTemperatures(tool, sensor)
+    if (sensor.temperatures && !ascending(sensor.temperatures)) {
+      issues.push(`${where}: temperatures nicht aufsteigend`)
+      continue
+    }
+    if (sensor.resistances.length !== temperatures.length) {
+      issues.push(`${where}: ${sensor.resistances.length} Widerstände für ${temperatures.length} Temperaturen`)
       continue
     }
     const filled = sensor.resistances.flatMap((resistance, index) => (resistance === null ? [] : [index]))
@@ -138,6 +156,8 @@ export function sensorKeywords(tool: SensorTool): string[] {
     'Kennlinie',
     'NTC',
     'PTC',
-    ...tool.sensors.flatMap((sensor) => [sensor.name, ...sensor.aliases, ...(sensor.equivalent ? [sensor.equivalent] : [])]),
+    ...tool.sensors.flatMap((sensor) =>
+      [sensor.name, sensor.group, ...sensor.aliases, sensor.equivalent, sensor.note].filter((keyword) => keyword !== ''),
+    ),
   ]
 }

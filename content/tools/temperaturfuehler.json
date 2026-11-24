@@ -2,7 +2,7 @@
   "id": "tool.temperaturfuehler",
   "visibility": "public",
   "status": "draft",
-  "source": "Regin, „Fühlercharakteristik, andere Elemente (PT100(0)/Ni1000.../NTC...)“, Widerstandstabelle, Stand 17.06.2022, https://www.regincontrols.com/globalassets/pimmediafiles/documents/resistance_table_de.pdf",
+  "source": "Standardfühler: Regin, „Fühlercharakteristik, andere Elemente (PT100(0)/Ni1000.../NTC...)“, Widerstandstabelle, Stand 17.06.2022, https://www.regincontrols.com/globalassets/pimmediafiles/documents/resistance_table_de.pdf. Herstellerfühler (Buderus, Vaillant, Windhager): Quelle steht beim jeweiligen Fühler.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "sensorResistance",
@@ -21,6 +21,7 @@
   "sensors": [
     {
       "name": "PT100",
+      "group": "Standardfühler",
       "aliases": [
         "Pt100"
       ],
@@ -29,6 +30,7 @@
     },
     {
       "name": "PT1000",
+      "group": "Standardfühler",
       "aliases": [
         "Pt1000"
       ],
@@ -37,6 +39,7 @@
     },
     {
       "name": "NTC1,8",
+      "group": "Standardfühler",
       "aliases": [
         "NTC 1,8k",
         "NTC1.8k"
@@ -46,6 +49,7 @@
     },
     {
       "name": "NTC2,2",
+      "group": "Standardfühler",
       "aliases": [
         "NTC 2,2k",
         "NTC2.2k"
@@ -55,6 +59,7 @@
     },
     {
       "name": "NTC10-01",
+      "group": "Standardfühler",
       "aliases": [
         "NTC 10k",
         "NTC10k"
@@ -64,6 +69,7 @@
     },
     {
       "name": "NTC10-02",
+      "group": "Standardfühler",
       "aliases": [
         "NTC 10k",
         "NTC10k"
@@ -73,6 +79,7 @@
     },
     {
       "name": "NTC10-03",
+      "group": "Standardfühler",
       "aliases": [
         "NTC 10k",
         "NTC10k"
@@ -82,6 +89,7 @@
     },
     {
       "name": "NTC20",
+      "group": "Standardfühler",
       "aliases": [
         "NTC 20k",
         "NTC20k"
@@ -91,6 +99,7 @@
     },
     {
       "name": "NI1000-01",
+      "group": "Standardfühler",
       "aliases": [
         "Ni1000"
       ],
@@ -99,11 +108,119 @@
     },
     {
       "name": "NI1000-02",
+      "group": "Standardfühler",
       "aliases": [
         "Ni1000"
       ],
       "equivalent": "Sauter",
       "resistances": [791, 816, 842, 867, 893, 919, 946, 973, 1000, 1005, 1011, 1016, 1022, 1028, 1033, 1039, 1044, 1050, 1056, 1061, 1067, 1072, 1078, 1084, 1089, 1095, 1101, 1107, 1112, 1118, 1124, 1130, 1136, 1141, 1147, 1153, 1159, 1165, 1171, 1200, 1230, 1260, 1291, 1322, 1353, 1385, 1417, 1483, 1549, 1618, 1688, 1760, 1833, 1909, null]
+    },
+    {
+      "name": "KTY81-210",
+      "group": "Standardfühler",
+      "aliases": [
+        "KTY",
+        "KTY 81-210",
+        "KTY 2000",
+        "KFKTY",
+        "KEKTY",
+        "BFKTY"
+      ],
+      "note": "Halbleiterfühler, 2000 Ω bei 25 °C (Werte von Technische Alternative für ihre KTY-Fühler).",
+      "resultNote": "Genauigkeit laut Technische Alternative: 1 K bei 25 °C.",
+      "source": "Technische Alternative RT GmbH, Datenblatt „Temperatursensoren“, Vers. 1.5, Widerstandswerte KTY Typ KTY 81-210, https://www.ta.co.at/download/datei/1127",
+      "temperatures": [0, 10, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100],
+      "resistances": [1630, 1772, 1922, 2000, 2080, 2245, 2417, 2597, 2785, 2980, 3182, 3392]
+    },
+    {
+      "name": "Buderus Außentemperaturfühler (Logamax plus GB172)",
+      "group": "Buderus",
+      "aliases": [
+        "Außenfühler"
+      ],
+      "note": "",
+      "source": "Buderus, Installations- und Wartungsanleitung Logamax plus GB172-14/-20/-24/-24K, 6 720 647 778 (2012/06), Kap. 16.1 Fühlerwerte, S. 59, https://www.meinhausshop.de/media/pdf/meinhausshop-buderus-GB172-inst.pdf",
+      "temperatures": [-20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+      "resistances": [95893, 90543, 85522, 80810, 76385, 72228, 68322, 64650, 61196, 57947, 54889, 52011, 49299, 46745, 44338, 42069, 39928, 37909, 36004, 34205, 32506, 30901, 29385, 27951, 26596, 25313, 24100, 22952, 21865, 20835, 19860, 18936, 18060, 17229, 16441, 15693, 14984, 14310, 13671, 13063, 12486, 11938, 11416, 10920, 10449, 10000, 9573, 9167, 8780, 8411, 8060]
+    },
+    {
+      "name": "Buderus Vorlauftemperaturfühler (Logamax plus GB172)",
+      "group": "Buderus",
+      "aliases": [
+        "Vorlauffühler"
+      ],
+      "note": "",
+      "source": "Buderus, Installations- und Wartungsanleitung Logamax plus GB172-14/-20/-24/-24K, 6 720 647 778 (2012/06), Kap. 16.1 Fühlerwerte, S. 59, https://www.meinhausshop.de/media/pdf/meinhausshop-buderus-GB172-inst.pdf",
+      "resultNote": "Messtoleranz ± 10 % (laut Buderus-Tabelle)",
+      "temperatures": [20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],
+      "resistances": [14772, 11981, 9786, 8047, 6653, 5523, 4608, 3856, 3243, 2744, 2332, 1990, 1704, 1464, 1262, 1093, 950]
+    },
+    {
+      "name": "Buderus Warmwasser-Temperaturfühler (Logamax plus GB172-24K)",
+      "group": "Buderus",
+      "aliases": [
+        "Warmwasserfühler"
+      ],
+      "note": "",
+      "source": "Buderus, Installations- und Wartungsanleitung Logamax plus GB172-14/-20/-24/-24K, 6 720 647 778 (2012/06), Kap. 16.1 Fühlerwerte, S. 59, https://www.meinhausshop.de/media/pdf/meinhausshop-buderus-GB172-inst.pdf",
+      "temperatures": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
+      "resistances": [33242, 19947, 12394, 7947, 5242, 3548, 2459, 1740, 1256, 923]
+    },
+    {
+      "name": "Buderus Speichertemperaturfühler / externer Vorlauftemperaturfühler (Logamax plus GB172)",
+      "group": "Buderus",
+      "aliases": [
+        "Speicherfühler"
+      ],
+      "note": "",
+      "source": "Buderus, Installations- und Wartungsanleitung Logamax plus GB172-14/-20/-24/-24K, 6 720 647 778 (2012/06), Kap. 16.1 Fühlerwerte, S. 59, https://www.meinhausshop.de/media/pdf/meinhausshop-buderus-GB172-inst.pdf",
+      "temperatures": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70],
+      "resistances": [19860, 18936, 18060, 17229, 16441, 15693, 14984, 14310, 13671, 13063, 12486, 11938, 11416, 10920, 10449, 10000, 9573, 9167, 8780, 8411, 8060, 7725, 7406, 7102, 6812, 6536, 6272, 6020, 5779, 5550, 5331, 5121, 4921, 4730, 4547, 4372, 4205, 4045, 3892, 3746, 3605, 3471, 3343, 3220, 3102, 2989, 2880, 2776, 2677, 2581, 2490, 2402, 2317, 2236, 2159, 2084, 2072, 1943, 1877, 1814, 1753]
+    },
+    {
+      "name": "Vaillant VR 10 (auroMATIC 560)",
+      "group": "Vaillant",
+      "aliases": [
+        "VR10",
+        "NTC 2,7k"
+      ],
+      "note": "Standardfühler, Bauart NTC 2,7K; Kennlinie aus der Anleitung auroMATIC 560 (Tab. 10.1).",
+      "source": "Vaillant, Installationsanleitung auroMATIC 560 (VRS 560), 838303_01, Kap. 10 Fühlerkennlinien, S. 26, https://Vaillant.it/downloads/vgoa-vaillant-it-doc/archivio-documentazione-fuori-listino/auromatic-vrs-560-838303-01-1956723.pdf",
+      "temperatures": [0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 80, 120],
+      "resistances": [9191, 7064, 5214, 3384, 2692, 2158, 1416, 954, 658, 463, 333, 105]
+    },
+    {
+      "name": "Vaillant VR 11 (auroMATIC 560)",
+      "group": "Vaillant",
+      "aliases": [
+        "VR11",
+        "Kollektorfühler"
+      ],
+      "note": "Kollektorfühler, Bauart NTC 10K; Kennlinie aus der Anleitung auroMATIC 560 (Tab. 10.2).",
+      "source": "Vaillant, Installationsanleitung auroMATIC 560 (VRS 560), 838303_01, Kap. 10 Fühlerkennlinien, S. 26, https://Vaillant.it/downloads/vgoa-vaillant-it-doc/archivio-documentazione-fuori-listino/auromatic-vrs-560-838303-01-1956723.pdf",
+      "temperatures": [-20, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130],
+      "resistances": [97070, 55330, 42320, 32650, 25390, 19900, 15710, 12490, 10000, 8057, 6532, 5327, 3603, 2488, 1752, 1258, 918, 680, 511, 389, 301]
+    },
+    {
+      "name": "Windhager NTC 5 kΩ (ZAF 200, ZVF 210, ZTF 222)",
+      "group": "Windhager",
+      "aliases": [
+        "ZAF 200",
+        "ZVF 210",
+        "ZTF 222",
+        "MES 008",
+        "MES 009M",
+        "NTC 5k",
+        "Außenfühler",
+        "Anlegefühler",
+        "Kesselfühler",
+        "Warmwasserfühler"
+      ],
+      "note": "Außenfühler Type ZAF 200, Anlegefühler MES 008 (Type ZVF 210), Kessel- und Warmwasserfühler MES 009M (Type ZTF 222); NTC, 5000 Ω bei 25 °C.",
+      "resultNote": "Messgenauigkeit laut Windhager: Außenfühler ± 2 K (−20 bis 50 °C), Anlege-, Kessel- und Warmwasserfühler ± 0,5 K (0 bis 70 °C).",
+      "source": "Windhager, Bedienungsanleitung Infinity TA Funktionsmodul Heizkreis (INF B20 TA, INF F20 TA), 024344/00 (04/2022), Kap. 4 Fühler, S. 10, https://www.windhager.com/fileadmin/PDF_Documents/Bedienungsanleitungen/Bedienungsanleitung_Heizkreis.pdf",
+      "temperatures": [-20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],
+      "resistances": [48500, 36500, 27600, 21200, 16300, 12700, 9900, 7850, 6250, 5000, 4030, 3270, 2660, 2190, 1800, 1490, 1240, 1040, 876, 739, 627, 535, 458, 393]
     }
   ]
 }

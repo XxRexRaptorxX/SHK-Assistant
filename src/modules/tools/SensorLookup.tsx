@@ -11,6 +11,7 @@ import {
   lookupSensor,
   sensorPoints,
   sensorTrend,
+  type Sensor,
   type SensorLookup as Lookup,
   type SensorPoint,
   type SensorQuantity,
@@ -69,6 +70,17 @@ const TREND_TEXT: Record<SensorTrend, { title: string; text: string }> = {
     title: 'Widerstand sinkt mit steigender Temperatur',
     text: 'Wärmer = niedrigerer Widerstand (negativer Temperaturkoeffizient, Heißleiter).',
   },
+}
+
+/** Fühler nach Gruppe in der Reihenfolge des ersten Auftretens, z. B. Standardfühler, Buderus, Vaillant */
+function sensorGroups(tool: SensorTool): { group: string; sensors: Sensor[] }[] {
+  const groups: { group: string; sensors: Sensor[] }[] = []
+  for (const sensor of tool.sensors) {
+    const existing = groups.find((entry) => entry.group === sensor.group)
+    if (existing) existing.sensors.push(sensor)
+    else groups.push({ group: sensor.group, sensors: [sensor] })
+  }
+  return groups
 }
 
 /** Nachkommastellen der Tabellenwerte eines Fühlers, z. B. 1 bei 109,7 Ω */
@@ -171,13 +183,24 @@ export function SensorLookup({
           <option value="" disabled>
             Fühler wählen …
           </option>
-          {tool.sensors.map((candidate) => (
-            <option key={candidate.name} value={candidate.name}>
-              {candidate.name}
-            </option>
-          ))}
+          {sensorGroups(tool).map(({ group, sensors }) => {
+            const options = sensors.map((candidate) => (
+              <option key={candidate.name} value={candidate.name}>
+                {candidate.name}
+              </option>
+            ))
+            return group ? (
+              <optgroup key={group} label={group}>
+                {options}
+              </optgroup>
+            ) : (
+              options
+            )
+          })}
         </select>
+        {sensor?.note && <p className="mt-1 text-base">{sensor.note}</p>}
         {sensor?.equivalent && <p className="mt-1 text-base text-muted">Kennlinie wie bei: {sensor.equivalent}</p>}
+        {sensor?.source && <p className="mt-1 text-sm text-muted">Quelle: {sensor.source}</p>}
 
         {trend && (
           <div className="mt-3 rounded-2xl border border-edge bg-raised p-3" data-trend={trend}>
@@ -262,6 +285,7 @@ export function SensorLookup({
             </>
           )}
         </div>
+        {sensor?.resultNote && <p className="mt-2 text-base font-semibold">{sensor.resultNote}</p>}
         {tool.tableNote && <p className="mt-2 text-base text-muted">{tool.tableNote}</p>}
       </section>
 

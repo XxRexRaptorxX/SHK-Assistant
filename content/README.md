@@ -272,9 +272,15 @@ Der zuletzt gewählte Fühler bleibt auf dem Gerät gespeichert. Felder: `title`
 
 - `resistanceUnit` (z. B. „Ω“) und `tableNote` (Hinweis zu den Werten; steht unter dem Ergebnis).
 - `temperatures`: Temperaturen der Tabellenzeilen in °C, aufsteigend.
-- `sensors`: je `name` (wie in der Quelle, z. B. „PT1000“), optional `aliases` (Suchbegriffe, z. B. „NTC 10k“), `equivalent`
-  (Hersteller mit dieser Kennlinie laut Quelle) und `resistances`: ein Widerstand je Zeile von `temperatures`, `null`, wo die
-  Quelle keinen Wert nennt (nur am Anfang und Ende).
+- `sensors`: je `name` (wie in der Quelle, z. B. „PT1000“), optional `group` (Gruppe in der Auswahlliste, z. B.
+  „Standardfühler“ oder ein Hersteller), `aliases` (Suchbegriffe, z. B. „NTC 10k“), `equivalent` (Hersteller mit dieser
+  Kennlinie laut Quelle), `note` (Zusatz unter der Auswahl, z. B. Bauart), `resultNote` (Hinweis der Quelle zum Messen,
+z. B. Messtoleranz; steht unter dem Ergebnis), `source` (eigene Quelle, wenn sie von der des Tools
+  abweicht, z. B. eine Herstelleranleitung), `temperatures` (eigene Temperaturstufen, wenn die Quelle andere Zeilen hat) und
+  `resistances`: ein Widerstand je Temperatur, `null`, wo die Quelle keinen Wert nennt (nur am Anfang und Ende).
+
+Herstellerfühler nur mit Zahlentabelle aus der Herstellerunterlage eintragen; Werte aus Kennlinien-Diagrammen werden nicht
+abgelesen.
 
 Der Build prüft doppelte Namen, die Zahl der Werte, Lücken mitten in der Tabelle und dass der Widerstand durchgehend steigt
 oder durchgehend fällt (sonst wäre die Umrechnung vom Widerstand zur Temperatur nicht eindeutig).

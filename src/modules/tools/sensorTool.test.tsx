@@ -40,8 +40,10 @@ describe('Temperaturfühler Widerstandswerte', () => {
     expect(tool.source).toContain('regincontrols.com')
   })
 
-  it('enthält alle 10 Fühler der Quelle von −40 bis 150 °C', () => {
-    expect(tool.sensors.map((sensor) => sensor.name)).toEqual([
+  it('enthält alle 10 Standardfühler der Regin-Tabelle von −40 bis 150 °C', () => {
+    const standard = tool.sensors.filter((sensor) => sensor.group === 'Standardfühler' && sensor.source === '')
+    expect(standard.every((sensor) => sensor.temperatures === undefined)).toBe(true)
+    expect(standard.map((sensor) => sensor.name)).toEqual([
       'PT100', 'PT1000', 'NTC1,8', 'NTC2,2', 'NTC10-01', 'NTC10-02', 'NTC10-03', 'NTC20', 'NI1000-01', 'NI1000-02',
     ])
     expect(tool.temperatures).toHaveLength(55)
@@ -61,6 +63,71 @@ describe('Temperaturfühler Widerstandswerte', () => {
     expect(points('PT1000').at(-1)).toEqual({ temperature: 150, resistance: 1573 })
     expect(points('NTC10-02').at(-1)).toEqual({ temperature: 110, resistance: 767 })
     expect(points('NTC1,8').at(-1)).toEqual({ temperature: 140, resistance: 71 })
+  })
+
+  it('enthält den KTY81-210 aus der Tabelle von Technische Alternative', () => {
+    const kty = tool.sensors.find((sensor) => sensor.name === 'KTY81-210')!
+    expect(kty.group).toBe('Standardfühler')
+    expect(kty.source).toContain('ta.co.at')
+    expect(points('KTY81-210')).toHaveLength(12)
+    expect(resistanceAt('KTY81-210', 0)).toBe(1630)
+    expect(resistanceAt('KTY81-210', 25)).toBe(2000)
+    expect(resistanceAt('KTY81-210', 100)).toBe(3392)
+    expect(sensorTrend(points('KTY81-210'))).toBe('rising')
+    expect(render('KTY81-210', 'resistance', '2,04', 'kilo')).toContain('27,5 °C')
+  })
+
+  it('enthält die Herstellerfühler mit eigenen Temperaturstufen und eigener Quelle', () => {
+    const groups = (group: string) => tool.sensors.filter((sensor) => sensor.group === group).map((sensor) => sensor.name)
+    expect(groups('Buderus')).toEqual([
+      'Buderus Außentemperaturfühler (Logamax plus GB172)',
+      'Buderus Vorlauftemperaturfühler (Logamax plus GB172)',
+      'Buderus Warmwasser-Temperaturfühler (Logamax plus GB172-24K)',
+      'Buderus Speichertemperaturfühler / externer Vorlauftemperaturfühler (Logamax plus GB172)',
+    ])
+    expect(groups('Vaillant')).toEqual(['Vaillant VR 10 (auroMATIC 560)', 'Vaillant VR 11 (auroMATIC 560)'])
+    for (const sensor of tool.sensors.filter((candidate) => candidate.group !== 'Standardfühler')) {
+      expect(sensor.temperatures).toBeDefined()
+      expect(sensor.source).not.toBe('')
+    }
+    // Stichproben aus Buderus GB172 S. 59 (Tab. 28–31) und Vaillant auroMATIC 560 (Tab. 10.1/10.2)
+    expect(points('Buderus Außentemperaturfühler (Logamax plus GB172)')[0]).toEqual({ temperature: -20, resistance: 95893 })
+    expect(resistanceAt('Buderus Außentemperaturfühler (Logamax plus GB172)', 30)).toBe(8060)
+    expect(resistanceAt('Buderus Vorlauftemperaturfühler (Logamax plus GB172)', 60)).toBe(3243)
+    expect(resistanceAt('Buderus Warmwasser-Temperaturfühler (Logamax plus GB172-24K)', 0)).toBe(33242)
+    expect(resistanceAt('Buderus Speichertemperaturfühler / externer Vorlauftemperaturfühler (Logamax plus GB172)', 66)).toBe(2072)
+    expect(resistanceAt('Vaillant VR 10 (auroMATIC 560)', 25)).toBe(2692)
+    expect(points('Vaillant VR 10 (auroMATIC 560)').at(-1)).toEqual({ temperature: 120, resistance: 105 })
+    expect(resistanceAt('Vaillant VR 11 (auroMATIC 560)', 0)).toBe(32650)
+    expect(points('Vaillant VR 11 (auroMATIC 560)')).toHaveLength(21)
+    // Windhager Infinity TA Heizkreis, S. 10: Werte in kΩ in Ω umgerechnet
+    const windhager = 'Windhager NTC 5 kΩ (ZAF 200, ZVF 210, ZTF 222)'
+    expect(groups('Windhager')).toEqual([windhager])
+    expect(points(windhager)[0]).toEqual({ temperature: -20, resistance: 48500 })
+    expect(resistanceAt(windhager, 25)).toBe(5000)
+    expect(resistanceAt(windhager, 15)).toBe(7850)
+    expect(points(windhager).at(-1)).toEqual({ temperature: 95, resistance: 393 })
+  })
+
+  it('zeigt die Hinweise der Quelle zur Messung unter dem Ergebnis', () => {
+    expect(render('Buderus Vorlauftemperaturfühler (Logamax plus GB172)', 'temperature', '60')).toContain(
+      'Messtoleranz ± 10 % (laut Buderus-Tabelle)',
+    )
+    const html = render('Windhager NTC 5 kΩ (ZAF 200, ZVF 210, ZTF 222)', 'resistance', '5', 'kilo')
+    expect(html).toContain('25,0 °C')
+    expect(html).toContain('Messgenauigkeit laut Windhager')
+    expect(render('PT1000', 'temperature', '20')).not.toContain('Messtoleranz')
+  })
+
+  it('zeigt Gruppen, Zusatz und Quelle eines Herstellerfühlers', () => {
+    const html = render('Vaillant VR 10 (auroMATIC 560)', 'temperature', '75')
+    expect(html).toContain('<optgroup label="Buderus">')
+    expect(html).toContain('<optgroup label="Vaillant">')
+    expect(html).toContain('Standardfühler, Bauart NTC 2,7K')
+    expect(html).toContain('Quelle: Vaillant, Installationsanleitung auroMATIC 560')
+    // 75 °C liegt zwischen 70 °C (463 Ω) und 80 °C (333 Ω)
+    expect(html).toContain('≈ 398 Ω')
+    expect(html).toContain('Widerstand sinkt mit steigender Temperatur')
   })
 
   it('leitet aus den Werten ab, ob der Widerstand mit der Temperatur steigt', () => {
@@ -161,6 +228,16 @@ describe('Temperaturfühler Widerstandswerte', () => {
       'sensors (Leer): weniger als zwei Werte',
     ])
     expect(checkSensorTool({ ...tool, temperatures: [...tool.temperatures].reverse() })).toContain('temperatures: nicht aufsteigend')
+    const own = tool.sensors.find((sensor) => sensor.name === 'Vaillant VR 10 (auroMATIC 560)')!
+    expect(
+      checkSensorTool({
+        ...tool,
+        sensors: [
+          { ...own, name: 'Fallend', temperatures: [...own.temperatures!].reverse() },
+          { ...own, name: 'Zu kurz', resistances: own.resistances.slice(1) },
+        ],
+      }),
+    ).toEqual(['sensors (Fallend): temperatures nicht aufsteigend', 'sensors (Zu kurz): 11 Widerstände für 12 Temperaturen'])
     expect(sensorToolSchema.safeParse({ ...tool, sensors: [] }).success).toBe(false)
   })
 
@@ -176,6 +253,8 @@ describe('Temperaturfühler Widerstandswerte', () => {
     expect(html).toContain('noch nicht geprüft')
     expect(html).toContain('Regin')
     const doc = toolSearchDocuments().find((item) => item.id === 'tool.temperaturfuehler')!
-    for (const keyword of ['PT1000', 'NTC 10k', 'Ni1000', 'Temperaturfühler']) expect(doc.keywords).toContain(keyword)
+    for (const keyword of ['PT1000', 'NTC 10k', 'Ni1000', 'Temperaturfühler', 'Buderus', 'Vaillant', 'VR10']) {
+      expect(doc.keywords).toContain(keyword)
+    }
   })
 })
