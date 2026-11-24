@@ -7,6 +7,7 @@ import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkDrainageSizingTool, drainageSizingToolSchema, type DrainageSizingTool } from './drainageSizingTool.ts'
 import { checkClassificationTool, classificationToolSchema, type ClassificationTool } from './classificationTool.ts'
+import { checkFallProtectionTool, fallProtectionToolSchema, type FallProtectionTool } from './fallProtectionTool.ts'
 import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
 import { checkFactorTool, factorToolSchema, relatedToolsSchema, type FactorTool } from './factorTool.ts'
 import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } from './hazmatPointsTool.ts'
@@ -53,6 +54,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Rohrwerkstoffe ("kind": "pipeMaterials"): Anlagensystem und Verlegung wählen, Werkstoffe mit Vor- und Nachteilen (siehe pipeMaterialTool.ts).
 // - Einstufungs-Tools ("kind": "classification"): Regelwerk, Brennstoff und Menge (z. B. Lagermenge, Nennleistung),
 //   Einstufung über/bis zur Grenze und Vorschriften nach Thema, z. B. Brennstofflagerung und Heizraum (siehe classificationTool.ts).
+// - Absturzsicherungs-Tools ("kind": "fallProtection"): Arbeitsplatz und Absturzhöhe, ob gesichert werden muss, und
+//   Schutzmaßnahmen in der Rangfolge mit Maßen für den Aufbau (siehe fallProtectionTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -216,6 +219,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   drainageSizingToolSchema,
   pipeMaterialToolSchema,
   classificationToolSchema,
+  fallProtectionToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -247,7 +251,8 @@ export type ToolEntry =
   | DrainageSizingTool
   | PipeMaterialTool
   | ClassificationTool
-export type { CableTool, DrainageSizingTool, ClassificationTool, FactorTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
+  | FallProtectionTool
+export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool,FactorTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
 export const isChoiceTool = (entry: ToolEntry): entry is ChoiceTool => entry.kind === 'choice'
@@ -270,6 +275,7 @@ export const isWireColorTool = (entry: ToolEntry): entry is WireColorTool => ent
 export const isNormFinderTool = (entry: ToolEntry): entry is NormFinderTool => entry.kind === 'normFinder'
 export const isRefrigerantTool = (entry: ToolEntry): entry is RefrigerantTool => entry.kind === 'refrigerantPressure'
 export const isSensorTool = (entry: ToolEntry): entry is SensorTool => entry.kind === 'sensorResistance'
+export const isFallProtectionTool = (entry: ToolEntry): entry is FallProtectionTool => entry.kind === 'fallProtection'
 export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => entry.kind === 'placement'
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
 export const isValveSurveyTool = (entry: ToolEntry): entry is ValveSurveyTool => entry.kind === 'valveSurvey'
@@ -449,7 +455,9 @@ export const toolCollection = defineCollection({
                                           ? checkPipeMaterialTool(entry)
                                           : isClassificationTool(entry)
                                             ? checkClassificationTool(entry)
-                                            : formulaCollection.check!(entry as FormulaEntry),
+                                            : isFallProtectionTool(entry)
+                                              ? checkFallProtectionTool(entry)
+                                              : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) => [
     ...relatedTools(entry),
     ...(isChoiceTool(entry) ? choiceFigures(entry) : []),

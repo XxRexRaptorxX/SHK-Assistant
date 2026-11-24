@@ -14,6 +14,7 @@ import {
   isChoiceTool,
   isClassificationTool,
   isDrainageSizingTool,
+  isFallProtectionTool,
   isFactorTool,
   isHazmatPointsTool,
   isHeatingCostTool,
@@ -49,6 +50,7 @@ import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
 import { RiserLookup } from './RiserLookup'
 import { SensorLookup } from './SensorLookup'
+import { FallProtectionLookup } from './FallProtectionLookup'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
@@ -96,6 +98,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <NormFinder tool={tool} />
       ) : isRefrigerantTool(tool) ? (
         <RefrigerantLookup tool={tool} />
+      ) : isFallProtectionTool(tool) ? (
+        <FallProtectionLookup tool={tool} />
       ) : isSensorTool(tool) ? (
         <SensorLookup tool={tool} />
       ) : isPlacementTool(tool) ? (

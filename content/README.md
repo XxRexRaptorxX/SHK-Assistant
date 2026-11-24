@@ -457,6 +457,28 @@ Entwässerungsgegenstände zählen, das Tool nennt die Nennweite. Felder: `title
 `keywords`, `related`, `closingNote` und:
 
 - `crossSections`: `system` (Rohrsystem, z. B. „POLO-KAL NG“) und `rows` je `dn` mit `area` (Querschnittsfläche in cm²).
+**Absturzsicherungs-Tools** (`"kind": "fallProtection"`): Arbeitsplatz wählen (z. B. Flachdach, Gerüst, Leiter) und die
+Absturz- bzw. Standhöhe eingeben. Das Tool zeigt den passenden Höhenbereich der Quelle (z. B. „Absturzsicherung
+erforderlich“) und die Schutzmaßnahmen in der Rangfolge, aufklappbar mit Maßen und Vorgaben zum Aufbau. Beispiel:
+Absturzsicherung. Felder: `title`, `summary`, `description`, `category`, `keywords`, `closingNote` und:
+
+- `sources`: je `key`, `name` (Kurzname für die Fundstellen, z. B. „DGUV Vorschrift 38“) und `source` (Ausgabe, Link).
+  Jede Fundstelle (`ref`) besteht aus `source` (key) und `where` (z. B. „§ 9 Abs. 2 Nr. 3, S. 12“).
+- `situations`: Arbeitsplätze, je `key`, `label`, optional `note`, `aliases`, `heightLabel` (Vorgabe „Absturzhöhe“),
+  `heightHint`, `rules` und `measures` (keys der angebotenen Maßnahmen) sowie `bands`: Höhenbereiche aufsteigend und
+  lückenlos, je optional `above` (mehr als, in m) und `upTo` (bis einschließlich), `tone` (`required`, `limited`,
+  `forbidden` oder `ok`, nur für die Farbe), `label`, optional `text` und `ref`. Ein einziger Bereich ohne Grenzen gilt
+  immer; dann fragt das Tool keine Höhe ab.
+- `ranks`: Stufen der Rangfolge in ihrer Reihenfolge, je `key`, `label`, `text`, `ref`.
+- `measures`: je `key`, `rank`, `label`, `summary`, optional `aliases`, `specs` (je `label`, `value`, optional `note`,
+  `ref`), `rules` und `todo` (fehlen Angaben: beginnt mit „TODO: Inhalt fehlt“, bei `verified` nicht erlaubt).
+- `rules` (bei Arbeitsplätzen und Maßnahmen): je `level` (`forbidden`, `required`, `exception`, `note`), `text` (eigene
+  Kurzfassung) und `ref`.
+- `examples`: Fälle aus den Quellen mit `label`, `situation`, `height` (fehlt ohne Höhenabfrage), `tone` und `ref`.
+
+Der Build prüft doppelte Schlüssel, unbekannte Quellen, Stufen und Maßnahmen, Lücken in den Höhenbereichen, Maßnahmen ohne
+Inhalt oder ohne Arbeitsplatz, nicht zitierte Quellen und dass jedes Beispiel im erwarteten Bereich landet.
+
   Daraus rechnet der Umschalter am Ergebnis den Innendurchmesser √(4·A/π); jede angezeigte Nennweite braucht eine Fläche.
 - Eigene Gegenstände (Bezeichnung, DU, Anzahl, optional Einzelanschluss-DN und „ist ein WC“) gibt man in der App ein, sie
   stehen nicht im Inhalt. Das Ergebnis kennzeichnet sie als eigene Angaben.

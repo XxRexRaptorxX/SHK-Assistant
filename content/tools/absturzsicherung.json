@@ -1,0 +1,1785 @@
+{
+  "id": "tool.absturzsicherung",
+  "visibility": "public",
+  "status": "draft",
+  "source": "DGUV Vorschrift 38 „Bauarbeiten“ (Muster-UVV), Ausgabe November 2019, §§ 2, 8, 9, 10, https://publikationen.dguv.de/regelwerk/dguv-vorschriften/3794/bauarbeiten; DGUV Information 201-011 „Verwendung von Arbeits-, Schutz- und Montagegerüsten“, Ausgabe Januar 2023, https://publikationen.dguv.de/regelwerk/dguv-informationen/793/verwendung-von-arbeits-schutz-und-montagegeruesten; DGUV Regel 101-011 „Verwendung von Schutznetzen (Sicherheitsnetzen)“, Ausgabe Januar 2024, https://publikationen.dguv.de/regelwerk/dguv-regeln/1010/verwendung-von-schutznetzen-sicherheitsnetzen; DGUV Information 201-023 „Einsatz von Seitenschutz und Seitenschutzsystemen sowie Randsicherungen als Schutzvorrichtungen bei Bauarbeiten“, Ausgabe September 2018, https://publikationen.dguv.de/regelwerk/dguv-informationen/594; alle abgerufen am 24.11.2026. Vorgaben eigenständig zusammengefasst.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "fallProtection",
+  "title": "Absturzsicherung: Gerüst, Seitenschutz, Netze",
+  "summary": "Zeigt je Arbeitsplatz und Absturzhöhe, ob gesichert werden muss, und wie Seitenschutz, Fanggerüst, Dachfanggerüst und Schutznetze richtig aufgebaut sind.",
+  "description": "Arbeitsplatz wählen und die Absturzhöhe eingeben. Das Tool zeigt, ob nach DGUV Vorschrift 38 eine Absturzsicherung nötig ist, und die Schutzmaßnahmen in der vorgeschriebenen Rangfolge: erst Absturzsicherung (z. B. Seitenschutz), dann Auffangeinrichtung (z. B. Fanggerüst, Schutznetz), zuletzt PSA gegen Absturz. Zu jeder Maßnahme stehen die Maße und Vorgaben für den richtigen Aufbau. Gerüste baut der Gerüstbauer auf; als Nutzer prüfst du vor der Arbeit, ob das Gerüst passt und vollständig ist.",
+  "category": "Montage",
+  "tags": [
+    "allgemein"
+  ],
+  "keywords": [
+    "Absturz",
+    "Absturzgefahr",
+    "Absturzkante",
+    "Baustelle",
+    "Arbeitsschutz",
+    "Unfallverhütung",
+    "UVV",
+    "Sicherheitsgeländer",
+    "Geländer",
+    "Gerüstnutzer",
+    "Bauarbeiten",
+    "Randsicherung"
+  ],
+  "closingNote": "Die DGUV Vorschrift 38 ist eine Muster-Unfallverhütungsvorschrift; maßgeblich ist die Fassung deines Unfallversicherungsträgers (für die BG BAU unter www.bgbau.de/38). Staatliche Regeln wie ASR A2.1 und TRBS 2121 gelten zusätzlich und sind hier noch nicht eingearbeitet. Bei Gerüsten gehen die Aufbau- und Verwendungsanleitung des Herstellers und der Plan für den Gebrauch vor. Das Tool ersetzt keine Gefährdungsbeurteilung.",
+  "sources": [
+    {
+      "key": "v38",
+      "name": "DGUV Vorschrift 38",
+      "source": "DGUV Vorschrift 38 „Bauarbeiten“ (Muster-UVV), Ausgabe November 2019, https://publikationen.dguv.de/regelwerk/dguv-vorschriften/3794/bauarbeiten"
+    },
+    {
+      "key": "i201011",
+      "name": "DGUV Information 201-011",
+      "source": "DGUV Information 201-011 „Verwendung von Arbeits-, Schutz- und Montagegerüsten“, Ausgabe Januar 2023, https://publikationen.dguv.de/regelwerk/dguv-informationen/793/verwendung-von-arbeits-schutz-und-montagegeruesten"
+    },
+    {
+      "key": "i201023",
+      "name": "DGUV Information 201-023",
+      "source": "DGUV Information 201-023 „Einsatz von Seitenschutz und Seitenschutzsystemen sowie Randsicherungen als Schutzvorrichtungen bei Bauarbeiten“, Ausgabe September 2018, https://publikationen.dguv.de/regelwerk/dguv-informationen/594/einsatz-von-seitenschutz-und-seitenschutzsystemen-sowie-randsicherungen-als-schutzvorrichtungen-bei"
+    },
+    {
+      "key": "r101011",
+      "name": "DGUV Regel 101-011",
+      "source": "DGUV Regel 101-011 „Verwendung von Schutznetzen (Sicherheitsnetzen)“, Ausgabe Januar 2024, https://publikationen.dguv.de/regelwerk/dguv-regeln/1010/verwendung-von-schutznetzen-sicherheitsnetzen"
+    }
+  ],
+  "situations": [
+    {
+      "key": "workplace",
+      "label": "Arbeitsplatz an einer Kante",
+      "note": "z. B. Decken- oder Bauwerksrand, Bühne, Podest",
+      "aliases": [
+        "Deckenrand",
+        "Bauwerksrand",
+        "Rohbau",
+        "Geschossdecke",
+        "Podest"
+      ],
+      "heightHint": "Senkrechter Höhenunterschied zwischen Standfläche und der tiefer liegenden, ausreichend großen und tragfähigen Fläche.",
+      "bands": [
+        {
+          "upTo": 2,
+          "tone": "ok",
+          "label": "Keine Schutzvorrichtung vorgeschrieben",
+          "text": "Absturzgefahr besteht schon ab mehr als 1,00 m. Ob trotzdem gesichert wird, legt die Gefährdungsbeurteilung fest.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 1 und Abs. 2 Nr. 3, S. 11–12"
+          }
+        },
+        {
+          "above": 2,
+          "tone": "required",
+          "label": "Absturzsicherung erforderlich",
+          "text": "An allen übrigen Arbeitsplätzen muss bei mehr als 2,00 m Absturzhöhe eine Schutzvorrichtung vorhanden sein.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2 Nr. 3, S. 12"
+          }
+        }
+      ],
+      "measures": [
+        "edgeGuard",
+        "edgeNet",
+        "scaffoldGuard",
+        "catchScaffold",
+        "catchScaffoldWall",
+        "netS",
+        "netT",
+        "fallArrest"
+      ]
+    },
+    {
+      "key": "stairs",
+      "label": "Treppe, Wandöffnung oder Verkehrsweg",
+      "note": "freiliegende Treppenläufe und -absätze",
+      "aliases": [
+        "Treppenlauf",
+        "Treppenabsatz",
+        "Wandöffnung",
+        "Fensteröffnung",
+        "Verkehrsweg",
+        "Laufsteg"
+      ],
+      "heightHint": "Senkrechter Höhenunterschied zwischen Standfläche und der tiefer liegenden, ausreichend großen und tragfähigen Fläche.",
+      "bands": [
+        {
+          "upTo": 1,
+          "tone": "ok",
+          "label": "Keine Schutzvorrichtung vorgeschrieben",
+          "text": "Bis 1,00 m besteht laut Vorschrift keine Absturzgefahr.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 1, S. 11"
+          }
+        },
+        {
+          "above": 1,
+          "tone": "required",
+          "label": "Absturzsicherung erforderlich",
+          "text": "An freiliegenden Treppenläufen und -absätzen, Wandöffnungen und Verkehrswegen schon bei mehr als 1,00 m Absturzhöhe.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2 Nr. 2, S. 12"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Laufstege und lastverteilende Beläge mindestens 0,50 m breit, höchstens 1:1,75 (etwa 30°) geneigt; steiler als 1:5 (etwa 11°) mit Trittleisten.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 2, S. 9"
+          }
+        }
+      ],
+      "measures": [
+        "edgeGuard",
+        "netS",
+        "fallArrest"
+      ]
+    },
+    {
+      "key": "flatRoof",
+      "label": "Flachdach oder Decke",
+      "note": "bis 22,5° Neigung",
+      "aliases": [
+        "Flachdach",
+        "Dachrand",
+        "Attika",
+        "Pultdach",
+        "Dacharbeiten"
+      ],
+      "heightHint": "Vom Dach bzw. von der Decke bis zur tiefer liegenden, ausreichend großen und tragfähigen Fläche.",
+      "bands": [
+        {
+          "upTo": 2,
+          "tone": "ok",
+          "label": "Keine Schutzvorrichtung vorgeschrieben",
+          "text": "Absturzgefahr besteht schon ab mehr als 1,00 m. Ob trotzdem gesichert wird, legt die Gefährdungsbeurteilung fest.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 1 und Abs. 2 Nr. 3, S. 11–12"
+          }
+        },
+        {
+          "above": 2,
+          "upTo": 3,
+          "tone": "limited",
+          "label": "Absturzsicherung erforderlich, mit Ausnahme",
+          "text": "Bis 3,00 m darf auf Dächern und Decken bis 22,5° Neigung mit höchstens 50 m² Grundfläche ohne Schutzvorrichtung gearbeitet werden, wenn alle Bedingungen der Ausnahme erfüllt sind. Sonst gilt: sichern.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2, S. 12"
+          }
+        },
+        {
+          "above": 3,
+          "tone": "required",
+          "label": "Absturzsicherung erforderlich",
+          "text": "Bei mehr als 3,00 m Absturzhöhe gilt die Ausnahme für kleine Dächer nicht mehr.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2, S. 12"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "exception",
+          "text": "Ausnahme bis 3,00 m: höchstens 50 m² Grundfläche, fachlich qualifizierte und körperlich geeignete Beschäftigte, besonders unterwiesen, und die Absturzkante ist deutlich erkennbar.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2, S. 12"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Nicht begehbare oder nicht durchsturzsichere Flächen (z. B. Lichtkuppeln, Lichtbänder, Faserzement-, Glas- oder PVC-Platten) nur betreten, wenn Maßnahmen gegen Durchbrechen und Abstürzen getroffen sind. Laufstege mindestens 0,50 m breit.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 2, S. 9"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Als Absturzkante gilt auch der Übergang von einer durchtrittsicheren zu einer nicht durchtrittsicheren Fläche.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 2 Abs. 5, S. 5"
+          }
+        }
+      ],
+      "measures": [
+        "edgeGuard",
+        "edgeNet",
+        "catchScaffold",
+        "catchScaffoldWall",
+        "netS",
+        "netT",
+        "fallArrest"
+      ]
+    },
+    {
+      "key": "pitchedRoof",
+      "label": "Geneigtes Dach",
+      "note": "über 22,5° bis 60° Neigung",
+      "aliases": [
+        "Steildach",
+        "Schrägdach",
+        "Traufe",
+        "Dachfanggerüst",
+        "Dachschutzwand"
+      ],
+      "heightLabel": "Absturzhöhe ab Traufe",
+      "heightHint": "Von der Traufe (Absturzkante) bis zur tiefer liegenden, ausreichend großen und tragfähigen Fläche.",
+      "bands": [
+        {
+          "upTo": 2,
+          "tone": "ok",
+          "label": "Keine Schutzvorrichtung vorgeschrieben",
+          "text": "Absturzgefahr besteht schon ab mehr als 1,00 m. Ob trotzdem gesichert wird, legt die Gefährdungsbeurteilung fest. Gegen Abrutschen auf der Dachfläche gelten die Vorgaben unten.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 1 und Abs. 2 Nr. 3, S. 11–12"
+          }
+        },
+        {
+          "above": 2,
+          "tone": "required",
+          "label": "Absturzsicherung erforderlich",
+          "text": "Bei mehr als 2,00 m Absturzhöhe ab Traufe: Dachschutzwand an der Traufe oder, wenn das aus arbeitstechnischen Gründen nicht geht, Dachfanggerüst.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 45"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Auf geneigten Flächen mit Abrutschgefahr erst arbeiten, wenn Maßnahmen gegen Abrutschen getroffen sind.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 4, S. 10"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Über 45° Dachneigung besondere Arbeitsplätze schaffen, z. B. Dachdecker-Auflegeleitern, Dachdeckerstühle oder waagerechte Standplätze von mindestens 0,50 m Breite.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 5, S. 10"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Bei Raureif, Schnee oder Eis kann man auch auf Dächern unter 22,5° abrutschen; das gehört in die Gefährdungsbeurteilung.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 45"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Über 60° Neigung ist die Kante selbst eine Absturzkante; dafür sind hier keine eigenen Vorgaben hinterlegt.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 2 Abs. 5, S. 5"
+          }
+        }
+      ],
+      "measures": [
+        "roofGuard",
+        "roofCatch",
+        "netT",
+        "fallArrest"
+      ]
+    },
+    {
+      "key": "scaffold",
+      "label": "Auf einem Arbeitsgerüst",
+      "note": "Fassadengerüst, Fahrgerüst",
+      "aliases": [
+        "Gerüst",
+        "Fassadengerüst",
+        "Fahrgerüst",
+        "Rollgerüst",
+        "Arbeitsgerüst"
+      ],
+      "bands": [
+        {
+          "tone": "required",
+          "label": "Seitenschutz an allen Arbeits- und Zugangsbereichen",
+          "text": "Fertig montierte, begehbare Bereiche eines Gerüsts sind mit Seitenschutz umwehrt. Die Quelle nennt dafür keine Mindesthöhe.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.4 und 6.2, S. 35, 41"
+          }
+        }
+      ],
+      "measures": [
+        "scaffoldUse",
+        "scaffoldGuard"
+      ]
+    },
+    {
+      "key": "opening",
+      "label": "Öffnung in Boden, Decke oder Dach",
+      "note": "auch Schächte und Vertiefungen",
+      "aliases": [
+        "Bodenöffnung",
+        "Deckenöffnung",
+        "Deckendurchbruch",
+        "Schacht",
+        "Aussparung",
+        "Vertiefung",
+        "Abdeckung"
+      ],
+      "bands": [
+        {
+          "tone": "required",
+          "label": "Öffnung sichern",
+          "text": "Öffnungen in Böden, Decken und Dachflächen sowie Vertiefungen mit Schutzvorrichtung oder Abdeckung sichern. Die Vorschrift nennt dafür keine Mindesthöhe.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 10, S. 13"
+          }
+        }
+      ],
+      "measures": [
+        "cover",
+        "edgeGuard",
+        "netS",
+        "fallArrest"
+      ]
+    },
+    {
+      "key": "water",
+      "label": "An oder über Wasser",
+      "note": "oder Stoffen, in denen man versinken kann",
+      "aliases": [
+        "Wasser",
+        "Becken",
+        "Silo",
+        "Schüttgut",
+        "Ertrinken"
+      ],
+      "bands": [
+        {
+          "tone": "required",
+          "label": "Absturzsicherung erforderlich, unabhängig von der Höhe",
+          "text": "Arbeitsplätze und Verkehrswege an oder über Wasser oder anderen Stoffen, in denen man versinken kann, immer sichern.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2 Nr. 1, S. 11"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Besteht Gefahr des Ertrinkens: geeignete Rettungsmittel einsatzbereit, PSA gegen Ertrinken und wenn nötig Schutzkleidung bereitstellen.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 6, S. 10"
+          }
+        }
+      ],
+      "measures": [
+        "edgeGuard",
+        "cover",
+        "fallArrest"
+      ]
+    },
+    {
+      "key": "ladder",
+      "label": "Auf einer tragbaren Leiter",
+      "note": "Leiter als Arbeitsplatz",
+      "aliases": [
+        "Leiter",
+        "Anlegeleiter",
+        "Stehleiter",
+        "Stufenleiter",
+        "Sprossenleiter"
+      ],
+      "heightLabel": "Standhöhe auf der Leiter",
+      "heightHint": "Höhe der Stufe oder Plattform, auf der man steht, über der Aufstellfläche.",
+      "bands": [
+        {
+          "upTo": 2,
+          "tone": "ok",
+          "label": "Leiter als Arbeitsplatz möglich",
+          "text": "Nur wenn die Gefährdungsbeurteilung die Leiter begründet und kein sichereres Arbeitsmittel verwendet werden kann.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 7, S. 10"
+          }
+        },
+        {
+          "above": 2,
+          "upTo": 5,
+          "tone": "limited",
+          "label": "Nur für zeitweilige Arbeiten",
+          "text": "Zeitweilig heißt: höchstens 2 Stunden je Arbeitsschicht, z. B. Wartungs-, Mess- und Montagearbeiten.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 7, S. 10; § 2 Abs. 3, S. 4"
+          }
+        },
+        {
+          "above": 5,
+          "tone": "forbidden",
+          "label": "Leiter als Arbeitsplatz nicht zulässig",
+          "text": "Der Standplatz darf nicht höher als 5,00 m über der Aufstellfläche liegen. Gerüst, Hubarbeitsbühne oder anderes Arbeitsmittel verwenden.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 7, S. 10–11"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Mit beiden Füßen auf einer Stufe oder Plattform stehen. Auf Sprossen nur arbeiten, wenn kein sichereres Arbeitsmittel möglich ist.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 7, S. 10–11"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Im Freien nicht beginnen oder weiterarbeiten, wenn z. B. starker oder böiger Wind, Vereisung oder Schneeglätte zum Absturz führen können.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 7, S. 11"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Als Aufstieg (Verkehrsweg) ist eine Leiter nur erlaubt bis 5,00 m Höhenunterschied für kurzzeitige Arbeiten oder in beengten Bereichen wie Schächten, wenn keine Treppe eingebaut werden kann.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 8 Abs. 7, S. 11"
+          }
+        }
+      ],
+      "measures": [
+        "scaffoldUse"
+      ]
+    }
+  ],
+  "ranks": [
+    {
+      "key": "protection",
+      "label": "1. Absturzsicherung",
+      "text": "Einrichtungen, die einen Absturz verhindern, z. B. Seitenschutz oder Abdeckung. Vorher prüfen, ob sich die Arbeit so gestalten lässt, dass gar keine Absturzgefahr entsteht.",
+      "ref": {
+        "source": "i201011",
+        "where": "Abschn. 4.1.2, Abb. 3, S. 16"
+      }
+    },
+    {
+      "key": "catching",
+      "label": "2. Auffangeinrichtung",
+      "text": "Nur wenn sich eine Absturzsicherung aus arbeitstechnischen Gründen nicht verwenden lässt: Einrichtungen, die abstürzende Personen auffangen.",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 3, S. 12"
+      }
+    },
+    {
+      "key": "personal",
+      "label": "3. PSA gegen Absturz",
+      "text": "Nur wenn weder Absturzsicherung noch Auffangeinrichtung möglich sind.",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 4, S. 12"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "key": "scaffoldGuard",
+      "rank": "protection",
+      "label": "Seitenschutz am Gerüst",
+      "summary": "Geländer am Gerüst und Gerüst als Absturzsicherung vor einer Kante.",
+      "aliases": [
+        "Seitenschutz",
+        "Geländerholm",
+        "Zwischenholm",
+        "Bordbrett",
+        "Innenseitenschutz",
+        "Konsole"
+      ],
+      "specs": [
+        {
+          "label": "Bestandteile",
+          "value": "Geländerholm, Zwischenholm, Bordbrett",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.4, S. 35"
+          }
+        },
+        {
+          "label": "Abstände Belag – Zwischenholm – Geländerholm",
+          "value": "je ≤ 0,47 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 11, S. 35"
+          }
+        },
+        {
+          "label": "Abstand Belagkante – Bauwerk ohne Innenseitenschutz",
+          "value": "≤ 0,30 m",
+          "note": "Auch an Vor- und Rücksprüngen, Fensternischen, Gesimsen und Balkonen.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.4, S. 35–36"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Seitenschutz gegen unbeabsichtigtes Lösen sichern.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.4, S. 35"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Mehr als 0,30 m zwischen Belagkante und Bauwerk: innenliegenden Seitenschutz anbringen oder den Abstand mit Konsolen verkleinern.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.4, S. 36"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Freistehende Gerüstlagen rundum mit Seitenschutz versehen, z. B. vor Öffnungen in der Fassade.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.4, S. 36"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Material nicht an den Seitenschutz hängen oder dagegen lehnen; so lagern, dass nichts durch oder über den Seitenschutz fallen kann.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Keine eigenmächtigen Änderungen, z. B. Anker, Beläge oder Seitenschutzteile entfernen. Das darf grundsätzlich nur der Gerüstersteller.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Geländer- und Zwischenholm dürfen entfallen, wenn systemeigene Seitenschutzgitter oder Schutzwände nach DIN 4420-1 verwendet werden.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.2, S. 41"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Bordbrett darf entfallen: zur Gebäudeseite bei Arbeiten an der Fassade, wenn das Gerüst nur Tragkonstruktion für die Absturzsicherung an der Kante ist, und an Gerüsttreppen, wenn die Anleitung keines vorsieht.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.2, S. 41"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Zwischenholm darf entfallen bei einem Zwischenseitenschutz nach DIN EN 12811-1.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.2, S. 41"
+          }
+        }
+      ]
+    },
+    {
+      "key": "edgeGuard",
+      "rank": "protection",
+      "label": "Seitenschutz an Kanten ohne Gerüst",
+      "summary": "Geländer direkt an Decken-, Dach- oder Treppenrand, z. B. Systemgeländer mit Klemmen oder Pfosten.",
+      "aliases": [
+        "Sicherheitsgeländer",
+        "Absturzgeländer",
+        "Randsicherung",
+        "Systemgeländer",
+        "Schutzgeländer"
+      ],
+      "specs": [
+        {
+          "label": "Bestandteile (Schutzklasse A)",
+          "value": "Geländerholm, Zwischenholm, Bordbrett",
+          "note": "Oder ein System, das diese drei Teile enthält, z. B. Gitterelemente",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.4.1, S. 27"
+          }
+        },
+        {
+          "label": "Oberkante über der Arbeitsfläche",
+          "value": "≥ 1,00 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.4.1, Abb. 3, S. 28"
+          }
+        },
+        {
+          "label": "Abstand Geländerholm – Zwischenholm – Bordbrett",
+          "value": "je ≤ 0,47 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.4.1, S. 28"
+          }
+        },
+        {
+          "label": "Bordbrett",
+          "value": "Oberkante ≥ 0,15 m, Dicke ≥ 3,0 cm",
+          "note": "Spalt zur Aufstellfläche und zu seitlichen Bauteilen < 20 mm",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.4.1, S. 28"
+          }
+        },
+        {
+          "label": "Sicherung gegen Lösen",
+          "value": "z. B. formschlüssig oder ≥ 150 mm Weg bis zum Ausfädeln",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.4.1, Abb. 2, S. 27"
+          }
+        },
+        {
+          "label": "Schutzklasse B (stärker geneigte Flächen)",
+          "value": "wie A, aber Zwischenräume ≤ 250 mm",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.5.1, S. 31"
+          }
+        },
+        {
+          "label": "Holzbauteile",
+          "value": "mind. Sortierklasse S 10 / MS 10, C24",
+          "note": "Bretter vollkantig, Enden nicht aufgerissen",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.3.1, S. 25–26"
+          }
+        },
+        {
+          "label": "Regelausführung Pfosten aus Rohr",
+          "value": "Abstand ≤ 3,00 m; Stahl 48,3 × 3,2 mm oder Alu 48,3 × 4,0 mm",
+          "note": "Holme aus gleichen Rohren mit Normalkupplungen nach DIN EN 74; Bordbretter müssen gehalten werden",
+          "ref": {
+            "source": "i201023",
+            "where": "Anhang A.1.1, S. 44"
+          }
+        },
+        {
+          "label": "Regelausführung Holme aus Brettern",
+          "value": "Pfostenabstand bis 2,00 m: ≥ 3,0 × 15 cm · bis 3,00 m: ≥ 4,0 × 20 cm",
+          "ref": {
+            "source": "i201023",
+            "where": "Anhang A.1.2, S. 44"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Die Schutzvorrichtung muss vorhanden sein, bevor an der Kante gearbeitet wird; Höhengrenzen siehe Ergebnis oben.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 2, S. 11–12"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Systeme nach DIN EN 13374 wählen; die Schutzklasse A, B oder C richtet sich nach der Neigung der Arbeitsfläche. Kennzeichnung und Aufbau- und Verwendungsanleitung beachten.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.1 und 4.2.2, S. 23, 25"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Nur an ausreichend tragfähigen Bauteilen befestigen.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.1, S. 23"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Beschädigte Teile nicht verwenden. Nach starker Belastung (z. B. Anprall) nur mit Zustimmung einer fachkundigen Person wieder einsetzen.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.1, S. 23"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Nach der Montage durch eine befähigte Person prüfen lassen und dokumentieren. Als Nutzer den ordnungsgemäßen Zustand sicherstellen, z. B. per Sichtprüfung.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 3.8 und 3.9, S. 22"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Bordbrett darf entfallen, wenn der Seitenschutz mehr als 0,30 m von der Absturzkante entfernt steht, oder an Treppen und Podesten, die nur Verkehrsweg sind.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.4.1, S. 28"
+          }
+        }
+      ]
+    },
+    {
+      "key": "edgeNet",
+      "rank": "protection",
+      "label": "Randsicherung (Netz an Pfosten)",
+      "summary": "Senkrechtes Schutznetz an Randsicherungspfosten am Dach- oder Deckenrand, z. B. bei großen Flachdächern oder Hallen.",
+      "aliases": [
+        "Randsicherung",
+        "Randsicherungsnetz",
+        "Randsicherungspfosten",
+        "Dachrandsicherung",
+        "Netzgeländer"
+      ],
+      "specs": [
+        {
+          "label": "Aufbau",
+          "value": "Pfosten, Fußpunkte, Schutznetz mit Randseilen (analog System S), Verbindungsmittel",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 38"
+          }
+        },
+        {
+          "label": "Oberes Randseil über der Absturzkante (tiefste Stelle)",
+          "value": "≥ 1,5 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, Abb. 20b, S. 38, 41"
+          }
+        },
+        {
+          "label": "Pfostenabstand",
+          "value": "≤ 10,0 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 43"
+          }
+        },
+        {
+          "label": "Neigung der Pfosten",
+          "value": "senkrecht; aus baulichen Gründen bis 45° zur Senkrechten",
+          "note": "Bauliche Gründe sind z. B. Dachüberstände",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 39"
+          }
+        },
+        {
+          "label": "Montage unterhalb der Dachfläche: Absturzkante bis tiefster Netzpunkt",
+          "value": "≤ 1,0 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, Abb. 20a, S. 40"
+          }
+        },
+        {
+          "label": "Unterer Netzrand am Bauwerk",
+          "value": "Abstand ≤ 100 mm, befestigt alle ≤ 750 mm",
+          "note": "Alternativ steife Randelemente (z. B. vorgespannte Stahlseile, Zurrgurte, Aluminiumrohre), dann Befestigung nach Herstellerangabe",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 41"
+          }
+        },
+        {
+          "label": "Montage auf der Dachfläche: Auslenkung des unteren Netzrands über die Absturzkante",
+          "value": "≤ 100 mm",
+          "note": "In Feldmitte darf der untere Rand bis 300 mm ausgelenkt werden; dann so weit zurückversetzen, dass höchstens 100 mm über die Kante hinausragen",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, Abb. 21, S. 42"
+          }
+        },
+        {
+          "label": "Netzstoß (Kopplungsseil)",
+          "value": "Spalt und Verschiebung je ≤ 100 mm",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 40"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Pfosten müssen die Lasten aufnehmen und weiterleiten (Lastannahmen nach DGUV Grundsatz 301-002). Gebäudeecken und Endfelder besonders ausbilden.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 38, 43"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Niemand darf zwischen Bauwerk und unterer Netzkante durchstürzen.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.7.1, S. 41–42"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Für die Brauchbarkeit sollen Randsicherungen den DGUV Grundsatz 301-002 erfüllen.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.2.3, S. 25"
+          }
+        }
+      ]
+    },
+    {
+      "key": "roofGuard",
+      "rank": "protection",
+      "label": "Dachschutzwand (Schutzklasse C)",
+      "summary": "Schutzwand auf der geneigten Dachfläche, eingehängt in Sicherheitsdachhaken.",
+      "aliases": [
+        "Dachschutzwand",
+        "Schutzklasse C",
+        "Sicherheitsdachhaken",
+        "DIN EN 13374"
+      ],
+      "specs": [
+        {
+          "label": "Oberkante über der Dachfläche (rechtwinklig gemessen)",
+          "value": "≥ 1,00 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.1, Abb. 14, S. 33"
+          }
+        },
+        {
+          "label": "Winkel zwischen Schutzwand und Dachfläche",
+          "value": "≤ 90°",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.1, S. 33"
+          }
+        },
+        {
+          "label": "Dachneigung",
+          "value": "bis 60°",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.2, S. 34"
+          }
+        },
+        {
+          "label": "Höhenabstand Arbeitsplatz – Aufstandskante (über 22,5°)",
+          "value": "≤ 5,00 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.2, S. 34"
+          }
+        },
+        {
+          "label": "Seitlicher Überstand über die Arbeitsplätze",
+          "value": "≥ 1,0 m",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.2, S. 34"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Schutzwandhalter in Sicherheitsdachhaken nach DIN EN 517 einhängen, die nach Herstellerangabe auf der Dachkonstruktion montiert sind. Andere Befestigungen nur mit Nachweis der Gleichwertigkeit.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.2, S. 34"
+          }
+        },
+        {
+          "level": "required",
+          "text": "In Längsrichtung aussteifen. Netze und Schutzgitter allseitig Masche für Masche an Rohren befestigen (Stahl ≥ 3,2 mm, Alu ≥ 4,0 mm Wand, 48,3 mm); Netze nur vom Hersteller in den Abmessungen ändern.",
+          "ref": {
+            "source": "i201023",
+            "where": "Abschn. 4.6.1 und 4.6.3, S. 33–34"
+          }
+        }
+      ]
+    },
+    {
+      "key": "cover",
+      "rank": "protection",
+      "label": "Abdeckung",
+      "summary": "Öffnungen in Böden, Decken und Dachflächen begehbar abdecken.",
+      "aliases": [
+        "Abdeckung",
+        "Bohle",
+        "Deckel",
+        "Lochabdeckung"
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Abdeckungen gegen unbeabsichtigtes Verschieben sichern.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 10, S. 13"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Statt Abdeckung geht auch eine Schutzvorrichtung (z. B. Seitenschutz), nachrangig eine Auffangeinrichtung.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 10, S. 13"
+          }
+        }
+      ],
+      "todo": "TODO: Inhalt fehlt – Anforderungen an Tragfähigkeit und Kennzeichnung von Abdeckungen werden noch gebraucht, z. B. aus ASR A2.1 oder DGUV Information 201-023."
+    },
+    {
+      "key": "scaffoldUse",
+      "rank": "protection",
+      "label": "Arbeitsgerüst wählen und prüfen",
+      "summary": "Welche Last- und Breitenklasse zur Arbeit passt und was vor der Benutzung zu prüfen ist.",
+      "aliases": [
+        "Lastklasse",
+        "Breitenklasse",
+        "Gerüstkennzeichnung",
+        "Gerüstprüfung",
+        "Inaugenscheinnahme",
+        "Fahrgerüst"
+      ],
+      "specs": [
+        {
+          "label": "Lastklasse 1 (0,75 kN/m²)",
+          "value": "nur Inspektion",
+          "note": "z. B. Ablesen, Begutachten, Funktionskontrollen; in der Praxis selten",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1, Tab. 2, und 6.1.2, S. 37, 39"
+          }
+        },
+        {
+          "label": "Lastklasse 2 (1,5 kN/m²)",
+          "value": "Arbeiten ohne Lagern von Baustoffen",
+          "note": "Mindestens Lastklasse 2 auch für Schutzgerüste",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1, Tab. 2, und 6.1.2, S. 37, 39"
+          }
+        },
+        {
+          "label": "Lastklasse 3 (2,0 kN/m²), mind. Breitenklasse W06",
+          "value": "z. B. Putz-, Maler-, Dachdecker-, Fassadenbekleidungsarbeiten",
+          "note": "WDVS-Arbeiten: mindestens W09",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1.1 und 6.1.2, S. 38–39"
+          }
+        },
+        {
+          "label": "Lastklasse 4 (3,0 kN/m², Teilfläche 5,0 kN/m²), mind. Breitenklasse W09",
+          "value": "z. B. Mauer-, Bewehrungs-, Fliesen- und Montagearbeiten",
+          "note": "Ab Lastklasse 4 dürfen Baustoffe auf dem Belag abgesetzt oder gelagert werden.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1, Tab. 2, und 6.1.2, S. 37, 40"
+          }
+        },
+        {
+          "label": "Lastklasse 5 und 6",
+          "value": "4,5 bzw. 6,0 kN/m² (Teilfläche 7,5 bzw. 10,0 kN/m²), mind. W09",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1, Tab. 2, S. 37, 40"
+          }
+        },
+        {
+          "label": "Breitenklassen",
+          "value": "W06: 0,6 bis < 0,9 m · W09: 0,9 bis < 1,2 m · W12: 1,2 bis < 1,5 m · W15: 1,5 bis < 1,8 m · W18: 1,8 bis < 2,1 m · W21: 2,1 bis < 2,4 m · W24: ≥ 2,4 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1, Tab. 1, S. 37"
+          }
+        },
+        {
+          "label": "Freier Durchgang bei Material auf dem Belag",
+          "value": "≥ 0,20 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1, S. 38"
+          }
+        },
+        {
+          "label": "Lichte Höhe zwischen den Gerüstlagen",
+          "value": "≥ 1,90 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 12, S. 38"
+          }
+        },
+        {
+          "label": "Last je Person",
+          "value": "1 kN (100 kg)",
+          "note": "Mit Hebezeug abgesetzte Lasten × 1,2",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.1.2, S. 39"
+          }
+        },
+        {
+          "label": "Zugänge",
+          "value": "mindestens alle 50 m",
+          "note": "Über 20 m Höhenunterschied: Personenaufzug, Servicelift, Transportbühne oder Treppenhaus",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.3, S. 34–35"
+          }
+        },
+        {
+          "label": "Innenliegende Leiter als Zugang",
+          "value": "bis 5,00 m Aufstiegshöhe",
+          "note": "Nur wenn Aufzug, Transportbühne oder Treppe z. B. wegen Platzmangel nicht gehen",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 4.8.3, S. 28"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Vor der Benutzung, mindestens arbeitstäglich: Inaugenscheinnahme durch eine qualifizierte Person. Passt das Gerüst zur Arbeit (Last-, Breiten-, Höhenklasse) und sind die Schutzeinrichtungen wirksam?",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.2, S. 34"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Kennzeichnung am Gerüst prüfen, meist am Zugang: Ersteller mit Anschrift und Telefon, Gerüstbauart, Last- und Breitenklasse, Nutzungsbeschränkungen, Warnhinweise, Datum der Prüfung.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 4.10, S. 30"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Nur so viel Material lagern, wie die Lastklasse zulässt; ausreichend Durchgang frei lassen.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Nach außergewöhnlichen Ereignissen (z. B. Sturm, Unfall, längere Nichtbenutzung, Änderungen am Bauwerk, viel Schnee) Prüfung durch eine zur Prüfung befähigte Person.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.5, S. 36"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Die vorgesehenen Auf- und Abstiege benutzen; Durchstiegsklappen während der Arbeit geschlossen halten.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Nicht klettern, nicht vom Gerüst springen, nicht auf Beläge springen, nichts abwerfen.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Fahrgerüst nicht verfahren, solange jemand darauf ist; gegen unbeabsichtigtes Fortbewegen sichern.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.7, S. 49"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Möglichst nicht gleichzeitig auf mehreren Gerüstlagen übereinander arbeiten (herabfallende Gegenstände).",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        }
+      ]
+    },
+    {
+      "key": "catchScaffold",
+      "rank": "catching",
+      "label": "Fanggerüst",
+      "summary": "Gerüstlage unter der Absturzkante, die abstürzende Personen auffängt.",
+      "aliases": [
+        "Fanggerüst",
+        "Fanglage",
+        "Schutzgerüst"
+      ],
+      "specs": [
+        {
+          "label": "Absturzkante bis Belag (senkrecht)",
+          "value": "≤ 2,00 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 42"
+          }
+        },
+        {
+          "label": "Belagbreite der Fanglage",
+          "value": "≥ 0,90 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 42"
+          }
+        },
+        {
+          "label": "Abstand Belag – Bauwerk (waagerecht)",
+          "value": "≤ 0,30 m",
+          "note": "Darf größer sein, wenn der Belag die Absturzkante innen um ≥ 0,50 m überragt und innen Seitenschutz hat.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 42"
+          }
+        },
+        {
+          "label": "Seitenschutz an der Fanglage",
+          "value": "≥ 1,00 m, mind. 950 mm",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 15, S. 43"
+          }
+        },
+        {
+          "label": "Seitlicher Überstand über den Arbeitsbereich",
+          "value": "≥ 1,00 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 43"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "note",
+          "text": "Fanggerüste nur, wenn wegen baulicher Gegebenheiten kein Seitenschutz möglich ist.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 42"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Kein Material auf Fanggerüsten lagern: Es erhöht die Verletzungsgefahr für eine abstürzende Person.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 5.1, S. 33"
+          }
+        }
+      ]
+    },
+    {
+      "key": "catchScaffoldWall",
+      "rank": "catching",
+      "label": "Fanggerüst mit Schutzwand",
+      "summary": "Wenn die Fangbreite von 0,90 m nicht eingehalten werden kann.",
+      "aliases": [
+        "Schutzwand",
+        "Fanggerüst mit Schutzwand"
+      ],
+      "specs": [
+        {
+          "label": "Belagbreite",
+          "value": "≥ 0,60 m",
+          "note": "Nur wenn alle drei Bedingungen dieser Maßnahme erfüllt sind",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 44"
+          }
+        },
+        {
+          "label": "Schutzwand über der Absturzkante",
+          "value": "≥ 0,80 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 44"
+          }
+        },
+        {
+          "label": "Abstand Absturzkante – Schutzwand",
+          "value": "≥ 0,70 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 44"
+          }
+        },
+        {
+          "label": "Absturzkante bis Belag",
+          "value": "≤ 2,00 m",
+          "note": "Bei 2,00 m hoher Schutzwand und 0,70 m Abstand: Belag höchstens 1,20 m unter der Absturzkante",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 17 und Abschn. 6.3, S. 44–45"
+          }
+        },
+        {
+          "label": "Abstand Belagkante – Bauwerk",
+          "value": "≤ 0,30 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 17, S. 45"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Der Seitenschutz ist als Schutzwand ausgebildet.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.3, S. 44"
+          }
+        }
+      ]
+    },
+    {
+      "key": "roofCatch",
+      "rank": "catching",
+      "label": "Dachfanggerüst",
+      "summary": "Fanglage mit Schutzwand an der Traufe, wenn keine Dachschutzwand verwendet werden kann.",
+      "aliases": [
+        "Dachfanggerüst",
+        "Traufe",
+        "Schutzwand",
+        "Dachschutzwand",
+        "Schutznetz Schutzwand"
+      ],
+      "specs": [
+        {
+          "label": "Fanglage unter der Traufe (Absturzkante)",
+          "value": "≤ 1,50 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 45"
+          }
+        },
+        {
+          "label": "Breite der Fanglage",
+          "value": "≥ 0,60 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 45"
+          }
+        },
+        {
+          "label": "Abstand b Schutzwand-Innenkante – Traufkante",
+          "value": "≥ 0,70 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 45"
+          }
+        },
+        {
+          "label": "Schutzwand über der Traufe",
+          "value": "mindestens 1,5 m − b",
+          "note": "Höhe der Schutzwand insgesamt mindestens 1,0 m. Beispiel: 2,00 m hohe Schutzwand mit 0,70 m Abstand → Belag höchstens 1,20 m unter der Traufe.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, Abb. 18, S. 45–46"
+          }
+        },
+        {
+          "label": "Abstand Belagkante – Bauwerk",
+          "value": "≤ 0,30 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 18, S. 46"
+          }
+        },
+        {
+          "label": "Netz als Füllung der Schutzwand",
+          "value": "DIN EN 1263-1, mind. Netztyp A2, Maschenweite 100 mm",
+          "note": "Alternativ Drahtgeflecht nach DIN 4420-1 oder Schutzgitter/-netze nach Anleitung des Gerüstherstellers",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 46"
+          }
+        },
+        {
+          "label": "Rohre für die Netzbefestigung",
+          "value": "Stahl ≥ 3,2 mm Wand (DIN EN 39) oder Alu ≥ 4,0 mm Wand, 48,3 mm Außendurchmesser",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 46"
+          }
+        },
+        {
+          "label": "Bordbrett / Lücke bis zum Netz",
+          "value": "≥ 0,15 m / ≤ 0,10 m",
+          "ref": {
+            "source": "i201011",
+            "where": "Abb. 19, S. 47"
+          }
+        },
+        {
+          "label": "Netzstoß ohne Verbindung",
+          "value": "≥ 75 cm überlappt",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 47"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Netze allseitig Masche für Masche an den Rohren befestigen; Netzstoß Masche für Masche mit Kopplungsseil nach DIN EN 1263-1 verbinden.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 46"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Statt Masche für Masche: Befestigung am Rand höchstens alle 75 cm, wenn die Tragfähigkeit im dynamischen Versuch nach DIN EN 1263 nachgewiesen ist. Gebrauchsanleitung beachten.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 47"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Netze nicht mit Kabelbindern oder Bindedraht befestigen und nicht in ihren Abmessungen verändern.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 46–47"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Schutznetze ohne Prüfung des Prüfgarns nur innerhalb von 12 Monaten nach Herstellung verwenden.",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 6.4, S. 47"
+          }
+        }
+      ]
+    },
+    {
+      "key": "netS",
+      "rank": "catching",
+      "label": "Schutznetz System S (Auffangnetz)",
+      "summary": "Waagerecht gespanntes Netz mit Randseil unter dem Arbeitsplatz, z. B. im Hallenbau oder unter Öffnungen.",
+      "aliases": [
+        "Schutznetz",
+        "Sicherheitsnetz",
+        "Auffangnetz",
+        "Netz",
+        "DIN EN 1263",
+        "System S"
+      ],
+      "specs": [
+        {
+          "label": "Absturzhöhe in das Netz",
+          "value": "≤ 3,0 m",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.2, S. 33"
+          }
+        },
+        {
+          "label": "Netzgröße",
+          "value": "≥ 35 m², kürzeste Seite ≥ 5,0 m",
+          "note": "Kleinere Netze nur mit besonderem Nachweis",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.1, S. 32"
+          }
+        },
+        {
+          "label": "Abstand Netz – Absturzkante (waagerecht)",
+          "value": "≤ 0,30 m",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.4, S. 31"
+          }
+        },
+        {
+          "label": "Abstand der Befestigungspunkte",
+          "value": "≤ 2,5 m",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.3, S. 34"
+          }
+        },
+        {
+          "label": "Last je Aufhängepunkt (Bemessung)",
+          "value": "≥ 6 kN unter 45°",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.3, S. 35"
+          }
+        },
+        {
+          "label": "Gekoppelte Netze",
+          "value": "Spalt und Verschiebung am Stoß je ≤ 100 mm",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.5, S. 31"
+          }
+        },
+        {
+          "label": "Überlappung ohne Kopplungsseil",
+          "value": "≥ 2,0 m",
+          "note": "Kopplung mit Kopplungsseilen wird empfohlen",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.4, S. 36"
+          }
+        },
+        {
+          "label": "Freiraum unter dem Netz",
+          "value": "Netzverformung nach Kurventafel + Sicherheitsabstand",
+          "note": "Beispiel der Quelle: Spannweite 9,0 m, Absturzhöhe 2,9 m → Verformung 3,65 m, mit 2,0 m Sicherheitsabstand 5,65 m Freiraum",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.5, Abb. 10, S. 36–39"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Netz möglichst dicht unter dem Arbeitsplatz aufhängen.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.3, S. 30"
+          }
+        },
+        {
+          "level": "required",
+          "text": "So aufhängen, dass eine aufgefangene Person weder den Boden noch Gegenstände berührt und niemanden darunter verletzt.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.5, S. 36"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Unter Öffnungen: Die Person darf nicht über die Netzaußenkante fallen, z. B. Netz über den Auftreffbereich hinaus verbreitern.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.2.6, S. 40"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Nur an tragfähigen Konstruktionen befestigen; Knoten an Aufhängeseilen dürfen sich nicht selbst lösen.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.2 und 4.2.3, S. 30, 34"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Vor dem erstmaligen Gebrauch durch eine zur Prüfung befähigte Person prüfen lassen.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.6, S. 32"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Alterungsprüfung: höchstens 12 Monate seit Herstellung oder letzter Prüfung; das Datum steht auf der Kennzeichnung am Netz.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 5.3, S. 45–46"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Hineingefallene Gegenstände sofort entfernen. Nach einem Auffangvorgang nur mit Zustimmung einer fachkundigen Person wieder verwenden.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.1, S. 29"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Mehr als 2 benachbarte Maschenschenkel beschädigt: Netz austauschen oder sofort reparieren. Lässt sich das Netz seinen Prüfmaschen nicht zuordnen, nicht mehr verwenden.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 5.1, S. 44"
+          }
+        },
+        {
+          "level": "forbidden",
+          "text": "Abmessungen nur vom Hersteller ändern lassen.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.1, S. 29"
+          }
+        }
+      ]
+    },
+    {
+      "key": "netT",
+      "rank": "catching",
+      "label": "Schutznetz System T (am Bauwerksrand)",
+      "summary": "Netz auf Auslegern vor der Absturzkante, z. B. an Decken- oder Dachrand.",
+      "aliases": [
+        "Schutznetz",
+        "Randnetz",
+        "System T",
+        "Netz am Dachrand"
+      ],
+      "specs": [
+        {
+          "label": "Fangbreite bei Absturzhöhe ≤ 1,0 m",
+          "value": "≥ 2,0 m",
+          "note": "Flächen mit 0° bis 22,5° Neigung",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.3.2, Abb. 11, S. 41"
+          }
+        },
+        {
+          "label": "Fangbreite bei Absturzhöhe über 1,0 m bis 3,0 m",
+          "value": "≥ 2,5 m",
+          "note": "Flächen mit 0° bis 22,5° Neigung",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.3.2, Abb. 11, S. 41"
+          }
+        },
+        {
+          "label": "Fangbreite bei Flächen über 22,5° bis 60°",
+          "value": "≥ 3,0 m",
+          "note": "Unterster Punkt des Netzrands höchstens 3,0 m unter der Absturzkante",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.3.2, Abb. 12, S. 42"
+          }
+        },
+        {
+          "label": "Überlappung ohne Verbindung",
+          "value": "≥ 0,75 m",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.3.3, S. 43"
+          }
+        }
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Fangbreiten auch an Gebäudeecken und Vorsprüngen einhalten.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.3.2, S. 41"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Aufhängepunkte nach Angaben des Herstellers des Netzsystems bemessen.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.3.1, S. 40"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Vor dem erstmaligen Gebrauch prüfen lassen; Alterungsprüfung höchstens 12 Monate zurück.",
+          "ref": {
+            "source": "r101011",
+            "where": "Abschn. 4.1.6 und 5.3, S. 32, 45"
+          }
+        }
+      ]
+    },
+    {
+      "key": "fallArrest",
+      "rank": "personal",
+      "label": "PSA gegen Absturz (Auffanggurt)",
+      "summary": "Auffanggurt mit Verbindungsmittel an einer geeigneten Anschlageinrichtung.",
+      "aliases": [
+        "PSAgA",
+        "Auffanggurt",
+        "Sicherheitsgeschirr",
+        "Anschlagpunkt",
+        "Anschlageinrichtung",
+        "Höhensicherungsgerät"
+      ],
+      "rules": [
+        {
+          "level": "required",
+          "text": "Nur mit geeigneten Anschlageinrichtungen; welche geeignet sind, legt der weisungsbefugte, fachkundige Vorgesetzte im Einzelfall fest.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 4, S. 12"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Die geeignete PSA ergibt sich aus der Gefährdungsbeurteilung. Beschäftigte werden in der Benutzung und in den Rettungsmaßnahmen unterwiesen.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 4, S. 12"
+          }
+        },
+        {
+          "level": "required",
+          "text": "Rettungskonzept festlegen und Rettungsausrüstung vor Ort bereithalten; Anprallen und Hängetrauma berücksichtigen (Beispiel Gerüstbau).",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 4.7.3, S. 25"
+          }
+        },
+        {
+          "level": "note",
+          "text": "Am Gerüst Anschlagpunkte möglichst oberhalb, mindestens 1 m über der Standfläche; Schutzhelm mit Kinnriemen nach DIN EN 397 (Beispiel Gerüstbau).",
+          "ref": {
+            "source": "i201011",
+            "where": "Abschn. 4.7.3, S. 26"
+          }
+        },
+        {
+          "level": "exception",
+          "text": "Verzicht im begründeten Einzelfall nur, wenn die Tätigkeit keine Schutzmaßnahme zulässt, qualifizierte und geeignete Beschäftigte arbeiten, besonders unterwiesen wurde und die Absturzkante deutlich erkennbar ist.",
+          "ref": {
+            "source": "v38",
+            "where": "§ 9 Abs. 5, S. 12–13"
+          }
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "label": "Deckenrand mit genau 2,00 m: noch keine Pflicht",
+      "situation": "workplace",
+      "height": 2,
+      "tone": "ok",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 2 Nr. 3, S. 12"
+      }
+    },
+    {
+      "label": "Deckenrand mit 2,10 m: sichern",
+      "situation": "workplace",
+      "height": 2.1,
+      "tone": "required",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 2 Nr. 3, S. 12"
+      }
+    },
+    {
+      "label": "Treppenabsatz mit 1,20 m: sichern",
+      "situation": "stairs",
+      "height": 1.2,
+      "tone": "required",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 2 Nr. 2, S. 12"
+      }
+    },
+    {
+      "label": "Kleines Flachdach mit 2,80 m: Ausnahme möglich",
+      "situation": "flatRoof",
+      "height": 2.8,
+      "tone": "limited",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 2, S. 12"
+      }
+    },
+    {
+      "label": "Flachdach mit 3,50 m: sichern",
+      "situation": "flatRoof",
+      "height": 3.5,
+      "tone": "required",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 2, S. 12"
+      }
+    },
+    {
+      "label": "Steildach, Traufe 6 m über Gelände: Dachfanggerüst oder Dachschutzwand",
+      "situation": "pitchedRoof",
+      "height": 6,
+      "tone": "required",
+      "ref": {
+        "source": "i201011",
+        "where": "Abschn. 6.4, S. 45"
+      }
+    },
+    {
+      "label": "Über Wasser: immer sichern",
+      "situation": "water",
+      "tone": "required",
+      "ref": {
+        "source": "v38",
+        "where": "§ 9 Abs. 2 Nr. 1, S. 11"
+      }
+    },
+    {
+      "label": "Leiter mit 3 m Standhöhe: nur zeitweilig",
+      "situation": "ladder",
+      "height": 3,
+      "tone": "limited",
+      "ref": {
+        "source": "v38",
+        "where": "§ 8 Abs. 7, S. 10"
+      }
+    },
+    {
+      "label": "Leiter mit 5,50 m Standhöhe: nicht zulässig",
+      "situation": "ladder",
+      "height": 5.5,
+      "tone": "forbidden",
+      "ref": {
+        "source": "v38",
+        "where": "§ 8 Abs. 7, S. 11"
+      }
+    }
+  ]
+}
