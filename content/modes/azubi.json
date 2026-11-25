@@ -25,6 +25,7 @@
     "tool.aufmass-heizkoerper",
     "tool.aufmass-thermostatventile",
     "tool.heizlast",
+    "tool.waermepumpe-bivalenzpunkt",
     "tool.heizraum",
     "tool.brennstofflagerung",
     "tool.abwasser-dimensionierung",

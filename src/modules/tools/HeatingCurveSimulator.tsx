@@ -9,7 +9,10 @@ import { renderSymbol } from '../formulas/SymbolText'
 import {
   changedParameters,
   comparePoints,
+  controlModeOf,
   curveExpressions,
+  effectiveSetpoint,
+  withControlMode,
   curveFormulaText,
   curveRefText,
   curveSegments,
@@ -242,15 +245,18 @@ function ParameterControl({
   name,
   settings,
   onChange,
+  toggle = true,
 }: {
   tool: HeatingCurveTool
   name: CurveParameterKey
   settings: CurveSettings
   onChange: (settings: CurveSettings) => void
+  /** false: optionale Einstellung ohne eigenes Häkchen (wird woanders an- und ausgeschaltet) */
+  toggle?: boolean
 }) {
   const parameter = tool.parameters[name]
   const value = settings[name]
-  const optional = parameter.default === null
+  const optional = toggle && parameter.default === null
   const active = value !== null
   return (
     <div className="rounded-2xl border-2 border-line bg-surface p-3">
@@ -313,9 +319,11 @@ function CurveChart({
   const current = curveSegments(tool.model, settings, outdoorFrom, outdoorTo)
   const baseline = changed ? curveSegments(tool.model, base, outdoorFrom, outdoorTo) : []
   const reduced = settings.reducedSetpoint !== null ? curveSegments(tool.model, settings, outdoorFrom, outdoorTo, true) : []
+  // Mit Raumaufschaltung: reine Heizkurve zum Vergleich
+  const pure = settings.roomInfluence !== null ? curveSegments(tool.model, { ...settings, roomInfluence: null }, outdoorFrom, outdoorTo) : []
   // Grenzlinien sollen immer im Bild liegen
   const limits = [settings.maxFlow, settings.minFlow].filter((value): value is number => value !== null)
-  const values = [...[current, baseline, reduced].flat(2).map((point) => point.flow), ...limits]
+  const values = [...[current, baseline, reduced, pure].flat(2).map((point) => point.flow), ...limits]
   const yMin = Math.min(20, Math.floor(Math.min(...values, 20) / 10) * 10)
   const yMax = Math.max(60, Math.ceil(Math.max(...values, 60) / 10) * 10)
   const x = (outdoor: number) => PAD.left + ((outdoor - outdoorFrom) / (outdoorTo - outdoorFrom)) * (WIDTH - PAD.left - PAD.right)
@@ -411,6 +419,7 @@ function CurveChart({
         </g>
       )}
       {baseline.length > 0 && <path d={path(baseline)} fill="none" className="stroke-muted" strokeWidth={2} strokeDasharray="6 4" />}
+      {pure.length > 0 && <path d={path(pure)} fill="none" className="stroke-ink" strokeWidth={1.5} strokeDasharray="8 3 2 3" />}
       {reduced.length > 0 && <path d={path(reduced)} fill="none" className="stroke-brand" strokeWidth={2} strokeDasharray="1 3" strokeLinecap="round" />}
       <path d={path(current)} fill="none" className="stroke-accent" strokeWidth={3.5} strokeLinejoin="round" />
       {points &&
@@ -444,8 +453,10 @@ function Legend({
   showReduced,
   showLimits,
   showHeatingLimit,
+  showPure,
 }: {
   showBase: boolean
+  showPure: boolean
   showReduced: boolean
   showLimits: boolean
   showHeatingLimit: boolean
@@ -462,6 +473,7 @@ function Legend({
     <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-base">
       {item('', 'stroke-accent', 3.5, 'Neue Einstellung')}
       {showBase && item('6 4', 'stroke-muted', 2, 'Ausgang')}
+      {showPure && item('8 3 2 3', 'stroke-ink', 1.5, 'Ohne Raumaufschaltung')}
       {showReduced && item('1 3', 'stroke-brand', 2, 'Absenkbetrieb')}
       {showLimits && item('6 3', 'stroke-warn-ink', 2, 'Max./Min.-Begrenzung')}
       {showHeatingLimit && item('2 3', 'stroke-warn-ink', 2, 'Heizgrenze')}
@@ -515,12 +527,35 @@ function EffectSection({ tool, base, settings }: { tool: HeatingCurveTool; base:
         `Der Heizbetrieb endet jetzt bei ${format(after)} °C statt ${format(before)} °C – die Heizung läuft ${after > before ? 'länger' : 'kürzer'} in die Übergangszeit hinein.`,
       )
   }
+  if (changed.includes('roomInfluence') && (base.roomInfluence === null || settings.roomInfluence === null)) {
+    sentences.push(
+      settings.roomInfluence === null
+        ? 'Ohne Raumaufschaltung folgt der Vorlauf nur noch der Außentemperatur; die Raumtemperatur im Führungsraum wirkt nicht mehr.'
+        : 'Mit Raumaufschaltung wirkt jetzt die Raumtemperatur im Führungsraum auf den Vorlauf.',
+    )
+  }
+  if (settings.roomInfluence !== null) {
+    const corrected = effectiveSetpoint(settings)
+    const deviation = settings.roomSetpoint - settings.roomActual
+    const point = tool.comparePoints[Math.floor(tool.comparePoints.length / 2)]!
+    const withRoom = flowAt(tool.model, settings, point.outdoor)
+    const without = flowAt(tool.model, { ...settings, roomInfluence: null }, point.outdoor)
+    const state =
+      Math.abs(deviation) < 0.05
+        ? 'Der Führungsraum hat Raumsoll, die Raumaufschaltung verschiebt nichts.'
+        : `Der Führungsraum ist ${format(Math.abs(deviation), 1)} K zu ${deviation > 0 ? 'kalt' : 'warm'}: Der Regler rechnet mit Raumsoll ${format(corrected, 1)} °C statt ${format(settings.roomSetpoint, 1)} °C.`
+    sentences.push(
+      withRoom.flow !== null && without.flow !== null && Math.abs(deviation) >= 0.05
+        ? `${state} Bei ${format(point.outdoor)} °C liegt der Vorlauf bei ${format(withRoom.flow)} °C statt ${format(without.flow)} °C.`
+        : state,
+    )
+  }
   const { outdoorFrom, outdoorTo } = tool.chart
   if (settings.maxFlow !== null) {
     const crossing = limitCrossing(tool.model, settings, settings.maxFlow, outdoorFrom, outdoorTo)
     sentences.push(
       crossing === null
-        ? `Die Maximalbegrenzung ${format(settings.maxFlow)} °C ${rawFlow(tool.model, settings.neigung, settings.niveau, settings.roomSetpoint, outdoorFrom) > settings.maxFlow ? 'greift im ganzen Bereich' : 'greift zwischen ' + format(outdoorFrom) + ' und ' + format(outdoorTo) + ' °C nicht'}.`
+        ? `Die Maximalbegrenzung ${format(settings.maxFlow)} °C ${rawFlow(tool.model, settings.neigung, settings.niveau, effectiveSetpoint(settings), outdoorFrom) > settings.maxFlow ? 'greift im ganzen Bereich' : 'greift zwischen ' + format(outdoorFrom) + ' und ' + format(outdoorTo) + ' °C nicht'}.`
         : `Die Maximalbegrenzung ${format(settings.maxFlow)} °C greift unter etwa ${format(crossing)} °C Außentemperatur: Wird es kälter, steigt der Vorlauf nicht weiter.`,
     )
   }
@@ -528,7 +563,7 @@ function EffectSection({ tool, base, settings }: { tool: HeatingCurveTool; base:
     const crossing = limitCrossing(tool.model, settings, settings.minFlow, outdoorFrom, outdoorTo)
     sentences.push(
       crossing === null
-        ? `Die Minimalbegrenzung ${format(settings.minFlow)} °C ${rawFlow(tool.model, settings.neigung, settings.niveau, settings.roomSetpoint, outdoorTo) < settings.minFlow ? 'greift im ganzen Bereich' : 'greift zwischen ' + format(outdoorFrom) + ' und ' + format(outdoorTo) + ' °C nicht'}.`
+        ? `Die Minimalbegrenzung ${format(settings.minFlow)} °C ${rawFlow(tool.model, settings.neigung, settings.niveau, effectiveSetpoint(settings), outdoorTo) < settings.minFlow ? 'greift im ganzen Bereich' : 'greift zwischen ' + format(outdoorFrom) + ' und ' + format(outdoorTo) + ' °C nicht'}.`
         : `Die Minimalbegrenzung ${format(settings.minFlow)} °C greift über etwa ${format(crossing)} °C Außentemperatur und hebt dort den Vorlauf an.`,
     )
   }
@@ -1018,6 +1053,7 @@ export function HeatingCurveSimulator({
   const [readout, setReadout] = useState(comparePoint.outdoor)
   const readoutId = useId()
   const changed = changedParameters(base, settings).length > 0
+  const controlMode = controlModeOf(tool, settings)
   const now = flowAt(tool.model, settings, readout)
   const before = flowAt(tool.model, base, readout)
   const reduced = settings.reducedSetpoint !== null ? flowAt(tool.model, settings, readout, true) : null
@@ -1052,6 +1088,7 @@ export function HeatingCurveSimulator({
         showReduced={settings.reducedSetpoint !== null}
         showLimits={settings.maxFlow !== null || settings.minFlow !== null}
         showHeatingLimit={settings.heatingLimit !== null}
+        showPure={settings.roomInfluence !== null}
       />
 
       <div className="mt-4">
@@ -1080,6 +1117,46 @@ export function HeatingCurveSimulator({
           </p>
         )}
       </div>
+
+      <h2 className="mt-8 text-xl font-bold">Betriebsweise</h2>
+      <div role="group" aria-label="Betriebsweise" className="mt-3 grid gap-2 sm:grid-cols-2">
+        {tool.controlModes.map((candidate) => {
+          const active = candidate.key === controlMode.key
+          return (
+            <button
+              key={candidate.key}
+              type="button"
+              aria-pressed={active}
+              onClick={() => setSettings(withControlMode(tool, settings, candidate))}
+              className={`min-h-14 rounded-xl border-2 px-3 py-2 font-semibold ${active ? 'border-accent bg-accent text-accent-ink' : 'border-line bg-surface text-ink'}`}
+            >
+              <span aria-hidden="true">{active ? '✓ ' : ''}</span>
+              {candidate.label}
+            </button>
+          )
+        })}
+      </div>
+      <div className="mt-3 rounded-2xl border-2 border-line bg-surface p-3">
+        <p className="text-base">{controlMode.text}</p>
+        <Source tool={tool} refValue={controlMode.ref} />
+      </div>
+      {settings.roomInfluence !== null && (
+        <>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <ParameterControl tool={tool} name="roomActual" settings={settings} onChange={setSettings} />
+            <ParameterControl tool={tool} name="roomInfluence" settings={settings} onChange={setSettings} toggle={false} />
+          </div>
+          <p className="mt-2 text-base" aria-live="polite">
+            Korrigiertes Raumsoll: <strong>{format(effectiveSetpoint(settings), 1)} °C</strong> (Raumsoll {format(settings.roomSetpoint, 1)} °C,
+            Abweichung {signed(settings.roomSetpoint - settings.roomActual)} K)
+          </p>
+          <details className="mt-1">
+            <summary className="min-h-10 cursor-pointer py-2 text-sm font-semibold text-muted">Wie rechnet das Tool?</summary>
+            <p className="text-sm">{tool.roomInfluenceModel.text}</p>
+            <Source tool={tool} refValue={tool.roomInfluenceModel.ref} />
+          </details>
+        </>
+      )}
 
       <h2 className="mt-8 text-xl font-bold">Einstellung</h2>
       <div role="group" aria-label="Einstellart" className="mt-3 grid grid-cols-2 gap-2">

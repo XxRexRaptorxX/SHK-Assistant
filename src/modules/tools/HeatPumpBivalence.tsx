@@ -187,13 +187,17 @@ export function HeatPumpBivalence({
   initialRows,
   initialMode,
   initialInputs = {},
+  initialProblem = '',
 }: {
   tool: HeatPumpTool
   /** Vorgaben (Tests) */
   initialRows?: PointRow[]
   initialMode?: string
   initialInputs?: Partial<BivalenceInputs>
+  initialProblem?: string
 }) {
+  const [problemKey, setProblemKey] = useState(initialProblem)
+  const problem = tool.problems.find((candidate) => candidate.key === problemKey)
   const defaults: BivalenceInputs = {
     heatLoad: tool.inputs.heatLoad.default,
     designOutdoor: tool.inputs.designOutdoor.default,
@@ -461,6 +465,45 @@ export function HeatPumpBivalence({
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {tool.problems.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-xl font-bold">Was ist das Problem?</h2>
+          <div role="group" aria-label="Problem" className="mt-2 grid gap-2 sm:grid-cols-2">
+            {tool.problems.map((candidate) => {
+              const active = candidate.key === problem?.key
+              return (
+                <button
+                  key={candidate.key}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setProblemKey(active ? '' : candidate.key)}
+                  className={`min-h-14 rounded-xl border-2 px-3 py-2 text-left font-semibold ${active ? 'border-accent bg-accent text-accent-ink' : 'border-line bg-surface text-ink'}`}
+                >
+                  <span aria-hidden="true">{active ? '✓ ' : ''}</span>
+                  {candidate.label}
+                </button>
+              )
+            })}
+          </div>
+          {problem && (
+            <div aria-live="polite" className="mt-4 rounded-xl border-2 border-line bg-surface p-3">
+              <p className="font-semibold">Regel</p>
+              <p className="text-base">{problem.text}</p>
+              {problem.bivalence !== 'keep' && (
+                <p className="mt-1 text-base font-semibold">Bivalenzpunkt {problem.bivalence === 'up' ? 'höher (wärmer)' : 'tiefer (kälter)'} wählen</p>
+              )}
+              <Source tool={tool} refValue={problem.ref} />
+              {result && (
+                <p className="mt-2 border-t-2 border-line pt-2 text-base">
+                  Jetzt im Tool: Bivalenzpunkt {result.bivalence === null ? 'keiner' : `${format(result.bivalence, 1)} °C`}, üblich bei Norm-AT{' '}
+                  {format(range.designOutdoor)} °C: {format(range.from)} bis {format(range.to)} °C.
+                </p>
+              )}
+            </div>
+          )}
         </section>
       )}
 

@@ -7,8 +7,12 @@ import {
   curveExpressions,
   curveFormulaText,
   comparePoints,
+  controlModeOf,
+  correctedSetpoint,
   curveSegments,
   defaultSettings,
+  effectiveSetpoint,
+  withControlMode,
   fitCurve,
   flowAt,
   heatingCurveToolSchema,
@@ -103,6 +107,51 @@ describe('Heizkurve: Kennlinie', () => {
     const settings = { ...base, reducedSetpoint: 17 }
     expect(flowAt(model, settings, 0, true).flow).toBeCloseTo(rawFlow(model, 1.4, 0, 17, 0), 9)
     expect(flowAt(model, { ...base, reducedSetpoint: null }, 0, true).flow).toBeCloseTo(rawFlow(model, 1.4, 0, 20, 0), 9)
+  })
+})
+
+describe('Heizkurve: Betriebsweise und Raumaufschaltung', () => {
+  const roomMode = tool.controlModes.find((mode) => mode.roomInfluence)!
+  const outdoorMode = tool.controlModes.find((mode) => !mode.roomInfluence)!
+
+  it('korrigiertes Raumsoll wie im Beispiel der Quelle', () => {
+    // Loxone, Beispiel 1: Raumsoll 20 °C, Abweichung 1,5 K, G = 1 → 21,5 °C
+    expect(correctedSetpoint(20, 18.5, 1)).toBeCloseTo(21.5, 9)
+    expect(correctedSetpoint(20, 18.5, 0)).toBe(20)
+  })
+
+  it('außentemperaturgeführt ist Standard, Raum ist wirkt dann nicht', () => {
+    expect(base.roomInfluence).toBeNull()
+    expect(controlModeOf(tool, base).key).toBe(outdoorMode.key)
+    expect(flowAt(model, { ...base, roomActual: 15 }, 0).flow).toBeCloseTo(rawFlow(model, 1.4, 0, 20, 0), 9)
+    expect(changedParameters(base, { ...base, roomActual: 15 })).toEqual([])
+  })
+
+  it('Raum zu kalt hebt, Raum zu warm senkt den Vorlauf', () => {
+    const settings = withControlMode(tool, base, roomMode)
+    expect(settings.roomInfluence).toBe(tool.parameters.roomInfluence.start)
+    const cold = flowAt(model, { ...settings, roomActual: 18.5, roomInfluence: 1 }, 0).flow!
+    expect(cold).toBeCloseTo(rawFlow(model, 1.4, 0, 21.5, 0), 9)
+    expect(flowAt(model, { ...settings, roomActual: 22 }, 0).flow!).toBeLessThan(rawFlow(model, 1.4, 0, 20, 0))
+    // Raum hat Soll: keine Verschiebung
+    expect(flowAt(model, { ...settings, roomActual: 20 }, 0).flow).toBeCloseTo(rawFlow(model, 1.4, 0, 20, 0), 9)
+    expect(withControlMode(tool, settings, outdoorMode).roomInfluence).toBeNull()
+  })
+
+  it('Raumaufschaltung wirkt auch im Absenkbetrieb', () => {
+    const settings = { ...base, reducedSetpoint: 17, roomInfluence: 1, roomActual: 16 }
+    expect(effectiveSetpoint(settings, true)).toBeCloseTo(18, 9)
+    expect(flowAt(model, settings, 0, true).flow).toBeCloseTo(rawFlow(model, 1.4, 0, 18, 0), 9)
+  })
+
+  it('Simulator zeigt Betriebsweise und korrigiertes Raumsoll', () => {
+    const html = renderToStaticMarkup(
+      <HeatingCurveSimulator tool={tool} initialSettings={{ roomInfluence: 1, roomActual: 18.5 }} />,
+    )
+    expect(html).toContain(roomMode.label)
+    expect(html).toContain('Korrigiertes Raumsoll: <strong>21,5 °C</strong>')
+    expect(html).toContain('Ohne Raumaufschaltung')
+    expect(html).toContain('1,5 K zu kalt')
   })
 })
 

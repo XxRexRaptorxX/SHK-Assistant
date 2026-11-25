@@ -7,7 +7,7 @@
   "verifiedAt": "",
   "kind": "heatingCurve",
   "title": "Heizkurve simulieren und einstellen",
-  "summary": "Zeichnet die Heizkurve, verändert sie über Neigung, Niveau, Raumsoll, Absenkung, Begrenzung und Heizgrenze und zeigt die Wirkung. Rechnet aus einem Problem oder einer Messung die passende Einstellung zurück.",
+  "summary": "Zeichnet die Heizkurve, verändert sie über Neigung, Niveau, Raumsoll, Raumaufschaltung, Absenkung, Begrenzung und Heizgrenze und zeigt die Wirkung. Rechnet aus einem Problem oder einer Messung die passende Einstellung zurück.",
   "description": "Neigung, Niveau und Raumsoll einstellen und sehen, was sich bei Frost und in der Übergangszeit ändert. Unter „Einstellung finden“ das Problem beschreiben und Neigung und Niveau als Empfehlung bekommen.",
   "category": "Wartung",
   "tags": ["heizung", "kundendienst"],
@@ -23,6 +23,11 @@
     "Außentemperatur",
     "witterungsgeführt",
     "außentemperaturgeführt",
+    "Raumaufschaltung",
+    "Raumtemperaturaufschaltung",
+    "Raumeinfluss",
+    "Führungsraum",
+    "Betriebsweise",
     "Nachtabsenkung",
     "reduzierter Betrieb",
     "Sommerabschaltung",
@@ -52,8 +57,48 @@
       "key": "wikipedia",
       "name": "Wikipedia Heizkurve",
       "source": "Wikipedia „Heizkurve“, Version vom 29.06.2026 (oldid 268322628), https://de.wikipedia.org/wiki/Heizkurve, abgerufen am 24.11.2026"
+    },
+    {
+      "key": "raumaufschaltung",
+      "name": "haustechnikdialog Raumtemperaturaufschaltung",
+      "source": "haustechnikdialog.de SHKwissen „Raumtemperaturaufschaltung“ (Artikel 1893, 17.03.2012), https://www.haustechnikdialog.de/SHKwissen/1893/Raumtemperaturaufschaltung, abgerufen am 25.11.2026"
+    },
+    {
+      "key": "loxone",
+      "name": "Loxone Intelligente Temperatursteuerung",
+      "source": "Loxone Dokumentation „Intelligente Temperatursteuerung“, https://www.loxone.com/dede/kb/intelligente-temperatursteuerung/, abgerufen am 25.11.2026"
     }
   ],
+  "controlModes": [
+    {
+      "key": "outdoor",
+      "label": "Außentemperaturgeführt",
+      "roomInfluence": false,
+      "text": "Der Vorlauf-Sollwert hängt nur von der Außentemperatur ab (Heizkurve). Wie warm es im Raum tatsächlich ist, sieht der Regler nicht; die Aufheizgeschwindigkeit lässt sich so nicht beeinflussen.",
+      "ref": { "source": "raumaufschaltung", "where": "Absatz 2" }
+    },
+    {
+      "key": "roomInfluence",
+      "label": "Mit Raumaufschaltung",
+      "roomInfluence": true,
+      "text": "Ein Raumfühler im Führungsraum (z. B. Wohnzimmer) meldet die Ist-Temperatur. Ist der Raum zu kalt, hebt der Regler den Vorlauf über die Heizkurve, ist er zu warm, senkt er ihn. Das verbessert die Regelung bei Fremdwärme wie Sonne, Kaminofen oder vielen Personen.",
+      "ref": { "source": "raumaufschaltung", "where": "Absatz 1 und 2" }
+    }
+  ],
+  "roomInfluenceModel": {
+    "text": "Die Abweichung (Raumsoll − Raum ist) wird mit dem Gewichtungsfaktor G multipliziert und zum Raumsoll addiert. Mit diesem korrigierten Raumsoll rechnet die Heizkurve. G = 0 schaltet den Einfluss ab. So beschreibt es die Loxone-Dokumentation; andere Regler können den Raumeinfluss anders einrechnen.",
+    "ref": { "source": "loxone", "where": "Abschnitt Berechnungsbeispiele, Einfluss Raum-Temperaturabweichung" },
+    "examples": [
+      {
+        "label": "Heizen, Abweichung 1,5 K, G = 1",
+        "roomSetpoint": 20,
+        "roomActual": 18.5,
+        "weight": 1,
+        "corrected": 21.5,
+        "ref": { "source": "loxone", "where": "Abschnitt Berechnungsbeispiele, Einfluss Raum-Temperaturabweichung, Beispiel 1" }
+      }
+    ]
+  },
   "model": {
     "name": "Kennlinie nach Viessmann-Community",
     "coefficients": [1.4347, 0.021, 0.0002479],
@@ -153,6 +198,26 @@
       "start": 18,
       "text": "Liegt die Außentemperatur über der Heizgrenze, schaltet der Regler den Heizbetrieb ab.",
       "ref": { "source": "wikipedia", "where": "Abschnitt Heizgrenze" }
+    },
+    "roomInfluence": {
+      "label": "Raumeinfluss (Gewichtung G)",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "default": null,
+      "start": 1,
+      "text": "Wie stark die Abweichung der Raumtemperatur den Vorlauf verschiebt. Bei G = 1 rechnet der Regler mit einem Raumsoll, das um die volle Abweichung angehoben (Raum zu kalt) oder gesenkt (Raum zu warm) ist; G = 0 schaltet den Einfluss ab.",
+      "ref": { "source": "loxone", "where": "Abschnitt Berechnungsbeispiele, Parameter G" }
+    },
+    "roomActual": {
+      "label": "Raumtemperatur ist (Führungsraum)",
+      "unit": "°C",
+      "min": 5,
+      "max": 35,
+      "step": 0.5,
+      "default": 20,
+      "text": "Vom Raumfühler im Führungsraum gemessene Temperatur. Liegt sie unter dem Raumsoll, steigt der Vorlauf, liegt sie darüber, sinkt er. Andere Räume bekommen dann ebenfalls diesen Vorlauf, für sie passt die Heizkurve nicht mehr.",
+      "ref": { "source": "raumaufschaltung", "where": "Absatz 1 bis 3" }
     }
   },
   "chart": { "outdoorFrom": -20, "outdoorTo": 20 },

@@ -197,6 +197,50 @@
       { "designOutdoor": -10, "from": -2, "to": -5 }
     ]
   },
+  "problems": [
+    {
+      "key": "reichtNichtBeiFrost",
+      "label": "Bei Frost wird es nicht warm",
+      "text": "Ist die Wärmepumpe für das Haus zu schwach ausgelegt, den Bivalenzpunkt höher einstellen, damit der zweite Erzeuger früher hilft.",
+      "bivalence": "up",
+      "ref": { "source": "viessmann", "where": "Abschnitt Einflussfaktoren, Auslegung der Wärmepumpenheizung" }
+    },
+    {
+      "key": "hoheStromkosten",
+      "label": "Neue Heizflächen, niedrigerer Vorlauf",
+      "text": "Niedertemperatur-Heizkörper oder Flächenheizung erlauben einen niedrigeren Vorlauf; dann lässt sich auch der Bivalenzpunkt absenken.",
+      "bivalence": "down",
+      "ref": { "source": "viessmann", "where": "Abschnitt Einflussfaktoren, Heizflächen und Vorlauftemperatur" }
+    },
+    {
+      "key": "zweiterErzeugerZuViel",
+      "label": "Zweiter Erzeuger heizt zu viel",
+      "text": "Der zweite Erzeuger soll nur einen geringen Anteil der Heizarbeit übernehmen. Den Bivalenzpunkt entsprechend legen, häufig um −5 °C.",
+      "bivalence": "down",
+      "ref": { "source": "watt42", "where": "Abschnitt Der bivalente Betrieb" }
+    },
+    {
+      "key": "heizstabMonoenergetisch",
+      "label": "Heizstab springt zu oft an",
+      "text": "Bei monoenergetischer Betriebsweise den Bivalenzpunkt niedriger wählen als bei bivalenter, etwa −5 bis −8 °C, weil der Heizstab weniger Zusatzleistung bringt als ein Gas-, Öl- oder Holzkessel.",
+      "bivalence": "down",
+      "ref": { "source": "energieExperten", "where": "Abschnitt Ermittlung des Bivalenzpunktes nach Betriebsweise" }
+    },
+    {
+      "key": "hoheSystemtemperatur",
+      "label": "Altbau braucht hohen Vorlauf",
+      "text": "Bei höheren Systemtemperaturen kann der Bivalenzpunkt höher angesetzt werden.",
+      "bivalence": "up",
+      "ref": { "source": "energieExperten", "where": "Abschnitt Ermittlung des Bivalenzpunktes nach Betriebsweise" }
+    },
+    {
+      "key": "taktet",
+      "label": "Wärmepumpe schaltet oft ein und aus",
+      "text": "Eine Wärmepumpe mit Inverter passt ihre Leistung an den Bedarf an, vermeidet so unnötige Schaltvorgänge und schont die Technik. Zum Bivalenzpunkt macht die Quelle hier keine Aussage.",
+      "bivalence": "keep",
+      "ref": { "source": "watt42", "where": "Abschnitt Modulierender Betrieb mittels Invertern" }
+    }
+  ],
   "infos": [
     {
       "title": "Heizstab: viel Leistung, wenig Arbeit",

@@ -805,5 +805,7 @@ Bivalenzpunkt. Beispiel: Wärmepumpe: Bivalenzpunkt und Betriebsweise. Felder: `
 - `coverage`: `title`, `ref`, `rows` je `bivalence`, `powerShare`, `parallel`, `alternative` (Anteile 0–1).
 - `typicalRanges`: `text`, `ref`, `rows` je `designOutdoor`, `from` (wärmer), `to` (kälter).
 - `infos`: je `title`, `text`, `ref`.
+- `problems` (optional, „Was ist das Problem?“): je `key`, `label`, `text` (Regel laut Quelle), `bivalence` (`up`, `down`
+  oder `keep`, wenn die Quelle keine Richtung nennt), `ref`.
 
 Der Build prüft Quellen, Wertebereiche, doppelte Schlüssel und Tabellenzeilen.

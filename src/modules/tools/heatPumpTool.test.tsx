@@ -7,6 +7,7 @@ import {
   checkHeatPumpTool,
   coverageAt,
   evaluateBivalence,
+  heatPumpRefText,
   heatPumpToolSchema,
   loadAt,
   typicalRange,
@@ -96,10 +97,12 @@ describe('Wärmepumpe: Rechnung', () => {
       ...tool,
       modes: [{ ...mode('parallel'), ref: { source: 'gibtsnicht', where: 'x' } }, mode('alternativ')],
       typicalRanges: { ...tool.typicalRanges, rows: [{ designOutdoor: -12, from: -6, to: -3 }] },
+      problems: [tool.problems[0], tool.problems[0]],
     })
     const issues = checkHeatPumpTool(broken)
     expect(issues.some((issue) => issue.includes('unbekannte Quelle "gibtsnicht"'))).toBe(true)
     expect(issues.some((issue) => issue.startsWith('typicalRanges.rows[0]'))).toBe(true)
+    expect(issues).toContain('problems: key doppelt vergeben')
   })
 
   it('ist in der Suche zu finden', () => {
@@ -144,6 +147,17 @@ describe('Wärmepumpe: Anzeige', () => {
   it('monovalent: warnt, wenn die Wärmepumpe nicht reicht', () => {
     const html = renderToStaticMarkup(<HeatPumpBivalence tool={tool} initialRows={rows} initialMode="monovalent" />)
     expect(html).toContain('fehlen 6,0 kW')
+  })
+
+  it('„Was ist das Problem?“: Auswahl zeigt Regel, Richtung und Quelle', () => {
+    const empty = renderToStaticMarkup(<HeatPumpBivalence tool={tool} />)
+    expect(empty).toContain('Was ist das Problem?')
+    expect(empty).not.toContain('Regel</p>')
+    const problem = tool.problems.find((candidate) => candidate.bivalence === 'up')!
+    const html = renderToStaticMarkup(<HeatPumpBivalence tool={tool} initialProblem={problem.key} />)
+    expect(html).toContain('Bivalenzpunkt höher (wärmer) wählen')
+    expect(html).toContain(`Quelle: ${heatPumpRefText(tool, problem.ref)}`)
+    expect(html).toContain('Jetzt im Tool: Bivalenzpunkt -3,0 °C')
   })
 
   it('teilparallel: Abschaltpunkt einstellbar, kein Deckungsanteil', () => {

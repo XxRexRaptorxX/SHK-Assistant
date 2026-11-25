@@ -74,6 +74,17 @@ const typicalRangeSchema = z.strictObject({
 
 const infoSchema = z.strictObject({ title: text, text, ref: refSchema })
 
+/** Problem, wie es auf der Baustelle auffällt, mit Regel aus der Quelle und Richtung für den Bivalenzpunkt */
+const problemSchema = z.strictObject({
+  key,
+  label: text,
+  /** Ursache und Abhilfe laut Quelle, eigene Kurzfassung */
+  text,
+  /** Bivalenzpunkt höher (up), tiefer (down) oder laut Quelle keine Aussage dazu (keep) */
+  bivalence: z.enum(['up', 'down', 'keep']),
+  ref: refSchema,
+})
+
 export const heatPumpToolSchema = defineEntrySchema({
   kind: z.literal('heatPumpBivalence'),
   title: text,
@@ -108,11 +119,14 @@ export const heatPumpToolSchema = defineEntrySchema({
   }),
   typicalRanges: z.strictObject({ text, ref: refSchema, rows: z.array(typicalRangeSchema).min(1) }),
   infos: z.array(infoSchema).default([]),
+  /** „Was ist das Problem?“: Auswahl mit Regel je Problem */
+  problems: z.array(problemSchema).default([]),
 })
 
 export type HeatPumpTool = z.output<typeof heatPumpToolSchema>
 export type BivalenceMode = HeatPumpTool['modes'][number]
 export type HeatPumpRef = z.output<typeof refSchema>
+export type HeatPumpProblem = HeatPumpTool['problems'][number]
 
 /** Datenblattpunkt: Heizleistung der Wärmepumpe bei einer Außentemperatur */
 export interface CapacityPoint {
@@ -299,10 +313,13 @@ export function checkHeatPumpTool(tool: HeatPumpTool): string[] {
     if (row.from < row.to) issues.push(`typicalRanges.rows[${index}]: from ist der wärmere Wert und muss größer als to sein`)
   })
   tool.infos.forEach((info, index) => checkRef(info.ref, `infos[${index}] (${info.title})`))
+  const problemKeys = tool.problems.map((problem) => problem.key)
+  if (new Set(problemKeys).size !== problemKeys.length) issues.push('problems: key doppelt vergeben')
+  tool.problems.forEach((problem) => checkRef(problem.ref, `problems (${problem.key})`))
   for (const source of sourceKeys) if (!used.has(source)) issues.push(`sources (${source}): wird nirgends zitiert`)
   return issues
 }
 
 export function heatPumpKeywords(tool: HeatPumpTool): string[] {
-  return [...tool.keywords, ...tool.modes.map((mode) => mode.label), ...tool.infos.map((info) => info.title)]
+  return [...tool.keywords, ...tool.modes.map((mode) => mode.label), ...tool.infos.map((info) => info.title), ...tool.problems.map((problem) => problem.label)]
 }

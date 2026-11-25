@@ -89,10 +89,32 @@ export const CURVE_PARAMETER_KEYS = [
   'maxFlow',
   'minFlow',
   'heatingLimit',
+  'roomInfluence',
+  'roomActual',
 ] as const
 export type CurveParameterKey = (typeof CURVE_PARAMETER_KEYS)[number]
 /** Einstellungen, die man ausschalten kann */
-export const OPTIONAL_CURVE_PARAMETERS: readonly CurveParameterKey[] = ['reducedSetpoint', 'maxFlow', 'minFlow', 'heatingLimit']
+export const OPTIONAL_CURVE_PARAMETERS: readonly CurveParameterKey[] = ['reducedSetpoint', 'maxFlow', 'minFlow', 'heatingLimit', 'roomInfluence']
+
+/** Betriebsweise des Reglers, z. B. außentemperaturgeführt oder mit Raumaufschaltung */
+const controlModeSchema = z.strictObject({
+  key,
+  label: text,
+  /** Raumaufschaltung aktiv (Raumeinfluss-Gewichtung wird gesetzt) */
+  roomInfluence: z.boolean(),
+  text,
+  ref: refSchema,
+})
+
+/** Rechenbeispiel aus der Quelle: Raumsoll, Raum ist und Gewichtung → korrigiertes Raumsoll; der Build prüft das Ergebnis */
+const roomInfluenceExampleSchema = z.strictObject({
+  label: text,
+  roomSetpoint: z.number(),
+  roomActual: z.number(),
+  weight: z.number(),
+  corrected: z.number(),
+  ref: refSchema,
+})
 
 const parametersSchema = z.strictObject(
   Object.fromEntries(CURVE_PARAMETER_KEYS.map((name) => [name, parameterSchema])) as Record<CurveParameterKey, typeof parameterSchema>,
@@ -166,6 +188,14 @@ export const heatingCurveToolSchema = defineEntrySchema({
   /** Solange Angaben fehlen: beginnt mit „TODO: Inhalt fehlt“ */
   todo: z.string().trim().default(''),
   sources: z.array(sourceSchema).min(1),
+  /** Betriebsweisen zur Auswahl; genau eine ohne und mindestens eine mit Raumaufschaltung */
+  controlModes: z.array(controlModeSchema).min(2),
+  /** Wie die Raumaufschaltung das Raumsoll korrigiert */
+  roomInfluenceModel: z.strictObject({
+    text,
+    ref: refSchema,
+    examples: z.array(roomInfluenceExampleSchema).min(1),
+  }),
   model: modelSchema,
   parameters: parametersSchema,
   /** Bereich der x-Achse im Diagramm */
@@ -195,7 +225,13 @@ export interface CurveSettings {
   maxFlow: number | null
   minFlow: number | null
   heatingLimit: number | null
+  /** Gewichtung der Raumaufschaltung; null = außentemperaturgeführt ohne Raumeinfluss */
+  roomInfluence: number | null
+  /** Gemessene Raumtemperatur im Führungsraum (nur mit Raumaufschaltung wirksam) */
+  roomActual: number
 }
+
+export type CurveControlMode = HeatingCurveTool['controlModes'][number]
 
 export const defaultSettings = (tool: HeatingCurveTool): CurveSettings => {
   const value = (name: CurveParameterKey) => tool.parameters[name].default
@@ -207,7 +243,34 @@ export const defaultSettings = (tool: HeatingCurveTool): CurveSettings => {
     maxFlow: value('maxFlow'),
     minFlow: value('minFlow'),
     heatingLimit: value('heatingLimit'),
+    roomInfluence: value('roomInfluence'),
+    roomActual: value('roomActual') ?? value('roomSetpoint') ?? 20,
   }
+}
+
+/** Korrigiertes Raumsoll: Raumsoll + Gewichtung · (Raumsoll − Raum ist), Modell aus dem Inhalt (roomInfluenceModel) */
+export function correctedSetpoint(setpoint: number, roomActual: number, weight: number): number {
+  return setpoint + weight * (setpoint - roomActual)
+}
+
+/** Raumsoll, mit dem die Kennlinie rechnet: normal oder reduziert, mit Raumaufschaltung korrigiert */
+export function effectiveSetpoint(settings: CurveSettings, reduced = false): number {
+  const setpoint = reduced && settings.reducedSetpoint !== null ? settings.reducedSetpoint : settings.roomSetpoint
+  return settings.roomInfluence === null ? setpoint : correctedSetpoint(setpoint, settings.roomActual, settings.roomInfluence)
+}
+
+/** Ausgewählte Betriebsweise aus der Einstellung */
+export function controlModeOf(tool: HeatingCurveTool, settings: CurveSettings): CurveControlMode {
+  const withRoom = settings.roomInfluence !== null
+  return tool.controlModes.find((mode) => mode.roomInfluence === withRoom) ?? tool.controlModes[0]!
+}
+
+/** Einstellung für eine Betriebsweise: Raumaufschaltung an (Startwert) oder aus */
+export function withControlMode(tool: HeatingCurveTool, settings: CurveSettings, mode: CurveControlMode): CurveSettings {
+  if (!mode.roomInfluence) return { ...settings, roomInfluence: null }
+  if (settings.roomInfluence !== null) return settings
+  const parameter = tool.parameters.roomInfluence
+  return { ...settings, roomInfluence: parameter.start ?? parameter.min }
 }
 
 /** Zahl für einen mathjs-Ausdruck; sehr kleine Beiwerte als Mantisse · 10^Exponent (247.9 * 10^(-6)) */
@@ -279,10 +342,12 @@ export interface FlowResult {
   limitedBy: 'max' | 'min' | null
 }
 
-/** Vorlauf-Sollwert mit Begrenzung und Heizgrenze; reduced: Raumsoll des Absenkbetriebs statt des normalen */
+/**
+ * Vorlauf-Sollwert mit Raumaufschaltung, Begrenzung und Heizgrenze; reduced: Raumsoll des Absenkbetriebs statt des
+ * normalen
+ */
 export function flowAt(model: HeatingCurveModel, settings: CurveSettings, outdoor: number, reduced = false): FlowResult {
-  const setpoint = reduced && settings.reducedSetpoint !== null ? settings.reducedSetpoint : settings.roomSetpoint
-  const raw = rawFlow(model, settings.neigung, settings.niveau, setpoint, outdoor)
+  const raw = rawFlow(model, settings.neigung, settings.niveau, effectiveSetpoint(settings, reduced), outdoor)
   if (settings.heatingLimit !== null && outdoor > settings.heatingLimit) return { flow: null, raw, limitedBy: null }
   if (settings.maxFlow !== null && raw > settings.maxFlow) return { flow: settings.maxFlow, raw, limitedBy: 'max' }
   if (settings.minFlow !== null && raw < settings.minFlow) return { flow: settings.minFlow, raw, limitedBy: 'min' }
@@ -512,6 +577,8 @@ export function comparePoints(tool: HeatingCurveTool, base: CurveSettings, next:
 export function changedParameters(base: CurveSettings, next: CurveSettings): CurveParameterKey[] {
   // Toleranz: Fußpunkt/Endpunkt rechnen Neigung und Niveau zurück, dabei entstehen Rundungsreste
   return CURVE_PARAMETER_KEYS.filter((name) => {
+    // Raum ist zählt nur, wenn die Raumaufschaltung auf einer Seite aktiv ist
+    if (name === 'roomActual' && base.roomInfluence === null && next.roomInfluence === null) return false
     const before = base[name]
     const after = next[name]
     return before === null || after === null ? before !== after : Math.abs(before - after) > 1e-6
@@ -526,7 +593,7 @@ export function limitCrossing(
   from: number,
   to: number,
 ): number | null {
-  const value = (outdoor: number) => rawFlow(model, settings.neigung, settings.niveau, settings.roomSetpoint, outdoor) - limit
+  const value = (outdoor: number) => rawFlow(model, settings.neigung, settings.niveau, effectiveSetpoint(settings), outdoor) - limit
   let low = from
   let high = to
   if (Math.sign(value(low)) === Math.sign(value(high))) return null
@@ -563,6 +630,19 @@ export function checkHeatingCurveTool(tool: HeatingCurveTool): string[] {
 
   if (tool.todo && !tool.todo.startsWith('TODO: Inhalt fehlt')) issues.push('todo muss mit „TODO: Inhalt fehlt“ beginnen')
   if (tool.todo && tool.status === 'verified') issues.push('todo bei verified nicht erlaubt')
+
+  const modeKeys = tool.controlModes.map((mode) => mode.key)
+  for (const value of duplicates(modeKeys)) issues.push(`controlModes: key "${value}" doppelt vergeben`)
+  if (tool.controlModes.filter((mode) => !mode.roomInfluence).length !== 1) issues.push('controlModes: genau eine Betriebsweise ohne Raumaufschaltung')
+  if (!tool.controlModes.some((mode) => mode.roomInfluence)) issues.push('controlModes: Betriebsweise mit Raumaufschaltung fehlt')
+  tool.controlModes.forEach((mode) => checkRef(mode.ref, `controlModes (${mode.key})`))
+  checkRef(tool.roomInfluenceModel.ref, 'roomInfluenceModel')
+  tool.roomInfluenceModel.examples.forEach((example, index) => {
+    const where = `roomInfluenceModel.examples[${index}] (${example.label})`
+    checkRef(example.ref, where)
+    const corrected = correctedSetpoint(example.roomSetpoint, example.roomActual, example.weight)
+    if (Math.abs(corrected - example.corrected) > 0.05 + 1e-9) issues.push(`${where}: ergibt ${corrected.toFixed(2)} statt ${example.corrected}`)
+  })
 
   checkRef(tool.model.ref, 'model')
   tool.model.examples.forEach((example, index) => {
@@ -646,6 +726,7 @@ export function checkHeatingCurveTool(tool: HeatingCurveTool): string[] {
 export function heatingCurveKeywords(tool: HeatingCurveTool): string[] {
   return [
     ...tool.keywords,
+    ...tool.controlModes.map((mode) => mode.label),
     ...CURVE_PARAMETER_KEYS.map((name) => tool.parameters[name].label),
     ...tool.symptoms.map((symptom) => symptom.label),
     ...tool.infos.map((info) => info.title),
