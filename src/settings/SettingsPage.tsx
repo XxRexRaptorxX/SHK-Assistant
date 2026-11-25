@@ -230,8 +230,11 @@ export function SettingsPage() {
     <>
       <h1 className={pageTitle}>Einstellungen</h1>
       <div className="mt-4">
-        <Section title="Modus und Ausblenden">
-          <VisibilitySettings />
+        <Section title="Design">
+          <ThemeChoice value={preference} onChange={setPreference} />
+        </Section>
+        <Section title="App auf den Startbildschirm">
+          <InstallSection />
         </Section>
         <Section title="Grundeinstellungen">
           <Switch
@@ -265,11 +268,8 @@ export function SettingsPage() {
             />
           </div>
         </Section>
-        <Section title="Design">
-          <ThemeChoice value={preference} onChange={setPreference} />
-        </Section>
-        <Section title="App auf den Startbildschirm">
-          <InstallSection />
+        <Section title="Modus und Ausblenden">
+          <VisibilitySettings />
         </Section>
         <Section title="Fehler melden">
           <BugReportSection shakeToReport={settings.shakeToReport} />

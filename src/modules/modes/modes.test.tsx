@@ -8,6 +8,7 @@ import { FormulaListPage } from '../formulas/FormulaListPage'
 import { ToolListPage } from '../tools/ToolListPage'
 import { matchesMode, matchesModes, modeEntries, resolveModes, toggleModeId } from './modes'
 import { ModePicker } from './ModePicker'
+import { modeColor } from './ModeNotice'
 import { MODE_PAGE_PATH, ModePage } from './ModePage'
 import { SettingsPage } from '../../settings/SettingsPage'
 import { modeCollection, type ModeEntry } from './schema'
@@ -126,7 +127,7 @@ describe('Modus-Seite', () => {
     expect(html).toContain('href="/tools"')
   })
 
-  it('verlinkt aus den Einstellungen und den Listen auf die Modus-Seite, auch bei „Alles“', () => {
+  it('verlinkt aus den Einstellungen und den gefilterten Listen auf die Modus-Seite', () => {
     const settings = renderToStaticMarkup(
       <MemoryRouter>
         <SettingsPage />
@@ -135,11 +136,36 @@ describe('Modus-Seite', () => {
     expect(settings).toContain(`href="${MODE_PAGE_PATH}"`)
     const list = renderToStaticMarkup(
       <MemoryRouter>
+        <ToolListPage modes={[modeEntries[0]!]} />
+      </MemoryRouter>,
+    )
+    expect(list).toContain(`href="${MODE_PAGE_PATH}"`)
+  })
+
+  it('zeigt bei „Alles“ keine Modus-Zeile', () => {
+    const list = renderToStaticMarkup(
+      <MemoryRouter>
         <ToolListPage modes={[]} />
       </MemoryRouter>,
     )
-    expect(list).toContain('Modus: Alles')
-    expect(list).toContain(`href="${MODE_PAGE_PATH}"`)
+    expect(list).not.toContain('Modus:')
+    expect(list).not.toContain(`href="${MODE_PAGE_PATH}"`)
+  })
+
+  it('zeigt mehrere Modi als farbige Kästchen nebeneinander', () => {
+    const [a, b] = modeEntries
+    const list = renderToStaticMarkup(
+      <MemoryRouter>
+        <ToolListPage modes={[a!, b!]} />
+      </MemoryRouter>,
+    )
+    expect(list).toContain(`${modeColor(a!)}">${a!.title}<`)
+    expect(list).toContain(`${modeColor(b!)}">${b!.title}<`)
+    expect(modeColor(a!)).not.toBe(modeColor(b!))
+  })
+
+  it('hat für jeden Modus eine eigene Farbe', () => {
+    expect(new Set(modeEntries.map(modeColor)).size).toBe(modeEntries.length)
   })
 })
 
@@ -167,7 +193,7 @@ describe('Gefilterte Listen', () => {
     )
     const hidden = content.tools.find((entry) => !matchesMode(entry, mode))!
     const shown = content.tools.find((entry) => matchesMode(entry, mode))!
-    expect(html).toContain('Modus: Elektriker')
+    expect(html).toContain('>Elektriker</span>')
     expect(html).toContain('ausgeblendet')
     expect(html).toContain(shown.title)
     // nur noch unten im Bereich „Ausgeblendet“
@@ -180,7 +206,7 @@ describe('Gefilterte Listen', () => {
         <FormulaListPage modes={[mode]} hiddenIds={new Set()} />
       </MemoryRouter>,
     )
-    expect(html).toContain('Modus: Elektriker')
+    expect(html).toContain('>Elektriker</span>')
     expect(html).toContain('Ohmsches Gesetz')
     expect(html.indexOf('kv-Wert')).toBeGreaterThan(html.indexOf('Ausgeblendet ('))
   })
