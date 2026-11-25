@@ -10,13 +10,21 @@ import { content } from '../content'
 import { CALCULATORS } from '../modules/calculator/calculators'
 import { useFavoriteIds } from '../favorites/favoritesStore'
 import { usePageTitle } from '../lib/usePageTitle'
+import type { TopicTag } from '../content/schema/topicTags'
+import { useVisibilityState, visibilityOf } from '../hidden/visibility'
 
 /** Kurze Angabe im Chip oben auf der Kachel, z. B. „48 Formeln“ */
 function useTileChips(): Record<string, string> {
   const favorites = useFavoriteIds().size
+  // Tools und Formeln: nur was nach Modus und Auge in der Liste steht
+  const visibility = useVisibilityState()
+  const count = (entries: readonly { id: string; tags: readonly TopicTag[] }[]) =>
+    entries.filter((entry) => visibilityOf(entry, visibility) === 'visible').length
+  const tools = count(content.tools)
+  const formulas = count(content.formulas)
   return {
-    [modules.tools.path]: `${content.tools.length} ${content.tools.length === 1 ? 'Tool' : 'Tools'}`,
-    [modules.formulas.path]: `${content.formulas.length} Formeln`,
+    [modules.tools.path]: `${tools} ${tools === 1 ? 'Tool' : 'Tools'}`,
+    [modules.formulas.path]: `${formulas} ${formulas === 1 ? 'Formel' : 'Formeln'}`,
     [modules.converter.path]: `${content.converter.length} Größen`,
     [modules.checklists.path]: `${content.checklists.length} Checklisten`,
     [modules.lexicon.path]: `${content.lexicon.length} Begriffe`,
@@ -117,7 +125,12 @@ export function HomePage() {
       </form>
       <ul className="grid gap-3 sm:grid-cols-2">
         {homeTileModules.map((module) => (
-          <li key={module.path}>
+          // Bleibt in der zweispaltigen Ansicht eine einzelne Kachel in der letzten Zeile übrig,
+          // wird sie über beide Spalten gelegt und mittig in Spaltenbreite (50 % minus halbe Lücke) gesetzt.
+          <li
+            key={module.path}
+            className="sm:[&:last-child:nth-child(odd)]:col-span-2 sm:[&:last-child:nth-child(odd)]:mx-auto sm:[&:last-child:nth-child(odd)]:w-[calc(50%-0.375rem)]"
+          >
             <Tile module={module} chipText={chips[module.path]} />
           </li>
         ))}
