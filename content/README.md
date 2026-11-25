@@ -790,3 +790,20 @@ Datenbestand: Der erste Bestand (724 Einträge) ist `internal` und `draft`. Die 
 eigenständig formulierte Kurzbeschreibungen, Wikipedia diente als Recherche-Einstieg. Das ist keine
 fachliche Freigabe: Sicherheits-, Normen-, Rechts- und herstellerspezifische Aussagen vor dem Setzen
 auf `verified` gegen Normen, Regeln und Herstellerunterlagen prüfen.
+
+**Wärmepumpen-Tools** (`"kind": "heatPumpBivalence"`): Heizlastgerade des Gebäudes (Norm-Heizlast bei Norm-Außentemperatur,
+0 kW an der Heizgrenze) und Heizleistung der Wärmepumpe aus Datenblattpunkten (Eingabe im Tool). Der Schnittpunkt ist der
+Bivalenzpunkt. Beispiel: Wärmepumpe: Bivalenzpunkt und Betriebsweise. Felder: `title`, `summary`, `description`, `category`,
+`keywords`, `related`, `closingNote` und:
+
+- `sources` und Fundstellen (`ref`) wie bei der Absturzsicherung.
+- `inputs`: `heatLoad`, `designOutdoor`, `heatingLimit`, `lowerLimit` (Abschaltpunkt, nur teilparallel), je `label`, `unit`,
+  `min`, `max`, `step`, `default`, `text`, optional `ref`.
+- `methodText`/`methodRef` (Heizlastgerade und Schnittpunkt), `capacityText`/`capacityRef` (Hinweis zu den Datenblattpunkten).
+- `modes`: je `key`, `label`, `text`, `ref`, `secondGenerator`, `heatPumpOffBelow` (`never`, `bivalence`, `lowerLimit`),
+  optional `coverage` (`parallel` oder `alternative`: Spalte der Tabelle) und `coverageNote`.
+- `coverage`: `title`, `ref`, `rows` je `bivalence`, `powerShare`, `parallel`, `alternative` (Anteile 0–1).
+- `typicalRanges`: `text`, `ref`, `rows` je `designOutdoor`, `from` (wärmer), `to` (kälter).
+- `infos`: je `title`, `text`, `ref`.
+
+Der Build prüft Quellen, Wertebereiche, doppelte Schlüssel und Tabellenzeilen.

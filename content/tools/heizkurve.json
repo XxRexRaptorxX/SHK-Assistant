@@ -30,6 +30,7 @@
     "zu kalt",
     "zu warm"
   ],
+  "related": ["tool.waermepumpe-bivalenzpunkt", "tool.heizlast"],
   "closingNote": "Die Kennlinie des Tools ist aus Anzeigewerten eines Viessmann-Reglers abgeleitet (Viessmann-Community), sie ist keine Herstellerangabe. Andere Regler können mit anderen Kennlinien rechnen; dieselbe Zahl für Neigung oder Niveau ergibt dort andere Vorlauftemperaturen. Die geschätzte Raumtemperatur setzt voraus, dass die Ausgangseinstellung zum Gebäude gepasst hat. Empfehlungen sind Startwerte: in kleinen Schritten übernehmen und beobachten. Die Anleitung des Reglers geht vor.",
   "sources": [
     {

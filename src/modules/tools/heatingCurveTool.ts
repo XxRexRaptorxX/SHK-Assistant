@@ -2,6 +2,7 @@ import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineEntrySchema } from '../../content/schema/base.ts'
 import { topicTagsSchema } from '../../content/schema/topicTags.ts'
+import { relatedToolsSchema } from './factorTool.ts'
 
 // Heizkurven-Tools ("kind": "heatingCurve"): Heizkurve zeichnen und mit Neigung, Niveau, Raumsoll, Absenkung,
 // Vorlaufbegrenzung und Heizgrenze verändern. Das Tool vergleicht mit einer Ausgangseinstellung, schätzt die Wirkung
@@ -160,6 +161,7 @@ export const heatingCurveToolSchema = defineEntrySchema({
   description: text,
   category: z.string().trim().default(''),
   keywords: z.array(text).default([]),
+  related: relatedToolsSchema,
   closingNote: text,
   /** Solange Angaben fehlen: beginnt mit „TODO: Inhalt fehlt“ */
   todo: z.string().trim().default(''),

@@ -10,6 +10,7 @@ import { drainageSizingKeywords } from './drainageSizingTool'
 import { fallProtectionKeywords } from './fallProtectionTool'
 import { loadSecuringKeywords } from './loadSecuringTool'
 import { heatingCurveKeywords } from './heatingCurveTool'
+import { heatPumpKeywords } from './heatPumpTool'
 import { hazmatPointsKeywords } from './hazmatPointsTool'
 import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
@@ -28,6 +29,7 @@ import {
   isFallProtectionTool,
   isLoadSecuringTool,
   isHeatingCurveTool,
+  isHeatPumpTool,
   isFormulaTool,
   isHazmatPointsTool,
   isHeatingCostTool,
@@ -118,6 +120,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isFallProtectionTool(entry)) return fallProtectionKeywords(entry)
   if (isLoadSecuringTool(entry)) return loadSecuringKeywords(entry)
   if (isHeatingCurveTool(entry)) return heatingCurveKeywords(entry)
+  if (isHeatPumpTool(entry)) return heatPumpKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)
   if (isWorkHoursTool(entry) || isMaterialListTool(entry)) return entry.keywords
   if (isValveSurveyTool(entry)) return valveSurveyKeywords(entry)

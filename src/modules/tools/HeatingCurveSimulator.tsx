@@ -139,7 +139,7 @@ function CurveFormula({ model, initialView = 'split' }: { model: HeatingCurveToo
 }
 
 /** Eingeklappte Erklärung unter einem Regler */
-function Help({ text, children }: { text: string; children?: React.ReactNode }) {
+export function Help({ text, children }: { text: string; children?: React.ReactNode }) {
   return (
     <details className="mt-1">
       <summary className="min-h-10 cursor-pointer py-2 text-sm font-semibold text-muted">Was bewirkt das?</summary>
@@ -150,7 +150,7 @@ function Help({ text, children }: { text: string; children?: React.ReactNode }) 
 }
 
 /** Zahl mit − und + (große Tasten für Handschuhe) und Eingabefeld */
-function Stepper({
+export function Stepper({
   label,
   unit,
   value,
@@ -177,6 +177,8 @@ function Stepper({
     <div>
       <label htmlFor={id} className="block font-semibold">
         {label}
+        {/* Die Einheit steht sichtbar im Feld; für Screenreader gehört sie zur Bezeichnung */}
+        {unit && <span className="sr-only"> in {unit}</span>}
       </label>
       <div className="mt-1 flex items-center gap-2">
         <button
@@ -187,25 +189,32 @@ function Stepper({
             setDraft(null)
             set(value - step)
           }}
-          className={`${secondaryButton} min-w-12 text-2xl`}
+          className={`${secondaryButton} w-12 shrink-0 px-0 text-2xl`}
         >
           −
         </button>
-        <input
-          id={id}
-          type="text"
-          inputMode="decimal"
-          autoComplete="off"
-          value={draft ?? format(value, decimals)}
-          aria-invalid={invalid}
-          onChange={(event) => {
-            setDraft(event.target.value)
-            const next = parseDecimal(event.target.value)
-            if (next !== undefined && next >= min && next <= max) onChange(next)
-          }}
-          onBlur={() => setDraft(null)}
-          className={`${fieldBase} w-24 text-center ${invalid ? 'border-warn-ink outline-2 outline-warn' : ''}`}
-        />
+        <div className="relative min-w-0 max-w-36 flex-1">
+          <input
+            id={id}
+            type="text"
+            inputMode="decimal"
+            autoComplete="off"
+            value={draft ?? format(value, decimals)}
+            aria-invalid={invalid}
+            onChange={(event) => {
+              setDraft(event.target.value)
+              const next = parseDecimal(event.target.value)
+              if (next !== undefined && next >= min && next <= max) onChange(next)
+            }}
+            onBlur={() => setDraft(null)}
+            className={`${fieldBase} w-full ${unit ? 'pr-8 pl-1 text-right' : 'px-1 text-center'} ${invalid ? 'border-warn-ink outline-2 outline-warn' : ''}`}
+          />
+          {unit && (
+            <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-sm text-muted">
+              {unit}
+            </span>
+          )}
+        </div>
         <button
           type="button"
           aria-label={`${label} erhöhen`}
@@ -214,11 +223,10 @@ function Stepper({
             setDraft(null)
             set(value + step)
           }}
-          className={`${secondaryButton} min-w-12 text-2xl`}
+          className={`${secondaryButton} w-12 shrink-0 px-0 text-2xl`}
         >
           +
         </button>
-        {unit && <span className="text-lg">{unit}</span>}
       </div>
       {invalid && (
         <p className="mt-1 text-base font-semibold">

@@ -17,6 +17,7 @@ import {
   isFallProtectionTool,
   isLoadSecuringTool,
   isHeatingCurveTool,
+  isHeatPumpTool,
   isFactorTool,
   isHazmatPointsTool,
   isHeatingCostTool,
@@ -55,6 +56,7 @@ import { SensorLookup } from './SensorLookup'
 import { FallProtectionLookup } from './FallProtectionLookup'
 import { LoadSecuringLookup } from './LoadSecuringLookup'
 import { HeatingCurveSimulator } from './HeatingCurveSimulator'
+import { HeatPumpBivalence } from './HeatPumpBivalence'
 import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
@@ -114,6 +116,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <LoadSecuringLookup tool={tool} />
       ) : isHeatingCurveTool(tool) ? (
         <HeatingCurveSimulator tool={tool} />
+      ) : isHeatPumpTool(tool) ? (
+        <HeatPumpBivalence tool={tool} />
       ) : isSensorTool(tool) ? (
         <SensorLookup tool={tool} />
       ) : isPlacementTool(tool) ? (

@@ -96,6 +96,7 @@ describe('Tools', () => {
       'Temperaturfühler Widerstandswerte',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Trinkwasser-Temperaturen',
+      'Wärmepumpe: Bivalenzpunkt und Betriebsweise',
       'Wartungsintervalle',
       'Wasserinhalt einer Rohrleitung',
     ])

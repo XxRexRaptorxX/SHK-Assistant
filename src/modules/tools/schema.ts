@@ -10,6 +10,7 @@ import { checkClassificationTool, classificationToolSchema, type ClassificationT
 import { checkFallProtectionTool, fallProtectionToolSchema, type FallProtectionTool } from './fallProtectionTool.ts'
 import { checkLoadSecuringTool, loadSecuringToolSchema, type LoadSecuringTool } from './loadSecuringTool.ts'
 import { checkHeatingCurveTool, heatingCurveToolSchema, type HeatingCurveTool } from './heatingCurveTool.ts'
+import { checkHeatPumpTool, heatPumpToolSchema, type HeatPumpTool } from './heatPumpTool.ts'
 import { checkHeatingCostTool, heatingCostToolSchema, type HeatingCostToolEntry } from './heatingCostTool.ts'
 import { checkFactorTool, factorToolSchema, relatedToolsSchema, type FactorTool } from './factorTool.ts'
 import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } from './hazmatPointsTool.ts'
@@ -62,6 +63,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 //   aus Gewicht und Fahrzeugklasse sowie Kippprüfung (siehe loadSecuringTool.ts).
 // - Heizkurven-Tools ("kind": "heatingCurve"): Heizkurve mit Neigung, Niveau, Raumsoll, Absenkung, Begrenzung und
 //   Heizgrenze simulieren, Wirkung zeigen und die Einstellung zurückrechnen (siehe heatingCurveTool.ts).
+// - Wärmepumpen-Tools ("kind": "heatPumpBivalence"): Heizlastgerade und Datenblattleistung, Bivalenzpunkt, Betriebsweise
+//   und Deckungsanteil (siehe heatPumpTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -228,6 +231,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   fallProtectionToolSchema,
   loadSecuringToolSchema,
   heatingCurveToolSchema,
+  heatPumpToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -262,7 +266,8 @@ export type ToolEntry =
   | FallProtectionTool
   | LoadSecuringTool
   | HeatingCurveTool
-export type { HeatingCurveTool }
+  | HeatPumpTool
+export type { HeatingCurveTool, HeatPumpTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -274,7 +279,9 @@ export const relatedTools = (entry: ToolEntry): string[] =>
   entry.kind === 'factor' ||
   entry.kind === 'drainageSizing' ||
   entry.kind === 'pipeMaterials' ||
-  entry.kind === 'classification'
+  entry.kind === 'classification' ||
+  entry.kind === 'heatPumpBivalence' ||
+  entry.kind === 'heatingCurve'
     ? entry.related
     : []
 export const isFactorTool = (entry: ToolEntry): entry is FactorTool => entry.kind === 'factor'
@@ -288,6 +295,7 @@ export const isRefrigerantTool = (entry: ToolEntry): entry is RefrigerantTool =>
 export const isSensorTool = (entry: ToolEntry): entry is SensorTool => entry.kind === 'sensorResistance'
 export const isFallProtectionTool = (entry: ToolEntry): entry is FallProtectionTool => entry.kind === 'fallProtection'
 export const isLoadSecuringTool = (entry: ToolEntry): entry is LoadSecuringTool => entry.kind === 'loadSecuring'
+export const isHeatPumpTool = (entry: ToolEntry): entry is HeatPumpTool => entry.kind === 'heatPumpBivalence'
 export const isHeatingCurveTool = (entry: ToolEntry): entry is HeatingCurveTool => entry.kind === 'heatingCurve'
 export const isPlacementTool = (entry: ToolEntry): entry is PlacementTool => entry.kind === 'placement'
 export const isWorkHoursTool = (entry: ToolEntry): entry is WorkHoursTool => entry.kind === 'workHours'
@@ -472,6 +480,8 @@ export const toolCollection = defineCollection({
                                               ? checkFallProtectionTool(entry)
                                               : isLoadSecuringTool(entry)
                                                 ? checkLoadSecuringTool(entry)
+                                                : isHeatPumpTool(entry)
+                                                  ? checkHeatPumpTool(entry)
                                                 : isHeatingCurveTool(entry)
                                                   ? checkHeatingCurveTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),

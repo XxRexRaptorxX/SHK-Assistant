@@ -1,0 +1,232 @@
+{
+  "id": "tool.waermepumpe-bivalenzpunkt",
+  "visibility": "public",
+  "status": "draft",
+  "source": "SBZ „Dimensionierung – Auslegung einer Wärmepumpe: Darauf kommt es an“; energie-experten.org „Berechnung des Bivalenzpunktes von Wärmepumpen“ (Tabelle als Auszug DIN 4701 Teil 10); Viessmann „Bivalenzpunkt der Wärmepumpe“; 42watt „Betriebsweise der Wärmepumpe“; alle abgerufen am 25.11.2026. Inhalte eigenständig zusammengefasst.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "heatPumpBivalence",
+  "title": "Wärmepumpe: Bivalenzpunkt und Betriebsweise",
+  "summary": "Zeichnet Heizlast des Gebäudes und Heizleistung der Wärmepumpe über der Außentemperatur, ermittelt den Bivalenzpunkt und zeigt je Betriebsweise, wer wann heizt und welchen Anteil die Wärmepumpe deckt.",
+  "description": "Norm-Heizlast, Norm-Außentemperatur und Heizgrenze eingeben, dazu die Heizleistung der Wärmepumpe aus dem Datenblatt. Der Schnittpunkt ist der Bivalenzpunkt. Je Betriebsweise siehst du, was der zweite Erzeuger leisten muss und welchen Anteil der Jahresheizarbeit die Wärmepumpe übernimmt.",
+  "category": "Auslegung",
+  "tags": ["heizung", "planung"],
+  "keywords": [
+    "Bivalenzpunkt",
+    "Bivalenztemperatur",
+    "Wärmepumpe",
+    "Luft-Wasser-Wärmepumpe",
+    "Heizstab",
+    "Heizlast",
+    "Heizlastgerade",
+    "Gebäudekennlinie",
+    "Leistungskurve",
+    "monovalent",
+    "monoenergetisch",
+    "bivalent",
+    "Deckungsanteil",
+    "DIN 4701-10",
+    "Norm-Außentemperatur",
+    "Hybridheizung"
+  ],
+  "related": ["tool.heizkurve", "tool.heizlast"],
+  "closingNote": "Die Heizlastgerade ist eine Vereinfachung; maßgeblich ist die Heizlastberechnung nach DIN EN 12831. Die Deckungsanteile gelten nach der Tabelle der Quelle (Auszug DIN 4701-10) und ersetzen keine Jahresarbeitszahl-Berechnung, z. B. nach VDI 4650. Datenblattangaben und Planungsunterlagen des Herstellers gehen vor.",
+  "sources": [
+    {
+      "key": "sbz",
+      "name": "SBZ Auslegung Wärmepumpe",
+      "source": "SBZ „Dimensionierung – Auslegung einer Wärmepumpe: Darauf kommt es an“, https://www.sbz-online.de/waermepumpe/dimensionierung-worauf-es-bei-der-auslegung-einer-waermepumpe-ankommt, abgerufen am 25.11.2026"
+    },
+    {
+      "key": "energieExperten",
+      "name": "energie-experten.org Bivalenzpunkt",
+      "source": "energie-experten.org „Berechnung des Bivalenzpunktes von Wärmepumpen“, https://www.energie-experten.org/heizung/waermepumpe/planung/bivalenzpunkt, abgerufen am 25.11.2026"
+    },
+    {
+      "key": "viessmann",
+      "name": "Viessmann Bivalenzpunkt",
+      "source": "Viessmann „Bivalenzpunkt der Wärmepumpe: Erklärung und Tipps zum Optimieren“, https://www.viessmann.de/de/wissen/technik-und-systeme/waermepumpe/bivalenzpunkt-waermepumpe.html, abgerufen am 25.11.2026"
+    },
+    {
+      "key": "bwp",
+      "name": "BWP Klimakarte",
+      "source": "Bundesverband Wärmepumpe (BWP) e. V., Klimakarte nach DIN/TS 12831-1:2020-04, https://www.waermepumpe.de/normen-technik/klimakarte/, abgerufen am 25.11.2026"
+    },
+    {
+      "key": "watt42",
+      "name": "42watt Betriebsweise",
+      "source": "42watt „Betriebsweise der Wärmepumpe“ (11.03.2026), https://42watt.de/magazin/betriebsweise-warmepumpe, abgerufen am 25.11.2026"
+    }
+  ],
+  "inputs": {
+    "heatLoad": {
+      "label": "Norm-Heizlast",
+      "unit": "kW",
+      "min": 1,
+      "max": 60,
+      "step": 0.5,
+      "default": 10,
+      "text": "Höchste Heizleistung, die das Gebäude bei Norm-Außentemperatur braucht, bezogen auf 20 °C Raumtemperatur. Sie wird nach DIN EN 12831 berechnet. Mehr Heizlast verschiebt den Bivalenzpunkt nach oben (wärmer).",
+      "ref": { "source": "sbz", "where": "Abschnitt Norm-Heizlast" }
+    },
+    "designOutdoor": {
+      "label": "Norm-Außentemp.",
+      "unit": "°C",
+      "min": -20,
+      "max": -2,
+      "step": 1,
+      "default": -12,
+      "text": "Das tiefste Zweitagesmittel der Außentemperatur, das zehnmal in 20 Jahren erreicht oder unterschritten wurde – ortsabhängig. Hier muss die Anlage die Norm-Heizlast bringen.",
+      "ref": { "source": "sbz", "where": "Abschnitt Norm-Außentemperatur" },
+      "lookup": {
+        "label": "Per PLZ nachschlagen",
+        "url": "https://www.waermepumpe.de/normen-technik/klimakarte/",
+        "text": "In Deutschland gilt die Norm-Außentemperatur je Postleitzahlgebiet (DIN/TS 12831-1). Die Klimakarte des Bundesverbands Wärmepumpe zeigt sie nach Postleitzahl; Wert dort ablesen und hier eintragen. Braucht Internet.",
+        "ref": { "source": "bwp", "where": "Klimakarte nach DIN/TS 12831-1:2020-04" }
+      }
+    },
+    "heatingLimit": {
+      "label": "Heizgrenztemperatur",
+      "unit": "°C",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 20,
+      "text": "Außentemperatur, ab der kein Heizbedarf mehr besteht; dort ist die Heizlast 0. Üblich sind 20 °C, bei besonderen Anforderungen auch mehr oder weniger. Eine niedrigere Heizgrenze macht die Heizlastgerade steiler und verschiebt den Bivalenzpunkt nach unten.",
+      "ref": { "source": "sbz", "where": "Abschnitt Bivalenzpunkt, Heizgrenztemperatur" }
+    },
+    "lowerLimit": {
+      "label": "Abschaltpunkt der Wärmepumpe",
+      "unit": "°C",
+      "min": -25,
+      "max": 5,
+      "step": 1,
+      "default": -10,
+      "text": "Nur bei bivalent-teilparallel: Unter dieser Außentemperatur schaltet die Wärmepumpe ab und der zweite Erzeuger heizt allein.",
+      "ref": { "source": "viessmann", "where": "Abschnitt Betriebsarten, bivalent-teilparallel" }
+    }
+  },
+  "methodText": "Die Heizlast des Gebäudes wird vereinfacht als Gerade gezeichnet: von der Norm-Heizlast bei Norm-Außentemperatur bis 0 kW an der Heizgrenztemperatur. Der Schnittpunkt dieser Geraden mit der Leistungskurve der Wärmepumpe ist der Bivalenzpunkt. Darunter reicht die Wärmepumpe allein nicht mehr.",
+  "methodRef": { "source": "sbz", "where": "Abschnitt Bivalenzpunkt" },
+  "capacityText": "Heizleistung aus dem Datenblatt, z. B. bei −7, 2 und 7 °C Außentemperatur. Alle Punkte bei der Vorlauftemperatur nehmen, die die Heizkurve bei diesen Außentemperaturen verlangt: Bei höherem Vorlauf liefert die Wärmepumpe weniger. Zwischen den Punkten rechnet das Tool linear.",
+  "capacityRef": { "source": "sbz", "where": "Abschnitt Bivalenzpunkt, Leistungskurve" },
+  "examplePoints": [
+    { "outdoor": -15, "power": 5 },
+    { "outdoor": -7, "power": 6.5 },
+    { "outdoor": 2, "power": 8 },
+    { "outdoor": 7, "power": 9.5 }
+  ],
+  "examplePointsNote": "Beispielwerte zum Ausprobieren, keine Herstellerangabe. Für eine echte Anlage die Werte aus dem Datenblatt eintragen.",
+  "defaultMode": "monoenergetisch",
+  "modes": [
+    {
+      "key": "monovalent",
+      "label": "Monovalent",
+      "text": "Nur die Wärmepumpe heizt. Sie muss Heizlast und Warmwasser ohne Zusatzheizung nachweislich decken.",
+      "ref": { "source": "watt42", "where": "Abschnitt monovalent" },
+      "secondGenerator": false,
+      "heatPumpOffBelow": "never",
+      "coverageNote": "Reicht die Wärmepumpe bei Norm-Außentemperatur, deckt sie die Heizlast allein."
+    },
+    {
+      "key": "monoenergetisch",
+      "label": "Monoenergetisch (Heizstab)",
+      "text": "Zweiter Erzeuger mit derselben Energie, meist ein elektrischer Heizstab. Er schaltet bei Kältespitzen zur Wärmepumpe zu, wenn sie allein nicht reicht.",
+      "ref": { "source": "watt42", "where": "Abschnitt monoenergetisch" },
+      "secondGenerator": true,
+      "heatPumpOffBelow": "never",
+      "coverage": "parallel",
+      "coverageNote": "Weil der Heizstab zur Wärmepumpe zuschaltet, nimmt das Tool die Spalte bivalent-parallel."
+    },
+    {
+      "key": "parallel",
+      "label": "Bivalent-parallel",
+      "text": "Über dem Bivalenzpunkt heizt die Wärmepumpe allein, darunter laufen beide Erzeuger gemeinsam.",
+      "ref": { "source": "watt42", "where": "Abschnitt bivalent-parallel" },
+      "secondGenerator": true,
+      "heatPumpOffBelow": "never",
+      "coverage": "parallel"
+    },
+    {
+      "key": "teilparallel",
+      "label": "Bivalent-teilparallel",
+      "text": "Unter dem Bivalenzpunkt schaltet der zweite Erzeuger zu; unter einem weiteren, tieferen Punkt schaltet die Wärmepumpe ab und der zweite Erzeuger heizt allein.",
+      "ref": { "source": "viessmann", "where": "Abschnitt Betriebsarten, bivalent-teilparallel" },
+      "secondGenerator": true,
+      "heatPumpOffBelow": "lowerLimit",
+      "coverageNote": "Für teilparallel hat die Tabelle der Quelle keine Spalte."
+    },
+    {
+      "key": "alternativ",
+      "label": "Bivalent-alternativ",
+      "text": "Bis zum Bivalenzpunkt heizt die Wärmepumpe allein, darunter übernimmt der zweite Erzeuger vollständig und die Wärmepumpe ist aus.",
+      "ref": { "source": "watt42", "where": "Abschnitt bivalent-alternativ" },
+      "secondGenerator": true,
+      "heatPumpOffBelow": "bivalence",
+      "coverage": "alternative"
+    }
+  ],
+  "coverage": {
+    "title": "Deckungsanteil der Wärmepumpe an der Jahresheizarbeit (Auszug DIN 4701 Teil 10)",
+    "ref": { "source": "energieExperten", "where": "Abschnitt Deckungsanteil der zusätzlichen Heizleistung, Tabelle" },
+    "rows": [
+      { "bivalence": -10, "powerShare": 0.77, "parallel": 1.0, "alternative": 0.96 },
+      { "bivalence": -9, "powerShare": 0.73, "parallel": 0.99, "alternative": 0.96 },
+      { "bivalence": -8, "powerShare": 0.69, "parallel": 0.99, "alternative": 0.95 },
+      { "bivalence": -7, "powerShare": 0.65, "parallel": 0.99, "alternative": 0.94 },
+      { "bivalence": -6, "powerShare": 0.62, "parallel": 0.99, "alternative": 0.93 },
+      { "bivalence": -5, "powerShare": 0.58, "parallel": 0.98, "alternative": 0.91 },
+      { "bivalence": -4, "powerShare": 0.54, "parallel": 0.97, "alternative": 0.87 },
+      { "bivalence": -3, "powerShare": 0.5, "parallel": 0.96, "alternative": 0.83 },
+      { "bivalence": -2, "powerShare": 0.46, "parallel": 0.95, "alternative": 0.78 },
+      { "bivalence": -1, "powerShare": 0.42, "parallel": 0.93, "alternative": 0.71 },
+      { "bivalence": 0, "powerShare": 0.38, "parallel": 0.9, "alternative": 0.64 },
+      { "bivalence": 1, "powerShare": 0.35, "parallel": 0.87, "alternative": 0.55 },
+      { "bivalence": 2, "powerShare": 0.31, "parallel": 0.83, "alternative": 0.46 },
+      { "bivalence": 3, "powerShare": 0.27, "parallel": 0.77, "alternative": 0.37 },
+      { "bivalence": 4, "powerShare": 0.23, "parallel": 0.7, "alternative": 0.28 },
+      { "bivalence": 5, "powerShare": 0.19, "parallel": 0.61, "alternative": 0.19 }
+    ]
+  },
+  "typicalRanges": {
+    "text": "Übliche Bivalenzpunkte je Norm-Außentemperatur. Die Einstellung ist immer objektbezogen.",
+    "ref": { "source": "energieExperten", "where": "Abschnitt typische Bivalenzpunkte" },
+    "rows": [
+      { "designOutdoor": -16, "from": -4, "to": -8 },
+      { "designOutdoor": -12, "from": -3, "to": -6 },
+      { "designOutdoor": -10, "from": -2, "to": -5 }
+    ]
+  },
+  "infos": [
+    {
+      "title": "Heizstab: viel Leistung, wenig Arbeit",
+      "text": "Der zweite Erzeuger muss oft rund 50 bis 60 % der Heizleistung bereitstellen, übernimmt aber nur etwa 2 bis 5 % der Jahresheizarbeit, weil es nur an wenigen Tagen so kalt ist.",
+      "ref": { "source": "energieExperten", "where": "Abschnitt Deckungsanteil der zusätzlichen Heizleistung" }
+    },
+    {
+      "title": "Bivalenzpunkt senken",
+      "text": "Bessere Dämmung und Heizflächen für niedrige Vorlauftemperaturen (Niedertemperaturheizkörper, Flächenheizung) lassen die Wärmepumpe länger allein arbeiten. Ist die Wärmepumpe knapp ausgelegt, muss der Bivalenzpunkt höher liegen. Sole- und Wasser-Wasser-Wärmepumpen lassen sich tiefer einstellen als Luft-Wasser-Geräte.",
+      "ref": { "source": "viessmann", "where": "Abschnitt Einflussfaktoren" }
+    },
+    {
+      "title": "Zu hoch oder zu tief eingestellt",
+      "text": "Der optimale Bivalenzpunkt liegt dort, wo die Leistung der Wärmepumpe noch die Heizlast deckt und ihre Effizienz noch ausreichend hoch ist. Moderne Regelungen legen ihn dynamisch fest, z. B. nach Außentemperatur, COP, Energiepreisen und Heizlast.",
+      "ref": { "source": "viessmann", "where": "Abschnitt Bivalenzpunkt einstellen" }
+    },
+    {
+      "title": "Bivalent statt überdimensioniert",
+      "text": "Eine bivalente Auslegung vermeidet eine Überdimensionierung der Wärmepumpe; monovalent bedeutet, die Wärmepumpe für die volle Norm-Heizlast auszulegen.",
+      "ref": { "source": "sbz", "where": "Abschnitt Betriebsweise" }
+    },
+    {
+      "title": "Sperrzeiten des Netzbetreibers",
+      "text": "Der Versorger darf die Wärmepumpe bis zu dreimal am Tag für jeweils bis zu zwei Stunden sperren. Sperrzeiten und Zeiten für die Warmwasserbereitung verkürzen die Laufzeit und sind bei der Auslegung abzuziehen.",
+      "ref": { "source": "sbz", "where": "Abschnitt Sperrzeiten" }
+    },
+    {
+      "title": "Luft-Wasser-Wärmepumpen",
+      "text": "Ihre Effizienz sinkt, wenn es draußen kälter wird – gerade dann, wenn das Gebäude am meisten Wärme braucht. Erdreich und Grundwasser bleiben dagegen relativ gleichmäßig temperiert.",
+      "ref": { "source": "watt42", "where": "Abschnitt Wärmequellen" }
+    }
+  ]
+}
