@@ -4,6 +4,7 @@ import { LocationIcon } from '../../components/icons'
 import { RichText } from '../../components/RichText'
 import { fieldBase } from '../../components/surfaces'
 import { parseDecimal } from '../../lib/number'
+import { placeLabels, type Point } from './chartLabels'
 import { Help, Stepper } from './HeatingCurveSimulator'
 import {
   capacityAt,
@@ -54,7 +55,11 @@ function readPoints(rows: readonly PointRow[]): { points: CapacityPoint[]; inval
 const WIDTH = 360
 const HEIGHT = 250
 const PAD = { left: 38, right: 10, top: 14, bottom: 34 }
-const LABEL = 'fill-ink stroke-surface text-[12px] font-bold'
+const LABEL = 'fill-ink text-[12px] font-bold'
+// Breite je Zeichen (12 px, fett) grob geschätzt, Innenabstand und Höhe der Beschriftungsrahmen
+const LABEL_CHAR = 6.9
+const LABEL_PAD = 5
+const LABEL_HEIGHT = 18
 
 function BivalenceChart({
   inputs,
@@ -95,6 +100,28 @@ function BivalenceChart({
           .map((outdoor) => `L${x(outdoor).toFixed(1)},${y(lower(outdoor)).toFixed(1)}`)
           .join('')}Z`
       : ''
+  // Beschriftungen der beiden Punkte: mit Rahmen und Hinweislinie in der Farbe des Punkts, frei von den Linien
+  const pixels = (values: [number, number][]): Point[] => values.map(([a, b]) => [x(a), y(b)])
+  const obstacleLines: Point[][] = [pixels(samples.map((outdoor) => [outdoor, loadAt(inputs, outdoor)]))]
+  if (points.length >= 2) {
+    obstacleLines.push(pixels(samples.filter(heatPumpOn).map((outdoor) => [outdoor, capacityAt(points, outdoor)!.power])))
+  }
+  if (offBelow !== null && offBelow > from) obstacleLines.push([[x(offBelow), PAD.top], [x(offBelow), HEIGHT - PAD.bottom]])
+  const designPoint: Point = [x(inputs.designOutdoor), y(inputs.heatLoad)]
+  const bivalencePoint: Point | null = bivalence === null ? null : [x(bivalence), y(loadAt(inputs, bivalence))]
+  const labels: { text: string; at: Point; tone: 'accent' | 'ink' }[] = [
+    ...(bivalencePoint ? [{ text: `Bivalenzpunkt ${format(bivalence!, 1)} °C`, at: bivalencePoint, tone: 'ink' as const }] : []),
+    { text: `Norm-Heizlast ${format(inputs.heatLoad, 1)} kW`, at: designPoint, tone: 'accent' as const },
+  ]
+  const placed = placeLabels(
+    labels.map((label) => ({ at: label.at, width: label.text.length * LABEL_CHAR + 2 * LABEL_PAD, height: LABEL_HEIGHT })),
+    {
+      area: { x: PAD.left + 2, y: PAD.top, width: WIDTH - PAD.left - PAD.right - 2, height: HEIGHT - PAD.top - PAD.bottom - 2 },
+      lines: obstacleLines,
+      points: [...points.map((point): Point => [x(point.outdoor), y(point.power)]), designPoint, ...(bivalencePoint ? [bivalencePoint] : [])],
+    },
+  )
+
   const xTicks: number[] = []
   for (let tick = Math.ceil(from / 5) * 5; tick <= to; tick += 5) xTicks.push(tick)
   const yStep = yMax > 20 ? 5 : 2
@@ -135,18 +162,21 @@ function BivalenceChart({
       {offBelow !== null && offBelow > from && (
         <line x1={x(offBelow)} x2={x(offBelow)} y1={PAD.top} y2={HEIGHT - PAD.bottom} className="stroke-warn-ink" strokeWidth={2} strokeDasharray="2 3" />
       )}
-      <circle cx={x(inputs.designOutdoor)} cy={y(inputs.heatLoad)} r={5} className="fill-accent stroke-ink" strokeWidth={1.5} />
-      <text x={x(inputs.designOutdoor) + 8} y={y(inputs.heatLoad) - 6} className={LABEL} strokeWidth={4} paintOrder="stroke">
-        Norm-Heizlast {format(inputs.heatLoad, 1)} kW
-      </text>
-      {bivalence !== null && (
-        <g>
-          <circle cx={x(bivalence)} cy={y(loadAt(inputs, bivalence))} r={7} className="fill-surface stroke-ink" strokeWidth={3} />
-          <text x={x(bivalence) + 10} y={y(loadAt(inputs, bivalence)) - 8} className={LABEL} strokeWidth={4} paintOrder="stroke">
-            Bivalenzpunkt {format(bivalence, 1)} °C
-          </text>
-        </g>
-      )}
+      <circle cx={designPoint[0]} cy={designPoint[1]} r={6} className="fill-accent stroke-ink" strokeWidth={1.5} />
+      {bivalencePoint && <circle cx={bivalencePoint[0]} cy={bivalencePoint[1]} r={7} className="fill-surface stroke-ink" strokeWidth={3} />}
+      {labels.map((label, index) => {
+        const { box, leaderEnd } = placed[index]!
+        const tone = label.tone === 'accent' ? 'stroke-accent' : 'stroke-ink'
+        return (
+          <g key={label.text}>
+            {leaderEnd && <line x1={label.at[0]} y1={label.at[1]} x2={leaderEnd[0]} y2={leaderEnd[1]} className={tone} strokeWidth={2} />}
+            <rect x={box.x} y={box.y} width={box.width} height={box.height} rx={4} className={`fill-surface ${tone}`} strokeWidth={2} />
+            <text x={box.x + box.width / 2} y={box.y + box.height / 2 + 4} textAnchor="middle" className={LABEL}>
+              {label.text}
+            </text>
+          </g>
+        )
+      })}
     </svg>
   )
 }
@@ -470,7 +500,7 @@ export function HeatPumpBivalence({
 
       {tool.problems.length > 0 && (
         <section className="mt-8">
-          <h2 className="text-xl font-bold">Was ist das Problem?</h2>
+          <h2 className="text-xl font-bold">Problem Helfer</h2>
           <div role="group" aria-label="Problem" className="mt-2 grid gap-2 sm:grid-cols-2">
             {tool.problems.map((candidate) => {
               const active = candidate.key === problem?.key

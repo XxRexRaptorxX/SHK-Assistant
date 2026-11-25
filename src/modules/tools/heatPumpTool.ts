@@ -119,7 +119,7 @@ export const heatPumpToolSchema = defineEntrySchema({
   }),
   typicalRanges: z.strictObject({ text, ref: refSchema, rows: z.array(typicalRangeSchema).min(1) }),
   infos: z.array(infoSchema).default([]),
-  /** „Was ist das Problem?“: Auswahl mit Regel je Problem */
+  /** „Problem Helfer“: Auswahl mit Regel je Problem */
   problems: z.array(problemSchema).default([]),
 })
 

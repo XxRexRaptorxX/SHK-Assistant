@@ -149,9 +149,9 @@ describe('Wärmepumpe: Anzeige', () => {
     expect(html).toContain('fehlen 6,0 kW')
   })
 
-  it('„Was ist das Problem?“: Auswahl zeigt Regel, Richtung und Quelle', () => {
+  it('„Problem Helfer“: Auswahl zeigt Regel, Richtung und Quelle', () => {
     const empty = renderToStaticMarkup(<HeatPumpBivalence tool={tool} />)
-    expect(empty).toContain('Was ist das Problem?')
+    expect(empty).toContain('Problem Helfer')
     expect(empty).not.toContain('Regel</p>')
     const problem = tool.problems.find((candidate) => candidate.bivalence === 'up')!
     const html = renderToStaticMarkup(<HeatPumpBivalence tool={tool} initialProblem={problem.key} />)

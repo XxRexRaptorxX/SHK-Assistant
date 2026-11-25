@@ -579,12 +579,15 @@ function EffectSection({ tool, base, settings }: { tool: HeatingCurveTool; base:
   }
 
   return (
-    <section className="mt-8">
-      <h2 className="text-xl font-bold">Was bewirkt die Änderung?</h2>
-      {changed.length === 0 && (
-        <p className="mt-2 text-base text-muted">Gleich wie die Ausgangseinstellung. Ändere oben einen Wert, dann steht hier die Wirkung.</p>
-      )}
-      <div className="mt-3 overflow-x-auto rounded-2xl border-2 border-line bg-surface">
+    <section className="mt-4" aria-live="polite">
+      <h2 className="text-xl font-bold">
+        Ergebnis <span className="text-base font-semibold text-muted">· {controlModeOf(tool, settings).label}</span>
+      </h2>
+      <div className="mt-3 rounded-2xl border-2 border-accent bg-surface p-4">
+        {changed.length === 0 && (
+          <p className="mb-3 text-base text-muted">Gleich wie die Ausgangseinstellung. Ändere unten einen Wert, dann steht hier die Wirkung.</p>
+        )}
+        <div className="overflow-x-auto">
         <table className="w-full text-left text-base">
           <thead>
             <tr className="border-b-2 border-line">
@@ -612,16 +615,17 @@ function EffectSection({ tool, base, settings }: { tool: HeatingCurveTool; base:
           </tbody>
         </table>
       </div>
-      {sentences.length > 0 && (
-        <ul className="mt-3 space-y-2" aria-live="polite">
-          {sentences.map((sentence) => (
-            <li key={sentence} className="rounded-xl border-2 border-accent bg-surface p-3 text-base">
-              {sentence}
-            </li>
-          ))}
-        </ul>
-      )}
-      <p className="mt-2 text-sm text-muted">Raum (geschätzt): gilt, wenn die Ausgangskurve zum Gebäude gepasst hat.</p>
+        {sentences.length > 0 && (
+          <ul className="mt-3 space-y-2 border-t-2 border-line pt-3">
+            {sentences.map((sentence) => (
+              <li key={sentence} className="text-base">
+                {sentence}
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="mt-3 text-sm text-muted">Raum (geschätzt): gilt, wenn die Ausgangskurve zum Gebäude gepasst hat.</p>
+      </div>
     </section>
   )
 }
@@ -911,7 +915,7 @@ function FinderSection({
       <div aria-live="polite">
         {mode === 'symptom' && (
           <div className="mt-4">
-            <p className="font-semibold">Was ist das Problem?</p>
+            <p className="font-semibold">Problem Helfer</p>
             <div role="group" aria-label="Problem" className="mt-2 grid gap-2 sm:grid-cols-2">
               {tool.symptoms.map((candidate) => {
                 const active = candidate.key === symptomKey
@@ -1118,6 +1122,8 @@ export function HeatingCurveSimulator({
         )}
       </div>
 
+      <EffectSection tool={tool} base={base} settings={settings} />
+
       <h2 className="mt-8 text-xl font-bold">Betriebsweise</h2>
       <div role="group" aria-label="Betriebsweise" className="mt-3 grid gap-2 sm:grid-cols-2">
         {tool.controlModes.map((candidate) => {
@@ -1257,8 +1263,6 @@ export function HeatingCurveSimulator({
           Zurück zum Ausgang
         </button>
       </div>
-
-      <EffectSection tool={tool} base={base} settings={settings} />
 
       <FinderSection
         tool={tool}
