@@ -1,0 +1,247 @@
+{
+  "id": "tool.gasleitung-bemessung",
+  "visibility": "internal",
+  "status": "draft",
+  "source": "Rechenweg und Kennwerte: DBI Gastechnologisches Institut gGmbH Freiberg (P. Enzmann, P. Pietsch, M. Wiersig), Abschlussbericht „Betrachtung der Leitungsdimensionierung nach TRGI in Haushalt und Gewerbe für hohe Wasserstoffmengen im Erdgas“, im Auftrag des Gaswirtschaftlichen Beirats, https://www.dbi-gruppe.de/wp-content/uploads/2023/09/2021_Bericht-GWB_81.pdf, abgerufen am 25.11.2026, Kap. 2.1 (S. 7–14) und 3.2.2 (S. 28–29); dort nach DVGW G 600 (TRGI 2018), DVGW G 617 und DIN 30652-1. GS-Auswahl Einzelgerät: Bosch Home Comfort, Glossar „Gasströmungswächter: Typ, Baugröße und Auslegung“, https://www.bosch-homecomfort.com/de/de/wohngebaeude/wissen/glossar/gasstroemungswaechter/, abgerufen am 25.11.2026. Schließfaktoren GS-K/GS-M: energie-experten.org, „Technik und Auslegung von Gasströmungswächtern“, https://www.energie-experten.org/heizung/gasheizung/gasleitung/gasstroemungswaechter, abgerufen am 25.11.2026. Zulässiger Gesamtdruckverlust beim direkten Abgleich: DVGW, Tabellenformular 1.2 „Direkter GS-Abgleich nach DVGW-TRGI 2018“, Stand 09/2018, https://www.dvgw.de/medien/dvgw/gas/installation/09_Tabellenformular_1.2_Direkter_Abgleich_GS.PDF. Kupferrohr-Abmessungen und Gegenprobe Rohrdruckgefälle: DVGW, „TRGI-Ergänzung Juli 2014 hinsichtlich Bemessungstabellen für dünnwandige Kupferrohre“, Tab. 15.1.1, https://www.dvgw.de/medien/dvgw/gas/installation/trgi_ergaenzung_juli2014.pdf. Die TRGI 2018 selbst (Tafeln 1 bis 5) wurde nicht eingesehen. Eigene Kurzfassungen. Noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "gasSizing",
+  "title": "Gasleitung und Gasströmungswächter bemessen",
+  "summary": "Gasströmungswächter auswählen und den Druckverlust der Gasleitung je Teilstrecke im Tabellenverfahren nach TRGI 2018 nachrechnen.",
+  "description": "Gasgeräte mit ihrer Nennbelastung eintragen: Das Tool wählt die Baugröße des Gasströmungswächters. Dann die Teilstrecken vom GS bis zum ungünstigsten Gerät anlegen. Für jede Teilstrecke rechnet das Tool Spitzenbelastung, Rohrdruckgefälle, Formteile, Armaturen und Höhenunterschied und vergleicht die Summe mit dem zulässigen Gesamtdruckverlust. Aufbau wie im DVGW-Formular „Bemessung der Leitungsanlage nach DVGW-TRGI 2018“. Das Rohrdruckgefälle wird nach den Formeln aus DVGW G 617 berechnet und nicht aus den TRGI-Tabellen abgelesen.",
+  "category": "Auslegung",
+  "tags": [
+    "heizung",
+    "planung"
+  ],
+  "keywords": [
+    "Gasströmungswächter",
+    "GS",
+    "GS-K",
+    "GS-M",
+    "TRGI",
+    "TRGI 2018",
+    "DVGW G 600",
+    "DVGW G 617",
+    "Gasleitung",
+    "Gasinstallation",
+    "Rohrdimension",
+    "Leitungsbemessung",
+    "Tabellenverfahren",
+    "Druckverlust",
+    "Rohrdruckgefälle",
+    "Nennbelastung",
+    "Spitzenbelastung",
+    "Summenbelastung",
+    "Zählergruppe",
+    "Gaszähler",
+    "Geräteanschlussarmatur",
+    "TAE",
+    "Erdgas"
+  ],
+  "related": [],
+  "gas": {
+    "label": "Erdgas L, Stoffwerte der TRGI-Tabellen",
+    "heatingValue": 8.6,
+    "density": 0.784,
+    "relativeDensity": 0.64,
+    "viscosity": 0.0000149,
+    "gravity": 9.81,
+    "source": "DBI-Bericht S. 7, Tabelle 1 „Kenndaten Erdgas L für Berechnungen in DVGW G 600 / G 617“; Erdbeschleunigung 9,81 m/s² S. 11. Laut Bericht beruhen die Tabellen und Diagramme der TRGI auf diesen Werten für L-Gas."
+  },
+  "peakLoad": {
+    "factor": 0.5,
+    "text": "Spitzenbelastung Q = 0,5 · (Summe aller Nennbelastungen + größte Nennbelastung). Bei nur einem Gerät ist das dessen Nennbelastung. Mit der Spitzenbelastung werden die Druckverluste gerechnet, mit der Nenn- bzw. Summenbelastung werden GS und Zähler ausgewählt.",
+    "source": "DBI-Bericht S. 7, Gleichung (2), und S. 13 (Gaszähler)"
+  },
+  "friction": {
+    "factor": 0.868,
+    "exponent": 1.2,
+    "roughnessFactor": 0.27,
+    "text": "Rohrreibungsbeiwert nach Zanke, wie ihn DVGW G 617 verwendet: λ = [−0,868 · ln((ln Re)^1,2 / Re + 0,27 · k/di)]^−2. Daraus R = λ/di · ρ/2 · w².",
+    "source": "DBI-Bericht S. 9, Gleichungen (5) bis (8). Die Klammer um den Logarithmus ist im Bericht nicht eindeutig gedruckt; so gelesen, wie sie die Werte der DVGW-Tabelle 15.1.1 (Kupferrohr) nachbildet. Vom Inhaber gegen DVGW G 617 zu prüfen."
+  },
+  "flowMonitor": {
+    "sizes": [
+      { "key": "gs25", "label": "GS 2,5", "nominalFlow": 2.5, "color": "gelb", "maxSingle": 17, "maxMultiple": 21 },
+      { "key": "gs4", "label": "GS 4", "nominalFlow": 4, "color": "braun", "maxSingle": 27, "maxMultiple": 34 },
+      { "key": "gs6", "label": "GS 6", "nominalFlow": 6, "color": "grün", "maxSingle": 41, "maxMultiple": 51 },
+      { "key": "gs10", "label": "GS 10", "nominalFlow": 10, "color": "rot", "maxSingle": 68, "maxMultiple": 86 },
+      { "key": "gs16", "label": "GS 16", "nominalFlow": 16, "color": "orange", "maxSingle": 110, "maxMultiple": 138 }
+    ],
+    "referenceLoss": 50,
+    "types": [
+      {
+        "key": "k",
+        "label": "GS-K",
+        "closingFactor": 1.45,
+        "text": "Schließt spätestens bei 45 % über dem Nenndurchfluss. Für Kunststoff- und Metallleitungen."
+      },
+      {
+        "key": "m",
+        "label": "GS-M",
+        "closingFactor": 1.8,
+        "metalOnly": true,
+        "text": "Schließt spätestens bei 80 % über dem Nenndurchfluss. Nur für metallene Leitungen; dort ist der direkte Abgleich Pflicht."
+      }
+    ],
+    "rules": [
+      "Ein Gerät (Einzelzuleitung): Baugröße nach der Nennbelastung des Geräts, also der Nennwärmebelastung, nicht der Nennwärmeleistung.",
+      "Mehrere Geräte (Verbrauchs- oder Verteilungsleitung): Baugröße nach der Summenbelastung. Zusätzlich darf das größte Gerät die Grenze der Baugröße als Einzelgerät nicht überschreiten, sonst die nächste Baugröße.",
+      "Liegt die Belastung zwischen zwei Tabellenwerten, gilt die nächstgrößere Baugröße (Beispiel: 27,3 kW an einer Einzelzuleitung ergibt GS 6, nicht GS 4).",
+      "Über 110 kW an einer Einzelzuleitung und über 138 kW Summenbelastung sieht die Tabelle keinen GS vor.",
+      "Kunststoffleitungen nur mit GS-K und zusätzlich einer thermisch auslösenden Absperreinrichtung.",
+      "Einbau vor oder hinter dem Hausdruckregelgerät, vorzugsweise direkt nach der Hauptabsperreinrichtung oder direkt vor dem Zählerhahn. Hat das Regelgerät des Netzbetreibers schon einen GS, entfällt ein zusätzlicher.",
+      "Einbaulage wie auf dem Typschild. Zwei GS gleichen Typs und gleichen Nennwerts nicht hintereinander in einem Fließweg."
+    ],
+    "source": "Auswahlgrenzen Einzelgerät (Kupfer, Edelstahl, Stahl, GS-K, TRGI 2018), Farben, Typen, Regeln zur Grenze, Höchstwerte, Kunststoff und Einbau: Bosch-Glossar. Auswahlgrenzen mehrere Geräte (Summenbelastung, Erdgas L) und Regel zum größten Gerät: DBI-Bericht S. 11 und S. 29, Tabelle 16. Druckverlust ΔpGS = 50 Pa · (V/VN)² bei Spitzenbelastung: DBI-Bericht S. 11, Gleichung (12), nach DIN 30652-1. Nenndurchfluss für Erdgas L: DBI-Bericht S. 11 nennt für GS 4 nach G 617 ausdrücklich 4 m³/h; die übrigen Werte aus Tabelle 6 (mit Luft: 2,0 / 3,2 / 4,8 / 8,0 / 12,8 m³/h) umgerechnet nach S. 33, Gleichung (33), VNG = VN · √(1/dV) mit dV = 0,64. Schließfaktoren als Höchstwerte nach DVGW-Prüfgrundlage VP 305-1 (energie-experten.org, „Technik und Auslegung von Gasströmungswächtern“, abgerufen am 25.11.2026, und Bosch-Glossar); der DBI-Bericht rechnet S. 33 mit fS = 1,3 nach DIN 30652-1. Vom Inhaber zu prüfen; laut Bericht weichen die so gerechneten Druckverluste um bis zu 22 % von TRGI-Tabelle L.1 ab."
+  },
+  "meters": {
+    "base": 30,
+    "flowFactor": 1.5,
+    "sizes": [
+      { "key": "g25", "label": "G2,5", "nominal": 2.5, "b": 109 },
+      { "key": "g4", "label": "G4", "nominal": 4, "b": 109 },
+      { "key": "g6", "label": "G6", "nominal": 6, "b": 109 },
+      { "key": "g10", "label": "G10", "nominal": 10, "b": 173 },
+      { "key": "g16", "label": "G16", "nominal": 16, "b": 173 },
+      { "key": "g25big", "label": "G25", "nominal": 25, "b": 173 },
+      { "key": "g40", "label": "G40", "nominal": 40, "b": 237 },
+      { "key": "g65", "label": "G65", "nominal": 65, "b": 237 }
+    ],
+    "note": "Balgengaszähler. Zur Zählergruppe gehören je nach Bauart die Zählerabsperreinrichtung und ein bis drei Bögen; sie sind im Wert enthalten. Den Zähler legt der Netz- bzw. Messstellenbetreiber fest.",
+    "source": "DBI-Bericht S. 13–14: ΔpZG = 30 + b · (V / (1,5 · GN))² nach DVGW G 617, Gleichung (16); b aus Tabelle 10 (Kenngrößen Balgengaszähler G2,5 bis G65)."
+  },
+  "valves": {
+    "types": [
+      {
+        "key": "withoutTae",
+        "label": "Absperreinrichtung ohne TAE",
+        "note": "z. B. Kugelhahn",
+        "referenceLoss": 100,
+        "rows": [
+          { "dn": 6, "straight": 1, "angle": null },
+          { "dn": 8, "straight": 2, "angle": null },
+          { "dn": 10, "straight": 3, "angle": 2 },
+          { "dn": 12, "straight": 3.5, "angle": 2.5 },
+          { "dn": 15, "straight": 5, "angle": 3.5 },
+          { "dn": 20, "straight": 10, "angle": 6 },
+          { "dn": 25, "straight": 16, "angle": 10 },
+          { "dn": 32, "straight": 27, "angle": 18 },
+          { "dn": 40, "straight": 40, "angle": 28 },
+          { "dn": 50, "straight": 65, "angle": 36 },
+          { "dn": 65, "straight": 100, "angle": null },
+          { "dn": 80, "straight": 170, "angle": null },
+          { "dn": 100, "straight": 230, "angle": null }
+        ]
+      },
+      {
+        "key": "withTae",
+        "label": "Armatur mit TAE",
+        "note": "Geräteanschlussarmatur oder Absperreinrichtung mit thermisch auslösender Absperreinrichtung",
+        "referenceLoss": 100,
+        "rows": [
+          { "dn": 6, "straight": 0.7, "angle": null },
+          { "dn": 8, "straight": 1.4, "angle": null },
+          { "dn": 10, "straight": 2.1, "angle": 1.4 },
+          { "dn": 12, "straight": 2.5, "angle": 1.8 },
+          { "dn": 15, "straight": 3.5, "angle": 2.5 },
+          { "dn": 20, "straight": 7.1, "angle": 4.2 },
+          { "dn": 25, "straight": 11.3, "angle": 7.1 },
+          { "dn": 32, "straight": 19.1, "angle": 12.7 },
+          { "dn": 40, "straight": 28.3, "angle": 19.8 },
+          { "dn": 50, "straight": 46, "angle": 25.5 },
+          { "dn": 65, "straight": 36, "angle": null, "referenceLoss": 20 },
+          { "dn": 80, "straight": 51, "angle": null, "referenceLoss": 20 },
+          { "dn": 100, "straight": 92, "angle": null, "referenceLoss": 20 },
+          { "dn": 125, "straight": 132, "angle": null, "referenceLoss": 20 },
+          { "dn": 150, "straight": 189, "angle": null, "referenceLoss": 20 }
+        ]
+      }
+    ],
+    "source": "DBI-Bericht S. 12–13: Δp = dV · Δp1 · (V/V1)², Gleichung (13); V1 ohne TAE aus Tabelle 8 (DIN EN 331), Δp1 = 100 Pa; V1 und Δp1 mit TAE aus Tabelle 9 (DIN 3586). Laut Bericht Grundlage der TRGI-Tabellen L.3 (Geräteanschlussarmaturen) und L.4 (Absperreinrichtungen)."
+  },
+  "fittings": {
+    "items": [
+      { "key": "bend", "label": "90°-Bogen", "zeta": 0.6 },
+      { "key": "elbow", "label": "90°-Winkel", "zeta": 1.3 },
+      { "key": "tee", "label": "T-Stück Abzweig", "zeta": 1.3 }
+    ],
+    "note": "T-Stück im Durchgang, Kupplungen, Muffen, Etagenbögen, Reduzierungen und Doppelnippel werden vernachlässigt. Druckverlust je Formteil ζ · ρ/2 · w², als äquivalente Länge läq = ζ/λ · di.",
+    "source": "DBI-Bericht S. 10, Tabelle 5 (ζ-Werte für Formteile mit vollem Durchgang, metallene Leitungen) und Gleichungen (9), (10)"
+  },
+  "pipeSeries": [
+    {
+      "key": "kupfer",
+      "label": "Kupferrohr",
+      "note": "dünnwandig nach DVGW GW 392",
+      "roughness": 0.0015,
+      "metal": true,
+      "sizes": [
+        { "key": "cu15x1", "label": "15 × 1", "outer": 15, "wall": 1 },
+        { "key": "cu18x1", "label": "18 × 1", "outer": 18, "wall": 1 },
+        { "key": "cu22x1", "label": "22 × 1", "outer": 22, "wall": 1 },
+        { "key": "cu28x1", "label": "28 × 1", "outer": 28, "wall": 1 },
+        { "key": "cu35x12", "label": "35 × 1,2", "outer": 35, "wall": 1.2 },
+        { "key": "cu42x12", "label": "42 × 1,2", "outer": 42, "wall": 1.2 },
+        { "key": "cu54x15", "label": "54 × 1,5", "outer": 54, "wall": 1.5 },
+        { "key": "cu64x2", "label": "64 × 2", "outer": 64, "wall": 2 },
+        { "key": "cu761x2", "label": "76,1 × 2", "outer": 76.1, "wall": 2 },
+        { "key": "cu899x25", "label": "89,9 × 2,5", "outer": 89.9, "wall": 2.5 }
+      ],
+      "source": "Abmessungen: DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1 (Spaltenköpfe). Rauigkeit k = 0,0015 mm: DBI-Bericht S. 9, Tabelle 2. Innendurchmesser = Außendurchmesser − 2 · Wanddicke."
+    }
+  ],
+  "lineTypes": [
+    {
+      "key": "standard",
+      "label": "Einzelzuleitung, Verbrauchs- oder Verteilungsleitung",
+      "firstChoiceR": 10
+    },
+    {
+      "key": "riser",
+      "label": "Verteilungsleitung mit Steigleitungen",
+      "note": "auch Steigleitung in einer Verteilungsleitung",
+      "firstChoiceR": 5
+    }
+  ],
+  "pressureBudget": {
+    "total": 300,
+    "text": "Grenzwert im Tabellenverfahren. Er ergibt sich aus dem üblichen Ausgangsdruck des Gas-Druckregelgeräts von 2.300 Pa und dem am Gasgerät nötigen Fließdruck von 2.000 Pa.",
+    "source": "DBI-Bericht S. 9"
+  },
+  "balancing": {
+    "rules": [
+      "Die Wirksamkeit des GS ist mit einem Abgleich nachzuweisen: Bricht die Leitung am Ende des Fließwegs, muss so viel Gas nachströmen können, dass der GS schließt.",
+      "Vereinfachtes Verfahren (nur GS-K): erster GS-K und Gaszähler in einer Teilstrecke, nur ein Gaszähler im Fließweg, Gesamtdruckverlust unter 300 Pa. Dabei die Mindestnennweiten nach TRGI-Tabelle L.0 prüfen.",
+      "Direkter Abgleich ist Pflicht bei GS-K in metallenen Leitungen mit zwei Zählern in Reihe, mit Berechnungslänge in Mindestnennweite über 10 m oder mit Gesamtdruckverlust über 300 Pa; außerdem bei metallenen Leitungen mit GS-M und bei Mehrschichtverbundrohr mit GS-T K.",
+      "Beim direkten Abgleich wird der Druckverlust der ganzen Leitungsanlage samt GS, Zählergruppe, Armaturen und Höhenunterschied beim Schließvolumenstrom VS = fS · VN gerechnet. Er darf den Ausgangsdruck des Gas-Druckregelgeräts nicht überschreiten; zulässig laut DVGW-Formular: metallene Leitungen 2.300 Pa, Kunststoffleitungen 1.400 Pa.",
+      "Jeden Fließweg prüfen, an dem ein Bruch auftreten kann, also bis zu jedem Gerät. Im Tool dafür die Teilstrecken des jeweiligen Fließwegs eintragen."
+    ],
+    "limits": {
+      "metal": 2300,
+      "plastic": 1400
+    },
+    "source": "DBI-Bericht S. 11–12, Tabelle 7 (Anwendungsmerkmale für Verfahren zum GS-Abgleich), und S. 33, Gleichungen (33) und (34) für den Schließvolumenstrom; DVGW-Tabellenformular 1.2 „Direkter GS-Abgleich nach DVGW-TRGI 2018“, Stand 09/2018 (Spalten: GS, Zählergruppe, Rohr, Formteile, Armaturen, Geräteanschlussarmatur, Höhenunterschied; zulässige Gesamtdruckverluste). Die TRGI rechnet den direkten Abgleich mit den Tafeln 3 und 4; das Tool rechnet stattdessen mit den Formeln aus G 617 wie bei der Bemessung."
+  },
+  "checks": {
+    "flowMonitor": [
+      { "label": "Ein Gerät 17 kW", "loads": [17], "expected": "gs25", "source": "Bosch-Glossar, Tabelle Einzelgerät: bis 17 kW GS 2,5" },
+      { "label": "Ein Gerät 27,3 kW", "loads": [27.3], "expected": "gs6", "source": "Bosch-Glossar, Beispiel: 27,3 kW ergibt GS 6, nicht GS 4" },
+      { "label": "Ein Gerät 110 kW", "loads": [110], "expected": "gs16", "source": "Bosch-Glossar, Tabelle Einzelgerät: 69 bis 110 kW GS 16" },
+      { "label": "Ein Gerät 111 kW", "loads": [111], "expected": null, "source": "Bosch-Glossar: über 110 kW an Einzelzuleitungen nicht vorgesehen" },
+      { "label": "Zwei Geräte, zusammen 21 kW", "loads": [11, 10], "expected": "gs25", "source": "DBI-Bericht Tabelle 16: Summenbelastung bis 21 kW GS 2,5" },
+      { "label": "Zwei Geräte, zusammen 44 kW, größtes 42 kW", "loads": [42, 2], "expected": "gs10", "source": "DBI-Bericht S. 11 und Tabelle 16: Summe ergibt GS 6, das größte Gerät liegt als Einzelgerät über 41 kW" }
+    ],
+    "pipe": [
+      { "label": "18 × 1 bei 20 kW", "series": "kupfer", "size": "cu18x1", "load": 20, "r": 10, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1 (Einzelzuleitung), Zeile R = 10 Pa/m" },
+      { "label": "22 × 1 bei 37 kW", "series": "kupfer", "size": "cu22x1", "load": 37, "r": 10, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1, Zeile R = 10 Pa/m" },
+      { "label": "28 × 1 bei 77 kW", "series": "kupfer", "size": "cu28x1", "load": 77, "r": 10, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1, Zeile R = 10 Pa/m" },
+      { "label": "35 × 1,2 bei 143 kW", "series": "kupfer", "size": "cu35x12", "load": 143, "r": 10, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1, Zeile R = 10 Pa/m" },
+      { "label": "54 × 1,5 bei 480 kW", "series": "kupfer", "size": "cu54x15", "load": 480, "r": 10, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1, Zeile R = 10 Pa/m" },
+      { "label": "22 × 1 bei 25 kW", "series": "kupfer", "size": "cu22x1", "load": 25, "r": 5, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1, Zeile R = 5 Pa/m" },
+      { "label": "89,9 × 2,5 bei 1290 kW", "series": "kupfer", "size": "cu899x25", "load": 1290, "r": 5, "tolerance": 0.1, "source": "DVGW TRGI-Ergänzung Juli 2014, Tab. 15.1.1, Zeile R = 5 Pa/m" }
+    ]
+  },
+  "closingNote": "Nur Niederdruck-Erdgas auf Basis der L-Gas-Stoffwerte der TRGI-Tabellen, nur Kupferrohr. Das Rohrdruckgefälle ist nach G 617 gerechnet und kann von den Tabellenwerten der TRGI 2018 abweichen; maßgebend sind die TRGI und die Herstellerangaben. Der direkte Abgleich ist ebenso mit G 617 statt mit den TRGI-Tafeln 3 und 4 gerechnet. Nicht enthalten: Mindestnennweiten (TRGI-Tabelle L.0) für das vereinfachte Verfahren, Diagrammverfahren, Flüssiggas (TRF), Kunststoff-, Stahl-, Edelstahl-, Mehrschichtverbund- und Wellrohr, Gassteckdosen und Gasherde mit Sonderregeln."
+}

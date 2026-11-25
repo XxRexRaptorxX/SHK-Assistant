@@ -66,6 +66,7 @@ describe('Tools', () => {
       'Brennstofflagerung',
       'Dampfdrucktabelle Kältemittel',
       'Edle und unedle Metalle',
+      'Gasleitung und Gasströmungswächter bemessen',
       'Gebäudeklasse',
       'Gefahrgut: 1000-Punkte-Regel',
       'Gehrungsmaße',

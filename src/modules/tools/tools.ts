@@ -16,6 +16,7 @@ import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
 import { pipeMaterialKeywords } from './pipeMaterialTool'
 import { metalKeywords } from './metalTool'
+import { gasSizingKeywords } from './gasSizingTool'
 import { placementKeywords } from './placementTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
@@ -38,6 +39,7 @@ import {
   isNormFinderTool,
   isPipeMaterialTool,
   isMetalTool,
+  isGasSizingTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -134,6 +136,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isDrainageSizingTool(entry)) return drainageSizingKeywords(entry)
   if (isPipeMaterialTool(entry)) return pipeMaterialKeywords(entry)
   if (isMetalTool(entry)) return metalKeywords(entry)
+  if (isGasSizingTool(entry)) return gasSizingKeywords(entry)
   if (isClassificationTool(entry)) return classificationKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [

@@ -177,6 +177,26 @@ Beleg). Nur Typnummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Di
 `TODO: Inhalt fehlt`; bei `verified` ist das nicht erlaubt. Der Build prüft unbekannte Eigenschaften und
 Kabelarten, doppelte Schlüssel und Kabelarten, die in keiner der beiden Listen vorkommen.
 
+**Gasleitungs-Tools** (`"kind": "gasSizing"`) wählen den Gasströmungswächter und rechnen den Druckverlust je
+Teilstrecke im Tabellenverfahren der TRGI 2018 (Spalten wie im DVGW-Tabellenformular). Felder: `title`, `summary`,
+`description`, `category`, `keywords`, `related` und, jeweils mit `source`:
+
+- `gas`: Stoffwerte (`heatingValue` Hi,B in kWh/m³, `density` kg/m³, `relativeDensity`, `viscosity` m²/s, `gravity`).
+- `peakLoad`: `factor` für die Spitzenbelastung Q = factor · (ΣQNB + QNBmax), `text`.
+- `friction`: Beiwerte des Reibungsbeiwerts λ = [−factor · ln((ln Re)^exponent / Re + roughnessFactor · k/di)]^−2.
+- `flowMonitor`: `sizes` (je `key`, `label`, `nominalFlow` m³/h, `color`, `maxSingle` kW bei einem Gerät,
+  `maxMultiple` kW Summenbelastung), `referenceLoss` (Pa bei Nenndurchfluss), `types` (`closingFactor`, optional
+  `metalOnly`, `text`), `rules`.
+- `meters`: ΔpZG = `base` + b · (V / (`flowFactor` · GN))², `sizes` je `key`, `label`, `nominal` (GN), `b`.
+- `valves.types`: je `referenceLoss` (Δp1) und `rows` mit `dn`, `straight`/`angle` (V1 in m³/h, `null` = nicht
+  anwendbar), optional abweichendem `referenceLoss`; Δp = dV · Δp1 · (V/V1)².
+- `fittings.items`: je `key`, `label`, `zeta`. `pipeSeries`: `roughness` k in mm, `metal`, `sizes` mit `outer` und `wall` in mm.
+- `lineTypes`: je `firstChoiceR` (Erstauswahl R in Pa/m). `pressureBudget.total` (Pa), `closingNote`.
+- `balancing`: `rules` und `limits` (`metal`, `plastic` in Pa) für den direkten Abgleich: alle Teilstrecken mit dem
+  Schließvolumenstrom VS = closingFactor · nominalFlow; `metal` gilt nur, wenn alle Teilstrecken metallen sind.
+- `checks.flowMonitor` (Belastungen → erwartete Baugröße) und `checks.pipe` (Rohrdruckgefälle einer Quelle mit
+  erlaubter relativer Abweichung `tolerance`): Der Build prüft, dass das Tool sie trifft.
+
 **Metall-Tools** (`"kind": "metals"`) listen Metalle nach edel und unedel und zeigen zu jedem Paar
 der gewählten Metalle, wie sie miteinander reagieren. Felder: `title`, `summary`, `description`, `category`, `related` und:
 

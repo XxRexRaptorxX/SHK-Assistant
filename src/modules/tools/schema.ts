@@ -17,6 +17,7 @@ import { checkHazmatPointsTool, hazmatPointsToolSchema, type HazmatPointsTool } 
 import { materialListToolSchema, type MaterialListTool } from './materialListTool.ts'
 import { checkPipeMaterialTool, pipeMaterialToolSchema, type PipeMaterialTool } from './pipeMaterialTool.ts'
 import { checkMetalTool, metalToolSchema, type MetalTool } from './metalTool.ts'
+import { checkGasSizingTool, gasSizingToolSchema, type GasSizingTool } from './gasSizingTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
@@ -67,6 +68,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 // - Metall-Tools ("kind": "metals"): edle und unedle Metalle mit Reinheit, Reaktionen gewählter Paare (siehe metalTool.ts).
 // - Wärmepumpen-Tools ("kind": "heatPumpBivalence"): Heizlastgerade und Datenblattleistung, Bivalenzpunkt, Betriebsweise
 //   und Deckungsanteil (siehe heatPumpTool.ts).
+// - Gasleitungs-Tools ("kind": "gasSizing"): Gasströmungswächter auswählen, Druckverlust der Teilstrecken im
+//   Tabellenverfahren nach TRGI 2018 mit den Rechenformeln aus G 617 (siehe gasSizingTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -235,6 +238,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   heatingCurveToolSchema,
   heatPumpToolSchema,
   metalToolSchema,
+  gasSizingToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -271,7 +275,8 @@ export type ToolEntry =
   | HeatingCurveTool
   | HeatPumpTool
   | MetalTool
-export type { HeatingCurveTool, HeatPumpTool, MetalTool }
+  | GasSizingTool
+export type { GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -284,6 +289,7 @@ export const relatedTools = (entry: ToolEntry): string[] =>
   entry.kind === 'drainageSizing' ||
   entry.kind === 'pipeMaterials' ||
   entry.kind === 'metals' ||
+  entry.kind === 'gasSizing' ||
   entry.kind === 'classification' ||
   entry.kind === 'heatPumpBivalence' ||
   entry.kind === 'heatingCurve'
@@ -313,6 +319,7 @@ export const isHazmatPointsTool = (entry: ToolEntry): entry is HazmatPointsTool 
 export const isDrainageSizingTool = (entry: ToolEntry): entry is DrainageSizingTool => entry.kind === 'drainageSizing'
 export const isPipeMaterialTool = (entry: ToolEntry): entry is PipeMaterialTool => entry.kind === 'pipeMaterials'
 export const isMetalTool = (entry: ToolEntry): entry is MetalTool => entry.kind === 'metals'
+export const isGasSizingTool = (entry: ToolEntry): entry is GasSizingTool => entry.kind === 'gasSizing'
 export const isClassificationTool = (entry: ToolEntry): entry is ClassificationTool => entry.kind === 'classification'
 export const isFormulaTool =(entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
@@ -490,6 +497,8 @@ export const toolCollection = defineCollection({
                                                   ? checkHeatPumpTool(entry)
                                                 : isMetalTool(entry)
                                                   ? checkMetalTool(entry)
+                                                : isGasSizingTool(entry)
+                                                  ? checkGasSizingTool(entry)
                                                 : isHeatingCurveTool(entry)
                                                   ? checkHeatingCurveTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),
