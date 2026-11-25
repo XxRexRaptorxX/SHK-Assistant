@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
-import { SearchInput } from '../../components/SearchInput'
+import { EMPTY_LIST_FILTER, ListSearchBar, listFilterOptions, matchesListFilter, type ListFilter } from '../../search/listFilter'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory, rearrangedIds } from './formulas'
 import { FormulaTitle } from './FormulaTitle'
@@ -21,11 +21,21 @@ interface FormulaListPageProps {
   initialQuery?: string
   hiddenIds?: ReadonlySet<string>
   modes?: readonly ModeEntry[]
+  initialFilter?: ListFilter
+  initialFiltersOpen?: boolean
 }
 
-export function FormulaListPage({ entries = formulaEntries, initialQuery = '', hiddenIds, modes }: FormulaListPageProps) {
+export function FormulaListPage({
+  entries = formulaEntries,
+  initialQuery = '',
+  hiddenIds,
+  modes,
+  initialFilter = EMPTY_LIST_FILTER,
+  initialFiltersOpen = false,
+}: FormulaListPageProps) {
   usePageTitle('Formeln')
   const [query, setQuery] = useState(initialQuery)
+  const [filter, setFilter] = useState<ListFilter>(initialFilter)
   const state = useListVisibility({ hiddenIds, modes })
   const shown = entries.filter((entry) => visibilityOf(entry, state) === 'visible')
   // Für den Hinweis zählen nur die Formeln, die sonst in der Liste stünden
@@ -34,27 +44,30 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '', h
   ).length
   // Umgestellte Formeln erscheinen erst beim Filtern, sonst würde die Liste unübersichtlich
   const listed = query.trim() === '' ? shown.filter((entry) => !rearrangedIds.has(entry.id)) : shown
-  const visible = filterFormulas(listed, query)
+  const visible = filterFormulas(listed, query).filter((entry) => matchesListFilter(entry, filter))
+  const searching = query.trim() !== '' || filter.categories.length + filter.tags.length > 0
 
   return (
     <>
       <h1 className={pageTitle}>Formeln</h1>
       <ModeNotice modes={state.modes} hiddenCount={modeHiddenCount} noun="Formeln" listTitle={modules.formulas.title} />
-      {query.trim() === '' && <ModuleFavorites moduleTitle={modules.formulas.title} />}
+      {!searching && <ModuleFavorites moduleTitle={modules.formulas.title} />}
 
       {entries.length === 0 ? (
         <p className="mt-2 text-muted">Noch keine Formeln vorhanden.</p>
       ) : (
         <>
-          <div className="mt-3">
-            <SearchInput
-              id="formula-filter"
-              label="Formeln filtern"
-              value={query}
-              onChange={setQuery}
-              placeholder="Formel filtern …"
-            />
-          </div>
+          <ListSearchBar
+            id="formula-filter"
+            label="Formeln filtern"
+            placeholder="Formel filtern …"
+            query={query}
+            onQueryChange={setQuery}
+            filter={filter}
+            onFilterChange={setFilter}
+            options={listFilterOptions(listed, groupFormulasByCategory)}
+            initialOpen={initialFiltersOpen}
+          />
           <p className="mt-2 text-base text-muted" aria-live="polite">
             {visible.length} von {listed.length} Formeln
           </p>

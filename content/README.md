@@ -177,6 +177,25 @@ Beleg). Nur Typnummern, eigene Kurzbeschreibungen und Links, keine Normtexte. Di
 `TODO: Inhalt fehlt`; bei `verified` ist das nicht erlaubt. Der Build prüft unbekannte Eigenschaften und
 Kabelarten, doppelte Schlüssel und Kabelarten, die in keiner der beiden Listen vorkommen.
 
+**Metall-Tools** (`"kind": "metals"`) listen Metalle nach edel und unedel und zeigen zu jedem Paar
+der gewählten Metalle, wie sie miteinander reagieren. Felder: `title`, `summary`, `description`, `category`, `related` und:
+
+- `metals`: je `key`, `name`, optional `symbol`, `aliases`, `group` (`noble` edel, `base` unedel), `potential`
+  (Volt laut Quelle, ordnet innerhalb der Gruppe, edelstes zuerst) mit `potentialNote` (Bezug), `note` und
+  `source`. Ohne belegte Gruppe beginnt `note` mit `TODO: Inhalt fehlt`.
+- `pairs`: je `metals` (zwei keys, Reihenfolge egal), `rating` (`ok`, `limited`, `avoid`), optional `corrodes`
+  (key des angegriffenen Metalls, erscheint als Anode, das andere als Kathode), `text` und `source`. Optional
+  `flow` (`first`: key des Metalls, das das Wasser zuerst durchströmen muss, dazu `text` und `source`) und `ions`
+  (`{ "text", "source" }`: was an Ionen gelöst oder übertragen wird). Fehlen sie, steht „Keine Angabe in den
+  Quellen“. Das Tool leitet keine Reaktion aus den Potentialen ab; ein Paar ohne Eintrag erscheint als
+  „TODO: Inhalt fehlt“.
+- `ionExchange`: optional, `{ "text", "source" }`, allgemeine Erklärung über den Paaren.
+- `derivation`: optional, je `{ "text", "source" }` für `anode` (unedleres Metall wird angegriffen), `flow`
+  (Fließregel: unedleres zuerst) und `caveat` (Grenzen). Ist es gesetzt, zeigt das Tool bei Paaren ohne belegte
+  Anode bzw. Fließrichtung, deren Metalle beide ein `potential` haben, das aus den Potentialen Abgeleitete mit der
+  Marke „Abgeleitet“. Eine Bewertung wird nie abgeleitet. Metalle mit `noDerivation` (`{ "text", "source" }`,
+  z. B. passive Werkstoffe) sperren die Ableitung; der Grund erscheint im Paar.
+
 **Rohrwerkstoff-Tools** (`"kind": "pipeMaterials"`) zeigen zu Anlagensystem, Untersystem und Verlegung die
 Rohrwerkstoffe mit Bewertung und darunter Vor- und Nachteile. Felder: `title`, `summary`, `description`,
 `category`, `related` und:

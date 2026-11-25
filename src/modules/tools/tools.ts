@@ -15,6 +15,7 @@ import { hazmatPointsKeywords } from './hazmatPointsTool'
 import { heatingCostKeywords } from './heatingCostTool'
 import { normFinderKeywords } from './normFinderTool'
 import { pipeMaterialKeywords } from './pipeMaterialTool'
+import { metalKeywords } from './metalTool'
 import { placementKeywords } from './placementTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
@@ -36,6 +37,7 @@ import {
   isMaterialListTool,
   isNormFinderTool,
   isPipeMaterialTool,
+  isMetalTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -53,6 +55,7 @@ import {
 import { sequenceKeywords } from './sequenceTool'
 import { symbolKeywords } from './symbolTool'
 import { topicTagLabel } from '../../content/schema/topicTags'
+import { normalizeForSearch } from '../../lib/text'
 import { valveSurveyKeywords } from './valveSurveyTool'
 import { variantFormulas } from './variantTool'
 import { wireColorKeywords } from './wireColorTool'
@@ -130,6 +133,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isHazmatPointsTool(entry)) return hazmatPointsKeywords(entry)
   if (isDrainageSizingTool(entry)) return drainageSizingKeywords(entry)
   if (isPipeMaterialTool(entry)) return pipeMaterialKeywords(entry)
+  if (isMetalTool(entry)) return metalKeywords(entry)
   if (isClassificationTool(entry)) return classificationKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [
@@ -139,6 +143,22 @@ function toolKeywords(entry: ToolEntry): string[] {
     ])
   }
   return entry.variables.map((variable) => variable.name)
+}
+
+/** Filter der Tool-Liste: Titel, Beschreibung, Kategorie, Themen-Tags und Suchbegriffe des Tools */
+export function filterTools(entries: readonly ToolEntry[], query: string): ToolEntry[] {
+  const needle = normalizeForSearch(query)
+  if (needle === '') return [...entries]
+  return entries.filter((entry) =>
+    [
+      entry.title,
+      entry.summary,
+      entry.description,
+      entry.category,
+      ...entry.tags.flatMap((tag) => [tag, topicTagLabel(tag)]),
+      ...toolKeywords(entry),
+    ].some((text) => normalizeForSearch(text).includes(needle)),
+  )
 }
 
 export function toolSearchDocuments(entries: readonly ToolEntry[] = toolEntries): SearchDocument[] {

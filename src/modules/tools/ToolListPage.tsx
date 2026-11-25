@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import { Link } from 'react-router'
+import { EMPTY_LIST_FILTER, ListSearchBar, listFilterOptions, matchesListFilter, type ListFilter } from '../../search/listFilter'
 import { modules } from '../../app/modules'
 import { DraftBadge } from '../../components/DraftBadge'
 import { categoryHeading, pageTitle } from '../../components/headings'
 import { listCard } from '../../components/surfaces'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
 import { usePageTitle } from '../../lib/usePageTitle'
-import { groupToolsByCategory, toolEntries, toolPath } from './tools'
+import { filterTools, groupToolsByCategory, toolEntries, toolPath } from './tools'
 import type { ToolEntry } from './schema'
 import { TopicTags } from '../../components/TopicTags'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
@@ -18,22 +20,54 @@ interface ToolListPageProps {
   entries?: ToolEntry[]
   modes?: readonly ModeEntry[]
   hiddenIds?: ReadonlySet<string>
+  initialQuery?: string
+  initialFilter?: ListFilter
+  initialFiltersOpen?: boolean
 }
 
-export function ToolListPage({ entries = toolEntries, modes, hiddenIds }: ToolListPageProps) {
+export function ToolListPage({
+  entries = toolEntries,
+  modes,
+  hiddenIds,
+  initialQuery = '',
+  initialFilter = EMPTY_LIST_FILTER,
+  initialFiltersOpen = false,
+}: ToolListPageProps) {
   usePageTitle(modules.tools.title)
+  const [query, setQuery] = useState(initialQuery)
+  const [filter, setFilter] = useState<ListFilter>(initialFilter)
   const state = useListVisibility({ hiddenIds, modes })
-  const visible = entries.filter((entry) => visibilityOf(entry, state) === 'visible')
+  const shown = entries.filter((entry) => visibilityOf(entry, state) === 'visible')
+  const visible = filterTools(shown, query).filter((entry) => matchesListFilter(entry, filter))
+  const searching = query.trim() !== '' || filter.categories.length + filter.tags.length > 0
   const modeHiddenCount = entries.filter((entry) => visibilityOf(entry, state) === 'mode').length
   return (
     <>
       <h1 className={pageTitle}>{modules.tools.title}</h1>
       <ModeNotice modes={state.modes} hiddenCount={modeHiddenCount} noun="Tools" listTitle={modules.tools.title} />
-      <ModuleFavorites moduleTitle={modules.tools.title} />
-      {visible.length === 0 && (
+      {!searching && <ModuleFavorites moduleTitle={modules.tools.title} />}
+      {shown.length === 0 ? (
         <p className="mt-2 text-muted">
           {entries.length === 0 ? 'Noch keine Tools vorhanden.' : 'Alle Tools sind ausgeblendet.'}
         </p>
+      ) : (
+        <>
+          <ListSearchBar
+            id="tool-filter"
+            label="Tools filtern"
+            placeholder="Tool filtern …"
+            query={query}
+            onQueryChange={setQuery}
+            filter={filter}
+            onFilterChange={setFilter}
+            options={listFilterOptions(shown, groupToolsByCategory)}
+            initialOpen={initialFiltersOpen}
+          />
+          <p className="mt-2 text-base text-muted" aria-live="polite">
+            {visible.length} von {shown.length} Tools
+          </p>
+          {visible.length === 0 && <p className="mt-4">Keine Tools gefunden.</p>}
+        </>
       )}
       {groupToolsByCategory(visible).map((group) => (
           <section key={group.category} className="mt-5">

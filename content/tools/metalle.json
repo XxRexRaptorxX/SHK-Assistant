@@ -1,0 +1,457 @@
+{
+  "id": "tool.metalle",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Standardpotentiale und Einteilung edel/unedel: Wikipedia, Elektrochemische Spannungsreihe, Tabelle (298,15 K, 1 mol/l), https://de.wikipedia.org/wiki/Elektrochemische_Spannungsreihe, abgerufen am 25.11.2026. Paarungen: Viega, Gebrauchsanleitung Profipress (de_DE), S. 11–12, 20–21, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/e0311a2c727798b5ac1140951424f46a_de_DE.pdf; Viega, Gebrauchsanleitung Sanpress Inox (de_DE), 2.3.6 Misch-Installationen S. 19–20, https://pspstmsimanuals.blob.core.windows.net/pub-production/Manuals/e951f22969c331bbac11409464b375ca_de_DE.pdf (wie im Tool Rohrwerkstoffe, abgerufen am 12.11.2026). Werkstoffpaarungen und Abtragsraten: Informationsstelle Edelstahl Rostfrei, Merkblatt 829 „Edelstahl Rostfrei in Kontakt mit anderen Werkstoffen“, 4. Auflage 2005, Nachdruck 2018, Abschnitte 3.3, 3.4, 4.1, Tab. 2 und 3, https://www.edelstahl-rostfrei.de/fileadmin/user_upload/ISER/downloads/MB_829.pdf; Institut Feuerverzinken, Arbeitsblatt E5 Kontaktkorrosion, Stand 08/2025, https://www.feuerverzinken.com/wissen/arbeitsblaetter/e-weiterverarbeitung/e5-kontaktkorrosion.pdf. Fließregel, Kupferionen, Heizkreislauf: Wikipedia, Bimetallkorrosion, Abschnitte Weitere Erscheinungsformen und 4.2.1 Fließregel für Trinkwasserinstallationen (verweist auf DIN 1988-7), https://de.wikipedia.org/wiki/Bimetallkorrosion. Einteilung edel/unedel der Rohrwerkstoffe, Fließregel nach DIN 1988-7, Mischinstallation Trinkwasser und Heizung (Matrizen): heima24 Wiki, Beitrag zur Fließregel, vom Inhaber am 25.11.2026 bereitgestellt (URL nachtragen). Praktische Korrosionspotentiale in Trinkwasser (Kupfer, Edelstahl, Rotguss, Messing, Stahl, verzinkter Stahl) und Rotguss-Paarungen: Angabe des Inhabers vom 25.11.2026, Originalquelle nachtragen. Bei Edelstahl + verzinktem Stahl gilt nach Vorgabe des Inhabers vom 25.11.2026 die Viega-Regel (nicht direkt verbinden), nicht die heima24-Matrix. Alle abgerufen am 25.11.2026. Wo das Tool „Abgeleitet“ zeigt, ist Anode bzw. Fließrichtung aus dem Standardpotential nach diesen Grundsätzen bestimmt, nicht aus einer Quelle zum Paar (Vorgabe des Inhabers vom 25.11.2026). Abtragsraten sind Versuchswerte unter den dort genannten Bedingungen. Standardpotentiale gelten für reine Metalle unter Normbedingungen, nicht für Legierungen oder Trinkwasser. Eigene Kurzfassungen. Noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "metals",
+  "title": "Edle und unedle Metalle",
+  "summary": "Listet Metalle nach edel und unedel und zeigt, wie gewählte Metalle miteinander reagieren, mit Fließrichtung.",
+  "description": "Metalle antippen, um sie auszuwählen. Das Tool zeigt zu jedem Paar der Auswahl, wie die Metalle miteinander reagieren (z. B. Kontaktkorrosion), welches Metall angegriffen wird, ob eine Fließrichtung einzuhalten ist und was dabei an Ionen gelöst wird, jeweils mit Quelle. Fehlt eine Quelle zum Paar, leitet das Tool Anode und Fließrichtung aus der Spannungsreihe ab und markiert das als „Abgeleitet“; eine Bewertung wird nie abgeleitet. Darunter stehen alle Metalle, eingeteilt in edel und unedel, mit Stellung in der Spannungsreihe.",
+  "category": "Planung",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "trinkwasser"
+  ],
+  "related": [
+    "tool.rohrwerkstoffe"
+  ],
+  "metals": [
+    {
+      "key": "gold",
+      "name": "Gold",
+      "symbol": "Au",
+      "aliases": [],
+      "group": "noble",
+      "potential": 1.498,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Au/Au³⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "silber",
+      "name": "Silber",
+      "symbol": "Ag",
+      "aliases": [],
+      "group": "noble",
+      "potential": 0.799,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Ag/Ag⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "kupfer",
+      "name": "Kupfer",
+      "symbol": "Cu",
+      "aliases": [],
+      "group": "noble",
+      "potential": 0.339,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Cu/Cu²⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)",
+      "practical": {
+        "min": -0.1,
+        "max": -0.1,
+        "note": "in belüftetem Trinkwasser, gegen Kupfer-Kupfersulfat-Elektrode (CSE ≈ +0,316 V gegen Wasserstoffelektrode); sehr edel",
+        "source": "Angabe des Inhabers (25.11.2026)"
+      }
+    },
+    {
+      "key": "edelstahl",
+      "name": "Edelstahl",
+      "symbol": "",
+      "aliases": [
+        "Nirosta",
+        "V2A",
+        "V4A"
+      ],
+      "group": "noble",
+      "source": "heima24 Wiki, Fließregel (Einteilung für Rohrwerkstoffe)",
+      "practical": {
+        "min": -0.1,
+        "max": -0.1,
+        "note": "in belüftetem Trinkwasser, gegen Kupfer-Kupfersulfat-Elektrode (CSE ≈ +0,316 V gegen Wasserstoffelektrode); passiv, sehr edel",
+        "source": "Angabe des Inhabers (25.11.2026)"
+      }
+    },
+    {
+      "key": "messing",
+      "name": "Messing",
+      "symbol": "",
+      "aliases": [
+        "CuZn"
+      ],
+      "group": "noble",
+      "source": "heima24 Wiki, Fließregel (Einteilung für Rohrwerkstoffe)",
+      "practical": {
+        "min": -0.35,
+        "max": -0.35,
+        "note": "in belüftetem Trinkwasser, gegen Kupfer-Kupfersulfat-Elektrode (CSE ≈ +0,316 V gegen Wasserstoffelektrode); etwas unedler, Gefahr von Entzinkung",
+        "source": "Angabe des Inhabers (25.11.2026)"
+      }
+    },
+    {
+      "key": "rotguss",
+      "name": "Rotguss",
+      "symbol": "",
+      "aliases": [
+        "Mehrstoffbronze"
+      ],
+      "group": "noble",
+      "source": "heima24 Wiki, Fließregel (Einteilung für Rohrwerkstoffe)",
+      "practical": {
+        "min": -0.2,
+        "max": -0.2,
+        "note": "in belüftetem Trinkwasser, gegen Kupfer-Kupfersulfat-Elektrode (CSE ≈ +0,316 V gegen Wasserstoffelektrode); edel, sehr korrosionsbeständig",
+        "source": "Angabe des Inhabers (25.11.2026)"
+      },
+      "note": "Freies Korrosionspotential in belüftetem Trinkwasser etwa +0,10 bis +0,12 V gegen Wasserstoffelektrode (Angabe des Inhabers (25.11.2026))."
+    },
+    {
+      "key": "zinn",
+      "name": "Zinn",
+      "symbol": "Sn",
+      "aliases": [],
+      "group": "base",
+      "potential": -0.141,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Sn/Sn²⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "blei",
+      "name": "Blei",
+      "symbol": "Pb",
+      "aliases": [],
+      "group": "base",
+      "potential": -0.126,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Pb/Pb²⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "eisen",
+      "name": "Eisen",
+      "symbol": "Fe",
+      "aliases": [],
+      "group": "base",
+      "potential": -0.41,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Fe/Fe²⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "stahl",
+      "name": "Stahl, unlegiert",
+      "symbol": "",
+      "aliases": [
+        "Schwarzstahl"
+      ],
+      "note": "Als Rohr: Schwarzrohr, C-Stahlrohr.",
+      "group": "base",
+      "source": "heima24 Wiki, Fließregel (Einteilung für Rohrwerkstoffe)",
+      "practical": {
+        "min": -0.75,
+        "max": -0.55,
+        "note": "in belüftetem Trinkwasser, gegen Kupfer-Kupfersulfat-Elektrode (CSE ≈ +0,316 V gegen Wasserstoffelektrode); unedel (auch Gusseisen)",
+        "source": "Angabe des Inhabers (25.11.2026)"
+      }
+    },
+    {
+      "key": "zink",
+      "name": "Zink",
+      "symbol": "Zn",
+      "aliases": [],
+      "group": "base",
+      "potential": -0.762,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Zn/Zn²⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "verzinkterStahl",
+      "name": "Stahl, verzinkt",
+      "symbol": "",
+      "aliases": [
+        "feuerverzinkt"
+      ],
+      "group": "base",
+      "source": "heima24 Wiki, Fließregel (Einteilung für Rohrwerkstoffe)",
+      "practical": {
+        "min": -1,
+        "max": -1,
+        "note": "in belüftetem Trinkwasser, gegen Kupfer-Kupfersulfat-Elektrode (CSE ≈ +0,316 V gegen Wasserstoffelektrode); sehr unedel",
+        "source": "Angabe des Inhabers (25.11.2026)"
+      }
+    },
+    {
+      "key": "aluminium",
+      "name": "Aluminium",
+      "symbol": "Al",
+      "aliases": [],
+      "group": "base",
+      "potential": -1.677,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Al/Al³⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)",
+      "noDerivation": {
+        "text": "Aluminium ist ein passiver Werkstoff; wie es sich im Kontakt verhält, hängt stark von den Umgebungsbedingungen ab.",
+        "source": "ISER MB 829, Abschnitt 2"
+      }
+    },
+    {
+      "key": "magnesium",
+      "name": "Magnesium",
+      "symbol": "Mg",
+      "aliases": [
+        "Opferanode"
+      ],
+      "group": "base",
+      "potential": -2.362,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Mg/Mg²⁺",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)"
+    },
+    {
+      "key": "titan",
+      "name": "Titan",
+      "symbol": "Ti",
+      "aliases": [],
+      "group": "base",
+      "potential": -1.628,
+      "potentialNote": "Standardpotential gegen Normalwasserstoffelektrode, 25 °C, Ti/Ti²⁺ (Ti/Ti³⁺: −0,90 V)",
+      "source": "Wikipedia Spannungsreihe (positives Vorzeichen = edel)",
+      "noDerivation": {
+        "text": "In der Praxis verhält sich Titan edler als Kupfer (praktische Spannungsreihe in Meerwasser), obwohl sein Standardpotential negativ ist.",
+        "source": "ISER MB 829, 3.3 und Bild 2"
+      }
+    },
+    {
+      "key": "titanzink",
+      "name": "Titanzink",
+      "symbol": "",
+      "aliases": [
+        "Titan-Zink",
+        "Zink-Titan"
+      ],
+      "note": "TODO: Inhalt fehlt (Legierung: kein Standardpotential in der Quelle; edel/unedel fehlt)"
+    },
+    {
+      "key": "siliziumbronze",
+      "name": "Siliziumbronze",
+      "symbol": "",
+      "aliases": [
+        "Silicium-Bronze",
+        "Silizium-Bronze"
+      ],
+      "note": "TODO: Inhalt fehlt (Legierung: kein Standardpotential in der Quelle; edel/unedel fehlt)"
+    }
+  ],
+  "pairs": [
+    {
+      "metals": [
+        "kupfer",
+        "verzinkterStahl"
+      ],
+      "rating": "avoid",
+      "corrodes": "verzinkterStahl",
+      "text": "Direkten Kontakt vermeiden, z. B. Isolierband zwischen Kupferrohr und verzinkter Schelle. Sind Rückströmungen durch Druckschwankungen möglich, nicht direkt verbinden, sondern Zwischenstück aus Rotguss oder Messing oder besser Trennverschraubung. Im Trinkwasser Kupfer vor verzinktem Stahl nicht zulässig (Matrix Mischinstallation Trinkwasser); verzinktes Stahlrohr nicht für Warmwasser verwenden. Rückfluss aus Kupferleitungen in verzinkte Leitungen mit Rückflussverhinderer vermeiden.",
+      "source": "Institut Feuerverzinken E5; Wikipedia Bimetallkorrosion, 4.2.1; heima24 Wiki, Fließregel",
+      "flow": {
+        "first": "verzinkterStahl",
+        "text": "Fließregel: In Fließrichtung kein Kupferrohr unmittelbar vor verzinktem Stahlrohr. Auch Wasser, das Kupfer berührt hat, soll nicht auf verzinkten Stahl treffen. Kupfer hinter verzinktem Stahl gilt im Allgemeinen als unproblematisch.",
+        "source": "Viega Profipress; Institut Feuerverzinken E5; Wikipedia Bimetallkorrosion, 4.2.1"
+      },
+      "ions": {
+        "text": "In sauerstoffreichem Wasser lösen sich Kupferionen aus dem Kupferrohr, werden mitgeführt und lagern sich weiter hinten auf dem verzinkten Stahl ab; dort entsteht Lochfraß, auch ohne leitenden Kontakt zwischen den Metallen. Folge: kupferinduzierter Lochfraß; Anzeichen sind trübes oder bräunliches Wasser.",
+        "source": "Institut Feuerverzinken E5; Wikipedia Bimetallkorrosion, 4.2.1; heima24 Wiki, Fließregel"
+      }
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "verzinkterStahl"
+      ],
+      "rating": "avoid",
+      "text": "Nicht unmittelbar verbinden; dafür Übergänge aus Rotguss oder Siliziumbronze. Im Trinkwasser besteht bei dieser Paarung generell Gefahr von Bimetallkorrosion. An der Atmosphäre (z. B. Edelstahlschrauben an verzinkten Bauteilen) meist unproblematisch, wenn die verzinkte Fläche deutlich größer ist als die Edelstahlfläche.",
+      "source": "Viega Sanpress Inox; ISER MB 829; Institut Feuerverzinken E5",
+      "corrodes": "verzinkterStahl"
+    },
+    {
+      "metals": [
+        "rotguss",
+        "edelstahl"
+      ],
+      "rating": "ok",
+      "text": "Rotguss ist als Übergangsstück zwischen Edelstahl und verzinktem Stahl vorgesehen. Edelstahl zusammen mit Rotguss ist im Trinkwasser bewährt, ohne Kontaktkorrosion. Wegen der sehr geringen Potentialdifferenz direkt verbindbar, ohne Gefahr von Kontaktkorrosion.",
+      "source": "Viega Sanpress Inox; ISER MB 829, 4.1; Angabe des Inhabers (25.11.2026)"
+    },
+    {
+      "metals": [
+        "rotguss",
+        "verzinkterStahl"
+      ],
+      "rating": "ok",
+      "text": "Rotguss ist als Übergangsstück zwischen Edelstahl und verzinktem Stahl vorgesehen. Großer Potentialunterschied: im Trinkwasser Fließregel einhalten, sonst Lochfraß an den verzinkten Leitungen.",
+      "source": "Viega Sanpress Inox; Angabe des Inhabers (25.11.2026)",
+      "flow": {
+        "first": "verzinkterStahl",
+        "text": "Erst verzinkte Bauteile, danach Armaturen aus Kupferlegierungen wie Messing oder Rotguss.",
+        "source": "heima24 Wiki, Fließregel"
+      }
+    },
+    {
+      "metals": [
+        "siliziumbronze",
+        "edelstahl"
+      ],
+      "rating": "ok",
+      "text": "Siliziumbronze ist als Übergangsstück zwischen Edelstahl und verzinktem Stahl vorgesehen.",
+      "source": "Viega Sanpress Inox"
+    },
+    {
+      "metals": [
+        "siliziumbronze",
+        "verzinkterStahl"
+      ],
+      "rating": "ok",
+      "text": "Siliziumbronze ist als Übergangsstück zwischen Edelstahl und verzinktem Stahl vorgesehen.",
+      "source": "Viega Sanpress Inox"
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "kupfer"
+      ],
+      "rating": "limited",
+      "text": "In Trinkwasser-Installationen seit vielen Jahren gemeinsam bewährt, ohne Kontaktkorrosion. Kombinierbar in beliebiger Reihenfolge (z. B. Kupfer → Edelstahl → Kupfer). Direktes Verpressen von Kupfer und Edelstahl entspricht nicht der DVGW-Zulassung: Systemübergang mit Gewindeübergang oder systemzugelassenem Buntmetall (Kupfer, Messing, Rotguss).",
+      "source": "ISER MB 829, 4.1; heima24 Wiki, Fließregel",
+      "flow": {
+        "text": "Keine Fließrichtung vorgeschrieben; beide Reihenfolgen zulässig.",
+        "source": "heima24 Wiki, Fließregel"
+      }
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "messing"
+      ],
+      "rating": "ok",
+      "text": "Edelstahl zusammen mit Kupferlegierungen ist im Trinkwasser bewährt, ohne Kontaktkorrosion.",
+      "source": "ISER MB 829, 4.1"
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "stahl"
+      ],
+      "rating": "limited",
+      "corrodes": "stahl",
+      "text": "Nur in sauerstoffarmen Wässern (z. B. geschlossene Heizung) unbedenklich. In belüftetem Trinkwasser trägt unlegierter Stahl im Kontakt mit Edelstahl stark ab (Versuch: 0,47 mm/Jahr bei Flächenverhältnis 1:1).",
+      "source": "ISER MB 829, 4.1 und Tab. 2"
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "aluminium"
+      ],
+      "rating": "avoid",
+      "corrodes": "aluminium",
+      "text": "Im Trinkwasser besteht bei dieser Paarung generell Gefahr von Bimetallkorrosion. Kleine Edelstahlteile (z. B. Schrauben) an großen Aluminiumflächen sind meist unkritisch.",
+      "source": "ISER MB 829, 3.4 und 4.1"
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "zink"
+      ],
+      "rating": "avoid",
+      "corrodes": "zink",
+      "text": "In belüftetem Trinkwasser trägt Zink im Kontakt mit Edelstahl ab (Versuch: 0,26 mm/Jahr bei Flächenverhältnis 1:1).",
+      "source": "ISER MB 829, Tab. 2"
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "titan"
+      ],
+      "rating": "ok",
+      "text": "Titan im Kontakt mit Edelstahl: im Versuch in Trinkwasser und Seewasser praktisch kein Abtrag (unter 0,01 mm/Jahr).",
+      "source": "ISER MB 829, Tab. 2"
+    },
+    {
+      "metals": [
+        "edelstahl",
+        "titanzink"
+      ],
+      "rating": "avoid",
+      "corrodes": "titanzink",
+      "text": "In Salzlösung trägt Titanzink (ZnCuTi) im Kontakt mit Edelstahl stark ab (Versuch: rund 4 mm/Jahr bei Flächenverhältnis 1:1).",
+      "source": "ISER MB 829, Tab. 3"
+    },
+    {
+      "metals": [
+        "aluminium",
+        "verzinkterStahl"
+      ],
+      "rating": "limited",
+      "corrodes": "verzinkterStahl",
+      "text": "Gefahr gering; nur in feuchter, besonders salzhaltiger Umgebung kritisch.",
+      "source": "Institut Feuerverzinken E5"
+    },
+    {
+      "metals": [
+        "stahl",
+        "kupfer"
+      ],
+      "rating": "limited",
+      "corrodes": "stahl",
+      "text": "Im geschlossenen Heizkreislauf ohne Einschränkung kombinierbar, in jeder Reihenfolge (Kupfer, Schwarzrohr, C-Stahl; laut heima24 nach VDI 2035). Im Trinkwasser (z. B. emaillierter Warmwasserspeicher aus Stahl) Fließregel beachten.",
+      "source": "Wikipedia Bimetallkorrosion, 4.2.1; heima24 Wiki, Fließregel",
+      "flow": {
+        "first": "stahl",
+        "text": "Stahl nicht in Fließrichtung hinter Kupferleitungen installieren.",
+        "source": "Wikipedia Bimetallkorrosion, 4.2.1"
+      },
+      "ions": {
+        "text": "Gelöste Kupferionen aus dem Kupferrohr werden mitgeführt und fördern auf nachgeschaltetem Stahl Lochfraß; Voraussetzung ist genug Sauerstoff im Wasser.",
+        "source": "Wikipedia Bimetallkorrosion, 4.2.1"
+      }
+    },
+    {
+      "metals": [
+        "messing",
+        "verzinkterStahl"
+      ],
+      "rating": "limited",
+      "corrodes": "verzinkterStahl",
+      "text": "Im Trinkwasser Fließregel beachten.",
+      "source": "heima24 Wiki, Fließregel",
+      "flow": {
+        "first": "verzinkterStahl",
+        "text": "Erst verzinkte Bauteile, danach Armaturen aus Kupferlegierungen wie Messing oder Rotguss.",
+        "source": "heima24 Wiki, Fließregel"
+      }
+    },
+    {
+      "metals": [
+        "rotguss",
+        "kupfer"
+      ],
+      "rating": "ok",
+      "text": "Wegen der sehr geringen Potentialdifferenz problemlos direkt verbindbar, ohne Gefahr von Kontaktkorrosion.",
+      "source": "Angabe des Inhabers (25.11.2026)"
+    }
+  ],
+  "ionExchange": {
+    "text": "Sind zwei Metalle elektrisch leitend verbunden und von leitfähigem Wasser benetzt, fließen Elektronen vom unedleren Metall (Anode) zum edleren (Kathode). Die Anode wird bevorzugt angegriffen, die Kathode dabei geschützt. Ohne eine der drei Bedingungen (Potentialunterschied, leitende Verbindung, Elektrolyt) tritt keine Kontaktkorrosion auf.",
+    "source": "ISER MB 829, Abschnitt 2"
+  },
+  "derivation": {
+    "anode": {
+      "text": "Grundsatz: Bei Kontakt wird das unedlere Metall (niedrigeres Potential) als Anode bevorzugt angegriffen.",
+      "source": "ISER MB 829, Abschnitt 2"
+    },
+    "flow": {
+      "text": "Fließregel: In Fließrichtung sollen immer edlere Metalle folgen, das unedlere also vor dem edleren liegen. Gilt vor allem für sauerstoffreiches Wasser wie Trinkwasser; in geschlossenen Heizkreisen tritt nach Verbrauch des Sauerstoffs kaum noch Korrosion auf.",
+      "source": "Wikipedia Bimetallkorrosion, 4.2.1 (nach DIN 1988-7)"
+    },
+    "caveat": {
+      "text": "Das Standardpotential ist nur ein erster Anhaltspunkt; entscheidend ist die Potentialdifferenz unter den Einsatzbedingungen. Schon 100 mV können Probleme machen, größere Differenzen können unproblematisch sein. Ob eine Paarung zulässig ist, lässt sich daraus nicht ableiten.",
+      "source": "ISER MB 829, 2 und 3.3"
+    }
+  }
+}

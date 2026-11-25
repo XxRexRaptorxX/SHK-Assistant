@@ -65,6 +65,7 @@ describe('Tools', () => {
       'Badplanung: Montagehöhen, Abstände und Schutzbereiche',
       'Brennstofflagerung',
       'Dampfdrucktabelle Kältemittel',
+      'Edle und unedle Metalle',
       'Gebäudeklasse',
       'Gefahrgut: 1000-Punkte-Regel',
       'Gehrungsmaße',

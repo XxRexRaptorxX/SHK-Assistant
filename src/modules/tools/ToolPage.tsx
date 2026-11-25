@@ -24,6 +24,7 @@ import {
   isMaterialListTool,
   isNormFinderTool,
   isPipeMaterialTool,
+  isMetalTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -48,6 +49,7 @@ import { ClassificationLookup } from './ClassificationLookup'
 import { MaterialList } from './MaterialList'
 import { NormFinder } from './NormFinder'
 import { PipeMaterialLookup } from './PipeMaterialLookup'
+import { MetalLookup } from './MetalLookup'
 import { PlacementLookup } from './PlacementLookup'
 import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
@@ -140,6 +142,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <DrainageSizing tool={tool} />
       ) : isPipeMaterialTool(tool) ? (
         <PipeMaterialLookup tool={tool} />
+      ) : isMetalTool(tool) ? (
+        <MetalLookup tool={tool} />
       ) : isClassificationTool(tool) ? (
         <ClassificationLookup tool={tool} />
       ) : (
