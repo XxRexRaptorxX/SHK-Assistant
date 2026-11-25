@@ -8,6 +8,7 @@
   "title": "Länge einer Schräge (Gehrung)",
   "description": "Berechnet, wie lang eine Schräge von Anfang bis Ende sein muss, damit der Schnitt durch ein Material der Breite b genau unter dem Winkel α liegt, z. B. beim Zuschnitt von Dämmung. Der Winkel liegt zwischen Schnittfläche und Oberfläche.",
   "category": "Geometrie",
+  "tags": ["allgemein"],
   "variables": [
     {
       "symbol": "b",

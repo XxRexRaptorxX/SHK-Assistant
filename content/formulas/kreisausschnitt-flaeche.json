@@ -8,6 +8,9 @@
   "title": "Kreisausschnittsfläche",
   "description": "Berechnet die Fläche eines Kreisausschnitts (Kreissektors) aus Durchmesser und Mittelpunktswinkel.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

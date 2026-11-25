@@ -8,6 +8,10 @@
   "title": "Energiemenge aus dem Gaszähler",
   "description": "Berechnet die Energiemenge aus dem am Zähler gemessenen Betriebsvolumen, der Zustandszahl und dem Brennwert im Normzustand, so wie bei der Gasabrechnung.",
   "category": "Gastechnik",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
   "variables": [
     {
       "symbol": "VB",

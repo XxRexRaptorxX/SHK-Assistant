@@ -8,6 +8,9 @@
   "title": "Temperaturänderung aus Wärmemenge",
   "description": "Berechnet die Temperaturänderung aus Wärmemenge, Masse und spezifischer Wärmekapazität.",
   "category": "Thermodynamik",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "Q",

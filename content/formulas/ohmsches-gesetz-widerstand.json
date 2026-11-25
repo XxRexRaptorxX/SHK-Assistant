@@ -8,6 +8,9 @@
   "title": "Ohmsches Gesetz: Widerstand",
   "description": "Berechnet den elektrischen Widerstand aus Spannung und Stromstärke; laut Formeltafel für metallische Leiter.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "U",

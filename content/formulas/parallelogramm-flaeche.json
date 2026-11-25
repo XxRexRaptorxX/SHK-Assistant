@@ -8,6 +8,9 @@
   "title": "Parallelogrammfläche",
   "description": "Berechnet die Fläche eines Parallelogramms aus Grundseite und zugehöriger Höhe.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "l",

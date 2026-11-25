@@ -8,6 +8,10 @@
   "title": "Zustandszahl",
   "description": "Berechnet die Zustandszahl Z: das Verhältnis von Gasvolumen im Normzustand zum Volumen im Betriebszustand am Gaszähler. Damit wird das am Zähler gemessene Volumen auf den Normzustand umgerechnet.",
   "category": "Gastechnik",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
   "variables": [
     {
       "symbol": "T",

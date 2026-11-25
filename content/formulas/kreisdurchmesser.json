@@ -8,6 +8,9 @@
   "title": "Kreisdurchmesser aus Fläche",
   "description": "Ermittelt den Durchmesser eines Kreises aus seiner Fläche.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "A",

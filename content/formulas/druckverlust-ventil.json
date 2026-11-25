@@ -8,6 +8,7 @@
   "title": "Druckverlust an einem Ventil",
   "description": "Berechnet den Druckabfall an einem Ventil, Strangregulierventil oder Mischer aus Volumenstrom und kv-Wert (Umstellung der kv-Formel). Gilt für Wasser.",
   "category": "Hydraulik",
+  "tags": ["heizung"],
   "variables": [
     {
       "symbol": "Vdot",

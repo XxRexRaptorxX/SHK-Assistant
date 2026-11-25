@@ -8,6 +8,9 @@
   "title": "Zylindermantelfläche",
   "description": "Berechnet die Mantelfläche eines Kreiszylinders ohne Grund- und Deckfläche, z. B. die Oberfläche eines Rohrs für die Dämmung.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

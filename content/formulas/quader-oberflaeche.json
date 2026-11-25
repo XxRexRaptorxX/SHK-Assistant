@@ -8,6 +8,9 @@
   "title": "Quaderoberfläche",
   "description": "Berechnet die Oberfläche eines Quaders aus Länge, Breite und Höhe.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "l",

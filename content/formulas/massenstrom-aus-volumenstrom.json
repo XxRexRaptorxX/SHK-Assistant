@@ -8,6 +8,10 @@
   "title": "Massenstrom aus Volumenstrom",
   "description": "Rechnet einen Volumenstrom über die Dichte in einen Massenstrom um.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "rho",

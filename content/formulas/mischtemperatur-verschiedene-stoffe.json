@@ -8,6 +8,9 @@
   "title": "Mischtemperatur verschiedener Stoffe",
   "description": "Berechnet die Mischtemperatur zweier Stoffe mit unterschiedlichen spezifischen Wärmekapazitäten, ohne Wärmeverluste an die Umgebung.",
   "category": "Thermodynamik",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "mk",

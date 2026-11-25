@@ -1,0 +1,28 @@
+{
+  "id": "mode.rohbau-monteur",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Rohbau-Monteur",
+  "order": 70,
+  "tags": [
+    "abwasser",
+    "allgemein"
+  ],
+  "include": [
+    "tool.stundenzettel",
+    "tool.materialliste",
+    "tool.material-zurueck",
+    "tool.montagehoehen",
+    "tool.rollenlaenge",
+    "tool.fbh-rohrlaenge",
+    "tool.rohrdaemmung",
+    "tool.daemmung-schnittwinkel",
+    "tool.rohrinhalt",
+    "formula.thermodynamik.laengenausdehnung",
+    "formula.hydraulik.rohrinhalt"
+  ],
+  "exclude": []
+}

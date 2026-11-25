@@ -1,0 +1,26 @@
+{
+  "id": "mode.planer",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Planer",
+  "order": 90,
+  "tags": [
+    "planung",
+    "heizung",
+    "sanitaer",
+    "trinkwasser",
+    "abwasser",
+    "lueftung",
+    "klima",
+    "kaelte",
+    "solar"
+  ],
+  "include": [],
+  "exclude": [
+    "tool.stundenzettel",
+    "tool.material-zurueck"
+  ]
+}

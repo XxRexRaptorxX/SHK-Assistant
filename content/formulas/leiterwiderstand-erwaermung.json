@@ -8,6 +8,9 @@
   "title": "Leiterwiderstand nach Erwärmung",
   "description": "Berechnet den temperaturabhängigen Widerstand relativ zum Bezugswert bei 20 °C.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "R20",

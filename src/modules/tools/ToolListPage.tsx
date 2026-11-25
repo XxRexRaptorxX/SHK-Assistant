@@ -8,17 +8,34 @@ import { usePageTitle } from '../../lib/usePageTitle'
 import { groupToolsByCategory, toolEntries, toolPath } from './tools'
 import type { ToolEntry } from './schema'
 import { TopicTags } from '../../components/TopicTags'
+import { ModuleHidden } from '../../hidden/ModuleHidden'
+import { useListVisibility, visibilityOf } from '../../hidden/visibility'
+import { ModeNotice } from '../modes/ModeNotice'
+import type { ModeEntry } from '../modes/schema'
 
-export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] }) {
+interface ToolListPageProps {
+  /** Für Tests überschreibbar */
+  entries?: ToolEntry[]
+  modes?: readonly ModeEntry[]
+  hiddenIds?: ReadonlySet<string>
+}
+
+export function ToolListPage({ entries = toolEntries, modes, hiddenIds }: ToolListPageProps) {
   usePageTitle(modules.tools.title)
+  const state = useListVisibility({ hiddenIds, modes })
+  const visible = entries.filter((entry) => visibilityOf(entry, state) === 'visible')
+  const modeHiddenCount = entries.filter((entry) => visibilityOf(entry, state) === 'mode').length
   return (
     <>
       <h1 className={pageTitle}>{modules.tools.title}</h1>
+      <ModeNotice modes={state.modes} hiddenCount={modeHiddenCount} noun="Tools" listTitle={modules.tools.title} />
       <ModuleFavorites moduleTitle={modules.tools.title} />
-      {entries.length === 0 ? (
-        <p className="mt-2 text-muted">Noch keine Tools vorhanden.</p>
-      ) : (
-        groupToolsByCategory(entries).map((group) => (
+      {visible.length === 0 && (
+        <p className="mt-2 text-muted">
+          {entries.length === 0 ? 'Noch keine Tools vorhanden.' : 'Alle Tools sind ausgeblendet.'}
+        </p>
+      )}
+      {groupToolsByCategory(visible).map((group) => (
           <section key={group.category} className="mt-5">
             <h2 className={categoryHeading}>{group.category}</h2>
             <ul className={`mt-2 ${listCard}`}>
@@ -44,8 +61,8 @@ export function ToolListPage({ entries = toolEntries }: { entries?: ToolEntry[] 
               ))}
             </ul>
           </section>
-        ))
-      )}
+        ))}
+      <ModuleHidden moduleTitle={modules.tools.title} state={state} />
     </>
   )
 }

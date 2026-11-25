@@ -1,10 +1,13 @@
 import { useMemo } from 'react'
 import { createStoredState } from '../lib/storedState'
 
-// Ausgeblendete Einträge (Formeln, Umrechner): fehlen in der Liste ihres Moduls.
-// Reine Anzeige-Vorliebe dieses Geräts, daher localStorage wie die Einstellungen.
+// Per Auge angepasste Einträge (Tools, Formeln, Umrechner). Reine Anzeige-Vorliebe dieses Geräts,
+// daher localStorage wie die Einstellungen. Wie beides mit dem Modus zusammenspielt: visibility.ts.
 
+/** Per Auge ausgeblendet: fehlen in der Liste ihres Moduls */
 export const HIDDEN_STORAGE_KEY = 'shk-hidden'
+/** Per Auge eingeblendet, obwohl der gewählte Modus sie ausblenden würde */
+export const SHOWN_STORAGE_KEY = 'shk-shown'
 
 /** Liest die gespeicherten IDs; Kaputtes oder Fremdes wird ignoriert */
 export function parseHiddenIds(raw: string | null): string[] {
@@ -16,35 +19,47 @@ export function parseHiddenIds(raw: string | null): string[] {
   }
 }
 
-const hiddenState = createStoredState<string[]>({
-  key: HIDDEN_STORAGE_KEY,
-  read: () => {
-    try {
-      return parseHiddenIds(globalThis.localStorage?.getItem(HIDDEN_STORAGE_KEY) ?? null)
-    } catch {
-      return []
-    }
-  },
-  write: (value) => {
-    try {
-      globalThis.localStorage?.setItem(HIDDEN_STORAGE_KEY, JSON.stringify(value))
-    } catch {
-      // ohne Speicher gilt die Auswahl bis zum Neuladen
-    }
-  },
-  fallback: [],
-})
+function createIdListState(key: string) {
+  return createStoredState<string[]>({
+    key,
+    read: () => {
+      try {
+        return parseHiddenIds(globalThis.localStorage?.getItem(key) ?? null)
+      } catch {
+        return []
+      }
+    },
+    write: (value) => {
+      try {
+        globalThis.localStorage?.setItem(key, JSON.stringify(value))
+      } catch {
+        // ohne Speicher gilt die Auswahl bis zum Neuladen
+      }
+    },
+    fallback: [],
+  })
+}
 
-export function useHiddenIds(): ReadonlySet<string> {
-  const ids = hiddenState.useValue()
+const hiddenState = createIdListState(HIDDEN_STORAGE_KEY)
+const shownState = createIdListState(SHOWN_STORAGE_KEY)
+
+function useIdSet(state: ReturnType<typeof createIdListState>): ReadonlySet<string> {
+  const ids = state.useValue()
   return useMemo(() => new Set(ids), [ids])
 }
 
-export function toggleHidden(id: string): void {
-  const ids = hiddenState.get()
-  hiddenState.set(ids.includes(id) ? ids.filter((other) => other !== id) : [...ids, id])
-}
+export const useHiddenIds = (): ReadonlySet<string> => useIdSet(hiddenState)
+export const useShownIds = (): ReadonlySet<string> => useIdSet(shownState)
 
+export const setHiddenIds = (ids: string[]): void => hiddenState.set(ids)
+export const setShownIds = (ids: string[]): void => shownState.set(ids)
+
+/** Per Auge ausgeblendete Einträge wieder einblenden */
 export function showAllHidden(): void {
   hiddenState.set([])
+}
+
+/** Per Auge eingeblendete Einträge wieder dem Modus überlassen */
+export function resetAllShown(): void {
+  shownState.set([])
 }

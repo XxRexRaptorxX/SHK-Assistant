@@ -8,6 +8,11 @@
   "title": "Dynamischer Druck",
   "description": "Berechnet den dynamischen Druck aus Dichte und Strömungsgeschwindigkeit.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "lueftung"
+  ],
   "variables": [
     {
       "symbol": "rho",

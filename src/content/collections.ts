@@ -8,6 +8,7 @@ import { formulaCollection } from '../modules/formulas/schema.ts'
 import { legalCollection } from '../modules/legal/schema.ts'
 import { lexiconCollection } from '../modules/lexicon/schema.ts'
 import { materialCollection } from '../modules/materials/schema.ts'
+import { modeCollection } from '../modules/modes/schema.ts'
 import { newsFeedCollection } from '../modules/news/schema.ts'
 import { toolCollection } from '../modules/tools/schema.ts'
 import { unitCollection } from '../modules/units/schema.ts'
@@ -28,6 +29,8 @@ export const collections = {
   newsFeeds: newsFeedCollection,
   materials: materialCollection,
   tools: toolCollection,
+  // Nach Tools und Formeln: Modi verweisen auf deren ids
+  modes: modeCollection,
 } satisfies Record<string, CollectionDefinition>
 
 export type CollectionName = keyof typeof collections

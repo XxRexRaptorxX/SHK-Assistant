@@ -68,6 +68,11 @@ export interface CollectionDefinition<T extends BaseEntry = BaseEntry> {
    * z. B. um Zusatzeinheiten zu registrieren. Liefert Fehlermeldungen.
    */
   prepare?(entries: T[]): string[]
+  /**
+   * Passt einen Eintrag an die Edition an, nachdem feststeht, welche Einträge sie enthält,
+   * z. B. Verweise auf interne Einträge im public-Build entfernen (sonst stünden deren ids im Bundle).
+   */
+  forEdition?(entry: T, isIncluded: (id: string) => boolean): T
 }
 
 /** Hilft TypeScript, den Eintragstyp aus dem Schema abzuleiten. */

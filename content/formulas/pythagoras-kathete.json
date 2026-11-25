@@ -8,6 +8,9 @@
   "title": "Satz des Pythagoras: Kathete",
   "description": "Berechnet im rechtwinkligen Dreieck eine Kathete aus Hypotenuse und der anderen Kathete.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "c",

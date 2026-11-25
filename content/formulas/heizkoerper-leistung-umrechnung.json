@@ -8,6 +8,9 @@
   "title": "Heizkörperleistung bei anderen Systemtemperaturen",
   "description": "Rechnet die Normwärmeleistung eines Heizkörpers auf andere Vorlauf-, Rücklauf- und Raumtemperaturen um. Die logarithmische Übertemperatur dafür mit der Formel „Mittlere logarithmische Temperaturdifferenz“ berechnen. Die Norm-Übertemperatur ist für 75/65/20 °C vorbelegt. Den Heizkörperexponenten n aus dem Datenblatt des Herstellers nehmen.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Qn",

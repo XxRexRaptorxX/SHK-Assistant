@@ -8,6 +8,10 @@
   "title": "Luftwechselzahl",
   "description": "Berechnet, wie oft die Raumluft pro Stunde ausgetauscht wird, aus Luftvolumenstrom und Raumvolumen.",
   "category": "Lüftung",
+  "tags": [
+    "lueftung",
+    "klima"
+  ],
   "variables": [
     {
       "symbol": "Vdot",

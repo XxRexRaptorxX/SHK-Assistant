@@ -1,0 +1,20 @@
+{
+  "id": "mode.elektriker",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Elektriker",
+  "order": 20,
+  "tags": [
+    "strom",
+    "allgemein"
+  ],
+  "include": [
+    "tool.stundenzettel",
+    "tool.materialliste",
+    "tool.material-zurueck"
+  ],
+  "exclude": []
+}

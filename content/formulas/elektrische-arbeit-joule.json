@@ -8,6 +8,9 @@
   "title": "Elektrische Arbeit in Joule",
   "description": "Berechnet die elektrische Arbeit aus Spannung, Stromstärke und Zeit in Sekunden.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "U",

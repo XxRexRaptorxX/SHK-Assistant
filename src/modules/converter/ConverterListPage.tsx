@@ -5,8 +5,8 @@ import { DraftBadge } from '../../components/DraftBadge'
 import { categoryHeading, pageTitle } from '../../components/headings'
 import { featureCard } from '../../components/surfaces'
 import { ModuleFavorites } from '../../favorites/ModuleFavorites'
-import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
+import { useListVisibility, visibilityOf } from '../../hidden/visibility'
 import { usePageTitle } from '../../lib/usePageTitle'
 import { converterEntries, converterPath, converterSummaryParts, groupConvertersByCategory } from './converter'
 import { ConverterTitle } from './converterUi'
@@ -64,9 +64,8 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
   hiddenIds?: ReadonlySet<string>
 }) {
   usePageTitle('Umrechner')
-  const storedHidden = useHiddenIds()
-  const hidden = hiddenIds ?? storedHidden
-  const listed = entries.filter((entry) => !hidden.has(entry.id))
+  const state = useListVisibility({ hiddenIds })
+  const listed = entries.filter((entry) => visibilityOf(entry, state) === 'visible')
   return (
     <>
       <h1 className={pageTitle}>Umrechner</h1>
@@ -96,7 +95,7 @@ export function ConverterListPage({ entries = converterEntries, hiddenIds }: {
           </ul>
         </section>
       ))}
-      <ModuleHidden moduleTitle={modules.converter.title} hiddenIds={hidden} />
+      <ModuleHidden moduleTitle={modules.converter.title} state={state} />
     </>
   )
 }

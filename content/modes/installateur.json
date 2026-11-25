@@ -1,0 +1,26 @@
+{
+  "id": "mode.installateur",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Installateur",
+  "order": 80,
+  "tags": [
+    "sanitaer",
+    "trinkwasser",
+    "abwasser",
+    "allgemein"
+  ],
+  "include": [
+    "tool.stundenzettel",
+    "tool.materialliste",
+    "tool.material-zurueck",
+    "formula.gastechnik.energiemenge-gas",
+    "formula.gastechnik.gasleistung-zaehler",
+    "formula.gastechnik.luftdruck-aus-hoehe",
+    "formula.gastechnik.zustandszahl"
+  ],
+  "exclude": []
+}

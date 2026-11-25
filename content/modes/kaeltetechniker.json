@@ -1,0 +1,22 @@
+{
+  "id": "mode.kaeltetechniker",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kältetechniker",
+  "order": 40,
+  "tags": [
+    "kaelte",
+    "klima",
+    "strom",
+    "allgemein"
+  ],
+  "include": [
+    "tool.stundenzettel",
+    "tool.materialliste",
+    "tool.material-zurueck"
+  ],
+  "exclude": []
+}

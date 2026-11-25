@@ -8,6 +8,9 @@
   "title": "Zylinderoberfläche",
   "description": "Berechnet die gesamte Oberfläche eines Kreiszylinders: Mantel plus Grund- und Deckfläche.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

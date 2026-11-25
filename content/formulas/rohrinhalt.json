@@ -8,6 +8,10 @@
   "title": "Wasserinhalt einer Rohrleitung",
   "description": "Berechnet das Volumen in einer Rohrleitung aus Innendurchmesser und Länge, z. B. für den Anlageninhalt.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "d",

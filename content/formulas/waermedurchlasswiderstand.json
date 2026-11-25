@@ -8,6 +8,10 @@
   "title": "Wärmedurchlasswiderstand einer Schicht",
   "description": "Berechnet den Wärmedurchlasswiderstand einer Bauteilschicht aus Dicke und Wärmeleitfähigkeit. Bei mehreren Schichten werden die Werte addiert.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung",
+    "planung"
+  ],
   "variables": [
     {
       "symbol": "d",

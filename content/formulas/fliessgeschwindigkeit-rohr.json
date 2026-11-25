@@ -8,6 +8,10 @@
   "title": "Fließgeschwindigkeit im Rohr",
   "description": "Berechnet die mittlere Fließgeschwindigkeit aus Volumenstrom und Innendurchmesser eines Rohrs.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "Vdot",

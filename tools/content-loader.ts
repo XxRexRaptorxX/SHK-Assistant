@@ -149,6 +149,15 @@ export function loadContent({ contentDir, edition, collections }: LoadContentOpt
     else if (!idToFile.has(to)) issues.push(`${file}: Verweis auf unbekannte id "${to}"`)
   }
 
+  // Verweise auf Einträge außerhalb der Edition entfernen (z. B. interne ids im public-Build)
+  const includedIds = new Set(Object.values(data).flatMap((entries) => entries.map((entry) => entry.id)))
+  const isIncluded = (id: string) => includedIds.has(id)
+  for (const [name, collection] of Object.entries(collections)) {
+    const adapt = collection.forEdition
+    const entries = data[name]
+    if (adapt && entries) data[name] = entries.map((entry) => adapt(entry, isIncluded))
+  }
+
   if (issues.length > 0) throw new ContentValidationError(issues)
   return { data, allEntries }
 }

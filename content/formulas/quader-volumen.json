@@ -8,6 +8,9 @@
   "title": "Quadervolumen",
   "description": "Berechnet das Volumen eines Quaders, z. B. eines Raums oder Behälters, aus Länge, Breite und Höhe.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "l",

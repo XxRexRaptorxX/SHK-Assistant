@@ -8,6 +8,9 @@
   "title": "Dreiecksfläche",
   "description": "Berechnet die Fläche eines Dreiecks aus Grundseite und zugehöriger Höhe.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "l",

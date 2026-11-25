@@ -8,6 +8,11 @@
   "title": "Kontinuitätsgesetz: Geschwindigkeit 1",
   "description": "Stellt die Kontinuitätsbeziehung nach der Geschwindigkeit im ersten Querschnitt um.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "lueftung"
+  ],
   "variables": [
     {
       "symbol": "A1",

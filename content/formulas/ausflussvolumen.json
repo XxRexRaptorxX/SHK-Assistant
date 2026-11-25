@@ -8,6 +8,10 @@
   "title": "Ausflussvolumen",
   "description": "Berechnet das ausströmende Volumen bei konstantem Querschnitt und konstanter Geschwindigkeit über eine Zeitspanne.",
   "category": "Hydraulik",
+  "tags": [
+    "sanitaer",
+    "trinkwasser"
+  ],
   "variables": [
     {
       "symbol": "A",

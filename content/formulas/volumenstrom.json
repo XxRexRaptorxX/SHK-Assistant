@@ -8,6 +8,11 @@
   "title": "Volumenstrom",
   "description": "Berechnet den Volumenstrom aus Strömungsquerschnitt und mittlerer Strömungsgeschwindigkeit.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "lueftung"
+  ],
   "variables": [
     {
       "symbol": "A",

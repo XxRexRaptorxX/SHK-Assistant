@@ -8,6 +8,10 @@
   "title": "Geschwindigkeit aus dynamischem Druck",
   "description": "Stellt die Formel für den dynamischen Druck nach der Strömungsgeschwindigkeit um.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "pdy",

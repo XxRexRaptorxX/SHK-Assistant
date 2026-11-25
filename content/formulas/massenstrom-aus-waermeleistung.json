@@ -8,6 +8,9 @@
   "title": "Massenstrom aus Wärmeleistung",
   "description": "Berechnet den nötigen Massenstrom eines Heizkreises aus Wärmeleistung, spezifischer Wärmekapazität und Spreizung zwischen Vor- und Rücklauf.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Qdot",

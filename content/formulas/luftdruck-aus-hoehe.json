@@ -8,6 +8,10 @@
   "title": "Mittlerer Luftdruck aus der Höhe",
   "description": "Schätzt den Jahresmittelwert des Luftdrucks aus der geodätischen Höhe des Aufstellorts, z. B. für die Zustandszahl.",
   "category": "Gastechnik",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
   "variables": [
     {
       "symbol": "h",

@@ -8,6 +8,9 @@
   "title": "Schmelzwärme",
   "description": "Berechnet die zum Schmelzen benötigte Wärme aus Masse und spezifischer Schmelzwärme.",
   "category": "Thermodynamik",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "m",

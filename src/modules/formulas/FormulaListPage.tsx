@@ -9,30 +9,37 @@ import { filterFormulas, formulaEntries, formulaPath, groupFormulasByCategory, r
 import { FormulaTitle } from './FormulaTitle'
 import type { FormulaEntry } from './schema'
 import { categoryHeading, pageTitle } from '../../components/headings'
-import { useHiddenIds } from '../../hidden/hiddenStore'
 import { ModuleHidden } from '../../hidden/ModuleHidden'
+import { useListVisibility, visibilityOf } from '../../hidden/visibility'
 import { listCard } from '../../components/surfaces'
+import { ModeNotice } from '../modes/ModeNotice'
+import type { ModeEntry } from '../modes/schema'
 
 interface FormulaListPageProps {
   /** Für Tests überschreibbar */
   entries?: FormulaEntry[]
   initialQuery?: string
   hiddenIds?: ReadonlySet<string>
+  modes?: readonly ModeEntry[]
 }
 
-export function FormulaListPage({ entries = formulaEntries, initialQuery = '', hiddenIds }: FormulaListPageProps) {
+export function FormulaListPage({ entries = formulaEntries, initialQuery = '', hiddenIds, modes }: FormulaListPageProps) {
   usePageTitle('Formeln')
   const [query, setQuery] = useState(initialQuery)
-  const storedHidden = useHiddenIds()
-  const hidden = hiddenIds ?? storedHidden
+  const state = useListVisibility({ hiddenIds, modes })
+  const shown = entries.filter((entry) => visibilityOf(entry, state) === 'visible')
+  // Für den Hinweis zählen nur die Formeln, die sonst in der Liste stünden
+  const modeHiddenCount = entries.filter(
+    (entry) => !rearrangedIds.has(entry.id) && visibilityOf(entry, state) === 'mode',
+  ).length
   // Umgestellte Formeln erscheinen erst beim Filtern, sonst würde die Liste unübersichtlich
-  const shown = entries.filter((entry) => !hidden.has(entry.id))
   const listed = query.trim() === '' ? shown.filter((entry) => !rearrangedIds.has(entry.id)) : shown
   const visible = filterFormulas(listed, query)
 
   return (
     <>
       <h1 className={pageTitle}>Formeln</h1>
+      <ModeNotice modes={state.modes} hiddenCount={modeHiddenCount} noun="Formeln" listTitle={modules.formulas.title} />
       {query.trim() === '' && <ModuleFavorites moduleTitle={modules.formulas.title} />}
 
       {entries.length === 0 ? (
@@ -73,7 +80,7 @@ export function FormulaListPage({ entries = formulaEntries, initialQuery = '', h
               </ul>
             </section>
           ))}
-          <ModuleHidden moduleTitle={modules.formulas.title} hiddenIds={hidden} />
+          <ModuleHidden moduleTitle={modules.formulas.title} state={state} skip={rearrangedIds} />
         </>
       )}
     </>

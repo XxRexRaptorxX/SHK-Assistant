@@ -8,6 +8,10 @@
   "title": "U-Wert eines mehrschichtigen Bauteils",
   "description": "Berechnet den U-Wert eines Bauteils aus beliebig vielen Schichten. Zuerst den Wärmedurchlasswiderstand jeder Schicht (d / λ) berechnen und addieren, die Summe hier als R eintragen. Die Übergangswiderstände sind einzusetzen, wie sie für das Bauteil und die Richtung des Wärmestroms gelten.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung",
+    "planung"
+  ],
   "variables": [
     {
       "symbol": "Rsi",

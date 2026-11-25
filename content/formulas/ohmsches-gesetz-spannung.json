@@ -8,6 +8,9 @@
   "title": "Ohmsches Gesetz: Spannung",
   "description": "Berechnet die Spannung aus Widerstand und Stromstärke.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "R",

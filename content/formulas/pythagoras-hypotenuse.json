@@ -8,6 +8,9 @@
   "title": "Satz des Pythagoras: Hypotenuse",
   "description": "Berechnet im rechtwinkligen Dreieck die längste Seite aus den beiden Katheten, z. B. das Diagonalmaß einer Rohretage.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "a",

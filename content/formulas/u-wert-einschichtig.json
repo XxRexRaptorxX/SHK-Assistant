@@ -8,6 +8,10 @@
   "title": "U-Wert einer einschichtigen Wand",
   "description": "Berechnet den Wärmedurchgangskoeffizienten aus den Wärmeübergangswiderständen innen und außen sowie Dicke und Wärmeleitfähigkeit der Schicht. Die Übergangswiderstände sind einzusetzen, wie sie für das Bauteil gelten.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung",
+    "planung"
+  ],
   "variables": [
     {
       "symbol": "Rsi",

@@ -8,6 +8,9 @@
   "title": "Förderhöhe einer Pumpe",
   "description": "Rechnet die Druckdifferenz, die eine Pumpe aufbringen muss (z. B. der Druckverlust des ungünstigsten Strangs), in die Förderhöhe um, wie sie in Pumpenkennlinien angegeben ist. Die Dichte ist für Wasser vorbelegt; bei Frostschutzgemischen anpassen.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "dp",

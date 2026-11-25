@@ -8,6 +8,9 @@
   "title": "Volumenänderung",
   "description": "Berechnet die Volumenänderung aus Masse und Differenz des spezifischen Volumens.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "m",

@@ -8,6 +8,9 @@
   "title": "Elektrische Arbeit aus Leistung und Stunden",
   "description": "Berechnet die elektrische Arbeit in Wattstunden aus Leistung und Zeit in Stunden.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "P",

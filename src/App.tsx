@@ -18,6 +18,7 @@ import { NotFoundPage } from './pages/NotFoundPage'
 import { SearchPage } from './search/SearchPage'
 import { ToolListPage } from './modules/tools/ToolListPage'
 import { SettingsPage } from './settings/SettingsPage'
+import { MODE_PAGE_PATH, ModePage } from './modules/modes/ModePage'
 
 // Seiten mit mathjs werden erst bei Bedarf geladen (kleineres Start-Bundle, offline trotzdem vorgecacht)
 const FormulaDetailPage = lazy(() => import('./modules/formulas/FormulaDetailPage'))
@@ -87,6 +88,7 @@ export function App() {
         <Route path={modules.favorites.path} element={<FavoritesPage />} />
         <Route path={modules.search.path} element={<SearchPage />} />
         <Route path={modules.settings.path} element={<SettingsPage />} />
+        <Route path={MODE_PAGE_PATH} element={<ModePage />} />
         {LEGAL_PAGES.map((page) => (
           <Route key={page.path} path={page.path} element={<LegalPage page={page} />} />
         ))}

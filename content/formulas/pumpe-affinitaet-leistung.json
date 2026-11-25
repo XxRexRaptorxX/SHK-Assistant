@@ -8,6 +8,7 @@
   "title": "Pumpe: Leistung bei anderer Drehzahl",
   "description": "Affinitätsgesetz für Kreiselpumpen: Die Antriebsleistung ändert sich mit der dritten Potenz des Drehzahlverhältnisses. Halbe Drehzahl braucht also nur etwa ein Achtel der Leistung. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie), Wirkungsgradänderungen bleiben unberücksichtigt.",
   "category": "Hydraulik",
+  "tags": ["heizung"],
   "variables": [
     {
       "symbol": "P1",

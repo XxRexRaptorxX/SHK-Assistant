@@ -8,6 +8,9 @@
   "title": "Trapezfläche",
   "description": "Berechnet die Fläche eines Trapezes aus den beiden parallelen Seiten und der Höhe.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "l1",

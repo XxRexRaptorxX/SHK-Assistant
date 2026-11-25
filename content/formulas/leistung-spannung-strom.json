@@ -8,6 +8,9 @@
   "title": "Elektrische Leistung aus Spannung und Strom",
   "description": "Berechnet die elektrische Wirkleistung bei ohmscher Belastung aus Spannung und Stromstärke.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "U",

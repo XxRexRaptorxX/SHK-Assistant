@@ -8,6 +8,9 @@
   "title": "Elektrische Leistung aus Strom und Widerstand",
   "description": "Berechnet die elektrische Leistung bei ohmscher Belastung aus Stromstärke und Widerstand.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "I",

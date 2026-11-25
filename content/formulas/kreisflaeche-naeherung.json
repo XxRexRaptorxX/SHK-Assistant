@@ -8,6 +8,9 @@
   "title": "Kreisfläche (Näherung)",
   "description": "Näherungsweise Berechnung der Kreisfläche aus dem Durchmesser; verwendet den Faktor 0,785.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

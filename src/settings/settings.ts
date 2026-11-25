@@ -15,22 +15,37 @@ export interface Settings {
   linearFormulas: boolean
   /** Rechner: Ergebnis als Rechenweg mit eingesetzten Zahlen (Standard: aus) */
   showWorking: boolean
+  /** Gewählte Modi (ids aus content/modes); leer = „Alles“ (Standard) */
+  modes: string[]
 }
 
-export const DEFAULT_SETTINGS: Settings = { hideRareUnits: false, showUnitNames: true, shakeToReport: true, linearFormulas: false, showWorking: false }
+export const DEFAULT_SETTINGS: Settings = {
+  hideRareUnits: false,
+  showUnitNames: true,
+  shakeToReport: true,
+  linearFormulas: false,
+  showWorking: false,
+  modes: [],
+}
+
+type FlagKey = { [K in keyof Settings]: Settings[K] extends boolean ? K : never }[keyof Settings]
 
 /** Liest gespeicherte Einstellungen; Unbekanntes oder Kaputtes fällt auf die Standardwerte zurück. */
 export function parseSettings(raw: string | null): Settings {
   try {
     const data: unknown = raw ? JSON.parse(raw) : {}
     const record = typeof data === 'object' && data !== null ? (data as Record<string, unknown>) : {}
-    const flag = (key: keyof Settings) => (typeof record[key] === 'boolean' ? record[key] : DEFAULT_SETTINGS[key])
+    const flag = (key: FlagKey): boolean => (typeof record[key] === 'boolean' ? record[key] : DEFAULT_SETTINGS[key])
+    const modes = Array.isArray(record.modes)
+      ? [...new Set(record.modes.filter((id): id is string => typeof id === 'string'))]
+      : DEFAULT_SETTINGS.modes
     return {
       hideRareUnits: flag('hideRareUnits'),
       showUnitNames: flag('showUnitNames'),
       shakeToReport: flag('shakeToReport'),
       linearFormulas: flag('linearFormulas'),
       showWorking: flag('showWorking'),
+      modes,
     }
   } catch {
     return DEFAULT_SETTINGS

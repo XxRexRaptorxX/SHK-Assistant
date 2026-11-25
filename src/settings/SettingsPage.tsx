@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { primaryButton, secondaryButton } from '../components/buttons'
-import { showAllHidden, useHiddenIds } from '../hidden/hiddenStore'
+import { VisibilitySettings } from '../hidden/VisibilitySettings'
 import { KofiIcon, MailIcon, MoonIcon, SunIcon, SystemThemeIcon } from '../components/icons'
 import { content } from '../content'
 import { currentBugReportUrl } from '../feedback/bugReport'
@@ -62,26 +62,6 @@ export function Switch({ label, description, checked, onChange }: {
         />
       </span>
     </button>
-  )
-}
-
-/** Anzahl ausgeblendeter Formeln/Umrechner und Knopf, um alle wieder einzublenden */
-function HiddenEntries() {
-  const count = useHiddenIds().size
-  return (
-    <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-edge bg-surface p-4">
-      <span>
-        <span className="block font-semibold">Ausgeblendete Einträge</span>
-        <span className="mt-1 block text-base text-muted">
-          {count === 0
-            ? 'Keine. Formeln und Umrechner lassen sich über das Auge auf ihrer Seite ausblenden.'
-            : `${count} ${count === 1 ? 'Eintrag ist' : 'Einträge sind'} in den Listen ausgeblendet.`}
-        </span>
-      </span>
-      <button type="button" className={secondaryButton} disabled={count === 0} onClick={showAllHidden}>
-        Alle einblenden
-      </button>
-    </div>
   )
 }
 
@@ -250,6 +230,9 @@ export function SettingsPage() {
     <>
       <h1 className={pageTitle}>Einstellungen</h1>
       <div className="mt-4">
+        <Section title="Modus und Ausblenden">
+          <VisibilitySettings />
+        </Section>
         <Section title="Grundeinstellungen">
           <Switch
             label="Unübliche Einheiten ausblenden"
@@ -281,7 +264,6 @@ export function SettingsPage() {
               onChange={(showWorking) => updateSettings({ showWorking })}
             />
           </div>
-          <HiddenEntries />
         </Section>
         <Section title="Design">
           <ThemeChoice value={preference} onChange={setPreference} />

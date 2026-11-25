@@ -8,6 +8,9 @@
   "title": "Ventilautorität",
   "description": "Berechnet die Ventilautorität eines Regelventils: Differenzdruck am voll geöffneten Ventil bei Nenndurchfluss geteilt durch den höchsten Differenzdruck am geschlossenen Ventil. Je höher, desto besser regelt das Ventil; laut Quelle wird in der Praxis mehr als 0,5 angestrebt.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "dpV100",

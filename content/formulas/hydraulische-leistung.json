@@ -8,6 +8,10 @@
   "title": "Hydraulische Leistung",
   "description": "Berechnet die Leistung, die eine Pumpe an das Wasser abgibt, aus Druckerhöhung und Volumenstrom.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "dp",

@@ -8,6 +8,9 @@
   "title": "Scheinleistung bei Drehstrom",
   "description": "Berechnet die Scheinleistung eines symmetrischen Drehstromsystems aus verketteter Spannung und Leiterstrom (Verkettungsfaktor √3). Für die Wirkleistung siehe „Wirkleistung bei Drehstrom“ (mit Leistungsfaktor cos φ).",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "U",

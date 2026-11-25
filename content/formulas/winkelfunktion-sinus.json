@@ -8,6 +8,7 @@
   "title": "Sinus: Gegenkathete aus Hypotenuse und Winkel",
   "description": "Im rechtwinkligen Dreieck gilt sin α = Gegenkathete ÷ Hypotenuse. Berechnet die Gegenkathete a aus der Hypotenuse c und dem Winkel α, der der Kathete a gegenüberliegt.",
   "category": "Geometrie",
+  "tags": ["allgemein"],
   "variables": [
     { "symbol": "c", "name": "Hypotenuse", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0 },
     { "symbol": "alpha", "label": "α", "name": "Winkel α", "term": "Winkel", "unit": "deg", "min": 0, "max": 90, "description": "Spitzer Winkel gegenüber der Kathete a" }

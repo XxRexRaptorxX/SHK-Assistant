@@ -8,6 +8,10 @@
   "title": "Druckverlust im geraden Rohr",
   "description": "Berechnet den Druckverlust durch Rohrreibung auf einer geraden Rohrstrecke (Darcy-Weisbach). Die Rohrreibungszahl hängt von Rohrmaterial und Strömung ab und muss bekannt sein.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "lambda",

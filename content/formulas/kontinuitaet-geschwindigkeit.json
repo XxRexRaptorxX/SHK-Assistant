@@ -8,6 +8,11 @@
   "title": "Kontinuitätsgesetz: Geschwindigkeit",
   "description": "Berechnet die Geschwindigkeit in einem zweiten Querschnitt bei konstantem Volumenstrom.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "lueftung"
+  ],
   "variables": [
     {
       "symbol": "A1",

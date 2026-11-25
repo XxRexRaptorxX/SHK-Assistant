@@ -8,6 +8,10 @@
   "title": "Abgasverlust (Siegert-Formel)",
   "description": "Berechnet den Abgasverlust einer Öl- oder Gasfeuerung aus Abgastemperatur, Verbrennungslufttemperatur und O₂-Gehalt im Abgas. Die brennstoffabhängigen Faktoren A2 und B lassen sich je Brennstoff auswählen. Maßgeblich sind die Faktoren der 1. BImSchV in der aktuellen Fassung und die Werte des Abgasmessgeräts.",
   "category": "Abgastechnik",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
   "variables": [
     {
       "symbol": "tA",

@@ -1,0 +1,28 @@
+{
+  "id": "mode.kundendienst-monteur",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Kundendienst-Monteur",
+  "order": 60,
+  "tags": [
+    "kundendienst",
+    "strom"
+  ],
+  "include": [
+    "tool.stundenzettel",
+    "tool.materialliste",
+    "tool.material-zurueck",
+    "tool.luftfeuchte",
+    "tool.trinkwasser-temperaturen",
+    "tool.kaeltemittel-dampfdruck",
+    "formula.heizungstechnik.mag-vordruck",
+    "formula.heizungstechnik.wirkungsgrad",
+    "formula.heizungstechnik.jahresarbeitszahl",
+    "formula.heizungstechnik.leistungszahl-waermepumpe",
+    "formula.hydraulik.hydrostatischer-druck"
+  ],
+  "exclude": []
+}

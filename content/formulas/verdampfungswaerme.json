@@ -8,6 +8,9 @@
   "title": "Verdampfungswärme",
   "description": "Berechnet die zum Verdampfen benötigte Wärme aus Masse und spezifischer Verdampfungswärme.",
   "category": "Thermodynamik",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "m",

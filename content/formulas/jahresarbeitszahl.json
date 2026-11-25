@@ -8,6 +8,10 @@
   "title": "Jahresarbeitszahl einer Wärmepumpe",
   "description": "Berechnet die Jahresarbeitszahl (JAZ) aus der in einem Jahr abgegebenen Wärme und der im selben Zeitraum aufgenommenen elektrischen Energie, z. B. aus Wärmemengen- und Stromzähler. Anders als der COP gilt sie für den realen Betrieb über ein ganzes Jahr. Welche Verbraucher (z. B. Umwälzpumpen, Heizstab) im Strom enthalten sind, hängt von der Messung ab.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung",
+    "kaelte"
+  ],
   "variables": [
     {
       "symbol": "QH",

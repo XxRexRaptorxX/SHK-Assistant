@@ -8,6 +8,10 @@
   "title": "Gasleistung aus der Zählermessung",
   "description": "Berechnet die Leistung eines Gasgeräts aus dem in einer Messzeit am Zähler durchgelaufenen Volumen (Zählermethode). Je nachdem, worauf sich die Angabe des Geräts bezieht, Heizwert oder Brennwert im Normzustand einsetzen.",
   "category": "Gastechnik",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
   "variables": [
     {
       "symbol": "VB",

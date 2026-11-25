@@ -8,6 +8,10 @@
   "title": "Leistungszahl einer Wärmepumpe",
   "description": "Berechnet die Leistungszahl (COP) einer Wärmepumpe aus abgegebener Heizleistung und aufgenommener elektrischer Leistung.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung",
+    "kaelte"
+  ],
   "variables": [
     {
       "symbol": "QdotH",

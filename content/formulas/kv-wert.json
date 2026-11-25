@@ -8,6 +8,9 @@
   "title": "kv-Wert eines Ventils",
   "description": "Berechnet den kv-Wert, also den Volumenstrom Wasser, der bei 1 bar Druckabfall durch das Ventil fließt. Gilt für Wasser (Dichte etwa 1000 kg/m³). Der kvs-Wert ist der kv-Wert des voll geöffneten Ventils laut Hersteller.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Vdot",

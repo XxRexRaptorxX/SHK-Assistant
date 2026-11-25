@@ -8,7 +8,7 @@ const SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle
 
 const draft = { visibility: 'public', status: 'draft', source: '', verifiedBy: '', verifiedAt: '' }
 const figure = { id: 'figure.test', ...draft, title: 'Testkreis' }
-const formula = (ref: string) => ({ id: 'formula.test', ...draft, title: 'Test', description: 'Test', figure: ref })
+const formula = (ref: string) => ({ id: 'formula.test', ...draft, title: 'Test', description: 'Test', tags: ['allgemein'], figure: ref })
 
 let cleanup: (() => void) | undefined
 afterEach(() => cleanup?.())

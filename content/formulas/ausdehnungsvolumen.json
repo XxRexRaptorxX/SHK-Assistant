@@ -8,6 +8,9 @@
   "title": "Ausdehnungsvolumen des Heizwassers",
   "description": "Berechnet, um wie viel sich das Wasser einer Heizungsanlage beim Aufheizen ausdehnt. Die prozentuale Ausdehnung wird für die höchste Vorlauftemperatur aus einer Tabelle abgelesen (Herstellerunterlagen bzw. DIN EN 12828). Das Ergebnis ist die Eingabe für das Nennvolumen des Ausdehnungsgefäßes.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "VA",

@@ -17,6 +17,7 @@ export function formulaSearchDocuments(entries: readonly FormulaEntry[] = formul
       text: stripEmphasis(entry.description),
       path: formulaPath(entry.id),
       status: entry.status,
+      tags: entry.tags,
     })),
   )
 }

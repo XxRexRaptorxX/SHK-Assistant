@@ -8,6 +8,9 @@
   "title": "Volumenstrom aus Wärmeleistung",
   "description": "Berechnet den nötigen Volumenstrom eines Heizkreises aus Wärmeleistung, Dichte, spezifischer Wärmekapazität und Spreizung, z. B. für die Pumpenauslegung.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Qdot",

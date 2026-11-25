@@ -24,6 +24,7 @@ falschem Präfix, Verweisen auf nicht vorhandene IDs und unregistrierten Ordnern
 | `title`       | Name der Formel                                                        |
 | `description` | Kurze eigene Erklärung, wann und wofür                                  |
 | `category`    | Gruppe in der Liste, z. B. „Hydraulik“ (leer = „Allgemein“)            |
+| `tags`        | Themen-Tags wie bei den Tools (siehe dort), mindestens einer; bestimmen, in welchen Modi die Formel erscheint, und filtern die Suche |
 | `variables`   | Eingaben: `symbol`, `name`, `unit`, optional `label` (Anzeige, z. B. „ΔT“; Indizes mit Unterstrich, z. B. `p_amb` oder `ΔT_1`, keine Unicode-Indizes wie ₁), `units` (weitere wählbare Einheiten), `description`, `term` (siehe unten), `min`/`max`, `default` (Vorbelegung im Rechner, z. B. ein Faustwert), `locate` (`"altitude"`: Knopf „GPS“ neben dem Feld trägt die vom Gerät gemeldete Höhe ein, auf ganze Meter gerundet; nur bei Längeneinheiten, ohne Internet) |
 | `constants`   | Feste Werte: `symbol`, `name`, `value` mit Einheit, z. B. `"1.163 Wh/(kg*K)"` |
 | `result`      | Ergebnis: `symbol`, `name`, `unit`, optional `label`, `units`, `decimals` (Nachkommastellen, Standard 2; blieben damit weniger als zwei gültige Stellen, zeigt die App drei gültige Stellen), `min` (kleinstes sinnvolles Ergebnis) und `minMessage` (Hinweis, wenn es darunter liegt oder kein reelles Ergebnis entsteht) |
@@ -603,6 +604,24 @@ Knöpfen umbrechen; die Suche ignoriert sie.
 Passen bei Tabellen-Tools mehrere Zeilen zur Eingabe (z. B. Werte aus zwei Quellen), werden alle angezeigt. Quellen
 einzelner Zeilen gehören in `source` des Eintrags. Der Build
 prüft, dass jede Zeile einen Bereich und zu jeder Spalte einen Wert hat.
+
+## Modi (`modes/`, Präfix `mode.`)
+
+Arbeitsbereiche, die man in den Einstellungen wählt (mehrere gleichzeitig möglich). Ein gewählter Modus
+zeigt in den Listen von Tools und Formeln und in den Zahlen auf der Startseite nur die passenden Einträge;
+die Suche und die Favoriten zeigen immer alles. „Alles“ (keine Auswahl) ist kein Eintrag, sondern Standard.
+
+| Feld      | Inhalt                                                                                     |
+|-----------|--------------------------------------------------------------------------------------------|
+| `title`   | Name in den Einstellungen, z. B. „Elektriker“                                               |
+| `order`   | Reihenfolge in den Einstellungen, aufsteigend                                               |
+| `tags`    | Themen-Tags (wie bei Tools): Tools und Formeln mit mindestens einem dieser Tags erscheinen  |
+| `include` | ids von Tools/Formeln, die zusätzlich erscheinen, auch ohne passenden Tag                    |
+| `exclude` | ids von Tools/Formeln, die trotz passendem Tag fehlen                                       |
+
+Sind mehrere Modi gewählt, erscheint, was zu mindestens einem passt. Der Build prüft, dass die ids in
+`include`/`exclude` existieren und Tools oder Formeln sind; im public-Build fallen Verweise auf interne
+Einträge weg.
 
 ## Skizzen (`figures/`, Präfix `figure.`)
 

@@ -8,6 +8,10 @@
   "title": "Hydrostatischer Druck",
   "description": "Berechnet den Druck einer ruhenden Flüssigkeitssäule in der Tiefe h, z. B. den statischen Druck aus der Höhe einer Heizungsanlage. Der Luftdruck an der Oberfläche ist nicht enthalten.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "rho",

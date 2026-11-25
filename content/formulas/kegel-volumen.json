@@ -8,6 +8,9 @@
   "title": "Kegelvolumen",
   "description": "Berechnet das Volumen eines geraden Kreiskegels aus Grundkreis-Durchmesser und Höhe.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

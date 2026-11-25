@@ -8,6 +8,10 @@
   "title": "Wärmeleitung durch eine ebene Wand",
   "description": "Berechnet den Wärmestrom durch eine ebene Schicht aus Wärmeleitfähigkeit, Fläche, Temperaturdifferenz der beiden Oberflächen und Dicke.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung",
+    "planung"
+  ],
   "variables": [
     {
       "symbol": "lambda",

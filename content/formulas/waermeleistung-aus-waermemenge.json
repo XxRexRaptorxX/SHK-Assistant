@@ -8,6 +8,9 @@
   "title": "Wärmeleistung aus Wärmemenge",
   "description": "Berechnet die mittlere Wärmeleistung aus übertragener Wärmemenge und Zeit.",
   "category": "Thermodynamik",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "Q",

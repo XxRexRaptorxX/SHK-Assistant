@@ -8,6 +8,9 @@
   "title": "Kreisbogenlänge",
   "description": "Berechnet die Länge eines Kreisbogens aus Durchmesser und Mittelpunktswinkel, z. B. die gestreckte Länge eines Rohrbogens.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

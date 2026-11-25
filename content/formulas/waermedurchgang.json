@@ -8,6 +8,10 @@
   "title": "Wärmestrom durch ein Bauteil",
   "description": "Berechnet den Wärmestrom durch ein Bauteil wie Wand oder Fenster aus U-Wert, Fläche und Temperaturdifferenz zwischen innen und außen.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung",
+    "planung"
+  ],
   "variables": [
     {
       "symbol": "U",

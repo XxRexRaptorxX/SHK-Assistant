@@ -8,6 +8,9 @@
   "title": "Pumpe: Förderhöhe bei anderer Drehzahl",
   "description": "Affinitätsgesetz für Kreiselpumpen: Die Förderhöhe ändert sich mit dem Quadrat des Drehzahlverhältnisses. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie).",
   "category": "Hydraulik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "H1",

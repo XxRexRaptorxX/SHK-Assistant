@@ -8,6 +8,9 @@
   "title": "Pumpe: Volumenstrom bei anderer Drehzahl",
   "description": "Affinitätsgesetz für Kreiselpumpen: Der Volumenstrom ändert sich im gleichen Verhältnis wie die Drehzahl. Gilt in der gleichen Anlage (unveränderte Anlagenkennlinie).",
   "category": "Hydraulik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Vdot1",

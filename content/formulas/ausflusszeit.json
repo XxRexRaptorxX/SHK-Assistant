@@ -8,6 +8,10 @@
   "title": "Ausflusszeit",
   "description": "Berechnet die benötigte Zeit aus Volumen und konstantem Volumenstrom.",
   "category": "Hydraulik",
+  "tags": [
+    "sanitaer",
+    "trinkwasser"
+  ],
   "variables": [
     {
       "symbol": "V",

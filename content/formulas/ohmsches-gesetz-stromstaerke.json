@@ -8,6 +8,9 @@
   "title": "Ohmsches Gesetz: Stromstärke",
   "description": "Berechnet die Stromstärke aus Spannung und Widerstand.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "U",

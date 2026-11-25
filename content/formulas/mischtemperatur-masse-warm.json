@@ -8,6 +8,9 @@
   "title": "Masse des warmen Stoffes aus Mischtemperatur",
   "description": "Stellt die Mischtemperaturformel für zwei Mengen desselben Stoffes nach der Masse des warmen Anteils um.",
   "category": "Thermodynamik",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "mk",

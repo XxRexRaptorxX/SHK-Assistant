@@ -8,6 +8,11 @@
   "title": "Gesamtdruck",
   "description": "Addiert statischen und dynamischen Druck zur Bestimmung des Gesamtdrucks.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "lueftung"
+  ],
   "variables": [
     {
       "symbol": "pst",

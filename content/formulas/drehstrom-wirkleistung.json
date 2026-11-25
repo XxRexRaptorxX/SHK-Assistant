@@ -8,6 +8,9 @@
   "title": "Wirkleistung bei Drehstrom",
   "description": "Berechnet die Wirkleistung eines symmetrischen Drehstromsystems aus verketteter Spannung, Leiterstrom und Leistungsfaktor cos φ. Bei ohmscher Last (z. B. Heizstab) ist cos φ = 1.",
   "category": "Elektrotechnik",
+  "tags": [
+    "strom"
+  ],
   "variables": [
     {
       "symbol": "U",

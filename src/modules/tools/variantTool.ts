@@ -76,6 +76,7 @@ export function variantFormula(tool: VariantTool, variant: ToolVariant): Formula
     source: tool.source,
     verifiedBy: tool.verifiedBy,
     verifiedAt: tool.verifiedAt,
+    tags: tool.tags,
     ...formula,
   }
 }

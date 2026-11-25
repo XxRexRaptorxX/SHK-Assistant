@@ -59,6 +59,7 @@ import { SequenceLookup } from './SequenceLookup'
 import { SymbolLookup } from './SymbolLookup'
 import { TableLookup } from './TableLookup'
 import { TopicTags } from '../../components/TopicTags'
+import { HideButton } from '../../hidden/HideButton'
 import { ValveSurvey } from './ValveSurvey'
 import { VariantCalculator } from './VariantCalculator'
 import { WireColorLookup } from './WireColorLookup'
@@ -78,7 +79,12 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
       entry={tool}
       title={tool.title}
       back={BACK}
-      actions={<FavoriteButton id={tool.id} title={tool.title} />}
+      actions={
+        <>
+          <HideButton id={tool.id} title={tool.title} tags={tool.tags} />
+          <FavoriteButton id={tool.id} title={tool.title} />
+        </>
+      }
       meta={<TopicTags tags={tool.tags} />}
     >
       <RichText text={tool.description} />

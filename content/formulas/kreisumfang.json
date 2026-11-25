@@ -8,6 +8,9 @@
   "title": "Kreisumfang",
   "description": "Berechnet den Umfang eines Kreises aus dem Durchmesser.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "d",

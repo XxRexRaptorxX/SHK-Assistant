@@ -8,6 +8,9 @@
   "title": "Mittlere logarithmische Temperaturdifferenz",
   "description": "Berechnet die mittlere Temperaturdifferenz eines Wärmetauschers aus den Temperaturdifferenzen an beiden Enden. Beide Werte müssen größer als null und verschieden sein.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "dT1",

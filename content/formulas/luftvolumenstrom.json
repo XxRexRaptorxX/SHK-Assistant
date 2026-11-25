@@ -8,6 +8,10 @@
   "title": "Luftvolumenstrom aus Luftwechsel",
   "description": "Berechnet den nötigen Luftvolumenstrom aus gewünschter Luftwechselzahl und Raumvolumen.",
   "category": "Lüftung",
+  "tags": [
+    "lueftung",
+    "klima"
+  ],
   "variables": [
     {
       "symbol": "n",

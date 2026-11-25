@@ -8,6 +8,9 @@
   "title": "Vordruck Membran-Ausdehnungsgefäß",
   "description": "Berechnet den Vordruck eines Ausdehnungsgefäßes überschlägig aus dem statischen Druck der Wassersäule über dem Gefäß und einem Zuschlag. Der Zuschlag ist mit 0,3 bar vorbelegt und kann angepasst werden. Bei Vorlauftemperaturen über 100 °C kommt der Dampfdruck hinzu. Maßgeblich sind DIN EN 12828 und die Herstellerangaben.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "h",

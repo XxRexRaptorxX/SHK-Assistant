@@ -1,6 +1,7 @@
 import { z } from 'zod'
 // Wird auch von vite.config.ts geladen: Importe mit Dateiendung .ts.
 import { defineCollection, defineEntrySchema } from '../../content/schema/base.ts'
+import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 import { FIGURE_ID_PREFIX } from '../figures/constants.ts'
 import { FORMULA_ID_PREFIX } from './constants.ts'
 import { checkFormula } from './engine.ts'
@@ -146,6 +147,8 @@ const rearrangementSchema = z
 
 export const formulaEntrySchema = defineEntrySchema({
   ...formulaShape,
+  /** Themen-Tags wie bei Tools; steuern u. a., in welchen Modi die Formel erscheint */
+  tags: topicTagsSchema,
   rearrangements: z.array(rearrangementSchema).optional(),
 }).superRefine(checkFormulaRequirements)
 

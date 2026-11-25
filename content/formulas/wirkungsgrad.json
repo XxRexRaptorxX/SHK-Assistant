@@ -8,6 +8,9 @@
   "title": "Wirkungsgrad",
   "description": "Berechnet den Wirkungsgrad als Verhältnis von abgegebener (genutzter) zu zugeführter Leistung, z. B. bei einem Wärmeerzeuger.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Pab",

@@ -30,6 +30,7 @@ const fixture: FormulaEntry = {
   title: 'Testfläche',
   description: 'Test',
   category: '',
+  tags: ['allgemein'],
   variables: [
     { symbol: 'l', name: 'Länge', unit: 'm', units: ['cm'], description: '' },
     { symbol: 'b', name: 'Breite', unit: 'm', units: [], description: '' },

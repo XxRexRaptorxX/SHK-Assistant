@@ -1,0 +1,27 @@
+{
+  "id": "mode.anlagenmechaniker-shk",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Anlagenmechaniker SHK",
+  "order": 10,
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "trinkwasser",
+    "abwasser",
+    "lueftung",
+    "solar",
+    "kundendienst",
+    "allgemein"
+  ],
+  "include": [
+    "tool.stundenzettel",
+    "tool.materialliste",
+    "tool.material-zurueck",
+    "tool.sinnbilder"
+  ],
+  "exclude": []
+}

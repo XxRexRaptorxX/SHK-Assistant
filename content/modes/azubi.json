@@ -1,0 +1,50 @@
+{
+  "id": "mode.azubi",
+  "visibility": "public",
+  "status": "draft",
+  "source": "",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "title": "Azubi",
+  "order": 50,
+  "tags": [
+    "heizung",
+    "sanitaer",
+    "trinkwasser",
+    "abwasser",
+    "lueftung",
+    "solar",
+    "strom",
+    "allgemein"
+  ],
+  "include": [
+    "tool.stundenzettel"
+  ],
+  "exclude": [
+    "tool.heizkostenvergleich",
+    "tool.aufmass-heizkoerper",
+    "tool.aufmass-thermostatventile",
+    "tool.heizlast",
+    "tool.heizraum",
+    "tool.brennstofflagerung",
+    "tool.abwasser-dimensionierung",
+    "tool.solar-auslegung",
+    "tool.solar-mag",
+    "tool.strangdimension-bad-luefter",
+    "tool.aufstellung-aussengeraet",
+    "tool.feuerungsautomat-startablauf",
+    "tool.gefahrgut-1000-punkte",
+    "formula.hydraulik.reynolds-zahl",
+    "formula.hydraulik.ventilautoritaet",
+    "formula.hydraulik.pumpe-affinitaet-foerderhoehe",
+    "formula.hydraulik.pumpe-affinitaet-leistung",
+    "formula.hydraulik.pumpe-affinitaet-volumenstrom",
+    "formula.heizungstechnik.logarithmische-temperaturdifferenz",
+    "formula.gastechnik.zustandszahl",
+    "formula.thermodynamik.u-wert-mehrschichtig",
+    "formula.thermodynamik.waermedurchgang",
+    "formula.thermodynamik.mischtemperatur-verschiedene-stoffe",
+    "formula.thermodynamik.differenz-spezifisches-volumen",
+    "formula.elektrotechnik.leiterwiderstand-erwaermung"
+  ]
+}

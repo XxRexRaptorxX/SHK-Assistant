@@ -8,6 +8,10 @@
   "title": "Längenausdehnung",
   "description": "Berechnet, um wie viel sich ein Bauteil wie ein Rohr beim Erwärmen verlängert. Der Längenausdehnungskoeffizient hängt vom Werkstoff ab.",
   "category": "Thermodynamik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "alpha",

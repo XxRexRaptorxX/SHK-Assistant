@@ -8,6 +8,7 @@
   "title": "Tangens: Gegenkathete aus Ankathete und Winkel",
   "description": "Im rechtwinkligen Dreieck gilt tan α = Gegenkathete ÷ Ankathete. Berechnet die Gegenkathete a aus der Ankathete b und dem Winkel α, z. B. den Höhenunterschied einer Leitung aus Länge und Neigungswinkel.",
   "category": "Geometrie",
+  "tags": ["allgemein"],
   "variables": [
     { "symbol": "b", "name": "Ankathete b", "term": "Rechtwinkliges Dreieck", "unit": "m", "min": 0 },
     { "symbol": "alpha", "label": "α", "name": "Winkel α", "term": "Winkel", "unit": "deg", "min": 0, "max": 90, "description": "Spitzer Winkel gegenüber der Kathete a" }

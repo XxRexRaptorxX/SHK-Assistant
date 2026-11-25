@@ -8,6 +8,10 @@
   "title": "Reynolds-Zahl im Rohr",
   "description": "Berechnet die Reynolds-Zahl einer Rohrströmung. Sie zeigt, ob die Strömung laminar oder turbulent ist, und wird für die Rohrreibungszahl gebraucht.",
   "category": "Hydraulik",
+  "tags": [
+    "heizung",
+    "sanitaer"
+  ],
   "variables": [
     {
       "symbol": "v",

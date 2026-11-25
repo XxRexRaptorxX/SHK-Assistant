@@ -8,6 +8,10 @@
   "title": "Luftzahl λ aus dem O₂-Gehalt",
   "description": "Berechnet die Luftzahl (Verbrennungsluftverhältnis) näherungsweise aus dem gemessenen Sauerstoffgehalt im trockenen Abgas. λ = 1 bedeutet stöchiometrische Verbrennung, größere Werte Luftüberschuss.",
   "category": "Abgastechnik",
+  "tags": [
+    "heizung",
+    "kundendienst"
+  ],
   "variables": [
     {
       "symbol": "O2",

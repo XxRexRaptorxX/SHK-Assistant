@@ -8,6 +8,9 @@
   "title": "Kreisringfläche",
   "description": "Berechnet die Fläche eines Kreisrings aus Außen- und Innendurchmesser, z. B. den Wandquerschnitt eines Rohrs.",
   "category": "Geometrie",
+  "tags": [
+    "allgemein"
+  ],
   "variables": [
     {
       "symbol": "D",

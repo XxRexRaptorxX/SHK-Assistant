@@ -8,6 +8,9 @@
   "title": "Nennvolumen Membran-Ausdehnungsgefäß",
   "description": "Berechnet das erforderliche Nennvolumen eines Membran-Ausdehnungsgefäßes (MAG) für geschlossene Heizungsanlagen aus Ausdehnungsvolumen, Wasservorlage, Enddruck und Vordruck. Die Drücke werden als Überdruck eingegeben; der Zuschlag von 1 bar rechnet sie in Absolutdruck um. Gibt es das Gefäß nicht in dieser Größe, wird das nächstgrößere gewählt. Maßgeblich sind DIN EN 12828 und die Unterlagen des Gefäßherstellers.",
   "category": "Heizungstechnik",
+  "tags": [
+    "heizung"
+  ],
   "variables": [
     {
       "symbol": "Ve",
