@@ -1,10 +1,10 @@
 {
   "id": "mode.anlagenmechaniker-shk",
   "visibility": "public",
-  "status": "draft",
-  "source": "",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Zuordnung vom Inhaber geprüft am 25.11.2026",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-11-25",
   "title": "Anlagenmechaniker SHK",
   "order": 10,
   "tags": [

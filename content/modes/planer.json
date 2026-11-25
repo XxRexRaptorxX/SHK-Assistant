@@ -1,10 +1,10 @@
 {
   "id": "mode.planer",
   "visibility": "public",
-  "status": "draft",
-  "source": "",
-  "verifiedBy": "",
-  "verifiedAt": "",
+  "status": "verified",
+  "source": "Zuordnung vom Inhaber geprüft am 25.11.2026",
+  "verifiedBy": "RR",
+  "verifiedAt": "2026-11-25",
   "title": "Planer",
   "order": 90,
   "tags": [
