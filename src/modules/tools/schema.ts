@@ -34,6 +34,7 @@ import { checkVariantTool, variantReferences, variantToolSchema, type VariantToo
 import { checkWireColorTool, wireColorToolSchema, type WireColorTool } from './wireColorTool.ts'
 import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 import { checkWorkSafetyTool, workSafetyReferences, workSafetyToolSchema, type WorkSafetyTool } from './workSafetyTool.ts'
+import { checkChimneySweepTool, chimneySweepToolSchema, type ChimneySweepTool } from './chimneySweepTool.ts'
 
 // Tools sind Rechenhelfer für die Praxis. Zwei Arten:
 // - Formel-Tools (ohne "kind"): Aufbau und Prüfung wie bei den Formeln.
@@ -82,6 +83,8 @@ import { checkWorkSafetyTool, workSafetyReferences, workSafetyToolSchema, type W
 //   Volumenstrom bzw. Rauminhalt im Verbrennungsluftverbund ausrechnen und prüfen (siehe combustionAirTool.ts).
 // - Arbeitsschutz-Tools ("kind": "workSafety"): Tätigkeiten wählen, Schutzausrüstung, Prüfliste vor Arbeitsbeginn und
 //   Vorgaben je Tätigkeit mit Fundstelle; Fragen blenden bedingte Vorgaben ein oder aus (siehe workSafetyTool.ts).
+// - Bezirksschornsteinfeger-Tools ("kind": "chimneySweepFinder"): Adresse oder GPS, Links zu den Suchportalen des
+//   Bundeslands mit übergebener Adresse (siehe chimneySweepTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -255,6 +258,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   pressureSwitchToolSchema,
   combustionAirToolSchema,
   workSafetyToolSchema,
+  chimneySweepToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -296,7 +300,8 @@ export type ToolEntry =
   | PressureSwitchTool
   | CombustionAirTool
   | WorkSafetyTool
-export type { CombustionAirTool, FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool, PressureSwitchTool, WorkSafetyTool }
+  | ChimneySweepTool
+export type { ChimneySweepTool, CombustionAirTool, FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool, PressureSwitchTool, WorkSafetyTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -348,6 +353,7 @@ export const isFlueTypeTool = (entry: ToolEntry): entry is FlueTypeTool => entry
 export const isPressureSwitchTool = (entry: ToolEntry): entry is PressureSwitchTool => entry.kind === 'pressureSwitch'
 export const isCombustionAirTool = (entry: ToolEntry): entry is CombustionAirTool => entry.kind === 'combustionAir'
 export const isWorkSafetyTool = (entry: ToolEntry): entry is WorkSafetyTool => entry.kind === 'workSafety'
+export const isChimneySweepTool = (entry: ToolEntry): entry is ChimneySweepTool => entry.kind === 'chimneySweepFinder'
 export const isClassificationTool =(entry: ToolEntry): entry is ClassificationTool => entry.kind === 'classification'
 export const isFormulaTool =(entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
@@ -537,6 +543,8 @@ export const toolCollection = defineCollection({
                                                   ? checkCombustionAirTool(entry)
                                                 : isWorkSafetyTool(entry)
                                                   ? checkWorkSafetyTool(entry)
+                                                : isChimneySweepTool(entry)
+                                                  ? checkChimneySweepTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) => [
     ...relatedTools(entry),

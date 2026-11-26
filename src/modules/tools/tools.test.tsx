@@ -105,6 +105,7 @@ describe('Tools', () => {
       'Wärmepumpe: Bivalenzpunkt und Betriebsweise',
       'Wartungsintervalle',
       'Wasserinhalt einer Rohrleitung',
+      'Zuständigen Bezirksschornsteinfeger finden',
     ])
   })
 

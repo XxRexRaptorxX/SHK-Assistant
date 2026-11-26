@@ -1,0 +1,173 @@
+{
+  "id": "tool.bezirksschornsteinfeger",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Bayern: Landesinnungsverband für das Bayerische Kaminkehrerhandwerk, Startseite mit Link „Bezirksschornsteinfeger suchen“ auf den BayernAtlas, https://www.schornsteinfeger-liv-bayern.de; Übergabe der Adresse mit dem Parameter search im BayernAtlas, https://atlas.bayern.de; Landeshauptstadt München, Kaminkehrer – Zuständige Stelle, https://stadt.muenchen.de/service/info/kaminkehrer/1049919/n0/; Stadt Coburg, BayernPortal, https://www.bayernportal.de/dokumente/onlineverfahren/2518821090146; Landratsamt als Auskunftsstelle: Landkreis München, https://www.landkreis-muenchen.de/buergerservice/dienstleistung/kaminkehrerwesen/. Hessen: Landesinnungsverband Schornsteinfegerhandwerk Hessen, Schornsteinfegersuche auf der Startseite, https://schornsteinfeger-liv-hessen.de/. Berlin: Bezirksamt Neukölln, Schornsteinfegerwesen, Link zur Suche der Schornsteinfeger-Innung, https://www.berlin.de/ba-neukoelln/politik-und-verwaltung/aemter/stadtentwicklungsamt/bau-und-wohnungsaufsicht/schornsteinfegerwesen/ (die Seite der Innung ließ sich bei der Prüfung nicht laden); Senatsverwaltung, Schornsteinfeger: Aufgaben und Zuständigkeiten, https://www.berlin.de/sen/uvk/umwelt/luft/luftreinhaltung/schornsteinfeger/. Bremen: Bekanntmachung der bestellten bevollmächtigten Bezirksschornsteinfeger, https://www.inneres.bremen.de/sixcms/media.php/13/Bekanntmachung%2Bder%2Bbestellten%2BbBSF-%2BLand%2BBremen.pdf. Nordrhein-Westfalen: Stadt Münster, Ordnungsamt – Schornsteinfeger, https://www.stadt-muenster.de/ordnungsamt/schornsteinfeger; Stadt Köln, Schornsteinfeger*innen, https://www.stadt-koeln.de/artikel/73871/index.html. Baden-Württemberg: service-bw, Schornsteinfeger beauftragen (Landratsamt, in Stadtkreisen die Stadtverwaltung), https://www.heidelberg.de/,Lde/-/Verfahrensbeschreibung/schornsteinfeger-beauftragen/vbid2175. Mecklenburg-Vorpommern: Verwaltungsportal des Bundes, Leistung 99050005061000 (Landräte und Oberbürgermeister der kreisfreien Städte), https://verwaltung.bund.de/leistungsverzeichnis/EN/leistung/99050005061000/herausgeber/MV-110215786/region/13. Sachsen-Anhalt: Pressemitteilung des Landesverwaltungsamts vom 22.04.2026, https://presse.sachsen-anhalt.de/wp-content/uploads/pdf/lvwa_22_04_2026_Pressemitteilung_215-bezirksschornsteinfeger-fuer-sichere-waerme-im-zuhause.pdf. Schleswig-Holstein: Landesportal, Schornsteinfegerwesen, https://www.schleswig-holstein.de/DE/landesregierung/themen/wirtschaft/schornsteinfegerwesen. Alle abgerufen am 26.11.2026. Für die übrigen Länder wurde keine Online-Suche gefunden; die Angaben zur zuständigen Stelle sind dort noch offen. Noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "chimneySweepFinder",
+  "title": "Zuständigen Bezirksschornsteinfeger finden",
+  "summary": "Adresse eingeben oder per GPS ermitteln und direkt zur Kehrbezirks-Suche des Bundeslands springen.",
+  "description": "Wer ist hier der bevollmächtigte Bezirksschornsteinfeger? Eine bundesweite Suche gibt es nicht, die Kehrbezirke vergeben die Länder. Adresse eingeben oder den Standort verwenden: Das Tool öffnet die Suche des Bundeslands und übergibt die Adresse, wo das Portal es zulässt. Ohne Online-Suche steht da, wo man nachfragt.",
+  "category": "Organisation",
+  "tags": ["kundendienst", "planung"],
+  "keywords": ["Schornsteinfeger", "Bezirksschornsteinfeger", "bBSF", "Kaminkehrer", "Kehrbezirk", "Feuerstättenschau", "zuständig"],
+  "geocoderNote": "Für den Standort und das Erkennen des Bundeslands wird die Adresse bzw. die Position an OpenStreetMap (Nominatim) gesendet. Ohne Internet das Bundesland selbst wählen.",
+  "closingNote": "Kehrbezirke folgen nicht den Postleitzahlen und werden regelmäßig neu vergeben. Maßgeblich ist immer die Auskunft im Portal oder bei der Behörde. Das Tool zeigt selbst keine Schornsteinfeger an.",
+  "states": [
+    {
+      "code": "DE-BW",
+      "name": "Baden-Württemberg",
+      "authority": "Keine landesweite Online-Suche gefunden. Auskunft gibt das Landratsamt, in Stadtkreisen die Stadtverwaltung."
+    },
+    {
+      "code": "DE-BY",
+      "name": "Bayern",
+      "portals": [
+        {
+          "key": "muenchen",
+          "label": "Stadt München: Kaminkehrer-Suche",
+          "url": "https://stadt.muenchen.de/service/info/kaminkehrer/1049919/n0/",
+          "searchUrl": "https://stadt.muenchen.de/service/info/kaminkehrer/1049919/n0/?hitsperpage=12&cat=1049919&from=0&type=1064506&streetaddress={query}&mi%240_gdb24={query}",
+          "query": "{street} {houseNumber}",
+          "cities": ["München"],
+          "note": "Zeigt den zuständigen Kaminkehrer direkt an."
+        },
+        {
+          "key": "coburg",
+          "label": "Stadt Coburg: Kehrbezirke nach Straße",
+          "url": "https://www.bayernportal.de/dokumente/onlineverfahren/2518821090146",
+          "cities": ["Coburg"],
+          "note": "„Zum Online-Verfahren“ öffnen und die Straße auswählen."
+        },
+        {
+          "key": "bayernAtlas",
+          "label": "BayernAtlas: Kehrbezirke",
+          "url": "https://atlas.bayern.de/?c=677751,5422939&z=8&r=0&l=atkis,264bf43b-1083-4914-a6e8-f11e108bc60a&mid=2",
+          "searchUrl": "https://atlas.bayern.de/?c=677751,5422939&z=8&r=0&l=atkis,264bf43b-1083-4914-a6e8-f11e108bc60a&mid=2&search={query}",
+          "query": "{street} {houseNumber} {city}",
+          "note": "Im Atlas den passenden Suchtreffer antippen, dann innerhalb der blauen Grenze tippen: Die Info zeigt den Kehrbezirk."
+        }
+      ],
+      "authority": "Auskunft gibt auch das Landratsamt bzw. die kreisfreie Stadt."
+    },
+    {
+      "code": "DE-BE",
+      "name": "Berlin",
+      "portals": [
+        {
+          "key": "innung",
+          "label": "Schornsteinfeger-Innung Berlin: Suche",
+          "url": "http://www.schornsteinfeger-berlin.org/index.php?option=com_wrapper&view=wrapper&Itemid=81",
+          "query": "{street} {houseNumber}",
+          "note": "Suche nach Straße und Hausnummer, eine reine PLZ-Suche gibt es nicht. Die Seite ließ sich bei der Prüfung nicht laden."
+        },
+        {
+          "key": "bezirksamt",
+          "label": "Bezirksamt: Schornsteinfegerwesen",
+          "url": "https://www.berlin.de/ba-neukoelln/politik-und-verwaltung/aemter/stadtentwicklungsamt/bau-und-wohnungsaufsicht/schornsteinfegerwesen/",
+          "note": "Seite des Bezirksamts Neukölln mit Link zur Suche der Innung."
+        }
+      ],
+      "authority": "Auskunft gibt die Bau- und Wohnungsaufsicht des Bezirksamts."
+    },
+    {
+      "code": "DE-BB",
+      "name": "Brandenburg",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-HB",
+      "name": "Bremen",
+      "portals": [
+        {
+          "key": "bestellungen",
+          "label": "Liste der bestellten Bezirksschornsteinfeger (PDF)",
+          "url": "https://www.inneres.bremen.de/sixcms/media.php/13/Bekanntmachung%2Bder%2Bbestellten%2BbBSF-%2BLand%2BBremen.pdf",
+          "note": "Nennt Kehrbezirk und Schornsteinfeger, aber nicht, welche Straßen zu welchem Bezirk gehören."
+        }
+      ],
+      "todo": "TODO: Inhalt fehlt – Stelle für die Zuordnung Straße → Kehrbezirk nicht belegt."
+    },
+    {
+      "code": "DE-HH",
+      "name": "Hamburg",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-HE",
+      "name": "Hessen",
+      "portals": [
+        {
+          "key": "liv",
+          "label": "Landesinnungsverband Hessen: Schornsteinfegersuche",
+          "url": "https://schornsteinfeger-liv-hessen.de/",
+          "query": "{postcode}",
+          "note": "Die Adresse lässt sich nicht übergeben: oben rechts „Schornsteinfegersuche“ öffnen, die PLZ eintippen, „Suchen“ und beim Treffer „Details anzeigen“."
+        }
+      ]
+    },
+    {
+      "code": "DE-MV",
+      "name": "Mecklenburg-Vorpommern",
+      "authority": "Keine Online-Suche gefunden. Zuständig für die Kehrbezirke sind die Landkreise und kreisfreien Städte."
+    },
+    {
+      "code": "DE-NI",
+      "name": "Niedersachsen",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-NW",
+      "name": "Nordrhein-Westfalen",
+      "portals": [
+        {
+          "key": "muenster",
+          "label": "Stadt Münster: Straßenliste der Kehrbezirke",
+          "url": "https://www.stadt-muenster.de/ordnungsamt/schornsteinfeger/alphabetische-strassenliste",
+          "cities": ["Münster"]
+        },
+        {
+          "key": "koeln",
+          "label": "Stadt Köln: Wer ist zuständig?",
+          "url": "https://www.stadt-koeln.de/artikel/73871/index.html",
+          "cities": ["Köln"],
+          "note": "Abschnitt „Wer ist zuständig?“ aufklappen."
+        }
+      ],
+      "todo": "TODO: Inhalt fehlt – keine landesweite Online-Suche gefunden, Auskunftsstelle außerhalb von Münster und Köln nicht belegt."
+    },
+    {
+      "code": "DE-RP",
+      "name": "Rheinland-Pfalz",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-SL",
+      "name": "Saarland",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-SN",
+      "name": "Sachsen",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-ST",
+      "name": "Sachsen-Anhalt",
+      "authority": "Keine Online-Suche gefunden. Die Bezirksschornsteinfeger bestellt das Landesverwaltungsamt.",
+      "todo": "TODO: Inhalt fehlt – Link zur Übersicht der Kehrbezirke beim Landesverwaltungsamt."
+    },
+    {
+      "code": "DE-SH",
+      "name": "Schleswig-Holstein",
+      "authority": "Keine Online-Suche gefunden. Bestellungen werden im Amtsblatt für Schleswig-Holstein bekanntgemacht.",
+      "todo": "TODO: Inhalt fehlt – zuständige Auskunftsstelle nicht belegt."
+    },
+    {
+      "code": "DE-TH",
+      "name": "Thüringen",
+      "todo": "TODO: Inhalt fehlt – keine Online-Suche gefunden, zuständige Auskunftsstelle nicht belegt."
+    }
+  ]
+}

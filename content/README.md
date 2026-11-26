@@ -627,6 +627,21 @@ Thema. Unten stehen die Grundpflichten des Betriebs. Beispiel: UVV-Helfer. Felde
 Der Build prüft doppelte Schlüssel, unbekannte Quellen, Gruppen, Stücke, Fragen, Optionen und Tätigkeiten, ungenutzte
 Fragen, Stücke und Quellen, Gruppen ohne Tätigkeit und Tätigkeiten ohne Vorgaben und ohne TODO.
 
+**Bezirksschornsteinfeger-Tools** (`"kind": "chimneySweepFinder"`): Adresse eintippen oder per GPS ermitteln, das
+Bundesland wird gewählt oder über OpenStreetMap (Nominatim) erkannt. Das Tool zeigt keine Schornsteinfeger an, sondern
+verlinkt die Suchportale des Bundeslands und übergibt die Adresse, wo das Portal es zulässt. Beispiel: Zuständigen
+Bezirksschornsteinfeger finden. Felder: `title`, `summary`, `description`, `category`, `keywords`, `geocoderNote`
+(Hinweis, welche Daten an den Geocoder gehen), `closingNote` und `states`:
+
+- `states`: alle 16 Bundesländer, je `code` (ISO 3166-2, z. B. `DE-BY`), `name`, optional `portals`, `authority` (wo man
+  ohne Online-Suche nachfragt) und `todo` (beginnt mit „TODO: Inhalt fehlt“, bei `verified` nicht erlaubt).
+- `portals`: je `key`, `label`, `url` (Einstiegsseite), optional `searchUrl` mit `{query}` an der Stelle des Suchtexts,
+  `query` (Suchtext aus `{street}`, `{houseNumber}`, `{postcode}`, `{city}`; ohne `searchUrl` wird er zum Eintippen
+  angezeigt), `cities` (nur für diese Orte, sonst ganzes Bundesland) und `note`.
+
+Der Build prüft, dass jedes Bundesland genau einmal vorkommt, doppelte Portal-keys, unbekannte Platzhalter, `searchUrl`
+ohne `{query}` oder ohne `query` und Bundesländer ohne Portal, zuständige Stelle und TODO.
+
 **Heizkurven-Tools** (`"kind": "heatingCurve"`): Diagramm der Heizkurve mit Neigung, Niveau und Raumsoll, zuschaltbar
 Absenkbetrieb, Vorlauf höchstens/mindestens und Heizgrenze. Vergleicht mit einer Ausgangseinstellung (Vorlauf und
 geschätzte Raumtemperatur an den Vergleichspunkten) und rechnet aus einem Problem, einer Messung oder einem Wunsch-Vorlauf

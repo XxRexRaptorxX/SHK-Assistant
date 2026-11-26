@@ -58,6 +58,7 @@ import {
   isWireColorTool,
   isWorkHoursTool,
   isWorkSafetyTool,
+  isChimneySweepTool,
   type ToolEntry,
 } from './schema'
 import { sequenceKeywords } from './sequenceTool'
@@ -69,6 +70,7 @@ import { variantFormulas } from './variantTool'
 import { wireColorKeywords } from './wireColorTool'
 import { flueTypeKeywords } from './flueTypeTool'
 import { workSafetyKeywords } from './workSafetyTool'
+import { chimneySweepKeywords } from './chimneySweepTool'
 
 /** Alle Tools der aktuellen Edition, alphabetisch */
 export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.title.localeCompare(b.title, 'de'))
@@ -133,6 +135,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isFallProtectionTool(entry)) return fallProtectionKeywords(entry)
   if (isLoadSecuringTool(entry)) return loadSecuringKeywords(entry)
   if (isWorkSafetyTool(entry)) return workSafetyKeywords(entry)
+  if (isChimneySweepTool(entry)) return chimneySweepKeywords(entry)
   if (isHeatingCurveTool(entry)) return heatingCurveKeywords(entry)
   if (isHeatPumpTool(entry)) return heatPumpKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)

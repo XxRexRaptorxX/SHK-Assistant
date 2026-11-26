@@ -42,6 +42,7 @@ import {
   isWireColorTool,
   isWorkHoursTool,
   isWorkSafetyTool,
+  isChimneySweepTool,
   type ToolEntry,
 } from './schema'
 import { CableLookup } from './CableLookup'
@@ -78,6 +79,7 @@ import { VariantCalculator } from './VariantCalculator'
 import { WireColorLookup } from './WireColorLookup'
 import { WorkHours } from './WorkHours'
 import { WorkSafetyLookup } from './WorkSafetyLookup'
+import { ChimneySweepFinder } from './ChimneySweepFinder'
 
 const BACK = { to: modules.tools.path, label: modules.tools.title }
 
@@ -130,7 +132,9 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <LoadSecuringLookup tool={tool} />
       ) : isWorkSafetyTool(tool) ? (
         <WorkSafetyLookup tool={tool} entries={entries} />
-      ) : isHeatingCurveTool(tool) ? (
+      ) : isChimneySweepTool(tool) ? (
+        <ChimneySweepFinder tool={tool} />
+      ) :isHeatingCurveTool(tool) ? (
         <HeatingCurveSimulator tool={tool} />
       ) : isHeatPumpTool(tool) ? (
         <HeatPumpBivalence tool={tool} />
