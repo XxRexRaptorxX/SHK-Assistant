@@ -27,6 +27,8 @@ export const refrigerantToolSchema = defineEntrySchema({
       z.strictObject({
         /** Bezeichnung, z. B. „R32“ */
         name: z.string().trim().min(1),
+        /** Ausgeschriebener Name, z. B. „Propan“; leer = keiner (z. B. Gemische). Quelle im Feld source des Tools */
+        fullName: z.string().trim().default(''),
         /** Weitere Suchbegriffe */
         aliases: z.array(z.string().trim().min(1)).default([]),
         /** Druck je Tabellenzeile; null = die Quelle nennt keinen Wert (nur am Anfang und Ende) */
@@ -112,6 +114,10 @@ export function refrigerantKeywords(tool: RefrigerantTool): string[] {
     'Sättigungsdruck',
     'Sättigungstemperatur',
     tool.pressureName,
-    ...tool.refrigerants.flatMap((refrigerant) => [refrigerant.name, ...refrigerant.aliases]),
+    ...tool.refrigerants.flatMap((refrigerant) => [
+      refrigerant.name,
+      ...(refrigerant.fullName ? [refrigerant.fullName] : []),
+      ...refrigerant.aliases,
+    ]),
   ]
 }

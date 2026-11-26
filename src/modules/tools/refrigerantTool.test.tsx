@@ -51,6 +51,27 @@ describe('Dampfdrucktabelle Kältemittel', () => {
     expect(points('R404A').at(-1)).toEqual({ temperature: 64, pressure: 30.16 })
   })
 
+  it('nennt ausgeschriebene Namen nur dort, wo die Quellen sie nennen', () => {
+    const names = Object.fromEntries(tool.refrigerants.filter((r) => r.fullName).map((r) => [r.name, r.fullName]))
+    expect(names).toEqual({
+      R22: 'Chlordifluormethan',
+      R23: 'Trifluormethan',
+      R32: 'Difluormethan',
+      R134a: '1,1,1,2-Tetrafluorethan',
+      R290: 'Propan',
+      R600a: 'Isobutan',
+    })
+    // Gewählt: R-Nummer und grau der Name
+    const html = render('R290')
+    expect(html).toContain('R290</span><span class="ml-2 text-muted">Propan</span>')
+    // Ohne Namen nur die R-Nummer
+    expect(render('R410A')).not.toContain('ml-2 text-muted')
+  })
+
+  it('findet Kältemittel über den ausgeschriebenen Namen', () => {
+    expect(toolSearchDocuments().find((doc) => doc.id === tool.id)?.keywords).toContain('Isobutan')
+  })
+
   it('liest Tabellenwerte direkt und rechnet dazwischen linear', () => {
     const r134a = points('R134a')
     expect(lookupTable(r134a, 'temperature', 0)).toEqual({ kind: 'exact', value: 1.92, point: { temperature: 0, pressure: 1.92 } })

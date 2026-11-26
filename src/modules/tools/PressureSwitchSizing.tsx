@@ -1,6 +1,5 @@
 import { useId, useState } from 'react'
 import { RichText } from '../../components/RichText'
-import { fieldBase } from '../../components/surfaces'
 import { SelectionBar } from './ChoiceLookup'
 import { Help, Stepper } from './HeatingCurveSimulator'
 import {
@@ -13,6 +12,7 @@ import {
 } from './pressureSwitchTool'
 import { formatRounded, lastRefrigerant } from './RefrigerantLookup'
 import { tablePoints } from './refrigerantTool'
+import { RefrigerantSelect } from './RefrigerantSelect'
 import { isRefrigerantTool, type ToolEntry } from './schema'
 
 const card = 'rounded-2xl border-2 border-accent bg-surface p-4'
@@ -150,24 +150,13 @@ export function PressureSwitchSizing({
           <p className="mt-3 text-base text-muted">Die Dampfdrucktabelle ist in dieser Ausgabe nicht enthalten.</p>
         ) : (
           <>
-            <label htmlFor={`${idPrefix}-refrigerant`} className="mt-4 block font-semibold">
-              Kältemittel
-            </label>
-            <select
-              id={`${idPrefix}-refrigerant`}
+            <p className="mt-4 font-semibold">Kältemittel</p>
+            <RefrigerantSelect
+              label="Kältemittel"
+              refrigerants={pressureTable.refrigerants}
               value={refrigerant?.name ?? ''}
-              onChange={(event) => selectRefrigerant(event.target.value)}
-              className={`${fieldBase} mt-1 w-full max-w-xs`}
-            >
-              <option value="" disabled>
-                Kältemittel wählen …
-              </option>
-              {pressureTable.refrigerants.map((candidate) => (
-                <option key={candidate.name} value={candidate.name}>
-                  {candidate.name}
-                </option>
-              ))}
-            </select>
+              onChange={selectRefrigerant}
+            />
             <div className="mt-4">
               <Stepper {...tool.inputs.condensing} value={condensing} onChange={setCondensing} />
               <Help text={tool.inputs.condensing.text}>

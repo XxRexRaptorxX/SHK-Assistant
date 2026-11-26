@@ -4,6 +4,7 @@ import { fieldBase } from '../../components/surfaces'
 import { createStoredState } from '../../lib/storedState'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import { SelectionBar } from './ChoiceLookup'
+import { RefrigerantSelect } from './RefrigerantSelect'
 import { lookupTable, tablePoints, type Quantity, type RefrigerantTool, type TableLookup, type TablePoint } from './refrigerantTool'
 
 // Zuletzt gewähltes Kältemittel: Auf der Baustelle ist es meist dasselbe wie beim letzten Mal.
@@ -105,24 +106,8 @@ export function RefrigerantLookup({
           Nachschlagen
         </HeadingWithClear>
 
-        <label htmlFor={`${idPrefix}-refrigerant`} className="mt-3 block font-semibold">
-          Kältemittel
-        </label>
-        <select
-          id={`${idPrefix}-refrigerant`}
-          value={refrigerant?.name ?? ''}
-          onChange={(event) => select(event.target.value)}
-          className={`${fieldBase} mt-1 w-full max-w-xs`}
-        >
-          <option value="" disabled>
-            Kältemittel wählen …
-          </option>
-          {tool.refrigerants.map((candidate) => (
-            <option key={candidate.name} value={candidate.name}>
-              {candidate.name}
-            </option>
-          ))}
-        </select>
+        <p className="mt-3 font-semibold">Kältemittel</p>
+        <RefrigerantSelect label="Kältemittel" refrigerants={tool.refrigerants} value={refrigerant?.name ?? ''} onChange={select} />
 
         <SelectionBar bar={{ key: 'mode', name: 'Eingabe', options: MODES }} selected={mode} onSelect={(key) => setMode(key as Quantity)} />
 
