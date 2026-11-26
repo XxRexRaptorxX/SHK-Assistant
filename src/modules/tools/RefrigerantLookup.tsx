@@ -5,7 +5,17 @@ import { createStoredState } from '../../lib/storedState'
 import { formatNumber, parseDecimal } from '../../lib/number'
 import { SelectionBar } from './ChoiceLookup'
 import { RefrigerantSelect } from './RefrigerantSelect'
-import { lookupTable, tablePoints, type Quantity, type RefrigerantTool, type TableLookup, type TablePoint } from './refrigerantTool'
+import {
+  lookupTable,
+  refrigerantProperties,
+  tablePoints,
+  type Quantity,
+  type PropertyRow,
+  type Refrigerant,
+  type RefrigerantTool,
+  type TableLookup,
+  type TablePoint,
+} from './refrigerantTool'
 
 // Zuletzt gewähltes Kältemittel: Auf der Baustelle ist es meist dasselbe wie beim letzten Mal.
 export const REFRIGERANT_STORAGE_KEY = 'shk-refrigerant'
@@ -51,6 +61,96 @@ function calculate(points: readonly TablePoint[], given: Quantity, raw: string):
   if (raw.trim() === '') return { kind: 'empty' }
   const value = parseDecimal(raw)
   return value === undefined ? { kind: 'invalid' } : { kind: 'result', lookup: lookupTable(points, given, value) }
+}
+
+/** Eine Zeile; lange Erläuterungen öffnet der i-Knopf neben dem Wert */
+function PropertyItem({ row }: { row: PropertyRow }) {
+  const [open, setOpen] = useState(false)
+  const infoId = useId()
+  return (
+    <div className="py-2.5 sm:flex sm:gap-4">
+      <dt className="text-base text-muted sm:w-56 sm:shrink-0 sm:pt-0.5">{row.label}</dt>
+      <dd className="min-w-0 flex-1">
+        <div className="flex items-start justify-between gap-2">
+          <span className={`text-lg font-semibold ${row.warn || row.missing ? 'rounded-md bg-warn px-2 py-0.5 text-warn-ink' : ''}`}>
+            {row.value}
+          </span>
+          {row.info && (
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls={infoId}
+              aria-label={`Erläuterung zu „${row.label}“ ${open ? 'ausblenden' : 'anzeigen'}`}
+              onClick={() => setOpen(!open)}
+              className={`-my-2 flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-raised ${open ? 'bg-raised' : ''}`}
+            >
+              <span aria-hidden="true" className="flex size-7 items-center justify-center rounded-full border-2 border-current font-serif text-base font-bold italic">
+                i
+              </span>
+            </button>
+          )}
+        </div>
+        {row.detail && <span className="mt-1 block text-base text-muted">{row.detail}</span>}
+        {row.info && open && (
+          <p id={infoId} className="mt-2 rounded-xl bg-raised p-3 text-base">
+            {row.info}
+          </p>
+        )}
+      </dd>
+    </div>
+  )
+}
+
+function PropertyList({ rows }: { rows: readonly PropertyRow[] }) {
+  return (
+    <dl className="divide-y divide-edge">
+      {rows.map((row) => (
+        <PropertyItem key={row.label} row={row} />
+      ))}
+    </dl>
+  )
+}
+
+/** Wichtige Eigenschaften des gewählten Kältemittels; weitere Stoffdaten auf Knopfdruck */
+function RefrigerantProperties({ tool, refrigerant }: { tool: RefrigerantTool; refrigerant: Refrigerant }) {
+  const [expanded, setExpanded] = useState(false)
+  const extendedId = useId()
+  const { basic, extended } = refrigerantProperties(tool, refrigerant, formatNumber)
+  if (basic.length === 0 || !tool.properties) return null
+  return (
+    <div className="mt-4 rounded-2xl border border-edge bg-surface p-4" aria-label={`Eigenschaften von ${refrigerant.name}`} role="group">
+      <p className="font-semibold">Eigenschaften von {refrigerant.name}</p>
+      <div className="mt-1">
+        <PropertyList rows={basic} />
+      </div>
+      {extended.length > 0 && (
+        <>
+          <button
+            type="button"
+            aria-expanded={expanded}
+            aria-controls={extendedId}
+            onClick={() => setExpanded(!expanded)}
+            className="mt-2 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border-2 border-line px-4 font-semibold hover:bg-raised"
+          >
+            {expanded ? 'Weniger anzeigen' : 'Alle Stoffdaten anzeigen'}
+            <svg viewBox="0 0 24 24" aria-hidden="true" className={`size-6 shrink-0 transition-transform ${expanded ? 'rotate-180' : ''}`}>
+              <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          {expanded && (
+            <div id={extendedId} className="mt-2">
+              <PropertyList rows={extended} />
+            </div>
+          )}
+        </>
+      )}
+      {tool.properties.note && <p className="mt-3 text-base text-muted">{tool.properties.note}</p>}
+      <details className="mt-2">
+        <summary className="min-h-12 cursor-pointer py-3 text-base font-semibold">Quellen der Eigenschaften</summary>
+        <p className="text-sm break-words text-muted">{tool.properties.source}</p>
+      </details>
+    </div>
+  )
 }
 
 /** Kältemittel-Tool: Kältemittel wählen, Druck oder Temperatur eingeben, darunter die ganze Tabelle */
@@ -108,6 +208,7 @@ export function RefrigerantLookup({
 
         <p className="mt-3 font-semibold">Kältemittel</p>
         <RefrigerantSelect label="Kältemittel" refrigerants={tool.refrigerants} value={refrigerant?.name ?? ''} onChange={select} />
+        {refrigerant && <RefrigerantProperties tool={tool} refrigerant={refrigerant} />}
 
         <SelectionBar bar={{ key: 'mode', name: 'Eingabe', options: MODES }} selected={mode} onSelect={(key) => setMode(key as Quantity)} />
 

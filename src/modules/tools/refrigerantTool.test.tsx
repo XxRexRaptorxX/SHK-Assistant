@@ -2,7 +2,14 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter, Route, Routes } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { RefrigerantLookup } from './RefrigerantLookup'
-import { checkRefrigerantTool, lookupTable, refrigerantToolSchema, tablePoints, type RefrigerantTool } from './refrigerantTool'
+import {
+  checkRefrigerantTool,
+  lookupTable,
+  refrigerantProperties,
+  refrigerantToolSchema,
+  tablePoints,
+  type RefrigerantTool,
+} from './refrigerantTool'
 import { isRefrigerantTool } from './schema'
 import ToolPage from './ToolPage'
 import { toolEntries, toolSearchDocuments } from './tools'
@@ -66,6 +73,115 @@ describe('Dampfdrucktabelle Kältemittel', () => {
     expect(html).toContain('R290</span><span class="ml-2 text-muted">Propan</span>')
     // Ohne Namen nur die R-Nummer
     expect(render('R410A')).not.toContain('ml-2 text-muted')
+  })
+
+  it('übernimmt Sicherheitsgruppe, GWP, Explosionsgrenze und Molmasse aus den Quellen (Stichproben)', () => {
+    const find = (name: string) => tool.refrigerants.find((refrigerant) => refrigerant.name === name)!
+    // BAFU-Übersicht Stand Februar 2025
+    expect(find('R32')).toMatchObject({ safetyGroup: 'A2L', gwp: '675', odp: 0 })
+    expect(find('R22')).toMatchObject({ safetyGroup: 'A1', gwp: '1810', odp: 0.055 })
+    expect(find('R507')).toMatchObject({ safetyGroup: 'A1', gwp: '3985' })
+    expect(find('R1234yf')).toMatchObject({ safetyGroup: 'A2L', gwp: '<1' })
+    // WKO/ÖKKV Information Nr. 34f, Seite 2
+    expect(find('R290').lowerFlammabilityLimit).toBe(0.038)
+    expect(find('R600a').lowerFlammabilityLimit).toBe(0.043)
+    expect(find('R1234ze').lowerFlammabilityLimit).toBe(0.303)
+    // Wikipedia „List of refrigerants“ bzw. Honeywell (R452A)
+    expect(find('R410A').molarMass).toBe(72.6)
+    expect(find('R452A').molarMass).toBe(103.5)
+    // Danfoss Ref Tools (nur Lücken der übrigen Quellen)
+    expect(find('R450A').molarMass).toBe(108.7)
+    expect(find('R422D').oil).toBe('MO/AB/POE/PVE')
+    expect(find('R1234ze')).toMatchObject({ criticalTemperature: 109.4, criticalPressure: 36.35, autoignitionTemperature: 368 })
+    // Wikipedia-Wert bleibt, Danfoss füllt nur den fehlenden kritischen Druck
+    expect(find('R449A')).toMatchObject({ criticalTemperature: 81.5, criticalPressure: 45 })
+    // Alle brennbaren haben eine Explosionsgrenze, die nicht brennbaren keine
+    for (const refrigerant of tool.refrigerants) {
+      expect(refrigerant.lowerFlammabilityLimit !== undefined, refrigerant.name).toBe(!refrigerant.safetyGroup!.endsWith('1'))
+    }
+  })
+
+  it('zeigt die Eigenschaften des gewählten Kältemittels unter der Auswahl', () => {
+    const propane = render('R290')
+    expect(propane).toContain('Eigenschaften von R290')
+    expect(propane).toContain('A3')
+    expect(propane).toContain('Stärker brennbar')
+    expect(propane).toContain('Klasse 3')
+    expect(propane).toContain('Geringere Giftigkeit')
+    expect(propane).toContain('0,038 kg/m³')
+    expect(propane).toContain('1,5-mal so schwer wie Luft')
+    expect(propane).toContain('Molmasse 44,1 g/mol, Luft 28,9 g/mol')
+    expect(propane.indexOf('Eigenschaften von R290')).toBeLessThan(propane.indexOf('→ Temperatur'))
+    // Erweiterte Stoffdaten erst auf Knopfdruck
+    expect(propane).toContain('aria-expanded="false"')
+    expect(propane).toContain('Alle Stoffdaten anzeigen')
+    expect(propane).not.toContain('Kritische Temperatur')
+
+    const r410a = render('R410A')
+    expect(r410a).toContain('Nicht brennbar (keine Flammenausbreitung)')
+    expect(r410a).toContain('Keine, nicht brennbar')
+    expect(r410a).toContain('Nachfüllen ab 2032 eingeschränkt')
+    expect(r410a).toContain('Beschränkungen (EU)')
+    expect(r410a).not.toContain('Verboten (EU)')
+
+    // Lange Erläuterung erst über den i-Knopf
+    expect(r410a).not.toContain('Art. 13 Abs. 5')
+    expect(r410a).toContain('Erläuterung zu „Beschränkungen (EU)“ anzeigen')
+    const r22 = refrigerantProperties(tool, tool.refrigerants.find((refrigerant) => refrigerant.name === 'R22')!, String).basic
+    expect(r22.find((row) => row.label === 'Beschränkungen (EU)')).toMatchObject({
+      value: 'Verboten, auch das Nachfüllen',
+      warn: true,
+      info: expect.stringContaining('Art. 3 Nr. 6'),
+    })
+    expect(render('R450A')).toContain('3,8-mal so schwer wie Luft')
+    expect(render(undefined)).not.toContain('Eigenschaften von')
+  })
+
+  it('ordnet Verbot und Nachfüllen nach Verordnung und GWP-Schwelle ein', () => {
+    const groupOf = (name: string) => tool.refrigerants.find((refrigerant) => refrigerant.name === name)!.regulation
+    expect(groupOf('R22')).toBe('ods')
+    expect(['R290', 'R600a'].map(groupOf)).toEqual(['natural', 'natural'])
+    // GWP-Schwellen 2 500 und 750 aus Art. 13 der VO (EU) 2024/573
+    for (const refrigerant of tool.refrigerants) {
+      if (refrigerant.regulation === 'ods' || refrigerant.regulation === 'natural') continue
+      const gwp = refrigerant.gwp === '<1' ? 0 : Number(refrigerant.gwp)
+      const expected = gwp >= 2500 ? 'fgas2500' : gwp >= 750 ? 'fgas750' : 'fgasBelow750'
+      expect(refrigerant.regulation, refrigerant.name).toBe(expected)
+    }
+  })
+
+  it('liefert die erweiterten Stoffdaten mit Platzhalter für fehlende Werte', () => {
+    const rows = (name: string) =>
+      refrigerantProperties(tool, tool.refrigerants.find((refrigerant) => refrigerant.name === name)!, (value, decimals) =>
+        value.toFixed(decimals).replace('.', ','),
+      ).extended
+    const value = (name: string, label: string) => rows(name).find((row) => row.label === label)?.value
+    expect(value('R32', 'Chemische Formel')).toBe('CH₂F₂')
+    expect(value('R32', 'CAS-Nummer')).toBe('75-10-5')
+    expect(value('R32', 'Kritische Temperatur')).toBe('78,1 °C')
+    expect(value('R32', 'Kritischer Druck')).toBe('57,82 bar (absolut)')
+    expect(value('R32', 'Selbstentzündungstemperatur')).toBe('648 °C')
+    expect(value('R404A', 'Zusammensetzung')).toBe('R125/R143a/R134a (44/52/4 %)')
+    expect(value('R404A', 'CAS-Nummer')).toBe('Keine (Gemisch)')
+    expect(value('R404A', 'Siedepunkt bei 0 bar (Überdruck)')).toBe('−46,6 °C (Siedepunkt) / −45,8 °C (Taupunkt)'.replace(/−/g, '-'))
+    expect(value('R290', 'Tripelpunkt')).toBe('-187,7 °C')
+    expect(value('R290', 'Öl')).toBe('MO/AB')
+    // Auch Danfoss nennt keinen Wert: bleibt offen
+    expect(value('R410A', 'Tripelpunkt')).toBe('TODO: Inhalt fehlt')
+  })
+
+  it('verlangt bei gesetzten Eigenschaften eine Sicherheitsgruppe und keine Explosionsgrenze bei A1', () => {
+    const broken = {
+      ...tool,
+      refrigerants: [
+        { ...tool.refrigerants[0]!, safetyGroup: undefined },
+        { ...tool.refrigerants[1]!, lowerFlammabilityLimit: 0.1 },
+        ...tool.refrigerants.slice(2),
+      ],
+    }
+    const issues = checkRefrigerantTool(broken)
+    expect(issues).toContain('refrigerants (R22): safetyGroup fehlt (properties ist gesetzt)')
+    expect(issues).toContain('refrigerants (R23): Explosionsgrenze bei nicht brennbarem Kältemittel')
   })
 
   it('findet Kältemittel über den ausgeschriebenen Namen', () => {

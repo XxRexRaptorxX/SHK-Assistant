@@ -64,7 +64,7 @@ den Einbau, z. B. Rohrschellenabstände), „Wartung“ (Richtwerte für Messung
 oder zuständige Normen) und „Organisation“ (Büroarbeit rund um die Baustelle, z. B. Stundenzettel). Die Reihenfolge steht in `TOOL_CATEGORY_ORDER` (`src/modules/tools/tools.ts`), eine neue
 Kategorie gehört dort dazu.
 
-Auswahl- und Faktor-Tools dürfen `related` haben: ids anderer Tools, die am Seitenende unter „Passende Tools“
+Auswahl- und Faktor-Tools dürfen `related` haben: ids anderer Tools, die am Seitenende unter „Verwandte Tools“
 verlinkt sind (z. B. Abwasser Leitungsführung ↔ Abwasser Belüftung von Anschlussleitungen). Der Build prüft, dass es sie gibt;
 Verweise gehen in beide Richtungen nur, wenn beide Einträge sie nennen.
 
@@ -325,7 +325,22 @@ keinen Wert. Das zuletzt gewählte Kältemittel bleibt auf dem Gerät gespeicher
 - `tableNote`: Hinweis der Quelle zu den Werten (z. B. gerundet, Taupunkt); steht unter dem Ergebnis.
 - `temperatures`: Temperaturen der Tabellenzeilen in °C, aufsteigend.
 - `refrigerants`: je `name` (z. B. „R32“), optional `aliases` (Suchbegriffe) und `pressures`: ein Druck je Zeile von
-  `temperatures`, `null`, wo die Quelle keinen Wert nennt (nur am Anfang und Ende).
+  `temperatures`, `null`, wo die Quelle keinen Wert nennt (nur am Anfang und Ende). Für den Eigenschaften-Block außerdem
+  `safetyGroup` (z. B. „A2L“), `gwp` (Text, z. B. „<1“), `odp`, `molarMass` in g/mol (`null` = Wert fehlt, wird als
+  „TODO: Inhalt fehlt“ angezeigt) und `lowerFlammabilityLimit` (untere Explosionsgrenze in kg/m³, nur bei brennbaren).
+  Auf Knopfdruck („Alle Stoffdaten anzeigen“) außerdem `class`, `formula` (Summenformel oder bei Gemischen die
+  Zusammensetzung), `cas` (fehlt bei Gemischen), `oil`, `boilingPoint` (°C bei Normaldruck; bei Gemischen
+  `[Siedepunkt, Taupunkt]`), `criticalTemperature` (°C), `criticalPressure` (bar absolut), `triplePoint` (°C) und
+  `autoignitionTemperature` (°C). `null` = Wert fehlt noch („TODO: Inhalt fehlt“), ein fehlendes Feld blendet die Zeile aus.
+  `regulation` verweist auf einen Eintrag in `properties.regulations`.
+- `properties` (optional): Eigenschaften-Block unter der Kältemittel-Auswahl. `source` (Quellen aller Eigenschaften),
+  `airMolarMass` (Molmasse trockener Luft; „schwerer als Luft“ wird aus dem Verhältnis der Molmassen gerechnet),
+  `toxicity` und `flammability` (Bedeutung von Buchstabe und Klasse der Sicherheitsgruppe), `regulations` (je Schlüssel
+  `summary` als Kurzfassung der Zeile „Beschränkungen (EU)“, `banned`/`banDetail` und `refill`/`refillDetail`:
+  Kurzantwort und Erläuterung mit Fundstelle; die Erläuterungen öffnet ein i-Knopf neben der Kurzfassung, hervorgehoben wird,
+  wenn `banned` nicht „Nein“ oder `refill` nicht „Ja“ ist) und `note`. Ist `properties`
+  gesetzt, prüft der Build, dass jedes Kältemittel eine Sicherheitsgruppe mit erklärter Bedeutung hat und nicht brennbare
+  (Klasse 1) keine Explosionsgrenze.
 
 Die Werte werden unverändert aus der Quelle übernommen, auch wenn ein Schritt auffällig ist. Der Build prüft doppelte
 Namen, die Zahl der Drücke, Lücken mitten in der Tabelle und dass der Druck mit der Temperatur steigt (sonst wäre die
