@@ -376,4 +376,19 @@ describe('Feste Anzeige-Einheiten und Auswahlwerte', () => {
     expect(siegert.variables.find((v) => v.symbol === 'O2')!.unitLabel).toBe('Vol.-%')
     expect(siegert.result!.unitLabel).toBe('%')
   })
+
+  it('bietet bei Brennwert/Heizwert die Faktoren Hs/Hi je Brennstoff zur Auswahl an', () => {
+    for (const id of ['formula.gastechnik.heizwert-aus-brennwert', 'formula.gastechnik.brennwert-aus-heizwert']) {
+      const formula = formulaEntries.find((f) => f.id === id)!
+      const presets = presetsFor(formula.variables.find((v) => v.symbol === 'f')!)
+      expect(presets.map((p) => [p.name, p.value, p.draft])).toEqual(
+        expect.arrayContaining([
+          ['Erdgas', 1.11, false],
+          ['Heizöl', 1.06, true],
+          ['Flüssiggas', 1.09, true],
+          ['Holz', 1.08, true],
+        ]),
+      )
+    }
+  })
 })

@@ -1,0 +1,18 @@
+{
+  "id": "material.brennwert-heizwert-verhaeltnis",
+  "visibility": "public",
+  "status": "verified",
+  "source": "HeizkostenV § 9 Abs. 2: bei brennwertbezogener Abrechnung von Erdgas Faktor 1,11 zwischen Brennwert und Heizwert, https://www.gesetze-im-internet.de/heizkostenv/__9.html",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-26",
+  "quantities": [
+    "Verhältnis Brennwert zu Heizwert (Hs/Hi)"
+  ],
+  "unit": "",
+  "values": [
+    {
+      "name": "Erdgas",
+      "value": 1.11
+    }
+  ]
+}

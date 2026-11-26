@@ -1,0 +1,47 @@
+{
+  "id": "formula.gastechnik.heizwert-aus-brennwert",
+  "visibility": "public",
+  "status": "verified",
+  "source": "HeizkostenV § 9 Abs. 2: bei brennwertbezogener Abrechnung von Erdgas Faktor 1,11 zwischen Brennwert und Heizwert, https://www.gesetze-im-internet.de/heizkostenv/__9.html",
+  "verifiedBy": "AI",
+  "verifiedAt": "2026-11-26",
+  "title": "Heizwert aus Brennwert",
+  "description": "Rechnet den Brennwert Hs eines Brennstoffs in den Heizwert Hi um, z. B. die kWh von der Gasrechnung (Brennwert) in Heizwert-kWh. Der Umrechnungsfaktor Hs/Hi hängt vom Brennstoff ab: über die Auswahl am Feld wählen (Erdgas 1,11 nach HeizkostenV) oder selbst eintragen.",
+  "category": "Gastechnik",
+  "tags": [
+    "heizung"
+  ],
+  "variables": [
+    {
+      "symbol": "Hs",
+      "label": "H_s",
+      "name": "Brennwert",
+      "unit": "kWh/m^3",
+      "min": 0
+    },
+    {
+      "symbol": "f",
+      "name": "Verhältnis Brennwert zu Heizwert (Hs/Hi)",
+      "unit": "",
+      "min": 1
+    }
+  ],
+  "constants": [],
+  "result": {
+    "symbol": "Hi",
+    "label": "H_i",
+    "name": "Heizwert",
+    "unit": "kWh/m^3",
+    "decimals": 2
+  },
+  "expression": "Hs / f",
+  "examples": [
+    {
+      "inputs": {
+        "Hs": 11.1,
+        "f": 1.11
+      },
+      "expected": 10
+    }
+  ]
+}

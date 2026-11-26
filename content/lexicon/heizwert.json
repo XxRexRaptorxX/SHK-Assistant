@@ -21,5 +21,9 @@
     "lexicon.brennwert",
     "lexicon.brennwerttechnik",
     "lexicon.brennstoff"
+  ],
+  "formulas": [
+    "formula.gastechnik.heizwert-aus-brennwert",
+    "formula.gastechnik.brennwert-aus-heizwert"
   ]
 }

@@ -22,6 +22,8 @@
     "lexicon.brennwerttechnik"
   ],
   "formulas": [
-    "formula.gastechnik.energiemenge-gas"
+    "formula.gastechnik.energiemenge-gas",
+    "formula.gastechnik.heizwert-aus-brennwert",
+    "formula.gastechnik.brennwert-aus-heizwert"
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "id": "material.brennwert-heizwert-verhaeltnis-entwurf",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Utopia, „Heizwert und Brennwert: Wofür du die Größen kennen solltest“ (Umrechnungsfaktoren Heizwert → Brennwert), https://utopia.de/ratgeber/heizwert-und-brennwert-wofuer-du-die-groessen-kennen-solltest_395188/, abgerufen am 26.11.2026. TODO: gegen eine Fachquelle prüfen.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "quantities": [
+    "Verhältnis Brennwert zu Heizwert (Hs/Hi)"
+  ],
+  "unit": "",
+  "values": [
+    {
+      "name": "Heizöl",
+      "value": 1.06
+    },
+    {
+      "name": "Flüssiggas",
+      "value": 1.09
+    },
+    {
+      "name": "Holz",
+      "value": 1.08
+    }
+  ]
+}
