@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import { fieldBase } from '../../components/surfaces'
 import { SelectionBar } from './ChoiceLookup'
+import { FlueDiagram } from './FlueDiagram'
 import {
   formatType,
   lookupType,
@@ -111,6 +112,7 @@ export function TypeResult({
         </p>
       ))}
       <p className="mt-3 text-base">{group.description}</p>
+      <FlueDiagram code={group.code} digit={digit} title={formatType(group, digit, suffixes)} />
 
       <h4 className="mt-4 text-lg font-bold">Merkmale</h4>
       <dl className="mt-1 space-y-2">

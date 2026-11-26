@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter, Route, Routes } from 'react-router'
 import { describe, expect, it } from 'vitest'
+import { FLUE_LAYOUTS, FlueDiagram } from './FlueDiagram'
 import { FlueTypeLookup } from './FlueTypeLookup'
 import { allTypeCodes, checkFlueTypeTool, flueTypeToolSchema, formatType, lookupType, narrow, parseType, type FlueTypeTool } from './flueTypeTool'
 import { isFlueTypeTool } from './schema'
@@ -126,6 +127,41 @@ describe('Abgasanlagen Arten', () => {
     expect(issues).toContain('groups (C3): über die Fragen nicht eindeutig erreichbar (C3, C9)')
     expect(issues).toContain('suffixes (x): unbekannte Art "C99"')
     expect(issues).toContain('questions (cAir): Option "existingShaft" hat keine Art')
+  })
+
+  it('hat für jede Grundart ein Schema', () => {
+    expect(Object.keys(FLUE_LAYOUTS).sort()).toEqual(tool.groups.map((group) => group.code).sort())
+    for (const group of tool.groups) {
+      for (const fan of group.fans) {
+        const html = renderToStaticMarkup(<FlueDiagram code={group.code} digit={fan.digit} title={`${group.code}${fan.digit}`} />)
+        expect(html, `${group.code}${fan.digit}`).toContain(`aria-label="Schema ${group.code}${fan.digit}"`)
+      }
+    }
+  })
+
+  it('zeichnet das Gebläse nur, wenn die letzte Ziffer eines nennt', () => {
+    const fans = (code: string, digit: string) =>
+      renderToStaticMarkup(<FlueDiagram code={code} digit={digit} title="x" />).split('aria-label="Gebläse"').length - 1
+    expect(fans('B1', '1')).toBe(0)
+    expect(fans('B1', '2')).toBe(1)
+    expect(fans('B1', '4')).toBe(1)
+    expect(fans('C3', '3')).toBe(1)
+    // Modulgerät: ein Gebläse je Modul
+    expect(fans('C(11)', '2')).toBe(3)
+  })
+
+  it('zeichnet die Strömungssicherung genau bei B1, B4 und C7', () => {
+    const withDiverter = tool.groups
+      .filter((group) =>
+        renderToStaticMarkup(<FlueDiagram code={group.code} digit={group.fans[0]!.digit} title="x" />).includes('aria-label="Strömungssicherung"'),
+      )
+      .map((group) => group.code)
+    expect(withDiverter).toEqual(['B1', 'B4', 'C7'])
+  })
+
+  it('zeigt das Schema im Ergebnis', () => {
+    expect(renderType('C93x')).toContain('aria-label="Schema C93x"')
+    expect(renderType('C93x')).toContain('vorhandener Schacht als')
   })
 
   it('erscheint als Tool-Seite und in der Suche', () => {
