@@ -40,6 +40,7 @@ import {
   isPipeMaterialTool,
   isMetalTool,
   isGasSizingTool,
+  isFlueTypeTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -61,6 +62,7 @@ import { normalizeForSearch } from '../../lib/text'
 import { valveSurveyKeywords } from './valveSurveyTool'
 import { variantFormulas } from './variantTool'
 import { wireColorKeywords } from './wireColorTool'
+import { flueTypeKeywords } from './flueTypeTool'
 
 /** Alle Tools der aktuellen Edition, alphabetisch */
 export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.title.localeCompare(b.title, 'de'))
@@ -137,6 +139,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isPipeMaterialTool(entry)) return pipeMaterialKeywords(entry)
   if (isMetalTool(entry)) return metalKeywords(entry)
   if (isGasSizingTool(entry)) return gasSizingKeywords(entry)
+  if (isFlueTypeTool(entry)) return flueTypeKeywords(entry)
   if (isClassificationTool(entry)) return classificationKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [

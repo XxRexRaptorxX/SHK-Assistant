@@ -26,6 +26,7 @@ import {
   isPipeMaterialTool,
   isMetalTool,
   isGasSizingTool,
+  isFlueTypeTool,
   isPlacementTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
@@ -52,6 +53,7 @@ import { NormFinder } from './NormFinder'
 import { PipeMaterialLookup } from './PipeMaterialLookup'
 import { MetalLookup } from './MetalLookup'
 import { GasSizing } from './GasSizing'
+import { FlueTypeLookup } from './FlueTypeLookup'
 import { PlacementLookup } from './PlacementLookup'
 import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
@@ -108,6 +110,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <SequenceLookup tool={tool} />
       ) : isCableTool(tool) ? (
         <CableLookup tool={tool} />
+      ) : isFlueTypeTool(tool) ? (
+        <FlueTypeLookup tool={tool} />
       ) : isWireColorTool(tool) ? (
         <WireColorLookup tool={tool} />
       ) : isNormFinderTool(tool) ? (

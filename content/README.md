@@ -197,6 +197,26 @@ Teilstrecke im Tabellenverfahren der TRGI 2018 (Spalten wie im DVGW-Tabellenform
 - `checks.flowMonitor` (Belastungen → erwartete Baugröße) und `checks.pipe` (Rohrdruckgefälle einer Quelle mit
   erlaubter relativer Abweichung `tolerance`): Der Build prüft, dass das Tool sie trifft.
 
+**Abgas-Arten-Tools** (`"kind": "flueTypes"`) zeigen die Gasgeräte-Arten nach DIN EN 1749 in zwei Richtungen:
+Einbausituation antippen → Art (z. B. C33x), oder Art eingeben (C33x, C(10)3, C103, B11BS …) → Merkmale und
+Einbaukriterien. Felder: `title`, `summary`, `description`, `category`, `related` und:
+
+- `questions`: Fragen in Auswahlreihenfolge, je `key`, `label` und `options` (`key`, `label`, optional `note` und
+  `notes`: Einbaukriterien `{ "text", "source" }`, die für jede Art mit diesem Merkmal angezeigt werden). Eine Frage
+  erscheint nur, wenn die noch passenden Arten sich in ihr unterscheiden.
+- `fanDigits`: Bedeutung der letzten Ziffer (`digit` 1–4, `label`, optional `note`).
+- `groups`: Grundarten, je `code` (`A`, `B1`…`B5`, `C1`…`C9`, `C(10)`…), `name`, `description` (eigene Kurzbeschreibung),
+  `criteria` (Frage-`key` → Options-`key`), `fans` (mögliche Ziffern, je optional `note`, z. B. „in Gerätenormen
+  nicht üblich“), `notes` (Einbaukriterien mit Quelle) und `source`.
+- `suffixes`: Zusätze wie `x`, `AS`, `BS`, `P`, `D`, `R`, je `label`, `text`, `allowed` (Grundart wie `B1` oder volle
+  Art wie `C33`, für die der Zusatz belegt ist), optional `missingNote` (Hinweis, wenn der Zusatz möglich ist, aber
+  fehlt) und `source`. Ein Zusatz bei einer anderen Art erscheint als Warnung, nicht als Fehler.
+- `generalNotes`: Einbaukriterien, die bei jeder Art stehen.
+
+Das Tool leitet keine Art aus Regeln ab, es filtert nur die eingetragenen Arten. Der Build prüft unbekannte Fragen,
+Optionen und Ziffern, Optionen ohne Art, Zusätze mit unbekannter Art und dass jede Art über ihre Merkmale eindeutig
+erreichbar ist.
+
 **Metall-Tools** (`"kind": "metals"`) listen Metalle nach edel und unedel und zeigen zu jedem Paar
 der gewählten Metalle, wie sie miteinander reagieren. Felder: `title`, `summary`, `description`, `category`, `related` und:
 

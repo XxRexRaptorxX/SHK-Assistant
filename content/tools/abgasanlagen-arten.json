@@ -1,0 +1,562 @@
+{
+  "id": "tool.abgasanlagen-arten",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Arten A, B und C mit Gebläse-Ziffer: DIN EN 1749:2020-04 bzw. EN 1749:2020, Abschnitt 4 (Allgemeine Klassifizierung), S. 6–13 der englischen Fassung, Leseprobe https://cdn.standards.iteh.ai/samples/67717/ab3cc65bb79d40ae95835e42bad62451/SIST-EN-1749-2020.pdf; deutsche Leseprobe (Inhaltsverzeichnis, Anwendungsbereich) https://www.normsplash.com/Samples/DIN/363715165/DIN-EN-1749-2020-de.pdf. Zusätze AS, BS, D, P und R: CEN/TR 1749:2014, Abschnitte 3–5, S. 11–12, Leseprobe https://cdn.standards.iteh.ai/samples/41327/1b22bcbf75b54756bbd45b2fe794947b/SIST-TP-CEN-TR-1749-2014.pdf; in EN 1749:2020 laut Inhaltsverzeichnis weiter als Abschnitte 5–7 enthalten, deren Text in der Leseprobe fehlt. Zusatz x: Wikipedia, „Gasgerät“ (Stand 14.11.2025), https://de.wikipedia.org/wiki/Gasger%C3%A4t; Fritz Guther, „Aufstellung von raumluftunabhängigen Gasgeräten“, ikz-praxis 1/2001, S. 8, https://www.ikz.de/ikz-praxis-archiv/p0101/010108.php; WOLF, Planungsunterlage Abgassysteme, 4801968, 02/2023, Abschnitt 1.5.7, S. 11, https://msvcweuaimpimcoreprod.blob.core.windows.net/public/assets/Oxomi/WOLF/HeiztechnikLuft-Abgassysteme/4801968_202302_web.pdf. Einbaukriterien: Jörg Scheele, „Neue Technische Regeln für Gas-Installationen, Teil 7 – Gasgeräte auf europäisch“, SBZ 15/2008 (zur TRGI 2008), https://www.sbz-online.de/sanitaer/neue-technische-regeln-fuer-gas-installationen-teil-7-gasgeraete-auf-europaeisch; Ronny Gedamke, „Gerätearten nach TRGI, TRF und TRÖl“, SHK Profi 07/2013, https://www.shk-profi.de/artikel/shk_Geraetearten_nach_TRGI_TRF_und_TRoel-1788408.html; WOLF, Planungsunterlage Abgassysteme (siehe oben), Abschnitte 1.5.1–1.5.6, S. 7–10. Alle abgerufen am 26.11.2026.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "flueTypes",
+  "title": "Abgasanlagen Arten",
+  "summary": "Zeigt zur Einbausituation die Gasgeräte-Art (z. B. C33x) und zur Art die Einbaukriterien.",
+  "description": "Zwei Wege: **Einbausituation → Art** fragt Verbrennungsluft, Abgasführung, Gebläse und Zusätze ab und zeigt die Art nach DIN EN 1749. **Art → Einbaukriterien** liest eine Art wie C33x, C(10)3 oder B11BS und zeigt, was sie bedeutet. Welche Arten ein Gerät erlaubt, steht auf dem Typenschild und in der Anleitung des Herstellers; die Art ersetzt nicht die Prüfung nach TRGI, Landes-FeuVO und Herstellerangaben.",
+  "category": "Planung",
+  "tags": ["heizung", "planung"],
+  "questions": [
+    {
+      "key": "basis",
+      "label": "Verbrennungsluft und Abgas",
+      "options": [
+        {
+          "key": "a",
+          "label": "Ohne Abgasanlage",
+          "note": "Luft aus dem Raum, Abgas bleibt im Raum",
+          "notes": [
+            {
+              "text": "Art A mit Zusatz AS heißt nicht, dass weitere Absicherung entfallen kann: Zwangslüftung oder CO-Überwachung bleiben nötig.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            }
+          ]
+        },
+        {
+          "key": "b",
+          "label": "Raumluftabhängig",
+          "note": "Luft aus dem Raum, Abgas über Abgasanlage ins Freie",
+          "notes": [
+            {
+              "text": "Die Verbrennungsluftversorgung des Aufstellraums ist nachzuweisen (TRGI). Nach TRGI 2008: Dauerbetrieb 4 m³ Raum je kW Nennleistung im Verbrennungsluftverbund oder Öffnung ins Freie mit 150 cm² bis 50 kW Gesamtnennleistung; aus Wohnräumen nur bis 35 kW. Werte mit der gültigen TRGI abgleichen.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            },
+            {
+              "text": "In Räumen mit Ventilator, der Luft absaugt (z. B. innenliegendes Bad), nur wenn das Abgas über den Ventilator abgeführt wird oder ausreichend Außenluft nachströmt.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            }
+          ]
+        },
+        {
+          "key": "c",
+          "label": "Raumluftunabhängig",
+          "note": "Luft von außen, Verbrennung zum Raum hin geschlossen"
+        }
+      ]
+    },
+    {
+      "key": "bConnection",
+      "label": "Abgasführung",
+      "options": [
+        {
+          "key": "separate",
+          "label": "An Abgasanlage des Gebäudes",
+          "note": "Gerät ohne eigene Abgasleitung; Schornstein oder Abgasleitung separat zugelassen"
+        },
+        {
+          "key": "own",
+          "label": "Eigene Abgasleitung bis zur Mündung",
+          "note": "Abgasleitung mit Mündungsstück gehört zum Gerät"
+        },
+        {
+          "key": "concentric",
+          "label": "Konzentrisch an gemeinsame Abgasanlage",
+          "note": "Luft aus dem Raum durch Öffnungen im Anschlussrohr, Abgas in Naturzug-Abgasanlage"
+        }
+      ]
+    },
+    {
+      "key": "diverter",
+      "label": "Strömungssicherung",
+      "options": [
+        { "key": "yes", "label": "Mit Strömungssicherung" },
+        { "key": "no", "label": "Ohne Strömungssicherung" }
+      ]
+    },
+    {
+      "key": "cFlue",
+      "label": "Abgasführung",
+      "options": [
+        {
+          "key": "horizontal",
+          "label": "Waagerecht durch Wand oder Dach",
+          "note": "Luft und Abgas an einer Mündung"
+        },
+        {
+          "key": "vertical",
+          "label": "Senkrecht über Dach",
+          "note": "Abgasleitung des Geräts bis zur senkrechten Mündung"
+        },
+        {
+          "key": "separateTerminals",
+          "label": "Getrennte Mündungen",
+          "note": "Luft und Abgas an verschiedenen Stellen, auch in verschiedenen Druckbereichen"
+        },
+        {
+          "key": "naturalDraught",
+          "label": "In Abgasanlage im Unterdruck",
+          "note": "eigene oder gemeinsame Naturzug-Abgasanlage des Gebäudes",
+          "notes": [
+            {
+              "text": "Die Abgasanlage bzw. der gemeinsame Schacht gehört zum Gebäude, nicht zum Gerät.",
+              "source": "DIN EN 1749:2020, 4.4, Fußnoten"
+            }
+          ]
+        },
+        {
+          "key": "positivePressure",
+          "label": "Gemeinsame Abgasleitung im Überdruck",
+          "note": "mehrere Geräte, Druck in der Abgasleitung kann höher sein als in der Luftleitung",
+          "notes": [
+            {
+              "text": "Die gemeinsame Leitung gehört zum Gebäude, nicht zum Gerät.",
+              "source": "DIN EN 1749:2020, 4.4, Fußnoten"
+            }
+          ]
+        },
+        {
+          "key": "sharedShaft",
+          "label": "Ein Schacht für Luft und Abgas",
+          "note": "gemeinsamer Schacht für mehrere Geräte"
+        },
+        {
+          "key": "modules",
+          "label": "Modulgerät mit gemeinsamer Abgasleitung",
+          "note": "mehrere gleiche Module, als ein Gerät zertifiziert"
+        },
+        {
+          "key": "notSupplied",
+          "label": "Ohne Luft-Abgas-System geliefert",
+          "note": "Anschluss an ein separat zugelassenes System"
+        }
+      ]
+    },
+    {
+      "key": "cAir",
+      "label": "Verbrennungsluft",
+      "options": [
+        {
+          "key": "sameTerminal",
+          "label": "Über dieselbe Mündung",
+          "note": "konzentrisch oder nah beieinander, gleiche Windverhältnisse"
+        },
+        {
+          "key": "loft",
+          "label": "Vom Dachboden",
+          "note": "Strömungssicherung in der Abgasleitung über der Luftöffnung"
+        },
+        {
+          "key": "existingShaft",
+          "label": "Aus vorhandenem Schacht",
+          "note": "z. B. ehemaliger Schornstein"
+        },
+        {
+          "key": "existingCommonShaft",
+          "label": "Aus vorhandenem gemeinsamen Luftschacht",
+          "note": "für mehrere Geräte, z. B. ehemaliger Schornstein"
+        },
+        {
+          "key": "ownDuct",
+          "label": "Eigene Zuluftleitung von außen",
+          "note": "mit eigener Mündung"
+        },
+        {
+          "key": "commonDuct",
+          "label": "Gemeinsamer Luftschacht der Anlage",
+          "note": "Luft-Abgas-System für mehrere Geräte"
+        }
+      ]
+    }
+  ],
+  "fanDigits": [
+    { "digit": "1", "label": "Ohne Gebläse", "note": "Naturzug" },
+    { "digit": "2", "label": "Gebläse hinter dem Brenner", "note": "hinter Brennkammer bzw. Wärmetauscher" },
+    { "digit": "3", "label": "Gebläse vor dem Brenner", "note": "vor Brennkammer bzw. Wärmetauscher" },
+    { "digit": "4", "label": "Gebläse hinter Strömungssicherung", "note": "hinter Wärmetauscher und Strömungssicherung" }
+  ],
+  "groups": [
+    {
+      "code": "A",
+      "name": "Ohne Abgasanlage",
+      "description": "Gerät ist nicht an eine Abgasanlage oder Abgasabführung ins Freie angeschlossen. Luft kommt aus dem Aufstellraum, das Abgas bleibt im Raum (z. B. Gasherd).",
+      "criteria": { "basis": "a" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "source": "DIN EN 1749:2020, 4.2"
+    },
+    {
+      "code": "B1",
+      "name": "Mit Strömungssicherung",
+      "description": "Raumluftabhängiges Gerät mit Strömungssicherung. Wird ohne Abgasleitung verkauft und an eine separat zugelassene Abgasanlage angeschlossen.",
+      "criteria": { "basis": "b", "bConnection": "separate", "diverter": "yes" },
+      "fans": [
+        { "digit": "1" },
+        { "digit": "2", "note": "Gebläse vor der Strömungssicherung; für eine Naturzug-Abgasanlage ausgelegt." },
+        { "digit": "3", "note": "Für eine Naturzug-Abgasanlage ausgelegt." },
+        { "digit": "4" }
+      ],
+      "notes": [
+        {
+          "text": "In Aufenthaltsräumen unabhängig von der Nennleistung mit Abgasüberwachung (AS oder BS).",
+          "source": "SBZ 15/2008 zur TRGI 2008"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.3"
+    },
+    {
+      "code": "B2",
+      "name": "Ohne Strömungssicherung",
+      "description": "Raumluftabhängiges Gerät ohne Strömungssicherung. Wird ohne Abgasleitung verkauft und an eine separat zugelassene Abgasanlage angeschlossen.",
+      "criteria": { "basis": "b", "bConnection": "separate", "diverter": "no" },
+      "fans": [
+        { "digit": "1", "note": "In Gerätenormen meist nicht vorgesehen, nur in Sonderfällen, z. B. gasbeheizte Verbrennungsanlagen." },
+        { "digit": "2" },
+        { "digit": "3" }
+      ],
+      "notes": [
+        {
+          "text": "Mit Gebläse und nicht von Verbrennungsluft umspülter Abgasleitung (z. B. B23) braucht der Aufstellraum eine Frischluftöffnung ins Freie.",
+          "source": "SHK Profi 07/2013"
+        },
+        {
+          "text": "Beispiel WOLF: B23 = Abgasleitung im Schacht, Verbrennungsluft direkt am Gerät aus dem Raum.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.3"
+    },
+    {
+      "code": "B3",
+      "name": "Konzentrisch an gemeinsame Abgasanlage",
+      "description": "Raumluftabhängiges Gerät ohne Strömungssicherung, über ein konzentrisches Rohr an eine gemeinsame Naturzug-Abgasanlage angeschlossen. Alle Teile mit Abgas unter Überdruck sind von Verbrennungsluft umspült; die Luft strömt aus dem Raum durch Öffnungen im Rohr.",
+      "criteria": { "basis": "b", "bConnection": "concentric", "diverter": "no" },
+      "fans": [{ "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "B31 (ohne Gebläse) ist nicht vorgesehen.",
+          "source": "DIN EN 1749:2020, 4.3"
+        },
+        {
+          "text": "Beispiel WOLF: B33 = Abgasleitung im Schacht mit waagerechter konzentrischer Anschlussleitung, oder Anschluss an feuchteunempfindlichen Abgasschornstein (Berechnung nach EN 13384).",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.3"
+    },
+    {
+      "code": "B4",
+      "name": "Mit Strömungssicherung und eigener Abgasleitung",
+      "description": "Raumluftabhängiges Gerät mit Strömungssicherung und eigener Abgasleitung bis zur Mündung.",
+      "criteria": { "basis": "b", "bConnection": "own", "diverter": "yes" },
+      "fans": [
+        { "digit": "1", "note": "In Mobilheimen (EN 1949) „closed flue“ genannt." },
+        { "digit": "2", "note": "Gebläse vor der Strömungssicherung; für eine Naturzug-Abgasleitung ausgelegt." },
+        { "digit": "3", "note": "Für eine Naturzug-Abgasleitung ausgelegt." },
+        { "digit": "4" }
+      ],
+      "notes": [
+        {
+          "text": "In Aufenthaltsräumen unabhängig von der Nennleistung mit Abgasüberwachung (AS oder BS).",
+          "source": "SBZ 15/2008 zur TRGI 2008"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.3"
+    },
+    {
+      "code": "B5",
+      "name": "Ohne Strömungssicherung, eigene Abgasleitung",
+      "description": "Raumluftabhängiges Gerät ohne Strömungssicherung mit eigener Abgasleitung bis zur Mündung.",
+      "criteria": { "basis": "b", "bConnection": "own", "diverter": "no" },
+      "fans": [
+        { "digit": "1", "note": "In Gerätenormen meist nicht vorgesehen, nur in Sonderfällen, z. B. gasbeheizte Verbrennungsanlagen." },
+        { "digit": "2" },
+        { "digit": "3" }
+      ],
+      "notes": [
+        {
+          "text": "Steht das Gerät mit Erlaubnis des Herstellers im Freien, bleibt die Art gleich (B53 bleibt B53).",
+          "source": "DIN EN 1749:2020, 1, Fußnote 1"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.3"
+    },
+    {
+      "code": "C1",
+      "name": "Waagerechte Mündung",
+      "description": "Raumluftunabhängiges Gerät mit eigener Luft-Abgas-Leitung zu einer waagerechten Mündung, die Luft zuführt und Abgas abführt (konzentrisch oder so nah beieinander, dass gleiche Windverhältnisse herrschen).",
+      "criteria": { "basis": "c", "cFlue": "horizontal", "cAir": "sameTerminal" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Beispiel WOLF: C13x = waagerechte Dachdurchführung durch Schrägdach (Dachgaube bauseits); nicht zulässig für Öl-Geräte.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C2",
+      "name": "Gemeinsamer Schacht für Luft und Abgas",
+      "description": "Raumluftunabhängiges Gerät, mit zwei Leitungen an einen gemeinsamen Schacht für mehrere Geräte angeschlossen, der zugleich Luft zuführt und Abgas abführt.",
+      "criteria": { "basis": "c", "cFlue": "sharedShaft" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Veraltet: Die Art wird in künftigen Gerätenormen voraussichtlich nicht mehr verwendet. Der Schacht gehört zum Gebäude.",
+          "source": "DIN EN 1749:2020, 4.4, Fußnoten"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C3",
+      "name": "Senkrecht über Dach",
+      "description": "Raumluftunabhängiges Gerät mit eigener Luft-Abgas-Leitung zu einer senkrechten Mündung, die Luft zuführt und Abgas abführt (konzentrisch oder nah beieinander).",
+      "criteria": { "basis": "c", "cFlue": "vertical", "cAir": "sameTerminal" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "WOLF: Über Dach zulässig, wenn der Wärmeerzeuger im Dachgeschoss steht, in einem Raum, dessen Decke zugleich das Dach ist, oder wenn über der Decke nur die Dachkonstruktion liegt.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1"
+        },
+        {
+          "text": "WOLF: Liegt über der Decke nur die Dachkonstruktion und ist eine Feuerwiderstandsdauer vorgeschrieben, die Leitungen bis zur Dachhaut nichtbrennbar mit derselben Feuerwiderstandsdauer verkleiden; sonst in einem Schacht aus nichtbrennbarem, formbeständigem Baustoff oder metallenem Schutzrohr führen.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1"
+        },
+        {
+          "text": "WOLF: Überbrücken die Leitungen ohne vorhandenen Schacht Geschosse, außerhalb des Aufstellraums mit mindestens 90 Minuten Feuerwiderstandsdauer einhausen.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C4",
+      "name": "Luft-Abgas-System für mehrere Geräte",
+      "description": "Raumluftunabhängiges Gerät, mit zwei Leitungen an ein gemeinsames Naturzug-System (Luftschacht und Abgasschacht) für mehrere Geräte angeschlossen, das an einer Mündung Luft zuführt und Abgas abführt.",
+      "criteria": { "basis": "c", "cFlue": "naturalDraught", "cAir": "commonDuct" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Beispiel WOLF: C43x = Anschluss an einen feuchteunempfindlichen Luft-Abgas-Schornstein (LAS), höchstens 3 m Rohrlänge von Mitte Gerätebogen bis Anschluss; Berechnung nach EN 13384 durch den LAS-Hersteller.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C5",
+      "name": "Getrennte Mündungen",
+      "description": "Raumluftunabhängiges Gerät mit getrennten Leitungen zu getrennten Mündungen für Luft und Abgas. Die Mündungen dürfen in Bereichen mit unterschiedlichem Druck liegen.",
+      "criteria": { "basis": "c", "cFlue": "separateTerminals", "cAir": "ownDuct" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Beispiele WOLF: C53 = Abgasleitung im Schacht und Zuluftleitung durch die Außenwand; C53x auch als Abgasleitung an der Fassade mit Luftansaugung über eine Außenwandkonsole.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C6",
+      "name": "Ohne Luft-Abgas-System geliefert",
+      "description": "Raumluftunabhängiges Gerät, das ohne Luft-Abgas-System verkauft wird und an ein separat zugelassenes System angeschlossen wird. Eingebaut sieht es aus wie eine der anderen C-Arten, je nach Herstellerangabe.",
+      "criteria": { "basis": "c", "cFlue": "notSupplied" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C7",
+      "name": "Luft vom Dachboden",
+      "description": "Raumluftunabhängiges Gerät mit zwei senkrechten Leitungen: Luft aus dem Dachboden, Abgas über Dach. In der Abgasleitung sitzt oberhalb der Luftöffnung eine Strömungssicherung.",
+      "criteria": { "basis": "c", "cFlue": "vertical", "cAir": "loft" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Veraltet: Die Art wird in künftigen Gerätenormen voraussichtlich nicht mehr verwendet.",
+          "source": "DIN EN 1749:2020, 4.4, Fußnote 8"
+        },
+        {
+          "text": "In Deutschland gibt es dafür keine Aufstellregeln; die Art entspricht nicht der Musterfeuerungsverordnung und ist nur mit baurechtlicher Ausnahme möglich.",
+          "source": "Wikipedia „Gasgerät“"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C8",
+      "name": "Abgas in Unterdruck-Abgasanlage, Luft von außen",
+      "description": "Raumluftunabhängiges Gerät: Abgas über eine Leitung in eine eigene oder gemeinsame Naturzug-Abgasanlage (ohne Gebläse in der Anlage), Luft über eine zweite Leitung von einer Mündung außen am Gebäude.",
+      "criteria": { "basis": "c", "cFlue": "naturalDraught", "cAir": "ownDuct" },
+      "fans": [
+        { "digit": "1", "note": "In Gerätenormen meist nicht vorgesehen." },
+        { "digit": "2" },
+        { "digit": "3" }
+      ],
+      "notes": [
+        {
+          "text": "Beispiel WOLF: C83x = konzentrischer Anschluss an feuchteunempfindlichen Abgasschornstein, Verbrennungsluft durch die Außenwand; Berechnung nach EN 13384 durch den LAS-Hersteller.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C9",
+      "name": "Abgasleitung im vorhandenen Schacht",
+      "description": "Raumluftunabhängiges Gerät mit Abgasleitung zu einer senkrechten Mündung; die Luft kommt ganz oder teilweise durch einen vorhandenen senkrechten Schacht im Gebäude, z. B. einen ehemaligen Schornstein.",
+      "criteria": { "basis": "c", "cFlue": "vertical", "cAir": "existingShaft" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Der Schacht gehört zum Gebäude, nicht zum Gerät.",
+          "source": "DIN EN 1749:2020, 4.4, Fußnote 11"
+        },
+        {
+          "text": "WOLF: Schacht, an dem vorher Öl- oder Festbrennstoffkessel hingen, vom Schornsteinfeger staubfrei reinigen lassen (sonst Geruch im Aufstellraum); geht das nicht, getrennte Zuluft einsetzen.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C(10)",
+      "name": "Luft-Abgas-System im Überdruck",
+      "description": "Raumluftunabhängiges Gerät, mit zwei Leitungen an ein gemeinsames System (Luftschacht und Abgasschacht) für mehrere Geräte angeschlossen. Im gemeinsamen Abgasschacht kann der Druck höher sein als im gemeinsamen Luftschacht.",
+      "criteria": { "basis": "c", "cFlue": "positivePressure", "cAir": "commonDuct" },
+      "fans": [{ "digit": "2" }, { "digit": "3" }],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C(11)",
+      "name": "Modulgerät mit gemeinsamem Luft-Abgas-System",
+      "description": "Gerät aus zwei oder mehr gleichen Modulen mit gemeinsamer Abgasleitung und gemeinsamer Luftleitung zu einer Mündung (konzentrisch oder nah beieinander); ein Lufteinlass, ein Abgasauslass. In der Abgasleitung kann der Druck höher sein als in der Luftleitung.",
+      "criteria": { "basis": "c", "cFlue": "modules", "cAir": "sameTerminal" },
+      "fans": [{ "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Gilt als ein Gerät; jedes Modul arbeitet eigenständig mit Wärmetauscher, Brenner, Regel- und Sicherheitseinrichtungen. Geprüft und zertifiziert wie C1, C3 und C5.",
+          "source": "DIN EN 1749:2020, 4.4"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C(12)",
+      "name": "Gemeinsame Abgasleitung im Überdruck, Luft von außen",
+      "description": "Raumluftunabhängiges Gerät: Abgas über eine Leitung in eine gemeinsame Abgasleitung, Luft über eine zweite Leitung von einer eigenen Mündung außen. In der gemeinsamen Abgasleitung kann der Druck höher sein als in den einzelnen Luftleitungen.",
+      "criteria": { "basis": "c", "cFlue": "positivePressure", "cAir": "ownDuct" },
+      "fans": [{ "digit": "2" }, { "digit": "3" }],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C(13)",
+      "name": "Modulgerät, Luft je Modul von außen",
+      "description": "Gerät aus zwei oder mehr gleichen Modulen mit gemeinsamer Abgasleitung; jedes Modul hat eine eigene Luftleitung zu seiner Mündung. In der Abgasleitung kann der Druck höher sein als in den Luftleitungen.",
+      "criteria": { "basis": "c", "cFlue": "modules", "cAir": "ownDuct" },
+      "fans": [{ "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Gilt als ein Gerät; jedes Modul arbeitet eigenständig mit Wärmetauscher, Brenner, Regel- und Sicherheitseinrichtungen. Geprüft und zertifiziert wie C1, C3 und C5.",
+          "source": "DIN EN 1749:2020, 4.4"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C(14)",
+      "name": "Modulgerät, Luft aus vorhandenem Schacht",
+      "description": "Gerät aus zwei oder mehr gleichen Modulen mit gemeinsamer Abgasleitung; die Luft kommt über die Luftleitungen der Module aus einem gemeinsamen senkrechten Luftschacht, der ganz oder teilweise ein vorhandener Schacht ist (z. B. ehemaliger Schornstein). Ein Lufteinlass, ein Abgasauslass.",
+      "criteria": { "basis": "c", "cFlue": "modules", "cAir": "existingCommonShaft" },
+      "fans": [{ "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Gilt als ein Gerät; jedes Modul arbeitet eigenständig. Geprüft und zertifiziert wie C1, C3 und C5. Der Luftschacht gehört zum Gebäude.",
+          "source": "DIN EN 1749:2020, 4.4"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    },
+    {
+      "code": "C(15)",
+      "name": "Abgasleitung über Dach, Luft aus gemeinsamem Schacht",
+      "description": "Raumluftunabhängiges Gerät mit Abgasleitung zu einer senkrechten Mündung; die Luft kommt aus einem vorhandenen gemeinsamen senkrechten Luftschacht im Gebäude, z. B. einem ehemaligen Schornstein.",
+      "criteria": { "basis": "c", "cFlue": "vertical", "cAir": "existingCommonShaft" },
+      "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
+      "notes": [
+        {
+          "text": "Der Luftschacht gehört zum Gebäude, nicht zum Gerät.",
+          "source": "DIN EN 1749:2020, 4.4, Fußnote 15"
+        }
+      ],
+      "source": "DIN EN 1749:2020, 4.4"
+    }
+  ],
+  "suffixes": [
+    {
+      "key": "x",
+      "label": "Erhöhte Dichtheit",
+      "text": "Alle Teile des Abgaswegs, die unter Überdruck stehen, sind von Verbrennungsluft umspült oder erfüllen erhöhte Dichtheitsanforderungen. Nationale Kennzeichnung in Deutschland.",
+      "allowed": ["C12", "C13", "C32", "C33", "C42", "C43", "C52", "C53", "C62", "C63", "C82", "C83", "C92", "C93"],
+      "missingNote": {
+        "text": "Ohne x braucht der Aufstellraum eines C-Geräts mit Gebläse eine Lüftungsöffnung ins Freie von mindestens 150 cm² (TRGI 2008). Lüftergestützte C-Geräte ohne x möglichst vermeiden.",
+        "source": "SBZ 15/2008 zur TRGI 2008; ikz-praxis 1/2001"
+      },
+      "source": "Wikipedia „Gasgerät“ (C12x bis C62x); WOLF Planungsunterlage Abgassysteme 02/2023 (C13x, C33x, C43x, C53x, C63x, C83x, C93x); ikz-praxis 1/2001"
+    },
+    {
+      "key": "AS",
+      "label": "Raumluftüberwachung",
+      "text": "Mit Raumluftüberwachung (atmosphere sensing device), z. B. A1AS oder B11AS.",
+      "allowed": ["A", "B1", "B2", "B3", "B4", "B5"],
+      "source": "CEN/TR 1749:2014, 3"
+    },
+    {
+      "key": "BS",
+      "label": "Abgasüberwachung",
+      "text": "Mit Abgasüberwachung (clearance monitoring device), die auf eine verstopfte oder eingeengte Abgasanlage reagiert, z. B. B11BS.",
+      "allowed": ["B1", "B2", "B3", "B4", "B5"],
+      "source": "CEN/TR 1749:2014, 3"
+    },
+    {
+      "key": "P",
+      "label": "Abgasanlage im Überdruck",
+      "text": "Für eine Abgasanlage, die im Überdruck betrieben wird. Nur, wenn die vom Hersteller vorgegebene Abgasanlage nach seiner Anleitung im Überdruck arbeitet.",
+      "allowed": ["B22", "B23", "B52", "B53", "B14", "B44"],
+      "source": "CEN/TR 1749:2014, 4.2"
+    },
+    {
+      "key": "D",
+      "label": "Wäschetrockner",
+      "text": "Für eine flexible, nichtmetallische Leitung, die feuchte Luft und Abgas ins Freie führt. Derzeit nur bei gasbeheizten Wäschetrocknern.",
+      "allowed": ["B22", "B23"],
+      "source": "CEN/TR 1749:2014, 4.1"
+    },
+    {
+      "key": "R",
+      "label": "Auch Dachmündung",
+      "text": "C1-Gerät, das auch mit waagerechter Mündung auf dem Dach eingebaut werden kann, nicht nur an der Wand.",
+      "allowed": ["C11", "C12", "C13"],
+      "source": "CEN/TR 1749:2014, 5"
+    }
+  ],
+  "generalNotes": [
+    {
+      "text": "Welche Arten ein Gerät erlaubt, legt der Hersteller fest (Typenschild, Anleitung). Die Art im Einbau ergibt sich aus der tatsächlichen Ausführung vor Ort.",
+      "source": "SHK Profi 07/2013; DIN EN 1749:2020, 4.4 (C6)"
+    },
+    {
+      "text": "Lage der Mündung und Führung der Abgasleitung im Gebäude: DIN 18160 und DVGW G 600 (TRGI). Aufstellraum: TRGI und Feuerungsverordnung des Landes. Schacht: DIN 18160 und FeuVO, abhängig von Gebäudeklasse und Betriebsweise.",
+      "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.3–1.5.6"
+    },
+    {
+      "text": "Fragen zu Revisionsöffnungen und Zuluftöffnungen mit dem bevollmächtigten Bezirksschornsteinfeger klären.",
+      "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1"
+    }
+  ]
+}

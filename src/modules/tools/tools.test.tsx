@@ -53,6 +53,7 @@ describe('Tools', () => {
     })
     expect(length).toBeCloseTo(6 * Math.PI, 6)
     expect(toolEntries.map((entry) => entry.title)).toEqual([
+      'Abgasanlagen Arten',
       'Abgaswerte je Brennerart',
       'Absturzsicherung: Gerüst, Seitenschutz, Netze',
       'Abwasser Belüftung von Anschlussleitungen',

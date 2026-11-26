@@ -18,6 +18,7 @@ import { materialListToolSchema, type MaterialListTool } from './materialListToo
 import { checkPipeMaterialTool, pipeMaterialToolSchema, type PipeMaterialTool } from './pipeMaterialTool.ts'
 import { checkMetalTool, metalToolSchema, type MetalTool } from './metalTool.ts'
 import { checkGasSizingTool, gasSizingToolSchema, type GasSizingTool } from './gasSizingTool.ts'
+import { checkFlueTypeTool, flueTypeToolSchema, type FlueTypeTool } from './flueTypeTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
@@ -70,6 +71,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 //   und Deckungsanteil (siehe heatPumpTool.ts).
 // - Gasleitungs-Tools ("kind": "gasSizing"): Gasströmungswächter auswählen, Druckverlust der Teilstrecken im
 //   Tabellenverfahren nach TRGI 2018 mit den Rechenformeln aus G 617 (siehe gasSizingTool.ts).
+// - Abgas-Arten-Tools ("kind": "flueTypes"): Gasgeräte-Arten nach DIN EN 1749, Einbausituation → Art und
+//   Art → Einbaukriterien (siehe flueTypeTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -239,6 +242,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   heatPumpToolSchema,
   metalToolSchema,
   gasSizingToolSchema,
+  flueTypeToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -276,7 +280,8 @@ export type ToolEntry =
   | HeatPumpTool
   | MetalTool
   | GasSizingTool
-export type { GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool }
+  | FlueTypeTool
+export type { FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -290,6 +295,7 @@ export const relatedTools = (entry: ToolEntry): string[] =>
   entry.kind === 'pipeMaterials' ||
   entry.kind === 'metals' ||
   entry.kind === 'gasSizing' ||
+  entry.kind === 'flueTypes' ||
   entry.kind === 'classification' ||
   entry.kind === 'heatPumpBivalence' ||
   entry.kind === 'heatingCurve'
@@ -320,6 +326,7 @@ export const isDrainageSizingTool = (entry: ToolEntry): entry is DrainageSizingT
 export const isPipeMaterialTool = (entry: ToolEntry): entry is PipeMaterialTool => entry.kind === 'pipeMaterials'
 export const isMetalTool = (entry: ToolEntry): entry is MetalTool => entry.kind === 'metals'
 export const isGasSizingTool = (entry: ToolEntry): entry is GasSizingTool => entry.kind === 'gasSizing'
+export const isFlueTypeTool = (entry: ToolEntry): entry is FlueTypeTool => entry.kind === 'flueTypes'
 export const isClassificationTool = (entry: ToolEntry): entry is ClassificationTool => entry.kind === 'classification'
 export const isFormulaTool =(entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
@@ -499,6 +506,8 @@ export const toolCollection = defineCollection({
                                                   ? checkMetalTool(entry)
                                                 : isGasSizingTool(entry)
                                                   ? checkGasSizingTool(entry)
+                                                : isFlueTypeTool(entry)
+                                                  ? checkFlueTypeTool(entry)
                                                 : isHeatingCurveTool(entry)
                                                   ? checkHeatingCurveTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),
