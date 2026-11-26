@@ -80,7 +80,7 @@ describe('Edle und unedle Metalle', () => {
     expect(html).toContain('Testionen')
     expect(html).toContain('Testmechanismus')
     expect(html).toContain('Testquelle')
-    expect(html).toContain('Bewertung: TODO: Inhalt fehlt, keine belegte Angabe')
+    expect(html).toContain('Keine belegte Bewertung zu diesem Paar')
     expect(html).toContain('Edle Metalle')
   })
 
@@ -94,7 +94,7 @@ describe('Edle und unedle Metalle', () => {
     expect(html).toContain('Zuerst Alpha → dann Gamma.')
     expect(html).toContain('Flussregel')
     expect(html).toContain('Grenze')
-    expect(html).toContain('Bewertung: TODO: Inhalt fehlt')
+    expect(html).toContain('Keine belegte Bewertung')
     expect(html).not.toContain('Vermeiden')
   })
 
@@ -128,7 +128,8 @@ describe('Edle und unedle Metalle', () => {
     expect(lessNoble('stahl', 'verzinkterStahl')).toBe('verzinkterStahl')
     expect(lessNoble('kupfer', 'edelstahl')).toBeUndefined()
     const html = renderToStaticMarkup(<MetalLookup tool={tool} />)
-    expect(html).toMatch(/Praxis: ca\.(<!-- -->)?\s*(<!-- -->)?-0,55 V bis -0,75 V/)
+    expect(html).toContain('In Trinkwasser')
+    expect(html).toContain('ca. -0,55 V bis -0,75 V')
   })
 
   it('Fließrichtung ohne vorgeschriebene Reihenfolge zeigt nur den Text', () => {

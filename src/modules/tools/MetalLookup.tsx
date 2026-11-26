@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import {
-  CONTENT_MISSING,
   metalsByGroup,
   selectedPairs,
   type Metal,
@@ -22,7 +21,7 @@ const GROUPS: { key: MetalGroup; title: string }[] = [
   { key: 'unknown', title: 'Noch nicht eingeordnet' },
 ]
 
-const formatPotential = (value: number) => `${value > 0 ? '+' : ''}${value.toLocaleString('de-DE')} V`
+const formatPotential = (value: number) => `${value > 0 ? '+' : ''}${value.toLocaleString('de-DE', { minimumFractionDigits: 2 })} V`
 
 const Source = ({ children }: { children: string }) => <span className="text-sm text-muted">({children})</span>
 const DerivedMark = () => (
@@ -71,7 +70,7 @@ function PairCard({ result, derivation }: { result: PairResult; derivation: Meta
           {pair.text} <Source>{pair.source}</Source>
         </p>
       ) : (
-        <p className="mt-2 text-base font-semibold text-muted">Bewertung: {CONTENT_MISSING}, keine belegte Angabe zu diesem Paar.</p>
+        <p className="mt-2 text-base font-semibold text-muted">Keine belegte Bewertung zu diesem Paar.</p>
       )}
       <h4 className="mt-3 font-semibold">Fließrichtung</h4>
       {pair?.flow ? (
@@ -118,32 +117,108 @@ function PairCard({ result, derivation }: { result: PairResult; derivation: Meta
   )
 }
 
-function MetalCard({ metal }: { metal: Metal }) {
+const GROUP_STYLE: Record<MetalGroup, { label: string; stripe: string; badge: string }> = {
+  noble: { label: 'edel', stripe: 'border-l-accent', badge: 'bg-accent text-accent-ink' },
+  base: { label: 'unedel', stripe: 'border-l-warn', badge: 'bg-warn text-warn-ink' },
+  unknown: { label: 'nicht eingeordnet', stripe: 'border-l-line', badge: 'bg-raised text-ink' },
+}
+
+/** Ein Messwert mit großer Zahl; Bezug und Quelle hinter dem i-Knopf */
+function ValueBox({ label, value, note }: { label: string; value: string; note: string }) {
+  const [open, setOpen] = useState(false)
+  const noteId = useId()
   return (
-    <li className="rounded-2xl border-2 border-line bg-surface p-4">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-        <h4 className="text-xl font-bold">
-          {metal.name}
-          {metal.symbol && <span className="ml-2 text-base font-normal text-muted">{metal.symbol}</span>}
-        </h4>
-        {metal.potential !== undefined && <span className="text-lg font-semibold">{formatPotential(metal.potential)}</span>}
+    <div className="rounded-xl bg-raised px-3 py-2">
+      <p className="text-sm font-semibold text-muted">{label}</p>
+      <div className="flex items-center justify-between gap-2">
+        <p className="whitespace-nowrap text-xl font-bold tabular-nums">{value}</p>
+        {note && (
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls={noteId}
+            aria-label={`Info zu ${label}`}
+            onClick={() => setOpen((current) => !current)}
+            className={`flex size-11 shrink-0 items-center justify-center rounded-full border-2 font-serif text-lg font-bold italic ${
+              open ? 'border-accent bg-accent text-accent-ink' : 'border-line bg-surface text-ink'
+            }`}
+          >
+            i
+          </button>
+        )}
       </div>
-      {metal.potentialNote && <p className="text-sm text-muted">{metal.potentialNote}</p>}
-      {metal.practical && (
-        <p className="mt-1 text-base">
-          <span className="font-semibold">
-            Praxis: ca.{' '}
-            {metal.practical.min === metal.practical.max
-              ? formatPotential(metal.practical.min)
-              : `${formatPotential(metal.practical.max)} bis ${formatPotential(metal.practical.min)}`}
-          </span>{' '}
-          <span className="text-sm text-muted">
-            {metal.practical.note} ({metal.practical.source})
-          </span>
+      {note && (
+        <p id={noteId} hidden={!open} className="mt-1 text-xs text-muted">
+          {note}
         </p>
       )}
-      {metal.note && <p className="mt-1 text-base">{metal.note}</p>}
-      {metal.source && <p className="mt-2 text-sm text-muted">Quelle: {metal.source}</p>}
+    </div>
+  )
+}
+
+function MetalCard({ metal, selected, onToggle }: { metal: Metal; selected: boolean; onToggle: () => void }) {
+  const group: MetalGroup = metal.group ?? 'unknown'
+  const style = GROUP_STYLE[group]
+  const practical = metal.practical
+  return (
+    <li
+      className={`flex flex-col rounded-2xl border-2 border-l-8 bg-surface p-4 ${style.stripe} ${
+        selected ? 'border-accent ring-2 ring-accent' : 'border-line'
+      }`}
+    >
+      <div className="flex items-start gap-3">
+        <span
+          aria-hidden="true"
+          className="flex size-14 shrink-0 items-center justify-center rounded-xl border-2 border-line bg-raised text-2xl font-bold"
+        >
+          {metal.symbol || metal.name.slice(0, 2)}
+        </span>
+        <div className="min-w-0 flex-1">
+          <h4 className="text-xl font-bold leading-tight">{metal.name}</h4>
+          <span className={`mt-1 inline-block rounded-md px-2 py-0.5 text-sm font-bold ${style.badge}`}>{style.label}</span>
+        </div>
+        <button
+          type="button"
+          aria-pressed={selected}
+          aria-label={`${metal.name} ${selected ? 'abwählen' : 'auswählen'}`}
+          onClick={onToggle}
+          className={`flex size-12 shrink-0 items-center justify-center rounded-xl border-2 text-2xl font-bold ${
+            selected ? 'border-accent bg-accent text-accent-ink' : 'border-line bg-surface text-ink'
+          }`}
+        >
+          {selected ? '✓' : '+'}
+        </button>
+      </div>
+
+      {(metal.potential !== undefined || practical) && (
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {metal.potential !== undefined && (
+            <ValueBox label="Standardpotential" value={formatPotential(metal.potential)} note={metal.potentialNote} />
+          )}
+          {practical && (
+            <ValueBox
+              label="In Trinkwasser"
+              value={`ca. ${
+                practical.min === practical.max
+                  ? formatPotential(practical.min)
+                  : `${formatPotential(practical.max)} bis ${formatPotential(practical.min)}`
+              }`}
+              note={`${practical.note} (${practical.source})`}
+            />
+          )}
+        </div>
+      )}
+
+      {metal.note && (
+        <p className="mt-3 text-base">{metal.note}</p>
+      )}
+      {metal.noDerivation && (
+        <p className="mt-2 text-sm">
+          <span className="font-semibold">Hinweis: </span>
+          {metal.noDerivation.text} <span className="text-muted">({metal.noDerivation.source})</span>
+        </p>
+      )}
+      {metal.source && <p className="mt-auto pt-3 text-xs text-muted">Quelle: {metal.source}</p>}
     </li>
   )
 }
@@ -203,10 +278,15 @@ export function MetalLookup({ tool, initialSelected = [] }: { tool: MetalTool; i
         groups[key].length === 0 ? null : (
           <section key={key} className="mt-8">
             <h3 className="text-xl font-bold">{title}</h3>
-            {key !== 'unknown' && <p className="text-sm text-muted">Edelstes zuerst</p>}
-            <ul className="mt-2 space-y-3">
+            {key !== 'unknown' && <p className="text-sm text-muted">Edelstes zuerst · mit + zur Auswahl hinzufügen</p>}
+            <ul className="mt-2 grid gap-3 sm:grid-cols-2">
               {groups[key].map((metal) => (
-                <MetalCard key={metal.key} metal={metal} />
+                <MetalCard
+                  key={metal.key}
+                  metal={metal}
+                  selected={selected.includes(metal.key)}
+                  onToggle={() => toggle(metal.key)}
+                />
               ))}
             </ul>
           </section>
