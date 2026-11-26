@@ -21,6 +21,7 @@ import { checkGasSizingTool, gasSizingToolSchema, type GasSizingTool } from './g
 import { checkFlueTypeTool, flueTypeToolSchema, type FlueTypeTool } from './flueTypeTool.ts'
 import { checkNormFinderTool, normFinderToolSchema, type NormFinderTool } from './normFinderTool.ts'
 import { checkPlacementTool, placementToolSchema, type PlacementTool } from './placementTool.ts'
+import { checkPressureSwitchTool, pressureSwitchToolSchema, type PressureSwitchTool } from './pressureSwitchTool.ts'
 import { checkRefrigerantTool, refrigerantToolSchema, type RefrigerantTool } from './refrigerantTool.ts'
 import { checkRadiatorSurveyTool, radiatorSurveyToolSchema, type RadiatorSurveyTool } from './radiatorSurveyTool.ts'
 import { checkSensorTool, sensorToolSchema, type SensorTool } from './sensorTool.ts'
@@ -73,6 +74,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 //   Tabellenverfahren nach TRGI 2018 mit den Rechenformeln aus G 617 (siehe gasSizingTool.ts).
 // - Abgas-Arten-Tools ("kind": "flueTypes"): Gasgeräte-Arten nach DIN EN 1749, Einbausituation → Art und
 //   Art → Einbaukriterien (siehe flueTypeTool.ts).
+// - Hochdruckschalter-Tools ("kind": "pressureSwitch"): Einstellwert des Sicherheitsdruckschalters aus PS und Art der
+//   Absicherung, Prüfung der Verflüssigungstemperatur mit der Dampfdrucktabelle (siehe pressureSwitchTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -243,6 +246,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   metalToolSchema,
   gasSizingToolSchema,
   flueTypeToolSchema,
+  pressureSwitchToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -281,7 +285,8 @@ export type ToolEntry =
   | MetalTool
   | GasSizingTool
   | FlueTypeTool
-export type { FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool }
+  | PressureSwitchTool
+export type { FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool, PressureSwitchTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -298,6 +303,7 @@ export const relatedTools = (entry: ToolEntry): string[] =>
   entry.kind === 'flueTypes' ||
   entry.kind === 'classification' ||
   entry.kind === 'heatPumpBivalence' ||
+  entry.kind === 'pressureSwitch' ||
   entry.kind === 'heatingCurve'
     ? entry.related
     : []
@@ -327,6 +333,7 @@ export const isPipeMaterialTool = (entry: ToolEntry): entry is PipeMaterialTool 
 export const isMetalTool = (entry: ToolEntry): entry is MetalTool => entry.kind === 'metals'
 export const isGasSizingTool = (entry: ToolEntry): entry is GasSizingTool => entry.kind === 'gasSizing'
 export const isFlueTypeTool = (entry: ToolEntry): entry is FlueTypeTool => entry.kind === 'flueTypes'
+export const isPressureSwitchTool = (entry: ToolEntry): entry is PressureSwitchTool => entry.kind === 'pressureSwitch'
 export const isClassificationTool = (entry: ToolEntry): entry is ClassificationTool => entry.kind === 'classification'
 export const isFormulaTool =(entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
@@ -510,6 +517,8 @@ export const toolCollection = defineCollection({
                                                   ? checkFlueTypeTool(entry)
                                                 : isHeatingCurveTool(entry)
                                                   ? checkHeatingCurveTool(entry)
+                                                : isPressureSwitchTool(entry)
+                                                  ? checkPressureSwitchTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) => [
     ...relatedTools(entry),
@@ -524,6 +533,8 @@ export const toolCollection = defineCollection({
           ? [entry.velocityFormula]
           : isHeatingCostTool(entry)
             ? [entry.heatingValues]
-            : []),
+            : isPressureSwitchTool(entry)
+              ? [entry.pressureTable]
+              : []),
   ],
 })

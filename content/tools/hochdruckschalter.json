@@ -1,0 +1,123 @@
+{
+  "id": "tool.hochdruckschalter",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Copeland Europe GmbH, „Wussten Sie schon? Hochdruckabsicherung in Wärmepumpensystemen“, ATS-DE-1910, © 2025, Seite 1 und 2 (Beispiele gemäß EN 378), https://media.copeland.com/80a040d3-d3d0-48e7-a208-b16b0109a1e0/ATS-DE-1910.pdf, abgerufen am 26.11.2026. Begriff PS und Überdruck: Druckgeräteverordnung (14. ProdSV) § 2 Nr. 2 und 8, https://www.gesetze-im-internet.de/gsgv_14_2016/__2.html, abgerufen am 26.11.2026. Sättigungsdrücke aus dem Tool „Dampfdrucktabelle Kältemittel“. Inhalte eigenständig zusammengefasst.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "pressureSwitch",
+  "title": "Hochdruckschalter: Einstellwert",
+  "summary": "Rechnet aus dem maximal zulässigen Druck PS den Einstellwert des Sicherheitsdruckschalters, sein Abschaltfenster und ggf. den Einstellwert des Druckbegrenzungsventils und prüft, ob die höchste Verflüssigungstemperatur darunter bleibt.",
+  "description": "PS vom Typenschild der Wärmepumpe bzw. Kälteanlage eingeben und die Art der Absicherung wählen. Das Tool zeigt, wie hoch der Sicherheitsdruckschalter eingestellt wird und in welchem Bereich er abschalten darf. Mit Kältemittel und höchster Verflüssigungstemperatur prüft es zusätzlich, ob der Verdichter im normalen Betrieb unter dem Abschaltbereich bleibt.",
+  "category": "Auslegung",
+  "tags": ["heizung", "kaelte"],
+  "keywords": [
+    "Hochdruckschalter",
+    "Hochdruckwächter",
+    "Hochdruckbegrenzer",
+    "Sicherheitsdruckschalter",
+    "Sicherheitsbegrenzungsdruckschalter",
+    "Druckschalter",
+    "Druckbegrenzungsventil",
+    "Sicherheitsventil",
+    "Abschaltdruck",
+    "Einstellwert",
+    "PS",
+    "maximal zulässiger Druck",
+    "Verflüssigungsdruck",
+    "Verflüssigungstemperatur",
+    "EN 378",
+    "Wärmepumpe",
+    "Kälteanlage"
+  ],
+  "related": ["tool.kaeltemittel-dampfdruck", "tool.waermepumpe-bivalenzpunkt"],
+  "closingNote": "Die Faktoren stammen aus den Beispielen eines Herstellermerkblatts, das sich auf die EN 378 beruft, nicht aus dem Normtext. Maßgeblich sind die EN 378-2 und die Vorgaben des Geräte- bzw. Anlagenherstellers; weichen dessen Einstellwerte ab, gelten sie.",
+  "sources": [
+    {
+      "key": "copeland",
+      "name": "Copeland ATS-DE-1910",
+      "source": "Copeland Europe GmbH, „Wussten Sie schon? Hochdruckabsicherung in Wärmepumpensystemen“, ATS-DE-1910, © 2025, https://media.copeland.com/80a040d3-d3d0-48e7-a208-b16b0109a1e0/ATS-DE-1910.pdf, abgerufen am 26.11.2026"
+    },
+    {
+      "key": "prodsv",
+      "name": "Druckgeräteverordnung (14. ProdSV)",
+      "source": "Vierzehnte Verordnung zum Produktsicherheitsgesetz (Druckgeräteverordnung – 14. ProdSV), § 2 Begriffsbestimmungen, https://www.gesetze-im-internet.de/gsgv_14_2016/__2.html, abgerufen am 26.11.2026"
+    }
+  ],
+  "pressureTable": "tool.kaeltemittel-dampfdruck",
+  "pressureDecimals": 1,
+  "inputs": {
+    "ps": {
+      "label": "Maximal zulässiger Druck PS (Hochdruckseite)",
+      "unit": "bar",
+      "min": 5,
+      "max": 60,
+      "step": 0.5,
+      "default": 45,
+      "text": "PS steht auf dem Typenschild bzw. in den Unterlagen des Herstellers. Wie in der Dampfdrucktabelle als Überdruck eingeben.",
+      "ref": { "source": "copeland", "where": "Seite 1 und 2, Beispiele 1 bis 3" },
+      "explanations": [
+        {
+          "title": "Was ist PS?",
+          "text": "PS ist der „maximal zulässige Druck“: der höchste Druck, für den der Hersteller das Druckgerät ausgelegt hat. PS ist also kein Betriebsdruck, sondern die Auslegungsgrenze, die im Betrieb nicht überschritten werden darf.",
+          "ref": { "source": "prodsv", "where": "§ 2 Nr. 8" }
+        },
+        {
+          "title": "Wo gilt PS?",
+          "text": "Der Hersteller legt PS für eine bestimmte Stelle fest: den Anschluss der Sicherheitseinrichtung oder die höchste Stelle des Geräts; passt beides nicht, eine andere angegebene Stelle.",
+          "ref": { "source": "prodsv", "where": "§ 2 Nr. 8" }
+        },
+        {
+          "title": "Überdruck",
+          "text": "Drücke sind auf den atmosphärischen Druck bezogen, also Überdruck (bar). Unterdruck wird als negativer Wert angegeben. Die Dampfdrucktabelle verwendet ebenfalls Überdruck.",
+          "ref": { "source": "prodsv", "where": "§ 2 Nr. 2" }
+        },
+        {
+          "title": "Bezug für die Sicherheitseinrichtungen",
+          "text": "Sicherheitsdruckschalter und Druckbegrenzungsventil werden als Anteil von PS eingestellt (z. B. 0,9 × PS bzw. 1,0 × PS), damit der Druck PS nicht überschreitet.",
+          "ref": { "source": "copeland", "where": "Seite 1 und 2, Beispiele 1 bis 3" }
+        }
+      ]
+    },
+    "condensing": {
+      "label": "Höchste Verflüssigungstemperatur",
+      "unit": "°C",
+      "min": 0,
+      "max": 70,
+      "step": 1,
+      "default": 60,
+      "text": "Höchste Sättigungstemperatur auf der Hochdruckseite im Betrieb, z. B. aus dem Einsatzbereich des Verdichters oder den Herstellerangaben. Die Dampfdrucktabelle reicht bis 70 °C."
+    }
+  },
+  "setups": [
+    {
+      "key": "switchOnly",
+      "label": "Nur Sicherheitsdruckschalter",
+      "text": "Ein einzelner Sicherheitsbegrenzungsdruckschalter sichert die Hochdruckseite ab. Einstellung höchstens auf PS.",
+      "ref": { "source": "copeland", "where": "Seite 1, Beispiel 1" },
+      "switchFactor": 1
+    },
+    {
+      "key": "withValve",
+      "label": "Schalter + Druckbegrenzungsventil",
+      "text": "Für höheren Betriebsdruck bzw. höhere Warmwassertemperatur: Druckbegrenzungsventil höchstens auf PS, zusätzlicher Sicherheitsbegrenzungsdruckschalter auf 0,9 × PS. Der Verdichter stoppt dann am Schalter, bevor das Ventil öffnet.",
+      "ref": { "source": "copeland", "where": "Seite 1, Beispiel 2, und Seite 2, Beispiel 3" },
+      "switchFactor": 0.9,
+      "reliefValveFactor": 1
+    }
+  ],
+  "defaultSetup": "switchOnly",
+  "tripWindow": {
+    "lowerFactor": 0.92,
+    "text": "Der Schalter darf innerhalb eines Fensters abschalten, das am Einstellwert endet (+0 %). In den Beispielen der Quelle beginnt es bei 92 % des Einstellwerts (41,4 bar bei 45 bar, 37,3 bar bei 40,5 bar); der Faktor ist daraus abgeleitet. Engere Toleranzen erlauben einen Betrieb näher an PS.",
+    "ref": { "source": "copeland", "where": "Seite 1 und 2, Tabellen der Beispiele 1 bis 3" }
+  },
+  "factoryTest": {
+    "factor": 1.1,
+    "text": "Der Druckschalter selbst wird im Werk über 1,1 × PS druckgeprüft.",
+    "ref": { "source": "copeland", "where": "Seite 1 und 2, Tabellen der Beispiele 1 bis 3" }
+  },
+  "condensingText": "Der Sättigungsdruck bei der höchsten Verflüssigungstemperatur muss unter dem Beginn des Abschaltfensters liegen. Sonst kann der Schalter im normalen Betrieb ansprechen und den Verdichter abschalten.",
+  "condensingRef": { "source": "copeland", "where": "Seite 1, Einleitung und Beispiel 2" },
+  "infos": []
+}

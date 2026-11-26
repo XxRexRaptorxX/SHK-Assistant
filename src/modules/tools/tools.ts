@@ -18,6 +18,7 @@ import { pipeMaterialKeywords } from './pipeMaterialTool'
 import { metalKeywords } from './metalTool'
 import { gasSizingKeywords } from './gasSizingTool'
 import { placementKeywords } from './placementTool'
+import { pressureSwitchKeywords } from './pressureSwitchTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
 import { refrigerantKeywords } from './refrigerantTool'
 import { sensorKeywords } from './sensorTool'
@@ -42,6 +43,7 @@ import {
   isGasSizingTool,
   isFlueTypeTool,
   isPlacementTool,
+  isPressureSwitchTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
   isSensorTool,
@@ -140,6 +142,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isMetalTool(entry)) return metalKeywords(entry)
   if (isGasSizingTool(entry)) return gasSizingKeywords(entry)
   if (isFlueTypeTool(entry)) return flueTypeKeywords(entry)
+  if (isPressureSwitchTool(entry)) return pressureSwitchKeywords(entry)
   if (isClassificationTool(entry)) return classificationKeywords(entry)
   if (isVariantTool(entry)) {
     return entry.variants.flatMap((variant) => [

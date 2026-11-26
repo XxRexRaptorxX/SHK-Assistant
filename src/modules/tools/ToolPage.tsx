@@ -28,6 +28,7 @@ import {
   isGasSizingTool,
   isFlueTypeTool,
   isPlacementTool,
+  isPressureSwitchTool,
   isRadiatorSurveyTool,
   isRefrigerantTool,
   isSensorTool,
@@ -55,6 +56,7 @@ import { MetalLookup } from './MetalLookup'
 import { GasSizing } from './GasSizing'
 import { FlueTypeLookup } from './FlueTypeLookup'
 import { PlacementLookup } from './PlacementLookup'
+import { PressureSwitchSizing } from './PressureSwitchSizing'
 import { RadiatorSurvey } from './RadiatorSurvey'
 import { RefrigerantLookup } from './RefrigerantLookup'
 import { RiserLookup } from './RiserLookup'
@@ -154,6 +156,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <GasSizing tool={tool} />
       ) : isClassificationTool(tool) ? (
         <ClassificationLookup tool={tool} />
+      ) : isPressureSwitchTool(tool) ? (
+        <PressureSwitchSizing tool={tool} entries={entries} />
       ) : (
         <FormulaBody formula={tool} />
       )}

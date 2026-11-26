@@ -9,7 +9,8 @@ import { lookupTable, tablePoints, type Quantity, type RefrigerantTool, type Tab
 // Zuletzt gewähltes Kältemittel: Auf der Baustelle ist es meist dasselbe wie beim letzten Mal.
 export const REFRIGERANT_STORAGE_KEY = 'shk-refrigerant'
 
-const lastRefrigerant = createStoredState<string>({
+/** Auch vom Hochdruckschalter-Tool genutzt */
+export const lastRefrigerant = createStoredState<string>({
   key: REFRIGERANT_STORAGE_KEY,
   read: () => {
     try {

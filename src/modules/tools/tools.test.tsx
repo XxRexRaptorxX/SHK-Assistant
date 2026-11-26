@@ -75,6 +75,7 @@ describe('Tools', () => {
       'Heizkurve simulieren und einstellen',
       'Heizlast überschlägig',
       'Heizraum und Aufstellraum',
+      'Hochdruckschalter: Einstellwert',
       'Kabel Aderfarben',
       'Kabelarten',
       'Ladungssicherung',
