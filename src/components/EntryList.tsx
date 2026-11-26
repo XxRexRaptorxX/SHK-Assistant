@@ -43,13 +43,18 @@ export function EntryRows({ entries, action }: { entries: readonly SearchDocumen
                 </span>
               )}
             </span>
-            {((entry.status === 'draft' && !tagged(entry)) || tagged(entry)) && (
+            {entry.status === 'draft' && !tagged(entry) && (
               <span className="flex shrink-0 flex-col items-end gap-1.5">
-                {entry.status === 'draft' && !tagged(entry) && <DraftBadge variant="inline" />}
-                {tagged(entry) && <TopicTags tags={entry.tags!} stacked />}
+                <DraftBadge variant="inline" />
               </span>
             )}
           </Link>
+          {/* Tags neben dem Link, nicht darin: jeder Tag führt zur Themen-Übersicht */}
+          {tagged(entry) && (
+            <span className="shrink-0 py-2 pr-4">
+              <TopicTags tags={entry.tags!} stacked linked />
+            </span>
+          )}
           {action?.(entry)}
         </li>
       ))}

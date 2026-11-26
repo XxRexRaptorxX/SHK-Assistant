@@ -15,6 +15,8 @@ import { LexiconListPage } from './modules/lexicon/LexiconListPage'
 import { NewsPage } from './modules/news/NewsPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { TopicPage } from './pages/TopicPage'
+import { TOPIC_PAGE_PATH } from './components/TopicTags'
 import { SearchPage } from './search/SearchPage'
 import { ToolListPage } from './modules/tools/ToolListPage'
 import { SettingsPage } from './settings/SettingsPage'
@@ -89,6 +91,7 @@ export function App() {
         <Route path={modules.search.path} element={<SearchPage />} />
         <Route path={modules.settings.path} element={<SettingsPage />} />
         <Route path={MODE_PAGE_PATH} element={<ModePage />} />
+        <Route path={TOPIC_PAGE_PATH} element={<TopicPage />} />
         {LEGAL_PAGES.map((page) => (
           <Route key={page.path} path={page.path} element={<LegalPage page={page} />} />
         ))}

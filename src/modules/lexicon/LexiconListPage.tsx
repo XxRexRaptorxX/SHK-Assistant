@@ -157,8 +157,8 @@ function TermList({ entries, total }: { entries: readonly LexiconEntry[]; total:
       ) : (
         <ul className={`mt-2 ${listCard}`}>
           {entries.map((entry) => (
-            <li key={entry.id}>
-              <Link to={lexiconPath(entry.id)} className="flex min-h-14 items-center justify-between gap-3 px-4 py-2">
+            <li key={entry.id} className="flex items-center">
+              <Link to={lexiconPath(entry.id)} className="flex min-h-14 flex-1 items-center gap-3 px-4 py-2">
                 <span>
                   <span className="block font-semibold">{entry.term}</span>
                   {entry.synonyms.length > 0 && (
@@ -171,10 +171,11 @@ function TermList({ entries, total }: { entries: readonly LexiconEntry[]; total:
                     </span>
                   )}
                 </span>
-                <span className="flex shrink-0 flex-col items-end gap-1.5">
-                  <TopicTags tags={entry.tags} stacked />
-                </span>
               </Link>
+              {/* Neben dem Link: jeder Tag führt zur Themen-Übersicht */}
+              <span className="shrink-0 py-2 pr-4">
+                <TopicTags tags={entry.tags} stacked linked />
+              </span>
             </li>
           ))}
         </ul>

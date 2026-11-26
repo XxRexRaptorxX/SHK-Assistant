@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { sortTopicTags, topicTagLabel, type TopicTag } from '../content/schema/topicTags'
 
 // Eigene Farbe je Fachgebiet; hell: zarter Grund mit dunkler Schrift, dunkel umgekehrt (Kontrast > 7:1).
@@ -26,19 +27,51 @@ const TAG_COLORS: Record<TopicTag, string> = {
 /** Farbklassen eines Tags, z. B. für den gewählten Themen-Filter der Suche */
 export const topicTagColor = (tag: TopicTag): string => TAG_COLORS[tag]
 
+/** Übersichtsseite eines Themas mit allen Einträgen, die diesen Tag tragen */
+export const TOPIC_PAGE_PATH = '/thema/:tag'
+export const topicPath = (tag: TopicTag): string => `/thema/${tag}`
+
 /**
  * Farbige Themen-Tags eines Tools oder Lexikon-Begriffs, z. B. „Heizung“ und „Kundendienst“.
- * Nur span-Elemente: steht in der Liste innerhalb eines Links.
+ * Ohne `linked` nur span-Elemente (dürfen innerhalb eines Links stehen). Mit `linked` führt jeder Tag
+ * zur Themen-Übersicht – dann nicht in einen anderen Link setzen.
  */
-export function TopicTags({ tags, stacked = false }: { tags: readonly TopicTag[]; /** untereinander, rechtsbündig */ stacked?: boolean }) {
+export function TopicTags({
+  tags,
+  stacked = false,
+  linked = false,
+  current,
+}: {
+  tags: readonly TopicTag[]
+  /** untereinander, rechtsbündig */
+  stacked?: boolean
+  /** jeder Tag ist ein Link zur Themen-Übersicht */
+  linked?: boolean
+  /** gerade geöffnetes Thema (Themen-Übersicht), wird hervorgehoben */
+  current?: TopicTag
+}) {
+  const layout = stacked ? 'flex flex-col items-end' : 'flex flex-wrap'
   return (
-    <span className={stacked ? 'flex flex-col items-end gap-1.5' : 'flex flex-wrap gap-1.5'}>
+    <span className={`${layout} ${linked ? 'gap-2' : 'gap-1.5'}`}>
       <span className="sr-only">Themen:</span>
-      {sortTopicTags(tags).map((tag) => (
-        <span key={tag} className={`rounded-full border px-2.5 py-0.5 text-sm font-semibold ${TAG_COLORS[tag]}`}>
-          {topicTagLabel(tag)}
-        </span>
-      ))}
+      {sortTopicTags(tags).map((tag) =>
+        linked ? (
+          <Link
+            key={tag}
+            to={topicPath(tag)}
+            aria-current={tag === current ? 'page' : undefined}
+            className={`rounded-full border px-3 py-1 text-sm font-semibold ${TAG_COLORS[tag]} underline-offset-2 hover:underline${
+              tag === current ? ' ring-2 ring-accent ring-offset-2 ring-offset-page' : ''
+            }`}
+          >
+            {topicTagLabel(tag)}
+          </Link>
+        ) : (
+          <span key={tag} className={`rounded-full border px-2.5 py-0.5 text-sm font-semibold ${TAG_COLORS[tag]}`}>
+            {topicTagLabel(tag)}
+          </span>
+        ),
+      )}
     </span>
   )
 }

@@ -74,8 +74,8 @@ export function ToolListPage({
             <h2 className={categoryHeading}>{group.category}</h2>
             <ul className={`mt-2 ${listCard}`}>
               {group.entries.map((entry) => (
-                <li key={entry.id}>
-                  <Link to={toolPath(entry.id)} className="flex min-h-16 items-center justify-between gap-3 px-4 py-3">
+                <li key={entry.id} className="flex items-center">
+                  <Link to={toolPath(entry.id)} className="flex min-h-16 flex-1 items-center gap-3 px-4 py-3">
                     <span>
                       <span className="block text-lg font-semibold">{entry.title}</span>
                       <span className="block text-base text-muted">{entry.summary}</span>
@@ -86,11 +86,11 @@ export function ToolListPage({
                         </span>
                       )}
                     </span>
-                    {/* Rechte Spalte: die Themen-Tags untereinander */}
-                    <span className="flex shrink-0 flex-col items-end gap-1.5">
-                      <TopicTags tags={entry.tags} stacked />
-                    </span>
                   </Link>
+                  {/* Rechte Spalte: die Themen-Tags untereinander, neben dem Link (jeder Tag führt zur Themen-Übersicht) */}
+                  <span className="shrink-0 py-3 pr-4">
+                    <TopicTags tags={entry.tags} stacked linked />
+                  </span>
                 </li>
               ))}
             </ul>

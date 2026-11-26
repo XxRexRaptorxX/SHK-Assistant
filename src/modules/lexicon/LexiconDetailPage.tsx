@@ -44,7 +44,7 @@ export function LexiconDetailPage({
       title={entry.term}
       back={BACK}
       actions={<FavoriteButton id={entry.id} title={entry.term} />}
-      meta={<TopicTags tags={entry.tags} />}
+      meta={<TopicTags tags={entry.tags} linked />}
     >
       {entry.synonyms.length > 0 && (
         <p className="text-muted">

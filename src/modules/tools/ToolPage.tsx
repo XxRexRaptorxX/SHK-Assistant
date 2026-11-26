@@ -95,7 +95,7 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
           <FavoriteButton id={tool.id} title={tool.title} />
         </>
       }
-      meta={<TopicTags tags={tool.tags} />}
+      meta={<TopicTags tags={tool.tags} linked />}
     >
       <RichText text={tool.description} />
       {isTableTool(tool) ? (

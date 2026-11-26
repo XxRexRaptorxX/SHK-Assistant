@@ -1,13 +1,14 @@
 import { renderToStaticMarkup } from 'react-dom/server'
-import { MemoryRouter } from 'react-router'
+import { MemoryRouter, Route, Routes } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { EntryList } from '../../components/EntryList'
 import { createSearch } from '../../search/search'
 import { lexiconEntries } from '../lexicon/lexicon'
 import { LexiconListPage } from '../lexicon/LexiconListPage'
 import { lexiconSearchDocuments } from '../lexicon/search'
+import { TopicPage } from '../../pages/TopicPage'
 import { ToolListPage } from './ToolListPage'
-import { TopicTags } from '../../components/TopicTags'
+import { TOPIC_PAGE_PATH, TopicTags } from '../../components/TopicTags'
 import { toolEntries, toolSearchDocuments } from './tools'
 import { sortTopicTags, TOPIC_TAGS, topicTagsSchema } from '../../content/schema/topicTags'
 
@@ -37,7 +38,8 @@ describe('Themen-Tags der Tools', () => {
         <LexiconListPage entries={[entry]} initialQuery={entry.term} />
       </MemoryRouter>,
     )
-    expect(html).toContain('Trinkwasser</span>')
+    expect(html).toContain('href="/thema/trinkwasser"')
+    expect(html).toContain('Trinkwasser</a>')
     expect(html).toContain('aria-label="Filter"')
   })
 
@@ -101,5 +103,53 @@ describe('Themen-Tags der Tools', () => {
     expect(html).toContain('Kundendienst')
     expect(html.indexOf('Ungeprüft')).toBeGreaterThan(-1)
     expect(html.indexOf('Ungeprüft')).toBeLessThan(html.indexOf('Kundendienst'))
+  })
+
+  it('Tags in Tool-Liste und Suchtreffern sind Links zur Themen-Übersicht, nie in einem anderen Link', () => {
+    const tool = toolEntries.find((entry) => entry.tags.includes('heizung'))!
+    const html = renderToStaticMarkup(
+      <MemoryRouter>
+        <ToolListPage entries={[tool]} />
+        <EntryList groups={createSearch(toolSearchDocuments([tool])).search(tool.title)} />
+      </MemoryRouter>,
+    )
+    expect(html.match(/href="\/thema\/heizung"/g)).toHaveLength(2)
+    // Kein <a> innerhalb eines <a>
+    expect(html).not.toMatch(/<a [^>]*>(?:(?!<\/a>).)*<a /s)
+  })
+})
+
+describe('Themen-Übersicht', () => {
+  const documents = [...toolSearchDocuments(), ...lexiconSearchDocuments()]
+  const index = new Map(documents.map((doc) => [doc.id, doc]))
+  const renderTopic = (tag: string) =>
+    renderToStaticMarkup(
+      <MemoryRouter initialEntries={[`/thema/${tag}`]}>
+        <Routes>
+          <Route path={TOPIC_PAGE_PATH} element={<TopicPage index={index} />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+
+  it('listet alle Einträge aller Module mit diesem Tag und keine anderen, nach Modul gruppiert', () => {
+    const html = renderTopic('heizung')
+    expect(html).toContain('Thema: Heizung')
+    const expected = documents.filter((doc) => doc.tags?.includes('heizung'))
+    expect(expected.length).toBeGreaterThan(1)
+    expect(html).toContain(`${expected.length} Einträge`)
+    for (const doc of expected) expect(html).toContain(`href="${doc.path}"`)
+    for (const doc of documents.filter((candidate) => !candidate.tags?.includes('heizung'))) {
+      expect(html).not.toContain(`href="${doc.path}"`)
+    }
+    expect(html).toContain('>Tools</h2>')
+    expect(html).toContain('>Lexikon</h2>')
+  })
+
+  it('markiert das aktuelle Thema in der Themen-Leiste', () => {
+    expect(renderTopic('kaelte')).toMatch(/<a aria-current="page"[^>]*href="\/thema\/kaelte"/)
+  })
+
+  it('zeigt bei unbekanntem Thema „Seite nicht gefunden“', () => {
+    expect(renderTopic('garten')).toContain('Seite nicht gefunden')
   })
 })
