@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 
 // Schematische Schnittzeichnung je Grundart nach DIN EN 1749 (eigene Darstellung, nicht maßstäblich).
 // Die Zeichnung zeigt nur, was die Definition der Art festlegt: woher die Luft kommt, wohin das Abgas geht,
@@ -167,7 +167,7 @@ function Appliance({ scene, x, y, w = 64, h = 70, sealed, airTop = sealed, label
 }
 
 /** Gebäudeschnitt: außen links, Außenwand, Dach oben, Boden unten; optional Zwischendecke oder Dachboden */
-function Building({ floors = 1, loft = false }: { floors?: 1 | 2; loft?: boolean }) {
+function Building({ floors = 1, loft = false, outsideLabel = true }: { floors?: 1 | 2; loft?: boolean; outsideLabel?: boolean }) {
   return (
     <g>
       {loft ? (
@@ -182,9 +182,11 @@ function Building({ floors = 1, loft = false }: { floors?: 1 | 2; loft?: boolean
       <Shaft x={40} y={40} w={320} h={10} />
       <Shaft x={40} y={282} w={320} h={10} />
       {floors === 2 && <Shaft x={52} y={160} w={308} h={8} />}
-      <Label x={4} y={34}>
-        außen
-      </Label>
+      {outsideLabel && (
+        <Label x={4} y={34}>
+          außen
+        </Label>
+      )}
     </g>
   )
 }
@@ -391,6 +393,19 @@ const c3: Layout = (scene) => (
   </>
 )
 
+/** C3 im Schacht (WOLF C33x Schachteinbau): konzentrisch in den Schacht, darin senkrecht konzentrisch über Dach */
+const c3Shaft: Layout = (scene) => (
+  <>
+    <Building floors={2} />
+    <Shaft x={286} y={20} w={48} h={262} />
+    <Concentric d="M 162 206 V 190 H 310 V 16" />
+    <Cap x={310} y={14} dir="up" />
+    <Appliance scene={scene} x={130} y={206} h={62} sealed />
+    {verticalFlows(scene, 310, 150, 90)}
+    <BuildingLabel x={280} lines={['Schacht (Gebäude), nur zur', 'Leitungsführung']} />
+  </>
+)
+
 /**
  * C4 und C(10): Luft-Abgas-System des Gebäudes für mehrere Geräte, gemeinsame Mündung. Gezeichnet als
  * konzentrischer LAS (Abgasschacht innen, Luft im Ringspalt) wie im WOLF-Abgasschema (C43x).
@@ -420,23 +435,43 @@ const commonAirFlue = (pressure: string): Layout => (scene) => {
   )
 }
 
+/**
+ * C5 als Außenkamin an der Fassade (WOLF C53x): konzentrisch durch die Außenwand zur Wandkonsole, dort saugt das
+ * Gerät die Luft von unten an; die Abgasleitung läuft außen an der Fassade bis über Dach
+ */
 const c5: Layout = (scene) => (
   <>
-    <Building />
-    <Cap x={12} y={176} dir="left" />
-    <Cap x={182} y={14} dir="up" />
-    <Splitter cx={182} y={190} top={170} air="H 14" flue="V 16" />
+    <Building outsideLabel={false} />
+    {/* Wandschellen der Fassadenleitung */}
+    {[70, 110].map((y) => (
+      <line key={y} x1={27} y1={y} x2={40} y2={y} stroke={INK} strokeWidth={2} />
+    ))}
+    <Pipe d="M 24 142 V 12" medium="flue" />
+    <Cap x={24} y={10} dir="up" />
+    {/*
+      Wandkonsole wie im WOLF-Abgasschema: dreieckiges Gehäuse unter dem Bogen an der Außenwand, die schräge
+      Unterseite ist offen (gestrichelt); dort strömt die Luft in den Ringspalt
+    */}
+    <path d="M 40 158 H 14 L 40 186 Z" fill={TINT.air} stroke="none" />
+    <path d="M 40 186 V 158 H 14" fill="none" stroke={INK} strokeWidth={2} strokeLinejoin="round" />
+    <path d="M 14 158 L 40 186" fill="none" stroke={INK} strokeWidth={2} strokeDasharray="3 2.5" />
+    <Concentric d="M 182 190 V 152 H 36 A 12 12 0 0 1 24 140" />
     <Appliance scene={scene} x={150} y={190} sealed />
-    <Flow scene={scene} medium="air" x1={70} y1={186} x2={130} y2={186} />
-    <Flow scene={scene} medium="flue" x1={196} y1={140} x2={196} y2={90} />
-    <Label x={60} y={164}>
-      Luftmündung
+    <Flow scene={scene} medium="air" x1={4} y1={200} x2={20} y2={176} />
+    <Flow scene={scene} medium="air" x1={70} y1={168} x2={130} y2={168} />
+    <Flow scene={scene} medium="flue" x1={130} y1={136} x2={70} y2={136} />
+    <Flow scene={scene} medium="flue" x1={10} y1={120} x2={10} y2={70} />
+    <Label x={60} y={96}>
+      Abgasleitung außen an der Fassade,
     </Label>
-    <Label x={206} y={110}>
-      getrennte Mündungen,
+    <Label x={60} y={108}>
+      Mündung über Dach
     </Label>
-    <Label x={206} y={122}>
-      versch. Druckbereiche
+    <Label x={58} y={232}>
+      Luft von unten
+    </Label>
+    <Label x={58} y={244}>
+      über Wandkonsole
     </Label>
   </>
 )
@@ -650,28 +685,40 @@ const c15: Layout = (scene) => {
 }
 
 /** Zeichnung je Grundart; jede Grundart des Inhalts braucht hier einen Eintrag (Test) */
-export const FLUE_LAYOUTS: Record<string, Layout> = {
-  A: a,
-  B1: bSeparate(true),
-  B2: bSeparate(false),
-  B3: b3,
-  B4: bOwn(true),
-  B5: bOwn(false),
-  C1: c1,
-  C2: c2,
-  C3: c3,
-  C4: commonAirFlue('Naturzug (Unterdruck)'),
-  C5: c5,
-  C6: c6,
-  C7: c7,
-  C8: c8,
-  C9: c9,
-  'C(10)': commonAirFlue('Überdruck möglich'),
-  'C(11)': c11,
-  'C(12)': c12,
-  'C(13)': c13,
-  'C(14)': c14,
-  'C(15)': c15,
+/** Ausführungsvariante einer Grundart; label nur, wenn es mehrere gibt */
+interface FlueVariant {
+  label: string
+  layout: Layout
+}
+
+const one = (layout: Layout): FlueVariant[] => [{ label: '', layout }]
+
+/** Zeichnungen je Grundart, ggf. mehrere Ausführungen zum Umschalten (wie im WOLF-Abgasschema) */
+export const FLUE_LAYOUTS: Record<string, FlueVariant[]> = {
+  A: one(a),
+  B1: one(bSeparate(true)),
+  B2: one(bSeparate(false)),
+  B3: one(b3),
+  B4: one(bOwn(true)),
+  B5: one(bOwn(false)),
+  C1: one(c1),
+  C2: one(c2),
+  C3: [
+    { label: 'Über Dach', layout: c3 },
+    { label: 'Im Schacht', layout: c3Shaft },
+  ],
+  C4: one(commonAirFlue('Naturzug (Unterdruck)')),
+  C5: one(c5),
+  C6: one(c6),
+  C7: one(c7),
+  C8: one(c8),
+  C9: one(c9),
+  'C(10)': one(commonAirFlue('Überdruck möglich')),
+  'C(11)': one(c11),
+  'C(12)': one(c12),
+  'C(13)': one(c13),
+  'C(14)': one(c14),
+  'C(15)': one(c15),
 }
 
 /** Ein Eintrag der Legende: kleines Symbol und kurzer Text */
@@ -724,14 +771,47 @@ export interface FlueVent {
 }
 
 /** Schemazeichnung einer Art mit Legende */
-export function FlueDiagram({ code, digit, title, vent }: { code: string; digit: string | undefined; title: string; vent?: FlueVent }) {
+export function FlueDiagram({
+  code,
+  digit,
+  title,
+  vent,
+  initialVariant = 0,
+}: {
+  code: string
+  digit: string | undefined
+  title: string
+  vent?: FlueVent
+  /** Vorauswahl der Ausführung (Tests) */
+  initialVariant?: number
+}) {
+  const [variantIndex, setVariantIndex] = useState(initialVariant)
   const id = useId().replace(/[^a-zA-Z0-9_-]/g, '')
-  const layout = FLUE_LAYOUTS[code]
-  if (!layout) return null
+  const variants = FLUE_LAYOUTS[code]
+  if (!variants) return null
+  const current = Math.min(variantIndex, variants.length - 1)
+  const layout = variants[current]!.layout
   const scene: Scene = { digit, marker: (medium) => `${id}-${medium}` }
   const ventRows = TWO_FLOORS.has(code) ? [122, 244] : [244]
   return (
     <figure className="mt-4">
+      {variants.length > 1 && (
+        <div role="group" aria-label="Ausführung" className="mx-auto mb-2 flex max-w-md gap-2">
+          {variants.map((variant, index) => (
+            <button
+              key={variant.label}
+              type="button"
+              aria-pressed={index === current}
+              onClick={() => setVariantIndex(index)}
+              className={`min-h-11 flex-1 rounded-lg border-2 px-2 text-sm font-semibold ${
+                index === current ? 'border-accent bg-accent text-accent-ink' : 'border-line bg-surface'
+              }`}
+            >
+              {variant.label}
+            </button>
+          ))}
+        </div>
+      )}
       <svg viewBox="0 0 360 300" role="img" aria-label={`Schema ${title}`} className="mx-auto w-full max-w-md rounded-xl border border-edge bg-surface">
         <defs>
           {(['air', 'flue'] as const).map((medium) => (

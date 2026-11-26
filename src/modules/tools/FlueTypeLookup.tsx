@@ -141,6 +141,7 @@ export function TypeResult({
       ))}
       <p className="mt-3 text-base">{group.description}</p>
       <FlueDiagram
+        key={group.code}
         code={group.code}
         digit={digit}
         title={formatType(group, digit, suffixes)}

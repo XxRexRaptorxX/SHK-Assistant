@@ -191,6 +191,19 @@ describe('Abgasanlagen Arten', () => {
     expect(list.match(/aria-label="C\S+, In Deutschland/g)).toHaveLength(6)
   })
 
+  it('bietet bei C3 zwei Ausführungen wie im WOLF-Abgasschema und zeichnet C5 als Außenkamin', () => {
+    expect(FLUE_LAYOUTS.C3!.map((variant) => variant.label)).toEqual(['Über Dach', 'Im Schacht'])
+    const roof = renderToStaticMarkup(<FlueDiagram code="C3" digit="3" title="C33x" />)
+    const shaft = renderToStaticMarkup(<FlueDiagram code="C3" digit="3" title="C33x" initialVariant={1} />)
+    expect(roof).toContain('aria-label="Ausführung"')
+    expect(roof).toContain('Mündung über Dach')
+    expect(shaft).toContain('Leitungsführung')
+    expect(shaft).not.toContain('Mündung über Dach')
+    // Nur eine Ausführung: kein Umschalter
+    expect(renderToStaticMarkup(<FlueDiagram code="C9" digit="3" title="C93" />)).not.toContain('aria-label="Ausführung"')
+    expect(renderToStaticMarkup(<FlueDiagram code="C5" digit="3" title="C53x" />)).toContain('Abgasleitung außen an der Fassade')
+  })
+
   it('zeigt das Schema im Ergebnis', () => {
     expect(renderType('C93x')).toContain('aria-label="Schema C93x"')
     expect(renderType('C93x')).toContain('vorhandener Schacht als')
