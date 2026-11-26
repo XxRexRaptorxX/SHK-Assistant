@@ -21,33 +21,48 @@ interface Scene {
   marker: (medium: Medium) => string
 }
 
+/** Leichte Tönung je Medium, damit man den Weg von Luft und Abgas verfolgen kann (hell und dunkel lesbar) */
+const TINT: Record<Medium, string> = {
+  air: 'color-mix(in srgb, var(--graph-1) 35%, var(--surface))',
+  flue: 'color-mix(in srgb, var(--graph-2) 35%, var(--surface))',
+}
+/** Kräftiger für die schmale Füllung der Rohre */
+const PIPE_TINT: Record<Medium, string> = {
+  air: 'color-mix(in srgb, var(--graph-1) 65%, var(--surface))',
+  flue: 'color-mix(in srgb, var(--graph-2) 65%, var(--surface))',
+}
+
 // ---------- Bausteine ----------
 
-/** Rohr: dunkel = gehört zum Gerät, grau = Gebäude oder separat zugelassen */
-function Pipe({ d, building = false, dashed = false }: { d: string; building?: boolean; dashed?: boolean }) {
+/**
+ * Rohr: dunkel = gehört zum Gerät, grau = Gebäude oder separat zugelassen. Innen getönt nach dem, was darin strömt;
+ * ohne medium neutral (z. B. bei gemischten oder offenen Wegen).
+ */
+function Pipe({ d, medium, building = false, dashed = false }: { d: string; medium?: Medium; building?: boolean; dashed?: boolean }) {
   const dash = dashed ? '6 4' : undefined
   return (
     <g fill="none" strokeLinejoin="round">
       <path d={d} stroke={building ? BUILDING_LINE : INK} strokeWidth={7} strokeDasharray={dash} />
-      <path d={d} stroke={building ? BUILDING : SURFACE} strokeWidth={3} strokeDasharray={dash} />
+      <path d={d} stroke={medium ? PIPE_TINT[medium] : building ? BUILDING : SURFACE} strokeWidth={4} strokeDasharray={dash} />
     </g>
   )
 }
 
-/** Konzentrisches Luft-Abgas-Rohr: außen Luft, innen Abgas */
+/** Konzentrisches Luft-Abgas-Rohr: außen Luft (Ringspalt blau getönt), innen Abgas (orange getönt) */
 function Concentric({ d }: { d: string }) {
   return (
     <g fill="none" strokeLinejoin="round">
       <path d={d} stroke={INK} strokeWidth={13} />
-      <path d={d} stroke={SURFACE} strokeWidth={9} />
-      <path d={d} stroke={INK} strokeWidth={3} />
+      <path d={d} stroke={PIPE_TINT.air} strokeWidth={9} />
+      <path d={d} stroke={INK} strokeWidth={5} />
+      <path d={d} stroke={PIPE_TINT.flue} strokeWidth={2.5} />
     </g>
   )
 }
 
-/** Schacht oder Abgasanlage des Gebäudes */
-const Shaft = ({ x, y, w, h }: { x: number; y: number; w: number; h: number }) => (
-  <rect x={x} y={y} width={w} height={h} fill={BUILDING} stroke={BUILDING_LINE} strokeWidth={1.5} />
+/** Schacht oder Abgasanlage des Gebäudes; getönt nach dem, was darin strömt (ohne medium: Bauteil bzw. gemischt) */
+const Shaft = ({ x, y, w, h, medium }: { x: number; y: number; w: number; h: number; medium?: Medium }) => (
+  <rect x={x} y={y} width={w} height={h} fill={medium ? TINT[medium] : BUILDING} stroke={BUILDING_LINE} strokeWidth={1.5} />
 )
 
 function Flow({ scene, medium, x1, y1, x2, y2 }: { scene: Scene; medium: Medium } & Record<'x1' | 'y1' | 'x2' | 'y2', number>) {
@@ -116,7 +131,7 @@ function FlueStack({ scene, cx, y, diverter }: { scene: Scene; cx: number; y: nu
       <Diverter scene={scene} x={cx} y={y} />
       {scene.digit === '4' && (
         <>
-          <Pipe d={`M ${cx} ${y - 24} V ${y - 44}`} />
+          <Pipe d={`M ${cx} ${y - 24} V ${y - 44}`} medium="flue" />
           <Fan x={cx} y={y - 34} />
         </>
       )}
@@ -128,7 +143,7 @@ function FlueStack({ scene, cx, y, diverter }: { scene: Scene; cx: number; y: nu
 }
 
 /** Gerät mit Brenner, Wärmetauscher und Gebläse nach Ziffer 2 (hinter dem Wärmetauscher) oder 3 (vor dem Brenner) */
-function Appliance({ scene, x, y, w = 64, h = 70, sealed, label = 'Gerät' }: { scene: Scene; x: number; y: number; w?: number; h?: number; sealed: boolean; label?: string }) {
+function Appliance({ scene, x, y, w = 64, h = 70, sealed, airTop = sealed, label = 'Gerät' }: { scene: Scene; x: number; y: number; w?: number; h?: number; sealed: boolean; /** Luft tritt oben ein */ airTop?: boolean; label?: string }) {
   const cx = x + w / 2
   const zig = Array.from({ length: 5 }, (_, i) => `L ${x + 10 + ((w - 20) * (i + 0.5)) / 5} ${y + h / 2 + (i % 2 === 0 ? -5 : 5)}`).join(' ')
   return (
@@ -141,7 +156,7 @@ function Appliance({ scene, x, y, w = 64, h = 70, sealed, label = 'Gerät' }: { 
       <line x1={cx - 12} y1={y + h - 9} x2={cx + 12} y2={y + h - 9} stroke={INK} strokeWidth={2} />
       <path d={`M ${cx - 6} ${y + h - 10} Q ${cx - 7} ${y + h - 18} ${cx} ${y + h - 24} Q ${cx + 7} ${y + h - 18} ${cx + 6} ${y + h - 10} Z`} fill={FLUE} />
       {scene.digit === '2' && <Fan x={cx} y={y + 11} />}
-      {scene.digit === '3' && <Fan x={x + 11} y={y + h - 13} />}
+      {scene.digit === '3' && <Fan x={x + 11} y={airTop ? y + 13 : y + h - 13} />}
       {label && (
         <text x={x - 4} y={y + 10} fontSize={8.5} fill={LABEL} textAnchor="end">
           {label}
@@ -179,14 +194,25 @@ function Building({ floors = 1, loft = false }: { floors?: 1 | 2; loft?: boolean
 type Layout = (scene: Scene) => ReactNode
 
 /** Raumluftabhängig: Luft strömt aus dem Raum unten ins Gerät */
-const roomAir = (scene: Scene, x: number, y: number, h: number) => (
-  <>
-    <Flow scene={scene} medium="air" x1={x - 44} y1={y + h - 8} x2={x - 4} y2={y + h - 8} />
-    <Label x={x - 46} y={y + h + 10}>
-      Luft aus dem Raum
-    </Label>
-  </>
-)
+const roomAir = (scene: Scene, x: number, y: number, h: number, top = false) =>
+  top ? (
+    <>
+      <Flow scene={scene} medium="air" x1={x - 40} y1={y - 24} x2={x + 2} y2={y - 2} />
+      <Label x={x - 50} y={y - 30}>
+        Luft aus dem Raum
+      </Label>
+    </>
+  ) : (
+    <>
+      <Flow scene={scene} medium="air" x1={x - 44} y1={y + h - 8} x2={x - 4} y2={y + h - 8} />
+      <Label x={x - 46} y={y + h + 10}>
+        Luft aus dem Raum
+      </Label>
+    </>
+  )
+
+/** Gebläsegeräte ohne Strömungssicherung saugen die Raumluft oben an, atmosphärische Geräte unten am Brenner */
+const fanAirTop = (diverter: boolean, digit: string | undefined) => !diverter && (digit === '2' || digit === '3')
 
 /** Beschriftung von Gebäudeteilen über dem Dach, rechtsbündig bis kurz vor den Schacht */
 const BuildingLabel = ({ x, lines }: { x: number; lines: string[] }) => (
@@ -205,11 +231,11 @@ const bSeparate = (diverter: boolean): Layout => (scene) => {
   return (
     <>
       <Building />
-      <Shaft x={300} y={8} w={30} h={274} />
-      <Pipe d={`M 182 ${top} V 110 H 300`} building />
+      <Shaft x={300} y={8} w={30} h={274} medium="flue" />
+      <Pipe d={`M 182 ${top} V 110 H 300`} building medium="flue" />
       <FlueStack scene={scene} cx={182} y={190} diverter={diverter} />
-      <Appliance scene={scene} x={150} y={190} sealed={false} />
-      {roomAir(scene, 150, 190, 70)}
+      <Appliance scene={scene} x={150} y={190} sealed={false} airTop={fanAirTop(diverter, scene.digit)} />
+      {roomAir(scene, 150, 190, 70, fanAirTop(diverter, scene.digit))}
       <Flow scene={scene} medium="flue" x1={200} y1={98} x2={280} y2={98} />
       <Flow scene={scene} medium="flue" x1={315} y1={60} x2={315} y2={4} />
       <Label x={240} y={128} anchor="middle">
@@ -226,11 +252,11 @@ const bOwn = (diverter: boolean): Layout => (scene) => {
   return (
     <>
       <Building />
-      <Pipe d={`M 182 ${top} V 16`} />
+      <Pipe d={`M 182 ${top} V 16`} medium="flue" />
       <Cap x={182} y={14} dir="up" />
       <FlueStack scene={scene} cx={182} y={190} diverter={diverter} />
-      <Appliance scene={scene} x={150} y={190} sealed={false} />
-      {roomAir(scene, 150, 190, 70)}
+      <Appliance scene={scene} x={150} y={190} sealed={false} airTop={fanAirTop(diverter, scene.digit)} />
+      {roomAir(scene, 150, 190, 70, fanAirTop(diverter, scene.digit))}
       <Flow scene={scene} medium="flue" x1={196} y1={130} x2={196} y2={80} />
       <Flow scene={scene} medium="flue" x1={196} y1={22} x2={196} y2={2} />
       <Label x={202} y={100}>
@@ -246,32 +272,32 @@ const bOwn = (diverter: boolean): Layout => (scene) => {
 /** B3: konzentrisches Rohr mit Luftöffnungen an gemeinsame Naturzug-Abgasanlage */
 const b3: Layout = (scene) => {
   const floor = (y: number) => {
-    const pipeY = y + 18
+    const pipeY = y - 14
     return (
       <g key={y}>
-        <Concentric d={`M 194 ${pipeY} H 300`} />
+        <Concentric d={`M 162 ${y} V ${pipeY} H 300`} />
         {[226, 248, 270].map((x) => (
           <g key={x}>
-            <rect x={x - 3} y={pipeY - 7} width={6} height={3} fill={SURFACE} />
-            <Flow scene={scene} medium="air" x1={x} y1={pipeY - 26} x2={x} y2={pipeY - 10} />
+            <rect x={x - 3} y={pipeY + 4} width={6} height={3} fill={SURFACE} />
+            <Flow scene={scene} medium="air" x1={x} y1={pipeY + 26} x2={x} y2={pipeY + 10} />
           </g>
         ))}
-        <Label x={248} y={pipeY - 30} anchor="middle">
+        <Label x={248} y={pipeY + 38} anchor="middle">
           Luft aus dem Raum
         </Label>
-        <Appliance scene={scene} x={130} y={y} h={62} sealed={false} />
+        <Appliance scene={scene} x={130} y={y} h={62} sealed={false} airTop />
       </g>
     )
   }
   return (
     <>
       <Building floors={2} />
-      <Shaft x={300} y={8} w={30} h={274} />
-      {floor(78)}
-      {floor(200)}
+      <Shaft x={300} y={8} w={30} h={274} medium="flue" />
+      {floor(84)}
+      {floor(206)}
       <Flow scene={scene} medium="flue" x1={315} y1={150} x2={315} y2={110} />
       <Flow scene={scene} medium="flue" x1={315} y1={36} x2={315} y2={4} />
-      <Label x={248} y={274} anchor="middle">
+      <Label x={248} y={276} anchor="middle">
         Öffnungen im Anschlussrohr
       </Label>
       <BuildingLabel x={294} lines={['gemeinsame Abgasanlage,', 'Naturzug (Gebäude)']} />
@@ -315,11 +341,27 @@ const c1: Layout = (scene) => (
   </>
 )
 
+/**
+ * Anschluss mittig oben am Gerät, der sich in getrennte Luft- und Abgasleitung teilt (T-Abzweig), wie im
+ * WOLF-Abgasschema bei C53 und C83x: konzentrischer Stutzen bis top, oben geschlossen; das Abgasrohr läuft
+ * geradeaus weiter (flue: Pfad ab (cx, top), beginnt senkrecht), die Luftleitung zweigt seitlich ab
+ * (air: Pfad ab (cx, top + 6), beginnt waagerecht).
+ */
+function Splitter({ cx, y, top, air, flue }: { cx: number; y: number; top: number; air: string; flue: string }) {
+  return (
+    <>
+      <Pipe d={`M ${cx} ${top + 6} ${air}`} medium="air" />
+      <Pipe d={`M ${cx} ${top + 2} ${flue}`} medium="flue" />
+      <Concentric d={`M ${cx} ${y} V ${top}`} />
+      <line x1={cx - 6.5} y1={top} x2={cx + 6.5} y2={top} stroke={INK} strokeWidth={2} />
+    </>
+  )
+}
+
 const c2: Layout = (scene) => {
   const floor = (y: number) => (
     <g key={y}>
-      <Pipe d={`M 194 ${y + 50} H 300`} />
-      <Pipe d={`M 162 ${y} V ${y - 14} H 300`} />
+      <Splitter cx={162} y={y} top={y - 16} air="H 300" flue={`V ${y - 28} H 300`} />
       <Appliance scene={scene} x={130} y={y} h={62} sealed />
     </g>
   )
@@ -327,8 +369,8 @@ const c2: Layout = (scene) => {
     <>
       <Building floors={2} />
       <Shaft x={300} y={8} w={34} h={284} />
-      {floor(78)}
-      {floor(200)}
+      {floor(84)}
+      {floor(206)}
       <Flow scene={scene} medium="air" x1={317} y1={286} x2={317} y2={262} />
       <Flow scene={scene} medium="flue" x1={317} y1={36} x2={317} y2={4} />
       <BuildingLabel x={294} lines={['ein Schacht für Luft und Abgas', '(Gebäude)']} />
@@ -349,26 +391,31 @@ const c3: Layout = (scene) => (
   </>
 )
 
-/** C4 und C(10): Luftschacht und Abgasschacht des Gebäudes für mehrere Geräte, gemeinsame Mündung */
+/**
+ * C4 und C(10): Luft-Abgas-System des Gebäudes für mehrere Geräte, gemeinsame Mündung. Gezeichnet als
+ * konzentrischer LAS (Abgasschacht innen, Luft im Ringspalt) wie im WOLF-Abgasschema (C43x).
+ */
 const commonAirFlue = (pressure: string): Layout => (scene) => {
   const floor = (y: number) => (
     <g key={y}>
-      <Pipe d={`M 194 ${y + 50} H 270`} />
-      <Pipe d={`M 162 ${y} V ${y - 14} H 302`} />
+      {/* Außenrohr (Luft) endet an der Schachtwand und öffnet in den Ringspalt; nur das Abgasrohr führt in den Abgasschacht */}
+      <Pipe d={`M 270 ${y - 14} H 296`} medium="flue" />
+      <Concentric d={`M 162 ${y} V ${y - 14} H 272`} />
       <Appliance scene={scene} x={130} y={y} h={62} sealed />
     </g>
   )
   return (
     <>
       <Building floors={2} />
-      <Shaft x={270} y={20} w={30} h={262} />
-      <Shaft x={302} y={20} w={30} h={262} />
-      <path d="M 266 18 L 301 6 L 336 18" fill="none" stroke={BUILDING_LINE} strokeWidth={3} />
-      {floor(78)}
-      {floor(200)}
-      <Flow scene={scene} medium="air" x1={285} y1={100} x2={285} y2={140} />
-      <Flow scene={scene} medium="flue" x1={317} y1={140} x2={317} y2={100} />
-      <BuildingLabel x={260} lines={['Luftschacht + Abgasschacht (Gebäude)', `Abgasschacht: ${pressure}`]} />
+      <Shaft x={272} y={20} w={62} h={262} medium="air" />
+      <Shaft x={294} y={10} w={18} h={272} medium="flue" />
+      <path d="M 268 18 L 303 2 L 338 18" fill="none" stroke={BUILDING_LINE} strokeWidth={3} />
+      {floor(84)}
+      {floor(206)}
+      <Flow scene={scene} medium="air" x1={283} y1={100} x2={283} y2={150} />
+      <Flow scene={scene} medium="air" x1={323} y1={100} x2={323} y2={150} />
+      <Flow scene={scene} medium="flue" x1={303} y1={150} x2={303} y2={100} />
+      <BuildingLabel x={262} lines={['Luft-Abgas-System (Gebäude):', 'Luft außen, Abgas innen,', `Abgasschacht: ${pressure}`]} />
     </>
   )
 }
@@ -376,14 +423,13 @@ const commonAirFlue = (pressure: string): Layout => (scene) => {
 const c5: Layout = (scene) => (
   <>
     <Building />
-    <Pipe d="M 150 250 H 14" />
-    <Cap x={12} y={250} dir="left" />
-    <Pipe d="M 182 190 V 16" />
+    <Cap x={12} y={176} dir="left" />
     <Cap x={182} y={14} dir="up" />
+    <Splitter cx={182} y={190} top={170} air="H 14" flue="V 16" />
     <Appliance scene={scene} x={150} y={190} sealed />
-    <Flow scene={scene} medium="air" x1={70} y1={238} x2={130} y2={238} />
+    <Flow scene={scene} medium="air" x1={70} y1={186} x2={130} y2={186} />
     <Flow scene={scene} medium="flue" x1={196} y1={140} x2={196} y2={90} />
-    <Label x={60} y={272}>
+    <Label x={60} y={164}>
       Luftmündung
     </Label>
     <Label x={206} y={110}>
@@ -399,11 +445,11 @@ const c6: Layout = (scene) => (
   <>
     <Building />
     <rect x={110} y={60} width={200} height={70} rx={6} fill="none" stroke={INK} strokeWidth={1.5} strokeDasharray="6 4" />
-    <Pipe d="M 172 190 V 130" dashed />
-    <Pipe d="M 192 190 V 130" dashed />
+    <Pipe d="M 182 176 V 130" dashed />
+    <Concentric d="M 182 190 V 176" />
     <Appliance scene={scene} x={150} y={190} sealed />
-    <Flow scene={scene} medium="air" x1={160} y1={140} x2={160} y2={180} />
-    <Flow scene={scene} medium="flue" x1={204} y1={180} x2={204} y2={140} />
+    <Flow scene={scene} medium="air" x1={166} y1={140} x2={166} y2={176} />
+    <Flow scene={scene} medium="flue" x1={198} y1={176} x2={198} y2={140} />
     <Label x={210} y={84} anchor="middle">
       Luft-Abgas-System separat
     </Label>
@@ -419,21 +465,21 @@ const c6: Layout = (scene) => (
 const c7: Layout = (scene) => (
   <>
     <Building loft />
-    <Pipe d="M 170 190 V 82" />
-    <Pipe d="M 196 190 V 16" />
-    <Cap x={196} y={14} dir="up" />
-    <Diverter scene={scene} x={196} y={76} />
+    <Pipe d="M 175 190 V 82" medium="air" />
+    <Pipe d="M 190 190 V 16" medium="flue" />
+    <Cap x={190} y={14} dir="up" />
+    <Diverter scene={scene} x={190} y={76} />
     <Appliance scene={scene} x={150} y={190} sealed />
     <Flow scene={scene} medium="air" x1={14} y1={80} x2={60} y2={80} />
-    <Flow scene={scene} medium="air" x1={170} y1={58} x2={170} y2={76} />
-    <Flow scene={scene} medium="flue" x1={210} y1={36} x2={210} y2={4} />
+    <Flow scene={scene} medium="air" x1={175} y1={58} x2={175} y2={76} />
+    <Flow scene={scene} medium="flue" x1={204} y1={36} x2={204} y2={4} />
     <Label x={66} y={74}>
       Dachboden
     </Label>
-    <Label x={216} y={62}>
+    <Label x={210} y={62}>
       Strömungssicherung
     </Label>
-    <Label x={216} y={74}>
+    <Label x={210} y={74}>
       über der Luftöffnung
     </Label>
   </>
@@ -442,17 +488,16 @@ const c7: Layout = (scene) => (
 const c8: Layout = (scene) => (
   <>
     <Building />
-    <Shaft x={300} y={8} w={30} h={274} />
-    <Pipe d="M 280 150 H 300" building />
-    <Pipe d="M 150 250 H 14" />
-    <Cap x={12} y={250} dir="left" />
-    <Pipe d="M 182 190 V 110 H 300" />
+    <Shaft x={300} y={8} w={30} h={274} medium="flue" />
+    <Pipe d="M 280 244 H 300" building medium="flue" />
+    <Cap x={12} y={176} dir="left" />
+    <Splitter cx={182} y={190} top={170} air="H 14" flue="V 110 H 300" />
     <Appliance scene={scene} x={150} y={190} sealed />
-    <Flow scene={scene} medium="air" x1={70} y1={238} x2={130} y2={238} />
+    <Flow scene={scene} medium="air" x1={70} y1={186} x2={130} y2={186} />
     <Flow scene={scene} medium="flue" x1={200} y1={98} x2={280} y2={98} />
     <Flow scene={scene} medium="flue" x1={315} y1={60} x2={315} y2={4} />
-    <Label x={276} y={154} anchor="end">
-      ggf. weitere Geräte
+    <Label x={296} y={234} anchor="end">
+      weitere Geräte
     </Label>
     <BuildingLabel x={294} lines={['eigene oder gemeinsame', 'Abgasanlage, Naturzug (Gebäude)']} />
   </>
@@ -461,7 +506,7 @@ const c8: Layout = (scene) => (
 /** Vorhandener Schacht mit Abgasleitung darin, Luft strömt im Schacht nach unten */
 const existingShaft = (scene: Scene, lines: string[]) => (
   <>
-    <Shaft x={290} y={20} w={44} h={262} />
+    <Shaft x={290} y={20} w={44} h={262} medium="air" />
     <Flow scene={scene} medium="air" x1={298} y1={4} x2={298} y2={34} />
     <Flow scene={scene} medium="air" x1={298} y1={70} x2={298} y2={120} />
     <BuildingLabel x={284} lines={lines} />
@@ -473,7 +518,7 @@ const c9: Layout = (scene) => (
     <Building />
     {existingShaft(scene, ['vorhandener Schacht als', 'Luftweg (Gebäude)'])}
     <Concentric d="M 162 190 V 150 H 296" />
-    <Pipe d="M 296 150 H 314 V 10" />
+    <Pipe d="M 296 150 H 314 V 10" medium="flue" />
     <Cap x={314} y={8} dir="up" />
     <Appliance scene={scene} x={130} y={190} sealed />
     <Flow scene={scene} medium="air" x1={260} y1={166} x2={200} y2={166} />
@@ -524,19 +569,18 @@ const c11: Layout = (scene) => (
 const c12: Layout = (scene) => {
   const floor = (y: number) => (
     <g key={y}>
-      <Pipe d={`M 130 ${y + 50} H 14`} />
-      <Cap x={12} y={y + 50} dir="left" />
-      <Pipe d={`M 162 ${y} V ${y - 14} H 300`} />
+      <Cap x={12} y={y - 10} dir="left" />
+      <Splitter cx={162} y={y} top={y - 16} air="H 14" flue={`V ${y - 28} H 300`} />
       <Appliance scene={scene} x={130} y={y} h={62} sealed />
     </g>
   )
   return (
     <>
       <Building floors={2} />
-      <Shaft x={300} y={8} w={30} h={274} />
-      {floor(78)}
-      {floor(200)}
-      <Flow scene={scene} medium="air" x1={64} y1={238} x2={110} y2={238} />
+      <Shaft x={300} y={8} w={30} h={274} medium="flue" />
+      {floor(84)}
+      {floor(206)}
+      <Flow scene={scene} medium="air" x1={64} y1={206} x2={110} y2={206} />
       <Flow scene={scene} medium="flue" x1={315} y1={150} x2={315} y2={110} />
       <Flow scene={scene} medium="flue" x1={315} y1={36} x2={315} y2={4} />
       <BuildingLabel x={294} lines={['gemeinsame Abgasleitung (Gebäude),', 'Überdruck möglich']} />
@@ -547,22 +591,24 @@ const c12: Layout = (scene) => {
 const c13: Layout = (scene) => (
   <>
     <Building />
-    <Pipe d="M 150 180 V 150 H 238 V 16" />
-    <Pipe d="M 194 180 V 150" />
-    <Cap x={238} y={14} dir="up" />
-    {[0, 1, 2].map((i) => (
-      <g key={i}>
-        <Pipe d={`M ${130 + 44 * i} 236 V ${250 + 10 * i} H 14`} />
-        <Cap x={12} y={250 + 10 * i} dir="left" />
-      </g>
-    ))}
+    <Pipe d="M 142 110 H 230" medium="flue" />
+    <Cap x={230} y={14} dir="up" />
+    {[0, 1, 2].map((i) => {
+      const cx = 142 + 44 * i
+      return (
+        <g key={i}>
+          <Cap x={12} y={150 - 12 * i} dir="left" />
+          <Splitter cx={cx} y={180} top={164} air={`H ${cx - 16} V ${150 - 12 * i} H 14`} flue={i === 2 ? 'V 16' : 'V 110'} />
+        </g>
+      )
+    })}
     {modules(scene, 180, 56, true)}
-    <Flow scene={scene} medium="air" x1={58} y1={238} x2={100} y2={238} />
-    <Flow scene={scene} medium="flue" x1={252} y1={130} x2={252} y2={80} />
-    <Label x={232} y={140} anchor="end">
+    <Flow scene={scene} medium="air" x1={58} y1={162} x2={100} y2={162} />
+    <Flow scene={scene} medium="flue" x1={244} y1={100} x2={244} y2={60} />
+    <Label x={226} y={102} anchor="end">
       gemeinsame Abgasleitung
     </Label>
-    <Label x={56} y={226}>
+    <Label x={56} y={116}>
       Luft je Modul
     </Label>
   </>
@@ -575,7 +621,7 @@ const c14: Layout = (scene) => (
     <Concentric d="M 142 200 V 170 H 296" />
     <Concentric d="M 186 200 V 170" />
     <Concentric d="M 230 200 V 170" />
-    <Pipe d="M 296 170 H 314 V 10" />
+    <Pipe d="M 296 170 H 314 V 10" medium="flue" />
     <Cap x={314} y={8} dir="up" />
     {modules(scene, 200)}
   </>
@@ -585,7 +631,7 @@ const c15: Layout = (scene) => {
   const floor = (y: number, flueX: number) => (
     <g key={y}>
       <Concentric d={`M 162 ${y} V ${y - 16} H 280`} />
-      <Pipe d={`M 280 ${y - 16} H ${flueX} V 10`} />
+      <Pipe d={`M 280 ${y - 16} H ${flueX} V 10`} medium="flue" />
       <Cap x={flueX} y={8} dir="up" />
       <Appliance scene={scene} x={130} y={y} h={62} sealed />
     </g>
@@ -593,7 +639,7 @@ const c15: Layout = (scene) => {
   return (
     <>
       <Building floors={2} />
-      <Shaft x={280} y={20} w={54} h={262} />
+      <Shaft x={280} y={20} w={54} h={262} medium="air" />
       {floor(200, 320)}
       {floor(78, 296)}
       <Flow scene={scene} medium="air" x1={308} y1={90} x2={308} y2={140} />
@@ -628,31 +674,62 @@ export const FLUE_LAYOUTS: Record<string, Layout> = {
   'C(15)': c15,
 }
 
-function LegendLine({ color, children, wide = false, building = false }: { color?: string; children: ReactNode; wide?: boolean; building?: boolean }) {
+/** Ein Eintrag der Legende: kleines Symbol und kurzer Text */
+function LegendItem({ symbol, children, wide = false }: { symbol: ReactNode; children: ReactNode; wide?: boolean }) {
   return (
-    <li className="flex items-center gap-2">
-      <svg width="28" height="12" aria-hidden="true">
-        {color ? (
-          <line x1="2" y1="6" x2="22" y2="6" stroke={color} strokeWidth="2.5" />
-        ) : (
-          <>
-            <line x1="2" y1="6" x2="26" y2="6" stroke={building ? BUILDING_LINE : INK} strokeWidth={wide ? 10 : 7} />
-            <line x1="2" y1="6" x2="26" y2="6" stroke={building ? BUILDING : SURFACE} strokeWidth={wide ? 8 : 3} />
-          </>
-        )}
-        {color && <path d="M 20 2 L 27 6 L 20 10 Z" fill={color} />}
+    <li className={`flex items-center gap-2 ${wide ? 'min-[420px]:col-span-2' : ''}`}>
+      <svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true" className="shrink-0">
+        {symbol}
       </svg>
       <span>{children}</span>
     </li>
   )
 }
 
+const pipeSymbol = (outline: string, fill: string, width = 7, inner = 4) => (
+  <>
+    <line x1="2" y1="8" x2="28" y2="8" stroke={outline} strokeWidth={width} />
+    <line x1="2" y1="8" x2="28" y2="8" stroke={fill} strokeWidth={inner} />
+  </>
+)
+
+/** Anordnungen ohne konzentrisches Rohr (Legende „Konzentrisch“ entfällt) */
+const WITHOUT_CONCENTRIC = new Set(['A', 'B1', 'B2', 'B4', 'B5', 'C7'])
+
+/** Anordnungen mit zwei Geschossen (je Geschoss ein Gerät) */
+const TWO_FLOORS = new Set(['B3', 'C2', 'C4', 'C(10)', 'C(12)', 'C(15)'])
+
+/** Gitter in der Außenwand: Zuluft- bzw. Lüftungsöffnung ins Freie, je Geschoss mit Gerät */
+function VentOpening({ scene, y, label }: { scene: Scene; y: number; label: string }) {
+  return (
+    <g aria-label={label}>
+      <rect x={40} y={y} width={12} height={16} fill={SURFACE} stroke={INK} strokeWidth={1.5} />
+      {[4, 8, 12].map((dy) => (
+        <line key={dy} x1={42} y1={y + dy} x2={50} y2={y + dy} stroke={INK} strokeWidth={1} />
+      ))}
+      <Flow scene={scene} medium="air" x1={6} y1={y + 8} x2={36} y2={y + 8} />
+      <Label x={58} y={y + 12}>
+        {label}
+      </Label>
+    </g>
+  )
+}
+
+/** Öffnung ins Freie im Aufstellraum: Bezeichnung und Erklärung kommen aus dem Inhalt (Einbaukriterien) */
+export interface FlueVent {
+  /** Kurzbeschriftung am Gitter, z. B. „Zuluft“ */
+  label: string
+  /** Kurze Erklärung in der Legende, z. B. „ins Freie, alternativ Verbrennungsluftverbund“ */
+  caption: string
+}
+
 /** Schemazeichnung einer Art mit Legende */
-export function FlueDiagram({ code, digit, title }: { code: string; digit: string | undefined; title: string }) {
+export function FlueDiagram({ code, digit, title, vent }: { code: string; digit: string | undefined; title: string; vent?: FlueVent }) {
   const id = useId().replace(/[^a-zA-Z0-9_-]/g, '')
   const layout = FLUE_LAYOUTS[code]
   if (!layout) return null
   const scene: Scene = { digit, marker: (medium) => `${id}-${medium}` }
+  const ventRows = TWO_FLOORS.has(code) ? [122, 244] : [244]
   return (
     <figure className="mt-4">
       <svg viewBox="0 0 360 300" role="img" aria-label={`Schema ${title}`} className="mx-auto w-full max-w-md rounded-xl border border-edge bg-surface">
@@ -664,20 +741,57 @@ export function FlueDiagram({ code, digit, title }: { code: string; digit: strin
           ))}
         </defs>
         {layout(scene)}
+        {vent && ventRows.map((y) => <VentOpening key={y} scene={scene} y={y} label={vent.label} />)}
       </svg>
-      <figcaption className="mt-2 text-sm">
-        <ul className="grid gap-1 min-[420px]:grid-cols-2">
-          <LegendLine color={AIR}>Verbrennungsluft</LegendLine>
-          <LegendLine color={FLUE}>Abgas</LegendLine>
-          <LegendLine>Leitung gehört zum Gerät</LegendLine>
-          <LegendLine building wide>
-            Gebäude bzw. separat zugelassen
-          </LegendLine>
+      <figcaption className="mx-auto mt-2 max-w-md text-sm">
+        <ul className="grid gap-x-4 gap-y-1.5 min-[420px]:grid-cols-2">
+          <LegendItem symbol={pipeSymbol(INK, PIPE_TINT.air)}>Luft</LegendItem>
+          <LegendItem symbol={pipeSymbol(INK, PIPE_TINT.flue)}>Abgas</LegendItem>
+          {!WITHOUT_CONCENTRIC.has(code) && (
+            <LegendItem
+              symbol={
+                <>
+                  {pipeSymbol(INK, PIPE_TINT.air, 13, 9)}
+                  {pipeSymbol(INK, PIPE_TINT.flue, 5, 2.5)}
+                </>
+              }
+            >
+              Konzentrisch: Luft außen, Abgas innen
+            </LegendItem>
+          )}
+          <LegendItem symbol={pipeSymbol(INK, SURFACE)}>Kräftige Kontur: gehört zum Gerät</LegendItem>
+          <LegendItem symbol={<rect x="2" y="2" width="26" height="12" fill={BUILDING} stroke={BUILDING_LINE} strokeWidth={1.5} />}>
+            Grau: Teil des Gebäudes
+          </LegendItem>
+          {code.startsWith('C') && (
+            <LegendItem
+              symbol={
+                <>
+                  <rect x="6" y="1" width="18" height="14" rx="2" fill="none" stroke={INK} strokeWidth={1.5} />
+                  <rect x="8.5" y="3.5" width="13" height="9" rx="1" fill="none" stroke={INK} strokeWidth={1} />
+                </>
+              }
+            >
+              Doppelter Rahmen: raumluftunabhängig
+            </LegendItem>
+          )}
+          {vent && (
+            <LegendItem
+              wide
+              symbol={
+                <>
+                  <rect x="9" y="1" width="12" height="14" fill={SURFACE} stroke={INK} strokeWidth={1.5} />
+                  {[5, 8, 11].map((y) => (
+                    <line key={y} x1="11" y1={y} x2="19" y2={y} stroke={INK} strokeWidth={1} />
+                  ))}
+                </>
+              }
+            >
+              {vent.label}: {vent.caption}
+            </LegendItem>
+          )}
         </ul>
-        <p className="mt-1 text-muted">
-          Doppelter Rahmen = raumluftunabhängig (geschlossen). Schema, nicht maßstäblich; ein Beispiel der Anordnung nach
-          der Definition in DIN EN 1749. Ausführung nach Hersteller und TRGI.
-        </p>
+        <p className="mt-2 text-xs text-muted">Schema, nicht maßstäblich · Ausführung nach Hersteller und TRGI</p>
       </figcaption>
     </figure>
   )

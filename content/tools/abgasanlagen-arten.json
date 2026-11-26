@@ -2,7 +2,7 @@
   "id": "tool.abgasanlagen-arten",
   "visibility": "public",
   "status": "draft",
-  "source": "Arten A, B und C mit Gebläse-Ziffer: DIN EN 1749:2020-04 bzw. EN 1749:2020, Abschnitt 4 (Allgemeine Klassifizierung), S. 6–13 der englischen Fassung, Leseprobe https://cdn.standards.iteh.ai/samples/67717/ab3cc65bb79d40ae95835e42bad62451/SIST-EN-1749-2020.pdf; deutsche Leseprobe (Inhaltsverzeichnis, Anwendungsbereich) https://www.normsplash.com/Samples/DIN/363715165/DIN-EN-1749-2020-de.pdf. Zusätze AS, BS, D, P und R: CEN/TR 1749:2014, Abschnitte 3–5, S. 11–12, Leseprobe https://cdn.standards.iteh.ai/samples/41327/1b22bcbf75b54756bbd45b2fe794947b/SIST-TP-CEN-TR-1749-2014.pdf; in EN 1749:2020 laut Inhaltsverzeichnis weiter als Abschnitte 5–7 enthalten, deren Text in der Leseprobe fehlt. Zusatz x: Wikipedia, „Gasgerät“ (Stand 14.11.2025), https://de.wikipedia.org/wiki/Gasger%C3%A4t; Fritz Guther, „Aufstellung von raumluftunabhängigen Gasgeräten“, ikz-praxis 1/2001, S. 8, https://www.ikz.de/ikz-praxis-archiv/p0101/010108.php; WOLF, Planungsunterlage Abgassysteme, 4801968, 02/2023, Abschnitt 1.5.7, S. 11, https://msvcweuaimpimcoreprod.blob.core.windows.net/public/assets/Oxomi/WOLF/HeiztechnikLuft-Abgassysteme/4801968_202302_web.pdf. Einbaukriterien: Jörg Scheele, „Neue Technische Regeln für Gas-Installationen, Teil 7 – Gasgeräte auf europäisch“, SBZ 15/2008 (zur TRGI 2008), https://www.sbz-online.de/sanitaer/neue-technische-regeln-fuer-gas-installationen-teil-7-gasgeraete-auf-europaeisch; Ronny Gedamke, „Gerätearten nach TRGI, TRF und TRÖl“, SHK Profi 07/2013, https://www.shk-profi.de/artikel/shk_Geraetearten_nach_TRGI_TRF_und_TRoel-1788408.html; WOLF, Planungsunterlage Abgassysteme (siehe oben), Abschnitte 1.5.1–1.5.6, S. 7–10. Alle abgerufen am 26.11.2026.",
+  "source": "Arten A, B und C mit Gebläse-Ziffer: DIN EN 1749:2020-04 bzw. EN 1749:2020, Abschnitt 4 (Allgemeine Klassifizierung), S. 6–13 der englischen Fassung, Leseprobe https://cdn.standards.iteh.ai/samples/67717/ab3cc65bb79d40ae95835e42bad62451/SIST-EN-1749-2020.pdf; deutsche Leseprobe (Inhaltsverzeichnis, Anwendungsbereich) https://www.normsplash.com/Samples/DIN/363715165/DIN-EN-1749-2020-de.pdf. Zusätze AS, BS, D, P und R: CEN/TR 1749:2014, Abschnitte 3–5, S. 11–12, Leseprobe https://cdn.standards.iteh.ai/samples/41327/1b22bcbf75b54756bbd45b2fe794947b/SIST-TP-CEN-TR-1749-2014.pdf; in EN 1749:2020 laut Inhaltsverzeichnis weiter als Abschnitte 5–7 enthalten, deren Text in der Leseprobe fehlt. Zusatz x: Wikipedia, „Gasgerät“ (Stand 14.11.2025), https://de.wikipedia.org/wiki/Gasger%C3%A4t; Fritz Guther, „Aufstellung von raumluftunabhängigen Gasgeräten“, ikz-praxis 1/2001, S. 8, https://www.ikz.de/ikz-praxis-archiv/p0101/010108.php; WOLF, Planungsunterlage Abgassysteme, 4801968, 02/2023, Abschnitt 1.5.7, S. 11, https://msvcweuaimpimcoreprod.blob.core.windows.net/public/assets/Oxomi/WOLF/HeiztechnikLuft-Abgassysteme/4801968_202302_web.pdf. Einbaukriterien: Jörg Scheele, „Neue Technische Regeln für Gas-Installationen, Teil 7 – Gasgeräte auf europäisch“, SBZ 15/2008 (zur TRGI 2008), https://www.sbz-online.de/sanitaer/neue-technische-regeln-fuer-gas-installationen-teil-7-gasgeraete-auf-europaeisch; Ronny Gedamke, „Gerätearten nach TRGI, TRF und TRÖl“, SHK Profi 07/2013, https://www.shk-profi.de/artikel/shk_Geraetearten_nach_TRGI_TRF_und_TRoel-1788408.html; WOLF, Planungsunterlage Abgassysteme (siehe oben), Abschnitte 1.5.1–1.5.6, S. 7–10. Zulässigkeit in Deutschland: DVGW, Zertifizierungs-Information Nr. 3, „Abgasanlagen – Installationsanforderungen – Systemzertifizierung“, 2. Auflage 01/1999, https://silo.tips/download/abgasanlagen-installationsanforderungen-systemzertifizierung-zertifizierungs-inf; SBZ-Monteur, „Erklär mal: Gasgerätearten“ (16.09.2010), https://www.sbz-monteur.de/erklaer-mal/erklaer-mal-gasgeraetearten. Abgleich der Schemazeichnungen und Zuluftöffnungen: WOLF-Abgasschema (Ausführungsvarianten) und Hinweistext auf heima24, „WOLF Abgassysteme für Öl-Brennwert Geräte“, https://www.heima24.de/heizung/oelheizung/wolf/abgassysteme-fuer-oel-brennwert/, Bild https://www.heima24.de/shop/images/files/editor/image/category/abgas-varianten.png. Alle abgerufen am 26.11.2026.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "flueTypes",
@@ -20,7 +20,27 @@
           "key": "a",
           "label": "Ohne Abgasanlage",
           "note": "Luft aus dem Raum, Abgas bleibt im Raum",
+          "vent": {
+            "label": "Lüftung",
+            "caption": "Raum ausreichend lüften – Fenster, Abzugshaube oder mechanisch (siehe Einbaukriterien)"
+          },
           "notes": [
+            {
+              "text": "Haushalts-Gasherd bis 11 kW: Raum mit mehr als 15 m³ und einem Fenster, das sich öffnen lässt, oder einer Tür ins Freie; sonst Abluft-Abzugshaube.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            },
+            {
+              "text": "Herd mit nicht zündgesicherten Kochstellen: Abzugshaube mit mindestens 100 m³/h Außenluftvolumenstrom; der Herd darf nur betrieben werden, wenn diese läuft.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            },
+            {
+              "text": "Durchlaufwasserheizer und Raumheizer der Art A: mechanische Lüftung ins Freie mit mindestens 30 m³/h je kW Nennleistung, alternativ CO-Überwachung, die bei 30 ppm abschaltet. Art A in Räumen möglichst vermeiden.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            },
+            {
+              "text": "Andere Geräte der Art A ohne Zündsicherung: mechanische Lüftung mit mindestens fünffachem Luftwechsel je Stunde; Betrieb nur, wenn sie tatsächlich fördert.",
+              "source": "SBZ 15/2008 zur TRGI 2008"
+            },
             {
               "text": "Art A mit Zusatz AS heißt nicht, dass weitere Absicherung entfallen kann: Zwangslüftung oder CO-Überwachung bleiben nötig.",
               "source": "SBZ 15/2008 zur TRGI 2008"
@@ -31,6 +51,10 @@
           "key": "b",
           "label": "Raumluftabhängig",
           "note": "Luft aus dem Raum, Abgas über Abgasanlage ins Freie",
+          "vent": {
+            "label": "Zuluft",
+            "caption": "Öffnung ins Freie oder Verbrennungsluftverbund mit genug Rauminhalt (siehe Einbaukriterien)"
+          },
           "notes": [
             {
               "text": "Die Verbrennungsluftversorgung des Aufstellraums ist nachzuweisen (TRGI). Nach TRGI 2008: Dauerbetrieb 4 m³ Raum je kW Nennleistung im Verbrennungsluftverbund oder Öffnung ins Freie mit 150 cm² bis 50 kW Gesamtnennleistung; aus Wohnräumen nur bis 35 kW. Werte mit der gültigen TRGI abgleichen.",
@@ -203,6 +227,10 @@
         {
           "text": "In Aufenthaltsräumen unabhängig von der Nennleistung mit Abgasüberwachung (AS oder BS).",
           "source": "SBZ 15/2008 zur TRGI 2008"
+        },
+        {
+          "text": "Mit Strömungssicherung zusätzlich Schutzziel 1 (Anfahren): mindestens 1 m³ Rauminhalt je kW Nennleistung, erweiterbar über einen Ergänzungsraum mit zwei Öffnungen je 150 cm²; sonst zwei ständig offene Öffnungen ins Freie mit je mindestens 75 cm².",
+          "source": "SBZ 15/2008 zur TRGI 2008; Wikipedia „Gasgerät“"
         }
       ],
       "source": "DIN EN 1749:2020, 4.3"
@@ -262,6 +290,10 @@
         {
           "text": "In Aufenthaltsräumen unabhängig von der Nennleistung mit Abgasüberwachung (AS oder BS).",
           "source": "SBZ 15/2008 zur TRGI 2008"
+        },
+        {
+          "text": "Mit Strömungssicherung zusätzlich Schutzziel 1 (Anfahren): mindestens 1 m³ Rauminhalt je kW Nennleistung, erweiterbar über einen Ergänzungsraum mit zwei Öffnungen je 150 cm²; sonst zwei ständig offene Öffnungen ins Freie mit je mindestens 75 cm².",
+          "source": "SBZ 15/2008 zur TRGI 2008; Wikipedia „Gasgerät“"
         }
       ],
       "source": "DIN EN 1749:2020, 4.3"
@@ -310,6 +342,11 @@
           "source": "DIN EN 1749:2020, 4.4, Fußnoten"
         }
       ],
+      "germany": {
+        "status": "notPermitted",
+        "text": "Nach baurechtlichen Bestimmungen nicht zulässig. Nur noch im Bestand nach DVGW-Arbeitsblatt G 627 (Bestandsschutz).",
+        "source": "DVGW Zertifizierungs-Information Nr. 3 (01/1999), Bild 6; SBZ-Monteur „Erklär mal: Gasgerätearten“ (16.09.2010) zur TRGI 2008"
+      },
       "source": "DIN EN 1749:2020, 4.4"
     },
     {
@@ -342,8 +379,8 @@
       "fans": [{ "digit": "1" }, { "digit": "2" }, { "digit": "3" }],
       "notes": [
         {
-          "text": "Beispiel WOLF: C43x = Anschluss an einen feuchteunempfindlichen Luft-Abgas-Schornstein (LAS), höchstens 3 m Rohrlänge von Mitte Gerätebogen bis Anschluss; Berechnung nach EN 13384 durch den LAS-Hersteller.",
-          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7"
+          "text": "Beispiel WOLF: C43x = Anschluss an einen feuchteunempfindlichen Luft-Abgas-Schornstein (LAS), höchstens 3 m Rohrlänge von Mitte Gerätebogen bis Anschluss; Berechnung nach EN 13384 durch den LAS-Hersteller. Im WOLF-Abgasschema als konzentrischer Schacht: Abgas innen, Luft im Ringspalt, Anschluss konzentrisch oben am Gerät.",
+          "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.7; WOLF-Abgasschema (heima24)"
         }
       ],
       "source": "DIN EN 1749:2020, 4.4"
@@ -380,12 +417,13 @@
         {
           "text": "Veraltet: Die Art wird in künftigen Gerätenormen voraussichtlich nicht mehr verwendet.",
           "source": "DIN EN 1749:2020, 4.4, Fußnote 8"
-        },
-        {
-          "text": "In Deutschland gibt es dafür keine Aufstellregeln; die Art entspricht nicht der Musterfeuerungsverordnung und ist nur mit baurechtlicher Ausnahme möglich.",
-          "source": "Wikipedia „Gasgerät“"
         }
       ],
+      "germany": {
+        "status": "exceptionOnly",
+        "text": "In Deutschland nicht gebräuchlich, keine Aufstellregeln; entspricht nicht der Musterfeuerungsverordnung. Höchstens als baurechtliche Ausnahme mit zusätzlichen Auflagen.",
+        "source": "SBZ-Monteur „Erklär mal: Gasgerätearten“ (16.09.2010) zur TRGI 2008; Wikipedia „Gasgerät“"
+      },
       "source": "DIN EN 1749:2020, 4.4"
     },
     {
@@ -555,8 +593,8 @@
       "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.3–1.5.6"
     },
     {
-      "text": "Fragen zu Revisionsöffnungen und Zuluftöffnungen mit dem bevollmächtigten Bezirksschornsteinfeger klären.",
-      "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1"
+      "text": "Fragen zu Revisionsöffnungen und Zuluftöffnungen vor der Installation mit dem bevollmächtigten Bezirksschornsteinfeger klären. WOLF: Belüftung über 50 kW generell erforderlich.",
+      "source": "WOLF Planungsunterlage Abgassysteme 02/2023, 1.5.1; WOLF-Hinweis auf heima24 (Abgassysteme für Öl-Brennwert)"
     }
   ]
 }

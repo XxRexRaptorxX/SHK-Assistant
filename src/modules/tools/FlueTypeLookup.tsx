@@ -4,6 +4,7 @@ import { SelectionBar } from './ChoiceLookup'
 import { FlueDiagram } from './FlueDiagram'
 import {
   formatType,
+  GERMANY_STATUS,
   lookupType,
   narrow,
   suffixesFor,
@@ -15,6 +16,26 @@ import {
 
 type Mode = 'situation' | 'type'
 
+/** Gemeinsame Einschränkung in Deutschland, wenn alle Arten sie haben (sonst keine Marke) */
+function germanyBadge(groups: readonly FlueGroup[]): string | undefined {
+  if (groups.length === 0 || !groups.every((group) => group.germany)) return undefined
+  return groups.every((group) => group.germany!.status === 'notPermitted')
+    ? GERMANY_STATUS.notPermitted
+    : GERMANY_STATUS.exceptionOnly
+}
+
+/** Deutlicher Hinweis zur Zulässigkeit in Deutschland */
+function GermanyNotice({ group }: { group: FlueGroup }) {
+  if (!group.germany) return null
+  return (
+    <p role="note" className="mt-3 rounded-xl border-2 border-warn-ink bg-warn p-3 text-warn-ink">
+      <span className="block font-bold">⚠ {GERMANY_STATUS[group.germany.status]}</span>
+      <span className="block">{group.germany.text}</span>
+      <span className="block text-sm">({group.germany.source})</span>
+    </p>
+  )
+}
+
 const resultCard = 'mt-4 rounded-2xl border-2 border-accent bg-surface p-4'
 
 /** Große Auswahlknöpfe untereinander, für lange Beschriftungen und Bedienung mit Handschuhen */
@@ -25,7 +46,8 @@ function OptionList({
   onSelect,
 }: {
   name: string
-  options: { key: string; label: string; note?: string }[]
+  /** badge: Warnmarke, z. B. „In Deutschland nicht zulässig“ */
+  options: { key: string; label: string; note?: string; badge?: string }[]
   selected: string | undefined
   onSelect: (key: string) => void
 }) {
@@ -47,6 +69,11 @@ function OptionList({
             >
               <span className="block text-base font-bold">{option.label}</span>
               {option.note && <span className={`block text-sm ${active ? '' : 'text-muted'}`}>{option.note}</span>}
+              {option.badge && (
+                <span className="mt-1 inline-block rounded-md border-2 border-warn-ink bg-warn px-1.5 text-sm font-bold text-warn-ink">
+                  ⚠ {option.badge}
+                </span>
+              )}
             </button>
           )
         })}
@@ -106,13 +133,19 @@ export function TypeResult({
       <p className="text-sm font-semibold text-muted">Art</p>
       <h3 className="text-4xl font-bold">{formatType(group, digit, suffixes)}</h3>
       <p className="mt-1 text-lg font-semibold">{group.name}</p>
+      <GermanyNotice group={group} />
       {messages.map((message) => (
         <p key={message} role="note" className="mt-3 rounded-xl border-2 border-warn-ink bg-warn p-3 font-semibold text-warn-ink">
           {message}
         </p>
       ))}
       <p className="mt-3 text-base">{group.description}</p>
-      <FlueDiagram code={group.code} digit={digit} title={formatType(group, digit, suffixes)} />
+      <FlueDiagram
+        code={group.code}
+        digit={digit}
+        title={formatType(group, digit, suffixes)}
+        vent={criteria.find(({ option }) => option.vent)?.option.vent}
+      />
 
       <h4 className="mt-4 text-lg font-bold">Merkmale</h4>
       <dl className="mt-1 space-y-2">
@@ -184,11 +217,20 @@ function SituationFinder({ tool }: { tool: FlueTypeTool }) {
 
   return (
     <>
-      {steps.map((step) => (
+      {steps.map((step, index) => (
         <OptionList
           key={step.question.key}
           name={step.question.label}
-          options={step.options}
+          options={step.options.map((option) => ({
+            ...option,
+            badge: germanyBadge(
+              tool.groups.filter(
+                (candidate) =>
+                  candidate.criteria[step.question.key] === option.key &&
+                  steps.slice(0, index).every((earlier) => candidate.criteria[earlier.question.key] === earlier.selected),
+              ),
+            ),
+          }))}
           selected={step.selected}
           onSelect={(key) => answer(step.question.key, key)}
         />
@@ -292,15 +334,20 @@ function TypeSearch({ tool, initialQuery = '' }: { tool: FlueTypeTool; initialQu
         <div key={letter} className="mt-2 flex flex-wrap gap-2">
           {tool.groups
             .filter((group) => group.code.startsWith(letter))
-            .flatMap((group) => group.fans.map((fan) => `${group.code}${fan.digit}`))
-            .map((code) => (
+            .flatMap((group) => group.fans.map((fan) => ({ code: `${group.code}${fan.digit}`, germany: group.germany })))
+            .map(({ code, germany }) => (
               <button
                 key={code}
                 type="button"
                 onClick={() => setQuery(code)}
-                className="min-h-11 min-w-14 rounded-lg border-2 border-line bg-surface px-2 text-base font-bold"
+                title={germany ? GERMANY_STATUS[germany.status] : undefined}
+                aria-label={germany ? `${code}, ${GERMANY_STATUS[germany.status]}` : undefined}
+                className={`min-h-11 min-w-14 rounded-lg border-2 px-2 text-base font-bold ${
+                  germany ? 'border-warn-ink bg-warn text-warn-ink' : 'border-line bg-surface'
+                }`}
               >
                 {code}
+                {germany && ' ⚠'}
               </button>
             ))}
         </div>

@@ -159,6 +159,38 @@ describe('Abgasanlagen Arten', () => {
     expect(withDiverter).toEqual(['B1', 'B4', 'C7'])
   })
 
+  it('zeigt Zuluft bei B und Lüftung bei A, nie bei C', () => {
+    const vent = (query: string) => renderType(query).match(/aria-label="(Zuluft|Lüftung)"/)?.[1]
+    expect(vent('B23')).toBe('Zuluft')
+    expect(vent('B11BS')).toBe('Zuluft')
+    expect(vent('A1')).toBe('Lüftung')
+    // Zwei Geschosse: je Geschoss eine Öffnung
+    expect(renderType('B33').split('aria-label="Zuluft"').length - 1).toBe(2)
+    for (const query of ['C53', 'C53x', 'C31', 'C43', 'C(10)3']) expect(vent(query), query).toBeUndefined()
+    // Rauminhalt als Alternative zur Öffnung, Schutzziel 1 nur mit Strömungssicherung
+    expect(renderType('B23')).toContain('4 m³ Raum je kW Nennleistung')
+    expect(renderType('B11')).toContain('Schutzziel 1')
+    expect(renderType('B23')).not.toContain('Schutzziel 1')
+    expect(renderType('A1')).toContain('mehr als 15 m³')
+  })
+
+  it('weist auf Arten hin, die in Deutschland nicht zulässig oder nur als Ausnahme möglich sind', () => {
+    const restricted = tool.groups.filter((group) => group.germany).map((group) => [group.code, group.germany!.status])
+    expect(restricted).toEqual([
+      ['C2', 'notPermitted'],
+      ['C7', 'exceptionOnly'],
+    ])
+    expect(renderType('C23')).toContain('In Deutschland nicht zulässig')
+    expect(renderType('C23')).toContain('DVGW-Arbeitsblatt G 627')
+    expect(renderType('C73')).toContain('In Deutschland nur als baurechtliche Ausnahme')
+    expect(renderType('C33')).not.toContain('⚠ In Deutschland')
+    // Liste aller Arten markiert die eingeschränkten, die übrigen nicht
+    const list = renderType('')
+    expect(list).toContain('aria-label="C21, In Deutschland nicht zulässig"')
+    expect(list).toContain('aria-label="C73, In Deutschland nur als baurechtliche Ausnahme"')
+    expect(list.match(/aria-label="C\S+, In Deutschland/g)).toHaveLength(6)
+  })
+
   it('zeigt das Schema im Ergebnis', () => {
     expect(renderType('C93x')).toContain('aria-label="Schema C93x"')
     expect(renderType('C93x')).toContain('vorhandener Schacht als')

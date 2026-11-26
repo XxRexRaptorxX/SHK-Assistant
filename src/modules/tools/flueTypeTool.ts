@@ -17,6 +17,14 @@ const noteSchema = z.strictObject({
   source: text,
 })
 
+/** Öffnung ins Freie im Aufstellraum, als Gitter in der Schemazeichnung */
+const ventSchema = z.strictObject({
+  /** Kurzbeschriftung am Gitter, z. B. „Zuluft“ */
+  label: z.string().trim().min(1).max(12),
+  /** Satz unter der Zeichnung, mit Quelle */
+  caption: text,
+})
+
 /** Gebläse-Ziffer (letzte Ziffer der Art) */
 const fanDigit = z.enum(['1', '2', '3', '4'])
 
@@ -36,6 +44,8 @@ const questionSchema = z.strictObject({
         note: z.string().trim().default(''),
         /** Einbaukriterien, die für jede Art mit diesem Merkmal gelten */
         notes: z.array(noteSchema).default([]),
+        /** Öffnung ins Freie, die die Zeichnung bei diesem Merkmal zeigt */
+        vent: ventSchema.optional(),
       }),
     )
     .min(2),
@@ -55,6 +65,13 @@ const groupSchema = z.strictObject({
     .min(1),
   /** Einbaukriterien und Hinweise zu dieser Grundart */
   notes: z.array(noteSchema).default([]),
+  /**
+   * Zulässigkeit in Deutschland, nur wenn eine Quelle sie einschränkt: `notPermitted` = nicht (mehr) zulässig,
+   * `exceptionOnly` = keine Aufstellregeln, höchstens als baurechtliche Ausnahme
+   */
+  germany: z
+    .strictObject({ status: z.enum(['notPermitted', 'exceptionOnly']), text, source: text })
+    .optional(),
   /** Woher die Definition stammt, kurz */
   source: text,
 })
@@ -97,6 +114,13 @@ export type FlueGroup = FlueTypeTool['groups'][number]
 export type FlueQuestion = FlueTypeTool['questions'][number]
 export type FlueSuffix = FlueTypeTool['suffixes'][number]
 export type FlueNote = z.output<typeof noteSchema>
+export type GermanyStatus = NonNullable<FlueGroup['germany']>['status']
+
+/** Kurzbezeichnung der Einschränkung in Deutschland */
+export const GERMANY_STATUS: Record<GermanyStatus, string> = {
+  notPermitted: 'In Deutschland nicht zulässig',
+  exceptionOnly: 'In Deutschland nur als baurechtliche Ausnahme',
+}
 
 /** Volle Art ohne Zusätze, z. B. „C33“ oder „C(10)3“ */
 export const typeCode = (group: Pick<FlueGroup, 'code'>, digit: string) => `${group.code}${digit}`

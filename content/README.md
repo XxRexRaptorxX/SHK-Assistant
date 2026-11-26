@@ -202,16 +202,23 @@ Einbausituation antippen → Art (z. B. C33x), oder Art eingeben (C33x, C(10)3, 
 Einbaukriterien. Felder: `title`, `summary`, `description`, `category`, `related` und:
 
 - `questions`: Fragen in Auswahlreihenfolge, je `key`, `label` und `options` (`key`, `label`, optional `note` und
-  `notes`: Einbaukriterien `{ "text", "source" }`, die für jede Art mit diesem Merkmal angezeigt werden). Eine Frage
-  erscheint nur, wenn die noch passenden Arten sich in ihr unterscheiden.
+  `notes`: Einbaukriterien `{ "text", "source" }`, die für jede Art mit diesem Merkmal angezeigt werden, und `vent`:
+  `{ "label", "caption" }` für ein Gitter „Öffnung ins Freie“ in der Schemazeichnung; `label` steht am Gitter, höchstens 12 Zeichen, `caption` ist die kurze Erklärung in der Legende).
+  Eine Frage erscheint nur, wenn die noch passenden Arten sich in ihr unterscheiden.
 - `fanDigits`: Bedeutung der letzten Ziffer (`digit` 1–4, `label`, optional `note`).
 - `groups`: Grundarten, je `code` (`A`, `B1`…`B5`, `C1`…`C9`, `C(10)`…), `name`, `description` (eigene Kurzbeschreibung),
   `criteria` (Frage-`key` → Options-`key`), `fans` (mögliche Ziffern, je optional `note`, z. B. „in Gerätenormen
-  nicht üblich“), `notes` (Einbaukriterien mit Quelle) und `source`.
+  nicht üblich“), `notes` (Einbaukriterien mit Quelle), optional `germany` (`status` `notPermitted` = in Deutschland
+  nicht zulässig oder `exceptionOnly` = nur als baurechtliche Ausnahme, dazu `text` und `source`; nur setzen, wenn eine
+  Quelle die Art einschränkt; erscheint als Warnung im Ergebnis, als Marke in der Auswahl und in der Liste aller Arten)
+  und `source`.
 - `suffixes`: Zusätze wie `x`, `AS`, `BS`, `P`, `D`, `R`, je `label`, `text`, `allowed` (Grundart wie `B1` oder volle
   Art wie `C33`, für die der Zusatz belegt ist), optional `missingNote` (Hinweis, wenn der Zusatz möglich ist, aber
   fehlt) und `source`. Ein Zusatz bei einer anderen Art erscheint als Warnung, nicht als Fehler.
 - `generalNotes`: Einbaukriterien, die bei jeder Art stehen.
+
+Die Schemazeichnung je Grundart steht in `src/modules/tools/FlueDiagram.tsx` (eigene Darstellung nach den Definitionen
+der DIN EN 1749, abgeglichen mit dem WOLF-Abgasschema); ein Test prüft, dass jede Grundart eine hat.
 
 Das Tool leitet keine Art aus Regeln ab, es filtert nur die eingetragenen Arten. Der Build prüft unbekannte Fragen,
 Optionen und Ziffern, Optionen ohne Art, Zusätze mit unbekannter Art und dass jede Art über ihre Merkmale eindeutig
