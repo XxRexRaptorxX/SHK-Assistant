@@ -57,6 +57,7 @@ import {
   isVentilationRiserTool,
   isWireColorTool,
   isWorkHoursTool,
+  isWorkSafetyTool,
   type ToolEntry,
 } from './schema'
 import { sequenceKeywords } from './sequenceTool'
@@ -67,6 +68,7 @@ import { valveSurveyKeywords } from './valveSurveyTool'
 import { variantFormulas } from './variantTool'
 import { wireColorKeywords } from './wireColorTool'
 import { flueTypeKeywords } from './flueTypeTool'
+import { workSafetyKeywords } from './workSafetyTool'
 
 /** Alle Tools der aktuellen Edition, alphabetisch */
 export const toolEntries: ToolEntry[] = [...content.tools].sort((a, b) => a.title.localeCompare(b.title, 'de'))
@@ -130,6 +132,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isSensorTool(entry)) return sensorKeywords(entry)
   if (isFallProtectionTool(entry)) return fallProtectionKeywords(entry)
   if (isLoadSecuringTool(entry)) return loadSecuringKeywords(entry)
+  if (isWorkSafetyTool(entry)) return workSafetyKeywords(entry)
   if (isHeatingCurveTool(entry)) return heatingCurveKeywords(entry)
   if (isHeatPumpTool(entry)) return heatPumpKeywords(entry)
   if (isPlacementTool(entry)) return placementKeywords(entry)

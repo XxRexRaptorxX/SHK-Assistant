@@ -100,6 +100,7 @@ describe('Tools', () => {
       'Temperaturfühler Widerstandswerte',
       'Thermostatkopf-Einstellung und Raumtemperatur',
       'Trinkwasser-Temperaturen',
+      'UVV-Helfer: Arbeitsschutz bei SHK-Arbeiten',
       'Verbrennungsluftversorgung',
       'Wärmepumpe: Bivalenzpunkt und Betriebsweise',
       'Wartungsintervalle',

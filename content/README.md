@@ -602,6 +602,31 @@ Richtung (Beiwert × Gewicht, 1 kg ≙ 1 daN) und prüft die Standsicherheit. Be
 Der Build prüft doppelte Schlüssel, unbekannte Quellen, Gruppen und Maßnahmen, Maßnahmen ohne Inhalt oder ohne Ladegut,
 Ladegüter ohne Vorgaben und Schritte, nicht zitierte Quellen und dass jedes Kipp-Beispiel so ausgeht wie in der Quelle.
 
+**Arbeitsschutz-Tools** (`"kind": "workSafety"`): Tätigkeiten wählen (mehrere, z. B. Löten, Arbeiten an Gasleitungen,
+Einstieg in Schächte) oder einen typischen Auftrag als Vorauswahl. Das Tool zeigt die Schutzausrüstung aller gewählten
+Tätigkeiten, eine Prüfliste „Vor Arbeitsbeginn“ zum Abhaken und je Tätigkeit aufklappbar Gefährdungen und Vorgaben nach
+Thema. Unten stehen die Grundpflichten des Betriebs. Beispiel: UVV-Helfer. Felder: `title`, `summary`, `description`,
+`category`, `keywords`, `closingNote` und:
+
+- `sources` und Fundstellen (`ref`) wie bei der Absturzsicherung.
+- `groups`: Gruppen der Tätigkeiten in Anzeigereihenfolge, je `key`, `label`.
+- `ppeItems`: Stücke der Schutzausrüstung in Anzeigereihenfolge, je `key`, `label`.
+- `activities`: je `key`, `group`, `label`, optional `note`, `aliases`, `related` (Tool-ids), `todo` (beginnt mit
+  „TODO: Inhalt fehlt“, bei `verified` nicht erlaubt), `hazards` (je `text`, `ref`), `questions` (je `key`, `text`,
+  `label` als Kurzform für „Gilt bei …“, optional `note` und `options` mit `key`, `label`; ohne `options` Ja/Nein mit den
+  keys `yes`/`no`), `ppe` (je `item`, `text`, `ref`, optional `when`) und `rules` (je `topic`, `level`, `text` als eigene
+  Kurzfassung, `ref`, optional `when`).
+- `topic`: `info` (Einordnung), `permit` (Erlaubnis und Qualifikation), `before` (Prüfliste vor Arbeitsbeginn),
+  `during`, `after`, `inspection` (Prüfungen der Arbeitsmittel), `health` (arbeitsmedizinische Vorsorge).
+- `level`: `forbidden`, `required`, `recommended`, `exception`, `note` – nach der Wortwahl der Quelle.
+- `when`: Bedingungen, je `question` (key der Frage derselben Tätigkeit) und `is` (passende Options-keys); alle müssen
+  passen. Ist die Frage offen, erscheint die Vorgabe mit „Gilt bei …“, eine widersprechende Antwort blendet sie aus.
+- `jobs`: typische Aufträge, je `key`, `label`, `activities` (keys); `jobsNote` steht darunter.
+- `basics`: Grundpflichten, je `key`, `label`, `rules` (je `level`, `text`, `ref`).
+
+Der Build prüft doppelte Schlüssel, unbekannte Quellen, Gruppen, Stücke, Fragen, Optionen und Tätigkeiten, ungenutzte
+Fragen, Stücke und Quellen, Gruppen ohne Tätigkeit und Tätigkeiten ohne Vorgaben und ohne TODO.
+
 **Heizkurven-Tools** (`"kind": "heatingCurve"`): Diagramm der Heizkurve mit Neigung, Niveau und Raumsoll, zuschaltbar
 Absenkbetrieb, Vorlauf höchstens/mindestens und Heizgrenze. Vergleicht mit einer Ausgangseinstellung (Vorlauf und
 geschätzte Raumtemperatur an den Vergleichspunkten) und rechnet aus einem Problem, einer Messung oder einem Wunsch-Vorlauf

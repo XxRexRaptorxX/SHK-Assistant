@@ -1,0 +1,1779 @@
+{
+  "id": "tool.uvv-arbeiten",
+  "visibility": "public",
+  "status": "draft",
+  "source": "DGUV Vorschrift 1, DGUV Vorschrift 3, DGUV Regel 100-500 Kap. 2.26, DGUV Regel 110-010, DGUV Regel 103-003, DGUV Information 208-016 (BGN Branchenwissen, https://vorschriften.bgn-branchenwissen.de); DGUV Regel 113-004 Abschn. 2.1 (umwelt-online) und DGUV-FAQ enge Räume; BG BAU Bausteine C 482, B 172, C 320 (07/2021) und BG-BAU-Themenseiten zu Staub und Asbest; TRGS 521 vom 2. März 2026 (Abschn. 1–2, umwelt-online); SHK Arbeitssicherheit .aktuell 8/2022 (BASIKNET); ArbSchG, GefStoffV, LärmVibrationsArbSchV, ArbMedVV, LasthandhabV, MuSchG, JArbSchG, SGB VII (https://www.gesetze-im-internet.de). Einzelne Fundstellen und Links unter sources; alle abgerufen am 26.11.2026. Vorgaben eigenständig zusammengefasst; die Zuordnung zu Tätigkeiten, Fragen und typischen Aufträgen ist eine eigene Einordnung und noch nicht vom Inhaber geprüft.",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "workSafety",
+  "title": "UVV-Helfer: Arbeitsschutz bei SHK-Arbeiten",
+  "summary": "Sammelt für die anstehenden Arbeiten – vom Löten bis zum Einstieg in den Schacht – Schutzausrüstung, Prüfliste vor Beginn, Erlaubnisse und Vorgaben mit Fundstelle.",
+  "description": "Wähle die Arbeiten, die anstehen (mehrere möglich), oder einen typischen Auftrag. Das Tool sammelt die Schutzausrüstung, eine Prüfliste zum Abhaken vor Arbeitsbeginn und je Tätigkeit die Vorgaben mit Fundstelle: Erlaubnis und Qualifikation, Regeln bei und nach der Arbeit, Prüfungen der Arbeitsmittel und arbeitsmedizinische Vorsorge. Manche Vorgaben gelten nur in bestimmten Situationen; dafür gibt es die Fragen unter „Angaben zur Arbeit“. Ganz unten stehen die Grundpflichten, die in jedem Betrieb gelten.",
+  "category": "Montage",
+  "tags": [
+    "allgemein"
+  ],
+  "keywords": [
+    "UVV",
+    "Unfallverhütung",
+    "Unfallverhütungsvorschrift",
+    "Arbeitsschutz",
+    "Arbeitssicherheit",
+    "DGUV",
+    "Berufsgenossenschaft",
+    "Gefährdungsbeurteilung",
+    "Unterweisung",
+    "PSA",
+    "Persönliche Schutzausrüstung",
+    "Erste Hilfe",
+    "Ersthelfer"
+  ],
+  "closingNote": "„Pflicht“, „Verboten“ und „Empfehlung“ geben die Wortwahl der jeweiligen Quelle wieder, nicht ihren Rechtsrang. Maßgeblich sind die Originaltexte in der aktuellen Fassung, die Unfallverhütungsvorschriften deines Unfallversicherungsträgers und die Anleitungen der Hersteller. Tätigkeiten mit dem Hinweis „unvollständig“ sind noch nicht vollständig ausgewertet. Das Tool ersetzt weder die Gefährdungsbeurteilung noch die Unterweisung im Betrieb.",
+  "sources": [
+    {
+      "key": "v1",
+      "name": "DGUV Vorschrift 1",
+      "source": "DGUV Vorschrift 1 „Grundsätze der Prävention“, Fassung bei BGN Branchenwissen (Ausgabe dort nicht angegeben), https://vorschriften.bgn-branchenwissen.de/daten/dguv/1/inhalt.htm"
+    },
+    {
+      "key": "v3",
+      "name": "DGUV Vorschrift 3",
+      "source": "DGUV Vorschrift 3 „Elektrische Anlagen und Betriebsmittel“ mit Durchführungsanweisungen, Fassung bei BGN Branchenwissen (Erster Nachtrag vom 1. Januar 1997 eingearbeitet), https://vorschriften.bgn-branchenwissen.de/daten/dguv/3/inhalt.htm"
+    },
+    {
+      "key": "r226",
+      "name": "DGUV Regel 100-500, Kap. 2.26",
+      "source": "DGUV Regel 100-500 „Betreiben von Arbeitsmitteln“, Kapitel 2.26 „Schweißen, Schneiden und verwandte Verfahren“, Fassung bei BGN Branchenwissen, https://vorschriften.bgn-branchenwissen.de/daten/dguv/100_500/2_26_inhalt.htm"
+    },
+    {
+      "key": "r110010",
+      "name": "DGUV Regel 110-010",
+      "source": "DGUV Regel 110-010 „Verwendung von Flüssiggas“, Ausgabe Dezember 2022, aktualisierte Fassung November 2024, https://vorschriften.bgn-branchenwissen.de/daten/dguv/110_010/inhalt.htm"
+    },
+    {
+      "key": "r103003",
+      "name": "DGUV Regel 103-003",
+      "source": "DGUV Regel 103-003 „Arbeiten in umschlossenen Räumen von abwassertechnischen Anlagen“, Fassung bei BGN Branchenwissen (Ausgabe dort nicht angegeben), https://vorschriften.bgn-branchenwissen.de/daten/dguv/103_003/inhalt.htm"
+    },
+    {
+      "key": "r113004",
+      "name": "DGUV Regel 113-004",
+      "source": "DGUV Regel 113-004 „Behälter, Silos und enge Räume, Teil 1: Arbeiten in Behältern, Silos und engen Räumen“, Ausgabe Februar 2019; gelesen nur Abschnitte 1 und 2.1, https://umwelt-online.de/recht/arbeitss/uvv/r100/113_004_19.htm"
+    },
+    {
+      "key": "faq113",
+      "name": "DGUV-FAQ enge Räume",
+      "source": "DGUV, Sachgebiet Behälter, Silos und enge Räume: Häufig gestellte Fragen (ohne Datum), https://dguv.de/fb-rci/sachgebiete/behaelter/faq/index.jsp"
+    },
+    {
+      "key": "i208016",
+      "name": "DGUV Information 208-016",
+      "source": "DGUV Information 208-016 „Handlungsanleitung für den Umgang mit Leitern und Tritten“, Ausgabe August 2022, https://vorschriften.bgn-branchenwissen.de/daten/dguv/208_016/inhalt.htm"
+    },
+    {
+      "key": "c482",
+      "name": "BG BAU Baustein C 482",
+      "source": "BG BAU, Baustein C 482 „Arbeiten an Gasleitungen“, Stand 07/2021, https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/Bausteine/c_482/c_482.pdf"
+    },
+    {
+      "key": "b172",
+      "name": "BG BAU Baustein B 172",
+      "source": "BG BAU, Baustein B 172 „Elektrische Anlagen und Betriebsmittel – Wiederholungsprüfungen“, Stand 07/2021, https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/Bausteine/b_172/b_172.pdf"
+    },
+    {
+      "key": "c320",
+      "name": "BG BAU Baustein C 320",
+      "source": "BG BAU, Baustein C 320 „Alte Mineralwolle-Dämmstoffe“, Stand 07/2021, https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/Bausteine/c_320/c_320.pdf"
+    },
+    {
+      "key": "bgbauStaub",
+      "name": "BG BAU: Staubminderung",
+      "source": "BG BAU, Themenseite „Staubminderung – Präventionsmaßnahmen“ (ohne Datum), https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/staubminderung-praeventionsmassnahmen"
+    },
+    {
+      "key": "bgbauAsbest",
+      "name": "BG BAU: Asbest",
+      "source": "BG BAU, „Der richtige Umgang mit Asbest: Beprobung bis Befund“, https://www.bgbau.de/themen/sicherheit-und-gesundheit/asbest/der-richtige-umgang-mit-asbest-beprobung-bis-befund; Meldung „Asbest-Arbeiten: Neue Genehmigungspflicht für Bauunternehmen ab dem 20. Dezember 2026“ vom 03.11.2026, https://www.bgbau.de/meldung/asbest-arbeiten-neue-genehmigungspflicht-fuer-bauunternehmen-ab-dem-20-dezember-2026"
+    },
+    {
+      "key": "trgs521",
+      "name": "TRGS 521",
+      "source": "TRGS 521 „Tätigkeiten mit alter Mineralwolle“ vom 2. März 2026, GMBl 2026 Nr. 14/15 S. 300; gelesen nur Abschnitte 1 bis 2.6, https://www.umwelt-online.de/recht/t_regeln/trgs/trgs500/521_26.htm"
+    },
+    {
+      "key": "shkKaelte",
+      "name": "SHK Arbeitssicherheit aktuell 8/2022",
+      "source": "BASIKNET, SHK Arbeitssicherheit .aktuell, Ausgabe 8/2022 „Gefährdungsbeurteilung für Arbeiten an Anlagen mit brennbaren Kältemitteln“, Oktober 2022, https://zvshk.de/fileadmin/zvshk.de/user_upload/Redaktion/PDF_Dokumente/SHK_Arbeitssicherheit_aktuell_8_2022_Kaeltemittel.pdf"
+    },
+    {
+      "key": "arbschg",
+      "name": "ArbSchG",
+      "source": "Arbeitsschutzgesetz, https://www.gesetze-im-internet.de/arbschg/"
+    },
+    {
+      "key": "gefstoffv",
+      "name": "GefStoffV",
+      "source": "Gefahrstoffverordnung, https://www.gesetze-im-internet.de/gefstoffv_2010/"
+    },
+    {
+      "key": "laermv",
+      "name": "LärmVibrationsArbSchV",
+      "source": "Lärm- und Vibrations-Arbeitsschutzverordnung, https://www.gesetze-im-internet.de/l_rmvibrationsarbschv/"
+    },
+    {
+      "key": "arbmedvv",
+      "name": "ArbMedVV",
+      "source": "Verordnung zur arbeitsmedizinischen Vorsorge, Anhang „Arbeitsmedizinische Pflicht- und Angebotsvorsorge“, https://www.gesetze-im-internet.de/arbmedvv/anhang.html"
+    },
+    {
+      "key": "lasthandhabv",
+      "name": "LasthandhabV",
+      "source": "Lastenhandhabungsverordnung, https://www.gesetze-im-internet.de/lasthandhabv/"
+    },
+    {
+      "key": "muschg",
+      "name": "MuSchG",
+      "source": "Mutterschutzgesetz, https://www.gesetze-im-internet.de/muschg_2018/"
+    },
+    {
+      "key": "jarbschg",
+      "name": "JArbSchG",
+      "source": "Jugendarbeitsschutzgesetz, https://www.gesetze-im-internet.de/jarbschg/"
+    },
+    {
+      "key": "sgb7",
+      "name": "SGB VII",
+      "source": "Sozialgesetzbuch Siebtes Buch, § 193, https://www.gesetze-im-internet.de/sgb_7/__193.html"
+    }
+  ],
+  "groups": [
+    { "key": "height", "label": "Höhe und Lasten" },
+    { "key": "fire", "label": "Feuer, Gas und Strom" },
+    { "key": "dust", "label": "Staub und Gefahrstoffe" },
+    { "key": "spaces", "label": "Räume und Anlagen" }
+  ],
+  "ppeItems": [
+    { "key": "weldingGoggles", "label": "Schutzbrille mit Schweißerschutzfilter" },
+    { "key": "safetyGlasses", "label": "Schutzbrille" },
+    { "key": "hearing", "label": "Gehörschutz" },
+    { "key": "respirator", "label": "Atemschutz" },
+    { "key": "flameSuit", "label": "Schwer entflammbare bzw. flammhemmende Schutzkleidung" },
+    { "key": "coverall", "label": "Schutzanzug Typ 5" },
+    { "key": "gloves", "label": "Schutzhandschuhe" },
+    { "key": "safetyShoes", "label": "Sicherheitsschuhe" },
+    { "key": "helmet", "label": "Schutzhelm" },
+    { "key": "rescueHarness", "label": "Rettungsgurt" }
+  ],
+  "jobsNote": "Vorauswahl als Vorschlag (eigene Zuordnung): Prüfe, welche Arbeiten wirklich anfallen, und ergänze oder entferne Tätigkeiten.",
+  "jobs": [
+    { "key": "boilerSwap", "label": "Gas-Kesseltausch", "activities": ["lifting", "gasLines", "hotWork", "propane", "electrical", "powerTools"] },
+    { "key": "bathroom", "label": "Badsanierung im Altbau", "activities": ["drilling", "asbestos", "hotWork", "propane", "chemicals", "lifting", "powerTools"] },
+    { "key": "heatPump", "label": "Wärmepumpe montieren", "activities": ["lifting", "drilling", "electrical", "refrigerant", "powerTools", "ladder"] },
+    { "key": "insulation", "label": "Alte Rohrdämmung entfernen", "activities": ["mineralWool", "ladder"] },
+    { "key": "oilTank", "label": "Öltank reinigen oder stilllegen", "activities": ["confined", "chemicals"] },
+    { "key": "liftingStation", "label": "Hebeanlage tauschen", "activities": ["wastewater", "lifting", "electrical"] }
+  ],
+  "activities": [
+    {
+      "key": "ladder",
+      "group": "height",
+      "label": "Arbeiten auf Leitern und Tritten",
+      "note": "Anlegeleiter, Stehleiter, Tritt",
+      "aliases": ["Leiter", "Anlegeleiter", "Stehleiter", "Stufenleiter", "Sprossenleiter", "Tritt", "Leiterprüfung"],
+      "related": ["tool.absturzsicherung"],
+      "rules": [
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Eine Leiter nur als Arbeitsplatz nutzen, wenn die Gefährdungsbeurteilung das begründet; sicherere Arbeitsmittel wie Gerüst oder Hubarbeitsbühne haben Vorrang.",
+          "ref": { "source": "i208016", "where": "Abschn. 2" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Leiter vor jeder Benutzung ansehen. Bei Schäden nicht benutzen und dem Vorgesetzten melden.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.1 und 6" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Standhöhe bis 2 m: zulässig. Über 2 m bis 5 m nur für zeitweilige Arbeiten von höchstens 2 Stunden je Schicht.",
+          "ref": { "source": "i208016", "where": "Abschn. 2" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Der Standplatz darf nicht höher als 5 m über der Aufstellfläche liegen.",
+          "ref": { "source": "i208016", "where": "Abschn. 2" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Mit beiden Füßen auf einer Stufe oder Plattform stehen. Sprossenleitern nur in begründeten Ausnahmen, die in der Gefährdungsbeurteilung stehen.",
+          "ref": { "source": "i208016", "where": "Abschn. 2" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Nicht bei starkem Wind, Vereisung oder Schneeglätte auf Leitern arbeiten.",
+          "ref": { "source": "i208016", "where": "Abschn. 2" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Höchstens 10 kg Werkzeug und Material mitnehmen.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.2" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Keine Geräte mit großer Krafteinwirkung (z. B. Bohrhammer) und kein seitliches Bohren in feste Werkstoffe von der Leiter aus.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.2" }
+        },
+        {
+          "topic": "during",
+          "level": "note",
+          "text": "Nur eine Person auf der Leiter. Die Höchstlast steht am Aufstieg, meist 150 kg.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.2" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Anlegeleiter richtig anstellen: Stufenleiter 60° bis 70°, Sprossenleiter 65° bis 75° (Ellbogenprobe).",
+          "ref": { "source": "i208016", "where": "Abschn. 5.3" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Anlegeleiter mindestens 1 m über die Austrittsstelle hinausragen lassen, wenn es dort keine andere Haltemöglichkeit gibt.",
+          "ref": { "source": "i208016", "where": "Abschn. 3.1.2 und 5.3" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Die obersten drei Sprossen oder Stufen einer Anlegeleiter nicht betreten.",
+          "ref": { "source": "i208016", "where": "Abschn. 3.1.2 und 5.3" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Stehleiter nur mit voll gespannter Spreizsicherung benutzen; ohne Haltevorrichtung höchstens bis zur drittobersten Stufe steigen.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.3" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Stehleiter nicht als Anlegeleiter benutzen und nicht von ihr auf höher gelegene Flächen übersteigen.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.3" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Keine Hocker, Stühle, Tische, Getränkekisten oder Fässer als Aufstieg nutzen.",
+          "ref": { "source": "i208016", "where": "Abschn. 5.2" }
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Leitern wiederkehrend prüfen lassen; Art, Umfang und Fristen legt der Unternehmer fest, mindestens jährlich wird empfohlen. Ergebnis festhalten, z. B. in einem Kontrollbuch.",
+          "ref": { "source": "i208016", "where": "Abschn. 6" }
+        },
+        {
+          "topic": "inspection",
+          "level": "forbidden",
+          "text": "Schadhafte Leitern nicht behelfsmäßig reparieren (z. B. gebrochene Holme bandagieren), sondern der Benutzung entziehen.",
+          "ref": { "source": "i208016", "where": "Abschn. 6 und 7" }
+        }
+      ]
+    },
+    {
+      "key": "lifting",
+      "group": "height",
+      "label": "Heben und Tragen schwerer Teile",
+      "note": "Kessel, Speicher, Heizkörper, Gasflaschen",
+      "aliases": ["Heben", "Tragen", "Lasten", "Lastenhandhabung", "Rücken", "Kessel tragen", "Speicher tragen"],
+      "rules": [
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Heben und Tragen von Hand möglichst vermeiden: durch die Arbeitsorganisation oder geeignete Arbeitsmittel, vor allem mechanische Hilfen.",
+          "ref": { "source": "lasthandhabv", "where": "§ 2 Abs. 1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Lässt es sich nicht vermeiden: Belastung beurteilen (Gewicht, Form, Griffe, Schwerpunkt, Weg, Körperhaltung, Platz, Boden, Klima) und so gering wie möglich halten.",
+          "ref": { "source": "lasthandhabv", "where": "§ 2 Abs. 2 und Anhang" }
+        },
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Die Verordnung nennt keine festen Gewichtsgrenzen; maßgeblich ist die Beurteilung nach den Merkmalen im Anhang.",
+          "ref": { "source": "lasthandhabv", "where": "Anhang" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Bei der Einteilung die körperliche Eignung der Beschäftigten berücksichtigen.",
+          "ref": { "source": "lasthandhabv", "where": "§ 3" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Beschäftigte über sachgemäßes Heben und Tragen und die Gefahren unterweisen.",
+          "ref": { "source": "lasthandhabv", "where": "§ 4" }
+        },
+        {
+          "topic": "permit",
+          "level": "forbidden",
+          "text": "Schwangere nicht ohne mechanische Hilfsmittel regelmäßig mehr als 5 kg oder gelegentlich mehr als 10 kg von Hand heben, halten, bewegen oder tragen lassen; mit Hilfsmitteln nicht, wenn die Belastung gleich hoch ist.",
+          "ref": { "source": "muschg", "where": "§ 11 Abs. 5 Nr. 1 und 2" }
+        },
+        {
+          "topic": "permit",
+          "level": "forbidden",
+          "text": "Jugendliche nicht mit Arbeiten beschäftigen, die ihre körperliche Leistungsfähigkeit übersteigen.",
+          "ref": { "source": "jarbschg", "where": "§ 22 Abs. 1 Nr. 1" }
+        }
+      ]
+    },
+    {
+      "key": "trenches",
+      "group": "height",
+      "label": "Gräben und Baugruben",
+      "note": "z. B. Hausanschluss, Grundleitung, Erdsonde",
+      "aliases": ["Graben", "Baugrube", "Verbau", "Böschung"],
+      "todo": "TODO: Inhalt fehlt – Vorgaben zur Sicherung von Gräben und Baugruben (Verbau, Böschung, Zugang); bitte Quelle benennen, z. B. die einschlägige DGUV-Vorschrift oder einen BG-BAU-Baustein."
+    },
+    {
+      "key": "hotWork",
+      "group": "fire",
+      "label": "Löten und Schweißen mit Flamme",
+      "note": "Hart- und Weichlöten, Flammwärmen",
+      "aliases": ["Löten", "Hartlöten", "Weichlöten", "Schweißen", "Flammwärmen", "Heißarbeiten", "feuergefährliche Arbeiten", "Schweißerlaubnis", "Brandwache", "Brandposten"],
+      "related": ["tool.ladungssicherung"],
+      "questions": [
+        {
+          "key": "fireRisk",
+          "text": "Besteht Brand- oder Explosionsgefahr, weil sich brennbare Stoffe nicht entfernen lassen (z. B. Holzbalken, Dämmung, Möbel)?",
+          "label": "Brandgefahr im Umfeld"
+        },
+        {
+          "key": "confined",
+          "text": "Wird in einem engen Raum gelötet (z. B. fensterloser Keller, Schacht, Behälter)?",
+          "label": "Enger Raum"
+        }
+      ],
+      "ppe": [
+        {
+          "item": "weldingGoggles",
+          "text": "mit Schweißerschutzfilter gegen die Brennerflamme",
+          "ref": { "source": "r226", "where": "Abschn. 3.3" }
+        },
+        {
+          "item": "respirator",
+          "text": "wenn Absaugung oder Lüftung den Rauch nicht ausreichend entfernen",
+          "ref": { "source": "r226", "where": "Abschn. 3.5.1" }
+        },
+        {
+          "item": "flameSuit",
+          "text": "schwer entflammbarer Schutzanzug im engen Raum",
+          "ref": { "source": "r226", "where": "Abschn. 3.7.1 Nr. 2" },
+          "when": [{ "question": "confined", "is": ["yes"] }]
+        }
+      ],
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Löten zählt zu den verwandten Verfahren; das Kapitel gilt also auch für Hart- und Weichlöten mit Flamme.",
+          "ref": { "source": "r226", "where": "Abschn. 2 Nr. 3" }
+        },
+        {
+          "topic": "info",
+          "level": "exception",
+          "text": "Die Brandschutzvorgaben des Abschnitts 3.8 gelten nicht für Arbeiten an Leitungen mit brennbaren Gasen selbst, solange von der Umgebung keine Brand- oder Explosionsgefahr ausgeht.",
+          "ref": { "source": "r226", "where": "Abschn. 1.2" }
+        },
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Als eng gilt ein Raum ohne natürlichen Luftabzug mit weniger als 100 m³ Luft oder mit einer Abmessung unter 2 m, z. B. fensterloser Keller, Schacht, Tank, Behälter.",
+          "ref": { "source": "r226", "where": "Abschn. 3.7.1" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Mit schweißtechnischen Arbeiten, auch Löten, nur Personen beauftragen, die mindestens 18 Jahre alt und mit dem Verfahren vertraut sind.",
+          "ref": { "source": "r226", "where": "Abschn. 3.2.1" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Schriftliche Schweißerlaubnis mit den zusätzlichen Schutzmaßnahmen ausstellen. Erst beginnen, wenn sie übergeben und die Maßnahmen umgesetzt sind.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.2 und 3.8.6" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "permit",
+          "level": "exception",
+          "text": "Bei regelmäßig wiederkehrenden, gleichartigen Arbeiten, z. B. in der Installationstechnik, genügt statt der einzelnen Schweißerlaubnis eine schriftliche Betriebsanweisung.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.4" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Feststellen, ob besondere Brand- oder Explosionsgefahren bestehen, nötigenfalls vor Ort.",
+          "ref": { "source": "r226", "where": "Abschn. 3.6.1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Brennbare Stoffe aus dem Gefahrenbereich entfernen; das hat Vorrang vor dem Abdecken.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.2" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Nicht entfernbare brennbare Stoffe abdecken, z. B. mit schwer entflammbaren Tüchern, Sand oder Pasten; Feuchthalten verbessert den Schutz.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.3" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Öffnungen zu Nachbarbereichen abdichten: Fugen, Ritzen, Rohrdurchführungen, Schächte, z. B. mit Gips, Mörtel oder feuchtem Sand.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.3" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Passende Löschmittel bereitstellen, z. B. Feuerlöscher, Wasserschlauch oder Löschdecke.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.3 und Anhang 1" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Brandposten während der Arbeit. Bei geringer Brandgefährdung darf der Ausführende das selbst übernehmen, wenn er im Löschen geübt ist.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.3" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Nicht löten, solange eine explosionsfähige Atmosphäre nicht sicher ausgeschlossen ist.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.1 Nr. 2 und 3.8.5" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Rauch an der Entstehungsstelle absaugen oder technisch bzw. natürlich lüften; reicht das nicht, Atemschutz tragen.",
+          "ref": { "source": "r226", "where": "Abschn. 3.5.1" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Kleidung muss den Körper bedecken und darf nicht mit entzündlichen Stoffen verschmutzt sein; Kunstfasern mit hohem Schmelzanteil meiden.",
+          "ref": { "source": "r226", "where": "Abschn. 3.4.1" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Keine Spraydosen oder Einwegfeuerzeuge am Körper mitführen.",
+          "ref": { "source": "r226", "where": "Abschn. 3.4.1" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Nie mit Sauerstoff abblasen, kühlen oder belüften.",
+          "ref": { "source": "r226", "where": "Abschn. 3.4.2 und 3.7.3" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Im engen Raum absaugen oder technisch lüften: keine Anreicherung mit Schadstoffen, Brenngas oder Sauerstoff, Sauerstoff nicht unter 19 Vol.-%; sonst Atemschutz.",
+          "ref": { "source": "r226", "where": "Abschn. 3.7.1 Nr. 1" },
+          "when": [{ "question": "confined", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Keine Gasflaschen im engen Raum.",
+          "ref": { "source": "r226", "where": "Abschn. 3.7.1 Nr. 3" },
+          "when": [{ "question": "confined", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Bei längeren Pausen die Schläuche aus dem engen Raum nehmen oder abtrennen.",
+          "ref": { "source": "r226", "where": "Abschn. 3.7.2" },
+          "when": [{ "question": "confined", "is": ["yes"] }]
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Brandwache: die Arbeitsstelle in den folgenden Stunden wiederholt auf Glimmnester, verdächtige Erwärmung und Rauch kontrollieren. Eine feste Dauer nennt die Quelle nicht.",
+          "ref": { "source": "r226", "where": "Abschn. 3.8.3 und Anhang 1" },
+          "when": [{ "question": "fireRisk", "is": ["yes"] }]
+        },
+        {
+          "topic": "health",
+          "level": "note",
+          "text": "Beim Schweißen und Trennen von Metallen: Pflichtvorsorge bei mehr als 3 mg/m³ Schweißrauch, sonst Angebotsvorsorge.",
+          "ref": { "source": "arbmedvv", "where": "Teil 1 Abs. 1 Nr. 2 Buchst. b und Abs. 2 Nr. 2 Buchst. f" }
+        }
+      ]
+    },
+    {
+      "key": "propane",
+      "group": "fire",
+      "label": "Propanflasche verwenden",
+      "note": "Flüssiggas zum Löten und Wärmen",
+      "aliases": ["Propan", "Flüssiggas", "Gasflasche", "Propanflasche", "Handwerkerflasche", "Kartusche", "Flaschenwechsel"],
+      "related": ["tool.ladungssicherung", "tool.gefahrgut-1000-punkte"],
+      "questions": [
+        {
+          "key": "basement",
+          "text": "Steht die Flasche in einem Raum unter Erdgleiche (Keller)?",
+          "label": "Flasche im Keller"
+        }
+      ],
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Gefahrenbereich in Räumen bei einer Flasche: 1 m um die Anschlussstelle, am Boden 2 m im Umkreis.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.1.3" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Löten in explosionsgefährdeten Bereichen nur nach Gefährdungsbeurteilung und mit dokumentierter Freigabe, z. B. Erlaubnisschein.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.2" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Aufstellort nach Rangfolge wählen: zuerst im Freien, dann in einem eigenen Aufstellraum, im Arbeitsraum nur mit dokumentierter Begründung.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1" }
+        },
+        {
+          "topic": "before",
+          "level": "forbidden",
+          "text": "Flaschen grundsätzlich nicht in Räumen unter Erdgleiche aufstellen.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1 Nr. 6" }
+        },
+        {
+          "topic": "before",
+          "level": "exception",
+          "text": "Im Keller erlaubt: in Gebrauch befindliche Handwerkerflaschen oder Kartuschen bis 1 Liter Rauminhalt sowie vorübergehendes Aufstellen, wenn die Arbeit es erfordert und besondere Schutzmaßnahmen getroffen sind (z. B. Absperrung, gesicherter Fluchtweg, Lüftung).",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3 Nr. 7 und 5.1.3.1 Nr. 6" },
+          "when": [{ "question": "basement", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "forbidden",
+          "text": "Im Gefahrenbereich um das Flaschenventil keine Kellerzugänge, Gruben, Lichtschächte oder Öffnungen zu Kellerräumen.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.1.1" }
+        },
+        {
+          "topic": "before",
+          "level": "forbidden",
+          "text": "Nicht in Nischen unter 2 m² Bodenfläche aufstellen, aus denen ausströmendes Gas nicht abfließen kann.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1 Nr. 10" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Im Arbeitsraum bis 500 m³ höchstens eine Flasche bis 33 kg oder zwei Flaschen bis je 16 kg; Ausnahmen nennt die Quelle.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Flaschen stehend und standsicher aufstellen; bei Zug über den Schlauch gegen Umfallen sichern, z. B. mit einer Kette.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1 Nr. 9" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Flasche nicht über 40 °C erwärmen: zu Heizgeräten und Feuerstätten 0,70 m Abstand, mit Strahlungsschutz 0,30 m.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1 Nr. 4, Tabelle 3" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Nach jedem Flaschenwechsel die Dichtheit kontrollieren.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3.1" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Beim Flaschenwechsel keine offenen Flammen an Ventil und Regler; in Aufstellräumen keine Zündquellen.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.1.3" }
+        },
+        {
+          "topic": "during",
+          "level": "exception",
+          "text": "In Treppenräumen, Durchgängen und engen Höfen Flaschen nur vorübergehend und mit besonderen Schutzmaßnahmen aufstellen.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.1.3 Nr. 7" }
+        },
+        {
+          "topic": "after",
+          "level": "forbidden",
+          "text": "Druckgaskartuschen nicht in Räumen unter Erdgleiche lagern.",
+          "ref": { "source": "r110010", "where": "Abschn. 5.2.2" }
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Ortsveränderliche Flüssiggasanlagen vor der ersten Inbetriebnahme und wiederkehrend mindestens alle 2 Jahre prüfen lassen, durch eine befähigte Person für Flüssiggasanlagen oder eine zugelassene Überwachungsstelle.",
+          "ref": { "source": "r110010", "where": "Abschn. 6.1 bis 6.5, Tabelle 13" }
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Schlauchleitungen bei der Prüfung auf Brüchigkeit, Risse, Aufquellen, Schäden und Alter ansehen; nach außergewöhnlichen Ereignissen ersetzen.",
+          "ref": { "source": "r110010", "where": "Abschn. 6.4 und 6.5" }
+        },
+        {
+          "topic": "inspection",
+          "level": "note",
+          "text": "Die Prüfaufzeichnung an der Verwendungsstelle aufbewahren. Flaschen mit abgelaufener Prüffrist dürfen noch leer gebraucht, aber nicht mehr befüllt werden.",
+          "ref": { "source": "r110010", "where": "Abschn. 6.1 und 6.10" }
+        }
+      ]
+    },
+    {
+      "key": "gasLines",
+      "group": "fire",
+      "label": "Arbeiten an Gasleitungen",
+      "note": "Trennen, Anschließen, Außer- und Inbetriebnahme",
+      "aliases": ["Gasleitung", "Gasinstallation", "Gas trennen", "Gaszähler", "Überbrückung", "Kupferseil", "Gasfreiheit", "Ausblasen"],
+      "todo": "TODO: Inhalt fehlt – Die DGUV Information 203-090 (Juli 2024) ersetzt Kapitel 2.31 der DGUV Regel 100-500 und gilt laut DGUV auch für Arbeiten im Bereich der Gasinstallation; ihr Volltext ist noch nicht ausgewertet. Die Angaben unten stammen aus dem BG-BAU-Baustein C 482 (07/2021).",
+      "hazards": [
+        {
+          "text": "Ausströmendes Gas kann zu Bränden, Verpuffungen und Explosionen führen; außerdem besteht Erstickungsgefahr.",
+          "ref": { "source": "c482", "where": "S. 1, Gefährdungen" }
+        }
+      ],
+      "questions": [
+        {
+          "key": "metalCut",
+          "text": "Wird eine metallene Leitung getrennt oder verbunden?",
+          "label": "Metallleitung trennen"
+        }
+      ],
+      "ppe": [
+        {
+          "item": "flameSuit",
+          "text": "flammhemmend und antistatisch; darunter keine leicht schmelzenden Textilien",
+          "ref": { "source": "c482", "where": "S. 2, Persönliche Schutzausrüstung" }
+        },
+        {
+          "item": "gloves",
+          "text": "je nach Gefährdung",
+          "ref": { "source": "c482", "where": "S. 2, Persönliche Schutzausrüstung" }
+        },
+        {
+          "item": "safetyShoes",
+          "text": "je nach Gefährdung S3 oder S5",
+          "ref": { "source": "c482", "where": "S. 2, Persönliche Schutzausrüstung" }
+        },
+        {
+          "item": "helmet",
+          "text": "je nach Gefährdung",
+          "ref": { "source": "c482", "where": "S. 2, Persönliche Schutzausrüstung" }
+        },
+        {
+          "item": "safetyGlasses",
+          "text": "Augen- und Gesichtsschutz beim Auffangen von Kondensat",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        }
+      ],
+      "rules": [
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Nur geeignete, zuverlässige und unterwiesene Personen einsetzen. Unterweisung mindestens jährlich, Teilnahme schriftlich dokumentieren.",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Bei Gesundheits-, Brand- oder Explosionsgefahr nur unter Aufsicht einer geeigneten, dafür unterwiesenen Person; Aufsicht und Weisungsbefugnis schriftlich übertragen.",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "before",
+          "level": "recommended",
+          "text": "Möglichst im gasfreien Zustand arbeiten (im Arbeitsbereich unter 50 % der unteren Explosionsgrenze) und ein Verfahren mit geringer Gefährdung wählen.",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Das Leitungsteil drucklos machen, falls nötig mit Inertgas wie Stickstoff spülen und das austretende Gas gefahrlos ableiten.",
+          "ref": { "source": "c482", "where": "S. 2, Schutzmaßnahmen" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Zündquellen fernhalten, wo sich ein zündfähiges Gas-Luft-Gemisch bilden kann: offene Flammen, glimmende Reste, Elektrowerkzeuge wie Trennschleifer oder Bohrmaschine, elektrostatische Funken, Potentialunterschiede beim Trennen.",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Vor dem Trennen oder Verbinden die Trennstelle mit einem flexiblen Kupferseil überbrücken: bis 10 m Länge mindestens 25 mm², bis 20 m mindestens 50 mm².",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" },
+          "when": [{ "question": "metalCut", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Löschmittel bereitstellen, ausgerichtet auf den Schutz von Personen, z. B. zwei Feuerlöscher mit je mindestens 15 Löschmitteleinheiten.",
+          "ref": { "source": "c482", "where": "S. 2, Schutzmaßnahmen" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Zum Trennen keine funkenreißenden Geräte verwenden; geeignet sind z. B. Rohrschneider oder funkenarmes Werkzeug.",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Die Gaskonzentration im Arbeitsbereich dauernd messen.",
+          "ref": { "source": "c482", "where": "S. 2, Schutzmaßnahmen" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Der Arbeitsplatz muss sich schnell und gefahrlos verlassen lassen.",
+          "ref": { "source": "c482", "where": "S. 2, Schutzmaßnahmen" }
+        },
+        {
+          "topic": "during",
+          "level": "note",
+          "text": "An Tiefpunkten kann sich Kondensat sammeln (z. B. Odoriermittel): in geeigneten Behältern auffangen, Haut- und Augenkontakt vermeiden.",
+          "ref": { "source": "c482", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "An Flüssiggasleitungen nicht unter kontrollierter Gasausströmung arbeiten.",
+          "ref": { "source": "c482", "where": "S. 2, Zusätzliche Hinweise" }
+        },
+        {
+          "topic": "during",
+          "level": "exception",
+          "text": "Arbeiten unter kontrollierter Gasausströmung nur in begründeten Ausnahmen: Leitung höchstens 65 mm, Betriebsdruck höchstens 100 mbar, nur besonders unterwiesenes Personal, erweiterte Schutzausrüstung.",
+          "ref": { "source": "c482", "where": "S. 2, Zusätzliche Hinweise" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Vor der Wiederinbetriebnahme mit Betriebsgas entlüften, bis die Luft verdrängt ist; das Gas-Luft-Gemisch gefahrlos ins Freie ableiten.",
+          "ref": { "source": "c482", "where": "S. 2, Schutzmaßnahmen" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Nach Abschluss überzeugt sich der Aufsichtführende, dass die Leitungen im Arbeitsbereich unter Betriebsbedingungen dicht sind.",
+          "ref": { "source": "c482", "where": "S. 2, Prüfungen" }
+        }
+      ]
+    },
+    {
+      "key": "electrical",
+      "group": "fire",
+      "label": "Elektrische Anschlüsse und Fehlersuche",
+      "note": "Kessel, Pumpen, Regelungen anschließen",
+      "aliases": ["Elektro", "Elektroarbeiten", "Freischalten", "Spannungsfreiheit", "Fünf Sicherheitsregeln", "5 Sicherheitsregeln", "Elektrofachkraft", "elektrotechnisch unterwiesene Person"],
+      "rules": [
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Elektrische Anlagen nur von einer Elektrofachkraft oder unter ihrer Leitung und Aufsicht errichten, ändern und instand halten lassen.",
+          "ref": { "source": "v3", "where": "§ 3 Abs. 1" }
+        },
+        {
+          "topic": "permit",
+          "level": "note",
+          "text": "Leitung und Aufsicht heißt: Die Elektrofachkraft trägt Führungs- und Fachverantwortung, überwacht und kontrolliert die Sicherheitsmaßnahmen und unterweist.",
+          "ref": { "source": "v3", "where": "Durchführungsanweisung zu § 3 Abs. 1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Den spannungsfreien Zustand herstellen und für die ganze Dauer der Arbeit sicherstellen, auch für benachbarte, nicht geschützte aktive Teile.",
+          "ref": { "source": "v3", "where": "§ 6 Abs. 2 und 3" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Fünf Sicherheitsregeln in dieser Reihenfolge: 1. freischalten, 2. gegen Wiedereinschalten sichern, 3. Spannungsfreiheit feststellen, 4. erden und kurzschließen, 5. benachbarte, unter Spannung stehende Teile abdecken oder abschranken.",
+          "ref": { "source": "v3", "where": "Durchführungsanweisung zu § 6 Abs. 2" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Nicht an unter Spannung stehenden aktiven Teilen arbeiten.",
+          "ref": { "source": "v3", "where": "§ 6 Abs. 1" }
+        },
+        {
+          "topic": "during",
+          "level": "note",
+          "text": "Bei nicht elektrotechnischen Arbeiten in der Nähe aktiver Teile bis 1 kV mindestens 1,0 m Schutzabstand halten.",
+          "ref": { "source": "v3", "where": "§ 7, Tabelle 4" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Festgestellte Mängel unverzüglich beheben; bei dringender Gefahr die Anlage im mangelhaften Zustand nicht verwenden.",
+          "ref": { "source": "v3", "where": "§ 3 Abs. 2" }
+        }
+      ]
+    },
+    {
+      "key": "powerTools",
+      "group": "fire",
+      "label": "Elektrowerkzeuge, Leitungen, Baustrom",
+      "note": "Prüffristen und tägliche Kontrolle",
+      "aliases": ["Elektrowerkzeug", "Verlängerungskabel", "Kabeltrommel", "Baustromverteiler", "RCD", "FI-Schalter", "Prüfplakette", "Prüffrist", "DGUV V3 Prüfung"],
+      "todo": "TODO: Inhalt fehlt – Vorgaben der DGUV Information 203-006 (Mai 2022) zu Anschlusspunkt, Bemessungsfehlerstrom der RCD, Leitungsbauart und Leitungsrollern; der Volltext lag nicht vor.",
+      "questions": [
+        {
+          "key": "site",
+          "text": "Wird über einen Baustromverteiler gearbeitet?",
+          "label": "Baustromverteiler"
+        }
+      ],
+      "rules": [
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Fehlerstrom-Schutzschalter im Baustromverteiler arbeitstäglich mit der Prüftaste testen und den Verteiler auf sichtbare Mängel ansehen; das dürfen eingewiesene Laien.",
+          "ref": { "source": "b172", "where": "S. 1" },
+          "when": [{ "question": "site", "is": ["yes"] }]
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Ortsveränderliche Betriebsmittel wie Verlängerungs- und Geräteanschlussleitungen wiederkehrend prüfen: Richtwert 6 Monate, auf Baustellen 3 Monate; Höchstwert auf Baustellen und in Werkstätten 1 Jahr.",
+          "ref": { "source": "v3", "where": "Durchführungsanweisung zu § 5, Tabelle 1B" }
+        },
+        {
+          "topic": "inspection",
+          "level": "note",
+          "text": "Die Frist richtet sich nach der Fehlerquote: Liegt sie bei höchstens 2 %, gilt die Frist als ausreichend.",
+          "ref": { "source": "v3", "where": "Durchführungsanweisung zu § 5, Tabelle 1B" }
+        },
+        {
+          "topic": "inspection",
+          "level": "note",
+          "text": "Die BG BAU nennt als Beispiel für den Sanitär-, Klima- und Heizungsbau (normaler Betrieb) 6 Monate, bei hoher Beanspruchung wie Kernbohren 3 Monate.",
+          "ref": { "source": "b172", "where": "S. 1, Tabelle" }
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Prüfen darf eine Elektrofachkraft; mit geeigneten Mess- und Prüfgeräten auch eine elektrotechnisch unterwiesene Person.",
+          "ref": { "source": "v3", "where": "Durchführungsanweisung zu § 5, Tabelle 1B" }
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Prüfungen dokumentieren (Ort, Datum, Arbeitsmittel, Prüfer, Art, Umfang, Ergebnis) und mindestens bis zur nächsten Prüfung aufbewahren; am Gerät sichtbar machen, z. B. mit Prüfplakette.",
+          "ref": { "source": "b172", "where": "S. 1, Prüfungen" }
+        },
+        {
+          "topic": "inspection",
+          "level": "note",
+          "text": "Baustromanlagen prüfen Elektrofachkräfte jährlich, die Wirksamkeit der Schutzmaßnahmen mit RCD monatlich.",
+          "ref": { "source": "b172", "where": "S. 1" },
+          "when": [{ "question": "site", "is": ["yes"] }]
+        }
+      ]
+    },
+    {
+      "key": "drilling",
+      "group": "dust",
+      "label": "Stemmen, Schlitzen, Kernbohren, Trennen",
+      "note": "Staub, Lärm und Vibration",
+      "aliases": ["Stemmen", "Schlitzen", "Kernbohrung", "Kernbohren", "Bohrhammer", "Trennschleifer", "Mauernutfräse", "Quarzstaub", "Staub", "Lärm", "Gehörschutz", "Vibration"],
+      "todo": "TODO: Inhalt fehlt – aktuelle TRGS 559 (Quarzhaltiger Staub) und TRGS 500 (Staub) auswerten: Staubklasse der Entstauber, verbotene Reinigungsarten, Grenzwerte.",
+      "ppe": [
+        {
+          "item": "hearing",
+          "text": "ab 80 dB(A) bereitstellen, ab 85 dB(A) tragen",
+          "ref": { "source": "laermv", "where": "§ 8 Abs. 1 und 3" }
+        },
+        {
+          "item": "respirator",
+          "text": "mindestens Halbmaske mit P2-Filter, wenn technische Maßnahmen nicht umsetzbar sind",
+          "ref": { "source": "bgbauStaub", "where": "Themenseite" }
+        }
+      ],
+      "rules": [
+        {
+          "topic": "before",
+          "level": "recommended",
+          "text": "Für Trennschleifer, Schlitz- und Putzfräsen und Schleifgeräte geprüfte staubarme Bearbeitungssysteme (Maschine mit Absaugung) einsetzen.",
+          "ref": { "source": "bgbauStaub", "where": "Themenseite" }
+        },
+        {
+          "topic": "before",
+          "level": "recommended",
+          "text": "Arbeitsbereich absperren und kennzeichnen.",
+          "ref": { "source": "bgbauStaub", "where": "Themenseite" }
+        },
+        {
+          "topic": "during",
+          "level": "recommended",
+          "text": "Wo möglich nass bearbeiten, damit der Staub gebunden wird.",
+          "ref": { "source": "bgbauStaub", "where": "Themenseite" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Wird der Grenzwert trotz technischer und organisatorischer Maßnahmen nicht eingehalten, Atemschutz bereitstellen.",
+          "ref": { "source": "gefstoffv", "where": "§ 9 Abs. 3" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Lärm zuerst an der Quelle mindern; Gehörschutz kommt danach.",
+          "ref": { "source": "laermv", "where": "§ 7 Abs. 1" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Ab 80 dB(A) Tages-Lärmexpositionspegel oder 135 dB(C) Spitzenpegel Gehörschutz zur Verfügung stellen.",
+          "ref": { "source": "laermv", "where": "§ 6 Nr. 2 und § 8 Abs. 1" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Ab 85 dB(A) oder 137 dB(C) muss Gehörschutz getragen werden; den Lärmbereich kennzeichnen.",
+          "ref": { "source": "laermv", "where": "§ 7 Abs. 4 und § 8 Abs. 3" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Gehörschutz so wählen, dass am Ohr 85 dB(A) bzw. 137 dB(C) nicht überschritten werden.",
+          "ref": { "source": "laermv", "where": "§ 8 Abs. 2" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Hand-Arm-Vibration: ab einem Tageswert A(8) von 2,5 m/s² ein Programm mit Gegenmaßnahmen umsetzen; der Grenzwert von 5 m/s² darf nicht überschritten werden.",
+          "ref": { "source": "laermv", "where": "§ 9 Abs. 1 und § 10 Abs. 3 und 4" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Ab 80 dB(A) bzw. ab 2,5 m/s² Hand-Arm-Vibration vor Beginn und danach regelmäßig unterweisen.",
+          "ref": { "source": "laermv", "where": "§ 11 Abs. 1" }
+        },
+        {
+          "topic": "health",
+          "level": "required",
+          "text": "Lärm: Pflichtvorsorge ab 85 dB(A) oder 137 dB(C), Angebotsvorsorge ab 80 dB(A) oder 135 dB(C).",
+          "ref": { "source": "arbmedvv", "where": "Teil 3 Abs. 1 Nr. 3 und Abs. 2 Nr. 1" }
+        },
+        {
+          "topic": "health",
+          "level": "required",
+          "text": "Hand-Arm-Vibration: Pflichtvorsorge ab A(8) 5 m/s², Angebotsvorsorge ab 2,5 m/s².",
+          "ref": { "source": "arbmedvv", "where": "Teil 3 Abs. 1 Nr. 4 Buchst. a und Abs. 2 Nr. 2 Buchst. a" }
+        },
+        {
+          "topic": "health",
+          "level": "note",
+          "text": "Silikogener Staub (Quarz) und A-Staub: Pflichtvorsorge u. a., wenn der Arbeitsplatzgrenzwert nicht eingehalten wird; sonst Angebotsvorsorge, wenn eine Belastung nicht ausgeschlossen ist.",
+          "ref": { "source": "arbmedvv", "where": "Teil 1 Abs. 1 Nr. 1 und Abs. 2 Nr. 1" }
+        },
+        {
+          "topic": "health",
+          "level": "note",
+          "text": "Atemschutzgeräte der Gruppen 2 und 3: Pflichtvorsorge; Gruppe 1: Angebotsvorsorge.",
+          "ref": { "source": "arbmedvv", "where": "Teil 4 Abs. 1 Nr. 1 und Abs. 2 Nr. 2" }
+        }
+      ]
+    },
+    {
+      "key": "asbestos",
+      "group": "dust",
+      "label": "Asbest im Bestand",
+      "note": "Altbau: Kessel, Leitungen, Bad, Bodenbeläge",
+      "aliases": ["Asbest", "Asbestzement", "Eternit", "Floor-Flex", "Nachtspeicher", "Fliesenkleber", "Spachtelmasse", "TRGS 519", "Asbestverdacht", "Asbestsachkunde"],
+      "todo": "TODO: Inhalt fehlt – TRGS 519 (Fassung 2025) und GefStoffV Anhang I Nr. 3 (Risikobereiche, Sachkunde, Fristen) auswerten; Liste typischer asbesthaltiger Bauteile im SHK-Bereich ergänzen (z. B. BG BAU Bausteine C 311 und C 312).",
+      "questions": [
+        {
+          "key": "built",
+          "text": "Wann hat der Bau des Gebäudes begonnen?",
+          "label": "Baubeginn",
+          "options": [
+            { "key": "before", "label": "vor dem 31.10.1993" },
+            { "key": "after", "label": "nach dem 31.10.1993" }
+          ]
+        }
+      ],
+      "ppe": [
+        {
+          "item": "respirator",
+          "text": "auch bei negativem Befund an anderen Stellen staubarm arbeiten, mit Atemschutz",
+          "ref": { "source": "bgbauAsbest", "where": "Seite „Beprobung bis Befund“" }
+        }
+      ],
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Bei Baubeginn nach dem 31.10.1993 darf in der Regel angenommen werden, dass kein Asbest vorhanden ist.",
+          "ref": { "source": "gefstoffv", "where": "§ 11a Abs. 1" },
+          "when": [{ "question": "built", "is": ["after"] }]
+        },
+        {
+          "topic": "info",
+          "level": "forbidden",
+          "text": "Tätigkeiten an asbesthaltigen Materialien in Gebäuden und Anlagen sind grundsätzlich verboten; erlaubt sind nur Ausnahmen wie Abbruch, bestimmte Sanierungen sowie Wartung und Instandhaltung.",
+          "ref": { "source": "gefstoffv", "where": "§ 11 Abs. 1 Nr. 3 und Abs. 2" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Gefährdungsbeurteilung, Schutzmaßnahmen und Unterweisung durch eine sachkundige Person. Eine weisungsbefugte sachkundige Person beaufsichtigt ständig vor Ort; ausführen dürfen nur Beschäftigte mit Fachkunde.",
+          "ref": { "source": "gefstoffv", "where": "§ 11a Abs. 5" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Tätigkeiten mit Asbest spätestens eine Woche vor Beginn bei der Behörde anzeigen.",
+          "ref": { "source": "gefstoffv", "where": "§ 11a Abs. 4" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Tätigkeiten mit hohem Risiko brauchen eine behördliche Betriebszulassung (höchstens sechs Jahre gültig).",
+          "ref": { "source": "gefstoffv", "where": "§ 11a Abs. 3" }
+        },
+        {
+          "topic": "permit",
+          "level": "note",
+          "text": "Ab dem 20.12.2026 brauchen auch Abbrucharbeiten mit niedrigem oder mittlerem Risiko eine Genehmigung; Instandhaltung braucht keine Genehmigung, aber die Anzeige.",
+          "ref": { "source": "bgbauAsbest", "where": "Meldung vom 03.11.2026; GefStoffV § 11a Abs. 4a" }
+        },
+        {
+          "topic": "permit",
+          "level": "exception",
+          "text": "Liegt die Belastung unter 1 000 Fasern/m³, entfallen diese besonderen Pflichten; staubmindernde Maßnahmen bleiben nötig.",
+          "ref": { "source": "gefstoffv", "where": "§ 11a Abs. 6" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Vom Auftraggeber die vorliegenden Angaben zu vorhandenen oder vermuteten Gefahrstoffen einholen, mindestens das Baujahr (bei Baujahr 1993 bis 1996 den Baubeginn); das gilt auch für Privathaushalte.",
+          "ref": { "source": "gefstoffv", "where": "§ 5a Abs. 1, 2 und 4" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Die Angaben auf Plausibilität prüfen, die Faserfreisetzung beurteilen, den Risikobereich (niedrig, mittel, hoch) festlegen und einen Arbeitsplan erstellen.",
+          "ref": { "source": "gefstoffv", "where": "§ 11a Abs. 1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Asbestverdacht lässt sich in der Regel nur durch technische Erkundung, Probenahme und Analyse ausräumen; Putz- und Spachtelproben emissionsarm entnehmen.",
+          "ref": { "source": "bgbauAsbest", "where": "Seite „Beprobung bis Befund“" },
+          "when": [{ "question": "built", "is": ["before"] }]
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Asbestzementdächer, Asbestzement-Wand- und -Deckenverkleidungen und asbesthaltige Bodenbeläge nicht fest überdecken, überbauen oder aufständern.",
+          "ref": { "source": "gefstoffv", "where": "§ 11 Abs. 3 Nr. 1" }
+        },
+        {
+          "topic": "during",
+          "level": "note",
+          "text": "Ein negativer Befund gilt nur für die beprobte Stelle. Auch sonst staubarm arbeiten: absaugen, lüften, nicht fegen, Atemschutz.",
+          "ref": { "source": "bgbauAsbest", "where": "Seite „Beprobung bis Befund“" }
+        },
+        {
+          "topic": "health",
+          "level": "required",
+          "text": "Bei positivem oder nicht ausgeräumtem Verdacht brauchen die Beschäftigten arbeitsmedizinische Vorsorge.",
+          "ref": { "source": "bgbauAsbest", "where": "Seite „Beprobung bis Befund“" }
+        }
+      ]
+    },
+    {
+      "key": "mineralWool",
+      "group": "dust",
+      "label": "Alte Mineralwolle ausbauen",
+      "note": "Rohr- und Kesseldämmung aus Glas- oder Steinwolle",
+      "aliases": ["Mineralwolle", "KMF", "Glaswolle", "Steinwolle", "Rohrdämmung", "Kesseldämmung", "TRGS 521"],
+      "todo": "TODO: Inhalt fehlt – Expositionskategorien und Schutzmaßnahmen mit der TRGS 521 vom 2. März 2026 abgleichen; die Maßnahmen stammen aus dem BG-BAU-Baustein C 320 (07/2021), der sich auf die frühere Fassung stützt.",
+      "hazards": [
+        {
+          "text": "Beim Ausbau alter Mineralwolle wird Faserstaub frei; die BG BAU geht bei Einbau vor dem Jahr 2000 grundsätzlich von Krebsverdacht aus.",
+          "ref": { "source": "c320", "where": "S. 1, Gefährdungen" }
+        }
+      ],
+      "questions": [
+        {
+          "key": "exposure",
+          "text": "Welche Staubbelastung ist zu erwarten (Expositionskategorie)?",
+          "label": "Expositionskategorie",
+          "options": [
+            { "key": "e1", "label": "E1: keine oder sehr gering" },
+            { "key": "e2", "label": "E2: gering bis mittel" },
+            { "key": "e3", "label": "E3: hoch bis sehr hoch" }
+          ]
+        }
+      ],
+      "ppe": [
+        {
+          "item": "gloves",
+          "text": "z. B. nitrilbeschichtete Baumwollhandschuhe, dazu locker sitzende, geschlossene Arbeitskleidung",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E1" }
+        },
+        {
+          "item": "respirator",
+          "text": "Halb- oder Viertelmaske mit P2-Filter, FFP2 oder Gebläsefiltergerät TM 1P; bei E2 bereitstellen, bei E3 tragen",
+          "ref": { "source": "c320", "where": "S. 2, Kategorien E2 und E3" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        },
+        {
+          "item": "safetyGlasses",
+          "text": "besonders bei Überkopfarbeiten",
+          "ref": { "source": "c320", "where": "S. 2, Kategorien E2 und E3" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        },
+        {
+          "item": "coverall",
+          "text": "bei E2 bereitstellen, bei E3 tragen",
+          "ref": { "source": "c320", "where": "S. 2, Kategorien E2 und E3" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        }
+      ],
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Als alt gilt Mineralwolle, die vor 1996 eingebaut wurde. Seit dem 1.6.2000 darf alte Mineralwolle nicht mehr hergestellt oder verwendet werden.",
+          "ref": { "source": "trgs521", "where": "Abschn. 1 Abs. 5 und Abschn. 2.3 Abs. 2" }
+        },
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Beispiele: E1 Öffnen einzelner Abschnitte unter 3 m²; E2 Demontage thermisch belasteter Anlagenteile im Freien bis 20 m²; E3 Demontage thermisch belasteter Anlagen in engen, schlecht belüfteten Räumen.",
+          "ref": { "source": "c320", "where": "S. 1–2, Expositionskategorien" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Betriebsanweisung erstellen und die Beschäftigten unterweisen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E1" }
+        },
+        {
+          "topic": "permit",
+          "level": "forbidden",
+          "text": "Bei E3 gilt eine Beschäftigungsbeschränkung für Jugendliche und Schwangere.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E3" },
+          "when": [{ "question": "exposure", "is": ["e3"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "In der Gefährdungsbeurteilung klären, ob es alte Mineralwolle ist; Tätigkeiten mit alten Dämmstoffen ins Gefahrstoffverzeichnis aufnehmen.",
+          "ref": { "source": "c320", "where": "S. 1, Allgemeines" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Arbeitsbereich abgrenzen und kennzeichnen; schwer zu reinigende Gegenstände mit Folie abdecken; Waschmöglichkeit vorsehen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E2" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Getrennte Umkleiden für Straßen- und Arbeitskleidung und einen Waschraum mit Duschen (Schwarz-Weiß-Anlage) bereitstellen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E3" },
+          "when": [{ "question": "exposure", "is": ["e3"] }]
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Material nicht reißen und ausgebautes Material nicht werfen.",
+          "ref": { "source": "c320", "where": "S. 1–2, Kategorie E1" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Motorgetriebene Sägen beim Ausbau nur mit Absaugung verwenden; für gute Durchlüftung sorgen und Staub nicht aufwirbeln.",
+          "ref": { "source": "c320", "where": "S. 1–2, Kategorie E1" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Staub nicht mit Druckluft abblasen oder trocken kehren, sondern mit Industriestaubsauger mindestens Staubklasse M oder feucht aufnehmen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E1" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Faserstaub direkt an der Austritts- oder Entstehungsstelle erfassen, soweit möglich; die Zahl der Beschäftigten begrenzen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E2" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Am Arbeitsplatz nicht rauchen, schnupfen, essen oder trinken.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E2" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Abfälle am Entstehungsort möglichst staubdicht verpacken und kennzeichnen; für den Transport geschlossene Behälter wie Tonnen, reißfeste Säcke oder Big-Bags.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E1" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Nach der Arbeit Staub mit Wasser von der Haut spülen; bei empfindlicher Haut Pflegemittel verwenden.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E1" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Schutzkleidung reinigen oder entsorgen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorie E3" },
+          "when": [{ "question": "exposure", "is": ["e3"] }]
+        },
+        {
+          "topic": "health",
+          "level": "required",
+          "text": "Arbeitsmedizinische Vorsorge bei E2 anbieten, bei E3 veranlassen.",
+          "ref": { "source": "c320", "where": "S. 2, Kategorien E2 und E3" },
+          "when": [{ "question": "exposure", "is": ["e2", "e3"] }]
+        }
+      ]
+    },
+    {
+      "key": "chemicals",
+      "group": "dust",
+      "label": "Gefahrstoffe: Kleber, Lösemittel, Reiniger",
+      "note": "auch Flussmittel, Frostschutz, Entkalker, Desinfektion",
+      "aliases": ["Gefahrstoff", "Kleber", "PVC-Kleber", "Lösemittel", "Flussmittel", "Frostschutz", "Glykol", "Entkalker", "Säure", "Inhibitor", "Desinfektion", "Sicherheitsdatenblatt", "Betriebsanweisung", "Gefahrstoffverzeichnis"],
+      "rules": [
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Schriftliche Betriebsanweisung in verständlicher Form und Sprache zugänglich machen; Zugang zu den Sicherheitsdatenblättern ermöglichen.",
+          "ref": { "source": "gefstoffv", "where": "§ 14 Abs. 1" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Anhand der Betriebsanweisung mündlich unterweisen: vor Aufnahme der Beschäftigung und danach mindestens jährlich; Inhalt und Zeitpunkt schriftlich festhalten und unterschreiben lassen.",
+          "ref": { "source": "gefstoffv", "where": "§ 14 Abs. 2" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Gefährdungsbeurteilung vor Beginn: Sicherheitsdatenblatt und Kennzeichnung auswerten, Ersatzstoffe prüfen, Schutzmaßnahmen festlegen und erstmals vor Aufnahme der Tätigkeit dokumentieren.",
+          "ref": { "source": "gefstoffv", "where": "§ 6 Abs. 1, 2 und 8, § 7 Abs. 1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Vorrangig durch weniger gefährliche Produkte oder Verfahren ersetzen.",
+          "ref": { "source": "gefstoffv", "where": "§ 7 Abs. 3" }
+        },
+        {
+          "topic": "before",
+          "level": "forbidden",
+          "text": "Mit ungekennzeichneten Gefahrstoffen nicht arbeiten; abgefüllte Behälter selbst kennzeichnen.",
+          "ref": { "source": "gefstoffv", "where": "§ 8 Abs. 2" }
+        },
+        {
+          "topic": "info",
+          "level": "required",
+          "text": "Gefahrstoffverzeichnis führen (Bezeichnung, Einstufung, Mengenbereich, Arbeitsbereich, Verweis auf das Sicherheitsdatenblatt); es entfällt bei Tätigkeiten mit nur geringer Gefährdung.",
+          "ref": { "source": "gefstoffv", "where": "§ 6 Abs. 12" }
+        },
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Rangfolge der Maßnahmen: zuerst Verfahren und emissionsarme Verwendung, dann technische Maßnahmen an der Quelle wie Lüftung und organisatorische Maßnahmen, zuletzt persönliche Schutzausrüstung.",
+          "ref": { "source": "gefstoffv", "where": "§ 7 Abs. 4" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Am Arbeitsplatz nur die Menge vorhalten, die für den Fortgang der Arbeit nötig ist.",
+          "ref": { "source": "gefstoffv", "where": "§ 8 Abs. 1 Nr. 6" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Im Bereich der Gefahrstoffe nicht essen oder trinken.",
+          "ref": { "source": "gefstoffv", "where": "§ 8 Abs. 3" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Gefahrstoffe nicht in Behälter füllen, die mit Lebensmitteln verwechselt werden können, und nicht neben Lebens-, Arznei- oder Futtermitteln lagern.",
+          "ref": { "source": "gefstoffv", "where": "§ 8 Abs. 5" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Schutzausrüstung vor Gebrauch prüfen, nach Gebrauch reinigen und bei Schäden ersetzen; belastende Schutzausrüstung darf keine Dauermaßnahme sein.",
+          "ref": { "source": "gefstoffv", "where": "§ 7 Abs. 5 und 6" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Nicht mehr benötigte Gefahrstoffe und Reste in leeren Gebinden sicher entfernen, lagern oder entsorgen.",
+          "ref": { "source": "gefstoffv", "where": "§ 8 Abs. 6" }
+        }
+      ]
+    },
+    {
+      "key": "confined",
+      "group": "spaces",
+      "label": "Enge Räume und Behälter",
+      "note": "Heizöltank, Tankraum, Schacht, Kriechkeller",
+      "aliases": ["enger Raum", "Behälter", "Öltank", "Heizöltank", "Tankreinigung", "Tanktasse", "Kriechkeller", "Schacht", "Sicherungsposten", "Freimessen", "Befahren"],
+      "related": ["tool.absturzsicherung"],
+      "todo": "TODO: Inhalt fehlt – DGUV Regel 113-004 ab Abschnitt 3 auswerten (Erlaubnisschein, Lüftung, Absperren von Zuleitungen, elektrische Betriebsmittel in engen leitfähigen Räumen, Rettung); der Volltext lag nicht vor.",
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Enge Räume sind ganz oder überwiegend umschlossene Bereiche mit besonderer Gefahr durch Enge, schlechten Luftaustausch oder Stoffe, z. B. Tanktassen, Gruben, Schächte, Kanäle.",
+          "ref": { "source": "r113004", "where": "Abschn. 2.1" }
+        },
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Schon das Hineinbeugen in einen Behälter gilt als Befahren.",
+          "ref": { "source": "faq113", "where": "Frage 1.2" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Meist ist ein Sicherungsposten nötig. Ohne ihn nur, wenn keine Gefahr durch Stoffe oder Sauerstoffmangel besteht und man den Raum ohne fremde Hilfe verlassen kann.",
+          "ref": { "source": "faq113", "where": "Frage 2.2" }
+        },
+        {
+          "topic": "permit",
+          "level": "note",
+          "text": "Der Aufsichtführende darf zugleich Sicherungsposten sein, wenn er geeignet ist, z. B. bei der Reinigung von Heizöltanks im Privathaushalt im Zweierteam.",
+          "ref": { "source": "faq113", "where": "Frage 2.4" }
+        },
+        {
+          "topic": "permit",
+          "level": "forbidden",
+          "text": "Auszubildende grundsätzlich nicht als Sicherungsposten einsetzen; Ausnahmen nur bei nachgewiesener Eignung und verstärkter Kontrolle.",
+          "ref": { "source": "faq113", "where": "Frage 2.5" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Sauerstoffmangel lässt sich meist nur durch Messen und Lüften ausschließen. Freimessen braucht Fachkunde; die Dauerüberwachung mit Gaswarngerät eine Unterweisung.",
+          "ref": { "source": "faq113", "where": "Fragen 2.2 und 2.6" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Behälter nur durch Mannlöcher mit mindestens 500 mm Durchmesser einsteigen.",
+          "ref": { "source": "faq113", "where": "Frage 1.3" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Öffnungen technisch gegen unbefugtes Einsteigen sichern; ein Warnschild genügt nicht.",
+          "ref": { "source": "faq113", "where": "Frage 1.4" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Der Sicherungsposten beobachtet ständig, kann in wenigen Minuten helfen, macht nichts anderes und bleibt direkt an der Öffnung. Verlässt er den Platz, müssen alle heraus.",
+          "ref": { "source": "faq113", "where": "Fragen 2.1 und 2.3" }
+        },
+        {
+          "topic": "during",
+          "level": "recommended",
+          "text": "Ab 2 m Höhe Absturzsicherungen verwenden.",
+          "ref": { "source": "faq113", "where": "Frage 3.6" }
+        }
+      ]
+    },
+    {
+      "key": "wastewater",
+      "group": "spaces",
+      "label": "Abwasseranlagen und Schächte",
+      "note": "Hebeanlage, Pumpensumpf, Revisionsschacht",
+      "aliases": ["Abwasser", "Hebeanlage", "Pumpensumpf", "Revisionsschacht", "Kontrollschacht", "Kanal", "Grundleitung", "Faulgas", "Schwefelwasserstoff", "Gaswarngerät", "Hepatitis A"],
+      "todo": "TODO: Inhalt fehlt – Ausgabe der DGUV Regel 103-003 und die TRBA 220 (Hygiene, Handschuhe, Augenschutz) prüfen.",
+      "questions": [
+        {
+          "key": "enter",
+          "text": "Steigst du in einen Schacht, Pumpensumpf oder Kanal ein?",
+          "label": "Einstieg in Schacht"
+        }
+      ],
+      "ppe": [
+        {
+          "item": "rescueHarness",
+          "text": "vor dem Einstieg anlegen",
+          "ref": { "source": "r103003", "where": "Abschn. 6.1.7.1" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        }
+      ],
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Umschlossene Räume sind u. a. Einsteig- und Kontrollschächte, Kanäle und Bauwerke in offener Verbindung mit dem Abwasser wie Pumpensümpfe.",
+          "ref": { "source": "r103003", "where": "Abschn. 2 Nr. 2" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Erlaubnisschein bei besonderen Gefahren, z. B. beim Öffnen geschlossener Systeme (Leitung trennen, Revisionsöffnung öffnen) oder bei Löten, Schleifen und Bohren; er gilt meist nur eine Schicht.",
+          "ref": { "source": "r103003", "where": "Abschn. 2 Nr. 11, 4.1.7.3 und 4.1.7.4" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Bei zwei oder mehr Personen eine aufsichtführende Person benennen; begonnen wird erst, wenn alle Schutzmaßnahmen getroffen sind.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.1.5.3 und 4.1.8.1" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Mindestens ein Sicherungsposten mit ständiger Verbindung; weitere Personen steigen erst auf sein Signal ein.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.1.6.1 bis 4.1.6.4" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Vor dem Einsteigen von oben freimessen, z. B. mit Mehrfach-Gaswarngerät und Schlauch; die messende Person braucht Sachkunde.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.2.1 bis 4.2.1.4" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Ausreichend lüften: Sauerstoff mindestens 20,9 Vol.-%, brennbare Gase unter 10 % der unteren Explosionsgrenze, keine giftigen Gase wie Schwefelwasserstoff.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.2.4.2" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Zu- und Abläufe wirksam unterbrechen; Pumpen, die gefährliche Wassermengen fördern, abschalten und gegen Wiedereinschalten sichern.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.2.3.1 und 4.10.1.1" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Rettungsausrüstung direkt am Einstieg bereithalten, z. B. Dreibock mit Hubgerät; bei zwei oder mehr Personen steht ein Ersthelfer außerhalb bereit.",
+          "ref": { "source": "r103003", "where": "Abschn. 6.1.2, 6.1.3 und 6.1.7.1" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Offene Einstiege gegen Absturz sichern; Schachtdeckel mit Deckelheber öffnen, festgefrorene nicht mit offenem Feuer auftauen.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.7.1 und 4.9.1" }
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Nicht mit reinem Sauerstoff belüften; beim Absaugen nur explosionsgeschützte Geräte.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.2.4.5" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "forbidden",
+          "text": "Filtergeräte sind ungeeignet, wenn giftige Gase oder Sauerstoffmangel auftreten können.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.2.5.2" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Zündquellen vermeiden: keine offenen Flammen, nicht rauchen, nur explosionsgeschützte Elektrogeräte.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.4.2.1" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Steckdosenstromkreise bis 32 A über eine Fehlerstrom-Schutzeinrichtung mit höchstens 30 mA absichern.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.8.2" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Bei Starkregen oder Gewitter die Arbeit einstellen und den Raum sofort verlassen.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.10.1.5" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Hände vor dem Essen, Trinken und Rauchen reinigen; beim Hochdruckspülen Aerosole vermeiden.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.5.4 und 4.5.5" }
+        },
+        {
+          "topic": "during",
+          "level": "recommended",
+          "text": "Vor Arbeitsbeginn Hautschutz nach Hautschutzplan auftragen.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.5.3" }
+        },
+        {
+          "topic": "after",
+          "level": "required",
+          "text": "Verschmutzte Arbeits- und Schutzkleidung getrennt von der Straßenkleidung aufbewahren; Waschgelegenheit mit warmem Wasser, auch mobil, bereitstellen.",
+          "ref": { "source": "r103003", "where": "Abschn. 4.5.1 und 4.5.3" }
+        },
+        {
+          "topic": "inspection",
+          "level": "required",
+          "text": "Die Rettung mindestens einmal jährlich üben.",
+          "ref": { "source": "r103003", "where": "Abschn. 6.1.4" },
+          "when": [{ "question": "enter", "is": ["yes"] }]
+        },
+        {
+          "topic": "health",
+          "level": "note",
+          "text": "Pflichtvorsorge (Hepatitis A) bei regelmäßigem Kontakt mit fäkalienhaltigem Abwasser oder damit verschmutzten Gegenständen in Kläranlagen oder der Kanalisation.",
+          "ref": { "source": "arbmedvv", "where": "Teil 2 Abs. 1 Nr. 3 Buchst. i" }
+        }
+      ]
+    },
+    {
+      "key": "refrigerant",
+      "group": "spaces",
+      "label": "Kältekreis von Wärmepumpen und Klimageräten",
+      "note": "auch brennbare Kältemittel wie R290",
+      "aliases": ["Kältemittel", "Kältekreis", "Wärmepumpe", "Klimaanlage", "Split", "R290", "Propan-Wärmepumpe", "R32", "Sachkunde", "Kältemittelschein", "Ex-Bereich"],
+      "todo": "TODO: Inhalt fehlt – DGUV Regel 100-500 Kap. 2.35, TRBS 1112 Teil 1 und ChemKlimaschutzV im Original auswerten (Schutzausrüstung gegen Kälte und Spritzer, Erstickungsgefahr, Löten am Kältekreis).",
+      "rules": [
+        {
+          "topic": "info",
+          "level": "note",
+          "text": "Sicherheitsklassen der Kältemittel: A3 leicht entflammbar (z. B. R290), A2L schwer entflammbar (z. B. R32), A1 nicht brennbar (z. B. R410A).",
+          "ref": { "source": "shkKaelte", "where": "S. 1, Tabelle" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "An ortsfesten Kälte- und Klimaanlagen und Wärmepumpen mit fluorierten Treibhausgasen nur mit Sachkundebescheinigung arbeiten (Kategorie 1 umfasst Kälte-, Klimaanlagen und Wärmepumpen).",
+          "ref": { "source": "shkKaelte", "where": "S. 1–2, Nachweis der Sachkunde" }
+        },
+        {
+          "topic": "permit",
+          "level": "required",
+          "text": "Bei brennbaren Kältemitteln die Gefährdungsbeurteilung anpassen, Betriebsanweisungen erstellen und aushändigen; nur geeignete Beschäftigte mit ausreichender Sachkunde einsetzen.",
+          "ref": { "source": "shkKaelte", "where": "S. 1, Unternehmerpflichten" }
+        },
+        {
+          "topic": "permit",
+          "level": "recommended",
+          "text": "Ergänzende Schulung zu brennbaren Kältemitteln und Schulung zum Brandhelfer.",
+          "ref": { "source": "shkKaelte", "where": "S. 2" }
+        },
+        {
+          "topic": "before",
+          "level": "recommended",
+          "text": "Bei Arbeiten am Kältekreis mit brennbarem Kältemittel mit explosionsfähiger Atmosphäre rechnen: Ex-Bereich festlegen und mit Schildern oder Absperrung kennzeichnen; Ort, Beginn, Dauer und Maßnahmen in einer Arbeitsanweisung festhalten.",
+          "ref": { "source": "shkKaelte", "where": "S. 2, Vorsichtsmaßnahmen gegen Explosionen" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Im Arbeitsbereich keine brennbaren Materialien und keine Zündquellen; funkenbildende Werkzeuge nur außerhalb einsetzen.",
+          "ref": { "source": "shkKaelte", "where": "S. 2, Maßnahmen gegen Brände" }
+        },
+        {
+          "topic": "before",
+          "level": "required",
+          "text": "Ausreichend Feuerlöscher mit geeignetem Löschmittel schon bei der Arbeitsvorbereitung festlegen.",
+          "ref": { "source": "shkKaelte", "where": "S. 2, Mobile Feuerlöscheinrichtungen" }
+        },
+        {
+          "topic": "before",
+          "level": "recommended",
+          "text": "Arbeitsbereich vor Beginn ausreichend und dauerhaft lüften.",
+          "ref": { "source": "shkKaelte", "where": "S. 2, Maßnahmen gegen Brände" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Handwerkzeug und Arbeitskleidung dürfen keine Zündquelle sein; am Kältekreis und in den Schutzbereichen des Herstellers nur geeignetes Werkzeug, z. B. eine passende Absaugstation.",
+          "ref": { "source": "shkKaelte", "where": "S. 2, Werkzeug" }
+        },
+        {
+          "topic": "during",
+          "level": "required",
+          "text": "Kältemittel nur in Flaschen absaugen, die für den Anlagendruck zugelassen sind, und nicht überfüllen: Es muss ausreichend Gasraum bleiben.",
+          "ref": { "source": "shkKaelte", "where": "S. 2, Absaugen von Kältemittel" }
+        }
+      ]
+    },
+    {
+      "key": "pressureTest",
+      "group": "spaces",
+      "label": "Druck- und Dichtheitsprüfungen",
+      "note": "mit Druckluft, Inertgas oder Wasser",
+      "aliases": ["Druckprüfung", "Dichtheitsprüfung", "Belastungsprüfung", "Druckluft", "Stickstoff", "Abdrücken"],
+      "todo": "TODO: Inhalt fehlt – Arbeitsschutz bei Belastungs- und Dichtheitsprüfungen mit Druckluft, Inertgas oder Wasser; bitte Quelle benennen (z. B. Merkblatt des Fachverbands oder DVGW-Regel)."
+    }
+  ],
+  "basics": [
+    {
+      "key": "riskAssessment",
+      "label": "Gefährdungsbeurteilung",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Der Arbeitgeber beurteilt die Gefährdungen der Arbeit und legt die nötigen Schutzmaßnahmen fest.",
+          "ref": { "source": "arbschg", "where": "§ 5 Abs. 1" }
+        },
+        {
+          "level": "required",
+          "text": "Bei veränderten betrieblichen Verhältnissen überprüfen; Ergebnis, Maßnahmen und Überprüfung dokumentieren.",
+          "ref": { "source": "v1", "where": "§ 3 Abs. 2 und 3" }
+        }
+      ]
+    },
+    {
+      "key": "instruction",
+      "label": "Unterweisung",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Während der Arbeitszeit und bezogen auf den Arbeitsplatz unterweisen: bei Einstellung, neuen Aufgaben oder neuen Arbeitsmitteln, vor Beginn der Tätigkeit.",
+          "ref": { "source": "arbschg", "where": "§ 12 Abs. 1" }
+        },
+        {
+          "level": "required",
+          "text": "Bei Bedarf wiederholen, mindestens aber einmal jährlich, und die Unterweisung dokumentieren.",
+          "ref": { "source": "v1", "where": "§ 4 Abs. 1" }
+        },
+        {
+          "level": "required",
+          "text": "Jugendliche vor Beginn und bei wesentlichen Änderungen unterweisen, vor der ersten Arbeit an Maschinen oder gefährlichen Arbeitsstellen besonders; Wiederholung mindestens halbjährlich.",
+          "ref": { "source": "jarbschg", "where": "§ 29 Abs. 1 und 2" }
+        }
+      ]
+    },
+    {
+      "key": "dangerousWork",
+      "label": "Gefährliche Arbeiten und Alleinarbeit",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Führen mehrere Personen gemeinsam gefährliche Arbeiten aus, die Verständigung erfordern, führt eine zuverlässige, mit der Arbeit vertraute Person die Aufsicht.",
+          "ref": { "source": "v1", "where": "§ 8 Abs. 1" }
+        },
+        {
+          "level": "required",
+          "text": "Wer eine gefährliche Arbeit allein ausführt, braucht über die allgemeinen Schutzmaßnahmen hinaus eine geeignete technische oder organisatorische Personenüberwachung.",
+          "ref": { "source": "v1", "where": "§ 8 Abs. 2" }
+        }
+      ]
+    },
+    {
+      "key": "ppe",
+      "label": "Persönliche Schutzausrüstung",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Der Unternehmer stellt geeignete Schutzausrüstung in ausreichender Zahl zur persönlichen Verwendung bereit und hört die Beschäftigten vorher an.",
+          "ref": { "source": "v1", "where": "§ 29 Abs. 1 und 2" }
+        },
+        {
+          "level": "required",
+          "text": "Die Beschäftigten benutzen die Schutzausrüstung bestimmungsgemäß, prüfen sie regelmäßig und melden Mängel sofort.",
+          "ref": { "source": "v1", "where": "§ 30 Abs. 2" }
+        }
+      ]
+    },
+    {
+      "key": "firstAid",
+      "label": "Erste Hilfe",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Ersthelfer: bei 2 bis 20 anwesenden Versicherten mindestens einer; bei mehr als 20 in Verwaltungs- und Handelsbetrieben 5 %, in sonstigen Betrieben 10 %.",
+          "ref": { "source": "v1", "where": "§ 26 Abs. 1" }
+        },
+        {
+          "level": "required",
+          "text": "Ersthelfer in der Regel alle zwei Jahre fortbilden.",
+          "ref": { "source": "v1", "where": "§ 26 Abs. 3" }
+        },
+        {
+          "level": "required",
+          "text": "Erste-Hilfe-Material jederzeit schnell erreichbar, geschützt und in ausreichender Menge bereithalten und rechtzeitig ergänzen.",
+          "ref": { "source": "v1", "where": "§ 25 Abs. 2" }
+        },
+        {
+          "level": "required",
+          "text": "Jede Erste-Hilfe-Leistung dokumentieren und die Aufzeichnung fünf Jahre verfügbar halten; Notruf und Ersthelfer per Aushang bekannt machen.",
+          "ref": { "source": "v1", "where": "§ 24 Abs. 5 und 6" }
+        }
+      ]
+    },
+    {
+      "key": "conduct",
+      "label": "Verhalten der Beschäftigten",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Schutzmaßnahmen unterstützen und Anweisungen befolgen; erkennbar gegen die Sicherheit gerichtete Weisungen müssen nicht befolgt werden.",
+          "ref": { "source": "v1", "where": "§ 15 Abs. 1" }
+        },
+        {
+          "level": "forbidden",
+          "text": "Nicht unter Alkohol, Drogen, anderen berauschenden Mitteln oder Medikamenten arbeiten, wenn man sich oder andere dadurch gefährdet.",
+          "ref": { "source": "v1", "where": "§ 15 Abs. 2 und 3" }
+        }
+      ]
+    },
+    {
+      "key": "accidentReport",
+      "label": "Unfallanzeige",
+      "rules": [
+        {
+          "level": "required",
+          "text": "Einen Unfall anzeigen, wenn eine versicherte Person getötet wird oder mehr als drei Tage arbeitsunfähig ist; Frist drei Tage ab Kenntnis des Unfalls.",
+          "ref": { "source": "sgb7", "where": "§ 193 Abs. 1 und 4" }
+        }
+      ]
+    }
+  ],
+  "related": [
+    "tool.absturzsicherung",
+    "tool.ladungssicherung"
+  ]
+}

@@ -41,6 +41,7 @@ import {
   isVentilationRiserTool,
   isWireColorTool,
   isWorkHoursTool,
+  isWorkSafetyTool,
   type ToolEntry,
 } from './schema'
 import { CableLookup } from './CableLookup'
@@ -76,6 +77,7 @@ import { ValveSurvey } from './ValveSurvey'
 import { VariantCalculator } from './VariantCalculator'
 import { WireColorLookup } from './WireColorLookup'
 import { WorkHours } from './WorkHours'
+import { WorkSafetyLookup } from './WorkSafetyLookup'
 
 const BACK = { to: modules.tools.path, label: modules.tools.title }
 
@@ -126,6 +128,8 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <FallProtectionLookup tool={tool} />
       ) : isLoadSecuringTool(tool) ? (
         <LoadSecuringLookup tool={tool} />
+      ) : isWorkSafetyTool(tool) ? (
+        <WorkSafetyLookup tool={tool} entries={entries} />
       ) : isHeatingCurveTool(tool) ? (
         <HeatingCurveSimulator tool={tool} />
       ) : isHeatPumpTool(tool) ? (
