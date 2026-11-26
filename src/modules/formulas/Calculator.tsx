@@ -22,7 +22,8 @@ type CalculationState =
 
 const fieldClass = fieldBase
 
-function UnitSelect({
+/** Einheiten-Auswahl neben einem Eingabefeld; auch von Tools genutzt */
+export function UnitSelect({
   id,
   label,
   units,

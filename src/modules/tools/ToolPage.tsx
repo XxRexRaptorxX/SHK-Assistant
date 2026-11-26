@@ -26,6 +26,7 @@ import {
   isPipeMaterialTool,
   isMetalTool,
   isGasSizingTool,
+  isCombustionAirTool,
   isFlueTypeTool,
   isPlacementTool,
   isPressureSwitchTool,
@@ -54,6 +55,7 @@ import { NormFinder } from './NormFinder'
 import { PipeMaterialLookup } from './PipeMaterialLookup'
 import { MetalLookup } from './MetalLookup'
 import { GasSizing } from './GasSizing'
+import { CombustionAirSizing } from './CombustionAirSizing'
 import { FlueTypeLookup } from './FlueTypeLookup'
 import { PlacementLookup } from './PlacementLookup'
 import { PressureSwitchSizing } from './PressureSwitchSizing'
@@ -154,7 +156,9 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
         <MetalLookup tool={tool} />
       ) : isGasSizingTool(tool) ? (
         <GasSizing tool={tool} />
-      ) : isClassificationTool(tool) ? (
+      ) : isCombustionAirTool(tool) ? (
+        <CombustionAirSizing tool={tool} />
+      ) :isClassificationTool(tool) ? (
         <ClassificationLookup tool={tool} />
       ) : isPressureSwitchTool(tool) ? (
         <PressureSwitchSizing tool={tool} entries={entries} />

@@ -1,0 +1,128 @@
+{
+  "id": "tool.verbrennungsluft",
+  "visibility": "public",
+  "status": "draft",
+  "source": "Muster-Feuerungsverordnung (MFeuV), Stand September 2007, geändert durch Beschluss der Fachkommission Bauaufsicht vom 28.01.2016 und 27.09.2017, §§ 2 bis 4, S. 2 bis 3, https://viega.de/content/dam/viegadm/content-assets/de/de-brandschutz/downloads-brandschutz/Muster-Feuerungsverordnung_DE_09_2017.PDF; Bayern: Feuerungsverordnung (FeuV) vom 11.11.2007, Text gilt ab 01.01.2013, § 3, https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-3",
+  "verifiedBy": "",
+  "verifiedAt": "",
+  "kind": "combustionAir",
+  "title": "Verbrennungsluftversorgung",
+  "summary": "Nennleistung eingeben: Mindestquerschnitt der Öffnung ins Freie, Volumenstrom oder Rauminhalt im Verbrennungsluftverbund ausrechnen und die eigene Lösung prüfen.",
+  "tags": ["heizung", "planung"],
+  "category": "Auslegung",
+  "description": "Für raumluftabhängige Feuerstätten, also Feuerstätten, die ihre Verbrennungsluft aus dem Aufstellraum nehmen. Regelwerk wählen und die Nennleistung aller Feuerstätten eingeben, die gleichzeitig laufen können. Das Tool nennt, was die Feuerungsverordnung für diese Leistung verlangt, und prüft vorhandene oder geplante Öffnungen ins Freie bzw. die Räume eines Verbrennungsluftverbunds.",
+  "keywords": [
+    "Verbrennungsluftverbund",
+    "Raumluftverbund",
+    "Verbrennungsluftöffnung",
+    "Zuluftöffnung",
+    "Lüftungsgitter",
+    "Rauminhalt",
+    "raumluftabhängig",
+    "B-Gerät",
+    "Aufstellraum",
+    "Feuerungsverordnung",
+    "FeuVO"
+  ],
+  "related": ["tool.heizraum"],
+  "sources": [
+    {
+      "key": "mfeuv",
+      "name": "MFeuV (Stand 2017)",
+      "source": "Muster-Feuerungsverordnung, Stand September 2007, geändert am 28.01.2016 und 27.09.2017, https://viega.de/content/dam/viegadm/content-assets/de/de-brandschutz/downloads-brandschutz/Muster-Feuerungsverordnung_DE_09_2017.PDF"
+    },
+    {
+      "key": "bayfeuv",
+      "name": "BayFeuV",
+      "source": "Bayerische Feuerungsverordnung vom 11.11.2007, Text gilt ab 01.01.2013, https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-3"
+    }
+  ],
+  "power": {
+    "label": "Nennleistung insgesamt",
+    "unit": "kW",
+    "max": 2000,
+    "text": "Summe der Nennleistungen aller raumluftabhängigen Feuerstätten im Aufstellraum, die gleichzeitig betrieben werden können. Als Nennleistung gilt die höchste Leistung auf dem Typenschild bzw. die fest eingestellte Leistung auf einem Zusatzschild.",
+    "ref": { "source": "mfeuv", "where": "§ 2 Abs. 1, S. 2" }
+  },
+  "regulations": [
+    {
+      "key": "mfeuv",
+      "label": "Muster (MFeuV)",
+      "note": "Stand 2017",
+      "opening": {
+        "upTo": 50,
+        "single": 150,
+        "pairEach": 75,
+        "perKwOver": 2,
+        "maxParts": 2,
+        "text": "Bis 50 kW insgesamt braucht jeder Aufstellraum eine Öffnung ins Freie mit mindestens 150 cm² lichtem Querschnitt, zwei Öffnungen mit je mindestens 75 cm² oder Leitungen ins Freie mit strömungstechnisch gleichwertigem Querschnitt.",
+        "ref": { "source": "mfeuv", "where": "§ 3 Abs. 2, S. 2" },
+        "overText": "Über 50 kW braucht jeder Aufstellraum eine Öffnung oder Leitung ins Freie: mindestens 150 cm² und für jedes kW über 50 kW 2 cm² mehr. Leitungen strömungstechnisch gleichwertig bemessen. Der Querschnitt darf auf höchstens zwei Öffnungen oder Leitungen verteilt werden.",
+        "overRef": { "source": "mfeuv", "where": "§ 3 Abs. 3, S. 2" }
+      },
+      "compoundMissing": "Die MFeuV (Stand 2017) sieht keinen Nachweis über den Rauminhalt oder einen Verbrennungsluftverbund mehr vor. Ob die Feuerungsverordnung des Bundeslandes ihn noch zulässt, dort prüfen.",
+      "volumeFlow": {
+        "perKw": 1.6,
+        "text": "Statt der Öffnungen darf die Verbrennungsluftversorgung auch auf andere Weise nachgewiesen werden. Sie reicht aus, wenn ein Volumenstrom von 1,6 m³/h je kW verfügbar ist.",
+        "ref": { "source": "mfeuv", "where": "§ 3 Abs. 5, S. 3" }
+      },
+      "notes": [
+        {
+          "title": "Nicht verschließen, Gitter mitrechnen",
+          "text": "Öffnungen und Leitungen für Verbrennungsluft dürfen nicht verschlossen oder zugestellt werden, außer besondere Sicherheitseinrichtungen lassen die Feuerstätten nur bei offenem Verschluss laufen. Verschluss oder Gitter dürfen den nötigen Querschnitt nicht verengen. Im Tool deshalb den lichten (freien) Querschnitt eintragen.",
+          "ref": { "source": "mfeuv", "where": "§ 3 Abs. 4, S. 2" }
+        },
+        {
+          "title": "Ausnahmen",
+          "text": "Die Öffnungen bis 50 kW gelten nicht für Gas-Haushalts-Kochgeräte. Für offene Kamine gelten die Vorgaben zu den Öffnungen nicht.",
+          "ref": { "source": "mfeuv", "where": "§ 3 Abs. 6, S. 3" }
+        },
+        {
+          "title": "Lüftungsanlage, Dunstabzug, Abluft-Trockner",
+          "text": "Anlagen, die Raumluft absaugen, dürfen raumluftabhängige Feuerstätten nicht gefährden. Das gilt als erfüllt, wenn Sicherheitseinrichtungen den gleichzeitigen Betrieb verhindern oder die Abgasabführung überwachen, die Abgase über die absaugende Anlage abgeführt werden oder anlagentechnisch kein gefährlicher Unterdruck entstehen kann.",
+          "ref": { "source": "mfeuv", "where": "§ 4 Abs. 2, S. 3" }
+        }
+      ]
+    },
+    {
+      "key": "bayern",
+      "label": "Bayern (BayFeuV)",
+      "note": "gilt ab 2013",
+      "opening": {
+        "upTo": 50,
+        "single": 150,
+        "pairEach": 75,
+        "perKwOver": 2,
+        "maxParts": 2,
+        "text": "Bis 50 kW insgesamt genügt eine Öffnung ins Freie mit mindestens 150 cm² lichtem Querschnitt, zwei Öffnungen mit je 75 cm² oder Leitungen ins Freie mit strömungstechnisch gleichwertigem Querschnitt. Über 35 kW ist das der einzige Weg ohne eigenen Nachweis, der Rauminhalt genügt dann nicht mehr.",
+        "ref": { "source": "bayfeuv", "where": "§ 3 Abs. 1 Nr. 3 und Abs. 3" },
+        "overText": "Über 50 kW braucht jeder Aufstellraum eine Öffnung oder Leitung ins Freie: mindestens 150 cm² und für jedes kW über 50 kW 2 cm² mehr. Leitungen strömungstechnisch gleichwertig bemessen. Der Querschnitt darf auf höchstens zwei Öffnungen oder Leitungen verteilt werden.",
+        "overRef": { "source": "bayfeuv", "where": "§ 3 Abs. 4" }
+      },
+      "compound": {
+        "upTo": 35,
+        "perKw": 4,
+        "openingMin": 150,
+        "text": "Bis 35 kW insgesamt reicht auch der Rauminhalt: Der Aufstellraum hat eine Tür ins Freie oder ein Fenster, das sich öffnen lässt, und mindestens 4 m³ je kW Nennleistung. Oder er ist über Verbrennungsluftöffnungen von mindestens 150 cm² mit Räumen mit Verbindung zum Freien verbunden (Verbrennungsluftverbund); alle Räume des Verbunds zusammen brauchen mindestens 4 m³ je kW der Feuerstätten, die gleichzeitig betrieben werden können. Räume ohne Verbindung zum Freien zählen nicht mit.",
+        "ref": { "source": "bayfeuv", "where": "§ 3 Abs. 1 Nr. 1 und 2, Abs. 2" }
+      },
+      "otherProof": {
+        "text": "Die Verbrennungsluftversorgung darf auch auf andere Weise nachgewiesen werden. Die BayFeuV nennt dafür keinen Zahlenwert.",
+        "ref": { "source": "bayfeuv", "where": "§ 3 Abs. 6" }
+      },
+      "notes": [
+        {
+          "title": "Nicht verschließen, Gitter mitrechnen",
+          "text": "Öffnungen und Leitungen für Verbrennungsluft dürfen nicht verschlossen oder zugestellt werden, außer besondere Sicherheitseinrichtungen lassen die Feuerstätten nur bei offenem Verschluss laufen. Verschluss oder Gitter dürfen den nötigen Querschnitt nicht verengen. Im Tool deshalb den lichten (freien) Querschnitt eintragen.",
+          "ref": { "source": "bayfeuv", "where": "§ 3 Abs. 5" }
+        },
+        {
+          "title": "Ausnahmen",
+          "text": "Rauminhalt und Verbrennungsluftverbund gelten nicht für Gas-Haushalts-Kochgeräte. Für offene Kamine gelten weder Rauminhalt und Verbund noch die Vorgaben zu den Öffnungen.",
+          "ref": { "source": "bayfeuv", "where": "§ 3 Abs. 7" }
+        }
+      ]
+    }
+  ],
+  "closingNote": "Ergebnisse gelten nur für raumluftabhängige Feuerstätten nach der gewählten Feuerungsverordnung. Zusätzlich gelten die Herstellerangaben und bei Gasfeuerstätten die DVGW-TRGI. Die Lösung vorab mit dem bevollmächtigten Bezirksschornsteinfeger abstimmen."
+}

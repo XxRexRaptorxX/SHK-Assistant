@@ -17,6 +17,7 @@ import { normFinderKeywords } from './normFinderTool'
 import { pipeMaterialKeywords } from './pipeMaterialTool'
 import { metalKeywords } from './metalTool'
 import { gasSizingKeywords } from './gasSizingTool'
+import { combustionAirKeywords } from './combustionAirTool'
 import { placementKeywords } from './placementTool'
 import { pressureSwitchKeywords } from './pressureSwitchTool'
 import { radiatorSurveyKeywords } from './radiatorSurveyTool'
@@ -41,6 +42,7 @@ import {
   isPipeMaterialTool,
   isMetalTool,
   isGasSizingTool,
+  isCombustionAirTool,
   isFlueTypeTool,
   isPlacementTool,
   isPressureSwitchTool,
@@ -141,6 +143,7 @@ function toolKeywords(entry: ToolEntry): string[] {
   if (isPipeMaterialTool(entry)) return pipeMaterialKeywords(entry)
   if (isMetalTool(entry)) return metalKeywords(entry)
   if (isGasSizingTool(entry)) return gasSizingKeywords(entry)
+  if (isCombustionAirTool(entry)) return combustionAirKeywords(entry)
   if (isFlueTypeTool(entry)) return flueTypeKeywords(entry)
   if (isPressureSwitchTool(entry)) return pressureSwitchKeywords(entry)
   if (isClassificationTool(entry)) return classificationKeywords(entry)

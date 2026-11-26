@@ -11,7 +11,7 @@
   "tags": ["heizung", "planung"],
   "category": "Planung",
   "description": "Regelwerk und Feuerstätte bzw. Anlage wählen, dann die Leistung eingeben: bei Feuerstätten die Nennleistung aller, die gleichzeitig betrieben werden sollen. Das Tool sagt, ob ein Heizraum (feste Brennstoffe) oder ein eigener Aufstellraum (Öl, Gas, BHKW, große Wärmepumpen) nötig ist, und listet nach Thema, was einzuhalten ist. Mindestquerschnitte, Rauminhalte und Abstände rechnet es für die eingegebene Leistung aus.",
-  "related": ["tool.brennstofflagerung", "tool.gebaeudeklasse"],
+  "related": ["tool.brennstofflagerung", "tool.gebaeudeklasse", "tool.verbrennungsluft"],
   "fuelsLabel": "Feuerstätte oder Anlage",
   "quantityLabel": "Leistung",
   "regulations": [

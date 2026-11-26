@@ -197,6 +197,21 @@ Teilstrecke im Tabellenverfahren der TRGI 2018 (Spalten wie im DVGW-Tabellenform
 - `checks.flowMonitor` (Belastungen → erwartete Baugröße) und `checks.pipe` (Rohrdruckgefälle einer Quelle mit
   erlaubter relativer Abweichung `tolerance`): Der Build prüft, dass das Tool sie trifft.
 
+**Verbrennungsluft-Tools** (`"kind": "combustionAir"`) legen die Verbrennungsluftversorgung raumluftabhängiger
+Feuerstätten nach einer Feuerungsverordnung aus: Nennleistung eingeben, Mindestquerschnitt der Öffnung ins Freie,
+Volumenstrom bzw. Mindest-Rauminhalt im Verbrennungsluftverbund sehen und eigene Öffnungen oder Räume prüfen.
+Felder: `title`, `summary`, `description`, `category`, `keywords`, `related`, `closingNote`, `sources` (je `key`,
+`name`, `source`; Verweise als `ref` mit `source` und `where`, z. B. „§ 3 Abs. 2“), `power` (`label`, `unit`, `max`,
+`text`, `ref`) und `regulations`, je Regelwerk:
+
+- `opening`: bis `upTo` kW eine Öffnung mit mind. `single` cm² oder zwei mit je `pairEach` cm²; darüber `single` plus
+  `perKwOver` cm² für jedes angefangene kW über `upTo`, auf höchstens `maxParts` Öffnungen; `text`/`ref` und `overText`/`overRef`.
+- `compound` (optional): Rauminhalt bzw. Verbund bis `upTo` kW, `perKw` m³ je kW, Öffnungen zwischen den Räumen mind.
+  `openingMin` cm². Fehlt er, ist `compoundMissing` (Hinweis) Pflicht. Gezählt werden nur Räume mit Verbindung zum Freien.
+- `volumeFlow` (optional, `perKw` m³/h je kW) und `otherProof` (optional, anderer Nachweis ohne Zahl), `notes` (`title`, `text`, `ref`).
+
+Der Build prüft Quellenverweise (jede Quelle muss zitiert sein) und dass `compound` und `compoundMissing` sich ausschließen.
+
 **Abgas-Arten-Tools** (`"kind": "flueTypes"`) zeigen die Gasgeräte-Arten nach DIN EN 1749 in zwei Richtungen:
 Einbausituation antippen → Art (z. B. C33x), oder Art eingeben (C33x, C(10)3, C103, B11BS …) → Merkmale und
 Einbaukriterien. Felder: `title`, `summary`, `description`, `category`, `related` und:

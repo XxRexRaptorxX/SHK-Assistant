@@ -4,6 +4,7 @@ import { defineCollection, defineEntrySchema } from '../../content/schema/base.t
 import { topicTagsSchema } from '../../content/schema/topicTags.ts'
 import { checkFormulaRequirements, formulaCollection, formulaShape, type FormulaEntry } from '../formulas/schema.ts'
 import { checkCableTool, cableToolSchema, type CableTool } from './cableTool.ts'
+import { checkCombustionAirTool, combustionAirToolSchema, type CombustionAirTool } from './combustionAirTool.ts'
 import { TOOL_ID_PREFIX } from './constants.ts'
 import { checkDrainageSizingTool, drainageSizingToolSchema, type DrainageSizingTool } from './drainageSizingTool.ts'
 import { checkClassificationTool, classificationToolSchema, type ClassificationTool } from './classificationTool.ts'
@@ -76,6 +77,8 @@ import { workHoursToolSchema, type WorkHoursTool } from './workHoursTool.ts'
 //   Art → Einbaukriterien (siehe flueTypeTool.ts).
 // - Hochdruckschalter-Tools ("kind": "pressureSwitch"): Einstellwert des Sicherheitsdruckschalters aus PS und Art der
 //   Absicherung, Prüfung der Verflüssigungstemperatur mit der Dampfdrucktabelle (siehe pressureSwitchTool.ts).
+// - Verbrennungsluft-Tools ("kind": "combustionAir"): Nennleistung und Feuerungsverordnung, Öffnung ins Freie,
+//   Volumenstrom bzw. Rauminhalt im Verbrennungsluftverbund ausrechnen und prüfen (siehe combustionAirTool.ts).
 
 const formulaToolSchema = defineEntrySchema({
   ...formulaShape,
@@ -247,6 +250,7 @@ export const toolEntrySchema = z.discriminatedUnion('kind', [
   gasSizingToolSchema,
   flueTypeToolSchema,
   pressureSwitchToolSchema,
+  combustionAirToolSchema,
 ])
 
 export type FormulaTool = z.output<typeof formulaToolSchema>
@@ -286,7 +290,8 @@ export type ToolEntry =
   | GasSizingTool
   | FlueTypeTool
   | PressureSwitchTool
-export type { FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool, PressureSwitchTool }
+  | CombustionAirTool
+export type { CombustionAirTool, FlueTypeTool, GasSizingTool, HeatingCurveTool, HeatPumpTool, MetalTool, PressureSwitchTool }
 export type { CableTool, DrainageSizingTool, ClassificationTool, FallProtectionTool, FactorTool, LoadSecuringTool, HazmatPointsTool, HeatingCostToolEntry, MaterialListTool, NormFinderTool, PipeMaterialTool, PlacementTool, RadiatorSurveyTool, RefrigerantTool, SensorTool, SequenceTool, SymbolTool, ValveSurveyTool, VariantTool, VentilationRiserTool, WireColorTool, WorkHoursTool }
 
 export const isTableTool = (entry: ToolEntry): entry is TableTool => entry.kind === 'table'
@@ -304,6 +309,7 @@ export const relatedTools = (entry: ToolEntry): string[] =>
   entry.kind === 'classification' ||
   entry.kind === 'heatPumpBivalence' ||
   entry.kind === 'pressureSwitch' ||
+  entry.kind === 'combustionAir' ||
   entry.kind === 'heatingCurve'
     ? entry.related
     : []
@@ -334,7 +340,8 @@ export const isMetalTool = (entry: ToolEntry): entry is MetalTool => entry.kind 
 export const isGasSizingTool = (entry: ToolEntry): entry is GasSizingTool => entry.kind === 'gasSizing'
 export const isFlueTypeTool = (entry: ToolEntry): entry is FlueTypeTool => entry.kind === 'flueTypes'
 export const isPressureSwitchTool = (entry: ToolEntry): entry is PressureSwitchTool => entry.kind === 'pressureSwitch'
-export const isClassificationTool = (entry: ToolEntry): entry is ClassificationTool => entry.kind === 'classification'
+export const isCombustionAirTool = (entry: ToolEntry): entry is CombustionAirTool => entry.kind === 'combustionAir'
+export const isClassificationTool =(entry: ToolEntry): entry is ClassificationTool => entry.kind === 'classification'
 export const isFormulaTool =(entry: ToolEntry): entry is FormulaTool => entry.kind === undefined
 
 /** Fehlende oder unbekannte Spalten in den Werten einer Zeile bzw. Option */
@@ -519,6 +526,8 @@ export const toolCollection = defineCollection({
                                                   ? checkHeatingCurveTool(entry)
                                                 : isPressureSwitchTool(entry)
                                                   ? checkPressureSwitchTool(entry)
+                                                : isCombustionAirTool(entry)
+                                                  ? checkCombustionAirTool(entry)
                                                 : formulaCollection.check!(entry as FormulaEntry),
   references: (entry) => [
     ...relatedTools(entry),
