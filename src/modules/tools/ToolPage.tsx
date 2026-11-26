@@ -166,7 +166,7 @@ export default function ToolPage({ entries = toolEntries }: { entries?: ToolEntr
   )
 }
 
-/** „Passende Tools“ am Seitenende: im Eintrag unter related genannt */
+/** „Verwandte Tools“ am Seitenende: im Eintrag unter related genannt */
 function RelatedTools({ tool, entries }: { tool: ToolEntry; entries: readonly ToolEntry[] }) {
   return <ToolLinks ids={relatedTools(tool)} entries={entries} />
 }

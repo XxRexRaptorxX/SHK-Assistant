@@ -30,7 +30,7 @@ export const checklistEntrySchema = defineEntrySchema({
   sections: z.array(sectionSchema).default([]),
   /** Freitextfeld unter den Punkten, z. B. für Auffälligkeiten; wird lokal gespeichert und gedruckt */
   notes: z.strictObject({ label: z.string().trim().min(1).default('Notizen') }).optional(),
-  /** Passende Tools, ganz unten verlinkt (Reihenfolge wie angegeben) */
+  /** Verwandte Tools, ganz unten verlinkt (Reihenfolge wie angegeben) */
   tools: z.array(z.string().startsWith(`${TOOL_ID_PREFIX}.`)).default([]),
 }).superRefine((entry, ctx) => {
   if (entry.status === 'verified' && entry.sections.length === 0) {

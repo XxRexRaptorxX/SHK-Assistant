@@ -12,7 +12,7 @@ import { math } from '../../lib/math.ts'
 const key = z.string().regex(/^[a-z][a-zA-Z0-9]*$/, 'key: Kleinbuchstabe, dann Buchstaben/Ziffern')
 const symbol = z.string().regex(/^[A-Za-z][A-Za-z0-9_]*$/, 'Symbol: nur A-Z, a-z, 0-9 und _')
 
-/** Verweise auf andere Tools (ids), stehen unter „Passende Tools“ am Seitenende; der Build prüft, dass es sie gibt */
+/** Verweise auf andere Tools (ids), stehen unter „Verwandte Tools“ am Seitenende; der Build prüft, dass es sie gibt */
 export const relatedToolsSchema = z.array(z.string().startsWith('tool.')).default([])
 
 const optionSchema = z.strictObject({

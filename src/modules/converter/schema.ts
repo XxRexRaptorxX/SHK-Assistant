@@ -73,7 +73,7 @@ export const converterEntrySchema = defineEntrySchema({
   /** kind "table": Spaltenüberschriften und Zeilen (Text je Zelle) */
   columns: z.array(z.string().trim().min(1)).default([]),
   rows: z.array(z.array(z.string())).default([]),
-  /** Passende Tools, unten auf der Seite verlinkt, z. B. ["tool.oelduese"] */
+  /** Verwandte Tools, unten auf der Seite verlinkt, z. B. ["tool.oelduese"] */
   tools: z.array(z.string().startsWith(`${TOOL_ID_PREFIX}.`)).default([]),
 })
 

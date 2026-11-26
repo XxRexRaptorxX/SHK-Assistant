@@ -60,7 +60,7 @@ describe('Umrechner Öldurchsatz', () => {
         </Routes>
       </MemoryRouter>,
     )
-    expect(html).toContain('Passende Tools')
+    expect(html).toContain('Verwandte Tools')
     expect(html).toContain('Öldüse auslegen')
   })
 })

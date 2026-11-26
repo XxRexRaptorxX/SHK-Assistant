@@ -184,11 +184,11 @@ describe('Checklisten-Seiten', () => {
 
   it('verlinkt ganz unten die passenden Tools und überspringt fehlende', () => {
     const html = renderAt('/checklisten/test-wartung')
-    expect(html).toContain('Passende Tools</h2>')
+    expect(html).toContain('Verwandte Tools</h2>')
     expect(html).toContain('href="/tools/abgaswerte"')
     expect(html).not.toContain('gibt-es-nicht')
     // nach den Knöpfen, also ganz unten
-    expect(html.indexOf('Passende Tools')).toBeGreaterThan(html.indexOf('Zurücksetzen'))
+    expect(html.indexOf('Verwandte Tools')).toBeGreaterThan(html.indexOf('Zurücksetzen'))
   })
 
   it('weist auf fehlende Prüfpunkte und unbekannte Checklisten hin', () => {

@@ -11,13 +11,13 @@ interface ToolLinksProps {
   entries?: readonly ToolEntry[]
 }
 
-/** „Passende Tools“ am Seitenende; nur vorhandene Tools (im public-Build fehlen interne) */
+/** „Verwandte Tools“ am Seitenende; nur vorhandene Tools (im public-Build fehlen interne) */
 export function ToolLinks({ ids, entries = toolEntries }: ToolLinksProps) {
   const tools = ids.flatMap((id) => entries.find((entry) => entry.id === id) ?? [])
   if (tools.length === 0) return null
   return (
     <section className="mt-8 print:hidden">
-      <h2 className="text-xl font-bold">Passende Tools</h2>
+      <h2 className="text-xl font-bold">Verwandte Tools</h2>
       <ul className={`mt-2 ${listCard}`}>
         {tools.map((entry) => (
           <li key={entry.id}>
