@@ -287,7 +287,30 @@ function SituationFinder({ tool }: { tool: FlueTypeTool }) {
           </div>
         )}
       </div>
+      <Regulations tool={tool} />
     </>
+  )
+}
+
+/** Allgemeine Abgasvorschriften als eigener Block unter dem Ergebnis */
+function Regulations({ tool }: { tool: FlueTypeTool }) {
+  const block = tool.regulations
+  if (!block) return null
+  return (
+    <section aria-label={block.title} className="mt-4 rounded-2xl border-2 border-line bg-surface p-4">
+      <h3 className="text-xl font-bold">{block.title}</h3>
+      {block.intro && <p className="mt-1 text-sm text-muted">{block.intro}</p>}
+      <dl className="mt-3 space-y-3">
+        {block.items.map((item) => (
+          <div key={item.heading}>
+            <dt className="text-base font-bold">{item.heading}</dt>
+            <dd className="text-base">
+              {item.text} <span className="text-sm text-muted">({item.source})</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
   )
 }
 
@@ -330,6 +353,7 @@ function TypeSearch({ tool, initialQuery = '' }: { tool: FlueTypeTool; initialQu
           </div>
         )}
       </div>
+      <Regulations tool={tool} />
       <h3 className="mt-6 font-semibold">Alle Arten</h3>
       {(['A', 'B', 'C'] as const).map((letter) => (
         <div key={letter} className="mt-2 flex flex-wrap gap-2">

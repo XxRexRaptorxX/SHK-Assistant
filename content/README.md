@@ -231,6 +231,8 @@ Einbaukriterien. Felder: `title`, `summary`, `description`, `category`, `related
   Art wie `C33`, für die der Zusatz belegt ist), optional `missingNote` (Hinweis, wenn der Zusatz möglich ist, aber
   fehlt) und `source`. Ein Zusatz bei einer anderen Art erscheint als Warnung, nicht als Fehler.
 - `generalNotes`: Einbaukriterien, die bei jeder Art stehen.
+- `regulations`: optional, eigener Block unter dem Ergebnis mit allgemeinen Abgasvorschriften (z. B. Mündungsabstände):
+  `title`, `intro` (welche Verordnung gilt) und `items` je `heading`, `text` (eigene Zusammenfassung) und `source`.
 
 Die Schemazeichnung je Grundart steht in `src/modules/tools/FlueDiagram.tsx` (eigene Darstellung nach den Definitionen
 der DIN EN 1749, abgeglichen mit dem WOLF-Abgasschema); ein Test prüft, dass jede Grundart eine hat.

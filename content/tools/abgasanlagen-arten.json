@@ -2,7 +2,7 @@
   "id": "tool.abgasanlagen-arten",
   "visibility": "public",
   "status": "draft",
-  "source": "Arten A, B und C mit Gebläse-Ziffer: DIN EN 1749:2020-04 bzw. EN 1749:2020, Abschnitt 4 (Allgemeine Klassifizierung), S. 6–13 der englischen Fassung, Leseprobe https://cdn.standards.iteh.ai/samples/67717/ab3cc65bb79d40ae95835e42bad62451/SIST-EN-1749-2020.pdf; deutsche Leseprobe (Inhaltsverzeichnis, Anwendungsbereich) https://www.normsplash.com/Samples/DIN/363715165/DIN-EN-1749-2020-de.pdf. Zusätze AS, BS, D, P und R: CEN/TR 1749:2014, Abschnitte 3–5, S. 11–12, Leseprobe https://cdn.standards.iteh.ai/samples/41327/1b22bcbf75b54756bbd45b2fe794947b/SIST-TP-CEN-TR-1749-2014.pdf; in EN 1749:2020 laut Inhaltsverzeichnis weiter als Abschnitte 5–7 enthalten, deren Text in der Leseprobe fehlt. Zusatz x: Wikipedia, „Gasgerät“ (Stand 14.11.2025), https://de.wikipedia.org/wiki/Gasger%C3%A4t; Fritz Guther, „Aufstellung von raumluftunabhängigen Gasgeräten“, ikz-praxis 1/2001, S. 8, https://www.ikz.de/ikz-praxis-archiv/p0101/010108.php; WOLF, Planungsunterlage Abgassysteme, 4801968, 02/2023, Abschnitt 1.5.7, S. 11, https://msvcweuaimpimcoreprod.blob.core.windows.net/public/assets/Oxomi/WOLF/HeiztechnikLuft-Abgassysteme/4801968_202302_web.pdf. Einbaukriterien: Jörg Scheele, „Neue Technische Regeln für Gas-Installationen, Teil 7 – Gasgeräte auf europäisch“, SBZ 15/2008 (zur TRGI 2008), https://www.sbz-online.de/sanitaer/neue-technische-regeln-fuer-gas-installationen-teil-7-gasgeraete-auf-europaeisch; Ronny Gedamke, „Gerätearten nach TRGI, TRF und TRÖl“, SHK Profi 07/2013, https://www.shk-profi.de/artikel/shk_Geraetearten_nach_TRGI_TRF_und_TRoel-1788408.html; WOLF, Planungsunterlage Abgassysteme (siehe oben), Abschnitte 1.5.1–1.5.6, S. 7–10. Zulässigkeit in Deutschland: DVGW, Zertifizierungs-Information Nr. 3, „Abgasanlagen – Installationsanforderungen – Systemzertifizierung“, 2. Auflage 01/1999, https://silo.tips/download/abgasanlagen-installationsanforderungen-systemzertifizierung-zertifizierungs-inf; SBZ-Monteur, „Erklär mal: Gasgerätearten“ (16.09.2010), https://www.sbz-monteur.de/erklaer-mal/erklaer-mal-gasgeraetearten. Abgleich der Schemazeichnungen und Zuluftöffnungen: WOLF-Abgasschema (Ausführungsvarianten) und Hinweistext auf heima24, „WOLF Abgassysteme für Öl-Brennwert Geräte“, https://www.heima24.de/heizung/oelheizung/wolf/abgassysteme-fuer-oel-brennwert/, Bild https://www.heima24.de/shop/images/files/editor/image/category/abgas-varianten.png. Alle abgerufen am 26.11.2026.",
+  "source": "Arten A, B und C mit Gebläse-Ziffer: DIN EN 1749:2020-04 bzw. EN 1749:2020, Abschnitt 4 (Allgemeine Klassifizierung), S. 6–13 der englischen Fassung, Leseprobe https://cdn.standards.iteh.ai/samples/67717/ab3cc65bb79d40ae95835e42bad62451/SIST-EN-1749-2020.pdf; deutsche Leseprobe (Inhaltsverzeichnis, Anwendungsbereich) https://www.normsplash.com/Samples/DIN/363715165/DIN-EN-1749-2020-de.pdf. Zusätze AS, BS, D, P und R: CEN/TR 1749:2014, Abschnitte 3–5, S. 11–12, Leseprobe https://cdn.standards.iteh.ai/samples/41327/1b22bcbf75b54756bbd45b2fe794947b/SIST-TP-CEN-TR-1749-2014.pdf; in EN 1749:2020 laut Inhaltsverzeichnis weiter als Abschnitte 5–7 enthalten, deren Text in der Leseprobe fehlt. Zusatz x: Wikipedia, „Gasgerät“ (Stand 14.11.2025), https://de.wikipedia.org/wiki/Gasger%C3%A4t; Fritz Guther, „Aufstellung von raumluftunabhängigen Gasgeräten“, ikz-praxis 1/2001, S. 8, https://www.ikz.de/ikz-praxis-archiv/p0101/010108.php; WOLF, Planungsunterlage Abgassysteme, 4801968, 02/2023, Abschnitt 1.5.7, S. 11, https://msvcweuaimpimcoreprod.blob.core.windows.net/public/assets/Oxomi/WOLF/HeiztechnikLuft-Abgassysteme/4801968_202302_web.pdf. Einbaukriterien: Jörg Scheele, „Neue Technische Regeln für Gas-Installationen, Teil 7 – Gasgeräte auf europäisch“, SBZ 15/2008 (zur TRGI 2008), https://www.sbz-online.de/sanitaer/neue-technische-regeln-fuer-gas-installationen-teil-7-gasgeraete-auf-europaeisch; Ronny Gedamke, „Gerätearten nach TRGI, TRF und TRÖl“, SHK Profi 07/2013, https://www.shk-profi.de/artikel/shk_Geraetearten_nach_TRGI_TRF_und_TRoel-1788408.html; WOLF, Planungsunterlage Abgassysteme (siehe oben), Abschnitte 1.5.1–1.5.6, S. 7–10. Zulässigkeit in Deutschland: DVGW, Zertifizierungs-Information Nr. 3, „Abgasanlagen – Installationsanforderungen – Systemzertifizierung“, 2. Auflage 01/1999, https://silo.tips/download/abgasanlagen-installationsanforderungen-systemzertifizierung-zertifizierungs-inf; SBZ-Monteur, „Erklär mal: Gasgerätearten“ (16.09.2010), https://www.sbz-monteur.de/erklaer-mal/erklaer-mal-gasgeraetearten. Allgemeine Abgasvorschriften: Bayerische Feuerungsverordnung (FeuV) vom 11.11.2007 (GVBl. S. 800), § 9 Abführung von Abgasen, https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-9. Abgleich der Schemazeichnungen und Zuluftöffnungen: WOLF-Abgasschema (Ausführungsvarianten) und Hinweistext auf heima24, „WOLF Abgassysteme für Öl-Brennwert Geräte“, https://www.heima24.de/heizung/oelheizung/wolf/abgassysteme-fuer-oel-brennwert/, Bild https://www.heima24.de/shop/images/files/editor/image/category/abgas-varianten.png. Alle abgerufen am 26.11.2026.",
   "verifiedBy": "",
   "verifiedAt": "",
   "kind": "flueTypes",
@@ -583,6 +583,42 @@
       "source": "CEN/TR 1749:2014, 5"
     }
   ],
+  "regulations": {
+    "title": "Allgemeine Abgasvorschriften",
+    "intro": "Nach der Feuerungsverordnung des Landes (hier Bayern, FeuV vom 11.11.2007, gültig bis 31.12.2028; die Länder-FeuVO folgen der Muster-Feuerungsverordnung, Abweichungen möglich). Gilt zusätzlich zu TRGI und Herstellerangaben.",
+    "items": [
+      {
+        "heading": "Mündung über Dach",
+        "text": "Die Mündung muss den First um mindestens 40 cm überragen oder mindestens 1 m von der Dachfläche entfernt sein.",
+        "source": "BayFeuV § 9 Abs. 1 Nr. 1"
+      },
+      {
+        "heading": "Ausnahme 40 cm zur Dachfläche",
+        "text": "40 cm Abstand zur Dachfläche genügen, wenn nur raumluftunabhängige Feuerstätten für flüssige oder gasförmige Brennstoffe angeschlossen sind, die Gesamtnennleistung höchstens 50 kW beträgt und das Abgas durch Gebläse abgeführt wird.",
+        "source": "BayFeuV § 9 Abs. 1 Nr. 1"
+      },
+      {
+        "heading": "Dachaufbauten und Öffnungen",
+        "text": "Dachaufbauten, Gebäudeteile, Öffnungen zu Räumen und ungeschützte brennbare Bauteile (außer der Bedachung) muss die Mündung um mindestens 1 m überragen, wenn sie weniger als 1,5 m von der Abgasanlage entfernt sind.",
+        "source": "BayFeuV § 9 Abs. 1 Nr. 2"
+      },
+      {
+        "heading": "Fenster, Türen, Lüftungsöffnungen",
+        "text": "Liegen Fenster, Türen oder Lüftungsöffnungen in der Nähe der Mündung, muss die Mündung ihre Oberkante um mindestens 1 m überragen. Als „in der Nähe“ gilt bei Öl und Gas bis 50 kW alles im Umkreis von 8 m (bei festen Brennstoffen 15 m). Bei größerer Leistung wächst der Umkreis mit jeden angefangenen 50 kW um 1 m (feste Brennstoffe: 2 m), höchstens bis 40 m. Beispiel Gasheizung 70 kW: Umkreis 9 m.",
+        "source": "BayFeuV § 9 Abs. 1 Nr. 4"
+      },
+      {
+        "heading": "Feste Brennstoffe, weiche Bedachung",
+        "text": "Bei Feuerstätten für feste Brennstoffe in Gebäuden, deren Bedachung überwiegend nicht den Anforderungen an harte Bedachung entspricht: Mündung am First, mindestens 80 cm darüber.",
+        "source": "BayFeuV § 9 Abs. 1 Nr. 3"
+      },
+      {
+        "heading": "Abgas durch die Außenwand",
+        "text": "Nur bei raumluftunabhängigen Gasfeuerstätten und nur wenn alle drei Bedingungen erfüllt sind: Ableitung über Dach nicht oder nur mit unverhältnismäßig hohem Aufwand möglich; Nennleistung höchstens 11 kW zur Raumheizung bzw. 28 kW zur Warmwasserbereitung; keine Gefahren oder unzumutbaren Belästigungen.",
+        "source": "BayFeuV § 9 Abs. 2"
+      }
+    ]
+  },
   "generalNotes": [
     {
       "text": "Welche Arten ein Gerät erlaubt, legt der Hersteller fest (Typenschild, Anleitung). Die Art im Einbau ergibt sich aus der tatsächlichen Ausführung vor Ort.",

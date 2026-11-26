@@ -204,6 +204,15 @@ describe('Abgasanlagen Arten', () => {
     expect(renderToStaticMarkup(<FlueDiagram code="C5" digit="3" title="C53x" />)).toContain('Abgasleitung außen an der Fassade')
   })
 
+  it('zeigt unter dem Ergebnis die allgemeinen Abgasvorschriften mit Quelle', () => {
+    for (const html of [renderType('C33x'), renderToStaticMarkup(<FlueTypeLookup tool={tool} />)]) {
+      expect(html).toContain('Allgemeine Abgasvorschriften')
+      expect(html).toContain('First um mindestens 40 cm')
+      expect(html).toContain('11 kW zur Raumheizung')
+      expect(html).toContain('BayFeuV § 9 Abs. 2')
+    }
+  })
+
   it('zeigt das Schema im Ergebnis', () => {
     expect(renderType('C93x')).toContain('aria-label="Schema C93x"')
     expect(renderType('C93x')).toContain('vorhandener Schacht als')

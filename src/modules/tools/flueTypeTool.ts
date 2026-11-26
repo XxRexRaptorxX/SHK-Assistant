@@ -107,6 +107,15 @@ export const flueTypeToolSchema = defineEntrySchema({
   suffixes: z.array(suffixSchema).default([]),
   /** Allgemeine Einbaukriterien zu jeder Art, z. B. wo Mündung und Aufstellraum geregelt sind */
   generalNotes: z.array(noteSchema).default([]),
+  /** Allgemeine Abgasvorschriften (z. B. Mündungsabstände) als eigener Block unter dem Ergebnis */
+  regulations: z
+    .strictObject({
+      title: text,
+      /** Kurzer Hinweis über der Liste, z. B. welche Verordnung gilt */
+      intro: z.string().trim().default(''),
+      items: z.array(z.strictObject({ heading: text, text, source: text })).min(1),
+    })
+    .optional(),
 })
 
 export type FlueTypeTool = z.output<typeof flueTypeToolSchema>
